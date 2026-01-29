@@ -38,6 +38,8 @@ UAUA combines two complementary exploration methods:
 ## The UAUA Pattern
 
 ```
+U0: EXEMPLAR GATHERING (Ground in known-good examples)
+    ↓
 U1: UNIVERSALIZE (Map the space)
     ↓
 A1: ARAW (Test top candidates)
@@ -51,11 +53,108 @@ SYNTHESIS (What survived all rounds?)
 
 ---
 
+## STEP U0: Exemplar Gathering
+
+**Purpose**: Before analysis, ground the exploration in known-good examples.
+
+**This step exists because UAUA's analytical decomposition can suppress implicit pattern knowledge. Exemplars provide a perceptual anchor that prevents analysis from drifting into "analytically sound but actually bad" territory.**
+
+### Procedure
+
+1. **Identify 3-5 exemplars** — What are the best existing examples in this domain?
+   - For design: "What are 3-5 sites/products that do this well?"
+   - For strategy: "What are 3-5 organizations that solved a similar problem?"
+   - For writing: "What are 3-5 pieces that achieve the tone/effect I want?"
+
+2. **Extract shared patterns** — What do the exemplars have in common?
+   - Don't analyze in detail yet — just note what stands out
+   - Focus on what's SHARED across exemplars (likely fundamental) vs what DIFFERS (likely stylistic)
+
+3. **Note the felt impression** — What's the overall quality or feeling the exemplars convey?
+   - This impression becomes a reference point throughout analysis
+   - If later analysis contradicts this impression, flag the tension (see Gestalt Principle below)
+
+### Output Format
+
+```
+U0: EXEMPLAR GROUNDING
+======================
+Exemplars identified:
+1. [Exemplar 1] — [why it's good]
+2. [Exemplar 2] — [why it's good]
+3. [Exemplar 3] — [why it's good]
+
+Shared patterns: [what they have in common]
+Felt impression: [the quality/feeling they share]
+```
+
+### When to Skip U0
+
+- Pure logic/math problems (no perceptual component)
+- The domain has no established exemplars (genuinely novel territory)
+- User has already supplied specific references (incorporate those instead)
+
+---
+
+## The Gestalt Principle
+
+**When your overall impression of something conflicts with your analytical decomposition, TRUST THE IMPRESSION FIRST.**
+
+Analytical decomposition can lose relational information — the quality that emerges from how parts relate, not from the parts themselves. If the analysis says "each element is correct" but the whole feels wrong, the whole IS wrong and the analysis missed something.
+
+**How to apply:**
+- State the impression honestly: "This feels [wrong/cheap/cluttered/etc.]"
+- Then investigate WHY the impression and analysis diverge
+- The impression is data. Don't override it with reasoning.
+
+**This is especially important for design, writing, music, and any domain where the whole is greater than the sum of parts.**
+
+---
+
+## Phase Awareness
+
+Different problems have different phases, and UAUA is not equally useful in all of them.
+
+### Design Phases
+
+| Phase | UAUA Fit | What to Use Instead |
+|-------|----------|---------------------|
+| **Strategy** ("What should we build?") | Strong | Standard UAUA — this is analytical and propositional |
+| **Ideation** ("What could it look like?") | Weak | Exemplar comparison (U0) + direct generation. Skip AR/AW. |
+| **Critique** ("Is this good enough?") | Moderate | UAUA with perceptual techniques (13-18). Focus on gestalt. |
+| **Polish** ("Make it perfect") | None | Direct iteration. Don't analyze — adjust and evaluate visually. |
+
+### General Principle
+
+If the task requires GENERATING something (a design, a piece of writing, a composition), UAUA works for planning what to generate but not for the generation itself. Use UAUA to decide WHAT, then generate directly, then use UAUA to critique the result.
+
+---
+
+## Domain Technique Profiles
+
+Not all techniques apply equally to all domains. Emphasize the right ones.
+
+| Domain | Primary Techniques | Secondary | Skip |
+|--------|--------------------|-----------|------|
+| **Design/UX** | 1-4, 10-11 (logical) + 13-18 (all perceptual) | 7, 8 | 5, 6, 9, 12 |
+| **Strategy/Business** | 1-8, 10-12 (full logical set) | 13, 16 | 14, 15, 17, 18 |
+| **Engineering** | 1-12 (all logical) | 13, 18 | 14-17 |
+| **Writing/Communication** | 2, 5, 9, 10, 12 + 14, 16 | 1, 7, 11, 13 | 3, 4, 6, 8, 15, 17, 18 |
+| **Research/Analysis** | 1-12 (all logical) | 13 | 14-18 |
+
+"Skip" means unlikely to be useful, not forbidden. If a skipped technique reveals something, include it.
+
+---
+
 ## STEP U1: Universalize (Map the Space)
 
 **Purpose**: Find the complete possibility space before testing anything.
 
-### Apply 12 Techniques to Input
+### Apply Techniques to Input
+
+Select techniques based on the domain (see Domain Profiles below). Use all that apply.
+
+#### Logical Techniques (1-12)
 
 | # | Technique | Question |
 |---|-----------|----------|
@@ -71,6 +170,19 @@ SYNTHESIS (What survived all rounds?)
 | 10 | PERSPECTIVE ROTATION | Whose view? |
 | 11 | SCALE VARIATION | At what level? |
 | 12 | NEGATION REFRAME | Problem or opportunity? |
+
+#### Perceptual Techniques (13-18)
+
+For design, creative, and aesthetic domains. These address dimensions that logical techniques miss.
+
+| # | Technique | Question |
+|---|-----------|----------|
+| 13 | EXEMPLAR COMPARISON | What known-good examples exist in this domain? What do the best ones share? |
+| 14 | SENSORY EVALUATION | What does this look/feel/sound like? What should it? |
+| 15 | COMPOSITIONAL ANALYSIS | How do elements relate to each other? What's the gestalt? |
+| 16 | EMOTIONAL RESPONSE | What feeling does this evoke? What feeling should it evoke? |
+| 17 | MATERIAL/SURFACE | What metaphorical surface, weight, or texture does this convey? |
+| 18 | PATTERN MATCHING | What established convention does this follow or violate? |
 
 ### Output Format
 
@@ -331,7 +443,7 @@ If user message contains depth signal, use that depth:
 
 | Component | At 2x | At 8x |
 |-----------|-------|-------|
-| **U1 Techniques** | Apply 6-8 of 12 | Apply all 12 exhaustively |
+| **U1 Techniques** | Apply 6-8 of 18 (domain-appropriate) | Apply all domain-appropriate techniques exhaustively |
 | **U1 Candidates** | 5-8 candidates | 18+ candidates |
 | **A1 Tree Depth** | 3-4 levels deep | 6-8 levels deep |
 | **U2 Edge Cases** | 3-5 per candidate | 8-12 per candidate |
@@ -341,11 +453,13 @@ If user message contains depth signal, use that depth:
 ### Pre-Completion Check
 
 Before finishing any UAUA, verify:
+- [ ] U0 exemplars gathered (unless pure logic domain)
 - [ ] Candidates count meets minimum for depth
 - [ ] Edge cases count meets minimum for depth
 - [ ] ARAW tree depth meets minimum
 - [ ] Output length meets minimum
-- [ ] All 4 steps (U1, A1, U2, A2) completed
+- [ ] All steps (U0, U1, A1, U2, A2) completed
+- [ ] Gestalt impression consistent with analytical findings
 
 **If ANY requirement not met: Continue analysis, do NOT submit.**
 
@@ -443,11 +557,13 @@ Don't use UAUA for:
 
 Before completing UAUA:
 
-- [ ] U1 applied at least 6 of 12 universalization techniques
+- [ ] U0 identified exemplars (unless pure logic domain)
+- [ ] U1 applied domain-appropriate techniques (logical + perceptual as needed)
 - [ ] U1 generated at least 5 candidates
 - [ ] A1 tested all candidates with full AR/AW
 - [ ] U2 found at least 2 edge cases
 - [ ] A2 tested edge cases
+- [ ] Gestalt check: does the overall impression match the analytical conclusion?
 - [ ] Synthesis explains what each step added
 - [ ] Final answer has clear validation rationale
 
