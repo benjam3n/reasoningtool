@@ -39,6 +39,12 @@ In a Claude Code session, type `/skillname` followed by your input:
 
 Skills are ranked by how much structured thinking they add — how likely they are to surface something you wouldn't have found on your own.
 
+Some of these skills are **universal** — their applicability is entailed by the problem itself. If you have a complex problem, decomposition applies; that follows from what "complex" means. If you have a claim, testing it against its negation applies; that follows from what "claim" means. You don't need to check whether these skills are relevant. They are relevant whenever their trigger condition exists, and the trigger condition is defined by the skill.
+
+Other skills are **heuristics** — they work well in specific contexts, but whether they apply to *your* context requires judgment. SCAMPER is a useful ideation framework, but whether it helps depends on what you're ideating about. SWOT analysis surfaces strategic factors, but whether those are the right factors depends on your situation.
+
+The tiers below loosely reflect this. Tier 1 skills tend to be universal. Tier 4 skills tend to be context-dependent. The boundary isn't always clean — some skills are universal in principle but heuristic in execution — but the distinction tells you which skills to trust on contact and which to validate before relying on.
+
 ### Tier 1: Start here
 
 These are the most generally useful skills. They work on almost any problem and consistently produce non-obvious results.
