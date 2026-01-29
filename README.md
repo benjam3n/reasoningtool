@@ -35,45 +35,6 @@ In a Claude Code session, type `/skillname` followed by your input:
 /decision_procedure should I take this job offer
 ```
 
-## Experimental: ARAW, UAUA, and GOSM
-
-These three skills use a different approach. They treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.
-
-| Skill | What it does |
-|-------|-------------|
-| `araw` | **Assume Right / Assume Wrong.** Takes a claim and explores both branches: what if this is true? What if it's false? Recurses on interesting sub-claims. Produces a tree of tested claims. |
-| `uaua` | **Universalize → ARAW → Universalize → ARAW.** First maps the complete possibility space, then tests the top candidates with ARAW, then finds edge cases, then validates again. For complex problems where you need both breadth and depth. |
-| `gosm` | **Goal-Oriented State Machine.** Routes any input (goal, problem, question, decision, situation) through the appropriate analysis chain. Orchestrates other skills. |
-
-### Why UAUA works
-
-UAUA alternates between two mathematically distinct search operations:
-
-- **Universalization** operates on N-valued type theory. It asks "what is this an instance of?" and derives all instances from the universal — searching *horizontally* across the possibility space. It guarantees completeness within known dimensions.
-- **ARAW** operates on binary Boolean logic. It asks "is this true or false?" and eliminates branches through contradiction — searching *vertically* into depth. It guarantees rigor by forcing every claim to survive negation.
-
-Neither alone is sufficient. Universalization finds all the possibilities but doesn't test them. ARAW tests rigorously but only within the space you already thought to look. UAUA combines them:
-
-```
-U1: Map the space (divergent, N-valued) → candidates
- ↓
-A1: Test candidates (convergent, binary) → validated/rejected
- ↓
-U2: Find edge cases of survivors (divergent) → new candidates
- ↓
-A2: Final validation (convergent) → what survived all rounds
-```
-
-The result is a search function that covers the space (breadth) AND tests what it finds (depth) AND then re-expands to find what the first pass missed AND validates again. Each step uses a fundamentally different logic — type enumeration vs. binary elimination — so their blind spots don't overlap.
-
-This makes UAUA the most powerful experimental search function in this toolkit. Where ARAW alone might miss alternatives it never considered, and universalization alone might map possibilities it never stress-tested, UAUA does both in alternation. Information-theoretically, each ARAW pass maximizes entropy reduction (selecting the crux that most constrains remaining uncertainty), while each universalization pass maximizes entropy expansion (finding dimensions not yet explored). The alternation converges on answers that are both complete and validated.
-
-Use `/uaua [your question]` to try it. Scale depth with 1x, 2x, 4x, or 8x.
-
-These are more opinionated than the other skills — they have a specific view about how to test thinking rigorously — but they tend to surface things other approaches miss.
-
-There are also bridging skills (`araw_gosm_integration`, `araw_to_gosm_bridge`) that connect these with the rest of the toolkit.
-
 ## Skills by tier
 
 Skills are ranked by how much structured thinking they add — how likely they are to surface something you wouldn't have found on your own.
@@ -150,6 +111,45 @@ The remaining skills cover specific use cases: `procedure_engine` · `procedure_
 
 Browse `claude-code-plugin/skills/` for the complete list.
 
+## Experimental: ARAW, UAUA, and GOSM
+
+These three skills use a different approach. They treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.
+
+| Skill | What it does |
+|-------|-------------|
+| `araw` | **Assume Right / Assume Wrong.** Takes a claim and explores both branches: what if this is true? What if it's false? Recurses on interesting sub-claims. Produces a tree of tested claims. |
+| `uaua` | **Universalize → ARAW → Universalize → ARAW.** First maps the complete possibility space, then tests the top candidates with ARAW, then finds edge cases, then validates again. For complex problems where you need both breadth and depth. |
+| `gosm` | **Goal-Oriented State Machine.** Routes any input (goal, problem, question, decision, situation) through the appropriate analysis chain. Orchestrates other skills. |
+
+### Why UAUA works
+
+UAUA alternates between two mathematically distinct search operations:
+
+- **Universalization** operates on N-valued type theory. It asks "what is this an instance of?" and derives all instances from the universal — searching *horizontally* across the possibility space. It guarantees completeness within known dimensions.
+- **ARAW** operates on binary Boolean logic. It asks "is this true or false?" and eliminates branches through contradiction — searching *vertically* into depth. It guarantees rigor by forcing every claim to survive negation.
+
+Neither alone is sufficient. Universalization finds all the possibilities but doesn't test them. ARAW tests rigorously but only within the space you already thought to look. UAUA combines them:
+
+```
+U1: Map the space (divergent, N-valued) → candidates
+ ↓
+A1: Test candidates (convergent, binary) → validated/rejected
+ ↓
+U2: Find edge cases of survivors (divergent) → new candidates
+ ↓
+A2: Final validation (convergent) → what survived all rounds
+```
+
+The result is a search function that covers the space (breadth) AND tests what it finds (depth) AND then re-expands to find what the first pass missed AND validates again. Each step uses a fundamentally different logic — type enumeration vs. binary elimination — so their blind spots don't overlap.
+
+This makes UAUA the most powerful experimental search function in this toolkit. Where ARAW alone might miss alternatives it never considered, and universalization alone might map possibilities it never stress-tested, UAUA does both in alternation. Information-theoretically, each ARAW pass maximizes entropy reduction (selecting the crux that most constrains remaining uncertainty), while each universalization pass maximizes entropy expansion (finding dimensions not yet explored). The alternation converges on answers that are both complete and validated.
+
+Use `/uaua [your question]` to try it. Scale depth with 1x, 2x, 4x, or 8x.
+
+These are more opinionated than the other skills — they have a specific view about how to test thinking rigorously — but they tend to surface things other approaches miss.
+
+There are also bridging skills (`araw_gosm_integration`, `araw_to_gosm_bridge`) that connect these with the rest of the toolkit.
+
 ## Documentation
 
 The `docs/` directory contains supporting material:
@@ -178,4 +178,4 @@ See [improvedreasoningwritingexample.txt](improvedreasoningwritingexample.txt) f
 
 ## License
 
-CC BY-NC 4.0
+Apache-2.0
