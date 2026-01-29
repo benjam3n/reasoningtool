@@ -1,0 +1,232 @@
+# Test-Based Confidence Gate
+# Purpose: Confidence must come from testing, not guessing
+# Version: 1.0.0
+
+id: test_based_confidence_gate
+name: Test-Based Confidence Gate
+version: "1.0.0"
+domain: core
+type: blocking_gate
+
+description: |
+  Confidence levels must be EARNED through testing, not ASSIGNED by guessing.
+
+  This gate eliminates:
+  - Self-assessed confidence ("I feel 80% sure")
+  - Calibrated guessing ("Spread your confidence levels")
+  - Untested strategy confidence
+
+  Confidence is a measure of TEST RESULTS, not FEELING.
+
+# ============================================
+# CONFIDENCE DERIVATION RULES
+# ============================================
+
+confidence_sources:
+
+  execution_tests:
+    description: Direct execution with observed results
+    confidence_derivation: |
+      confidence = (successful_executions / total_executions) * 100
+    example: |
+      Ran procedure 10 times. 9 succeeded. Confidence = 90%.
+    validity: HIGHEST - actual execution results
+
+  adversarial_survival:
+    description: Number and severity of attacks survived
+    confidence_derivation: |
+      base = 50 (survived at least one attack)
+      + 10 per additional unique attack type survived
+      + 10 if attack was by genuine adversary (not self)
+      cap at 95 (never 100 - unknown attacks may exist)
+    example: |
+      Survived 4 attack types, 2 by external reviewer.
+      Confidence = 50 + 40 + 20 = 95 (capped).
+    validity: HIGH - tested against opposition
+
+  precedent_track_record:
+    description: Historical success rate of similar approaches
+    confidence_derivation: |
+      confidence = precedent_success_rate
+      Must document: N cases, success definition, similarity to current
+    example: |
+      Similar strategy worked in 8/10 documented cases.
+      Confidence = 80%.
+    validity: MEDIUM - assumes similarity holds
+
+  logical_derivation:
+    description: Follows necessarily from verified premises
+    confidence_derivation: |
+      If ALL premises have confidence >= X AND
+      inference is deductively valid THEN
+      conclusion confidence = min(premise confidences)
+    example: |
+      Premise A (90% confidence) AND Premise B (85% confidence)
+      → Conclusion confidence = 85%
+    validity: MEDIUM - only as strong as weakest premise
+
+# ============================================
+# FORBIDDEN CONFIDENCE SOURCES
+# ============================================
+
+forbidden_sources:
+
+  self_assessment:
+    examples:
+      - "I feel confident about this"
+      - "This seems right"
+      - "I'm pretty sure"
+    why_forbidden: Feeling is not evidence
+
+  calibration_without_test:
+    examples:
+      - "Adjusting from 90% to 75% to be conservative"
+      - "Spreading confidence levels across options"
+    why_forbidden: Adjusting a guess is still guessing
+
+  authority_assertion:
+    examples:
+      - "Expert says this works"
+      - "Standard practice"
+    why_forbidden: Authority without test data is appeal to authority
+    exception: Can use if expert provides their test data
+
+  plausibility:
+    examples:
+      - "This makes sense"
+      - "Logically coherent"
+      - "No obvious flaws"
+    why_forbidden: Making sense is not the same as working
+
+  majority_opinion:
+    examples:
+      - "Most people think this"
+      - "Conventional wisdom"
+    why_forbidden: Popularity is not evidence of correctness
+
+# ============================================
+# CONFIDENCE LEVELS REDEFINED
+# ============================================
+
+confidence_levels:
+
+  level_0_untested:
+    range: 0%
+    meaning: No tests performed
+    acceptable_for: Nothing - must test before using
+    display: "UNTESTED"
+
+  level_1_single_test:
+    range: 10-30%
+    meaning: Passed 1 test or survived 1 attack
+    acceptable_for: Low-stakes exploration only
+    derivation: 10 + (10 * severity_of_test)
+    display: "PRELIMINARY (N=1)"
+
+  level_2_multiple_tests:
+    range: 40-60%
+    meaning: Passed multiple tests, no failures
+    acceptable_for: Medium-stakes decisions with fallback
+    derivation: 40 + (5 * additional_tests), capped at 60
+    display: "TESTED (N=X)"
+
+  level_3_adversarial_tested:
+    range: 65-85%
+    meaning: Survived adversarial attacks
+    acceptable_for: High-stakes decisions
+    derivation: 65 + (5 * attack_types_survived), capped at 85
+    display: "ADVERSARIAL (A=X)"
+
+  level_4_extensively_validated:
+    range: 90-95%
+    meaning: Multiple test types, adversarial review, real execution
+    acceptable_for: Critical decisions
+    derivation: 90 + (execution_tests + adversarial_tests) / 2, capped at 95
+    display: "VALIDATED (N=X, A=Y)"
+
+  level_5_proven:
+    range: 96-99%
+    meaning: Extensive track record across contexts
+    acceptable_for: Building other things on top
+    derivation: Requires 10+ successful executions in varied conditions
+    display: "PROVEN (N=X contexts)"
+
+  note: |
+    100% is reserved for mathematical/logical certainties only.
+    Nothing empirical ever gets 100%.
+
+# ============================================
+# GATE PROCEDURE
+# ============================================
+
+procedure:
+
+  step_1_identify_confidence_claims:
+    action: |
+      Find all confidence claims in the output:
+      - Explicit percentages
+      - Confidence levels (high/medium/low)
+      - Certainty language ("definitely", "likely", "probably")
+
+  step_2_check_source:
+    action: |
+      For each confidence claim:
+      1. What is the source of this confidence?
+      2. Is it from a valid source (execution_tests, adversarial_survival, etc.)?
+      3. Is it from a forbidden source (self_assessment, plausibility, etc.)?
+
+  step_3_require_documentation:
+    action: |
+      Each valid confidence claim must include:
+      - Test type (execution, adversarial, precedent, derivation)
+      - Test count (N=)
+      - Test conditions
+      - Results
+
+  step_4_block_or_pass:
+    action: |
+      If any confidence claim:
+      - Has no valid source → BLOCK
+      - Uses forbidden source → BLOCK
+      - Lacks documentation → BLOCK
+
+      Otherwise → PASS
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+
+confidence_format: |
+  All confidence claims must use this format:
+
+  CONFIDENCE: [level_name] ([percentage]%)
+  SOURCE: [test_type]
+  EVIDENCE: [N=count] [conditions] [results]
+
+  Example:
+  CONFIDENCE: TESTED (55%)
+  SOURCE: execution_tests
+  EVIDENCE: N=5, all in development environment, 5/5 succeeded
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+integration:
+
+  with_adversarial_review: |
+    Adversarial Review provides attack survival data.
+    This gate converts that data to confidence levels.
+
+    Level 2 (Defended) → ADVERSARIAL (A=1) → 65%
+    Level 3 (Battle-tested) → ADVERSARIAL (A=3+) → 75-85%
+
+  with_strategy_selection: |
+    Strategy selection requires minimum confidence threshold.
+    This gate ensures threshold is met with TEST EVIDENCE, not guessing.
+
+    Minimum for selection: TESTED (N=3) or higher
+
+  with_execution: |
+    During execution, confidence updates based on results.
+    Each success/failure updates the confidence calculation.

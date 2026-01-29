@@ -1,0 +1,268 @@
+# No Guessing Gate
+# Purpose: Block any output that contains unverified inference
+# Version: 1.0.0
+
+id: no_guessing_gate
+name: No Guessing Gate
+version: "1.0.0"
+domain: core
+type: blocking_gate
+
+description: |
+  This gate BLOCKS any output that contains unverified inference, assumption,
+  or guess. Unlike flagging gates that document uncertainty and proceed,
+  this gate requires verification BEFORE inclusion.
+
+  The principle: Nothing enters the output unless it is either:
+  1. DERIVED - Logically follows from verified premises
+  2. OBSERVED - Directly measured or witnessed
+  3. TESTED - Executed and confirmed to work
+
+  "Flagged for review" is NOT acceptable. Review must happen BEFORE output.
+
+# ============================================
+# VERIFICATION CATEGORIES
+# ============================================
+
+content_categories:
+
+  derived:
+    description: Logically follows from verified premises
+    requirements:
+      - All premises are themselves DERIVED, OBSERVED, or TESTED
+      - Inference step is valid (modus ponens, etc.)
+      - No hidden premises
+      - Derivation is documented
+    marker: "[DERIVED: <premises> → <conclusion>]"
+
+  observed:
+    description: Directly measured, witnessed, or stated
+    requirements:
+      - Source is identified
+      - Observation method is documented
+      - No interpretation added
+      - Verbatim if quoting
+    marker: "[OBSERVED: <source> states <content>]"
+
+  tested:
+    description: Executed and confirmed to work
+    requirements:
+      - Test conditions documented
+      - Test result documented
+      - Test is reproducible
+      - Test matches claim
+    marker: "[TESTED: <test> confirmed <claim>]"
+
+  unverified:
+    description: Does not meet DERIVED, OBSERVED, or TESTED
+    requirements:
+      - Cannot be included in output
+      - Must be verified first or excluded
+    action: BLOCK
+
+# ============================================
+# BLOCKING CONDITIONS
+# ============================================
+
+blocks_on:
+
+  - condition: "Contains inference without derivation chain"
+    check: |
+      Does any claim lack explicit [DERIVED], [OBSERVED], or [TESTED] marker?
+    action: BLOCK until marker added with documentation
+
+  - condition: "Contains confidence without test"
+    check: |
+      Is confidence level assigned without [TESTED] evidence?
+    action: BLOCK - confidence must come from testing, not guessing
+
+  - condition: "Contains tacit knowledge inference"
+    check: |
+      Is something inferred about unstated knowledge/thinking?
+    action: BLOCK unless verified with source or tested
+
+  - condition: "Contains gap-filled steps"
+    check: |
+      Were missing steps reconstructed without verification?
+    action: BLOCK - missing steps must be verified before inclusion
+
+  - condition: "Contains default assumptions"
+    check: |
+      Are any default values used without justification?
+    action: BLOCK - must justify why default is appropriate or derive actual value
+
+  - condition: "Contains expert-fill-in permission"
+    check: |
+      Does specification rely on "expert can figure it out"?
+    action: BLOCK - must specify completely or test that expert can fill gaps
+
+  - condition: "Contains flagged-for-review without resolution"
+    check: |
+      Is anything flagged for review but not actually reviewed?
+    action: BLOCK - review must happen before output, not after
+
+# ============================================
+# VERIFICATION PROCEDURE
+# ============================================
+
+verification_procedure:
+
+  step_1_categorize:
+    action: |
+      For each claim/element in the output:
+      1. Attempt to categorize as DERIVED, OBSERVED, or TESTED
+      2. If cannot categorize, mark as UNVERIFIED
+
+  step_2_document:
+    action: |
+      For each categorized element:
+      - DERIVED: Document premises and inference
+      - OBSERVED: Document source and observation method
+      - TESTED: Document test and result
+
+  step_3_resolve_unverified:
+    action: |
+      For each UNVERIFIED element:
+      1. Can it be derived? → Do the derivation
+      2. Can it be observed? → Go observe it
+      3. Can it be tested? → Test it
+      4. None of above? → EXCLUDE from output
+
+  step_4_verify_derivations:
+    action: |
+      For each DERIVED element:
+      - Are all premises themselves verified?
+      - Is the inference valid?
+      - Are there hidden premises?
+
+  step_5_final_check:
+    action: |
+      Final scan of output:
+      - Every claim has [DERIVED/OBSERVED/TESTED] marker?
+      - No "flagged for review" without resolution?
+      - No default assumptions without justification?
+      - No expert-fill-in permissions?
+
+# ============================================
+# SPECIFIC ELIMINATIONS
+# ============================================
+
+eliminates:
+
+  hallucinated_content:
+    problem: LLM fabricates procedures not in source
+    solution: |
+      All extracted procedures must be [OBSERVED] with verbatim source quote.
+      No procedure without direct source evidence.
+    enforcement: extraction_validation_gate
+
+  tacit_knowledge_inference:
+    problem: Inferring unstated knowledge from behavior
+    solution: |
+      Tacit knowledge must be:
+      1. Verified with source (ask them), OR
+      2. Tested (does the procedure work without this knowledge?)
+      Until verified, tacit knowledge is EXCLUDED, not "LOW confidence"
+    enforcement: no_guessing_gate
+
+  confidence_without_testing:
+    problem: Self-assigned confidence levels
+    solution: |
+      Confidence must come from:
+      - Number of tests passed
+      - Number of adversarial attacks survived
+      - Track record data
+      NOT from "how sure do I feel"
+    enforcement: test_based_confidence_gate
+
+  adequacy_without_execution:
+    problem: Steps scored adequate without execution
+    solution: |
+      Before marking "adequate":
+      1. Execute the step (or simulate with test case)
+      2. Verify output matches expectation
+      3. Only then mark adequate
+    enforcement: execution_verified_adequacy_gate
+
+  gap_filling:
+    problem: Missing steps reconstructed without verification
+    solution: |
+      Gaps must be:
+      1. Verified with source, OR
+      2. Tested (does procedure work with reconstructed step?)
+      Unverified reconstructions are EXCLUDED
+    enforcement: no_guessing_gate
+
+  default_assumptions:
+    problem: Using defaults without justification
+    solution: |
+      For each default:
+      1. Why is this default appropriate for this case?
+      2. What would be different if we derived actual value?
+      3. Is the cost of deriving > value of precision?
+      Document reasoning, don't just use default
+    enforcement: justified_defaults_gate
+
+  assumption_without_verification:
+    problem: Assumptions proceed with risk calculated but not verified
+    solution: |
+      High-impact assumptions must be:
+      1. Verified before proceeding, OR
+      2. Explicitly accepted with documented risk tolerance
+      "Documented but proceeding" is NOT acceptable for high-impact
+    enforcement: assumption_verification_gate
+
+# ============================================
+# GATE INTEGRATION
+# ============================================
+
+integration:
+
+  when_to_apply: |
+    This gate applies to ALL outputs:
+    - Procedure outputs
+    - Strategy recommendations
+    - Plan elements
+    - Extracted content
+    - Assessment results
+
+  how_to_apply: |
+    Before any output is emitted:
+    1. Run verification_procedure
+    2. If any BLOCK condition met, halt and fix
+    3. Only emit output with all claims verified
+
+  exceptions: |
+    NONE. This gate has no exceptions.
+    The only way to bypass is to verify the content.
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+
+  blocked_output:
+    content: |
+      "The user probably wants X because..."
+    reason: "probably" indicates inference without verification
+    resolution: Verify with user what they actually want, or exclude
+
+  blocked_output_2:
+    content: |
+      "Strategy confidence: 85%"
+    reason: Confidence assigned without test documentation
+    resolution: Document tests that justify 85%, or exclude confidence claim
+
+  blocked_output_3:
+    content: |
+      "Expert practitioners also check Y (tacit knowledge)"
+    reason: Tacit knowledge inferred without verification
+    resolution: Verify with expert that they check Y, or exclude
+
+  passed_output:
+    content: |
+      "[OBSERVED: Source video at 12:34 states 'Always check X before Y']
+       [DERIVED: If always check X before Y, and we're doing Y, then must check X first]
+       [TESTED: Executed procedure without X check - failed. With X check - succeeded.]"
+    reason: All claims have verification markers with documentation

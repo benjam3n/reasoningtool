@@ -1,0 +1,290 @@
+# Systematic Variation (SCAMPER)
+# Intelligence Reduction: 80%
+# Version: 1.0.0
+
+id: systematic_variation_scamper
+name: Systematic Variation (SCAMPER)
+version: "1.0.0"
+domain: core
+intelligence_reduction: "80%"
+
+goal: |
+  Generate variations of an existing solution by systematically applying
+  each transformation operation. No creativity needed - just apply
+  each operation mechanically.
+
+description: |
+  SCAMPER is an acronym for 7 transformation operations:
+  - Substitute
+  - Combine
+  - Adapt
+  - Modify/Magnify/Minimize
+  - Put to other uses
+  - Eliminate
+  - Reverse/Rearrange
+
+  Apply each operation to generate variations, then evaluate.
+
+when_to_use:
+  - Improving existing solution
+  - Generating alternatives
+  - Breaking out of fixation on current approach
+  - Brainstorming systematically
+  - Innovation on existing product/process
+
+inputs:
+  - name: current_solution
+    type: description
+    description: "The existing solution to vary"
+  - name: components
+    type: list
+    description: "Components/parts of the solution (for targeted variation)"
+
+outputs:
+  - name: variations
+    type: list
+    description: "All generated variations"
+  - name: promising_variations
+    type: list
+    description: "Variations worth pursuing"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Describe Current Solution"
+    action: |
+      Document the current solution and its components.
+      Break it down into parts that can be individually varied.
+    output: "Solution description with component list"
+    template: |
+      CURRENT SOLUTION: [Name/Description]
+
+      COMPONENTS:
+      1. [Component 1]: [What it does]
+      2. [Component 2]: [What it does]
+      ...
+
+      KEY ATTRIBUTES:
+      - [Attribute 1]: [Current value]
+      - [Attribute 2]: [Current value]
+      ...
+
+  - id: 2
+    name: "Apply SUBSTITUTE"
+    action: |
+      For each component, ask: What can be substituted?
+      - Different materials?
+      - Different components?
+      - Different people/roles?
+      - Different process?
+      - Different place?
+      - Different time?
+    output: "List of substitution variations"
+    template: |
+      SUBSTITUTE VARIATIONS:
+      - Replace [X] with [Y]: [Result would be...]
+      - Replace [X] with [Z]: [Result would be...]
+      ...
+
+  - id: 3
+    name: "Apply COMBINE"
+    action: |
+      Ask: What can be combined?
+      - Combine with another product?
+      - Combine functions?
+      - Combine materials?
+      - Combine steps?
+      - Combine with competitor's approach?
+    output: "List of combination variations"
+    template: |
+      COMBINE VARIATIONS:
+      - Combine [X] with [Y]: [Result would be...]
+      - Merge [function A] and [function B]: [Result would be...]
+      ...
+
+  - id: 4
+    name: "Apply ADAPT"
+    action: |
+      Ask: What can be adapted from elsewhere?
+      - What else is like this?
+      - What ideas from other fields apply?
+      - What from nature could be copied?
+      - What from history could be revived?
+      - What from other industries?
+    output: "List of adaptation variations"
+    template: |
+      ADAPT VARIATIONS:
+      - Adapt [idea from X]: [How it would apply...]
+      - Copy [approach from Y]: [How it would work...]
+      ...
+
+  - id: 5
+    name: "Apply MODIFY/MAGNIFY/MINIMIZE"
+    action: |
+      Ask: What can be modified?
+      - Make it bigger/smaller?
+      - Make it faster/slower?
+      - Make it stronger/lighter?
+      - Change color, shape, form?
+      - Exaggerate a feature?
+      - Minimize a feature?
+    output: "List of modification variations"
+    template: |
+      MODIFY VARIATIONS:
+      - Increase [attribute]: [Result would be...]
+      - Decrease [attribute]: [Result would be...]
+      - Change [attribute] to [new value]: [Result would be...]
+      ...
+
+  - id: 6
+    name: "Apply PUT TO OTHER USES"
+    action: |
+      Ask: What other uses could this have?
+      - Use in different context?
+      - Use by different user?
+      - Use for different problem?
+      - Use at different scale?
+      - Use in different industry?
+    output: "List of alternative use variations"
+    template: |
+      OTHER USES VARIATIONS:
+      - Use for [different purpose]: [How it would work...]
+      - Apply to [different context]: [How it would work...]
+      ...
+
+  - id: 7
+    name: "Apply ELIMINATE"
+    action: |
+      Ask: What can be eliminated?
+      - Remove a component?
+      - Remove a step?
+      - Remove a feature?
+      - Remove complexity?
+      - Remove a constraint?
+      - What's not actually necessary?
+    output: "List of elimination variations"
+    template: |
+      ELIMINATE VARIATIONS:
+      - Remove [component]: [Result would be...]
+      - Simplify by removing [feature]: [Result would be...]
+      ...
+
+  - id: 8
+    name: "Apply REVERSE/REARRANGE"
+    action: |
+      Ask: What can be reversed or rearranged?
+      - Reverse the order?
+      - Reverse the direction?
+      - Swap components?
+      - Change the sequence?
+      - Turn inside out?
+      - Do the opposite?
+    output: "List of reversal variations"
+    template: |
+      REVERSE/REARRANGE VARIATIONS:
+      - Reverse [aspect]: [Result would be...]
+      - Rearrange [sequence] to [new order]: [Result would be...]
+      - Swap [X] and [Y]: [Result would be...]
+      ...
+
+  - id: 9
+    name: "Compile All Variations"
+    action: |
+      List all generated variations.
+      Remove duplicates.
+      Group similar variations.
+    output: "Master variation list"
+
+  - id: 10
+    name: "Evaluate Variations"
+    action: |
+      For each variation, quick assessment:
+      - Feasible? (Yes/No/Maybe)
+      - Valuable? (Better than current? How?)
+      - Worth exploring? (Yes/No)
+    output: "Evaluated variations"
+    template: |
+      VARIATION: [Description]
+      Feasible: [Yes/No/Maybe]
+      Value: [Better/Same/Worse] - [Why]
+      Pursue: [Yes/No]
+
+  - id: 11
+    name: "Select Promising Variations"
+    action: |
+      Select variations marked as feasible AND valuable AND worth pursuing.
+      Rank by potential impact.
+    output: "Shortlist for further development"
+
+# ============================================
+# QUICK REFERENCE CARD
+# ============================================
+
+quick_reference:
+  S_substitute: "What can I replace? Material, component, person, process?"
+  C_combine: "What can I merge? Functions, products, ideas?"
+  A_adapt: "What can I copy from elsewhere? Other fields, nature, history?"
+  M_modify: "What can I change? Bigger, smaller, faster, different?"
+  P_put_other_uses: "What else could this do? Different context, user, scale?"
+  E_eliminate: "What can I remove? Unnecessary parts, steps, features?"
+  R_reverse: "What can I flip? Order, direction, inside-out, opposite?"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  solution: "Coffee mug"
+  components: ["Handle", "Cup body", "Material (ceramic)", "Size (12oz)"]
+
+  variations:
+    substitute:
+      - "Replace handle with grip texture"
+      - "Replace ceramic with double-wall glass"
+      - "Replace ceramic with stainless steel"
+
+    combine:
+      - "Combine with phone charger (wireless charging base)"
+      - "Combine with temperature display"
+      - "Combine with French press (mug + brewer)"
+
+    adapt:
+      - "Adapt vacuum flask technology (insulation)"
+      - "Adapt from baby bottles (spill-proof lid)"
+
+    modify:
+      - "Make it collapsible (travel)"
+      - "Make it much larger (32oz)"
+      - "Add weight to base (stability)"
+
+    put_other_uses:
+      - "Use as pen holder"
+      - "Use as plant pot"
+      - "Use as soup bowl"
+
+    eliminate:
+      - "Remove handle entirely (Japanese style)"
+      - "Remove fixed size (nesting mugs)"
+
+    reverse:
+      - "Reverse taper (wider at bottom)"
+      - "Handle on inside (different grip)"
+
+  promising:
+    - "Double-wall glass + vacuum insulation"
+    - "Wireless charging base integration"
+    - "Collapsible for travel"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "All 7 SCAMPER operations were applied"
+  - "Each operation generated at least 2 variations"
+  - "Variations are genuinely different from current solution"
+  - "Evaluation criteria were applied consistently"
+  - "Promising variations are feasible and valuable"

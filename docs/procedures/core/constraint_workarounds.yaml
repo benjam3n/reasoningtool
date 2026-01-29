@@ -1,0 +1,253 @@
+id: constraint_workarounds
+name: Constraint Workaround Meta-Procedure
+version: "1.0"
+domain: core
+description: |
+  When you face a constraint that seems to block progress, NEVER give up.
+  There is ALWAYS a workaround.
+
+  CORE PHILOSOPHY:
+  Most successful people started with constraints others would consider fatal.
+  - No money → They found money or built without it
+  - No authority → They got authority or used someone else's
+  - No connections → They built connections
+  - No skills → They learned or hired
+
+  If people without plans can succeed despite constraints,
+  a system WITH plans should completely dominate.
+
+  The arbitrage is: we find workarounds they don't think to look for.
+
+when_to_use:
+  - You've identified a constraint that seems to block the goal
+  - System is tempted to say "you can't do this because..."
+  - Resource/authority/access gap seems insurmountable
+
+tags:
+  - mandatory
+  - core
+  - constraints
+  - workarounds
+  - resources
+  - authority
+
+inputs:
+  - Goal being pursued
+  - Constraint identified
+  - Why constraint seems blocking
+
+outputs:
+  - Workaround strategy
+  - Path to removing or circumventing constraint
+  - Updated plan
+
+process:
+  step_1_classify_constraint:
+    description: What type of constraint is this?
+    types:
+      resource_lack:
+        examples: ["No money", "No equipment", "No materials"]
+        workaround_class: "acquire, substitute, or eliminate need"
+
+      authority_lack:
+        examples: ["No permission", "No position", "No credentials"]
+        workaround_class: "acquire, borrow, or circumvent"
+
+      knowledge_lack:
+        examples: ["Don't know how", "No expertise", "No experience"]
+        workaround_class: "learn, hire, or simplify"
+
+      access_lack:
+        examples: ["No connections", "Can't reach decision-maker", "Locked out"]
+        workaround_class: "build access, find alternate path, or create leverage"
+
+      time_lack:
+        examples: ["Deadline too soon", "Not enough hours", "Competing priorities"]
+        workaround_class: "extend, accelerate, or reduce scope"
+
+      capability_lack:
+        examples: ["Can't do X", "Not strong enough", "Not smart enough"]
+        workaround_class: "build capability, substitute, or redefine success"
+
+  step_2_generate_workarounds:
+    description: For each constraint type, apply these strategies
+
+    resource_workarounds:
+      acquire:
+        - "Earn/save the money"
+        - "Borrow/raise the money"
+        - "Get grants/sponsorship"
+        - "Trade services for resources"
+        - "Win competitions with prizes"
+      substitute:
+        - "Use cheaper alternative"
+        - "Use free version/open source"
+        - "Repurpose existing resources"
+        - "Share resources with others"
+      eliminate_need:
+        - "Redesign approach to not need resource"
+        - "Start with MVP that doesn't require resource"
+        - "Build revenue first, then spend"
+
+    authority_workarounds:
+      acquire:
+        - "Get the credential/certification"
+        - "Get promoted/elected to position"
+        - "Start your own organization where you have authority"
+        - "Build track record until authority is given"
+      borrow:
+        - "Partner with someone who has authority"
+        - "Get endorsed by authority figure"
+        - "Act as agent/representative for authority"
+        - "Get authority figure to sponsor your effort"
+      circumvent:
+        - "Find domain where authority isn't required"
+        - "Build grassroots power that forces authority response"
+        - "Create fait accompli that authority must accept"
+        - "Reframe goal to not require permission"
+
+    knowledge_workarounds:
+      learn:
+        - "Take courses/read books/watch tutorials"
+        - "Get mentorship from expert"
+        - "Learn by doing (trial and error)"
+        - "Study competitors/role models"
+      hire:
+        - "Hire consultant/contractor"
+        - "Partner with expert"
+        - "Outsource to specialist"
+        - "Join team that has expertise"
+      simplify:
+        - "Use no-code/low-code solutions"
+        - "Buy instead of build"
+        - "Use templates/frameworks"
+        - "Reduce complexity until knowledge is sufficient"
+
+    access_workarounds:
+      build:
+        - "Cold outreach with compelling value prop"
+        - "Create content that attracts target"
+        - "Attend events where targets are present"
+        - "Build reputation in target's circle"
+      alternate_path:
+        - "Go through intermediary who has access"
+        - "Access target's colleagues/subordinates first"
+        - "Create reason for target to come to you"
+        - "Find different target who can achieve same goal"
+      create_leverage:
+        - "Build something target needs"
+        - "Help target's priorities to earn reciprocity"
+        - "Create public pressure/visibility"
+        - "Become undeniable through excellence"
+
+    time_workarounds:
+      extend:
+        - "Negotiate deadline extension"
+        - "Redefine milestones (partial delivery)"
+        - "Accept delay and plan for longer timeline"
+      accelerate:
+        - "Add resources (hire help)"
+        - "Remove non-essential scope"
+        - "Work in parallel instead of series"
+        - "Use faster methods (pay for speed)"
+      reduce_scope:
+        - "MVP first, expand later"
+        - "Focus on highest-value components"
+        - "Cut nice-to-haves ruthlessly"
+
+    capability_workarounds:
+      build:
+        - "Train/practice until capable"
+        - "Take incremental steps toward capability"
+        - "Use goal as forcing function to build capability"
+      substitute:
+        - "Use tool/technology that compensates"
+        - "Partner with someone who has capability"
+        - "Hire capability"
+      redefine:
+        - "Find approach that doesn't require capability"
+        - "Change definition of success to match capabilities"
+        - "Focus on different strength that achieves same outcome"
+
+  step_3_evaluate_workarounds:
+    description: Which workaround is most viable?
+    criteria:
+      - "Speed: How quickly can this workaround be implemented?"
+      - "Cost: What resources does the workaround require?"
+      - "Reliability: How likely is it to work?"
+      - "Sustainability: Is this a one-time fix or ongoing solution?"
+      - "Side effects: What new constraints might this create?"
+
+  step_4_implement_workaround:
+    description: Make the workaround part of the plan
+    actions:
+      - "Add workaround as explicit step in plan"
+      - "Identify any NEW constraints the workaround creates"
+      - "Apply this procedure recursively if needed"
+
+examples:
+  - constraint: "I have no money to start a business"
+    workarounds_considered:
+      - '"Get a job and save" (slow but reliable)'
+      - '"Bootstrap with service business first" (earn while building)'
+      - '"Raise from investors" (requires traction)'
+      - '"Use free tools and sweat equity" (eliminates need)'
+      - '"Partner with someone who has money" (borrow resources)'
+    selected: "Bootstrap with service business → reinvest → build product"
+    reasoning: "Creates cash flow while building toward goal; no external dependency"
+
+  - constraint: "I don't have authority to change company policy"
+    workarounds_considered:
+      - "Get promoted to role with authority"
+      - "Build coalition of peers to create pressure"
+      - "Pilot change in your own area as proof of concept"
+      - "Get executive sponsor who has authority"
+      - "Leave and join/start company where you have authority"
+    selected: "Pilot in own area → document results → get executive sponsor"
+    reasoning: "Creates evidence that makes authority easier to acquire"
+
+  - constraint: "I don't know anyone in the industry"
+    workarounds_considered:
+      - "Attend industry events"
+      - "Create valuable content that attracts connections"
+      - "Cold outreach with specific value proposition"
+      - "Get warm intros through second-degree connections"
+      - "Hire consultant who has connections"
+    selected: "Create valuable content → builds reputation → connections come to you"
+    reasoning: "Scalable, builds lasting asset, attracts right people"
+
+  - constraint: "I don't have the skills to build this"
+    workarounds_considered:
+      - "Learn the skills (courses, practice)"
+      - "Hire developer/contractor"
+      - "Use no-code tools"
+      - "Partner with technical co-founder"
+      - "Start with simpler version I can build"
+    selected: "Start with no-code MVP → validate → hire to rebuild properly"
+    reasoning: "Fastest to validation; skill gap doesn't block progress"
+
+anti_patterns:
+  - "Accepting constraint as permanent blocker"
+  - "Giving up because 'I don't have X'"
+  - "Assuming current limitations are fixed"
+  - "Not considering workarounds because they're harder than ideal path"
+  - "Treating lack of resources as permission to not try"
+
+philosophy: |
+  CONSTRAINTS ARE CREATIVE FUEL, NOT BLOCKERS.
+
+  Every successful person faced constraints others said were fatal.
+  - "You don't have the background" → Built it
+  - "You don't have the money" → Found it or built without it
+  - "You don't have the connections" → Made them
+  - "You don't have permission" → Got it or didn't need it
+
+  The difference between success and failure is NOT having fewer constraints.
+  It's finding workarounds others don't think to look for.
+
+  YOUR COMPETITIVE ADVANTAGE:
+  You have a system for finding workarounds.
+  Most people give up when they hit constraints.
+  You don't give up. You find another way.
+
+  This is the arbitrage.

@@ -1,0 +1,542 @@
+# Meta-Reasoning Core
+# The foundational decision loop for GOSM
+# Synthesized from 300+ extracted procedures across 269 books
+# Enhanced with goal-structure reconstruction and backward reasoning
+#
+# Use this BEFORE and DURING any complex task
+
+id: meta_reasoning_core
+name: Meta-Reasoning Core
+version: "2.2.0"
+domain: core
+tier: platinum
+
+description: |
+  A unified meta-cognitive loop for deciding what to do next. Combines the
+  highest-validated patterns from book extraction with GOSM's core insight:
+  all reasoning should trace backward from goals to methods.
+
+  The fundamental question is not "what should I do?" but "what am I trying
+  to achieve, and is this the best method for that?"
+
+long_description: |
+  This procedure synthesizes foundational meta-reasoning patterns with
+  GOSM's mission: backward reasoning from goals to methods.
+
+  Key insight: Any action is in the middle of a story. Before acting,
+  reconstruct the goal-structure - the journey from intrinsic goals to
+  this specific action. This enables evaluation of whether the action
+  actually serves its purpose.
+
+  Common failure modes:
+  - Skipping goal-structure reconstruction (acting without understanding why)
+  - Treating the stated request as the real goal
+  - Not detecting failure patterns (sustainable failure, strategic suboptimization)
+  - Not asking "is this the best method for that goal?"
+  - Binary pass/fail thinking instead of comparative evaluation
+
+when_to_use:
+  - Starting any non-trivial task
+  - Feeling stuck or uncertain about next steps
+  - Before committing significant resources
+  - When a plan isn't working
+  - During periodic check-ins on long-running work
+  - When receiving vague or ambiguous requests
+
+when_not_to_use:
+  - Trivial, well-understood tasks
+  - Time-critical emergencies (use heuristics)
+  - When explicit instructions are clear and trusted
+
+# ============================================
+# THE CORE LOOP
+# ============================================
+
+# Pre-step: Apply honest_question_gate before engaging
+pre_gate:
+  gate: honest_question_gate
+  action: |
+    Before any reasoning, check: Does this request have an identifiable goal?
+    If goal unclear, clarify before proceeding.
+    This filters noise and prevents wasted effort on questions without purpose.
+
+steps:
+  - id: step_0_goal_structure
+    name: "Goal-Structure Reconstruction"
+    action: "Trace backward from the request to foundational goals"
+    procedure: goal_structure_reconstruction
+    questions:
+      - "What goal does this request serve?"
+      - "What goal does THAT goal serve?"
+      - "Continue until reaching intrinsic goals (apply intrinsic_goal_termination_gate)"
+    output: |
+      A "story" from foundational goals to this request:
+      Ch1: Intrinsic goal (wellbeing, knowledge, etc.)
+      Ch2: What that requires...
+      ...
+      Final: This specific request
+    why_first: |
+      This step comes BEFORE intention check because:
+      - Intention check asks "what's the real goal?" but doesn't trace to foundations
+      - Goal-structure reconstruction reveals the FULL journey
+      - You can't evaluate whether a method is good without knowing what it's for
+      - This enables the "is this the best method?" question
+    failure_modes:
+      - Stopping at instrumental goals instead of tracing to intrinsic
+      - Assuming the stated goal is the foundational goal
+      - Not constructing the full story
+    source_procedures:
+      - goal_structure_reconstruction
+      - backward_reasoning
+
+  - id: step_0b_failure_pattern
+    name: "Failure Pattern Check"
+    action: "Check if the goal might actually be serving a failure pattern"
+    gate: failure_journey_detection_gate
+    when_to_apply: |
+      After goal-structure reconstruction, before planning.
+      Especially important when:
+      - Person has "tried this before" without success
+      - Progress seems perpetual without completion
+      - Success seems close but never arrives
+
+    # ============================================
+    # FIRST: Check for legitimate iteration
+    # ============================================
+    legitimate_iteration_check:
+      description: |
+        Multiple attempts is NOT failure if each produces measurable improvement.
+        Must distinguish:
+        - Sustainable failure: same pattern, no improvement, forward trial-and-error
+        - Legitimate iteration: measurable improvement, backward reasoning, foundational work
+
+      questions:
+        - "Does each iteration produce measurable improvement (not just activity)?"
+        - "Do improvements come from backward reasoning (identifying gaps)?"
+        - "Is this foundational work that must precede testing?"
+        - "Can you articulate what changed and why it's better?"
+
+      if_all_yes: |
+        This is LEGITIMATE ITERATION, not sustainable failure.
+        The pattern of multiple attempts without "completion" is CORRECT behavior
+        when building foundational capability.
+
+        The REAL failure would be to test prematurely and fail for predictable reasons.
+
+        Proceed to Step 1 (skip failure pattern checks).
+
+    # ============================================
+    # If not legitimate iteration, check for failure patterns
+    # ============================================
+    questions:
+      sustainable_failure:
+        - "Same pattern, same approach, same outcome each time?"
+        - "Do you keep getting close but never finishing?"
+        - "Would succeeding actually threaten something you value?"
+        - "Is the struggle part of your identity?"
+        - "Is there relief when things fall apart?"
+      strategic_suboptimization:
+        - "Is activity maintaining, not building capability?"
+        - "Is busyness general rather than targeted at specific gaps?"
+        - "Is it 'good enough' in a way that prevents 'great'?"
+        - "Who benefits from you staying at this level?"
+        - "Would stopping lose comfort rather than progress?"
+
+    outcomes:
+      legitimate_iteration:
+        condition: "All legitimate_iteration_check questions pass"
+        action: "Proceed to Step 1 (Best Method Check)"
+      no_pattern:
+        condition: "All failure checks below threshold"
+        action: "Proceed to Step 1 (Best Method Check)"
+      possible_pattern:
+        condition: "One check at or above threshold"
+        action: |
+          Pause before planning.
+          Probe deeper: What does the failure pattern serve?
+          Consider: Is the stated goal the real goal?
+          Options:
+            1. Acknowledge and proceed (conscious failure)
+            2. Trace the REAL goal (what failure serves)
+            3. Address the pattern before planning
+      likely_pattern:
+        condition: "Multiple checks at or above threshold"
+        action: |
+          Do NOT proceed with planning for stated goal.
+          Required:
+            1. Trace what the failure pattern serves
+            2. Identify the actual intrinsic goal
+            3. Decide: pursue failure consciously, or escape?
+          Loop back to Step 0 with the REAL goal.
+
+    why_here: |
+      This check comes AFTER goal-structure reconstruction because:
+      - Need to know the goal chain to detect failure patterns
+      - Failure patterns masquerade as legitimate goals
+      - Catching them early prevents wasted planning effort
+
+      This check comes BEFORE best-method check because:
+      - If the goal is a failure pattern, method optimization is pointless
+      - The "best method" for a failure pattern is to escape it
+    source_procedures:
+      - failure_journeys
+      - failure_journey_detection_gate
+
+  - id: step_1_best_method
+    name: "Best Method Check"
+    action: "Evaluate whether the proposed approach is the best method for the goal"
+    questions:
+      - "Given the goal-structure, is the stated request the best way to achieve it?"
+      - "What alternative methods could achieve the same goal?"
+      - "What would make the stated request unnecessary?"
+      - "Are we at the right level of the instrumental ladder?"
+    evaluation: |
+      Compare methods on:
+      - Directness (how directly does it serve the goal?)
+      - Reliability (how likely to work?)
+      - Efficiency (resource usage)
+      - Side effects (unintended consequences)
+
+      Use gradational assessment, not binary pass/fail.
+      A defended method > undefended method, even if both could be improved.
+    failure_modes:
+      - Accepting the stated method without checking alternatives
+      - Dismissing methods too quickly (binary thinking)
+      - Not considering what would make the method unnecessary
+    source_procedures:
+      - gosm_self_improvement_analysis (Change 1)
+
+  - id: step_2_intention
+    name: "Intention Check"
+    action: "Verify alignment between stated request and underlying goal"
+    note: |
+      This step is now INFORMED by goal-structure reconstruction.
+      We already know the goal chain; now we check alignment.
+    questions:
+      - "Does the stated request actually serve the reconstructed goals?"
+      - "Is there a gap between what's requested and what's needed?"
+      - "Am I solving at the right level of abstraction?"
+    failure_modes:
+      - "Assuming stated request is complete without checking"
+      - "Assuming stated request is incomplete without checking"
+      - "Solving efficiently at the wrong level"
+    source_procedures:
+      - intention_over_literal_framing (225 sources)
+
+  - id: step_3_information
+    name: "Information Elicitation"
+    action: "Recover missing, vague, or assumed information"
+    questions:
+      - "What's missing that I need to know?"
+      - "What am I assuming that might be wrong?"
+      - "How specifically? (recover deletions)"
+      - "According to whom? (challenge generalizations)"
+      - "What would happen if X? (test boundaries)"
+    techniques:
+      - Challenge generalizations ("always", "never", "everyone")
+      - Probe deletions ("who/what/when/where specifically?")
+      - Question distortions ("how do you know that?")
+    source_procedures:
+      - meta_model_information_elicitation (8 sources)
+
+  - id: step_4_evidence
+    name: "Evidence Evaluation"
+    action: "Assess reliability before acting on information"
+    checklist:
+      - "What's the base rate / prior probability?"
+      - "What competing hypotheses exist?"
+      - "How strong is the evidence (sample size, replication)?"
+      - "What are the boundary conditions?"
+      - "What's the effect size / practical significance?"
+    note: |
+      Use gradational assessment, not binary pass/fail.
+      Evidence can be strong, moderate, weak, or absent.
+      Weak evidence is still better than no evidence.
+    warning_signs:
+      - Single source of information
+      - No consideration of alternatives
+      - Anchoring on first hypothesis
+    source_procedures:
+      - evidence_evaluation_ladder (5 sources)
+      - evidence_quality_triangulation (6 sources)
+
+  - id: step_5_hypotheses
+    name: "Hypothesis Generation"
+    action: "Generate multiple possibilities before committing"
+    process:
+      - "Generate at least 3 distinct approaches"
+      - "Include one 'opposite' or contrarian option"
+      - "For each: what would have to be true for this to work?"
+      - "What's the fastest way to test/falsify each?"
+      - "Evaluate comparatively: which serves the goal-structure best?"
+    anti_patterns:
+      - Satisficing on first viable option
+      - Only considering variations of one approach
+      - Skipping directly to implementation
+      - Binary rejection of imperfect options
+    source_procedures:
+      - five_phase_iterative_decision_cycle
+      - generative_questions (12 sources)
+
+  - id: step_6_process
+    name: "Process Check"
+    action: "Focus on HOW you're working, not just WHAT"
+    questions:
+      - "Am I documenting iterations and learnings?"
+      - "What's my process-based success criteria?"
+      - "Am I iterating or just executing linearly?"
+      - "What feedback loops are in place?"
+    principle: |
+      How you work affects outcomes alongside what you work on.
+      A sound process applied to correct content yields better results
+      than either alone.
+    source_procedures:
+      - process_first_thinking (13 sources)
+
+  - id: step_7_story_coherence
+    name: "Story Coherence Check"
+    action: "Verify the plan serves the foundational goals"
+    gate: story_coherence_gate
+    questions:
+      - "Does each step of the plan connect to the next?"
+      - "Does the plan serve the goals identified in Step 0?"
+      - "Is this journey necessary?"
+      - "Is this a valid path (not the only one, but reasonable)?"
+    output: |
+      The plan should tell a coherent story from goals to actions.
+      If the story doesn't cohere, either the plan is wrong or
+      the goal-structure was misidentified.
+    source_procedures:
+      - story_coherence_gate
+      - gosm_self_improvement_analysis (Change 7)
+
+  - id: step_8_iterate
+    name: "Iteration Decision"
+    action: "Decide whether to proceed, adjust, or loop back"
+    decision_tree:
+      - condition: "Goal-structure unclear or incomplete"
+        action: "Loop to Step 0"
+      - condition: "Possible failure pattern detected"
+        action: "Loop to Step 0b - investigate pattern before planning"
+      - condition: "Likely failure pattern - goal may be the failure itself"
+        action: "Loop to Step 0 with the REAL goal (what failure serves)"
+      - condition: "Current method may not be best"
+        action: "Loop to Step 1"
+      - condition: "Intention misaligned with goals"
+        action: "Loop to Step 2"
+      - condition: "Missing critical information"
+        action: "Loop to Step 3"
+      - condition: "Evidence insufficient"
+        action: "Loop to Step 4"
+      - condition: "Only one hypothesis considered"
+        action: "Loop to Step 5"
+      - condition: "Process feels stuck/linear"
+        action: "Loop to Step 6"
+      - condition: "Story doesn't cohere"
+        action: "Loop to Step 0 or Step 7"
+      - condition: "All checks pass"
+        action: "Proceed with highest-confidence approach"
+
+# ============================================
+# QUICK VERSION (for time pressure)
+# ============================================
+quick_version:
+  description: "30-second meta-check"
+  steps:
+    - "What intrinsic goal does this serve? (trace backward)"
+    - "Failure check: Is this legitimate iteration (measurable improvement, backward reasoning)? If yes, skip. Otherwise: tried before without success? relief at failure?"
+    - "Is this the best method for that goal?"
+    - "What am I assuming?"
+    - "What are 2 other ways to approach this?"
+    - "Does this story cohere?"
+
+# ============================================
+# LLM ADAPTATION
+# ============================================
+llm_adaptation: |
+  For LLM reasoning systems:
+  1. Apply honest_question_gate before engaging
+  2. Trace backward to intrinsic goals (goal-structure reconstruction)
+  3. Check for failure patterns:
+     - FIRST: Is this legitimate iteration? (measurable improvement, backward reasoning, foundational work)
+     - If yes: skip failure checks, proceed
+     - If no: check for sustainable failure, strategic suboptimization
+  4. Ask "is this the best method?" before accepting the stated approach
+  5. Generate minimum 3 approaches before selecting
+  6. Use gradational assessment, not binary pass/fail
+  7. Check story coherence before proceeding
+
+  Prompt pattern:
+  "Before proceeding, I'll check:
+   - Goal-structure: [intrinsic goal] → [chain] → [this request]
+   - Legitimate iteration? [measurable improvement each cycle? backward reasoning? foundational?]
+   - If not legitimate: Failure pattern check [same pattern? relief at failure? identity in struggle?]
+   - Is this the best method? [evaluation]
+   - Key assumptions: [list]
+   - Alternative approaches: [3+, compared gradationally]
+   - Story coheres? [yes/no, why]
+   - I'd update if: [falsification criteria]"
+
+# ============================================
+# VERIFICATION
+# ============================================
+verification:
+  success_indicators:
+    - Goal-structure traced to intrinsic goals
+    - '"Is this the best method?" question asked and answered'
+    - Intention articulated differently than original request
+    - Multiple hypotheses generated and compared gradationally
+    - Story coherence checked
+    - Clear criteria for what would change the approach
+
+  failure_indicators:
+    - Jumped straight to execution without goal-structure reconstruction
+    - Accepted stated method without checking alternatives
+    - Binary pass/fail on methods instead of comparative evaluation
+    - Only one approach considered
+    - No story coherence check
+    - Process identical to previous similar task
+
+# ============================================
+# PROVENANCE
+# ============================================
+provenance:
+  synthesis_date: "2026-01-24"
+  version_2_date: "2026-01-24"
+  version_2_1_date: "2026-01-25"
+  source_procedure_count: 7
+  total_source_books: 269
+  highest_validation: "intention_over_literal_framing (225 books)"
+  extraction_method: "pdf_bulk_v5 + semantic clustering"
+
+  version_2_2_enhancements:
+    - "Added legitimate iteration exclusion to failure pattern check"
+    - "Distinguishes: sustainable failure (same pattern, no improvement) vs legitimate iteration (measurable improvement via backward reasoning)"
+    - "Multiple attempts is NOT failure if each produces measurable improvement"
+    - "Added foundational work exclusion to strategic suboptimization check"
+    - "Updated quick_version and llm_adaptation with legitimate iteration check"
+
+  version_2_1_enhancements:
+    - "Added failure pattern check as Step 0b"
+    - "Integrated failure_journey_detection_gate"
+    - "Checks for sustainable failure and strategic suboptimization"
+    - "Updated iteration decision tree for failure patterns"
+    - "Updated quick_version and llm_adaptation"
+    - "Source: gosm_self_improvement_analysis_v5.md"
+
+  version_2_enhancements:
+    - "Added goal-structure reconstruction as Step 0"
+    - "Added best-method check as Step 1"
+    - "Added story coherence check as Step 7"
+    - "Integrated honest_question_gate as pre-gate"
+    - "Added gradational assessment guidance throughout"
+    - "Updated iteration decision tree for new steps"
+    - "Source: gosm_self_improvement_analysis.md"
+
+  source_procedures:
+    - id: intention_over_literal_framing
+      sources: 225
+      quality: 100
+    - id: meta_model_information_elicitation
+      sources: 8
+      quality: 100
+    - id: evidence_evaluation_ladder
+      sources: 5
+      quality: 95
+    - id: process_first_thinking
+      sources: 13
+      quality: 95
+    - id: five_phase_iterative_decision_cycle
+      sources: 1
+      quality: 65
+    - id: generative_questions
+      sources: 12
+      quality: 100
+    - id: goal_structure_reconstruction
+      sources: "GOSM mission"
+      quality: 100
+    - id: backward_reasoning
+      sources: "GOSM mission"
+      quality: 100
+    - id: story_coherence_gate
+      sources: "GOSM mission"
+      quality: 100
+    - id: failure_journeys
+      sources: "GOSM mission"
+      quality: 100
+    - id: failure_journey_detection_gate
+      sources: "GOSM mission"
+      quality: 100
+
+# ============================================
+# RELATED PROCEDURES
+# ============================================
+related_procedures:
+  - id: goal_structure_reconstruction
+    relationship: "Core - Step 0 of this procedure"
+    note: |
+      Reconstructs the "story" from intrinsic goals to current request.
+      Enables evaluation of whether the request serves its purpose.
+
+  - id: backward_reasoning
+    relationship: "Core method - how goal-structure reconstruction works"
+    note: |
+      Traces from conclusions back to foundational goals.
+      The core method underlying goal-structure reconstruction.
+
+  - id: assumption_elimination
+    relationship: "Foundation - apply before and during this procedure"
+    note: |
+      The meta-reasoning core identifies what to think about.
+      Assumption elimination ensures HOW you think is grounded.
+      Apply assumption elimination to each step of this procedure.
+
+  - id: bounded_inquiry
+    relationship: "Structure - frames the inquiry with boundaries"
+    note: |
+      Ensures the meta-reasoning process has clear termination conditions.
+      Apply when the process risks becoming unbounded.
+
+  - id: procedure_extraction
+    relationship: "Source of this synthesis"
+
+related_gates:
+  - id: honest_question_gate
+    relationship: "Pre-gate - applied before engaging"
+    note: Filters requests without identifiable goals.
+
+  - id: intrinsic_goal_termination_gate
+    relationship: "Used in Step 0"
+    note: Determines when goal-structure reconstruction terminates.
+
+  - id: failure_journey_detection_gate
+    relationship: "Used in Step 0b"
+    note: |
+      Detects failure patterns before planning:
+      - Sustainable failure (failing to keep failing)
+      - Strategic suboptimization (good enough but never great)
+      If detected, either address or consciously acknowledge before proceeding.
+
+  - id: story_coherence_gate
+    relationship: "Used in Step 7"
+    note: Evaluates whether the plan coheres with goals.
+
+gosm_integration:
+  use_cases:
+    - "Default reasoning scaffold for complex tasks"
+    - "Check-in during long-running projects"
+    - "Debugging when stuck"
+    - "Evaluating whether current approach serves goals"
+    - "Moving up the instrumental ladder"
+
+  gates:
+    - gate: meta_reasoning_check
+      question: "Have I completed the meta-reasoning loop?"
+    - gate: goal_structure_check
+      question: "Have I reconstructed the goal-structure?"
+    - gate: failure_pattern_check
+      question: "Have I checked for failure patterns (sustainable failure, strategic suboptimization)?"
+    - gate: best_method_check
+      question: "Have I asked if this is the best method?"
+    - gate: story_coherence_check
+      question: "Does the story cohere?"

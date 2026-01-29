@@ -1,0 +1,197 @@
+# ARAW to GOSM Bridge Procedure
+# Takes ARAW exploration findings and integrates them into GOSM planning
+
+id: araw_to_gosm_bridge
+name: ARAW to GOSM Bridge
+version: "1.0.0"
+domain: core
+tags: ["meta", "integration", "planning", "strategy"]
+
+description: |
+  Bridges ARAW exploration outputs to GOSM planning inputs.
+  Converts discovered assumptions/claims into actionable GOSM items:
+  - Assumption verification tasks
+  - Strategy constraints
+  - Risk factors
+  - Decision dependencies
+
+core_principle: |
+  ARAW explores possibility space → finds claims that matter
+  GOSM plans execution → needs to know which claims to validate first
+
+  This bridge ensures ARAW insights become GOSM action items,
+  and GOSM outcomes update ARAW assumptions.
+
+# ============================================
+# WHAT GETS BRIDGED
+# ============================================
+araw_to_gosm_mapping:
+  - araw_type: "DO_FIRST actions"
+    gosm_use: "Immediate verification tasks"
+    rationale: "Low effort + High impact = validate these before planning"
+
+  - araw_type: "Crux nodes"
+    gosm_use: "Critical assumption verification"
+    rationale: "Could flip entire strategy - must verify early"
+
+  - araw_type: "High-leverage unexplored"
+    gosm_use: "Research tasks / information gathering"
+    rationale: "High potential value but not yet explored"
+
+  - araw_type: "Tensions/contradictions"
+    gosm_use: "Decision points requiring resolution"
+    rationale: "Cannot proceed until tension is resolved"
+
+  - araw_type: "Common themes across runs"
+    gosm_use: "Robust assumptions (appeared independently)"
+    rationale: "Multiple explorations converged = higher confidence"
+
+  - araw_type: "Drifted/rejected claims"
+    gosm_use: "Out of scope markers"
+    rationale: "Explicitly mark what we're NOT addressing"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+steps:
+  - id: 1
+    name: "Run ARAW synthesis"
+    action: |
+      Run synthesis across relevant ARAW databases:
+
+      python synthesize.py *.db --find-tensions --extract-actions actions.json
+
+      This produces:
+      - Summary of each database
+      - Cross-database themes
+      - Tensions and contradictions
+      - Consolidated action items
+
+  - id: 2
+    name: "Identify critical assumptions"
+    action: |
+      From synthesis output, extract:
+
+      MUST_VERIFY (before proceeding):
+      - All crux nodes
+      - DO_FIRST actions
+      - Unresolved tensions
+
+      SHOULD_VERIFY (during execution):
+      - DO_SECOND actions
+      - High-leverage unexplored
+
+      NICE_TO_VERIFY (if time permits):
+      - Medium-leverage unexplored
+      - Common themes (for confidence)
+
+  - id: 3
+    name: "Create verification tasks"
+    action: |
+      For each MUST_VERIFY item, create a GOSM task:
+
+      - task: "Verify: [claim summary]"
+        type: assumption_verification
+        source: [araw_db_name]
+        original_claim: [full claim text]
+        verification_method: [how to check]
+        pass_criteria: [what counts as verified]
+        fail_action: [what to do if false]
+        effort: [from ARAW scoring]
+        impact: [from ARAW scoring]
+
+  - id: 4
+    name: "Map to GOSM decision tree"
+    action: |
+      For each tension/contradiction:
+
+      Create a decision node in GOSM:
+      - decision: "Resolve tension: X vs Y"
+        option_a: [one side of tension]
+        option_b: [other side]
+        evidence_needed: [what would resolve]
+        default: [if can't resolve, which way to lean]
+
+  - id: 5
+    name: "Set up feedback loop"
+    action: |
+      Create feedback mechanism:
+
+      When GOSM verification task completes:
+      1. Record outcome (verified/falsified/inconclusive)
+      2. If falsified: Mark ARAW node as WRONG, prune downstream
+      3. If verified: Mark ARAW node as CONFIRMED, boost leverage
+      4. If inconclusive: Add to SHOULD_VERIFY for later
+
+      CAUTION: Assumption updates can cascade.
+      Only update with high-confidence outcomes.
+      Mark update source (evidence vs inference).
+
+  - id: 6
+    name: "Generate GOSM input file"
+    action: |
+      Export bridge output as GOSM-compatible format:
+
+      assumptions:
+        must_verify: [list]
+        should_verify: [list]
+        nice_to_verify: [list]
+
+      decisions:
+        unresolved_tensions: [list with options]
+
+      constraints:
+        from_araw: [list of discovered constraints]
+
+      out_of_scope:
+        drifted_topics: [list of rejected/drifted claims]
+
+# ============================================
+# FEEDBACK SAFETY
+# ============================================
+feedback_safety:
+  caution: |
+    Updating assumptions based on outcomes is powerful but dangerous.
+
+    SAFE updates:
+    - Direct empirical verification (tested and observed)
+    - Multiple independent confirmations
+    - Clear falsification (prediction failed)
+
+    UNSAFE updates:
+    - Single data point generalized
+    - Confirmation bias (only seeing what we expect)
+    - Updating on inference rather than observation
+    - Cascade updates without checking each step
+
+  rules:
+    - Only update on DIRECT evidence, not inference
+    - Require 2+ independent confirmations for CONFIRMED
+    - Mark confidence level of update (HIGH/MEDIUM/LOW)
+    - Log all updates with source and reasoning
+    - Allow rollback if update was wrong
+    - Don't cascade automatically - check each downstream
+
+  verification_outcomes:
+    - CONFIRMED: Direct evidence supports claim
+    - FALSIFIED: Direct evidence contradicts claim
+    - SUPPORTED: Indirect evidence supports (weaker)
+    - CHALLENGED: Indirect evidence contradicts (weaker)
+    - INCONCLUSIVE: Couldn't determine
+    - NOT_TESTED: Didn't attempt verification
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+outputs:
+  - name: gosm_assumptions_file
+    type: yaml
+    description: "GOSM-compatible assumptions to verify"
+
+  - name: gosm_decisions_file
+    type: yaml
+    description: "GOSM decision nodes from tensions"
+
+  - name: feedback_log
+    type: jsonl
+    description: "Log of assumption updates from outcomes"

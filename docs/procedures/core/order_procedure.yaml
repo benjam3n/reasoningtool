@@ -1,0 +1,462 @@
+# Order Procedure - Determines execution sequence for steps
+# Core GOSM procedure for establishing correct step ordering based on dependencies
+
+id: order_procedure
+name: Order Procedure
+version: "1.0.0"
+domain: core
+
+description: Determine the correct execution order for a set of steps based on dependencies and constraints
+
+long_description: |
+  The Order Procedure establishes the correct execution sequence for a set of steps.
+  It ensures dependencies are satisfied, constraints are respected, and efficiency
+  is maximized through proper sequencing and parallelization.
+
+  Key principles:
+  - Dependencies must be satisfied: outputs available before needed as inputs
+  - Constraints must be respected: deadlines, resource limits, mutual exclusions
+  - Efficiency should be maximized: parallel execution where possible
+  - Risk should be front-loaded: fail fast on uncertain steps
+  - Critical path should be identified: know what determines total duration
+
+  This procedure transforms an unordered set of steps into a valid, optimized
+  execution sequence with clear dependency relationships.
+
+tags:
+  - ordering
+  - dependencies
+  - sequencing
+  - planning
+  - execution
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After generating steps from a COMPLETE_PLAN
+  - When steps have dependencies that must be satisfied
+  - When parallel execution opportunities should be identified
+  - When optimizing execution sequence for efficiency
+  - When constraints (deadlines, resources) must be respected
+  - When building a Gantt chart or execution timeline
+
+when_not_to_use:
+  - When there's only one step (no ordering needed)
+  - When steps are inherently sequential with no flexibility
+  - When order is already specified by external requirements
+  - When real-time dynamic ordering is needed (use reactive approach)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: steps_list
+    type: list
+    required: true
+    description: List of steps to be ordered, each with inputs/outputs defined
+
+  - name: dependency_info
+    type: dict
+    required: false
+    description: Explicit dependency relationships if not derivable from inputs/outputs
+
+  - name: constraints
+    type: list
+    required: false
+    description: Constraints to satisfy (deadlines, resource limits, ordering requirements)
+
+  - name: optimization_goals
+    type: list
+    required: false
+    description: What to optimize for (speed, resource usage, risk reduction)
+
+outputs:
+  - name: ordered_steps
+    type: list
+    description: Steps in valid execution order
+
+  - name: dependency_graph
+    type: dict
+    description: Graph showing dependencies between steps
+
+  - name: parallel_groups
+    type: list
+    description: Groups of steps that can execute in parallel
+
+  - name: critical_path
+    type: list
+    description: Longest dependency chain determining minimum duration
+
+# ============================================
+# DEPENDENCY TYPES REFERENCE
+# ============================================
+dependency_types:
+  hard_dependency:
+    notation: "A -> B"
+    meaning: "Step B requires output from Step A"
+    constraint: "A must complete before B starts"
+    example: "Create file -> Write to file"
+
+  soft_dependency:
+    notation: "A ~> B"
+    meaning: "Step B benefits from Step A but can proceed without"
+    constraint: "Prefer A before B, but not required"
+    example: "Research best practices -> Implement"
+
+  mutual_exclusion:
+    notation: "A || B"
+    meaning: "Steps A and B cannot run simultaneously"
+    constraint: "One must complete before other starts"
+    example: "Write to file || Read from same file"
+
+  resource_dependency:
+    notation: "A <r> B"
+    meaning: "Steps A and B compete for same resource"
+    constraint: "May need serialization or resource allocation"
+    example: "API calls when rate-limited"
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Collect steps and identify dependencies
+    action: |
+      Gather all steps and identify their dependency relationships:
+      1. List all steps from input steps_list
+      2. For each step, identify:
+         - Inputs required (implies dependency on source)
+         - Outputs produced (others may depend on)
+         - Resources used (potential conflicts)
+         - Constraints (deadlines, ordering requirements)
+      3. Classify each dependency by type (hard, soft, mutual exclusion, resource)
+    inputs:
+      - steps_list
+      - dependency_info (optional)
+      - constraints (optional)
+    outputs:
+      - step_inventory: complete list of steps with input/output annotations
+      - raw_dependencies: list of identified dependencies with types
+    verification: |
+      Every step has inputs and outputs identified
+      Every dependency has a type classification
+
+  - id: 2
+    name: Build dependency graph
+    action: |
+      Construct a directed graph representing dependencies:
+      1. Create a node for each step
+      2. Add directed edge A->B for each hard dependency
+      3. Add directed edge A~>B for each soft dependency (marked differently)
+      4. Mark mutual exclusion relationships
+      5. Annotate resource dependencies on edges
+    inputs:
+      - step_inventory (from Step 1)
+      - raw_dependencies (from Step 1)
+    outputs:
+      - dependency_graph: directed graph with nodes and typed edges
+    verification: |
+      Graph has one node per step
+      All dependencies represented as edges
+      Edge types are clearly marked
+
+  - id: 3
+    name: Detect and resolve circular dependencies
+    action: |
+      Check for cycles and resolve them:
+      1. Run cycle detection algorithm on the graph
+      2. If cycle found:
+         - Identify all steps in the cycle
+         - Examine each edge: is it really a hard dependency?
+         - Often one edge is actually a soft dependency
+         - Break the weakest edge in the cycle
+      3. Repeat until no cycles remain
+      4. If cycle cannot be broken, flag as planning error
+    inputs:
+      - dependency_graph (from Step 2)
+    outputs:
+      - acyclic_graph: dependency graph with no cycles (DAG)
+      - broken_edges: list of soft dependencies that were broken to resolve cycles
+      - cycle_errors: any unresolvable cycles (planning errors)
+    verification: |
+      No cycles exist in the output graph
+      Any broken edges are documented with rationale
+      Planning errors are clearly flagged if present
+
+  - id: 4
+    name: Compute valid execution order
+    action: |
+      Perform topological sort to get valid ordering:
+      1. Use Kahn's algorithm or DFS-based topological sort
+      2. If multiple valid orders exist, collect all nodes with no incoming edges
+      3. Apply prioritization rules to choose among equal-priority nodes:
+         - Blocking steps before blocked (unblocks more work)
+         - Critical path steps first (determines total duration)
+         - High-risk steps early (fail fast)
+         - Quick wins if equal priority (builds momentum)
+         - Steps with many dependents first (maximizes unblocked work)
+      4. Respect soft dependencies where possible without violating hard dependencies
+    inputs:
+      - acyclic_graph (from Step 3)
+      - optimization_goals (optional)
+    outputs:
+      - ordered_sequence: valid topological order of steps
+      - ordering_rationale: why this order was chosen when alternatives existed
+    verification: |
+      Every step's dependencies appear earlier in sequence
+      No step requires something that hasn't been produced yet
+
+  - id: 5
+    name: Identify parallel execution opportunities
+    action: |
+      Group steps that can run simultaneously:
+      1. For each pair of steps, check:
+         - No dependency relationship (neither depends on other)
+         - No resource conflict
+         - No mutual exclusion constraint
+      2. Group parallel-eligible steps that share the same "depth" in the graph
+      3. Format as parallel groups with sync points
+    inputs:
+      - ordered_sequence (from Step 4)
+      - acyclic_graph (from Step 3)
+    outputs:
+      - parallel_groups: groups of steps that can execute in parallel
+      - sync_points: where parallel branches must rejoin
+    verification: |
+      No parallel group contains dependent steps
+      No resource conflicts within parallel groups
+
+  - id: 6
+    name: Identify critical path
+    action: |
+      Find the longest dependency chain:
+      1. Calculate the "depth" of each step (longest path to reach it)
+      2. Identify the path with maximum total depth
+      3. Mark steps on critical path (these determine minimum duration)
+      4. Calculate slack for non-critical steps
+    inputs:
+      - acyclic_graph (from Step 3)
+      - ordered_sequence (from Step 4)
+    outputs:
+      - critical_path: sequence of steps determining minimum duration
+      - step_slack: how much each non-critical step can be delayed
+    verification: |
+      Critical path is the longest chain in the graph
+      All steps on critical path have zero slack
+
+  - id: 7
+    name: Apply optimization rules
+    action: |
+      Optimize the sequence for efficiency:
+      1. Minimize context switches: group related steps together
+      2. Front-load risk: move uncertain steps earlier
+      3. Batch similar operations: group steps using same tools/resources
+      4. Respect energy constraints: if human executor, hard steps when fresh
+      5. Verify constraints are still satisfied after optimization
+    inputs:
+      - ordered_sequence (from Step 4)
+      - parallel_groups (from Step 5)
+      - optimization_goals (optional)
+      - constraints (optional)
+    outputs:
+      - optimized_sequence: final ordered sequence
+      - optimization_notes: what was optimized and why
+    verification: |
+      All hard dependencies still satisfied
+      All constraints still met
+      Optimization rationale documented
+
+  - id: 8
+    name: Format and output final order
+    action: |
+      Produce the final ordered output in requested format:
+      1. Simple numbered list
+      2. With parallelism markers
+      3. With dependency annotations
+      4. Gantt-compatible format (if requested)
+    inputs:
+      - optimized_sequence (from Step 7)
+      - parallel_groups (from Step 5)
+      - critical_path (from Step 6)
+    outputs:
+      - ordered_steps: final ordered list ready for execution
+      - dependency_graph: complete graph for reference
+      - parallel_groups: parallel execution opportunities
+      - critical_path: bottleneck path
+    verification: |
+      Output format is clear and actionable
+      Dependencies are traceable
+      Parallel opportunities are marked
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Every step's dependencies appear earlier in the sequence
+  - No step requires something that hasn't been produced yet
+  - All explicit constraints are satisfied
+  - Parallel groups contain no dependent steps
+  - Critical path is correctly identified
+  - Optimization rationale is documented
+
+failure_modes:
+  - mode: Circular dependency detected
+    symptom: Cycle detection finds steps that depend on each other
+    resolution: Examine edges in cycle, break weakest (usually a soft dependency)
+
+  - mode: Missing dependency
+    symptom: Step fails because input not available
+    resolution: Re-analyze step inputs/outputs, add missing dependency edge
+
+  - mode: Over-serialization
+    symptom: Steps run sequentially that could be parallel
+    resolution: Re-examine dependencies, check if truly required or just assumed
+
+  - mode: Constraint violation
+    symptom: Deadline missed or resource exhausted
+    resolution: Re-order to respect constraint, may need to parallelize or cut scope
+
+  - mode: Wrong critical path
+    symptom: Actual duration exceeds estimate
+    resolution: Re-calculate with actual durations, check for hidden dependencies
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: API Development Ordering
+    context: Need to order steps for deploying a new API endpoint
+    inputs:
+      steps_list:
+        - id: A
+          name: "Define API schema"
+          inputs: []
+          outputs: ["api_schema"]
+        - id: B
+          name: "Implement database models"
+          inputs: ["api_schema"]
+          outputs: ["db_models"]
+        - id: C
+          name: "Write API handlers"
+          inputs: ["api_schema"]
+          outputs: ["handlers"]
+        - id: D
+          name: "Write tests"
+          inputs: ["handlers"]
+          outputs: ["test_suite"]
+        - id: E
+          name: "Set up CI pipeline"
+          inputs: []
+          outputs: ["ci_pipeline"]
+        - id: F
+          name: "Write documentation"
+          inputs: ["api_schema"]
+          outputs: ["docs"]
+        - id: G
+          name: "Deploy"
+          inputs: ["test_suite", "ci_pipeline"]
+          outputs: ["deployment"]
+    expected_output:
+      ordered_steps:
+        - "1. A: Define API schema"
+        - "2. [PARALLEL]"
+        - "   2a. B: Implement database models"
+        - "   2b. C: Write API handlers"
+        - "   2c. E: Set up CI pipeline"
+        - "   2d. F: Write documentation"
+        - "3. D: Write tests (after C)"
+        - "4. G: Deploy (after D, E)"
+      critical_path: ["A", "C", "D", "G"]
+      parallel_groups:
+        - group: 2
+          steps: ["B", "C", "E", "F"]
+          sync_before: "D"
+
+  - name: Simple Linear Ordering
+    context: Steps with clear sequential dependencies
+    inputs:
+      steps_list:
+        - id: X
+          name: "Create directory"
+          inputs: []
+          outputs: ["directory"]
+        - id: Y
+          name: "Create file in directory"
+          inputs: ["directory"]
+          outputs: ["file"]
+        - id: Z
+          name: "Write content to file"
+          inputs: ["file"]
+          outputs: ["completed_file"]
+    expected_output:
+      ordered_steps:
+        - "1. X: Create directory"
+        - "2. Y: Create file in directory"
+        - "3. Z: Write content to file"
+      critical_path: ["X", "Y", "Z"]
+      parallel_groups: []
+
+# ============================================
+# OUTPUT FORMATS
+# ============================================
+output_formats:
+  simple_list:
+    description: "Numbered list of steps"
+    example: |
+      1. Step A
+      2. Step B
+      3. Step C
+
+  with_parallelism:
+    description: "Shows parallel execution opportunities"
+    example: |
+      1. Step A
+      2. [PARALLEL]
+         2a. Step B
+         2b. Step C
+      3. Step D (after 2a, 2b)
+
+  with_dependencies:
+    description: "Shows dependency rationale"
+    example: |
+      1. Step A
+      2. Step B [depends on: Step 1 output]
+      3. Step C [depends on: Step 1 output]
+      4. Step D [depends on: Step 2, Step 3]
+
+  gantt_compatible:
+    description: "For visualization tools"
+    example: |
+      | Step | Depends On | Duration | Earliest Start |
+      |------|------------|----------|----------------|
+      | A    | -          | 1h       | 0h             |
+      | B    | A          | 2h       | 1h             |
+      | C    | A          | 1h       | 1h             |
+      | D    | B, C       | 1h       | 3h             |
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - After steps_generation to establish execution sequence
+    - When building execution plans from COMPLETE_PLAN
+    - When optimizing workflows for efficiency
+    - When identifying bottlenecks in complex procedures
+
+  gates:
+    - gate: dependencies_satisfied
+      question: "Do all steps have their inputs available before execution?"
+
+    - gate: no_circular_dependencies
+      question: "Is the dependency graph acyclic?"
+
+    - gate: constraints_met
+      question: "Are all constraints (deadlines, resources) satisfied?"
+
+  related_procedures:
+    - steps_generation: Generates the steps that this procedure orders
+    - generation: May generate multiple ordering strategies
+    - matching: Filters orderings against constraints
+    - execution_tracking: Uses ordered steps for progress tracking

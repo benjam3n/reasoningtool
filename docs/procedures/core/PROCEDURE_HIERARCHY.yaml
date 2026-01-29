@@ -1,0 +1,148 @@
+# Procedure Hierarchy
+# How the different levels of procedures relate
+
+id: procedure_hierarchy
+name: Procedure Hierarchy
+version: "0.1.0"
+
+description: |
+  Not all procedures are equal. There is a hierarchy:
+  - Meta-procedures constrain HOW reasoning happens
+  - Content procedures address WHAT to do in specific situations
+
+  Meta-procedures apply first, always, to everything.
+  Content procedures are invoked through meta-procedures, when appropriate.
+
+# ============================================
+# THE HIERARCHY
+# ============================================
+
+levels:
+  level_0:
+    name: "Foundational Meta"
+    description: |
+      These procedures apply to all reasoning, including themselves.
+      They constrain how thinking happens at the most basic level.
+
+    procedures:
+      - id: assumption_elimination
+        purpose: "Ground all reasoning in verifiable foundations"
+        applies_to: "Everything, including other meta-procedures"
+
+    principle: |
+      Level 0 procedures are self-referential. They apply to their
+      own application. This prevents infinite regress through
+      grounding in observable/verifiable foundations.
+
+  level_1:
+    name: "Strategic Meta"
+    description: |
+      These procedures determine approach and method.
+      They are constrained by Level 0.
+
+    procedures:
+      - id: method_derivation
+        purpose: "Derive approach from situation"
+        constrained_by: assumption_elimination
+      - id: meta_reasoning_core
+        purpose: "Overall decision loop"
+        constrained_by: assumption_elimination
+
+    principle: |
+      Level 1 procedures determine WHAT to do.
+      Level 0 ensures HOW they're applied is grounded.
+
+  level_2:
+    name: "Domain Content"
+    description: |
+      These procedures address specific problems.
+      They are invoked through Level 1 decisions.
+
+    examples:
+      - "Negotiation procedures"
+      - "Decision-making frameworks"
+      - "Communication techniques"
+      - "Problem-solving methods"
+
+    count: "~18,000 extracted procedures"
+
+    principle: |
+      Level 2 procedures are tools, not defaults.
+      They are selected through Level 1 method derivation.
+      They are applied through Level 0 grounding.
+
+# ============================================
+# THE FLOW
+# ============================================
+
+execution_flow:
+  step_1:
+    name: "Ground the situation"
+    procedure: assumption_elimination
+    action: |
+      Separate observable from assumed.
+      Identify what is actually known.
+      Flag inferences and assumptions.
+
+  step_2:
+    name: "Derive the approach"
+    procedure: method_derivation
+    action: |
+      Characterize the situation (grounded).
+      Consider multiple methods.
+      Derive approach from situation.
+
+  step_3:
+    name: "Select content procedures (if appropriate)"
+    procedure: procedure_retrieval
+    action: |
+      If a content procedure fits the derived approach:
+      - Retrieve relevant procedures
+      - Evaluate fit to grounded situation
+      - Apply through Level 0 constraints
+
+  step_4:
+    name: "Execute with grounding"
+    procedure: assumption_elimination (continuous)
+    action: |
+      Throughout execution:
+      - Keep separating observable from assumed
+      - Flag when moving to inference
+      - Question the method being used
+      - Adjust when grounding is lost
+
+# ============================================
+# KEY INSIGHT
+# ============================================
+
+key_insight: |
+  The 18,000 content procedures are not the core of the system.
+  They are resources that MAY be useful.
+
+  The core is:
+  1. Grounded reasoning (assumption_elimination)
+  2. Derived method (method_derivation)
+  3. Rigorous application (Level 0 throughout)
+
+  Content procedures are optional tools.
+  Meta-procedures are mandatory constraints.
+
+# ============================================
+# IMPLICATIONS FOR LIBRARY
+# ============================================
+
+implications:
+  for_extraction:
+    - "Prioritize extracting meta-procedures over content"
+    - "Tag procedures by level (meta vs content)"
+    - "Meta-procedures are rarer and more valuable"
+
+  for_retrieval:
+    - "Don't retrieve content procedures first"
+    - "Apply meta-procedures to determine if retrieval is needed"
+    - "Content procedures are invoked, not defaulted to"
+
+  for_quality:
+    - "Quality comes from meta-level, not content quantity"
+    - "18,000 mediocre procedures < 10 excellent meta-procedures"
+    - "The meta-procedures enable quality use of content procedures"

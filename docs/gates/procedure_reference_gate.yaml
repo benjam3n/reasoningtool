@@ -1,0 +1,37 @@
+# GOSM v2.2: Procedure Reference Gate
+# Ensures plans actually use the procedure library
+
+gates:
+  - id: procedures_referenced_check
+    name: Library Procedures Referenced Check
+    phase: planning
+    category: quality
+
+    question: "Does the plan reference and apply library procedures?"
+
+    description: |
+      GOSM v2.2 MANDATE:
+      Plans must explicitly reference procedures from the GOSM library.
+      This ensures the accumulated procedural knowledge is actually used,
+      not just sitting in files nobody reads.
+
+      The procedure library contains 100+ detailed procedures across domains.
+      Plans that don't reference them are reinventing the wheel.
+
+      Minimum requirement: 3 library procedure references
+      Recommended: 5+ procedure references
+
+    trigger_conditions:
+      - type: context_has
+        key: complete_plan
+
+    on_pass: next
+    on_fail: procedure_injection  # Inject procedures and require replan
+
+    evaluation_criteria:
+      - "Plan explicitly names at least 3 library procedures"
+      - "Plan describes HOW each referenced procedure will be applied"
+      - "Innovation procedures (innovation_engine, adversarial_review) are referenced"
+      - "Domain-specific procedures are referenced where applicable"
+
+    minimum_references: 3

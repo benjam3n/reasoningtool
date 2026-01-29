@@ -1,0 +1,286 @@
+# Backward Reasoning Procedure
+# The method of starting from conclusions and tracing back to foundations
+
+id: backward_reasoning
+name: Backward Reasoning
+version: "1.0.0"
+domain: core
+tier: platinum
+
+description: |
+  Typical reasoning goes "forward" - from premises to conclusions.
+  This procedure goes "backward" - from conclusions to premises.
+
+  Given a conclusion, what came before? What journey led here?
+
+  This is harder than forward reasoning but reveals PURPOSE and enables
+  evaluation of the journey, not just the endpoint.
+
+core_insight: |
+  Any statement is in the middle of a story.
+
+  Before: What led to this statement (journey, goals, context)
+  After: What follows from it (implications, consequences)
+
+  Forward reasoning explores "after." Backward reasoning explores "before."
+
+# ============================================
+# WHY BACKWARD IS HARDER
+# ============================================
+
+why_harder:
+  forward:
+    description: Given A, what follows?
+    characteristics:
+      - Often deterministic or near-deterministic
+      - Logic provides clear inference rules
+      - One premise set → specific conclusions
+    example: "If P then Q, P, therefore Q"
+
+  backward:
+    description: Given B, what led to it?
+    characteristics:
+      - Underdetermined - many paths could lead to same conclusion
+      - Requires reconstruction, not just inference
+      - Multiple premise sets → same conclusion
+    example: "Q is true. What P might have implied Q?"
+
+  key_difference: |
+    Forward: Calculate
+    Backward: Hypothesize and evaluate
+
+    Backward reasoning generates candidate stories and evaluates which
+    makes most sense.
+
+# ============================================
+# THE METHOD
+# ============================================
+
+steps:
+  - id: 1
+    name: Start with the endpoint
+    action: |
+      Take the conclusion, statement, or position as given.
+      Don't question it yet - treat it as the END of a journey.
+
+      Ask: "Someone arrived at this. What journey brought them here?"
+    output: endpoint_statement
+
+  - id: 2
+    name: Ask "What goal does this serve?"
+    action: |
+      This conclusion was reached for a REASON.
+      What is the statement trying to achieve?
+
+      Not: What are its logical implications?
+      But: What PURPOSE does it serve?
+    output: immediate_purpose
+
+  - id: 3
+    name: Ask "What problem generated that goal?"
+    action: |
+      Goals arise from problems/needs.
+      What problem would make this goal relevant?
+
+      Example:
+      Goal: Establish something certain
+      Problem: Everything seems doubtable
+    output: generating_problem
+
+  - id: 4
+    name: Ask "What context created that problem?"
+    action: |
+      Problems arise in contexts.
+      What situation would make this problem salient?
+
+      Example:
+      Problem: Everything seems doubtable
+      Context: Skepticism is challenging previous beliefs
+    output: generating_context
+
+  - id: 5
+    name: Continue tracing until reaching foundational goals
+    action: |
+      Keep asking backward:
+      - What led to this context?
+      - What underlying values are at play?
+      - What would have to be true/desired for this journey to make sense?
+
+      Stop when reaching intrinsic goals (apply intrinsic_goal_termination_gate).
+    output: full_backward_trace
+
+  - id: 6
+    name: Construct the forward story
+    action: |
+      Now reverse the trace to construct the "story":
+
+      Chapter 1: Foundational goal/value
+      Chapter 2: Context that made it relevant
+      Chapter 3: Problem that arose
+      Chapter 4: Goal that addressed the problem
+      ...
+      Final: The conclusion
+
+      This is the journey that (hypothetically) led to the endpoint.
+    output: reconstructed_story
+
+  - id: 7
+    name: Evaluate the story
+    action: |
+      Apply story_coherence_gate:
+      - Does the story cohere?
+      - Are the goals legitimate?
+      - Does the conclusion serve the goals?
+      - Was the journey necessary?
+      - Is this a valid path?
+
+      If coherent: You've understood WHY this conclusion exists.
+      If not coherent: Either the conclusion is confused OR your reconstruction is wrong.
+    output: story_evaluation
+
+# ============================================
+# MULTIPLE RECONSTRUCTIONS
+# ============================================
+
+multiple_paths: |
+  Because backward reasoning is underdetermined, multiple stories
+  may explain the same conclusion.
+
+  This is okay. Generate multiple candidates, then:
+  1. Evaluate each for coherence
+  2. Compare: which is more plausible?
+  3. If multiple are equally plausible, that's useful information
+     (the conclusion may be overdetermined - supported by multiple paths)
+
+  Red flag: If NO coherent story can be constructed, the conclusion
+  may be arbitrary or confused.
+
+# ============================================
+# EXAMPLE: RECONSTRUCTING "I THINK THEREFORE I AM"
+# ============================================
+
+example:
+  endpoint: '"I think therefore I am" (Descartes)'
+
+  step_2_purpose: |
+    Establish that at least ONE thing is certain.
+
+  step_3_problem: |
+    Everything can be doubted - senses, reasoning, external world.
+    If everything can be doubted, no stable knowledge.
+
+  step_4_context: |
+    Skeptical challenges to knowledge (ancient and contemporary).
+    Need to rebuild knowledge on solid foundation after scholasticism.
+    New science requires new epistemology.
+
+  step_5_deeper_trace: |
+    Why does knowledge need foundations?
+    → Because unreliable beliefs lead to unreliable actions
+    → Because unreliable actions lead to poor outcomes
+    → Because we want good outcomes (wellbeing)
+    → Wellbeing is intrinsically valued (STOP)
+
+  step_6_reconstructed_story:
+    ch1: We value wellbeing (intrinsic)
+    ch2: Wellbeing requires reliable action
+    ch3: Reliable action requires reliable knowledge
+    ch4: Reliable knowledge requires foundations
+    ch5: Current foundations are unstable (scholasticism challenged)
+    ch6: Need new certain foundation
+    ch7: Method of doubt - doubt everything, see what survives
+    ch8: The doubter can't be doubted
+    ch9: "I think therefore I am"
+
+  step_7_evaluation: |
+    Coherence: Yes - each chapter connects
+    Goals legitimate: Yes - wellbeing, reliable knowledge are reasonable
+    Conclusion serves goals: Yes - provides the certain foundation sought
+    Journey necessary: Yes - if old foundations are unstable
+    Valid path: Yes - the doubt method is reasonable (not only method)
+
+    RESULT: Coherent story. The cogito makes sense as an endpoint.
+
+# ============================================
+# WHEN TO USE BACKWARD REASONING
+# ============================================
+
+when_to_use:
+  - Evaluating a philosophical claim or position
+  - Understanding why someone believes something
+  - Analyzing a criticism or objection
+  - Making sense of an unfamiliar argument
+  - Finding the PURPOSE behind any statement
+
+when_not_to_use:
+  - Deriving new conclusions (use forward reasoning)
+  - When the premises are already clear
+  - When you need speed over depth
+
+# ============================================
+# CONNECTION TO MISSION
+# ============================================
+
+mission_connection: |
+  From the mission statement:
+
+  "Typical philosophy does 'forward': Given premises, what follows?
+   This is like reading a book from beginning to end - but the 'end'
+   of philosophy is often nowhere useful.
+
+   Backward reasoning: Given this conclusion, what came before?
+   This is like watching the end of a movie and reconstructing the plot."
+
+  Backward reasoning is the CORE METHOD of GOSM. It enables:
+  - Understanding WHY conclusions exist (not just what they are)
+  - Evaluating the journey (not just the endpoint)
+  - Finding the goals that ground everything
+  - Terminating n+1 by reaching intrinsic goals
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+related_procedures:
+  - goal_structure_reconstruction: The output format for backward reasoning
+  - language_goal_identification: Identifies purposes of statements
+  - bounded_inquiry: Structures the backward search
+
+related_gates:
+  - honest_question_gate: Validates that questions have identifiable goals
+  - intrinsic_goal_termination_gate: Determines when to stop tracing
+  - story_coherence_gate: Evaluates the reconstructed story
+
+# ============================================
+# GOAL UNDERSTANDING PIPELINE
+# ============================================
+# This procedure is STEP 3 of the goal understanding pipeline:
+#
+#   1. recursive_causal_interrogation
+#      → Question the framing, trace causes of the goal statement
+#      → Output: Clearer understanding of what's actually being sought
+#
+#   2. goal_structure_reconstruction
+#      → Trace goal chain: action → goal → goal → intrinsic goal
+#      → Output: The "story" of why this goal matters
+#
+#   3. backward_reasoning (THIS)
+#      → Given conclusions, trace back to premises
+#      → Output: Understanding of what journey led here
+#
+#   4. deductive_strategy_discovery
+#      → Derive strategies from problem structure
+#      → Output: Strategies native to the actual situation
+#
+# Use backward reasoning after GSR when you want to understand
+# the full journey that led to a conclusion or position.
+goal_understanding_pipeline:
+  position: 3
+  previous: goal_structure_reconstruction
+  next: deductive_strategy_discovery
+  when_to_use_this_step: |
+    Use after GSR when:
+    - You have a goal chain and want the full story
+    - You're evaluating someone else's conclusion
+    - You need to understand what journey led here
+    - You want to check if the journey was valid

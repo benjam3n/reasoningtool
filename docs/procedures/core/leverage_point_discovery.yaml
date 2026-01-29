@@ -1,0 +1,538 @@
+# Leverage Point Discovery
+# Intelligence Reduction: 65%
+# Version: 1.0.0
+
+id: leverage_point_discovery
+name: Leverage Point Discovery (Arbitrage & System Insertion)
+version: "1.0.0"
+domain: core
+intelligence_reduction: "65%"
+
+goal: |
+  Find high-leverage opportunities by identifying gaps between systems
+  (arbitrage) or friction points within systems (insertion opportunities).
+  Systematic search across leverage types reduces intelligence needed.
+
+description: |
+  Most valuable strategies exploit leverage points - places where small
+  effort produces disproportionate results. This procedure searches for
+  multiple types of leverage:
+
+  PRIMARY TYPES (position-based):
+  1. ARBITRAGE: Position yourself between disconnected systems/markets
+     that have inefficient information/price/value flow.
+     Example: Dropshipping (supplier market ↔ you ↔ retail market)
+
+  2. SYSTEM INSERTION: Insert yourself into an existing system's flow
+     where there's friction, complexity, or unmet needs.
+     Example: Payment processors (buyer → you → seller)
+
+  ADDITIONAL TYPES (extensible):
+  - Network effects, compounding, automation, aggregation
+  - Scarcity, standards, trust/reputation, data/learning, optionality
+
+  All leverage types find where value is trapped, flowing inefficiently,
+  or could be amplified with the right positioning.
+
+when_to_use:
+  - Looking for business/strategy opportunities
+  - Want high-leverage approaches (small input, large output)
+  - Searching for competitive advantages
+  - Exploring new markets or niches
+  - Want to avoid competing on pure effort/resources
+
+inputs:
+  - name: domain_or_situation
+    type: string
+    description: "The domain, market, or situation to analyze"
+  - name: resources_available
+    type: description
+    description: "What you can bring (skills, capital, access, information)"
+
+outputs:
+  - name: arbitrage_opportunities
+    type: list
+    description: "Gaps between systems that could be exploited"
+  - name: insertion_opportunities
+    type: list
+    description: "Points in existing flows where you could add value"
+  - name: ranked_opportunities
+    type: list
+    description: "All opportunities ranked by leverage potential"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Map the Landscape"
+    action: |
+      Identify all the systems, markets, and flows in the domain.
+
+      Ask:
+      - What are the major systems/markets?
+      - Who are the players (buyers, sellers, intermediaries)?
+      - What flows between them (money, goods, information, attention)?
+      - Where are the boundaries between systems?
+    output: "System/market map"
+    template: |
+      SYSTEMS/MARKETS IDENTIFIED:
+      1. [System A]: [What it does, who's in it]
+      2. [System B]: [What it does, who's in it]
+      ...
+
+      FLOWS:
+      - [Flow 1]: [What moves, from where to where]
+      - [Flow 2]: [What moves, from where to where]
+      ...
+
+      BOUNDARIES:
+      - [Boundary 1]: [What separates System A from B]
+      ...
+
+  - id: 2
+    name: "Search for Arbitrage Opportunities"
+    action: |
+      Look for gaps BETWEEN systems where value/information flows
+      inefficiently or not at all.
+
+      For each pair of systems, ask:
+      - Is there a price difference? (buy low, sell high)
+      - Is there an information asymmetry? (know something one side doesn't)
+      - Is there a timing gap? (faster than the market corrects)
+      - Is there a geographic gap? (available here, needed there)
+      - Is there an access gap? (you can reach both, they can't reach each other)
+      - Is there a format gap? (incompatible systems you could bridge)
+    output: "Arbitrage opportunities"
+
+  - id: 3
+    name: "Search for Insertion Opportunities"
+    action: |
+      Look for friction points WITHIN existing flows where you could
+      insert yourself to add value.
+
+      For each flow, ask:
+      - Where is it slow? (you could speed it up)
+      - Where is it complex? (you could simplify it)
+      - Where is it unreliable? (you could make it reliable)
+      - Where is it expensive? (you could make it cheaper)
+      - Where is it opaque? (you could make it transparent)
+      - Where is trust lacking? (you could provide trust/verification)
+      - Where do systems not talk? (you could translate/integrate)
+      - Where do people struggle? (you could provide an easier interface)
+    output: "Insertion opportunities"
+
+  - id: 4
+    name: "Search Other Leverage Types"
+    action: |
+      Go through additional leverage types and ask whether any apply.
+
+      For each type, consider:
+      - Network effects: What gets more valuable with more users?
+      - Compounding: What builds on itself over time?
+      - Automation: What manual work could be systematized?
+      - Aggregation: What fragmented things could be combined?
+      - Scarcity: What limited resources could you control?
+      - Standards: What coordination problems need solving?
+      - Trust: Where is credibility hard to establish?
+      - Data: What learning loops could you create?
+      - Optionality: What positions preserve future choices?
+    output: "Additional leverage opportunities"
+
+  - id: 5
+    name: "Evaluate Each Opportunity"
+    action: |
+      For each opportunity found, assess:
+
+      LEVERAGE FACTORS:
+      - Value gap: How much value is currently lost/trapped?
+      - Defensibility: Can others easily copy you?
+      - Scalability: Can this grow without proportional effort?
+      - Sustainability: Will this opportunity persist?
+
+      FEASIBILITY FACTORS:
+      - Access: Can you actually get into position?
+      - Resources: Do you have what's needed?
+      - Risk: What could go wrong?
+      - Competition: Who else is trying this?
+    output: "Evaluated opportunities"
+    template: |
+      OPPORTUNITY: [Name]
+      TYPE: [Arbitrage / Insertion]
+
+      THE GAP/FRICTION:
+      [What inefficiency exists]
+
+      YOUR POSITION:
+      [How you would sit in the middle]
+
+      VALUE CREATED:
+      [What value you add or capture]
+
+      LEVERAGE SCORE (1-5):
+      - Value gap: [score] - [why]
+      - Defensibility: [score] - [why]
+      - Scalability: [score] - [why]
+      - Sustainability: [score] - [why]
+
+      FEASIBILITY SCORE (1-5):
+      - Access: [score] - [why]
+      - Resources: [score] - [why]
+      - Risk: [score] - [why]
+      - Competition: [score] - [why]
+
+      OVERALL: [High/Medium/Low leverage]
+
+  - id: 6
+    name: "Rank and Select"
+    action: |
+      Rank all opportunities by:
+      1. Leverage potential (value × defensibility × scalability)
+      2. Feasibility (access × resources × low risk)
+      3. Fit with your resources/skills
+
+      Select top candidates for deeper analysis.
+    output: "Ranked opportunities with top selections"
+
+# ============================================
+# ARBITRAGE TYPES (Systematic Search)
+# ============================================
+
+arbitrage_types:
+  price_arbitrage:
+    description: "Buy low in one market, sell high in another"
+    examples:
+      - "Dropshipping (supplier → you → retail)"
+      - "Import/export (cheap region → expensive region)"
+      - "Reselling limited items"
+    questions:
+      - "Where is the same thing priced differently?"
+      - "Who's selling cheap but doesn't have buyers?"
+      - "Who's buying expensive but doesn't have sellers?"
+
+  information_arbitrage:
+    description: "Know something one side doesn't"
+    examples:
+      - "Consulting (expertise → clients who lack it)"
+      - "Deal sourcing (know about opportunities others don't)"
+      - "Trend spotting (see future before others)"
+    questions:
+      - "What do you know that others don't?"
+      - "Who needs information they can't easily get?"
+      - "Where is valuable information not flowing?"
+
+  time_arbitrage:
+    description: "Act faster than the market corrects"
+    examples:
+      - "Breaking news trading"
+      - "Early adoption advantages"
+      - "Speed of execution edge"
+    questions:
+      - "Where is there a delay in information spreading?"
+      - "What opportunities exist only briefly?"
+      - "Where does speed create advantage?"
+
+  geographic_arbitrage:
+    description: "Bridge location-based differences"
+    examples:
+      - "Remote work arbitrage (high salary market, low cost location)"
+      - "Tourism arbitrage (bring experiences from elsewhere)"
+      - "Sourcing from different regions"
+    questions:
+      - "What's available here that's needed there?"
+      - "What's cheap here that's expensive there?"
+      - "What location advantages aren't being exploited?"
+
+  access_arbitrage:
+    description: "Connect parties that can't reach each other"
+    examples:
+      - "Marketplace platforms"
+      - "Network brokering"
+      - "Exclusive access monetization"
+    questions:
+      - "Who can't find each other but should?"
+      - "What barriers prevent connection?"
+      - "What exclusive access do you have?"
+
+  format_arbitrage:
+    description: "Translate between incompatible systems"
+    examples:
+      - "API integrations"
+      - "Format converters"
+      - "Cross-platform bridges"
+    questions:
+      - "What systems should talk but don't?"
+      - "What formats need translation?"
+      - "Where is manual work bridging gaps?"
+
+  attention_arbitrage:
+    description: "Find undervalued attention sources"
+    examples:
+      - "New platforms before they're crowded"
+      - "Underserved niches"
+      - "Emerging channels"
+    questions:
+      - "Where is attention cheap but valuable?"
+      - "What audiences are underserved?"
+      - "What platforms are growing but uncrowded?"
+
+# ============================================
+# INSERTION TYPES (Systematic Search)
+# ============================================
+
+insertion_types:
+  simplification:
+    description: "Make a complex process easier"
+    examples:
+      - "Tax software (complex rules → simple interface)"
+      - "No-code tools (programming → visual builders)"
+      - "Aggregators (many sources → one view)"
+    questions:
+      - "What do people find confusing?"
+      - "What requires expertise that could be automated?"
+      - "What has too many steps?"
+
+  speed:
+    description: "Make a slow process faster"
+    examples:
+      - "Express shipping"
+      - "Same-day services"
+      - "Automated approvals"
+    questions:
+      - "Where are people waiting too long?"
+      - "What bottlenecks cause delays?"
+      - "What could be parallelized or automated?"
+
+  reliability:
+    description: "Make an unreliable process dependable"
+    examples:
+      - "Quality guarantees"
+      - "Escrow services"
+      - "Monitoring and alerting"
+    questions:
+      - "What frequently goes wrong?"
+      - "Where is there variance people hate?"
+      - "What would people pay to make reliable?"
+
+  trust:
+    description: "Provide trust where it's lacking"
+    examples:
+      - "Reviews and ratings"
+      - "Verification services"
+      - "Escrow and guarantees"
+    questions:
+      - "Where are people worried about getting scammed?"
+      - "What transactions need a trusted third party?"
+      - "Where is reputation hard to verify?"
+
+  integration:
+    description: "Connect systems that don't talk"
+    examples:
+      - "Zapier (connect apps)"
+      - "Data pipelines"
+      - "Unified dashboards"
+    questions:
+      - "What do people manually copy between systems?"
+      - "What tools should work together but don't?"
+      - "Where is data siloed?"
+
+  accessibility:
+    description: "Make something available to more people"
+    examples:
+      - "Affordable versions"
+      - "Self-service options"
+      - "Removing gatekeepers"
+    questions:
+      - "What is only available to few but wanted by many?"
+      - "What requires going through gatekeepers?"
+      - "What could be democratized?"
+
+  transparency:
+    description: "Make opaque processes visible"
+    examples:
+      - "Price comparison"
+      - "Supply chain tracking"
+      - "Performance analytics"
+    questions:
+      - "What is hidden that people want to see?"
+      - "Where is information asymmetry hurting people?"
+      - "What decisions are made without good data?"
+
+# ============================================
+# OTHER LEVERAGE TYPES (Extensible)
+# ============================================
+
+other_leverage_types:
+  network_effects:
+    description: "Value increases as more people use it"
+    examples:
+      - "Social platforms (more users = more value)"
+      - "Marketplaces (more buyers attract sellers, vice versa)"
+      - "Standards (more adoption = more compatibility)"
+    questions:
+      - "What gets more valuable with more users?"
+      - "Where could you create positive feedback loops?"
+      - "What has chicken-and-egg problems you could solve?"
+
+  compounding:
+    description: "Effort builds on itself over time"
+    examples:
+      - "Content libraries (each piece adds value forever)"
+      - "Skill stacking (skills combine multiplicatively)"
+      - "Relationship building (trust compounds)"
+    questions:
+      - "What work would still pay off in 10 years?"
+      - "Where does past effort make future effort easier?"
+      - "What accumulates rather than depletes?"
+
+  automation:
+    description: "Remove human effort from the loop"
+    examples:
+      - "Software replacing manual processes"
+      - "Systems that run while you sleep"
+      - "One-time setup, ongoing value"
+    questions:
+      - "What are people doing manually that could be automated?"
+      - "What requires constant attention but shouldn't?"
+      - "Where is human effort the bottleneck?"
+
+  aggregation:
+    description: "Combine many small things into something larger"
+    examples:
+      - "ETFs (many stocks → one product)"
+      - "Newsletters (many sources → curated digest)"
+      - "Buying groups (many buyers → volume pricing)"
+    questions:
+      - "What is fragmented that could be unified?"
+      - "Where do people want one thing but have to deal with many?"
+      - "What small things add up to something valuable?"
+
+  scarcity:
+    description: "Control something limited"
+    examples:
+      - "Domain names, usernames"
+      - "Licenses, permits"
+      - "Prime real estate (physical or digital)"
+    questions:
+      - "What is becoming scarce?"
+      - "What bottlenecks exist?"
+      - "What can't be easily replicated?"
+
+  standards:
+    description: "Set the rules others play by"
+    examples:
+      - "File formats (PDF, MP3)"
+      - "Protocols (HTTP, TCP/IP)"
+      - "Industry standards"
+    questions:
+      - "Where is there chaos that needs standardization?"
+      - "What coordination problems need solving?"
+      - "Where could you define the interface?"
+
+  trust_reputation:
+    description: "Accumulated credibility as leverage"
+    examples:
+      - "Brand premium (pay more for trusted brand)"
+      - "Expert status (authority in a domain)"
+      - "Track record (proven performance)"
+    questions:
+      - "Where is trust hard to establish?"
+      - "What decisions require credibility?"
+      - "Where does reputation create pricing power?"
+
+  data_learning:
+    description: "Information that improves with use"
+    examples:
+      - "ML models that get better with data"
+      - "Knowledge bases that grow"
+      - "Feedback loops that optimize"
+    questions:
+      - "What could you learn from that others can't access?"
+      - "Where does data create defensible advantage?"
+      - "What improves automatically with usage?"
+
+  optionality:
+    description: "Positions that preserve future choices"
+    examples:
+      - "Skills that open doors"
+      - "Relationships that create opportunities"
+      - "Assets that can be used multiple ways"
+    questions:
+      - "What gives you more choices later?"
+      - "What positions don't lock you in?"
+      - "What investments have multiple payoff paths?"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  domain: "Hiring process for tech companies"
+
+  systems_mapped:
+    - "Companies with job openings"
+    - "Candidates looking for jobs"
+    - "Recruiters connecting them"
+    - "Job boards listing positions"
+    - "Interview process"
+    - "Reference checking"
+
+  arbitrage_found:
+    - type: "Information arbitrage"
+      opportunity: "Companies don't know which candidates are actually good"
+      position: "Pre-vetted candidate pool with verified skills"
+
+    - type: "Access arbitrage"
+      opportunity: "Great candidates not on job boards"
+      position: "Tap into passive candidate networks"
+
+  insertion_found:
+    - type: "Speed"
+      opportunity: "Interview process takes weeks"
+      position: "Rapid screening and scheduling tool"
+
+    - type: "Reliability"
+      opportunity: "References are often fake or useless"
+      position: "Verified reference checking service"
+
+    - type: "Simplification"
+      opportunity: "Managing multiple candidates is complex"
+      position: "Unified candidate pipeline tool"
+
+  top_opportunities:
+    1: "Pre-vetted candidate pool (high leverage, defensible network effects)"
+    2: "Rapid screening tool (high value, but less defensible)"
+    3: "Reference verification (valuable but harder to scale)"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Systems and flows were mapped before searching"
+  - "Both arbitrage AND insertion types were searched"
+  - "Opportunities were evaluated on leverage AND feasibility"
+  - "Selected opportunities match available resources"
+  - "Sustainability of opportunity was considered"
+
+# ============================================
+# ANTI-PATTERNS
+# ============================================
+
+anti_patterns:
+  - name: "Value extraction without creation"
+    description: "Pure middleman that adds no value - will be disintermediated"
+    fix: "Ensure you're genuinely solving a problem, not just inserting friction"
+
+  - name: "Racing to the bottom"
+    description: "Arbitrage on price alone with no defensibility"
+    fix: "Add value beyond price, or find structural barriers to competition"
+
+  - name: "Temporary gap"
+    description: "Exploiting a gap that will close quickly"
+    fix: "Either move fast and exit, or build lasting advantages while you have time"
+
+  - name: "Requiring continuous hustle"
+    description: "Leverage that doesn't compound"
+    fix: "Look for opportunities that build moats over time"

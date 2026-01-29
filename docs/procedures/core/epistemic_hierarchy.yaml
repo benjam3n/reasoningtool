@@ -1,0 +1,375 @@
+# Epistemic Hierarchy
+# Purpose: Build from certainty to action through layered epistemology
+# Version: 1.0.0
+
+id: epistemic_hierarchy
+name: Epistemic Hierarchy
+domain: core
+version: "1.0.0"
+tags: ["epistemology", "certainty", "foundations", "ethics", "pragmatic", "deductive"]
+
+description: |
+  A layered framework for building from certain foundations toward determinate action.
+  Each level provides different certainty and different utility.
+
+  The hierarchy:
+  - Level 0: Undeniable certainties (experience exists)
+  - Level 1: Pragmatic necessities (invariant across metaphysical views)
+  - Level 1.5: Ethical constraints (hard to reject without incoherence)
+  - Level 2: Empirical regularities (contingent but testable)
+  - Level 3: Situation-specific derivations (from above + specifics)
+
+core_insight: |
+  You can't derive action from nothing. But you can build from what's certain,
+  through what's pragmatically necessary, constrained by ethics, informed by
+  evidence, to specific action. Each level has different certainty.
+
+when_to_use:
+  - When grounding axioms for deductive strategy
+  - When determining certainty level of premises
+  - When asking "how do I know this?"
+  - When building RCI chains that reach foundational questions
+  - When distinguishing solid ground from assumptions
+
+# ============================================
+# LEVEL 0: WHAT IS CERTAIN
+# ============================================
+
+level_0:
+  name: Certain Foundations
+  description: Undeniable truths. Denying them is self-refuting.
+
+  undeniable:
+    - name: Experience exists
+      description: Something is happening. Denying this is self-refuting.
+      status: Cannot be coherently denied
+
+    - name: This present moment exists
+      description: The current experience is occurring.
+      status: Cannot be coherently denied
+
+  highly_certain:
+    - name: Structure exists
+      description: Not just undifferentiated "something" but patterns, distinctions.
+      status: Denial seems incoherent given structure of denial itself
+
+    - name: Change exists
+      description: Experience is not static.
+      status: Denial seems incoherent given experience of denying
+
+    - name: Memory exists
+      description: Or at least the appearance of memory within experience.
+      status: Denial seems incoherent given structure of thought
+
+  inference_required:
+    - name: The past existed
+      note: Inferred from memory, but memory could be constructed
+      status: Strong inference but not undeniable
+
+    - name: The future will exist
+      note: Inferred from pattern, but pattern could break
+      status: Strong inference but not undeniable
+
+    - name: Other minds exist
+      note: Inferred from behavior, could be philosophical zombies
+      status: Reasonable inference but philosophically contestable
+
+    - name: External world exists
+      note: Inferred from structure, could be simulation/dream
+      status: Reasonable inference but philosophically contestable
+
+  theoretical_posit:
+    - name: Physical objects exist independent of observation
+      status: Useful assumption, philosophically contested
+
+    - name: Causation exists (not just correlation)
+      status: Useful assumption, philosophically contested
+
+    - name: Laws of nature exist (not just regularities)
+      status: Useful assumption, philosophically contested
+
+# ============================================
+# LEVEL 1: PRAGMATIC NECESSITIES
+# ============================================
+
+level_1:
+  name: Pragmatic Necessities
+  description: |
+    If certainty is limited to Level 0, and everything needed to act (external
+    world, other minds, future, causation, values) is uncertain, how do we act?
+
+    These are invariants across major metaphysical possibilities. Whether or not
+    the external world is "real," modeling regularities works. Whether or not
+    other minds exist, reducing apparent-suffering matters.
+
+  core_pragmatic_necessities:
+
+    - name: Model regularities in experience
+      reasoning: |
+        Whether external world exists or not, modeling regularities works
+        within whatever system you're embedded in.
+      applies: Always
+
+    - name: Act as if actions influence subsequent experience
+      reasoning: |
+        Whether or not "causation" is real, the correlation between actions
+        and subsequent experiences holds. Acting on this is necessary.
+      applies: Always
+
+    - name: Reduce apparent-suffering in experience
+      reasoning: |
+        Whether or not other minds exist, apparent-suffering appears in
+        experience. Reducing it might be instrumentally or intrinsically
+        valuable regardless of metaphysical truth.
+      applies: Always
+
+    - name: Act coherently with own preferences
+      reasoning: |
+        Whether or not values are objective, you have preferences. Acting
+        against them is incoherent from your own perspective.
+      applies: Always
+
+  invariance_analysis:
+
+    other_minds:
+      if_exist: Their suffering matters; consider their interests
+      if_not_exist: Apparent-suffering still appears in experience; reducing it still matters
+      invariant: Reducing apparent-suffering is valuable either way
+
+    external_world:
+      if_exists: Physical actions have real consequences
+      if_not_exists: Actions still have consequences within the simulation/dream
+      invariant: Accurate modeling works within the system you're embedded in
+
+    future:
+      if_exists: Actions affect future states
+      if_not_exists: Current actions still correlate with subsequent experiences
+      invariant: Acting as if actions influence subsequent experience is pragmatically necessary
+
+    objective_values:
+      if_exist: Discover and act on them
+      if_not_exist: You still have preferences that motivate action
+      invariant: Acting against your own preferences is incoherent
+
+# ============================================
+# LEVEL 1.5: ETHICAL CONSTRAINTS
+# ============================================
+
+level_1_5:
+  name: Ethical Constraints
+  description: |
+    Hard to reject without incoherence. Not certain, but defensible.
+    These don't determine a unique ethics but rule out a lot.
+
+  core_constraints:
+
+    - name: Non-contradiction
+      description: Can't hold X and not-X
+      implication: Ethical views can't contradict themselves
+      hard_to_reject: Rejecting it requires holding contradictions
+
+    - name: Means-end coherence
+      description: If I want Y and X is necessary for Y, I have reason to X
+      implication: Instrumental rationality is binding given goals
+      hard_to_reject: Rejecting it means wanting Y but not wanting means to Y
+
+    - name: Preference satisfaction (self)
+      description: Acting against my own preferences is prima facie bad for me
+      implication: My preferences generate reasons for action
+      open_question: Which preferences - current, informed, or idealized?
+
+    - name: Suffering matters (prima facie)
+      description: Hard to deny that suffering provides some reason for action
+      implication: Have some reason to reduce suffering
+      open_question: How much reason? How does it weigh against other things?
+
+    - name: Universalizability (weak form)
+      description: If I can't state a relevant difference, similar cases should be treated similarly
+      implication: Can't make arbitrary exceptions for myself
+      hard_to_reject: Rejecting requires accepting arbitrary inconsistency
+
+  defensible_space:
+    concept: |
+      There's no unique "correct action" to derive. There's a space of
+      "defensible actions" and a larger space of "indefensible actions."
+      The goal isn't to find THE answer but to stay within the defensible space.
+
+    indefensible:
+      - Contradicting yourself
+      - Wanting ends but not means
+      - Acting against your own preferences for no reason
+      - Treating suffering as if it doesn't matter at all
+      - Making arbitrary exceptions for yourself
+
+# ============================================
+# LEVEL 2: EMPIRICAL REGULARITIES
+# ============================================
+
+level_2:
+  name: Empirical Regularities
+  description: |
+    Contingent but testable. What we've learned about how the world works.
+    Varies in stability and reliability.
+
+  knowledge_hierarchy:
+    - domain: Physics
+      stability: Most stable
+      reliability: Highest
+      note: Well-replicated, mathematically precise
+
+    - domain: Chemistry
+      stability: Very stable
+      reliability: Very high
+      note: Built on physics, well-established
+
+    - domain: Biology
+      stability: Stable
+      reliability: High
+      note: More complexity, some context-dependence
+
+    - domain: Psychology
+      stability: Less stable
+      reliability: Moderate
+      note: Replication issues, individual variation
+
+    - domain: Economics
+      stability: Even less stable
+      reliability: Lower
+      note: Heavily context-dependent, ideology-influenced
+
+    - domain: Sociology
+      stability: Least stable
+      reliability: Lowest
+      note: Highly context-dependent, hard to replicate
+
+  using_level_2:
+    strong_reliance: Physics, chemistry, basic biology
+    moderate_reliance: Psychology (well-replicated findings)
+    cautious_reliance: Economics, sociology
+    treat_as_contested: Political and ethical claims
+
+# ============================================
+# LEVEL 3: SITUATION-SPECIFIC
+# ============================================
+
+level_3:
+  name: Situation-Specific Derivation
+  description: |
+    Derived from Level 0-2 plus specific situation facts.
+    This is where action determination happens.
+
+  derivation_formula: |
+    This situation + these regularities + these preferences → this action
+
+  components:
+    - Level 0-1.5 constraints (must not violate)
+    - Level 2 empirical regularities (best available)
+    - Situation-specific facts (current state)
+    - Preferences (what matters to you)
+    - Available actions (what's possible)
+
+  quality_criteria:
+    good_action:
+      - Not violating Level 0-1.5 constraints
+      - Using best-available Level 2 knowledge
+      - Making remaining choices consciously rather than by default
+      - Acknowledging uncertainty where it exists
+
+    bad_action:
+      - Contradicting yourself
+      - Ignoring regularities
+      - Pretending certainty you don't have
+      - Making choices unconsciously
+
+# ============================================
+# USING THE HIERARCHY
+# ============================================
+
+usage:
+
+  for_rci:
+    description: When RCI chains reach foundational questions
+    process:
+      - Identify which level the question operates at
+      - Level 0-1 → Metaphysics, epistemology
+      - Level 1.5 → Ethics, axiology
+      - Level 2 → Empirical questions
+      - Level 3 → Applied questions
+    then: Use higher levels to constrain lower levels
+
+  for_deductive_strategy:
+    description: When identifying axioms for derivation
+    process:
+      - Level 0 claims can be used as axioms (certain)
+      - Level 1 claims can be used pragmatically (invariant)
+      - Level 1.5 claims constrain ethical space (defensible)
+      - Level 2 claims are empirical premises (testable)
+      - Level 3 conclusions are derived
+    confidence_guidance:
+      level_0: Treat as axioms - denial is self-refuting
+      level_1: Treat as pragmatic axioms - invariant across metaphysical views
+      level_1_5: Treat as constraints - defensible, hard to reject coherently
+      level_2: Treat as empirical premises - require support, vary by domain stability
+      level_3: Treat as derived - quality depends on premise quality and reasoning validity
+
+  for_assumption_register:
+    description: When tracking assumptions
+    process:
+      - Classify each assumption by level
+      - Level 0-1 assumptions are nearly certain
+      - Level 1.5 assumptions require ethical justification
+      - Level 2 assumptions require empirical support
+      - Level 3 assumptions are derived (check derivation)
+
+# ============================================
+# STRUCTURE DIAGRAM
+# ============================================
+
+structure_diagram: |
+  Level 0: Certain
+  ├── Experience exists
+  ├── Structure exists
+  └── Change exists
+
+  Level 1: Pragmatic Necessities (invariant across metaphysical possibilities)
+  ├── Model regularities
+  ├── Act as if causation
+  ├── Coherence with preferences
+  └── Reduce apparent-suffering
+
+  Level 1.5: Ethical Constraints (hard to reject without incoherence)
+  ├── Non-contradiction
+  ├── Means-end coherence
+  ├── Preference satisfaction
+  ├── Suffering matters (prima facie)
+  └── Universalizability
+
+  Level 2: Empirical Regularities (contingent but testable)
+  ├── Physics (most stable)
+  ├── Chemistry
+  ├── Biology
+  ├── Psychology (less stable)
+  ├── Economics (even less stable)
+  └── Sociology (least stable)
+
+  Level 3: Situation-Specific (derived from above)
+  └── This situation + these regularities + these preferences → this action
+
+# ============================================
+# INTEGRATION WITH GOSM
+# ============================================
+
+gosm_integration:
+  rci_connection: |
+    RCI chains often terminate at foundational questions (Level 0-1.5).
+    The epistemic hierarchy tells you which level you've reached and
+    what kind of certainty you can expect.
+
+  deductive_strategy_connection: |
+    Deductive derivation needs axioms. The epistemic hierarchy provides
+    the certainty levels for premises at each level. Level 0 premises
+    are solid axioms. Level 2 premises are empirical and require support.
+
+  assumption_register_connection: |
+    Assumptions can be classified by level. This determines how much
+    verification they need and what kind of verification applies.

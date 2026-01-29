@@ -1,0 +1,230 @@
+# Fairness & Allocation Orderings
+# Orderings that balance competing priorities and prevent starvation
+
+category_id: fairness_allocation
+category_name: "Fairness & Allocation Orderings"
+description: |
+  Orderings that balance competing priorities, prevent starvation,
+  and allocate resources proportionally. Use when multiple stakeholders
+  or categories need fair treatment over time.
+
+when_to_consider: |
+  - Multiple stakeholders with different importance levels
+  - Must prevent any category from being ignored
+  - Need predictable, bounded wait times
+  - Allocating across uncertain options
+  - Long-running system where fairness matters
+
+variations:
+
+  # ----------------------------------------
+  # WEIGHTED-FAIRNESS ORDERING
+  # ----------------------------------------
+  weighted_fairness:
+    id: weighted_fairness_ordering
+    name: "Weighted-Fairness Ordering (WFQ)"
+    category: fairness_allocation
+
+    philosophy: |
+      Balance priority with fairness; prevent starvation through
+      weighted allocation. From network scheduling: pure priority
+      can starve low-priority items forever. Weighted Fair Queuing
+      gives each category a guaranteed share while still respecting
+      relative importance.
+
+    when_to_use:
+      - Multiple stakeholders with different importance levels
+      - Must prevent any category from being completely ignored
+      - Long-running system where fairness matters over time
+      - Want predictable allocation, not just best-effort
+
+    key_concepts:
+      weight: "Relative importance of each category (not absolute)"
+      share: "Guaranteed portion of resources/attention"
+      starvation: "When low-priority items never get served"
+      aging: "Increasing priority of waiting items over time"
+
+    prioritization_rules:
+      1_assign_weights:
+        rule: "Give each category a weight reflecting importance"
+        example: "Critical:50%, Normal:35%, Low:15%"
+        note: "Weights are relative, not absolute priority"
+
+      2_allocate_proportionally:
+        rule: "Allocate attention/resources proportional to weights"
+        reason: "Everyone gets their fair share"
+        example: "In 10 hours, Low gets at least 1.5 hours"
+
+      3_round_robin_within_weights:
+        rule: "Rotate within categories to prevent individual starvation"
+        reason: "Even low-priority items eventually get served"
+
+      4_burst_allowance:
+        rule: "Allow temporary imbalance but rebalance over time"
+        reason: "Short-term urgency shouldn't starve others long-term"
+
+    anti_patterns:
+      - "Pure priority (low-priority never served)"
+      - "Equal treatment (ignores legitimate differences)"
+      - "No guaranteed minimum (some categories starved)"
+      - "Never rebalancing (accumulated unfairness)"
+
+    example:
+      context: "Managing support tickets from different customer tiers"
+      weights:
+        enterprise: "50% of attention"
+        professional: "35% of attention"
+        free_tier: "15% of attention"
+      in_practice:
+        - "Don't do 5 enterprise tickets then move on"
+        - "After each enterprise, consider: is pro/free share met?"
+        - "If free tier backlog grows, allocate time even if enterprise waiting"
+        - "Track over time: is each tier getting its share?"
+      rationale: "Enterprise gets more, but free users aren't ignored"
+
+    source: "Network Scheduling - Weighted Fair Queuing (WFQ)"
+
+  # ----------------------------------------
+  # ROUND-ROBIN ORDERING
+  # ----------------------------------------
+  round_robin:
+    id: round_robin_ordering
+    name: "Round-Robin Ordering (Fair Time-Slicing)"
+    category: fairness_allocation
+
+    philosophy: |
+      Give each item equal turns in circular order. From CPU
+      scheduling: each process gets a time quantum, then yields
+      to the next. Ensures fairness - no item starves. Simple
+      and predictable but not optimal for throughput.
+
+    when_to_use:
+      - Fairness is primary concern
+      - All items have similar priority
+      - Need predictable, bounded wait times
+      - Time-sharing systems
+      - When no better priority criterion exists
+
+    key_concepts:
+      quantum: "Time slice allocated to each item"
+      circular: "After last item, return to first"
+      preemption: "Item yields after quantum expires"
+      waiting_time: "Bounded by (n-1) x quantum"
+
+    prioritization_rules:
+      1_maintain_circular_queue:
+        rule: "Items arranged in circular order"
+        structure: "Queue with wrap-around"
+
+      2_allocate_quantum:
+        rule: "Each item gets fixed time slice"
+        trade_off: "Small quantum = more switching, better response"
+        guideline: "Quantum should be > context switch time"
+
+      3_rotate_after_quantum:
+        rule: "After quantum, move to back of queue"
+        effect: "Next item gets its turn"
+
+      4_complete_items_leave:
+        rule: "Item done before quantum exits queue"
+        remaining: "If not done, continues next turn"
+
+    variations:
+      simple_rr: "Fixed quantum for all"
+      weighted_rr: "Different quanta based on weight"
+      virtual_rr: "Adjust for I/O-bound processes"
+
+    comparison:
+      fifo: "First come, first served - unfair for long items"
+      priority: "May starve low priority"
+      round_robin: "Fair but may not optimize throughput"
+
+    anti_patterns:
+      - "Quantum too small (excessive context switching)"
+      - "Quantum too large (degenerates to FIFO)"
+      - "Using when priorities differ significantly"
+      - "Not suitable for batch processing"
+
+    example:
+      context: "CPU scheduling 3 processes"
+      quantum: "4 time units"
+      processes:
+        P1: "Needs 8 units"
+        P2: "Needs 3 units"
+        P3: "Needs 5 units"
+      round_robin_execution:
+        time_0_4: "P1 runs (4 units done, 4 remaining)"
+        time_4_7: "P2 runs (3 units done, complete)"
+        time_7_11: "P3 runs (4 units done, 1 remaining)"
+        time_11_15: "P1 runs (4 units done, complete)"
+        time_15_16: "P3 runs (1 unit done, complete)"
+      total_time: "16 units"
+      fairness: "Each process got regular turns"
+
+    source: "Operating Systems - Round-Robin Scheduling"
+
+  # ----------------------------------------
+  # PROPORTIONAL-CONFIDENCE ORDERING
+  # ----------------------------------------
+  proportional_confidence:
+    id: proportional_confidence_ordering
+    name: "Proportional-Confidence Ordering (Kelly Criterion)"
+    category: fairness_allocation
+
+    philosophy: |
+      Allocate effort proportional to confidence in success. From
+      betting theory (Kelly Criterion): bet more on higher-confidence
+      outcomes, but don't bet everything even on sure things. Balances
+      exploiting likely successes with hedging against uncertainty.
+
+    when_to_use:
+      - Multiple options with different success probabilities
+      - Want to maximize expected value while managing risk
+      - Have estimates of outcome probability
+      - Iterative decisions where you can adjust
+
+    key_concepts:
+      edge: "Your estimated advantage or probability of success"
+      allocation: "Fraction of resources to assign"
+      kelly_fraction: "Optimal bet size given edge and odds"
+      half_kelly: "Conservative approach - half of optimal"
+
+    prioritization_rules:
+      1_estimate_probabilities:
+        rule: "Assess likelihood of success for each option"
+        reason: "Can't allocate proportionally without estimates"
+        caution: "Overconfidence leads to over-allocation"
+
+      2_allocate_proportionally:
+        rule: "Higher confidence = larger allocation"
+        formula: "Kelly: fraction = edge / odds"
+        practical: "Half-Kelly for conservatism"
+
+      3_never_all_in:
+        rule: "Always diversify even with high confidence"
+        reason: "Estimates are wrong; total loss ruins you"
+
+      4_adjust_with_evidence:
+        rule: "Update allocations as you learn"
+        reason: "Initial estimates improve with data"
+
+    anti_patterns:
+      - "Equal allocation regardless of confidence"
+      - "All-in on highest confidence (no hedge)"
+      - "Ignoring low-probability high-value options"
+      - "Not updating with new information"
+
+    example:
+      context: "Allocating engineering effort across feature bets"
+      features:
+        A: "80% confident users want this"
+        B: "50% confident users want this"
+        C: "20% confident users want this"
+      proportional_allocation:
+        A: "50% of effort (highest confidence)"
+        B: "35% of effort (moderate confidence)"
+        C: "15% of effort (exploration / hedge)"
+      outcome: "If A validates, increase; if fails, reallocate"
+      rationale: "Bet more on likely successes, but hedge against uncertainty"
+
+    source: "Probability Theory - Kelly Criterion (John Kelly, 1956)"

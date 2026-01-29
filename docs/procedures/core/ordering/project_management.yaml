@@ -1,0 +1,509 @@
+# Project Management Orderings
+# Orderings from formal project management methodologies
+
+category_id: project_management
+category_name: "Project Management Orderings"
+description: |
+  Orderings from formal project management methodologies (PERT, CPM,
+  CCPM, Agile). Use when managing schedules, resources, and uncertainty
+  in complex multi-person projects with explicit dependencies.
+
+when_to_consider: |
+  - Managing complex project schedules
+  - Need probabilistic duration estimates
+  - Resource constraints affect scheduling
+  - Must compress schedule to meet deadline
+  - Tracking earned value and schedule variance
+  - Multiple parallel workstreams with dependencies
+  - Need to optimize critical path or critical chain
+
+variations:
+
+  # ----------------------------------------
+  # PERT ORDERING
+  # ----------------------------------------
+  pert:
+    id: pert_ordering
+    name: "PERT Ordering (Three-Point Estimation)"
+    category: project_management
+
+    philosophy: |
+      Use probabilistic estimates to account for uncertainty. From PERT
+      (Program Evaluation and Review Technique): each task has optimistic,
+      most likely, and pessimistic durations. Expected duration and variance
+      computed from three-point estimates. Critical path identified with
+      probability analysis.
+
+    when_to_use:
+      - High uncertainty in task durations
+      - Need probabilistic schedule
+      - Research and development projects
+      - First-time projects with no historical data
+      - Want to quantify schedule risk
+
+    three_point_estimation:
+      optimistic_a: "Best case - everything goes right"
+      most_likely_m: "Most probable duration"
+      pessimistic_b: "Worst case - reasonable problems occur"
+      expected: "E = (a + 4m + b) / 6"
+      variance: "V = ((b - a) / 6)^2"
+
+    prioritization_rules:
+      1_estimate_three_points:
+        rule: "Get O, M, P estimates for each task"
+        method: "Expert judgment, historical data, analogy"
+
+      2_compute_expected:
+        rule: "Calculate expected duration using beta formula"
+        formula: "E = (O + 4M + P) / 6"
+
+      3_identify_critical_path:
+        rule: "Path with longest expected duration"
+        focus: "These tasks determine project duration"
+
+      4_analyze_variance:
+        rule: "Sum variances on critical path for schedule risk"
+        output: "Probability of meeting deadline"
+
+    probability_analysis:
+      project_variance: "Sum of variances on critical path"
+      project_std_dev: "sqrt(project_variance)"
+      z_score: "(deadline - expected) / std_dev"
+      probability: "Look up z-score in normal table"
+
+    example:
+      context: "Software development project"
+      task_estimates:
+        requirements: "O:5, M:10, P:20 days -> E:10.8, V:6.25"
+        design: "O:10, M:15, P:25 days -> E:15.8, V:6.25"
+        coding: "O:20, M:30, P:50 days -> E:31.7, V:25"
+        testing: "O:10, M:15, P:30 days -> E:16.7, V:11.1"
+      critical_path: "Requirements -> Design -> Coding -> Testing"
+      expected_duration: "75 days"
+      variance: "48.6 days^2"
+      std_dev: "7 days"
+      probability_80_days: "z = 0.71 -> 76% probability"
+
+    source: "Project Management - PERT (US Navy, 1958)"
+
+  # ----------------------------------------
+  # CRITICAL-PATH ORDERING
+  # ----------------------------------------
+  critical_path:
+    id: critical_path_ordering
+    name: "Critical Path Ordering (CPM)"
+    category: project_management
+
+    philosophy: |
+      Identify and focus on the longest path through the project network.
+      From Critical Path Method: the critical path determines minimum
+      project duration. Tasks on critical path have zero float - any
+      delay delays the project. Focus management attention on critical
+      path tasks.
+
+    when_to_use:
+      - Projects with clear task dependencies
+      - Need to identify minimum project duration
+      - Want to know which tasks can slip and which cannot
+      - Resource allocation decisions
+      - Schedule compression analysis
+
+    key_concepts:
+      critical_path: "Longest path through network"
+      float_slack: "How much task can slip without delaying project"
+      early_start_finish: "Earliest possible times"
+      late_start_finish: "Latest possible times without delay"
+      forward_backward_pass: "Calculations to find float"
+
+    calculation_steps:
+      forward_pass:
+        1: "Start at project start"
+        2: "ES of first tasks = 0"
+        3: "EF = ES + duration"
+        4: "ES of successor = max(EF of all predecessors)"
+        5: "Continue to project end"
+
+      backward_pass:
+        1: "Start at project end"
+        2: "LF of final tasks = project duration"
+        3: "LS = LF - duration"
+        4: "LF of predecessor = min(LS of all successors)"
+        5: "Continue to project start"
+
+      float_calculation:
+        total_float: "LS - ES (or LF - EF)"
+        critical_path: "Tasks with float = 0"
+
+    prioritization_rules:
+      1_identify_critical_path:
+        rule: "Find path with zero float"
+        method: "Forward and backward pass"
+
+      2_focus_on_critical:
+        rule: "Prioritize critical path task management"
+        reason: "Any slip delays entire project"
+
+      3_use_float_wisely:
+        rule: "Non-critical tasks can use float if needed"
+        caution: "Using all float makes them critical"
+
+      4_monitor_near_critical:
+        rule: "Watch tasks with small float"
+        reason: "May become critical if they slip"
+
+    example:
+      context: "Product launch project"
+      network:
+        A_design: "5 days, no predecessors"
+        B_content: "3 days, no predecessors"
+        C_development: "10 days, depends on A"
+        D_testing: "4 days, depends on C"
+        E_marketing: "6 days, depends on B"
+        F_launch: "2 days, depends on D, E"
+      critical_path: "A -> C -> D -> F (21 days)"
+      float_analysis:
+        B: "Float = 6 days (can slip without delaying)"
+        E: "Float = 6 days (can slip without delaying)"
+      management_focus: "A, C, D must not slip"
+
+    source: "Project Management - Critical Path Method (DuPont, 1957)"
+
+  # ----------------------------------------
+  # CRITICAL-CHAIN ORDERING
+  # ----------------------------------------
+  critical_chain:
+    id: critical_chain_ordering
+    name: "Critical Chain Ordering (CCPM)"
+    category: project_management
+
+    philosophy: |
+      Focus on resource-constrained critical path with aggregated buffers.
+      From Theory of Constraints: traditional CPM ignores resource conflicts
+      and pads individual tasks. CCPM resolves resource contention to find
+      true critical chain, removes individual padding, adds project buffer.
+      Manages buffer consumption rather than task completion.
+
+    when_to_use:
+      - Resources are constrained (not just dependencies)
+      - Estimates are padded (Student Syndrome)
+      - Multitasking is hurting productivity
+      - Want more predictable delivery
+      - Traditional CPM produces unrealistic schedules
+
+    key_concepts:
+      critical_chain: "Longest path considering resources"
+      project_buffer: "Protection at end of project"
+      feeding_buffer: "Protection where non-critical feeds critical"
+      aggressive_estimates: "50% probability estimates, not 90%"
+      buffer_management: "Track buffer consumption, not task status"
+
+    ccpm_vs_cpm:
+      resource_contention: "CCPM resolves; CPM assumes infinite resources"
+      padding: "CCPM aggregates; CPM has in each task"
+      buffer: "CCPM explicit; CPM hidden in estimates"
+      focus: "CCPM buffer consumption; CPM task completion"
+
+    prioritization_rules:
+      1_identify_critical_chain:
+        rule: "Find longest path INCLUDING resource conflicts"
+        method: "Resolve resource contention first"
+
+      2_use_aggressive_estimates:
+        rule: "50% probability estimates, not 90%"
+        reason: "Remove hidden padding from individual tasks"
+
+      3_add_buffers:
+        rule: "Project buffer at end, feeding buffers at joins"
+        size: "Typically 50% of chain length"
+
+      4_manage_by_buffer:
+        rule: "Track buffer consumption, not task status"
+        zones: "Green (OK), Yellow (watch), Red (act)"
+
+    buffer_management:
+      green: "Buffer consumption < 33% - no action needed"
+      yellow: "33-66% consumed - develop recovery plans"
+      red: ">66% consumed - execute recovery plans"
+
+    anti_patterns:
+      - "Multitasking (reduces throughput)"
+      - "Early start (increases WIP without benefit)"
+      - "Padding individual estimates"
+      - "Managing tasks, not buffer"
+
+    source: "Theory of Constraints - Critical Chain (Goldratt, 1997)"
+
+  # ----------------------------------------
+  # AGILE-SPRINT ORDERING
+  # ----------------------------------------
+  agile_sprint:
+    id: agile_sprint_ordering
+    name: "Agile Sprint Ordering (Iterative Delivery)"
+    category: project_management
+
+    philosophy: |
+      Work in short fixed iterations, prioritizing by value, adapting to
+      change. From Agile/Scrum: instead of planning everything upfront,
+      plan just enough for next sprint. Prioritize backlog by value,
+      pull highest-value items into sprint. Deliver working increment
+      each sprint, inspect and adapt.
+
+    when_to_use:
+      - Requirements are uncertain or evolving
+      - Early and continuous delivery of value
+      - Want to incorporate feedback rapidly
+      - Change is expected
+      - Team can work in iterations
+
+    key_concepts:
+      sprint: "Fixed-length iteration (typically 2 weeks)"
+      backlog: "Prioritized list of work items"
+      sprint_planning: "Select items for this sprint"
+      daily_standup: "Daily coordination and impediment removal"
+      sprint_review: "Demonstrate completed work"
+      retrospective: "Process improvement"
+
+    prioritization_rules:
+      1_prioritize_by_value:
+        rule: "Order backlog by business value"
+        methods: "WSJF, MoSCoW, value/effort ratio"
+        responsibility: "Product Owner"
+
+      2_pull_into_sprint:
+        rule: "Team pulls top items they can complete"
+        commitment: "Only what fits in sprint capacity"
+        principle: "Don't overcommit"
+
+      3_complete_items_fully:
+        rule: "Done means done (Definition of Done)"
+        no_partial: "Don't start what you can't finish"
+
+      4_inspect_and_adapt:
+        rule: "Review results, adjust backlog priorities"
+        frequency: "Every sprint"
+        learning: "Incorporate feedback into next iteration"
+
+    value_prioritization:
+      wsjf:
+        formula: "(Value + Time Criticality + Risk Reduction) / Job Size"
+        principle: "Weighted Shortest Job First"
+      moscow:
+        must: "Essential for delivery"
+        should: "Important but not vital"
+        could: "Desirable but not necessary"
+        wont: "Not this time"
+
+    example:
+      context: "Product development"
+      sprint_planning:
+        capacity: "40 story points"
+        backlog:
+          feature_a: "13 points, high value"
+          feature_b: "8 points, high value"
+          feature_c: "21 points, medium value"
+          feature_d: "5 points, low value"
+        sprint_commitment: "A + B + D = 26 points"
+        deferred: "C (doesn't fit, lower priority)"
+      sprint_execution:
+        daily_standup: "Coordinate, remove blockers"
+        focus: "Complete committed items"
+      sprint_review: "Demo A, B, D to stakeholders"
+      retrospective: "What to improve next sprint"
+
+    source: "Agile - Scrum, XP, Lean"
+
+  # ----------------------------------------
+  # EARNED-VALUE ORDERING
+  # ----------------------------------------
+  earned_value:
+    id: earned_value_ordering
+    name: "Earned Value Ordering (Progress Tracking)"
+    category: project_management
+
+    philosophy: |
+      Measure project progress by comparing planned value, earned value,
+      and actual cost. From EVM: track not just what you spent but what
+      you got for it. Schedule and cost performance indices reveal whether
+      project is on track. Prioritize based on earned value analysis.
+
+    when_to_use:
+      - Need objective progress measurement
+      - Cost and schedule tracking required
+      - Forecasting completion needed
+      - Management reporting on project health
+      - Government or compliance contexts
+
+    key_metrics:
+      planned_value_pv: "Budgeted cost of work scheduled"
+      earned_value_ev: "Budgeted cost of work performed"
+      actual_cost_ac: "Actual cost of work performed"
+      schedule_variance: "SV = EV - PV (negative is behind)"
+      cost_variance: "CV = EV - AC (negative is over budget)"
+      schedule_performance: "SPI = EV / PV (< 1 is behind)"
+      cost_performance: "CPI = EV / AC (< 1 is over budget)"
+
+    prioritization_rules:
+      1_track_earned_value:
+        rule: "Measure completed work against plan"
+        method: "Percent complete, milestones, deliverables"
+
+      2_analyze_performance:
+        rule: "Compute SPI and CPI regularly"
+        interpretation:
+          spi_gt_1: "Ahead of schedule"
+          spi_lt_1: "Behind schedule"
+          cpi_gt_1: "Under budget"
+          cpi_lt_1: "Over budget"
+
+      3_forecast_completion:
+        rule: "Estimate at completion (EAC)"
+        formula: "EAC = BAC / CPI (if trend continues)"
+        alternative: "EAC = AC + (BAC - EV) (if one-time variance)"
+
+      4_prioritize_recovery:
+        rule: "Focus on tasks to improve SPI/CPI"
+        if_behind: "Prioritize schedule recovery"
+        if_over_budget: "Prioritize cost control"
+
+    example:
+      context: "6-month project, $600K budget"
+      at_month_3:
+        pv: "$300K (should have completed)"
+        ev: "$240K (actually completed)"
+        ac: "$280K (actually spent)"
+      analysis:
+        sv: "-$60K (behind schedule)"
+        cv: "-$40K (over budget)"
+        spi: "0.8 (80% schedule efficiency)"
+        cpi: "0.86 (86% cost efficiency)"
+      forecast:
+        eac: "$700K (will likely cost $100K over budget)"
+        completion: "7.5 months (1.5 months late)"
+      action: "Prioritize high-value items to recover schedule"
+
+    source: "Project Management - Earned Value Management"
+
+  # ----------------------------------------
+  # RESOURCE-LEVELING ORDERING
+  # ----------------------------------------
+  resource_leveling:
+    id: resource_leveling_ordering
+    name: "Resource Leveling Ordering"
+    category: project_management
+
+    philosophy: |
+      Adjust schedule to smooth resource demand over time. From resource
+      management: peaks and valleys in demand are inefficient. Leveling
+      shifts tasks (within float) to create more consistent workload.
+      May extend project if resources are hard constraint.
+
+    when_to_use:
+      - Resource availability is constrained
+      - Demand peaks exceed capacity
+      - Want consistent workload (no overtime, no idle)
+      - Resources cannot be easily scaled
+      - Hiring/firing costs are high
+
+    prioritization_rules:
+      1_identify_resource_conflicts:
+        rule: "Find where demand exceeds capacity"
+        method: "Resource histogram showing peaks"
+
+      2_delay_within_float:
+        rule: "Shift non-critical tasks to reduce peaks"
+        constraint: "Use available float without extending project"
+
+      3_level_when_possible:
+        rule: "Smooth demand curves over time"
+        goal: "Consistent resource utilization"
+
+      4_accept_extension_if_needed:
+        rule: "If leveling within float is insufficient, extend"
+        trade_off: "Longer schedule vs. resource overload"
+
+    leveling_vs_smoothing:
+      leveling: "Resource capacity is hard constraint; schedule may extend"
+      smoothing: "Deadline is hard constraint; level within float only"
+
+    example:
+      context: "Three tasks requiring same resource"
+      before_leveling:
+        week_1: "Task A (10 hrs) + Task B (10 hrs) = 20 hrs demand"
+        week_2: "Task C (10 hrs) = 10 hrs demand"
+        problem: "Week 1 exceeds 15 hr capacity"
+      after_leveling:
+        shift: "Task B delayed (has float)"
+        week_1: "Task A (10 hrs)"
+        week_2: "Task B (10 hrs) + Task C (10 hrs)"
+        problem: "Week 2 now overloaded"
+        solution: "Extend into week 3 or split tasks"
+
+    source: "Project Management - Resource Leveling"
+
+  # ----------------------------------------
+  # FAST-TRACKING-CRASHING ORDERING
+  # ----------------------------------------
+  fast_tracking_crashing:
+    id: fast_tracking_crashing_ordering
+    name: "Fast-Tracking & Crashing Ordering (Schedule Compression)"
+    category: project_management
+
+    philosophy: |
+      Compress schedule through parallelization (fast-tracking) or
+      additional resources (crashing). From schedule management: when
+      deadline is fixed but schedule is too long, must compress.
+      Fast-tracking increases risk; crashing increases cost.
+
+    when_to_use:
+      - Must meet a fixed deadline
+      - Current schedule is too long
+      - Willing to accept risk (fast-tracking) or cost (crashing)
+      - Need to recover from schedule slip
+
+    two_techniques:
+      fast_tracking:
+        what: "Do sequential tasks in parallel"
+        risk: "Rework if early task changes affect later"
+        cost: "May not increase cost directly"
+        limit: "Only works if tasks can overlap"
+
+      crashing:
+        what: "Add resources to shorten task duration"
+        risk: "Communication overhead, Brooks's Law"
+        cost: "Direct cost increase"
+        limit: "Diminishing returns, some tasks can't be shortened"
+
+    prioritization_rules:
+      1_identify_critical_path:
+        rule: "Compression only helps on critical path"
+        reason: "Shortening non-critical tasks doesn't help"
+
+      2_evaluate_options:
+        rule: "For each critical task, assess fast-track and crash options"
+        fast_track: "Can it overlap with predecessor?"
+        crash: "Can it be shortened with more resources?"
+
+      3_cost_slope_analysis:
+        rule: "Compute cost per day of compression"
+        formula: "Cost slope = (Crash cost - Normal cost) / (Normal duration - Crash duration)"
+        prioritize: "Compress tasks with lowest cost slope first"
+
+      4_accept_trade_offs:
+        rule: "Understand risk and cost implications"
+        fast_track_risk: "Rework, coordination"
+        crash_cost: "Direct cost increase"
+
+    example:
+      context: "Project 10 days late, must meet deadline"
+      critical_path_tasks:
+        task_a: "Can fast-track with B (accept rework risk)"
+        task_b: "Can crash by adding developer ($5K/day saved)"
+        task_c: "Cannot compress (already minimum)"
+      compression_plan:
+        1: "Fast-track A with B (saves 3 days, no direct cost)"
+        2: "Crash B (saves 5 days, costs $25K)"
+        3: "Cannot compress C"
+        total: "8 days saved, $25K cost, some rework risk"
+      still_needed: "2 more days - negotiate scope or deadline"
+
+    source: "Project Management - Schedule Compression"

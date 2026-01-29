@@ -1,0 +1,502 @@
+# Failure Journeys
+# Mapping the paths to failure with the same rigor as success
+# Because failure is also a goal people pursue (consciously or not)
+
+id: failure_journeys
+name: Failure Journey System
+version: "1.0.0"
+domain: core
+tier: platinum
+
+description: |
+  Most goal journey work focuses on SUCCESS paths.
+  But failure is ALSO a goal people pursue.
+
+  This isn't just "anti-flourishing" in the simple sense (one-time destruction).
+  It's the sophisticated patterns of SUSTAINABLE FAILURE - failing in ways
+  that allow continued failing.
+
+  Many stories already map these patterns:
+  - Tragedies
+  - Noir
+  - Addiction narratives
+  - Self-sabotage arcs
+  - "Almost but never quite" stories
+
+  A complete goal journey system must include failure journeys.
+
+core_insight: |
+  There's a crucial difference between:
+
+  LEVEL 1 - Terminal Failure:
+    Delete the project. Blow it all up. One-time catastrophic failure.
+    This ENDS the game. Can start fresh. Actually opens possibilities.
+
+  LEVEL 2 - Sustainable Failure:
+    Fail in a way that keeps you failing.
+    Never quite catastrophically (which would force reset).
+    Never quite succeeding (which would end the failure).
+    PERPETUATES the state.
+
+  LEVEL 3 - Strategic Suboptimization:
+    Keep self/others in "good enough to continue, bad enough to never succeed."
+    Prevents backward thinking.
+    Prevents opening new possibilities.
+    Maintains the trap.
+
+  The sophisticated failure isn't the explosion - it's the slow leak.
+
+# ============================================
+# WHY PEOPLE PURSUE FAILURE
+# ============================================
+
+why_failure_is_pursued:
+  note: |
+    These are VALID intrinsic goals for some people.
+    Not pathology to be fixed - patterns to be understood.
+
+  reasons:
+    identity_maintenance:
+      description: "Failure is who I am"
+      mechanism: |
+        If I succeed, I lose my identity as the struggling one.
+        Failure confirms my self-concept.
+        Success would require becoming someone else.
+      intrinsic_goal: Identity / Continuity of self
+
+    connection_through_struggle:
+      description: "Failure connects me to others"
+      mechanism: |
+        Being helped, receiving sympathy, being the one who needs support.
+        Success might mean losing those connections.
+        The struggle IS the relationship.
+      intrinsic_goal: Connection (via asymmetric help)
+
+    fear_of_success:
+      description: "What happens after I succeed?"
+      mechanism: |
+        Success brings new responsibilities, expectations, visibility.
+        Failure is familiar. Success is unknown territory.
+        Stay in the known.
+      intrinsic_goal: Security / Predictability
+
+    avoiding_finality:
+      description: "As long as I'm failing, I'm still playing"
+      mechanism: |
+        Success ends the game. Failure keeps it going.
+        "What if I succeed and it's not what I wanted?"
+        Perpetual failure = perpetual possibility (paradoxically)
+      intrinsic_goal: Possibility / Optionality
+
+    victimhood_as_power:
+      description: "Being wronged gives me moral authority"
+      mechanism: |
+        The victim has grievance. Grievance is leverage.
+        Success would mean losing the grievance.
+        Stay wronged, stay powerful (in a specific way).
+      intrinsic_goal: Power (via moral positioning)
+
+    responsibility_avoidance:
+      description: "Can't be held responsible if I never succeed"
+      mechanism: |
+        Success brings accountability.
+        "I tried but couldn't" vs "I did and it failed."
+        Never quite succeeding means never quite being responsible.
+      intrinsic_goal: Safety from judgment
+
+    comfort_in_struggle:
+      description: "I know how to struggle. I don't know how to thrive."
+      mechanism: |
+        Struggle has become the comfort zone.
+        Skills are calibrated for surviving, not thriving.
+        Success would require new skills.
+      intrinsic_goal: Competence (in struggle)
+
+# ============================================
+# FAILURE JOURNEY TYPES
+# ============================================
+
+failure_types:
+  terminal_failure:
+    level: 1
+    name: "Catastrophic / Terminal Failure"
+    description: "Complete destruction. Game ends. Can start fresh."
+    pattern: |
+      Action → Total failure → End
+    examples:
+      - "Delete the project entirely"
+      - "Burn bridges completely"
+      - "Quit and walk away"
+    characteristics:
+      - One-time event
+      - Actually opens new possibilities
+      - Forces reset / backward thinking
+      - Ends the current game
+    paradox: |
+      Terminal failure is actually LESS effective at keeping you failing
+      because it forces a reset. You might start over and succeed.
+      This is why it's Level 1 - it's the naive approach to failure.
+
+  sustainable_failure:
+    level: 2
+    name: "Sustainable / Continuous Failure"
+    description: "Fail in a way that enables continued failing."
+    pattern: |
+      Action → Partial failure → Not quite bad enough to reset →
+      Continue → Partial failure → Loop
+    examples:
+      - "Almost finish project, then let it stall indefinitely"
+      - "Get close to deadline, then miss it, but not so badly that you're fired"
+      - "Make progress, then introduce problem, maintain struggle"
+    characteristics:
+      - Perpetuating state, not achieving outcome
+      - Never quite catastrophic
+      - Never quite successful
+      - Self-sustaining loop
+    key_insight: |
+      The goal is to STAY FAILING, not to ACHIEVE FAILURE.
+      Achieving failure (terminal) ends the game.
+      Staying failing keeps the game going.
+
+  strategic_suboptimization:
+    level: 3
+    name: "Strategic Suboptimization / Semi-Sabotage"
+    description: "Maintain self/others in 'good enough but never great' state."
+    pattern: |
+      Action → Some success → Cap it → Prevent more success →
+      Maintain suboptimal state → Prevent reset thinking
+    examples:
+      - "Keep employee just satisfied enough not to quit, never promoted"
+      - "Keep competitor alive but weakened - don't destroy completely"
+      - "Keep yourself busy enough to feel productive, never accomplishing"
+    characteristics:
+      - Prevents backward thinking
+      - Prevents opening new possibilities
+      - Maintains the trap
+      - Looks like effort from outside
+    key_insight: |
+      Complete destruction would allow the target to start fresh.
+      Fresh starts enable new thinking.
+      Suboptimization keeps them on a path going nowhere.
+
+      Applied to self: Keep yourself busy with things that don't matter
+      so you never step back and ask "why am I doing this?"
+
+  oscillating_failure:
+    level: 2.5
+    name: "Almost-But-Never / Oscillating Failure"
+    description: "Get close to success, then pull back or sabotage."
+    pattern: |
+      Action → Progress → Close to success → Sabotage/Retreat →
+      Reset to earlier state → Progress again → Repeat
+    examples:
+      - "Almost finish degree, drop out, re-enroll, almost finish, drop out"
+      - "Almost close the deal, introduce concern, lose deal, find new lead, repeat"
+      - "Almost have breakthrough, get distracted, start over"
+    characteristics:
+      - Tantalizing proximity to success
+      - Never crossing the finish line
+      - Repeat pattern across domains
+      - '"I almost had it" as perpetual state'
+    key_insight: |
+      The approach creates hope. The retreat creates the drama.
+      This is actually a sustainable energy source for some people.
+      Success would end the cycle.
+
+# ============================================
+# FAILURE JOURNEY CHAINS
+# ============================================
+
+failure_chains:
+  description: |
+    Failure journeys have goal chains just like success journeys.
+    The intrinsic goal is different, but the structure is the same.
+
+  example_sustainable_failure:
+    action: "Working on project but never finishing"
+    chain:
+      - level: action
+        description: "Make progress on project, then introduce obstacles"
+        serves: "Maintain state of 'working on it'"
+      - level: low_instrumental
+        description: "Maintain state of 'working on it'"
+        serves: "Always have something to struggle with"
+      - level: mid_instrumental
+        description: "Always have something to struggle with"
+        serves: "Have identity as someone who struggles/tries"
+      - level: high_instrumental
+        description: "Have identity as someone who struggles"
+        serves: "Continuity of self-concept"
+      - level: intrinsic
+        description: "Identity / Continuity of self"
+        serves: null
+    type: sustainable_failure
+    note: "This chain is VALID. The intrinsic goal (identity) is legitimate."
+
+  example_strategic_suboptimization:
+    action: "Keeping competitor alive but weakened"
+    chain:
+      - level: action
+        description: "Compete enough to wound, not enough to kill"
+        serves: "Maintain competitor in weakened state"
+      - level: low_instrumental
+        description: "Maintain competitor in weakened state"
+        serves: "Prevent competitor from resetting and rethinking"
+      - level: mid_instrumental
+        description: "Prevent reset and rethinking"
+        serves: "Keep competitor on predictable, losing path"
+      - level: high_instrumental
+        description: "Competitor on losing path"
+        serves: "Maintain own advantage without triggering adaptation"
+      - level: intrinsic
+        description: "Security / Control"
+        serves: null
+    type: strategic_suboptimization
+    note: "Complete destruction would allow competitor to start fresh."
+
+  example_self_suboptimization:
+    action: "Keeping self busy with unimportant work"
+    chain:
+      - level: action
+        description: "Fill time with tasks that feel productive but don't advance goals"
+        serves: "Maintain feeling of productivity"
+      - level: low_instrumental
+        description: "Feel productive"
+        serves: "Avoid confronting whether current path is right"
+      - level: mid_instrumental
+        description: "Avoid confronting path"
+        serves: "Never do backward thinking that might require change"
+      - level: high_instrumental
+        description: "Avoid change"
+        serves: "Security in the familiar"
+      - level: intrinsic
+        description: "Security / Avoiding uncertainty"
+        serves: null
+    type: strategic_suboptimization (self-applied)
+    note: |
+      This is self-sabotage via busyness.
+      The person is "working hard" but specifically avoiding
+      the work that would force a reckoning.
+
+# ============================================
+# STORIES THAT MAP FAILURE
+# ============================================
+
+failure_in_stories:
+  description: |
+    Many classic stories are FAILURE JOURNEYS.
+    These map the terrain of failure with the same detail
+    as success stories map success.
+
+  tragedy:
+    description: "The classic failure journey"
+    examples:
+      - "Hamlet - oscillating failure, paralysis of analysis"
+      - "Macbeth - terminal failure via overreach"
+      - "Death of a Salesman - sustainable failure, identity-based"
+      - "Oedipus - failure through trying to avoid failure"
+    pattern: |
+      Character with potential → Flaw/Choice → Path to destruction →
+      Moments where could turn back → Doesn't → Catastrophe
+    insight: "Tragedies often show terminal failure (Level 1)"
+
+  noir:
+    description: "The trapped failure journey"
+    examples:
+      - "Double Indemnity - can't escape once started"
+      - "Chinatown - system is stronger than individual"
+      - "No Country for Old Men - randomness defeats agency"
+    pattern: |
+      Character enters situation → Gets deeper → Each attempt to escape
+      makes it worse → Trapped → No exit or bad exit
+    insight: "Noir often shows sustainable failure - the trap that perpetuates"
+
+  addiction_narrative:
+    description: "The cycle failure journey"
+    examples:
+      - "Requiem for a Dream - oscillating descent"
+      - "Leaving Las Vegas - terminal failure chosen"
+      - "A Star Is Born - success and failure intertwined"
+    pattern: |
+      Character → Temporary relief via substance/behavior →
+      Consequences → Need more relief → Cycle
+    insight: "Addiction narratives map sustainable failure perfectly"
+
+  anti_hero:
+    description: "Success that is also failure"
+    examples:
+      - "Breaking Bad - succeeds at wrong goal"
+      - "The Godfather - achieves power, loses self"
+      - "Wolf of Wall Street - succeeds by measures, fails by values"
+    pattern: |
+      Character pursues goal → Achieves it → Achievement IS failure
+      (by deeper values) → Realization too late (or not at all)
+    insight: "Success and failure can be the same journey, different termini"
+
+  almost_stories:
+    description: "The perpetual almost"
+    examples:
+      - "Groundhog Day (before breakthrough) - oscillating failure"
+      - "Many sports movies show this before the win"
+      - "Romantic comedies use this as tension device"
+    pattern: |
+      Character close to goal → Something prevents → Try again →
+      Close again → Prevented again → Repeat
+    insight: "The 'almost' pattern is sustainable failure as entertainment"
+
+# ============================================
+# DETECTING FAILURE JOURNEYS
+# ============================================
+
+detection:
+  in_self:
+    questions:
+      - "Am I making progress, or am I just busy?"
+      - "Do I keep getting close but never finishing?"
+      - "What would happen if I actually succeeded?"
+      - "Am I avoiding the work that would force me to rethink?"
+      - "Is my struggle part of my identity?"
+    warning_signs:
+      - Same pattern across different domains
+      - Comfort in the struggle
+      - Anxiety when close to success
+      - Creating obstacles when things go well
+      - '"Almost had it" as recurring theme'
+
+  in_others:
+    questions:
+      - "Is this person trying to help me succeed or keep me struggling?"
+      - "Would my success threaten their position?"
+      - "Are they keeping me 'good enough' but never great?"
+      - "Do they solve symptoms but not causes?"
+    warning_signs:
+      - Help that creates dependency
+      - Advice that keeps you on current path
+      - Competition that wounds but doesn't kill
+      - Support that maintains status quo
+
+  in_situations:
+    questions:
+      - "Is this system designed to produce outcomes or sustain itself?"
+      - "Who benefits from this continuing without resolution?"
+      - "What would happen if this actually got solved?"
+    warning_signs:
+      - Problems that persist despite "efforts"
+      - Solutions that create new problems
+      - Complexity that prevents clean resolution
+
+# ============================================
+# ESCAPING FAILURE JOURNEYS
+# ============================================
+
+escape:
+  note: |
+    This is OPTIONAL. Some people pursue failure and that's valid.
+    But for those who want to escape, here are the methods.
+
+  terminal_failure_escape:
+    situation: "Already in Level 1 terminal failure"
+    escape: |
+      Terminal failure actually enables escape.
+      It forces reset, opens new possibilities.
+      The pain is short but enables fresh start.
+    action: "Use the reset. Don't restart the same pattern."
+
+  sustainable_failure_escape:
+    situation: "Trapped in Level 2 sustainable failure"
+    escape: |
+      The trap is that it's never bad enough to force reset.
+      Options:
+      1. Deliberately trigger terminal failure (controlled demolition)
+      2. Step back and do backward thinking (why am I doing this?)
+      3. Change the intrinsic goal (if identity is the issue)
+    action: "Force the reset that the pattern prevents."
+
+  suboptimization_escape:
+    situation: "Trapped in Level 3 strategic suboptimization"
+    escape: |
+      The trap is you're too busy to think.
+      Options:
+      1. Stop. Full stop. Create space for backward thinking.
+      2. Ask: "What am I avoiding by staying busy?"
+      3. Deliberately underperform to create crisis
+    action: "Create the crisis that forces the rethink."
+
+  key_insight: |
+    Escaping sustainable failure often requires WORSE failure.
+    The controlled demolition that forces reset.
+    This is counterintuitive but necessary.
+
+    The alternative is perpetual low-grade failure.
+
+# ============================================
+# INTEGRATION WITH SUCCESS JOURNEYS
+# ============================================
+
+integration:
+  principle: |
+    Every success journey has a shadow failure journey.
+    Every choice point is a fork between success and failure paths.
+
+    Complete journey mapping includes BOTH:
+    - How to succeed
+    - How to fail
+    - How success and failure patterns interact
+
+  example: |
+    Success journey: Learn skill → Practice → Improve → Master → Achievement
+    Failure shadow: Learn skill → Practice → Almost good → Sabotage → Start over
+
+    Same beginning, divergent paths.
+
+  for_extraction:
+    when: "Extracting journeys from any source"
+    add: "Look for both success and failure patterns"
+    questions:
+      - "What's the success path in this source?"
+      - "What's the failure path?"
+      - "Where do they diverge?"
+      - "What failure type is shown (terminal/sustainable/strategic)?"
+
+  for_planning:
+    when: "Planning a goal"
+    add: "Map potential failure patterns, not just success path"
+    questions:
+      - "How might I sustainably fail at this?"
+      - "What would strategic suboptimization look like?"
+      - "Where are the oscillation points?"
+      - "What would prevent me from resetting if needed?"
+
+# ============================================
+# SELF-VALIDATION
+# ============================================
+
+self_validation:
+  is_this_valid: |
+    This framework might seem cynical or negative.
+    But it's completing the picture, not darkening it.
+
+    Goal journeys that only map success are INCOMPLETE.
+    Human behavior includes both success-seeking AND failure-seeking.
+    Many stories already map failure - we're making it explicit.
+
+  does_it_integrate: |
+    Yes. Failure journeys use the same structure:
+    - Action → Goal → Goal → Intrinsic Goal
+    - Each step serves the next
+    - Terminates at intrinsic value
+
+    The difference is the intrinsic goal (identity, security, connection via struggle).
+
+  does_it_help: |
+    Mapping failure helps because:
+    1. Can recognize patterns in self/others
+    2. Can make conscious choice (vs unconscious pattern)
+    3. Can design escape routes
+    4. Can understand stories more deeply
+    5. For some - can pursue failure consciously as valid choice
+
+  would_it_detract: |
+    No. It adds dimension.
+    A map that only shows roads to success is missing half the terrain.
+    This adds the roads to failure - equally real, equally traveled.

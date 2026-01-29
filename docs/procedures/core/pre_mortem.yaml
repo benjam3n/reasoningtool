@@ -1,0 +1,281 @@
+# Pre-Mortem Analysis
+# Intelligence Reduction: 70%
+# Version: 1.0.0
+
+id: pre_mortem
+name: Pre-Mortem Analysis
+version: "1.0.0"
+domain: core
+intelligence_reduction: "70%"
+
+goal: |
+  Identify failure modes BEFORE they happen by assuming the project
+  failed and searching for causes. Inversion makes failure identification
+  easier than direct risk assessment.
+
+description: |
+  Invented by Gary Klein. Instead of asking "What might go wrong?"
+  (prospective), assume "It went wrong" and ask "Why?" (retrospective).
+  People are better at explaining past events than predicting future ones.
+
+  This cognitive reframe makes failure modes easier to identify.
+
+when_to_use:
+  - Before launching project/initiative
+  - Before major decision
+  - When planning has been optimistic
+  - To stress-test a plan
+  - To surface concerns people are hesitant to voice
+
+inputs:
+  - name: plan
+    type: description
+    description: "The plan/project to analyze"
+  - name: timeframe
+    type: string
+    description: "When are we imagining the failure happened?"
+
+outputs:
+  - name: failure_causes
+    type: list
+    description: "All identified reasons for failure"
+  - name: mitigations
+    type: list
+    description: "Actions to prevent each failure"
+  - name: warning_signs
+    type: list
+    description: "Early indicators of each failure mode"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Describe the Plan"
+    action: |
+      Summarize the plan/project being analyzed.
+      Include: Goal, approach, timeline, key assumptions.
+    output: "Plan summary"
+
+  - id: 2
+    name: "Assume Total Failure"
+    action: |
+      Project forward to end of timeframe.
+      Assume the project has COMPLETELY FAILED.
+      Make it vivid: "It's [date]. The project has failed spectacularly."
+    output: "Failure scenario"
+    template: |
+      IMAGINE: It is [future date].
+      The [project name] has completely failed.
+      [Brief description of the failure state]
+
+      Now: Why did it fail?
+
+  - id: 3
+    name: "Brainstorm Failure Causes"
+    action: |
+      Working backward from the failure, list all plausible causes.
+      Use prompts to ensure coverage of different failure types.
+
+      Each person/perspective should generate causes independently
+      before sharing (reduces groupthink).
+    output: "List of failure causes"
+    template: |
+      WHY IT FAILED:
+
+      Technical/Execution failures:
+      1. [Cause]
+      2. [Cause]
+
+      People/Team failures:
+      1. [Cause]
+      2. [Cause]
+
+      External/Environment failures:
+      1. [Cause]
+      2. [Cause]
+
+      Planning/Strategy failures:
+      1. [Cause]
+      2. [Cause]
+
+      Resource/Timing failures:
+      1. [Cause]
+      2. [Cause]
+
+  - id: 4
+    name: "Assess Likelihood and Impact"
+    action: |
+      For each cause, estimate:
+      - Likelihood (High/Medium/Low)
+      - Impact if it happens (High/Medium/Low)
+
+      Focus attention on High-High and High-Medium items.
+    output: "Prioritized failure causes"
+    template: |
+      CAUSE: [Description]
+      Likelihood: [H/M/L]
+      Impact: [H/M/L]
+      Priority: [Critical/High/Medium/Low]
+
+  - id: 5
+    name: "Identify Warning Signs"
+    action: |
+      For each high-priority cause, ask:
+      "What early signs would indicate this is happening?"
+
+      Good warning signs are:
+      - Observable before the failure
+      - Specific enough to detect
+      - Early enough to respond
+    output: "Warning signs for each cause"
+    template: |
+      CAUSE: [Description]
+      WARNING SIGNS:
+      - [Early indicator 1]
+      - [Early indicator 2]
+      WHEN TO CHECK: [Timing/frequency]
+
+  - id: 6
+    name: "Develop Mitigations"
+    action: |
+      For each high-priority cause, develop:
+      - Prevention: How to stop it from happening
+      - Contingency: What to do if it happens anyway
+
+      Be specific about actions, owners, timing.
+    output: "Mitigation plans"
+    template: |
+      CAUSE: [Description]
+
+      PREVENTION:
+      - Action: [What to do]
+      - Owner: [Who does it]
+      - When: [Timing]
+
+      CONTINGENCY (if it happens anyway):
+      - Response: [What to do]
+      - Trigger: [When to activate]
+
+  - id: 7
+    name: "Update the Plan"
+    action: |
+      Incorporate mitigations into the original plan.
+      Add monitoring for warning signs.
+      Document contingencies.
+    output: "Updated plan with pre-mortem insights"
+
+# ============================================
+# FAILURE CATEGORY PROMPTS
+# ============================================
+
+failure_prompts:
+  technical:
+    - "The technology didn't work as expected"
+    - "Integration failed"
+    - "Scale problems emerged"
+    - "Security/reliability issues"
+    - "Technical debt caught up"
+
+  people:
+    - "Key person left"
+    - "Team conflict"
+    - "Skills gap"
+    - "Communication breakdown"
+    - "Motivation/burnout"
+    - "Wrong people in wrong roles"
+
+  external:
+    - "Market changed"
+    - "Competitor moved"
+    - "Regulation changed"
+    - "Economic conditions shifted"
+    - "Key partner/vendor failed"
+    - "Customer needs changed"
+
+  planning:
+    - "Wrong strategy"
+    - "Wrong priorities"
+    - "Missed key requirement"
+    - "Bad assumptions"
+    - "Scope creep"
+    - "Underestimated complexity"
+
+  resources:
+    - "Ran out of money"
+    - "Ran out of time"
+    - "Key resource unavailable"
+    - "Opportunity cost too high"
+
+  execution:
+    - "Poor quality"
+    - "Too slow"
+    - "Wrong sequence"
+    - "Failed to adapt"
+    - "Didn't follow the plan"
+    - "Followed the plan when shouldn't have"
+
+  organizational:
+    - "Lost stakeholder support"
+    - "Priority changed"
+    - "Political issues"
+    - "Organizational change"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  plan: "Launch new mobile app in 6 months"
+
+  failure_scenario: |
+    It's 6 months from now. The app launch has completely failed.
+    We've spent the budget, missed the deadline, and the app
+    that did launch has terrible reviews and few users.
+
+  failure_causes:
+    - cause: "Underestimated iOS/Android differences"
+      likelihood: "High"
+      impact: "High"
+      warning_signs:
+        - "Velocity drops when starting second platform"
+        - "Bugs that only appear on one platform"
+      prevention: "Build shared core, platform-specific UI from start"
+      contingency: "Launch on one platform first, delay second"
+
+    - cause: "Key developer left mid-project"
+      likelihood: "Medium"
+      impact: "High"
+      warning_signs:
+        - "Developer seems disengaged"
+        - "Starts taking more time off"
+      prevention: "Ensure knowledge sharing, competitive compensation"
+      contingency: "Document heavily, have contractor backup identified"
+
+    - cause: "Scope crept beyond timeline"
+      likelihood: "High"
+      impact: "High"
+      warning_signs:
+        - "Feature requests keep getting added"
+        - "MVP definition changes"
+      prevention: "Lock scope, say no to additions"
+      contingency: "Cut features, not quality or timeline"
+
+  plan_updates:
+    - "Added: Cross-platform architecture decision upfront"
+    - "Added: Weekly scope review meeting"
+    - "Added: Key person risk assessment monthly"
+    - "Added: Go/no-go decision point at month 4"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Failure was assumed vividly and specifically"
+  - "Multiple failure categories were explored"
+  - "Causes were assessed for likelihood and impact"
+  - "Warning signs are observable and early"
+  - "Mitigations are specific and actionable"
+  - "Plan was updated with insights"

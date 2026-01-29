@@ -1,0 +1,126 @@
+id: araw_universalization_matrix
+name: ARAW-Universalization Decision Matrix
+version: 1.0.0
+description: |
+  Decision matrix for choosing between ARAW, Universalization, or both.
+
+  [D: derived from araw_2026-01-28_araw-vs-universalization.md]
+
+  CORE DISTINCTION:
+  - ARAW = Boolean negation (claim true/false) [O:source araw-vs-universalization.md]
+  - Universalization = Type theory (instance belongs to categories) [O:source araw-vs-universalization.md]
+
+  EPISTEMOLOGICAL:
+  - ARAW = Popperian falsification (test claims by trying to disprove)
+  - Universalization = Aristotelian taxonomy (classify instances into categories)
+
+matrix:
+  # Each entry: task_type -> recommended_method with conditions
+
+  - task_type: "Testing a specific claim"
+    recommended: ARAW
+    reason: "ARAW stress-tests specific claims through negation [D:falsification serves claim-testing]"
+    example: "Is this architecture scalable?"
+    when_to_add_universalization: "After ARAW if claim survives, universalize to find edge cases"
+
+  - task_type: "Exploring possibility space"
+    recommended: Universalization
+    reason: "Universalization maps complete equivalence classes [D:taxonomy serves exploration]"
+    example: "What approaches exist for this problem?"
+    when_to_add_araw: "After mapping space, ARAW top candidates"
+
+  - task_type: "Finding hidden assumptions"
+    recommended: ARAW
+    reason: "ASSUME WRONG surfaces assumptions by forcing alternatives [D:negation reveals implicit]"
+    example: "What am I assuming about user behavior?"
+    when_to_add_universalization: "Universalize discovered assumptions to find patterns"
+
+  - task_type: "Finding analogies/transferred solutions"
+    recommended: Universalization
+    reason: "Instance-to-category finds sibling instances [D:taxonomy enables transfer]"
+    example: "What have others done with similar problems?"
+    when_to_add_araw: "ARAW analogies for fitness to this context"
+
+  - task_type: "Validating before commitment"
+    recommended: ARAW
+    reason: "Binary pass/fail needed before irreversible action [D:falsification guards commitment]"
+    example: "Should I sign this contract?"
+    when_to_add_universalization: "Universalize contract type to find standard failure modes"
+
+  - task_type: "Brainstorming options"
+    recommended: Universalization
+    reason: "12 techniques generate maximum option diversity [D:taxonomy maximizes breadth]"
+    example: "What could we build?"
+    when_to_add_araw: "ARAW most promising options"
+
+  - task_type: "Finding contradictions"
+    recommended: ARAW
+    reason: "AR + AW on same claim surfaces inconsistency [D:Boolean logic detects contradiction]"
+    example: "Is my strategy internally consistent?"
+    when_to_add_universalization: "Universalize contradiction pattern to find systemic issues"
+
+  - task_type: "Ensuring completeness"
+    recommended: Universalization
+    reason: "Exhaustive dimension coverage [D:taxonomy produces complete within known]"
+    example: "Have I considered all stakeholders?"
+    when_to_add_araw: "ARAW the completeness claim itself"
+
+  - task_type: "Understanding failure modes"
+    recommended: ARAW
+    reason: "ASSUME WRONG is failure-seeking [D:negation finds what could go wrong]"
+    example: "How could this project fail?"
+    when_to_add_universalization: "Universalize failures to failure-class to find missed modes"
+
+  - task_type: "Improving writing/thesis"
+    recommended: Universalization
+    reason: "Subject universalization finds non-obvious angles [T:validated in writing procedure]"
+    example: "Make this argument stronger"
+    when_to_add_araw: "ARAW the selected angle for soundness"
+
+decision_algorithm:
+  step_1: "Identify task type from matrix above"
+  step_2: "Use recommended method first"
+  step_3: "Check 'when_to_add' condition"
+  step_4: "If condition applies, add second method"
+  step_5: "If unsure, use UAUA (Universalize → ARAW → Universalize → ARAW)"
+
+quick_heuristics:
+  - question: "Am I testing or exploring?"
+    test: ARAW
+    explore: Universalization
+
+  - question: "Do I need yes/no or a list?"
+    yes_no: ARAW
+    list: Universalization
+
+  - question: "Am I looking for flaws or options?"
+    flaws: ARAW
+    options: Universalization
+
+  - question: "Is this convergent (narrowing) or divergent (expanding)?"
+    convergent: ARAW
+    divergent: Universalization
+
+combination_patterns:
+  UAUA:
+    description: "Universalize → ARAW → Universalize → ARAW"
+    when: "Complex problems requiring both breadth and depth"
+    steps:
+      - "U1: Map the space with 12 techniques"
+      - "A1: ARAW top candidates from mapping"
+      - "U2: Universalize surviving candidates to find edge cases"
+      - "A2: ARAW edge cases for final validation"
+    source: "[O:source araw_2026-01-28_araw-vs-universalization.md]"
+
+  depth_first:
+    description: "ARAW → Universalization"
+    when: "Starting with specific claim, need to generalize findings"
+
+  breadth_first:
+    description: "Universalization → ARAW"
+    when: "Starting with open question, need to validate candidates"
+
+verification:
+  "[T:result]": "Matrix tested on 10 task types from ARAW session"
+  "[D:derivation]": "Each entry derived from Boolean vs Type distinction"
+  "[O:source]": "Patterns from araw_2026-01-28_araw-vs-universalization.md"

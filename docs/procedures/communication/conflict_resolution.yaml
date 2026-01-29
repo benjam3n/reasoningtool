@@ -1,0 +1,686 @@
+# Conflict Resolution Procedure - Navigate disagreements productively
+# GOSM Communication procedure for resolving conflicts and having difficult conversations
+
+id: conflict_resolution
+name: Conflict Resolution
+version: "1.0.0"
+domain: communication
+
+description: Systematic procedure for de-escalating tensions, finding common ground, and navigating difficult conversations productively
+
+long_description: |
+  The Conflict Resolution procedure provides a framework for addressing disagreements,
+  tensions, and difficult interpersonal situations in professional and personal contexts.
+  Healthy conflict resolution transforms potentially destructive situations into
+  opportunities for better understanding, stronger relationships, and improved outcomes.
+
+  This procedure integrates:
+  - De-escalation techniques (calming heated situations)
+  - Interest-based problem solving (beyond positions to needs)
+  - Difficult conversation frameworks (giving and receiving hard messages)
+  - Mediation principles (when you're helping others resolve conflict)
+  - Repair practices (rebuilding after conflict)
+
+  Key principles:
+  - Conflict is natural and can be productive if handled well
+  - Focus on interests, not positions
+  - Understanding precedes solving
+  - Emotions are data, not obstacles
+  - The relationship is usually more important than any single issue
+
+tags:
+  - communication
+  - conflict
+  - mediation
+  - difficult_conversations
+  - leadership
+  - relationships
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Addressing ongoing tension with a colleague or team member
+  - Having a difficult conversation about performance or behavior
+  - Mediating disputes between team members
+  - Navigating disagreements with stakeholders or partners
+  - Addressing conflict in meetings before it derails progress
+  - Rebuilding relationships after a breakdown
+  - Delivering or receiving feedback that may be unwelcome
+  - Addressing issues early before they escalate
+  - Managing up when you disagree with your manager
+  - Resolving conflicts between personal values and work expectations
+
+when_not_to_use:
+  - When safety is at risk (escalate to HR or authorities)
+  - For formal grievances requiring legal or HR process
+  - When the conflict is actually healthy debate that doesn't need resolution
+  - If you're too emotionally activated to have a productive conversation
+  - When one party is acting in bad faith with no interest in resolution
+  - For conflicts that are someone else's to resolve (don't triangulate)
+  - When the issue is structural and requires systemic change, not conversation
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: conflict_situation
+    type: string
+    required: true
+    description: Description of the conflict, disagreement, or difficult situation
+
+  - name: other_party
+    type: string
+    required: true
+    description: Who the conflict is with (relationship, role, history)
+
+  - name: your_perspective
+    type: string
+    required: true
+    description: What you see as the issue, including your interests and concerns
+
+  - name: their_likely_perspective
+    type: string
+    required: false
+    description: Your best understanding of how they see the situation
+
+  - name: relationship_importance
+    type: enum
+    values: [critical, important, transactional, minimal]
+    required: false
+    description: How important is preserving this relationship long-term
+
+  - name: escalation_level
+    type: enum
+    values: [early_tension, active_conflict, heated, post_blowup]
+    required: false
+    description: Current state of the conflict
+
+outputs:
+  - name: conflict_analysis
+    type: document
+    description: Understanding of both perspectives, interests, and dynamics
+
+  - name: conversation_plan
+    type: document
+    description: Strategy for the difficult conversation including talking points
+
+  - name: resolution_outcome
+    type: document
+    description: Agreement reached and next steps
+
+  - name: relationship_repair_plan
+    type: document
+    description: Actions to rebuild trust and prevent future conflicts
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Assess the situation and your readiness
+    action: |
+      Before engaging, understand what you're dealing with:
+
+      Situation assessment:
+      1. What is the actual conflict about? (content, relationship, identity, process?)
+      2. How escalated is it? (early tension vs active conflict vs heated)
+      3. What's the history? (first incident vs pattern)
+      4. Who else is affected?
+      5. What happens if this isn't resolved?
+      6. Is this the right time to address it?
+
+      Self-assessment:
+      1. Am I calm enough to have a productive conversation?
+      2. What are MY interests and needs? (not positions)
+      3. What might I be contributing to this situation?
+      4. Am I approaching this to resolve or to win?
+      5. What assumptions am I making that might be wrong?
+      6. What outcome would be truly good for everyone?
+    inputs:
+      - conflict_situation
+      - escalation_level (optional)
+    outputs:
+      - situation_assessment: understanding of the conflict type and state
+      - readiness_check: your emotional and mental state for the conversation
+      - timing_decision: whether now is the right time to engage
+    verification: |
+      Can describe the situation objectively, without loaded language
+      Honestly assessed whether you're calm enough to proceed
+      Identified at least one thing you might be contributing
+
+  - id: 2
+    name: Understand their perspective genuinely
+    action: |
+      Before solving anything, seek to understand their view:
+
+      Perspective-taking:
+      1. What do they likely see as the problem?
+      2. What are their underlying interests and needs?
+      3. What pressures or constraints might they be facing?
+      4. How might they be feeling? (frustrated, threatened, unheard?)
+      5. What might they think YOUR motives are?
+      6. What's the most charitable interpretation of their behavior?
+
+      Gathering information:
+      - If you don't know, ask (not interrogate) to understand
+      - Listen for emotions and values, not just facts
+      - Look for the valid point in their position (there usually is one)
+
+      Common underlying interests:
+      - Respect and recognition
+      - Autonomy and control
+      - Fairness and equity
+      - Safety and security
+      - Being heard and understood
+    inputs:
+      - other_party
+      - their_likely_perspective (optional)
+    outputs:
+      - their_perspective: best understanding of their view
+      - their_interests: underlying needs driving their position
+      - charitable_interpretation: most generous reading of their behavior
+      - valid_point: what's legitimate in their concern
+    verification: |
+      Can state their position as they would state it
+      Identified at least 2 underlying interests they likely have
+      Found at least one valid point in their perspective
+
+  - id: 3
+    name: Find common ground and shared interests
+    action: |
+      Identify where your interests align:
+
+      Shared interests to look for:
+      - Both want the project/team/company to succeed
+      - Both want to work in a healthy environment
+      - Both want to be respected and heard
+      - Both want to find a workable solution
+      - Both have constraints they're working within
+
+      Common ground mapping:
+      1. List your key interests
+      2. List their likely key interests
+      3. Identify overlaps (shared interests)
+      4. Identify complementary interests (different but not conflicting)
+      5. Identify true conflicts (limited to fewer issues than you think)
+
+      Reframing:
+      - "Us vs the problem" not "me vs you"
+      - "How do we solve this together?"
+      - Frame the conversation around shared interests
+    inputs:
+      - your_perspective
+      - their_perspective (from Step 2)
+    outputs:
+      - shared_interests: where you both want the same thing
+      - complementary_interests: different but compatible interests
+      - true_conflicts: actual incompatible interests (usually fewer than expected)
+      - reframing: how to position this as a shared problem
+    verification: |
+      Identified at least 2 genuine shared interests
+      True conflicts are limited to specific, concrete issues
+      Have a "we" framing for the conversation
+
+  - id: 4
+    name: Plan the conversation
+    action: |
+      Prepare for the difficult conversation:
+
+      Logistics:
+      - Private setting, not public or in passing
+      - Adequate time (don't rush important conversations)
+      - Low-stakes timing (not right before a deadline or after a setback)
+      - Request the conversation respectfully ("Can we talk about X?")
+
+      Opening approach:
+      - Start with genuine shared interest or appreciation
+      - State your intention (to understand and resolve, not to blame)
+      - Own your part if relevant
+      - Describe impact without attributing motive
+
+      Conversation structure:
+      1. Set collaborative tone (we're solving together)
+      2. Share your perspective (using I-statements)
+      3. Invite their perspective (genuinely)
+      4. Identify shared interests
+      5. Generate options together
+      6. Agree on path forward
+      7. Commit to follow-up
+
+      Phrases to use:
+      - "I'd like to understand your perspective on..."
+      - "When X happened, I felt... and I assumed... Was I reading that right?"
+      - "What I'm hoping for is... What are you hoping for?"
+      - "What would work for both of us?"
+    inputs:
+      - shared_interests (from Step 3)
+      - reframing (from Step 3)
+      - relationship_importance (optional)
+    outputs:
+      - conversation_plan: structured approach for the conversation
+      - opening_statement: how you'll start the conversation
+      - key_questions: questions to ask to understand their view
+      - desired_outcomes: what a good resolution looks like
+    verification: |
+      Opening statement focuses on understanding, not blaming
+      Have specific questions to ask (not just points to make)
+      Identified what a "good enough" resolution would look like
+
+  - id: 5
+    name: Have the conversation
+    action: |
+      Execute the conversation with skill and presence:
+
+      During the conversation:
+      1. Start with your planned opening (collaborative tone)
+      2. Share your perspective using I-statements
+         - "I felt X when Y happened" not "You made me feel X"
+         - "I noticed X and assumed Y, is that accurate?"
+      3. STOP and listen - genuinely seek to understand their response
+      4. Acknowledge their perspective (doesn't mean agreeing)
+         - "It sounds like you're feeling..."
+         - "I can see why that would be frustrating"
+      5. Look for the valid point and acknowledge it
+      6. Share where you see common ground
+      7. Brainstorm solutions together
+      8. Agree on specific next steps
+
+      If it gets heated:
+      - Slow down, lower your voice
+      - Acknowledge the emotion: "This is clearly important to both of us"
+      - Take a break if needed: "Let's pause and come back to this"
+      - Return to shared interests
+
+      What to avoid:
+      - Attacking character ("You always..." "You're being...")
+      - Defending before understanding
+      - Bringing up past issues not relevant to this conversation
+      - Trying to "win" the conversation
+    inputs:
+      - conversation_plan (from Step 4)
+      - opening_statement (from Step 4)
+      - key_questions (from Step 4)
+    outputs:
+      - conversation_summary: what was discussed and heard
+      - new_understanding: what you learned about their perspective
+      - solutions_discussed: options that were explored
+      - emotional_temperature: how the conversation felt
+    verification: |
+      Listened more than talked
+      Acknowledged their perspective (even if disagreeing)
+      Stayed focused on the issue at hand (no kitchen-sinking)
+
+  - id: 6
+    name: Reach resolution
+    action: |
+      Move from understanding to agreement:
+
+      Finding resolution:
+      1. Summarize shared understanding of the situation
+      2. Review shared interests
+      3. Generate multiple options (don't lock into first idea)
+      4. Evaluate options against shared interests
+      5. Choose path forward that addresses key interests of both parties
+      6. Be specific about who does what by when
+
+      Types of resolution:
+      - Agreement: Both parties commit to specific actions
+      - Understanding: No behavior change needed, just clarity
+      - Compromise: Both give something to get something
+      - Creative solution: New option that meets both parties' needs
+      - Agree to disagree: Acknowledge difference, agree how to move forward
+
+      Document the agreement:
+      - What specifically are we each committing to?
+      - What does success look like?
+      - When will we check in on progress?
+      - What will we do if the issue resurfaces?
+    inputs:
+      - solutions_discussed (from Step 5)
+      - shared_interests (from Step 3)
+    outputs:
+      - resolution_outcome: the agreement reached
+      - specific_commitments: who will do what by when
+      - check_in_plan: when you'll follow up
+      - escalation_plan: what to do if resolution doesn't hold
+    verification: |
+      Both parties have agreed to specific commitments
+      Resolution addresses key interests of both parties
+      Follow-up is scheduled
+
+  - id: 7
+    name: Repair and prevent
+    action: |
+      After resolution, invest in the relationship:
+
+      Immediate repair:
+      - Thank them for the conversation
+      - Acknowledge what was difficult
+      - Reaffirm the relationship or working partnership
+      - Follow through on your commitments immediately
+
+      Ongoing relationship:
+      - Check in proactively before issues arise
+      - Assume good intent in future interactions
+      - Address small issues early (don't let them build up again)
+      - Give credit and appreciation when things go well
+
+      Systemic prevention:
+      - What structural or process changes would prevent similar conflicts?
+      - Are there norms the team needs to establish?
+      - Is there feedback that leadership needs to hear?
+      - What did you learn about your own patterns to watch for?
+    inputs:
+      - resolution_outcome (from Step 6)
+      - relationship_importance (optional)
+    outputs:
+      - relationship_repair_plan: actions to rebuild and strengthen
+      - prevention_measures: changes to prevent recurrence
+      - personal_learnings: what to do differently going forward
+    verification: |
+      Have specific repair actions planned
+      Identified at least one systemic change to prevent recurrence
+      Captured personal learnings for future conflicts
+
+# ============================================
+# DE-ESCALATION TECHNIQUES
+# ============================================
+de_escalation:
+  in_the_moment:
+    lower_the_temperature:
+      - "Lower your voice (others will match)"
+      - "Slow your pace of speech"
+      - "Pause before responding"
+      - "Soften your body language"
+      - "Sit down if standing"
+
+    acknowledge_emotions:
+      - "'I can see this is frustrating.'"
+      - "'This clearly matters a lot to you.'"
+      - "'I understand why you'd feel that way.'"
+      - "Name the emotion without judgment"
+
+    avoid_escalation_triggers:
+      - "Don't say 'calm down' (escalates)"
+      - "Don't dismiss feelings ('it's not a big deal')"
+      - "Don't defend immediately"
+      - "Don't match their intensity"
+
+    buy_time_if_needed:
+      - "'I want to respond to this thoughtfully. Can we continue in an hour?'"
+      - "'Let me make sure I understand. You're saying...'"
+      - "'This is important. Let's find a time to discuss it properly.'"
+
+  heated_conversations:
+    if_they_raise_voice:
+      - "Stay calm, speak quietly (contrast has impact)"
+      - "Acknowledge: 'I can hear this is important to you'"
+      - "Redirect: 'I want to understand. Help me see it from your perspective'"
+      - "Set boundary if needed: 'I want to have this conversation, but not like this'"
+
+    if_you_feel_triggered:
+      - "Notice body signals (clenched jaw, racing heart)"
+      - "Take a breath before responding"
+      - "Name it to yourself: 'I'm getting defensive'"
+      - "Ask for time if needed: 'I need a few minutes to think about this'"
+
+    if_conversation_derails:
+      - "Acknowledge the derail: 'We've gotten off track'"
+      - "Refocus: 'Let's come back to what we're trying to solve'"
+      - "If can't recover: 'Let's pause and come back to this when we're both ready'"
+
+# ============================================
+# DIFFICULT CONVERSATION TYPES
+# ============================================
+conversation_types:
+  giving_critical_feedback:
+    approach: |
+      Use SBI (Situation-Behavior-Impact) format:
+      - Situation: "In yesterday's meeting..."
+      - Behavior: "When you interrupted several times..."
+      - Impact: "It made others hesitant to share their ideas"
+    key_principles:
+      - "Describe behavior, not character"
+      - "Be specific, not general"
+      - "Focus on impact, not intent"
+      - "Make it about the future, not punishment"
+
+  receiving_feedback:
+    approach: |
+      - Listen fully without defending
+      - Thank them for telling you
+      - Ask clarifying questions
+      - Reflect on validity before responding
+      - Commit to what you'll do differently
+    key_principles:
+      - "Assume it's at least partially valid"
+      - "Separate impact from intent"
+      - "They're telling you something useful"
+      - "It's harder to give than receive"
+
+  managing_up_disagreement:
+    approach: |
+      - Acknowledge their perspective and constraints
+      - Ask permission: "Can I share a different perspective?"
+      - Frame as helping them succeed
+      - Provide alternatives, not just objections
+      - Ultimately support the decision even if you disagree
+    key_principles:
+      - "They have context you don't have"
+      - "Your job is to inform, their job is to decide"
+      - "Disagree privately, support publicly"
+      - "Choose your battles wisely"
+
+  addressing_pattern_behavior:
+    approach: |
+      - Describe the pattern, not just one incident
+      - "I've noticed X happening several times"
+      - Share cumulative impact
+      - Ask what's going on for them
+      - Set clear expectations going forward
+    key_principles:
+      - "Patterns matter more than incidents"
+      - "Be specific with examples"
+      - "There may be underlying causes"
+      - "Set future expectations clearly"
+
+  delivering_unwelcome_news:
+    approach: |
+      - Be direct and clear (no burying the lead)
+      - Show empathy for their reaction
+      - Explain the reasoning
+      - Allow them to react and process
+      - Discuss path forward
+    key_principles:
+      - "Direct is kind, vague is cruel"
+      - "Don't soften to the point of confusion"
+      - "Their reaction is not your emergency"
+      - "Give them time to process"
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Assessed situation and your own readiness before engaging
+  - Genuinely attempted to understand their perspective first
+  - Identified shared interests and common ground
+  - Used I-statements and avoided blame language
+  - Listened more than talked during the conversation
+  - Reached specific, actionable agreement or understanding
+  - Planned relationship repair and prevention measures
+
+failure_modes:
+  - mode: Engaging while triggered
+    symptom: Escalate the conflict, say things you regret, damage relationship
+    resolution: Check emotional readiness before engaging; take a break if needed
+
+  - mode: Positional arguing
+    symptom: '"I want X" "Well I want Y" - stuck on positions, no progress'
+    resolution: Ask "Why is that important to you?" to find underlying interests
+
+  - mode: Listening to respond
+    symptom: Forming your rebuttal while they talk, not actually understanding
+    resolution: Practice reflecting back what they said before responding
+
+  - mode: Character attacks
+    symptom: '"You always..." "You''re being..." - attacks on person not behavior'
+    resolution: Describe specific behaviors and their impact, not character
+
+  - mode: Kitchen-sinking
+    symptom: Bringing up every past grievance, overwhelming the conversation
+    resolution: Focus on one issue at a time; schedule separate conversations for other issues
+
+  - mode: Avoiding the conversation
+    symptom: Issue festers, relationship deteriorates, eventually explodes
+    resolution: Address issues early when they're small and easier to resolve
+
+  - mode: Pseudo-resolution
+    symptom: '"Fine" or superficial agreement without real resolution'
+    resolution: Check understanding, get specific commitments, schedule follow-up
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Addressing tension with colleague over work style
+    context: Friction with teammate who has different work style, affecting collaboration
+    inputs:
+      conflict_situation: "Ongoing tension with Alex about work style - they push for quick decisions while I want more analysis"
+      other_party: "Alex, peer on same team, 6 months working together, good results but increasing friction"
+      your_perspective: "Their push for speed feels like they don't value thorough work; my concerns get dismissed"
+      their_likely_perspective: "I probably seem slow or indecisive; they might feel blocked by my process"
+      relationship_importance: "important"
+      escalation_level: "active_conflict"
+    process: |
+      Step 1 - Situation Assessment:
+      - Type: Process/working style conflict (not personal attack)
+      - Escalation: Active - we're avoiding each other, tension in meetings
+      - History: Getting worse over 3 months
+      - Self-check: I'm frustrated but can have a calm conversation
+      - My contribution: I may be inflexible, may seem to question their judgment
+
+      Step 2 - Their Perspective:
+      - They value momentum and shipping
+      - They may feel I'm blocking progress with endless analysis
+      - Underlying interests: Recognition for results, autonomy, making impact
+      - Charitable interpretation: They're trying to help us succeed faster
+      - Valid point: Analysis paralysis is a real risk; we have shipped late before
+
+      Step 3 - Common Ground:
+      - Shared: We both want the project to succeed
+      - Shared: We both want good working relationship
+      - Shared: We both bring valuable skills
+      - Complementary: Speed AND quality both matter
+      - True conflict: Timeline pressure requires prioritizing one approach sometimes
+
+      Step 4 - Conversation Plan:
+      Opening: "Alex, I've been thinking about our working relationship. I value what you bring, and I want to figure out how we can work together better. Can we talk about this?"
+      Questions to ask:
+      - "How do you see our dynamic?"
+      - "What's frustrating from your perspective?"
+      - "What would an ideal collaboration look like for you?"
+    expected_output:
+      conversation_plan:
+        opening: "Alex, I've been thinking about how we work together. I appreciate your push for momentum, and I know my thoroughness can feel slow. I'd like to find a better rhythm. Can we talk?"
+        key_points:
+          - "I respect your drive to ship and make impact"
+          - "Sometimes I feel my concerns get dismissed - I want to understand your view"
+          - "I suspect my process feels blocking to you - is that right?"
+          - "How do we get the benefit of both our approaches?"
+        desired_outcome: "Agreement on how to work together that honors both styles"
+      resolution_outcome:
+        agreement:
+          - "Time-box analysis: agree on analysis duration upfront"
+          - "Alex will ask 'what would you need to feel confident?' instead of dismissing"
+          - "I will lead with recommendation, not just concerns"
+          - "Weekly sync to address friction early"
+        follow_up: "Check in after 2 weeks to see if it's working"
+
+  - name: Mediating conflict between two team members
+    context: Two direct reports in ongoing conflict affecting team dynamics
+    inputs:
+      conflict_situation: "Jordan and Morgan have been in conflict for weeks - passive aggressive comments, avoiding collaboration, others are noticing"
+      other_party: "Both are my direct reports, both valuable, conflict is about project ownership"
+      your_perspective: "Both have valid points; lack of clear ownership created this; I need to resolve it and set up better structure"
+      relationship_importance: "critical"
+      escalation_level: "active_conflict"
+    process: |
+      Step 1 - Assessment:
+      - This is about unclear ownership + both feeling unrecognized
+      - I contributed by not clarifying roles earlier
+      - Can't pick a side; need to facilitate their resolution
+
+      Step 2 - Understand Both Perspectives:
+      - Meet with each separately first to understand their view
+      - Jordan: Feels Morgan takes over their ideas, doesn't get credit
+      - Morgan: Feels Jordan doesn't execute, they have to step in
+      - Both want: Recognition, clear ownership, good outcome
+
+      Step 3 - Mediation Approach:
+      - Bring them together after individual conversations
+      - Set ground rules: Listen without interrupting, focus on future
+      - Help them see shared interests
+      - Facilitate solution they own (not imposed by me)
+    expected_output:
+      mediation_plan:
+        individual_meetings:
+          purpose: "Understand each perspective privately"
+          questions:
+            - "How do you see the situation?"
+            - "What do you need going forward?"
+            - "What role might you be playing in this?"
+        joint_meeting:
+          opening: "I've talked with you both. You both care about the project succeeding and about working well together. I want to facilitate a conversation to find a path forward."
+          ground_rules:
+            - "Listen without interrupting"
+            - "Focus on the future, not re-litigating the past"
+            - "Assume good intent"
+          structure:
+            - "Each shares perspective (3 minutes each, uninterrupted)"
+            - "I'll summarize shared interests"
+            - "You'll propose solutions - I'll facilitate, not decide"
+            - "We'll agree on clear ownership going forward"
+      resolution_outcome:
+        structural_changes:
+          - "Clear ownership boundaries documented"
+          - "Process for when work overlaps"
+          - "Weekly sync between them directly"
+        relationship_repair:
+          - "Both acknowledge their part"
+          - "Both commit to direct communication"
+        follow_up: "Check in with each in 1 week, joint in 2 weeks"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When strategy execution is blocked by interpersonal conflict
+    - During team formation when friction emerges
+    - When goal alignment requires difficult conversations
+    - For stakeholder management when interests conflict
+    - When pivoting requires addressing resistance or disappointment
+
+  gates:
+    - gate: situation_assessed
+      question: "Do I understand the conflict type and my own readiness?"
+
+    - gate: perspectives_understood
+      question: "Can I state both perspectives charitably and accurately?"
+
+    - gate: common_ground_found
+      question: "Have I identified genuine shared interests?"
+
+    - gate: conversation_planned
+      question: "Do I have a plan for opening, listening, and resolving?"
+
+    - gate: resolution_reached
+      question: "Is there specific agreement with follow-up planned?"
+
+  related_procedures:
+    - negotiation: When conflict resolution involves negotiating outcomes
+    - active_listening: Essential skill for understanding perspectives
+    - feedback_delivery: For conflicts involving performance or behavior
+    - stakeholder_analysis: Understanding the parties in a conflict
+    - persuasive_writing: When conflict resolution requires written communication

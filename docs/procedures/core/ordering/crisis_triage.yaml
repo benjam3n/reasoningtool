@@ -1,0 +1,106 @@
+# Crisis & Triage Orderings
+# Orderings for resource-constrained emergency situations
+
+category_id: crisis_triage
+category_name: "Crisis & Triage Orderings"
+description: |
+  Orderings for resource-constrained emergency situations where
+  not everything can be addressed. Use when you must maximize
+  positive outcomes with limited resources, accepting some losses.
+
+when_to_consider: |
+  - Resource-constrained crisis situations
+  - Multiple urgent competing demands
+  - Some items cannot be saved regardless of effort
+  - Need to maximize overall positive outcomes
+  - Must make hard prioritization decisions
+
+variations:
+
+  # ----------------------------------------
+  # TRIAGE-SEVERITY ORDERING
+  # ----------------------------------------
+  triage_severity:
+    id: triage_severity_ordering
+    name: "Triage-Severity Ordering"
+    category: crisis_triage
+
+    philosophy: |
+      Prioritize based on severity AND treatability. From medical triage
+      (START algorithm): not just "who needs help most" but "who will
+      benefit most from help now." Maximize positive outcomes given
+      limited resources. Sometimes the most critical case isn't the
+      best use of resources.
+
+    when_to_use:
+      - Resource-constrained situations
+      - Multiple urgent competing demands
+      - Some items can't be saved regardless of effort
+      - Need to maximize overall positive outcomes
+      - Crisis or emergency contexts
+
+    prioritization_rules:
+      1_triage_categories:
+        rule: "Sort into categories by severity and treatability"
+        categories:
+          immediate: "Critical, will benefit from immediate attention"
+          delayed: "Serious but can wait without deterioration"
+          minor: "Can handle themselves or wait longest"
+          expectant: "Too far gone to save with available resources"
+
+      2_immediate_first:
+        rule: "Address 'immediate' category first"
+        reason: "Highest impact per unit of resource"
+
+      3_skip_expectant:
+        rule: "Don't spend resources on unsalvageable items"
+        reason: "Opportunity cost - others can be saved"
+        hard_truth: "Sometimes you must let things fail to save others"
+
+      4_reassess_continuously:
+        rule: "Conditions change; re-triage periodically"
+        reason: "Delayed can become immediate; immediate can become expectant"
+
+    triage_framework:
+      immediate_red:
+        criteria: "Life-threatening but treatable with available resources"
+        action: "Address immediately"
+        examples: "Severe but fixable bugs, critical customer issues with solution"
+
+      delayed_yellow:
+        criteria: "Serious but stable for now"
+        action: "Address after immediate cases cleared"
+        examples: "Important issues that won't get worse in short term"
+
+      minor_green:
+        criteria: "Not urgent, can self-resolve or wait indefinitely"
+        action: "Defer or delegate"
+        examples: "Nice-to-haves, minor inconveniences"
+
+      expectant_black:
+        criteria: "Cannot be saved with available resources OR consuming resources won't help"
+        action: "Do not allocate resources"
+        examples: "Legacy systems requiring full rewrite, issues beyond team capability"
+
+    anti_patterns:
+      - "Helping whoever asks first (FIFO in crisis)"
+      - "Spending all resources on unsalvageable case"
+      - "Ignoring severity because task is 'interesting'"
+      - "Static triage without reassessment"
+      - "Treating all urgent requests as immediate"
+
+    example:
+      context: "Tech debt crisis - multiple critical bugs"
+      bugs:
+        A: "Payment system down - immediate (will lose revenue now)"
+        B: "Minor UI glitch - minor (annoying but functional)"
+        C: "Database corruption - delayed (serious but stable for now)"
+        D: "Legacy system failing - expectant (too tangled, must rewrite later)"
+      triage_order:
+        1: "A - Payment system (immediate - highest impact)"
+        2: "C - Database (delayed - prevent escalation)"
+        3: "B - UI glitch (minor - when bandwidth permits)"
+        skip: "D - Legacy system (expectant - don't patch, schedule rewrite)"
+      rationale: "Greatest good for greatest number of users"
+
+    source: "Medical Triage - START/SALT algorithms"

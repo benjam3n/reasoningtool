@@ -1,0 +1,1548 @@
+# Ordering Strategy Variations - Index
+# Different philosophies for sequencing steps in procedures
+# Each variation optimizes for different outcomes
+
+id: ordering_variations
+name: Ordering Strategy Variations
+version: "4.0.0"
+domain: core
+
+description: |
+  Alternative ordering strategies for procedure steps. The base order_procedure
+  uses a default prioritization. These variations offer different sequencing
+  philosophies, each optimal for different contexts.
+
+purpose: |
+  Not all tasks should be ordered the same way. A crisis needs fail-fast ordering;
+  a learning project needs information-gain ordering; a team project needs
+  parallel-maximizing ordering. This procedure helps select and apply the right
+  ordering strategy for the context.
+
+tags:
+  - ordering
+  - sequencing
+  - planning
+  - variations
+
+# ============================================
+# CATEGORY ORGANIZATION
+# ============================================
+# Files are organized by category groupings for easier navigation.
+# Each file contains related ordering variations.
+
+category_files:
+  risk_management.yaml:
+    categories: [risk_management]
+    description: "Orderings focused on managing uncertainty and preserving options"
+
+  motivation_psychology.yaml:
+    categories: [motivation_psychology]
+    description: "Orderings accounting for human psychological factors"
+
+  learning_discovery.yaml:
+    categories: [learning_discovery]
+    description: "Orderings optimized for acquiring knowledge and validation"
+
+  time_deadline.yaml:
+    categories: [time_deadline]
+    description: "Orderings driven by temporal constraints and deadlines"
+
+  resource_optimization.yaml:
+    categories: [resource_optimization]
+    description: "Orderings for maximizing throughput and efficiency"
+
+  fairness_allocation.yaml:
+    categories: [fairness_allocation]
+    description: "Orderings balancing competing priorities and preventing starvation"
+
+  crisis_triage.yaml:
+    categories: [crisis_triage]
+    description: "Orderings for resource-constrained emergency situations"
+
+  negotiation_strategy.yaml:
+    categories: [negotiation_strategy]
+    description: "Orderings for strategic interactions and negotiations"
+
+  progressive_building.yaml:
+    categories: [progressive_building]
+    description: "Orderings building complexity incrementally"
+
+  communication_narrative.yaml:
+    categories: [communication_narrative]
+    description: "Orderings for presentations and audience engagement"
+
+  priority_frameworks.yaml:
+    categories: [priority_frameworks]
+    description: "Classic priority frameworks for systematic ranking"
+
+  architecture_design.yaml:
+    categories: [architecture_design]
+    description: "Orderings for software development direction"
+
+  graph_traversal.yaml:
+    categories: [graph_traversal]
+    description: "Orderings from fundamental graph traversal algorithms"
+
+  algorithmic_optimization.yaml:
+    categories: [algorithmic_optimization]
+    description: "Orderings based on classic algorithm design paradigms"
+
+  constraint_solving.yaml:
+    categories: [constraint_solving]
+    description: "Orderings for constraint satisfaction and guided search"
+
+  queue_scheduling.yaml:
+    categories: [queue_scheduling]
+    description: "Orderings for managing queues and priorities"
+
+  local_search.yaml:
+    categories: [local_search]
+    description: "Orderings based on local search optimization"
+
+  population_based_search.yaml:
+    categories: [population_based_search]
+    description: "Orderings maintaining multiple candidate solutions"
+
+  bandit_exploration.yaml:
+    categories: [bandit_exploration]
+    description: "Orderings balancing exploration and exploitation"
+
+  diversity_search.yaml:
+    categories: [diversity_search]
+    description: "Orderings prioritizing behavioral diversity and novelty"
+
+  music_composition_performance.yaml:
+    categories: [music_composition_performance]
+    description: "Orderings inspired by musical forms and performance"
+
+  military_strategy.yaml:
+    categories: [military_strategy]
+    description: "Orderings from military doctrine and strategic principles"
+
+  project_management.yaml:
+    categories: [project_management]
+    description: "Orderings from formal project management methodologies"
+
+  pedagogy_educational.yaml:
+    categories: [pedagogy_educational]
+    description: "Orderings based on learning science and educational psychology"
+
+  detection_verification.yaml:
+    categories: [detection_verification]
+    description: "Orderings for detecting cheating, fraud, and anomalies"
+
+  strategic_deception.yaml:
+    categories: [strategic_deception]
+    description: "Orderings for legitimate competitive misdirection"
+
+# ============================================
+# VARIATION CATEGORIES SUMMARY
+# ============================================
+variation_categories:
+
+  risk_management:
+    id: risk_management
+    name: "Risk Management Orderings"
+    description: |
+      Orderings focused on managing uncertainty, preserving options, and
+      handling irreversible decisions. Use these when the stakes are high
+      and you need to minimize downside risk or maintain flexibility.
+    member_variations:
+      - fail_fast_ordering
+      - reversibility_ordering
+      - option_preserving_ordering
+      - defense_in_depth_ordering
+    when_to_consider: |
+      - High uncertainty about feasibility or outcomes
+      - Expensive consequences of wrong decisions
+      - Irreversible actions that foreclose options
+      - Safety-critical systems requiring redundancy
+      - Need to validate assumptions before major investment
+
+  motivation_psychology:
+    id: motivation_psychology
+    name: "Motivation & Psychology Orderings"
+    description: |
+      Orderings that account for human psychological factors like energy,
+      motivation, habits, and engagement. Essential for human executors
+      who need to maintain sustainable performance over time.
+    member_variations:
+      - momentum_ordering
+      - energy_aware_ordering
+      - energy_envelope_ordering
+      - anchor_based_ordering
+    when_to_consider: |
+      - Human executor (not automated)
+      - Low motivation or energy levels
+      - Long work sessions requiring pacing
+      - Building new habits or routines
+      - Need to maintain stakeholder engagement
+
+  learning_discovery:
+    id: learning_discovery
+    name: "Learning & Discovery Orderings"
+    description: |
+      Orderings optimized for acquiring knowledge, validating hypotheses,
+      and iterative learning. Use when the goal is understanding rather
+      than just completion, or when requirements are uncertain.
+    member_variations:
+      - learning_optimized_ordering
+      - curiosity_driven_ordering
+      - build_measure_learn_ordering
+    when_to_consider: |
+      - Exploratory projects with evolving requirements
+      - Research or investigation tasks
+      - Validating product-market fit
+      - Situations with many unknown unknowns
+      - When learning drives future decisions
+
+  time_deadline:
+    id: time_deadline
+    name: "Time & Deadline Management Orderings"
+    description: |
+      Orderings driven by temporal constraints, deadlines, and timing
+      requirements. Use when external time pressures dominate or when
+      multiple workstreams must converge at specific moments.
+    member_variations:
+      - deadline_driven_ordering
+      - critical_ratio_ordering
+      - peak_targeting_ordering
+      - convergence_timing_ordering
+    when_to_consider: |
+      - Hard external deadlines exist
+      - Multiple deliverables with different due dates
+      - Peak performance needed at specific time (demos, launches)
+      - Multiple parallel workstreams that must converge
+      - Dynamic environment where priorities shift
+
+  resource_optimization:
+    id: resource_optimization
+    name: "Resource Optimization Orderings"
+    description: |
+      Orderings focused on maximizing throughput, minimizing waste,
+      and efficiently utilizing available resources. Use when efficiency
+      and resource utilization are primary concerns.
+    member_variations:
+      - throughput_optimized_ordering
+      - parallel_maximizing_ordering
+      - dependency_fanout_ordering
+      - vital_few_first_ordering
+      - batch_vs_stream_ordering
+      - demand_driven_ordering
+    when_to_consider: |
+      - Many tasks of varying duration
+      - Team execution with multiple people
+      - Need to maximize completions per unit time
+      - Want to minimize context-switching costs
+      - Uneven distribution of value across tasks
+
+  fairness_allocation:
+    id: fairness_allocation
+    name: "Fairness & Allocation Orderings"
+    description: |
+      Orderings that balance competing priorities, prevent starvation,
+      and allocate resources proportionally. Use when multiple stakeholders
+      or categories need fair treatment over time.
+    member_variations:
+      - weighted_fairness_ordering
+      - round_robin_ordering
+      - proportional_confidence_ordering
+    when_to_consider: |
+      - Multiple stakeholders with different importance levels
+      - Must prevent any category from being ignored
+      - Need predictable, bounded wait times
+      - Allocating across uncertain options
+      - Long-running system where fairness matters
+
+  crisis_triage:
+    id: crisis_triage
+    name: "Crisis & Triage Orderings"
+    description: |
+      Orderings for resource-constrained emergency situations where
+      not everything can be addressed. Use when you must maximize
+      positive outcomes with limited resources, accepting some losses.
+    member_variations:
+      - triage_severity_ordering
+    when_to_consider: |
+      - Resource-constrained crisis situations
+      - Multiple urgent competing demands
+      - Some items cannot be saved regardless of effort
+      - Need to maximize overall positive outcomes
+      - Must make hard prioritization decisions
+
+  negotiation_strategy:
+    id: negotiation_strategy
+    name: "Negotiation & Strategy Orderings"
+    description: |
+      Orderings for strategic interactions, negotiations, and situations
+      where the sequence of actions affects others' responses. Use when
+      dealing with counterparties or optimizing trade-offs.
+    member_variations:
+      - commitment_first_ordering
+      - concession_patterned_ordering
+      - information_position_ordering
+      - diminishing_returns_ordering
+    when_to_consider: |
+      - Negotiation or competitive contexts
+      - Need to shape how others respond
+      - Trade-offs where giving up something
+      - Iterative work with decreasing returns
+      - When observation before action is valuable
+
+  progressive_building:
+    id: progressive_building
+    name: "Progressive Building Orderings"
+    description: |
+      Orderings that build complexity incrementally, ensuring each step
+      works before adding the next. Use for learning, training, or
+      building systems where foundations matter.
+    member_variations:
+      - scaffolded_progression_ordering
+      - prerequisite_chain_ordering
+    when_to_consider: |
+      - Learning new skills or technologies
+      - Building complex systems incrementally
+      - Training or onboarding processes
+      - When gaps in foundation cause later failures
+      - Prototyping with increasing fidelity
+
+  communication_narrative:
+    id: communication_narrative
+    name: "Communication & Narrative Orderings"
+    description: |
+      Orderings for presentations, writing, and communication where
+      the sequence affects audience engagement and comprehension.
+      Use when structuring content for human consumption.
+    member_variations:
+      - tension_arc_ordering
+      - inverted_pyramid_ordering
+    when_to_consider: |
+      - Presentations or pitches
+      - Status updates and reports
+      - Content that may be truncated
+      - Need to engage and satisfy audience
+      - Executive communication
+
+  priority_frameworks:
+    id: priority_frameworks
+    name: "Priority Framework Orderings"
+    description: |
+      Orderings based on classic priority frameworks that classify
+      items by urgency, importance, constraints, or recency.
+      Use when you need a systematic way to rank items.
+    member_variations:
+      - urgency_importance_ordering
+      - most_constrained_first_ordering
+      - recency_weighted_ordering
+    when_to_consider: |
+      - Overwhelmed with mixed priorities
+      - Scheduling with many constraints
+      - Context-switching between workstreams
+      - Urgency crowding out importance
+      - Items have restricted choices/options
+
+  architecture_design:
+    id: architecture_design
+    name: "Architecture & Design Orderings"
+    description: |
+      Orderings for software development that determine whether to
+      start from interfaces (outside-in) or domain logic (inside-out).
+      Use when building systems with external consumers or complex domains.
+    member_variations:
+      - outside_in_ordering
+      - inside_out_ordering
+    when_to_consider: |
+      - Building systems with external consumers
+      - Contract or interface must be stable
+      - Complex business rules that must be correct
+      - Multiple teams need to integrate
+      - Need to decide build direction
+
+  graph_traversal:
+    id: graph_traversal
+    name: "Graph Traversal Orderings"
+    description: |
+      Orderings derived from fundamental graph traversal algorithms.
+      Use when problems have explicit dependency structures, need
+      shortest paths, or involve exploring tree/graph structures.
+    member_variations:
+      - topological_sort_ordering
+      - breadth_first_ordering
+      - depth_first_ordering
+      - bidirectional_search_ordering
+    when_to_consider: |
+      - Tasks have explicit dependencies (DAG)
+      - Need shortest path (fewest steps)
+      - Need to explore all paths exhaustively
+      - Know both start and goal states
+      - Building/compiling with dependencies
+
+  algorithmic_optimization:
+    id: algorithmic_optimization
+    name: "Algorithmic Optimization Orderings"
+    description: |
+      Orderings based on classic algorithm design paradigms: greedy,
+      dynamic programming, divide-and-conquer, and branch-and-bound.
+      Use when problems have optimal substructure or can be decomposed.
+    member_variations:
+      - greedy_local_ordering
+      - dynamic_subproblem_ordering
+      - divide_conquer_ordering
+      - branch_bound_ordering
+    when_to_consider: |
+      - Local optimum leads to global optimum (greedy)
+      - Overlapping subproblems exist (DP)
+      - Problem splits into independent parts (D&C)
+      - Optimization with computable bounds (B&B)
+      - Mathematical optimization problems
+
+  constraint_solving:
+    id: constraint_solving
+    name: "Constraint Solving Orderings"
+    description: |
+      Orderings for constraint satisfaction and guided search problems.
+      Use when building solutions incrementally with constraints or
+      when heuristics can guide search toward goals.
+    member_variations:
+      - backtrack_prune_ordering
+      - heuristic_guided_ordering
+    when_to_consider: |
+      - Constraint satisfaction problems
+      - Can validate partial solutions
+      - Have heuristic estimate to goal
+      - Puzzles, scheduling, planning
+      - Need systematic exploration with pruning
+
+  queue_scheduling:
+    id: queue_scheduling
+    name: "Queue & Scheduling Orderings"
+    description: |
+      Orderings for managing queues, processing items by priority,
+      and systematic debugging. Use when items have priorities or
+      when searching for root causes.
+    member_variations:
+      - priority_queue_ordering
+      - uniform_cost_ordering
+      - bisection_debugging_ordering
+    when_to_consider: |
+      - Items have varying priorities
+      - Weighted graph shortest path needed
+      - Root cause unknown among many possibilities
+      - Priorities may change dynamically
+      - Need efficient access to highest priority
+
+  local_search:
+    id: local_search
+    name: "Local Search Orderings"
+    description: |
+      Orderings based on local search optimization: improving from
+      current position, escaping local optima, and systematic exploration
+      with memory. Use for optimization without global structure.
+    member_variations:
+      - hill_climbing_ordering
+      - simulated_annealing_ordering
+      - random_restart_ordering
+      - tabu_search_ordering
+    when_to_consider: |
+      - Optimization with clear neighbor structure
+      - Need to escape local optima
+      - Many local optima exist
+      - Good-enough solution acceptable
+      - Want to avoid cycling in search
+
+  population_based_search:
+    id: population_based_search
+    name: "Population-Based Search Orderings"
+    description: |
+      Orderings that maintain multiple candidate solutions or use
+      iterative deepening. Use when exploring multiple regions
+      simultaneously or when memory/optimality trade-offs matter.
+    member_variations:
+      - genetic_evolutionary_ordering
+      - beam_search_ordering
+      - iterative_deepening_ordering
+    when_to_consider: |
+      - Complex optimization with many local optima
+      - Need to explore multiple regions simultaneously
+      - Limited memory but need optimal solution
+      - Large branching factor, limited resources
+      - Parallel evaluation possible
+
+  bandit_exploration:
+    id: bandit_exploration
+    name: "Bandit Exploration Orderings"
+    description: |
+      Orderings from multi-armed bandit algorithms for balancing
+      exploration of unknown options with exploitation of known good
+      options. Use for sequential decision-making with learning.
+    member_variations:
+      - epsilon_greedy_ordering
+      - thompson_sampling_ordering
+      - softmax_boltzmann_ordering
+      - ucb_exploration_ordering
+      - monte_carlo_tree_ordering
+    when_to_consider: |
+      - Need to balance exploration and exploitation
+      - Sequential decisions with learning
+      - A/B testing and experimentation
+      - Can model uncertainty about options
+      - Large search spaces (games, planning)
+
+  diversity_search:
+    id: diversity_search
+    name: "Diversity Search Orderings"
+    description: |
+      Orderings that prioritize behavioral diversity, novelty, and
+      coverage of solution space. Use when you need multiple diverse
+      solutions or when objectives are deceptive.
+    member_variations:
+      - novelty_search_ordering
+      - go_explore_ordering
+      - map_elites_ordering
+      - levy_flight_ordering
+      - quality_diversity_ordering
+    when_to_consider: |
+      - Want diverse solutions, not just one
+      - Objective is deceptive (many local optima)
+      - Need to illuminate solution landscape
+      - Building repertoire of options
+      - Targets are sparse and randomly distributed
+
+  music_composition_performance:
+    id: music_composition_performance
+    name: "Music Composition & Performance Orderings"
+    description: |
+      Orderings inspired by musical forms and performance practices.
+      Use when content needs narrative structure, thematic development,
+      or audience engagement over extended experiences.
+    member_variations:
+      - sonata_form_ordering
+      - theme_and_variations_ordering
+      - fugue_construction_ordering
+      - rondo_form_ordering
+      - call_and_response_ordering
+      - crescendo_building_ordering
+      - concert_setlist_ordering
+    when_to_consider: |
+      - Content needs introduce-develop-resolve narrative arc
+      - Teaching same concept through multiple examples/contexts
+      - Multiple voices/perspectives must combine harmoniously
+      - Key message needs reinforcement through repetition
+      - Work proceeds through dialogic exchange
+      - Building toward climactic reveal or announcement
+      - Extended experience needs energy management
+
+  military_strategy:
+    id: military_strategy
+    name: "Military Strategy Orderings"
+    description: |
+      Orderings derived from military doctrine and strategic principles.
+      Use when facing active competition, time pressure, distributed
+      execution, or when decisive action at key points is required.
+    member_variations:
+      - ooda_loop_ordering
+      - schwerpunkt_ordering
+      - auftragstaktik_ordering
+      - economy_of_force_ordering
+      - concentration_of_force_ordering
+      - interior_lines_ordering
+      - culminating_point_ordering
+      - center_of_gravity_ordering
+      - phases_of_operations_ordering
+    when_to_consider: |
+      - Active competitor/adversary will react to your actions
+      - Need to act faster than environment changes
+      - There is a decisive point where victory makes everything easier
+      - Execution will be distributed with local autonomy needed
+      - Resources insufficient for all objectives simultaneously
+      - Facing multiple separated threats/competitors
+      - Risk of overextension or unsustainable commitments
+      - Work has distinct preparation, execution, and sustain phases
+
+  project_management:
+    id: project_management
+    name: "Project Management Orderings"
+    description: |
+      Orderings from formal project management methodologies (PERT, CPM,
+      CCPM, Agile). Use when managing schedules, resources, and uncertainty
+      in complex multi-person projects with explicit dependencies.
+    member_variations:
+      - pert_ordering
+      - critical_path_ordering
+      - critical_chain_ordering
+      - agile_sprint_ordering
+      - earned_value_ordering
+      - resource_leveling_ordering
+      - fast_tracking_crashing_ordering
+    when_to_consider: |
+      - Managing complex project schedules
+      - Need probabilistic duration estimates
+      - Resource constraints affect scheduling
+      - Must compress schedule to meet deadline
+      - Tracking earned value and schedule variance
+      - Multiple parallel workstreams with dependencies
+      - Need to optimize critical path or critical chain
+
+  pedagogy_educational:
+    id: pedagogy_educational
+    name: "Pedagogy & Educational Theory Orderings"
+    description: |
+      Orderings based on learning science research and educational psychology.
+      Use when learning, skill-building, or long-term retention is a primary
+      goal. These variations optimize for durable understanding rather than
+      immediate performance.
+    member_variations:
+      - spiral_curriculum_ordering
+      - mastery_learning_ordering
+      - cognitive_load_ordering
+      - worked_examples_ordering
+      - fading_scaffolds_ordering
+      - interleaved_practice_ordering
+      - spaced_repetition_ordering
+      - desirable_difficulties_ordering
+    when_to_consider: |
+      - Learning or skill-building is a primary goal
+      - Long-term retention matters more than immediate performance
+      - Material has high intrinsic complexity
+      - Learners are novices who need scaffolding
+      - Teaching hierarchical skills where gaps compound
+      - Building intuition before formal understanding
+      - Training with eventual autonomous performance
+      - Need to counter illusions of competence
+
+  detection_verification:
+    id: detection_verification
+    name: "Detection & Verification Orderings"
+    description: |
+      Orderings optimized for detecting cheating, fraud, deception, and anomalies.
+      Use when investigating potential malfeasance, verifying integrity, or
+      establishing whether someone or something can be trusted. These variations
+      structure investigative and verification steps to maximize detection probability
+      while minimizing false positives and protecting against detection evasion.
+    member_variations:
+      - forensic_audit_ordering
+      - benford_anomaly_ordering
+      - academic_integrity_ordering
+      - anti_cheat_behavioral_ordering
+      - baseline_deviation_ordering
+      - cognitive_load_interview_ordering
+      - peace_model_ordering
+      - mice_access_ordering
+      - behavioral_tells_ordering
+      - trust_but_verify_ordering
+      - layered_verification_ordering
+    when_to_consider: |
+      - Investigating potential fraud, cheating, or deception
+      - Auditing financial records or transactions
+      - Verifying academic or professional integrity
+      - Detecting anomalies in behavioral or statistical patterns
+      - Conducting interviews where deception is possible
+      - Vetting individuals for sensitive access
+      - Building verification systems for high-stakes decisions
+      - Counter-intelligence or security screening
+      - Validating claims before trusting them
+
+  strategic_deception:
+    id: strategic_deception
+    name: "Strategic Deception Orderings"
+    description: |
+      Orderings for legitimate competitive, adversarial, and performance contexts
+      where the sequence of actions is designed to influence opponent perception,
+      manage attention, or create strategic advantage through misdirection.
+      Derived from magic/illusion performance, military deception doctrine,
+      game theory signaling, poker strategy, and negotiation tactics.
+
+      LEGITIMATE USE CASES ONLY:
+      - Competitive strategy and game theory
+      - Magic and illusion performance sequencing
+      - Poker and bluffing strategy
+      - Military deception (feints, misdirection) in authorized contexts
+      - Negotiation tactics (anchoring, strategic disclosure)
+      - Red team / penetration testing (authorized security testing)
+      - Surprise reveals in presentations and announcements
+      - Competitive business strategy
+    member_variations:
+      - misdirection_attention_ordering
+      - forcing_choice_ordering
+      - signal_manipulation_ordering
+      - layered_deception_ordering
+      - tempo_disruption_ordering
+      - strategic_revelation_ordering
+      - false_pattern_ordering
+      - leveling_metagame_ordering
+    when_to_consider: |
+      - Competitive/adversarial context with strategic opponent
+      - Performance art requiring audience attention management
+      - Authorized security testing (red team exercises)
+      - Negotiation where information asymmetry is leverage
+      - Game-theoretic situations with signaling dynamics
+      - Presentations designed for maximum surprise impact
+      - Situations where apparent intent differs from true intent
+      - When opponent is analyzing and predicting your moves
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Default ordering doesn't fit the situation
+  - Context strongly favors one concern (risk, time, learning, etc.)
+  - Need to compare different ordering approaches
+  - Building STEPS document and need to justify sequence
+
+when_not_to_use:
+  - Steps have strict hard dependencies (order is forced)
+  - Only one or two steps (ordering is trivial)
+  - Already have externally-mandated sequence
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: steps
+    type: list
+    required: true
+    description: List of steps to order
+
+  - name: dependencies
+    type: dict
+    required: true
+    description: Dependency graph between steps
+
+  - name: context
+    type: enum
+    values: [default, crisis, learning, team, deadline, exploration, reversibility, throughput, demand, commitment, iterative, progression, dynamic, triage, peak, narrative, recency, anchor, constrained, convergence, fairness, options, envelope, concession, prerequisite, defense, sonata, theme_variations, fugue, rondo, call_response, crescendo, setlist]
+    required: false
+    default: default
+    description: Context that determines which ordering variation to apply
+
+  - name: executor_type
+    type: enum
+    values: [human_solo, ai_agent, team, automated]
+    required: false
+    description: Who executes affects energy and parallel considerations
+
+outputs:
+  - name: ordered_steps
+    type: list
+    description: Steps in recommended execution order
+
+  - name: ordering_rationale
+    type: string
+    description: Why this order was chosen
+
+  - name: alternative_orderings
+    type: list
+    description: Other valid orderings with trade-offs
+
+# ============================================
+# SELECTION PROCEDURE
+# ============================================
+selection_procedure:
+  name: "Select Ordering Variation"
+  version: "2.0.0"
+  description: |
+    A formalized system for selecting the optimal ordering variation.
+    Combines a decision tree for rapid narrowing, a scoring system for
+    nuanced multi-factor decisions, and a context questionnaire for
+    gathering the information needed to decide.
+
+  # ==========================================
+  # CONTEXT QUESTIONNAIRE
+  # ==========================================
+  context_questionnaire:
+    instructions: |
+      Answer each question to gather context. Questions are grouped by category.
+      Answers feed into the decision tree and scoring system.
+
+    categories:
+      constraints:
+        - id: Q_DEADLINE
+          question: "Is there a hard deadline driving the work?"
+          type: boolean
+          follow_up:
+            if_yes: Q_DEADLINE_IMMOVABLE
+        - id: Q_DEADLINE_IMMOVABLE
+          question: "Is the deadline immovable (external, contractual, event-based)?"
+          type: boolean
+        - id: Q_MULTIPLE_DEADLINES
+          question: "Are there multiple deadlines for different deliverables?"
+          type: boolean
+        - id: Q_RESOURCE_LIMITED
+          question: "Are resources (time, people, budget) severely constrained?"
+          type: boolean
+        - id: Q_DEPENDENCIES_STRICT
+          question: "Are there strict technical dependencies that force ordering?"
+          type: boolean
+
+      uncertainty:
+        - id: Q_FEASIBILITY_UNKNOWN
+          question: "Is the feasibility of the work unknown or uncertain?"
+          type: boolean
+        - id: Q_REQUIREMENTS_CHANGING
+          question: "Are requirements likely to change during execution?"
+          type: boolean
+        - id: Q_UNKNOWN_UNKNOWNS
+          question: "Do you suspect there are unknown unknowns to discover?"
+          type: boolean
+        - id: Q_NEED_VALIDATION
+          question: "Does this need validation from users/stakeholders before proceeding?"
+          type: boolean
+
+      executor:
+        - id: Q_EXECUTOR_TYPE
+          question: "Who will execute this work?"
+          type: enum
+          options: [human_solo, human_team, ai_agent, automated_system, mixed]
+        - id: Q_TEAM_SIZE
+          question: "If team, how many people?"
+          type: number
+          condition: Q_EXECUTOR_TYPE in [human_team, mixed]
+        - id: Q_ENERGY_MATTERS
+          question: "Does executor energy/fatigue need to be managed?"
+          type: boolean
+          condition: Q_EXECUTOR_TYPE in [human_solo, human_team]
+        - id: Q_SESSION_LENGTH
+          question: "How long is the work session?"
+          type: enum
+          options: [short_under_2h, medium_2_4h, long_over_4h, multi_day]
+
+      stakes:
+        - id: Q_IRREVERSIBLE_ACTIONS
+          question: "Are there irreversible or hard-to-reverse actions?"
+          type: boolean
+        - id: Q_HIGH_COST_FAILURE
+          question: "Would failure have high costs (financial, reputational, safety)?"
+          type: boolean
+        - id: Q_SAFETY_CRITICAL
+          question: "Is this safety-critical work requiring redundancy?"
+          type: boolean
+
+      nature_of_work:
+        - id: Q_LEARNING_PRIMARY
+          question: "Is learning or skill-building a primary goal?"
+          type: boolean
+        - id: Q_CREATIVE_WORK
+          question: "Is this primarily creative/generative work?"
+          type: boolean
+        - id: Q_OPTIMIZATION_WORK
+          question: "Is this optimization/improvement of existing work?"
+          type: boolean
+        - id: Q_DEBUGGING_DIAGNOSTIC
+          question: "Is this debugging or diagnostic work (finding root cause)?"
+          type: boolean
+        - id: Q_PRESENTATION_NARRATIVE
+          question: "Is this for presentation to an audience?"
+          type: boolean
+        - id: Q_NEGOTIATION_CONTEXT
+          question: "Is this in a negotiation or competitive context?"
+          type: boolean
+
+      military_strategy:
+        - id: Q_ACTIVE_COMPETITOR
+          question: "Is there an active competitor/adversary who will react to your actions?"
+          type: boolean
+        - id: Q_RAPID_TEMPO_NEEDED
+          question: "Do you need to act faster than the environment/competition changes?"
+          type: boolean
+        - id: Q_DECISIVE_POINT_EXISTS
+          question: "Is there one decisive point where victory would make everything else easier?"
+          type: boolean
+        - id: Q_DISTRIBUTED_EXECUTION
+          question: "Will execution be distributed with need for local autonomy?"
+          type: boolean
+        - id: Q_RESOURCES_FOR_ALL_FRONTS
+          question: "Do you have enough resources to fully address all objectives?"
+          type: boolean
+        - id: Q_MULTIPLE_SEPARATED_THREATS
+          question: "Are you facing multiple separated threats/competitors?"
+          type: boolean
+        - id: Q_RISK_OF_OVEREXTENSION
+          question: "Could success lead to overextension or unsustainable commitments?"
+          type: boolean
+        - id: Q_CAMPAIGN_HAS_PHASES
+          question: "Does this work have distinct preparation, execution, and sustain phases?"
+          type: boolean
+
+      pedagogy:
+        - id: Q_LONG_TERM_RETENTION
+          question: "Is long-term retention more important than immediate performance?"
+          type: boolean
+        - id: Q_LEARNER_NOVICE
+          question: "Is the learner a novice in this domain (no existing schemas)?"
+          type: boolean
+        - id: Q_MATERIAL_COMPLEX
+          question: "Does the material have high intrinsic complexity (many interacting elements)?"
+          type: boolean
+        - id: Q_SKILLS_HIERARCHICAL
+          question: "Are skills strictly hierarchical (gaps in earlier skills cause cascading failure)?"
+          type: boolean
+        - id: Q_MULTIPLE_TOPICS
+          question: "Are there multiple related topics/skills to learn?"
+          type: boolean
+        - id: Q_INTUITION_BEFORE_FORMAL
+          question: "Should learner build intuition before formal understanding?"
+          type: boolean
+        - id: Q_LEARNER_NEEDS_SUPPORT
+          question: "Does the learner currently need scaffolding/support to succeed?"
+          type: boolean
+        - id: Q_PROCEDURAL_SKILLS
+          question: "Are these procedural skills with clear solution steps?"
+          type: boolean
+
+      technical:
+        - id: Q_MEMORY_CONSTRAINED
+          question: "Is memory/working memory a constraint?"
+          type: boolean
+        - id: Q_PARALLEL_POSSIBLE
+          question: "Can multiple steps run in parallel?"
+          type: boolean
+        - id: Q_HEURISTIC_AVAILABLE
+          question: "Do you have a good heuristic for estimating progress/distance?"
+          type: boolean
+        - id: Q_EXPLORATION_NEEDED
+          question: "Is exploration of solution space needed (vs. exploitation)?"
+          type: boolean
+
+  # ==========================================
+  # DECISION TREE
+  # ==========================================
+  decision_tree:
+    instructions: |
+      Start at 'root'. For each node, evaluate the question.
+      Follow 'yes' or 'no' branch. Continue until you reach a 'recommend' node.
+      Some branches lead to the scoring system for more nuanced decisions.
+
+    nodes:
+      root:
+        question: "Are step dependencies strict and technically enforced?"
+        yes: strict_deps_branch
+        no: deadline_check
+
+      strict_deps_branch:
+        question: "Is this a build/compile/dependency resolution task?"
+        yes:
+          recommend: topological_sort
+          confidence: high
+          rationale: "Explicit dependencies require topological ordering"
+        no:
+          recommend: topological_sort
+          confidence: high
+          rationale: "Strict dependencies must be respected regardless of context"
+
+      deadline_check:
+        question: "Is there a hard, immovable deadline?"
+        yes: deadline_branch
+        no: crisis_check
+
+      deadline_branch:
+        question: "Are there multiple competing deadlines?"
+        yes:
+          recommend: critical_ratio_dynamic
+          confidence: high
+          rationale: "Multiple deadlines need dynamic rebalancing"
+        no: deadline_single_branch
+
+      deadline_single_branch:
+        question: "Is the deadline very tight with little buffer?"
+        yes:
+          recommend: deadline_driven
+          confidence: high
+          rationale: "Hard deadline with no slack dominates all other concerns"
+        no: deadline_with_options
+
+      deadline_with_options:
+        question: "Is there significant uncertainty about feasibility?"
+        yes:
+          recommend: fail_fast
+          confidence: high
+          rationale: "Even with deadline, must validate feasibility early"
+        no:
+          recommend: deadline_driven
+          confidence: medium
+          rationale: "Deadline exists but has buffer; work backward from constraint"
+
+      crisis_check:
+        question: "Is this a crisis/emergency with limited resources?"
+        yes: crisis_branch
+        no: uncertainty_check
+
+      crisis_branch:
+        question: "Are multiple systems/issues competing for attention?"
+        yes:
+          recommend: triage_severity
+          confidence: high
+          rationale: "Crisis requires triage - save what can be saved"
+        no:
+          recommend: fail_fast
+          confidence: high
+          rationale: "Single crisis item - validate critical path immediately"
+
+      uncertainty_check:
+        question: "Is there high uncertainty about feasibility or requirements?"
+        yes: uncertainty_branch
+        no: executor_check
+
+      uncertainty_branch:
+        question: "Do you need user/stakeholder validation?"
+        yes: validation_branch
+        no: exploration_branch
+
+      validation_branch:
+        question: "Can you build a quick prototype or MVP?"
+        yes:
+          recommend: build_measure_learn
+          confidence: high
+          rationale: "Validate with minimal viable product before full build"
+        no:
+          recommend: fail_fast
+          confidence: high
+          rationale: "Identify feasibility blockers as early as possible"
+
+      exploration_branch:
+        question: "Is the solution space well-defined with a clear goal?"
+        yes: search_strategy_branch
+        no: open_exploration_branch
+
+      search_strategy_branch:
+        question: "Do you have a good heuristic to estimate distance to goal?"
+        yes:
+          recommend: heuristic_guided
+          confidence: high
+          rationale: "Use A* style search with your heuristic"
+        no: no_heuristic_branch
+
+      no_heuristic_branch:
+        question: "Is memory/state tracking constrained?"
+        yes:
+          recommend: iterative_deepening
+          confidence: high
+          rationale: "Memory-efficient optimal search"
+        no:
+          recommend: breadth_first
+          confidence: medium
+          rationale: "Finds shortest path when heuristic unavailable"
+
+      open_exploration_branch:
+        question: "Is novelty/diversity more important than immediate quality?"
+        yes:
+          recommend: novelty_search
+          confidence: medium
+          rationale: "Maximize behavioral diversity, ignore fitness"
+        no: exploration_quality_branch
+
+      exploration_quality_branch:
+        question: "Do you need both quality AND diversity?"
+        yes:
+          recommend: quality_diversity
+          confidence: high
+          rationale: "MAP-Elites or similar to fill behavior-performance space"
+        no:
+          recommend: epsilon_greedy
+          confidence: medium
+          rationale: "Simple exploration with tunable randomness"
+
+      executor_check:
+        question: "Is this being executed by a team (2+ people)?"
+        yes: team_branch
+        no: solo_executor_check
+
+      team_branch:
+        question: "Is wall-clock time the primary constraint?"
+        yes:
+          recommend: parallel_maximizing
+          confidence: high
+          rationale: "Maximize parallel execution to minimize elapsed time"
+        no: team_other_concerns
+
+      team_other_concerns:
+        question: "Do team members have different skill levels?"
+        yes:
+          recommend: scaffolded_progression
+          confidence: medium
+          rationale: "Build skills incrementally, each step works standalone"
+        no: use_scoring_system
+
+      solo_executor_check:
+        question: "Is executor a human (vs AI/automated)?"
+        yes: human_solo_branch
+        no: automated_branch
+
+      human_solo_branch:
+        question: "Is this a long work session (4+ hours)?"
+        yes: long_session_branch
+        no: short_session_branch
+
+      long_session_branch:
+        question: "Is motivation/energy currently low?"
+        yes:
+          recommend: momentum
+          confidence: high
+          rationale: "Build momentum with quick wins to restore energy"
+        no:
+          recommend: energy_envelope
+          confidence: high
+          rationale: "Plan peaks and valleys over extended session"
+
+      short_session_branch:
+        question: "Is there a mix of hard and easy tasks?"
+        yes:
+          recommend: energy_aware
+          confidence: medium
+          rationale: "Match difficulty to energy levels"
+        no: nature_of_work_check
+
+      automated_branch:
+        question: "Is this a scheduling/assignment problem?"
+        yes: scheduling_branch
+        no: algorithmic_branch
+
+      scheduling_branch:
+        question: "Must items be processed fairly (no starvation)?"
+        yes:
+          recommend: round_robin
+          confidence: high
+          rationale: "Equal turns prevents starvation"
+        no:
+          recommend: priority_queue
+          confidence: high
+          rationale: "Dynamic priorities with arrivals/changes"
+
+      algorithmic_branch:
+        question: "Can the problem be divided into independent subproblems?"
+        yes:
+          recommend: divide_conquer
+          confidence: high
+          rationale: "Split, solve independently, combine results"
+        no:
+          recommend: greedy_local
+          confidence: medium
+          rationale: "Local optimum approach when divide-conquer not applicable"
+
+      nature_of_work_check:
+        question: "Is this primarily learning/skill-building?"
+        yes: learning_branch
+        no: work_type_branch
+
+      learning_branch:
+        question: "Are there strict prerequisites (topic A before topic B) where gaps cause cascading failure?"
+        yes: mastery_vs_prereq
+        no: learning_retention_check
+
+      mastery_vs_prereq:
+        question: "Is ensuring complete mastery at each stage critical?"
+        yes:
+          recommend: mastery_learning
+          confidence: high
+          rationale: "Gate progress on mastery to prevent accumulating gaps"
+        no:
+          recommend: prerequisite_chain
+          confidence: high
+          rationale: "Follow prerequisite dependencies for effective learning"
+
+      learning_retention_check:
+        question: "Is long-term retention more important than immediate performance?"
+        yes: retention_learning_branch
+        no: novice_check
+
+      retention_learning_branch:
+        question: "Are there multiple related topics/skills to learn?"
+        yes:
+          recommend: interleaved_practice
+          confidence: high
+          rationale: "Mixing topics forces discrimination and improves retention"
+        no:
+          recommend: spaced_repetition
+          confidence: high
+          rationale: "Optimal review intervals maximize retention with minimal effort"
+
+      novice_check:
+        question: "Is the learner a novice who needs scaffolding?"
+        yes: novice_learning_branch
+        no: complexity_check
+
+      novice_learning_branch:
+        question: "Are these procedural skills with clear solution steps?"
+        yes:
+          recommend: worked_examples
+          confidence: high
+          rationale: "Examples before practice reduces cognitive load for novices"
+        no:
+          recommend: fading_scaffolds
+          confidence: high
+          rationale: "Provide support initially, then gradually release responsibility"
+
+      complexity_check:
+        question: "Does the material have high intrinsic complexity (many interacting elements)?"
+        yes:
+          recommend: cognitive_load
+          confidence: high
+          rationale: "Sequence by element interactivity, build schemas before complexity"
+        no: intuition_check
+
+      intuition_check:
+        question: "Should learner build intuition before formal understanding?"
+        yes:
+          recommend: spiral_curriculum
+          confidence: high
+          rationale: "Revisit topics at increasing depth, concrete before abstract"
+        no:
+          recommend: learning_optimized
+          confidence: medium
+          rationale: "Maximize information gain per unit effort"
+
+      work_type_branch:
+        question: "Is this debugging/diagnostic work?"
+        yes:
+          recommend: bisection_debugging
+          confidence: high
+          rationale: "Binary search to find root cause efficiently"
+        no: presentation_check
+
+      presentation_check:
+        question: "Is this for presentation to an audience?"
+        yes: presentation_branch
+        no: optimization_check
+
+      presentation_branch:
+        question: "Might the audience not finish/read everything?"
+        yes:
+          recommend: inverted_pyramid
+          confidence: high
+          rationale: "Most important first, details in descending order"
+        no:
+          recommend: tension_arc
+          confidence: high
+          rationale: "Build dramatic tension to climax then resolve"
+
+      optimization_check:
+        question: "Is this optimization/improvement work?"
+        yes:
+          recommend: diminishing_returns
+          confidence: high
+          rationale: "Stop before returns drop below cost"
+        no: investigation_check
+
+      investigation_check:
+        question: "Is this an investigation, audit, or verification task?"
+        yes: investigation_branch
+        no: strategic_deception_check
+
+      investigation_branch:
+        question: "Does it involve financial records or transaction data?"
+        yes:
+          recommend: forensic_audit
+          confidence: high
+          rationale: "Automated red flags first, then relationship mapping, then confrontation"
+        no: interview_based_check
+
+      interview_based_check:
+        question: "Is this primarily interview-based investigation?"
+        yes: interview_deception_branch
+        no:
+          recommend: layered_verification
+          confidence: high
+          rationale: "Multiple independent verification methods catch different deception types"
+
+      interview_deception_branch:
+        question: "Is building rapport and information quality more important than detection?"
+        yes:
+          recommend: peace_model
+          confidence: high
+          rationale: "Ethical interviewing - complete account before challenging"
+        no:
+          recommend: baseline_deviation
+          confidence: high
+          rationale: "Establish baseline before probing sensitive topics"
+
+      strategic_deception_check:
+        question: "Is this a legitimate competitive context where strategic misdirection is appropriate?"
+        yes: deception_context_branch
+        no: competitive_check
+
+      deception_context_branch:
+        question: "Is attention management the primary concern (magic, presentations)?"
+        yes:
+          recommend: misdirection_attention
+          confidence: high
+          rationale: "Control where audience directs attention"
+        no: deception_game_theory_check
+
+      deception_game_theory_check:
+        question: "Is the opponent analyzing and predicting your patterns?"
+        yes:
+          recommend: leveling_metagame
+          confidence: high
+          rationale: "Operate one level above opponent's strategic thinking"
+        no:
+          recommend: signal_manipulation
+          confidence: medium
+          rationale: "Shape opponent beliefs through strategic signal ordering"
+
+      competitive_check:
+        question: "Is there an active competitor/adversary who will react to your actions?"
+        yes: competitive_branch
+        no: reversibility_check
+
+      competitive_branch:
+        question: "Do you need to act faster than the competition can react?"
+        yes:
+          recommend: ooda_loop
+          confidence: high
+          rationale: "Faster decision cycles outmaneuver slower opponents"
+        no: competitive_resources_check
+
+      competitive_resources_check:
+        question: "Are your resources limited relative to competitors?"
+        yes: concentration_branch
+        no: competitive_phases_check
+
+      concentration_branch:
+        question: "Is there one decisive point where winning would change everything?"
+        yes:
+          recommend: schwerpunkt
+          confidence: high
+          rationale: "Concentrate overwhelming force at the decisive point"
+        no:
+          recommend: economy_of_force
+          confidence: high
+          rationale: "Minimum necessary on secondary fronts, concentrate on main effort"
+
+      competitive_phases_check:
+        question: "Does this campaign have distinct preparation, action, and sustain phases?"
+        yes:
+          recommend: phases_of_operations
+          confidence: high
+          rationale: "Structure work into shape, decisive, and sustain phases"
+        no: reversibility_check
+
+      reversibility_check:
+        question: "Are there irreversible or high-cost-to-reverse actions?"
+        yes:
+          recommend: reversibility
+          confidence: high
+          rationale: "Delay irreversible actions until maximum certainty"
+        no: use_scoring_system
+
+      use_scoring_system:
+        action: "Use scoring system below for nuanced multi-factor decision"
+        confidence: medium
+        rationale: "Multiple factors present; scoring provides weighted selection"
+
+  # ==========================================
+  # CONFLICT RESOLUTION
+  # ==========================================
+  conflict_resolution:
+    instructions: |
+      Some variations fundamentally conflict. Use these rules to resolve.
+
+    conflict_pairs:
+      - pair: [fail_fast, momentum]
+        nature: "Opposite priorities (uncertainty vs. energy)"
+        resolution: "If uncertainty threatens project viability, fail_fast wins"
+        tiebreaker: fail_fast
+
+      - pair: [reversibility, commitment_first]
+        nature: "Opposite philosophies (preserve options vs. commit early)"
+        resolution: "If irreversible action affects third parties, reversibility wins"
+        tiebreaker: reversibility
+
+      - pair: [demand_driven, deadline_driven]
+        nature: "Pull vs. push conflict"
+        resolution: "External deadline always wins over internal pull system"
+        tiebreaker: deadline_driven
+
+      - pair: [throughput_optimized, learning_optimized]
+        nature: "Speed vs. depth conflict"
+        resolution: "If primary goal is learning, accept slower throughput"
+        tiebreaker: learning_optimized
+
+      - pair: [energy_aware, parallel_maximizing]
+        nature: "Individual pacing vs. team speed"
+        resolution: "Team context makes parallel_maximizing win"
+        tiebreaker: parallel_maximizing
+
+      - pair: [depth_first, breadth_first]
+        nature: "Memory vs. optimality trade-off"
+        resolution: "If memory constrained, depth_first; if need shortest path, breadth_first"
+        tiebreaker: breadth_first
+
+      - pair: [critical_path, critical_chain]
+        nature: "Traditional vs. buffer-based scheduling"
+        resolution: "If multitasking is a problem, critical_chain; if need clear accountability, critical_path"
+        tiebreaker: critical_chain
+
+      - pair: [agile_sprint, critical_path]
+        nature: "Iterative vs. predictive planning"
+        resolution: "If requirements are stable and deadlines firm, critical_path; if change expected, agile_sprint"
+        tiebreaker: agile_sprint
+
+      - pair: [pert, agile_sprint]
+        nature: "Upfront estimation vs. emergent understanding"
+        resolution: "If need probabilistic schedule for stakeholders, pert; if learning through doing, agile_sprint"
+        tiebreaker: agile_sprint
+
+      - pair: [fast_tracking_crashing, resource_leveling]
+        nature: "Schedule compression vs. resource smoothing"
+        resolution: "If deadline is hard constraint, fast_tracking_crashing; if resources are hard constraint, resource_leveling"
+        tiebreaker: fast_tracking_crashing
+
+    dominance_rules:
+      - rule: "Hard external deadline dominates all non-safety concerns"
+        applies_when: CF_HARD_DEADLINE is true
+        dominant: deadline_driven
+
+      - rule: "Safety-critical dominates all non-safety concerns"
+        applies_when: CF_SAFETY_CRITICAL is true
+        dominant: defense_in_depth
+
+      - rule: "Strict dependencies must be respected regardless of other factors"
+        applies_when: CF_STRICT_DEPENDENCIES is true
+        dominant: topological_sort
+
+      - rule: "Active crisis dominates normal prioritization"
+        applies_when: "Crisis or emergency situation"
+        dominant: triage_severity
+
+  # ==========================================
+  # HYBRID COMBINATIONS
+  # ==========================================
+  hybrid_strategies:
+    instructions: |
+      When multiple concerns are important, consider hybrid approaches.
+
+    common_hybrids:
+      - name: "Deadline + Fail-Fast"
+        combination: [deadline_driven, fail_fast]
+        when: "Hard deadline but significant uncertainty"
+        how: "Work backward from deadline; within that, prioritize uncertainty resolution"
+
+      - name: "Learning + Momentum"
+        combination: [learning_optimized, momentum]
+        when: "Learning goal but motivation is low"
+        how: "Choose learnings that also provide quick wins"
+
+      - name: "Parallel + Energy-Aware"
+        combination: [parallel_maximizing, energy_aware]
+        when: "Team execution with human members"
+        how: "Enable parallel work but respect individual energy cycles"
+
+      - name: "Fail-Fast + Reversibility"
+        combination: [fail_fast, reversibility]
+        when: "High uncertainty AND irreversible actions"
+        how: "Test uncertainty first; sequence reversible before irreversible"
+
+      - name: "Throughput + Fairness"
+        combination: [throughput_optimized, weighted_fairness]
+        when: "Many tasks with different priority classes"
+        how: "SPT within priority tiers; allocation across tiers by weight"
+
+      - name: "Exploration + Exploitation"
+        combination: [epsilon_greedy, greedy_local]
+        when: "Need to balance discovery with progress"
+        how: "Mostly exploit best known; occasionally explore randomly"
+
+      - name: "PERT + Critical Path"
+        combination: [pert, critical_path]
+        when: "Formal project with significant duration uncertainty"
+        how: "Use PERT three-point estimates to identify critical path with probability; focus on high-variance critical activities"
+
+      - name: "Critical Chain + Agile"
+        combination: [critical_chain, agile_sprint]
+        when: "Need buffer protection but also iterative delivery"
+        how: "Plan in sprints but include project buffer; track buffer consumption across sprints"
+
+      - name: "Earned Value + Agile"
+        combination: [earned_value, agile_sprint]
+        when: "Government/compliance context with agile delivery"
+        how: "Use story points as earned value; calculate SPI/CPI at sprint boundaries"
+
+      - name: "Resource Leveling + Critical Path"
+        combination: [resource_leveling, critical_path]
+        when: "Resource constraints affect critical path"
+        how: "Identify critical path first; level resources consuming only available slack; recalculate if critical path changes"
+
+      - name: "Fast-Tracking + PERT"
+        combination: [fast_tracking_crashing, pert]
+        when: "Must compress schedule with uncertain durations"
+        how: "Use PERT analysis to identify which parallel paths have highest schedule risk; crash high-variance critical activities first"
+
+  # ==========================================
+  # EXECUTION STEPS
+  # ==========================================
+  steps:
+    - id: 1
+      name: "Complete context questionnaire"
+      action: |
+        Answer questions from context_questionnaire above.
+        Focus on the categories most relevant to your situation.
+        Note which context factors (CF_*) apply.
+
+    - id: 2
+      name: "Traverse decision tree"
+      action: |
+        Start at decision_tree.nodes.root.
+        Follow yes/no branches based on questionnaire answers.
+        If you reach 'use_scoring_system', proceed to step 3.
+        Otherwise, note the recommendation and confidence level.
+
+    - id: 3
+      name: "Apply scoring system (if needed)"
+      action: |
+        If decision tree led to scoring, or if confidence is low:
+        - Add points for each applicable context factor
+        - Sum totals for each variation
+        - Select highest scoring variation
+        - Check confidence threshold
+
+    - id: 4
+      name: "Check for conflicts"
+      action: |
+        If top two variations conflict (see conflict_pairs):
+        - Apply resolution rule
+        - Consider hybrid approach if both concerns are critical
+
+    - id: 5
+      name: "Consider hybrid approach"
+      action: |
+        If multiple factors scored highly (difference < 2 points):
+        - Check hybrid_strategies for common combinations
+        - Design custom hybrid if needed
+
+    - id: 6
+      name: "Apply selected variation"
+      action: |
+        Use the prioritization rules from selected variation
+        to order the steps within dependency constraints.
+
+    - id: 7
+      name: "Document rationale"
+      action: |
+        In STEPS.md, note:
+        - Which ordering variation was used (or hybrid)
+        - Key context factors that drove the decision
+        - Decision tree path or scoring breakdown
+        - What trade-offs were accepted
+        - Confidence level of the selection
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - During STEPS generation to justify sequence
+    - When default ordering feels wrong for context
+    - When comparing alternative execution plans
+    - When explaining to stakeholders why this order
+
+  gates:
+    - gate: ordering_appropriate
+      question: "Is the selected ordering variation appropriate for context?"
+
+    - gate: dependencies_respected
+      question: "Does the order satisfy all hard dependencies?"
+
+  related_procedures:
+    - order_procedure: Base ordering algorithm
+    - steps_generation: Consumer of ordering output
+    - decomposition: Creates steps to be ordered
+    - parallel_identification: Related to parallel_maximizing variation

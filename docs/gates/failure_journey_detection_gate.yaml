@@ -1,0 +1,433 @@
+# Failure Journey Detection Gate
+# Checks if a goal/problem might actually be a failure pattern
+# Apply before planning to catch sustainable failure and strategic suboptimization
+
+id: failure_journey_detection_gate
+name: Failure Journey Detection Gate
+version: "1.1.0"
+domain: core
+
+description: |
+  Before planning how to achieve a goal or solve a problem,
+  check if it might actually be a FAILURE PATTERN.
+
+  Failure patterns:
+  - Level 1: Terminal failure (one-time destruction)
+  - Level 2: Sustainable failure (failing to keep failing)
+  - Level 3: Strategic suboptimization (good enough but never great)
+
+  Level 2 and 3 are traps. This gate detects them.
+
+purpose: |
+  - Prevent planning for goals that are actually failure patterns
+  - Make unconscious failure patterns conscious
+  - Give person choice: pursue failure knowingly, or escape
+
+when_to_apply: |
+  - After value elicitation, before goal journey tracing
+  - When someone has "tried this before" without success
+  - When progress seems perpetual without completion
+  - When success seems close but never arrives
+
+# ============================================
+# THE GATE
+# ============================================
+
+question: Could this goal/problem actually be serving a failure pattern?
+
+# ============================================
+# CHECK 1: SUSTAINABLE FAILURE
+# ============================================
+
+check_sustainable_failure:
+  name: "Sustainable Failure Check"
+  description: "Failing in a way that enables continued failing"
+
+  # ============================================
+  # FIRST: Check for legitimate iteration
+  # ============================================
+  # Multiple attempts is NOT failure if each produces measurable improvement.
+  # Must distinguish:
+  #   - Sustainable failure: same pattern, no improvement, forward trial-and-error
+  #   - Legitimate iteration: measurable improvement each cycle, backward reasoning
+
+  legitimate_iteration_exclusion:
+    description: |
+      If ALL of these are true, this is legitimate iteration, NOT sustainable failure:
+      1. Each iteration produces measurable improvement (not just activity)
+      2. Improvements come from backward reasoning (identifying gaps) not forward trial-and-error
+      3. The work is foundational - testing would fail for identified reasons
+      4. You can articulate what changed between iterations and why it's better
+
+    check_questions:
+      measurable_improvement:
+        question: "Can you point to specific, measurable improvement from each iteration?"
+        positive_sign: "Yes - can articulate what's better and how"
+        warning_sign: "No - similar outcome each time, or 'it feels like progress'"
+
+      backward_vs_forward:
+        question: "Did improvements come from identifying what was missing (backward) or just trying again (forward)?"
+        positive_sign: "Backward - analyzed what the system needed and built it"
+        warning_sign: "Forward - kept trying the same approach hoping it works"
+
+      foundational_necessity:
+        question: "Would testing now fail for reasons you've identified and are addressing?"
+        positive_sign: "Yes - specific gaps exist that must be filled before testing"
+        warning_sign: "No - could have tested at any point, just didn't"
+
+      articulate_changes:
+        question: "Can you describe exactly what changed between iterations and why it matters?"
+        positive_sign: "Yes - specific changes serving identified needs"
+        warning_sign: "No - vague sense of 'working on it'"
+
+    if_all_positive: |
+      This is LEGITIMATE ITERATION, not sustainable failure.
+      The pattern of multiple attempts without "completion" is CORRECT behavior
+      when building foundational capability.
+
+      Skip to check_strategic_suboptimization (this check passes).
+
+      Note: The REAL failure would have been to test prematurely and fail
+      for predictable reasons that backward reasoning identified.
+
+  # ============================================
+  # If not legitimate iteration, check for failure pattern
+  # ============================================
+
+  questions:
+    history:
+      question: "Have you pursued this (or similar) before?"
+      if_yes: "What happened? Did you complete it or cycle back?"
+      warning_sign: "Multiple attempts, same pattern, never finished"
+      note: "Only a warning sign if legitimate_iteration_exclusion failed"
+
+    proximity:
+      question: "Do you often get close to success but not quite there?"
+      if_yes: "What happens when you get close?"
+      warning_sign: "Repeated near-misses, obstacles appear at predictable points"
+
+    threat_of_success:
+      question: "What would you lose if you succeeded?"
+      probe_for:
+        - Identity ("I'm the one who struggles with X")
+        - Connection ("People help me because I'm struggling")
+        - Avoiding responsibility ("Can't be judged if I never finish")
+        - Comfort ("I know how to struggle, not how to succeed")
+      warning_sign: "Clear answer to what would be lost"
+
+    relief_at_failure:
+      question: "When things fall apart, is there any sense of relief?"
+      if_yes: "What's the relief about?"
+      warning_sign: "Relief exists, even if also disappointed"
+
+    identity:
+      question: "Is struggling with this part of who you are?"
+      probe_for:
+        - "I'm the person who can never quite..."
+        - "I've always had trouble with..."
+        - "This is my ongoing battle..."
+      warning_sign: "Struggle is identity-defining"
+
+  scoring:
+    indicators_present: 0  # Count of warning signs
+    threshold: 2
+    interpretation: |
+      If legitimate_iteration_exclusion passed: Skip to next check (not sustainable failure)
+
+      Otherwise:
+      0-1 indicators: Probably not sustainable failure
+      2-3 indicators: Possible sustainable failure - probe deeper
+      4-5 indicators: Likely sustainable failure - address before planning
+
+# ============================================
+# CHECK 2: STRATEGIC SUBOPTIMIZATION
+# ============================================
+
+check_strategic_suboptimization:
+  name: "Strategic Suboptimization Check"
+  description: "Keeping self in 'good enough but never great' state"
+
+  # ============================================
+  # FIRST: Check for legitimate foundational work
+  # ============================================
+  # Being "busy" is NOT suboptimization if the busyness is building capability
+  # that couldn't exist otherwise.
+
+  legitimate_foundation_exclusion:
+    description: |
+      If ALL of these are true, this is legitimate foundation-building, NOT suboptimization:
+      1. The work is building capability that didn't exist before
+      2. Backward reasoning identified this work as necessary
+      3. The "busyness" is targeted at specific identified gaps
+      4. Stopping would lose progress toward the actual goal, not just comfort
+
+    check_questions:
+      building_capability:
+        question: "Is this work creating new capability, or just maintaining current state?"
+        positive_sign: "Creating - system/skill/output that didn't exist before"
+        warning_sign: "Maintaining - keeping things from getting worse, treading water"
+
+      identified_necessity:
+        question: "Did backward reasoning identify this work as necessary?"
+        positive_sign: "Yes - traced from goal to this requirement"
+        warning_sign: "No - fell into it, or started without clear purpose"
+
+      targeted_busyness:
+        question: "Is the activity targeted at specific identified gaps?"
+        positive_sign: "Yes - can point to what gap each activity serves"
+        warning_sign: "No - general 'working on it' without specific targets"
+
+      stopping_consequence:
+        question: "What happens if you stop - lose progress or lose comfort?"
+        positive_sign: "Lose progress - concrete work would be abandoned"
+        warning_sign: "Lose comfort - would have to face bigger questions"
+
+    if_all_positive: |
+      This is LEGITIMATE FOUNDATIONAL WORK, not suboptimization.
+      The busyness is productive, not escapist.
+
+      Skip to check_failure_applied_to_others (this check passes).
+
+  # ============================================
+  # If not legitimate foundation, check for suboptimization
+  # ============================================
+
+  questions:
+    busyness:
+      question: "Are you too busy with this to question whether it's the right goal?"
+      probe_for:
+        - Activity that feels productive but doesn't advance
+        - No time for reflection
+        - Constant engagement without progress
+      warning_sign: "Busyness prevents stepping back"
+      note: "Only a warning sign if legitimate_foundation_exclusion failed"
+
+    preventing_reset:
+      question: "Is it never bad enough to force a major change?"
+      probe_for:
+        - "It's not great, but it's okay"
+        - "I can manage"
+        - "It's not worth blowing up"
+      warning_sign: "Comfort prevents necessary disruption"
+
+    avoiding_questions:
+      question: "What question are you avoiding by staying engaged with this?"
+      common_avoided_questions:
+        - "Is this the right path at all?"
+        - "Should I be doing something completely different?"
+        - "What do I actually want?"
+      warning_sign: "Clear avoided question exists"
+
+    beneficiary:
+      question: "Who benefits from you staying at this level?"
+      probe_for:
+        - Self (avoid risk/change)
+        - Others (dependent on your current state)
+        - System (designed to maintain status quo)
+      warning_sign: "Clear beneficiary of stasis"
+
+    full_stop_reaction:
+      question: "What would happen if you stopped completely for a month?"
+      probe_for:
+        - Fear of stopping
+        - "I can't stop"
+        - "Everything would fall apart"
+      warning_sign: "Stopping feels impossible or terrifying"
+
+  scoring:
+    indicators_present: 0  # Count of warning signs
+    threshold: 2
+    interpretation: |
+      If legitimate_foundation_exclusion passed: Skip to next check (not suboptimization)
+
+      Otherwise:
+      0-1 indicators: Probably not suboptimization
+      2-3 indicators: Possible suboptimization - probe deeper
+      4-5 indicators: Likely suboptimization - address before planning
+
+# ============================================
+# CHECK 3: APPLIED TO OTHERS
+# ============================================
+
+check_failure_applied_to_others:
+  name: "External Failure Pattern Check"
+  description: "Is someone else keeping you in a failure pattern?"
+
+  questions:
+    helper_motives:
+      question: "Who is 'helping' you with this? What do they gain from your struggle?"
+      warning_sign: "Helper benefits from continued struggle"
+
+    advice_quality:
+      question: "Does the advice you receive keep you on the same path?"
+      warning_sign: "Advice never suggests fundamental change"
+
+    competition:
+      question: "Is someone keeping you engaged but weakened?"
+      warning_sign: "Competitor wounds but doesn't kill"
+
+    dependency:
+      question: "Does someone depend on you staying at this level?"
+      warning_sign: "Others' stability requires your stasis"
+
+  scoring:
+    indicators_present: 0
+    threshold: 2
+    interpretation: |
+      0-1 indicators: Probably not external failure pattern
+      2+ indicators: Someone may be maintaining your failure - investigate
+
+# ============================================
+# OUTCOMES
+# ============================================
+
+outcomes:
+  no_failure_pattern:
+    condition: "All checks below threshold"
+    action: |
+      Proceed with goal journey tracing and planning.
+      No failure pattern detected.
+
+  possible_failure_pattern:
+    condition: "One check at or above threshold"
+    action: |
+      Pause before planning.
+      Probe deeper on the flagged area.
+      Consider: Is the stated goal the real goal?
+      Consider: What does the failure pattern serve?
+
+      Options:
+      1. Acknowledge and proceed (conscious failure)
+      2. Trace the REAL goal (what failure serves)
+      3. Address the pattern before planning
+
+  likely_failure_pattern:
+    condition: "Multiple checks at or above threshold"
+    action: |
+      Do NOT proceed with planning for stated goal.
+      The stated goal is likely not the real goal.
+
+      Required:
+      1. Trace what the failure pattern serves
+      2. Identify the actual intrinsic goal
+      3. Decide: pursue failure consciously, or escape?
+
+      If escape desired:
+      - Controlled demolition (force reset)
+      - Full stop (create space)
+      - Identity work (decouple from struggle)
+
+# ============================================
+# INTEGRATION WITH VALUE ELICITATION
+# ============================================
+
+value_elicitation_probes:
+  description: |
+    Add these probes to value elicitation when failure pattern is suspected.
+
+  additional_questions:
+    - "What would you lose if you actually achieved this?"
+    - "What does continuing to struggle with this give you?"
+    - "If you could never succeed at this, what would that mean?"
+    - "Is there part of you that doesn't want to succeed?"
+
+  interpreting_answers:
+    loss_answer_exists: |
+      If they can articulate what they'd lose by succeeding,
+      that loss might be connected to their real intrinsic goal.
+      Trace that instead.
+
+    struggle_gives_something: |
+      If struggling gives them something (identity, connection, etc.),
+      that something is being served by the failure.
+      That's a valid intrinsic goal - but failure isn't the only path to it.
+
+    part_doesnt_want: |
+      If part of them doesn't want to succeed,
+      that part has an intrinsic goal too.
+      Multiple intrinsic goals, in conflict.
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1_sustainable_failure:
+    input:
+      goal: "I want to finish my novel"
+      history: "I've been working on it for 5 years"
+      pattern: "I get to 80% done, then start a new project"
+
+    check_results:
+      sustainable_failure:
+        history: Yes - multiple attempts, same pattern
+        proximity: Yes - always gets close
+        threat_of_success: "If I finish, I have to show people. They might not like it."
+        relief_at_failure: "Honestly, yes, when I start something new, it's exciting again"
+        identity: "I'm a writer working on my novel" (present tense, ongoing)
+      score: 5/5 - likely sustainable failure
+
+    interpretation: |
+      The goal is not "finish novel."
+      The goal is "be a writer working on a novel" (identity).
+      Finishing would end that identity.
+      Sustainable failure preserves it.
+
+    options:
+      1. Acknowledge: "I don't actually want to finish. I want to be writing. That's okay."
+      2. Trace real goal: Identity as writer → Meaning/Purpose
+      3. Escape: Decouple identity from this specific novel. Finish it or kill it.
+
+  example_2_suboptimization:
+    input:
+      goal: "I want to advance in my career"
+      pattern: "I work hard but never get promoted"
+
+    check_results:
+      suboptimization:
+        busyness: Yes - "I'm too busy doing my job to think about my career"
+        preventing_reset: Yes - "It's not bad enough to quit"
+        avoiding_questions: "Should I be in a different field entirely?"
+        beneficiary: "My company likes me at this level - reliable, not threatening"
+        full_stop: "I can't take a break, everything would fall apart"
+      score: 5/5 - likely suboptimization
+
+    interpretation: |
+      The stated goal (advance) conflicts with actual behavior (stay busy, don't question).
+      The real pattern is strategic suboptimization - maintaining the trap.
+      Someone benefits (company, fear of change).
+
+    options:
+      1. Acknowledge: "I'm choosing security over advancement. That's okay if conscious."
+      2. Trace real goal: Security/Stability (not advancement)
+      3. Escape: Full stop. Create space. Question the path.
+
+  example_3_no_pattern:
+    input:
+      goal: "I want to learn Spanish"
+      history: "Never tried before"
+
+    check_results:
+      sustainable_failure: 0/5 - no history, no pattern
+      suboptimization: 0/5 - new goal, no trap yet
+
+    interpretation: |
+      No failure pattern detected.
+      Proceed with goal journey tracing and planning.
+
+# ============================================
+# SELF-VALIDATION
+# ============================================
+
+self_validation:
+  goal_journey:
+    action: "Create failure journey detection gate"
+    serves: "Enable detection of failure patterns before planning"
+    serves: "Prevent wasted effort on goals that are actually failure patterns"
+    serves: "Support conscious choice about pursuing or escaping failure"
+    serves: "Make GOSM more effective at serving actual intrinsic goals"
+    intrinsic: "Effectiveness / Understanding"
+
+  chain_is_clear: true
+  each_step_serves_next: true
+  satisfying: true

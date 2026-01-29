@@ -1,0 +1,526 @@
+# Adaptive Extraction Pipeline - Learn and adapt to user preferences
+# Meta-procedure for intelligent procedure extraction
+
+id: adaptive_extraction_pipeline
+name: Adaptive Extraction Pipeline
+version: "1.0.0"
+domain: meta
+
+description: Breadth-first, learned extraction pipeline that clarifies goals first, samples broadly, learns user preferences, and extracts selectively from highest-value items.
+
+long_description: |
+  This pipeline adapts to user preferences through a multi-phase approach:
+
+  Phase 0: Goal Clarification - Use question_generation to understand priorities
+  Phase 1: Sample and Learn - Broad sampling with user calibration
+  Phase 2: Scale Triage - Apply learned model to all sources
+  Phase 3: Selective Extraction - Deep extraction on highest-value items only
+
+  The highest-leverage intervention is improving triage signal quality
+  (leverage_points Point 6: Information Flows). A better triage model
+  that accurately predicts value is worth more than processing 10x
+  the volume with mediocre triage.
+
+  Key insight: Learning the user's evaluation pattern before scaling
+  extraction dramatically improves efficiency by focusing effort on
+  content that actually matches user priorities.
+
+tags:
+  - meta
+  - extraction
+  - learning
+  - calibration
+  - triage
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - When starting extraction from a new user's sources
+  - When user priorities are unclear or unstated
+  - When processing large source collections (100+ videos)
+  - When extraction budget requires high precision targeting
+  - When previous extraction didn't match user expectations
+  - After changing goals or priorities
+  - When optimizing extraction ROI is critical
+
+when_not_to_use:
+  - For small, well-defined extraction tasks (use automated_extraction_pipeline)
+  - When user preferences are already well-understood
+  - When all sources must be processed regardless of value
+  - For urgent extractions without time for calibration
+  - When sources are uniform in value (no need to prioritize)
+  - For single-source extraction
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: source_collection
+    type: list
+    required: true
+    description: |
+      Collection of sources to process, typically:
+      - Multiple YouTube channels
+      - Book collection
+      - Paper database
+
+  - name: extraction_budget
+    type: object
+    required: true
+    description: |
+      Time and cost constraints:
+      - time_hours: Available extraction time
+      - cost_usd: Maximum API spend
+      - procedures_target: Desired number of procedures
+
+  - name: initial_preferences
+    type: object
+    required: false
+    description: |
+      Any known preferences (optional, will be refined):
+      - priority_domains: Areas of focus
+      - procedure_types: Types of procedures wanted
+      - skip_criteria: What to avoid
+
+outputs:
+  - name: extraction_profile
+    type: object
+    description: Learned user preferences from calibration
+
+  - name: triage_results
+    type: list
+    description: Scored and ranked source list
+
+  - name: extracted_procedures
+    type: list
+    description: Procedures from selective extraction
+
+  - name: model_calibration
+    type: dict
+    description: Triage model accuracy metrics
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Clarify extraction goals (Phase 0)
+    action: |
+      Use question_generation to clarify extraction priorities:
+
+      WEIGHTING QUESTION:
+      "When evaluating for extraction, which matters MORE?"
+      - Procedure density (more 'how to' per minute)
+      - Uniqueness (rare insights, can't find elsewhere)
+      - Direct relevance (applicable to current goals)
+      - Roughly equal (balanced)
+
+      PROCEDURE TYPES QUESTION:
+      "What types of procedures are you MOST interested in?"
+      - Technical methods (how to build/code/engineer)
+      - Thinking patterns (how experts reason/decide)
+      - Research methods (how to find/validate/synthesize)
+      - All types equally
+
+      PRIORITY DOMAINS QUESTION:
+      "What are your CURRENT priority domains?"
+      - AI/ML systems, Business/income, Research/learning
+      - Health/optimization, Engineering/hardware
+
+      SKIP THRESHOLD QUESTION:
+      "At what point would you SKIP a video entirely?"
+      - < 1 procedure expected
+      - Low uniqueness (could find elsewhere)
+      - Off-topic for current goals
+
+      Duration: 10-15 minutes
+    inputs:
+      - initial_preferences (if any)
+    outputs:
+      - extraction_profile:
+          weighting: "balanced | density_first | uniqueness_first | relevance_first"
+          procedure_types: list of desired types
+          priority_domains: list of focus areas
+          skip_criteria: list of skip conditions
+          abstraction_level: "meta_cognitive | domain_specific | both"
+    verification: |
+      User has answered all clarifying questions with clear preferences
+
+  - id: 2
+    name: Get broad sample (Phase 1)
+    action: |
+      Sample broadly across source collection:
+
+      1. Get video/content lists from sources
+         - ~10 recent items from each Tier 1 source
+         - Target: ~100 items total for calibration
+
+      2. Fetch transcript/content samples
+         - First ~2000 characters per item
+         - Enough to assess without full processing
+
+      3. Ensure diversity:
+         - Mix of sources
+         - Mix of content types
+         - Mix of topics
+    inputs:
+      - source_collection
+    outputs:
+      - sample_items: ~100 items with metadata
+      - sample_transcripts: first 2000 chars of each
+    verification: |
+      Sample covers all major sources with sufficient diversity
+
+  - id: 3
+    name: Run initial triage
+    action: |
+      Score each sampled item on extraction profile criteria:
+
+      DENSITY (1-5): How much is 'how to' vs 'what is'?
+      UNIQUENESS (1-5): Could find this knowledge elsewhere?
+      RELEVANCE (1-5): Matches priority domains?
+      EXPECTED_PROCEDURES (0-10): Estimated extractable procedures
+
+      Calculate composite score:
+      composite = (density * w_d + uniqueness * w_u + relevance * w_r)
+                  * (expected_procedures / 5)
+
+      where weights come from extraction_profile.weighting:
+      - balanced: w_d=0.33, w_u=0.33, w_r=0.33
+      - density_first: w_d=0.5, w_u=0.25, w_r=0.25
+      - uniqueness_first: w_d=0.25, w_u=0.5, w_r=0.25
+      - relevance_first: w_d=0.25, w_u=0.25, w_r=0.5
+    inputs:
+      - sample_items (from Step 2)
+      - sample_transcripts (from Step 2)
+      - extraction_profile (from Step 1)
+    outputs:
+      - initial_scores: composite score per item
+      - score_components: breakdown of each dimension
+    verification: |
+      All sampled items have complete scores
+
+  - id: 4
+    name: Calibrate with user ratings
+    action: |
+      User manually rates ~20 items to calibrate model:
+
+      1. Present items in random order
+      2. User rates each 1-10 for extraction value
+      3. Duration: ~1 hour (3 min per item)
+
+      Purpose: Learn where model predictions diverge from user preferences
+
+      Calibration output:
+      - Items where model overestimated (user rated lower)
+      - Items where model underestimated (user rated higher)
+      - Patterns in divergence
+    inputs:
+      - initial_scores (from Step 3)
+      - sample_items (subset for calibration)
+    outputs:
+      - calibration_set: 20 items with user ratings
+      - divergence_analysis: where model differs from user
+    verification: |
+      User has rated 20 items across score range
+
+  - id: 5
+    name: Validate triage model
+    action: |
+      Compare model predictions to user ratings:
+
+      Calculate correlation:
+      - Pearson correlation between predicted and actual scores
+      - Target: correlation > 0.7 means model is calibrated
+
+      If correlation < 0.7:
+      - Identify systematic biases
+      - Ask clarifying questions about divergences
+      - Adjust weights or criteria
+      - Re-run triage on calibration set
+
+      If correlation >= 0.7:
+      - Model is calibrated, proceed to Phase 2
+    inputs:
+      - initial_scores (from Step 3)
+      - calibration_set (from Step 4)
+    outputs:
+      - model_correlation: correlation coefficient
+      - calibration_adjustments: weight/criteria changes
+      - calibrated_model: final scoring model
+    verification: |
+      Model correlation > 0.7 or adjustments made and re-validated
+
+  - id: 6
+    name: Scale triage to all sources (Phase 2)
+    action: |
+      Apply calibrated model to full source collection:
+
+      1. Expand to all sources:
+         - Get content lists from ALL channels (Tier 1-3)
+         - Target: full coverage (~5000 items typical)
+
+      2. Batch triage:
+         - Fetch transcript samples for all items
+         - Run calibrated scoring model
+         - Use LLM for initial scoring (Haiku for efficiency)
+
+      3. Global ranking:
+         - Sort ALL items by composite score
+         - Single ranked list across all sources
+    inputs:
+      - source_collection (full)
+      - calibrated_model (from Step 5)
+    outputs:
+      - global_ranking: all items sorted by score
+      - score_distribution: histogram of scores
+    verification: |
+      All sources processed, global ranking complete
+
+  - id: 7
+    name: Identify extraction targets
+    action: |
+      Mark items for extraction based on budget:
+
+      Heuristic: Top 100 items often = 50%+ of total value
+
+      Budget allocation:
+      - Calculate items affordable within budget
+      - Consider: top 10% often yields 50% of value
+      - Mark clear "extract" vs "skip" vs "maybe"
+
+      Create extraction queue:
+      - Ordered by score (highest first)
+      - Include estimated extraction time
+      - Include skip flags for items below threshold
+    inputs:
+      - global_ranking (from Step 6)
+      - extraction_budget
+    outputs:
+      - extraction_queue: ordered list with flags
+      - expected_yield: estimated procedures
+      - expected_cost: estimated spend
+    verification: |
+      Queue fits within budget constraints
+
+  - id: 8
+    name: Execute selective extraction (Phase 3)
+    action: |
+      Full extraction on highest-value items only:
+
+      1. Run 3-pass extraction on queued items:
+         - Pass 1 (Explicit): What they SAY (HIGH confidence)
+         - Pass 2 (Implicit): What they DO (MEDIUM confidence)
+         - Pass 3 (Meta): HOW they think (MEDIUM confidence)
+
+      2. Track actual yield:
+         - Record procedures extracted vs predicted
+         - Note where predictions were accurate/inaccurate
+
+      3. Monitor for diminishing returns:
+         - Track procedures per item in rolling window
+         - If rate drops below 2 procedures/item, reassess
+    inputs:
+      - extraction_queue (from Step 7)
+    outputs:
+      - extracted_procedures: list of procedures
+      - actual_yield: procedures per item
+      - prediction_accuracy: predicted vs actual
+    verification: |
+      Extraction complete or diminishing returns detected
+
+  - id: 9
+    name: Update model for future runs
+    action: |
+      Apply evolutionary improvement to triage model:
+
+      1. Analyze prediction accuracy:
+         - Which criteria correlated with actual yield?
+         - Which criteria were noise?
+
+      2. Evolve successful criteria:
+         - Keep/strengthen criteria that predicted well
+         - Modify criteria that were partially predictive
+         - Drop criteria that didn't correlate
+
+      3. Document learnings:
+         - What types of content yielded best?
+         - What skip criteria were accurate?
+         - Recommendations for next extraction run
+    inputs:
+      - calibrated_model (from Step 5)
+      - prediction_accuracy (from Step 8)
+    outputs:
+      - improved_model: updated scoring model
+      - learnings_documented: what worked and didn't
+    verification: |
+      Model improvements documented for future use
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - User preferences captured through explicit questions
+  - Model calibrated with user ratings (correlation > 0.7)
+  - Global ranking covers all sources
+  - Extraction focused on highest-value items
+  - Actual yield tracked against predictions
+  - Model improved based on outcomes
+
+failure_modes:
+  - mode: Low calibration correlation
+    symptom: Model predictions don't match user ratings (correlation < 0.5)
+    resolution: Ask more clarifying questions, identify specific divergences, adjust weights
+
+  - mode: Insufficient sample diversity
+    symptom: Calibration set doesn't represent full source variety
+    resolution: Ensure sample covers all source types, topics, and formats
+
+  - mode: User rating inconsistency
+    symptom: User rates similar items very differently
+    resolution: Clarify rating criteria, provide reference examples, check for fatigue
+
+  - mode: Triage model overfitting
+    symptom: Model performs well on calibration but poorly on new items
+    resolution: Use holdout validation set, simplify model, avoid over-tuning
+
+  - mode: Budget exhaustion before high-value items
+    symptom: Spending budget on medium-value items
+    resolution: Enforce strict priority ordering, review queue before extraction
+
+  - mode: Diminishing returns ignored
+    symptom: Continuing extraction after yield drops significantly
+    resolution: Monitor rolling yield metric, stop when below threshold
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: First-time extraction from YouTube channels
+    context: New user with 10 priority channels, 50 hours to extract
+    inputs:
+      source_collection: "10 YouTube channels, ~1000 videos total"
+      extraction_budget:
+        time_hours: 50
+        cost_usd: 100
+        procedures_target: 200
+      initial_preferences: null
+    process: |
+      Phase 0 (15 min):
+      - User answers weighting question: "balanced"
+      - User selects types: "thinking_patterns, technical_methods"
+      - User selects domains: "AI/ML, research"
+      - User selects skips: "low_uniqueness, off_topic"
+
+      Phase 1 (2 hours):
+      - Sample 100 videos across 10 channels
+      - Initial triage scores all 100
+      - User rates 20 videos (1 hour)
+      - Model correlation: 0.72 (calibrated)
+
+      Phase 2 (3 hours):
+      - Expand to all 1000 videos
+      - Global ranking created
+      - Top 100 marked for extraction
+
+      Phase 3 (40 hours):
+      - Extract from top 100 videos
+      - Yield: 180 procedures
+      - Prediction accuracy: 75%
+
+      Model update:
+      - "MIT OCW" content higher value than predicted
+      - "Shorts" lower value - add to skip criteria
+    expected_output:
+      extraction_profile:
+        weighting: "balanced"
+        procedure_types: ["thinking_patterns", "technical_methods"]
+        priority_domains: ["AI/ML", "research"]
+      triage_results:
+        total_items: 1000
+        top_100_score_range: "7.5-10.0"
+      extracted_procedures: 180
+      model_calibration:
+        correlation: 0.72
+        prediction_accuracy: 0.75
+
+  - name: Re-calibration after priority shift
+    context: User priorities changed, need to re-rank sources
+    inputs:
+      source_collection: "Same 10 channels"
+      extraction_budget:
+        time_hours: 20
+        procedures_target: 50
+      initial_preferences:
+        priority_domains: ["business"]  # Changed from AI/ML
+    process: |
+      Phase 0 (10 min):
+      - Confirm changed priorities
+      - Update extraction profile
+
+      Phase 1 (1 hour):
+      - Re-sample with new lens
+      - User rates 15 items quickly
+      - Correlation: 0.68 (needs adjustment)
+      - Clarify: "business" means what exactly?
+      - Re-calibrate: correlation 0.74
+
+      Phase 2-3:
+      - Re-rank all items with new model
+      - Extract from new top 50
+    expected_output:
+      extraction_profile:
+        priority_domains: ["business/income", "entrepreneurship"]
+      extracted_procedures: 45
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Initial extraction for new GOSM users
+    - Extraction after goal/priority changes
+    - High-precision extraction with limited budget
+    - Learning user preferences for future automation
+
+  gates:
+    - gate: goals_clarified
+      question: "Has Phase 0 goal clarification been completed?"
+
+    - gate: model_calibrated
+      question: "Does triage model have correlation > 0.7 with user ratings?"
+
+    - gate: extraction_focused
+      question: "Is extraction targeting highest-value items only?"
+
+    - gate: learnings_captured
+      question: "Have model improvements been documented?"
+
+  related_procedures:
+    - question_generation: Used in Phase 0 for goal clarification
+    - cognitive_amplification: Pattern learning in Phase 1
+    - source_prioritization: Channel-level prioritization
+    - automated_extraction_pipeline: The extraction engine used in Phase 3
+    - evolutionary_strategies: Criteria improvement in final step
+    - leverage_points: Focus on highest-impact interventions
+
+# ============================================
+# QUICK REFERENCE
+# ============================================
+quick_reference:
+  phases:
+    phase_0: "Goal Clarification - 10-15 min"
+    phase_1: "Sample + Learn - 2-3 hours"
+    phase_2: "Scale Triage - 1-3 hours"
+    phase_3: "Selective Extraction - varies"
+
+  calibration_target: "Correlation > 0.7 between model and user"
+
+  efficiency_heuristic: "Top 10% of items often yield 50% of value"
+
+  key_metrics:
+    - "Triage model correlation"
+    - "Prediction accuracy (predicted vs actual yield)"
+    - "Procedures per item extracted"
+    - "Budget utilization"

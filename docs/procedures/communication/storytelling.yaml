@@ -1,0 +1,680 @@
+# Storytelling Procedure - Craft compelling narratives that resonate
+# GOSM Communication procedure for using stories to connect, persuade, and inspire
+
+id: storytelling
+name: Storytelling
+version: "1.0.0"
+domain: communication
+
+description: Systematic procedure for crafting and delivering compelling stories that create emotional connection and drive action
+
+long_description: |
+  The Storytelling procedure provides a framework for using narrative to communicate
+  more effectively in business, leadership, and personal contexts. Stories are the
+  most powerful tool for making ideas memorable, creating emotional connection,
+  and inspiring action.
+
+  This procedure covers:
+  - Narrative structure (the arc that keeps audiences engaged)
+  - Story selection (finding the right story for the moment)
+  - Emotional resonance (creating connection through vulnerability)
+  - Business storytelling (data + story = impact)
+  - Story delivery (bringing stories to life)
+
+  Key principles:
+  - Facts tell, stories sell (and inspire, and teach)
+  - The best stories are specific, not generic
+  - Vulnerability creates connection
+  - Your audience is the hero, not you
+  - Stories need conflict to be compelling
+
+tags:
+  - communication
+  - narrative
+  - storytelling
+  - leadership
+  - influence
+  - presentation
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Making a point memorable in a presentation or meeting
+  - Inspiring teams during change or uncertainty
+  - Building culture by sharing organizational values in action
+  - Pitching ideas where emotional connection matters
+  - Teaching concepts through concrete examples
+  - Building rapport and trust with new relationships
+  - Sharing lessons learned without lecturing
+  - Making data and statistics meaningful
+  - Persuading when logic alone isn't working
+  - Creating content that spreads and resonates
+
+when_not_to_use:
+  - When brevity is critical and there's no time for narrative
+  - For purely technical documentation requiring precision
+  - When the audience needs data analysis, not interpretation
+  - For legal or compliance communications requiring neutral language
+  - When you're overusing stories and need to vary your approach
+  - For routine status updates where facts suffice
+  - When the story would be inappropriate (too personal, irrelevant)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: purpose
+    type: string
+    required: true
+    description: What you want the story to accomplish (inspire, teach, persuade, connect)
+
+  - name: audience
+    type: string
+    required: true
+    description: Who will hear this story (relationship, context, what they care about)
+
+  - name: key_message
+    type: string
+    required: true
+    description: The one takeaway you want the story to convey
+
+  - name: story_context
+    type: enum
+    values: [presentation, one_on_one, written, pitch, teaching, team_meeting]
+    required: false
+    description: Where and how the story will be delivered
+
+  - name: available_time
+    type: string
+    required: false
+    description: How long the story can be (30 seconds to 5 minutes typical)
+
+  - name: raw_material
+    type: string
+    required: false
+    description: Events, experiences, or data you might shape into a story
+
+outputs:
+  - name: story_design
+    type: document
+    description: Complete story structure with all narrative elements
+
+  - name: story_script
+    type: document
+    description: The story as you would tell it, with delivery notes
+
+  - name: story_variations
+    type: document
+    description: Shorter and longer versions for different contexts
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Define the story's purpose and message
+    action: |
+      Before selecting or crafting a story, clarify what it must accomplish:
+      1. What's the ONE point you want this story to make?
+      2. What emotion do you want the audience to feel?
+      3. What action or belief change should result?
+      4. Why does this audience need to hear this story?
+      5. What makes this the right moment for this story?
+      6. What would be lost if you just stated the point without a story?
+    inputs:
+      - purpose
+      - key_message
+      - audience
+    outputs:
+      - story_purpose: what the story must accomplish
+      - target_emotion: the feeling you want to evoke
+      - desired_outcome: the change you want in the audience
+    verification: |
+      Can complete: "After hearing this story, the audience will feel ___ and ___"
+      The story purpose is specific, not vague ("inspire" -> "inspire courage to try")
+
+  - id: 2
+    name: Select or develop your story
+    action: |
+      Choose the right story from your experiences or craft one:
+
+      Story sources (in order of impact):
+      1. Personal experience (most powerful, most vulnerable)
+      2. Someone you know directly (still personal, less vulnerable)
+      3. Customer/user stories (powerful for business contexts)
+      4. Historical or well-known stories (least vulnerable, most universal)
+      5. Hypothetical scenarios (useful for teaching, less emotional impact)
+
+      Evaluation criteria:
+      - Does it clearly illustrate the key message?
+      - Is it appropriate for this audience and context?
+      - Do you have the right to tell this story?
+      - Is the specificity level right (not too abstract, not too detailed)?
+      - Does it have natural conflict and resolution?
+      - Can you tell it authentically?
+    inputs:
+      - story_purpose (from Step 1)
+      - raw_material (optional)
+      - audience
+    outputs:
+      - selected_story: the story you'll develop
+      - story_source: where this story comes from
+      - appropriateness_check: confirmation it's right for context
+    verification: |
+      Story directly supports the key message (not tangential)
+      Have permission/right to tell this story
+      Story has inherent conflict or tension
+
+  - id: 3
+    name: Structure the narrative arc
+    action: |
+      Shape the story using proven narrative structure:
+
+      CLASSIC ARC (works for most stories):
+      1. HOOK: Grab attention in the first line (not "So, one time...")
+      2. SETUP: Establish character, context, and stakes (who, where, what matters)
+      3. CONFLICT: Introduce the problem, challenge, or obstacle (stories need tension)
+      4. RISING ACTION: Show the struggle, the attempts, the journey
+      5. CLIMAX: The turning point, decision, or revelation
+      6. RESOLUTION: What happened as a result
+      7. LESSON: The meaning, connected to your key message (often implicit)
+
+      Alternative structures:
+      - STAR: Situation, Task, Action, Result (good for professional stories)
+      - BEFORE/AFTER: Contrast state before and after the change
+      - IN MEDIA RES: Start in the middle of action, then explain
+      - NESTED: Story within a story for complex lessons
+    inputs:
+      - selected_story (from Step 2)
+      - key_message
+      - available_time (optional)
+    outputs:
+      - story_structure: the narrative arc with each element defined
+      - hook_options: 2-3 possible opening lines
+      - conflict_statement: the core tension of the story
+    verification: |
+      Every element of the arc is present
+      Conflict is clear and compelling
+      Resolution connects to key message
+
+  - id: 4
+    name: Add sensory and emotional details
+    action: |
+      Make the story vivid and emotionally resonant:
+
+      Sensory details:
+      - What did you SEE? (specific visual details, not generic)
+      - What did you HEAR? (dialogue, sounds, ambient noise)
+      - Physical sensations? (nervous stomach, racing heart, cold hands)
+
+      Emotional honesty:
+      - What were you actually feeling? (fear, doubt, excitement)
+      - What was at stake emotionally?
+      - Where is the vulnerability? (vulnerability creates connection)
+
+      Specific over generic:
+      - Names and places (not "a colleague" but "Sarah")
+      - Numbers and times ("3am" not "late at night")
+      - Exact dialogue (not "he said something like...")
+
+      Show don't tell:
+      - "My hands were shaking" not "I was nervous"
+      - "She turned and walked out" not "She was upset"
+      - Action and dialogue reveal character, not description
+    inputs:
+      - story_structure (from Step 3)
+    outputs:
+      - enriched_story: story with sensory and emotional details added
+      - key_details: the specific details that make this story vivid
+      - vulnerability_point: where you're being authentically vulnerable
+    verification: |
+      Story has at least 3 specific sensory details
+      Emotions are shown through action, not just stated
+      There's at least one moment of authentic vulnerability
+
+  - id: 5
+    name: Craft the hook and the landing
+    action: |
+      The opening and closing are the most important parts:
+
+      HOOKS that work:
+      - Drop into action: "The phone rang at 3am and everything changed."
+      - Provocative statement: "I was wrong about everything."
+      - Question: "Have you ever had a moment that changed everything?"
+      - Sensory: "The fluorescent lights buzzed in the empty office."
+      - Contrast: "Two weeks earlier, I'd been celebrating."
+
+      HOOKS to avoid:
+      - "So, this one time..."
+      - "I want to tell you a story about..."
+      - "This is a funny story..." (don't preview, let them discover)
+      - Starting with backstory before the hook
+
+      LANDING the story:
+      - The lesson should emerge naturally from the story
+      - Don't over-explain ("The point of that story is...")
+      - Let there be a beat of silence after the climax
+      - Connect explicitly to the key message if needed
+      - Strong final line that resonates
+    inputs:
+      - enriched_story (from Step 4)
+      - key_message
+    outputs:
+      - crafted_hook: the polished opening line(s)
+      - crafted_landing: the closing that lands the message
+      - transition_in: how to introduce the story in context
+      - transition_out: how to move from story to next point
+    verification: |
+      Hook grabs attention in first sentence
+      Landing connects clearly to key message
+      No over-explanation of "the point"
+
+  - id: 6
+    name: Adjust for time and context
+    action: |
+      Create versions of different lengths and contexts:
+
+      30-second version (elevator):
+      - Hook + core conflict + resolution + lesson
+      - Cut all but essential details
+
+      2-minute version (standard):
+      - Full arc with key details
+      - Most common for meetings and presentations
+
+      5-minute version (keynote):
+      - Full sensory details and emotional journey
+      - Multiple beats and subsidiary tensions
+
+      Context adjustments:
+      - Written vs spoken (written can have more detail, spoken needs more beats)
+      - Formal vs informal (adjust language and vulnerability level)
+      - Large audience vs small (large needs bigger gestures, clearer structure)
+      - Known audience vs strangers (adjust how much context to provide)
+    inputs:
+      - enriched_story (from Step 4)
+      - available_time (optional)
+      - story_context (optional)
+    outputs:
+      - story_variations: multiple versions for different contexts
+      - context_adaptations: notes on adjusting for different situations
+    verification: |
+      Have at least 2 versions (short and standard)
+      Each version still has complete arc (hook through landing)
+      Versions are actually different lengths (not just cutting mid-story)
+
+  - id: 7
+    name: Practice and refine
+    action: |
+      Stories get better every time you tell them:
+
+      Practice method:
+      1. Tell it out loud (not just in your head)
+      2. Record yourself and listen back
+      3. Tell it to someone and watch their reactions
+      4. Note which parts land, which fall flat
+      5. Refine language, cut dead weight
+      6. Practice the hook until it's automatic
+
+      Refinement questions:
+      - Where do people's eyes light up? (keep those parts)
+      - Where do they check their phone? (cut or revise)
+      - What questions do they ask? (add that context)
+      - Does the ending land? (adjust the landing)
+
+      Signs the story is ready:
+      - You can tell it without notes
+      - The hook comes out smoothly every time
+      - You enjoy telling it (energy matters)
+      - People remember it and reference it later
+    inputs:
+      - story_variations (from Step 6)
+    outputs:
+      - story_script: the polished story as you would tell it
+      - delivery_notes: reminders for key moments
+      - refinement_log: changes made through practice
+    verification: |
+      Told the story out loud at least 3 times
+      Can deliver the hook without hesitation
+      Know which details are essential vs optional
+
+# ============================================
+# STORY TYPES
+# ============================================
+story_types:
+  origin_story:
+    description: "How something began - the founding story"
+    use_for: "Building culture, explaining 'why', investor pitches"
+    elements:
+      - "The moment of realization or inspiration"
+      - "The obstacles overcome"
+      - "The values that drove decisions"
+      - "The transformation from then to now"
+    example_hook: "It started with a frustration I couldn't ignore..."
+
+  failure_story:
+    description: "A time you failed and what you learned"
+    use_for: "Building trust, teaching lessons, showing vulnerability"
+    elements:
+      - "The confident assumption before"
+      - "What went wrong (be specific)"
+      - "The moment of realization"
+      - "What you learned and changed"
+    example_hook: "I was absolutely certain I was right. I was absolutely wrong."
+
+  customer_story:
+    description: "A customer's journey and transformation"
+    use_for: "Sales, marketing, proving value, building empathy"
+    elements:
+      - "Customer before (their pain and struggle)"
+      - "The turning point (finding your solution)"
+      - "Customer after (their transformation)"
+      - "In their own words if possible"
+    example_hook: "Sarah had tried everything. Nothing worked."
+
+  values_in_action:
+    description: "A moment when values were tested and demonstrated"
+    use_for: "Culture building, leadership, onboarding, difficult times"
+    elements:
+      - "The situation that created a choice"
+      - "The competing pressures (make the dilemma real)"
+      - "The decision and why"
+      - "What it cost and what it meant"
+    example_hook: "We had to choose between the easy thing and the right thing."
+
+  teaching_story:
+    description: "A specific example that illustrates a concept"
+    use_for: "Training, explaining, making abstract concrete"
+    elements:
+      - "The concept stated simply"
+      - "A specific instance where it happened"
+      - "What it looked like in practice"
+      - "How to apply this lesson"
+    example_hook: "Let me show you what I mean..."
+
+  vision_story:
+    description: "A story about the future you're building"
+    use_for: "Inspiring teams, rallying support, strategic communication"
+    elements:
+      - "Where we are now (grounded in reality)"
+      - "The future we're building (vivid and specific)"
+      - "A day in that future world"
+      - "What it takes to get there"
+    example_hook: "Imagine it's three years from now..."
+
+# ============================================
+# BUSINESS STORYTELLING
+# ============================================
+business_applications:
+  data_plus_story:
+    principle: "Data gives credibility, story gives meaning"
+    technique: |
+      1. Lead with a story that illustrates the human impact
+      2. Support with data that validates the pattern
+      3. Return to story for emotional landing
+    example: |
+      "Sarah spent 3 hours a day on manual reports. (story start)
+      Our survey found 67% of analysts have the same problem. (data)
+      Now Sarah leaves at 5pm. She coaches her daughter's soccer team. (story end)"
+
+  presenting_data:
+    principle: "Every data point has a human story behind it"
+    technique: |
+      - Don't just show the number, show what it means
+      - One specific example > aggregated statistics
+      - "67% of users" -> "That's 2 million people who..."
+    example: |
+      "Revenue grew 40% this quarter. But here's what that number means:
+      It's the story of the deal we almost lost, the team that worked weekends,
+      and the customer who said 'you actually listened to us.'"
+
+  change_management:
+    principle: "Stories help people see themselves in the change"
+    technique: |
+      1. Acknowledge the current state (validate their experience)
+      2. Paint the future state (vivid and specific)
+      3. Tell the story of someone who made the transition
+      4. Show the path from here to there
+    example: |
+      "I know the new system feels overwhelming. I felt the same way.
+      Let me tell you about Miguel, who was the most skeptical person on his team.
+      Three months later, he's training others."
+
+  pitching:
+    principle: "Investors invest in stories they want to be part of"
+    technique: |
+      - Problem: Tell a specific user's pain story
+      - Solution: Show that user's transformation
+      - Why you: Your founder story and mission
+      - Vision: The future you're building
+    example: |
+      "Last year, I watched my mother struggle for three hours to schedule
+      a simple doctor's appointment. That's when I knew we had to build this."
+
+# ============================================
+# EMOTIONAL TECHNIQUES
+# ============================================
+emotional_techniques:
+  vulnerability:
+    principle: "Vulnerability creates connection; pretending to be perfect creates distance"
+    how_to:
+      - "Share genuine doubts you had, not just triumphs"
+      - "Admit mistakes without excessive self-deprecation"
+      - "Share how you felt, not just what you did"
+      - "Be specific about fears and struggles"
+    calibration: "Match vulnerability level to relationship and context"
+
+  contrast:
+    principle: "Emotion comes from change; show the before and after"
+    how_to:
+      - "Paint the before state vividly (the problem)"
+      - "Paint the after state vividly (the transformation)"
+      - "The bigger the contrast, the bigger the emotion"
+    example: "Before: exhausted, frustrated, ready to quit. After: energized, focused, promoted."
+
+  specificity:
+    principle: "Specific details create emotional reality; generalities feel fake"
+    how_to:
+      - "Use names, places, times, exact dialogue"
+      - "'Tuesday at 3pm' not 'one day'"
+      - "'Sarah said: I can't do this anymore' not 'she was frustrated'"
+    why_it_works: "Specific details signal truth and activate imagination"
+
+  stakes:
+    principle: "Stories without stakes are boring; we need to know why it matters"
+    how_to:
+      - "Make clear what could be lost or gained"
+      - "Show why the character cares (not just facts)"
+      - "Raise the stakes as the story progresses"
+    example: "It wasn't just about the project. My credibility was on the line."
+
+  pause:
+    principle: "Silence lets emotion land; rushing buries it"
+    how_to:
+      - "Pause before the climax to build tension"
+      - "Pause after the climax to let it land"
+      - "Pause after the lesson to let it sink in"
+    delivery: "The pause feels longer to you than to them. Hold it."
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Story directly supports the key message (not tangential)
+  - Has clear narrative arc (hook, conflict, resolution, meaning)
+  - Contains specific sensory and emotional details
+  - Hook grabs attention in the first sentence
+  - Includes authentic vulnerability (not posturing)
+  - Landing connects to the key message without over-explaining
+  - Appropriate length for context
+  - Practiced out loud and refined
+
+failure_modes:
+  - mode: Story without point
+    symptom: Entertaining but audience wonders "why did they tell us that?"
+    resolution: Be clear on key message first, select story that directly supports it
+
+  - mode: All hero, no struggle
+    symptom: Story of triumph without vulnerability, feels like bragging
+    resolution: Include doubts, failures, struggles - the messy middle
+
+  - mode: Generic and abstract
+    symptom: '"Someone faced a challenge and overcame it" - forgettable'
+    resolution: Add specific names, times, dialogue, sensory details
+
+  - mode: Conflict-free
+    symptom: Story with no tension or obstacle - boring
+    resolution: Every story needs something at stake, something that could go wrong
+
+  - mode: Over-explaining the point
+    symptom: '"The point of that story is..." "What I want you to take away is..."'
+    resolution: Let the story speak; if you need to explain, the story isn't landing
+
+  - mode: Wrong story for audience
+    symptom: Story that alienates, confuses, or is inappropriate for context
+    resolution: Check appropriateness for audience, relationship, and setting
+
+  - mode: Reading the story
+    symptom: Story told from notes or memory without genuine engagement
+    resolution: Know the story well enough to tell it, not recite it
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Failure story for leadership presentation
+    context: Leading all-hands meeting about embracing failure as learning
+    inputs:
+      purpose: "Inspire team to take more risks and share failures openly"
+      audience: "50-person team, mixed tenure, after a period of playing it safe"
+      key_message: "The biggest risk is not taking any risks"
+      story_context: "team_meeting"
+      available_time: "3 minutes"
+    process: |
+      Step 1 - Purpose:
+      - Point: Taking smart risks is essential; playing it safe is actually risky
+      - Target emotion: Relief (it's okay to fail) + courage (try anyway)
+      - Outcome: Team members share failures more openly, try more experiments
+
+      Step 2 - Story Selection:
+      - Personal failure story from my own career
+      - The project I was afraid to try, then afraid to admit failed
+      - What I learned when I finally shared the failure
+
+      Step 3 - Structure:
+      - HOOK: The moment I knew the project had failed
+      - SETUP: The ambitious project, my confidence, the stakes
+      - CONFLICT: Things start going wrong, my fear of admitting it
+      - RISING ACTION: Trying to hide the failure, making it worse
+      - CLIMAX: Finally admitting to my team and boss
+      - RESOLUTION: Their response surprised me, what happened next
+      - LESSON: (implicit) Sharing failure early would have helped
+
+      Step 4 - Details:
+      - Visual: The empty conference room where I sat alone, staring at the numbers
+      - Sound: The silence when I finally said "I failed"
+      - Feeling: The knot in my stomach for weeks, the relief when I spoke up
+      - Vulnerability: My fear of looking incompetent, my ego
+    expected_output:
+      story_script: |
+        HOOK: "I still remember sitting in conference room B, alone, staring at a spreadsheet that proved I had failed."
+
+        SETUP: "Six months earlier, I'd convinced leadership to let me run an ambitious experiment. I was confident. This was going to change everything. I put my reputation on the line."
+
+        CONFLICT: "Three months in, I knew it wasn't working. The numbers were clear. But I kept pushing, kept tweaking, kept hoping. Because admitting failure felt impossible."
+
+        RISING ACTION: "I started avoiding my boss. I gave vague updates in our one-on-ones. 'Making progress,' I'd say. Meanwhile, I was barely sleeping, trying to find some way to salvage it. Every week I didn't speak up, it got harder to speak up."
+
+        CLIMAX: "Finally, I scheduled a meeting with my boss and my team. My voice actually shook when I said it: 'The experiment failed. I should have told you two months ago. I was afraid.'"
+
+        RESOLUTION: "And then something unexpected happened. My boss said, 'Thanks for telling us. What did you learn?' My teammate said, 'I had an idea that might have helped, but I didn't know you were struggling.' Another said, 'I've been sitting on a failure too.'"
+
+        LESSON: "The biggest mistake wasn't the failed experiment. It was the two months I spent hiding it instead of learning from it."
+
+        LANDING: "So here's what I want to say to all of you: if you're working on something that's not going well, please share it. The cost of hiding failure is always higher than the cost of admitting it."
+      delivery_notes:
+        - "Pause after 'I had failed' - let it land"
+        - "Make eye contact when saying 'I was afraid'"
+        - "Slow down for the boss's response - it's the turn"
+        - "Final line delivered slowly, directly to audience"
+
+  - name: Customer story for sales presentation
+    context: Presenting to potential enterprise client
+    inputs:
+      purpose: "Build emotional connection and credibility"
+      audience: "VP of Operations at target company, skeptical of vendors"
+      key_message: "We understand your pain because we've solved it for companies like yours"
+      story_context: "pitch"
+      available_time: "2 minutes"
+      raw_material: "Success story from similar company that reduced ops costs 40%"
+    process: |
+      Step 1 - Purpose:
+      - Point: We've been here before, we know how to help
+      - Emotion: Recognition ("that's me!") + hope ("they can help")
+      - Outcome: VP sees themselves in the story, wants to learn more
+
+      Step 2 - Story Selection:
+      - Customer story from similar company (enterprise, ops focused)
+      - Focus on the person, not the product features
+      - Make the customer the hero, not us
+
+      Step 3 - Structure:
+      - HOOK: The customer's pain moment
+      - SETUP: Their situation (relatable to this prospect)
+      - CONFLICT: What they tried, why it didn't work
+      - TURNING POINT: Finding us (brief, we're not the hero)
+      - RESOLUTION: Their transformation (specific metrics)
+      - LESSON: This could be you
+    expected_output:
+      story_script: |
+        HOOK: "Maria, the VP of Ops at [Similar Company], told me she used to dread Monday mornings. Her inbox would be full of overnight exceptions that her team would spend all day firefighting."
+
+        SETUP: "They were growing fast - 40% year over year. But their operations couldn't keep up. Every new customer made the chaos worse. Maria's team was burning out."
+
+        CONFLICT: "She tried everything. Hired more people. Bought more tools. Created more processes. But the problems just multiplied. She told me she was seriously considering whether she could keep doing this job."
+
+        TURNING POINT: "When we started working together, we didn't just implement software. We started by understanding her specific bottlenecks - the ones that were invisible in the dashboard but obvious to her team."
+
+        RESOLUTION: "Six months later, Maria sent me a message on a Monday morning. 'Quiet inbox,' it said. 'Going to the gym before work for the first time in years.' Her team reduced manual exceptions by 73%. She got promoted to SVP."
+
+        LANDING: "I share this because your situation reminds me of Maria's. Same growth rate, same operational complexity. And I'm curious whether some of what we learned might be relevant for you."
+      delivery_notes:
+        - "Use the customer's first name to make it personal"
+        - "The 'Going to the gym' detail makes it human"
+        - "Don't oversell - 'I'm curious' invites conversation"
+        - "Let prospect see themselves in Maria"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When strategy requires inspiring teams or stakeholders
+    - During execution for sharing lessons learned and building culture
+    - When goals require emotional buy-in beyond logical argument
+    - For communication milestones involving presentations or content
+    - When pivoting requires explaining 'why' and rallying support
+
+  gates:
+    - gate: purpose_clear
+      question: "What specific point does this story need to make?"
+
+    - gate: story_selected
+      question: "Is this the right story for this audience and message?"
+
+    - gate: arc_complete
+      question: "Does the story have hook, conflict, resolution, and landing?"
+
+    - gate: details_vivid
+      question: "Are there specific sensory and emotional details?"
+
+    - gate: practiced
+      question: "Have I told this story out loud and refined it?"
+
+  related_procedures:
+    - public_speaking: Using stories within presentations
+    - persuasive_writing: Written storytelling for influence
+    - presentation_design: Visual support for stories
+    - feedback_delivery: Using stories to illustrate feedback
+    - active_listening: Gathering stories from others

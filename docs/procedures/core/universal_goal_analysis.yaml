@@ -1,0 +1,3021 @@
+id: universal_goal_analysis
+name: Universal Goal Analysis Framework
+version: "6.0"
+domain: core
+note: "Canonical version. Previous versions archived in ./archive/"
+description: |
+  The comprehensive question framework that applies to EVERY goal, regardless of domain.
+
+  v6.0 improvements:
+  - Added mathematical analysis categories: probability, rates/accumulation, structure/mapping,
+    continuity/connectedness, sets/logic, graphs/networks, dimensionality, symmetry, order, combinatorics
+  - Added applied analysis categories: inventory management, invoicing, customer relations,
+    problem solving, communication, coaching, leadership, negotiation, management, writing,
+    quality assurance, detail analysis
+  - All previous v5.0 content preserved
+  - All questions follow "is there" before "what is" pattern
+  - No assumptions about things existing before asking if they exist
+  - Recursive structures for tracing requirements
+
+when_to_use:
+  - Any new goal
+  - Any goal that feels stuck
+  - Any goal where approach is uncertain
+  - Periodic review of ongoing goals
+
+tags:
+  - core
+  - universal
+  - goal-analysis
+  - meta-procedure
+  - required
+
+categories:
+
+  # ====================
+  # GOAL DEFINITION
+  # ====================
+
+  goal_definition:
+    description: What exactly are we trying to achieve and why?
+
+    goal_clarity:
+      - "What is the specific end state in observable terms?"
+      - "What objects, relationships, or conditions will exist that don't exist now?"
+      - "What objects, relationships, or conditions will cease to exist?"
+      - "What is the precise definition of 'done' that leaves no ambiguity?"
+      - "Is this a single goal or multiple goals bundled? If multiple, list each separately."
+      - "What is explicitly excluded from this goal?"
+
+    goal_validity:
+      - "What is the actual need this goal serves? (Not the goal itself, the underlying need)"
+      - "If this goal were achieved, what decisions would be made differently going forward?"
+      - "If this goal were achieved, what goals would become achievable that are not achievable now?"
+      - "If this goal were achieved, what goals would become unachievable that are achievable now?"
+      - "If this goal failed, what decisions would be made differently going forward?"
+      - "What is the specific cost of never achieving this goal? (Quantify in resources, opportunities, outcomes)"
+      - "Is there a different goal that serves the same need with fewer requirements? If so, what?"
+      - "What conditions would immediately disqualify this goal from being the right goal?"
+
+    goal_origin:
+      - "Who or what created this goal? (Self-generated, requested by specific person, societal expectation, reaction to specific event)"
+      - "If the origin is external, what specific benefit do I receive from pursuing it?"
+      - "What assumptions does this goal contain? List each assumption."
+      - "What must be true about the world for this goal to make sense? List each requirement."
+
+  # ====================
+  # CURRENT STATE
+  # ====================
+
+  current_state:
+    description: Where am I starting from and why am I not already there?
+
+    position_assessment:
+      - "What is the measurable distance between current state and goal state on each dimension?"
+      - "Which dimensions have the largest gaps?"
+      - "Which gaps require the most resources to close?"
+      - "Which gaps depend on factors outside my control?"
+
+    trajectory:
+      - "If no action is taken, what will the state be in 6 months?"
+      - "If no action is taken, what will the state be in 1 year?"
+      - "If no action is taken, what will the state be in 5 years?"
+      - "What forces are currently causing movement toward the goal?"
+      - "What forces are currently causing movement away from the goal?"
+      - "What rate of progress is required to achieve the goal in the desired timeframe?"
+
+    historical_pattern_analysis:
+      - "What similar goals have I pursued before? List each."
+      - "For each previous attempt:"
+      - "  - What was the outcome (achieved, partially achieved, failed, abandoned)?"
+      - "  - At what stage did it end (planning, early execution, mid execution, near completion)?"
+      - "  - What was the primary cause of the outcome?"
+      - "What patterns appear in multiple previous attempts?"
+      - "What approaches have I never tried for this type of goal?"
+
+    current_resource_state:
+      - "How many hours per week are actually available for this goal? (Measured from last 4 weeks, not theoretical)"
+      - "What resources are currently accessible without additional acquisition?"
+      - "What existing commitments compete for the same resources?"
+      - "At what rate are depleted resources being replenished?"
+
+  # ====================
+  # PRIOR ART
+  # ====================
+
+  prior_art:
+    description: What can I learn from others who've attempted this?
+
+    success_definition:
+      - "What is the precise definition of success for this goal?"
+      - "What conditions must ALL be met to satisfy the definition?"
+      - "What conditions, if present, would immediately disqualify something from being success?"
+
+    existing_solutions:
+      - "What methods have been documented for achieving this goal? List all known methods."
+      - "For each method:"
+      - "  - What inputs are required?"
+      - "  - What is the documented or estimated success rate?"
+      - "  - What is the primary way this method fails?"
+      - "  - What starting conditions does this method require?"
+      - "What methods were previously used but are now abandoned? For each, why was it abandoned?"
+      - "What is the most recently developed method? What change enabled it?"
+
+    knowledge_sources:
+      - "What written documentation directly addresses how to achieve this goal?"
+      - "What information do practitioners know that is not written down? How can it be accessed?"
+      - "What points do experts disagree on? What is each position?"
+      - "Who has achieved this goal from starting conditions similar to mine? What specific actions did they take?"
+      - "Who attempted this goal from similar starting conditions and failed? What specific actions led to failure?"
+
+    disqualification_factors:
+      - "What characteristics make this goal impossible for a person/situation? List all."
+      - "Which of these disqualifying characteristics apply to me?"
+      - "For each that applies: Is it permanent or can it be changed? If changeable, what would change it?"
+
+  # ====================
+  # FEASIBILITY
+  # ====================
+
+  feasibility:
+    description: Is this actually achievable given reality?
+
+    constraint_classification:
+      description: "List all constraints, then classify each"
+      constraints:
+        - "Physical law constraints (cannot be violated by any means)"
+        - "Current technology constraints (cannot be violated now, may be possible in future)"
+        - "Resource constraints (could be overcome with sufficient resources)"
+        - "Skill constraints (could be overcome with learning/practice)"
+        - "Time constraints (could be overcome with more time)"
+        - "Access constraints (could be overcome with different position/relationships)"
+        - "Knowledge constraints (could be overcome with information)"
+        - "Assumed constraints (believed to be constraints but not verified)"
+
+    constraint_verification:
+      - "For each non-physical constraint:"
+      - "  - What evidence confirms this constraint is real?"
+      - "  - Has anyone in a similar situation overcome this constraint? What did they do?"
+      - "  - What specific change would cause this constraint to not apply?"
+      - "  - What would it cost to test whether this constraint is real?"
+
+    constraint_origin_analysis:
+      - "For each constraint on this goal:"
+      - "  - What is the constraint?"
+      - "  - What is the origin of this constraint?"
+      - "    - Physical law?"
+      - "    - Regulation or policy?"
+      - "    - Resource limitation?"
+      - "    - Decision by a person? (Who? Why?)"
+      - "    - Historical artifact? (Made sense before but conditions changed)"
+      - "    - Assumption? (Believed to be a constraint but not verified)"
+      - "  - Is the origin still valid?"
+      - "  - If the origin is a decision: Can the decision be changed?"
+      - "  - If the origin is a regulation: Can an exception be obtained?"
+      - "  - If the origin is historical: Should it be reconsidered?"
+
+    minimum_requirements:
+      - "What is the minimum set of resources required? (Cannot succeed without these)"
+      - "What is the minimum time required? (Cannot succeed faster than this)"
+      - "What is the minimum skill set required? (Cannot succeed without these abilities)"
+      - "What is the minimum access/position required? (Cannot succeed without this access)"
+      - "Do I currently meet all minimum requirements?"
+      - "For each minimum requirement not met: What would it take to meet it?"
+
+    partial_achievement:
+      - "If the full goal is not achievable, what is the largest achievable portion?"
+      - "What specific constraint prevents full achievement?"
+      - "What would achieving the partial goal make possible that is not possible now?"
+
+  # ====================
+  # RESOURCES
+  # ====================
+
+  resources:
+    description: What do I need and what do I have?
+
+    resource_inventory:
+      - "List all resources relevant to this goal"
+      - "For each resource:"
+      - "  - What is the current quantity?"
+      - "  - What is the replenishment rate (if any)?"
+      - "  - What depletes this resource?"
+      - "  - What increases this resource?"
+
+    resource_requirements:
+      - "What resources are required for each stage of the goal?"
+      - "Which resources are consumed and cannot be reused?"
+      - "Which resources are retained after use?"
+      - "Which resources generate additional resources when used?"
+
+    resource_gaps:
+      - "What required resources are not currently available?"
+      - "For each missing resource, evaluate all acquisition paths:"
+      - "  - Can it be purchased? What is the cost?"
+      - "  - Can it be borrowed? From whom? Under what terms?"
+      - "  - Can it be built? What inputs and time are required?"
+      - "  - Can it be substituted with something else? What?"
+      - "  - Can the approach be changed to not require it? How?"
+      - "  - Can it be obtained through partnership? With whom?"
+
+    resource_leverage:
+      - "Which resources can be converted to other resources? What is the exchange rate?"
+      - "Which resources, if acquired, would reduce the need for other resources?"
+      - "What resources do I have that are not currently being used for this goal?"
+      - "What resources do I have that others pursuing similar goals typically lack?"
+
+  # ====================
+  # STRATEGY
+  # ====================
+
+  strategy:
+    description: What's the approach and can I improve on existing methods?
+
+    method_enumeration:
+      - "List all known methods for achieving this goal"
+      - "For each method:"
+      - "  - What inputs are required?"
+      - "  - What is the expected time to completion?"
+      - "  - What is the documented success rate?"
+      - "  - What is the primary failure mode?"
+      - "  - What conditions must exist for this method to work?"
+      - "  - If it fails, can progress be salvaged or must you restart?"
+
+    method_selection:
+      - "Which methods can I execute given my current resources and constraints?"
+      - "Of those, which has the highest success rate for my starting conditions?"
+      - "Of those, which has failure modes I can recover from?"
+      - "Of those, which generates useful information even if it fails?"
+      - "Of those, which preserves the most future options?"
+
+    method_improvement:
+      - "What are the documented limitations of existing methods?"
+      - "What causes each limitation?"
+      - "What has changed (technology, knowledge, context) since these methods were created?"
+      - "What would a method need to do differently to avoid these limitations?"
+      - "What methods from adjacent domains could be adapted?"
+
+    strategy_stress_test:
+      - "What assumptions does the chosen strategy make? List each."
+      - "For each assumption: What happens to the strategy if this assumption is false?"
+      - "What conditions would cause this strategy to fail?"
+      - "At what point in execution would failure become detectable?"
+      - "What is the backup strategy if the primary fails?"
+
+  # ====================
+  # DEPENDENCIES
+  # ====================
+
+  dependencies:
+    description: What needs to happen first and what's blocking me?
+
+    dependency_mapping:
+      - "What must happen before the goal can be achieved? List all prerequisites."
+      - "For each prerequisite:"
+      - "  - Is it under my control or dependent on external factors?"
+      - "  - What is its current status (not started, in progress, completed, blocked)?"
+      - "  - What is the expected time to completion?"
+      - "  - What is the probability it will be completed?"
+      - "  - If it fails, what is the impact on the goal?"
+
+    critical_path:
+      - "What is the longest chain of sequential prerequisites?"
+      - "What is the total time required for this chain?"
+      - "Which prerequisites appear in multiple chains (bottlenecks)?"
+      - "Which prerequisites, if completed faster, would reduce total time most?"
+
+    dependency_risk:
+      - "Which prerequisites have the highest probability of not completing?"
+      - "Which prerequisites, if they fail, cannot be replaced with alternatives?"
+      - "For high-risk prerequisites: What is the contingency plan?"
+      - "Can any prerequisites be eliminated by changing the approach?"
+
+    hidden_dependencies:
+      - "What am I assuming will continue to be available that could become unavailable?"
+      - "What am I assuming others will do that they might not do?"
+      - "What am I assuming about the environment that could change?"
+      - "What events would invalidate these assumptions?"
+
+  # ====================
+  # RISKS
+  # ====================
+
+  risks:
+    description: What could go wrong and how do I handle it?
+
+    risk_identification:
+      - "What events could prevent goal achievement? List all."
+      - "For each risk:"
+      - "  - What is the probability of occurrence (percentage or high/medium/low)?"
+      - "  - What is the impact if it occurs (goal fails, goal delayed, goal reduced)?"
+      - "  - At what stage would it occur?"
+      - "  - What observable signs would indicate this risk is materializing?"
+      - "  - Is this risk within my control to prevent?"
+
+    risk_classification:
+      - "Which risks can be recovered from (continue toward goal after occurrence)?"
+      - "Which risks are terminal (goal becomes impossible)?"
+      - "Which risks can be detected before they fully materialize?"
+      - "Which risks increase in probability or impact over time?"
+      - "Which risks tend to occur together?"
+
+    risk_response:
+      - "For each high-probability or high-impact risk:"
+      - "  - Can the probability be reduced? What action would reduce it?"
+      - "  - Can the impact be reduced? What action would reduce it?"
+      - "  - Can it be detected earlier? What monitoring would detect it?"
+      - "  - What is the specific response if it occurs?"
+      - "  - What resources are needed for the response?"
+
+    unknown_risk_identification:
+      - "What categories of risk might exist that I have not identified?"
+      - "What risks did others pursuing similar goals encounter that they did not anticipate?"
+      - "If someone wanted to prevent this goal from succeeding, what would they do?"
+      - "What small failures could trigger cascading larger failures?"
+
+    single_point_of_failure_analysis:
+      - "Is there any component that, if it fails, causes the entire goal to fail?"
+      - "If yes, for each single point of failure:"
+      - "  - What is the component?"
+      - "  - What is the probability of its failure?"
+      - "  - Is there a backup or redundancy?"
+      - "  - If no: Can one be created? What would that require?"
+      - "  - If yes: Is the backup tested and ready?"
+      - "  - What monitoring exists to detect failure early?"
+
+    resilience_analysis:
+      - "Is the plan designed to handle unexpected disruptions?"
+      - "What types of disruptions could occur?"
+      - "For each disruption type:"
+      - "  - What is the impact on goal progress?"
+      - "  - How quickly can recovery occur?"
+      - "  - What resources are needed for recovery?"
+      - "  - Are those resources available?"
+      - "Is there slack (extra time, resources, capacity) built into the plan?"
+      - "If yes: How much? Is it sufficient for likely disruptions?"
+      - "If no: What would adding slack require?"
+
+  # ====================
+  # EXECUTION
+  # ====================
+
+  execution:
+    description: How do I actually make progress?
+
+    action_specification:
+      - "What is the specific next physical action required?"
+      - "What inputs does that action require?"
+      - "What is the expected output of that action?"
+      - "What is currently preventing that action from being taken?"
+      - "What would remove each blocker?"
+
+    progress_stages:
+      - "What stages must be progressed through to reach the goal? List in order."
+      - "For each stage:"
+      - "  - What condition marks entry to this stage?"
+      - "  - What condition marks completion of this stage?"
+      - "  - What is the expected duration range (minimum to maximum)?"
+      - "  - What portion of stage duration is determined by my effort vs external factors?"
+      - "  - What actions would accelerate completion of this stage?"
+
+    action_systems:
+      - "What specific triggers will initiate goal-related action? (Time, event, condition)"
+      - "What changes to physical environment would increase action frequency?"
+      - "What activities currently compete for the same time/energy? Which can be reduced?"
+      - "What structure exists to verify actions are being taken as planned?"
+      - "What is the smallest action that counts as progress when full effort is not possible?"
+
+    failure_analysis:
+      - "When a failure occurs, answer:"
+      - "  - Was this failure type predicted before it occurred?"
+      - "  - Was this failure type predictable with available information?"
+      - "  - Was there a pre-existing plan for handling this failure type?"
+      - "  - Is there a plan for failures that have no pre-existing plan?"
+      - "  - At what stage did failure occur?"
+      - "    - Goal definition (wrong goal)"
+      - "    - Planning (wrong plan)"
+      - "    - Execution (wrong implementation of right plan)"
+      - "    - Monitoring (failed to detect problem)"
+      - "    - Prediction (incorrect forecast)"
+      - "    - Human error (mistake in carrying out known action)"
+      - "    - External event (factor outside control)"
+      - "    - Other (specify)"
+      - "  - How have failures of this type been addressed in documented cases?"
+      - "  - What methods exist to prevent this failure type from recurring?"
+
+    plan_adjustment:
+      - "When progress is slower than expected, evaluate:"
+      - "  - Can the plan be simplified by removing steps? Which steps?"
+      - "  - Can additional resources be acquired? What resources? From where?"
+      - "  - Can the timeline be extended? By how much? What is the cost?"
+      - "  - Can the scope be reduced? What would be removed? What remains?"
+      - "  - Should the approach be changed entirely? To what?"
+      - "What criteria determine which adjustment type to use?"
+      - "At what point should the goal be abandoned rather than adjusted?"
+
+  # ====================
+  # VERIFICATION
+  # ====================
+
+  verification:
+    description: How do I know if I'm succeeding?
+
+    completion_criteria:
+      - "What specific conditions define goal completion? List each."
+      - "For each condition, what evidence would prove it is met?"
+      - "What person or system validates that completion criteria are met?"
+      - "What situations could create the appearance of completion without actual completion?"
+
+    progress_metrics:
+      - "What metrics indicate progress toward the goal? List each."
+      - "For each metric:"
+      - "  - How is it measured (method, tool, data source)?"
+      - "  - How frequently should it be measured?"
+      - "  - What value range indicates on-track progress?"
+      - "  - What value range indicates off-track progress?"
+      - "  - What earlier indicator predicts this metric before it changes?"
+
+    reality_checks:
+      - "What specific observations would prove progress is NOT being made?"
+      - "What external data sources can validate or contradict my progress assessment?"
+      - "What data, if discovered, would contradict my current belief about status?"
+
+    checkpoint_structure:
+      - "What intermediate milestones exist between start and goal? List in order."
+      - "For each milestone:"
+      - "  - What are the specific completion criteria?"
+      - "  - What is the expected date range (earliest to latest)?"
+      - "  - What specific evidence must exist to confirm completion?"
+      - "  - If milestone IS reached on time: What decision follows?"
+      - "  - If milestone is NOT reached on time: What decision follows?"
+      - "  - If milestone is PARTIALLY reached: What decision follows?"
+
+    validation_analysis:
+      - "Is there a way to validate that the approach is working?"
+      - "If no: How could validation be added?"
+      - "If yes:"
+      - "  - What is being validated?"
+      - "  - How is validation performed?"
+      - "  - How frequently?"
+      - "  - What would a failed validation indicate?"
+      - "  - What action follows a failed validation?"
+
+    metric_gaming_analysis:
+      - "Are there metrics being used to measure progress or success?"
+      - "If yes, for each metric:"
+      - "  - What is the metric?"
+      - "  - What behavior does it incentivize?"
+      - "  - Is that the behavior actually wanted?"
+      - "  - Can the metric be improved without improving the actual outcome? (Gamed)"
+      - "  - If yes: How could it be gamed?"
+      - "  - Is there evidence of gaming occurring?"
+      - "  - What would be a better metric that is harder to game?"
+
+  # ====================
+  # INFRASTRUCTURE
+  # ====================
+
+  infrastructure:
+    description: What tools, systems, and structures exist or are needed?
+
+    infrastructure_categories:
+      physical:
+        - "What physical locations are required?"
+        - "What physical equipment is required?"
+        - "What physical materials are required?"
+        - "For each: Is it currently available? If not, how is it obtained?"
+
+      digital:
+        - "What software is required?"
+        - "What digital platforms or services are required?"
+        - "What data or information systems are required?"
+        - "For each: Is it currently available? If not, how is it obtained?"
+
+      organizational:
+        - "What organizational structures are required (teams, roles, hierarchies)?"
+        - "What processes or procedures are required?"
+        - "What policies or rules are required?"
+        - "For each: Does it currently exist? If not, how is it created?"
+
+      social:
+        - "What relationships are required?"
+        - "What communities or networks are required?"
+        - "What reputation or credibility is required?"
+        - "For each: Does it currently exist? If not, how is it built?"
+
+      financial:
+        - "What financial accounts or instruments are required?"
+        - "What financial processes are required (invoicing, payment, etc.)?"
+        - "What financial reserves are required?"
+        - "For each: Does it currently exist? If not, how is it established?"
+
+    infrastructure_gaps:
+      - "What required infrastructure does not currently exist?"
+      - "For each gap:"
+      - "  - Can existing infrastructure be accessed? How?"
+      - "  - If not accessible, can it be replicated? What would that require?"
+      - "  - If not replicable, can an alternative serve the same function?"
+      - "  - If no alternative, how does this affect goal feasibility?"
+
+    infrastructure_under_control:
+      - "What infrastructure do I control that is relevant to this goal?"
+      - "What modifications to controlled infrastructure would improve goal progress?"
+      - "What is the cost of each modification?"
+
+  # ====================
+  # AFFECTED PARTIES
+  # ====================
+
+  affected_parties:
+    description: Who is affected by this goal and how do they respond?
+
+    party_identification:
+      - "Who is affected by this goal being conceived (known to exist)?"
+      - "Who is affected by this goal being pursued (actions being taken)?"
+      - "Who is affected by this goal succeeding?"
+      - "Who is affected by this goal failing?"
+      - "Who is affected by this goal being abandoned?"
+
+    impact_analysis:
+      - "For each affected party and each goal state (conceived, pursued, succeeded, failed, abandoned):"
+      - "  Impact on their resources:"
+      - "    - Money: More / Less / Same"
+      - "    - Time: More / Less / Same"
+      - "    - Opportunity: More / Less / Same"
+      - "    - Status/Reputation: More / Less / Same"
+      - "  Impact on their goals:"
+      - "    - Their goals become easier: Which goals?"
+      - "    - Their goals become harder: Which goals?"
+      - "    - Their goals become possible: Which goals?"
+      - "    - Their goals become impossible: Which goals?"
+
+    response_prediction:
+      - "For each affected party, predict their response based on:"
+      - "  - Are they likely to respond rationally (based on interests) or emotionally?"
+      - "  - How much do they care about the impact (high/medium/low/none)?"
+      - "  - How much power do they have to affect the goal (high/medium/low/none)?"
+      - "  - Given the above: What actions are they likely to take?"
+      - "    - Active support: What form?"
+      - "    - Passive acceptance: No action"
+      - "    - Passive resistance: What form?"
+      - "    - Active opposition: What form?"
+
+    required_participation:
+      - "Whose active participation (taking specific actions) is required for the goal?"
+      - "For each required participant:"
+      - "  - What specific actions do they need to take?"
+      - "  - What benefit do they receive from participating?"
+      - "  - What cost do they incur from participating?"
+      - "  - What would cause them to stop participating?"
+      - "  - If they do not participate, what is the alternative?"
+
+    opposition_management:
+      - "Who is likely to actively oppose this goal?"
+      - "For each opposer:"
+      - "  - What is their specific reason for opposition?"
+      - "  - What actions could they take to obstruct the goal?"
+      - "  - What would reduce their motivation to oppose?"
+      - "  - What would reduce their ability to oppose?"
+
+    advisors:
+      - "Who has achieved this goal and is accessible for advice?"
+      - "Who has attempted this goal and failed, and could share what went wrong?"
+      - "Who has expertise relevant to this goal?"
+      - "What is required to access each advisor (time, money, relationship, introduction)?"
+
+    expectation_analysis:
+      - "Are there expectations (beliefs about what will happen) held by relevant parties?"
+      - "If yes, for each expectation:"
+      - "  - Who holds the expectation?"
+      - "  - What is the expectation?"
+      - "  - Is the expectation accurate?"
+      - "  - If no: What is the gap between expectation and reality?"
+      - "  - What is the consequence of the expectation not being met?"
+      - "  - Should the expectation be corrected?"
+      - "  - If yes: How? By whom? When?"
+
+    conflict_detection_analysis:
+      - "Is there potential for conflict between parties involved in this goal?"
+      - "If yes, for each potential conflict:"
+      - "  - Who are the parties?"
+      - "  - What is the source of potential conflict?"
+      - "  - What would trigger the conflict to become active?"
+      - "  - Are trigger conditions present?"
+      - "  - What is the impact if conflict occurs?"
+      - "  - What would prevent the conflict?"
+      - "  - What would resolve the conflict if it occurs?"
+
+  # ====================
+  # COMMUNICATION
+  # ====================
+
+  communication:
+    description: What information needs to be shared with whom?
+
+    information_distribution:
+      - "Is there information that others need to know for this goal to succeed?"
+      - "If yes, for each piece of information:"
+      - "  - What is the information?"
+      - "  - What role or position needs to receive it?"
+      - "  - When do they need to receive it?"
+      - "  - What format should it be in?"
+      - "  - What is the consequence if they do not receive it?"
+
+    information_withholding:
+      - "Is there information that should not be shared?"
+      - "If yes, for each piece of information:"
+      - "  - What is the information?"
+      - "  - Who should not receive it?"
+      - "  - What is the consequence if they do receive it?"
+      - "  - What controls prevent unintended sharing?"
+
+    information_gaps:
+      - "Is there information I should be communicating but am not?"
+      - "If yes: What is it? To whom? Why is it not being communicated?"
+      - "Is there information I am communicating that I should not be?"
+      - "If yes: What is it? To whom? Why is it being communicated?"
+
+    visibility_analysis:
+      - "Is the current state of the goal visible to relevant parties?"
+      - "If no:"
+      - "  - What is not visible?"
+      - "  - To whom is it not visible?"
+      - "  - What is the consequence of this lack of visibility?"
+      - "  - Should visibility be increased?"
+      - "  - If yes: How?"
+      - "Is there visibility that should not exist? (Information exposed that should be private)"
+      - "If yes:"
+      - "  - What is exposed?"
+      - "  - To whom?"
+      - "  - What is the risk?"
+      - "  - How can exposure be reduced?"
+
+    signaling_analysis:
+      - "Does pursuing this goal send signals to others?"
+      - "If yes:"
+      - "  - What signals are being sent?"
+      - "  - To whom?"
+      - "  - Are the signals intentional or unintentional?"
+      - "  - For unintentional signals: Are they helpful or harmful?"
+      - "  - How might recipients interpret the signals?"
+      - "  - Could the signals be misinterpreted?"
+      - "  - If yes: What is the cost of misinterpretation? How can it be prevented?"
+      - "Are there signals I should be sending but am not?"
+      - "Are there signals I am sending that I should not be?"
+
+  # ====================
+  # TIMING
+  # ====================
+
+  timing:
+    description: When should this happen?
+
+    time_constraints:
+      - "Is there a deadline? What is it?"
+      - "What creates the deadline (external requirement, resource expiration, opportunity window, decay)?"
+      - "What is the consequence of missing the deadline?"
+      - "Is the deadline changeable? By whom? Under what conditions?"
+
+    ordering:
+      - "What must happen in what order? List the required sequence."
+      - "What can happen simultaneously?"
+
+    ordering_optimization:
+      speed_optimization:
+        - "What is the current total time for the required sequence?"
+        - "Which steps can be parallelized to reduce total time?"
+        - "Which steps have slack time that can absorb delays?"
+        - "Which steps, if accelerated, would reduce total time most?"
+        - "What would accelerating those steps require?"
+
+      risk_optimization:
+        - "Which steps have the highest probability of failure?"
+        - "Which steps, if done first, would reveal critical information?"
+        - "Which steps, if done first, would reduce later risk?"
+        - "Which ordering minimizes the cost of potential failure?"
+        - "Which ordering maximizes the ability to abandon early if needed?"
+
+    windows:
+      - "Are there time periods when this goal is easier to achieve? When?"
+      - "Are there time periods when this goal is harder to achieve? When?"
+      - "What events would create new opportunity windows?"
+      - "What events would close existing opportunity windows?"
+      - "Is the current time within an opportunity window? If not, when is the next one?"
+
+  # ====================
+  # INFORMATION
+  # ====================
+
+  information:
+    description: What do I need to know and how do I find out?
+
+    information_gaps:
+      - "What information is required to achieve this goal that I do not have? List each gap."
+      - "For each gap:"
+      - "  - Where does this information exist (source, location, person)?"
+      - "  - What is required to obtain it (time, money, access, relationship)?"
+      - "  - What is the cost of proceeding without it?"
+      - "  - Can the goal be achieved without it? How would the approach change?"
+
+    uncertainty_analysis:
+      - "What am I most uncertain about? List in order of uncertainty."
+      - "For each major uncertainty:"
+      - "  - What specific information would resolve it?"
+      - "  - What decisions cannot be made until it is resolved?"
+      - "  - What is the cost of making those decisions with wrong assumptions?"
+      - "  - Is it better to resolve the uncertainty first or proceed and adapt?"
+
+    experiments:
+      - "What experiments could reduce uncertainty before full commitment?"
+      - "For each potential experiment:"
+      - "  - What specific question does it answer?"
+      - "  - What are the possible outcomes?"
+      - "  - For each outcome, what would it tell us?"
+      - "  - What resources are required to run it?"
+      - "  - How long would it take?"
+      - "  - What decision would each possible outcome lead to?"
+
+  # ====================
+  # DECISIONS
+  # ====================
+
+  decisions:
+    description: What choices need to be made?
+
+    decision_inventory:
+      - "What decisions need to be made for this goal? List all."
+      - "For each decision:"
+      - "  - What are the available options?"
+      - "  - What information is needed to choose between options?"
+      - "  - What is the latest date by which this decision must be made?"
+      - "  - Is this decision reversible? If yes, at what cost?"
+
+    decision_maker_analysis:
+      - "For each decision, analyze who decides:"
+      - "  - Who currently has the authority to make this decision?"
+      - "  - How was this decision-maker determined (role, ownership, delegation, default)?"
+      - "  - Can the decision-maker be changed? By whom? Under what conditions?"
+      - "  - How frequently does the decision-maker change, if ever?"
+      - "  - What influences the decision-maker's choice (incentives, information, relationships, biases)?"
+      - "  - How can I provide input to the decision-maker?"
+      - "  - What would cause the decision-maker to decide in my favor?"
+      - "  - What would cause the decision-maker to decide against my interest?"
+
+    pending_decisions:
+      - "What decisions should have been made by now but have not been?"
+      - "For each pending decision:"
+      - "  - What is preventing the decision from being made?"
+      - "  - What is the cost of continued delay?"
+      - "  - What specific action would enable the decision to be made?"
+
+    commitment_analysis:
+      - "What decisions, once made, cannot be reversed?"
+      - "For each irreversible decision:"
+      - "  - What is permanently lost once committed?"
+      - "  - What is permanently gained once committed?"
+      - "  - What information should be gathered before committing?"
+      - "  - What is the last possible moment to make this decision?"
+
+  # ====================
+  # INCENTIVES
+  # ====================
+
+  incentives:
+    description: What motivates all parties involved?
+
+    self_incentives:
+      - "What rewards exist for making progress on this goal?"
+      - "What costs exist for not making progress?"
+      - "Do the rewards and costs occur at the right times to motivate action?"
+      - "Are the incentives aligned with the specific actions required?"
+      - "What changes to the incentive structure would improve action likelihood?"
+
+    other_party_incentives:
+      - "For each affected party:"
+      - "  - What do they gain if this goal succeeds?"
+      - "  - What do they lose if this goal succeeds?"
+      - "  - What do they gain if this goal fails?"
+      - "  - What do they lose if this goal fails?"
+      - "Where are other parties' incentives aligned with mine?"
+      - "Where are other parties' incentives opposed to mine?"
+      - "What changes would better align incentives?"
+
+    protection_mechanisms:
+      - "What could other parties do to take advantage of my goal pursuit?"
+      - "For each vulnerability:"
+      - "  - What would make it harder for them to exploit this?"
+      - "  - What monitoring would detect exploitation early?"
+      - "  - What is the response if exploitation occurs?"
+      - "What commitments should I obtain from others before proceeding?"
+      - "What commitments should I make to others, and under what conditions?"
+
+  # ====================
+  # FEEDBACK SYSTEMS
+  # ====================
+
+  feedback_systems:
+    description: How do I get information about progress?
+
+    existing_feedback:
+      - "What feedback currently exists on progress toward this goal?"
+      - "For each feedback source:"
+      - "  - What is the delay between action and feedback (hours, days, weeks, months)?"
+      - "  - How accurate is the feedback (does it correctly reflect reality)?"
+      - "  - What information is the feedback missing?"
+
+    feedback_design:
+      - "What feedback does not currently exist but would be valuable?"
+      - "For each desired feedback:"
+      - "  - How could this feedback be created or obtained?"
+      - "  - How frequently should it be collected?"
+      - "  - What would trigger a change in action based on this feedback?"
+
+    learning_loop_analysis:
+      - "Is there a process for learning from outcomes and adjusting the approach?"
+      - "If no: How could one be created?"
+      - "If yes:"
+      - "  - What triggers a learning review?"
+      - "  - What questions are asked during review?"
+      - "  - How are lessons captured?"
+      - "  - How are lessons applied to future actions?"
+      - "  - Is there evidence that learning is actually occurring? (Approach changing based on outcomes)"
+
+  # ====================
+  # SYSTEMS
+  # ====================
+
+  systems:
+    description: What processes and automations support this?
+
+    existing_systems:
+      - "What systems (processes, tools, automations) currently support this goal?"
+      - "For each system:"
+      - "  - What function does it perform?"
+      - "  - How well does it perform that function?"
+      - "  - Is it under my control?"
+
+    system_gaps:
+      - "What functions need to be performed that no current system performs?"
+      - "For each gap:"
+      - "  - Does a system exist that I could access? What would access require?"
+      - "  - If I cannot access an existing system, can I build one? What would that require?"
+      - "  - If I cannot build one, can a manual process substitute? At what cost?"
+
+    system_modifications:
+      - "What systems under my control should be modified to better support this goal?"
+      - "For each modification:"
+      - "  - What is the current behavior?"
+      - "  - What should the new behavior be?"
+      - "  - What would the modification cost?"
+      - "  - What is the expected improvement?"
+
+    system_interference:
+      - "What systems currently interfere with this goal?"
+      - "For each interfering system:"
+      - "  - Is it under my control?"
+      - "  - If under my control: Should it be modified or removed?"
+      - "  - If not under my control: Can its interference be reduced? How?"
+
+    default_and_fallback_analysis:
+      - "Are there default behaviors defined for when decisions are not explicitly made?"
+      - "If yes: What are the defaults? Are they appropriate?"
+      - "If no: What happens when no explicit decision is made? Is that acceptable?"
+      - "Is there a fallback plan if the primary approach fails?"
+      - "If yes:"
+      - "  - What triggers switching to the fallback?"
+      - "  - Is the fallback ready to execute?"
+      - "  - Has the fallback been tested?"
+      - "If no: What would creating a fallback require?"
+
+  # ====================
+  # BEHAVIORS
+  # ====================
+
+  behaviors:
+    description: What actions need to be taken regularly?
+
+    required_actions:
+      - "What actions must be taken repeatedly for this goal? List each."
+      - "For each action:"
+      - "  - How frequently must it occur?"
+      - "  - What is the consequence of missing one occurrence?"
+      - "  - What is the consequence of missing multiple occurrences?"
+
+    current_behavior_state:
+      - "Which required actions are currently being taken consistently?"
+      - "Which required actions are not being taken consistently?"
+      - "For actions not being taken: What is preventing them?"
+
+    behavior_establishment:
+      - "For each required action that is not yet consistent:"
+      - "  - What specific trigger would initiate the action?"
+      - "  - What specific environment change would make the action easier?"
+      - "  - What reward would reinforce the action?"
+      - "  - What existing consistent action could this be attached to?"
+
+    competing_behaviors:
+      - "What current behaviors consume the time/energy needed for required actions?"
+      - "Which of these can be reduced or eliminated?"
+      - "What would be required to reduce or eliminate each?"
+
+  # ====================
+  # CONTROL AND PERMISSIONS
+  # ====================
+
+  control_and_permissions:
+    description: Who has the power to do what?
+
+    permission_requirements:
+      - "What permissions (rights to take specific actions) are required to achieve this goal?"
+      - "For each required permission:"
+      - "  - What specific action does it allow?"
+      - "  - Do I currently have this permission?"
+      - "  - If not: Who has the ability to grant it?"
+      - "  - What would obtaining this permission require?"
+      - "  - Can the goal be achieved without this permission? How would the approach change?"
+
+    control_mapping:
+      - "What factors affecting this goal are under my direct control?"
+      - "What factors are under others' control?"
+      - "For factors under others' control:"
+      - "  - Who controls each factor?"
+      - "  - What is their incentive regarding this goal?"
+      - "  - How can I influence their decisions?"
+
+    permission_acquisition:
+      - "For each permission I need but don't have:"
+      - "  - What is the process for obtaining it?"
+      - "  - What are the requirements for obtaining it?"
+      - "  - How long does obtaining it typically take?"
+      - "  - What would increase the probability of obtaining it?"
+
+  # ====================
+  # ETHICS
+  # ====================
+
+  ethics:
+    description: What are the moral considerations?
+
+    value_conflicts:
+      - "Does this goal require any action that conflicts with my stated values? List each conflict."
+      - "For each conflict: Can the goal or approach be modified to eliminate the conflict?"
+      - "What actions would I refuse to take regardless of goal progress?"
+      - "What boundaries exist that cannot be crossed?"
+
+    harm_assessment:
+      - "Who is negatively affected by this goal?"
+      - "For each negatively affected party:"
+      - "  - What is the nature of the harm?"
+      - "  - What is the magnitude of the harm?"
+      - "  - Is the harm necessary for goal achievement or incidental?"
+      - "  - Can the harm be reduced while still achieving the goal?"
+      - "  - Can those harmed be compensated?"
+      - "  - Are those harmed able to avoid the harm if they choose?"
+
+  # ====================
+  # SUSTAINABILITY
+  # ====================
+
+  sustainability:
+    description: Can the outcome be maintained?
+
+    maintenance_requirements:
+      - "Once the goal is achieved, what ongoing actions are required to maintain the achieved state?"
+      - "What resources are consumed by maintenance?"
+      - "What systems must continue operating for maintenance?"
+      - "What is the ongoing cost (time, money, effort) of maintenance?"
+
+    decay_analysis:
+      - "Are there elements relevant to this goal that become less useful or effective over time if not actively maintained?"
+      - "Categories to check:"
+      - "  - Skills: Do any skills required for this goal weaken without practice?"
+      - "  - Information: Does any information used for this goal become outdated?"
+      - "  - Relationships: Do any relationships important to this goal weaken without contact?"
+      - "  - Assets: Do any physical or digital assets lose value or function over time?"
+      - "  - Opportunities: Are any opportunities time-limited or expiring?"
+      - "  - Competitive position: Does any advantage erode as others catch up?"
+      - "  - Progress made: Can completed work become undone or obsolete?"
+      - "For each element that decays:"
+      - "  - What is it?"
+      - "  - What causes it to decay?"
+      - "  - How quickly does it decay? (Timeframe: days, weeks, months, years)"
+      - "  - At what point does decay make it no longer useful?"
+      - "  - What is the current state relative to that point?"
+      - "  - What action prevents or slows decay?"
+      - "  - What is the cost of that preventive action?"
+      - "  - What is the cost of allowing decay to occur?"
+      - "  - Is prevention worth the cost?"
+
+    loss_risks:
+      - "What events could cause complete loss of the achieved state?"
+      - "What is the probability of each event?"
+      - "What would detect each event early?"
+      - "What would prevent or respond to each event?"
+
+    post_achievement_state:
+      - "After achievement, what new goals become achievable that are not achievable now?"
+      - "After achievement, what new risks exist that do not exist now?"
+      - "After achievement, what resources will be freed up?"
+      - "After achievement, what resources will be consumed by maintenance?"
+      - "After achievement, what relationships will change and how?"
+
+    renewal_and_maintenance_analysis:
+      - "Are there elements of this goal that require periodic renewal or maintenance?"
+      - "If yes, for each:"
+      - "  - What is it?"
+      - "  - What maintenance is required?"
+      - "  - How frequently?"
+      - "  - What is the cost of maintenance?"
+      - "  - What happens if maintenance is skipped?"
+      - "  - Is maintenance currently being performed?"
+      - "  - If no: Why not? What would enable it?"
+
+  # ====================
+  # OPTIONALITY
+  # ====================
+
+  optionality:
+    description: What doors does this open or close?
+
+    options_analysis:
+      - "What goals become achievable if this goal succeeds that are not achievable now?"
+      - "What goals become unachievable if this goal succeeds that are achievable now?"
+      - "What goals become unachievable by pursuing this goal (regardless of success)?"
+      - "What options are preserved during pursuit?"
+
+    reversibility_analysis:
+      - "List all major decisions in this goal"
+      - "For each decision:"
+      - "  - Is it reversible?"
+      - "  - If reversible: What is the cost of reversal?"
+      - "  - If irreversible: What is permanently lost? What is permanently gained?"
+      - "How can more information be gathered before irreversible decisions?"
+
+    alternatives:
+      - "What alternative goals would serve the same underlying need?"
+      - "What alternative approaches exist for this goal?"
+      - "At what points during pursuit can alternatives still be switched to?"
+      - "What conditions would trigger abandoning this goal for an alternative?"
+
+    sunk_cost_analysis:
+      - "Are there resources already spent on this goal?"
+      - "Are those sunk costs influencing current decisions?"
+      - "Is there a plan or approach being continued because of past investment rather than future value?"
+      - "If yes:"
+      - "  - What would the decision be if starting fresh today with no prior investment?"
+      - "  - Is the current path different from the fresh-start path?"
+      - "  - If yes: What is the justification for continuing the current path?"
+
+    opportunity_cost_analysis:
+      - "What else could be done with the resources being used for this goal?"
+      - "For each alternative use:"
+      - "  - What would it achieve?"
+      - "  - What is the value of that achievement?"
+      - "  - How does it compare to the value of this goal?"
+      - "Is this goal the highest-value use of these resources?"
+      - "If no: Why is it being pursued instead of the higher-value alternative?"
+
+  # ====================
+  # LEVERAGE ANALYSIS
+  # ====================
+
+  leverage_analysis:
+    description: Where can small effort produce large results?
+
+    repetition_analysis:
+      - "Is any action being performed more than once for this goal?"
+      - "If yes, for each repeated action:"
+      - "  - How many times is it performed?"
+      - "  - Is the output the same each time or different?"
+      - "  - If same: Could it be performed once and the output stored/reused?"
+      - "  - If different: What causes the variation? Is the variation necessary?"
+      - "  - What would be required to reduce the number of repetitions?"
+      - "  - What is the cost of current repetition vs cost of reducing it?"
+
+    automation_analysis:
+      - "Is any action being performed by a person?"
+      - "If yes, for each such action:"
+      - "  - What are the inputs?"
+      - "  - What are the outputs?"
+      - "  - Can the rules for transforming inputs to outputs be fully written down?"
+      - "  - If yes:"
+      - "    - Does a system exist that follows these rules?"
+      - "    - If yes:"
+      - "      - Is that system accessible?"
+      - "      - Is anything required to use it?"
+      - "      - If yes: What is required?"
+      - "    - If no system exists:"
+      - "      - What skills would building one require?"
+      - "      - What time would building one require?"
+      - "      - What is the ongoing cost of continued performance by a person?"
+      - "      - Is ongoing cost greater than one-time build cost?"
+
+    decision_redundancy_analysis:
+      - "Is any decision being made more than once?"
+      - "If yes, for each repeated decision:"
+      - "  - What is the decision?"
+      - "  - Is the criteria for deciding the same each time?"
+      - "  - If yes:"
+      - "    - Is the outcome the same each time?"
+      - "    - If yes:"
+      - "      - What is the rule that describes this pattern?"
+      - "      - Is anyone's agreement required to implement this rule?"
+      - "      - If yes:"
+      - "        - Is that person easily accessible?"
+      - "        - What requirements must be met for them to agree?"
+      - "        - What would increase their likelihood of agreeing?"
+
+    approval_requirements:
+      - "Does any action require approval before it can proceed?"
+      - "If yes, for each action requiring approval:"
+      - "  - Is the approval granted by a person, a system, or both?"
+      - "  - If person:"
+      - "    - Is the person who can grant approval easily accessible?"
+      - "    - What requirements must be met for approval to be granted?"
+      - "    - What is the typical time between requesting and receiving approval?"
+      - "    - Can requirements be pre-met to reduce approval time?"
+      - "  - If system:"
+      - "    - What requirements must be met for the system to grant approval?"
+      - "    - What is the typical time between requesting and receiving approval?"
+      - "    - Can requirements be pre-met to reduce approval time?"
+      - "  - Is there a way to restructure so approval is not required?"
+      - "  - Is there a way to reduce the time approval takes?"
+
+    information_dependencies:
+      - "Does any action require information from another person before it can proceed?"
+      - "If yes, for each such action:"
+      - "  - What information is required?"
+      - "  - What role or position provides this information?"
+      - "  - Is that role easily accessible?"
+      - "  - What is the typical time between requesting and receiving the information?"
+      - "  - Can this information be obtained in advance?"
+      - "  - Is there a way to restructure so this information is not required?"
+
+    deliverable_dependencies:
+      - "Does any action require a deliverable from another person before it can proceed?"
+      - "If yes, for each such action:"
+      - "  - What deliverable is required?"
+      - "  - What role or position provides this deliverable?"
+      - "  - Is that role easily accessible?"
+      - "  - What is the typical time between requesting and receiving the deliverable?"
+      - "  - Is there a way to restructure so this deliverable is not required?"
+      - "  - Is there a way to reduce the time to receive the deliverable?"
+
+    multi_system_coordination:
+      - "Is more than one system (software, tool, process) involved in achieving this goal?"
+      - "If yes:"
+      - "  - Does any system require output from another system as input?"
+      - "  - If yes, for each instance:"
+      - "    - Which system requires the output?"
+      - "    - Which system provides it?"
+      - "    - What data passes between them?"
+      - "    - Is the transfer automatic or manual?"
+      - "    - If manual: Is there a way to make it automatic?"
+      - "    - If automatic but slow: Is there a way to make it faster?"
+
+    sequential_requirement_analysis:
+      - "Does any action require waiting for a prior action to complete before it can begin?"
+      - "If yes, for each instance:"
+      - "  - What action must complete first?"
+      - "  - What action is waiting?"
+      - "  - What does the waiting action need from the completed action? (Specify: information, resource, approval, or deliverable)"
+      - "  - Is there a different approach that allows both actions to proceed without waiting?"
+      - "  - If yes:"
+      - "    - What is that approach?"
+      - "    - What would switching to it require?"
+
+    activity_impact_analysis:
+      - "List all activities currently being performed related to this goal"
+      - "For each activity:"
+      - "  - Does this activity produce an output that contributes to goal completion?"
+      - "  - If no:"
+      - "    - What was the original reason for this activity?"
+      - "    - Does that reason still apply?"
+      - "    - What would happen if this activity stopped?"
+      - "    - Is stopping this activity possible?"
+      - "    - If yes: What would stopping require?"
+
+    resource_application_analysis:
+      - "What types of resources could be applied to this goal? (Categories: money, time, skills, relationships, tools, information, access)"
+      - "For each resource type:"
+      - "  - What resources of this type are currently being applied?"
+      - "  - Are there additional resources of this type that are accessible but not applied?"
+      - "  - If yes, for each:"
+      - "    - Is it applicable to this goal?"
+      - "    - If yes:"
+      - "      - What prevents it from being applied?"
+      - "      - Is that barrier removable?"
+      - "      - If yes: What would removing it require?"
+
+    progress_rate_analysis:
+      - "Is progress toward this goal occurring?"
+      - "Is there a factor that, if changed, would increase the rate of progress?"
+      - "If yes:"
+      - "  - Can the factor be identified?"
+      - "  - If yes:"
+      - "    - What is the factor?"
+      - "    - Can what this factor limits be identified?"
+      - "    - If yes:"
+      - "      - What does it limit? (Specify: which action, which stage, which resource)"
+      - "    - Is this factor changeable?"
+      - "    - If yes:"
+      - "      - What would change it?"
+      - "      - What would that cost?"
+      - "  - If this factor were no longer limiting:"
+      - "    - Would another factor become limiting?"
+      - "    - If yes:"
+      - "      - Can that factor be identified?"
+      - "      - If yes: What is it?"
+
+  # ====================
+  # REQUIREMENT ANALYSIS
+  # ====================
+
+  requirement_analysis:
+    description: Recursive structure for tracing requirements and their requirements
+
+    condition_identification:
+      - "Is there one or more conditions that must be true for the next milestone to be achieved?"
+      - "If yes:"
+      - "  - How many conditions are there?"
+      - "  - What are those conditions? (List each)"
+
+    condition_status_analysis:
+      - "For each identified condition:"
+      - "  - Is this condition currently met?"
+      - "  - If yes: Mark as satisfied, no further analysis needed for this condition"
+      - "  - If no:"
+      - "    - Is it on track to being met?"
+      - "    - If yes:"
+      - "      - What is the expected timeline for it to be met?"
+      - "      - What could cause it to go off track?"
+      - "    - If no:"
+      - "      - Is there a way to make it be on track?"
+      - "      - If yes: Proceed to PATH ANALYSIS for this condition"
+      - "      - If no: Mark as blocked, proceed to ALTERNATIVE ANALYSIS"
+
+    path_analysis:
+      description: "Apply this for each condition that is not met and not on track but has a way to get on track"
+      questions:
+        - "What is the way to make this condition be on track?"
+        - "What does doing it that way require? (List all requirements)"
+        - "For each requirement:"
+        - "  - Is this requirement currently met?"
+        - "  - If yes: Mark as satisfied"
+        - "  - If no:"
+        - "    - Is it on track to being met?"
+        - "    - If yes:"
+        - "      - What is the expected timeline?"
+        - "    - If no:"
+        - "      - Is there a way to make it be on track?"
+        - "      - If yes:"
+        - "        - What is that way?"
+        - "        - What does that way require? (RECURSE: Apply PATH ANALYSIS to these sub-requirements)"
+        - "      - If no: Mark as blocked"
+
+    requirement_cost_analysis:
+      - "For each requirement identified in PATH ANALYSIS:"
+      - "  - Can this requirement be met?"
+      - "  - If yes:"
+      - "    - What is the cost to meet it?"
+      - "      - Time cost: How much time?"
+      - "      - Money cost: How much money?"
+      - "      - Effort cost: How much effort?"
+      - "      - Opportunity cost: What else cannot be done if this is pursued?"
+      - "    - Is the cost known or estimated?"
+      - "    - If estimated: What is the confidence level in the estimate?"
+      - "    - Is the cost acceptable relative to the goal value?"
+      - "    - If no: Proceed to ALTERNATIVE ANALYSIS for this requirement"
+
+    requirement_chain_tracing:
+      description: "For understanding the full depth of requirements"
+      questions:
+        - "Starting from the original condition, what is the chain of requirements?"
+        - "For each level of the chain:"
+        - "  - Level 0: Original condition"
+        - "  - Level 1: Requirements to meet Level 0"
+        - "  - Level 2: Requirements to meet Level 1 requirements"
+        - "  - Level N: Requirements to meet Level N-1 requirements"
+        - "At what level does the chain terminate? (All requirements at that level are either met or meetable with acceptable cost)"
+        - "What is the longest chain?"
+        - "What is the total cost across the entire chain?"
+
+    requirement_feasibility_determination:
+      - "For each requirement in the chain:"
+      - "  - Is it met? → Feasible"
+      - "  - Is it meetable at acceptable cost? → Feasible with cost"
+      - "  - Is it meetable at unacceptable cost? → Feasible but costly"
+      - "  - Is it not meetable? → Infeasible"
+      - "Are all requirements in the chain feasible or feasible with cost?"
+      - "If no: Which requirements are infeasible or feasible but costly?"
+
+    alternative_analysis:
+      description: "Apply when a requirement is blocked or has unacceptable cost"
+      questions:
+        - "Is there an alternative way to satisfy the parent condition without this requirement?"
+        - "If yes:"
+        - "  - What is the alternative?"
+        - "  - What does the alternative require? (Apply PATH ANALYSIS to alternative requirements)"
+        - "  - What is the cost of the alternative path?"
+        - "  - Is the alternative cost lower than the original path cost?"
+        - "If no alternative exists:"
+        - "  - Is there an alternative condition that would achieve the same purpose as the parent condition?"
+        - "  - If yes: Apply CONDITION STATUS ANALYSIS to the alternative condition"
+        - "  - If no: The goal may need to be modified or may not be achievable"
+
+    requirement_dependency_mapping:
+      - "For all identified requirements:"
+      - "  - Which requirements depend on other requirements? (Cannot be met until another is met)"
+      - "  - Which requirements are independent? (Can be met in any order)"
+      - "  - Which requirements can be pursued in parallel?"
+      - "  - What is the critical path? (Longest chain of dependent requirements)"
+
+    requirement_priority_ordering:
+      - "For independent requirements that can be pursued now:"
+      - "  - Which requirements, if met, would unblock the most other requirements?"
+      - "  - Which requirements have the lowest cost?"
+      - "  - Which requirements have the highest risk of becoming harder to meet over time?"
+      - "  - Which requirements, if not met, would make other requirements pointless?"
+
+  # ====================
+  # ACTION ANALYSIS
+  # ====================
+
+  action_analysis:
+    description: Identifying and comparing possible actions
+
+    next_action_identification:
+      - "What is the next milestone in the plan?"
+      - "Is there one or more conditions that must be true for that milestone to be reached?"
+      - "If yes:"
+      - "  - How many conditions are there?"
+      - "  - What are those conditions? (List each)"
+      - "For each condition:"
+      - "  - Is it currently true?"
+      - "  - If no: What action would make it true?"
+      - "List all actions identified above"
+      - "Are there additional actions not yet identified that could contribute to reaching the milestone?"
+      - "If yes: What are they? What would each accomplish?"
+
+    action_effort_comparison:
+      - "For each identified action:"
+      - "  - What is the time required?"
+      - "  - What is the money required?"
+      - "  - What is the effort/energy required?"
+      - "  - What skills are required?"
+      - "  - Are all required skills available?"
+      - "  - What resources are required?"
+      - "  - Are all required resources available?"
+
+    action_impact_comparison:
+      - "For each identified action:"
+      - "  - What condition does this action satisfy?"
+      - "  - How many other conditions depend on this condition being satisfied?"
+      - "  - Does this action satisfy the condition fully or partially?"
+      - "  - If partially: What percentage of the condition does it satisfy?"
+
+    action_risk_comparison:
+      - "For each identified action:"
+      - "  - What is the probability this action fails to produce the expected output?"
+      - "  - If it fails, is the effort recoverable or lost?"
+      - "  - If it fails, does it prevent other actions from being taken?"
+      - "  - If it fails, is there an alternative action that could be taken instead?"
+
+    action_dependency_comparison:
+      - "For each identified action:"
+      - "  - Does this action depend on other actions being completed first?"
+      - "  - If yes: Are those actions completed?"
+      - "  - Do other actions depend on this action being completed?"
+      - "  - If yes: How many actions are waiting on this one?"
+
+    action_reversibility_comparison:
+      - "For each identified action:"
+      - "  - Once taken, can this action be undone?"
+      - "  - If yes: What is the cost of undoing it?"
+      - "  - If no: What is permanently changed by taking this action?"
+
+    action_timing_comparison:
+      - "For each identified action:"
+      - "  - Is there a deadline by which this action must be taken?"
+      - "  - If yes: What is the deadline? How much time remains?"
+      - "  - Does waiting to take this action reduce its effectiveness?"
+      - "    - (Example: A competitive response becomes less effective after competitor establishes market position)"
+      - "    - If yes: How does effectiveness reduce? By how much per unit of time?"
+      - "  - Does waiting to take this action increase the difficulty of taking it?"
+      - "    - (Example: Fixing a bug becomes harder after more code is built on top of it)"
+      - "    - If yes: What makes it harder? How much harder per unit of time?"
+      - "  - Does waiting to take this action cause dependencies to accumulate?"
+      - "    - (Example: Delaying a foundation task causes more tasks to queue behind it)"
+      - "    - If yes: What dependencies accumulate?"
+      - "  - Is there a window during which this action is easier or more effective?"
+      - "    - If yes: When is that window? Is the window currently open?"
+
+    action_selection:
+      - "Are there actions where required skills or resources are not available?"
+      - "If yes: Eliminate those actions from consideration"
+      - "Are there actions where dependencies are not yet satisfied?"
+      - "If yes: Eliminate those actions from consideration"
+      - "For remaining actions:"
+      - "  - How many other actions does each action unblock?"
+      - "  - Rank by number of actions unblocked (highest first)"
+      - "  - For actions with equal unblock count: Rank by total cost (lowest first)"
+      - "  - For actions still tied: Rank by probability of failure (lowest first)"
+      - "  - For actions still tied: Rank by time sensitivity (most urgent first)"
+      - "What action is ranked highest?"
+      - "Is there a reason this action should not be taken?"
+      - "If yes:"
+      - "  - What is the reason?"
+      - "  - Is this reason temporary or permanent?"
+      - "  - If temporary: When will it no longer apply?"
+
+  # ====================
+  # THINKING QUALITY
+  # ====================
+
+  thinking_quality:
+    description: Analysis of the quality of reasoning being applied
+
+    causation_analysis:
+      - "Is there a believed causal relationship between any action and the goal outcome?"
+      - "If yes, for each believed causal relationship:"
+      - "  - What is the action?"
+      - "  - What is the believed outcome?"
+      - "  - What is the evidence that this action causes this outcome?"
+      - "  - Is the evidence based on correlation or demonstrated causation?"
+      - "  - Are there documented cases where the action occurred but the outcome did not?"
+      - "  - Are there intermediate steps between action and outcome?"
+      - "  - If yes: What are they? Can any intermediate step fail?"
+      - "  - Are there other factors that could cause the same outcome without this action?"
+      - "  - Are there other factors that could prevent the outcome despite this action?"
+
+    prediction_analysis:
+      - "Is there uncertainty about any future state relevant to this goal?"
+      - "If yes, for each uncertainty:"
+      - "  - What is being predicted?"
+      - "  - What is the basis for the prediction?"
+      - "  - What is the track record of predictions made on this basis?"
+      - "  - What range of outcomes is possible?"
+      - "  - What is the probability distribution across that range?"
+      - "  - What information would narrow the range?"
+      - "  - What would completely invalidate the prediction?"
+      - "  - What is the cost of acting on a wrong prediction?"
+
+    assumption_identification:
+      - "Is there anything being treated as true without verification?"
+      - "If yes, for each assumption:"
+      - "  - What is the assumption?"
+      - "  - What is the source of the assumption?"
+      - "  - What evidence supports it?"
+      - "  - What evidence would contradict it?"
+      - "  - What is the cost if the assumption is false?"
+      - "  - Can the assumption be tested before relying on it?"
+      - "  - If yes: What test would verify it? What would the test cost?"
+
+    belief_quality_analysis:
+      - "Are there beliefs influencing decisions about this goal?"
+      - "If yes, for each belief:"
+      - "  - What is the belief?"
+      - "  - What is the source of this belief?"
+      - "    - Is it first-hand observation or received from others?"
+      - "    - If received from others: How many steps removed from the original source?"
+      - "  - What is the evidence supporting this belief?"
+      - "  - For the evidence:"
+      - "    - Is it based on one instance or multiple instances?"
+      - "    - If multiple: How many?"
+      - "    - Is it from one source or multiple independent sources?"
+      - "    - If multiple sources: Do they corroborate each other?"
+      - "    - How recent is the evidence?"
+      - "    - Is the evidence from conditions similar to current conditions?"
+      - "    - Has the evidence been challenged or tested?"
+      - "    - If yes: Did it survive the challenge?"
+      - "    - Is there potential bias in the source of the evidence?"
+      - "    - If yes: What is the bias? How might it distort the evidence?"
+      - "  - Has contradicting evidence been actively sought?"
+      - "  - If yes: Was any found? What was it?"
+      - "  - If no: What would contradicting evidence look like?"
+      - "  - What is the consequence of acting on this belief if it is true?"
+      - "  - What is the consequence of acting on this belief if it is false?"
+      - "  - Given the evidence quality and consequences, should this belief be:"
+      - "    - Acted upon as is?"
+      - "    - Tested further before acting?"
+      - "    - Treated as uncertain and planned for both cases?"
+
+    bias_detection:
+      - "Are there known biases that affect decisions of this type?"
+      - "If yes, for each known bias:"
+      - "  - What is the bias?"
+      - "  - How does it distort thinking?"
+      - "  - What signs indicate this bias is present?"
+      - "  - Are any of those signs present in my thinking about this goal?"
+      - "  - What process would counteract this bias?"
+      - "Are there decisions being made that could be affected by biases I am not aware of?"
+      - "If yes:"
+      - "  - What external check could detect unknown biases?"
+      - "  - Who could provide an outside perspective?"
+
+    error_pattern_analysis:
+      - "Are there common errors made when pursuing goals of this type?"
+      - "If yes, for each common error:"
+      - "  - What is the error?"
+      - "  - At what stage does it typically occur?"
+      - "  - What causes it?"
+      - "  - What are the signs it is occurring?"
+      - "  - Am I showing any of those signs?"
+      - "  - What would prevent this error?"
+
+    mental_model_analysis:
+      - "Is there a mental model being used to understand this situation?"
+      - "If yes:"
+      - "  - What is the model? (How does it represent the situation?)"
+      - "  - What does the model include?"
+      - "  - What does the model exclude or simplify?"
+      - "  - In what situations does this model work well?"
+      - "  - In what situations does this model fail?"
+      - "  - Are the current conditions more like situations where it works or fails?"
+      - "  - Is there an alternative model that could apply?"
+      - "  - If yes: What would the alternative model suggest differently?"
+
+    definition_clarity_analysis:
+      - "Are there key terms being used in planning or communication?"
+      - "If yes, for each key term:"
+      - "  - Is the term clearly defined?"
+      - "  - If no: What is the ambiguity?"
+      - "  - Do all relevant parties share the same definition?"
+      - "  - If no: What are the different definitions?"
+      - "  - Could the ambiguity cause problems?"
+      - "  - If yes: What problems? How can definition be clarified?"
+
+    consistency_analysis:
+      - "Is the plan internally consistent? (No contradictions)"
+      - "Are there any elements that contradict each other?"
+      - "If yes: What are they? How can the contradiction be resolved?"
+      - "Is this goal consistent with other active goals?"
+      - "If no: What is the conflict? Which goal takes priority?"
+      - "Are stated priorities consistent with actual resource allocation?"
+      - "If no: What is the discrepancy? Which should change?"
+
+    simplicity_analysis:
+      - "Is the current plan as simple as it could be while still achieving the goal?"
+      - "Is there complexity that does not contribute to goal achievement?"
+      - "If yes:"
+      - "  - What is the unnecessary complexity?"
+      - "  - Why was it added?"
+      - "  - Can it be removed?"
+      - "  - What would removing it require?"
+      - "Is there complexity that is necessary but could be hidden or encapsulated?"
+      - "If yes: How could it be encapsulated?"
+
+    reversal_test:
+      - "If the opposite of this goal were proposed, what would be the argument against it?"
+      - "Does that argument apply in reverse as an argument for this goal?"
+      - "What would have to be true for the opposite goal to be the right choice?"
+      - "Are any of those conditions actually true?"
+
+  # ====================
+  # SYSTEM DYNAMICS
+  # ====================
+
+  system_dynamics:
+    description: Understanding complex system behavior
+
+    system_dynamics_analysis:
+      - "Is this goal affected by a system with multiple interacting parts?"
+      - "If yes:"
+      - "  - What are the parts of the system?"
+      - "  - How do the parts interact?"
+      - "  - Are there feedback loops?"
+      - "  - If yes, for each feedback loop:"
+      - "    - Is it reinforcing (amplifies change) or balancing (resists change)?"
+      - "    - What triggers the loop?"
+      - "    - What is the loop's effect on goal progress?"
+      - "  - Are there delays between cause and effect in the system?"
+      - "  - If yes: Where are the delays? How long are they?"
+      - "  - Are there emergent behaviors (outcomes that no single part causes)?"
+      - "  - If yes: What are they? How do they affect the goal?"
+
+    threshold_and_tipping_point_analysis:
+      - "Are there thresholds that, once crossed, cause significant change?"
+      - "If yes, for each threshold:"
+      - "  - What is the threshold?"
+      - "  - What happens before the threshold is reached?"
+      - "  - What happens after the threshold is crossed?"
+      - "  - Is the change reversible or irreversible?"
+      - "  - How close is the current state to the threshold?"
+      - "  - What actions would move toward the threshold?"
+      - "  - What actions would move away from the threshold?"
+      - "  - Is crossing the threshold desirable or undesirable for this goal?"
+
+    scaling_analysis:
+      - "Is this goal or approach intended to work at a particular scale?"
+      - "If yes:"
+      - "  - What is the intended scale?"
+      - "  - What is the current scale?"
+      - "  - Does the approach work at the current scale?"
+      - "  - Are there plans to change scale?"
+      - "  - If yes:"
+      - "    - What aspects of the approach depend on scale?"
+      - "    - What works at small scale but not large scale?"
+      - "    - What works at large scale but not small scale?"
+      - "    - What modifications are needed for the new scale?"
+      - "    - At what scale does the approach break entirely?"
+
+    second_order_effect_analysis:
+      - "Does achieving this goal cause other effects beyond the immediate outcome?"
+      - "If yes, for each second-order effect:"
+      - "  - What is the effect?"
+      - "  - Is it positive, negative, or neutral?"
+      - "  - How significant is it compared to the primary goal?"
+      - "  - Was it considered in the decision to pursue this goal?"
+      - "  - Does it change the overall value of achieving the goal?"
+
+  # ====================
+  # STRATEGIC CONTEXT
+  # ====================
+
+  strategic_context:
+    description: Understanding the broader strategic landscape
+
+    strategic_interaction_analysis:
+      - "Are there other actors whose actions affect this goal?"
+      - "If yes, for each actor:"
+      - "  - What are their goals?"
+      - "  - Are their goals aligned, opposed, or orthogonal to mine?"
+      - "  - What actions can they take that affect my goal?"
+      - "  - What actions can I take that affect their goals?"
+      - "  - Is this a zero-sum situation (my gain is their loss)?"
+      - "  - Is cooperation possible?"
+      - "  - If yes: What would cooperation look like? What is required to achieve it?"
+      - "  - If no: What is my best strategy given their likely actions?"
+      - "  - What information do they have about my plans?"
+      - "  - What information do I have about their plans?"
+
+    precedent_analysis:
+      - "Are there precedents (previous similar situations) that inform this goal?"
+      - "If yes, for each precedent:"
+      - "  - What was the situation?"
+      - "  - What approach was taken?"
+      - "  - What was the outcome?"
+      - "  - What factors are similar to my situation?"
+      - "  - What factors are different from my situation?"
+      - "  - Do the differences change which approach would work?"
+      - "  - What can be learned from this precedent?"
+      - "  - What should not be copied from this precedent?"
+
+    analogy_analysis:
+      - "Is an analogy being used to understand this goal or situation?"
+      - "If yes:"
+      - "  - What is the analogy? (This situation is like what other situation?)"
+      - "  - In what ways are they similar?"
+      - "  - In what ways are they different?"
+      - "  - Do the differences affect which approach would work?"
+      - "  - What does the analogy suggest about what to do?"
+      - "  - What does the analogy fail to account for?"
+      - "  - Is there a better analogy that fits more closely?"
+
+    context_sensitivity_analysis:
+      - "Was this plan designed for specific conditions?"
+      - "If yes:"
+      - "  - What conditions was it designed for?"
+      - "  - Are those conditions currently present?"
+      - "  - What conditions would make the plan ineffective?"
+      - "  - Is there monitoring to detect condition changes?"
+      - "  - If conditions change, what is the response?"
+
+  # ====================
+  # KNOWLEDGE MANAGEMENT
+  # ====================
+
+  knowledge_management:
+    description: Capturing and preserving knowledge
+
+    knowledge_preservation_analysis:
+      - "Is knowledge being created during pursuit of this goal?"
+      - "If yes:"
+      - "  - Can the knowledge being created be identified?"
+      - "  - If yes:"
+      - "    - What is the knowledge?"
+      - "    - What form is it in?"
+      - "      - Tacit (exists only in someone's mind)?"
+      - "      - Explicit (documented, recorded, written)?"
+      - "    - If tacit:"
+      - "      - Is there risk of this knowledge being lost? (Person leaves, forgets, becomes unavailable)"
+      - "      - If yes: What is the cost of losing this knowledge?"
+      - "      - Can it be converted to explicit form?"
+      - "      - If yes: What would that require?"
+      - "    - If explicit:"
+      - "      - Where is it stored?"
+      - "      - Is the storage reliable? (Backed up, protected, accessible)"
+      - "      - Is the documentation accurate and complete?"
+      - "      - Is it findable by those who need it?"
+      - "    - Who needs access to this knowledge?"
+      - "    - For each person/role that needs access:"
+      - "      - Do they currently have access?"
+      - "      - If no: What prevents access?"
+      - "      - Can the barrier to access be removed?"
+      - "      - If yes: What would that require?"
+      - "    - Is there anyone who does not currently have access who would benefit from access?"
+      - "    - If yes, for each:"
+      - "      - Who are they?"
+      - "      - What benefit would they receive?"
+      - "      - What is the cost of providing access?"
+      - "      - What is the cost of not providing access?"
+      - "      - Is there any reason access should not be provided?"
+      - "      - If no reason against: What is required to provide access?"
+      - "  - If no (knowledge cannot be identified):"
+      - "    - Why can it not be identified?"
+      - "    - Is there a process that would capture knowledge even if it cannot be identified in advance? (e.g., logging, journaling, recording)"
+      - "    - If yes: Is that process in place?"
+      - "    - If no: What would implementing it require?"
+
+    version_and_state_analysis:
+      - "Is there a need to track different versions or states?"
+      - "If yes:"
+      - "  - What is being versioned?"
+      - "  - What is the current version?"
+      - "  - Is version history preserved?"
+      - "  - Can previous versions be accessed?"
+      - "  - Can previous versions be restored?"
+      - "  - What triggers a new version?"
+      - "  - Who controls versioning?"
+
+  # ====================
+  # OPERATIONAL EFFICIENCY
+  # ====================
+
+  operational_efficiency:
+    description: Optimizing how work gets done
+
+    delegation_analysis:
+      - "Are there tasks that could be performed by someone other than me?"
+      - "If yes, for each delegatable task:"
+      - "  - What is the task?"
+      - "  - What skills does it require?"
+      - "  - Who has those skills?"
+      - "  - Is that person available?"
+      - "  - What is required to delegate to them? (Instructions, authority, resources)"
+      - "  - What oversight is needed after delegation?"
+      - "  - What is the cost of delegation vs doing it myself?"
+      - "  - What is the risk of delegation? (Quality, timeliness, reliability)"
+
+    handoff_analysis:
+      - "Are there points where responsibility transfers from one party to another?"
+      - "If yes, for each handoff:"
+      - "  - What is being handed off?"
+      - "  - From whom to whom?"
+      - "  - What information must be transferred?"
+      - "  - Is the information transfer reliable?"
+      - "  - What could go wrong at the handoff?"
+      - "  - What verification exists that the handoff was successful?"
+      - "  - Who is responsible if something goes wrong during handoff?"
+
+    waiting_and_queue_analysis:
+      - "Is there waiting occurring in pursuit of this goal?"
+      - "If yes, for each instance of waiting:"
+      - "  - What is waiting?"
+      - "  - What is it waiting for?"
+      - "  - How long is the expected wait?"
+      - "  - Is the wait necessary?"
+      - "  - If no: How can it be eliminated?"
+      - "  - If yes: Can the wait time be reduced? How?"
+      - "  - What is the cost of waiting? (Time lost, resources idle, delays cascading)"
+      - "  - Can other productive work occur during the wait?"
+
+    batch_vs_flow_analysis:
+      - "Are tasks being processed in batches (collected and processed together) or flow (processed as they arrive)?"
+      - "Is the current approach optimal?"
+      - "What are the tradeoffs?"
+      - "  - Batch: What is the cost of waiting to form a batch? What is the benefit of batch processing?"
+      - "  - Flow: What is the cost of constant context switching? What is the benefit of immediate processing?"
+      - "Would switching approach improve progress?"
+
+    interruption_analysis:
+      - "Are there interruptions that disrupt progress?"
+      - "If yes, for each type of interruption:"
+      - "  - What is the source?"
+      - "  - How frequent are interruptions?"
+      - "  - How long does each interruption last?"
+      - "  - How long does recovery from interruption take?"
+      - "  - What is the total cost of this interruption type?"
+      - "  - Is the interruption necessary?"
+      - "  - If no: Can it be eliminated? How?"
+      - "  - If yes: Can it be batched or scheduled instead of random?"
+
+  # ====================
+  # CAPACITY AND EFFORT
+  # ====================
+
+  capacity_and_effort:
+    description: Managing capacity and sustained effort
+
+    capacity_analysis:
+      - "Is there a maximum rate at which progress can occur?"
+      - "If yes:"
+      - "  - What determines the maximum rate?"
+      - "  - Is current progress at, below, or above sustainable capacity?"
+      - "  - If above: What is the consequence of exceeding capacity? How long can it be sustained?"
+      - "  - If below: What is preventing full capacity utilization?"
+      - "Is there surge capacity available for critical periods?"
+      - "If yes: How much? For how long? What is the recovery cost?"
+      - "Is capacity being reserved for unexpected demands?"
+      - "If yes: How much? Is the reserve appropriate for likely unexpected demands?"
+
+    cognitive_load_analysis:
+      - "Is there a limit to how much information can be held in mind at once?"
+      - "Is the current plan exceeding that limit?"
+      - "If yes:"
+      - "  - What is being tracked mentally that could be externalized (written down, systematized)?"
+      - "  - What complexity could be reduced?"
+      - "  - What could be chunked into larger units?"
+      - "  - What could be automated or delegated?"
+      - "Is decision fatigue a factor?"
+      - "If yes:"
+      - "  - How many decisions are being made per day/week?"
+      - "  - Which decisions could be pre-made as rules or policies?"
+      - "  - Which decisions could be eliminated?"
+      - "  - What is the optimal time for important decisions?"
+
+    attention_allocation_analysis:
+      - "What is currently receiving attention?"
+      - "Is attention being allocated to the highest priority items?"
+      - "Is there anything that should receive attention but is not?"
+      - "If yes: What is it? Why is it not receiving attention?"
+      - "Is there anything receiving attention that should not be?"
+      - "If yes: What is it? Why is it receiving attention?"
+      - "Are there attention traps (things that capture attention disproportionate to their value)?"
+      - "If yes: What are they? How can they be avoided?"
+
+    sustained_effort_analysis:
+      - "Does this goal require effort over an extended period?"
+      - "If yes:"
+      - "  - What is the expected duration?"
+      - "  - What enables effort to continue over that duration?"
+      - "    - Motivation:"
+      - "      - Is there intrinsic motivation (the activity itself is rewarding)?"
+      - "      - Is there extrinsic motivation (external rewards or consequences)?"
+      - "      - Is the motivation sufficient for the expected duration?"
+      - "      - What would cause motivation to decrease?"
+      - "      - What would restore motivation if it decreases?"
+      - "    - Physical capacity:"
+      - "      - Does this goal require physical effort?"
+      - "      - If yes: Is there sufficient capacity for the duration?"
+      - "      - What would deplete physical capacity?"
+      - "      - What is the recovery process and time?"
+      - "    - Mental capacity:"
+      - "      - Does this goal require sustained focus or cognitive effort?"
+      - "      - If yes: Is there sufficient capacity for the duration?"
+      - "      - What would deplete mental capacity?"
+      - "      - What is the recovery process and time?"
+      - "    - Willpower/discipline:"
+      - "      - Does this goal require doing things that are unpleasant or resisting things that are tempting?"
+      - "      - If yes: Is there sufficient willpower for the duration?"
+      - "      - What would deplete willpower?"
+      - "      - What would reduce the need for willpower? (Making desired actions easier, undesired actions harder)"
+      - "  - Are there periods of higher effort required?"
+      - "  - If yes: When? Is there capacity for those periods?"
+      - "  - What would cause effort to stop entirely?"
+      - "  - What would restart effort if it stops?"
+
+    momentum_analysis:
+      - "Is progress building on itself? (Each step makes the next step easier)"
+      - "If yes: What is creating the momentum? How can it be maintained?"
+      - "If no: What would create momentum?"
+      - "What would cause progress to stall?"
+      - "If progress stalls, how much effort is required to restart?"
+      - "Are there points where momentum is particularly fragile?"
+      - "If yes: What protects momentum at those points?"
+
+    prioritization_analysis:
+      - "Are there more tasks than can be completed with available resources?"
+      - "If yes:"
+      - "  - What is the prioritization method?"
+      - "  - Is prioritization explicit or implicit?"
+      - "  - What criteria determine priority?"
+      - "  - Are the criteria aligned with goal achievement?"
+      - "  - What is the highest priority item?"
+      - "  - What can be deferred without significant cost?"
+      - "  - What can be dropped entirely without significant cost?"
+
+  # ====================
+  # COMMITMENTS AND OBLIGATIONS
+  # ====================
+
+  commitments_and_obligations:
+    description: Tracking promises and responsibilities
+
+    obligation_analysis:
+      - "Are there obligations (commitments that must be fulfilled) relevant to this goal?"
+      - "If yes, for each obligation:"
+      - "  - What is the obligation?"
+      - "  - To whom is it owed?"
+      - "  - What is the deadline?"
+      - "  - What is the consequence of not fulfilling it?"
+      - "  - Does fulfilling this obligation conflict with the goal?"
+      - "  - If yes: Which takes priority? Why?"
+      - "Does this goal create new obligations?"
+      - "If yes:"
+      - "  - What are they?"
+      - "  - To whom?"
+      - "  - What is the duration?"
+      - "  - Are they acceptable?"
+
+    promise_and_commitment_tracking:
+      - "Have promises or commitments been made related to this goal?"
+      - "If yes, for each promise:"
+      - "  - What was promised?"
+      - "  - To whom?"
+      - "  - By when?"
+      - "  - What is the current status? (Not started, in progress, complete, at risk, broken)"
+      - "  - If at risk: What is causing the risk? What would mitigate it?"
+      - "Have promises been received from others?"
+      - "If yes, for each promise received:"
+      - "  - What was promised?"
+      - "  - By whom?"
+      - "  - By when?"
+      - "  - What is the evidence they will fulfill it?"
+      - "  - What is the consequence if they do not fulfill it?"
+      - "  - What is the contingency if they do not fulfill it?"
+
+  # ====================
+  # TRUST AND EXPERTISE
+  # ====================
+
+  trust_and_expertise:
+    description: Leveraging expertise and managing trust
+
+    expertise_analysis:
+      - "Does this goal require expertise (specialized knowledge or skill)?"
+      - "If yes, for each area of expertise required:"
+      - "  - What is the expertise?"
+      - "  - Do I have this expertise?"
+      - "  - If yes: At what level (beginner, intermediate, expert)?"
+      - "  - If no: Who has this expertise?"
+      - "    - Is that person accessible?"
+      - "    - What would accessing their expertise require?"
+      - "    - Can this expertise be acquired? How long would it take?"
+      - "    - Can the goal be modified to not require this expertise?"
+
+    trust_analysis:
+      - "Is there anything being trusted without verification?"
+      - "If yes, for each instance of trust:"
+      - "  - What is being trusted?"
+      - "  - Who or what is being trusted?"
+      - "  - What is the basis for this trust? (Track record, reputation, necessity, default)"
+      - "  - What would happen if the trust is misplaced?"
+      - "  - What is the cost of verifying instead of trusting?"
+      - "  - Is the cost of misplaced trust greater than the cost of verification?"
+      - "  - If yes: Should this be verified rather than trusted?"
+      - "  - If verification is not possible: What monitoring would detect betrayed trust early?"
+
+  # ====================
+  # SECURITY
+  # ====================
+
+  security:
+    description: Protecting against threats
+
+    security_and_protection_analysis:
+      - "Is there anything that needs to be protected for this goal to succeed?"
+      - "If yes, for each thing requiring protection:"
+      - "  - What is it?"
+      - "  - What threatens it?"
+      - "  - What protections are in place?"
+      - "  - Are protections adequate for the threats?"
+      - "  - What vulnerabilities exist?"
+      - "  - What would addressing vulnerabilities require?"
+
+  # ====================
+  # BOUNDARIES
+  # ====================
+
+  boundaries:
+    description: Defining scope and interfaces
+
+    boundary_analysis:
+      - "Are boundaries defined for this goal? (What is in scope vs out of scope)"
+      - "If no: Should boundaries be defined? What problems might occur without them?"
+      - "If yes:"
+      - "  - What is included?"
+      - "  - What is excluded?"
+      - "  - Are the boundaries clearly communicated to all relevant parties?"
+      - "  - Are there disputes about boundaries?"
+      - "  - If yes: What is the dispute? How can it be resolved?"
+      - "  - Are there interfaces where this goal connects to things outside its boundary?"
+      - "  - If yes, for each interface:"
+      - "    - What crosses the boundary? (Information, resources, dependencies)"
+      - "    - Is the interface well-defined?"
+      - "    - Who is responsible for each side of the interface?"
+      - "    - Are there problems at the interface?"
+
+  # ====================
+  # RECOVERY
+  # ====================
+
+  recovery:
+    description: Handling setbacks and restoration
+
+    recovery_analysis:
+      - "If progress is lost, can it be recovered?"
+      - "If yes:"
+      - "  - What is the recovery process?"
+      - "  - How long does recovery take?"
+      - "  - What resources does recovery require?"
+      - "  - Are those resources available?"
+      - "  - Is there a point beyond which recovery is not possible?"
+      - "  - How close is the current state to that point?"
+      - "If no:"
+      - "  - What would be required to start over?"
+      - "  - Is starting over acceptable?"
+      - "  - What would be permanently lost?"
+
+  # ====================
+  # PROBABILITY AND UNCERTAINTY ANALYSIS
+  # ====================
+
+  probability_and_uncertainty:
+    description: Mathematical analysis of uncertain outcomes
+
+    outcome_probability_analysis:
+      - "Are there outcomes that are uncertain (not guaranteed to occur or not occur)?"
+      - "If yes, for each uncertain outcome:"
+      - "  - Can the probability be estimated numerically?"
+      - "  - If yes, what is the probability (0-1)?"
+      - "  - If no, can it be ranked relative to other outcomes (more likely, less likely, equally likely)?"
+      - "  - What evidence supports this probability estimate?"
+      - "  - Has this type of event occurred before? How many times? Under what conditions?"
+      - "  - Is this probability fixed, or does it change based on actions taken?"
+
+    conditional_probability_analysis:
+      - "Are there outcomes whose probability changes based on other events occurring?"
+      - "If yes, for each:"
+      - "  - What is the probability if the conditioning event occurs?"
+      - "  - What is the probability if the conditioning event does not occur?"
+      - "  - Is the difference significant enough to change decisions?"
+      - "  - Can the conditioning event be influenced?"
+
+    independence_analysis:
+      - "Are there events being treated as independent (one occurring doesn't affect the other's probability)?"
+      - "If yes, for each pair:"
+      - "  - Is there any causal connection between them?"
+      - "  - Is there a common cause that affects both?"
+      - "  - If not truly independent, what is the actual relationship?"
+
+    expected_value_analysis:
+      - "For uncertain outcomes, can expected value be calculated?"
+      - "If yes:"
+      - "  - What is the probability of each possible outcome?"
+      - "  - What is the value (positive or negative) of each outcome?"
+      - "  - What is the sum of (probability * value) for all outcomes?"
+      - "  - Is the expected value positive, negative, or zero?"
+      - "  - Is variance (spread of outcomes) acceptable even if expected value is positive?"
+
+    base_rate_analysis:
+      - "Is there a reference class (category of similar situations) for this goal?"
+      - "If yes:"
+      - "  - What is the success rate for that reference class?"
+      - "  - Are there reasons to believe this case differs from the reference class?"
+      - "  - If yes, in which direction (more or less likely to succeed)?"
+      - "  - What is the adjusted probability accounting for differences?"
+
+  # ====================
+  # RATE AND ACCUMULATION ANALYSIS
+  # ====================
+
+  rate_and_accumulation:
+    description: Calculus-based analysis of change and accumulation
+
+    rate_of_change_analysis:
+      - "Are there quantities that change over time relevant to this goal?"
+      - "If yes, for each quantity:"
+      - "  - Is it increasing, decreasing, or constant?"
+      - "  - Is the rate of change itself changing (accelerating/decelerating)?"
+      - "  - What is the current rate numerically if measurable?"
+      - "  - At current rate, when will it reach the target value?"
+      - "  - At current rate, when will it reach zero (if decreasing)?"
+
+    accumulation_analysis:
+      - "Are there small actions/effects that accumulate over time?"
+      - "If yes:"
+      - "  - What is the size of each individual contribution?"
+      - "  - What is the frequency of contributions?"
+      - "  - What is the total accumulated so far?"
+      - "  - What total is needed?"
+      - "  - Are contributions being lost/decaying faster than they accumulate?"
+
+    threshold_and_critical_point_analysis:
+      - "Are there values at which behavior changes qualitatively (not just quantitatively)?"
+      - "If yes, for each threshold:"
+      - "  - What is the threshold value?"
+      - "  - What changes when crossed (from below vs from above)?"
+      - "  - How far is current state from the threshold?"
+      - "  - Is crossing the threshold reversible?"
+
+    optimization_point_analysis:
+      - "Is there a quantity to maximize or minimize?"
+      - "If yes:"
+      - "  - What is the objective function (what exactly is being maximized/minimized)?"
+      - "  - Is there a theoretical maximum/minimum?"
+      - "  - What is it?"
+      - "  - Are there constraints that limit what values are achievable?"
+      - "  - Is there a point where increasing input produces decreasing output (diminishing returns)?"
+      - "  - Where is that point?"
+
+    limit_analysis:
+      - "Are there quantities approaching a limiting value they cannot exceed?"
+      - "If yes:"
+      - "  - What is the limiting value?"
+      - "  - How close is current state to the limit?"
+      - "  - Is the limit hard (physically impossible to exceed) or soft (increasingly difficult)?"
+      - "  - What happens as the limit is approached?"
+
+  # ====================
+  # STRUCTURE AND MAPPING ANALYSIS
+  # ====================
+
+  structure_and_mapping:
+    description: Category theory concepts for understanding structure
+
+    equivalence_analysis:
+      - "Are there things being treated as different that are actually equivalent?"
+      - "Are there things being treated as equivalent that are actually different?"
+      - "If equivalences exist:"
+      - "  - What transformation maps one to the other?"
+      - "  - Is the transformation reversible?"
+      - "  - What properties are preserved under the transformation?"
+      - "  - What properties are not preserved?"
+
+    composition_analysis:
+      - "Are there operations/actions that can be composed (output of one becomes input of next)?"
+      - "If yes:"
+      - "  - Does the order of composition matter?"
+      - "  - Is there an identity operation (one that leaves things unchanged)?"
+      - "  - For each operation, is there an inverse operation?"
+      - "  - Are there compositions that simplify to simpler operations?"
+
+    functor_analysis:
+      description: Structure-preserving maps between systems
+      questions:
+        - "Is there a mapping from one system/domain to another that preserves relationships?"
+        - "If yes:"
+        - "  - What corresponds to what between the two systems?"
+        - "  - Are relationships in one system preserved in the other?"
+        - "  - Can solutions in one system be translated to solutions in the other?"
+        - "  - Which system is easier to work in?"
+
+    universal_property_analysis:
+      - "Is there something uniquely determined by a property it satisfies?"
+      - "If multiple solutions exist, is there a 'best' one in a precise sense?"
+      - "If yes, what property makes it uniquely best?"
+
+  # ====================
+  # CONTINUITY AND CONNECTEDNESS ANALYSIS
+  # ====================
+
+  continuity_and_connectedness:
+    description: Topology concepts for understanding spaces of possibility
+
+    path_existence_analysis:
+      - "Is there a continuous path from current state to goal state?"
+      - "If yes:"
+      - "  - Can the path be traversed in small steps without jumps?"
+      - "  - Are there multiple paths?"
+      - "  - Which path has fewest obstacles?"
+      - "If no:"
+      - "  - What is the gap that cannot be crossed continuously?"
+      - "  - Is there a discrete jump that can bridge the gap?"
+      - "  - What enables that jump?"
+
+    connectedness_analysis:
+      - "Is the space of possibilities connected (can reach any point from any other)?"
+      - "If not connected:"
+      - "  - How many separate components exist?"
+      - "  - Which component is the current state in?"
+      - "  - Which component is the goal in?"
+      - "  - Is it possible to move between components? How?"
+
+    neighborhood_analysis:
+      - "For the current state, what states are 'nearby' (reachable with small changes)?"
+      - "For the goal state, what states are 'nearby' the goal?"
+      - "Is there a state that is nearby both current state and goal?"
+      - "What is the closest reachable approximation to the goal?"
+
+    boundary_analysis_topological:
+      - "Is the goal on the boundary of what's possible or in the interior?"
+      - "If on boundary:"
+      - "  - Which constraints are active (binding) at the goal?"
+      - "  - Is the boundary approachable from the current position?"
+      - "  - Are there discontinuities at the boundary?"
+
+  # ====================
+  # SET AND LOGIC ANALYSIS
+  # ====================
+
+  set_and_logic:
+    description: Set theory and logical analysis
+
+    membership_analysis:
+      - "What set/category does this goal belong to?"
+      - "What other members of that set exist?"
+      - "What properties do all members of the set share?"
+      - "What distinguishes this goal from other members?"
+
+    subset_superset_analysis:
+      - "Is this goal a subset of a larger goal (achieving it partially achieves the larger)?"
+      - "Are there smaller goals that are subsets of this goal (must achieve them to achieve this)?"
+      - "What is the smallest superset that is well-understood?"
+
+    intersection_analysis:
+      - "Does this goal intersect with other goals?"
+      - "If yes, what is in the intersection (achieved by both)?"
+      - "Is the intersection empty (goals mutually exclusive)?"
+
+    complement_analysis:
+      - "What is the complement of this goal (everything that is NOT this goal)?"
+      - "Is it easier to characterize what the goal is NOT than what it IS?"
+      - "Can the goal be defined by exclusion?"
+
+    implication_analysis:
+      - "Does achieving this goal necessarily imply other things?"
+      - "Does failing this goal necessarily imply other things?"
+      - "Are there things that must be true for this goal to be achievable?"
+      - "Are the logical implications acceptable?"
+
+  # ====================
+  # GRAPH AND NETWORK ANALYSIS
+  # ====================
+
+  graph_and_network:
+    description: Graph theory for analyzing relationships and paths
+
+    node_and_edge_analysis:
+      - "Can the problem be represented as a graph?"
+      - "If yes:"
+      - "  - What are the nodes (things)?"
+      - "  - What are the edges (relationships between things)?"
+      - "  - Are edges directed (one-way) or undirected (two-way)?"
+      - "  - Do edges have weights (costs/values)?"
+
+    path_analysis_graph:
+      - "Is there a path from current state node to goal node?"
+      - "If yes:"
+      - "  - What is the shortest path (fewest edges)?"
+      - "  - What is the lowest-cost path (if edges have costs)?"
+      - "  - How many distinct paths exist?"
+      - "  - Are there critical edges that appear in all paths?"
+      - "If no path exists:"
+      - "  - What nodes are reachable from current state?"
+      - "  - What nodes can reach the goal?"
+      - "  - What would need to be added to create a path?"
+
+    cycle_analysis:
+      - "Are there cycles (paths that return to starting point)?"
+      - "If yes:"
+      - "  - Are cycles desirable (sustainable loops) or undesirable (stuck in loops)?"
+      - "  - Can cycles be broken? How?"
+      - "  - Can cycles be created where beneficial?"
+
+    centrality_analysis:
+      - "Which nodes have the most connections?"
+      - "Which nodes lie on the most paths between other nodes?"
+      - "Are there nodes whose removal disconnects the graph?"
+      - "Are there nodes that must be passed through to reach the goal?"
+
+  # ====================
+  # DIMENSIONALITY ANALYSIS
+  # ====================
+
+  dimensionality:
+    description: Analysis of independent variables and degrees of freedom
+
+    independent_variable_analysis:
+      - "How many independent variables affect the outcome?"
+      - "For each variable:"
+      - "  - Is it under control or fixed/external?"
+      - "  - What is its current value?"
+      - "  - What is its range of possible values?"
+      - "  - How sensitive is the outcome to changes in this variable?"
+
+    degrees_of_freedom_analysis:
+      - "How many dimensions of choice exist?"
+      - "Are there constraints that reduce degrees of freedom?"
+      - "After constraints, how many free choices remain?"
+      - "Are any degrees of freedom being ignored or overlooked?"
+
+    projection_analysis:
+      - "Is a simpler lower-dimensional problem being solved as a proxy?"
+      - "If yes:"
+      - "  - What dimensions are being ignored?"
+      - "  - Does the solution to the simpler problem lift to a solution of the full problem?"
+      - "  - What information is lost in the projection?"
+
+    dimensional_mismatch_analysis:
+      - "Are quantities of different dimensions being compared?"
+      - "If yes, is the comparison valid?"
+      - "Are units consistent throughout?"
+
+  # ====================
+  # SYMMETRY AND INVARIANCE ANALYSIS
+  # ====================
+
+  symmetry_and_invariance:
+    description: Analysis of what stays the same under transformations
+
+    symmetry_identification:
+      - "Are there transformations that leave the problem unchanged?"
+      - "If yes, for each symmetry:"
+      - "  - What transformation is it?"
+      - "  - Can the symmetry be exploited to simplify the problem?"
+      - "  - Can the symmetry be exploited to generate new solutions from known solutions?"
+
+    invariant_identification:
+      - "Are there quantities that remain constant regardless of actions taken?"
+      - "If yes:"
+      - "  - What is conserved?"
+      - "  - Why is it conserved?"
+      - "  - Does the invariant constrain what outcomes are possible?"
+      - "  - Does the invariant provide a check on correctness?"
+
+    symmetry_breaking_analysis:
+      - "Is there symmetry that needs to be broken to make progress?"
+      - "If multiple equivalent choices exist:"
+      - "  - Does it matter which is chosen?"
+      - "  - If not, pick one and proceed"
+      - "  - If yes, what breaks the symmetry (makes one better)?"
+
+  # ====================
+  # ORDER AND SEQUENCE ANALYSIS
+  # ====================
+
+  order_and_sequence:
+    description: Analysis of ordering relationships
+
+    partial_order_analysis:
+      - "Can elements be partially ordered (some pairs comparable, some not)?"
+      - "If yes:"
+      - "  - What is the ordering relation?"
+      - "  - What are the maximal elements (nothing greater)?"
+      - "  - What are the minimal elements (nothing lesser)?"
+      - "  - What are the incomparable pairs?"
+
+    total_order_analysis:
+      - "Can elements be totally ordered (every pair comparable)?"
+      - "If yes:"
+      - "  - What is the ordering criterion?"
+      - "  - What is first? What is last?"
+      - "  - Does the order determine sequence of actions?"
+
+    lattice_analysis:
+      - "Is there a lattice structure (every pair has meet and join)?"
+      - "If yes:"
+      - "  - What is the bottom element (minimum)?"
+      - "  - What is the top element (maximum)?"
+      - "  - Can the goal be approached by climbing the lattice?"
+
+  # ====================
+  # COMBINATORIAL ANALYSIS
+  # ====================
+
+  combinatorial:
+    description: Analysis of counting and combinations
+
+    counting_analysis:
+      - "How many possibilities exist?"
+      - "Is the count finite or infinite?"
+      - "If finite, is the count small enough to enumerate?"
+      - "Can the count be reduced by eliminating invalid possibilities?"
+
+    combination_analysis:
+      - "Does the problem involve selecting a subset from a set?"
+      - "If yes:"
+      - "  - How many items are being selected?"
+      - "  - Does order matter (permutation) or not (combination)?"
+      - "  - Are repetitions allowed?"
+      - "  - How many total combinations exist?"
+
+    partition_analysis:
+      - "Does the problem involve dividing something into parts?"
+      - "If yes:"
+      - "  - What are the constraints on parts?"
+      - "  - How many ways can the division be made?"
+      - "  - Is there an optimal partition?"
+
+  # ====================
+  # INVENTORY AND RESOURCE TRACKING
+  # ====================
+
+  inventory_and_resource_tracking:
+    description: Tracking physical or digital items
+
+    inventory_identification:
+      - "Does this goal involve physical or digital items that must be tracked?"
+      - "If yes:"
+      - "  - What items exist?"
+      - "  - Where is each item located?"
+      - "  - What quantity of each item exists?"
+      - "  - What is the condition/state of each item?"
+      - "  - Is there a record of this information? Is the record accurate?"
+
+    stock_level_analysis:
+      - "Are there items that can be depleted?"
+      - "If yes, for each:"
+      - "  - What is the current quantity?"
+      - "  - What quantity is needed?"
+      - "  - At what rate is it being consumed?"
+      - "  - At what rate is it being replenished?"
+      - "  - When will it run out at current rates?"
+      - "  - What is the minimum acceptable quantity?"
+      - "  - What happens when it drops below minimum?"
+
+    reorder_analysis:
+      - "Are there items that must be reordered/replenished?"
+      - "If yes, for each:"
+      - "  - What triggers reorder (quantity threshold, time interval, event)?"
+      - "  - What is the lead time from order to receipt?"
+      - "  - What is the cost to reorder?"
+      - "  - Is there a minimum order quantity?"
+      - "  - Who is responsible for reordering?"
+
+    tracking_system_analysis:
+      - "Is there a system for tracking what exists, where, and in what quantity?"
+      - "If yes:"
+      - "  - Is it accurate? When was it last verified?"
+      - "  - Is it current? How often is it updated?"
+      - "  - Is it accessible to those who need it?"
+      - "If no:"
+      - "  - Is one needed?"
+      - "  - What is the cost of not having one?"
+
+  # ====================
+  # INVOICING AND BILLING
+  # ====================
+
+  invoicing_and_billing:
+    description: Financial documentation and payment tracking
+
+    billable_item_identification:
+      - "Are there items, services, or deliverables that should be invoiced?"
+      - "If yes, for each:"
+      - "  - What is it?"
+      - "  - What is the agreed price/rate?"
+      - "  - Has it been delivered/completed?"
+      - "  - Has it been invoiced?"
+      - "  - Has it been paid?"
+
+    invoice_status_analysis:
+      - "Are there outstanding invoices?"
+      - "If yes, for each:"
+      - "  - What is the amount?"
+      - "  - When was it issued?"
+      - "  - When is/was it due?"
+      - "  - Has payment been received?"
+      - "  - If overdue, how many days overdue?"
+      - "  - Has follow-up been sent?"
+
+    payment_terms_analysis:
+      - "Are payment terms defined?"
+      - "If yes:"
+      - "  - What are the terms (net 30, upon receipt, milestone-based)?"
+      - "  - Are terms documented and agreed by both parties?"
+      - "  - Are there penalties for late payment?"
+      - "  - Are there discounts for early payment?"
+
+    billing_accuracy_analysis:
+      - "Has everything billable been captured?"
+      - "Are quantities correct?"
+      - "Are rates correct?"
+      - "Are calculations correct?"
+      - "Is billing information (address, contact, tax ID) correct?"
+
+  # ====================
+  # CUSTOMER/CLIENT RELATIONS
+  # ====================
+
+  customer_relations:
+    description: Managing relationships with customers and clients
+
+    customer_identification:
+      - "Who are the customers/clients relevant to this goal?"
+      - "For each:"
+      - "  - What is their contact information?"
+      - "  - What is the history of interaction?"
+      - "  - What have they purchased/received?"
+      - "  - What is their current status (active, inactive, prospect)?"
+
+    customer_need_analysis:
+      - "What does the customer need?"
+      - "How do we know this (stated directly, inferred, assumed)?"
+      - "Has the need been confirmed with the customer?"
+      - "Has the need changed since last confirmed?"
+
+    customer_satisfaction_analysis:
+      - "Is the customer satisfied?"
+      - "How do we know (asked directly, inferred from behavior, assumed)?"
+      - "If dissatisfied:"
+      - "  - What specifically are they dissatisfied with?"
+      - "  - When did dissatisfaction begin?"
+      - "  - What would resolve it?"
+      - "  - Has resolution been attempted?"
+
+    customer_communication_status:
+      - "When was last contact with the customer?"
+      - "What was the content of last contact?"
+      - "Is there pending communication (unanswered questions, unacknowledged requests)?"
+      - "Is follow-up needed? When?"
+      - "Who is responsible for next contact?"
+
+    customer_commitment_tracking:
+      - "What has been promised to the customer?"
+      - "For each promise:"
+      - "  - What specifically was promised?"
+      - "  - When was it promised?"
+      - "  - When is it due?"
+      - "  - Has it been delivered?"
+      - "  - If not delivered, what is the status?"
+
+  # ====================
+  # PROBLEM SOLVING
+  # ====================
+
+  problem_solving:
+    description: Systematic approach to solving problems
+
+    problem_definition:
+      - "Is there a problem (gap between current state and desired state)?"
+      - "If yes:"
+      - "  - What specifically is the current state?"
+      - "  - What specifically is the desired state?"
+      - "  - What is the gap between them?"
+      - "  - Is this actually a problem or just a situation?"
+
+    problem_ownership:
+      - "Whose problem is this?"
+      - "Who is affected by the problem?"
+      - "Who has authority to implement solutions?"
+      - "Who has resources to implement solutions?"
+      - "Are these the same person? If not, who needs to be involved?"
+
+    root_cause_analysis:
+      - "What caused the problem?"
+      - "Is this the actual cause or a symptom of deeper cause?"
+      - "If symptom, what is the deeper cause?"
+      - "Continue asking 'what caused that' until reaching something that can be addressed"
+      - "Are there multiple contributing causes?"
+      - "Which causes are addressable?"
+
+    solution_identification:
+      - "Are there known solutions to this type of problem?"
+      - "If yes:"
+      - "  - What are they?"
+      - "  - Which have been tried?"
+      - "  - What were the results?"
+      - "If no known solutions:"
+      - "  - What approaches could potentially work?"
+      - "  - Can the problem be decomposed into smaller solvable problems?"
+      - "  - Can similar problems in other domains provide approaches?"
+
+    solution_selection:
+      - "For each potential solution:"
+      - "  - Does it address the root cause or just symptoms?"
+      - "  - What is the cost to implement?"
+      - "  - What is the probability of success?"
+      - "  - What are the side effects?"
+      - "  - Is it reversible if it doesn't work?"
+      - "  - How long until results are visible?"
+
+    problem_recurrence_prevention:
+      - "Once solved, can this problem recur?"
+      - "If yes:"
+      - "  - What would cause recurrence?"
+      - "  - Can the cause of recurrence be eliminated?"
+      - "  - If not, can early warning be established?"
+      - "  - Can response be prepared in advance?"
+
+  # ====================
+  # COMMUNICATION ANALYSIS (APPLIED)
+  # ====================
+
+  communication_applied:
+    description: Practical communication analysis
+
+    message_clarity_analysis:
+      - "Is there a message to communicate?"
+      - "If yes:"
+      - "  - What is the message in one sentence?"
+      - "  - Is the message unambiguous (only one interpretation)?"
+      - "  - Are all terms in the message defined?"
+      - "  - Could someone unfamiliar understand it?"
+
+    audience_analysis:
+      - "Who is the intended recipient?"
+      - "What does the recipient already know about this topic?"
+      - "What does the recipient need to know?"
+      - "What is the gap between current and needed knowledge?"
+      - "What is the recipient's likely response/reaction?"
+      - "What does the recipient care about?"
+
+    channel_analysis:
+      - "What channel will be used (verbal, written, visual, etc.)?"
+      - "Is this channel appropriate for this message?"
+      - "Does the recipient have access to this channel?"
+      - "Is the channel reliable (message will be received)?"
+      - "Is the channel timely (message will arrive when needed)?"
+      - "Does the channel allow for confirmation of receipt?"
+      - "Does the channel allow for response/clarification?"
+
+    timing_analysis_communication:
+      - "When should this be communicated?"
+      - "Is there information the recipient needs before this message?"
+      - "Is there a deadline by which they must receive it?"
+      - "Is there a time when the recipient is most receptive?"
+      - "Is there a time when communication would be inappropriate?"
+
+    confirmation_analysis:
+      - "How will you know the message was received?"
+      - "How will you know the message was understood?"
+      - "How will you know if action was taken as a result?"
+      - "Is confirmation needed for this communication?"
+      - "What is the process if message was not received or understood?"
+
+    documentation_analysis:
+      - "Should this communication be documented/recorded?"
+      - "If yes:"
+      - "  - Where will it be documented?"
+      - "  - Who will have access to the documentation?"
+      - "  - How long must it be retained?"
+
+  # ====================
+  # COACHING
+  # ====================
+
+  coaching:
+    description: Developing skills and capabilities in others
+
+    coachee_current_state:
+      - "What is the current skill/knowledge/behavior level of the person being coached?"
+      - "How is this measured or observed?"
+      - "What evidence supports this assessment?"
+
+    coachee_target_state:
+      - "What skill/knowledge/behavior level is the target?"
+      - "How will achievement of target be measured or observed?"
+      - "Is the target agreed upon by both parties?"
+
+    gap_identification_coaching:
+      - "What is the gap between current and target?"
+      - "Is the gap in knowledge (doesn't know), skill (can't do), or will (won't do)?"
+      - "If knowledge: What specific knowledge is missing?"
+      - "If skill: What specific skill is underdeveloped?"
+      - "If will: What is preventing action (motivation, belief, fear, priority)?"
+
+    intervention_selection:
+      - "What intervention addresses the identified gap?"
+      - "If knowledge gap: What information needs to be provided? In what format?"
+      - "If skill gap: What practice/repetition is needed? What feedback mechanism?"
+      - "If will gap: What is blocking motivation? What would unblock it?"
+
+    progress_tracking_coaching:
+      - "How will progress be measured?"
+      - "How frequently will progress be assessed?"
+      - "What milestones indicate progress?"
+      - "What indicates the coaching has succeeded?"
+      - "What indicates the approach isn't working and should be changed?"
+
+    feedback_structure:
+      - "Is feedback being provided?"
+      - "If yes:"
+      - "  - Is it specific (describes exact behavior)?"
+      - "  - Is it timely (close to the behavior)?"
+      - "  - Is it actionable (person can do something with it)?"
+      - "  - Is it balanced (both what to continue and what to change)?"
+
+  # ====================
+  # LEADERSHIP
+  # ====================
+
+  leadership:
+    description: Guiding and influencing others toward goals
+
+    direction_clarity:
+      - "Is there a clear direction/vision?"
+      - "If yes:"
+      - "  - Can it be stated in one sentence?"
+      - "  - Does everyone who needs to know it, know it?"
+      - "  - Do they understand it the same way?"
+      - "  - Do they know what it means for their work?"
+      - "If no:"
+      - "  - Why not?"
+      - "  - What would it take to establish one?"
+
+    alignment_analysis:
+      - "Are people's efforts aligned toward the direction?"
+      - "If not aligned:"
+      - "  - What are they doing instead?"
+      - "  - Why are they doing that?"
+      - "  - What would bring them into alignment?"
+      - "  - Do they have the information/resources needed to align?"
+
+    empowerment_analysis:
+      - "Do people have what they need to contribute?"
+      - "Do they have the authority to make necessary decisions?"
+      - "Do they have the resources to execute?"
+      - "Do they have the information to decide and act correctly?"
+      - "Do they have the skills to perform?"
+      - "Where are the gaps?"
+
+    accountability_analysis:
+      - "Is it clear who is responsible for what?"
+      - "For each responsibility:"
+      - "  - Is it assigned to one person (not diffuse)?"
+      - "  - Does that person know they are responsible?"
+      - "  - Do they have authority matching their responsibility?"
+      - "  - How are results measured?"
+      - "  - What happens if results are not achieved?"
+
+    trust_analysis_leadership:
+      - "Do people trust the leader?"
+      - "If not:"
+      - "  - Is it lack of competence trust (don't believe capable)?"
+      - "  - Is it lack of character trust (don't believe intentions)?"
+      - "  - Is it lack of consistency trust (don't believe reliable)?"
+      - "  - What evidence would build trust?"
+      - "Does the leader trust the people?"
+      - "If not, what is the basis for distrust?"
+
+  # ====================
+  # NEGOTIATION
+  # ====================
+
+  negotiation:
+    description: Reaching agreements between parties
+
+    party_identification:
+      - "Who are the parties in this negotiation?"
+      - "For each party:"
+      - "  - What do they want (stated position)?"
+      - "  - Why do they want it (underlying interest)?"
+      - "  - What is their best alternative if no agreement (BATNA)?"
+      - "  - What is their worst acceptable outcome?"
+
+    interest_analysis:
+      - "What are the underlying interests (not positions) of each party?"
+      - "Are there interests that are shared by multiple parties?"
+      - "Are there interests that conflict?"
+      - "For conflicting interests, are they about the same thing or different things?"
+
+    option_generation:
+      - "What options could satisfy multiple parties' interests?"
+      - "Have all parties contributed options?"
+      - "Are there options that create value (enlarge the pie)?"
+      - "Are there options that trade low-value items for high-value items across parties?"
+
+    batna_analysis:
+      - "What is your best alternative to negotiated agreement?"
+      - "What is the other party's best alternative?"
+      - "Whose BATNA is stronger?"
+      - "How does this affect bargaining power?"
+      - "Can your BATNA be improved before or during negotiation?"
+
+    zone_of_possible_agreement:
+      - "Is there a range of outcomes acceptable to all parties?"
+      - "If yes:"
+      - "  - What is the range?"
+      - "  - Where in the range is the current proposal?"
+      - "If no:"
+      - "  - What would need to change to create one?"
+      - "  - Should negotiation continue or terminate?"
+
+    commitment_analysis_negotiation:
+      - "What commitments are being made?"
+      - "For each commitment:"
+      - "  - Is it specific and measurable?"
+      - "  - Is there a deadline?"
+      - "  - What happens if not fulfilled?"
+      - "  - Can the party making it actually deliver?"
+      - "  - How will fulfillment be verified?"
+
+  # ====================
+  # MANAGEMENT
+  # ====================
+
+  management:
+    description: Organizing and directing work
+
+    work_identification:
+      - "What work needs to be done?"
+      - "Is all work identified and captured somewhere?"
+      - "Is work defined at the right level of granularity (not too vague, not too detailed)?"
+      - "Is the scope of work clear (what's included, what's not)?"
+
+    assignment_analysis:
+      - "Is each piece of work assigned to someone?"
+      - "For each assignment:"
+      - "  - Does the assignee know they are assigned?"
+      - "  - Do they understand what is expected?"
+      - "  - Do they have capacity to do it?"
+      - "  - Do they have capability to do it?"
+      - "  - Is there exactly one person accountable (not diffuse)?"
+
+    status_tracking:
+      - "What is the status of each piece of work?"
+      - "Is status current (recently updated)?"
+      - "Is status accurate (matches reality)?"
+      - "Is status visible to those who need it?"
+      - "How is status determined (reported, observed, measured)?"
+
+    dependency_management:
+      - "Are there dependencies between pieces of work?"
+      - "If yes, for each dependency:"
+      - "  - Is the dependency known to both parties?"
+      - "  - Is the timing coordinated?"
+      - "  - What happens if the upstream dependency is late?"
+      - "  - Is there slack/buffer?"
+
+    escalation_analysis:
+      - "Are there issues that cannot be resolved at current level?"
+      - "If yes:"
+      - "  - What is the issue?"
+      - "  - Why can't it be resolved at current level?"
+      - "  - Who has authority to resolve it?"
+      - "  - Has it been escalated?"
+      - "  - What is the urgency?"
+
+    capacity_management:
+      - "Is there enough capacity (people, time, equipment) to complete all work?"
+      - "If not:"
+      - "  - What is the shortfall?"
+      - "  - Can work be reduced (cut scope)?"
+      - "  - Can capacity be increased (add resources)?"
+      - "  - Can deadline be extended?"
+      - "  - What trade-offs are being made?"
+
+  # ====================
+  # WRITING
+  # ====================
+
+  writing:
+    description: Creating written communication
+
+    purpose_identification:
+      - "What is the purpose of this writing?"
+      - "Is it to inform (provide information)?"
+      - "Is it to persuade (change belief or behavior)?"
+      - "Is it to instruct (enable action)?"
+      - "Is it to entertain?"
+      - "Is it to record (create documentation)?"
+
+    audience_analysis_writing:
+      - "Who will read this?"
+      - "What do they already know about the topic?"
+      - "What vocabulary/jargon will they understand?"
+      - "What is their attention span/reading time?"
+      - "What do they need from this writing?"
+
+    structure_analysis:
+      - "Is there a logical structure?"
+      - "Does the structure serve the purpose?"
+      - "Can the reader navigate the structure?"
+      - "Is information in the order the reader needs it?"
+      - "Are transitions between sections clear?"
+
+    content_completeness:
+      - "Does the writing contain everything the reader needs?"
+      - "Is there anything missing that the reader will ask about?"
+      - "Is there anything included that the reader doesn't need?"
+      - "Are all claims supported?"
+      - "Are all terms defined (or common enough to not need definition)?"
+
+    clarity_analysis:
+      - "For each sentence:"
+      - "  - Is the subject clear (who/what is doing the action)?"
+      - "  - Is the verb clear (what is the action)?"
+      - "  - Is there only one way to interpret it?"
+      - "Are there sentences longer than 25 words that could be split?"
+      - "Are there words that could be replaced with simpler words?"
+      - "Is passive voice used unnecessarily?"
+
+    accuracy_analysis:
+      - "Are all facts correct?"
+      - "Are all names spelled correctly?"
+      - "Are all numbers accurate?"
+      - "Are all dates correct?"
+      - "Are all references/links valid?"
+
+  # ====================
+  # QUALITY ASSURANCE
+  # ====================
+
+  quality_assurance:
+    description: Ensuring output meets specifications
+
+    specification_existence:
+      - "Is there a specification defining what quality means?"
+      - "If yes:"
+      - "  - Is it documented?"
+      - "  - Is it accessible to those doing the work?"
+      - "  - Is it unambiguous?"
+      - "  - Is it current?"
+      - "If no:"
+      - "  - How will quality be judged?"
+      - "  - Who defines acceptable quality?"
+
+    inspection_analysis:
+      - "Is the output being inspected for quality?"
+      - "If yes:"
+      - "  - What is being inspected?"
+      - "  - Against what criteria?"
+      - "  - By whom?"
+      - "  - At what frequency?"
+      - "  - What happens when defects are found?"
+      - "If no, why not?"
+
+    defect_identification:
+      - "Are there defects (deviations from specification)?"
+      - "If yes, for each defect:"
+      - "  - What is the defect specifically?"
+      - "  - What is the severity (impact if not fixed)?"
+      - "  - What caused it?"
+      - "  - Can it be fixed?"
+      - "  - Should it be fixed (cost-benefit)?"
+
+    defect_prevention:
+      - "Are there recurring defects (same type appearing repeatedly)?"
+      - "If yes:"
+      - "  - What is causing the recurrence?"
+      - "  - Can the cause be eliminated?"
+      - "  - Can detection be moved earlier (before defect is created)?"
+
+    process_capability:
+      - "Can the process produce output meeting specification consistently?"
+      - "What is the defect rate?"
+      - "Is the defect rate acceptable?"
+      - "If not, what would reduce it?"
+
+    traceability_analysis:
+      - "Can outputs be traced back to inputs?"
+      - "Can defects be traced to their source?"
+      - "Is there an audit trail of who did what, when?"
+      - "Can quality at any point in time be reconstructed?"
+
+  # ====================
+  # DETAIL ANALYSIS
+  # ====================
+
+  detail_analysis:
+    description: Thorough examination of specifics
+
+    completeness_check:
+      - "Are all required elements present?"
+      - "Is there a checklist of required elements?"
+      - "Has each element on the checklist been verified?"
+      - "Are there elements that are conditionally required (if X then Y is required)?"
+
+    accuracy_check:
+      - "For each piece of information:"
+      - "  - Is it correct?"
+      - "  - How was correctness verified?"
+      - "  - When was it last verified?"
+      - "  - Could it have changed since verification?"
+
+    consistency_check:
+      - "Is information consistent across locations?"
+      - "If the same information appears multiple places, do they match?"
+      - "If there are inconsistencies, which is correct?"
+
+    formatting_check:
+      - "Does format match requirements/standards?"
+      - "Are there format requirements?"
+      - "Are dates in consistent format?"
+      - "Are numbers in consistent format (decimals, thousands separators)?"
+      - "Is capitalization consistent?"
+      - "Is punctuation correct?"
+      - "Is spacing consistent?"
+
+    edge_case_check:
+      - "Are there edge cases (unusual but valid scenarios)?"
+      - "If yes, for each edge case:"
+      - "  - Has it been considered?"
+      - "  - Is it handled correctly?"
+      - "  - What happens at boundaries (minimum value, maximum value, empty, null)?"
+
+    cross_reference_check:
+      - "Are there references to other things (documents, sections, data)?"
+      - "For each reference:"
+      - "  - Does the referenced thing exist?"
+      - "  - Is the reference correct (points to right thing)?"
+      - "  - Is the referenced thing current?"
+
+key_insight: |
+  EVERY GOAL FAILS FOR ANSWERABLE REASONS.
+
+  Either the goal was wrong, the strategy was wrong, the execution was wrong,
+  or something external changed. All of these can be anticipated by asking
+  the right questions upfront.
+
+  This framework doesn't guarantee success. It guarantees you've thought
+  about everything that matters before you start.
+
+  v6.0: Added mathematical analysis categories (probability, rates, structures,
+  topology, sets, graphs, dimensions, symmetry, order, combinatorics) and
+  applied analysis categories (inventory, invoicing, customer relations,
+  problem solving, communication, coaching, leadership, negotiation,
+  management, writing, quality assurance, detail analysis). All questions
+  follow the "is there" before "what is" pattern to avoid assumptions.

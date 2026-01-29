@@ -1,0 +1,302 @@
+# Inference Space Search
+# Generate possible inferences, search for valid/useful
+# Version: 1.0.0
+
+id: inference_space_search
+name: Inference Space Search
+version: "1.0.0"
+domain: core
+
+goal: |
+  From given information, generate all possible inferences,
+  then search for those that are valid, sound, and useful.
+
+description: |
+  Information implies other information. But not all inferences are equal:
+  - Some are logically valid, some aren't
+  - Some have true premises, some don't
+  - Some are useful, some are trivial
+
+  Generate the inference space, then filter by quality criteria.
+
+when_to_use:
+  - Drawing conclusions from evidence
+  - Reasoning about implications
+  - Finding hidden connections
+  - Building arguments
+  - Understanding consequences
+
+inputs:
+  - name: premises
+    type: list
+    description: "Known facts/assumptions to reason from"
+  - name: question
+    type: string
+    description: "What are we trying to infer? (optional, can be open)"
+
+outputs:
+  - name: inferences
+    type: list
+    description: "All generated inferences"
+  - name: valid_inferences
+    type: list
+    description: "Inferences passing quality criteria"
+
+# ============================================
+# CRITERIA FOR GOOD INFERENCES
+# ============================================
+
+criteria:
+  logical:
+    - name: "Validity"
+      question: "Does the conclusion follow from the premises?"
+      weight: 30
+      test: "If premises true, must conclusion be true?"
+
+    - name: "Soundness"
+      question: "Are the premises actually true?"
+      weight: 25
+      test: "Is there good evidence for each premise?"
+
+  epistemic:
+    - name: "Non-triviality"
+      question: "Does this tell us something we didn't already know?"
+      weight: 15
+      test: "Is conclusion different from premises?"
+
+    - name: "Precision"
+      question: "Is the inference specific rather than vague?"
+      weight: 10
+      test: "Can we tell exactly what is being claimed?"
+
+  practical:
+    - name: "Relevance"
+      question: "Does this matter for our purposes?"
+      weight: 10
+      test: "Would knowing this change any decision?"
+
+    - name: "Actionability"
+      question: "Can we do something with this inference?"
+      weight: 10
+      test: "Does it suggest action or further inquiry?"
+
+# ============================================
+# INFERENCE TYPES
+# ============================================
+
+inference_types:
+  deductive:
+    description: "Conclusion necessarily follows from premises"
+    pattern: "If A, then B. A. Therefore B."
+    strength: "Certain (if valid and sound)"
+    generation: |
+      Look for:
+      - Conditionals to apply (modus ponens)
+      - Universal statements to instantiate
+      - Logical equivalences
+      - Contradictions to exploit
+
+  inductive:
+    description: "Conclusion is probable given premises"
+    pattern: "These X are Y. Therefore, X are generally Y."
+    strength: "Probable (depends on evidence)"
+    generation: |
+      Look for:
+      - Patterns to generalize
+      - Trends to extrapolate
+      - Frequencies to estimate probability
+      - Sample to population inferences
+
+  abductive:
+    description: "Best explanation of the evidence"
+    pattern: "We observe X. Y would explain X. Therefore probably Y."
+    strength: "Plausible (depends on alternatives)"
+    generation: |
+      Look for:
+      - Effects that need explaining
+      - Possible causes
+      - Which cause is simplest/most likely
+
+  analogical:
+    description: "Similar cases have similar properties"
+    pattern: "A has property P. B is similar to A. Therefore B probably has P."
+    strength: "Suggestive (depends on similarity)"
+    generation: |
+      Look for:
+      - Similar cases
+      - Relevant similarities
+      - Properties that transfer
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "List Premises"
+    action: |
+      Explicitly state all known facts/assumptions being used.
+      Number them for reference.
+      Note which are certain vs assumed.
+    output: "Numbered premise list"
+    template: |
+      PREMISES:
+      P1: [Fact/assumption] - [Certain/Assumed]
+      P2: [Fact/assumption] - [Certain/Assumed]
+      ...
+
+  - id: 2
+    name: "Generate Deductive Inferences"
+    action: |
+      What follows necessarily from the premises?
+
+      Apply:
+      - Modus ponens (If A then B; A; therefore B)
+      - Modus tollens (If A then B; not B; therefore not A)
+      - Syllogisms
+      - Instantiation of universals
+    output: "Deductive inferences"
+    template: |
+      INFERENCE: [Conclusion]
+      Type: Deductive
+      From premises: [P1, P3]
+      Reasoning: [How conclusion follows]
+
+  - id: 3
+    name: "Generate Inductive Inferences"
+    action: |
+      What patterns can be generalized?
+      What trends can be extrapolated?
+
+      Look for:
+      - Repeated observations
+      - Statistical patterns
+      - Historical trends
+    output: "Inductive inferences"
+
+  - id: 4
+    name: "Generate Abductive Inferences"
+    action: |
+      What would explain the premises?
+      What causes would produce these effects?
+
+      For each surprising/unexplained fact:
+      - What could cause it?
+      - Which cause is simplest?
+      - Which is most likely given background knowledge?
+    output: "Abductive inferences"
+
+  - id: 5
+    name: "Generate Analogical Inferences"
+    action: |
+      What similar cases exist?
+      What can be transferred from them?
+
+      For each premise about X:
+      - What is similar to X?
+      - Does the similar thing have relevant properties?
+      - Would those properties transfer?
+    output: "Analogical inferences"
+
+  - id: 6
+    name: "Check Validity"
+    action: |
+      For each inference, ask:
+      "If the premises were true, would the conclusion have to be true?"
+
+      Score:
+      - 10: Necessarily follows (deductive, valid)
+      - 7-9: Highly probable (strong inductive)
+      - 4-6: Plausible (weak inductive, abductive)
+      - 1-3: Speculative (analogical, weak)
+    output: "Validity scores"
+
+  - id: 7
+    name: "Check Soundness"
+    action: |
+      For each inference, ask:
+      "Are all the premises actually true?"
+
+      Check each premise used:
+      - Evidence for premise
+      - Confidence level
+      - Alternative interpretations
+    output: "Soundness assessment"
+
+  - id: 8
+    name: "Check Usefulness"
+    action: |
+      For each valid and sound inference, ask:
+      - Is it non-trivial? (tells us something new)
+      - Is it relevant? (matters for our purposes)
+      - Is it actionable? (suggests what to do)
+    output: "Usefulness scores"
+
+  - id: 9
+    name: "Rank and Select"
+    action: |
+      Combine scores: Validity × Soundness × Usefulness
+      Rank inferences.
+      Select top inferences for use.
+    output: "Ranked inferences"
+    template: |
+      TOP INFERENCES:
+
+      1. [Inference]
+         Validity: [score], Soundness: [score], Usefulness: [score]
+         Total: [product]
+         Implication: [What this means for us]
+
+      2. ...
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  premises:
+    P1: "Sales dropped 20% last month (certain)"
+    P2: "Competitor launched similar product at lower price (certain)"
+    P3: "Our marketing spend unchanged (certain)"
+    P4: "Customer complaints increased about our price (certain)"
+    P5: "Economy is stable (assumed)"
+
+  inferences_generated:
+    deductive:
+      - inference: "Our relative market position weakened"
+        from: "P1, P2"
+        validity: 9
+
+    inductive:
+      - inference: "Sales will continue declining if nothing changes"
+        from: "P1 trend"
+        validity: 6
+
+    abductive:
+      - inference: "The competitor's lower price is causing our sales drop"
+        from: "P1, P2, P4 best explanation"
+        validity: 7
+        note: "Best explanation of the pattern"
+
+    analogical:
+      - inference: "Price reduction or value addition needed (like similar past cases)"
+        from: "Similar competitive situations"
+        validity: 5
+
+  top_inferences:
+    1:
+      inference: "Competitor's lower price is causing sales drop"
+      total_score: 350
+      action: "Consider price response or value differentiation"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Premises are explicitly stated"
+  - "Multiple inference types were attempted"
+  - "Validity was assessed for each"
+  - "Soundness was assessed for each"
+  - "Usefulness was considered"
+  - "Top inferences are actionable"

@@ -1,0 +1,472 @@
+# Bandit Exploration Orderings
+# Orderings balancing exploration and exploitation
+
+category_id: bandit_exploration
+category_name: "Bandit Exploration Orderings"
+description: |
+  Orderings from multi-armed bandit algorithms for balancing
+  exploration of unknown options with exploitation of known good
+  options. Use for sequential decision-making with learning.
+
+when_to_consider: |
+  - Need to balance exploration and exploitation
+  - Sequential decisions with learning
+  - A/B testing and experimentation
+  - Can model uncertainty about options
+  - Large search spaces (games, planning)
+
+variations:
+
+  # ----------------------------------------
+  # EPSILON-GREEDY ORDERING
+  # ----------------------------------------
+  epsilon_greedy:
+    id: epsilon_greedy_ordering
+    name: "Epsilon-Greedy Ordering (Simple Exploration)"
+    category: bandit_exploration
+
+    philosophy: |
+      Usually exploit the best known option; occasionally explore
+      randomly. From multi-armed bandits: with probability (1-epsilon)
+      choose the best-so-far; with probability epsilon choose randomly.
+      Simple but effective balance of exploration and exploitation.
+      Tuning epsilon controls the trade-off.
+
+    when_to_use:
+      - Need simple exploration strategy
+      - Don't want complex probability models
+      - Online learning, A/B testing
+      - When options have uncertain payoffs
+      - Quick and dirty approach
+
+    key_concepts:
+      exploit: "Choose best known option"
+      explore: "Choose random option"
+      epsilon: "Probability of exploring"
+      regret: "Loss from not always choosing best"
+
+    algorithm:
+      with_probability_epsilon: "Choose random option"
+      with_probability_1_minus_epsilon: "Choose best-so-far"
+      after_choice: "Update estimate of chosen option's value"
+
+    prioritization_rules:
+      1_track_estimates:
+        rule: "Maintain estimated value of each option"
+        method: "Running average of observed rewards"
+
+      2_epsilon_probability:
+        rule: "Explore with probability epsilon"
+        typical: "epsilon = 0.1 means 10% random"
+
+      3_best_otherwise:
+        rule: "With probability 1-epsilon, choose best"
+        greedy: "Exploit current knowledge"
+
+      4_decay_epsilon:
+        rule: "Consider reducing epsilon over time"
+        reason: "Explore early, exploit later"
+        schedule: "epsilon = epsilon_0 / (1 + t)"
+
+    epsilon_tuning:
+      high_epsilon:
+        effect: "More exploration"
+        when: "High uncertainty, early in learning"
+      low_epsilon:
+        effect: "More exploitation"
+        when: "Confident in estimates, later in process"
+      zero_epsilon:
+        effect: "Pure exploitation (no learning)"
+        problem: "May never discover better options"
+
+    anti_patterns:
+      - "Epsilon too high (too much random waste)"
+      - "Epsilon too low (miss better options)"
+      - "Not updating estimates"
+      - "Fixed epsilon when decay would help"
+
+    example:
+      context: "Recommending articles to users"
+      options: "Articles A, B, C, D"
+      estimates: "A:0.3, B:0.5, C:0.2, D:0.4 (click rates)"
+      epsilon: "0.1"
+      decisions:
+        round_1: "Random < 0.1: Explore -> C (random)"
+        round_2: "Random > 0.1: Exploit -> B (best)"
+        round_3: "Random > 0.1: Exploit -> B (best)"
+        round_4: "Random < 0.1: Explore -> A (random)"
+      over_time: "B recommended 90% of time, others 10%"
+      learning: "Estimates update with each click/no-click"
+
+    source: "Multi-Armed Bandits - Epsilon-Greedy"
+
+  # ----------------------------------------
+  # THOMPSON-SAMPLING ORDERING
+  # ----------------------------------------
+  thompson_sampling:
+    id: thompson_sampling_ordering
+    name: "Thompson-Sampling Ordering (Bayesian Exploration)"
+    category: bandit_exploration
+
+    philosophy: |
+      Sample from the posterior distribution of each option's value,
+      then choose the option with highest sample. From Bayesian
+      bandits: maintain uncertainty about each option's true value.
+      Naturally balances exploration (uncertain options get sampled
+      high sometimes) and exploitation (good options usually sample
+      high). Elegant and theoretically optimal.
+
+    when_to_use:
+      - Can model uncertainty probabilistically
+      - Want principled exploration
+      - Bayesian inference is tractable
+      - A/B testing, ad selection
+      - When better than epsilon-greedy needed
+
+    key_concepts:
+      posterior: "Probability distribution over option's true value"
+      sample: "Draw random value from posterior"
+      update: "Bayesian update after observing outcome"
+      natural_exploration: "Uncertain options occasionally sample high"
+
+    algorithm:
+      for_each_option:
+        sample: "Draw theta_i from posterior P(theta_i | data)"
+      select: "Option with highest sampled theta_i"
+      observe: "Outcome of selected option"
+      update: "Bayesian update of that option's posterior"
+
+    prioritization_rules:
+      1_model_uncertainty:
+        rule: "Maintain probability distribution for each option"
+        common: "Beta distribution for binary outcomes"
+        parameters: "Success and failure counts"
+
+      2_sample_from_posterior:
+        rule: "Draw random sample from each option's distribution"
+        effect: "High-uncertainty options sometimes sample high"
+
+      3_select_highest_sample:
+        rule: "Choose option with highest sampled value"
+        no_epsilon: "Exploration emerges naturally"
+
+      4_bayesian_update:
+        rule: "Update posterior with new observation"
+        beta_example: "Success: alpha += 1; Failure: beta += 1"
+
+    comparison_to_epsilon_greedy:
+      exploration: "Thompson is principled, epsilon is arbitrary"
+      performance: "Thompson typically better"
+      complexity: "Thompson requires probability modeling"
+      simplicity: "Epsilon is simpler to implement"
+
+    anti_patterns:
+      - "Wrong prior (biases exploration)"
+      - "Not updating properly"
+      - "Using with deterministic outcomes"
+      - "Computational overhead when not needed"
+
+    example:
+      context: "A/B test for button color"
+      options:
+        green_button: "Beta(10, 90) - 10 clicks, 90 no-clicks"
+        red_button: "Beta(15, 85) - 15 clicks, 85 no-clicks"
+      sampling:
+        sample_green: "Draw from Beta(10, 90) = 0.08"
+        sample_red: "Draw from Beta(15, 85) = 0.18"
+        select: "Red (0.18 > 0.08)"
+      next_round:
+        sample_green: "Draw from Beta(10, 90) = 0.12"
+        sample_red: "Draw from Beta(15, 85) = 0.11"
+        select: "Green (0.12 > 0.11)"
+      behavior: "Red usually wins, but green explored when it samples high"
+
+    source: "Bayesian Bandits - Thompson Sampling"
+
+  # ----------------------------------------
+  # SOFTMAX-BOLTZMANN ORDERING
+  # ----------------------------------------
+  softmax_boltzmann:
+    id: softmax_boltzmann_ordering
+    name: "Softmax/Boltzmann Ordering (Temperature-Based Exploration)"
+    category: bandit_exploration
+
+    philosophy: |
+      Choose options with probability proportional to their estimated
+      value (softmax). From statistical mechanics: at temperature T,
+      states with energy E have probability proportional to exp(E/T).
+      Higher temperature = more random; lower temperature = more greedy.
+      Smooth interpolation between exploration and exploitation.
+
+    when_to_use:
+      - Want exploration proportional to uncertainty/value
+      - Smooth probability allocation needed
+      - Alternative to epsilon-greedy
+      - RL action selection
+      - When hard cutoffs are undesirable
+
+    key_concepts:
+      temperature: "Controls randomness (like simulated annealing)"
+      softmax: "exp(Q/T) / sum(exp(Q/T))"
+      boltzmann_distribution: "Statistical mechanics foundation"
+      annealing: "Decrease temperature over time"
+
+    algorithm:
+      for_each_option:
+        compute_probability: "p_i = exp(Q_i / T) / sum(exp(Q_j / T))"
+      sample: "Choose option according to probabilities"
+      observe: "Outcome of selected option"
+      update: "Improve estimate Q_i"
+
+    prioritization_rules:
+      1_compute_softmax:
+        rule: "Convert values to probabilities"
+        formula: "p_i = exp(Q_i / T) / Z"
+        normalization: "Z = sum over all exp(Q_j / T)"
+
+      2_sample_by_probability:
+        rule: "Select option randomly according to distribution"
+        effect: "Better options chosen more often"
+
+      3_temperature_control:
+        rule: "T controls exploration level"
+        high_T: "Near-uniform random"
+        low_T: "Mostly best option"
+        T_to_0: "Pure greedy"
+        T_to_infinity: "Pure random"
+
+      4_anneal_temperature:
+        rule: "Consider decreasing T over time"
+        reason: "Explore early, exploit later"
+
+    comparison:
+      vs_epsilon_greedy:
+        softmax: "Probability based on value"
+        epsilon: "Random or best"
+        advantage: "Softmax prefers good options even when exploring"
+
+      vs_thompson:
+        softmax: "Uses point estimates"
+        thompson: "Uses distributions"
+        advantage: "Thompson handles uncertainty better"
+
+    anti_patterns:
+      - "Temperature too high (random)"
+      - "Temperature too low (no exploration)"
+      - "Not scaling Q values properly"
+      - "Fixed temperature when annealing would help"
+
+    example:
+      context: "Selecting between three strategies"
+      estimates: "Q = [1.0, 2.0, 3.0]"
+      temperature: "T = 1.0"
+      softmax_calculation:
+        exp_values: "[e^1, e^2, e^3] = [2.7, 7.4, 20.1]"
+        sum: "30.2"
+        probabilities: "[0.09, 0.25, 0.66]"
+      interpretation: "Strategy 3 chosen 66% of time, but 2 gets 25%"
+      with_T_0_5:
+        probabilities: "[0.02, 0.12, 0.86]"
+        effect: "More exploitation"
+      with_T_2_0:
+        probabilities: "[0.19, 0.31, 0.50]"
+        effect: "More exploration"
+
+    source: "Statistical Mechanics/RL - Boltzmann Distribution"
+
+  # ----------------------------------------
+  # UCB-EXPLORATION ORDERING
+  # ----------------------------------------
+  ucb_exploration:
+    id: ucb_exploration_ordering
+    name: "UCB-Exploration Ordering (Optimism in Face of Uncertainty)"
+    category: bandit_exploration
+
+    philosophy: |
+      Choose option with highest upper confidence bound on its value.
+      From bandits: be optimistic about uncertain options. UCB adds
+      a bonus to the estimated value that is larger for less-explored
+      options. "Optimism in the face of uncertainty" ensures adequate
+      exploration without explicit randomness.
+
+    when_to_use:
+      - Want deterministic exploration (no randomness)
+      - Can quantify uncertainty in estimates
+      - Theoretical guarantees important
+      - Online learning, algorithm selection
+      - When epsilon-greedy is too random
+
+    key_concepts:
+      upper_confidence_bound: "Estimate + exploration bonus"
+      exploration_bonus: "Decreases with more samples"
+      optimism: "Act as if uncertain options are as good as possible"
+      logarithmic_regret: "Theoretical guarantee of UCB1"
+
+    ucb1_formula:
+      select: "argmax_i (Q_i + c * sqrt(ln(t) / n_i))"
+      where:
+        Q_i: "Average reward of option i"
+        t: "Total number of rounds"
+        n_i: "Times option i selected"
+        c: "Exploration constant (typically sqrt(2))"
+
+    algorithm:
+      initialize: "Try each option once"
+      for_each_round:
+        compute: "UCB score for each option"
+        select: "Option with highest UCB"
+        observe: "Reward from selected option"
+        update: "Q_i and n_i for selected option"
+
+    prioritization_rules:
+      1_compute_ucb:
+        rule: "Add exploration bonus to estimated value"
+        bonus: "c * sqrt(ln(t) / n_i)"
+        property: "Bonus shrinks as n_i grows"
+
+      2_select_highest:
+        rule: "Choose option with highest UCB"
+        deterministic: "No randomness"
+        exploration: "Comes from bonus on unexplored options"
+
+      3_tuning_c:
+        rule: "Exploration constant affects balance"
+        higher_c: "More exploration"
+        lower_c: "More exploitation"
+        theory: "c = sqrt(2) is optimal for [0,1] rewards"
+
+      4_no_sampling:
+        rule: "UCB is deterministic given history"
+        advantage: "Reproducible, analyzable"
+        disadvantage: "May be predictable"
+
+    comparison:
+      vs_epsilon_greedy: "UCB explores uncertain options systematically"
+      vs_thompson: "Both are near-optimal; UCB is deterministic"
+      vs_softmax: "UCB uses explicit uncertainty bounds"
+
+    anti_patterns:
+      - "Not trying each option at least once"
+      - "Wrong c value for reward scale"
+      - "Using with non-stationary rewards (need discounting)"
+      - "Overhead when simple methods suffice"
+
+    example:
+      context: "Ad selection optimization"
+      round_100:
+        ad_a: "Q=0.05, n=50, UCB = 0.05 + sqrt(2*ln(100)/50) = 0.34"
+        ad_b: "Q=0.08, n=40, UCB = 0.08 + sqrt(2*ln(100)/40) = 0.42"
+        ad_c: "Q=0.03, n=10, UCB = 0.03 + sqrt(2*ln(100)/10) = 0.96"
+        selection: "Ad C (highest UCB despite lowest Q)"
+        reason: "C has been under-explored (n=10)"
+      round_200:
+        ad_c_updated: "Q=0.04, n=60, UCB = 0.04 + sqrt(2*ln(200)/60) = 0.39"
+        selection: "Now A or B might win"
+      behavior: "UCB naturally explores uncertain options"
+
+    source: "Bandit Algorithms - UCB (Auer et al., 2002)"
+
+  # ----------------------------------------
+  # MONTE-CARLO-TREE ORDERING
+  # ----------------------------------------
+  monte_carlo_tree:
+    id: monte_carlo_tree_ordering
+    name: "Monte-Carlo-Tree Ordering (MCTS)"
+    category: bandit_exploration
+
+    philosophy: |
+      Build a search tree incrementally using random simulations.
+      From game AI: balance tree exploration using UCB-like selection,
+      expand promising nodes, simulate to terminal state, backpropagate
+      results. Combines best-first search with Monte Carlo sampling.
+      Basis for AlphaGo and many game AI systems.
+
+    when_to_use:
+      - Large game trees or planning problems
+      - Can simulate to terminal states
+      - Good policies emerge from random play
+      - Don't have good heuristic function
+      - Real-time decision making in games
+
+    key_concepts:
+      selection: "Navigate tree using UCB to choose children"
+      expansion: "Add new node to tree"
+      simulation: "Random playout from new node to terminal"
+      backpropagation: "Update statistics along path"
+      ucb_for_trees: "UCT = Q + c * sqrt(ln(N_parent) / N_child)"
+
+    four_phases:
+      selection:
+        what: "Walk down tree using UCT to choose children"
+        stops: "When reaching unexpanded node or leaf"
+
+      expansion:
+        what: "Add one or more children to selected node"
+        creates: "New positions to explore"
+
+      simulation:
+        what: "Random playout from new node to end"
+        also_called: "Rollout"
+        purpose: "Estimate value without building full tree"
+
+      backpropagation:
+        what: "Update win/visit counts up the tree"
+        path: "From simulated node to root"
+        statistics: "N (visits), Q (wins or value)"
+
+    algorithm:
+      repeat_for_iterations:
+        select: "Use UCT from root to expandable node"
+        expand: "Add child node(s)"
+        simulate: "Random playout to terminal"
+        backpropagate: "Update N, Q on path to root"
+      return: "Child of root with most visits (or highest Q)"
+
+    prioritization_rules:
+      1_ucb_selection:
+        rule: "At each node, select child maximizing UCT"
+        formula: "Q/N + c * sqrt(ln(N_parent) / N_child)"
+        balance: "Exploitation (Q/N) + Exploration (bonus)"
+
+      2_expand_leaf:
+        rule: "Add new game states to tree"
+        policy: "Add one child, or all legal moves"
+
+      3_simulate_to_end:
+        rule: "Play out randomly to get result"
+        alternatives: "Use neural net for faster estimate (AlphaZero)"
+
+      4_propagate_result:
+        rule: "Update all ancestors with simulation result"
+        update: "N_i += 1, Q_i += result"
+
+    variants:
+      vanilla_mcts: "Random rollouts"
+      alphago_style: "Neural net for rollout and evaluation"
+      rave: "Rapid Action Value Estimation"
+
+    anti_patterns:
+      - "Too few iterations (poor estimates)"
+      - "Bad simulation policy (misleading results)"
+      - "Not enough exploration (converges to local optimum)"
+      - "Using when good heuristic exists (A* might be faster)"
+
+    example:
+      context: "Game playing (simplified Go)"
+      tree_building:
+        iteration_1:
+          select: "Root -> A (unexplored)"
+          expand: "Add node A to tree"
+          simulate: "Random play: Black wins"
+          backprop: "A: 1/1, Root: 1/1"
+        iteration_2:
+          select: "Root -> B (UCT prefers unexplored)"
+          expand: "Add node B"
+          simulate: "Random play: White wins"
+          backprop: "B: 0/1, Root: 1/2"
+        iteration_1000:
+          tree: "Deep in promising variations"
+          selection: "UCT balances exploration/exploitation"
+      decision: "Choose child with most visits from root"
+
+    source: "Game AI - Monte Carlo Tree Search (Coulom 2006)"

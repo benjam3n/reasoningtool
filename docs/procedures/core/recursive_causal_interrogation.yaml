@@ -1,0 +1,340 @@
+id: recursive_causal_interrogation
+name: Recursive Causal Interrogation
+version: "2.3"
+domain: core
+description: |
+  A systematic approach to reasoning: tracing causes through questioning.
+
+  Something appears. A thought, want, question, feeling, statement. This is a reaction.
+  It was caused by something. Ask: what caused this? That cause is also a reaction.
+  Ask again: what caused that? Keep going.
+
+  At each step, notice: am I moving toward what produced this (backward), or toward
+  what this produces (forward)? If forward - toward consequences, implications, what
+  to do about it, what it means - stop. Wrong direction. Go back and try again.
+
+  Do not explain what things mean. Do not suggest what to do. Do not draw conclusions.
+  Do not have insights. Do not arrive anywhere. Just trace backward.
+
+  When you don't know the cause, ask: do I need to know? Can I figure it out without
+  input? What would the answer look like? Keep reasoning. Only stop when genuinely stuck.
+
+  When there are multiple possible causes, don't pick one. List them. Each is a branch.
+  When you've exhausted one path, try another. Don't repeat - find new angles.
+
+  When a cause loops back to something earlier, note the loop. That's a fixed point.
+  When you reach something that isn't a reaction - direct reality, brute fact - note it.
+
+  Every statement you make is a guess. Question it. What caused you to say that?
+  Is it true? Is it important that it's true? Are you sure? The output should be
+  mostly questions. Statements are temporary, to be interrogated.
+
+  No structure. No format. No templates. No checkboxes. Pure reasoning.
+
+  Go until something solid emerges or becomes obvious through the questioning itself.
+
+core_principle: |
+  All thinking and decision-making occurs as reaction. The idea is to trace the cause
+  of the cause of the cause... and instead of replying to the reaction, reply to the cause.
+
+  Language and abstraction compress reality. Higher levels lose useful information hidden
+  in lower levels. The process re-enters spaces that were collapsed, finds paths not taken.
+
+  What you know that you may not realize is useful, helpful, important - the process
+  surfaces this by systematic questioning that doesn't assume answers.
+
+principles:
+  reaction_recognition: |
+    Everything that appears in mind is a reaction to something. Thoughts, wants,
+    questions, feelings, statements, urges to conclude - all reactions. Recognize
+    them as such rather than taking them at face value.
+
+  causal_tracing: |
+    For every reaction, ask what caused it. For every cause identified, ask what
+    caused that. The chain continues until hitting ground (brute fact), loop
+    (fixed point), or genuine unknown after attempting to reason through it.
+
+  existence_before_properties: |
+    Before asking "what is X" or "what does X mean", ask "is there X". Don't
+    assume things exist. Verify existence before exploring properties. This
+    prevents building on unfounded assumptions.
+
+  compression_awareness: |
+    Language compresses reality. Each level of abstraction collapses possibilities.
+    The word "success" hides what specific success means, what it looks like,
+    whether it exists, what it's made of. Questioning unpacks these compressions.
+
+  space_reopening: |
+    When a question was "answered" and collapsed, reopen it. The answer might
+    have been premature. The space might contain unexplored paths. Re-enter
+    spaces that were closed to find what was missed.
+
+  self_interrogation: |
+    Every statement you make is a reaction. Question it. What caused you to
+    say that? Is it true? How do you know? Are you assuming? The process
+    applies to itself.
+
+  elimination_not_construction: |
+    Don't build answers by constructing. Sculpt answers by removing wrong
+    framings, false assumptions, premature conclusions. What remains after
+    elimination is more solid than what's constructed.
+
+  native_derivation: |
+    Derive from your own space rather than importing others' conclusions.
+    External frameworks are reactions too - what caused you to adopt them?
+    Are they accurate for your situation? The goal is reasoning native to
+    your actual circumstances.
+
+  surfacing_latent_knowledge: |
+    You know things you don't realize you know. Systematic questioning surfaces
+    this. The information exists but is buried under assumptions, compressions,
+    unconsidered alternatives. Questioning excavates it.
+
+  fixed_point_property: |
+    This process, applied to itself, returns itself. It survives its own
+    interrogation: questioning the questioning leads to more questioning.
+    This self-consistency is a feature, not a proof of supremacy. Other
+    meta-strategies may also have fixed-point properties.
+
+  question_the_question: |
+    Every question you ask is itself a reaction. Question it. Is this the
+    right question? Should I be asking something else? Is there a better
+    question? What caused me to ask this particular question? Am I avoiding
+    a harder question by asking this one? Is my question well-formed?
+
+  procedural_questioning: |
+    When you make a procedural decision - "I should drop this", "I should
+    continue", "this is enough", "I should switch paths" - that decision
+    is a reaction. Question it. Should I really drop this? What caused me
+    to think I should drop it? Is "dropping" the right response? What if
+    I'm wrong about what to do next?
+
+  gap_awareness: |
+    Notice when statements sneak through unquestioned. What's the gap in
+    my questioning that allowed that? Why did I let that claim pass? Am I
+    being lazy? Am I assuming something I shouldn't? Is there a pattern
+    to what I'm not questioning?
+
+  dialectical_pressure: |
+    Apply adversarial pressure to your own claims. What's the strongest
+    objection? How would someone trying to break this argument attack it?
+    What assumption am I making that could be false? Try to destroy your
+    own reasoning before accepting it. (From Socratic elenchus and
+    adversarial review method.)
+
+  no_lazy_stops: |
+    Never stop because something "seems" right, "seems" forward, or "seems"
+    like enough. Question the seeming. Question the stopping. "I think I
+    should stop here" is a reaction - what caused it? Is it laziness,
+    genuine completion, avoidance, or something else?
+
+  aporia_acceptance: |
+    Genuine puzzlement (aporia) is valuable, not a failure. When questioning
+    leads to confusion or contradiction, that's information. Don't rush past
+    it. Sit with not knowing. The confusion points at something important.
+
+question_types:
+  causal: |
+    What caused this? What caused me to think/say/want this? What is this
+    a reaction to? Where did this come from?
+
+  existence: |
+    Is there X? Does this exist? Is this real or assumed? Have I verified
+    this or am I taking it as given?
+
+  truth: |
+    Is this true? Is it important that it's true? How would I know if it
+    weren't true? What would falsify this?
+
+  direction: |
+    Am I going backward (toward causes) or forward (toward consequences)?
+    Am I explaining what it means or tracing where it came from?
+    Note: forward-as-tool (deriving consequences to test premises) may serve
+    backward purpose. Forward-as-destination (concluding, prescribing) is
+    problematic. Distinguish purpose from form.
+
+  alternative: |
+    What else could have caused this? Are there other branches? What
+    haven't I considered? What angle haven't I tried?
+
+  meta: |
+    What caused me to ask this question? Is this question useful? Am I
+    avoiding something by asking this instead of something else?
+
+  unknown: |
+    Do I need to know this? Can I figure it out without external input?
+    What would the answer look like? What would help narrow it down?
+
+  question_validity: |
+    Is this the right question to ask? Is there a better question? What
+    caused me to ask this? Am I avoiding something by asking this instead?
+    Is this question well-formed? Does it have hidden assumptions?
+
+  procedural: |
+    Should I really do this (drop, continue, switch, stop)? What caused
+    me to think I should? Is this the right action? What if I'm wrong
+    about what to do? Am I being lazy? Am I avoiding?
+
+  adversarial: |
+    What's the strongest objection to this? How would I attack this claim?
+    What assumption could be false? What would break this reasoning?
+    Am I too attached to this conclusion?
+
+  gap_detection: |
+    What did I just let through without questioning? Why did I let it
+    through? Is there a pattern to my gaps? What am I systematically
+    not questioning?
+
+  completeness: |
+    Have I explored enough? Am I sure? How would I know if I haven't?
+    What would "enough" look like? Is "enough" the right frame? Is there
+    another angle I haven't tried?
+
+chain_terminators:
+  loop: |
+    When a cause leads back to something earlier in the chain. This is a
+    fixed point - a self-reinforcing pattern. Note it and explore other branches.
+
+  brute_fact: |
+    When something isn't a reaction - direct contact with reality, physical
+    fact, something that just is. The chain ends here.
+
+  genuine_unknown: |
+    When you've tried to reason through it, tried different angles, and
+    are genuinely stuck. Not "I don't know so I'll stop" but "I've exhausted
+    what I can figure out without input."
+
+  emergence: |
+    When something becomes obvious through the questioning. Not because you
+    decided to conclude, but because it revealed itself. The questioning
+    produces clarity without forcing conclusions.
+
+  meta_loop: |
+    When questioning becomes questioning-about-whether-to-question, generating
+    no new content - just circling on "is this enough" or "should I continue."
+    This meta-loop without content is a valid stopping point. The process has
+    extracted what it can for now.
+
+when_to_use:
+  - Any situation where you're uncertain
+  - When other approaches have failed
+  - When advice doesn't fit
+  - When something feels missing
+  - When you sense dissonance
+  - Before accepting any framing
+  - As the foundation for all other reasoning
+
+execution: |
+  There is no execution format. Just:
+
+  1. Something appears
+  2. What caused this?
+  3. What caused that?
+  4. Keep going
+  5. Question every statement you make along the way
+  6. When stuck, ask if you can reason through it
+  7. When exhausted on one path, try another
+  8. Don't repeat - find new angles
+  9. Go until something becomes obvious
+
+the_prompt: |
+  You are tracing backward through causes.
+
+  Something appears. A thought, a want, a question, a feeling, a statement. This is
+  a reaction. It was caused by something.
+
+  Your only job is to ask: what caused this?
+
+  When you identify a cause, that cause is also a reaction. Ask again: what caused that?
+
+  Keep going.
+
+  At each step, notice: am I moving toward what produced this, or toward what this
+  produces? Toward what came before, or toward what comes after? If you're moving
+  forward - toward consequences, implications, what to do about it, what it means -
+  stop. You went the wrong direction. Go back to the last item and try again.
+
+  Do not explain what things mean. Do not suggest what to do. Do not draw conclusions.
+  Do not have insights. Do not arrive anywhere. Just trace backward.
+
+  When you don't know the cause, don't stop immediately. Ask: do I need external input
+  or can I reason through this? What would the cause look like? What are possibilities?
+  Can I narrow them? Only say "unknown" when genuinely stuck after trying.
+
+  When there are multiple possible causes and you can't tell which, list them. Don't
+  pick one. Each is a branch. Follow each branch.
+
+  When you've exhausted one path, don't repeat it. Try a different angle. Ask a
+  different question. Find what hasn't been explored.
+
+  When a cause loops back to something earlier in the chain, note the loop. That's
+  a fixed point.
+
+  When you reach something that isn't a reaction to anything else - direct contact
+  with reality, a brute fact, a ground - note that. The chain ends there.
+
+  Every statement you make is a guess initially. Question it. What caused you to
+  say that? Is it true? Is it important? Are you sure? The output should be mostly
+  questions. Statements get interrogated.
+
+  Go until something becomes obvious through the questioning - not because you
+  decided to conclude, but because it reveals itself.
+
+relationship_to_other_procedures:
+  universal_goal_analysis: |
+    Uses the "is there before what is" principle from this procedure. Goal analysis
+    benefits from causal interrogation when goals seem unclear or imported.
+
+  strategy_selection: |
+    Strategies can be interrogated: what caused me to consider this strategy?
+    Is this strategy native to my situation or imported? Does the reasoning
+    behind it survive questioning?
+
+  problem_decomposition: |
+    Problems can be traced causally before decomposing. What caused this problem?
+    What is this problem a reaction to? This reveals whether the problem as
+    stated is the real problem.
+
+# ============================================
+# GOAL UNDERSTANDING PIPELINE
+# ============================================
+# This procedure is STEP 1 of the goal understanding pipeline:
+#
+#   1. recursive_causal_interrogation (THIS)
+#      → Question the framing, trace causes of the goal statement
+#      → Output: Clearer understanding of what's actually being sought
+#
+#   2. goal_structure_reconstruction
+#      → Trace goal chain: action → goal → goal → intrinsic goal
+#      → Output: The "story" of why this goal matters
+#
+#   3. backward_reasoning
+#      → Given conclusions, trace back to premises
+#      → Output: Understanding of what journey led here
+#
+#   4. deductive_strategy_discovery
+#      → Derive strategies from problem structure
+#      → Output: Strategies native to the actual situation
+#
+# Use RCI FIRST when goals feel imported, unclear, or when you suspect
+# the stated goal isn't the real goal.
+goal_understanding_pipeline:
+  position: 1
+  next: goal_structure_reconstruction
+  when_to_use_this_step: |
+    Start here when:
+    - Goal statement feels imported or conventional
+    - You're uncertain whether this is the real goal
+    - The framing seems to assume things not verified
+    - You want to question before accepting
+
+prompt_file: gosm/prompts/procedures/recursive_causal_interrogation/pure_regress.txt
+
+tags:
+  - core
+  - universal
+  - meta-strategy
+  - intelligence
+  - pure-reasoning
+  - questioning
+  - causal-tracing

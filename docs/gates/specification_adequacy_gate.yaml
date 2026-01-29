@@ -1,0 +1,218 @@
+# Specification Adequacy Gate
+# Verify that STEPS are actually executable before release
+# Addresses gap: No verification that steps are genuinely atomic and sufficient
+
+id: specification_adequacy_gate
+name: Specification Adequacy Gate
+version: "1.0.0"
+domain: core
+tags: ["planning", "verification", "steps", "mandatory"]
+
+description: |
+  Before STEPS generation, verify the specification is sufficient for execution.
+
+  Current gap: STEPS can be generated but may not be actually executable.
+  This gate ensures steps meet adequacy threshold for executor type.
+
+when_to_use:
+  - Before releasing STEPS for execution (MANDATORY)
+  - After major plan revisions
+  - When executor changes
+
+# ============================================
+# STEP 1: IDENTIFY EXECUTOR TYPE
+# ============================================
+executor_identification:
+  description: Who/what will execute these steps?
+
+  executor_types:
+    human_expert:
+      description: "Person with domain expertise"
+      adequacy_threshold: "Can fill gaps with domain knowledge"
+      detail_level: "Medium - can infer missing details"
+
+    human_novice:
+      description: "Person without domain expertise"
+      adequacy_threshold: "Must be able to follow literally"
+      detail_level: "High - explicit detail for every action"
+
+    ai_agent:
+      description: "AI system executing steps"
+      adequacy_threshold: "All assumptions explicit, no ambiguity"
+      detail_level: "Very High - edge cases handled"
+
+    automated_system:
+      description: "Software/script executing steps"
+      adequacy_threshold: "Every decision point pre-resolved"
+      detail_level: "Complete - deterministic execution"
+
+    team:
+      description: "Multiple people coordinating"
+      adequacy_threshold: "Handoffs explicit, responsibilities clear"
+      detail_level: "Medium-High - coordination points explicit"
+
+# ============================================
+# STEP 2: ADEQUACY CRITERIA
+# ============================================
+adequacy_criteria:
+  description: What makes steps adequate?
+
+  atomicity:
+    description: "Each step is single action"
+    check: "Can step be broken into smaller steps?"
+    pass: "Step cannot be meaningfully decomposed further"
+    fail: "Step contains multiple distinct actions"
+    examples:
+      good: "Create file auth.js with JWT configuration"
+      bad: "Handle authentication" (contains multiple actions)
+
+  completeness:
+    description: "All necessary steps are present"
+    check: "Is there a gap between any two steps?"
+    pass: "Step N output is sufficient input for Step N+1"
+    fail: "Step N+1 requires something not produced by Step N"
+    examples:
+      good: "Step 3 produces config.json → Step 4 reads config.json"
+      bad: "Step 3 produces config → Step 4 requires config.json AND database setup"
+
+  explicitness:
+    description: "No implicit assumptions"
+    check: "Does step require knowledge not stated?"
+    pass: "All required knowledge is in the step or previous steps"
+    fail: "Step assumes executor knows something unstated"
+    examples:
+      good: "Run: npm install express@4.18.2"
+      bad: "Install Express" (which version? how?)
+
+  unambiguity:
+    description: "Only one interpretation possible"
+    check: "Could two people interpret this differently?"
+    pass: "Step has single clear interpretation"
+    fail: "Step could be understood multiple ways"
+    examples:
+      good: "Set timeout to 30 seconds"
+      bad: "Set appropriate timeout" (what's appropriate?)
+
+  verifiability:
+    description: "Can tell when step is complete"
+    check: "How do you know step succeeded?"
+    pass: "Success condition is clear and checkable"
+    fail: "No way to verify step completed correctly"
+    examples:
+      good: "Verify: File auth.js exists and contains 'jwt.sign'"
+      bad: "Set up authentication" (how to verify?)
+
+  error_handling:
+    description: "What to do if step fails"
+    check: "Is there guidance for failure?"
+    pass: "Step includes 'if fails: [action]' or failure is noted"
+    fail: "No guidance for what to do if step fails"
+    examples:
+      good: "Run npm install. If fails, check node version >= 18"
+      bad: "Run npm install" (what if it fails?)
+
+# ============================================
+# STEP 3: ADEQUACY SCORING
+# ============================================
+scoring:
+  description: Score specification against criteria
+
+  per_step_scoring:
+    atomicity: "[0-2] 0=compound, 1=semi-atomic, 2=atomic"
+    completeness: "[0-2] 0=gaps, 1=minor gaps, 2=complete"
+    explicitness: "[0-2] 0=implicit, 1=mostly explicit, 2=fully explicit"
+    unambiguity: "[0-2] 0=ambiguous, 1=mostly clear, 2=unambiguous"
+    verifiability: "[0-2] 0=unverifiable, 1=partially, 2=verifiable"
+    error_handling: "[0-2] 0=none, 1=partial, 2=complete"
+
+  step_score: "Sum of criteria (0-12)"
+
+  step_adequacy:
+    ADEQUATE: "score >= 10"
+    MARGINAL: "score 7-9"
+    INADEQUATE: "score < 7"
+
+  overall_adequacy:
+    method: "Minimum of all step scores"
+    rationale: "Chain is as strong as weakest link"
+
+# ============================================
+# STEP 4: EXECUTOR-SPECIFIC THRESHOLDS
+# ============================================
+thresholds_by_executor:
+  human_expert:
+    minimum_step_score: 7
+    rationale: "Can fill gaps with expertise"
+
+  human_novice:
+    minimum_step_score: 10
+    rationale: "Must be able to follow literally"
+
+  ai_agent:
+    minimum_step_score: 11
+    rationale: "Needs near-complete specification"
+
+  automated_system:
+    minimum_step_score: 12
+    rationale: "Must be deterministic"
+
+  team:
+    minimum_step_score: 9
+    additional_check: "All handoffs explicit"
+
+# ============================================
+# STEP 5: COMMON INADEQUACY PATTERNS
+# ============================================
+common_inadequacies:
+  - pattern: "Use appropriate [X]"
+    problem: "What's appropriate is undefined"
+    fix: "Specify exact value or provide decision criteria"
+
+  - pattern: "Handle [X] properly"
+    problem: "'Properly' is subjective"
+    fix: "Define what proper handling means"
+
+  - pattern: "If needed, [X]"
+    problem: "When is it needed?"
+    fix: "Specify conditions for when to do X"
+
+  - pattern: "Apply procedure [X]"
+    problem: "Procedure might have its own ambiguities"
+    fix: "Either inline the procedure or verify its adequacy"
+
+  - pattern: "Coordinate with [team]"
+    problem: "What coordination? What's the output?"
+    fix: "Specify: 'Get approval from [team] in form of [artifact]'"
+
+  - pattern: "[verb] the [thing]"
+    problem: "Missing: how? with what? what's success?"
+    fix: "Add method, tools, and verification"
+
+# ============================================
+# STEP 6: GATE DECISION
+# ============================================
+gate_decision:
+  PASS:
+    condition: "All steps meet executor threshold"
+    action: "Release STEPS for execution"
+
+  CONDITIONAL_PASS:
+    condition: "Most steps adequate, 1-2 marginal"
+    action: "Release with noted risks on marginal steps"
+
+  FAIL:
+    condition: "Any step below threshold"
+    action: "Revise steps before release"
+    required_output: "List of inadequate steps with specific issues"
+
+# ============================================
+# QUICK CHECKLIST
+# ============================================
+quick_checklist:
+  - "[ ] Executor type identified"
+  - "[ ] Each step scored on 6 criteria"
+  - "[ ] Minimum score meets executor threshold"
+  - "[ ] Common inadequacy patterns checked"
+  - "[ ] Handoffs explicit (if team execution)"
+  - "[ ] Error handling present for critical steps"
+  - "[ ] Verification method defined for each step"

@@ -1,0 +1,181 @@
+# Constraint Solving Orderings
+# Orderings for constraint satisfaction and guided search
+
+category_id: constraint_solving
+category_name: "Constraint Solving Orderings"
+description: |
+  Orderings for constraint satisfaction and guided search problems.
+  Use when building solutions incrementally with constraints or
+  when heuristics can guide search toward goals.
+
+when_to_consider: |
+  - Constraint satisfaction problems
+  - Can validate partial solutions
+  - Have heuristic estimate to goal
+  - Puzzles, scheduling, planning
+  - Need systematic exploration with pruning
+
+variations:
+
+  # ----------------------------------------
+  # BACKTRACK-PRUNE ORDERING
+  # ----------------------------------------
+  backtrack_prune:
+    id: backtrack_prune_ordering
+    name: "Backtrack-Prune Ordering (Try-Fail-Undo)"
+    category: constraint_solving
+
+    philosophy: |
+      Build solution incrementally, abandon partial solutions that
+      can't possibly work. From backtracking: try a choice, recurse,
+      if it fails undo and try next. Pruning eliminates branches
+      early when they violate constraints. Explores solution space
+      systematically without full enumeration.
+
+    when_to_use:
+      - Constraint satisfaction problems
+      - Finding all solutions (or any solution)
+      - When partial solutions can be validated
+      - Puzzles: N-Queens, Sudoku, crosswords
+      - Combinatorial search with constraints
+
+    key_concepts:
+      partial_solution: "Incomplete assignment being built"
+      constraint_check: "Does partial solution violate any rule?"
+      backtrack: "Undo last choice, try alternative"
+      prune: "Skip entire subtrees that can't lead to solution"
+
+    prioritization_rules:
+      1_choose:
+        rule: "Make a choice to extend partial solution"
+        strategy: "Often use variable/value ordering heuristics"
+
+      2_check_constraints:
+        rule: "Does this choice violate any constraint?"
+        if_valid: "Continue to next choice"
+        if_invalid: "Prune this branch"
+
+      3_recurse:
+        rule: "If valid, recursively solve remaining problem"
+        base_case: "If complete solution, record it"
+
+      4_backtrack:
+        rule: "If recursion fails, undo choice, try next option"
+        mechanism: "Return from recursive call, pop from stack"
+
+      5_prune_aggressively:
+        rule: "Detect failures as early as possible"
+        techniques:
+          - "Forward checking: eliminate impossible values"
+          - "Constraint propagation: infer additional constraints"
+          - "Heuristics: choose most constrained variable first"
+
+    ordering_heuristics:
+      mrv: "Minimum Remaining Values - most constrained first"
+      degree: "Choose variable affecting most others"
+      lcv: "Least Constraining Value - keep options open"
+
+    anti_patterns:
+      - "Not pruning (explores impossible branches)"
+      - "Pruning too late (wasted exploration)"
+      - "Not undoing state properly (corrupted search)"
+      - "Using when better algorithms exist"
+
+    example:
+      context: "Solving Sudoku"
+      backtrack_approach:
+        1_choose: "Pick empty cell, try digit 1-9"
+        2_check: "Does digit violate row/column/box constraint?"
+        3_recurse: "If valid, move to next empty cell"
+        4_backtrack: "If stuck, undo and try next digit"
+        5_prune: "Skip digits already in row/column/box"
+      with_mrv_heuristic:
+        improvement: "Choose cell with fewest valid options first"
+        reason: "Fails faster if unsolvable, reduces branching"
+      pruning_power:
+        without: "9^81 possible assignments to explore"
+        with_constraints: "Prune most branches immediately"
+
+    source: "Algorithm Design - Backtracking, Constraint Satisfaction"
+
+  # ----------------------------------------
+  # HEURISTIC-GUIDED ORDERING
+  # ----------------------------------------
+  heuristic_guided:
+    id: heuristic_guided_ordering
+    name: "Heuristic-Guided Ordering (A* Style)"
+    category: constraint_solving
+
+    philosophy: |
+      Use estimates to guide search toward likely solutions first.
+      From A* search: f(n) = g(n) + h(n) where g is cost so far
+      and h is estimated cost to goal. Always expand the most
+      promising node. Optimal if heuristic is admissible (never
+      overestimates).
+
+    when_to_use:
+      - Search problems with goal states
+      - Can estimate distance/cost to goal
+      - Want optimal solution (with admissible heuristic)
+      - Pathfinding, puzzle solving, planning
+      - When blind search is too slow
+
+    key_concepts:
+      heuristic: "Estimate of cost from current state to goal"
+      admissible: "Never overestimates true cost (optimistic)"
+      consistent: "h(n) <= cost(n,n') + h(n') for all edges"
+      f_value: "f(n) = g(n) + h(n) - total estimated cost"
+      priority_queue: "Always expand lowest f-value node"
+
+    components:
+      g_n: "Actual cost from start to current node"
+      h_n: "Estimated cost from current to goal"
+      f_n: "g(n) + h(n) = estimated total path cost"
+
+    prioritization_rules:
+      1_compute_f_values:
+        rule: "For each candidate, compute f = g + h"
+        g: "Known cost to reach this state"
+        h: "Estimated cost to reach goal from here"
+
+      2_expand_lowest_f:
+        rule: "Always process node with lowest f value"
+        mechanism: "Priority queue ordered by f"
+
+      3_update_as_discovered:
+        rule: "If better path found to node, update g and f"
+        effect: "May reprioritize node in queue"
+
+      4_stop_at_goal:
+        rule: "When goal has lowest f, optimal path found"
+        reason: "No unexplored path could be shorter"
+
+    heuristic_design:
+      admissible_examples:
+        manhattan: "Sum of x and y distances (grid pathfinding)"
+        euclidean: "Straight-line distance"
+        misplaced_tiles: "Count of tiles out of place (puzzles)"
+      trade_off: "Better heuristic = less search but more computation"
+
+    anti_patterns:
+      - "Overestimating heuristic (not admissible, not optimal)"
+      - "Zero heuristic (degenerates to Dijkstra)"
+      - "Not using priority queue (loses efficiency)"
+      - "Computing expensive heuristic when cheap one suffices"
+
+    example:
+      context: "Pathfinding on a map"
+      setup:
+        start: "City A"
+        goal: "City Z"
+        g: "Actual road distance traveled so far"
+        h: "Straight-line distance to Z (admissible)"
+      search_process:
+        step_1: "Start at A, f(A) = 0 + h(A)"
+        step_2: "Expand A, add neighbors with f values"
+        step_3: "Expand node with lowest f"
+        continue: "Until Z has lowest f in queue"
+      why_optimal: "Admissible h means f never overestimates true cost"
+      efficiency: "h guides search toward goal, avoiding dead ends"
+
+    source: "AI/Search Algorithms - A*, Best-First Search"

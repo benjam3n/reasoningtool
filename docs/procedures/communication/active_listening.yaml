@@ -1,0 +1,698 @@
+# Active Listening Procedure - Listen to understand, not just to respond
+# GOSM Communication procedure for deep listening that builds trust and understanding
+
+id: active_listening
+name: Active Listening
+version: "1.0.0"
+domain: communication
+
+description: Systematic procedure for listening deeply to understand others, build trust, and improve communication outcomes
+
+long_description: |
+  The Active Listening procedure provides a framework for truly hearing and understanding
+  what others are communicating - both verbally and nonverbally. Most people listen to
+  respond; active listening means listening to understand first.
+
+  This procedure covers:
+  - Listening techniques (full attention, suspending judgment)
+  - Paraphrasing and reflection (confirming understanding)
+  - Asking powerful questions (deepening understanding)
+  - Reading nonverbal cues (hearing what's not said)
+  - Creating psychological safety (encouraging authentic sharing)
+
+  Key principles:
+  - Seek first to understand, then to be understood
+  - Listening is not passive - it requires full engagement
+  - People don't care how much you know until they know how much you care
+  - The best insights come from following curiosity, not checklists
+  - Silence is a powerful listening tool
+
+tags:
+  - communication
+  - listening
+  - empathy
+  - leadership
+  - coaching
+  - relationships
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - One-on-one meetings where understanding the other person is key
+  - Gathering requirements or feedback from users or stakeholders
+  - Performance conversations and career discussions
+  - Coaching and mentoring conversations
+  - Conflict resolution where understanding perspectives is essential
+  - Sales or customer conversations where discovering needs matters
+  - Job interviews (both as interviewer and candidate)
+  - Building new relationships where trust needs to be established
+  - When someone is sharing something important or difficult
+  - Any conversation where you're tempted to interrupt with your opinion
+
+when_not_to_use:
+  - Emergency situations requiring immediate action
+  - When you need to deliver clear direction, not gather input
+  - For routine information exchange that doesn't require deep understanding
+  - When the person is not engaging in good faith
+  - If using listening techniques would feel manipulative in context
+  - When time constraints make deep listening impossible (acknowledge this)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: conversation_purpose
+    type: string
+    required: true
+    description: Why you're having this conversation and what you hope to understand
+
+  - name: other_person
+    type: string
+    required: true
+    description: Who you're listening to (relationship, context, what you know about them)
+
+  - name: conversation_context
+    type: enum
+    values: [one_on_one, meeting, interview, feedback, coaching, discovery, relationship_building]
+    required: false
+    description: The type of conversation you're in
+
+  - name: time_available
+    type: integer
+    required: false
+    description: How much time you have for this conversation
+
+  - name: listening_challenges
+    type: list
+    required: false
+    description: Known barriers (you tend to interrupt, topic is contentious, etc.)
+
+outputs:
+  - name: understanding_summary
+    type: document
+    description: What you learned about their perspective, needs, and feelings
+
+  - name: follow_up_items
+    type: list
+    description: Questions to explore further or actions to take
+
+  - name: listening_reflection
+    type: document
+    description: Self-assessment of listening quality and areas to improve
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Prepare to listen
+    action: |
+      Before the conversation, set yourself up for quality listening:
+
+      Mental preparation:
+      1. Set an intention: "My goal is to understand their perspective"
+      2. Acknowledge your biases: What assumptions might you bring?
+      3. Clear your mind: Let go of what you'll say next
+      4. Adopt genuine curiosity: Treat this as a learning opportunity
+      5. Remember: You can respond later; first, understand
+
+      Practical preparation:
+      1. Remove distractions (close laptop, silence phone, find quiet space)
+      2. Allow adequate time (don't schedule tight)
+      3. Prepare open questions you want to explore
+      4. Review what you know about this person and topic
+      5. Consider what might be difficult for them to share
+    inputs:
+      - conversation_purpose
+      - other_person
+      - listening_challenges (optional)
+    outputs:
+      - listening_intention: what you're trying to understand
+      - potential_biases: assumptions to watch for
+      - prepared_questions: open questions to start exploration
+    verification: |
+      Can state what you're genuinely curious about
+      Identified at least one bias or assumption to watch
+
+  - id: 2
+    name: Create psychological safety
+    action: |
+      Make it safe for them to share openly:
+
+      Establishing safety:
+      1. Start with genuine warmth and connection
+      2. Signal that you're here to understand, not judge
+      3. Make it clear that their perspective matters
+      4. If sensitive topic, acknowledge difficulty
+      5. Affirm confidentiality if appropriate
+
+      Nonverbal safety signals:
+      - Open body posture (uncrossed arms, leaning in slightly)
+      - Appropriate eye contact (not staring, not avoiding)
+      - Calm, unhurried presence
+      - Match their energy level (don't be overly enthusiastic if they're serious)
+
+      Verbal safety signals:
+      - "I really want to understand how you see this"
+      - "There's no wrong answer here"
+      - "I'm curious about your perspective"
+      - "Take your time"
+    inputs:
+      - other_person
+      - conversation_context (optional)
+    outputs:
+      - safety_approach: how you'll create an open environment
+      - opening_words: how you'll start the conversation
+    verification: |
+      Opening creates space for honest sharing
+      Your presence is calm and inviting, not pressured
+
+  - id: 3
+    name: Listen with full attention
+    action: |
+      Give complete, undivided attention:
+
+      Full presence:
+      1. Clear your mind of what you'll say next
+      2. Focus entirely on what they're saying
+      3. Notice both words AND how they're saying them
+      4. Listen for what's NOT being said
+      5. Resist the urge to interrupt, even to agree
+
+      What to listen for:
+      - CONTENT: What are the facts and events?
+      - FEELINGS: What emotions are underneath?
+      - VALUES: What matters to them about this?
+      - NEEDS: What do they want or need?
+      - REQUESTS: Is there something they're asking for?
+
+      Managing internal distractions:
+      - Notice when your mind wanders and bring it back
+      - If you start formulating your response, stop
+      - If you disagree internally, park it and keep listening
+      - If something is unclear, note it to ask about later
+    inputs:
+      - The conversation itself
+    outputs:
+      - content_heard: the facts and events they shared
+      - emotions_noticed: feelings you observed
+      - values_detected: what seems to matter to them
+      - needs_inferred: what they might want or need
+    verification: |
+      Can summarize what they said accurately
+      Noticed emotional undertones, not just facts
+
+  - id: 4
+    name: Use silence strategically
+    action: |
+      Silence is a powerful listening tool:
+
+      Why silence matters:
+      - People often have more to say if given space
+      - Important insights often come after initial thoughts
+      - Silence signals you're not rushing them
+      - Your quiet presence encourages deeper reflection
+
+      How to use silence:
+      1. After they finish speaking, wait 2-3 seconds before responding
+      2. If they seem to have more, say nothing and maintain eye contact
+      3. Use "mm-hmm" or nodding to encourage without interrupting
+      4. Resist filling silence with your thoughts
+
+      When silence reveals more:
+      - After emotional statements (let them sit with it)
+      - When they say "I don't know" (often they do know, they need space)
+      - After a long explanation (they may want to add something)
+      - When you sense there's more underneath
+    inputs:
+      - The conversation flow
+    outputs:
+      - additional_insights: what emerged from holding space
+    verification: |
+      Allowed meaningful pauses without jumping in
+      Their deeper thoughts emerged because you waited
+
+  - id: 5
+    name: Paraphrase and reflect
+    action: |
+      Confirm understanding by reflecting back what you heard:
+
+      Paraphrasing content:
+      - "So what you're saying is..."
+      - "Let me make sure I understand..."
+      - "If I'm hearing you right..."
+      - "It sounds like the key issue is..."
+
+      Reflecting emotions:
+      - "It sounds like you're feeling frustrated about..."
+      - "I hear some excitement when you talk about..."
+      - "That seems like it was really difficult"
+      - "You seem torn about this"
+
+      Why this matters:
+      - Confirms you understood (or gives them chance to correct)
+      - Shows you're really listening (people feel heard)
+      - Slows down the conversation for depth
+      - Helps them clarify their own thinking
+
+      Guidelines:
+      - Use your own words, not just repeating theirs
+      - Keep it brief - this is a check, not a summary
+      - End with openness: "Is that right?" or "Did I get that?"
+      - Don't add your interpretation or opinion yet
+    inputs:
+      - content_heard (from Step 3)
+      - emotions_noticed (from Step 3)
+    outputs:
+      - paraphrase_checks: reflections offered and their responses
+      - corrected_understanding: where your understanding was adjusted
+    verification: |
+      Paraphrased at least 2-3 times during conversation
+      They confirmed or corrected your understanding
+
+  - id: 6
+    name: Ask powerful questions
+    action: |
+      Use questions to deepen understanding:
+
+      Open questions that explore:
+      - "Can you tell me more about...?"
+      - "What was that like for you?"
+      - "What matters most to you about this?"
+      - "How did you feel when that happened?"
+      - "What do you think is really going on here?"
+
+      Questions that go deeper:
+      - "And what else?" (often gets to the real answer)
+      - "What's the hardest part about this?"
+      - "If you could change one thing, what would it be?"
+      - "What would success look like?"
+      - "What aren't we talking about that we should be?"
+
+      Clarifying questions:
+      - "When you say X, what do you mean by that?"
+      - "Can you give me an example?"
+      - "What led you to that conclusion?"
+      - "How does this connect to...?"
+
+      Questions to avoid:
+      - Leading questions (with your answer embedded)
+      - Rapid-fire questions (overwhelms)
+      - Why questions that sound judgmental ("Why did you do that?")
+      - Questions that are really opinions ("Don't you think...?")
+
+      The magic question:
+      - "And what else?" - Use it repeatedly. The first answer is rarely the fullest.
+    inputs:
+      - content_heard (from Step 3)
+      - prepared_questions (from Step 1)
+    outputs:
+      - questions_asked: key questions and what they revealed
+      - deeper_understanding: insights that emerged from good questions
+    verification: |
+      Asked mostly open questions (not yes/no)
+      Used "And what else?" at least once
+      Questions came from curiosity, not agenda
+
+  - id: 7
+    name: Read nonverbal cues
+    action: |
+      Listen with your eyes as well as your ears:
+
+      Body language to notice:
+      - Posture: Open or closed? Leaning in or pulling back?
+      - Eyes: Contact or avoidance? Engaged or distracted?
+      - Hands: Relaxed or tense? Gesturing or still?
+      - Face: Matching their words? Microexpressions?
+      - Energy: Higher or lower than their words suggest?
+
+      What incongruence might mean:
+      - Words say "fine" but body says stressed: explore further
+      - Enthusiasm in voice but arms crossed: possible reservation
+      - Confident words but avoiding eye contact: uncertainty underneath
+      - Quick to move on from topic: might be more there
+
+      How to use what you notice:
+      - Note patterns, not single signals (one crossed arm isn't definitive)
+      - Gently invite: "I notice you seem a bit tense when we talk about this..."
+      - Check in: "How are you feeling about this conversation?"
+      - Don't assume: Your interpretation might be wrong
+    inputs:
+      - The conversation observation
+    outputs:
+      - nonverbal_observations: what body language you noticed
+      - incongruence_noted: where words and nonverbals didn't match
+      - follow_up_needed: topics that seemed to have more underneath
+    verification: |
+      Noticed at least 2-3 nonverbal signals
+      Explored at least one apparent incongruence
+
+  - id: 8
+    name: Summarize and confirm understanding
+    action: |
+      At key moments and at the end, synthesize what you've heard:
+
+      Key moment summaries:
+      - After they've shared something significant
+      - Before moving to a new topic
+      - When the conversation has been complex
+
+      End of conversation summary:
+      1. Main points: "Here's what I'm taking away..."
+      2. Feelings: "It seems like you're feeling..."
+      3. Needs/desires: "What's most important to you is..."
+      4. Confirmation: "Did I get that right?"
+
+      Summary technique:
+      - Be concise (not a transcript)
+      - Use their key words and phrases
+      - Capture essence, not just facts
+      - Include emotions and values, not just content
+      - Leave room for them to correct or add
+
+      After confirmation:
+      - Ask if there's anything else they want to add
+      - Thank them for sharing
+      - If applicable, discuss next steps
+    inputs:
+      - All understanding gathered
+    outputs:
+      - understanding_summary: complete synthesis of what you learned
+      - confirmed_understanding: what they agreed you understood correctly
+      - open_threads: topics to explore further in future
+    verification: |
+      Provided summary that they confirmed or corrected
+      Asked if there was anything else before closing
+
+  - id: 9
+    name: Reflect on listening quality
+    action: |
+      After the conversation, assess your listening:
+
+      Self-assessment questions:
+      1. Did I truly understand their perspective?
+      2. Did they seem to feel heard?
+      3. Where did I listen well? Where did I fall short?
+      4. Did I interrupt or rush? Why?
+      5. What did I learn that surprised me?
+      6. What assumptions were challenged?
+      7. What would I do differently next time?
+
+      Signs you listened well:
+      - They shared more than expected
+      - They said "exactly" or "yes, that's it"
+      - They seemed relieved or lighter
+      - You learned something new
+      - They thanked you for listening
+
+      Signs to improve:
+      - You did most of the talking
+      - You were thinking about your response while they spoke
+      - They seemed frustrated or unheard
+      - You missed emotional undertones
+      - You rushed to solutions or advice
+    inputs:
+      - The completed conversation
+    outputs:
+      - listening_reflection: honest assessment of how you did
+      - improvement_areas: specific things to work on
+      - follow_up_items: questions or actions from the conversation
+    verification: |
+      Honestly assessed both strengths and weaknesses
+      Identified at least one specific area to improve
+
+# ============================================
+# LISTENING TECHNIQUES
+# ============================================
+techniques:
+  minimal_encouragers:
+    description: "Small responses that show you're listening without interrupting"
+    examples:
+      - "'Mm-hmm'"
+      - "'I see'"
+      - "'Go on'"
+      - "'Right'"
+      - "Nodding"
+      - "Leaning in"
+    caution: "Don't overuse - can seem mechanical"
+
+  reflecting_feelings:
+    description: "Naming the emotions you perceive"
+    examples:
+      - "'It sounds like you're feeling frustrated'"
+      - "'That must have been disappointing'"
+      - "'I hear some excitement about this'"
+      - "'You seem conflicted'"
+    caution: "Use tentative language - you might be wrong"
+
+  clarifying:
+    description: "Seeking clearer understanding of what was said"
+    examples:
+      - "'When you say X, what do you mean?'"
+      - "'Can you give me an example?'"
+      - "'I want to make sure I understand...'"
+      - "'What do you mean by that specifically?'"
+    caution: "Don't over-clarify - it can feel like interrogation"
+
+  summarizing:
+    description: "Pulling together key points to confirm understanding"
+    examples:
+      - "'So the main things you're saying are...'"
+      - "'Let me see if I've got this right...'"
+      - "'What I'm hearing is... Is that accurate?'"
+    caution: "Keep it brief - this is a check, not a restatement"
+
+  normalizing:
+    description: "Acknowledging that their experience makes sense"
+    examples:
+      - "'That makes sense given what you were dealing with'"
+      - "'Anyone in that situation might feel that way'"
+      - "'It's understandable that you'd be concerned'"
+    caution: "Don't minimize or dismiss - validate without patronizing"
+
+  reframing:
+    description: "Offering a different perspective on their situation"
+    examples:
+      - "'Another way to look at it might be...'"
+      - "'What if this is actually an opportunity?'"
+      - "'I wonder if the situation also means...'"
+    caution: "Only after understanding; don't reframe too early"
+
+# ============================================
+# COMMON BARRIERS
+# ============================================
+listening_barriers:
+  internal_barriers:
+    planning_response:
+      symptom: "Thinking about what you'll say while they're talking"
+      solution: "Notice it happening and refocus on their words"
+
+    judging:
+      symptom: "Evaluating or criticizing what they're saying mentally"
+      solution: "Suspend judgment; seek to understand first"
+
+    assuming:
+      symptom: "Thinking you already know what they mean or feel"
+      solution: "Check assumptions with questions; stay curious"
+
+    relating_to_self:
+      symptom: "Connecting everything to your own experience"
+      solution: "Stay focused on them; share your experience later if relevant"
+
+    solving:
+      symptom: "Jumping to solutions before fully understanding"
+      solution: "Resist the fix; ask 'What would be most helpful?'"
+
+    rehearsing:
+      symptom: "Preparing counter-arguments while listening"
+      solution: "Note disagreements mentally; continue listening"
+
+  external_barriers:
+    distractions:
+      symptom: "Phone, notifications, environment pulling attention"
+      solution: "Remove or silence devices; find quiet space"
+
+    time_pressure:
+      symptom: "Rushing because of tight schedule"
+      solution: "Either give proper time or reschedule; don't half-listen"
+
+    emotional_reactivity:
+      symptom: "Getting triggered by what they say"
+      solution: "Notice your reaction; take a breath; stay curious"
+
+    cultural_differences:
+      symptom: "Misinterpreting based on different communication norms"
+      solution: "Ask clarifying questions; don't assume your interpretation is right"
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Gave full, undivided attention throughout the conversation
+  - Paraphrased and reflected to confirm understanding
+  - Asked open questions that deepened understanding
+  - Allowed silence and didn't rush to fill it
+  - Noticed and explored nonverbal cues
+  - Summarized and confirmed understanding at the end
+  - The other person seemed to feel genuinely heard
+
+failure_modes:
+  - mode: Listening to respond
+    symptom: Formulating your answer while they're still talking
+    resolution: Notice when you're doing it; refocus on their words
+
+  - mode: Interrupting
+    symptom: Cutting them off to make your point
+    resolution: Wait 2 seconds after they stop before responding; notice urge to interrupt
+
+  - mode: Advice giving
+    symptom: Jumping to solutions before fully understanding
+    resolution: Ask "What would be helpful?" instead of assuming they want advice
+
+  - mode: Making it about you
+    symptom: Redirecting conversation to your own experiences
+    resolution: Stay focused on them; share your experience only if relevant and brief
+
+  - mode: Pseudo-listening
+    symptom: Appearing to listen while distracted or checked out
+    resolution: Remove distractions; if you can't be present, reschedule
+
+  - mode: Selective listening
+    symptom: Only hearing parts that interest you or confirm your view
+    resolution: Listen especially carefully to parts you disagree with or find boring
+
+  - mode: Missing emotion
+    symptom: Hearing only facts, not feelings underneath
+    resolution: Ask yourself "How might they be feeling?" and check
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: One-on-one with direct report about career concerns
+    context: Regular 1:1 where team member seems disengaged lately
+    inputs:
+      conversation_purpose: "Understand what's going on - they've seemed off lately"
+      other_person: "Direct report for 18 months, usually engaged, recently seems checked out"
+      conversation_context: "one_on_one"
+      time_available: 45
+      listening_challenges:
+        - "I tend to jump to solutions"
+        - "I might be defensive if it's about my management"
+    process: |
+      Step 1 - Preparation:
+      - Intention: Understand their experience, not fix immediately
+      - Biases to watch: Might assume it's about compensation; might get defensive
+      - Questions: "How are you really doing?" "What's on your mind lately?"
+
+      Step 2 - Create safety:
+      - Start casual, then: "I've noticed you seem a bit different lately. I wanted to check in and hear what's going on for you. Whatever you share, I just want to understand."
+
+      Step 3 - Listen:
+      - They share: feeling stuck, don't see growth path, considering other options
+      - Emotions: frustration, some sadness, maybe fear of disappointing me
+      - Values: growth, being challenged, making impact
+      - Needs: clearer path forward, to feel valued
+
+      Step 5 - Paraphrase:
+      "So it sounds like you're feeling stuck - like you've been doing good work but can't see where it leads. And that's making you question whether to stay. Did I get that right?"
+
+      Step 6 - Questions:
+      - "And what else is contributing to this feeling?"
+      - "What would a good growth path look like for you?"
+      - "What matters most to you about your next step?"
+
+      Step 7 - Nonverbal:
+      - They avoided eye contact when mentioning other options - might be uncomfortable telling me
+      - Energy picked up when describing what they want - that's what they're drawn to
+    expected_output:
+      understanding_summary:
+        content: "Feeling plateaued after 18 months; can't see growth path; considering external options"
+        emotions: "Frustrated, somewhat anxious about future, conflicted about loyalty"
+        values: "Growth, being challenged, making visible impact"
+        needs: "Clear path forward, recognition of potential, challenging work"
+      follow_up_items:
+        - "Schedule follow-up to discuss specific growth options"
+        - "Research internal opportunities that match their interests"
+        - "Reflect on whether I've been giving enough growth opportunity"
+      listening_reflection:
+        what_worked: "Didn't jump to solutions; they shared more than expected"
+        to_improve: "Initially felt defensive about 'considering options'; worked through it"
+        surprise: "It's not about money; it's about growth and challenge"
+
+  - name: Customer discovery interview
+    context: Understanding user needs for product development
+    inputs:
+      conversation_purpose: "Understand their workflow and pain points deeply"
+      other_person: "Potential customer, operations manager, agreed to 30-minute call"
+      conversation_context: "discovery"
+      time_available: 30
+      listening_challenges:
+        - "Might lead toward our solution instead of understanding their reality"
+        - "Time pressure might make me rush"
+    process: |
+      Step 1 - Preparation:
+      - Intention: Understand their world, not pitch our solution
+      - Biases: Might hear confirmation of what we want to build
+      - Questions: "Walk me through a typical day" "What's the hardest part?"
+
+      Step 2 - Create safety:
+      - "I'm not here to sell you anything today. I just want to understand how you work and what's challenging. The more honest you are, the more helpful this is."
+
+      Step 3-6 - Listen and explore:
+      - Use "And what else?" repeatedly
+      - Follow their energy - where do they get animated?
+      - Paraphrase their pain points to confirm understanding
+      - Ask for specific examples, not generalizations
+
+      Step 8 - Summary:
+      "Let me make sure I understood. Your biggest challenge is X, which costs you Y hours per week. You've tried A and B but they didn't work because of C. Ideally, you'd want something that does D. Is that right?"
+    expected_output:
+      understanding_summary:
+        workflow: "Detailed understanding of their daily process"
+        pain_points: "Top 3 frustrations with current approach"
+        attempted_solutions: "What they've tried and why it didn't work"
+        ideal_state: "What success would look like in their words"
+        surprising_insights: "Things that challenged our assumptions"
+      follow_up_items:
+        - "Areas to explore in next interview"
+        - "Assumptions to test with other customers"
+        - "Product implications to discuss with team"
+      listening_reflection:
+        what_worked: "Let them lead; followed their energy; got to unexpected insights"
+        to_improve: "Caught myself about to pitch once; stopped and asked another question"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When strategy requires understanding stakeholder perspectives
+    - During execution for gathering feedback and adjusting course
+    - When goals require buy-in that comes from feeling understood
+    - For communication checkpoints requiring deep understanding
+    - When pivoting requires understanding why current approach isn't working
+
+  gates:
+    - gate: prepared_to_listen
+      question: "Have I prepared mentally and removed distractions?"
+
+    - gate: safety_established
+      question: "Does the other person feel safe to share openly?"
+
+    - gate: understanding_confirmed
+      question: "Have I paraphrased and confirmed I understand correctly?"
+
+    - gate: depth_achieved
+      question: "Have I asked 'And what else?' and gone beyond surface?"
+
+    - gate: reflection_complete
+      question: "Have I assessed my listening quality and identified improvements?"
+
+  related_procedures:
+    - conflict_resolution: Understanding perspectives is essential to resolution
+    - feedback_delivery: Listening is crucial when giving and receiving feedback
+    - negotiation: Understanding interests requires active listening
+    - storytelling: Gathering stories from others requires listening
+    - public_speaking: Q&A and reading the room require listening skills

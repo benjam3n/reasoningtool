@@ -1,0 +1,919 @@
+# API Middleman Strategies - Workarounds for API limitations
+# Meta-procedure for reliable data access when APIs block or limit
+# Last tested: 2026-01-19 (YouTube heavily blocking, all auto methods failed)
+
+id: api_middleman_strategies
+name: API Middleman Strategies
+version: "1.1.0"
+domain: meta
+
+description: Collection of strategies for bypassing or working around API limitations, including rate limits, IP blocks, and access restrictions.
+
+long_description: |
+  APIs are gatekeepers. When they block you, you need alternative paths.
+  The goal is reliable data access, not API compliance for its own sake.
+
+  This procedure documents multiple strategies for working around API
+  limitations, organized by reliability and cost:
+
+  Hierarchy of approaches:
+  1. Use official APIs correctly (respect limits, use auth)
+  2. Use browser authentication passthrough
+  3. Use alternative data sources/services
+  4. Use caching/batching to reduce requests
+  5. Use manual extraction as fallback
+
+  Primary use cases:
+  - YouTube transcript acquisition when API blocks
+  - LLM API rate limits and cost optimization
+  - General web scraping when direct access fails
+
+tags:
+  - meta
+  - api
+  - workaround
+  - automation
+  - data-acquisition
+
+# ============================================
+# CURRENT STATUS (2026-01-19)
+# ============================================
+current_status:
+  last_tested: "2026-01-19"
+  test_video: "j5h9dBtWZXM (3Blue1Brown, 1 min)"
+
+  youtube:
+    youtube_transcript_api:
+      status: "BLOCKED"
+      error: "429 rate limiting, IP blocked"
+      notes: "Library uses direct YouTube API, blocked from cloud/many IPs"
+
+    yt_dlp_with_cookies:
+      status: "BLOCKED"
+      error: "Chrome cookies v11 encryption - 'cannot decrypt v11 cookies: no key found'"
+      error_2: "nsig extraction failed - player signature issues"
+      notes: "Chrome uses encrypted cookies that require OS keyring access"
+      tried:
+        - chrome: "Failed - v11 encryption"
+        - firefox: "No output"
+        - android_client: "Failed - 'content not available on this app'"
+        - web_client: "Failed - HTTP 403 Forbidden"
+        - geo_bypass: "No effect"
+
+    yt_dlp_without_cookies:
+      status: "BLOCKED"
+      error: "HTTP Error 429: Too Many Requests (subtitles)"
+      error_2: "HTTP Error 403: Forbidden (audio/video)"
+      notes: "Even subtitle download blocked"
+
+    piped_api:
+      status: "MOSTLY DOWN"
+      tested_instances:
+        - "pipedapi.adminforge.de: Connection error"
+        - "pipedapi.kavin.rocks: Timeout"
+        - "api.piped.yt: Connection refused"
+        - "pipedapi.syncpundit.io: Timeout"
+        - "api-piped.mha.fi: Timeout"
+      notes: "Most Piped instances appear down or blocking"
+
+    invidious_api:
+      status: "BLOCKED"
+      tested_instances:
+        - "vid.puffyan.us: Failed"
+        - "invidious.nerdvpn.de: Empty response"
+        - "inv.tux.pizza: Connection error"
+        - "invidious.protokolla.fi: Connection error"
+        - "invidious.snopyta.org: Failed"
+        - "yewtu.be: Failed"
+      notes: "All tested Invidious instances blocked or down"
+
+    third_party_services:
+      status: "BLOCKED"
+      tested:
+        - "youtubetranscript.com: Returns 'YouTube is blocking us' message"
+        - "kome.ai: No response"
+      notes: "Third-party services also experiencing YouTube blocks"
+
+    whisper_fallback:
+      status: "BLOCKED (audio download blocked)"
+      error: "Cannot download audio - HTTP 403 Forbidden"
+      notes: "Would work if audio could be downloaded"
+
+    manual_extraction:
+      status: "WORKS"
+      method: "Browser transcript copy/paste"
+      time: "~5 minutes per video"
+      notes: "Only reliable method when automated fails"
+
+  what_didnt_work:
+    - method: "yt-dlp --cookies-from-browser chrome"
+      reason: "Chrome v11 encrypted cookies require keyring"
+      fix_attempt: "Try Firefox instead"
+      result: "Firefox produced no output"
+
+    - method: "yt-dlp --extractor-args youtube:player_client=android"
+      reason: "YouTube blocks old app versions"
+      error: "content not available on this app"
+
+    - method: "yt-dlp --geo-bypass"
+      reason: "Not a geo-blocking issue"
+      result: "No effect"
+
+    - method: "Piped API instances"
+      reason: "Most instances down or overloaded"
+      result: "Connection timeouts"
+
+    - method: "Invidious API instances"
+      reason: "YouTube actively blocks these"
+      result: "Empty responses or connection errors"
+
+    - method: "Direct audio download for Whisper"
+      reason: "YouTube blocks downloads from this IP"
+      error: "HTTP 403 Forbidden"
+
+  what_might_work:
+    - method: "Residential proxy with yt-dlp"
+      reason: "Different IP might not be blocked"
+      cost: "$20-100/month"
+      untested: true
+
+    - method: "VPN from different region"
+      reason: "Some regions less blocked"
+      untested: true
+
+    - method: "YouTube Data API with OAuth"
+      reason: "Official API with proper auth"
+      limitation: "Doesn't provide transcripts directly"
+      untested: true
+
+  additional_tests_2026_01_19:
+    playwright_browser_automation:
+      status: "PARTIAL - loads page but can't click transcript"
+      issue: "YouTube UI elements not clickable in headless mode"
+      notes: "Gets page but extracts comments instead of transcript"
+
+    direct_timedtext_api:
+      status: "BLOCKED"
+      error: "Returns Google 'Sorry...' block page"
+      notes: "Even with valid signed URL from page, fetch is blocked"
+      url_extraction: "Works - can extract timedtext URL from page HTML"
+      url_fetch: "Blocked - returns 'Sorry...' HTML page"
+
+    youtube_page_fetch:
+      status: "WORKS - page loads"
+      captionTracks: "Found in page HTML"
+      timedtext_url: "Extractable from page"
+      issue: "Fetching the timedtext URL is blocked"
+
+    playwright_with_chrome_profile:
+      status: "PARTIAL - best automated approach found"
+      script: "scripts/playwright_chrome_profile.py"
+      what_works:
+        - "Can use existing Chrome login session"
+        - "Page loads with authenticated context"
+        - "ytInitialPlayerResponse contains captionTracks data"
+        - "timedtext URL is extractable from page"
+      what_fails:
+        - "Fetching timedtext URL via browser fetch() still blocked"
+        - "Returns 'Sorry...' even with authenticated browser context"
+      conclusion: "Confirms IP-level blocking, not auth issue"
+
+    browser_cookie3:
+      status: "NOT TESTED - package install blocked"
+      reason: "System Python externally-managed, requires venv"
+
+    pytube:
+      status: "BLOCKED"
+      error: "HTTP Error 400: Bad Request"
+
+    undetected_chromedriver:
+      status: "VERSION MISMATCH"
+      error: "ChromeDriver only supports Chrome 143, installed is 128"
+
+  conclusion: |
+    YouTube is actively blocking this IP/network at multiple levels:
+    1. Direct API calls (youtube-transcript-api) - 429 rate limited
+    2. yt-dlp downloads - 403 Forbidden
+    3. timedtext endpoint - "Sorry" block page (even with auth)
+    4. Third-party frontends (Piped, Invidious) - down or blocked
+    5. Browser fetch() with cookies - still blocked at IP level
+
+    Key finding: playwright_chrome_profile.py can extract timedtext URLs
+    from authenticated pages, but fetching them is still blocked.
+    This confirms IP-level blocking, not an authentication issue.
+
+    The ONLY working method is manual browser extraction.
+    Recommended: Wait 24-48h or use different network (VPN/proxy).
+
+  recommended_approach: |
+    For immediate needs: Manual extraction (5 min/video)
+    For batch processing: Wait 24-48h for rate limit reset, or use Whisper
+    For long-term: Set up residential proxy or use different network
+
+  working_implementation: |
+    scripts/transcript_middleman.py in projects/2026-01-19_gosm-expansion-roadmap/
+    Implements fallback chain with manual extraction prompt
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - When direct API access is blocked or rate-limited
+  - When API costs are prohibitively high
+  - When building extraction pipelines that need reliability
+  - When IP addresses are flagged or blocked
+  - When scaling up data collection
+  - When official API lacks needed functionality
+  - When setting up automation that must handle failures
+
+when_not_to_use:
+  - When official API works fine and is within budget
+  - When terms of service violations would have serious consequences
+  - For one-off data collection where manual is faster
+  - When data freshness is critical (caching won't work)
+  - When legal compliance is paramount
+  - For production systems where reliability trumps cost
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: target_api
+    type: string
+    required: true
+    description: |
+      The API or data source being accessed:
+      - YouTube Transcripts
+      - LLM APIs (Anthropic, OpenAI)
+      - General web scraping
+
+  - name: failure_type
+    type: enum
+    values: [rate_limited, ip_blocked, authentication_required, cost_prohibitive, functionality_missing]
+    required: true
+    description: What kind of limitation is being encountered
+
+  - name: volume_requirements
+    type: object
+    required: false
+    description: |
+      Scale of data collection needed:
+      - requests_per_day: expected request volume
+      - budget_usd: available budget
+
+outputs:
+  - name: recommended_strategy
+    type: string
+    description: Best strategy for the situation
+
+  - name: implementation_guide
+    type: object
+    description: Specific steps to implement the strategy
+
+  - name: fallback_chain
+    type: list
+    description: Ordered list of fallback strategies
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Diagnose the limitation
+    action: |
+      Identify what's actually blocking access:
+
+      RATE LIMITED:
+      - HTTP 429 responses
+      - "Too many requests" errors
+      - Requests throttled or slowed
+
+      IP BLOCKED:
+      - HTTP 403 from specific IPs
+      - Works from browser but not script
+      - Works from home but not cloud
+
+      AUTHENTICATION REQUIRED:
+      - HTTP 401/403 requiring login
+      - Content only visible when logged in
+      - Requires API key you don't have
+
+      COST PROHIBITIVE:
+      - API works but too expensive at scale
+      - Would exceed budget with volume needed
+
+      FUNCTIONALITY MISSING:
+      - API doesn't expose needed data
+      - Data available on website but not API
+    inputs:
+      - target_api
+      - error_messages and responses
+    outputs:
+      - failure_type: classified limitation type
+      - specific_error: exact error details
+    verification: |
+      Limitation is correctly classified with evidence
+
+  - id: 2
+    name: Check official options first
+    action: |
+      Before workarounds, verify official options exhausted:
+
+      1. Rate limit options:
+         - Can you request a higher limit?
+         - Can you use authenticated requests for higher limits?
+         - Is there a paid tier with higher limits?
+
+      2. IP block options:
+         - Is there an official way to whitelist?
+         - Are you violating ToS that triggered the block?
+         - Can you fix the violation?
+
+      3. Authentication options:
+         - Is there an official API key program?
+         - Is there a developer/researcher program?
+         - Can you use OAuth properly?
+
+      4. Cost options:
+         - Are there volume discounts?
+         - Is there an academic/nonprofit rate?
+         - Can you reduce scope to fit budget?
+
+      Document what official options were considered and why not viable.
+    inputs:
+      - failure_type (from Step 1)
+      - target_api details
+    outputs:
+      - official_options_checked: list of options reviewed
+      - why_not_viable: reasons official options don't work
+    verification: |
+      Official options documented before proceeding to workarounds
+
+  - id: 3
+    name: Select primary strategy
+    action: |
+      Choose the best workaround based on failure type:
+
+      FOR YOUTUBE TRANSCRIPTS:
+      1. Browser Cookie Passthrough (yt-dlp)
+         - Reliability: HIGH (when working)
+         - Setup: 5 minutes
+         - Use when: IP blocked or rate limited
+         - Note: May be blocked during high-volume periods
+
+      2. Alternative Transcript Services
+         - Reliability: MEDIUM
+         - Cost: Usually free
+         - Use when: Cookie method doesn't work
+
+      3. Residential Proxy Rotation
+         - Reliability: HIGH
+         - Cost: $20-100/month
+         - Use when: High volume needed
+
+      4. Local Whisper Transcription
+         - Reliability: HIGH
+         - Cost: Compute only
+         - Use when: All API methods fail
+
+      5. Manual Extraction
+         - Reliability: HIGHEST
+         - Cost: Time (5 min/video)
+         - Use when: Low volume, all else fails
+
+      FOR LLM APIS:
+      1. Local Models (Ollama)
+         - Reliability: HIGH
+         - Cost: Compute only
+         - Use when: Cost is primary issue
+
+      2. API Aggregators (OpenRouter)
+         - Reliability: HIGH
+         - Cost: Variable
+         - Use when: Need redundancy across providers
+
+      3. Model Fallback Chain
+         - Reliability: HIGH
+         - Use when: Single provider unreliable
+
+      FOR GENERAL WEB:
+      1. Browser Automation (Playwright)
+         - Reliability: HIGH
+         - Use when: Anti-bot measures active
+
+      2. Scraping APIs (ScrapingBee)
+         - Reliability: HIGH
+         - Cost: Paid
+         - Use when: Complex anti-bot
+    inputs:
+      - failure_type (from Step 1)
+      - target_api
+      - volume_requirements
+    outputs:
+      - primary_strategy: recommended approach
+      - rationale: why this strategy fits
+    verification: |
+      Strategy matches failure type and volume requirements
+
+  - id: 4
+    name: Build fallback chain
+    action: |
+      Create ordered list of fallback strategies:
+
+      Example for YouTube transcripts:
+      1. YouTube Transcript API (official)
+      2. yt-dlp with browser cookies
+      3. Alternative services (youtubetranscript.com)
+      4. Residential proxy + API
+      5. Local Whisper transcription
+      6. Manual extraction
+
+      Example for LLM APIs:
+      1. Primary provider (Anthropic Claude)
+      2. Secondary provider (OpenAI)
+      3. API aggregator (OpenRouter)
+      4. Local model (Ollama)
+
+      For each fallback:
+      - Define trigger condition (when to fall back)
+      - Define retry logic (how many attempts)
+      - Define escalation path (when to give up)
+    inputs:
+      - primary_strategy (from Step 3)
+      - target_api
+    outputs:
+      - fallback_chain: ordered list with triggers
+      - max_retries_per_level: retry limits
+    verification: |
+      Fallback chain covers all failure modes
+
+  - id: 5
+    name: Implement primary strategy
+    action: |
+      Set up the chosen strategy. See YOUTUBE_TRANSCRIPT_MIDDLEMEN
+      and LLM_API_STRATEGIES sections below for specific implementations.
+
+      Key implementation patterns:
+      - Always add caching layer
+      - Always implement exponential backoff
+      - Always have manual fallback
+    inputs:
+      - primary_strategy (from Step 3)
+    outputs:
+      - implementation_code: working code/commands
+      - setup_verified: confirmation it works
+    verification: |
+      Primary strategy successfully retrieves data
+
+  - id: 6
+    name: Add reliability layers
+    action: |
+      Add infrastructure for reliable operation:
+
+      1. EXPONENTIAL BACKOFF
+         - Wait progressively longer after failures
+         - Add jitter to prevent thundering herd
+
+      2. CACHING LAYER
+         - Cache responses with TTL
+         - Avoid repeat requests for same data
+
+      3. REQUEST SPREADING
+         - Track requests in sliding window
+         - Wait when approaching limit
+
+      See RATE_LIMIT_STRATEGIES section below for code templates.
+    inputs:
+      - primary_strategy (from Step 3)
+      - volume_requirements
+    outputs:
+      - reliability_code: backoff, caching, rate limiting
+    verification: |
+      Reliability layers handle failures gracefully
+
+  - id: 7
+    name: Test full pipeline
+    action: |
+      Verify the complete solution works:
+
+      1. Test happy path:
+         - Normal request succeeds
+         - Response is correct format
+         - Performance is acceptable
+
+      2. Test failure handling:
+         - Simulate rate limit (does backoff work?)
+         - Simulate timeout (does retry work?)
+         - Simulate primary failure (does fallback work?)
+
+      3. Test at scale:
+         - Process 10-100 items
+         - Monitor error rate
+         - Check cache hit rate
+         - Verify cost is within budget
+    inputs:
+      - implementation from Steps 5-6
+    outputs:
+      - test_results: success/failure metrics
+      - issues_found: problems to address
+    verification: |
+      Pipeline handles normal and failure cases reliably
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Limitation is correctly diagnosed
+  - Official options were considered first
+  - Strategy matches the specific failure type
+  - Fallback chain covers all likely failures
+  - Implementation includes reliability layers
+  - Pipeline tested at expected scale
+
+failure_modes:
+  - mode: Cookie expiration
+    symptom: yt-dlp stops working after browser session changes
+    resolution: Re-export cookies, or use browser that stays logged in
+
+  - mode: IP rotation not working
+    symptom: Still getting blocked despite proxy
+    resolution: Check proxy is actually being used, try different provider
+
+  - mode: Fallback cascade
+    symptom: All fallbacks fail in sequence
+    resolution: Add manual extraction as final fallback, investigate root cause
+
+  - mode: Cost explosion
+    symptom: Workaround is more expensive than expected
+    resolution: Add cost monitoring, set alerts, review volume assumptions
+
+  - mode: Data quality degradation
+    symptom: Workaround produces lower quality data
+    resolution: Validate output quality, may need to accept or find better approach
+
+  - mode: Terms of service violation
+    symptom: Account suspension or legal notice
+    resolution: Review ToS, consider if risk is acceptable, use official methods
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: YouTube transcript acquisition for extraction pipeline
+    context: Building automated extraction, YouTube blocks cloud IPs
+    inputs:
+      target_api: "YouTube Transcripts"
+      failure_type: ip_blocked
+      volume_requirements:
+        requests_per_day: 100
+        budget_usd: 0
+    process: |
+      1. Diagnose: HTTP 403 from AWS IP, works from browser
+         - Classic cloud IP block
+
+      2. Official options:
+         - YouTube Data API doesn't provide transcripts
+         - No official transcript API exists
+         - Conclusion: Must use workaround
+
+      3. Select strategy:
+         - Primary: yt-dlp with browser cookies
+         - Rationale: Free, reliable, handles auth
+
+      4. Build fallback:
+         1. yt-dlp with Chrome cookies
+         2. yt-dlp with Firefox cookies
+         3. Whisper transcription (download audio, transcribe locally)
+         4. Manual extraction
+
+      5-6. Implement with reliability layers
+
+      7. Test: Process 50 videos, 98% success rate
+    expected_output:
+      recommended_strategy: "yt-dlp with browser cookies"
+      fallback_chain: ["yt-dlp_chrome", "yt-dlp_firefox", "whisper", "manual"]
+      success_rate: "98%"
+
+  - name: LLM cost optimization with fallbacks
+    context: Extraction pipeline spending too much on Claude
+    inputs:
+      target_api: "Anthropic Claude API"
+      failure_type: cost_prohibitive
+      volume_requirements:
+        requests_per_day: 500
+        budget_usd: 50
+    process: |
+      1. Diagnose: Claude Sonnet at $0.15 per extraction
+         - 500 x $0.15 = $75/day, over budget
+
+      2. Official options:
+         - No volume discount available
+         - Must reduce cost per request
+
+      3. Select strategy:
+         - Use Haiku for triage ($0.01)
+         - Use Sonnet only for high-value extractions
+         - Local model for low-value items
+
+      4-7. Implement tiered approach
+         - Average cost drops to $0.04 per extraction
+         - 500 x $0.04 = $20/day, under budget
+    expected_output:
+      recommended_strategy: "Tiered model selection"
+      cost_reduction: "73% (from $75 to $20/day)"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Setting up automated extraction pipelines
+    - Recovering from API failures during extraction
+    - Cost optimization for large-scale extraction
+    - Building reliable data acquisition infrastructure
+
+  gates:
+    - gate: official_options_exhausted
+      question: "Have official API options been fully explored?"
+
+    - gate: strategy_appropriate
+      question: "Does the workaround strategy match the failure type?"
+
+    - gate: fallbacks_defined
+      question: "Is there a complete fallback chain?"
+
+    - gate: reliability_layers_added
+      question: "Are caching, backoff, and rate limiting implemented?"
+
+  related_procedures:
+    - automated_extraction_pipeline: Uses these strategies for transcript acquisition
+    - source_prioritization: Informs which sources are worth the workaround effort
+    - procedure_extraction_from_source: May need these strategies for blocked sources
+
+# ============================================
+# YOUTUBE TRANSCRIPT MIDDLEMEN
+# ============================================
+youtube_transcript_middlemen:
+
+  problem: |
+    YouTube blocks transcript API requests from:
+    - Cloud provider IPs (AWS, GCP, Azure)
+    - IPs with too many requests
+    - Certain geographic regions
+
+  strategy_1_browser_cookies:
+    name: "Browser Cookie Passthrough"
+    description: "Use authenticated browser session to bypass blocks"
+    reliability: "HIGH"
+    setup_time: "5 minutes"
+
+    method_yt_dlp:
+      description: "Use yt-dlp with browser cookies"
+      install: "pip install yt-dlp"
+
+      commands:
+        get_subtitles: |
+          # Extract auto-generated subtitles using browser cookies
+          yt-dlp --cookies-from-browser chrome \
+                 --skip-download \
+                 --write-auto-sub \
+                 --sub-lang en \
+                 --output "%(id)s" \
+                 "https://www.youtube.com/watch?v=VIDEO_ID"
+
+        get_info: |
+          # Get video metadata
+          yt-dlp --cookies-from-browser chrome \
+                 --skip-download \
+                 --print-json \
+                 "https://www.youtube.com/watch?v=VIDEO_ID"
+
+      supported_browsers:
+        - chrome
+        - firefox
+        - edge
+        - safari
+        - opera
+        - brave
+
+  strategy_2_alternative_services:
+    name: "Alternative Transcript Services"
+    description: "Use third-party services that have YouTube access"
+    reliability: "MEDIUM"
+
+    services:
+      youtubetranscript_com:
+        url: "https://youtubetranscript.com"
+        method: "Web scraping or API"
+        cost: "Free"
+        limits: "Unknown rate limits"
+
+      kome_ai:
+        url: "https://kome.ai"
+        method: "Paste URL, get transcript"
+        cost: "Free tier available"
+
+      tactiq:
+        url: "https://tactiq.io"
+        method: "Browser extension + export"
+        cost: "Free tier"
+
+      otter_ai:
+        url: "https://otter.ai"
+        method: "Import video, transcribe"
+        cost: "Free tier (limited minutes)"
+
+  strategy_3_residential_proxy:
+    name: "Residential Proxy Rotation"
+    description: "Route requests through residential IPs"
+    reliability: "HIGH"
+    cost: "$20-100/month"
+
+    providers:
+      - name: "Bright Data (Luminati)"
+        url: "https://brightdata.com"
+        type: "Residential proxy pool"
+
+      - name: "Oxylabs"
+        url: "https://oxylabs.io"
+        type: "Residential + datacenter"
+
+      - name: "Smartproxy"
+        url: "https://smartproxy.com"
+        type: "Residential pool"
+
+  strategy_4_manual_extraction:
+    name: "Manual Transcript Extraction"
+    description: "Human-in-the-loop for blocked content"
+    reliability: "HIGHEST"
+    cost: "Time (5 min per video)"
+
+    procedure:
+      step_1: "Open video in browser"
+      step_2: "Click '...' menu below video"
+      step_3: "Select 'Show transcript'"
+      step_4: "Click 'Toggle timestamps' if needed"
+      step_5: "Select all (Ctrl+A) and copy"
+      step_6: "Paste into file: transcripts/{video_id}.txt"
+
+  strategy_5_whisper_fallback:
+    name: "Local Whisper Transcription"
+    description: "Download audio and transcribe locally"
+    reliability: "HIGH"
+    cost: "Compute time + storage"
+
+    model_selection:
+      tiny: "~1GB VRAM, fastest, lowest quality"
+      base: "~1GB VRAM, fast, okay quality"
+      small: "~2GB VRAM, good balance"
+      medium: "~5GB VRAM, good quality (recommended)"
+      large: "~10GB VRAM, best quality"
+
+# ============================================
+# RATE LIMIT STRATEGIES
+# ============================================
+rate_limit_strategies:
+
+  exponential_backoff:
+    description: "Progressively wait longer after each failure"
+    pattern: "wait = (2 ** attempt) + random(0, 1)"
+
+  request_spreading:
+    description: "Spread requests over time to stay under limits"
+    pattern: "Track requests in sliding window, wait when approaching limit"
+
+  caching_layer:
+    description: "Cache responses to avoid repeat requests"
+    pattern: "24hr TTL, MD5 key from URL"
+
+  batch_requests:
+    description: "Combine multiple requests into one when possible"
+
+# ============================================
+# LLM API STRATEGIES
+# ============================================
+llm_api_strategies:
+
+  local_models:
+    description: "Run models locally to avoid API limits entirely"
+
+    options:
+      ollama:
+        url: "https://ollama.ai"
+        models: ["llama3", "mistral", "codellama", "phi"]
+        setup: "curl -fsSL https://ollama.ai/install.sh | sh"
+
+      llama_cpp:
+        url: "https://github.com/ggerganov/llama.cpp"
+        description: "Run GGUF models locally"
+
+      vllm:
+        url: "https://github.com/vllm-project/vllm"
+        description: "High-performance local inference"
+
+  api_aggregators:
+    description: "Services that provide unified access to multiple LLM APIs"
+
+    options:
+      openrouter:
+        url: "https://openrouter.ai"
+        description: "Access Claude, GPT-4, etc. through one API"
+        benefit: "Can switch models if one is rate-limited"
+
+      together_ai:
+        url: "https://together.ai"
+        description: "Cheap access to open-source models"
+
+      anyscale:
+        url: "https://anyscale.com"
+        description: "Serverless LLM endpoints"
+
+  model_fallback_chain:
+    description: "Try expensive model first, fall back to cheaper ones"
+    pattern: |
+      1. Claude Sonnet (best quality)
+      2. GPT-4o (backup)
+      3. Local model (cost-free fallback)
+
+# ============================================
+# WEB SCRAPING STRATEGIES
+# ============================================
+web_scraping_middlemen:
+
+  browser_automation:
+    description: "Use real browser to bypass anti-bot measures"
+
+    tools:
+      playwright:
+        install: "pip install playwright && playwright install"
+
+      selenium:
+        install: "pip install selenium webdriver-manager"
+
+  undetected_chromedriver:
+    description: "Chrome driver that evades bot detection"
+    install: "pip install undetected-chromedriver"
+
+  scraping_apis:
+    description: "Paid services that handle anti-bot measures"
+
+    options:
+      scrapingbee:
+        url: "https://scrapingbee.com"
+        features: ["JavaScript rendering", "Proxy rotation", "CAPTCHA solving"]
+
+      scraperapi:
+        url: "https://scraperapi.com"
+        features: ["Geo-targeting", "Headless browser"]
+
+      zenrows:
+        url: "https://zenrows.com"
+        features: ["Anti-bot bypass", "Residential proxies"]
+
+# ============================================
+# DECISION TREE
+# ============================================
+decision_tree:
+  description: "How to choose which middleman strategy to use"
+
+  questions:
+    q1:
+      question: "Is the API blocking you?"
+      if_no: "Use API directly with rate limiting"
+      if_yes: "Go to Q2"
+
+    q2:
+      question: "Do you have browser access to the data?"
+      if_yes: "Use browser cookie passthrough (strategy_1)"
+      if_no: "Go to Q3"
+
+    q3:
+      question: "Are there alternative services?"
+      if_yes: "Try alternative services (strategy_2)"
+      if_no: "Go to Q4"
+
+    q4:
+      question: "Is the data worth paying for access?"
+      if_yes: "Use residential proxies or paid APIs (strategy_3)"
+      if_no: "Go to Q5"
+
+    q5:
+      question: "Can you extract manually (small volume)?"
+      if_yes: "Manual extraction (strategy_4)"
+      if_no: "Use local processing (Whisper, local LLMs)"
+
+# ============================================
+# IMPLEMENTATION CHECKLIST
+# ============================================
+implementation_checklist:
+  immediate_setup:
+    - "Install yt-dlp: pip install yt-dlp"
+    - "Ensure browser is logged into YouTube"
+    - "Create cache directory: mkdir -p cache/transcripts"
+    - "Install Whisper as fallback: pip install openai-whisper"
+
+  for_scale:
+    - "Set up residential proxy account"
+    - "Configure local LLM (Ollama) for extraction"
+    - "Build caching layer for API responses"
+    - "Create fallback chain across providers"

@@ -1,0 +1,250 @@
+# Inversion Method
+# Intelligence Reduction: 75%
+# Version: 1.0.0
+
+id: inversion_method
+name: Inversion Method (How to Fail)
+version: "1.0.0"
+domain: core
+intelligence_reduction: "75%"
+
+goal: |
+  Find how to succeed by first asking "How would I guarantee failure?"
+  Then do the opposite. Inversion often reveals non-obvious insights.
+
+description: |
+  Charlie Munger's favorite technique: "Invert, always invert."
+  It's often easier to identify failure modes than success factors.
+  Finding ways to fail → Avoiding them → More likely to succeed.
+
+  Also known as: "Kill the company" exercise, Pre-mortem, Via negativa
+
+when_to_use:
+  - Planning a project/venture
+  - Evaluating a strategy
+  - Improving a process
+  - Personal goals
+  - When "how to succeed" is unclear
+
+inputs:
+  - name: goal
+    type: string
+    description: "What are you trying to achieve?"
+
+outputs:
+  - name: failure_modes
+    type: list
+    description: "All the ways to guarantee failure"
+  - name: success_factors
+    type: list
+    description: "Inversions of failure modes"
+  - name: action_plan
+    type: list
+    description: "What to do (and not do)"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "State the Goal"
+    action: |
+      Clearly state what you're trying to achieve.
+      Be specific about what success looks like.
+    output: "Goal statement"
+    template: |
+      GOAL: [What I'm trying to achieve]
+      SUCCESS LOOKS LIKE: [Observable outcome when successful]
+
+  - id: 2
+    name: "Invert the Goal"
+    action: |
+      Ask: "How would I GUARANTEE failure?"
+      Not "might fail" but "definitely fail."
+
+      Reframe: "If I wanted to [opposite of goal], what would I do?"
+    output: "Inverted goal"
+    template: |
+      INVERTED GOAL: How to guarantee [failure/opposite of goal]
+
+  - id: 3
+    name: "Brainstorm Failure Modes"
+    action: |
+      List all the ways to guarantee failure.
+      Be thorough and honest. Include:
+      - Obvious failures
+      - Subtle failures
+      - Failures of omission (not doing things)
+      - Failures of commission (doing wrong things)
+      - Psychological failures (mindset, motivation)
+      - Environmental failures (wrong context, timing)
+    output: "Exhaustive failure list"
+    template: |
+      WAYS TO GUARANTEE FAILURE:
+
+      Actions that would cause failure:
+      1. [Do X wrong way]
+      2. [Do Y at wrong time]
+      ...
+
+      Inactions that would cause failure:
+      1. [Not do A]
+      2. [Not do B]
+      ...
+
+      Mindsets that would cause failure:
+      1. [Assume X]
+      2. [Believe Y]
+      ...
+
+  - id: 4
+    name: "Invert Each Failure Mode"
+    action: |
+      For each failure mode, state its opposite.
+      This becomes a success factor.
+    output: "Success factors"
+    template: |
+      FAILURE MODE → SUCCESS FACTOR
+
+      [Failure 1] → [Do opposite: Success 1]
+      [Failure 2] → [Do opposite: Success 2]
+      ...
+
+  - id: 5
+    name: "Prioritize Success Factors"
+    action: |
+      Not all success factors are equal.
+      Prioritize by:
+      - Impact (how much does this matter?)
+      - Controllability (can I actually do this?)
+      - Likelihood (how likely is the failure mode?)
+    output: "Prioritized success factors"
+    template: |
+      HIGH PRIORITY (Must do):
+      - [Success factor 1]
+      - [Success factor 2]
+
+      MEDIUM PRIORITY (Should do):
+      - [Success factor 3]
+      - [Success factor 4]
+
+      LOWER PRIORITY (Nice to do):
+      - [Success factor 5]
+
+  - id: 6
+    name: "Create Action Plan"
+    action: |
+      Convert success factors to specific actions.
+      Include both:
+      - Things TO DO
+      - Things to AVOID
+    output: "Action plan"
+    template: |
+      ACTION PLAN:
+
+      DO:
+      □ [Specific action 1]
+      □ [Specific action 2]
+      ...
+
+      DON'T:
+      □ Avoid [thing 1]
+      □ Avoid [thing 2]
+      ...
+
+      WATCH FOR (warning signs of failure modes):
+      □ [Early indicator 1]
+      □ [Early indicator 2]
+      ...
+
+# ============================================
+# INVERSION PROMPTS
+# ============================================
+
+failure_brainstorm_prompts:
+  action_failures:
+    - "What wrong actions would guarantee failure?"
+    - "What would be the worst way to approach this?"
+    - "What timing would be worst?"
+    - "What resource allocation would doom this?"
+
+  inaction_failures:
+    - "What would I need to NOT do to fail?"
+    - "What obvious step could I skip?"
+    - "What preparation could I neglect?"
+    - "What maintenance could I ignore?"
+
+  mindset_failures:
+    - "What beliefs would doom this?"
+    - "What attitude would sabotage this?"
+    - "What assumptions would be fatal?"
+    - "What blindspots would kill this?"
+
+  environmental_failures:
+    - "What context would make this impossible?"
+    - "What timing would be worst?"
+    - "What market conditions would doom this?"
+    - "What team composition would fail?"
+
+  relationship_failures:
+    - "How could I alienate key stakeholders?"
+    - "What communication would doom this?"
+    - "How could I lose trust?"
+    - "What partnerships would be toxic?"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  goal: "Launch a successful software product"
+
+  failure_modes:
+    actions:
+      - "Build without talking to customers"
+      - "Add every feature anyone mentions"
+      - "Launch when it's 'perfect'"
+      - "Ignore competition"
+      - "Underprice thinking volume will come"
+
+    inactions:
+      - "Don't validate the problem exists"
+      - "Don't define target customer"
+      - "Don't set success metrics"
+      - "Don't plan for iteration"
+
+    mindset:
+      - "Assume I know what customers want"
+      - "Believe if I build it they will come"
+      - "Think first version must be complete"
+
+  inversions:
+    - '"Build without customers" → "Talk to customers before/during building"'
+    - '"Add every feature" → "Ruthlessly prioritize, say no to most"'
+    - '"Wait for perfect" → "Launch MVP, iterate"'
+    - '"Assume I know" → "Validate assumptions explicitly"'
+    - '"If I build it they will come" → "Plan distribution from day 1"'
+
+  action_plan:
+    do:
+      - "Interview 20 potential customers before building"
+      - "Define ONE core use case to nail"
+      - "Set launch date, ship whatever is ready"
+      - "Build distribution channel in parallel"
+
+    dont:
+      - "Don't add features without customer evidence"
+      - "Don't delay launch for 'one more thing'"
+      - "Don't assume, validate"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Goal was clearly stated"
+  - "Failure modes are genuine (would actually cause failure)"
+  - "Inversions are true opposites"
+  - "Actions are specific and actionable"
+  - "Both do's and don'ts are included"

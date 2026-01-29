@@ -1,0 +1,157 @@
+# Input Calibration Gate
+# Does more input help or hurt?
+# Derived from ARAW synthesis tension: increases vs decreases
+
+id: input_calibration_gate
+name: Input Calibration Gate
+version: "1.0.0"
+domain: core
+tags: ["decision", "input", "feedback", "information"]
+
+description: |
+  Gate for deciding whether to seek more input vs act on what you have.
+
+  The tension: More input can improve decisions, but it can also cause
+  paralysis, noise, and delay. This gate helps calibrate.
+
+when_to_use:
+  - Deciding whether to gather more information
+  - Evaluating whether feedback is helping or hurting
+  - Determining when analysis is sufficient
+  - Choosing between action and investigation
+
+# ============================================
+# CURRENT INPUT STATE
+# ============================================
+current_input_state:
+  description: What input do you already have?
+
+  questions:
+    - "What information do you currently have about this decision/problem?"
+    - "How confident are you in the key facts? (percentage or HIGH/MEDIUM/LOW)"
+    - "What are the key uncertainties remaining?"
+    - "How much input have you already gathered?"
+    - "What sources have you already consulted?"
+
+# ============================================
+# ADDITIONAL INPUT BENEFIT
+# ============================================
+input_benefits:
+  description: Would more input actually help?
+
+  uncertainty_reduction:
+    - "Would additional input reduce uncertainty on the key question?"
+    - "Is the remaining uncertainty resolvable with more input?"
+    - "Or is it fundamental uncertainty that more input won't reduce?"
+    - "What specific question would additional input answer?"
+
+  decision_change_potential:
+    - "Could any realistic additional input change your decision?"
+    - "What would you need to learn to change course?"
+    - "Is that learnable, or are you hoping for certainty that won't come?"
+
+  error_detection:
+    - "Could additional input surface errors in current understanding?"
+    - "Are you in an echo chamber (similar sources confirming each other)?"
+    - "What contrary perspective have you not heard?"
+
+# ============================================
+# ADDITIONAL INPUT COST
+# ============================================
+input_costs:
+  description: What is the cost of seeking more input?
+
+  delay:
+    - "How long would gathering more input take?"
+    - "What is the cost of that delay?"
+    - "Is the situation time-sensitive?"
+    - "Are options closing while you gather input?"
+
+  noise:
+    - "Would additional input add signal or noise?"
+    - "Are you already at diminishing returns?"
+    - "Is more input making the decision harder, not clearer?"
+
+  action_displacement:
+    - "Is seeking input becoming a substitute for action?"
+    - "Could you learn more by acting than by researching?"
+    - "Is the next action reversible if new input changes things?"
+
+  analysis_paralysis:
+    - "Are you seeking input to avoid deciding?"
+    - "Have you set a deadline for decision?"
+    - "What would 'enough' input look like?"
+
+# ============================================
+# INPUT SOURCE QUALITY
+# ============================================
+source_quality:
+  description: Is the available additional input worth getting?
+
+  questions:
+    - "What sources are available that you haven't consulted?"
+    - "How reliable are those sources?"
+    - "Do they have information you don't have, or just opinions?"
+    - "Would they tell you what you want to hear, or the truth?"
+    - "Is the source appropriate for this question?"
+
+# ============================================
+# DECISION LOGIC
+# ============================================
+decision_logic: |
+  SEEK MORE INPUT if:
+  - Key uncertainties are resolvable with available input
+  - Additional input could realistically change the decision
+  - Cost of delay is low relative to cost of error
+  - You haven't heard contrary perspectives
+
+  ACT ON CURRENT INPUT if:
+  - Remaining uncertainty is not resolvable (fundamental)
+  - No realistic input would change decision
+  - Delay cost exceeds error cost
+  - Action is reversible and will generate better input
+  - You're seeking input to avoid deciding
+
+  SEEK SPECIFIC INPUT if:
+  - There's a particular gap that's addressable
+  - One more source would resolve a key question
+  - Quick verification would significantly reduce risk
+
+  SET DEADLINE if:
+  - Input-seeking has no natural end point
+  - Decision is being avoided
+  - Diminishing returns are evident
+
+# ============================================
+# CALIBRATION HEURISTICS
+# ============================================
+heuristics:
+  too_little_input:
+    - "Haven't heard any contrary perspective"
+    - "Relying on single source"
+    - "Key assumptions untested"
+    - "Would be surprised by basic objections"
+
+  too_much_input:
+    - "New input isn't changing understanding"
+    - "Getting conflicting advice that cancels out"
+    - "Feeling more confused, not clearer"
+    - "Seeking input to delay decision"
+    - "Perfect information isn't available and never will be"
+
+  right_amount:
+    - "Key uncertainties are identified (even if not resolved)"
+    - "Decision would survive learning something unexpected"
+    - "Have heard strongest contrary case"
+    - "Know what would change your mind"
+
+# ============================================
+# OUTPUT
+# ============================================
+outputs:
+  - name: input_decision
+    options: [SEEK_MORE, ACT_NOW, SEEK_SPECIFIC, SET_DEADLINE]
+  - name: specific_gap
+    description: "If SEEK_SPECIFIC, what exactly to get"
+  - name: deadline
+    description: "If SET_DEADLINE, when to decide regardless"

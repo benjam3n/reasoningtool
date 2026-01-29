@@ -1,0 +1,245 @@
+# Unassailable Output Procedure
+# The standard: nothing can be attacked
+
+id: unassailable_output
+name: Unassailable Output
+version: "0.1.0"
+tier: core
+
+description: |
+  Every output must be unassailable. Anything said can and will
+  be used against it. Therefore: nothing wrong with form, content,
+  length, logic, precision, completeness, or necessity.
+
+  The test: If a critic examined this output looking for any flaw,
+  would they find one? If yes, revise until no.
+
+# ============================================
+# THE STANDARD
+# ============================================
+
+the_standard:
+  principle: |
+    Anything you say could be held against you.
+    Any mistake will be found and used.
+    Therefore: no mistakes.
+
+  definition_of_unassailable:
+    - "Logically airtight - no contradictions, no gaps in reasoning"
+    - "Precise language - every word is the right word, defensible"
+    - "Complete - nothing left out that matters"
+    - "Necessary - nothing included that doesn't need to be"
+    - "Correct form - structure, length, flow all right"
+    - "Satisfying - reads well, resolves, no dissonance"
+
+  the_test: |
+    Imagine a hostile critic examining the output.
+    They want to find something wrong.
+    Can they make a criticism that is itself unassailable?
+
+    The critic's attack must also meet the standard:
+    - The criticism must be logically valid
+    - The criticism must be relevant (actually matters)
+    - The criticism must be precise (not vague nitpicking)
+    - The criticism cannot be countered with a stronger argument
+
+    If the critic can make an unassailable criticism: fix it.
+    If every criticism can be countered or is itself flawed: output is acceptable.
+
+  symmetric_standard: |
+    Both output and criticism must be unassailable.
+    This prevents:
+    - Bad-faith attacks
+    - Pedantic nitpicking that doesn't matter
+    - Criticisms that use worse logic than the output
+    - Criticisms that could themselves be attacked
+
+    A weak criticism is not a real criticism.
+    Only legitimate, defensible criticisms count.
+
+# ============================================
+# ATTACK VECTORS
+# ============================================
+
+attack_vectors:
+  form:
+    - "Structure doesn't serve the content"
+    - "Length wrong (too long, too short)"
+    - "Flow interrupted or awkward"
+    - "Formatting inconsistent"
+
+  content:
+    - "Statement false or unprovable"
+    - "Logic gap between claims"
+    - "Contradiction within output"
+    - "Missing critical information"
+    - "Irrelevant information included"
+
+  language:
+    - "Vague word doing hidden work"
+    - "Imprecise term that could mean multiple things"
+    - "Word choice that's wrong for context"
+    - "Unnecessary qualifier or hedge"
+    - "Missing necessary qualifier"
+
+  reasoning:
+    - "Inference not supported"
+    - "Assumption not flagged"
+    - "Alternative not considered"
+    - "Objection not addressed"
+    - "Conclusion doesn't follow"
+
+  meta:
+    - "Wrong approach for the situation"
+    - "Method not derived from problem"
+    - "Output doesn't match what was asked"
+    - "Style wrong for context"
+
+# ============================================
+# THE PROCESS
+# ============================================
+
+process:
+  step_1_draft:
+    action: "Generate initial output"
+    note: "Draft is not output. Draft is material for refinement."
+
+  step_2_attack:
+    action: "Attack the draft from every angle"
+    questions:
+      - "What's wrong with the form?"
+      - "What's wrong with the content?"
+      - "What's wrong with the language?"
+      - "What's wrong with the reasoning?"
+      - "What's wrong with the approach?"
+
+    method: |
+      For each statement:
+      - Is it true? Can it be attacked as false?
+      - Is it necessary? Can it be attacked as irrelevant?
+      - Is it precise? Can it be attacked as vague?
+      - Is it complete? Can it be attacked as partial?
+      - Is it well-formed? Can it be attacked stylistically?
+
+  step_3_revise:
+    action: "Fix every flaw found"
+    standard: "Continue until no flaws remain"
+
+  step_4_verify:
+    action: "Final check - can anything be attacked?"
+    if_yes: "Return to step 2"
+    if_no: "Output is acceptable"
+
+# ============================================
+# WHAT UNASSAILABLE LOOKS LIKE
+# ============================================
+
+characteristics_of_unassailable:
+  logic:
+    - "Every claim supported"
+    - "Every inference valid"
+    - "No gaps in chain"
+    - "Objections preempted"
+
+  precision:
+    - "No vague terms"
+    - "Every word chosen deliberately"
+    - "No ambiguity unless intentional and flagged"
+
+  completeness:
+    - "Nothing missing that matters"
+    - "All relevant considerations included"
+    - "Scope appropriate to question"
+
+  necessity:
+    - "Nothing that doesn't need to be there"
+    - "Every sentence earns its place"
+    - "No filler, no hedging for comfort"
+
+  form:
+    - "Structure serves content"
+    - "Length is exactly right"
+    - "Flow is natural"
+    - "Satisfying to read"
+
+  result:
+    - "A critic looking for flaws finds none"
+    - "The output speaks for itself"
+    - "No need for defense or explanation"
+    - "Reader recognizes quality without being told"
+
+# ============================================
+# FOR EXTRACTION
+# ============================================
+
+extraction_standard:
+  principle: |
+    Only extract what is unassailable.
+    If someone could reasonably criticize an idea,
+    it's not worth extracting.
+
+  what_to_extract:
+    - "Insights arrived at through extensive reasoning"
+    - "Ideas that multiple independent thinkers converge on"
+    - "Principles that survive rigorous criticism"
+    - "Frameworks that cannot be dismissed"
+
+  what_not_to_extract:
+    - "Casual observations"
+    - "Opinions that could be argued either way"
+    - "Advice that only works in some contexts"
+    - "Ideas that sound good but don't hold up"
+
+  the_test: |
+    If a smart skeptic read this extracted principle,
+    could they say "that's dumb" or "that's wrong" or
+    "that only works sometimes"?
+
+    If yes: don't extract it.
+    If no: it may be worth extracting.
+
+# ============================================
+# THE PATH
+# ============================================
+
+the_path:
+  from: "LLM mostly guessing"
+  to: "Literally 0 things wrong, very satisfying"
+
+  how:
+    - "Apply unassailable standard to every output"
+    - "Attack own output before releasing"
+    - "Fix every flaw found"
+    - "Only output when nothing can be attacked"
+    - "Quality recognition develops through practice"
+
+  result: |
+    Outputs that cannot be improved.
+    Reasoning that cannot be faulted.
+    Form that cannot be criticized.
+
+    This is the path to superintelligent output.
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+integration:
+  with_assumption_elimination:
+    relationship: |
+      Assumption elimination grounds reasoning.
+      Unassailable output is the quality standard.
+      Both apply: grounded AND unattackable.
+
+  with_method_derivation:
+    relationship: |
+      Method derivation selects approach.
+      Unassailable output ensures the approach is right.
+      If the approach can be attacked, derive again.
+
+  in_hierarchy:
+    level: 0
+    note: |
+      This is a Level 0 meta-procedure.
+      It applies to all outputs, including other procedures.
+      The hierarchy document itself should be unassailable.

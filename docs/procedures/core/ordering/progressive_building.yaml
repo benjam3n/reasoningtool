@@ -1,0 +1,158 @@
+# Progressive Building Orderings
+# Orderings that build complexity incrementally
+
+category_id: progressive_building
+category_name: "Progressive Building Orderings"
+description: |
+  Orderings that build complexity incrementally, ensuring each step
+  works before adding the next. Use for learning, training, or
+  building systems where foundations matter.
+
+when_to_consider: |
+  - Learning new skills or technologies
+  - Building complex systems incrementally
+  - Training or onboarding processes
+  - When gaps in foundation cause later failures
+  - Prototyping with increasing fidelity
+
+variations:
+
+  # ----------------------------------------
+  # SCAFFOLDED PROGRESSION ORDERING
+  # ----------------------------------------
+  scaffolded_progression:
+    id: scaffolded_progression_ordering
+    name: "Scaffolded Progression Ordering"
+    category: progressive_building
+
+    philosophy: |
+      Start with the simplest complete version, then progressively
+      elaborate. Each step builds on the last, staying within the
+      "zone of proximal development" - challenging but achievable
+      given prior steps. Temporary support structures are added then
+      removed as capability grows.
+
+    when_to_use:
+      - Learning new skills
+      - Building complex systems incrementally
+      - Training or onboarding
+      - Prototyping with increasing fidelity
+      - When each step must work before adding complexity
+
+    prioritization_rules:
+      1_minimum_viable_first:
+        rule: "Start with smallest complete version"
+        reason: "Establishes foundation that works"
+        principle: "Make it work, then make it better"
+
+      2_zone_of_proximal_development:
+        rule: "Each step should be achievable given prior steps"
+        reason: "Prevents overwhelming leaps"
+        test: "Can this be done with only prior knowledge + small stretch?"
+
+      3_progressive_complexity:
+        rule: "Add complexity incrementally"
+        reason: "Each addition is debuggable against working baseline"
+        pattern: "Version N+1 = Version N + one new element"
+
+      4_scaffold_and_remove:
+        rule: "Add temporary support, remove when no longer needed"
+        reason: "Prevents permanent dependency on scaffolding"
+
+    complexity_dimensions:
+      - "Fewer features -> more features"
+      - "Simpler cases -> edge cases"
+      - "Happy path -> error handling"
+      - "Manual -> automated"
+      - "Hardcoded -> configurable"
+      - "Single -> multiple"
+      - "Synchronous -> asynchronous"
+
+    anti_patterns:
+      - "Building the complex version first"
+      - "Adding all features before any work"
+      - "Skipping steps in progression"
+      - "Never removing scaffolding"
+
+    example:
+      context: "Building a web application"
+      scaffolded_steps:
+        1: "Static HTML page (works, no logic)"
+        2: "Add single dynamic element (one moving part)"
+        3: "Add user input (interaction)"
+        4: "Add database persistence (state)"
+        5: "Add user authentication (complexity)"
+        6: "Add multiple users (scale)"
+        7: "Add error handling (robustness)"
+        8: "Add performance optimization (polish)"
+      rationale: "Each step has working baseline to build on"
+
+    source: "Vygotsky - Zone of Proximal Development, Scaffolding"
+
+  # ----------------------------------------
+  # PREREQUISITE-CHAIN ORDERING
+  # ----------------------------------------
+  prerequisite_chain:
+    id: prerequisite_chain_ordering
+    name: "Prerequisite-Chain Ordering"
+    category: progressive_building
+
+    philosophy: |
+      Ensure all prerequisites are met before proceeding. From
+      curriculum design: some knowledge builds on prior knowledge.
+      Skipping prerequisites creates gaps that compound. Follow
+      the prerequisite chain strictly, even if some steps seem
+      "easy" or "obvious."
+
+    when_to_use:
+      - Learning with strict dependencies (math, programming)
+      - Process that has technical prerequisites
+      - Avoiding gaps that cause later problems
+      - When steps build on each other conceptually
+
+    prioritization_rules:
+      1_map_prerequisites:
+        rule: "Identify what each step requires"
+        reason: "Can't sequence without knowing dependencies"
+        output: "Prerequisite graph"
+
+      2_topological_order:
+        rule: "Order so all prerequisites complete before dependent"
+        reason: "Mathematical guarantee of completeness"
+
+      3_verify_mastery:
+        rule: "Confirm prerequisite mastery before proceeding"
+        reason: "Proceeding without mastery compounds problems"
+
+      4_identify_chains:
+        rule: "Find the longest prerequisite chains"
+        reason: "These are the critical paths"
+
+    anti_patterns:
+      - "Skipping 'easy' prerequisites"
+      - "Parallel work on dependent items"
+      - "Assuming prerequisites without checking"
+      - "Ignoring gaps in foundational knowledge"
+
+    example:
+      context: "Learning machine learning"
+      prerequisite_chain:
+        level_1:
+          - "Linear algebra basics"
+          - "Probability and statistics"
+          - "Python programming"
+        level_2:
+          - "Calculus for optimization (requires level 1)"
+          - "Data manipulation (requires Python)"
+        level_3:
+          - "Linear regression (requires calculus, statistics)"
+          - "Gradient descent (requires calculus)"
+        level_4:
+          - "Neural networks (requires all of level 3)"
+        level_5:
+          - "Deep learning (requires neural networks)"
+      wrong_approach: "Jump straight to deep learning tutorials"
+      right_approach: "Build from level 1 up"
+      rationale: "Each level requires mastery of previous levels"
+
+    source: "Curriculum Design - Prerequisite structures"

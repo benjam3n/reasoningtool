@@ -1,0 +1,569 @@
+# Pedagogy & Educational Theory Orderings
+# Orderings based on learning science and educational psychology
+
+category_id: pedagogy_educational
+category_name: "Pedagogy & Educational Theory Orderings"
+description: |
+  Orderings based on learning science research and educational psychology.
+  Use when learning, skill-building, or long-term retention is a primary
+  goal. These variations optimize for durable understanding rather than
+  immediate performance.
+
+when_to_consider: |
+  - Learning or skill-building is a primary goal
+  - Long-term retention matters more than immediate performance
+  - Material has high intrinsic complexity
+  - Learners are novices who need scaffolding
+  - Teaching hierarchical skills where gaps compound
+  - Building intuition before formal understanding
+  - Training with eventual autonomous performance
+  - Need to counter illusions of competence
+
+variations:
+
+  # ----------------------------------------
+  # SPIRAL-CURRICULUM ORDERING
+  # ----------------------------------------
+  spiral_curriculum:
+    id: spiral_curriculum_ordering
+    name: "Spiral Curriculum Ordering (Increasing Depth)"
+    category: pedagogy_educational
+
+    philosophy: |
+      Revisit topics at increasing levels of depth and sophistication.
+      From Bruner: any subject can be taught at any age in intellectually
+      honest form. Start with intuitive understanding, return later with
+      more formal treatment. Each spiral reinforces and deepens.
+
+    when_to_use:
+      - Complex subjects requiring multiple passes
+      - Learners need intuition before formalism
+      - Long-term curriculum design
+      - Building from concrete to abstract
+      - When forgetting is expected between sessions
+
+    prioritization_rules:
+      1_start_accessible:
+        rule: "First pass should be intuitive and concrete"
+        form: "Examples, stories, hands-on experience"
+
+      2_return_with_depth:
+        rule: "Subsequent passes add formal structure"
+        progression: "Intuition -> Procedure -> Theory -> Generalization"
+
+      3_connect_to_prior:
+        rule: "Each spiral explicitly links to previous understanding"
+        scaffold: "You learned X; now we see it's part of Y"
+
+      4_increase_abstraction:
+        rule: "Later spirals are more abstract and general"
+        progression: "Concrete -> Abstract -> Transferable"
+
+    example:
+      context: "Teaching multiplication across grades"
+      spiral_1_grade_2: "Groups of objects (3 groups of 4 apples)"
+      spiral_2_grade_3: "Repeated addition, times tables"
+      spiral_3_grade_4: "Multi-digit multiplication, area model"
+      spiral_4_grade_5: "Distributive property, algebraic thinking"
+      spiral_5_middle: "Abstract algebra concepts"
+      each_spiral: "Reinforces prior, adds new depth"
+
+    source: "Educational Psychology - Bruner's Spiral Curriculum"
+
+  # ----------------------------------------
+  # MASTERY-LEARNING ORDERING
+  # ----------------------------------------
+  mastery_learning:
+    id: mastery_learning_ordering
+    name: "Mastery Learning Ordering (Gate Progress on Competence)"
+    category: pedagogy_educational
+
+    philosophy: |
+      Don't proceed until current material is mastered. From Bloom:
+      most students can master material given enough time and appropriate
+      instruction. Gate progress on demonstrated competence, not time
+      elapsed. Prevents accumulating gaps that compound.
+
+    when_to_use:
+      - Skills are strictly hierarchical
+      - Gaps in earlier material cause later failure
+      - Learner variability in pace
+      - High-stakes skill acquisition
+      - When proceeding without mastery is costly
+
+    prioritization_rules:
+      1_define_mastery:
+        rule: "Specify what mastery looks like for each unit"
+        criteria: "Observable, measurable competence"
+        threshold: "Typically 80-90% performance"
+
+      2_assess_before_proceeding:
+        rule: "Verify mastery before moving to next unit"
+        method: "Formative assessment, not just completion"
+
+      3_provide_remediation:
+        rule: "Those who haven't mastered get additional instruction"
+        differentiation: "Different paths to same destination"
+
+      4_allow_variable_time:
+        rule: "Time is variable, mastery is constant"
+        contrast: "Traditional: time constant, mastery variable"
+
+    anti_patterns:
+      - "Moving on despite gaps (compounds problems)"
+      - "Assuming completion equals mastery"
+      - "Same instruction for all despite different needs"
+      - "Punishing slower learners"
+
+    example:
+      context: "Learning programming fundamentals"
+      mastery_gates:
+        unit_1_variables:
+          content: "Variables, data types, assignment"
+          mastery_threshold: "Can explain and use correctly 90%"
+          gate: "Must pass before Unit 2"
+        unit_2_control_flow:
+          content: "Conditionals, loops"
+          requires: "Mastery of Unit 1"
+          gate: "Must pass before Unit 3"
+        unit_3_functions:
+          content: "Functions, parameters, return values"
+          requires: "Mastery of Units 1-2"
+      remediation: "Struggling students get extra practice, not just repetition"
+      result: "All students have solid foundation, no gaps"
+
+    source: "Educational Psychology - Bloom's Mastery Learning"
+
+  # ----------------------------------------
+  # COGNITIVE-LOAD ORDERING
+  # ----------------------------------------
+  cognitive_load:
+    id: cognitive_load_ordering
+    name: "Cognitive Load Ordering (Manage Mental Resources)"
+    category: pedagogy_educational
+
+    philosophy: |
+      Sequence instruction to manage working memory load. From Sweller:
+      working memory is limited; intrinsic load depends on element
+      interactivity. Reduce extraneous load, manage intrinsic load by
+      sequencing from low to high interactivity. Build schemas before
+      complex problems.
+
+    when_to_use:
+      - Material has high intrinsic complexity
+      - Learners are novices (no existing schemas)
+      - Want to optimize learning efficiency
+      - Complex procedures with many steps
+      - Domain has many interacting elements
+
+    three_types_of_load:
+      intrinsic:
+        source: "Inherent complexity of material"
+        factor: "Element interactivity"
+        management: "Sequence by complexity, build schemas"
+
+      extraneous:
+        source: "Poor instructional design"
+        factor: "Unnecessary cognitive processing"
+        management: "Eliminate, reduce through better design"
+
+      germane:
+        source: "Learning processes"
+        factor: "Schema construction and automation"
+        management: "Maximize by reducing other loads"
+
+    prioritization_rules:
+      1_assess_element_interactivity:
+        rule: "Identify how many elements must be processed together"
+        low: "Elements can be learned in isolation"
+        high: "Elements only make sense together"
+
+      2_start_with_low_interactivity:
+        rule: "Begin with isolated elements before combinations"
+        method: "Part-task first, then whole-task"
+
+      3_build_schemas:
+        rule: "Establish patterns that can be chunked"
+        effect: "Reduces load for later complex material"
+
+      4_sequence_by_complexity:
+        rule: "Gradually increase element interactivity"
+        progression: "Simple -> Intermediate -> Complex"
+
+    anti_patterns:
+      - "Starting with complex whole-task"
+      - "Combining novel elements (split attention)"
+      - "Information overload in early learning"
+      - "Ignoring expertise reversal effect"
+
+    example:
+      context: "Learning circuit analysis"
+      cognitive_load_sequence:
+        phase_1_isolated:
+          content: "Ohm's law in isolation (V=IR)"
+          interactivity: "Low - one relationship"
+        phase_2_simple:
+          content: "Series circuits (2 resistors)"
+          interactivity: "Medium - combine Ohm's law with addition"
+        phase_3_complex:
+          content: "Series-parallel combinations"
+          interactivity: "High - many elements interact"
+        phase_4_integrated:
+          content: "Complete circuit analysis"
+          interactivity: "High - but schemas built"
+      rationale: "Each phase builds schemas that reduce load for next"
+
+    source: "Educational Psychology - Cognitive Load Theory (Sweller)"
+
+  # ----------------------------------------
+  # WORKED-EXAMPLES ORDERING
+  # ----------------------------------------
+  worked_examples:
+    id: worked_examples_ordering
+    name: "Worked Examples Ordering (Examples Before Practice)"
+    category: pedagogy_educational
+
+    philosophy: |
+      Study worked examples before practicing. From research: for novices,
+      studying complete solutions is more effective than problem-solving.
+      The worked example effect: examples reduce cognitive load, allowing
+      focus on learning domain structure. Fade examples to problems as
+      expertise develops.
+
+    when_to_use:
+      - Learners are novices in the domain
+      - Procedural skills with clear solution steps
+      - Want to build schemas efficiently
+      - Problem-solving load would overwhelm learning
+      - Early skill acquisition
+
+    prioritization_rules:
+      1_examples_first:
+        rule: "Present complete worked examples before practice"
+        reason: "Study reduces cognitive load vs. problem-solving"
+
+      2_multiple_examples:
+        rule: "Show several examples with same structure"
+        reason: "Supports schema abstraction"
+
+      3_self_explanation:
+        rule: "Prompt learners to explain each step"
+        reason: "Deepens processing of examples"
+
+      4_fade_gradually:
+        rule: "Transition from examples to problems"
+        method: "Completion problems, faded scaffolds"
+
+    fading_sequence:
+      1_complete_examples: "Full worked solution"
+      2_completion_problems: "Some steps missing, fill in"
+      3_faded_examples: "Progressively more steps missing"
+      4_full_problems: "Independent problem-solving"
+
+    expertise_reversal:
+      warning: "Worked examples become harmful for experts"
+      reason: "Adds redundant information, increases load"
+      solution: "Fade examples as expertise develops"
+
+    example:
+      context: "Learning algebra equation solving"
+      worked_example_sequence:
+        phase_1_study:
+          example_1: "Solve: 2x + 3 = 7 (complete solution)"
+          example_2: "Solve: 3x - 5 = 10 (complete solution)"
+          activity: "Study solutions, explain each step"
+        phase_2_completion:
+          problem: "Solve: 4x + 2 = 14, Step 1: ____, Step 2: divide..."
+          activity: "Fill in missing steps"
+        phase_3_faded:
+          problem: "Solve: 5x - 3 = 12, Step 1: ____, Step 2: ____"
+          activity: "More steps missing"
+        phase_4_independent:
+          problem: "Solve: 6x + 4 = 22"
+          activity: "Complete problem-solving"
+
+    source: "Educational Psychology - Worked Example Effect (Sweller)"
+
+  # ----------------------------------------
+  # FADING-SCAFFOLDS ORDERING
+  # ----------------------------------------
+  fading_scaffolds:
+    id: fading_scaffolds_ordering
+    name: "Fading Scaffolds Ordering (Gradual Release)"
+    category: pedagogy_educational
+
+    philosophy: |
+      Provide support initially, then gradually remove it. From scaffolding
+      theory: give learners support needed to succeed, then transfer
+      responsibility as competence grows. "I do, we do, you do" pattern.
+      Goal is independent performance.
+
+    when_to_use:
+      - Learners need initial support to succeed
+      - Goal is autonomous performance
+      - Skills can be supported then released
+      - Training toward independence
+      - When overwhelming initially would cause failure
+
+    gradual_release_model:
+      focused_lesson: "Teacher demonstrates, explains thinking"
+      guided_instruction: "Teacher-student collaboration"
+      collaborative_learning: "Student-student practice"
+      independent_practice: "Students work alone"
+
+    prioritization_rules:
+      1_maximum_initial_support:
+        rule: "Start with scaffolds that ensure success"
+        types: "Hints, templates, feedback, guidance"
+
+      2_fade_deliberately:
+        rule: "Remove support incrementally as competence grows"
+        rate: "Based on performance, not time"
+
+      3_transfer_responsibility:
+        rule: "Shift cognitive load to learner progressively"
+        from: "Teacher does thinking"
+        to: "Student does thinking"
+
+      4_target_independence:
+        rule: "End state is performance without scaffolds"
+        verify: "Can learner succeed alone?"
+
+    scaffold_types:
+      procedural: "Checklists, step-by-step guides"
+      conceptual: "Hints, prompts, cues"
+      metacognitive: "Self-monitoring questions"
+      social: "Collaboration, expert guidance"
+
+    example:
+      context: "Learning essay writing"
+      scaffold_fading:
+        phase_1_full_support:
+          template: "Complete outline provided"
+          guidance: "Each section has sentence starters"
+          feedback: "Detailed teacher feedback"
+        phase_2_partial:
+          template: "Topic sentences provided only"
+          guidance: "Questions to guide thinking"
+          feedback: "Focused feedback on specific areas"
+        phase_3_minimal:
+          template: "General structure reminder"
+          guidance: "Self-check rubric"
+          feedback: "Peer feedback"
+        phase_4_independent:
+          template: "None"
+          guidance: "Internalized strategies"
+          feedback: "Self-assessment"
+
+    source: "Educational Psychology - Scaffolding (Vygotsky, Wood)"
+
+  # ----------------------------------------
+  # INTERLEAVED-PRACTICE ORDERING
+  # ----------------------------------------
+  interleaved_practice:
+    id: interleaved_practice_ordering
+    name: "Interleaved Practice Ordering (Mixed Practice)"
+    category: pedagogy_educational
+
+    philosophy: |
+      Mix practice of different skills/topics rather than blocking.
+      From learning science: blocked practice (AAABBBCCC) feels easier
+      but interleaved practice (ABCABCABC) produces better long-term
+      learning. Interleaving forces discrimination and strengthens
+      retrieval pathways.
+
+    when_to_use:
+      - Multiple related skills/topics to learn
+      - Long-term retention matters more than immediate performance
+      - Want to build discrimination ability
+      - Practicing problem categorization
+      - Counter-intuitive but research-supported
+
+    blocked_vs_interleaved:
+      blocked:
+        pattern: "AAABBBCCC"
+        feels: "Easier, faster improvement"
+        actually: "Less durable learning"
+        mechanism: "Repetition priming, not learning"
+
+      interleaved:
+        pattern: "ABCABCABC"
+        feels: "Harder, slower improvement"
+        actually: "Better long-term retention and transfer"
+        mechanism: "Forces retrieval, discrimination"
+
+    prioritization_rules:
+      1_mix_related_topics:
+        rule: "Interleave topics that could be confused"
+        reason: "Builds discrimination ability"
+
+      2_accept_difficulty:
+        rule: "Expect it to feel harder"
+        reason: "Desirable difficulty enhances learning"
+
+      3_space_repetitions:
+        rule: "Combine interleaving with spacing"
+        effect: "Double benefit"
+
+      4_practice_categorization:
+        rule: "Include 'what type of problem is this?'"
+        reason: "Real-world requires identifying approach"
+
+    anti_patterns:
+      - "Blocking because it feels more productive"
+      - "Interleaving unrelated topics (too confusing)"
+      - "Switching so fast context never establishes"
+      - "Judging learning by immediate performance"
+
+    example:
+      context: "Math problem practice"
+      blocked_schedule:
+        monday: "20 area problems"
+        tuesday: "20 volume problems"
+        wednesday: "20 perimeter problems"
+        immediate_performance: "90% correct"
+        week_later_test: "60% correct"
+      interleaved_schedule:
+        each_day: "Mix of area, volume, perimeter"
+        immediate_performance: "75% correct (feels harder)"
+        week_later_test: "85% correct (actually learned)"
+      key_difference: "Student must identify problem type each time"
+
+    source: "Learning Science - Interleaving Effect (Rohrer, Taylor)"
+
+  # ----------------------------------------
+  # SPACED-REPETITION ORDERING
+  # ----------------------------------------
+  spaced_repetition:
+    id: spaced_repetition_ordering
+    name: "Spaced Repetition Ordering (Expanding Intervals)"
+    category: pedagogy_educational
+
+    philosophy: |
+      Review material at increasing intervals over time. From memory
+      research: spacing reviews (distributed practice) beats massing
+      (cramming). Optimal interval expands as item is learned - review
+      just before forgetting. Minimizes study time while maximizing
+      retention.
+
+    when_to_use:
+      - Long-term retention is the goal
+      - Large amounts of material to memorize
+      - Want efficient use of study time
+      - Vocabulary, facts, procedures
+      - Any recall-based learning
+
+    spacing_effect:
+      massed_practice: "Study AAAA in one session"
+      spaced_practice: "Study A...A...A...A with gaps"
+      result: "Spaced produces much better retention"
+      mechanism: "Forgetting + retrieval strengthens memory"
+
+    optimal_interval:
+      new_item: "Review soon (1 day)"
+      after_success: "Increase interval (2.5x typical)"
+      after_failure: "Decrease interval"
+      algorithms: "SM-2, FSRS, Leitner system"
+
+    prioritization_rules:
+      1_schedule_reviews:
+        rule: "Plan when to review each item"
+        principle: "Review just before forgetting"
+
+      2_expand_intervals:
+        rule: "Successful recall = longer next interval"
+        typical: "1 day -> 3 days -> 7 days -> 14 days -> 30 days"
+
+      3_contract_on_failure:
+        rule: "Failed recall = shorter next interval"
+        effect: "Struggling items get more practice"
+
+      4_prioritize_due_items:
+        rule: "Review items at optimal moment"
+        metric: "Retrievability - how likely to recall"
+
+    example:
+      context: "Learning vocabulary"
+      spaced_schedule:
+        day_1: "Learn 'ephemeral' - review same day"
+        day_2: "Review 'ephemeral' (recalled) - schedule day 4"
+        day_4: "Review 'ephemeral' (recalled) - schedule day 11"
+        day_11: "Review 'ephemeral' (forgot) - schedule day 13"
+        day_13: "Review 'ephemeral' (recalled) - schedule day 20"
+      efficiency: "6 reviews over 20 days vs. 20 consecutive reviews"
+      retention: "High retention with minimal time"
+
+    source: "Memory Research - Spacing Effect (Ebbinghaus, Pimsleur)"
+
+  # ----------------------------------------
+  # DESIRABLE-DIFFICULTIES ORDERING
+  # ----------------------------------------
+  desirable_difficulties:
+    id: desirable_difficulties_ordering
+    name: "Desirable Difficulties Ordering (Harder Is Better)"
+    category: pedagogy_educational
+
+    philosophy: |
+      Introduce conditions that make learning harder but more durable.
+      From Bjork: some difficulties improve long-term learning despite
+      reducing immediate performance. Desirable difficulties include
+      spacing, interleaving, testing, varying conditions. Distinguish
+      from undesirable difficulties that just frustrate.
+
+    when_to_use:
+      - Long-term retention and transfer are goals
+      - Willing to sacrifice immediate performance
+      - Want to counter illusions of competence
+      - Building robust, flexible knowledge
+      - Need learning that transfers to new contexts
+
+    desirable_difficulties:
+      spacing: "Distribute practice over time"
+      interleaving: "Mix practice of different skills"
+      testing: "Practice retrieval, not just re-study"
+      variation: "Vary conditions of practice"
+      generation: "Generate answers before seeing"
+      difficulty: "Appropriate challenge level"
+
+    undesirable_difficulties:
+      too_hard: "Material beyond current ability"
+      irrelevant: "Difficulty unrelated to learning goal"
+      frustrating: "Difficulty that destroys motivation"
+      confusing: "Poor explanation, not productive struggle"
+
+    prioritization_rules:
+      1_embrace_difficulty:
+        rule: "Choose harder conditions that enhance learning"
+        examples: "Spaced over massed, interleaved over blocked"
+
+      2_test_don't_restudy:
+        rule: "Retrieval practice beats re-reading"
+        testing_effect: "Testing is learning, not just assessment"
+
+      3_vary_conditions:
+        rule: "Practice in multiple contexts"
+        reason: "Prevents context-dependent learning"
+
+      4_calibrate_difficulty:
+        rule: "Hard enough to be effortful, not so hard as to fail"
+        sweet_spot: "~70-85% success rate"
+
+    anti_patterns:
+      - "Choosing easy because it feels more productive"
+      - "Judging learning by immediate performance"
+      - "Making things hard in unhelpful ways"
+      - "Frustrating learners without purpose"
+
+    example:
+      context: "Training medical diagnosis"
+      easy_but_ineffective:
+        method: "Study case, then identical case"
+        immediate: "100% correct (recognition)"
+        later: "50% correct (can't discriminate)"
+      desirable_difficulties:
+        method: "Study case, delay, different presentation, retrieve"
+        immediate: "70% correct (harder)"
+        later: "90% correct (true learning)"
+      key_insight: "What feels like learning often isn't"
+
+    source: "Learning Science - Desirable Difficulties (Robert Bjork)"

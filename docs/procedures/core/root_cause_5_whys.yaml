@@ -1,0 +1,314 @@
+# Root Cause Analysis (5 Whys)
+# Intelligence Reduction: 60%
+# Version: 1.0.0
+
+id: root_cause_5_whys
+name: Root Cause Analysis (5 Whys)
+version: "1.0.0"
+domain: core
+intelligence_reduction: "60%"
+
+goal: |
+  Find the root cause of a problem by repeatedly asking "Why?"
+  until you reach a cause that, if fixed, prevents recurrence.
+  Simple to follow; judgment needed to identify true root.
+
+description: |
+  Developed by Sakichi Toyoda for Toyota. When a problem occurs,
+  ask "Why?" repeatedly (typically 5 times) to drill past symptoms
+  to root causes. Fixing root causes prevents recurrence.
+
+  The number 5 is a guideline, not a rule. Sometimes 3 is enough,
+  sometimes 7 is needed.
+
+when_to_use:
+  - Problem keeps recurring
+  - Symptoms are clear but cause is not
+  - After an incident or failure
+  - When initial fix didn't work
+  - To prevent future occurrences
+
+inputs:
+  - name: problem
+    type: string
+    description: "The problem or symptom being investigated"
+
+outputs:
+  - name: causal_chain
+    type: list
+    description: "The why chain from symptom to root cause"
+  - name: root_cause
+    type: string
+    description: "The identified root cause"
+  - name: corrective_action
+    type: string
+    description: "Action to address root cause"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "State the Problem"
+    action: |
+      Describe the problem clearly and specifically.
+      Focus on what happened, not why (yet).
+
+      Good: "The website was down for 2 hours on Tuesday"
+      Bad: "The website keeps having problems"
+    output: "Problem statement"
+    template: |
+      PROBLEM: [Specific description]
+      When: [When did it happen]
+      Impact: [What was affected]
+
+  - id: 2
+    name: "Ask Why #1"
+    action: |
+      Ask: "Why did [problem] happen?"
+      Answer with the immediate cause.
+      This is usually a symptom or proximate cause, not root.
+    output: "First why"
+    template: |
+      Why did [problem] happen?
+      → Because: [Immediate cause]
+
+  - id: 3
+    name: "Ask Why #2"
+    action: |
+      Ask: "Why did [first cause] happen?"
+      Go one level deeper.
+    output: "Second why"
+    template: |
+      Why did [first cause] happen?
+      → Because: [Second-level cause]
+
+  - id: 4
+    name: "Ask Why #3"
+    action: |
+      Ask: "Why did [second cause] happen?"
+      Continue drilling down.
+    output: "Third why"
+
+  - id: 5
+    name: "Ask Why #4"
+    action: |
+      Ask: "Why did [third cause] happen?"
+      Getting closer to root.
+    output: "Fourth why"
+
+  - id: 6
+    name: "Ask Why #5"
+    action: |
+      Ask: "Why did [fourth cause] happen?"
+      Often this reaches root cause, but may need more.
+    output: "Fifth why"
+
+  - id: 7
+    name: "Check for Root Cause"
+    action: |
+      Ask: "Is this the root cause?"
+
+      Root cause test:
+      - If we fix this, will the problem stop recurring?
+      - Is there a deeper "why" that makes sense?
+      - Is this something we can actually address?
+
+      If not root yet, continue asking why.
+      If circular, you've gone too far.
+    output: "Root cause determination"
+
+  - id: 8
+    name: "Verify the Chain"
+    action: |
+      Read the chain forward (cause → effect):
+      "Because of [root cause], [cause 4] happened.
+       Because of [cause 4], [cause 3] happened.
+       ...
+       Because of [cause 1], [problem] happened."
+
+      Does it make sense? Each step should logically cause the next.
+    output: "Verified causal chain"
+
+  - id: 9
+    name: "Identify Corrective Action"
+    action: |
+      Ask: "What action would eliminate or mitigate the root cause?"
+
+      Good corrective actions:
+      - Address root, not symptoms
+      - Are specific and actionable
+      - Prevent recurrence
+      - Are within your control
+    output: "Corrective action"
+    template: |
+      ROOT CAUSE: [Description]
+
+      CORRECTIVE ACTION:
+      - Action: [What to do]
+      - Owner: [Who]
+      - Timeline: [When]
+      - Verification: [How to confirm it worked]
+
+  - id: 10
+    name: "Check for Multiple Roots"
+    action: |
+      Some problems have multiple root causes.
+      Go back to step 2 and ask "Why else?"
+      Explore parallel branches.
+    output: "Additional root causes (if any)"
+
+# ============================================
+# BRANCHING VARIANT
+# ============================================
+
+branching_5_whys:
+  description: |
+    Sometimes there are multiple causes at each level.
+    Branch the analysis to explore each path.
+
+  approach: |
+    At each "Why?", if multiple answers:
+    1. List all plausible answers
+    2. Follow each branch separately
+    3. Identify root causes for each branch
+    4. Address all root causes
+
+  template: |
+    Problem: [X]
+    ├── Why? → [Cause A]
+    │   ├── Why? → [Cause A1]
+    │   │   └── Why? → [Root A1]
+    │   └── Why? → [Cause A2]
+    │       └── Why? → [Root A2]
+    └── Why? → [Cause B]
+        └── Why? → [Root B]
+
+# ============================================
+# ROOT CAUSE CATEGORIES
+# ============================================
+
+root_categories:
+  description: "Common root cause types to look for"
+
+  categories:
+    process:
+      - "Missing step in process"
+      - "Unclear process"
+      - "Process not followed"
+      - "Wrong process for situation"
+
+    people:
+      - "Insufficient training"
+      - "Unclear responsibility"
+      - "Communication failure"
+      - "Skill gap"
+
+    tools:
+      - "Wrong tool for job"
+      - "Tool malfunction"
+      - "Missing tool/feature"
+
+    environment:
+      - "Resource constraint"
+      - "Time pressure"
+      - "Competing priorities"
+
+    design:
+      - "Design flaw"
+      - "Missing error handling"
+      - "Fragile dependency"
+
+    measurement:
+      - "Lack of monitoring"
+      - "Wrong metric"
+      - "Delayed feedback"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  problem: "Customer received wrong product"
+
+  chain:
+    why_1:
+      question: "Why did customer receive wrong product?"
+      answer: "Warehouse shipped wrong item"
+
+    why_2:
+      question: "Why did warehouse ship wrong item?"
+      answer: "Picker grabbed item from wrong bin"
+
+    why_3:
+      question: "Why did picker grab from wrong bin?"
+      answer: "Bins for similar products are adjacent"
+
+    why_4:
+      question: "Why are similar products in adjacent bins?"
+      answer: "Products were organized by category, not by difference"
+
+    why_5:
+      question: "Why were products organized by category?"
+      answer: "That was the default; no one considered pick-error risk"
+
+  root_cause: "Warehouse organization didn't account for pick-error risk with similar items"
+
+  verification: |
+    Chain forward:
+    Because warehouse organization didn't consider pick-error risk →
+    Similar products ended up in adjacent bins →
+    Picker grabbed from wrong bin →
+    Wrong item was shipped →
+    Customer received wrong product ✓
+
+  corrective_action:
+    action: "Reorganize warehouse so similar-looking products are separated"
+    additional: "Add visual differentiation (color-coded labels)"
+    owner: "Warehouse manager"
+    timeline: "2 weeks"
+    verification: "Track pick errors for similar products over 30 days"
+
+# ============================================
+# COMMON PITFALLS
+# ============================================
+
+pitfalls:
+  stopping_too_early:
+    description: "Accepting a symptom as root cause"
+    sign: "The 'root cause' is something you can't directly fix"
+    fix: "Keep asking why until you reach actionable cause"
+
+  going_too_far:
+    description: "Getting philosophical or circular"
+    sign: "Answers like 'because humans make mistakes' or circular reasoning"
+    fix: "Stop at the level where action is possible"
+
+  single_path:
+    description: "Only exploring one branch"
+    sign: "Missed other contributing factors"
+    fix: "Ask 'why else?' at each level"
+
+  blame_finding:
+    description: "Chains that end with 'Person X messed up'"
+    sign: "Root cause is a person, not a system"
+    fix: "Ask why the system allowed/enabled the error"
+
+  jumping_to_solutions:
+    description: "Proposing fixes before understanding cause"
+    sign: "Fixing symptoms, problem recurs"
+    fix: "Complete the chain before discussing solutions"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Problem was stated specifically"
+  - "Each 'why' answer is a direct cause of the previous"
+  - "Chain reads sensibly forward (cause → effect)"
+  - "Root cause is actionable (can be addressed)"
+  - "Root cause is systemic (not 'person made mistake')"
+  - "Corrective action addresses root, not symptoms"
+  - "Multiple branches explored if applicable"

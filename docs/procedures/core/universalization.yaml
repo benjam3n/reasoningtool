@@ -1,0 +1,279 @@
+id: universalization
+name: Universalization Procedure
+version: 1.0.0
+description: |
+  Find all logical possibilities by universalizing input, then deriving instances.
+  Validated against 3 test inputs; 12 techniques confirmed distinct.
+
+  KEY INSIGHT: Universalization produces completeness WITHIN known dimensions.
+  Framework blindness means unknown dimensions remain unknown.
+  Always do external check after systematic universalization.
+
+inputs:
+  - name: input
+    type: string
+    description: Statement, question, goal, or problem to universalize
+  - name: purpose
+    type: string
+    description: What you want from universalization (alternatives, analogies, completeness)
+  - name: stopping_criterion
+    type: enum
+    values: [utility, derivation, saturation, dimension]
+    default: utility
+    description: When to stop universalizing
+
+outputs:
+  - name: universalizations
+    type: array
+    description: All universalizations found across 12 dimensions
+  - name: selected_universal
+    type: string
+    description: Most useful universalization for purpose
+  - name: derived_instances
+    type: array
+    description: Specific instances derived from selected universal
+  - name: unexpected_instances
+    type: array
+    description: Instances that weren't in prior expectation
+  - name: missed_check
+    type: array
+    description: Items found through external check (framework blindness test)
+
+gates:
+  - id: input_parseable
+    type: entry
+    check: Can input be broken into components (subject, predicate, objects)?
+    fail_action: Ask user to rephrase in statement form
+
+  - id: universalization_distinct
+    type: quality
+    check: Did at least 6 of 12 techniques produce distinct outputs?
+    fail_action: Re-examine input; may be already highly abstract
+
+  - id: stopping_applied
+    type: process
+    check: Was stopping criterion actually applied (not just ceiling)?
+    fail_action: Re-evaluate using specified stopping criterion
+
+  - id: derivation_productive
+    type: quality
+    check: Did derivation produce at least 3 specific instances?
+    fail_action: Go one level lower in abstraction; universal may be too abstract
+
+  - id: external_check_done
+    type: exit
+    check: Was external/random search done after systematic universalization?
+    fail_action: Do external check to find framework blindspots
+
+steps:
+  - id: identify_components
+    prompt: |
+      Break the input into components:
+
+      Input: "{input}"
+
+      Components to identify:
+      - SUBJECT: What is being discussed?
+      - PREDICATE: What is being claimed/asked about it?
+      - OBJECTS: What other entities are mentioned?
+      - MODIFIERS: Any time, place, manner, degree markers?
+
+      List each component.
+    gate: input_parseable
+
+  - id: apply_12_techniques
+    prompt: |
+      Apply all 12 universalization techniques to each major component.
+
+      For "{input}", apply:
+
+      1. STATE SPACE: What states could [component] be in?
+         → List: [enumerate states]
+
+      2. INSTANCE-TO-CATEGORY: What is [component] an instance of?
+         → Category: [name category]
+
+      3. PARAMETER VARIATION: What if [component]'s parameters varied?
+         → Variations: [list variations]
+
+      4. ROLE REVERSAL: What if [component]'s role reversed?
+         → Reversal: [describe]
+
+      5. EXISTENCE CHECK: Does [component] exist/is this true?
+         → Check: [yes/no/uncertain - why]
+
+      6. CAUSAL REVERSAL: What if causation reversed?
+         → Reversed: [describe]
+
+      7. TEMPORAL VARIATION: What if timing varied?
+         → Variations: [past/present/future/never/cyclical]
+
+      8. BOUNDARY DISSOLUTION: What if scope changed?
+         → Expanded: [describe broader scope]
+
+      9. MODALITY SHIFT: What certainty level?
+         → Shift: [will/might/could/should]
+
+      10. PERSPECTIVE ROTATION: Whose view?
+          → Perspectives: [list stakeholders]
+
+      11. SCALE VARIATION: At what level?
+          → Scales: [individual/team/org/industry/society]
+
+      12. NEGATION REFRAME: Problem or opportunity?
+          → Reframe: [describe opposite valence]
+
+      Record ALL 12 outputs.
+    gate: universalization_distinct
+
+  - id: apply_stopping
+    prompt: |
+      Apply stopping criterion: {stopping_criterion}
+
+      For each universalization from Step 2:
+
+      IF utility: Is this level useful for purpose "{purpose}"?
+      IF derivation: Can interesting instances be derived here?
+      IF saturation: Does going higher add new insight?
+      IF dimension: Are new exploration dimensions visible?
+
+      Mark each universalization as:
+      - STOP HERE (criterion met)
+      - GO HIGHER (criterion not yet met)
+      - CEILING (cannot go higher)
+
+      Select the universalizations where criterion is met.
+    gate: stopping_applied
+
+  - id: select_universal
+    prompt: |
+      From the universalizations that passed stopping criterion, select the most useful.
+
+      Purpose: "{purpose}"
+
+      Selection criteria:
+      - RELEVANCE: Does it serve the purpose?
+      - NOVELTY: Does it reveal new territory?
+      - DERIVATION: Can useful instances be derived?
+      - DIMENSION COVERAGE: Does it cover unexplored dimension?
+
+      Select ONE primary universal and note why.
+
+  - id: derive_instances
+    prompt: |
+      From the selected universal, derive all specific instances.
+
+      Universal: [from step 4]
+
+      Derivation questions:
+      - What specific cases fall under this universal?
+      - What examples from other domains share this pattern?
+      - What variations exist within this category?
+
+      List ALL instances you can derive.
+
+      Then mark which were:
+      - EXPECTED: You would have thought of this anyway
+      - UNEXPECTED: Only emerged through universalization
+    gate: derivation_productive
+
+  - id: truth_test
+    prompt: |
+      TRUTH-TEST TOP INSTANCES (AR/AW Mini-Test)
+
+      Universalization finds what's POSSIBLE. Now test what's TRUE.
+      [D: derived from araw_2026-01-28_araw-vs-universalization.md]
+
+      For the top 3-5 most promising/unexpected instances:
+
+      INSTANCE: [name]
+      ├── ASSUME RIGHT (this instance is valid/valuable)
+      │   ├── What evidence supports this?
+      │   ├── When would this apply?
+      │   └── What makes it useful?
+      │
+      └── ASSUME WRONG (this instance is flawed/irrelevant)
+          ├── What evidence contradicts this?
+          ├── When would this fail?
+          └── Why might it not matter?
+
+      For each instance, verdict:
+      - VALIDATED: AR stronger than AW
+      - REJECTED: AW stronger than AR
+      - CONDITIONAL: Depends on context
+
+      [T:result] Truth-tested [N] instances: [V] validated, [R] rejected, [C] conditional
+
+  - id: external_check
+    prompt: |
+      FRAMEWORK BLINDNESS CHECK
+
+      You've done systematic universalization. Now search OUTSIDE the framework.
+
+      Methods:
+      1. EXPERT VIEW: What would a domain expert from an adjacent field notice?
+      2. OPPOSITE FRAME: What if you assumed the opposite of your selected universal?
+      3. RANDOM ADJACENT: Pick 3 random related concepts - do any connect?
+      4. MISSING STAKEHOLDER: Who might care about this that you haven't considered?
+
+      List anything found that was NOT in your derivation.
+      These are your FRAMEWORK BLINDSPOTS.
+    gate: external_check_done
+
+  - id: contradiction_check
+    prompt: |
+      CONTRADICTION CHECK (Pairwise Consistency)
+
+      Universalization can produce instances that contradict each other.
+      [D: derived from araw_2026-01-28_araw-vs-universalization.md - Type logic blindspot fix]
+
+      For each pair of VALIDATED instances from truth_test:
+
+      INSTANCE A: [name]
+      INSTANCE B: [name]
+
+      Questions:
+      1. Can A and B both be true/valid simultaneously?
+      2. Does accepting A rule out B?
+      3. Does accepting B rule out A?
+      4. Do A and B make contradictory predictions?
+
+      Mark pairs as:
+      - COMPATIBLE: Both can be true
+      - EXCLUSIVE: Only one can be true (choose which)
+      - CONDITIONAL: Depends on context (specify when each)
+
+      If EXCLUSIVE pairs found:
+      - Which instance is more supported?
+      - What resolves the contradiction?
+
+      Output:
+      - COMPATIBLE PAIRS: [list]
+      - EXCLUSIVE PAIRS: [list with resolution]
+      - CONDITIONAL PAIRS: [list with conditions]
+      - [T:result] Checked [N] pairs: [C] compatible, [E] exclusive, [D] conditional
+
+  - id: synthesize
+    prompt: |
+      SYNTHESIS
+
+      Original input: "{input}"
+      Purpose: "{purpose}"
+
+      Selected universal: [from step 4]
+
+      Key derived instances:
+      - Expected: [list]
+      - Unexpected: [list]
+
+      Framework blindspots found: [from step 6]
+
+      Conclusion:
+      - What does universalization reveal about the input?
+      - What alternatives/possibilities were surfaced?
+      - What remains unknown (blindspots)?
+
+      Verification:
+      - [T:result] Universalization produced [N] distinct outputs
+      - [T:result] Derivation produced [M] instances, [K] unexpected
+      - [T:result] External check found [L] blindspots

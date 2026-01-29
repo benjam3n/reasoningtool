@@ -1,0 +1,419 @@
+# Evaluation Dimensions
+# Comprehensive dimensions for evaluating claims, problems, and solutions
+
+id: evaluation_dimensions
+name: Evaluation Dimensions
+version: "1.0.0"
+domain: core
+tags: ["meta", "evaluation", "analysis", "universal"]
+
+description: |
+  Universal dimensions for evaluating any claim, problem, or solution.
+  Use external grounding to assess claims on these dimensions when ARAW
+  alone cannot determine them.
+
+  External grounding helps:
+  1. Find problems/solutions ARAW wouldn't find (blind spots)
+  2. Verify ARAW outputs on these dimensions
+  3. Calibrate confidence in ARAW findings
+
+# ============================================
+# VALIDITY DIMENSIONS
+# Is it true/possible/consistent?
+# ============================================
+validity:
+  - id: truth
+    question: "Is this true?"
+    type: boolean_or_probability
+    grounding_method: "Search for confirming/disconfirming evidence"
+    note: "Only applies to empirical claims, not value claims"
+
+  - id: possibility
+    question: "Is this possible?"
+    options: [POSSIBLE, IMPOSSIBLE, UNKNOWN]
+    grounding_method: "Search for examples, counterexamples, physical constraints"
+
+  - id: internal_consistency
+    question: "Is this internally consistent?"
+    type: boolean
+    grounding_method: "Check for logical contradictions within the claim"
+
+  - id: external_consistency
+    question: "Is this consistent with known facts?"
+    type: boolean
+    grounding_method: "Compare against established knowledge"
+
+  - id: testability
+    question: "Can this be tested/verified?"
+    options: [TESTABLE, PARTIALLY_TESTABLE, NOT_TESTABLE]
+    note: "Untestable claims may still be useful but lower confidence"
+
+# ============================================
+# ACTIONABILITY DIMENSIONS
+# Can we do this? How hard is it?
+# ============================================
+actionability:
+  - id: practical
+    question: "Is this practical to implement?"
+    options: [HIGHLY_PRACTICAL, PRACTICAL, IMPRACTICAL, IMPOSSIBLE]
+    grounding_method: "Search for implementation examples, resource requirements"
+
+  - id: effort
+    question: "How much effort does this require?"
+    options: [TRIVIAL, LOW, MEDIUM, HIGH, MASSIVE]
+    grounding_method: "Search for similar implementations, cost estimates"
+
+  - id: resources_required
+    question: "What resources does this require?"
+    sub_dimensions:
+      - time
+      - money
+      - people
+      - skills
+      - technology
+      - permissions
+    grounding_method: "Search for case studies, project retrospectives"
+
+  - id: skills_required
+    question: "What skills/expertise are needed?"
+    type: list
+    grounding_method: "Search for job descriptions, tutorials, expert requirements"
+
+  - id: dependencies
+    question: "What must be true/done first?"
+    type: list
+    grounding_method: "Search for prerequisite discussions, implementation guides"
+
+  - id: reversibility
+    question: "Can this be undone if it fails?"
+    options: [FULLY_REVERSIBLE, PARTIALLY_REVERSIBLE, IRREVERSIBLE]
+    grounding_method: "Search for rollback procedures, failure recovery"
+
+# ============================================
+# VALUE DIMENSIONS
+# Is it worth doing? For whom?
+# ============================================
+value:
+  - id: importance
+    question: "How important is this?"
+    options: [CRITICAL, HIGH, MEDIUM, LOW, NEGLIGIBLE]
+    grounding_method: "Search for impact discussions, stakeholder priorities"
+
+  - id: roi
+    question: "What's the return on investment?"
+    type: ratio
+    sub_dimensions:
+      - effort_cost: "What does it cost (time, money, risk)?"
+      - benefit_gained: "What do we get?"
+    grounding_method: "Search for cost-benefit analyses, case studies"
+
+  - id: who_benefits
+    question: "Who benefits from this?"
+    type: list
+    grounding_method: "Search for stakeholder analyses, impact assessments"
+
+  - id: who_harmed
+    question: "Who is harmed by this?"
+    type: list
+    grounding_method: "Search for criticism, opposition, unintended consequences"
+
+  - id: stakes
+    question: "What's at stake if this fails/succeeds?"
+    options: [EXISTENTIAL, MAJOR, MODERATE, MINOR, TRIVIAL]
+    grounding_method: "Search for risk assessments, worst-case analyses"
+
+  - id: opportunity_cost
+    question: "What are we NOT doing by doing this?"
+    type: description
+    grounding_method: "Search for alternative approaches, trade-off discussions"
+
+# ============================================
+# NOVELTY DIMENSIONS
+# Is this new? Has it been tried?
+# ============================================
+novelty:
+  - id: done_before
+    question: "Has this been done before?"
+    options: [NEVER, RARELY, SOMETIMES, COMMONLY, STANDARD_PRACTICE]
+    grounding_method: "Search for implementations, case studies, examples"
+
+  - id: tried_and_failed
+    question: "Has this been tried and failed?"
+    type: boolean_with_context
+    grounding_method: "Search for failure postmortems, critical analyses"
+    note: "Past failure doesn't mean future failure, but understand why"
+
+  - id: talked_about
+    question: "Has this been discussed/proposed before?"
+    options: [NOVEL, DISCUSSED, WELL_KNOWN, CONSENSUS]
+    grounding_method: "Search for proposals, discussions, debates"
+
+  - id: prior_art
+    question: "What prior work exists in this area?"
+    type: list
+    grounding_method: "Search for papers, projects, products, patents"
+
+  - id: what_is_new
+    question: "What's genuinely new here vs existing knowledge?"
+    type: description
+    grounding_method: "Compare against prior art"
+
+# ============================================
+# CONTEXT DIMENSIONS
+# When/where/who does this apply to?
+# ============================================
+context:
+  - id: temporal_scope
+    question: "When is this relevant?"
+    sub_dimensions:
+      - time_sensitive: "Is there a deadline/window?"
+      - duration: "How long does this remain true/relevant?"
+      - timing: "Is now the right time?"
+
+  - id: spatial_scope
+    question: "Where does this apply?"
+    type: description
+    note: "Geographic, organizational, domain boundaries"
+
+  - id: population_scope
+    question: "Who does this apply to?"
+    type: description
+    note: "What population, role, situation"
+
+  - id: conditions
+    question: "What conditions must hold for this to apply?"
+    type: list
+    grounding_method: "Search for boundary conditions, exceptions"
+
+  - id: generalizability
+    question: "How broadly does this generalize?"
+    options: [UNIVERSAL, BROAD, MODERATE, NARROW, SPECIFIC_CASE]
+    grounding_method: "Search for scope discussions, edge cases"
+
+# ============================================
+# EVIDENCE DIMENSIONS
+# What supports/refutes this?
+# ============================================
+evidence:
+  - id: supporting_evidence
+    question: "What evidence supports this?"
+    type: list
+    grounding_method: "Search for studies, data, observations"
+
+  - id: contradicting_evidence
+    question: "What evidence contradicts this?"
+    type: list
+    grounding_method: "Search for counter-studies, critiques, anomalies"
+
+  - id: evidence_strength
+    question: "How strong is the evidence?"
+    options: [CONCLUSIVE, STRONG, MODERATE, WEAK, ABSENT]
+    sub_dimensions:
+      - quantity: "How much evidence?"
+      - quality: "How rigorous?"
+      - independence: "How independent are sources?"
+      - recency: "How current?"
+
+  - id: evidence_type
+    question: "What type of evidence?"
+    options:
+      - EMPIRICAL: "Based on observation/experiment"
+      - THEORETICAL: "Based on reasoning/models"
+      - ANECDOTAL: "Based on individual cases"
+      - EXPERT_OPINION: "Based on authority"
+      - CONSENSUS: "Based on agreement"
+
+  - id: verifiability
+    question: "Can claims be independently verified?"
+    options: [EASILY_VERIFIED, VERIFIABLE_WITH_EFFORT, HARD_TO_VERIFY, UNVERIFIABLE]
+    grounding_method: "Search for replication studies, verification methods"
+
+# ============================================
+# RELATIONSHIP DIMENSIONS
+# How does this connect to other things?
+# ============================================
+relationship:
+  - id: contradicts
+    question: "Does this contradict other beliefs/claims?"
+    type: list
+    grounding_method: "Search for conflicting positions, debates"
+
+  - id: supports
+    question: "Does this support other beliefs/claims?"
+    type: list
+    grounding_method: "Search for related work, confirmations"
+
+  - id: depends_on
+    question: "What does this depend on being true?"
+    type: list
+    note: "Upstream assumptions that must hold"
+
+  - id: enables
+    question: "What does this enable if true?"
+    type: list
+    note: "Downstream implications"
+
+  - id: blocks
+    question: "What does this block/prevent?"
+    type: list
+    note: "What becomes impossible if this is true"
+
+  - id: related_to
+    question: "What is this related to?"
+    type: list
+    grounding_method: "Search for related topics, cross-references"
+
+# ============================================
+# SOURCE DIMENSIONS
+# Where did this come from?
+# ============================================
+source:
+  - id: origin
+    question: "Where did this claim come from?"
+    options:
+      - ARAW_GENERATED: "Generated by ARAW exploration"
+      - EXTERNAL_SOURCE: "From books, papers, web"
+      - DIRECT_OBSERVATION: "From personal experience"
+      - REASONING: "Derived from other claims"
+      - UNKNOWN: "Origin not clear"
+
+  - id: credibility
+    question: "How credible is the source?"
+    options: [HIGHLY_CREDIBLE, CREDIBLE, UNCERTAIN, DUBIOUS, NOT_CREDIBLE]
+    grounding_method: "Search for source reputation, track record"
+
+  - id: bias
+    question: "What biases might the source have?"
+    type: list
+    grounding_method: "Search for source interests, funding, history"
+
+  - id: independent_verification
+    question: "Has this been independently verified?"
+    options: [MULTIPLY_VERIFIED, ONCE_VERIFIED, NOT_VERIFIED, CONTRADICTED]
+    grounding_method: "Search for independent confirmations"
+
+  - id: external_support_status
+    question: "What do external sources say about this?"
+    options:
+      - SUPPORTED: "Multiple quality sources agree with this claim"
+      - UNSUPPORTED: "No external sources back this up"
+      - CANT_CONFIRM: "External sources don't address this claim"
+      - MIXED: "Different sources/groups disagree"
+    when_mixed:
+      record:
+        - group_a: "Who believes position A and why"
+        - group_b: "Who believes position B and why"
+        - reason_for_disagreement: "Why they disagree (context, values, evidence)"
+      note: "Mixed signals IS the finding - understand the disagreement"
+    when_to_check: |
+      Only check external status when:
+      1. Specific fact needed before irreversible decision
+      2. Genuinely stuck after internal analysis
+      3. Need to calibrate confidence before action
+      Default: Don't check. LLM has sufficient internal knowledge.
+
+# ============================================
+# TIME DIMENSIONS
+# When-related aspects
+# ============================================
+time:
+  - id: urgency
+    question: "How urgent is this?"
+    options: [IMMEDIATE, SOON, MODERATE, LOW, NONE]
+    factors:
+      - harm_increasing: "Is harm getting worse over time?"
+      - window_closing: "Is there a deadline/opportunity?"
+      - dependencies_waiting: "Are other things blocked?"
+
+  - id: time_to_results
+    question: "How long until we see results?"
+    options: [IMMEDIATE, DAYS, WEEKS, MONTHS, YEARS, UNKNOWN]
+    grounding_method: "Search for timelines, case studies"
+
+  - id: durability
+    question: "How long will results last?"
+    options: [PERMANENT, LONG_TERM, MEDIUM_TERM, SHORT_TERM, TEMPORARY]
+    grounding_method: "Search for sustainability analyses"
+
+  - id: compounding
+    question: "Does this compound over time?"
+    type: boolean
+    note: "Compounding effects should be prioritized earlier"
+
+# ============================================
+# CERTAINTY DIMENSIONS
+# How confident are we?
+# ============================================
+certainty:
+  - id: confidence
+    question: "How confident are we in this?"
+    options: [CERTAIN, HIGH, MODERATE, LOW, VERY_LOW, UNKNOWN]
+    sub_dimensions:
+      - evidence_based: "Based on evidence strength"
+      - reasoning_based: "Based on logical soundness"
+      - intuition_based: "Based on gut feel (lower weight)"
+
+  - id: controversy
+    question: "Is this controversial?"
+    options: [CONSENSUS, MOSTLY_AGREED, DEBATED, CONTROVERSIAL, NO_CONSENSUS]
+    grounding_method: "Search for debate, disagreement"
+
+  - id: uncertainty_type
+    question: "What kind of uncertainty?"
+    options:
+      - ALEATORY: "Random/inherent variability"
+      - EPISTEMIC: "Could know more with effort"
+      - DEEP: "Fundamentally unknowable"
+
+# ============================================
+# USAGE GUIDE
+# ============================================
+usage:
+  when_to_ground: |
+    External grounding is a LAST RESORT, not a default step.
+    LLM has extensive internal knowledge - use that first.
+
+    Only use external grounding when:
+    1. Specific fact needed before irreversible decision (speed limits, regs, prices)
+    2. Genuinely stuck after trying to resolve internally
+    3. Need to determine support status (supported/unsupported/mixed)
+
+    Skip external grounding when:
+    1. Can reason about it internally with reasonable confidence
+    2. Exploratory claims (just mapping territory)
+    3. Low-stakes claims (cost of wrong < cost of checking)
+    4. Value claims (not empirically verifiable)
+
+  which_dimensions: |
+    Prioritize dimensions based on situation:
+
+    FOR PROBLEMS:
+    - validity.truth: Is this actually a problem?
+    - novelty.done_before: Has this been solved?
+    - context.conditions: When does this apply?
+    - value.importance: How much does it matter?
+
+    FOR SOLUTIONS:
+    - actionability.practical: Can we do this?
+    - actionability.effort: How hard?
+    - novelty.tried_and_failed: Did this fail before?
+    - value.roi: Is it worth it?
+
+    FOR CLAIMS:
+    - evidence.supporting_evidence: What backs this up?
+    - evidence.contradicting_evidence: What contradicts?
+    - source.credibility: Is the source trustworthy?
+    - certainty.confidence: How sure are we?
+
+  grounding_efficiency: |
+    Don't ground everything. Ground:
+    1. High-stakes decisions (before committing resources)
+    2. Crux claims (could flip conclusion)
+    3. Surprising claims (unexpected = verify)
+    4. Actionable claims (about to act on it)
+
+    Skip grounding:
+    1. Exploratory claims (just mapping territory)
+    2. Low-stakes claims (cost of wrong < cost of checking)
+    3. Already-verified claims (don't re-check)
+    4. Value claims (not empirically groundable)

@@ -1,0 +1,595 @@
+# Infrastructure Setup Procedure - Foundation for advocacy operations
+# GOSM procedure for setting up email, phone, database, and monitoring systems
+
+id: advocacy_infrastructure_setup
+name: Advocacy Infrastructure Setup
+version: "1.0.0"
+domain: advocacy
+
+description: Set up foundational infrastructure for autonomous advocacy operations
+
+long_description: |
+  The Infrastructure Setup procedure establishes the technical foundation for
+  professional advocacy operations including email with deliverability, AI phone
+  calling, database tracking, and legislative monitoring.
+
+  This is typically the first step before any policy research or outreach begins.
+  A properly configured infrastructure enables autonomous, scalable advocacy
+  while maintaining professional standards and accurate tracking.
+
+  Key principles:
+  - Professional domains build credibility with targets
+  - Email deliverability is critical for inbox placement
+  - AI phone capability enables scalable follow-up
+  - Database structure enables learning and optimization
+  - Monitoring catches legislative opportunities
+
+tags:
+  - advocacy
+  - infrastructure
+  - setup
+  - email
+  - phone
+  - database
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Starting a new advocacy project from scratch
+  - Setting up autonomous outreach capability for campaigns
+  - Need professional communication infrastructure for credibility
+  - Establishing legislative monitoring for policy tracking
+  - Building capacity for multi-channel advocacy campaigns
+  - Transitioning from informal to systematic advocacy operations
+
+when_not_to_use:
+  - Already have established advocacy infrastructure in place
+  - One-time advocacy action not requiring tracking
+  - Operating through an existing organization with shared infrastructure
+  - Budget constraints prevent minimum infrastructure investment
+  - Testing advocacy concept before committing to infrastructure
+  - Working as part of coalition where another org handles infrastructure
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: project_name
+    type: string
+    required: true
+    description: Name of the advocacy project for domain and branding
+
+  - name: policy_area
+    type: string
+    required: true
+    description: Primary policy area for domain naming suggestions
+
+  - name: budget
+    type: number
+    required: true
+    description: Available budget for infrastructure setup (minimum $35)
+
+  - name: existing_resources
+    type: dict
+    required: false
+    description: Any existing resources (domain, email, phone) to integrate
+
+  - name: monitoring_keywords
+    type: list
+    required: false
+    description: Initial keywords for legislative monitoring setup
+
+outputs:
+  - name: infrastructure_status
+    type: dict
+    description: Status of each infrastructure component (email, phone, database, monitoring)
+
+  - name: credentials_list
+    type: dict
+    description: All credentials and access information (stored securely)
+
+  - name: deliverability_score
+    type: number
+    description: Email deliverability test score (target 8+/10)
+
+  - name: test_results
+    type: dict
+    description: Results of all component tests
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Budget and resource assessment
+    action: |
+      Verify available resources and create setup plan:
+      1. Confirm budget meets minimum ($35)
+      2. Check for existing resources to integrate
+      3. Create prioritized setup timeline
+      4. Identify any constraints or special requirements
+    inputs:
+      - budget
+      - existing_resources (optional)
+    outputs:
+      - setup_plan: prioritized component list with timeline
+      - resource_inventory: what exists vs what to create
+    verification: |
+      Budget covers minimum requirements; timeline is realistic
+
+  - id: 2
+    name: Domain registration and DNS setup
+    action: |
+      Register professional domain and configure DNS:
+      1. Choose domain name (e.g., [cause]policy.org, evidence[topic].org)
+      2. Register via Porkbun or Namecheap ($8-15)
+      3. Access DNS management panel
+      4. Prepare for mail provider DNS records
+    inputs:
+      - project_name
+      - policy_area
+    outputs:
+      - domain_name: registered domain
+      - dns_access: credentials for DNS management
+    verification: |
+      Domain resolves; DNS panel accessible
+
+  - id: 3
+    name: Email configuration with deliverability
+    action: |
+      Set up email hosting with all authentication records:
+      1. Create Zoho Mail account (free tier)
+      2. Add MX records (mx.zoho.com, priority 10)
+      3. Add SPF record (v=spf1 include:zoho.com ~all)
+      4. Generate and add DKIM record
+      5. Add DMARC record (v=DMARC1; p=none)
+      6. Create primary email addresses
+      7. Test deliverability with mail-tester.com
+    inputs:
+      - domain_name (from Step 2)
+    outputs:
+      - email_addresses: list of created addresses
+      - deliverability_score: mail-tester.com score
+      - dns_records_configured: list of records added
+    verification: |
+      Deliverability score 8+/10; test email reaches inbox
+
+  - id: 4
+    name: Phone and AI calling setup
+    action: |
+      Configure Twilio and Bland AI for phone outreach:
+      1. Create Twilio account
+      2. Add initial credit ($15-20)
+      3. Purchase phone number (professional area code)
+      4. Configure voicemail-to-email
+      5. Note Account SID and Auth Token
+      6. Create Bland AI account
+      7. Connect Twilio credentials to Bland AI
+      8. Add payment method
+      9. Create and test simple script
+      10. Make test call to personal phone
+    inputs:
+      - budget
+    outputs:
+      - phone_number: acquired Twilio number
+      - twilio_credentials: Account SID and Auth Token
+      - bland_ai_status: account configured and tested
+    verification: |
+      Test call completes successfully with clear audio
+
+  - id: 5
+    name: Database initialization
+    action: |
+      Create SQLite database with advocacy schema:
+      1. Initialize database file (data/advocacy.db)
+      2. Create policies table (tracking policy candidates)
+      3. Create targets table (legislators and staff)
+      4. Create campaigns table (outreach campaigns)
+      5. Create outreach table (individual contacts)
+      6. Create donations table (funding tracking)
+      7. Create learnings table (knowledge base)
+      8. Test CRUD operations on each table
+    inputs:
+      - project_name
+    outputs:
+      - database_path: location of database file
+      - tables_created: list of tables with schemas
+      - test_queries_passed: confirmation of working queries
+    verification: |
+      All tables exist; insert, select, update, delete work on each
+
+  - id: 6
+    name: Legislative monitoring setup
+    action: |
+      Configure monitoring for legislative activity:
+      1. Set up Congress.gov RSS feeds for relevant committees
+      2. Configure Google Alerts for policy keywords
+      3. Set up GovTrack API access if needed
+      4. Create RSS reader organization (Feedly or similar)
+      5. Test alert delivery with sample keywords
+      6. Document monitoring checklist for regular review
+    inputs:
+      - monitoring_keywords (optional)
+      - policy_area
+    outputs:
+      - monitoring_feeds: list of configured RSS feeds
+      - alert_keywords: active Google Alert keywords
+      - monitoring_schedule: when to check each source
+    verification: |
+      At least one alert fires for test keyword; feeds updating
+
+  - id: 7
+    name: Integration testing and documentation
+    action: |
+      Verify all components work together:
+      1. Send test email and verify delivery
+      2. Make test AI phone call
+      3. Log test outreach in database
+      4. Verify monitoring alerts firing
+      5. Document all credentials securely
+      6. Create quick-reference setup guide
+      7. Test recovery procedures
+    inputs:
+      - All outputs from Steps 2-6
+    outputs:
+      - infrastructure_status: component-by-component status
+      - credentials_list: secure credential documentation
+      - test_results: all integration test results
+    verification: |
+      All components pass integration tests; credentials documented
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Email deliverability score meets 8+/10 threshold
+  - Test phone call completes with clear audio quality
+  - AI phone call via Bland AI executes successfully
+  - Database accepts and retrieves test records correctly
+  - Legislative monitoring alerts trigger for test keywords
+  - All credentials are documented securely
+  - Integration between components verified end-to-end
+
+failure_modes:
+  - mode: Email deliverability below threshold
+    symptom: Mail-tester score below 8, emails going to spam
+    resolution: Check DNS records for typos; verify SPF/DKIM/DMARC; warm up domain with normal emails for 1-2 weeks before bulk sending
+
+  - mode: DNS propagation delays
+    symptom: Records not resolving, mail provider can't verify domain
+    resolution: Wait 24-48 hours for propagation; verify records in multiple DNS checkers; contact registrar if persistent
+
+  - mode: Twilio number rejection
+    symptom: Cannot purchase number, number flagged for spam
+    resolution: Choose different area code; verify account information; contact Twilio support; consider dedicated number verification
+
+  - mode: Bland AI connection failure
+    symptom: API calls failing, test calls not completing
+    resolution: Verify Twilio credentials are correct; check Bland AI account status; test Twilio independently first
+
+  - mode: Database schema conflicts
+    symptom: Table creation errors, constraint violations
+    resolution: Drop and recreate tables; verify SQL syntax; check for reserved words in column names
+
+  - mode: Legislative monitoring gaps
+    symptom: Missing relevant alerts, RSS feeds not updating
+    resolution: Verify feed URLs are correct; add additional keyword variations; check committee assignments
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Criminal justice reform advocacy setup
+    context: Starting new advocacy project focused on bail reform
+    inputs:
+      project_name: "Evidence-Based Bail Reform"
+      policy_area: "criminal justice"
+      budget: 50
+      monitoring_keywords:
+        - "bail reform"
+        - "pretrial detention"
+        - "cash bail"
+    process: |
+      Step 1: Verified $50 budget exceeds $35 minimum
+
+      Step 2: Registered bailevidence.org via Porkbun ($9)
+
+      Step 3: Set up Zoho Mail with:
+        - MX: mx.zoho.com (priority 10)
+        - SPF: v=spf1 include:zoho.com ~all
+        - DKIM: generated and added
+        - DMARC: v=DMARC1; p=none
+        - Created contact@bailevidence.org
+        - Mail-tester score: 9/10
+
+      Step 4: Twilio setup:
+        - Added $20 credit
+        - Purchased (202) XXX-XXXX number (DC area code)
+        - Configured voicemail forwarding
+        - Connected to Bland AI
+        - Test call successful
+
+      Step 5: Database created with all tables
+        - Test records inserted successfully
+
+      Step 6: Monitoring configured:
+        - Congress.gov RSS for House/Senate Judiciary
+        - Google Alerts for bail reform keywords
+        - Alert test successful
+
+      Step 7: All integration tests passed
+    expected_output:
+      infrastructure_status:
+        email: "operational"
+        phone: "operational"
+        ai_calling: "operational"
+        database: "operational"
+        monitoring: "operational"
+      deliverability_score: 9
+      credentials_list: "[securely documented]"
+      test_results:
+        email_delivery: "pass"
+        phone_call: "pass"
+        ai_call: "pass"
+        database_crud: "pass"
+        monitoring_alert: "pass"
+
+  - name: Healthcare policy advocacy setup with existing domain
+    context: Expanding existing project to include advocacy infrastructure
+    inputs:
+      project_name: "Healthcare Cost Transparency"
+      policy_area: "healthcare"
+      budget: 40
+      existing_resources:
+        domain: "healthtransparency.org"
+        dns_provider: "Cloudflare"
+      monitoring_keywords:
+        - "healthcare prices"
+        - "hospital transparency"
+        - "surprise billing"
+    process: |
+      Step 1: Budget verified; noted existing domain saves $10
+
+      Step 2: Used existing domain; accessed Cloudflare DNS
+
+      Step 3: Added email authentication records to Cloudflare:
+        - Initial deliverability: 5/10 (missing DKIM)
+        - After DKIM: 9/10
+
+      Step 4-7: Standard setup completed
+
+      Note: Cloudflare proxy settings initially blocked
+      some mail records; disabled proxy for MX record
+    expected_output:
+      infrastructure_status:
+        email: "operational"
+        phone: "operational"
+        ai_calling: "operational"
+        database: "operational"
+        monitoring: "operational"
+      deliverability_score: 9
+      test_results:
+        email_delivery: "pass (after DKIM fix)"
+        phone_call: "pass"
+        ai_call: "pass"
+        database_crud: "pass"
+        monitoring_alert: "pass"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - At project initiation to establish advocacy foundation
+    - When scaling from informal to systematic advocacy
+    - When starting autonomous outreach campaigns
+    - When current infrastructure is inadequate or unprofessional
+    - When consolidating multiple advocacy tools into unified system
+
+  gates:
+    - gate: infrastructure_ready
+      question: "Is all advocacy infrastructure operational and tested?"
+
+    - gate: deliverability_verified
+      question: "Does email deliverability meet 8+/10 threshold?"
+
+    - gate: ai_calling_functional
+      question: "Can AI phone calls be made successfully?"
+
+    - gate: database_operational
+      question: "Is the database accepting and retrieving records?"
+
+  related_procedures:
+    - policy_research: Next step after infrastructure is ready
+    - outreach_campaigns: Depends on infrastructure for execution
+    - learning_system: Uses database for storing learnings
+    - fundraising: May share infrastructure components
+
+# ============================================
+# COMPONENTS REFERENCE
+# ============================================
+components:
+  email:
+    purpose: "Professional outreach with high deliverability"
+    setup_steps:
+      - id: register_domain
+        action: "Register professional domain"
+        options:
+          - provider: "Porkbun"
+            cost: "$8-12/year"
+            notes: "Good prices, easy DNS"
+          - provider: "Namecheap"
+            cost: "$10-15/year"
+            notes: "Reliable, good support"
+        naming_suggestions:
+          - "[cause]policy.org"
+          - "evidence[topic].org"
+          - "[topic]advocates.org"
+
+      - id: setup_mail_provider
+        action: "Configure email hosting"
+        recommended: "Zoho Mail"
+        cost: "Free (up to 5 users)"
+        dns_records:
+          - type: "MX"
+            value: "mx.zoho.com (priority 10)"
+          - type: "TXT (SPF)"
+            value: "v=spf1 include:zoho.com ~all"
+          - type: "TXT (DKIM)"
+            value: "[Generated in Zoho admin]"
+          - type: "TXT (DMARC)"
+            value: "v=DMARC1; p=none; rua=mailto:dmarc@[domain]"
+
+      - id: test_deliverability
+        action: "Verify email reaches inbox"
+        method: "mail-tester.com"
+        target_score: "8+/10"
+        if_low_score:
+          - "Check SPF record"
+          - "Verify DKIM signing"
+          - "Warm up domain with normal emails first"
+
+  phone:
+    purpose: "AI phone calling for follow-up and outreach"
+    setup_steps:
+      - id: twilio_account
+        action: "Create Twilio account"
+        url: "https://www.twilio.com"
+        initial_credit: "$15-20"
+        tasks:
+          - "Create account"
+          - "Purchase phone number (professional area code)"
+          - "Configure voicemail-to-email"
+          - "Note credentials (Account SID, Auth Token)"
+
+      - id: bland_ai_setup
+        action: "Configure AI calling service"
+        url: "https://www.bland.ai"
+        cost: "$0.09/minute"
+        tasks:
+          - "Create account"
+          - "Connect Twilio credentials"
+          - "Add payment method"
+          - "Create test script"
+          - "Make test call to personal phone"
+
+  database:
+    purpose: "Track all advocacy data"
+    location: "data/advocacy.db"
+    tables:
+      policies:
+        fields:
+          - "id TEXT PRIMARY KEY"
+          - "name TEXT NOT NULL"
+          - "area TEXT"
+          - "description TEXT"
+          - "evidence_score REAL"
+          - "cost_score REAL"
+          - "neglect_score REAL"
+          - "tractability_score REAL"
+          - "impact_score REAL"
+          - "total_score REAL"
+          - "status TEXT DEFAULT 'candidate'"
+          - "brief_path TEXT"
+          - "created_at TIMESTAMP"
+          - "updated_at TIMESTAMP"
+
+      targets:
+        fields:
+          - "id INTEGER PRIMARY KEY AUTOINCREMENT"
+          - "name TEXT NOT NULL"
+          - "title TEXT"
+          - "organization TEXT"
+          - "org_type TEXT"
+          - "email TEXT"
+          - "phone TEXT"
+          - "party TEXT"
+          - "state TEXT"
+          - "committees TEXT"
+          - "interests TEXT"
+          - "profile_notes TEXT"
+          - "tier INTEGER"
+          - "status TEXT DEFAULT 'not_contacted'"
+          - "created_at TIMESTAMP"
+          - "updated_at TIMESTAMP"
+
+      campaigns:
+        fields:
+          - "id INTEGER PRIMARY KEY AUTOINCREMENT"
+          - "policy_id TEXT"
+          - "name TEXT NOT NULL"
+          - "start_date DATE"
+          - "end_date DATE"
+          - "status TEXT DEFAULT 'planned'"
+          - "notes TEXT"
+          - "FOREIGN KEY (policy_id) REFERENCES policies(id)"
+
+      outreach:
+        fields:
+          - "id INTEGER PRIMARY KEY AUTOINCREMENT"
+          - "campaign_id INTEGER"
+          - "target_id INTEGER"
+          - "channel TEXT"
+          - "sent_at TIMESTAMP"
+          - "content TEXT"
+          - "subject TEXT"
+          - "response TEXT"
+          - "response_type TEXT"
+          - "response_at TIMESTAMP"
+          - "cost REAL DEFAULT 0"
+          - "notes TEXT"
+          - "FOREIGN KEY (campaign_id) REFERENCES campaigns(id)"
+          - "FOREIGN KEY (target_id) REFERENCES targets(id)"
+
+      donations:
+        fields:
+          - "id INTEGER PRIMARY KEY AUTOINCREMENT"
+          - "date DATE"
+          - "amount REAL"
+          - "source TEXT"
+          - "campaign_id INTEGER"
+          - "donor_email TEXT"
+          - "notes TEXT"
+
+      learnings:
+        fields:
+          - "id INTEGER PRIMARY KEY AUTOINCREMENT"
+          - "date DATE"
+          - "campaign_id INTEGER"
+          - "category TEXT"
+          - "finding TEXT"
+          - "evidence TEXT"
+          - "confidence TEXT"
+          - "implications TEXT"
+
+  monitoring:
+    purpose: "Track legislative activity"
+    setup_steps:
+      - id: congress_feeds
+        action: "Set up Congress.gov RSS monitoring"
+        feeds:
+          - "Committee hearing schedules"
+          - "Bill introductions by keyword"
+          - "Votes on relevant legislation"
+        tools:
+          - "RSS reader (Feedly, etc.)"
+          - "Custom script with feedparser"
+
+      - id: keyword_alerts
+        action: "Configure keyword monitoring"
+        sources:
+          - "Google Alerts"
+          - "Congress.gov search"
+          - "GovTrack API"
+        keywords: "[Policy-specific terms]"
+
+cost_summary:
+  domain: "$10"
+  twilio_credit: "$20"
+  bland_ai_initial: "$5"
+  total: "$35"
+
+dependencies: []
+
+next_procedure: "policy_research"

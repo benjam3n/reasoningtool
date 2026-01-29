@@ -1,0 +1,234 @@
+# Morphological Analysis
+# Intelligence Reduction: 85%
+# Version: 1.0.0
+
+id: morphological_analysis
+name: Morphological Analysis (Morphological Box)
+version: "1.0.0"
+domain: core
+intelligence_reduction: "85%"
+
+goal: |
+  Generate all possible solutions by identifying independent dimensions
+  and systematically combining values across dimensions. Combination
+  generation is purely mechanical.
+
+description: |
+  Invented by Fritz Zwicky. Break a problem into independent dimensions,
+  list possible values for each dimension, then systematically generate
+  all combinations. The structure guarantees exhaustive coverage.
+
+when_to_use:
+  - Designing new products/solutions
+  - Exploring solution space exhaustively
+  - Ensuring no combinations are missed
+  - Breaking creative blocks
+  - Systematic innovation
+
+inputs:
+  - name: problem
+    type: string
+    description: "What are we trying to solve/create?"
+  - name: dimensions
+    type: list
+    description: "Independent aspects of the solution"
+  - name: values
+    type: dict
+    description: "Possible values for each dimension"
+
+outputs:
+  - name: morphological_box
+    type: matrix
+    description: "Dimensions × Values matrix"
+  - name: combinations
+    type: list
+    description: "All possible combinations"
+  - name: viable_combinations
+    type: list
+    description: "Combinations that pass feasibility filter"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Define the Problem"
+    action: |
+      Clearly state what you're trying to create or solve.
+      This frames what dimensions are relevant.
+    output: "Problem statement"
+
+  - id: 2
+    name: "Identify Independent Dimensions"
+    action: |
+      List the independent aspects/parameters of the solution.
+
+      Rules for good dimensions:
+      - Independent (changing one doesn't force change in another)
+      - Relevant (affects the solution quality)
+      - Variable (has multiple possible values)
+
+      Common dimension types:
+      - Physical: size, material, shape, color
+      - Functional: method, mechanism, process
+      - Contextual: user, location, time, frequency
+      - Economic: price point, cost structure
+    output: "List of 4-8 dimensions"
+    template: |
+      DIMENSIONS:
+      D1: [Dimension name] - [What aspect it covers]
+      D2: [Dimension name] - [What aspect it covers]
+      ...
+
+  - id: 3
+    name: "List Values for Each Dimension"
+    action: |
+      For each dimension, list all possible values.
+      Be exhaustive within reason (3-7 values per dimension typical).
+
+      Include:
+      - Obvious values
+      - Extreme values
+      - Novel values
+      - "None" or "opposite" if applicable
+    output: "Values for each dimension"
+    template: |
+      D1: [Dimension]
+        - Value 1a: [Description]
+        - Value 1b: [Description]
+        - Value 1c: [Description]
+
+      D2: [Dimension]
+        - Value 2a: [Description]
+        - Value 2b: [Description]
+        ...
+
+  - id: 4
+    name: "Construct Morphological Box"
+    action: |
+      Create matrix with dimensions as rows and values as columns.
+      This visualizes the solution space.
+    output: "Morphological box matrix"
+    template: |
+      MORPHOLOGICAL BOX:
+
+      Dimension    | Value A    | Value B    | Value C    | Value D
+      -------------|------------|------------|------------|----------
+      D1: [Name]   | [1a]       | [1b]       | [1c]       | [1d]
+      D2: [Name]   | [2a]       | [2b]       | [2c]       | -
+      D3: [Name]   | [3a]       | [3b]       | [3c]       | [3d]
+      ...
+
+      Total combinations: [Product of value counts]
+
+  - id: 5
+    name: "Calculate Combination Count"
+    action: |
+      Total combinations = V1 × V2 × V3 × ... × Vn
+      where Vi is the number of values for dimension i.
+
+      If too large (>1000), either:
+      - Reduce values per dimension
+      - Use sampling instead of exhaustive
+      - Add constraints to eliminate combinations
+    output: "Combination count"
+
+  - id: 6
+    name: "Generate Combinations"
+    action: |
+      Systematically generate all combinations.
+      Each combination picks one value from each dimension.
+
+      For small spaces: List all
+      For large spaces: Sample systematically or use constraints
+    output: "List of combinations"
+    template: |
+      COMBINATIONS:
+      C1: [D1=1a, D2=2a, D3=3a, ...]
+      C2: [D1=1a, D2=2a, D3=3b, ...]
+      C3: [D1=1a, D2=2b, D3=3a, ...]
+      ...
+
+  - id: 7
+    name: "Apply Constraint Filter"
+    action: |
+      Remove combinations that are:
+      - Physically impossible
+      - Logically contradictory
+      - Clearly inferior (dominated by another)
+      - Outside scope/budget
+    output: "Reduced combination list"
+    template: |
+      CONSTRAINTS:
+      - [Constraint 1]: Eliminates combinations where [condition]
+      - [Constraint 2]: Eliminates combinations where [condition]
+      ...
+
+      Combinations before filter: [N]
+      Combinations after filter: [M]
+
+  - id: 8
+    name: "Evaluate Viable Combinations"
+    action: |
+      Score remaining combinations on:
+      - Feasibility (can we build it?)
+      - Value (does it solve the problem well?)
+      - Novelty (is it differentiated?)
+      - Cost (can we afford it?)
+    output: "Ranked combinations"
+    template: |
+      COMBINATION: [Description]
+      Feasibility: [1-10]
+      Value: [1-10]
+      Novelty: [1-10]
+      Cost: [1-10]
+      Total: [Sum or weighted]
+
+  - id: 9
+    name: "Select Top Combinations"
+    action: |
+      Select top 3-5 combinations for further development.
+      Consider diversity (don't pick all similar).
+    output: "Shortlist"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  problem: "Design a new type of chair"
+
+  dimensions:
+    D1_material: ["Wood", "Metal", "Plastic", "Mixed"]
+    D2_legs: ["4 legs", "Pedestal", "Cantilever", "No legs (hanging)"]
+    D3_back: ["Full back", "Low back", "No back (stool)", "Ergonomic"]
+    D4_user: ["Office", "Dining", "Outdoor", "Gaming"]
+    D5_adjustment: ["Fixed", "Height adjust", "Full ergonomic", "Transformable"]
+
+  combination_count: "4 × 4 × 4 × 4 × 4 = 1024 combinations"
+
+  constraints:
+    - "Outdoor + Wood without treatment = not durable → eliminate"
+    - "Gaming + No back = poor ergonomics → eliminate"
+    - "Hanging + Dining = impractical → eliminate"
+
+  interesting_combinations:
+    - combination: "Metal + Cantilever + Ergonomic + Office + Full ergonomic"
+      note: "Modern office chair"
+    - combination: "Mixed + Pedestal + Full back + Gaming + Full ergonomic"
+      note: "Gaming chair"
+    - combination: "Plastic + No legs + Low back + Outdoor + Fixed"
+      note: "Hanging pod chair"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Dimensions are truly independent"
+  - "Values are mutually exclusive within each dimension"
+  - "Values are exhaustive (cover the space)"
+  - "Combination count is correct"
+  - "Constraints are justified"
+  - "Evaluation criteria are clear"

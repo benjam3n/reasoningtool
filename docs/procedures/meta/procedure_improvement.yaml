@@ -1,0 +1,277 @@
+# Procedure Improvement Meta-Procedure
+# Extracted from: projects/2026-01-19_improve-gosm-procedures
+# Purpose: Systematically improve GOSM library procedures without arbitrary changes
+
+id: procedure_improvement
+name: Procedure Improvement
+version: "1.0.0"
+domain: meta
+
+description: Systematically improve GOSM library procedures using schema-driven validation and tier-based progress tracking
+
+long_description: |
+  This meta-procedure provides a systematic, non-arbitrary method for improving
+  procedures in the GOSM library. It uses:
+
+  1. Schema validation to objectively identify gaps
+  2. Tier-based assessment (Bronze/Silver/Gold) for progress tracking
+  3. Priority scoring to focus on highest-impact improvements
+  4. Before/after verification to prevent degradation
+
+  Key principle: Evidence over intuition - every change must be justified by
+  the schema, not by subjective "this feels better" reasoning.
+
+tags:
+  - meta
+  - quality
+  - improvement
+  - schema
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After adding new procedures to the library
+  - Periodically to improve library quality
+  - When procedures feel incomplete or inconsistent
+  - Before major GOSM version releases
+
+when_not_to_use:
+  - For content/semantic improvements (this is structural)
+  - When procedures are domain-specific and schema doesn't apply
+  - For minor cosmetic changes
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: procedure_paths
+    type: list
+    required: true
+    description: List of procedure file paths to improve (or "all" for full library)
+
+  - name: target_tier
+    type: enum
+    values: [bronze, silver, gold]
+    required: false
+    default: silver
+    description: Minimum tier to achieve for each procedure
+
+  - name: schema_path
+    type: string
+    required: false
+    default: "library/schemas/procedure_schema.yaml"
+    description: Path to the procedure schema
+
+outputs:
+  - name: improvement_report
+    type: document
+    description: Summary of improvements made
+
+  - name: tier_distribution
+    type: dict
+    description: Count of procedures at each tier (before and after)
+
+  - name: improved_procedures
+    type: list
+    description: List of procedures that were modified
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Load schema and procedures
+    action: |
+      1. Read the procedure schema from schema_path
+      2. Parse all procedure files from procedure_paths
+      3. Create inventory of procedures to assess
+    inputs:
+      - procedure_paths
+      - schema_path
+    outputs:
+      - schema: parsed schema with tier requirements
+      - procedures: list of parsed procedure files
+    verification: |
+      - Schema loaded successfully
+      - All procedure files are valid YAML
+
+  - id: 2
+    name: Validate each procedure
+    action: |
+      For each procedure:
+      1. Check Bronze tier requirements (id, name, version, description, steps)
+      2. Check Silver tier requirements (inputs, outputs, when_to_use, examples)
+      3. Check Gold tier requirements (failure_modes, gosm_integration, verification)
+      4. Record current tier and missing fields
+    inputs:
+      - schema (from Step 1)
+      - procedures (from Step 1)
+    outputs:
+      - validation_results: {procedure: {tier, missing_fields, issues}}
+    verification: |
+      Every procedure has a tier assignment and gap list
+
+  - id: 3
+    name: Calculate priority scores
+    action: |
+      For each procedure:
+      priority = usage_weight × severity_weight / effort_estimate
+
+      Usage weights:
+      - core: 3, meta: 3, extracted: 2, domain-specific: 1
+
+      Severity weights:
+      - failing_schema: 3, missing_examples: 2, missing_advanced: 1
+
+      Effort estimate:
+      - single_field: 1, section_add: 2, major_rewrite: 5
+
+      Sort procedures by priority (highest first)
+    inputs:
+      - validation_results (from Step 2)
+    outputs:
+      - priority_queue: ordered list of procedures to improve
+    verification: |
+      Queue is ordered by descending priority
+
+  - id: 4
+    name: Improve procedures
+    action: |
+      For each procedure in priority_queue (up to target count):
+      1. Read current content
+      2. Identify gaps from validation_results
+      3. Generate content for missing fields:
+         - version: Add "1.0.0" if missing
+         - inputs: Infer from steps and description
+         - outputs: Infer from steps and purpose
+         - when_to_use: Derive from purpose
+         - examples: Create from procedure purpose
+         - failure_modes: Identify common problems
+         - gosm_integration: Determine workflow placement
+      4. Merge new content with original (preserve all original content)
+      5. Validate improved version
+      6. Verify no degradation (tier >= original tier)
+      7. Write improved file
+    inputs:
+      - priority_queue (from Step 3)
+      - target_tier
+    outputs:
+      - improved_procedures: list of modified procedures
+    verification: |
+      - Each improved procedure passes schema for target_tier
+      - No procedure has lower tier than before
+      - All original content preserved
+
+  - id: 5
+    name: Generate improvement report
+    action: |
+      Create summary document with:
+      1. Procedures analyzed
+      2. Tier distribution (before and after)
+      3. Improvements made per procedure
+      4. Remaining gaps for future work
+    inputs:
+      - validation_results (from Step 2)
+      - improved_procedures (from Step 4)
+    outputs:
+      - improvement_report: markdown summary document
+    verification: |
+      Report includes before/after comparison
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All improvements are schema-justified (not arbitrary)
+  - No procedure degrades (tier before <= tier after)
+  - Original content preserved in all cases
+  - Priority algorithm applied consistently
+
+failure_modes:
+  - mode: Schema too strict
+    symptom: Good procedures fail validation
+    resolution: Move requirements to higher tier (recommended vs required)
+
+  - mode: Generated content is low quality
+    symptom: Added fields are vague or unhelpful
+    resolution: Focus on structural fields, leave content for human review
+
+  - mode: Breaking existing functionality
+    symptom: Procedure used to work, now doesn't
+    resolution: Always preserve original content, only add new sections
+
+  - mode: Arbitrary prioritization
+    symptom: Low-impact procedures improved before high-impact
+    resolution: Follow priority algorithm, don't skip based on preference
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Improve single procedure to Silver
+    context: validation.yaml is Bronze tier, want to reach Silver
+    inputs:
+      procedure_paths: ["library/procedures/core/validation.yaml"]
+      target_tier: silver
+    process: |
+      1. Validate: Currently Bronze (has id, name, steps; missing inputs, outputs, examples)
+      2. Priority: Core procedure, missing examples = high priority
+      3. Improve:
+         - Add inputs section (validation_target, requirements, acceptance_criteria)
+         - Add outputs section (validation_result, validation_coverage, validation_issues)
+         - Add examples section (API validation example, plan validation example)
+      4. Verify: Now passes Silver, original content preserved
+    expected_output:
+      improved_procedures: ["validation.yaml"]
+      tier_before: bronze
+      tier_after: silver
+      fields_added: ["inputs", "outputs", "examples"]
+
+  - name: Library-wide improvement sprint
+    context: Want to improve overall library quality
+    inputs:
+      procedure_paths: "all"
+      target_tier: bronze
+    process: |
+      1. Validate all 71 procedures
+      2. Identify 16 failing schema
+      3. Prioritize by usage_weight
+      4. Improve top 10 to Bronze
+      5. Generate report with remaining gaps
+    expected_output:
+      procedures_analyzed: 71
+      tier_distribution_before:
+        gold: 8
+        silver: 12
+        bronze: 35
+        failing: 16
+      tier_distribution_after:
+        gold: 8
+        silver: 12
+        bronze: 45
+        failing: 6
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Library maintenance projects
+    - Post-extraction cleanup (after procedure_extraction)
+    - Quality improvement initiatives
+
+  gates:
+    - gate: schema_defined
+      question: "Is the procedure schema available and current?"
+
+    - gate: validation_complete
+      question: "Have all target procedures been validated?"
+
+    - gate: no_degradation
+      question: "Did any procedure decrease in tier?"
+
+  related_procedures:
+    - procedure_extraction: Creates new procedures that need improvement
+    - validation: Used to check schema compliance
+    - steps_generation: Template for procedure step structure

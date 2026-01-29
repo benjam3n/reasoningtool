@@ -1,0 +1,398 @@
+# Matching Procedure - Second step in the decision-making sequence
+# Core GOSM procedure for defining criteria to filter options
+
+id: matching
+name: Matching
+version: "1.0.0"
+domain: core
+
+description: Define criteria for filtering options
+
+long_description: |
+  The Matching procedure is the second step in the systematic decision-making
+  sequence (Generation → Matching → Comparison → Optimization → Selection).
+
+  Its purpose is to define the CRITERIA that options must meet to be viable.
+  These are the "gates" that options must pass through.
+
+  Criteria types:
+  - Must-have (Required): Absolute requirements, no exceptions
+  - Should-have (Preferred): Strongly desired but negotiable
+  - Nice-to-have (Optional): Would be good but not critical
+  - Must-not-have (Exclusions): Automatic disqualifiers
+
+  Key principle: Define criteria BEFORE evaluating options. This prevents
+  post-hoc rationalization and ensures fair comparison.
+
+tags:
+  - decision
+  - criteria
+  - filtering
+  - second_step
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After Generation, before Comparison
+  - When you need to establish what "good enough" means
+  - When stakeholders need to agree on requirements
+  - When filtering will be done by someone else (criteria as contract)
+  - When options vary widely and need systematic filtering
+  - When past decisions lacked clear criteria (learning from mistakes)
+
+when_not_to_use:
+  - When criteria are already well-established (reuse existing)
+  - When there's only one option (no filtering needed)
+  - When time pressure requires immediate action
+  - When the decision is purely preference-based (no objective criteria)
+  - When criteria cannot be articulated (intuition-based domains)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: generated_options
+    type: list
+    required: true
+    description: The options from Generation step (needed to ensure criteria are relevant)
+
+  - name: goal
+    type: string
+    required: true
+    description: What we're trying to achieve (criteria derive from goal)
+
+  - name: constraints
+    type: list
+    required: false
+    description: Known constraints (become must-have criteria)
+
+  - name: stakeholders
+    type: list
+    required: false
+    description: Who cares about this decision (different stakeholders = different criteria)
+
+  - name: context
+    type: dict
+    required: false
+    description: Additional context (timeline, budget, risk tolerance)
+
+outputs:
+  - name: matching_criteria
+    type: list
+    description: List of criteria with types, descriptions, and evaluation methods
+
+  - name: required_criteria_count
+    type: integer
+    description: Number of must-have criteria
+
+  - name: criteria_completeness
+    type: float
+    description: Estimated completeness of criteria set (0.0 to 1.0)
+
+  - name: criteria_conflicts
+    type: list
+    description: Any tensions between criteria that may require trade-offs
+
+# ============================================
+# PROCEDURE
+# ============================================
+preconditions:
+  - type: context_has
+    key: generated_options
+    description: Must have options to define criteria for
+
+postconditions:
+  - type: context_has
+    key: matching_criteria
+    description: Criteria must be defined
+
+steps:
+  - id: 1
+    name: Extract goal requirements
+    action: |
+      Analyze the goal to identify implicit requirements:
+      - What must be true for the goal to be achieved?
+      - What would make a solution unacceptable?
+      - What constraints exist (time, money, resources)?
+    inputs:
+      - goal
+      - constraints (optional)
+    outputs:
+      - goal_requirements: list of requirements derived from goal
+    verification: |
+      At least 3 requirements extracted from goal statement
+
+  - id: 2
+    name: Identify stakeholder needs
+    action: |
+      For each stakeholder (or stakeholder type):
+      - What do they need from the solution?
+      - What would they reject?
+      - What would delight them?
+    inputs:
+      - stakeholders (optional)
+      - context (optional)
+    outputs:
+      - stakeholder_requirements: requirements by stakeholder
+    verification: |
+      Each stakeholder has at least one requirement identified
+
+  - id: 3
+    name: Categorize criteria by type
+    action: |
+      Sort all requirements into criteria categories:
+
+      MUST-HAVE (Required):
+      - Non-negotiable requirements
+      - Constraint-driven criteria
+      - Safety/legal requirements
+
+      MUST-NOT-HAVE (Exclusions):
+      - Automatic disqualifiers
+      - Known failure patterns
+      - Incompatible characteristics
+
+      SHOULD-HAVE (Preferred):
+      - Strongly desired features
+      - Significant value-add
+      - Differentiating factors
+
+      NICE-TO-HAVE (Optional):
+      - Bonus features
+      - Future-proofing
+      - Convenience factors
+    inputs:
+      - goal_requirements (from Step 1)
+      - stakeholder_requirements (from Step 2)
+    outputs:
+      - categorized_criteria: criteria organized by type
+    verification: |
+      Each criterion has exactly one type assigned
+
+  - id: 4
+    name: Define evaluation method for each criterion
+    action: |
+      For each criterion, specify HOW to evaluate it:
+      - Binary (yes/no): Clear pass/fail
+      - Scalar (1-10): Degree of satisfaction
+      - Threshold (>X): Minimum acceptable value
+      - Comparative (better than Y): Relative assessment
+
+      Also specify:
+      - What evidence is needed?
+      - Who can make this judgment?
+      - How long does evaluation take?
+    inputs:
+      - categorized_criteria (from Step 3)
+    outputs:
+      - criteria_with_methods: criteria with evaluation approaches
+    verification: |
+      Every criterion has a defined evaluation method
+
+  - id: 5
+    name: Check for conflicts and gaps
+    action: |
+      Review criteria set for issues:
+
+      Conflicts:
+      - Do any criteria contradict each other?
+      - Are there impossible combinations?
+      - Will trade-offs be needed?
+
+      Gaps:
+      - Are there obvious criteria missing?
+      - Does the set cover all stakeholder needs?
+      - Are there blind spots?
+
+      Feasibility:
+      - Can all criteria actually be evaluated?
+      - Do we have access to needed information?
+    inputs:
+      - criteria_with_methods (from Step 4)
+      - generated_options (to check against)
+    outputs:
+      - criteria_conflicts: identified tensions
+      - criteria_gaps: potential missing criteria
+    verification: |
+      Conflicts and gaps explicitly documented (even if none found)
+
+  - id: 6
+    name: Finalize criteria set
+    action: |
+      Produce final criteria list:
+      1. Resolve or document conflicts
+      2. Add any missing criteria from gap analysis
+      3. Assign weights if needed (for Optimization step)
+      4. Calculate completeness estimate
+      5. Count required criteria
+    inputs:
+      - criteria_with_methods (from Step 4)
+      - criteria_conflicts (from Step 5)
+      - criteria_gaps (from Step 5)
+    outputs:
+      - matching_criteria: final criteria list
+      - required_criteria_count: number of must-haves
+      - criteria_completeness: completeness estimate
+    verification: |
+      Criteria list is ready for Comparison step
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All must-have criteria are truly non-negotiable
+  - Criteria are evaluable (not vague or subjective)
+  - No redundant criteria (each adds information)
+  - Criteria derive from goal (not arbitrary)
+  - Conflicts are documented, not hidden
+
+failure_modes:
+  - mode: Criteria inflation
+    symptom: Too many must-have criteria, no options pass
+    resolution: Re-examine each must-have - is it truly required?
+
+  - mode: Vague criteria
+    symptom: Different people evaluate same option differently
+    resolution: Add specific evaluation method and threshold
+
+  - mode: Missing criteria
+    symptom: Options pass but still feel wrong
+    resolution: Identify the unstated criterion causing discomfort
+
+  - mode: Conflicting criteria
+    symptom: No option can satisfy all criteria
+    resolution: Explicitly trade off, or re-examine if both are truly required
+
+  - mode: Premature weighting
+    symptom: Assigning weights before understanding trade-offs
+    resolution: Weight criteria after seeing how options perform (in Optimization)
+
+  - mode: Stakeholder blindness
+    symptom: Criteria only reflect one perspective
+    resolution: Explicitly list stakeholders and their requirements
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Define criteria for hiring a contractor
+    context: Need to hire a web developer for a 3-month project
+    inputs:
+      goal: "Hire a contractor to build our MVP web application"
+      generated_options:
+        - "Freelancer from Upwork"
+        - "Local development agency"
+        - "Offshore team"
+        - "Part-time employee"
+      constraints:
+        - "Budget: $15,000 total"
+        - "Timeline: 3 months"
+        - "Must use React"
+    process: |
+      Goal requirements: within budget, delivers in 3 months, React expertise
+      Stakeholder requirements: CEO wants quality, CTO wants maintainability
+
+      Categorized:
+      MUST-HAVE:
+      - Total cost ≤ $15,000
+      - Can deliver within 3 months
+      - Proven React experience (portfolio/references)
+      - Available to start within 2 weeks
+
+      MUST-NOT-HAVE:
+      - No portfolio or references
+      - Requires long-term commitment
+      - Cannot communicate in English
+
+      SHOULD-HAVE:
+      - Previous startup experience
+      - Familiar with our tech stack beyond React
+      - Timezone overlap (±3 hours)
+
+      NICE-TO-HAVE:
+      - Local (can meet in person)
+      - Experience in our industry
+      - Can continue for maintenance after MVP
+    expected_output:
+      matching_criteria:
+        - criterion: "Total cost ≤ $15,000"
+          type: must_have
+          evaluation: threshold
+          method: "Get quote, verify against budget"
+        - criterion: "Delivers within 3 months"
+          type: must_have
+          evaluation: binary
+          method: "Check availability and estimate"
+        - criterion: "Proven React experience"
+          type: must_have
+          evaluation: binary
+          method: "Review portfolio for React projects"
+        - criterion: "Previous startup experience"
+          type: should_have
+          evaluation: binary
+          method: "Ask in interview"
+      required_criteria_count: 4
+      criteria_completeness: 0.85
+      criteria_conflicts:
+        - "Low cost may conflict with timezone overlap preference"
+
+  - name: Define criteria for selecting a database
+    context: Choosing database for new microservice
+    inputs:
+      goal: "Select database for user profile service"
+      generated_options:
+        - "PostgreSQL"
+        - "MongoDB"
+        - "DynamoDB"
+        - "Redis"
+      constraints:
+        - "Must handle 10k concurrent users"
+        - "Team knows SQL"
+    expected_output:
+      matching_criteria:
+        - criterion: "Handles 10k concurrent connections"
+          type: must_have
+          evaluation: threshold
+          method: "Check documentation/benchmarks"
+        - criterion: "Team can operate it"
+          type: must_have
+          evaluation: binary
+          method: "Team familiarity assessment"
+        - criterion: "ACID compliance"
+          type: should_have
+          evaluation: binary
+          method: "Check documentation"
+        - criterion: "Managed service available"
+          type: nice_to_have
+          evaluation: binary
+          method: "Check cloud provider offerings"
+      required_criteria_count: 2
+      criteria_completeness: 0.70
+      criteria_conflicts: []
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - At strategy evaluation to define what makes a strategy acceptable
+    - Before vendor/tool selection to establish requirements
+    - When decomposing goals to define sub-goal success criteria
+    - During planning to clarify what "done" means
+
+  gates:
+    - gate: criteria_defined
+      question: "Do we have clear, evaluable criteria for this decision?"
+
+    - gate: criteria_complete
+      question: "Are we confident the criteria cover all important factors?"
+
+    - gate: criteria_agreed
+      question: "Do stakeholders agree on the criteria?"
+
+  related_procedures:
+    - generation: Previous step - provides options to define criteria against
+    - comparison: Next step - applies criteria to filter options
+    - requirements_gathering: More detailed requirements elicitation
+    - stakeholder_analysis: Deeper stakeholder identification

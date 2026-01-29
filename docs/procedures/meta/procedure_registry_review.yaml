@@ -1,0 +1,105 @@
+# Procedure Registry Review
+# Use the registry itself as an input to improve the registry design.
+
+id: procedure_registry_review
+name: Procedure Registry Review
+version: "1.0.0"
+domain: meta
+
+description: Review and improve the procedure registry schema using explicit definitions, evidence alignment, and non-regression.
+
+tags:
+  - meta
+  - procedures
+  - registry
+  - evidence
+  - quality
+
+when_to_use:
+  - After changing registry schema, naming, or derived state logic
+  - When the registry output feels unclear to read
+  - When adding a new evidence source or new derived state
+
+inputs:
+  - name: registry_path
+    type: string
+    required: false
+    description: Path to the procedure registry YAML file
+    default: library/PROCEDURE_REGISTRY.yaml
+
+outputs:
+  - name: change_proposals
+    type: list
+    description: List of concrete edits to improve clarity, evidence alignment, and usability
+
+  - name: non_regression_notes
+    type: list
+    description: What existing value must be preserved, and how the proposed edits preserve it
+
+steps:
+  - id: 1
+    name: Read the registry policy
+    action: |
+      Read the policy section in the registry.
+
+      Extract:
+      - evidence_signals sources and meanings
+      - terms and definitions
+      - derived_states definitions and logic
+      - projections and their conditions
+
+      Write a short summary of what the registry claims it measures.
+    outputs:
+      - policy_summary
+
+  - id: 2
+    name: Naming clarity review
+    action: |
+      For each key and label in policy.derived_states:
+      - Write the meaning in plain language.
+      - Write one plausible wrong interpretation a reader could make.
+      - If the wrong interpretation is likely, propose a rename and update the definition.
+
+      Do the same for any domain terms in policy.terms.
+    outputs:
+      - naming_findings
+      - rename_proposals
+
+  - id: 3
+    name: Evidence alignment review
+    action: |
+      For each derived state:
+      - List the exact evidence fields used by its logic.
+      - Check that every word in the label is supported by those fields.
+      - If a label claims too much, narrow the label.
+      - If evidence exists but the label is too weak, strengthen the label.
+
+      Repeat for each projection rule in policy.projections.
+    outputs:
+      - evidence_alignment_findings
+
+  - id: 4
+    name: Non-regression review
+    action: |
+      For each proposed change:
+      - Identify what value the old version provided.
+      - State how the new version preserves that value.
+      - If a change removes information, propose an alternative that preserves it.
+    outputs:
+      - non_regression_notes
+
+  - id: 5
+    name: Apply changes and validate
+    action: |
+      Apply the proposed edits.
+
+      Regenerate the registry using:
+      - python3 scripts/update_procedure_registry.py
+
+      Spot-check at least three entries:
+      - one that is required by core gates
+      - one that has multiple usage logs
+      - one that is not listed in the catalog
+    outputs:
+      - change_proposals
+      - validation_notes

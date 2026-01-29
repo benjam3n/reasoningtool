@@ -1,0 +1,764 @@
+# Procedure Extraction from Source - Extract procedures from external materials
+# Meta-procedure for turning external knowledge into reusable procedures
+
+id: procedure_extraction_from_source
+name: Procedure Extraction from Source
+version: "1.0.0"
+domain: meta
+
+description: Meta-procedure for extracting implicit procedures from ANY external source, turning tacit knowledge into explicit, reusable GOSM-compatible procedures.
+
+long_description: |
+  This procedure extracts procedures from external sources including:
+  - YouTube videos and podcasts
+  - Research papers and books
+  - Tool documentation
+  - Observed behavior
+  - Interviews and courses
+
+  Philosophy: If someone can do something successfully, there IS a procedure -
+  even if they can't articulate it. Our job is to make the implicit explicit.
+
+  "If they can do it, so can I" - but only if I can extract HOW they do it.
+
+  Core insight: Most valuable knowledge is TACIT (in people's heads, habits,
+  intuitions). Extracting it into EXPLICIT procedures is intellectual arbitrage.
+  The extraction itself is a learnable skill.
+
+  The procedure operates in five phases:
+  1. Source Analysis - understand what you're working with
+  2. Deep Extraction - systematically extract all procedure types
+  3. Formalization - convert to GOSM format
+  4. Validation - verify extraction quality
+  5. Integration - add to library
+
+tags:
+  - meta
+  - extraction
+  - learning
+  - tacit-knowledge
+  - source-processing
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - When encountering high-value content with extractable procedures
+  - When a source creator has unique knowledge or access
+  - When building procedure library from curated sources
+  - When wanting to learn from experts systematically
+  - When source has proven results worth capturing
+  - After prioritizing sources using source_prioritization procedure
+  - When noticed patterns in external content worth codifying
+  - When seeking to transfer knowledge from one domain to another
+
+when_not_to_use:
+  - For purely entertainment content
+  - When source lacks credibility or proven results
+  - For information that's readily available in existing procedures
+  - When extraction cost exceeds expected value
+  - For highly domain-specific content with no transfer potential
+  - When no time to complete proper extraction (rushed = low quality)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: source
+    type: object
+    required: true
+    description: The material to extract from
+    fields:
+      - type: "youtube_video | research_paper | book | tool_docs | observed_behavior | interview | podcast | code | course"
+      - content: "Text/transcript or reference to content"
+      - url: "Link if applicable"
+
+  - name: source_metadata
+    type: object
+    required: true
+    description: Context about the source
+    fields:
+      - creator: "Who made this"
+      - domain: "What field/area"
+      - reputation: "Why this source is worth extracting from"
+      - length: "Size of source material"
+
+  - name: extraction_focus
+    type: enum
+    required: false
+    description: What kind of procedures to prioritize
+    values: [all, teaching, learning, research, presentation, problem_solving, decision_making, creation, persuasion, meta]
+    default: all
+
+outputs:
+  - name: extracted_procedures
+    type: list
+    description: List of procedures in GOSM-compatible YAML format
+
+  - name: extraction_confidence
+    type: dict
+    description: Confidence level (HIGH/MEDIUM/LOW) for each extraction
+
+  - name: gaps_identified
+    type: list
+    description: Tacit knowledge that resisted explicit capture
+
+  - name: source_value_assessment
+    type: object
+    description: Was this source worth extracting from? Should we extract more?
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Surface scan
+    action: |
+      Quick pass to understand scope and structure:
+
+      1. Skim entire source (or sample if very long)
+         - For videos: watch at 2x, note structure
+         - For papers: read abstract, intro, conclusion
+         - For books: read table of contents, chapter summaries
+
+      2. Note structure:
+         - Chapters, sections, segments
+         - How content is organized
+         - Where "how to" content is concentrated
+
+      3. Identify main topics covered
+
+      4. Estimate procedure density:
+         - High: mostly "how to" content
+         - Medium: mix of explanation and procedure
+         - Low: mostly "what is" content
+
+      Output: Source map with annotated sections
+    inputs:
+      - source
+      - source_metadata
+    outputs:
+      - source_map: annotated overview of source structure
+      - procedure_density: estimated richness of extractable content
+    verification: |
+      Source structure is understood, procedure-rich sections identified
+
+  - id: 2
+    name: Creator analysis
+    action: |
+      Understand WHO created this and WHY it matters:
+
+      Questions to answer:
+      - What is this person known for?
+      - What unique perspective or access do they have?
+      - What can they do that others can't?
+      - What's their track record of results?
+      - Why should I trust their procedures?
+
+      Credibility signals:
+      - Verifiable achievements
+      - Peer recognition
+      - Students/followers with results
+      - Published/cited work
+      - Professional credentials
+
+      Warning signs:
+      - Only self-reported success
+      - No verifiable outcomes
+      - Contradicted by evidence
+
+      Output: Creator profile with credibility assessment
+    inputs:
+      - source_metadata
+    outputs:
+      - creator_profile: background and credibility assessment
+      - credibility_rating: HIGH/MEDIUM/LOW with reasoning
+    verification: |
+      Creator credibility is assessed with specific evidence
+
+  - id: 3
+    name: Identify procedure signals
+    action: |
+      Find markers that indicate procedures exist:
+
+      EXPLICIT SIGNALS (direct statements):
+      - "Here's how I do it..."
+      - "The steps are..."
+      - "First... then... finally..."
+      - "My process is..."
+      - "The framework I use..."
+      - Numbered lists
+      - Flowcharts or diagrams
+
+      IMPLICIT SIGNALS (patterns in behavior):
+      - Consistent patterns across examples
+      - Repeated decision points
+      - "I always..." or "I never..."
+      - Unstated assumptions that enable success
+      - What they do WITHOUT explaining why
+      - Transitions between states
+      - Error handling / edge cases mentioned
+
+      META SIGNALS (about their thinking):
+      - How they explain their own thinking
+      - How they teach others
+      - What they emphasize vs skip
+      - Where they slow down (important) vs speed up (obvious to them)
+
+      Create procedure signal map with locations in source.
+    inputs:
+      - source
+      - source_map (from Step 1)
+    outputs:
+      - signal_map: locations of procedure signals by type
+      - estimated_procedure_count: how many procedures likely extractable
+    verification: |
+      Signals identified with specific locations in source
+
+  - id: 4
+    name: Estimate extraction value
+    action: |
+      Decide if this source is worth deep extraction:
+
+      HIGH VALUE criteria:
+      - Unique procedures not found elsewhere
+      - Proven results from applying these procedures
+      - High procedure density
+      - Transferable to other domains
+      - Creator has exceptional track record
+
+      MEDIUM VALUE criteria:
+      - Good procedures but commonly known
+      - Some unique insights
+      - Moderate procedure density
+
+      LOW VALUE criteria:
+      - Mostly opinion, little procedure
+      - Procedures are obvious/common
+      - No evidence of results
+      - Very domain-specific, low transfer
+
+      Decision:
+      - HIGH: Proceed with full extraction
+      - MEDIUM: Extract selectively (explicit only)
+      - LOW: Skip or defer
+
+      Output: Value assessment with go/no-go decision
+    inputs:
+      - source_map (from Step 1)
+      - creator_profile (from Step 2)
+      - signal_map (from Step 3)
+    outputs:
+      - value_assessment: HIGH/MEDIUM/LOW with reasoning
+      - extraction_decision: proceed/selective/skip
+    verification: |
+      Clear decision made with documented reasoning
+
+  - id: 5
+    name: Extract explicit procedures
+    action: |
+      Extract procedures that are directly stated:
+
+      Process:
+      1. Find each explicit procedure signal
+      2. Copy the stated procedure verbatim
+      3. Note any gaps or ambiguities
+      4. Mark confidence as HIGH (they said it directly)
+
+      For each procedure found, capture:
+      - Name (descriptive)
+      - Source location (timestamp/page/section)
+      - Verbatim quote
+      - Steps as stated
+      - Gaps (what's missing or unclear)
+      - Notes (additional context)
+
+      Do NOT interpret or add - capture what's actually said.
+    inputs:
+      - source
+      - signal_map (from Step 3)
+    outputs:
+      - explicit_procedures: list of directly stated procedures
+    verification: |
+      Each explicit procedure has verbatim source quote
+
+  - id: 6
+    name: Extract implicit procedures
+    action: |
+      Extract procedures hidden in behavior and examples:
+
+      Techniques:
+      1. Pattern Matching
+         - "Every time X happens, they do Y"
+         - "They always check Z before proceeding"
+         - "The order is consistently A then B then C"
+
+      2. Counterfactual Analysis
+         - "What would happen if they skipped this step?"
+         - "Why this order and not another?"
+         - "What constraint does this step satisfy?"
+
+      3. Gap Filling
+         - "They jumped from A to C - what's B?"
+         - "This assumes X - where did X come from?"
+         - "They didn't explain why - what's the reason?"
+
+      For each implicit procedure, capture:
+      - Name (descriptive)
+      - Source location (where observed)
+      - Observed pattern (what you saw)
+      - Evidence (examples supporting the inference)
+      - Reconstructed steps
+      - Uncertainty (what you're not sure about)
+      - Confidence: MEDIUM
+
+      These require interpretation - be explicit about inferences.
+    inputs:
+      - source
+      - explicit_procedures (from Step 5)
+    outputs:
+      - implicit_procedures: list of inferred procedures
+    verification: |
+      Each implicit procedure has evidence from source
+
+  - id: 7
+    name: Extract meta-procedures
+    action: |
+      Extract HOW they think, learn, teach, and improve:
+
+      LEARNING PROCEDURES:
+      - How do they acquire new knowledge?
+      - What sources do they use?
+      - How do they validate what they learn?
+      - How do they integrate new with existing?
+
+      TEACHING PROCEDURES:
+      - How do they structure explanations?
+      - What examples do they choose?
+      - How do they handle confusion?
+      - What do they emphasize?
+
+      THINKING PROCEDURES:
+      - How do they approach problems?
+      - What mental models do they use?
+      - How do they make decisions?
+
+      IMPROVEMENT PROCEDURES:
+      - How do they refine their methods?
+      - How do they handle failure?
+      - How do they incorporate feedback?
+      - How do they know when something is "good enough"?
+
+      Meta-procedures are often the most transferable.
+    inputs:
+      - source
+      - explicit_procedures (from Step 5)
+      - implicit_procedures (from Step 6)
+    outputs:
+      - meta_procedures: list of meta-level procedures
+    verification: |
+      Meta-procedures capture how they think, not just what they do
+
+  - id: 8
+    name: Excavate tacit knowledge
+    action: |
+      Surface knowledge they have but don't state:
+
+      Techniques:
+      1. Assumption Surfacing
+         - "What must be true for this to work?"
+         - "What do they take for granted?"
+         - "What would a beginner miss?"
+         - "What 'obvious' thing isn't obvious?"
+
+      2. Expert Blind Spot Detection
+         - "What do they skip because it's automatic?"
+         - "Where do they use jargon without explaining?"
+         - "What intermediate steps are missing?"
+         - "What do they 'just know'?"
+
+      3. Failure Mode Inference
+         - "What could go wrong that they don't mention?"
+         - "What warnings would an expert give?"
+         - "What mistakes did they probably make learning this?"
+
+      4. Context Dependency Mapping
+         - "When would this NOT work?"
+         - "What conditions are assumed?"
+         - "What resources are assumed?"
+
+      Confidence: LOW for tacit knowledge (needs validation)
+    inputs:
+      - source
+      - all procedures from Steps 5-7
+    outputs:
+      - tacit_knowledge: list of inferred unstated knowledge
+      - validation_needed: how to verify each inference
+    verification: |
+      Tacit knowledge explicitly marked as inference requiring validation
+
+  - id: 9
+    name: Formalize procedures
+    action: |
+      Convert raw extractions to GOSM format:
+
+      For each procedure, create structured YAML:
+      ```yaml
+      name: [procedure_name]
+      version: "1.0"
+      source:
+        origin: "[Source name]"
+        creator: "[Who]"
+        location: "[Where in source]"
+        extraction_date: "[Date]"
+        confidence: "[HIGH/MEDIUM/LOW]"
+
+      description: |
+        [What this procedure does]
+
+      when_to_use:
+        - [Trigger condition 1]
+        - [Trigger condition 2]
+
+      inputs:
+        [input_name]:
+          description: "[What it is]"
+          required: [true/false]
+
+      outputs:
+        [output_name]:
+          description: "[What it produces]"
+
+      steps:
+        - id: 1
+          name: "[Step name]"
+          action: "[What to do]"
+        - id: 2
+          name: "[Step name]"
+          action: "[What to do]"
+
+      verification:
+        - "[How to know it worked]"
+
+      failure_modes:
+        - mode: "[What can go wrong]"
+          resolution: "[What to do]"
+
+      notes:
+        - "[Additional context]"
+        - "[Caveats]"
+      ```
+
+      Fill gaps where possible, mark unknowns explicitly.
+    inputs:
+      - all procedures from Steps 5-8
+    outputs:
+      - formalized_procedures: GOSM-format procedure files
+    verification: |
+      Each procedure has all required GOSM fields
+
+  - id: 10
+    name: Assess completeness
+    action: |
+      Rate how complete and usable each procedure is:
+
+      COMPLETE:
+      - Could be used immediately by someone unfamiliar
+      - All steps explicit
+      - All inputs defined
+      - Verification clear
+      - Failure modes covered
+
+      USABLE:
+      - Could be used with some domain knowledge
+      - Core steps clear
+      - Some gaps but manageable
+      - Verification possible
+
+      PARTIAL:
+      - Needs more work before use
+      - Key steps identified
+      - Significant gaps remain
+      - Would need expert to fill in
+
+      SKETCH:
+      - Rough outline only
+      - General shape visible
+      - Most details missing
+      - Starting point for further extraction
+
+      Categorize each procedure and note what's needed to improve.
+    inputs:
+      - formalized_procedures (from Step 9)
+    outputs:
+      - completeness_ratings: rating per procedure
+      - improvement_needs: what each procedure needs to reach COMPLETE
+    verification: |
+      Each procedure has completeness rating with justification
+
+  - id: 11
+    name: Validate extractions
+    action: |
+      Verify extraction quality:
+
+      1. Internal Consistency
+         - Do steps follow logically?
+         - Are inputs sufficient for outputs?
+         - Are there circular dependencies?
+         - Does verification actually verify?
+
+      2. Source Fidelity
+         - Re-read source with procedure in hand
+         - Does procedure match observed behavior?
+         - Did we add anything not in source?
+         - Did we miss anything important?
+
+      3. Usefulness Test
+         - Read procedure cold - is it clear?
+         - Simulate following it - do you get stuck?
+         - Compare to existing procedures - is it better/different?
+         - Would you use this yourself?
+
+      4. Uniqueness Check
+         - Does similar procedure already exist in library?
+         - If yes, is this better or just different?
+         - What unique value does this add?
+
+      Decision: add / merge / enhance existing / skip
+    inputs:
+      - formalized_procedures (from Step 9)
+      - existing library
+    outputs:
+      - validation_results: pass/fail per procedure with issues
+      - integration_decisions: add/merge/enhance/skip for each
+    verification: |
+      Each procedure has clear integration decision
+
+  - id: 12
+    name: Integrate into library
+    action: |
+      Add validated procedures to GOSM library:
+
+      1. Create procedure file:
+         Path: library/procedures/extracted/[source_type]/[source_name]/[procedure_name].yaml
+
+      2. Update indexes:
+         - library/procedures/extracted/EXTRACTED_PROCEDURES_INDEX.md
+         - Any domain-specific indexes
+
+      3. Cross-reference with related procedures:
+         - Find similar procedures
+         - Note relationships in both
+
+      4. Create extraction log entry:
+         - Source name and type
+         - Creator
+         - Procedures extracted (count by type)
+         - Time spent
+         - Value assessment
+    inputs:
+      - formalized_procedures (from Step 9)
+      - integration_decisions (from Step 11)
+    outputs:
+      - library_files: paths to created procedure files
+      - index_updates: changes to index files
+      - extraction_log_entry: record of this extraction
+    verification: |
+      Files created, indexes updated, log entry recorded
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Source was assessed for value before deep extraction
+  - Explicit procedures have verbatim source quotes
+  - Implicit procedures have evidence from source
+  - Tacit knowledge is clearly marked as inference
+  - All procedures are in valid GOSM format
+  - Completeness ratings reflect actual usability
+  - Integration decisions are justified
+  - Extraction logged for future reference
+
+failure_modes:
+  - mode: Hallucination
+    symptom: Extracted procedure not actually in source
+    resolution: Always cite specific source location, re-verify against source
+
+  - mode: Over-interpretation
+    symptom: Adding steps or details not supported by source
+    resolution: Distinguish inference from observation, mark confidence levels
+
+  - mode: Missing context
+    symptom: Procedure works in source context but not generally
+    resolution: Document context dependencies, test with different contexts
+
+  - mode: Expert curse
+    symptom: Extracted procedure assumes too much knowledge
+    resolution: Test with novice perspective, fill in missing basics
+
+  - mode: Low signal extraction
+    symptom: Spending time on low-value sources
+    resolution: Use value assessment strictly, stop early if value drops
+
+  - mode: Format over substance
+    symptom: Procedures look complete but aren't useful
+    resolution: Test each procedure by trying to use it
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Extract from Veritasium video on learning
+    context: YouTube video on effective learning techniques
+    inputs:
+      source:
+        type: youtube_video
+        content: "[transcript]"
+        url: "https://youtube.com/..."
+      source_metadata:
+        creator: "Derek Muller (Veritasium)"
+        domain: "learning science"
+        reputation: "PhD in physics education, research-backed"
+        length: "15 minutes"
+      extraction_focus: learning
+    process: |
+      1. Surface scan:
+         - Structure: Introduction, 4 main points, summary
+         - Procedure density: HIGH (mostly how-to)
+
+      2. Creator analysis:
+         - Credibility: HIGH - PhD, peer-reviewed research
+
+      3. Identify signals:
+         - Explicit: "The four things it takes to become an expert are..."
+         - Implicit: Consistent use of diagrams before formulas
+         - Meta: How he transforms research into explanations
+
+      4. Value assessment: HIGH - unique, evidence-based, transferable
+
+      5. Extract explicit:
+         - "Deliberate Practice Protocol" - 4 steps directly stated
+
+      6. Extract implicit:
+         - "Visual Explanation Design" - pattern in presentation
+
+      7. Extract meta:
+         - "Research to Video Pipeline" - how he creates content
+
+      8. Tacit knowledge:
+         - Audience calibration (inferred, needs validation)
+
+      9. Formalize: 3 procedures in GOSM format
+
+      10. Completeness: 1 COMPLETE, 2 USABLE
+
+      11. Validate: All pass, unique to library
+
+      12. Integrate: Create 3 files, update index
+    expected_output:
+      extracted_procedures:
+        - name: "deliberate_practice_protocol"
+          confidence: HIGH
+          completeness: COMPLETE
+        - name: "visual_explanation_design"
+          confidence: MEDIUM
+          completeness: USABLE
+        - name: "research_to_video_pipeline"
+          confidence: MEDIUM
+          completeness: USABLE
+      gaps_identified:
+        - "How he calibrates to audience (tacit)"
+      source_value_assessment: HIGH
+
+  - name: Extract from research paper on decision-making
+    context: Academic paper on expert decision-making
+    inputs:
+      source:
+        type: research_paper
+        content: "[paper text]"
+        url: "https://doi.org/..."
+      source_metadata:
+        creator: "Klein et al."
+        domain: "cognitive psychology"
+        reputation: "Highly cited, foundational work"
+        length: "25 pages"
+      extraction_focus: decision_making
+    process: |
+      1. Surface scan:
+         - Methods section is primary target
+         - Figures contain implicit procedures
+
+      2. Creator analysis:
+         - Gary Klein - founder of naturalistic decision making
+         - Credibility: VERY HIGH
+
+      3-12. [Standard extraction process]
+    expected_output:
+      extracted_procedures:
+        - name: "recognition_primed_decision"
+          confidence: HIGH
+          completeness: COMPLETE
+        - name: "mental_simulation_evaluation"
+          confidence: HIGH
+          completeness: USABLE
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Building procedure library from curated external sources
+    - Learning from experts systematically
+    - Cross-domain knowledge transfer
+    - Continuous library enrichment from new content
+
+  gates:
+    - gate: source_assessed
+      question: "Has the source been assessed for extraction value?"
+
+    - gate: extraction_complete
+      question: "Have all four extraction types been attempted?"
+
+    - gate: procedures_validated
+      question: "Have extracted procedures been validated for quality?"
+
+    - gate: library_integrated
+      question: "Are procedures properly filed and indexed?"
+
+  related_procedures:
+    - source_prioritization: Prioritize which sources to extract first
+    - procedure_extraction: Extract from your own completed projects
+    - automated_extraction_pipeline: Scale up extraction with automation
+    - procedure_improvement: Improve extracted procedures over time
+
+# ============================================
+# SOURCE-SPECIFIC TIPS
+# ============================================
+source_specific_tips:
+  youtube_video:
+    - Watch at 1.5x for overview, 1x for extraction
+    - Pause at each decision point
+    - Note what they DO vs what they SAY
+    - Check description for links/resources
+    - Comments may contain clarifications
+
+  research_paper:
+    - Methods section is primary extraction target
+    - Figures often contain implicit procedures
+    - Citations may lead to fuller explanations
+    - Supplementary materials may have details
+
+  book:
+    - Focus on chapters with "how", "steps", "process"
+    - Skip to examples if theory is dense
+    - Check index for procedure-related terms
+
+  tool_documentation:
+    - Tutorials often have implicit procedures
+    - Configuration reveals decision points
+    - Issue trackers reveal failure modes
+
+  observed_behavior:
+    - Observe multiple instances
+    - Ask "why" at each step (if possible)
+    - Note variations between instances

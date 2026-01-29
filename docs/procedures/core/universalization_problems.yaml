@@ -1,0 +1,270 @@
+id: universalization_problems
+name: Problem-Finding Universalization Procedure
+version: 1.0.0
+description: |
+  Apply universalization to find problems by identifying system class,
+  stakeholder patterns, and lifecycle stages, then deriving problems
+  that are universal to those patterns.
+
+  VALIDATED: Tested on "What problems might our product have?" - produced
+  non-obvious insight "focus on transition problems, not just steady-state"
+  by universalizing lifecycle to acquisition→onboarding→use→renewal stages.
+
+inputs:
+  - name: system
+    type: string
+    description: The system, situation, or domain to examine for problems
+  - name: known_problems
+    type: array
+    description: Problems already identified
+  - name: focus_area
+    type: string
+    description: Optional area to focus problem search
+
+outputs:
+  - name: system_class
+    type: string
+    description: Universal category this system belongs to
+  - name: universal_problems
+    type: array
+    description: Problems that occur in this system class
+  - name: stakeholder_problems
+    type: object
+    description: Problems mapped by stakeholder
+  - name: lifecycle_problems
+    type: array
+    description: Problems by lifecycle stage and transition
+  - name: novel_problems
+    type: array
+    description: Problems not in known_problems that emerged through universalization
+  - name: highest_leverage
+    type: string
+    description: Which problem is most important to solve
+
+gates:
+  - id: system_defined
+    type: entry
+    check: Is the system clearly enough defined to universalize?
+    fail_action: Ask user to clarify system boundaries and purpose
+
+  - id: system_universalized
+    type: process
+    check: Was the system classified into a universal system class?
+    fail_action: Apply instance-to-category to identify system class
+
+  - id: stakeholders_enumerated
+    type: process
+    check: Were all stakeholder classes identified?
+    fail_action: Apply perspective rotation to find missing stakeholders
+
+  - id: lifecycle_mapped
+    type: process
+    check: Was the system lifecycle mapped with stages and transitions?
+    fail_action: Identify lifecycle stages and transition points
+
+  - id: universal_problems_applied
+    type: quality
+    check: Were known universal problem patterns applied to this system?
+    fail_action: Apply problem patterns for this system class
+
+  - id: novel_problem_found
+    type: exit
+    check: Did at least one problem emerge that wasn't in known_problems?
+    fail_action: Try different system class; examine transitions more closely
+
+steps:
+  - id: define_system
+    prompt: |
+      Define the system to examine:
+
+      System: "{system}"
+
+      Identify:
+      - PURPOSE: What is this system for?
+      - BOUNDARIES: Where does the system start and end?
+      - COMPONENTS: What are the main parts?
+      - ENVIRONMENT: What external factors affect it?
+      - INPUTS/OUTPUTS: What goes in, what comes out?
+
+      List each clearly.
+    gate: system_defined
+
+  - id: universalize_system
+    prompt: |
+      UNIVERSALIZE THE SYSTEM
+
+      Apply instance-to-category:
+      - What is this system an instance of?
+      - What class of systems does it belong to?
+
+      Common system classes:
+      - Information system (processes information)
+      - Value-delivery system (delivers value to users)
+      - Coordination system (aligns multiple parties)
+      - Transformation system (changes inputs to outputs)
+      - Control system (maintains desired state)
+      - Learning system (improves over time)
+
+      Then apply parameter variation:
+      - What other systems share this class?
+      - What makes this system different from siblings?
+
+      Example:
+      "Our product" → "Software product" → "Value-delivery system"
+      Siblings: Other SaaS products, physical products, services
+
+      Record:
+      - System class: [name]
+      - Universal properties of this class: [list]
+      - Sibling systems: [list]
+      - [T:result] System universalized to class: [name]
+    gate: system_universalized
+
+  - id: enumerate_stakeholders
+    prompt: |
+      ENUMERATE ALL STAKEHOLDERS
+
+      Apply perspective rotation:
+      Who has a stake in this system?
+
+      Common stakeholder categories:
+      - USERS: Who uses the system directly?
+      - BUYERS: Who pays for it? (may differ from users)
+      - OPERATORS: Who runs/maintains it?
+      - BUILDERS: Who creates/modifies it?
+      - AFFECTED: Who is affected by its operation?
+      - COMPETITORS: Who competes with it?
+      - REGULATORS: Who governs it?
+
+      For each stakeholder:
+      - What do they care about?
+      - What could go wrong FOR THEM?
+
+      [T:result] Identified [N] stakeholder classes
+    gate: stakeholders_enumerated
+
+  - id: map_lifecycle
+    prompt: |
+      MAP THE LIFECYCLE
+
+      Apply temporal variation:
+      What stages does this system go through?
+
+      Common lifecycle patterns:
+      - Product: Acquisition → Onboarding → Daily Use → Advanced Use → Renewal/Churn
+      - Project: Initiation → Planning → Execution → Monitoring → Closure
+      - Relationship: Discovery → Evaluation → Commitment → Engagement → Renewal
+      - System: Design → Build → Deploy → Operate → Evolve → Retire
+
+      For this system, identify:
+      - STAGES: What are the distinct phases?
+      - TRANSITIONS: What moves the system from one stage to next?
+      - FAILURE POINTS: Where do transitions often fail?
+
+      Example:
+      Product lifecycle stages: Acquisition → Onboarding → Daily Use → Renewal
+      Transition failure points: Onboarding dropout, Feature discovery failure
+
+      [T:result] Mapped [N] lifecycle stages with [M] transition points
+    gate: lifecycle_mapped
+
+  - id: apply_universal_problems
+    prompt: |
+      APPLY UNIVERSAL PROBLEM PATTERNS
+
+      For system class "{system_class}", apply known problem patterns:
+
+      VALUE-DELIVERY SYSTEMS typically suffer from:
+      - Value proposition unclear or wrong
+      - Value not perceived by user
+      - Value delivery unreliable
+      - Competition delivers more value
+
+      INFORMATION SYSTEMS typically suffer from:
+      - Data quality problems
+      - Processing errors
+      - Latency/performance issues
+      - Security/privacy vulnerabilities
+
+      COORDINATION SYSTEMS typically suffer from:
+      - Communication breakdowns
+      - Incentive misalignment
+      - Trust erosion
+      - Scaling failures
+
+      For EACH universal problem pattern:
+      - Does this apply to our system?
+      - What's the specific manifestation here?
+      - How severe might it be?
+
+      [T:result] Applied [N] universal problem patterns; [M] relevant
+    gate: universal_problems_applied
+
+  - id: derive_stakeholder_problems
+    prompt: |
+      DERIVE STAKEHOLDER-SPECIFIC PROBLEMS
+
+      For each stakeholder from step 3:
+
+      What universal problems do stakeholders of this type have?
+      - Users: Confusion, frustration, unmet needs, switching costs
+      - Buyers: ROI unclear, budget constraints, procurement friction
+      - Operators: Reliability, observability, incident response
+      - Builders: Technical debt, complexity, velocity
+
+      Map: Stakeholder → Universal problem → Specific manifestation here
+
+      Identify which stakeholder problems are:
+      - KNOWN: Already in known_problems
+      - NOVEL: Not previously identified
+
+  - id: derive_lifecycle_problems
+    prompt: |
+      DERIVE LIFECYCLE PROBLEMS
+
+      For each STAGE from step 4:
+      - What typically goes wrong at this stage?
+
+      For each TRANSITION from step 4:
+      - What causes transition failure?
+      - What's the dropout/failure rate?
+
+      KEY INSIGHT: Transition problems are often more important than
+      steady-state problems. A system can work well but fail at transitions.
+
+      Example:
+      - Onboarding → Daily Use transition: Users don't discover key features
+      - Daily Use → Renewal transition: Value not demonstrated
+
+      Identify which lifecycle problems are:
+      - KNOWN: Already identified
+      - NOVEL: Emerged through lifecycle analysis
+
+  - id: synthesize_and_prioritize
+    prompt: |
+      SYNTHESIZE AND PRIORITIZE
+
+      Collect all problems from:
+      - Universal problem patterns
+      - Stakeholder-specific problems
+      - Lifecycle problems
+      - Transition problems
+
+      Compare to known_problems: {known_problems}
+
+      For NOVEL problems (not in known_problems):
+      - How severe if unaddressed?
+      - How likely to occur?
+      - How difficult to solve?
+      - Who is affected?
+
+      Rank by: Severity × Likelihood × (1 / Difficulty)
+
+      Identify HIGHEST LEVERAGE problem to address.
+
+      Verification:
+      - [T:result] Total problems identified: [N]
+      - [T:result] Novel problems (not in known): [M]
+      - [T:result] Highest leverage: [description]
+      - [T:result] Why highest leverage: [reasoning]
+    gate: novel_problem_found

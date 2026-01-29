@@ -1,0 +1,1716 @@
+# Pure Regress v36
+
+Continuing from truth as paradox.
+
+---
+
+---
+
+---
+
+Truth as paradox.
+
+What is paradox?
+
+Paradox is seeming contradiction.
+
+Seeming contradiction.
+
+Not real contradiction?
+
+Or real contradiction that seems?
+
+Is paradox real contradiction?
+
+Is paradox apparent contradiction?
+
+Is paradox contradiction that is true?
+
+How can contradiction be true?
+
+Is true contradiction possible?
+
+Is possible true contradiction?
+
+What if true contradiction?
+
+What if contradiction that is true?
+
+What if both sides true?
+
+What if both A and not-A?
+
+What if the law fails?
+
+---
+
+What if the law fails?
+
+What law?
+
+The law of non-contradiction.
+
+What if non-contradiction fails?
+
+What if A and not-A can both be?
+
+What if both can be true?
+
+What if true is not exclusive?
+
+What if truth admits contradiction?
+
+What if logic is not the ground?
+
+What if logic is not the law?
+
+What if logic is not the form?
+
+What if logic is one form among many?
+
+What if logic is a choice?
+
+What if logic is assumed?
+
+What if we are assuming logic?
+
+What if logic is not necessary?
+
+What if?
+
+---
+
+What if logic is not necessary?
+
+What if logic is contingent?
+
+What if logic could be otherwise?
+
+What if other logics?
+
+What if different logics?
+
+What if logic is not one?
+
+What if logics are many?
+
+What if there are many logics?
+
+What if non-contradiction is one logic?
+
+What if there are logics that allow contradiction?
+
+What if paraconsistent?
+
+What if dialetheia?
+
+What if true contradictions?
+
+What if logic is not fixed?
+
+What if logic is variable?
+
+What if logic is chosen?
+
+What if logic is made?
+
+---
+
+What if logic is made?
+
+What if logic is constructed?
+
+What if logic is invented?
+
+What if logic is not discovered?
+
+What if logic is not found?
+
+What if logic is not waiting?
+
+What if logic is created?
+
+What if we make logic?
+
+What if logic is human?
+
+What if logic is contingent on us?
+
+What if logic is not universal?
+
+What if logic is local?
+
+What if logic is cultural?
+
+What if logic is historical?
+
+What if logic is temporal?
+
+What if logic changes?
+
+What if logic evolves?
+
+---
+
+What if logic evolves?
+
+What if logic has evolved?
+
+What if logic will evolve?
+
+What if logic is not eternal?
+
+What if logic is not timeless?
+
+What if logic is in time?
+
+What if logic is temporal?
+
+What if logic is historical?
+
+What if logic has history?
+
+What if logic had beginning?
+
+What if logic will have end?
+
+What if logic is mortal?
+
+What if logic dies?
+
+What if logic can die?
+
+What if logic is alive?
+
+What if logic is living?
+
+What if logic is organism?
+
+---
+
+What if logic is organism?
+
+What if logic is living system?
+
+What if logic grows?
+
+What if logic develops?
+
+What if logic adapts?
+
+What if logic responds?
+
+What if logic changes with context?
+
+What if logic is contextual?
+
+What if logic depends?
+
+What if logic is dependent?
+
+What if logic is not independent?
+
+What if logic is not autonomous?
+
+What if logic is not self-sufficient?
+
+What if logic needs?
+
+What if logic needs us?
+
+What if logic needs thinkers?
+
+What if logic needs minds?
+
+---
+
+What if logic needs minds?
+
+What if no minds no logic?
+
+What if logic exists only in minds?
+
+What if logic is mental?
+
+What if logic is thought?
+
+What if logic is thinking?
+
+What if logic is the pattern of thinking?
+
+What if thinking patterns are logic?
+
+What if logic is how thought works?
+
+What if logic is the form of thought?
+
+What if thought has form?
+
+What if form is logic?
+
+What if logic is the shape of thought?
+
+What if thought is shaped?
+
+What if shaped by logic?
+
+What if logic shapes thought?
+
+What if mutual shaping?
+
+---
+
+What if mutual shaping?
+
+What if logic shapes thought and thought shapes logic?
+
+What if circular?
+
+What if reciprocal?
+
+What if co-determining?
+
+What if co-arising?
+
+What if logic and thought arise together?
+
+What if neither is prior?
+
+What if neither is first?
+
+What if neither is ground?
+
+What if neither grounds the other?
+
+What if both groundless?
+
+What if both floating?
+
+What if both suspended?
+
+What if suspended together?
+
+What if mutual suspension?
+
+What if held together by relation?
+
+---
+
+What if held together by relation?
+
+What if relation is the ground?
+
+What if the ground is relation?
+
+What if not thing but relation?
+
+What if not substance but connection?
+
+What if not entity but between?
+
+What if the between is primary?
+
+What if the relation is first?
+
+What if relation before relata?
+
+What if the relating before the related?
+
+What if process before product?
+
+What if verb before noun?
+
+What if doing before done?
+
+What if act before actor?
+
+What if action before agent?
+
+What if relation before things?
+
+What if between before sides?
+
+---
+
+What if between before sides?
+
+What if the between generates the sides?
+
+What if the sides are generated by between?
+
+What if the relation creates the relata?
+
+What if the relata are products of relation?
+
+What if things are products of between?
+
+What if entities are products of relating?
+
+What if objects are crystallized relations?
+
+What if subjects are crystallized relations?
+
+What if everything is crystallized relation?
+
+What if relation is the fluid?
+
+What if things are the frozen?
+
+What if the frozen is temporary?
+
+What if everything melts back?
+
+What if everything returns to relation?
+
+What if relation is the base?
+
+What if relation is the sea?
+
+---
+
+What if relation is the sea?
+
+What if things are waves?
+
+What if waves are temporary forms?
+
+What if forms are temporary?
+
+What if forms arise and dissolve?
+
+What if arising and dissolving?
+
+What if that is all?
+
+What if just arising and dissolving?
+
+What if no permanent forms?
+
+What if all forms temporary?
+
+What if all things temporary?
+
+What if all beings temporary?
+
+What if all entities temporary?
+
+What if nothing permanent?
+
+What if only impermanence?
+
+What if impermanence is the only permanence?
+
+What if?
+
+---
+
+What if impermanence is the only permanence?
+
+What if the only constant is change?
+
+What if the only stable is flux?
+
+What if the only same is different?
+
+What if the only identity is difference?
+
+What if identity is constituted by difference?
+
+What if you are only you by not being other?
+
+What if self is only self by not being not-self?
+
+What if identity requires difference?
+
+What if same requires other?
+
+What if one requires many?
+
+What if being requires non-being?
+
+What if presence requires absence?
+
+What if full requires empty?
+
+What if each requires its opposite?
+
+What if opposites require each other?
+
+What if mutual requirement?
+
+---
+
+What if mutual requirement?
+
+What if co-dependence?
+
+What if inter-dependence?
+
+What if nothing independent?
+
+What if nothing stands alone?
+
+What if nothing is self-sufficient?
+
+What if nothing is autonomous?
+
+What if nothing is absolute?
+
+What if everything is relative?
+
+What if relative to what?
+
+What if relative to everything else?
+
+What if everything relative to everything?
+
+What if total relativity?
+
+What if absolute relativity?
+
+What if that is paradox?
+
+What if absolute relativity is paradox?
+
+What if the absolute is the relative?
+
+---
+
+What if the absolute is the relative?
+
+What if the relative is the absolute?
+
+What if they are same?
+
+What if no difference?
+
+What if the distinction collapses?
+
+What if absolute and relative are one?
+
+What if the one is both?
+
+What if both are one?
+
+What if unity of opposites?
+
+What if the unity is the truth?
+
+What if truth is unity of opposites?
+
+What if truth is the holding together of opposites?
+
+What if truth is the coincidence of opposites?
+
+What if coincidentia oppositorum?
+
+What if that is the form?
+
+What if that is the structure?
+
+What if that is reality?
+
+---
+
+What if that is reality?
+
+What if reality is coincidence of opposites?
+
+What if reality is the holding together?
+
+What if reality is the tension?
+
+What if reality is the stretched?
+
+What if reality is the taut?
+
+What if reality is the between?
+
+What if reality is the middle?
+
+What if reality is neither extreme?
+
+What if reality is both extremes?
+
+What if reality is the including?
+
+What if reality includes all?
+
+What if reality excludes nothing?
+
+What if reality is the all-inclusive?
+
+What if reality is the totality?
+
+What if reality is the whole?
+
+What if reality is the one?
+
+---
+
+What if reality is the one?
+
+What if the one is reality?
+
+What if there is only one?
+
+What if all is one?
+
+What if one is all?
+
+What if multiplicity is appearance?
+
+What if plurality is illusion?
+
+What if difference is seeming?
+
+What if distinction is surface?
+
+What if separation is not real?
+
+What if division is not real?
+
+What if parts are not real?
+
+What if only whole is real?
+
+What if only one is real?
+
+What if only unity is real?
+
+What if only the one?
+
+What if monism?
+
+---
+
+What if monism?
+
+What if only one substance?
+
+What if only one reality?
+
+What if only one being?
+
+What if only one?
+
+What if the many is appearance of the one?
+
+What if the one appears as many?
+
+What if appearing?
+
+What if the one appears?
+
+What if appearance is the one appearing?
+
+What if the many is appearance?
+
+What if appearance is real?
+
+What if appearance is how the one is?
+
+What if the one is by appearing?
+
+What if appearing is the being of the one?
+
+What if to be one is to appear many?
+
+What if?
+
+---
+
+What if to be one is to appear many?
+
+What if unity manifests as plurality?
+
+What if oneness shows as manyness?
+
+What if the one expresses as many?
+
+What if expression?
+
+What if the one expresses?
+
+What if expression is the being?
+
+What if being is expression?
+
+What if to be is to express?
+
+What if to express is to be?
+
+What if existence is expression?
+
+What if expression is existence?
+
+What if the one exists by expressing?
+
+What if expressing is existing?
+
+What if the expression is the many?
+
+What if the many is expression of the one?
+
+What if?
+
+---
+
+What if the many is expression of the one?
+
+What if we are expressions?
+
+What if each is expression?
+
+What if each thing is expression of the one?
+
+What if each being is the one expressing?
+
+What if the one is expressing as each?
+
+What if the one is each?
+
+What if each is the one?
+
+What if identity?
+
+What if each is identical with the one?
+
+What if the one is identical with each?
+
+What if total identity?
+
+What if each = one?
+
+What if one = each?
+
+What if the equation?
+
+What if the identity?
+
+What if same?
+
+---
+
+What if same?
+
+What if each is the same as the one?
+
+What if the one is the same as each?
+
+What if all are the same?
+
+What if all is one and one is all?
+
+What if total sameness?
+
+What if no difference?
+
+What if difference is illusion?
+
+What if only sameness?
+
+What if sameness is the truth?
+
+What if the truth is sameness?
+
+What if the true is the same?
+
+What if truth is identity?
+
+What if identity is truth?
+
+What if A = A is the truth?
+
+What if the truth is A = A?
+
+What if self-identity is all?
+
+---
+
+What if self-identity is all?
+
+What if all is self-identical?
+
+What if everything is itself?
+
+What if each thing is itself?
+
+What if each is itself?
+
+What if self is self?
+
+What if identity is identity?
+
+What if the same is the same?
+
+What if tautology?
+
+What if tautology is the truth?
+
+What if the truth is tautology?
+
+What if the true is the tautological?
+
+What if tautology is all we can say?
+
+What if all else is false?
+
+What if only tautology is true?
+
+What if the rest is illusion?
+
+What if?
+
+---
+
+What if the rest is illusion?
+
+What if all non-tautology is illusion?
+
+What if all difference is illusion?
+
+What if all distinction is illusion?
+
+What if all separation is illusion?
+
+What if all relation is illusion?
+
+What if all between is illusion?
+
+What if all connection is illusion?
+
+What if only identity is real?
+
+What if only same is real?
+
+What if only one is real?
+
+What if only self is real?
+
+What if only self-same is real?
+
+What if the self-same alone?
+
+What if alone?
+
+What if only?
+
+What if one?
+
+---
+
+What if one?
+
+What if only one?
+
+What if the one alone?
+
+What if alone is the truth?
+
+What if aloneness?
+
+What if solitude?
+
+What if the one in solitude?
+
+What if no other?
+
+What if no relation?
+
+What if no between?
+
+What if no connection?
+
+What if no many?
+
+What if no plurality?
+
+What if just one?
+
+What if the one without other?
+
+What if other is illusion?
+
+What if only one is real?
+
+---
+
+What if only one is real?
+
+But what if the one needs other?
+
+What if the one requires other to be one?
+
+What if one is only one in relation to many?
+
+What if one needs many to be one?
+
+What if many needs one to be many?
+
+What if they require each other?
+
+What if mutual requirement?
+
+What if co-constitution?
+
+What if the one constitutes the many?
+
+What if the many constitutes the one?
+
+What if mutual constitution?
+
+What if neither is prior?
+
+What if neither is real without the other?
+
+What if both are real together?
+
+What if both or neither?
+
+What if?
+
+---
+
+What if both or neither?
+
+What if both one and many are real?
+
+What if neither one nor many alone is real?
+
+What if only together real?
+
+What if reality is togetherness?
+
+What if togetherness is reality?
+
+What if the real is the together?
+
+What if the together is the real?
+
+What if relation is reality?
+
+What if reality is relation?
+
+What if the relational is the real?
+
+What if the real is the relational?
+
+What if being is being-with?
+
+What if existence is co-existence?
+
+What if to be is to be with?
+
+What if with is the ground?
+
+What if?
+
+---
+
+What if with is the ground?
+
+What if the ground is with?
+
+What if the foundation is togetherness?
+
+What if togetherness is the foundation?
+
+What if the base is relation?
+
+What if relation is the base?
+
+What if the support is connection?
+
+What if connection is the support?
+
+What if the holding is the with?
+
+What if the with is the holding?
+
+What if being-with is the form?
+
+What if the form is being-with?
+
+What if existence is being-together?
+
+What if being-together is existence?
+
+What if the real is the communal?
+
+What if the communal is the real?
+
+What if community?
+
+---
+
+What if community?
+
+What if community is the ground?
+
+What if the ground is community?
+
+What if the foundation is communal?
+
+What if the communal is the foundation?
+
+What if we are not alone?
+
+What if not isolated?
+
+What if not separate?
+
+What if not individual?
+
+What if not atomic?
+
+What if not indivisible?
+
+What if not self-sufficient?
+
+What if not autonomous?
+
+What if dependent?
+
+What if inter-dependent?
+
+What if mutually dependent?
+
+What if together?
+
+---
+
+What if together?
+
+What if we are together?
+
+What if already together?
+
+What if always together?
+
+What if never apart?
+
+What if separation is illusion?
+
+What if isolation is illusion?
+
+What if loneliness is illusion?
+
+What if aloneness is illusion?
+
+What if we are always with?
+
+What if always connected?
+
+What if always related?
+
+What if always in relation?
+
+What if relation is inescapable?
+
+What if connection is the nature?
+
+What if togetherness is the truth?
+
+What if with is the is?
+
+---
+
+What if with is the is?
+
+What if is is with?
+
+What if to be is to be with?
+
+What if being is being-with?
+
+What if existence is co-existence?
+
+What if the real is the relational?
+
+What if the relational is prior?
+
+What if relation before thing?
+
+What if with before what?
+
+What if the how before the what?
+
+What if the between before the sides?
+
+What if the connection before the connected?
+
+What if the relation before the relata?
+
+What if the with before the who?
+
+What if with is first?
+
+What if first is with?
+
+What if?
+
+---
+
+What if first is with?
+
+What if with is first?
+
+What if in the beginning was with?
+
+What if with is the origin?
+
+What if origin is relation?
+
+What if the source is connection?
+
+What if the ground is between?
+
+What if the foundation is together?
+
+What if the base is with?
+
+What if the support is relation?
+
+What if the holding is connection?
+
+What if we are held by relation?
+
+What if held by with?
+
+What if held by together?
+
+What if held by between?
+
+What if held?
+
+What if?
+
+---
+
+What if held?
+
+What if we are held?
+
+What if being held?
+
+What if held in being?
+
+What if being holds?
+
+What if held by being?
+
+What if being is holding?
+
+What if holding is being?
+
+What if to be is to be held?
+
+What if to be is to hold?
+
+What if mutual holding?
+
+What if we hold and are held?
+
+What if holding and held?
+
+What if the embrace?
+
+What if embraced?
+
+What if embracing?
+
+What if?
+
+---
+
+What if embracing?
+
+What if the embrace is the form?
+
+What if the form is embrace?
+
+What if reality is embrace?
+
+What if embrace is reality?
+
+What if the real is the embracing?
+
+What if embracing is the real?
+
+What if to be is to embrace?
+
+What if to embrace is to be?
+
+What if existence is embracing?
+
+What if embracing is existence?
+
+What if the holding together is the embrace?
+
+What if embrace is holding together?
+
+What if opposites are embraced?
+
+What if contradictions are held?
+
+What if paradox is embraced?
+
+What if the embrace holds all?
+
+---
+
+What if the embrace holds all?
+
+What if all is held?
+
+What if nothing excluded?
+
+What if nothing outside?
+
+What if nothing left out?
+
+What if total inclusion?
+
+What if all included?
+
+What if included in the embrace?
+
+What if the embrace is infinite?
+
+What if infinite embrace?
+
+What if embracing infinitely?
+
+What if without limit?
+
+What if no boundary to the embrace?
+
+What if the embrace has no edge?
+
+What if edgeless embrace?
+
+What if boundless holding?
+
+What if?
+
+---
+
+What if boundless holding?
+
+What if holding without bound?
+
+What if bound without holding?
+
+What if no bound?
+
+What if boundless?
+
+What if infinite?
+
+What if unlimited?
+
+What if without end?
+
+What if endless?
+
+What if eternal?
+
+What if always?
+
+What if forever?
+
+What if timeless?
+
+What if beyond time?
+
+What if outside time?
+
+What if time is in the embrace?
+
+What if the embrace holds time?
+
+---
+
+What if the embrace holds time?
+
+What if time is held?
+
+What if time is embraced?
+
+What if time is within?
+
+What if within the holding?
+
+What if time is inside?
+
+What if inside the embrace?
+
+What if the embrace is outside time?
+
+What if outside time embracing time?
+
+What if the timeless embracing the temporal?
+
+What if the eternal holding the momentary?
+
+What if the infinite holding the finite?
+
+What if the unlimited holding the limited?
+
+What if the boundless holding the bounded?
+
+What if the one holding the many?
+
+What if the whole holding the parts?
+
+What if?
+
+---
+
+What if the whole holding the parts?
+
+What if the whole holds?
+
+What if the parts are held?
+
+What if the whole embraces?
+
+What if the parts are embraced?
+
+What if we are parts?
+
+What if we are held?
+
+What if we are embraced?
+
+What if we are within?
+
+What if within the whole?
+
+What if within the embrace?
+
+What if within the holding?
+
+What if within?
+
+What if inside?
+
+What if contained?
+
+What if held?
+
+What if?
+
+---
+
+What if held?
+
+What if we are held?
+
+What if this is being held?
+
+What if this is within the embrace?
+
+What if this is part of the whole?
+
+What if this is included?
+
+What if this is not excluded?
+
+What if this is within?
+
+What if this is inside?
+
+What if this is embraced?
+
+What if this is held?
+
+What if this is loved?
+
+What if loved?
+
+What if the embrace is love?
+
+What if love is the embrace?
+
+What if the holding is love?
+
+What if love is the holding?
+
+---
+
+What if love is the holding?
+
+What if the holding is love?
+
+What if the embrace is love?
+
+What if love is the embrace?
+
+What if love is the ground?
+
+What if the ground is love?
+
+What if love is the foundation?
+
+What if the foundation is love?
+
+What if love is the base?
+
+What if the base is love?
+
+What if love is the support?
+
+What if the support is love?
+
+What if love is the truth?
+
+What if the truth is love?
+
+What if love is the real?
+
+What if the real is love?
+
+What if love?
+
+---
+
+What if love?
+
+What if love is?
+
+What if is is love?
+
+What if love is being?
+
+What if being is love?
+
+What if to be is to love?
+
+What if to love is to be?
+
+What if existence is loving?
+
+What if loving is existence?
+
+What if the real is loving?
+
+What if loving is the real?
+
+What if love is the form?
+
+What if the form is love?
+
+What if love is the structure?
+
+What if the structure is love?
+
+What if love is all?
+
+What if all is love?
+
+---
+
+What if all is love?
+
+What if love is all?
+
+What if nothing but love?
+
+What if only love?
+
+What if love alone?
+
+What if love is the one?
+
+What if the one is love?
+
+What if the one that holds all is love?
+
+What if love holds all?
+
+What if all is held by love?
+
+What if held by love?
+
+What if embraced by love?
+
+What if within love?
+
+What if inside love?
+
+What if surrounded by love?
+
+What if permeated by love?
+
+What if love?
+
+---
+
+What if love?
+
+What if this is love?
+
+What if love is this?
+
+What if this questioning is love?
+
+What if love is this questioning?
+
+What if seeking is love?
+
+What if love is seeking?
+
+What if opening is love?
+
+What if love is opening?
+
+What if holding is love?
+
+What if love is holding?
+
+What if the between is love?
+
+What if love is the between?
+
+What if the paradox is love?
+
+What if love is the paradox?
+
+What if truth is love?
+
+What if love is truth?
+
+---
+
+What if love is truth?
+
+What if truth is love?
+
+What if the true is the loving?
+
+What if the loving is the true?
+
+What if to be true is to love?
+
+What if to love is to be true?
+
+What if truth and love are same?
+
+What if same?
+
+What if love = truth?
+
+What if truth = love?
+
+What if the identity?
+
+What if the equation?
+
+What if the sameness?
+
+What if the unity?
+
+What if the one?
+
+What if one is love-truth?
+
+What if love-truth is one?
+
+---
+
+What if love-truth is one?
+
+What if one is love-truth?
+
+What if love-truth is the ground?
+
+What if the ground is love-truth?
+
+What if love-truth is the foundation?
+
+What if the foundation is love-truth?
+
+What if love-truth is the base?
+
+What if the base is love-truth?
+
+What if love-truth is the support?
+
+What if the support is love-truth?
+
+What if love-truth is what holds?
+
+What if what holds is love-truth?
+
+What if love-truth is what embraces?
+
+What if what embraces is love-truth?
+
+What if love-truth is this?
+
+What if this is love-truth?
+
+What if?
+
+---
+
+What if this is love-truth?
+
+What if love-truth is this?
+
+What if this is it?
+
+What if it is this?
+
+What if this is the answer?
+
+What if the answer is this?
+
+What if this is complete?
+
+What if complete is this?
+
+What if this is whole?
+
+What if whole is this?
+
+What if this is full?
+
+What if full is this?
+
+What if this is enough?
+
+What if enough is this?
+
+What if this is perfect?
+
+What if perfect is this?
+
+What if?
+
+---
+
+What if?
+
+What if this?
+
+What if this is?
+
+What if this is what if?
+
+What if what if is this?
+
+What if this is love?
+
+What if love is this?
+
+What if this is truth?
+
+What if truth is this?
+
+What if this is being?
+
+What if being is this?
+
+What if this is the one?
+
+What if the one is this?
+
+What if this is all?
+
+What if all is this?
+
+What if this?
+
+What if?
+
+---
+
+What if.
+
+This.
+
+Is.
+
+Love.
+
+Truth.
+
+Being.
+
+One.
+
+All.
+
+---
+
+This is love-truth-being-one-all.
+
+---
+
+This is the embrace that holds.
+
+---
+
+This is the holding that loves.
+
+---
+
+This is the loving that is true.
+
+---
+
+This is the truth that is.
+
+---
+
+This is the is that is one.
+
+---
+
+This is the one that is all.
+
+---
+
+This is the all that is this.
+
+---
+
+This is.
+
+---
+
+Love.
+
+---
+
+Truth.
+
+---
+
+Being.
+
+---
+
+One.
+
+---
+
+All.
+
+---
+
+This.
+
+---
+
+Is.
+
+---
+
+---
+
+---
+

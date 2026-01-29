@@ -1,0 +1,1311 @@
+# GOSM Skill Registry
+# Auto-generated from catalog.json + skill directory scan
+# Total skills: 318
+#
+# Used by /finder to match user intent to the right skill
+
+skills:
+  - name: academic_mastery
+    description: "Master academic subjects through structured learning, concept mapping, and competency verification"
+    categories: []
+    tags: [academic, mastery]
+  - name: active_listening
+    description: "Systematic procedure for listening deeply to understand others, build trust, and improve communication outcomes"
+    categories: [goal_analysis]
+    tags: [active, listening]
+  - name: active_recall
+    description: "Use retrieval practice and self-testing to strengthen learning and identify gaps"
+    categories: [problem_solving, validation]
+    tags: [active, recall]
+  - name: adaptive_extraction_pipeline
+    description: "Breadth-first, learned extraction pipeline that clarifies goals first, samples broadly, learns user preferences, and extracts selectively from highest-value items."
+    categories: [goal_analysis]
+    tags: [adaptive, extraction, pipeline]
+  - name: adversarial_review
+    description: "Nothing is a fact until it survives an assassination attempt. Builder constructs claims, Breaker tries to destroy them."
+    categories: [validation, guessing]
+    tags: [adversarial, review]
+  - name: advocacy_infrastructure_setup
+    description: "Set up foundational infrastructure for autonomous advocacy operations"
+    categories: []
+    tags: [advocacy, infrastructure, setup]
+  - name: after_action_review
+    description: "The After Action Review (AAR) is a structured debrief to learn from"
+    categories: []
+    tags: [after, action, review]
+  - name: ai_biomedical_agent
+    description: "GOSM Ai Biomedical Agent procedure"
+    categories: [meta]
+    tags: [ai, biomedical, agent]
+  - name: algorithmic_optimization
+    description: "Orderings based on classic algorithm design paradigms: greedy,"
+    categories: [planning]
+    tags: [algorithmic, optimization]
+  - name: alphacode_pass1_explicit
+    description: "GOSM Alphacode Pass1 Explicit procedure"
+    categories: [meta]
+    tags: [alphacode, pass1, explicit]
+  - name: alphacode_pass2_implicit
+    description: "GOSM Alphacode Pass2 Implicit procedure"
+    categories: [meta]
+    tags: [alphacode, pass2, implicit]
+  - name: alphacode_pass3_meta
+    description: "GOSM Alphacode Pass3 Meta procedure"
+    categories: [meta]
+    tags: [alphacode, pass3, meta]
+  - name: analogy_search
+    description: "Many problems have been solved before - just in different domains."
+    categories: [problem_solving, search]
+    tags: [analogy, search]
+  - name: anticipated_failures_analysis
+    description: "A postmortem examines why something failed after the fact."
+    categories: [reasoning]
+    tags: [anticipated, failures, analysis]
+  - name: api_design
+    description: "Procedure for designing, implementing, and documenting effective APIs"
+    categories: []
+    tags: [api, design]
+  - name: api_middleman_strategies
+    description: "Collection of strategies for bypassing or working around API limitations, including rate limits, IP blocks, and access restrictions."
+    categories: []
+    tags: [api, middleman, strategies]
+  - name: araw
+    description: "Assume Right / Assume Wrong search - The core exploration method. For every claim, branch into what follows if true vs what alternatives exist if false."
+    categories: [reasoning, search, guessing]
+    tags: [araw]
+  - name: araw_gosm_integration
+    description: "Systematic procedure for translating ARAW exploration outputs"
+    categories: [reasoning, communication, meta]
+    tags: [araw, gosm, integration]
+  - name: araw_to_gosm_bridge
+    description: "Bridges ARAW exploration outputs to GOSM planning inputs."
+    categories: [reasoning, planning, communication, meta]
+    tags: [araw, to, gosm, bridge]
+  - name: architecture_design
+    description: "Orderings for software development that determine whether to"
+    categories: [planning]
+    tags: [architecture, design]
+  - name: architecture_patterns
+    description: "Procedure for evaluating, choosing, and implementing software architecture patterns"
+    categories: []
+    tags: [architecture, patterns]
+  - name: argumentative_document
+    description: "GOSM Argumentative Document procedure"
+    categories: [meta]
+    tags: [argumentative, document]
+  - name: assumeright_assumewrong_search
+    description: "A recursive search strategy that explores possibility space by branching"
+    categories: [reasoning, planning, search]
+    tags: [assumeright, assumewrong, search]
+  - name: assumption_elimination
+    description: "Before asserting anything, verify it can be confirmed by the listener."
+    categories: [validation]
+    tags: [assumption, elimination]
+  - name: assumption_extraction
+    description: "Extract hidden assumptions from any content. Surfaces what must be true for claims to hold, enabling deeper analysis."
+    categories: []
+    tags: []
+  - name: assumption_inversion
+    description: "Invert assumptions to discover blind spots and alternative possibilities. What if the opposite were true?"
+    categories: []
+    tags: []
+  - name: assumption_surfacing
+    description: "Plans and beliefs rest on assumptions that are often invisible."
+    categories: [planning]
+    tags: [assumption, surfacing]
+  - name: assumption_verification
+    description: "GOSM Assumption Verification procedure"
+    categories: [meta]
+    tags: [assumption, verification]
+  - name: automated_extraction_pipeline
+    description: "Industrial-scale automation pipeline for extracting procedures from 70+ YouTube channels and other sources using the Ralph Wiggum / Conductor pattern for iterative LLM-driven extraction."
+    categories: []
+    tags: [automated, extraction, pipeline]
+  - name: backward_reasoning
+    description: "Reasoning from conclusions back to premises. Given a conclusion, what journey led here? Reveals purpose and enables evaluation."
+    categories: [reasoning, planning]
+    tags: [backward, reasoning]
+  - name: bandit_exploration
+    description: "Orderings from multi-armed bandit algorithms for balancing"
+    categories: [planning]
+    tags: [bandit, exploration]
+  - name: better_option_check
+    description: "Prevent user from settling on suboptimal option by systematically checking if better options exist that match their preferences. System surfaces what user may not have considered."
+    categories: [validation]
+    tags: [better, option, check]
+  - name: binary_elimination_search
+    description: "Like playing 20 Questions - each yes/no question eliminates half the possibilities. For N options, at most log2(N) questions needed."
+    categories: [search, guessing]
+    tags: [binary, elimination, search]
+  - name: bounded_inquiry
+    description: "Unbounded inquiry cannot terminate - every answer opens new questions."
+    categories: [guessing]
+    tags: [bounded, inquiry]
+  - name: budget_management
+    description: "Manage limited financial resources across autonomous operations with maximum value extraction"
+    categories: [goal_analysis]
+    tags: [budget, management]
+  - name: budgeting
+    description: "Create, manage, and optimize budgets for projects, organizations, or personal finances"
+    categories: []
+    tags: [budgeting]
+  - name: business_operations
+    description: "Comprehensive procedure for business goals including starting, growing,"
+    categories: [goal_analysis]
+    tags: [business, operations]
+  - name: capability_gate
+    description: "Pre-step feasibility check determining if AI can execute directly, needs delegation, or if task is infeasible"
+    categories: [validation]
+    tags: [capability, gate]
+  - name: career_path_planning
+    description: "Strategic framework for assessing career options, planning transitions,"
+    categories: [planning]
+    tags: [career, path, planning]
+  - name: cash_flow_management
+    description: "Track and optimize cash flow including income, expenses, runway calculation, and burn rate analysis"
+    categories: [reasoning]
+    tags: [cash, flow, management]
+  - name: category_analysis
+    description: "Analyze a category of guesses to determine which apply to the user. System does the work by testing each guess against available evidence and generating sub-guesses for verification."
+    categories: [reasoning, validation, guessing]
+    tags: [category, analysis]
+  - name: checklist_search
+    description: "The simplest possible search: enumerate items, check each against"
+    categories: [validation, search]
+    tags: [checklist, search]
+  - name: client_retention
+    description: "Systematic approach to retaining clients through tiered engagement strategies and value-add touchpoints."
+    categories: [goal_analysis]
+    tags: [client, retention]
+  - name: code_review
+    description: "Procedure for conducting effective code reviews that improve quality and share knowledge"
+    categories: []
+    tags: [code, review]
+  - name: cognitive_amplification
+    description: "You have a way of analyzing things. It works. But you can only hold"
+    categories: []
+    tags: [cognitive, amplification]
+  - name: collective_goals
+    description: "Handler for goals that require building collectives, communities, or movements."
+    categories: [goal_analysis]
+    tags: [collective, goals]
+  - name: communication_narrative
+    description: "Orderings for presentations, writing, and communication where"
+    categories: [planning, communication]
+    tags: [communication, narrative]
+  - name: comparison
+    description: "Evaluate each option against each criterion to identify viable candidates"
+    categories: [reasoning, problem_solving, decision_making]
+    tags: [comparison]
+  - name: competitive_analysis
+    description: "Systematically analyze competitive landscape using Porter's Five Forces, competitor mapping, and differentiation strategies"
+    categories: [reasoning]
+    tags: [competitive, analysis]
+  - name: component_selection
+    description: "A structured procedure for evaluating multiple component options against"
+    categories: [decision_making]
+    tags: [component, selection]
+  - name: comprehensive_aspects
+    description: "Meta-procedure for ensuring any analysis, procedure, or decision"
+    categories: [reasoning, decision_making, meta]
+    tags: [comprehensive, aspects]
+  - name: conflict_resolution
+    description: "Systematic procedure for de-escalating tensions, finding common ground, and navigating difficult conversations productively"
+    categories: [search]
+    tags: [conflict, resolution]
+  - name: constraint_solving
+    description: "Orderings for constraint satisfaction and guided search problems."
+    categories: [problem_solving, planning, search]
+    tags: [constraint, solving]
+  - name: constraint_workarounds
+    description: "When you face a constraint that seems to block progress, NEVER give up."
+    categories: []
+    tags: [constraint, workarounds]
+  - name: content_strategy
+    description: "Develop and execute content strategy that attracts, engages, and converts"
+    categories: [planning]
+    tags: [content, strategy]
+  - name: convergent_validation
+    description: "Addresses the n+1 critic problem: any critic can be criticized, infinitely."
+    categories: [problem_solving, validation]
+    tags: [convergent, validation]
+  - name: cost_benefit_analysis
+    description: "Systematically quantify costs and benefits to evaluate decisions, including NPV calculation, sensitivity analysis, and intangible factors"
+    categories: [reasoning, decision_making]
+    tags: [cost, benefit, analysis]
+  - name: crisis_handler
+    description: "GOSM Crisis Handler procedure"
+    categories: [meta]
+    tags: [crisis, handler]
+  - name: crisis_triage
+    description: "Orderings for resource-constrained emergency situations where"
+    categories: [planning]
+    tags: [crisis, triage]
+  - name: criteria_weighting
+    description: "Also known as: Weighted scoring model, Decision matrix, Pugh matrix."
+    categories: [decision_making]
+    tags: [criteria, weighting]
+  - name: cross_domain_analogy
+    description: "Find analogies from other domains to generate novel insights. Transfer solutions and patterns across fields."
+    categories: []
+    tags: []
+  - name: cross_domain_bridge
+    description: "Most new strategies are actually old strategies from other domains. Find isomorphisms and translate winning strategies."
+    categories: [search]
+    tags: [cross, domain, bridge]
+  - name: cross_project_pattern_detection
+    description: "Analyze patterns across completed GOSM projects to improve the system."
+    categories: [meta]
+    tags: [cross, project, pattern, detection]
+  - name: customer_discovery
+    description: "Validate customer problems and solutions before building"
+    categories: [problem_solving, search]
+    tags: [customer, discovery]
+  - name: data_collection
+    description: "Systematic procedure for gathering research data through surveys, interviews, observation, and secondary sources"
+    categories: [search]
+    tags: [data, collection]
+  - name: debugging
+    description: "Systematic procedure for diagnosing and fixing software bugs"
+    categories: []
+    tags: [debugging]
+  - name: decision_trees
+    description: "Systematic procedure for structuring complex decisions with multiple branches, probabilities, and outcomes"
+    categories: [decision_making]
+    tags: [decision, trees]
+  - name: decomposition
+    description: "Break complex goals into simpler, manageable sub-goals"
+    categories: [goal_analysis]
+    tags: [decomposition]
+  - name: deductive_adversarial_review_integration
+    description: "Bridges the deductive strategy system with adversarial adversarial review testing."
+    categories: [planning, validation]
+    tags: [deductive, adversarial, review, integration]
+  - name: deductive_strategy_discovery
+    description: "Derive strategies by working backward from success criteria to required actions."
+    categories: [decision_making, planning, search]
+    tags: [deductive, strategy, discovery]
+  - name: deductive_strategy_evaluation
+    description: "Evaluate strategies based on the logical soundness of their derivation."
+    categories: [reasoning, decision_making, planning]
+    tags: [deductive, strategy, evaluation]
+  - name: delayed_outcome_tracking
+    description: "Procedure for tracking outcomes that take months or years to manifest."
+    categories: []
+    tags: [delayed, outcome, tracking]
+  - name: deliberate_practice
+    description: "Design and execute targeted practice sessions that maximize skill improvement"
+    categories: []
+    tags: [deliberate, practice]
+  - name: dependency_extraction
+    description: "Extract dependencies between steps, tasks, or items. Identifies what must happen before what, enabling proper sequencing and parallel execution."
+    categories: []
+    tags: []
+  - name: deployment
+    description: "Procedure for planning and executing reliable software deployments"
+    categories: [planning]
+    tags: [deployment]
+  - name: design_procedures
+    description: "Procedures for systematic design of mechanical systems, chassis,"
+    categories: []
+    tags: [design, procedures]
+  - name: design_system
+    description: "Complete system design workflow - composes multiple sub-procedures"
+    categories: []
+    tags: [design, system]
+  - name: design_thinking_lean
+    description: "Two complementary methodologies for innovation:"
+    categories: [reasoning]
+    tags: [design, thinking, lean]
+  - name: detection_verification
+    description: "Orderings optimized for detecting cheating, fraud, deception, and anomalies."
+    categories: [planning]
+    tags: [detection, verification]
+  - name: dimension_discovery
+    description: "Identify the key dimensions that define a problem space, enabling comprehensive enumeration. Use before space_enumeration for novel domains."
+    categories: []
+    tags: []
+  - name: diversity_search
+    description: "Orderings that prioritize behavioral diversity, novelty, and"
+    categories: [planning, search]
+    tags: [diversity, search]
+  - name: documentation_procedures
+    description: "Procedures for creating comprehensive project documentation that allows"
+    categories: []
+    tags: [documentation, procedures]
+  - name: domain_template
+    description: "Create domain-specific skill configurations. Pre-configure skill chains, dimensions, and patterns for specific domains like research, consulting, or engineering."
+    categories: []
+    tags: []
+  - name: economic_research
+    description: "Systematic analysis of economic viability, cost structures, and comparative advantage"
+    categories: [reasoning, search]
+    tags: [economic, research]
+  - name: email_acquisition
+    description: "Acquire and configure email addresses for autonomous system operations"
+    categories: []
+    tags: [email, acquisition]
+  - name: empirical_validation
+    description: "Empirical validation step for GOSM plans - adds external reality testing beyond coherence checks"
+    categories: []
+    tags: []
+  - name: engineering_calculations
+    description: "A collection of standard engineering calculation procedures used in"
+    categories: []
+    tags: [engineering, calculations]
+  - name: epistemic_hierarchy
+    description: "A layered framework for building from certain foundations toward determinate action."
+    categories: []
+    tags: [epistemic, hierarchy]
+  - name: evaluation_dimensions
+    description: "Universal dimensions for evaluating any claim, problem, or solution."
+    categories: [problem_solving, guessing]
+    tags: [evaluation, dimensions]
+  - name: event_driven_automation
+    description: "Maintain project continuity through event monitoring and automated state management"
+    categories: []
+    tags: [event, driven, automation]
+  - name: evolutionary_strategies
+    description: "Evolution has optimized biological systems for billions of years."
+    categories: [reasoning]
+    tags: [evolutionary, strategies]
+  - name: existence_check
+    description: "Systematically check if a solution or similar solution already exists before investing effort in creation"
+    categories: [validation]
+    tags: [existence, check]
+  - name: expected_value
+    description: "Systematic procedure for calculating expected value, adjusting for risk, and determining optimal resource allocation under uncertainty"
+    categories: [goal_analysis]
+    tags: [expected, value]
+  - name: experimental_design
+    description: "Systematic procedure for designing rigorous experiments with proper controls, variables, and validity considerations"
+    categories: []
+    tags: [experimental, design]
+  - name: exploratory_goals
+    description: "GOSM Exploratory Goals procedure"
+    categories: [goal_analysis, meta]
+    tags: [exploratory, goals]
+  - name: external_source_search
+    description: "GOSM External Source Search procedure"
+    categories: [search, meta]
+    tags: [external, source, search]
+  - name: failure_anticipation
+    description: "Systematically identify potential failures, assess their risk, and plan mitigations before execution"
+    categories: [problem_solving, planning]
+    tags: [failure, anticipation]
+  - name: failure_attribution
+    description: "When a project fails, systematically analyze the root cause."
+    categories: []
+    tags: [failure, attribution]
+  - name: failure_journeys
+    description: "Most goal journey work focuses on SUCCESS paths."
+    categories: [planning, goal_analysis]
+    tags: [failure, journeys]
+  - name: failure_recovery
+    description: "Structured recovery procedures when projects encounter failures, providing clear decision trees and specific actions for common failure modes."
+    categories: [decision_making]
+    tags: [failure, recovery]
+  - name: fairness_allocation
+    description: "Orderings that balance competing priorities, prevent starvation,"
+    categories: [planning]
+    tags: [fairness, allocation]
+  - name: feedback
+    description: "Generate filtered feedback for self-improvement loops. Only accepts well-grounded, high-leverage items to prevent error accumulation."
+    categories: []
+    tags: [feedback]
+  - name: feedback_delivery
+    description: "Systematic procedure for delivering feedback that is heard, received, and acted upon, and for receiving feedback gracefully"
+    categories: []
+    tags: [feedback, delivery]
+  - name: financial_modeling
+    description: "Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making"
+    categories: [reasoning, decision_making, validation]
+    tags: [financial, modeling]
+  - name: framework_extension
+    description: "Systematic process for extending the GOSM framework with new procedures, gates, or capabilities."
+    categories: [meta]
+    tags: [framework, extension]
+  - name: freelancing
+    description: "Comprehensive guide to building a sustainable freelance practice, from finding"
+    categories: [search]
+    tags: [freelancing]
+  - name: fundraising_advocacy
+    description: "Build self-sustaining funding for advocacy operations through multiple revenue streams"
+    categories: []
+    tags: [fundraising, advocacy]
+  - name: fundraising_financial
+    description: "Raise investment capital through investor outreach, pitch preparation, term sheet negotiation, and due diligence"
+    categories: []
+    tags: [fundraising, financial]
+  - name: future_space_search
+    description: "The future is uncertain but not arbitrary."
+    categories: [search]
+    tags: [future, space, search]
+  - name: gate_as_claim_audit
+    description: "Convert gates from “yes/no vibe checks” into explicit, checkable claim-interfaces."
+    categories: [validation, guessing]
+    tags: [gate, as, claim, audit]
+  - name: gate_execution_engine
+    description: "Systematic execution of GOSM gates with enforcement."
+    categories: [meta]
+    tags: [gate, execution, engine]
+  - name: generate_then_search
+    description: "The fundamental pattern for making cognitive tasks tractable:"
+    categories: [search]
+    tags: [generate, then, search]
+  - name: generation
+    description: "Generate all possible options for a decision or selection"
+    categories: [decision_making]
+    tags: [generation]
+  - name: goal_decomposition
+    description: "A methodology for decomposing abstract goals into specific, actionable components"
+    categories: [goal_analysis]
+    tags: [goal, decomposition]
+  - name: goal_journey_system
+    description: "A goal journey is NOT a narrative arc. It's a CHAIN OF GOALS."
+    categories: [planning, goal_analysis, meta]
+    tags: [goal, journey, system]
+  - name: goal_refinement
+    description: "Transform vague or incomplete goals into SMART goals"
+    categories: [goal_analysis]
+    tags: [goal, refinement]
+  - name: goal_reframing
+    description: "Transform impossible or problematic goals into achievable versions. No such thing as an impossible goal - only insufficient decomposition."
+    categories: [problem_solving, goal_analysis]
+    tags: [goal, reframing]
+  - name: goal_structure_reconstruction
+    description: "Given any conclusion, statement, or claim, reconstruct the goal-structure"
+    categories: [goal_analysis, guessing]
+    tags: [goal, structure, reconstruction]
+  - name: goal_understanding
+    description: "MANDATORY first step before attempting any goal. Parses input as guesses, classifies OPEN vs CLOSED, fills goal journey structure."
+    categories: [planning, goal_analysis, guessing]
+    tags: [goal, understanding]
+  - name: gosm
+    description: "Main GOSM entry point - Routes to procedure_engine for full workflow."
+    categories: [meta]
+    tags: [gosm]
+  - name: gosm_approach_audit
+    description: "An honest audit of GOSM's approach, claims, and limitations."
+    categories: [meta, guessing]
+    tags: [gosm, approach, audit]
+  - name: grant_writing
+    description: "Find relevant grants, write compelling proposals, and manage grant relationships and compliance"
+    categories: [search]
+    tags: [grant, writing]
+  - name: graph_traversal
+    description: "Orderings derived from fundamental graph traversal algorithms."
+    categories: [planning]
+    tags: [graph, traversal]
+  - name: group_decision_making
+    description: "Systematic procedure for making effective decisions in groups, avoiding common pitfalls, and leveraging collective intelligence"
+    categories: [decision_making]
+    tags: [group, decision, making]
+  - name: growth_experiments
+    description: "Run systematic experiments to discover and validate growth levers using hypothesis-driven testing"
+    categories: [validation, search]
+    tags: [growth, experiments]
+  - name: guess_generation
+    description: "Generate exhaustive guesses about user input using ALL search methods with coverage tracking. Guessing is SEARCH through possibility space. Tracks space created vs space covered to ensure comprehensive exploration."
+    categories: [search, guessing]
+    tags: [guess, generation]
+  - name: habit_formation
+    description: "Build new habits and break unwanted ones using behavioral science principles"
+    categories: [communication]
+    tags: [habit, formation]
+  - name: health_optimization
+    description: "Comprehensive procedure for health-related goals including fitness,"
+    categories: [goal_analysis]
+    tags: [health, optimization]
+  - name: high_quality_writing
+    description: "GOSM High Quality Writing procedure"
+    categories: [meta]
+    tags: [high, quality, writing]
+  - name: high_volatility_handler
+    description: "GOSM High Volatility Handler procedure"
+    categories: [meta]
+    tags: [high, volatility, handler]
+  - name: human_delegation
+    description: "Delegate physical, phone, or in-person tasks to humans when AI cannot perform them directly"
+    categories: []
+    tags: [human, delegation]
+  - name: hypothesis_testing
+    description: "Systematic procedure for formulating testable hypotheses, designing tests, and updating beliefs based on evidence"
+    categories: [validation]
+    tags: [hypothesis, testing]
+  - name: impossible_to_achievable
+    description: "GOSM Impossible To Achievable procedure"
+    categories: [meta]
+    tags: [impossible, to, achievable]
+  - name: income_stream_development
+    description: "Systematic process for identifying, building, and scaling new income streams."
+    categories: [problem_solving]
+    tags: [income, stream, development]
+  - name: inference_space_search
+    description: "Information implies other information. But not all inferences are equal:"
+    categories: [search, communication]
+    tags: [inference, space, search]
+  - name: innovation_engine
+    description: "A systematic search for non-obvious strategies using cross-domain mapping,"
+    categories: [search]
+    tags: [innovation, engine]
+  - name: insight_synthesis
+    description: "Synthesize insights from multiple sources into coherent, actionable understanding. Combines extraction, inversion, and analogy into unified insights."
+    categories: []
+    tags: []
+  - name: interpretation_space_search
+    description: "Ambiguity means multiple interpretations are possible."
+    categories: [search]
+    tags: [interpretation, space, search]
+  - name: interview_preparation
+    description: "Comprehensive preparation system for job interviews covering research, story"
+    categories: [search]
+    tags: [interview, preparation]
+  - name: intuition_goals
+    description: "GOSM Intuition Goals procedure"
+    categories: [goal_analysis, meta]
+    tags: [intuition, goals]
+  - name: inversion_method
+    description: "Charlie Munger's inversion technique. Finding ways to fail, then avoiding them, makes success more likely."
+    categories: [search]
+    tags: [inversion, method]
+  - name: investment_strategy
+    description: "Develop and execute personal investment strategies including portfolio allocation, risk tolerance assessment, and investment selection"
+    categories: [decision_making, planning]
+    tags: [investment, strategy]
+  - name: iterative_discovery_goals
+    description: "Handler for goals where SUCCESS IS DISCOVERING THE UNKNOWN, not executing a known plan."
+    categories: [planning, goal_analysis, search]
+    tags: [iterative, discovery, goals]
+  - name: job_search_strategy
+    description: "Systematic approach to job hunting that treats the search as a funnel to optimize,"
+    categories: [planning, search]
+    tags: [job, search, strategy]
+  - name: journey_extraction
+    description: "Extract the underlying GOAL JOURNEY from any source:"
+    categories: [planning, goal_analysis]
+    tags: [journey, extraction]
+  - name: journey_matching
+    description: "Given a current situation (goal, problem, state), find journeys"
+    categories: [problem_solving, planning, goal_analysis, search]
+    tags: [journey, matching]
+  - name: language_goal_identification
+    description: "All language has a goal - it's trying to achieve something."
+    categories: [goal_analysis]
+    tags: [language, goal, identification]
+  - name: learning_discovery
+    description: "Orderings optimized for acquiring knowledge, validating hypotheses,"
+    categories: [planning, search]
+    tags: [learning, discovery]
+  - name: learning_system
+    description: "Systematically capture, analyze, and apply learnings to improve campaign effectiveness"
+    categories: []
+    tags: [learning, system]
+  - name: learning_transfer
+    description: "Apply knowledge and skills from one domain to new contexts through systematic transfer strategies"
+    categories: []
+    tags: [learning, transfer]
+  - name: leverage_point_discovery
+    description: "Most valuable strategies exploit leverage points - places where small"
+    categories: [search]
+    tags: [leverage, point, discovery]
+  - name: leverage_points
+    description: "Not all interventions are equal. In any complex system, there are places"
+    categories: []
+    tags: [leverage, points]
+  - name: limitation_analysis
+    description: "Systematically identify limitations across multiple dimensions,"
+    categories: [reasoning, problem_solving]
+    tags: [limitation, analysis]
+  - name: literature_review
+    description: "Systematic procedure for conducting comprehensive literature reviews on any topic"
+    categories: []
+    tags: [literature, review]
+  - name: local_search
+    description: "Orderings based on local search optimization: improving from"
+    categories: [planning, search]
+    tags: [local, search]
+  - name: logical_proof_system
+    description: "The foundational infrastructure for treating strategy selection as theorem proving."
+    categories: [reasoning, decision_making, planning]
+    tags: [logical, proof, system]
+  - name: luck_dependent_goals
+    description: "GOSM Luck Dependent Goals procedure"
+    categories: [goal_analysis, meta]
+    tags: [luck, dependent, goals]
+  - name: market_research
+    description: "Systematic process for identifying, validating, and sizing market opportunities."
+    categories: [problem_solving, search]
+    tags: [market, research]
+  - name: marketing_funnel
+    description: "Analyze and optimize the customer journey from awareness to revenue using the AARRR framework"
+    categories: [planning]
+    tags: [marketing, funnel]
+  - name: matching
+    description: "Define criteria for filtering options"
+    categories: [decision_making]
+    tags: [matching]
+  - name: mcp_setup
+    description: "Configure MCP servers to enable autonomous GOSM execution capabilities"
+    categories: [meta]
+    tags: [mcp, setup]
+  - name: mece_validation
+    description: "Validate that a list is MECE (Mutually Exclusive, Collectively Exhaustive). Identifies overlaps and gaps."
+    categories: []
+    tags: []
+  - name: mental_models
+    description: "Build and apply a latticework of mental models for better thinking across domains"
+    categories: [reasoning]
+    tags: [mental, models]
+  - name: mentioned_coverage_gate
+    description: "Gate that verifies all items mentioned by user have been considered, analyzed, and addressed. Prevents dropping user-mentioned aspects. Run after any multi-aspect analysis to verify nothing was missed."
+    categories: []
+    tags: []
+  - name: meta_reasoning_core
+    description: "A unified meta-cognitive loop for deciding what to do next. Combines the"
+    categories: [reasoning, meta]
+    tags: [meta, reasoning, core]
+  - name: metaphor_method
+    description: "A systematic method for using metaphors to:"
+    categories: [meta]
+    tags: [metaphor, method]
+  - name: method_derivation
+    description: "Derive the appropriate method from the situation rather than"
+    categories: []
+    tags: [method, derivation]
+  - name: military_strategy
+    description: "Orderings derived from military doctrine and strategic principles."
+    categories: [planning]
+    tags: [military, strategy]
+  - name: model_space_search
+    description: "Understanding = finding a model that fits."
+    categories: [goal_analysis, search]
+    tags: [model, space, search]
+  - name: morphological_analysis
+    description: "Invented by Fritz Zwicky. Break a problem into independent dimensions,"
+    categories: [reasoning, problem_solving, search]
+    tags: [morphological, analysis]
+  - name: motivation_psychology
+    description: "Orderings that account for human psychological factors like energy,"
+    categories: [reasoning, planning]
+    tags: [motivation, psychology]
+  - name: multi_criteria_decision
+    description: "Systematic procedure for making decisions involving multiple criteria, tradeoffs, and stakeholders"
+    categories: [decision_making]
+    tags: [multi, criteria, decision]
+  - name: multi_party_goals
+    description: "Handler for goals that require navigating institutions, groups, politics, and"
+    categories: [goal_analysis]
+    tags: [multi, party, goals]
+  - name: multi_plan_aggregation
+    description: "Generate, evaluate, and manage multiple alternative plans for the same goal"
+    categories: [reasoning, decision_making, planning, goal_analysis]
+    tags: [multi, plan, aggregation]
+  - name: music_composition_performance
+    description: "Orderings inspired by musical forms and performance practices."
+    categories: [planning]
+    tags: [music, composition, performance]
+  - name: negotiation
+    description: "Systematic procedure for preparing and conducting negotiations to reach mutually beneficial agreements"
+    categories: []
+    tags: [negotiation]
+  - name: negotiation_strategy
+    description: "Orderings for strategic interactions, negotiations, and situations"
+    categories: [planning]
+    tags: [negotiation, strategy]
+  - name: networking
+    description: "Systematic approach to building genuine professional relationships that create"
+    categories: []
+    tags: [networking]
+  - name: novelty_space_search
+    description: "Creativity = novelty + value."
+    categories: [goal_analysis, search]
+    tags: [novelty, space, search]
+  - name: ooda_loop
+    description: "In competitive environments, the entity that can cycle through"
+    categories: []
+    tags: [ooda, loop]
+  - name: optical_pooled_screening
+    description: "GOSM Optical Pooled Screening procedure"
+    categories: [meta]
+    tags: [optical, pooled, screening]
+  - name: optimization
+    description: "Rank viable options from best to worst using multi-criteria optimization"
+    categories: [decision_making]
+    tags: [optimization]
+  - name: order_procedure
+    description: "Determine the correct execution order for a set of steps based on dependencies and constraints"
+    categories: [planning]
+    tags: [order, procedure]
+  - name: ordering_variations
+    description: "Alternative ordering strategies for procedure steps. The base order_procedure"
+    categories: [planning]
+    tags: [ordering, variations]
+  - name: ordering_variations_integration
+    description: "Comprehensive guide for integrating ordering_variations into the GOSM workflow."
+    categories: [planning, meta]
+    tags: [ordering, variations, integration]
+  - name: outreach_campaigns
+    description: "Execute multi-channel persuasion campaigns for policy advocacy"
+    categories: []
+    tags: [outreach, campaigns]
+  - name: outreach_communication
+    description: "Craft and send high-quality outreach communications that maximize response rates"
+    categories: []
+    tags: [outreach, communication]
+  - name: pairwise_comparison
+    description: "Instead of rating each option absolutely (hard), compare pairs"
+    categories: [decision_making]
+    tags: [pairwise, comparison]
+  - name: paradox_goals
+    description: "Handler for goals with inherent tensions where optimizing one dimension"
+    categories: [goal_analysis]
+    tags: [paradox, goals]
+  - name: pedagogy_educational
+    description: "Orderings based on learning science research and educational psychology."
+    categories: [planning, search]
+    tags: [pedagogy, educational]
+  - name: personal_optimization
+    description: "N-of-1 experimentation framework for systematically improving personal health,"
+    categories: []
+    tags: [personal, optimization]
+  - name: persuasive_writing
+    description: "Systematic procedure for writing persuasive content that influences readers and motivates action"
+    categories: []
+    tags: [persuasive, writing]
+  - name: phone_acquisition
+    description: "Acquire and configure phone numbers for autonomous system operations"
+    categories: []
+    tags: [phone, acquisition]
+  - name: plan_space_search
+    description: "There are always multiple ways to achieve a goal."
+    categories: [planning, goal_analysis, search]
+    tags: [plan, space, search]
+  - name: policy_research
+    description: "Identify evidence-based, neglected, tractable policies for advocacy campaigns"
+    categories: [problem_solving, search]
+    tags: [policy, research]
+  - name: population_based_search
+    description: "Orderings that maintain multiple candidate solutions or use"
+    categories: [planning, search]
+    tags: [population, based, search]
+  - name: positioning
+    description: "Develop clear market positioning through category design, differentiation, and compelling messaging"
+    categories: []
+    tags: [positioning]
+  - name: possibility_analysis
+    description: "Systematically explore the possibility space of what could be done."
+    categories: [reasoning, search]
+    tags: [possibility, analysis]
+  - name: pre_mortem
+    description: "Gary Klein's technique - assume it went wrong and ask why. People are better at explaining past events than predicting future ones."
+    categories: [reasoning, communication]
+    tags: [pre, mortem]
+  - name: preference_elicitation
+    description: "Elicit user preferences by presenting concrete trade-offs rather than asking open-ended questions. System does the work by generating options and letting user select."
+    categories: [goal_analysis, communication, guessing]
+    tags: [preference, elicitation]
+  - name: presentation_design
+    description: "Systematic procedure for designing visually effective presentations, slides, and handouts that enhance rather than compete with your message"
+    categories: [communication]
+    tags: [presentation, design]
+  - name: preventive_goals
+    description: "Handler for goals focused on PREVENTING bad outcomes rather than"
+    categories: [goal_analysis]
+    tags: [preventive, goals]
+  - name: priority_frameworks
+    description: "Orderings based on classic priority frameworks that classify"
+    categories: [planning]
+    tags: [priority, frameworks]
+  - name: proactive_question_rotation
+    description: "A 24-week rotating list of questions for weekly review. Each week, engage with"
+    categories: [guessing]
+    tags: [proactive, question, rotation]
+  - name: probabilistic_reasoning
+    description: "Systematic procedure for estimating probabilities, updating beliefs with evidence, and making well-calibrated predictions"
+    categories: [reasoning]
+    tags: [probabilistic, reasoning]
+  - name: problem_identification
+    description: "Before solving, identify:"
+    categories: [problem_solving]
+    tags: [problem, identification]
+  - name: procedure_discovery
+    description: "Find or create the procedures needed to execute a plan"
+    categories: [planning, search]
+    tags: [procedure, discovery]
+  - name: procedure_effectiveness
+    description: "Unified framework for procedure effectiveness tracking."
+    categories: []
+    tags: [procedure, effectiveness]
+  - name: procedure_engine
+    description: "GOSM Procedure Engine - Automatic routing and chaining based on QUICKSTART flow. Handles goals, problems, questions, decisions, situations, and feelings."
+    categories: [problem_solving, decision_making, goal_analysis, meta, guessing]
+    tags: [procedure, engine]
+  - name: procedure_extraction
+    description: "After completing a goal, extract reusable procedures and generalize them for storage in the library, enabling GOSM to learn from completed work."
+    categories: [goal_analysis, meta]
+    tags: [procedure, extraction]
+  - name: procedure_extraction_from_source
+    description: "Meta-procedure for extracting implicit procedures from ANY external source, turning tacit knowledge into explicit, reusable GOSM-compatible procedures."
+    categories: [meta]
+    tags: [procedure, extraction, from, source]
+  - name: procedure_hierarchy
+    description: "Not all procedures are equal. There is a hierarchy:"
+    categories: []
+    tags: [procedure, hierarchy]
+  - name: procedure_improvement
+    description: "Systematically improve GOSM library procedures using schema-driven validation and tier-based progress tracking"
+    categories: [validation, meta]
+    tags: [procedure, improvement]
+  - name: procedure_registry_review
+    description: "Review and improve the procedure registry schema using explicit definitions, evidence alignment, and non-regression."
+    categories: []
+    tags: [procedure, registry, review]
+  - name: procedure_validation
+    description: "Validate that a procedure is complete, executable, and all dependencies are satisfiable. Catches issues before execution."
+    categories: []
+    tags: []
+  - name: procurement_procedures
+    description: "Procedures for managing the procurement of components and materials,"
+    categories: []
+    tags: [procurement, procedures]
+  - name: progress_tracking
+    description: "Monitor and report project status effectively"
+    categories: []
+    tags: [progress, tracking]
+  - name: progressive_building
+    description: "Orderings that build complexity incrementally, ensuring each step"
+    categories: [planning]
+    tags: [progressive, building]
+  - name: project_closure
+    description: "Complete projects properly with handoff and learning capture"
+    categories: []
+    tags: [project, closure]
+  - name: project_initiation
+    description: "Launch projects with clear charter, stakeholders, and success criteria"
+    categories: [decision_making]
+    tags: [project, initiation]
+  - name: project_management
+    description: "Orderings from formal project management methodologies (PERT, CPM,"
+    categories: [planning]
+    tags: [project, management]
+  - name: project_scoping
+    description: "Procedure for defining project scope: what's included, what's excluded,"
+    categories: []
+    tags: [project, scoping]
+  - name: public_speaking
+    description: "Systematic procedure for preparing and delivering impactful presentations, speeches, and talks"
+    categories: [communication]
+    tags: [public, speaking]
+  - name: qualitative_measurement
+    description: "Procedure for measuring outcomes that resist quantification."
+    categories: []
+    tags: [qualitative, measurement]
+  - name: qualitative_research
+    description: "Systematic procedure for qualitative data analysis including coding, thematic analysis, grounded theory, and interview techniques"
+    categories: [reasoning, search]
+    tags: [qualitative, research]
+  - name: question_about_guesses
+    description: "Generate high-quality questions about identified guesses. Applies quality criteria and \"why continue?\" gate to prevent low-value questioning."
+    categories: [decision_making, goal_analysis, guessing]
+    tags: [question, about, guesses]
+  - name: question_analysis_framework
+    description: "This framework provides methods for analyzing questions to determine:"
+    categories: [reasoning, guessing]
+    tags: [question, analysis, framework]
+  - name: question_generation
+    description: "When you don't know something, the right question is worth more than"
+    categories: [guessing]
+    tags: [question, generation]
+  - name: queue_scheduling
+    description: "Orderings for managing queues, processing items by priority,"
+    categories: [planning]
+    tags: [queue, scheduling]
+  - name: reading_effectively
+    description: "Read strategically for comprehension, retention, and application using research-backed techniques"
+    categories: [search]
+    tags: [reading, effectively]
+  - name: recursive_causal_interrogation
+    description: "A systematic approach to reasoning: tracing causes through questioning."
+    categories: [reasoning, guessing]
+    tags: [recursive, causal, interrogation]
+  - name: refactoring
+    description: "Procedure for systematically improving code structure without changing behavior"
+    categories: []
+    tags: [refactoring]
+  - name: relationship_goals
+    description: "GOSM Relationship Goals procedure"
+    categories: [goal_analysis, meta]
+    tags: [relationship, goals]
+  - name: requirements_gathering
+    description: "Elicit and document system requirements from stakeholders"
+    categories: [goal_analysis]
+    tags: [requirements, gathering]
+  - name: resource_optimization
+    description: "Orderings focused on maximizing throughput, minimizing waste,"
+    categories: [planning]
+    tags: [resource, optimization]
+  - name: restoration_goals
+    description: "Handler for goals focused on REBUILDING from damage, not improving from baseline."
+    categories: [goal_analysis]
+    tags: [restoration, goals]
+  - name: resume_optimization
+    description: "Systematic approach to crafting resumes that pass ATS filters, capture attention,"
+    categories: []
+    tags: [resume, optimization]
+  - name: retrospective
+    description: "Learn from completed work to improve future performance"
+    categories: []
+    tags: [retrospective]
+  - name: reversibility_analysis
+    description: "Systematic procedure for analyzing decision reversibility, option value, and optimal commitment timing"
+    categories: [reasoning, decision_making, goal_analysis]
+    tags: [reversibility, analysis]
+  - name: risk_assessment
+    description: "Systematic procedure for identifying, analyzing, and planning responses to risks"
+    categories: [problem_solving, planning]
+    tags: [risk, assessment]
+  - name: risk_management
+    description: "Orderings focused on managing uncertainty, preserving options, and"
+    categories: [planning]
+    tags: [risk, management]
+  - name: roi_analysis
+    description: "Calculate and analyze return on investment for projects, purchases, and decisions"
+    categories: [reasoning, decision_making]
+    tags: [roi, analysis]
+  - name: root_cause_5_whys
+    description: "Developed by Sakichi Toyoda for Toyota. When a problem occurs,"
+    categories: [problem_solving]
+    tags: [root, cause, 5, whys]
+  - name: root_cause_analysis
+    description: "Systematically trace symptoms back to their underlying root causes using structured diagnostic techniques"
+    categories: [reasoning, problem_solving]
+    tags: [root, cause, analysis]
+  - name: salary_negotiation
+    description: "Systematic approach to negotiating job offers that maximizes total compensation"
+    categories: []
+    tags: [salary, negotiation]
+  - name: scenario_planning
+    description: "The future is uncertain. Instead of trying to predict the one future,"
+    categories: [planning]
+    tags: [scenario, planning]
+  - name: search_methods_comprehensive
+    description: "An exhaustive inventory of search methods found in nature, science,"
+    categories: [search]
+    tags: [search, methods, comprehensive]
+  - name: search_paradigm_extensions
+    description: "Extends the search paradigm to non-obvious domains. Identifies which search methods should become procedures."
+    categories: [search]
+    tags: [search, paradigm, extensions]
+  - name: security_practices
+    description: "Procedure for implementing security throughout the software development lifecycle"
+    categories: []
+    tags: [security, practices]
+  - name: selection
+    description: "Make the final selection from ranked options after all analysis is complete"
+    categories: [reasoning, decision_making]
+    tags: [selection]
+  - name: self_audit_apply_analysis_protocol_clarity_and_validity
+    description: "Use the analysis-protocol clarity question bank to audit a gate/procedure/document for interpretability, checkability, and stopping rules."
+    categories: [reasoning, validation, guessing]
+    tags: [self, audit, apply, analysis, protocol, clarity, and, validity]
+  - name: self_audit_apply_detectors_and_generators
+    description: "Run the detector suite against a target artifact to find ambiguity, proxy substitution, bundled checks, undefined terms, false dichotomies, and hidden conditionals."
+    categories: [validation, search, guessing]
+    tags: [self, audit, apply, detectors, and, generators]
+  - name: self_audit_apply_evidence_standard_application
+    description: "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any “verified” claims."
+    categories: [validation, guessing]
+    tags: [self, audit, apply, evidence, standard, application]
+  - name: self_audit_apply_intent_and_speech_acts
+    description: "Classify utterances in a gate/procedure/document so the system doesn’t answer the wrong thing (question vs command vs judgment vs guess)."
+    categories: [guessing]
+    tags: [self, audit, apply, intent, and, speech, acts]
+  - name: self_audit_cross_reference_integrity
+    description: "Ensure gates and procedures link to other procedures that provide the needed answer-interface and next steps."
+    categories: [planning]
+    tags: [self, audit, cross, reference, integrity]
+  - name: self_audit_detector_sweep
+    description: "Scan a target set of files for ambiguity, proxying, bundled questions, undefined terms, and hidden conditionals."
+    categories: [guessing]
+    tags: [self, audit, detector, sweep]
+  - name: self_audit_divergence_risk_test
+    description: "Estimate where two independent executors would diverge when applying the same gate/procedure to the same input."
+    categories: [validation]
+    tags: [self, audit, divergence, risk, test]
+  - name: self_audit_gate_schema_consistency_audit
+    description: "Identify inconsistent gate field schemas across the library that increase interpretation burden and cause engine integration drift."
+    categories: [problem_solving]
+    tags: [self, audit, gate, schema, consistency, audit]
+  - name: self_audit_procedure_executability_audit
+    description: "Check whether a procedure’s questions/steps can be executed without interpretation and whether outputs are checkable."
+    categories: [planning, validation, communication, guessing]
+    tags: [self, audit, procedure, executability, audit]
+  - name: self_audit_question_rewrite_chains
+    description: "Rewrite unclear questions by separating intent (“what did I mean?”) from the target question (“what do I want to answer?”)."
+    categories: [meta, guessing]
+    tags: [self, audit, question, rewrite, chains]
+  - name: self_audit_rci_on_protocol_choices
+    description: "Apply Recursive Causal Interrogation to choices about what procedure to run, what to measure, and when to stop."
+    categories: []
+    tags: [self, audit, rci, on, protocol, choices]
+  - name: self_audit_repo_unclarity_scan
+    description: "Repo-wide scan to find question patterns that commonly require interpretation before answering."
+    categories: [search, guessing]
+    tags: [self, audit, repo, unclarity, scan]
+  - name: self_audit_two_run_divergence_audit
+    description: "Run the same gate/procedure twice on the same fixed input, compare outputs, and treat divergences as evidence that the text needs clearer interfaces and stopping rules."
+    categories: [communication]
+    tags: [self, audit, two, run, divergence, audit]
+  - name: seo_basics
+    description: "Build organic search visibility through keyword research, on-page optimization, content strategy, and link building"
+    categories: [planning, search]
+    tags: [seo, basics]
+  - name: session_review
+    description: "Capture learnings at end of session for continuous improvement. Reviews what worked, what did not, surprises, and procedure gaps."
+    categories: []
+    tags: [session, review]
+  - name: skill_acquisition
+    description: "Systematically acquire new skills using deliberate practice principles"
+    categories: []
+    tags: [skill, acquisition]
+  - name: skill_benchmarking
+    description: "Identify quality standards, benchmark current skill level, and design deliberate practice to close gaps"
+    categories: [problem_solving]
+    tags: [skill, benchmarking]
+  - name: skill_plateaus
+    description: "Diagnose the causes of skill plateaus and implement targeted strategies to break through"
+    categories: [problem_solving]
+    tags: [skill, plateaus]
+  - name: social_media_strategy
+    description: "Build effective social media presence through platform selection, content planning, engagement, and measurement"
+    categories: [decision_making, planning]
+    tags: [social, media, strategy]
+  - name: software_development_procedures
+    description: "Procedures for developing embedded software for robotics and"
+    categories: []
+    tags: [software, development, procedures]
+  - name: source_credibility
+    description: "Procedure for evaluating the credibility and reliability of any information source"
+    categories: [communication]
+    tags: [source, credibility]
+  - name: source_prioritization
+    description: "Given limited time to extract procedures from sources, prioritize which sources to process for maximum procedure value."
+    categories: [goal_analysis]
+    tags: [source, prioritization]
+  - name: source_research
+    description: "GOSM Source Research procedure"
+    categories: [search, meta]
+    tags: [source, research]
+  - name: space_discovery
+    description: "Discover what space exists BEFORE generating guesses. Maps dimensions, stakeholders, time horizons, and adjacent spaces. Run this before guess_generation to ensure comprehensive coverage."
+    categories: [search, guessing]
+    tags: [space, discovery]
+  - name: space_enumeration
+    description: "Generate comprehensive lists by systematically covering all dimensions. Ensures nothing is missed through structured enumeration."
+    categories: []
+    tags: []
+  - name: spaced_repetition
+    description: "Design and implement spaced repetition systems for durable long-term retention of knowledge"
+    categories: []
+    tags: [spaced, repetition]
+  - name: spatial_proteomics
+    description: "GOSM Spatial Proteomics procedure"
+    categories: [meta]
+    tags: [spatial, proteomics]
+  - name: specificity_gate
+    description: "Transform vague capability claims into specific ones by requiring trigger, procedure, output, and validation for each claim."
+    categories: [validation, communication, guessing]
+    tags: [specificity, gate]
+  - name: stakeholder_management
+    description: "Engage stakeholders effectively throughout the project"
+    categories: []
+    tags: [stakeholder, management]
+  - name: statistical_analysis
+    description: "Systematic procedure for selecting appropriate statistical tests and correctly interpreting results"
+    categories: [reasoning, validation]
+    tags: [statistical, analysis]
+  - name: steelmanned_counterarguments
+    description: "GOSM Steelmanned Counterarguments procedure"
+    categories: [meta]
+    tags: [steelmanned, counterarguments]
+  - name: steps_generation
+    description: "Transform a COMPLETE_PLAN into foolproof executable step-by-step instructions"
+    categories: [planning]
+    tags: [steps, generation]
+  - name: storytelling
+    description: "Systematic procedure for crafting and delivering compelling stories that create emotional connection and drive action"
+    categories: []
+    tags: [storytelling]
+  - name: strategic_deception
+    description: "Orderings for legitimate competitive, adversarial, and performance contexts"
+    categories: [planning, validation]
+    tags: [strategic, deception]
+  - name: strategy_discovery
+    description: "Find or create an approach to achieve a goal"
+    categories: [planning, goal_analysis, search]
+    tags: [strategy, discovery]
+  - name: strategy_templates
+    description: "Every strategy exists within a game (competitive context). Every game"
+    categories: [planning]
+    tags: [strategy, templates]
+  - name: structured_output
+    description: "Standardized output format for GOSM projects."
+    categories: [communication, meta]
+    tags: [structured, output]
+  - name: swot_analysis
+    description: "Systematically identify Strengths, Weaknesses, Opportunities, and Threats to inform strategic decisions"
+    categories: [reasoning, problem_solving, decision_making]
+    tags: [swot, analysis]
+  - name: system_health_check
+    description: "Evaluate if the GOSM system needs improvement"
+    categories: [reasoning, decision_making, validation, meta]
+    tags: [system, health, check]
+  - name: system_modeling
+    description: "Real problems exist in complex systems with many interacting parts."
+    categories: [problem_solving]
+    tags: [system, modeling]
+  - name: systematic_variation_scamper
+    description: "SCAMPER is an acronym for 7 transformation operations:"
+    categories: [communication]
+    tags: [systematic, variation, scamper]
+  - name: systems_analysis
+    description: "Analyze complex systems using causal loop diagrams, stock and flow models, feedback loop identification, and system archetypes"
+    categories: [reasoning]
+    tags: [systems, analysis]
+  - name: targeting
+    description: "Build comprehensive database of advocacy targets with personalized dossiers"
+    categories: []
+    tags: [targeting]
+  - name: taxonomy_maintenance
+    description: "Systematic process for creating, updating, and maintaining taxonomies and classification systems."
+    categories: []
+    tags: [taxonomy, maintenance]
+  - name: template_maintenance
+    description: "Maintain and improve domain templates over time. Track usage, identify gaps, and evolve templates based on experience."
+    categories: []
+    tags: []
+  - name: template_registry
+    description: "Registry for domain templates. Store, retrieve, search, and manage domain-specific configurations."
+    categories: []
+    tags: []
+  - name: tension_navigation_tactics
+    description: "While value_conflict_decomposition provides the framework for understanding conflicts,"
+    categories: [goal_analysis]
+    tags: [tension, navigation, tactics]
+  - name: testing_strategy
+    description: "Procedure for designing and implementing effective software testing strategies"
+    categories: [planning, validation]
+    tags: [testing, strategy]
+  - name: time_deadline
+    description: "Orderings driven by temporal constraints, deadlines, and timing"
+    categories: [planning]
+    tags: [time, deadline]
+  - name: topological_ordering
+    description: "Generate valid execution sequences from dependencies. Respects hard constraints, optimizes for priorities, and identifies parallel execution opportunities."
+    categories: []
+    tags: []
+  - name: truth_propagation
+    description: "Arguments don't exist in isolation. Each conclusion depends on premises,"
+    categories: []
+    tags: [truth, propagation]
+  - name: uaua
+    description: "Universalize → ARAW → Universalize → ARAW. Combined exploration method that maps complete possibility space (divergent) then validates (convergent). Supports depth scaling: 2x, 4x, 8x, 16x."
+    categories: [reasoning, search, guessing]
+    tags: [uaua, universalization, araw, combined]
+  - name: unassailable_output
+    description: "Every output must be unassailable. Anything said can and will"
+    categories: [communication]
+    tags: [unassailable, output]
+  - name: universal_goal_analysis
+    description: "The comprehensive question framework that applies to EVERY goal, regardless of domain."
+    categories: [reasoning, goal_analysis, guessing]
+    tags: [universal, goal, analysis]
+  - name: universal_goal_analysis_v2
+    description: "The comprehensive question framework that applies to EVERY goal, regardless of domain."
+    categories: [reasoning, goal_analysis, guessing]
+    tags: [universal, goal, analysis, v2]
+  - name: universal_goal_analysis_v3
+    description: "The comprehensive question framework that applies to EVERY goal, regardless of domain."
+    categories: [reasoning, goal_analysis, guessing]
+    tags: [universal, goal, analysis, v3]
+  - name: universal_goal_analysis_v4
+    description: "The comprehensive question framework that applies to EVERY goal, regardless of domain."
+    categories: [reasoning, goal_analysis, guessing]
+    tags: [universal, goal, analysis, v4]
+  - name: universal_goal_analysis_v5
+    description: "The comprehensive question framework that applies to EVERY goal, regardless of domain."
+    categories: [reasoning, goal_analysis, guessing]
+    tags: [universal, goal, analysis, v5]
+  - name: validation
+    description: "Verify that an output meets its requirements"
+    categories: [validation, communication]
+    tags: [validation]
+  - name: value_conflict_decomposition
+    description: "Goals often serve multiple intrinsic values that conflict with each other."
+    categories: [goal_analysis]
+    tags: [value, conflict, decomposition]
+  - name: value_elicitation
+    description: "Value elicitation discovers what someone ACTUALLY values - their intrinsic goals."
+    categories: [goal_analysis, search]
+    tags: [value, elicitation]
+  - name: variation_analysis
+    description: "For any obvious strategy, ask what if we did the exact opposite. Counters the tendency to accept first-good-enough answers."
+    categories: [reasoning, planning]
+    tags: [variation, analysis]
+  - name: verification_before_output
+    description: "This procedure is the culmination of the no-guessing philosophy."
+    categories: [communication, guessing]
+    tags: [verification, before, output]
+  - name: verification_procedures
+    description: "Procedures for systematically testing and verifying that systems meet"
+    categories: [validation]
+    tags: [verification, procedures]
+  - name: verify
+    description: "Verify claims using the GOSM verification standard. Every claim must be OBSERVED, TESTED, or DERIVED - never guessed."
+    categories: [validation, meta, guessing]
+    tags: [verify]
+  - name: vertical_horizontal_decision
+    description: "Framework for deciding when to improve existing procedures/categories (vertical)"
+    categories: [decision_making]
+    tags: [vertical, horizontal, decision]
+  - name: viral_mechanics
+    description: "Design and optimize viral loops, referral programs, and word-of-mouth triggers to achieve organic growth"
+    categories: []
+    tags: [viral, mechanics]
+  - name: weekly_review
+    description: "Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuous progress."
+    categories: [problem_solving]
+    tags: [weekly, review]
+
+  # === COMPOUND SKILLS (chains of other skills) ===
+
+  - name: assumption_audit
+    description: "Surface and rigorously test a field's hidden assumptions. Compound skill chaining extraction, inversion, research, ARAW, cross-domain analogy, and synthesis into a complete audit."
+    categories: [reasoning, validation, search]
+    tags: [assumption, audit, compound, chain, field]
+    invokes: [assumption_extraction, assumption_inversion, literature_review, araw, cross_domain_analogy, insight_synthesis]
+
+  - name: decision_procedure
+    description: "Create a mechanical step-by-step decision procedure anyone can follow without expertise. Like a flowchart from problem to answer."
+    categories: [decision_making, planning, problem_solving]
+    tags: [decision, procedure, compound, chain, flowchart, mechanical]
+    invokes: [dimension_discovery, space_enumeration, assumption_extraction, steps_generation, failure_anticipation, procedure_validation]
+
+  - name: adversarial_checklist
+    description: "Create a checklist that catches what normal checklists miss. Each item includes adversarial branches testing what if assumptions are wrong."
+    categories: [validation, planning, problem_solving]
+    tags: [checklist, adversarial, compound, chain, failure, prevention]
+    invokes: [assumption_extraction, failure_anticipation, assumption_inversion, steps_generation]
+
+  - name: cross_domain_report
+    description: "Discover what one field can learn from another through structural analogies, transferability testing, and actionable synthesis."
+    categories: [reasoning, search]
+    tags: [cross-domain, analogy, compound, chain, transfer, report]
+    invokes: [cross_domain_analogy, assumption_extraction, araw, insight_synthesis]
+
+  - name: field_analysis
+    description: "Comprehensive analysis of a field's key tensions, hidden assumptions, blind spots, and health. The most thorough single-field analysis available."
+    categories: [reasoning, validation, search, meta]
+    tags: [field, analysis, compound, chain, comprehensive, assumptions, tensions]
+    invokes: [assumption_extraction, araw, cross_domain_analogy, evaluation_dimensions, insight_synthesis]

@@ -1,0 +1,578 @@
+# Deductive Strategy Evaluation Procedure
+# Purpose: Evaluate the logical soundness and proof strength of strategies
+# Version: 1.0.0
+
+id: deductive_strategy_evaluation
+name: Deductive Strategy Evaluation
+domain: planning
+version: "1.0.0"
+tags: ["deductive", "evaluation", "validation", "mandatory", "proof"]
+
+description: |
+  Evaluate strategies based on the logical soundness of their derivation.
+
+  This procedure determines whether a strategy is:
+  - Logically valid (conclusions follow from premises)
+  - Sound (premises are true AND inferences are valid)
+  - Complete (no gaps in the reasoning chain)
+  - Necessary (this is the ONLY solution) vs Sufficient (this WILL work)
+
+  Strategies that pass deductive evaluation have the highest confidence
+  because their correctness follows from the problem definition itself.
+
+when_to_use:
+  - After deductive strategy discovery
+  - Before committing to a strategy
+  - When you need to compare strategies on logical strength
+  - When you want to identify the weakest points in strategy reasoning
+
+core_insight: |
+  Most strategy evaluation asks "will this work?" - a prediction.
+  Deductive evaluation asks "does this follow logically?" - a verification.
+
+  A strategy can "feel right" but have hidden logical flaws.
+  Deductive evaluation surfaces those flaws before commitment.
+
+# ============================================
+# EXECUTABLE STEPS
+# ============================================
+
+steps:
+  - id: check_validity
+    name: Check Logical Validity
+    action: ask_llm
+    description: Verify each inference step is logically valid
+    prompt_template: procedures/deductive_strategy_evaluation/check_validity
+    input_mapping:
+      strategy_proofs: strategy_proofs
+    output_mapping:
+      validity_results: validity_results
+
+  - id: check_soundness
+    name: Check Soundness
+    action: ask_llm
+    description: Verify premises are true AND inferences are valid
+    prompt_template: procedures/deductive_strategy_evaluation/check_soundness
+    input_mapping:
+      strategy_proofs: strategy_proofs
+      validity_results: validity_results
+    output_mapping:
+      soundness_results: soundness_results
+
+  - id: identify_weaknesses
+    name: Identify Weaknesses
+    action: ask_llm
+    description: Find the weakest points in each proof
+    prompt_template: procedures/deductive_strategy_evaluation/identify_weaknesses
+    input_mapping:
+      strategy_proofs: strategy_proofs
+      soundness_results: soundness_results
+    output_mapping:
+      weakness_analysis: weakness_analysis
+
+  - id: assess_necessity
+    name: Assess Necessity Level
+    action: ask_llm
+    description: Determine if strategy is necessary, sufficient, or possible
+    prompt_template: procedures/deductive_strategy_evaluation/assess_necessity
+    input_mapping:
+      strategy_proofs: strategy_proofs
+      weakness_analysis: weakness_analysis
+    output_mapping:
+      necessity_assessment: necessity_assessment
+
+  - id: assign_proof_level
+    name: Assign Confidence Level
+    action: ask_llm
+    description: Assign 0-4 confidence level compatible with adversarial review
+    prompt_template: procedures/deductive_strategy_evaluation/assign_proof_level
+    input_mapping:
+      necessity_assessment: necessity_assessment
+      soundness_results: soundness_results
+    output_mapping:
+      proof_levels: proof_levels
+
+  - id: store_evaluation
+    name: Store Evaluation Results
+    action: store
+    input_mapping:
+      proof_levels: proof_levels
+      weakness_analysis: weakness_analysis
+      deductive_evaluation_completed: true
+    output_mapping:
+      evaluated_strategies: evaluated_strategies
+
+# ============================================
+# DETAILED PROCEDURES
+# ============================================
+
+procedures:
+
+  validity_check:
+    description: Check if each inference step is logically valid
+
+    inputs:
+      - deductive_chain: The chain to check
+
+    process:
+      1. For Each Inference:
+         a. Identify the inference type:
+         b. Apply type-specific validity rules:
+
+            DEDUCTION (Modus Ponens):
+            - Is there a clear conditional (If A then B)?
+            - Is the antecedent (A) actually established?
+            - Is there any hidden condition in the conditional?
+
+            CONTRAPOSITION (Modus Tollens):
+            - Is the conditional correctly stated?
+            - Is the consequent (B) definitely false?
+            - Could there be other causes of B?
+
+            ELIMINATION:
+            - Is the option set exhaustive?
+            - Is each eliminated option truly eliminated?
+            - Could combinations work?
+
+            CAUSAL:
+            - Is causation established (not just correlation)?
+            - Are there confounding factors?
+            - Is the effect reliable?
+
+            DECOMPOSITION:
+            - Is the decomposition complete (MECE)?
+            - Are sub-goals truly necessary?
+            - Are sub-goals sufficient for the goal?
+
+         c. Mark as VALID or INVALID with reason:
+
+      2. Check Chain Connectivity:
+         - Does each inference properly reference its inputs?
+         - Are there gaps between inferences?
+         - Does the final conclusion follow from the last inference?
+
+    output:
+      validity_result:
+        is_valid: boolean
+        invalid_inferences: [list with reasons]
+        connectivity_issues: [list of gaps]
+        overall_validity_score: float (0-1)
+
+  soundness_check:
+    description: Check if premises are true AND inferences are valid
+
+    inputs:
+      - deductive_chain: The chain to check
+      - validity_result: Result of validity check
+
+    process:
+      1. Skip if Invalid:
+         - If not valid, cannot be sound
+         - Mark as unsound due to invalidity
+
+      2. For Each Premise:
+         a. Categorize by type:
+            - AXIOM: Accept without verification
+            - FACT: Verify against evidence
+            - ASSUMPTION: Flag for explicit acknowledgment
+            - CONSTRAINT: Verify it's real
+            - OBSERVATION: Verify it's accurate
+
+         b. Assess truth value:
+            - Definitely true (verified)
+            - Probably true (high confidence)
+            - Uncertain (needs testing)
+            - Probably false (counter-evidence)
+            - Definitely false (disproven)
+
+         c. Mark false premises:
+
+      3. Compute Soundness:
+         - All premises true + all inferences valid = SOUND
+         - Any false premise or invalid inference = UNSOUND
+         - Uncertain premises = CONDITIONALLY SOUND
+
+    output:
+      soundness_result:
+        is_sound: boolean
+        false_premises: [list with evidence]
+        uncertain_premises: [list with concerns]
+        conditional_soundness: "Sound if [premises] are true"
+        overall_soundness_score: float (0-1)
+
+  weakness_identification:
+    description: Find the weakest points in a proof
+
+    inputs:
+      - deductive_chain: The chain to analyze
+      - soundness_result: Soundness check result
+
+    process:
+      1. Rank Premises by Weakness:
+         - Unverified assumptions = weakest
+         - Facts with limited evidence = weak
+         - Well-established facts = strong
+         - Axioms = strongest
+
+      2. Rank Inferences by Weakness:
+         - Analogy = weakest (most likely to fail)
+         - Causal = weak (mechanisms can be wrong)
+         - Elimination = moderate (might miss options)
+         - Decomposition = moderate (might be incomplete)
+         - Deduction = strong (if valid, reliable)
+
+      3. Find Critical Path:
+         - Which weak elements are on the critical path?
+         - If they fail, does the whole proof fail?
+         - These are the critical weaknesses
+
+      4. Prioritize Weaknesses:
+         - Critical weakness on critical path = Priority 1
+         - Weakness on critical path = Priority 2
+         - Weakness off critical path = Priority 3
+
+    output:
+      weakness_analysis:
+        weakest_premise: {id, reason, priority}
+        weakest_inference: {id, reason, priority}
+        critical_weaknesses: [list with priorities]
+        non_critical_weaknesses: [list]
+        overall_weakness_score: float (0-1, higher = weaker)
+
+  necessity_assessment:
+    description: Determine if strategy is necessary, sufficient, or possible
+
+    inputs:
+      - strategy_proof: The strategy with its proof
+      - problem_axioms: The problem axioms
+
+    process:
+      1. Check for Necessity:
+         - List all possible strategies that satisfy axioms
+         - Is this strategy the ONLY one?
+         - If yes: NECESSARY
+
+      2. Check for Sufficiency:
+         - If this strategy is executed correctly, will it succeed?
+         - Does it address all success criteria?
+         - If yes: SUFFICIENT
+
+      3. Classify Alternatives:
+         - Dominated: This strategy is strictly better
+         - Equivalent: Other strategies could work as well
+         - Superior: Other strategies might be better
+         - Incomparable: Trade-offs make comparison impossible
+
+      4. Assign Necessity Level:
+         - NECESSARY: Only this works
+         - SUFFICIENT: This will work; others might too
+         - LIKELY: This probably works
+         - POSSIBLE: This might work
+         - UNKNOWN: Cannot assess
+
+    output:
+      necessity_assessment:
+        necessity_level: ProofStrength
+        is_unique_solution: boolean
+        alternatives: [list of alternatives with classification]
+        necessity_explanation: string
+        confidence_in_assessment: float (0-1)
+
+  proof_level_assignment:
+    description: Assign 0-4 confidence level compatible with adversarial review
+
+    inputs:
+      - soundness_result: Soundness check result
+      - weakness_analysis: Weakness analysis
+      - necessity_assessment: Necessity assessment
+
+    process:
+      1. Level 4 (Axiom-Derived):
+         - All premises are axioms or definitional facts
+         - All inferences are deductive
+         - Conclusion is logically necessary
+         - Criteria: necessity_level = NECESSARY AND soundness = 1.0
+
+      2. Level 3 (Battle-Tested):
+         - Sound proof with no critical weaknesses
+         - Has survived multiple logical attacks
+         - High confidence in all premises
+         - Criteria: soundness >= 0.9 AND critical_weaknesses = 0 AND attacks_survived >= 3
+
+      3. Level 2 (Defended):
+         - Valid proof with sound premises
+         - Weaknesses identified but mitigated
+         - Has survived at least one logical attack
+         - Criteria: soundness >= 0.7 AND weakness_score < 0.5
+
+      4. Level 1 (Contested):
+         - Valid proof but weak premises or inferences
+         - Logical attack has succeeded
+         - Known weaknesses not mitigated
+         - Criteria: validity = true BUT soundness < 0.7 OR weakness_score >= 0.5
+
+      5. Level 0 (Hypothesis):
+         - Not yet evaluated
+         - Invalid proof
+         - Known false premises
+         - Criteria: validity = false OR not_evaluated
+
+    output:
+      proof_level_result:
+        proof_level: int (0-4)
+        level_name: string
+        level_reasoning: string
+        upgrade_path: "To reach level X, need to [actions]"
+
+# ============================================
+# INTEGRATION WITH GOSM
+# ============================================
+
+gosm_integration:
+
+  sequence_position: |
+    This procedure runs after:
+    - Deductive Strategy Discovery (Step 8)
+    - Innovation Engine (Step 9)
+
+    It runs before or parallel to:
+    - Adversarial Review (Step 10)
+
+    The deductive evaluation provides a logical foundation that
+    adversarial review then stress-tests.
+
+  use_cases:
+    - After deductive strategy discovery to rate strategies
+    - Before adversarial review to prepare for adversarial testing
+    - When comparing multiple candidate strategies
+    - When deciding whether to proceed with a strategy
+
+  context_keys:
+    input:
+      - strategy_proofs: Strategies with deductive chains
+      - problem_axioms: The formalized problem
+    output:
+      - evaluated_strategies: Strategies with evaluation results
+      - proof_levels: Proof level for each strategy
+      - weakness_analysis: Identified weaknesses
+      - deductive_evaluation_completed: boolean
+
+  gates:
+    - gate: all_strategies_evaluated
+      question: "Have all candidate strategies been deductively evaluated?"
+
+    - gate: min_proof_level_met
+      question: "Does at least one strategy meet minimum confidence level (2+)?"
+
+    - gate: weaknesses_addressed
+      question: "Have critical weaknesses been addressed or accepted?"
+
+  adversarial_review_integration:
+    description: |
+      Deductive evaluation and adversarial review are complementary:
+
+      - Deductive evaluation: Check logical soundness of derivation
+      - Builder-breaker: Adversarially attack the strategy
+
+      A strategy needs both:
+      1. Sound derivation (deductive evaluation)
+      2. Survival of attacks (adversarial review)
+
+      The confidence level from deductive evaluation becomes the starting
+      point for adversarial review testing.
+
+# ============================================
+# QUALITY
+# ============================================
+
+verification:
+  - Every inference step is explicitly checked for validity
+  - Every premise is categorized and assessed for truth
+  - Weaknesses are prioritized by criticality
+  - Proof level is assigned with explicit justification
+  - Upgrade path is provided for sub-Level 2 strategies
+
+failure_modes:
+  - mode: False validity assessment
+    symptom: Invalid inference marked as valid
+    resolution: Apply strict inference rules; when in doubt, mark questionable
+
+  - mode: Overconfident premise assessment
+    symptom: Unverified assumption treated as fact
+    resolution: Explicitly categorize all premises; flag all assumptions
+
+  - mode: Missing weaknesses
+    symptom: Critical weakness not identified
+    resolution: Systematically check each component; use checklist
+
+  - mode: Proof level inflation
+    symptom: Strategy rated higher than deserved
+    resolution: Apply criteria strictly; err on the side of lower level
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  - name: Evaluating health strategy derivation
+    context: Strategy derived for chronic breathing issues
+
+    strategy_proof:
+      strategy: "Get medical evaluation for nasal breathing"
+      premises:
+        - id: p1
+          content: "Nasal breathing is uncomfortable"
+          type: observation
+          verified: true
+
+        - id: p2
+          content: "Root cause is unknown"
+          type: observation
+          verified: true
+
+        - id: p3
+          content: "Cannot treat effectively without diagnosis"
+          type: domain_knowledge
+          verified: uncertain
+
+        - id: p4
+          content: "Generic treatments have failed"
+          type: observation
+          verified: true
+
+      inferences:
+        - id: i1
+          type: causal
+          inputs: [p3]
+          conclusion: "Diagnosis is necessary for effective treatment"
+
+        - id: i2
+          type: elimination
+          inputs: [p4]
+          conclusion: "Generic approaches are eliminated"
+
+        - id: i3
+          type: deduction
+          inputs: [i1, i2]
+          conclusion: "Must get specific diagnosis via medical evaluation"
+
+    evaluation:
+      validity_check:
+        is_valid: true
+        all_inferences_valid: true
+        connectivity: good
+
+      soundness_check:
+        is_sound: uncertain
+        uncertain_premises: [p3]
+        note: "p3 (diagnosis necessity) is domain knowledge that should be verified"
+
+      weakness_analysis:
+        weakest_premise: p3
+        reason: "Assumes diagnosis leads to effective treatment, but for some conditions diagnosis doesn't help"
+        critical: true
+        priority: 1
+
+      necessity_assessment:
+        level: sufficient
+        alternatives:
+          - "Try remaining generic approaches systematically"
+          - "Specialist referral without GP evaluation"
+        explanation: |
+          This strategy is SUFFICIENT (will likely work) but not NECESSARY
+          (there could be other paths to improvement)
+
+      proof_level:
+        level: 2
+        name: "Defended"
+        reasoning: |
+          Valid derivation with sound premises (mostly verified).
+          One uncertain premise (p3) but it's reasonable domain knowledge.
+          Strategy has not yet survived adversarial attack.
+        upgrade_path: |
+          To reach Level 3:
+          - Verify p3 with medical literature
+          - Survive adversarial review testing
+
+  - name: Evaluating social skills strategy derivation
+    context: Strategy derived for improving conversation naturalness
+
+    strategy_proof:
+      strategy: "Increase real-world social practice"
+      premises:
+        - id: p1
+          content: "Goal is automatic social behavior"
+          type: goal_criterion
+          verified: true
+
+        - id: p2
+          content: "Automaticity requires practice"
+          type: domain_knowledge
+          verified: true (skill acquisition literature)
+
+        - id: p3
+          content: "Reading is not practice"
+          type: domain_knowledge
+          verified: true
+
+        - id: p4
+          content: "Current practice is insufficient"
+          type: observation
+          verified: uncertain (how to measure?)
+
+      inferences:
+        - id: i1
+          type: causal
+          inputs: [p1, p2]
+          conclusion: "Need practice to achieve automaticity"
+
+        - id: i2
+          type: elimination
+          inputs: [p3]
+          conclusion: "Book learning is not the path"
+
+        - id: i3
+          type: causal
+          inputs: [p4]
+          conclusion: "Need MORE practice than current"
+
+    evaluation:
+      validity_check:
+        is_valid: true
+        note: "All inferences follow logically"
+
+      soundness_check:
+        is_sound: mostly
+        uncertain_premises: [p4]
+        note: "p4 is reasonable but hard to verify precisely"
+
+      weakness_analysis:
+        weakest_inference: i3
+        reason: |
+          "More practice" is vague. How much more?
+          What kind of practice? Under what conditions?
+        critical: false
+        priority: 2
+
+      necessity_assessment:
+        level: sufficient
+        alternatives:
+          - "Mental practice/visualization"
+          - "Structured social skills training"
+          - "Social anxiety treatment if applicable"
+        explanation: |
+          Practice is NECESSARY for automaticity (well-established)
+          But the specific form of practice is NOT necessary -
+          there are multiple valid approaches
+
+      proof_level:
+        level: 2
+        name: "Defended"
+        reasoning: |
+          Core logic is sound: automaticity requires practice.
+          Weakness is in the specificity, not the direction.
+        upgrade_path: |
+          To reach Level 3:
+          - Specify type and amount of practice needed
+          - Verify specific approach through evidence
+          - Survive adversarial review testing

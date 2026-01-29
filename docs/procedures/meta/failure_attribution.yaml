@@ -1,0 +1,291 @@
+# Failure Attribution Framework
+# Systematic analysis of why projects fail
+# Addresses gap: Projects fail but GOSM doesn't learn what to improve
+
+id: failure_attribution
+name: Failure Attribution Framework
+version: "1.0.0"
+domain: meta
+tags: ["meta", "learning", "failure", "improvement"]
+
+description: |
+  When a project fails, systematically analyze the root cause.
+
+  Current gap: GOSM captures "what worked" but not "why did this fail?"
+  This framework distinguishes controllable vs. uncontrollable factors
+  and identifies what GOSM should improve.
+
+when_to_use:
+  - Project failed (achievement < 50%)
+  - Project partially succeeded but with significant issues
+  - Retrospective analysis of historical failures
+
+# ============================================
+# FAILURE TYPE DECISION TREE
+# ============================================
+failure_type_tree:
+  description: Trace back from failure to root cause
+
+  level_1_was_goal_right:
+    question: "Was the goal the right goal to pursue?"
+    if_no:
+      failure_type: GOAL_FAILURE
+      description: "Pursued wrong goal - success wouldn't have helped"
+      gosm_improvement: "Improve RCI, goal-structure reconstruction"
+    if_yes:
+      proceed_to: level_2
+
+  level_2_was_strategy_right:
+    question: "Given the goal, was the strategy correct?"
+    if_no:
+      failure_type: STRATEGY_FAILURE
+      description: "Right goal, wrong approach"
+      gosm_improvement: "Improve adversarial review, cross-domain search"
+    if_yes:
+      proceed_to: level_3
+
+  level_3_was_plan_right:
+    question: "Given the strategy, was the plan executable?"
+    if_no:
+      failure_type: PLANNING_FAILURE
+      description: "Right strategy, inadequate specification"
+      gosm_improvement: "Improve specification adequacy, steps generation"
+    if_yes:
+      proceed_to: level_4
+
+  level_4_was_execution_right:
+    question: "Given the plan, was execution competent?"
+    if_no:
+      failure_type: EXECUTION_FAILURE
+      description: "Good plan, poor execution"
+      gosm_improvement: "Improve executor assessment, skill requirements"
+    if_yes:
+      proceed_to: level_5
+
+  level_5_were_externals_favorable:
+    question: "Did external factors cooperate?"
+    if_no:
+      failure_type: EXTERNAL_FAILURE
+      description: "Everything right, environment didn't cooperate"
+      gosm_improvement: "Improve risk assessment, contingency planning"
+    if_yes:
+      failure_type: LUCK_FAILURE
+      description: "Random bad outcome - variance"
+      gosm_improvement: "No system change needed (accept variance)"
+
+# ============================================
+# FAILURE TYPE DETAILS
+# ============================================
+failure_types:
+
+  GOAL_FAILURE:
+    description: "Pursued the wrong goal"
+    symptoms:
+      - "Achieved what we planned, but it didn't help"
+      - "In hindsight, would have done something completely different"
+      - "Success criteria met but real problem remains"
+      - "Goal served wrong intrinsic need"
+
+    root_causes:
+      - "RCI didn't trace deep enough"
+      - "Goal-structure reconstruction was incomplete"
+      - "Accepted stated goal without questioning"
+      - "Intrinsic goals were misidentified"
+
+    evidence_to_gather:
+      - "What goal should we have pursued instead?"
+      - "At what point did we know this was wrong goal?"
+      - "What would RCI have revealed if done properly?"
+
+    gosm_fix:
+      procedure: "Strengthen recursive_causal_interrogation"
+      gate: "Add goal validation gate with skeptical second opinion"
+      training: "Practice goal-structure reconstruction on past failures"
+
+  STRATEGY_FAILURE:
+    description: "Right goal, wrong approach"
+    symptoms:
+      - "Strategy didn't achieve goal"
+      - "Alternative strategy would have worked"
+      - "Assumptions in strategy proved false"
+      - "Adversarial attacks were correct"
+
+    root_causes:
+      - "Cross-domain search was superficial"
+      - "Adversarial review didn't find the real weakness"
+      - "Strategy selection picked wrong one"
+      - "Didn't explore enough alternatives"
+
+    evidence_to_gather:
+      - "What strategy would have worked?"
+      - "Was this alternative considered?"
+      - "What adversarial attack would have revealed the flaw?"
+      - "What assumption was wrong?"
+
+    gosm_fix:
+      procedure: "Strengthen adversarial_review with more attack types"
+      gate: "Require more alternatives before selection"
+      training: "Practice cross-domain search on this goal type"
+
+  PLANNING_FAILURE:
+    description: "Right strategy, inadequate plan"
+    symptoms:
+      - "Steps were unclear or ambiguous"
+      - "Dependencies were missed"
+      - "Timeline was wildly wrong"
+      - "Resources were underestimated"
+
+    root_causes:
+      - "Specification depth was insufficient"
+      - "Steps weren't actually atomic"
+      - "Implicit assumptions not made explicit"
+      - "Error handling not specified"
+
+    evidence_to_gather:
+      - "Which steps caused problems?"
+      - "What was missing from the plan?"
+      - "Where did executor get stuck?"
+      - "What would have made the plan sufficient?"
+
+    gosm_fix:
+      procedure: "Strengthen specification_adequacy_gate"
+      gate: "Require step-by-step walkthrough before release"
+      training: "Practice steps generation with novice test"
+
+  EXECUTION_FAILURE:
+    description: "Good plan, poor execution"
+    symptoms:
+      - "Steps were clear but not followed"
+      - "Quality was insufficient"
+      - "Executor lacked required skills"
+      - "Execution discipline was poor"
+
+    root_causes:
+      - "Wrong executor selected"
+      - "Skill requirements underestimated"
+      - "Execution monitoring was weak"
+      - "Adaptation during execution was poor"
+
+    evidence_to_gather:
+      - "Was executor qualified?"
+      - "Were steps followed?"
+      - "Where did quality fail?"
+      - "Was monitoring adequate?"
+
+    gosm_fix:
+      procedure: "Add executor assessment procedure"
+      gate: "Verify executor capability before assignment"
+      training: "Practice matching executor to specification"
+
+  EXTERNAL_FAILURE:
+    description: "Everything right, environment didn't cooperate"
+    symptoms:
+      - "Unpredictable external event occurred"
+      - "Other parties didn't behave as expected"
+      - "Market/timing changed"
+      - "Resources became unavailable"
+
+    root_causes:
+      - "External dependency wasn't identified"
+      - "Risk wasn't in risk register"
+      - "Contingency didn't exist"
+      - "Adaptation was too slow"
+
+    evidence_to_gather:
+      - "What external factor caused failure?"
+      - "Was it predictable?"
+      - "Was it in risk register?"
+      - "Did contingency exist? Was it activated?"
+
+    gosm_fix:
+      procedure: "Strengthen risk assessment"
+      gate: "Require contingency for all critical external dependencies"
+      training: "Practice premortem analysis"
+
+  LUCK_FAILURE:
+    description: "Random bad outcome - variance"
+    symptoms:
+      - "Same approach would succeed most of the time"
+      - "Improbable event occurred"
+      - "No way to have predicted or prevented"
+      - "Execution was correct, just unlucky"
+
+    root_causes:
+      - "Variance in outcomes"
+      - "Low-probability negative event"
+      - "Inherent uncertainty in domain"
+
+    evidence_to_gather:
+      - "What was the probability of this outcome?"
+      - "Would you do the same thing again?"
+      - "Is this variance or systematic problem?"
+
+    gosm_fix:
+      procedure: "None needed - accept variance"
+      gate: "Ensure failure wasn't preventable before classifying as luck"
+      training: "Calibrate expectations for this goal type"
+
+# ============================================
+# ATTRIBUTION PROCESS
+# ============================================
+attribution_process:
+  step_1_document_failure:
+    - "What was the original goal?"
+    - "What was the outcome?"
+    - "What was the gap (goal vs. outcome)?"
+
+  step_2_walk_decision_tree:
+    - "Start at level 1 (goal)"
+    - "Ask each question honestly"
+    - "Gather evidence at each level"
+    - "Identify failure type"
+
+  step_3_determine_controllability:
+    - "Was this failure preventable by GOSM process?"
+    - "If yes: What would have prevented it?"
+    - "If no: Is it truly uncontrollable or just hard?"
+
+  step_4_identify_gosm_improvement:
+    - "Based on failure type, what should change?"
+    - "Is it a procedure fix, gate fix, or training?"
+    - "Document specific recommendation"
+
+  step_5_implement_improvement:
+    - "Create issue for GOSM improvement"
+    - "Test improvement on historical failures"
+    - "Integrate if effective"
+
+# ============================================
+# ATTRIBUTION BIASES TO AVOID
+# ============================================
+biases:
+  - name: "Luck attribution for skill problems"
+    description: "Calling skill failures 'bad luck'"
+    fix: "Ask: Would a more skilled executor have succeeded?"
+
+  - name: "External attribution for strategy problems"
+    description: "Blaming environment for strategy choice"
+    fix: "Ask: Should we have anticipated this?"
+
+  - name: "Execution attribution for planning problems"
+    description: "Blaming executor for unclear steps"
+    fix: "Ask: Could a novice have followed these steps?"
+
+  - name: "Goal attribution for everything"
+    description: "Retroactively claiming goal was wrong"
+    fix: "Ask: At planning time, was this the right goal?"
+
+# ============================================
+# OUTPUT
+# ============================================
+output:
+  failure_attribution_report:
+    project: "[project name]"
+    goal: "[original goal]"
+    outcome: "[what happened]"
+    gap: "[goal vs outcome]"
+    failure_type: "[GOAL|STRATEGY|PLANNING|EXECUTION|EXTERNAL|LUCK]"
+    evidence: "[supporting evidence]"
+    controllability: "[PREVENTABLE|UNPREVENTABLE]"
+    gosm_improvement: "[specific recommendation]"
+    implementation_status: "[NOT_STARTED|IN_PROGRESS|COMPLETE]"

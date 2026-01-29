@@ -1,0 +1,772 @@
+# Presentation Design Procedure - Create visually effective slides and handouts
+# GOSM Communication procedure for designing presentations that enhance communication
+
+id: presentation_design
+name: Presentation Design
+version: "1.0.0"
+domain: communication
+
+description: Systematic procedure for designing visually effective presentations, slides, and handouts that enhance rather than compete with your message
+
+long_description: |
+  The Presentation Design procedure provides a framework for creating visual
+  materials that support effective communication. Good presentation design
+  makes complex ideas clear, focuses attention appropriately, and enhances
+  rather than replaces the presenter.
+
+  This procedure covers:
+  - Slide design principles (simplicity, visual hierarchy, consistency)
+  - Visual hierarchy (guiding the eye to what matters)
+  - Data visualization (making numbers meaningful)
+  - Handout design (materials that work without you)
+  - Technical execution (tools, templates, delivery formats)
+
+  Key principles:
+  - You are the presentation; slides support you
+  - One idea per slide maximum
+  - Visuals over text, always
+  - Design for the back of the room
+  - If the slide can stand alone, you're not needed
+
+tags:
+  - communication
+  - presentation
+  - design
+  - visualization
+  - slides
+  - data
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Creating slides for any presentation or talk
+  - Designing pitch decks for investors or clients
+  - Building executive briefing materials
+  - Preparing conference or meetup presentations
+  - Creating training materials with visual aids
+  - Designing data-heavy presentations that need clarity
+  - Building leave-behind documents or handouts
+  - Creating video presentation visuals
+
+when_not_to_use:
+  - When no visual aids are appropriate (some talks are better without slides)
+  - For documents meant to be read, not presented (use document design instead)
+  - When time doesn't permit quality design (simple or none is better than bad)
+  - For informal discussions where slides would be overkill
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: presentation_content
+    type: document
+    required: true
+    description: The outline or content of your presentation
+
+  - name: audience
+    type: string
+    required: true
+    description: Who will view these materials (role, context, expectations)
+
+  - name: presentation_context
+    type: enum
+    values: [in_person_large, in_person_small, virtual, recorded, leave_behind, hybrid]
+    required: false
+    description: How the presentation will be delivered
+
+  - name: time_available
+    type: integer
+    required: false
+    description: Total presentation time in minutes
+
+  - name: brand_constraints
+    type: string
+    required: false
+    description: Any brand, color, or style guidelines to follow
+
+  - name: technical_constraints
+    type: list
+    required: false
+    description: Technical limitations (screen size, format requirements, etc.)
+
+outputs:
+  - name: slide_deck
+    type: file
+    description: The designed presentation slides
+
+  - name: speaker_notes
+    type: document
+    description: Notes for the presenter aligned with slides
+
+  - name: handout
+    type: file
+    description: Leave-behind document for audience (if applicable)
+
+  - name: design_documentation
+    type: document
+    description: Design decisions and rationale for future reference
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Define design requirements
+    action: |
+      Before designing, understand what the visuals need to accomplish:
+
+      Audience analysis:
+      1. What is their visual literacy level?
+      2. What design conventions do they expect?
+      3. Will they see this once (presentation) or refer back (handout)?
+      4. Are there accessibility considerations?
+
+      Context analysis:
+      1. Room size and screen configuration?
+      2. Lighting conditions?
+      3. Virtual vs in-person?
+      4. Will people be close or far from screen?
+
+      Content requirements:
+      1. How many main sections?
+      2. What types of content (concepts, data, processes, comparisons)?
+      3. Are there complex ideas that need visual explanation?
+      4. Is there data that needs visualization?
+
+      Constraints:
+      1. Brand guidelines or templates required?
+      2. Format requirements (aspect ratio, file type)?
+      3. Accessibility requirements?
+      4. Time available for design?
+    inputs:
+      - audience
+      - presentation_context (optional)
+      - brand_constraints (optional)
+      - technical_constraints (optional)
+    outputs:
+      - design_requirements: what the visuals need to accomplish
+      - context_constraints: environmental factors affecting design
+      - content_types: types of content that need visual treatment
+    verification: |
+      Know the viewing context (room size, virtual/in-person)
+      Identified types of content requiring visual design
+
+  - id: 2
+    name: Plan the visual structure
+    action: |
+      Map content to visual treatment:
+
+      Content-to-visual mapping:
+      1. Title slides: For section breaks and major transitions
+      2. Concept slides: Single ideas that need illustration
+      3. Data slides: Numbers that need visualization
+      4. Process slides: Sequences or workflows
+      5. Comparison slides: Contrasting options or before/after
+      6. Image slides: Full-bleed images for emotional impact
+      7. Blank slides: Strategic pauses where you want attention on you
+
+      Slide count estimation:
+      - 1-2 slides per minute of talking (maximum)
+      - Better to have fewer, more impactful slides
+      - Account for transition slides and pauses
+
+      Visual narrative:
+      - How does the visual journey support the story?
+      - Where are the high-impact moments?
+      - What visual motifs or metaphors could unify the deck?
+    inputs:
+      - presentation_content
+      - time_available (optional)
+      - content_types (from Step 1)
+    outputs:
+      - slide_plan: list of slides with type and purpose
+      - visual_narrative: how visuals support the story arc
+      - slide_count: estimated total slides
+    verification: |
+      Slide count is appropriate for time (1-2 per minute max)
+      Each slide has a clear purpose identified
+
+  - id: 3
+    name: Establish visual design system
+    action: |
+      Create consistent design elements:
+
+      Color palette:
+      - Primary color (1): For emphasis and key elements
+      - Secondary color (1-2): For supporting elements
+      - Neutral colors: For text and backgrounds
+      - Accent color (1): For calls to action or highlights
+      - Ensure sufficient contrast for readability
+      - Consider color blindness (don't rely on red/green alone)
+
+      Typography:
+      - Headline font: Bold, readable from distance
+      - Body font: Clean, professional, readable
+      - Maximum 2 font families
+      - Minimum sizes: Headlines 32pt+, body 24pt+
+      - Consistent hierarchy across slides
+
+      Layout grid:
+      - Consistent margins (generous - use whitespace)
+      - Alignment guides for elements
+      - Consistent placement of recurring elements (logo, page numbers)
+
+      Visual elements:
+      - Icon style (line, filled, consistent style)
+      - Image treatment (full bleed, contained, filtered)
+      - Chart style (colors, labels, legends)
+      - Transition style (simple, consistent)
+    inputs:
+      - brand_constraints (optional)
+      - context_constraints (from Step 1)
+    outputs:
+      - color_palette: defined colors with usage guidelines
+      - typography_system: fonts and sizes for each use
+      - layout_grid: template layout with guides
+      - visual_elements: icon, image, and chart standards
+    verification: |
+      Color palette has sufficient contrast (4.5:1 minimum)
+      Font sizes are readable from back of room
+      Design system is simple enough to apply consistently
+
+  - id: 4
+    name: Design slide layouts
+    action: |
+      Create or select slide templates for each content type:
+
+      Title slide:
+      - Presentation title (large, prominent)
+      - Subtitle or tagline
+      - Presenter name and context
+      - Minimal, impactful visual
+
+      Section break slide:
+      - Section title only
+      - Strong visual impact
+      - Signals transition to audience
+
+      Concept slide (most common):
+      - One idea, one visual
+      - Text: 6 words or fewer
+      - Large image or simple diagram
+      - Whitespace to let idea breathe
+
+      Data slide:
+      - One chart or visualization per slide
+      - Clear headline stating the insight (not "Q3 Sales" but "Sales grew 40%")
+      - Minimal labels, no chartjunk
+      - Call out the key data point visually
+
+      Comparison slide:
+      - Clear two-column or before/after structure
+      - Parallel construction
+      - Visual distinction between options
+
+      Quote slide:
+      - Quote in large text
+      - Attribution smaller
+      - Simple, minimal design
+
+      Image slide:
+      - Full-bleed high-quality image
+      - Minimal or no text overlay
+      - Use for emotional impact or transitions
+    inputs:
+      - slide_plan (from Step 2)
+      - typography_system (from Step 3)
+      - layout_grid (from Step 3)
+    outputs:
+      - slide_templates: reusable layouts for each content type
+      - usage_guidelines: when to use each template
+    verification: |
+      Have templates for all content types identified in planning
+      Templates enforce design constraints (minimal text, etc.)
+
+  - id: 5
+    name: Design data visualizations
+    action: |
+      Create clear, honest, impactful data displays:
+
+      Choose the right chart:
+      - Comparison: Bar chart (horizontal for many items)
+      - Change over time: Line chart
+      - Part of whole: Pie (limit to 3-5 slices) or stacked bar
+      - Relationship: Scatter plot
+      - Distribution: Histogram
+
+      Data visualization principles:
+      1. Start axis at zero (unless misleading not to)
+      2. Label directly, avoid legends when possible
+      3. Remove chartjunk (gridlines, 3D effects, unnecessary decoration)
+      4. Highlight the insight, not just the data
+      5. Use color strategically to draw attention
+      6. Make the headline the insight ("Sales grew 40%" not "Q3 Sales")
+
+      Avoid:
+      - 3D charts (distort perception)
+      - Dual Y-axes (confusing)
+      - Too many data series (simplify)
+      - Truncated axes that exaggerate differences
+      - Pie charts with too many slices
+
+      Accessibility:
+      - Don't rely on color alone (use patterns or labels)
+      - Ensure sufficient contrast
+      - Provide alt text descriptions
+    inputs:
+      - presentation_content (data elements)
+      - color_palette (from Step 3)
+    outputs:
+      - data_visualizations: designed charts and graphs
+      - visualization_guidelines: how data was treated
+    verification: |
+      Charts show insight clearly, not just data
+      No chartjunk or misleading visual treatments
+      Data is labeled directly, legends minimized
+
+  - id: 6
+    name: Build the slides
+    action: |
+      Execute the design for each slide:
+
+      Building process:
+      1. Start with template/layout for slide type
+      2. Add content following design system
+      3. Apply one-idea-per-slide rule ruthlessly
+      4. Replace text with visuals wherever possible
+      5. Check readability at actual viewing size
+      6. Ensure consistency with design system
+
+      Slide-by-slide checklist:
+      - Is there only ONE idea on this slide?
+      - Could this be an image instead of text?
+      - Is text under 6 words?
+      - Is it readable from the back of the room?
+      - Does it follow the design system?
+      - Does the headline state an insight/claim (not just a topic)?
+
+      Text reduction techniques:
+      - Bullet points to single headline
+      - Paragraphs to key phrase
+      - Lists to icons with labels
+      - Tables to simplified charts
+      - Text to visual metaphor
+
+      Animation guidelines:
+      - Use sparingly and purposefully
+      - Simple transitions only (no spinning text)
+      - Build sequences can reveal complexity gradually
+      - Avoid animation that competes with your words
+    inputs:
+      - slide_plan (from Step 2)
+      - slide_templates (from Step 4)
+      - data_visualizations (from Step 5)
+      - visual_elements (from Step 3)
+    outputs:
+      - slide_deck: completed presentation slides
+      - speaker_notes: aligned notes for each slide
+    verification: |
+      Every slide passes the 6-word test (or less)
+      Design system is applied consistently throughout
+      Could present without slides if they failed
+
+  - id: 7
+    name: Create supporting materials
+    action: |
+      Design handouts or leave-behind documents:
+
+      Handout purposes:
+      - Reference during presentation (brief, follow-along)
+      - Reference after presentation (detailed, standalone)
+      - Pre-reading before presentation (context setting)
+
+      Handout design principles:
+      - Handouts are DOCUMENTS, not printed slides
+      - Include detail that slides deliberately exclude
+      - Can stand alone without presenter
+      - Include sources, references, next steps
+      - Design for reading, not projecting
+
+      What to include:
+      - Summary of key points
+      - Detailed data and analysis
+      - References and sources
+      - Contact information and next steps
+      - Space for notes if used during presentation
+
+      When to distribute:
+      - Before: If they need context or will take notes
+      - After: If you want attention on you during talk
+      - During: Only if they need to reference specific content
+    inputs:
+      - presentation_content
+      - slide_deck (from Step 6)
+    outputs:
+      - handout: leave-behind document
+      - distribution_plan: when and how to provide materials
+    verification: |
+      Handout can stand alone without presenter
+      Handout is a document, not printed slides
+
+  - id: 8
+    name: Review and refine
+    action: |
+      Quality check the complete design:
+
+      Visual review:
+      1. View at actual presentation size
+      2. Step back - is it readable from distance?
+      3. Squint test - do key elements stand out?
+      4. Consistency check - does design system hold throughout?
+      5. Flow check - does visual narrative work?
+
+      Content review:
+      1. One idea per slide?
+      2. Text minimal enough?
+      3. Headlines state insights, not just topics?
+      4. Data visualizations clear and honest?
+      5. Could you present without slides?
+
+      Technical review:
+      1. File size acceptable?
+      2. Fonts embedded?
+      3. Links working?
+      4. Compatible with presentation system?
+      5. Backup formats available?
+
+      Accessibility review:
+      1. Color contrast sufficient?
+      2. Not relying on color alone?
+      3. Alt text for images?
+      4. Readable fonts and sizes?
+    inputs:
+      - slide_deck (from Step 6)
+      - handout (from Step 7)
+    outputs:
+      - refined_slide_deck: polished final version
+      - design_documentation: rationale and guidelines for future
+      - backup_files: exported versions in backup formats
+    verification: |
+      Slides pass distance readability test
+      All technical requirements met
+      Accessibility standards met
+
+# ============================================
+# DESIGN PRINCIPLES
+# ============================================
+design_principles:
+  simplicity:
+    principle: "Reduce until it breaks, then add back one thing"
+    application:
+      - "Start with nothing, add only what's essential"
+      - "Remove every element that doesn't serve the message"
+      - "White space is not wasted space"
+      - "If in doubt, leave it out"
+
+  one_idea_per_slide:
+    principle: "Each slide should have one and only one purpose"
+    application:
+      - "If you can split it, split it"
+      - "Builds/reveals can show sequence on one slide"
+      - "The slide should pass the 'what is this about?' instant test"
+      - "Agenda slides can list items, but each item is one phrase"
+
+  visual_hierarchy:
+    principle: "Guide the eye to what matters most"
+    application:
+      - "Larger = more important"
+      - "Color draws attention - use strategically"
+      - "Position matters - top left is read first"
+      - "Contrast creates hierarchy - make key elements pop"
+
+  consistency:
+    principle: "Consistent design builds trust and reduces cognitive load"
+    application:
+      - "Same fonts, colors, layouts throughout"
+      - "Same placement for recurring elements"
+      - "Variations should be meaningful, not random"
+      - "Templates enforce consistency"
+
+  readability:
+    principle: "Design for the worst seat in the room"
+    application:
+      - "If it's too small for the back row, it's too small"
+      - "High contrast between text and background"
+      - "Simple, clean fonts - no decorative scripts"
+      - "Test at actual viewing size"
+
+  support_not_replace:
+    principle: "Slides support the speaker, they don't replace them"
+    application:
+      - "If slides can stand alone, you're not needed"
+      - "Audience should look at you, not read your slides"
+      - "Slides illustrate; you explain"
+      - "Never read your slides"
+
+# ============================================
+# VISUAL HIERARCHY
+# ============================================
+visual_hierarchy:
+  guiding_attention:
+    size:
+      principle: "Larger elements are seen first and perceived as more important"
+      application: "Make headlines larger than supporting text; key data points larger than labels"
+
+    color:
+      principle: "Color contrast draws the eye"
+      application: "Use accent color only for most important elements; grayscale for context"
+
+    position:
+      principle: "Top-left is seen first in most cultures; center commands attention"
+      application: "Put most important element in prime position; use center for single focus"
+
+    contrast:
+      principle: "High contrast elements pop; low contrast recedes"
+      application: "Full saturation for key elements; desaturated for supporting content"
+
+    whitespace:
+      principle: "Isolation draws attention; crowding diffuses it"
+      application: "Give key elements breathing room; group related elements together"
+
+  common_patterns:
+    z_pattern:
+      description: "Eye moves top-left to top-right, diagonal to bottom-left, then bottom-right"
+      use: "Place key elements along this path"
+
+    f_pattern:
+      description: "For text-heavy content, eye scans horizontal lines, dropping down"
+      use: "Put most important info in first lines"
+
+    center_focus:
+      description: "Single centered element commands full attention"
+      use: "For hero images or single key messages"
+
+    thirds:
+      description: "Divide slide into 3x3 grid, place key elements at intersections"
+      use: "For balanced, visually pleasing layouts"
+
+# ============================================
+# DATA VISUALIZATION
+# ============================================
+data_visualization:
+  chart_selection:
+    bar_chart:
+      use_for: "Comparing discrete items"
+      variants:
+        - "Horizontal: when labels are long or many items"
+        - "Vertical: when fewer items or showing change over time"
+        - "Stacked: showing part of whole across categories"
+
+    line_chart:
+      use_for: "Showing change over time, trends"
+      guidelines:
+        - "Time on x-axis"
+        - "Limit to 3-4 lines maximum"
+        - "Use direct labels, not legend if possible"
+
+    pie_chart:
+      use_for: "Showing part of whole (use sparingly)"
+      guidelines:
+        - "Maximum 5 slices"
+        - "Start at 12 o'clock, largest slice first"
+        - "Consider donut or bar chart instead"
+
+    scatter_plot:
+      use_for: "Showing relationship between two variables"
+      guidelines:
+        - "Clear axis labels"
+        - "Use trend line if relationship is the point"
+        - "Color or size can show third variable"
+
+  design_guidelines:
+    clarity:
+      - "Title is the insight, not the description ('Sales grew 40%' not 'Q3 Sales')"
+      - "Label data directly, minimize legends"
+      - "Remove gridlines or make them subtle"
+      - "Highlight the key data point"
+
+    honesty:
+      - "Start y-axis at zero (unless zero is misleading)"
+      - "Consistent scales across related charts"
+      - "Don't cherry-pick time ranges to distort trends"
+      - "Show context when needed"
+
+    simplicity:
+      - "One insight per chart"
+      - "Remove chartjunk (3D effects, decorations)"
+      - "Limit colors to what's meaningful"
+      - "If complex, build with animation"
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Every slide has one clear idea only
+  - Text is 6 words or fewer (except quotes)
+  - Readable from the back of the room (32pt+ headlines, 24pt+ body)
+  - Design system applied consistently throughout
+  - Data visualizations show insight, not just data
+  - Presentation can be delivered without slides if needed
+  - Accessibility requirements met (contrast, alt text)
+  - Technical requirements met (format, size, compatibility)
+
+failure_modes:
+  - mode: Slideument
+    symptom: Slides full of text that could be a document
+    resolution: Reduce text to 6 words max; put detail in handout or speaker notes
+
+  - mode: Death by bullet
+    symptom: Every slide is bullet points
+    resolution: Replace bullets with visuals, diagrams, or single powerful statements
+
+  - mode: Reading the slides
+    symptom: Presenter reads what audience can see
+    resolution: Slides should illustrate, not duplicate what you're saying
+
+  - mode: Chartjunk
+    symptom: Busy, decorated charts that obscure the data
+    resolution: Remove 3D effects, unnecessary gridlines, decoration; highlight key insight
+
+  - mode: Inconsistency
+    symptom: Random fonts, colors, layouts throughout
+    resolution: Establish and enforce design system from the start
+
+  - mode: Too many slides
+    symptom: Rushing through 60 slides in 20 minutes
+    resolution: 1-2 slides per minute max; cut ruthlessly
+
+  - mode: Unreadable from distance
+    symptom: Squinting audience, small text, low contrast
+    resolution: Test at actual viewing size; minimum 24pt; high contrast
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Investor pitch deck
+    context: 10-minute pitch to venture capitalists
+    inputs:
+      presentation_content: "Pitch narrative with problem, solution, market, team, ask"
+      audience: "VCs, see hundreds of pitches, sophisticated but time-poor"
+      presentation_context: "in_person_small"
+      time_available: 10
+      brand_constraints: "Company brand colors and logo"
+    process: |
+      Step 1 - Requirements:
+      - Audience: Visual savvy, will judge professionalism; want to see key metrics quickly
+      - Context: Conference room, close viewing, 2-3 people
+      - Content: Story-driven with key metrics; need memorable differentiation
+
+      Step 2 - Structure (10 slides for 10 minutes):
+      1. Hook slide (not company name - start with problem or vision)
+      2. Problem slide (their pain)
+      3. Solution slide (your answer)
+      4. Demo/How it works (if applicable)
+      5. Traction slide (key metrics)
+      6. Market slide (opportunity size)
+      7. Business model (how you make money)
+      8. Team slide
+      9. Ask slide (what you want)
+      10. Contact/close
+
+      Step 3 - Design system:
+      - Clean, professional, not flashy
+      - Brand colors with high-contrast text
+      - Modern sans-serif fonts
+      - Minimal decoration
+      - Metrics displayed prominently
+
+      Step 5 - Data slides:
+      - Traction: Large number callout "10x growth in 12 months"
+      - Market: Clear TAM/SAM/SOM visualization
+      - Financials: Simple charts, not spreadsheets
+    expected_output:
+      slide_deck:
+        slide_count: 10
+        design_approach: "Clean, professional, metrics-forward"
+        key_decisions:
+          - "No logo on slide 1 - hook with problem"
+          - "Traction slide has 3 key metrics, not 10"
+          - "Team slide shows faces and brief credentials"
+          - "Ask slide is specific and clear"
+
+  - name: Technical conference presentation
+    context: 30-minute talk at tech conference on system design
+    inputs:
+      presentation_content: "Technical deep-dive on distributed systems pattern"
+      audience: "Engineers, technical, comfortable with complexity"
+      presentation_context: "in_person_large"
+      time_available: 30
+      technical_constraints: "16:9 format, large screen, 500-person room"
+    process: |
+      Step 1 - Requirements:
+      - Audience: Technical, want depth, will reference slides later
+      - Context: Large room, back row 50+ feet from screen
+      - Content: Concepts, architecture diagrams, code samples
+
+      Step 2 - Structure:
+      - Title slide
+      - Problem context (2-3 slides)
+      - Solution overview (1 slide)
+      - Deep dive into 3 key concepts (3-4 slides each)
+      - Demo/code examples (2-3 slides)
+      - Summary and takeaways
+      - Resources
+
+      Step 3 - Design system:
+      - High contrast (will be in lit room)
+      - Very large fonts (back of room readability)
+      - Simple diagrams, build complexity with reveals
+      - Code in large, readable font with highlighting
+
+      Step 5 - Technical diagrams:
+      - Architecture: Build up layer by layer
+      - Flow: Animate the sequence
+      - Code: Highlight relevant lines, not full files
+    expected_output:
+      slide_deck:
+        slide_count: 20-25
+        design_approach: "High contrast, large fonts, progressive reveals"
+        key_decisions:
+          - "Architecture diagram builds in 4 steps"
+          - "Code snippets are 10 lines max, key parts highlighted"
+          - "Each concept slide has diagram on left, 3 bullet points on right"
+          - "Summary slide has 3 key takeaways only"
+      handout:
+        content: "Full code samples, references, links to repository"
+        distribution: "QR code on final slide to download"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When strategy requires presenting to stakeholders or investors
+    - During execution for progress updates and demonstrations
+    - When goals require visual communication of complex ideas
+    - For communication milestones requiring polished materials
+    - When teaching or training on new processes or systems
+
+  gates:
+    - gate: requirements_defined
+      question: "Do I understand the viewing context and audience needs?"
+
+    - gate: structure_planned
+      question: "Is the visual structure mapped to content?"
+
+    - gate: design_system_established
+      question: "Are colors, fonts, and layouts defined consistently?"
+
+    - gate: one_idea_per_slide
+      question: "Does every slide have only one clear idea?"
+
+    - gate: readability_tested
+      question: "Is everything readable from the back of the room?"
+
+  related_procedures:
+    - public_speaking: Presentation design supports effective delivery
+    - storytelling: Visual design can enhance narrative
+    - persuasive_writing: Visual design principles apply to persuasive presentations
+    - data_analysis: Data needs visualization for presentation
+    - feedback_delivery: Performance conversations may use visual data

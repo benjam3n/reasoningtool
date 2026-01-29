@@ -1,0 +1,591 @@
+# Policy Research Procedure - Identifying high-impact advocacy targets
+# GOSM procedure for systematic evidence-based policy selection
+
+id: policy_research
+name: Policy Research
+version: "1.0.0"
+domain: advocacy
+
+description: Identify evidence-based, neglected, tractable policies for advocacy campaigns
+
+long_description: |
+  The Policy Research procedure systematically identifies and evaluates policy
+  opportunities for advocacy campaigns using a five-criteria scoring framework:
+  evidence quality, cost-effectiveness, neglectedness, tractability, and impact.
+
+  This procedure ensures advocacy resources are directed toward policies where
+  marginal effort can produce the greatest positive outcomes. It emphasizes
+  finding genuinely neglected opportunities where new advocacy can make a difference.
+
+  Key principles:
+  - Evidence base determines credibility with policymakers
+  - Neglectedness multiplies marginal impact of advocacy
+  - Tractability determines realistic chance of success
+  - Cost-effectiveness ensures efficient resource use
+  - Diversity of policies builds broader coalition potential
+
+tags:
+  - advocacy
+  - policy
+  - research
+  - evidence
+  - scoring
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Starting a new advocacy project and need to identify what to advocate for
+  - Evaluating policy opportunities for campaign selection
+  - Building an evidence-based advocacy portfolio
+  - Refreshing policy priorities after legislative changes
+  - Assessing whether to join existing advocacy coalitions
+  - Preparing grant applications requiring policy rationale
+
+when_not_to_use:
+  - Already committed to specific policy from funder or coalition
+  - Reactive advocacy responding to immediate legislative threat
+  - Single-issue organization with predefined focus
+  - Insufficient time for thorough research (use rapid assessment instead)
+  - Policy area already well-covered by existing advocacy organizations
+  - Operating in jurisdiction where research sources are unavailable
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: policy_areas
+    type: list
+    required: true
+    description: Policy areas to explore (e.g., criminal justice, healthcare, housing)
+
+  - name: constraints
+    type: dict
+    required: false
+    description: Constraints on policy selection (political alignment, geography, budget)
+
+  - name: research_depth
+    type: enum
+    values: [rapid, standard, comprehensive]
+    required: false
+    description: Level of research depth (affects timeline and thoroughness)
+
+  - name: existing_landscape
+    type: dict
+    required: false
+    description: Known advocacy landscape (existing orgs, recent activity)
+
+outputs:
+  - name: policy_candidates
+    type: list
+    description: All policies reviewed with initial assessments
+
+  - name: scored_policies
+    type: list
+    description: Policies with full five-criteria scoring
+
+  - name: selected_policies
+    type: list
+    description: Top 3-5 policies selected for advocacy
+
+  - name: policy_briefs
+    type: list
+    description: One-page briefs for each selected policy
+
+  - name: evidence_summaries
+    type: list
+    description: Detailed evidence compilations for each selected policy
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Source identification and review
+    action: |
+      Systematically review primary sources for policy candidates:
+      1. Review Open Philanthropy focus areas for EA-aligned priorities
+      2. Check Niskanen Center for evidence-based, bipartisan options
+      3. Review Brookings Institution for research-backed recommendations
+      4. Check RAND Corporation for policy analysis
+      5. Review CBO for cost-benefit analyzed policies
+      6. Check 80,000 Hours problem profiles for high-impact areas
+      7. Search secondary sources (CRS, GAO, academic journals)
+
+      For each promising policy found:
+      - Note specific actionable recommendation
+      - Record evidence cited
+      - Check current advocacy level
+      - Add to candidates list
+    inputs:
+      - policy_areas
+      - constraints (optional)
+    outputs:
+      - policy_candidates: list of 20+ candidates with initial notes
+      - source_coverage: which sources reviewed
+    verification: |
+      At least 20 candidate policies identified across multiple sources
+
+  - id: 2
+    name: Initial screening
+    action: |
+      Apply quick filters to narrow candidate list:
+      1. Has specific actionable ask (bill, executive action, regulation)
+      2. Has some evidence base (not purely theoretical)
+      3. Not already heavily advocated (check OpenSecrets lobbying data)
+      4. Plausible path to implementation
+      5. Aligns with any specified constraints
+
+      Mark each candidate as: Promising / Maybe / Unlikely
+    inputs:
+      - policy_candidates (from Step 1)
+      - constraints (optional)
+    outputs:
+      - filtered_candidates: 10-15 candidates passing initial screen
+      - screening_notes: reasons for filtering decisions
+    verification: |
+      Each candidate has clear pass/fail on each criterion
+
+  - id: 3
+    name: Deep scoring
+    action: |
+      Score each filtered candidate on five criteria (1-10 scale):
+
+      Evidence (weight 0.25):
+      - 1-3: Theoretical only
+      - 4-6: Observational studies
+      - 7-10: RCTs or meta-analyses
+      Sources: Google Scholar, CBO reports, CRS reports
+
+      Cost-Effectiveness (weight 0.20):
+      - 1-3: Unclear ROI
+      - 4-6: Moderate ROI
+      - 7-10: High ROI (CBO scored)
+      Sources: CBO cost estimates, academic cost-benefit analyses
+
+      Neglectedness (weight 0.20):
+      - 1-3: Major advocacy already exists
+      - 4-6: Some advocacy present
+      - 7-10: Little or no organized advocacy
+      Check: OpenSecrets lobbying data, news search, think tank activity
+
+      Tractability (weight 0.20):
+      - 1-3: Major opposition, unlikely to pass
+      - 4-6: Mixed political landscape
+      - 7-10: Bipartisan potential
+      Indicators: Recent votes, legislator statements, political climate
+
+      Impact (weight 0.15):
+      - 1-3: Less than 100K affected
+      - 4-6: 100K to 1M affected
+      - 7-10: More than 1M affected
+      Measurement: Population affected, severity, duration
+
+      Calculate weighted total for each candidate.
+    inputs:
+      - filtered_candidates (from Step 2)
+    outputs:
+      - scored_policies: candidates with all scores and weighted total
+      - scoring_evidence: documentation for each score
+    verification: |
+      Each candidate has documented score for all five criteria
+
+  - id: 4
+    name: Ranking and selection
+    action: |
+      Rank candidates by weighted score and select portfolio:
+      1. Sort by total weighted score (descending)
+      2. Apply selection criteria:
+         - Score 6.0+ overall
+         - Clear evidence base
+         - Genuinely neglected (neglect score 6+)
+         - Specific actionable ask
+      3. Apply diversity requirements:
+         - At least one traditionally "left" policy
+         - At least one traditionally "right" policy
+         - At least one clearly bipartisan
+         - Different congressional committees
+      4. Select top 3-5 policies balancing score and diversity
+    inputs:
+      - scored_policies (from Step 3)
+    outputs:
+      - selected_policies: 3-5 policies chosen for advocacy
+      - selection_rationale: why each was selected
+      - diversity_coverage: how diversity requirements met
+    verification: |
+      Selection includes required diversity; all selections score 6.0+
+
+  - id: 5
+    name: Policy brief creation
+    action: |
+      Create one-page brief for each selected policy:
+
+      Structure:
+      1. The Problem (2-3 sentences on current situation and harm)
+      2. The Evidence (3 key findings with sources)
+      3. The Solution (specific policy recommendation, bill number if exists)
+      4. The Impact (quantified benefits, cost-benefit ratio)
+      5. Political Landscape (current support, opposition, path forward)
+      6. Action Requested (specific ask for legislators/staff)
+      7. Sources (key citations)
+
+      Format as professional one-pager suitable for legislative staff.
+    inputs:
+      - selected_policies (from Step 4)
+      - scoring_evidence (from Step 3)
+    outputs:
+      - policy_briefs: one-page PDF for each selected policy
+    verification: |
+      Each brief includes all seven sections; fits on one page
+
+  - id: 6
+    name: Evidence compilation
+    action: |
+      Create detailed evidence summary for each selected policy:
+      1. Full literature review (key studies with summaries)
+      2. All relevant CBO/CRS reports
+      3. Historical voting patterns on similar issues
+      4. Stakeholder map (supporters, opponents, undecided)
+      5. Counterarguments and evidence-based rebuttals
+      6. State-level implementations and outcomes (if applicable)
+
+      This serves as reference material for meetings and detailed questions.
+    inputs:
+      - selected_policies (from Step 4)
+      - scoring_evidence (from Step 3)
+    outputs:
+      - evidence_summaries: comprehensive research document per policy
+      - stakeholder_maps: visual maps of key players
+    verification: |
+      Each summary includes at least 5 key studies and counterargument rebuttals
+
+  - id: 7
+    name: Database population
+    action: |
+      Enter all policy data into advocacy database:
+      1. Add all candidates to policies table
+      2. Include all five scores
+      3. Mark selected policies with status "active"
+      4. Link brief file paths
+      5. Record research sources and dates
+    inputs:
+      - policy_candidates (from Step 1)
+      - scored_policies (from Step 3)
+      - selected_policies (from Step 4)
+    outputs:
+      - database_records: confirmation of data entry
+    verification: |
+      All policies in database with complete scoring data
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - At least 20 policies reviewed across multiple sources
+  - All candidates scored on all five criteria with documentation
+  - Selected policies meet 6.0+ threshold
+  - Diversity requirements met (political, committee)
+  - One-page briefs are clear, professional, and complete
+  - Evidence summaries include counterargument rebuttals
+  - Database fully populated with scoring data
+
+failure_modes:
+  - mode: Insufficient candidate diversity
+    symptom: All candidates cluster in one policy area or political lean
+    resolution: Explicitly search additional areas; use diversity as search criterion
+
+  - mode: Evidence score inflation
+    symptom: High evidence scores for policies with only observational data
+    resolution: Apply strict RCT/meta-analysis standard for 7+ scores; document study types
+
+  - mode: Neglectedness miscalculation
+    symptom: Selected policy actually has significant existing advocacy
+    resolution: Deep check OpenSecrets, recent news, and active lobbying registrations
+
+  - mode: Tractability optimism
+    symptom: Selected policies have unrealistic chance of passage
+    resolution: Check recent similar votes; interview staffers if possible; be conservative
+
+  - mode: Brief too technical
+    symptom: Legislative staff find brief hard to understand
+    resolution: Test with non-expert reader; lead with impact, not methodology
+
+  - mode: Missing counterarguments
+    symptom: Unprepared for objections in meetings
+    resolution: Explicitly research opposition arguments; develop evidence-based rebuttals
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Criminal justice policy portfolio development
+    context: New advocacy project focusing on evidence-based criminal justice reform
+    inputs:
+      policy_areas:
+        - "criminal justice"
+        - "pretrial reform"
+        - "sentencing"
+      constraints:
+        political_alignment: "bipartisan"
+      research_depth: "standard"
+    process: |
+      Step 1: Reviewed 8 primary sources over 3 days
+        - Open Philanthropy: Cash bail, prosecutorial reform
+        - Niskanen: Mandatory minimum reform
+        - Brookings: Reentry programs
+        - CBO: Various cost analyses
+        Identified 24 candidate policies
+
+      Step 2: Initial screening
+        - 6 excluded (no specific bill)
+        - 4 excluded (heavy existing advocacy)
+        - 14 candidates passed
+
+      Step 3: Deep scoring (sample):
+        Cash Bail Reform:
+          Evidence: 8 (multiple RCTs including Arnold Foundation)
+          Cost-effectiveness: 7 (CBO analysis shows savings)
+          Neglectedness: 5 (some state-level advocacy exists)
+          Tractability: 6 (bipartisan interest, recent state wins)
+          Impact: 8 (500K+ detained annually)
+          Total: 6.85
+
+        Mandatory Minimum Reform:
+          Evidence: 6 (strong observational, limited RCTs)
+          Cost-effectiveness: 8 (clear savings documented)
+          Neglectedness: 4 (significant existing advocacy)
+          Tractability: 5 (politically contentious)
+          Impact: 9 (millions affected)
+          Total: 6.20
+
+      Step 4: Selected 4 policies meeting criteria
+        - Cash bail reform (6.85)
+        - Prosecutorial accountability (6.72)
+        - Reentry employment programs (6.45)
+        - Risk assessment transparency (6.30)
+
+      Step 5-6: Created briefs and evidence summaries
+
+      Step 7: All 24 candidates entered in database
+    expected_output:
+      policy_candidates: 24
+      selected_policies:
+        - name: "Cash Bail Reform"
+          score: 6.85
+          brief: "briefs/cash_bail_reform.pdf"
+        - name: "Prosecutorial Accountability"
+          score: 6.72
+          brief: "briefs/prosecutorial_accountability.pdf"
+        - name: "Reentry Employment Programs"
+          score: 6.45
+          brief: "briefs/reentry_employment.pdf"
+        - name: "Risk Assessment Transparency"
+          score: 6.30
+          brief: "briefs/risk_assessment.pdf"
+
+  - name: Healthcare cost transparency rapid assessment
+    context: Rapid policy selection for healthcare advocacy with limited timeline
+    inputs:
+      policy_areas:
+        - "healthcare pricing"
+        - "surprise billing"
+      constraints:
+        timeline: "1 week"
+      research_depth: "rapid"
+    process: |
+      Step 1: Rapid source review (2 days)
+        - Focused on CBO-scored proposals
+        - Identified 12 candidates
+
+      Step 2: Quick screening
+        - 8 passed initial screen
+
+      Step 3: Abbreviated scoring
+        - Used existing CBO/CRS scores where available
+        - Focused on neglectedness and tractability research
+
+      Step 4: Selected 3 policies
+        - Hospital price transparency enforcement
+        - Surprise billing arbitration reform
+        - PBM transparency requirements
+
+      Step 5: Created briefs (abbreviated format)
+
+      Note: Rapid process trades thoroughness for speed;
+      plan to deepen research after initial outreach
+    expected_output:
+      selected_policies:
+        - name: "Hospital Price Transparency Enforcement"
+          score: 6.50
+        - name: "Surprise Billing Arbitration Reform"
+          score: 6.35
+        - name: "PBM Transparency Requirements"
+          score: 6.20
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - At advocacy project initiation to select policy portfolio
+    - When refreshing priorities after major legislative changes
+    - When evaluating coalition participation opportunities
+    - During strategic planning to allocate advocacy resources
+    - When preparing grant applications requiring policy rationale
+
+  gates:
+    - gate: policies_identified
+      question: "Have we identified a diverse set of candidate policies?"
+
+    - gate: scoring_complete
+      question: "Are all candidates scored on five criteria with documentation?"
+
+    - gate: selection_justified
+      question: "Are selected policies clearly justified by scores and diversity?"
+
+    - gate: briefs_ready
+      question: "Are professional one-page briefs ready for each selected policy?"
+
+  related_procedures:
+    - infrastructure_setup: Must complete before policy research (database)
+    - targeting: Next step after policies selected
+    - outreach_campaigns: Uses policy briefs for messaging
+    - learning_system: Captures which policies generate most engagement
+
+# ============================================
+# SCORING REFERENCE
+# ============================================
+scoring_criteria:
+  evidence:
+    weight: 0.25
+    scale:
+      1-3: "Theoretical only"
+      4-6: "Observational studies"
+      7-10: "RCTs or meta-analyses"
+    sources:
+      - "Google Scholar"
+      - "CBO reports"
+      - "CRS reports"
+      - "Academic journals"
+      - "Think tank publications"
+
+  cost_effectiveness:
+    weight: 0.20
+    scale:
+      1-3: "Unclear ROI"
+      4-6: "Moderate ROI"
+      7-10: "High ROI (CBO scored)"
+    sources:
+      - "CBO cost estimates"
+      - "Academic cost-benefit analyses"
+      - "Think tank evaluations"
+
+  neglectedness:
+    weight: 0.20
+    scale:
+      1-3: "Major advocacy already exists"
+      4-6: "Some advocacy present"
+      7-10: "Little or no organized advocacy"
+    check_method:
+      - "OpenSecrets lobbying data"
+      - "News search for advocacy"
+      - "Think tank activity"
+
+  tractability:
+    weight: 0.20
+    scale:
+      1-3: "Major opposition, unlikely to pass"
+      4-6: "Mixed political landscape"
+      7-10: "Bipartisan potential"
+    indicators:
+      - "Recent votes on similar issues"
+      - "Statements from key legislators"
+      - "Political climate"
+
+  impact:
+    weight: 0.15
+    scale:
+      1-3: "Less than 100K affected"
+      4-6: "100K to 1M affected"
+      7-10: "More than 1M affected"
+    measurement:
+      - "Population affected"
+      - "Severity of problem"
+      - "Duration of impact"
+
+# ============================================
+# RESEARCH SOURCES
+# ============================================
+research_sources:
+  primary:
+    - name: "Open Philanthropy"
+      url: "openphilanthropy.org/focus-areas"
+      focus: "EA-aligned policy priorities"
+
+    - name: "Niskanen Center"
+      url: "niskanencenter.org/publications"
+      focus: "Evidence-based, bipartisan policy"
+
+    - name: "Brookings Institution"
+      url: "brookings.edu/research"
+      focus: "Bipartisan analysis"
+
+    - name: "RAND Corporation"
+      url: "rand.org/pubs"
+      focus: "Research-backed policy"
+
+    - name: "Congressional Budget Office"
+      url: "cbo.gov"
+      focus: "Cost-benefit analyses"
+
+    - name: "80,000 Hours"
+      url: "80000hours.org/problem-profiles"
+      focus: "High-impact career areas"
+
+  secondary:
+    - "Congressional Research Service reports"
+    - "GAO reports"
+    - "Academic policy journals"
+    - "State-level policy labs"
+
+# ============================================
+# TEMPLATES
+# ============================================
+brief_template:
+  sections:
+    - name: "The Problem"
+      content: "2-3 sentences on current situation and harm"
+
+    - name: "The Evidence"
+      content: "3 key findings with sources"
+
+    - name: "The Solution"
+      content: "Specific policy recommendation, bill number if exists"
+
+    - name: "The Impact"
+      content: "Quantified benefits, cost-benefit ratio"
+
+    - name: "Political Landscape"
+      content: "Current support, opposition, path forward"
+
+    - name: "Action Requested"
+      content: "Specific ask for legislators/staff"
+
+    - name: "Sources"
+      content: "Key citations"
+
+candidate_template:
+  fields:
+    - name: "Policy name"
+    - area: "Policy area (criminal justice, housing, etc.)"
+    - source: "Where found"
+    - summary: "2-3 sentence description"
+    - evidence_cited: "Key studies/data"
+    - current_advocacy: "Who's working on this"
+    - political_landscape: "Bipartisan? Which party?"
+    - initial_assessment: "Promising / Maybe / Unlikely"
+
+dependencies:
+  - "infrastructure_setup (database)"
+
+next_procedure: "targeting"

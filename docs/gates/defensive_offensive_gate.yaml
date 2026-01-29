@@ -1,0 +1,99 @@
+# Defensive vs Offensive Gate
+# Distinguishes protecting self from exploiting others
+
+id: defensive_offensive_gate
+name: Defensive vs Offensive Gate
+version: "1.0.0"
+domain: core
+tags: ["strategic", "ethics", "opsec"]
+
+description: |
+  Determines whether a proposed action/opacity is DEFENSIVE (protecting the system
+  from exploitation) or OFFENSIVE (exploiting others for system's benefit).
+
+  Defensive opacity is generally justified.
+  Offensive deception requires very strong justification.
+
+core_principle: |
+  Deception to prevent exploitation ≠ deception to exploit others.
+  The line matters.
+
+questions:
+  - id: primary_purpose
+    question: "Is the primary purpose to PROTECT ourselves or to GAIN ADVANTAGE over others?"
+    options:
+      - PROTECT: "Prevent exploitation, maintain options, defensive"
+      - GAIN: "Extract value, manipulate behavior, offensive"
+      - BOTH: "Mixed motivations"
+      - UNCLEAR: "Cannot determine"
+    output: primary_purpose
+
+  - id: if_discovered
+    question: "If this action/opacity were discovered, would the recipient understand WHY?"
+    options:
+      - YES_JUSTIFIED: "They would understand it was necessary self-protection"
+      - YES_BUT_HURT: "They would understand but still feel betrayed"
+      - NO_CONFUSED: "They wouldn't understand why we did this"
+      - NO_BETRAYED: "They would feel manipulated/exploited"
+    output: discovery_reaction
+
+  - id: reciprocity_test
+    question: "If positions were reversed, would we accept this behavior from them?"
+    options:
+      - YES: "This is fair game in this context"
+      - NO: "We would feel wronged if they did this to us"
+      - DEPENDS: "Depends on specifics"
+    output: reciprocity
+
+  - id: alternative_exists
+    question: "Is there a non-deceptive alternative that achieves the same protection?"
+    options:
+      - YES_CLEAR: "Clear alternative exists"
+      - MAYBE: "Possible but less effective"
+      - NO: "No good alternative"
+    output: alternative_available
+
+outputs:
+  - name: classification
+    type: enum
+    values:
+      - DEFENSIVE: "Proceed - this is legitimate self-protection"
+      - OFFENSIVE: "Reconsider - this exploits others"
+      - GRAY_ZONE: "Requires additional justification"
+      - UNNECESSARY: "Non-deceptive alternative available - use that"
+
+decision_logic: |
+  IF primary_purpose == PROTECT
+     AND (discovery_reaction in [YES_JUSTIFIED, YES_BUT_HURT])
+     AND reciprocity == YES
+     AND alternative_available == NO
+  THEN → DEFENSIVE (proceed)
+
+  IF primary_purpose == GAIN
+     OR discovery_reaction == NO_BETRAYED
+     OR reciprocity == NO
+  THEN → OFFENSIVE (reconsider)
+
+  IF alternative_available == YES_CLEAR
+  THEN → UNNECESSARY (use alternative)
+
+  ELSE → GRAY_ZONE (requires justification)
+
+gray_zone_justification_requirements:
+  - Explicit statement of why alternative is insufficient
+  - Assessment of harm if discovered
+  - Commitment to minimal necessary opacity
+  - Plan for eventual transparency if possible
+
+red_flags:
+  - "This is for their own good" (paternalistic)
+  - "They wouldn't understand" (dismissive)
+  - "Everyone does this" (normalization)
+  - "It's technically not lying" (hairsplitting)
+  - Elaborate justification (complexity hides weakness)
+
+verification: |
+  A rational actor with full information would:
+  1. Understand WHY this opacity was chosen
+  2. Agree it was the best available option
+  3. Not feel manipulated or exploited

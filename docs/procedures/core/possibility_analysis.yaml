@@ -1,0 +1,286 @@
+# Possibility Analysis Procedure
+# Systematically explore what COULD be done with a system/resource/situation
+
+id: possibility_analysis
+name: Possibility Analysis
+version: "1.0.0"
+domain: core
+tags: ["meta", "strategy", "innovation", "exploration"]
+
+description: |
+  Systematically explore the possibility space of what could be done.
+  Counterpart to limitation_analysis - limitations ask "what can't we do?"
+  while possibilities ask "what COULD we do?"
+
+  Key insight: We often under-explore possibility space because we
+  anchor on current usage. This procedure forces broad enumeration
+  before filtering.
+
+core_principle: |
+  1. Enumerate possibilities WITHOUT filtering (defer judgment)
+  2. Categorize by type (what kind of possibility)
+  3. Assess value (what would we gain)
+  4. Assess feasibility (what would it take)
+  5. Apply effort/impact gate to prioritize
+  6. Identify ADJACENT possibilities (small extensions of current)
+  7. Identify TRANSFORMATIVE possibilities (fundamental changes)
+
+# ============================================
+# POSSIBILITY CATEGORIES
+# ============================================
+possibility_categories:
+  - id: EXTENSION
+    name: "Extensions"
+    description: "Do more of what we already do, or do it better"
+    examples:
+      - "Handle more edge cases"
+      - "Improve accuracy/speed/reliability"
+      - "Support more input/output formats"
+    typical_feasibility: HIGH
+
+  - id: COMBINATION
+    name: "Combinations"
+    description: "Combine with other systems/methods/data"
+    examples:
+      - "Integrate with system X"
+      - "Use data source Y"
+      - "Chain with process Z"
+    typical_feasibility: MEDIUM
+
+  - id: INVERSION
+    name: "Inversions"
+    description: "Do the opposite or reverse the flow"
+    examples:
+      - "Instead of X→Y, do Y→X"
+      - "Instead of generating, validate"
+      - "Instead of exploring, exploiting"
+    typical_feasibility: MEDIUM
+
+  - id: GENERALIZATION
+    name: "Generalizations"
+    description: "Apply to broader domain or more abstract level"
+    examples:
+      - "Apply method to different domain"
+      - "Make configurable what was hardcoded"
+      - "Extract reusable component"
+    typical_feasibility: MEDIUM
+
+  - id: SPECIALIZATION
+    name: "Specializations"
+    description: "Optimize for specific use case or domain"
+    examples:
+      - "Domain-specific tuning"
+      - "User-specific customization"
+      - "Task-specific optimization"
+    typical_feasibility: HIGH
+
+  - id: AUTOMATION
+    name: "Automation"
+    description: "Automate what's currently manual"
+    examples:
+      - "Auto-trigger on condition"
+      - "Auto-chain multiple steps"
+      - "Auto-validate results"
+    typical_feasibility: MEDIUM
+
+  - id: HUMAN_LOOP
+    name: "Human-in-the-Loop"
+    description: "Add human judgment/intervention points"
+    examples:
+      - "Human validation checkpoint"
+      - "Human override capability"
+      - "Human feedback integration"
+    typical_feasibility: HIGH
+
+  - id: TRANSFORMATION
+    name: "Transformations"
+    description: "Fundamentally change what the system does"
+    examples:
+      - "Pivot to different purpose"
+      - "Reframe the problem entirely"
+      - "Use as component for larger system"
+    typical_feasibility: LOW
+
+# ============================================
+# EXPLORATION PROMPTS
+# ============================================
+exploration_prompts:
+  # Core exploration
+  - id: current_state
+    question: "What does this system/resource currently do?"
+
+  - id: obvious_extensions
+    question: "What's the obvious next feature/capability?"
+
+  - id: ten_x
+    question: "What would make this 10x more valuable?"
+
+  - id: combination
+    question: "What could this be combined with?"
+
+  - id: inversion
+    question: "What if we did the opposite?"
+
+  - id: analogy
+    question: "What would [industry/domain X] do with this?"
+
+  - id: constraint_removal
+    question: "If we had unlimited [time/money/data], what would we do?"
+
+  - id: user_perspective
+    question: "What would different users want from this?"
+
+  - id: failure_mode
+    question: "What if it fails? Can failure itself be useful?"
+
+  - id: meta_level
+    question: "Can we apply this to itself? (meta-recursion)"
+
+  # Adjacent possibilities (Kauffman)
+  - id: adjacent_possible
+    question: |
+      What's ADJACENT to current capability?
+      (One step away, builds on what exists, doesn't require breakthrough)
+
+  # Distal possibilities
+  - id: distal_possible
+    question: |
+      What's DISTAL but valuable?
+      (Multiple steps away, requires significant new capability)
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+steps:
+  - id: 1
+    name: "Define scope"
+    action: |
+      Clearly state what system/resource/situation you're analyzing.
+      Include: current purpose, current capabilities, current usage.
+
+  - id: 2
+    name: "Enumerate possibilities freely"
+    action: |
+      Use exploration_prompts to generate possibilities.
+      NO FILTERING - write down everything, even if it seems:
+        - Obvious (still worth noting)
+        - Impossible (might inspire adjacent ideas)
+        - Stupid (might not be)
+        - Already considered (document it anyway)
+
+      Aim for QUANTITY first. 20+ possibilities minimum.
+
+  - id: 3
+    name: "Categorize each possibility"
+    action: |
+      For each possibility, assign a category from possibility_categories.
+      Mark whether it's:
+        - ADJACENT: One step from current (high feasibility)
+        - DISTAL: Multiple steps away (lower feasibility, higher potential)
+
+  - id: 4
+    name: "Assess value of each"
+    action: |
+      Rate potential value: TRANSFORMATIVE / HIGH / MEDIUM / LOW / NEGLIGIBLE
+
+      TRANSFORMATIVE: Changes the game entirely
+      HIGH: Significant new capability or major improvement
+      MEDIUM: Useful improvement, noticeable difference
+      LOW: Minor improvement
+      NEGLIGIBLE: Not worth the effort
+
+  - id: 5
+    name: "Assess feasibility of each"
+    action: |
+      Rate feasibility: TRIVIAL / EASY / MODERATE / HARD / BREAKTHROUGH
+
+      TRIVIAL: < 1 hour, obvious how to do it
+      EASY: < 1 day, clear path
+      MODERATE: Days to weeks, some unknowns
+      HARD: Weeks to months, significant challenges
+      BREAKTHROUGH: Requires fundamental advance we don't have
+
+  - id: 6
+    name: "Apply value/feasibility prioritization"
+    action: |
+      Create priority matrix:
+
+      DO FIRST:   EASY/TRIVIAL feasibility + HIGH/TRANSFORMATIVE value
+      DO SECOND:  MODERATE feasibility + HIGH/TRANSFORMATIVE value
+      EXPLORE:    HARD feasibility + TRANSFORMATIVE value (worth investigating)
+      MAYBE:      EASY feasibility + MEDIUM/LOW value
+      DEFER:      HARD feasibility + MEDIUM/LOW value
+      MOONSHOT:   BREAKTHROUGH + TRANSFORMATIVE (track but don't invest yet)
+
+  - id: 7
+    name: "Identify the ONE thing"
+    action: |
+      From DO FIRST, identify the single highest-leverage possibility.
+      Ask: "If we could only do ONE new thing, what would it be?"
+
+  - id: 8
+    name: "Map dependencies"
+    action: |
+      For top possibilities, identify:
+        - What must be true first (prerequisites)
+        - What this enables next (unlocks)
+        - What this conflicts with (tradeoffs)
+
+  - id: 9
+    name: "Create exploration plan"
+    action: |
+      For EXPLORE items (hard but potentially transformative):
+        - What's the cheapest experiment to test feasibility?
+        - What would we need to learn first?
+        - What's the smallest version we could try?
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+outputs:
+  - name: possibility_inventory
+    type: list
+    schema: |
+      - possibility: string
+        category: enum[EXTENSION, COMBINATION, INVERSION, GENERALIZATION, SPECIALIZATION, AUTOMATION, HUMAN_LOOP, TRANSFORMATION]
+        adjacent: boolean
+        value: enum[TRANSFORMATIVE, HIGH, MEDIUM, LOW, NEGLIGIBLE]
+        feasibility: enum[TRIVIAL, EASY, MODERATE, HARD, BREAKTHROUGH]
+        priority: enum[DO_FIRST, DO_SECOND, EXPLORE, MAYBE, DEFER, MOONSHOT]
+        notes: string
+
+  - name: action_plan
+    type: list
+    description: "Ordered list of possibilities to pursue"
+
+  - name: exploration_experiments
+    type: list
+    description: "Cheap experiments to test hard but valuable possibilities"
+
+  - name: dependency_map
+    type: graph
+    description: "What enables what, what conflicts with what"
+
+# ============================================
+# ANTI-PATTERNS
+# ============================================
+anti_patterns:
+  - name: "Premature filtering"
+    description: "Dismissing ideas before fully exploring them"
+    fix: "Write everything down first, filter later"
+
+  - name: "Anchoring on current use"
+    description: "Only seeing extensions of current usage"
+    fix: "Use inversion and analogy prompts"
+
+  - name: "Feasibility bias"
+    description: "Only considering what's obviously possible"
+    fix: "Explicitly generate moonshots, then work backward"
+
+  - name: "Value underestimation"
+    description: "Undervaluing unfamiliar possibilities"
+    fix: "Ask 'what if this worked?' before 'can this work?'"
+
+  - name: "Isolation"
+    description: "Analyzing in isolation instead of in context"
+    fix: "Use combination prompts, consider ecosystem"

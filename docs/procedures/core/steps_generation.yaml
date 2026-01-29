@@ -1,0 +1,617 @@
+# Steps Generation Procedure - Transform plans into executable instructions
+# Core GOSM procedure for compiling COMPLETE_PLAN into foolproof STEPS
+# Enhanced with goal-structure verification and story coherence checking
+
+id: steps_generation
+name: Steps Generation
+version: "2.0.0"
+domain: core
+
+description: Transform a COMPLETE_PLAN into foolproof executable step-by-step instructions
+
+long_description: |
+  The Steps Generation procedure transforms a high-level COMPLETE_PLAN into a STEPS
+  document that is impossible to fail if followed literally. It eliminates ambiguity,
+  makes all assumptions explicit, and ensures each step is self-contained and verifiable.
+
+  Philosophy: The STEPS document does the thinking UPFRONT so the executor doesn't
+  have to think - only execute. Every decision point is pre-resolved. Every ambiguity
+  is eliminated. If the executor gets stuck, the STEPS failed, not the executor.
+
+  v2.0 Enhancement: Before generating steps, reconstruct the goal-structure to verify
+  the plan serves its intended purpose. Each step should serve the foundational goals,
+  and the complete set of steps should tell a coherent story from goals to outcomes.
+
+  Key principles:
+  - First: verify the plan serves intrinsic goals (goal-structure reconstruction)
+  - Each step has one concrete action with one outcome
+  - Each step should serve the goal-structure (not just exist in isolation)
+  - All inputs are explicitly listed with their sources
+  - All outputs are concrete and verifiable
+  - No assumed knowledge - fully self-contained
+  - Failure modes are anticipated with resolutions
+  - The complete STEPS should tell a coherent story
+  - Like: DoD acquisition specs, legal contracts, assembly instructions
+
+tags:
+  - steps
+  - execution
+  - planning
+  - decomposition
+  - instructions
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - When transforming a COMPLETE_PLAN into executable steps
+  - When creating instructions that must work for any executor
+  - When eliminating ambiguity is critical
+  - When steps must be verifiable and auditable
+  - When handoff between planning and execution is needed
+  - When building automated workflows
+
+when_not_to_use:
+  - For exploratory work where the path is unknown
+  - When flexibility and improvisation are needed
+  - For simple tasks that don't need decomposition
+  - When the executor needs to use judgment (use guidelines instead)
+  - For creative work that shouldn't be constrained
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: complete_plan
+    type: document
+    required: true
+    description: The COMPLETE_PLAN.md to transform into steps
+
+  - name: context
+    type: dict
+    required: true
+    description: Context information (resources, constraints, environment)
+
+  - name: decision_tree
+    type: document
+    required: false
+    description: Pre-resolved decision tree if complex branching exists
+
+  - name: executor_type
+    type: string
+    required: false
+    description: Who will execute (human, AI, team, automated system)
+
+outputs:
+  - name: steps_document
+    type: document
+    description: STEPS.md with complete executable instructions
+
+  - name: prerequisite_checklist
+    type: list
+    description: What must be true before execution can begin
+
+  - name: completion_checklist
+    type: list
+    description: How to verify the entire procedure succeeded
+
+# ============================================
+# STEP QUALITY CRITERIA
+# ============================================
+step_quality_criteria:
+  action:
+    description: "Exactly what to do"
+    requirements:
+      - "Single concrete action (not multiple)"
+      - "Verb in imperative form ('Create X', not 'X should be created')"
+      - "No vague verbs ('handle', 'deal with', 'address')"
+      - "No ambiguous pronouns ('it', 'this', 'that' without clear referent)"
+
+  inputs:
+    description: "Everything needed before starting"
+    requirements:
+      - "All inputs explicitly listed"
+      - "Where each input comes from (previous step N, external source, etc.)"
+      - "Format of each input specified"
+      - "No assumed knowledge"
+
+  outputs:
+    description: "What this step produces"
+    requirements:
+      - "Concrete deliverable or state change"
+      - "Format specified"
+      - "Where output goes (file, variable, next step)"
+
+  verification:
+    description: "How to know step is complete"
+    requirements:
+      - "Observable criteria (not 'feels done')"
+      - "Pass/fail determination"
+      - "What to check"
+
+  if_blocked:
+    description: "What to do if stuck"
+    requirements:
+      - "Common failure modes listed"
+      - "Resolution for each"
+      - "Escalation path if unresolvable"
+
+# ============================================
+# PROCEDURE
+# ============================================
+
+# Pre-step: Reconstruct goal-structure before generating steps
+pre_step:
+  name: Goal-Structure Reconstruction
+  procedure: goal_structure_reconstruction
+  action: |
+    Before generating any steps, trace backward from the plan to foundational goals:
+    1. What goal does this COMPLETE_PLAN serve?
+    2. What goal does THAT goal serve?
+    3. Continue until reaching intrinsic goals (apply intrinsic_goal_termination_gate)
+    4. Construct the "story" from intrinsic goals to this plan
+    5. Apply story_coherence_gate - does the story cohere?
+
+    If story doesn't cohere, STOP. The plan may not serve its intended purpose.
+    Return to planning phase to fix the plan before generating steps.
+  outputs:
+    - goal_structure: the traced goal chain from intrinsic to this plan
+    - story_coherence: whether the story passes coherence checks
+  gate: story_coherence_gate
+
+steps:
+  - id: 1
+    name: Extract actions from COMPLETE_PLAN
+    action: |
+      Read the COMPLETE_PLAN and identify all action items:
+      1. Read COMPLETE_PLAN.md thoroughly
+      2. Identify all explicit action items (stated directly)
+      3. Identify all implicit action items (assumed but not stated)
+      4. List actions in rough sequence
+      5. Note dependencies between actions
+      6. For each action, verify: does this serve the goal-structure?
+         (If an action doesn't serve the goals, flag for review)
+    inputs:
+      - complete_plan
+      - context
+      - goal_structure (from pre_step)
+    outputs:
+      - raw_actions: list of all actions (explicit and implicit)
+      - rough_sequence: initial ordering of actions
+      - noted_dependencies: observed dependencies between actions
+      - goal_service_notes: how each action serves the goal-structure
+    verification: |
+      Every action in COMPLETE_PLAN is captured
+      Implicit actions are surfaced and listed
+      Each action's service to goals is documented
+
+  - id: 2
+    name: Decompose into atomic steps
+    action: |
+      Break compound actions into single atomic steps:
+      1. For each action, check: does it have multiple verbs?
+      2. If multiple verbs, split into separate steps
+      3. Ensure each step has ONE verb, ONE outcome
+      4. Add implicit steps that were assumed (setup, teardown, validation)
+      5. Resolve all decision points - no branching allowed in STEPS
+         (use decision_tree if complex branching exists)
+    inputs:
+      - raw_actions (from Step 1)
+      - decision_tree (optional)
+    outputs:
+      - atomic_steps: list of single-action steps
+      - resolved_decisions: how each decision point was resolved
+    verification: |
+      Each step has exactly one verb
+      No compound actions remain
+      All decision points are pre-resolved
+
+  - id: 3
+    name: Establish execution order
+    action: |
+      Determine valid execution sequence:
+      1. Build dependency graph from step inputs/outputs
+      2. Perform topological sort for valid ordering
+      3. Identify parallel execution opportunities
+      4. Number steps sequentially
+      5. Use order_procedure if complex ordering needed
+    inputs:
+      - atomic_steps (from Step 2)
+      - noted_dependencies (from Step 1)
+    outputs:
+      - ordered_steps: steps in valid execution order
+      - parallel_opportunities: steps that can run simultaneously
+    verification: |
+      Every step's inputs are available from prior steps
+      No circular dependencies exist
+
+  - id: 4
+    name: Elaborate each step fully
+    action: |
+      Apply the step template to each step:
+      1. Write clear action in imperative form
+      2. List ALL inputs with sources and formats
+      3. Define concrete output with format and destination
+      4. Add verification criteria (observable, pass/fail)
+      5. Add if_blocked handling (failure modes, resolutions, escalation)
+
+      Step template to apply:
+      ```
+      ## Step {N}: {Title}
+
+      **Action**: {Exactly what to do - single imperative verb phrase}
+
+      **Inputs**:
+      - {Input 1}: {description} [from: {source}]
+
+      **Process**:
+      1. {Sub-action 1}
+      2. {Sub-action 2}
+
+      **Output**: {What this produces} [format: {format}] [goes to: {destination}]
+
+      **Verification**:
+      - [ ] {Checkable criterion 1}
+      - [ ] {Checkable criterion 2}
+
+      **If blocked**:
+      - If {problem 1}: {resolution 1}
+      - If unresolvable: {escalation path}
+      ```
+    inputs:
+      - ordered_steps (from Step 3)
+      - context
+    outputs:
+      - elaborated_steps: fully specified steps using template
+    verification: |
+      Every step has all template fields filled
+      No placeholders or TBDs remain
+
+  - id: 5
+    name: Verify information sufficiency
+    action: |
+      Run information sufficiency gate on each step:
+
+      For each step, verify:
+      1. Action clear? Could someone unfamiliar execute this?
+      2. Inputs complete? All inputs listed with sources?
+      3. Output defined? Concrete and verifiable?
+      4. Verification checkable? Observable pass/fail?
+      5. Blockers handled? Common failures addressed?
+      6. No assumptions? Fully self-contained?
+
+      If any check fails, return to Step 4 and fix.
+    inputs:
+      - elaborated_steps (from Step 4)
+    outputs:
+      - verified_steps: steps that pass all sufficiency checks
+      - sufficiency_results: pass/fail for each check on each step
+    verification: |
+      All steps pass all six sufficiency checks
+      No hidden assumptions remain
+
+  - id: 6
+    name: Verify sequence validity
+    action: |
+      Verify the full sequence is executable:
+      1. Dependency order: Does each step have inputs available?
+      2. No gaps: Are any transformation steps missing?
+      3. Parallelization: Are parallel opportunities correctly marked?
+      4. Critical path: What's the longest dependency chain?
+
+      Fix any issues found and re-verify.
+    inputs:
+      - verified_steps (from Step 5)
+      - parallel_opportunities (from Step 3)
+    outputs:
+      - valid_sequence: sequence that passes all checks
+      - critical_path: longest dependency chain
+    verification: |
+      Tracing each input back to source succeeds
+      No missing steps between outputs and inputs
+
+  - id: 7
+    name: Identify anti-patterns and fix
+    action: |
+      Scan for common anti-patterns and eliminate them:
+
+      Anti-patterns to catch:
+      - Vague actions: "Handle the authentication" -> specify exactly
+      - Missing source: "Use the config file" -> specify which file, from where
+      - Assumed knowledge: "Set up database as usual" -> specify exact commands
+      - Ambiguous pronouns: "Pass it to the function" -> name the specific thing
+      - Subjective verification: "Looks correct" -> objective criteria
+      - Hidden decisions: "Choose appropriate timeout" -> specify exact value
+      - Multiple actions: "Create and populate and validate" -> split into steps
+    inputs:
+      - valid_sequence (from Step 6)
+    outputs:
+      - cleaned_steps: steps with anti-patterns removed
+      - anti_patterns_fixed: list of anti-patterns found and how fixed
+    verification: |
+      No vague verbs remain
+      No ambiguous pronouns remain
+      All decisions are explicit
+
+  - id: 8
+    name: Verify story coherence
+    action: |
+      Apply story_coherence_gate to the complete set of steps:
+
+      1. Read through all steps as a narrative (the "journey")
+      2. Check: Does each step connect to the next?
+      3. Check: Do the steps, taken together, serve the goal-structure?
+      4. Check: Is this journey necessary? (no unnecessary steps)
+      5. Check: Is this a valid path to the goals?
+
+      If story doesn't cohere:
+      - Identify which steps break the narrative
+      - Either remove unnecessary steps or add missing steps
+      - Re-verify until story coheres
+    inputs:
+      - cleaned_steps (from Step 7)
+      - goal_structure (from pre_step)
+    outputs:
+      - story_coherent_steps: steps that pass coherence check
+      - story_evaluation: coherence check results
+    gate: story_coherence_gate
+    verification: |
+      Steps tell a coherent story from start to finish
+      Each step serves the foundational goals
+      No unnecessary steps remain
+
+  - id: 9
+    name: Create document structure
+    action: |
+      Assemble the final STEPS.md document:
+      1. Write header with purpose, scope, metadata
+      2. Include goal-structure summary (what intrinsic goals this serves)
+      3. Write prerequisites checklist
+      4. Write glossary of terms (if needed)
+      5. Write each step using the template
+      6. Write completion checklist
+      7. Write rollback procedure (if abandoning partway)
+
+      Document structure:
+      ```
+      # STEPS: {Goal Name}
+
+      **Generated from**: COMPLETE_PLAN.md
+      **Total steps**: {N}
+      **Estimated duration**: {time}
+      **Executor type**: {human/AI/team/automated}
+
+      ## Goal-Structure
+      This STEPS document serves the following goal chain:
+      - Intrinsic goal: {e.g., wellbeing}
+      - Instrumental goals: {chain leading to this plan}
+      - Immediate goal: {what this plan achieves}
+
+      ## Prerequisites
+      - [ ] {Prerequisite 1}
+
+      ## Glossary
+      | Term | Definition |
+
+      ## Steps
+      {Each step}
+
+      ## Completion Checklist
+      - [ ] All steps complete
+      - [ ] Output artifacts present
+      - [ ] Goals served (verify against Goal-Structure)
+
+      ## Rollback Procedure
+      {If abandoning}
+      ```
+    inputs:
+      - story_coherent_steps (from Step 8)
+      - goal_structure (from pre_step)
+      - context
+      - executor_type (optional)
+    outputs:
+      - steps_document: complete STEPS.md document
+      - prerequisite_checklist: what must be true before starting
+      - completion_checklist: how to verify success
+    verification: |
+      Document has all required sections including Goal-Structure
+      Steps are numbered and formatted consistently
+      Goal-structure is clearly documented
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Each step has exactly one concrete action
+  - All inputs have explicit sources
+  - All outputs have explicit formats and destinations
+  - Verification criteria are observable and objective
+  - No vague verbs or ambiguous pronouns
+  - All decision points are pre-resolved
+  - Sequence passes dependency validation
+
+failure_modes:
+  - mode: Compound action not decomposed
+    symptom: Step has multiple verbs or multiple outcomes
+    resolution: Split into separate steps, one verb each
+
+  - mode: Missing input source
+    symptom: Step refers to input without stating where it comes from
+    resolution: 'Trace input to its source, add [from: source] annotation'
+
+  - mode: Vague action verb
+    symptom: Step uses "handle", "deal with", "address", "manage"
+    resolution: Replace with specific verb - what exactly happens?
+
+  - mode: Subjective verification
+    symptom: '"Verify it looks correct", "ensure quality"'
+    resolution: Add objective criteria - what specific checks determine pass/fail?
+
+  - mode: Hidden assumption
+    symptom: Executor gets stuck because something was assumed
+    resolution: Make assumption explicit or add step to establish it
+
+  - mode: Unresolved decision point
+    symptom: Step says "choose appropriate X" or "if needed"
+    resolution: Make decision now, document the specific choice
+
+  - mode: Missing intermediate step
+    symptom: Output of step A doesn't match format needed by step B
+    resolution: Add transformation step between A and B
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Bad step vs good step
+    context: Deploying a new API endpoint
+    bad_step: |
+      ## Step 3: Set up the endpoint
+
+      Configure the endpoint and make sure it works.
+    good_step: |
+      ## Step 3: Create route handler file
+
+      **Action**: Create new file `src/routes/users.py` with FastAPI route definition
+
+      **Inputs**:
+      - OpenAPI spec section for /users endpoint [from: Step 1 output, lines 45-67]
+      - Base route template [from: src/routes/_template.py]
+      - Database session factory [from: src/db/session.py:get_db]
+
+      **Process**:
+      1. Copy src/routes/_template.py to src/routes/users.py
+      2. Replace {ROUTE_PATH} with "/users"
+      3. Replace {HANDLER_NAME} with "get_users"
+      4. Add query parameters from OpenAPI spec: limit (int, default=10), offset (int, default=0)
+      5. Add response model: List[UserResponse] (defined in src/models/user.py)
+
+      **Output**: src/routes/users.py [format: Python file] [goes to: Step 4 import]
+
+      **Verification**:
+      - [ ] File exists at src/routes/users.py
+      - [ ] File passes: python -m py_compile src/routes/users.py
+      - [ ] Route decorator is @router.get("/users")
+      - [ ] Function signature includes limit: int = 10, offset: int = 0
+
+      **If blocked**:
+      - If template not found: Check src/routes/ exists, create _template.py from docs/templates/route.py
+      - If import error: Verify src/models/user.py has UserResponse class
+      - If unresolvable: Flag for review, document in BLOCKED.md
+
+  - name: Full document structure
+    context: Simple file processing task
+    inputs:
+      complete_plan: "Process CSV file, validate data, output JSON"
+    expected_output:
+      steps_document: |
+        # STEPS: CSV to JSON Processing
+
+        **Generated from**: COMPLETE_PLAN.md
+        **Total steps**: 4
+        **Estimated duration**: 15 minutes
+        **Executor type**: automated
+
+        ## Prerequisites
+        - [ ] Input file exists at data/input.csv
+        - [ ] Python 3.8+ installed
+        - [ ] pandas library available
+
+        ## Steps
+
+        ### Step 1: Load CSV file
+        **Action**: Read CSV file into pandas DataFrame
+        **Inputs**:
+        - data/input.csv [from: external, provided by user]
+        **Output**: df (DataFrame) [format: pandas DataFrame] [goes to: Step 2]
+        **Verification**:
+        - [ ] df.shape[0] > 0 (has rows)
+        - [ ] df.columns matches expected schema
+
+        ### Step 2: Validate data
+        ...
+
+        ## Completion Checklist
+        - [ ] Output file exists at data/output.json
+        - [ ] JSON is valid (passes json.loads())
+        - [ ] Record count matches input
+
+# ============================================
+# ANTI-PATTERNS REFERENCE
+# ============================================
+anti_patterns:
+  vague_actions:
+    bad: "Handle the authentication"
+    good: "Create JWT token with user_id claim, 24h expiry, using SECRET_KEY"
+
+  missing_source:
+    bad: "Use the configuration file"
+    good: "Use config.yaml from Step 3 output [format: YAML key-value]"
+
+  assumed_knowledge:
+    bad: "Set up the database as usual"
+    good: "Run: docker-compose up -d postgres (creates container 'gosm-db' on port 5432)"
+
+  ambiguous_pronouns:
+    bad: "Pass it to the next function"
+    good: "Pass user_record (from Step 5) to validate_user() function"
+
+  subjective_verification:
+    bad: "Verify it looks correct"
+    good: "Verify response.status_code == 200 AND response.json()['success'] == true"
+
+  hidden_decisions:
+    bad: "Choose an appropriate timeout"
+    good: "Set timeout to 30 seconds (rationale: 95th percentile response time is 12s)"
+
+  multiple_actions:
+    bad: "Create the file and populate it with data and validate the format"
+    good: |
+      Step N: Create empty output file
+      Step N+1: Populate file with data from Step M
+      Step N+2: Validate file format matches schema
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Transforming COMPLETE_PLAN into executable STEPS
+    - Creating handoff documents between planning and execution
+    - Building automated workflow definitions
+    - Creating audit trails for compliance
+    - Verifying plans serve their intended goals
+
+  gates:
+    - gate: story_coherence_gate
+      question: "Do the steps tell a coherent story serving the foundational goals?"
+      when: "Pre-step and Step 8"
+
+    - gate: steps_sufficient
+      question: "Does each step have enough information to execute without context?"
+
+    - gate: no_ambiguity
+      question: "Are all actions, inputs, and outputs unambiguous?"
+
+    - gate: verifiable
+      question: "Can each step's completion be objectively verified?"
+
+    - gate: goal_service
+      question: "Does each step serve the goal-structure?"
+
+  related_procedures:
+    - goal_structure_reconstruction: Reconstructs goal chain before generating steps
+    - backward_reasoning: The method underlying goal-structure reconstruction
+    - order_procedure: Orders the steps after generation
+    - generation: May generate multiple step decomposition strategies
+    - execution_tracking: Tracks progress through generated steps
+    - verification: Validates step completion during execution
+
+  version_history:
+    v1_0_0: Original procedure
+    v2_0_0: |
+      - Added goal-structure reconstruction as pre-step
+      - Added goal-service check for each action
+      - Added story coherence check (Step 8)
+      - Added Goal-Structure section to output document
+      - Source: gosm_self_improvement_analysis.md

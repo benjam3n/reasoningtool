@@ -1,0 +1,266 @@
+# Goal-Structure Reconstruction Procedure
+# The core method for understanding any conclusion by tracing backward to its foundational goals
+
+id: goal_structure_reconstruction
+name: Goal-Structure Reconstruction
+version: "1.0.0"
+domain: core
+tier: platinum
+
+description: |
+  Given any conclusion, statement, or claim, reconstruct the goal-structure
+  (the "story") that led to it. This reveals WHY the conclusion exists,
+  enabling evaluation of purpose rather than just logic.
+
+core_insight: |
+  Every conclusion is the last step of a journey. Without knowing the journey,
+  the conclusion is just a statement - hard to evaluate. With the journey known,
+  we can evaluate whether the journey was necessary, whether this was the right
+  path, and whether the destination was worth reaching.
+
+when_to_use:
+  - Evaluating philosophical claims or foundations
+  - Understanding why someone made a statement
+  - Finding the purpose behind a criticism
+  - Determining if a conclusion is meaningful or arbitrary
+  - Terminating n+1 regress by reaching intrinsic goals
+
+# ============================================
+# THE METHOD
+# ============================================
+
+steps:
+  - id: 1
+    name: Identify the conclusion
+    action: |
+      State the conclusion, claim, or statement to be reconstructed.
+
+      Be precise. The exact wording matters.
+    output: conclusion_statement
+
+  - id: 2
+    name: Ask "What goal does this serve?"
+    action: |
+      What is the IMMEDIATE goal of this statement?
+      Not assumptions, not implications - the GOAL.
+
+      What state is the speaker trying to bring about?
+      What need is this serving?
+    output: immediate_goal
+
+  - id: 3
+    name: Ask "What goal led to pursuing that goal?"
+    action: |
+      Why pursue the immediate goal?
+      What deeper need does achieving that goal serve?
+
+      Continue asking until you reach either:
+      - An intrinsic goal (valued for itself)
+      - A practical necessity (required for functioning)
+      - A transcendental condition (required for any goal-pursuit)
+    output: goal_chain
+
+  - id: 4
+    name: Map the story
+    action: |
+      Organize the goal chain as a "story" with chapters:
+
+      Chapter 1: The foundational/intrinsic goal
+      Chapter 2: What problem or need arises from that goal
+      Chapter 3: What approach addresses that problem
+      ...
+      Final Chapter: The conclusion
+
+      Each chapter should connect to the next.
+    output: story_structure
+
+  - id: 5
+    name: Evaluate the story
+    action: |
+      Ask of the story:
+
+      1. Does it cohere? (Do the chapters connect logically?)
+      2. Are the goals legitimate? (Would reasonable people share them?)
+      3. Does the conclusion serve the goals? (Does the ending fit?)
+      4. Is this the best way? (Are there better paths to the same goal?)
+      5. Was the journey necessary? (Did the goal need pursuing at all?)
+    output: evaluation
+
+# ============================================
+# GOAL TYPES
+# ============================================
+
+goal_types:
+  intrinsic:
+    description: Valued for itself, not for what it leads to
+    examples:
+      - Wellbeing/flourishing
+      - Pleasure
+      - Knowledge (for some)
+      - Connection (for some)
+      - Meaning/purpose
+    termination: |
+      Intrinsic goals are like "chapter 1" - you don't ask what came before.
+      They're the POINT. The regress of "why?" terminates here.
+
+  instrumental:
+    description: Valued for what it leads to
+    examples:
+      - Money (leads to security, options)
+      - Credentials (leads to opportunities)
+      - Tools (leads to capabilities)
+    termination: |
+      Instrumental goals don't terminate regress - keep asking "why?"
+      until you reach the intrinsic goal being served.
+
+  practical_necessity:
+    description: Required for functioning regardless of specific goals
+    examples:
+      - Food/water (biological necessity)
+      - Communication (social necessity)
+      - Reasoning (epistemic necessity)
+    termination: |
+      Practical necessities terminate regress because denying them
+      makes functioning impossible. Not arbitrary - required.
+
+  transcendental:
+    description: Required for any goal-pursuit to be possible
+    examples:
+      - Experience exists
+      - Structure exists
+      - Some things can be distinguished from others
+    termination: |
+      Transcendental conditions terminate regress because denying them
+      is self-undermining. They're preconditions for the activity of
+      having goals at all.
+
+# ============================================
+# EXAMPLE APPLICATION
+# ============================================
+
+example:
+  target: "Better reasoning should beat worse reasoning"
+
+  step_1_conclusion: "Better reasoning should beat worse reasoning"
+
+  step_2_immediate_goal: |
+    Provide a criterion for accepting/rejecting arguments.
+    Enable discrimination between arguments.
+
+  step_3_goal_chain:
+    - goal: Discriminate between arguments
+      why: So we can accept good ones and reject bad ones
+    - goal: Accept good arguments, reject bad ones
+      why: So our beliefs are well-supported
+    - goal: Well-supported beliefs
+      why: So our decisions are well-founded
+    - goal: Well-founded decisions
+      why: So our actions are effective
+    - goal: Effective actions
+      why: So we achieve wellbeing/flourishing
+    - goal: Wellbeing/flourishing
+      why: (intrinsic - valued for itself)
+
+  step_4_story:
+    chapter_1: We value wellbeing (intrinsic goal)
+    chapter_2: Wellbeing requires effective action (necessity)
+    chapter_3: Effective action requires good decisions (derivation)
+    chapter_4: Good decisions require well-supported beliefs (derivation)
+    chapter_5: Well-supported beliefs require discriminating arguments (derivation)
+    chapter_6: '"Better reasoning beats worse reasoning" (conclusion)'
+
+  step_5_evaluation:
+    coherence: Yes - each chapter connects to the next
+    goals_legitimate: Yes - wellbeing is reasonable intrinsic goal
+    conclusion_serves_goals: Yes - the criterion enables the chain
+    best_way: Maybe not only way, but valid
+    journey_necessary: Yes - if you want wellbeing, this chain is needed
+
+# ============================================
+# CONNECTION TO N+1
+# ============================================
+
+n_plus_1_connection: |
+  Goal-structure reconstruction addresses n+1 because:
+
+  1. The regress of "why?" terminates at intrinsic goals
+     - "Why X?" "To achieve Y." "Why Y?" ... "Because I value Z intrinsically."
+     - Intrinsic values don't have a "because" - they're the point.
+
+  2. The story structure provides bounded inquiry
+     - A story has a beginning (chapter 1 = foundational goal)
+     - You don't ask "what came before chapter 1?"
+     - The story defines its scope
+
+  3. Goals enable evaluation of criticisms
+     - "What goal does this criticism serve?"
+     - If no legitimate goal, the criticism is noise
+     - If legitimate goal, address it within that scope
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+related_procedures:
+  - honest_question_gate: Checks if a question has identifiable goal
+  - language_goal_identification: Identifies the goal of any statement
+  - bounded_inquiry: Structures inquiry with explicit boundaries
+  - metaphor_method: Uses metaphors to discover goal-structures
+
+# ============================================
+# GOAL UNDERSTANDING PIPELINE
+# ============================================
+# This procedure is STEP 2 of the goal understanding pipeline:
+#
+#   1. recursive_causal_interrogation
+#      → Question the framing, trace causes of the goal statement
+#      → Output: Clearer understanding of what's actually being sought
+#
+#   2. goal_structure_reconstruction (THIS)
+#      → Trace goal chain: action → goal → goal → intrinsic goal
+#      → Output: The "story" of why this goal matters
+#
+#   3. backward_reasoning
+#      → Given conclusions, trace back to premises
+#      → Output: Understanding of what journey led here
+#
+#   4. deductive_strategy_discovery
+#      → Derive strategies from problem structure
+#      → Output: Strategies native to the actual situation
+#
+# Use GSR after RCI when you have a clearer goal and want to trace
+# the full chain to intrinsic goals.
+goal_understanding_pipeline:
+  position: 2
+  previous: recursive_causal_interrogation
+  next: backward_reasoning
+  when_to_use_this_step: |
+    Use after RCI when:
+    - Goal is clarified but chain to intrinsic goals unclear
+    - You need to understand WHY this goal matters
+    - You want to evaluate whether the goal is worth pursuing
+    - You need to find where the regress terminates
+
+output_format: |
+  ## Goal-Structure Reconstruction: [Conclusion]
+
+  **Conclusion**: [The statement being analyzed]
+
+  **Goal Chain**:
+  1. [Immediate goal]
+  2. [Next level goal]
+  ...
+  N. [Foundational/intrinsic goal]
+
+  **Story**:
+  - Chapter 1: [Foundational goal]
+  - Chapter 2: [Problem/need]
+  ...
+  - Final: [Conclusion]
+
+  **Evaluation**:
+  - Coherence: [Yes/No + explanation]
+  - Goals legitimate: [Yes/No + explanation]
+  - Conclusion serves goals: [Yes/No + explanation]
+  - Best way: [Assessment]
+  - Journey necessary: [Assessment]

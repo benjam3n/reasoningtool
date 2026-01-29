@@ -1,0 +1,675 @@
+# Persuasive Writing Procedure - Craft compelling written communication
+# GOSM Communication procedure for writing that influences and motivates action
+
+id: persuasive_writing
+name: Persuasive Writing
+version: "1.0.0"
+domain: communication
+
+description: Systematic procedure for writing persuasive content that influences readers and motivates action
+
+long_description: |
+  The Persuasive Writing procedure provides a comprehensive framework for creating
+  written content that convinces readers and drives them to take specific actions.
+  Applicable across formats including emails, proposals, pitches, op-eds, and
+  advocacy materials.
+
+  This procedure combines:
+  - Audience analysis (understanding who you're persuading)
+  - Psychological principles (reciprocity, social proof, scarcity, etc.)
+  - Structural frameworks (AIDA, problem-solution, story-based)
+  - Writing craft techniques (hooks, evidence, calls to action)
+  - Revision practices (for both persuasion and clarity)
+
+  Key principles:
+  - Know your audience deeply before writing
+  - Lead with value, not with your ask
+  - Make the benefit to THEM crystal clear
+  - Address objections proactively
+  - Make it easy to say yes
+
+tags:
+  - communication
+  - writing
+  - persuasion
+  - marketing
+  - proposals
+  - influence
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Writing proposals to clients, executives, or stakeholders
+  - Crafting emails that need to get a response or action
+  - Creating pitch decks or investor communications
+  - Writing op-eds, blog posts, or opinion pieces
+  - Developing marketing copy or sales materials
+  - Composing advocacy messages or fundraising appeals
+  - Writing cover letters or application materials
+  - Creating internal communications that need buy-in
+  - Drafting requests for resources, budget, or support
+  - Writing recommendation letters or endorsements
+
+when_not_to_use:
+  - For purely informational or technical documentation
+  - When the audience has already decided and just needs details
+  - For legal documents requiring precise neutral language
+  - When manipulation would be unethical (misleading claims)
+  - For routine communications with no persuasive goal
+  - When the relationship is transactional with no influence needed
+  - For academic writing requiring objective presentation
+  - When brevity matters more than persuasion (emergency alerts)
+  - For internal notes or documentation with no audience to persuade
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: persuasion_goal
+    type: string
+    required: true
+    description: What specific action or belief change you want from readers
+
+  - name: target_audience
+    type: string
+    required: true
+    description: Who you are writing for (role, relationship, knowledge level)
+
+  - name: audience_current_state
+    type: dict
+    required: false
+    description: What they currently believe, know, and feel about the topic
+
+  - name: format
+    type: enum
+    values: [email, proposal, pitch_deck, op_ed, blog_post, letter, marketing_copy, other]
+    required: false
+    description: The format/medium for the persuasive writing
+
+  - name: constraints
+    type: list
+    required: false
+    description: Word limits, tone requirements, format restrictions
+
+  - name: supporting_evidence
+    type: list
+    required: false
+    description: Data, examples, testimonials, or stories available to use
+
+outputs:
+  - name: audience_analysis
+    type: document
+    description: Profile of audience including beliefs, motivations, objections
+
+  - name: outline
+    type: document
+    description: Structured outline with hook, main points, evidence, and CTA
+
+  - name: persuasive_piece
+    type: document
+    description: The final written content ready for delivery
+
+  - name: revision_notes
+    type: document
+    description: Key improvements made and alternatives considered
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Analyze the audience deeply
+    action: |
+      Before writing anything, understand who you're persuading:
+      1. Who exactly is the audience? (demographics, role, relationship)
+      2. What do they already believe about this topic?
+      3. What do they care about most? (values, priorities, fears)
+      4. What objections or concerns will they have?
+      5. What would motivate them to act?
+      6. What's their knowledge level on this topic?
+      7. What's their emotional state likely to be?
+    inputs:
+      - target_audience
+      - audience_current_state (optional)
+    outputs:
+      - audience_profile: detailed understanding of who you're writing for
+      - audience_type: supportive, neutral, skeptical, or hostile
+      - key_motivations: what drives this audience
+      - likely_objections: concerns they will have
+    verification: |
+      Can describe the audience's perspective in their own words
+      Identified at least 3 specific objections they might raise
+
+  - id: 2
+    name: Define the objective precisely
+    action: |
+      Clarify exactly what you want to achieve:
+      1. What specific action do you want them to take?
+      2. What belief change is needed for that action?
+      3. What's the minimum viable outcome (if they don't do everything)?
+      4. How will you know if the writing succeeded?
+      5. What's the timeline for action?
+    inputs:
+      - persuasion_goal
+      - format (optional)
+    outputs:
+      - specific_ask: exactly what you want them to do
+      - success_metrics: how you'll measure if it worked
+      - urgency_factors: why they should act now
+    verification: |
+      Can complete: "After reading this, I want them to _____"
+      The ask is specific and actionable (not vague)
+
+  - id: 3
+    name: Gather and organize evidence
+    action: |
+      Collect materials to support your argument:
+      1. What data/statistics support your position?
+      2. What examples or case studies are relevant?
+      3. What expert opinions or authorities can you cite?
+      4. What stories or testimonials are available?
+      5. What analogies might make complex points clear?
+      6. What responses to objections do you have?
+    inputs:
+      - supporting_evidence (optional)
+      - likely_objections (from Step 1)
+    outputs:
+      - evidence_inventory: organized list of supporting materials
+      - objection_responses: prepared counters to concerns
+      - strongest_points: your most compelling arguments
+    verification: |
+      Have at least 2 types of evidence (data, story, expert, example)
+      Have a response for each identified objection
+
+  - id: 4
+    name: Choose structure and framework
+    action: |
+      Select the right persuasive structure for your situation:
+
+      For neutral audiences with clear problems:
+      - Problem-Solution: Describe problem -> Agitate -> Present solution -> CTA
+
+      For short-form marketing:
+      - AIDA: Attention -> Interest -> Desire -> Action
+
+      For speeches or longer persuasion:
+      - Monroe: Attention -> Need -> Satisfaction -> Visualization -> Action
+
+      For logical audiences with complex arguments:
+      - Argument-Evidence: Claim -> Evidence -> Explain -> Counter -> Restate
+
+      For emotional appeals:
+      - Story-based: Hook with story -> Build tension -> Resolution -> Lesson -> Ask
+    inputs:
+      - audience_type (from Step 1)
+      - format (optional)
+      - constraints (optional)
+    outputs:
+      - chosen_framework: which structure to use and why
+      - adapted_structure: framework customized for this specific piece
+    verification: |
+      Framework matches audience type and format requirements
+
+  - id: 5
+    name: Create detailed outline
+    action: |
+      Build the skeleton of your piece:
+      1. Craft the hook (surprising stat, provocative question, story, etc.)
+      2. Sequence main points for maximum impact
+      3. Place evidence strategically to support each point
+      4. Plan transitions between sections
+      5. Position objection handling (preemptive vs responsive)
+      6. Design the call to action (specific, simple, urgent)
+    inputs:
+      - chosen_framework (from Step 4)
+      - evidence_inventory (from Step 3)
+      - specific_ask (from Step 2)
+    outputs:
+      - detailed_outline: complete structure with all elements placed
+      - hook_options: 2-3 possible openings to consider
+      - cta_draft: initial call to action language
+    verification: |
+      Outline covers: hook, value, evidence, objections, CTA
+      Can explain why each section appears in its position
+
+  - id: 6
+    name: Write the first draft
+    action: |
+      Execute the outline into prose:
+      1. Write the hook first - make it compelling
+      2. Follow the outline structure
+      3. Don't edit while writing - get it down first
+      4. Use "you" frequently - make it about them
+      5. Write the CTA to be unmistakably clear
+      6. Include all planned evidence and examples
+    inputs:
+      - detailed_outline (from Step 5)
+      - evidence_inventory (from Step 3)
+      - constraints (optional)
+    outputs:
+      - first_draft: complete initial version
+    verification: |
+      Draft follows outline structure
+      Call to action is present and specific
+
+  - id: 7
+    name: Revise for persuasive power
+    action: |
+      Strengthen the persuasive elements:
+      1. Is the hook compelling? Would you keep reading?
+      2. Is the value/benefit to THEM immediately clear?
+      3. Is evidence credible and well-placed?
+      4. Are objections addressed before they're thought?
+      5. Is the ask specific and easy to do?
+      6. Is there urgency/reason to act NOW?
+      7. Have you applied relevant psychological principles?
+    inputs:
+      - first_draft (from Step 6)
+      - likely_objections (from Step 1)
+      - key_motivations (from Step 1)
+    outputs:
+      - persuasion_revised_draft: strengthened for influence
+      - persuasion_improvements: changes made and why
+    verification: |
+      Each identified objection is addressed somewhere
+      Benefits are stated in terms of what THEY gain
+
+  - id: 8
+    name: Revise for clarity and style
+    action: |
+      Polish for readability and impact:
+      1. Shorten sentences - aim for average 15-20 words
+      2. Use active voice - "We will deliver" not "It will be delivered"
+      3. Replace jargon with plain language
+      4. Strengthen verbs - "accelerate" not "help to speed up"
+      5. Add white space - short paragraphs (2-4 sentences)
+      6. Vary sentence length for rhythm
+      7. Check flow - do transitions work?
+    inputs:
+      - persuasion_revised_draft (from Step 7)
+      - constraints (optional)
+    outputs:
+      - clarity_revised_draft: polished for readability
+      - style_improvements: changes made
+    verification: |
+      A smart 12-year-old could understand the core message
+      No paragraph longer than 4 sentences
+
+  - id: 9
+    name: Final polish and format
+    action: |
+      Complete final preparation:
+      1. Proofread for errors (spelling, grammar, typos)
+      2. Format for medium (email subject lines, slide layouts, etc.)
+      3. Ensure CTA is visually prominent
+      4. Check length against constraints
+      5. Read aloud - does it sound natural?
+      6. Get feedback if possible before sending
+    inputs:
+      - clarity_revised_draft (from Step 8)
+      - format (optional)
+      - constraints (optional)
+    outputs:
+      - persuasive_piece: final deliverable ready to send
+      - revision_notes: key decisions and alternatives considered
+    verification: |
+      No spelling or grammar errors
+      Meets all format and length constraints
+      CTA stands out visually
+
+# ============================================
+# PSYCHOLOGICAL PRINCIPLES
+# ============================================
+psychological_principles:
+  reciprocity:
+    principle: "People return favors and feel obligated after receiving"
+    application: "Give value before asking - free resource, helpful insight, genuine compliment"
+    example: "I noticed your recent post about X - here's a resource that might help. Also, I wanted to ask..."
+
+  commitment_consistency:
+    principle: "People act consistently with prior commitments and self-image"
+    application: "Reference their past statements or values, get small agreements first"
+    example: "You've said innovation is a priority. This proposal directly supports that goal."
+
+  social_proof:
+    principle: "People follow what others like them are doing"
+    application: "Show others (especially similar others) taking the desired action"
+    example: "Join 10,000 other engineering leaders who subscribe to..."
+
+  authority:
+    principle: "People defer to credible experts and institutions"
+    application: "Cite experts, establish credentials, reference respected sources"
+    example: "According to McKinsey research... Based on my 15 years in the field..."
+
+  liking:
+    principle: "People say yes to those they like and relate to"
+    application: "Build rapport, find common ground, be genuinely helpful"
+    example: "Like you, I've struggled with... As a fellow founder..."
+
+  scarcity:
+    principle: "People want what's rare or diminishing"
+    application: "Highlight limited availability, deadlines, exclusive access"
+    example: "Only 3 spots remaining... This offer expires Friday..."
+
+  loss_aversion:
+    principle: "Losses feel roughly twice as painful as equivalent gains"
+    application: "Frame as avoiding loss rather than achieving gain"
+    example: '"Don''t miss out on..." vs "Get access to..."'
+
+# ============================================
+# FORMAT TEMPLATES
+# ============================================
+format_templates:
+  persuasive_email:
+    structure:
+      subject: "Specific, benefit-oriented, curiosity-inducing"
+      opening: "Personalized hook (why them, why now)"
+      body:
+        - "Value first (what you're offering)"
+        - "The ask (specific, clear)"
+        - "Why it benefits them (WIIFM)"
+        - "How to take action (step by step)"
+      close: "Clear next step, deadline if applicable"
+    guidelines:
+      - "Under 200 words ideal"
+      - "One clear ask per email"
+      - "Make reply easy (yes/no if possible)"
+
+  proposal:
+    structure:
+      - "Executive summary (decision-ready, 1 page max)"
+      - "Problem/opportunity definition (their pain, not your solution)"
+      - "Proposed solution (what you're offering)"
+      - "Benefits and value (ROI, outcomes)"
+      - "Approach and timeline (how it works)"
+      - "Investment required (price in context of value)"
+      - "Risk mitigation (why this is safe)"
+      - "Call to action (specific next step)"
+    guidelines:
+      - "Lead with their problem, not your solution"
+      - "Quantify value wherever possible"
+      - "Make the decision easy"
+
+  pitch_deck:
+    slides:
+      - "Hook (compelling opener, not your logo)"
+      - "Problem (pain point they recognize)"
+      - "Solution (your answer, simply stated)"
+      - "How it works (demo or explanation)"
+      - "Traction/proof (evidence it works)"
+      - "Market/opportunity (why it matters)"
+      - "Team (why you can execute)"
+      - "Ask (specific request)"
+    guidelines:
+      - "Visuals over text, one idea per slide"
+      - "10-15 slides maximum"
+      - "Tell a story, not just facts"
+
+  op_ed:
+    structure:
+      - "Hook (news peg or striking fact)"
+      - "State thesis clearly (your argument)"
+      - "Evidence point 1 (strongest)"
+      - "Evidence point 2 (supporting)"
+      - "Address counterargument (steelman and refute)"
+      - "Implications/call to action (why it matters)"
+    guidelines:
+      - "600-800 words typical"
+      - "Clear position, not wishy-washy"
+      - "Timely and relevant to current events"
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Hook would make a busy person keep reading (test: would YOU read on?)
+  - Benefit to reader is clear within first paragraph
+  - Evidence is specific, credible, and well-placed
+  - All likely objections are addressed before they arise
+  - Call to action is specific, simple, and prominent
+  - Urgency or reason to act NOW is present
+  - Language is clear enough for a smart 12-year-old
+  - Format is appropriate for the medium and audience
+
+failure_modes:
+  - mode: Self-focused writing
+    symptom: Uses "I/we" more than "you", focuses on what writer wants
+    resolution: Rewrite from audience perspective, lead with their benefit
+
+  - mode: Buried lead
+    symptom: Key point or ask appears late in the piece, readers lose interest
+    resolution: Front-load value and main point, don't build up to it
+
+  - mode: Vague call to action
+    symptom: CTA is unclear ("let me know what you think") or missing
+    resolution: Make CTA specific and actionable ("Reply YES and I'll send the contract")
+
+  - mode: Objection avoidance
+    symptom: Obvious concerns not addressed, reader raises them mentally
+    resolution: List likely objections, address each proactively in the piece
+
+  - mode: Evidence-free claims
+    symptom: Assertions without support ("this is the best solution")
+    resolution: Back every significant claim with data, example, or expert
+
+  - mode: Jargon overload
+    symptom: Technical language or buzzwords that alienate or confuse
+    resolution: Use plain language, explain necessary terms, test with outsider
+
+  - mode: Wall of text
+    symptom: Long paragraphs, no visual breaks, hard to scan
+    resolution: Short paragraphs, bullet points, headers, white space
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Cold email requesting meeting with potential client
+    context: Reaching out to VP of Engineering at target company to discuss services
+    inputs:
+      persuasion_goal: "Get a 30-minute discovery call scheduled"
+      target_audience: "VP Engineering at 200-person SaaS company, technical background, busy"
+      audience_current_state:
+        current_belief: "Doesn't know me or my company"
+        likely_concerns: "Time waste, sales pitch, not relevant"
+        motivations: "Shipping faster, team productivity, reducing tech debt"
+      format: "email"
+      constraints:
+        - "Under 150 words"
+        - "Must work on mobile"
+      supporting_evidence:
+        - "Case study: helped similar company reduce deploy time 40%"
+        - "Worked with 3 companies in their space"
+    process: |
+      Step 1 - Audience Analysis:
+      - VP Eng, technical, skeptical of vendors
+      - Cares about: team velocity, reliability, not wasting time
+      - Objections: "Another sales pitch", "We handle this internally", "No budget"
+      - Motivation: Looking good to CEO, shipping features, happy team
+
+      Step 2 - Objective:
+      - Specific ask: 30-minute call this week or next
+      - Minimum viable: get a reply (even if "not now")
+      - Success: calendar link clicked or reply suggesting time
+
+      Step 3 - Evidence:
+      - Lead with case study result (40% faster deploys)
+      - Name-drop similar companies (social proof)
+      - Keep brief - detailed evidence comes in meeting
+
+      Step 4 - Framework:
+      - Short email = AIDA compressed
+      - Hook with relevance, value prop, easy ask
+
+      Step 5 - Outline:
+      - Subject: Specific benefit + curiosity
+      - Line 1: Why them specifically (personalized)
+      - Line 2-3: Value/credibility (case study result)
+      - Line 4: The ask (specific and easy)
+      - Line 5: Make it easy to say yes
+
+      Steps 6-9 - Draft and revise:
+      (See expected output)
+    expected_output:
+      persuasive_piece: |
+        Subject: Quick question about [Company]'s deploy process
+
+        Hi [Name],
+
+        Saw your talk at [Conference] on reducing cycle time - great insights on the CI bottleneck problem.
+
+        We helped [Similar Company] cut deploy time 40% by addressing exactly that issue. Given [Company]'s growth, thought it might be relevant.
+
+        Worth a 20-minute call to see if there's a fit?
+
+        Here's my calendar: [link]
+
+        Either way, congrats on the Series B.
+
+        [Signature]
+      key_techniques_used:
+        - "Personalization (conference talk reference)"
+        - "Social proof (similar company)"
+        - "Specific result (40%)"
+        - "Easy CTA (calendar link)"
+        - "Low commitment (20 minutes)"
+        - "Graceful out (either way)"
+      word_count: 82
+
+  - name: Internal proposal for new tool adoption
+    context: Proposing that engineering team adopt new testing framework
+    inputs:
+      persuasion_goal: "Get approval and budget for team to adopt new testing framework"
+      target_audience: "Engineering Director, budget authority, values reliability and velocity"
+      audience_current_state:
+        current_belief: "Current testing is 'good enough', change is risky"
+        likely_concerns: "Migration cost, learning curve, team resistance, budget"
+        motivations: "Fewer production bugs, faster releases, team morale"
+      format: "proposal"
+      constraints:
+        - "2 pages maximum"
+        - "Needs to work as standalone document"
+      supporting_evidence:
+        - "Current test suite takes 45 minutes, proposed: 12 minutes"
+        - "3 production bugs last quarter traced to test coverage gaps"
+        - "Team survey: 70% frustrated with current testing speed"
+        - "Competitor case study: 60% reduction in regression bugs"
+        - "Cost: $15k/year, estimated savings: $50k in developer time"
+    process: |
+      Step 1 - Audience Analysis:
+      - Engineering Director, cares about team performance metrics
+      - Risk-aware but open to improvements with clear ROI
+      - Objections: "Why now?", "Migration disruption", "Will team adopt?"
+      - Motivation: Looking good to CTO, team velocity metrics, fewer incidents
+
+      Step 2 - Objective:
+      - Specific ask: Approve $15k budget + 2-week migration pilot
+      - Success metric: Signed approval, budget allocated
+      - Urgency: Q2 planning happening now, test debt growing
+
+      Step 3 - Evidence:
+      - ROI calculation (3x return in year 1)
+      - Team survey data (internal social proof)
+      - Bug incident analysis (problem is real and costly)
+      - Competitor case study (others have succeeded)
+
+      Step 4 - Framework:
+      - Problem-Solution structure (lead with their pain)
+      - Executive summary first (decision-ready)
+
+      Step 5 - Outline:
+      - Executive Summary: Problem + solution + ask (half page)
+      - Current State: Pain points with data (test time, bugs, team frustration)
+      - Proposed Solution: What we're recommending
+      - Benefits: Quantified value
+      - Approach: Low-risk pilot plan
+      - Investment: Cost vs return
+      - Ask: Specific approval needed
+    expected_output:
+      persuasive_piece: |
+        # Proposal: Modernizing Our Testing Infrastructure
+
+        ## Executive Summary
+        Our testing infrastructure is costing us approximately $50k annually in developer time and contributed to 3 production incidents last quarter. I'm proposing we adopt [New Framework] at $15k/year, with a 2-week pilot to validate. Expected ROI: 3x in year one, plus faster releases and fewer bugs.
+
+        **Ask**: Approve $15k budget and 2-week pilot starting in Q2.
+
+        ## The Problem
+        Our current testing setup is hurting velocity and quality:
+        - **Test suite runtime**: 45 minutes (developers context-switch while waiting)
+        - **Production bugs**: 3 incidents in Q4 traced to test coverage gaps
+        - **Team morale**: 70% of engineers cite testing as a top frustration (survey attached)
+        - **Hidden cost**: ~$50k/year in developer time waiting for tests
+
+        ## Proposed Solution
+        Adopt [New Framework], which offers:
+        - Parallel test execution (estimated 12 min vs 45 min)
+        - Better coverage reporting (catch gaps before production)
+        - Modern syntax our team already knows
+
+        ## Expected Benefits
+        - **Time savings**: 33 min/run x 20 runs/day = 11 hours saved daily
+        - **Fewer bugs**: [Competitor] saw 60% reduction in regression bugs
+        - **Team satisfaction**: Faster feedback loop, less waiting
+
+        ## Implementation Plan
+        Low-risk approach:
+        1. **Week 1-2**: Pilot with Platform team (lowest risk, highest gain)
+        2. **Week 3**: Evaluate results, gather feedback
+        3. **Week 4-6**: If successful, gradual rollout to other teams
+        4. **Rollback**: Keep current system until new one proven
+
+        ## Investment
+        - **Cost**: $15k/year (licensing) + 2 weeks pilot time
+        - **Return**: $50k+ saved annually, fewer incidents, happier team
+        - **ROI**: ~3x in year one
+
+        ## Request
+        Please approve:
+        1. $15k budget for [New Framework] license
+        2. Platform team pilot for 2 weeks starting [Date]
+
+        I'm happy to discuss further or provide additional data. Can we sync for 15 minutes this week to align?
+      key_techniques_used:
+        - "Executive summary first (busy reader friendly)"
+        - "Problem-led (their pain, not my solution)"
+        - "Quantified benefits (ROI, time savings)"
+        - "Social proof (team survey, competitor case study)"
+        - "Low-risk approach (pilot, rollback plan)"
+        - "Specific ask (amount, timeline, action)"
+      word_count: ~400
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When strategy requires buy-in from stakeholders or decision-makers
+    - During execution phase for proposals, pitches, or requests
+    - When goals require convincing others to take action
+    - For communication milestones that require persuasive writing
+    - When pivoting requires re-selling the new direction
+
+  gates:
+    - gate: audience_understood
+      question: "Do I deeply understand who I'm writing for and what motivates them?"
+
+    - gate: objective_clear
+      question: "Is my specific ask defined and actionable?"
+
+    - gate: evidence_ready
+      question: "Do I have credible evidence for my key claims?"
+
+    - gate: objections_addressed
+      question: "Have I proactively addressed likely concerns?"
+
+    - gate: cta_prominent
+      question: "Is my call to action specific, simple, and easy to act on?"
+
+  related_procedures:
+    - negotiation: Persuasive writing often precedes or supports negotiations
+    - stakeholder_analysis: Deep audience understanding for better persuasion
+    - presentation: When persuasive writing becomes persuasive speaking
+    - communication_planning: Strategic context for persuasive pieces
+    - feedback_collection: Testing persuasive writing effectiveness

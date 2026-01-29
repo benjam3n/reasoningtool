@@ -1,0 +1,328 @@
+# Question Analysis Framework for Pure Regress Files
+# Purpose: Transform raw questions into prioritized, actionable analysis with minimal guessing
+
+version: "1.0"
+description: |
+  This framework provides methods for analyzing philosophical questions to determine:
+  1. Which questions are foundational (answering them unlocks other answers)
+  2. Which questions already have rigorous answers in existing research
+  3. Which questions can be answered deductively vs empirically
+  4. How questions depend on each other (DAG structure)
+  5. What analysis methods produce answers with high confidence
+
+# ====================
+# REACTION ANALYSIS
+# ====================
+# What is this framework reacting to?
+
+reaction_chain:
+  surface_observation: "400,000+ questions across 100+ files exist"
+  surface_reaction: "How do I know which questions matter?"
+  deeper_reaction: "Generating questions is easy; knowing which MATTER is hard"
+  core_reaction: "I want methods that produce certainty, not more questions"
+  meta_reaction: "If I had a method to prioritize questions, how do I know THAT method is correct?"
+  resolution: "Find foundational questions whose answers are self-evident or deductively derivable"
+
+# ====================
+# QUESTION CLASSIFICATION DIMENSIONS
+# ====================
+
+classification_dimensions:
+
+  foundationality:
+    description: "Does answering this question unlock answers to other questions?"
+    levels:
+      - level: 5
+        name: "Axiomatic"
+        definition: "Cannot be derived from other questions; must be assumed or self-evident"
+        examples: ["What does 'exist' mean?", "What is truth?"]
+      - level: 4
+        name: "Foundational"
+        definition: "Answering this enables answering 10+ other questions"
+        examples: ["What is causation?", "What is knowledge?"]
+      - level: 3
+        name: "Structural"
+        definition: "Answering this enables answering 3-10 other questions"
+        examples: ["What is a mechanism?", "What is function?"]
+      - level: 2
+        name: "Derivative"
+        definition: "Answer depends on 1-3 other questions"
+        examples: ["What is biological function?", "What is economic rationality?"]
+      - level: 1
+        name: "Terminal"
+        definition: "Answer depends on many prior answers; does not unlock others"
+        examples: ["Is gene therapy ethical?", "Should we use nuclear power?"]
+
+  prior_art_availability:
+    description: "Has this question been examined rigorously by others?"
+    levels:
+      - level: 5
+        name: "Settled"
+        definition: "Strong consensus exists among experts; multiple rigorous treatments"
+        action: "Retrieve and synthesize existing answers"
+      - level: 4
+        name: "Well-examined"
+        definition: "Multiple serious treatments exist; some disagreement remains"
+        action: "Map the disagreement; identify what would resolve it"
+      - level: 3
+        name: "Partially examined"
+        definition: "Some serious treatments exist; significant gaps"
+        action: "Identify gaps; prioritize filling them"
+      - level: 2
+        name: "Poorly examined"
+        definition: "Few treatments; mostly speculation or opinion"
+        action: "Identify what rigorous examination would require"
+      - level: 1
+        name: "Unexamined"
+        definition: "No serious treatment found"
+        action: "Determine if examinable; if so, what method?"
+
+  verifiability:
+    description: "Can the answer be verified without guessing?"
+    levels:
+      - level: 5
+        name: "Deductively provable"
+        definition: "Answer follows necessarily from definitions/axioms"
+        method: "Formal proof or argument reconstruction"
+      - level: 4
+        name: "Empirically testable"
+        definition: "Answer can be tested against observations"
+        method: "Experiment, measurement, case study"
+      - level: 3
+        name: "Indirectly verifiable"
+        definition: "Implications can be tested even if answer cannot directly"
+        method: "Inference to best explanation"
+      - level: 2
+        name: "Coherence-verifiable"
+        definition: "Can check consistency with other accepted answers"
+        method: "Coherence analysis"
+      - level: 1
+        name: "Not verifiable"
+        definition: "No known method to verify"
+        method: "Flag as assumption or value judgment"
+
+  deductive_tractability:
+    description: "Can this be answered through pure logic rather than empirical observation?"
+    levels:
+      - level: 5
+        name: "Purely analytic"
+        definition: "Answer determined entirely by meanings of terms"
+        examples: ["Is a bachelor unmarried?", "Can something both exist and not exist?"]
+      - level: 4
+        name: "Mostly analytic"
+        definition: "Answer mostly follows from definitions with minimal empirical input"
+        examples: ["What is the structure of valid inference?"]
+      - level: 3
+        name: "Mixed"
+        definition: "Requires both conceptual analysis and empirical input"
+        examples: ["What is the nature of mind?", "What is causation?"]
+      - level: 2
+        name: "Mostly empirical"
+        definition: "Answer depends primarily on how the world happens to be"
+        examples: ["Do genes cause traits?", "Is free trade beneficial?"]
+      - level: 1
+        name: "Purely empirical"
+        definition: "Answer entirely contingent on observations"
+        examples: ["What is the GDP of France?", "How many species exist?"]
+
+  dependency_position:
+    description: "Where does this question sit in the dependency graph?"
+    types:
+      - type: "root"
+        definition: "Has no dependencies; other questions depend on it"
+        priority: "Highest - answer first"
+      - type: "hub"
+        definition: "Has few dependencies but many dependents"
+        priority: "Very high - high leverage"
+      - type: "bridge"
+        definition: "Connects otherwise disconnected question clusters"
+        priority: "High - enables integration"
+      - type: "leaf"
+        definition: "Depends on many questions; nothing depends on it"
+        priority: "Low - answer last"
+      - type: "isolated"
+        definition: "Neither depends on nor is depended upon"
+        priority: "Evaluate relevance; may be removable"
+
+# ====================
+# ANALYSIS METHODS
+# ====================
+
+analysis_methods:
+
+  conceptual_analysis:
+    description: "Break down concepts into necessary and sufficient conditions"
+    when_to_use: "Question asks 'What is X?'"
+    steps:
+      - "List candidate definitions of X"
+      - "For each definition, find counterexamples"
+      - "Refine definition to handle counterexamples"
+      - "Check if refined definition is circular"
+      - "If circular, identify what prior concept must be analyzed first"
+    output: "Definition of X or identification of prior concept needed"
+
+  presupposition_analysis:
+    description: "Identify what must be true for the question to make sense"
+    when_to_use: "Any question"
+    steps:
+      - "List what the question presupposes exists"
+      - "List what the question presupposes is meaningful"
+      - "For each presupposition, ask: Is this established?"
+      - "If not established, that becomes a prior question"
+    output: "List of prior questions that must be answered first"
+
+  reversal_test:
+    description: "Check if reversing the question reveals hidden assumptions"
+    when_to_use: "Questions of the form 'Is X Y?'"
+    steps:
+      - "Form the reversal: 'Is Y X?'"
+      - "If reversal is trivially true/false, original question has hidden asymmetry"
+      - "Identify what creates the asymmetry"
+      - "The asymmetry often reveals the real question"
+    output: "The real question being asked"
+
+  dependency_tracing:
+    description: "Map what questions this question depends on"
+    when_to_use: "To determine question priority"
+    steps:
+      - "Ask: What must be answered before this can be answered?"
+      - "For each dependency, recursively trace its dependencies"
+      - "Continue until reaching questions with no dependencies (roots)"
+      - "The roots are the foundational questions"
+    output: "Dependency graph with identified roots"
+
+  literature_mapping:
+    description: "Find existing rigorous treatments of this question"
+    when_to_use: "Before attempting original analysis"
+    steps:
+      - "Identify the academic field(s) that address this question"
+      - "Find survey papers or handbook entries"
+      - "Identify the main positions and their proponents"
+      - "Identify the strongest arguments for each position"
+      - "Identify what would settle the debate"
+    output: "Map of existing positions and what would resolve them"
+
+  argument_reconstruction:
+    description: "Formalize the best arguments for each answer"
+    when_to_use: "When multiple answers exist"
+    steps:
+      - "For each proposed answer:"
+      - "  List the premises explicitly"
+      - "  Check if conclusion follows from premises"
+      - "  Check if premises are established or assumed"
+      - "  If premises are assumed, can they be established?"
+      - "Compare the premise sets across answers"
+      - "The answer with most establishable premises wins"
+    output: "Ranked answers by premise quality"
+
+# ====================
+# FILE STRUCTURE FOR ANSWERS
+# ====================
+
+answer_file_structure:
+  description: "How to record analysis and answers for each pure_regress file"
+
+  per_file_structure:
+    - filename: "pure_regress_vXX_analysis.yaml"
+      contents:
+        - metadata: "File info, analysis date, completeness status"
+        - question_index: "List of all questions with IDs"
+        - classification: "Each question's scores on classification dimensions"
+        - dependencies: "DAG of question dependencies"
+        - priority_order: "Ordered list of questions to answer"
+
+    - filename: "pure_regress_vXX_roots.yaml"
+      contents:
+        - root_questions: "Questions with no dependencies"
+        - root_analysis: "Analysis of each root question"
+        - root_answers: "Established answers to root questions"
+        - confidence_levels: "How confident in each answer"
+
+    - filename: "pure_regress_vXX_prior_art.yaml"
+      contents:
+        - literature_map: "What has been written on each question"
+        - consensus_positions: "Where experts agree"
+        - open_debates: "Where experts disagree"
+        - resolution_conditions: "What would settle each debate"
+
+    - filename: "pure_regress_vXX_conclusions.yaml"
+      contents:
+        - verified_conclusions: "Answers with high confidence"
+        - derivation_chains: "How each conclusion was derived"
+        - remaining_uncertainty: "What still requires guessing"
+        - next_questions: "What to investigate next"
+
+# ====================
+# PRIORITY ALGORITHM
+# ====================
+
+priority_algorithm:
+  description: "How to determine which questions to analyze first"
+
+  step_1_identify_roots:
+    action: "Use dependency tracing on all questions"
+    output: "Set of root questions (no dependencies)"
+
+  step_2_score_roots:
+    action: "Score each root on foundationality and prior_art_availability"
+    formula: "priority = foundationality * (6 - prior_art_availability)"
+    rationale: "High foundationality + low prior art = highest priority for original analysis"
+
+  step_3_check_prior_art:
+    action: "For high-prior-art questions, retrieve existing answers"
+    output: "Answers from literature for questions already examined"
+
+  step_4_analyze_high_priority:
+    action: "Apply analysis methods to highest priority questions without prior art"
+    output: "Original analysis for foundational questions"
+
+  step_5_propagate:
+    action: "Use established root answers to derive answers to dependent questions"
+    output: "Cascade of derived answers"
+
+  step_6_identify_gaps:
+    action: "Find questions that cannot be answered even with all roots answered"
+    output: "Questions requiring empirical input or additional axioms"
+
+# ====================
+# MINIMAL GUESSING CRITERION
+# ====================
+
+minimal_guessing:
+  description: "How to ensure conclusions have minimal guessing"
+
+  levels_of_certainty:
+    - level: "Proven"
+      definition: "Follows deductively from established premises"
+      guessing: 0
+
+    - level: "Strongly supported"
+      definition: "Best explanation of available evidence"
+      guessing: 0.1
+
+    - level: "Consensus"
+      definition: "Most experts agree; some disagreement"
+      guessing: 0.2
+
+    - level: "Probable"
+      definition: "More likely than alternatives given evidence"
+      guessing: 0.3
+
+    - level: "Plausible"
+      definition: "Consistent with evidence; alternatives also plausible"
+      guessing: 0.5
+
+    - level: "Speculative"
+      definition: "Limited evidence; mostly reasoning from analogy"
+      guessing: 0.7
+
+    - level: "Assumption"
+      definition: "Adopted without proof; could be wrong"
+      guessing: 0.9
+
+  tracking:
+    - "Every conclusion must have explicit certainty level"
+    - "Total guessing in a derivation = product of guessing in premises"
+    - "If total guessing > 0.5, derivation is unreliable"
+    - "Identify which premises contribute most guessing"
+    - "Prioritize reducing guessing in high-contribution premises"

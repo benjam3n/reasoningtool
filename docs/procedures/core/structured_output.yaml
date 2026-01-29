@@ -1,0 +1,173 @@
+# Structured Output Format
+# Makes GOSM outputs analyzable and synthesizable
+# Enables cross-project pattern detection
+
+id: structured_output
+name: Structured Output Format
+version: "1.0.0"
+domain: core
+tags: ["output", "analysis", "structure", "synthesis"]
+
+description: |
+  Standardized output format for GOSM projects.
+
+  Problem: Current outputs are markdown files - good for reading, hard to analyze.
+  Solution: Structured format that enables cross-project synthesis.
+
+  Like ARAW uses databases for synthesis, GOSM needs structured project records.
+
+# ============================================
+# PROJECT RECORD STRUCTURE
+# ============================================
+project_record:
+  metadata:
+    project_id: "unique identifier (YYYY-MM-DD_goal-slug)"
+    created: "timestamp"
+    completed: "timestamp or null"
+    status: "PLANNING | IN_PROGRESS | COMPLETED | ABANDONED"
+
+  goal:
+    original_statement: "user's original goal statement"
+    refined_statement: "after RCI refinement"
+    goal_type: "category (engineering, personal, research, etc.)"
+    intrinsic_goals: "[list of underlying intrinsic goals]"
+
+  assessment:
+    requirement_verification:
+      specific: "CLEAR | ADEQUATE | WEAK | MISSING"
+      measurable: "CLEAR | ADEQUATE | WEAK | MISSING"
+      achievable: "CLEAR | ADEQUATE | WEAK | MISSING"
+      relevant: "CLEAR | ADEQUATE | WEAK | MISSING"
+      timebound: "CLEAR | ADEQUATE | WEAK | MISSING"
+    complexity: "SIMPLE | COMPLICATED | COMPLEX | CHAOTIC"
+    executor: "description of who executes"
+
+  strategy:
+    strategies_considered: "[list of strategy summaries]"
+    strategy_selected: "summary of chosen strategy"
+    confidence_level: "0-4"
+    key_assumptions: "[list]"
+    key_risks: "[list]"
+
+  planning:
+    phases: "[list of phase summaries]"
+    total_steps: "count"
+    estimated_duration: "if specified"
+    dependencies: "[list of external dependencies]"
+
+  execution:
+    start_date: "timestamp"
+    end_date: "timestamp"
+    pivots: "[list of major changes during execution]"
+    blockers_encountered: "[list]"
+
+  outcome:
+    achievement_level: "FULL | SUBSTANTIAL | PARTIAL | MINIMAL | FAILURE | AMBIGUOUS"
+    achievement_percentage: "0-100+"
+    success_criteria_met: "[list of criteria and whether met]"
+    attribution:
+      process: "percentage"
+      execution: "percentage"
+      external: "percentage"
+      luck: "percentage"
+    failure_type: "GOAL | STRATEGY | PLANNING | EXECUTION | EXTERNAL | LUCK | null"
+
+  learnings:
+    process_learnings: "[list]"
+    domain_learnings: "[list]"
+    procedures_used: "[list with helpfulness ratings]"
+    recommendations: "[list of GOSM improvements suggested]"
+
+# ============================================
+# OUTPUT FILES
+# ============================================
+output_files:
+  project_record_json:
+    path: "project_record.json"
+    content: "Full structured record (schema above)"
+    purpose: "Machine-readable for synthesis"
+
+  human_readable:
+    STATE_md:
+      path: "STATE.md"
+      content: "Current status, next actions"
+      purpose: "Quick human reference"
+
+    COMPLETE_PLAN_md:
+      path: "COMPLETE_PLAN.md"
+      content: "Full plan with phases and gates"
+      purpose: "Detailed human reference"
+
+    STEPS_md:
+      path: "STEPS.md"
+      content: "Executable steps"
+      purpose: "Execution guidance"
+
+    LEARNINGS_md:
+      path: "LEARNINGS.md"
+      content: "Lessons learned"
+      purpose: "Knowledge capture"
+
+# ============================================
+# WHEN TO UPDATE
+# ============================================
+update_triggers:
+  project_record_json:
+    - "After each phase completion"
+    - "After any gate execution"
+    - "After any pivot/change"
+    - "At project completion"
+
+  update_protocol: |
+    1. Load current project_record.json
+    2. Update relevant section
+    3. Save project_record.json
+    4. Update human-readable files as needed
+
+# ============================================
+# SYNTHESIS USAGE
+# ============================================
+synthesis:
+  description: "How structured output enables cross-project analysis"
+
+  queries_enabled:
+    - "What goal types have highest success rates?"
+    - "What strategies work for goal type X?"
+    - "What procedures correlate with success?"
+    - "What failure types are most common?"
+    - "What assumptions frequently prove false?"
+
+  aggregation_approach: |
+    1. Collect project_record.json from all completed projects
+    2. Parse into analysis-ready format
+    3. Query across projects
+    4. Identify patterns
+
+  example_analysis: |
+    # Find all projects with STRATEGY_FAILURE
+    failures = [p for p in projects if p.outcome.failure_type == "STRATEGY"]
+
+    # What strategies were selected in these failures?
+    failed_strategies = [f.strategy.strategy_selected for f in failures]
+
+    # What goal types do strategy failures cluster in?
+    goal_types = Counter([f.goal.goal_type for f in failures])
+
+# ============================================
+# MINIMAL IMPLEMENTATION
+# ============================================
+minimal_implementation:
+  description: "Start with minimal structured data, expand as needed"
+
+  minimum_fields:
+    - project_id
+    - goal.original_statement
+    - goal.goal_type
+    - outcome.achievement_level
+    - outcome.failure_type (if failure)
+    - learnings.procedures_used
+
+  expansion_path: |
+    Start with minimum fields.
+    Add more fields when you need them for analysis.
+    Don't over-structure before you know what questions you'll ask.

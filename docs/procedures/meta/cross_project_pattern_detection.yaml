@@ -1,0 +1,214 @@
+# Cross-Project Pattern Detection
+# Standalone procedure for analyzing patterns across completed projects
+# Run periodically, not continuously
+
+id: cross_project_pattern_detection
+name: Cross-Project Pattern Detection
+version: "1.0.0"
+domain: meta
+tags: ["meta", "analysis", "patterns", "improvement"]
+
+description: |
+  Analyze patterns across completed GOSM projects to improve the system.
+
+  This is a standalone procedure - run it when you want to learn from
+  accumulated experience, not as part of every project.
+
+when_to_use:
+  - After completing 5+ projects
+  - Quarterly review
+  - When system seems stuck or ineffective
+  - Before major GOSM changes
+
+# ============================================
+# PATTERN CATEGORIES
+# ============================================
+pattern_categories:
+
+  success_patterns:
+    description: "What correlates with successful projects?"
+    questions:
+      - "What goal types have highest success rates?"
+      - "What strategies appear in successful projects?"
+      - "What procedures are used in successful projects?"
+      - "What assessment patterns predict success?"
+      - "What execution patterns predict success?"
+
+  failure_patterns:
+    description: "What correlates with failed projects?"
+    questions:
+      - "What goal types have highest failure rates?"
+      - "What failure types are most common?"
+      - "What strategies appear in failed projects?"
+      - "Are there common assumptions that prove false?"
+      - "Are there common risks that materialize?"
+
+  procedure_patterns:
+    description: "Which procedures actually help?"
+    questions:
+      - "Which procedures appear in successful vs failed projects?"
+      - "Which procedures are frequently skipped?"
+      - "Which procedures get negative subjective ratings despite being used?"
+      - "Are there procedure combinations that work well together?"
+
+  timing_patterns:
+    description: "What happens with timing?"
+    questions:
+      - "Do projects typically take longer than estimated?"
+      - "Which phases take longer than expected?"
+      - "Are there common bottlenecks?"
+
+  learning_patterns:
+    description: "What learnings keep recurring?"
+    questions:
+      - "What recommendations appear in multiple projects?"
+      - "Are learnings being incorporated or just documented?"
+      - "What domain knowledge keeps being rediscovered?"
+
+# ============================================
+# ANALYSIS PROCESS
+# ============================================
+analysis_process:
+  step_1_gather_data:
+    action: |
+      Collect project_record.json from all completed projects.
+      If no structured records exist, extract key data from markdown files:
+      - Goal type
+      - Outcome (success/failure)
+      - Procedures used
+      - Learnings documented
+
+  step_2_categorize_projects:
+    action: |
+      Group projects by:
+      - Outcome: SUCCESS (>=75%) vs PARTIAL (50-74%) vs FAILURE (<50%)
+      - Goal type: engineering, personal, research, etc.
+      - Complexity: simple, complicated, complex
+
+  step_3_find_correlations:
+    action: |
+      For each pattern category, look for correlations:
+
+      Success correlation:
+      - What appears MORE in successful projects?
+      - What appears LESS in successful projects?
+
+      Failure correlation:
+      - What appears MORE in failed projects?
+      - What appears LESS in failed projects?
+
+  step_4_identify_actionable_patterns:
+    action: |
+      Filter for patterns that are:
+      - Consistent (appear in 3+ projects)
+      - Actionable (something GOSM can change)
+      - Significant (meaningful difference between success/failure)
+
+  step_5_generate_recommendations:
+    action: |
+      For each actionable pattern, generate recommendation:
+      - What should change in GOSM?
+      - Is it a procedure change, gate change, or new addition?
+      - What's the expected impact?
+
+# ============================================
+# ANALYSIS QUESTIONS
+# ============================================
+analysis_questions:
+  goal_types:
+    - "Which goal types succeed most often?"
+    - "Which goal types fail most often?"
+    - "Are certain goal types consistently underestimated?"
+    - "Should GOSM have goal-type-specific guidance?"
+
+  strategies:
+    - "Do certain strategies work for certain goal types?"
+    - "Are there strategies that consistently fail?"
+    - "Are strategy alternatives being considered or is first-good taken?"
+
+  procedures:
+    - "Which procedures correlate with success?"
+    - "Which procedures correlate with failure (when used)?"
+    - "Which procedures correlate with failure (when skipped)?"
+    - "Are procedures being used as intended?"
+
+  assumptions:
+    - "What assumptions commonly prove false?"
+    - "Are certain assumption types riskier than others?"
+    - "Should any common assumptions be flagged automatically?"
+
+  failures:
+    - "What failure type is most common?"
+    - "Are failures clustered in certain phases?"
+    - "Are the same failures happening repeatedly?"
+    - "Is GOSM learning from failures or repeating them?"
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+output:
+  pattern_report:
+    summary:
+      total_projects_analyzed: "N"
+      success_rate: "X%"
+      most_common_failure_type: "[type]"
+      most_effective_procedure: "[procedure]"
+
+    success_correlations:
+      - pattern: "[description]"
+        evidence: "[data]"
+        recommendation: "[action]"
+
+    failure_correlations:
+      - pattern: "[description]"
+        evidence: "[data]"
+        recommendation: "[action]"
+
+    procedure_insights:
+      - procedure: "[name]"
+        usage_rate: "X%"
+        success_correlation: "+/-X%"
+        recommendation: "[keep/modify/archive]"
+
+    recommendations:
+      priority_1: "[most important change]"
+      priority_2: "[second most important]"
+      priority_3: "[third]"
+
+# ============================================
+# MINIMUM VIABLE ANALYSIS
+# ============================================
+minimum_viable:
+  description: "Simplest useful analysis"
+
+  with_5_projects: |
+    1. List all 5 projects with outcomes
+    2. For successes: What did they have in common?
+    3. For failures: What did they have in common?
+    4. What's one thing that appears in all successes and no failures?
+    5. What's one thing that appears in all failures and no successes?
+
+  expected_output: |
+    - 1-2 patterns worth investigating
+    - 1 recommendation for GOSM improvement
+    - Note: Small sample, patterns are hypotheses not conclusions
+
+# ============================================
+# AVOIDING BAD PATTERNS
+# ============================================
+cautions:
+  small_sample_size:
+    problem: "Pattern appears in 2 projects, might be coincidence"
+    mitigation: "Note sample size, mark as tentative until N >= 5"
+
+  confounding_factors:
+    problem: "Success might be due to executor skill, not procedure"
+    mitigation: "Look for patterns that hold across different executors"
+
+  survivorship_bias:
+    problem: "Only analyzing completed projects, not abandoned ones"
+    mitigation: "Include abandoned projects in analysis"
+
+  overfitting:
+    problem: "Finding patterns that are specific to past, not predictive"
+    mitigation: "Test patterns on next few projects before acting"

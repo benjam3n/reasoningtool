@@ -1,0 +1,265 @@
+# Assumption Surfacing
+# Intelligence Reduction: 65%
+# Version: 1.0.0
+
+id: assumption_surfacing
+name: Assumption Surfacing
+version: "1.0.0"
+domain: core
+intelligence_reduction: "65%"
+
+goal: |
+  Systematically identify hidden assumptions in a plan, belief, or
+  strategy using structured prompts. Prompts do most of the work;
+  recognition requires some insight.
+
+description: |
+  Plans and beliefs rest on assumptions that are often invisible.
+  These hidden assumptions can cause spectacular failures when violated.
+  This procedure uses systematic prompts to surface assumptions that
+  would otherwise remain hidden.
+
+when_to_use:
+  - Before committing to a plan
+  - When a strategy seems too good
+  - When there's unexpected disagreement
+  - When adapting a solution to new context
+  - To stress-test thinking
+
+inputs:
+  - name: subject
+    type: description
+    description: "The plan, belief, or strategy being examined"
+
+outputs:
+  - name: assumptions
+    type: list
+    description: "All identified assumptions"
+  - name: critical_assumptions
+    type: list
+    description: "Assumptions that, if wrong, would invalidate the subject"
+  - name: validation_plan
+    type: list
+    description: "How to test critical assumptions"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "State the Subject"
+    action: |
+      Clearly describe the plan, belief, or strategy being examined.
+      Be specific about what it claims or proposes.
+    output: "Subject description"
+
+  - id: 2
+    name: "Apply Assumption Prompts"
+    action: |
+      Go through each category of prompts systematically.
+      For each prompt, ask: "What am I assuming about this?"
+      Record all assumptions, even obvious ones.
+    output: "Raw assumption list"
+
+  - id: 3
+    name: "Consolidate and Deduplicate"
+    action: |
+      Combine similar assumptions.
+      Remove true duplicates.
+      Clarify vague assumptions.
+    output: "Clean assumption list"
+
+  - id: 4
+    name: "Assess Criticality"
+    action: |
+      For each assumption, ask:
+      "If this assumption is wrong, does the plan still work?"
+
+      Critical = Plan fails if assumption is wrong
+      Important = Plan degraded if wrong
+      Minor = Doesn't significantly affect plan
+    output: "Prioritized assumptions"
+    template: |
+      CRITICAL (plan fails if wrong):
+      - [Assumption 1]
+      - [Assumption 2]
+
+      IMPORTANT (plan degraded if wrong):
+      - [Assumption 3]
+      - [Assumption 4]
+
+      MINOR:
+      - [Assumption 5]
+
+  - id: 5
+    name: "Assess Confidence"
+    action: |
+      For each critical assumption:
+      - How confident are you it's true?
+      - What's the evidence?
+      - Has it been tested?
+
+      High risk = Critical + Low confidence
+    output: "Confidence assessment"
+    template: |
+      ASSUMPTION: [Description]
+      Confidence: [High/Medium/Low]
+      Evidence: [What supports it]
+      Tested: [Yes/No/Partially]
+      Risk: [High/Medium/Low]
+
+  - id: 6
+    name: "Plan Validation"
+    action: |
+      For high-risk assumptions (critical + low confidence):
+      - How could you test this?
+      - What would prove it wrong?
+      - What's the cheapest test?
+    output: "Validation plan"
+    template: |
+      ASSUMPTION: [Description]
+      Test: [How to validate]
+      Disproof: [What would show it's wrong]
+      Cost: [Resources needed to test]
+      Timeline: [When to test]
+
+  - id: 7
+    name: "Consider Alternatives"
+    action: |
+      For each critical assumption:
+      "If this is wrong, what's the alternative plan?"
+      Having contingencies reduces risk.
+    output: "Contingency plans"
+
+# ============================================
+# ASSUMPTION PROMPTS BY CATEGORY
+# ============================================
+
+prompts:
+  about_the_world:
+    - "What must be true about the world for this to work?"
+    - "What economic conditions am I assuming?"
+    - "What technological conditions am I assuming?"
+    - "What social/cultural conditions am I assuming?"
+    - "What am I assuming about competitors/others?"
+    - "What am I assuming will stay the same?"
+    - "What am I assuming will change?"
+
+  about_people:
+    - "What am I assuming about what people want?"
+    - "What am I assuming about how people will behave?"
+    - "What am I assuming about people's capabilities?"
+    - "What am I assuming about people's motivations?"
+    - "What am I assuming about people's knowledge?"
+    - "What am I assuming about who will do what?"
+
+  about_resources:
+    - "What am I assuming about time available?"
+    - "What am I assuming about money/budget?"
+    - "What am I assuming about skills/expertise?"
+    - "What am I assuming about tools/technology?"
+    - "What am I assuming about information access?"
+    - "What am I assuming about support/help?"
+
+  about_causation:
+    - "What am I assuming will cause what?"
+    - "What sequence of events am I assuming?"
+    - "What am I assuming about how long things take?"
+    - "What am I assuming about dependencies?"
+    - "What am I assuming will NOT happen?"
+
+  about_myself:
+    - "What am I assuming about my own abilities?"
+    - "What am I assuming about my own discipline?"
+    - "What am I assuming about my own preferences?"
+    - "What am I assuming about my future self?"
+    - "What am I assuming I know?"
+
+  about_the_problem:
+    - "What am I assuming is the actual problem?"
+    - "What am I assuming about the root cause?"
+    - "What am I assuming about the problem scope?"
+    - "What am I assuming about what success looks like?"
+    - "What am I assuming is NOT part of the problem?"
+
+  about_the_solution:
+    - "What am I assuming this solution will achieve?"
+    - "What am I assuming about side effects?"
+    - "What am I assuming about implementation difficulty?"
+    - "What am I assuming about adoption/acceptance?"
+    - "What am I assuming this solution won't break?"
+
+  meta_assumptions:
+    - "What am I assuming about what I don't know?"
+    - "What have others assumed that I'm implicitly accepting?"
+    - "What seems so obvious I haven't questioned it?"
+    - "What would someone who disagrees assume instead?"
+
+# ============================================
+# INVERSION PROMPTS
+# ============================================
+
+inversion_prompts:
+  description: "Another way to find assumptions: Invert and see what changes"
+
+  prompts:
+    - "If the opposite were true, would the plan still work?"
+    - "What if [key element] didn't exist?"
+    - "What if [key element] cost 10x more/less?"
+    - "What if [key element] took 10x longer/shorter?"
+    - "What if the competition knew everything?"
+    - "What if this is exactly what everyone else is doing?"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  subject: "Plan to learn programming and get a job in 6 months"
+
+  assumptions_surfaced:
+    about_world:
+      - "Jobs exist for junior developers"
+      - "Self-taught programmers can get hired"
+      - "6 months is enough time to be employable"
+
+    about_myself:
+      - "I can maintain motivation for 6 months"
+      - "I learn at an average or above-average rate"
+      - "I have 20+ hours/week to dedicate"
+      - "I can learn without formal instruction"
+
+    about_solution:
+      - "The curriculum I've chosen covers what employers want"
+      - "Building projects is sufficient to demonstrate skill"
+      - "I can figure out what I don't know to learn"
+
+  critical_assumptions:
+    - assumption: "6 months is enough to be employable"
+      confidence: "Low - based on anecdotes"
+      test: "Research actual timelines of successful self-taught devs"
+
+    - assumption: "I have 20+ hours/week"
+      confidence: "Medium - have other commitments"
+      test: "Track actual time for 2 weeks before committing"
+
+    - assumption: "Self-taught programmers can get hired"
+      confidence: "Medium - true for some, not all"
+      test: "Interview 5 self-taught developers about their experience"
+
+  validation_plan:
+    - "Week 1: Time tracking to validate availability"
+    - "Week 2: Research and interviews with self-taught devs"
+    - "Month 1: Reassess timeline assumption based on progress"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "All prompt categories were considered"
+  - "Assumptions are clearly stated (not vague)"
+  - "Criticality was assessed for each"
+  - "High-risk assumptions have validation plans"
+  - "Contingencies exist for critical assumptions"

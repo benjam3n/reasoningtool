@@ -1,0 +1,180 @@
+name: advocacy_procedures_index
+version: "1.0"
+description: |
+  Index of reusable procedures for evidence-based policy advocacy.
+  These procedures form a complete system for identifying policies,
+  building target lists, executing outreach campaigns, learning from
+  results, and achieving financial sustainability.
+
+procedures:
+  - name: infrastructure_setup
+    file: infrastructure_setup.yaml
+    purpose: "Set up email, phone, database, and monitoring"
+    triggers:
+      - "Starting new advocacy project"
+      - "Need professional outreach capability"
+    dependencies: []
+    outputs:
+      - "Email with 8+ deliverability"
+      - "AI phone calling via Bland AI"
+      - "SQLite database with schema"
+      - "Legislative monitoring"
+    cost: "$35"
+    duration: "Week 1-2"
+
+  - name: policy_research
+    file: policy_research.yaml
+    purpose: "Identify evidence-based, neglected, tractable policies"
+    triggers:
+      - "Need to decide what to advocate for"
+      - "Evaluating policy opportunities"
+    dependencies:
+      - infrastructure_setup
+    outputs:
+      - "20+ policies scored"
+      - "3-5 policies selected"
+      - "One-page briefs"
+      - "Evidence summaries"
+    cost: "$0-10"
+    duration: "Week 2-3"
+
+  - name: targeting
+    file: targeting.yaml
+    purpose: "Build database of advocacy targets with dossiers"
+    triggers:
+      - "Policies selected"
+      - "Need to identify who to contact"
+    dependencies:
+      - infrastructure_setup
+      - policy_research
+    outputs:
+      - "50+ targets identified"
+      - "Full dossiers for Tier 1"
+      - "Prioritization by tier"
+      - "Personalization notes"
+    cost: "$0-10"
+    duration: "Week 3-4"
+
+  - name: outreach_campaigns
+    file: outreach_campaigns.yaml
+    purpose: "Execute multi-channel persuasion campaigns"
+    triggers:
+      - "Targets identified"
+      - "Ready to execute outreach"
+    dependencies:
+      - infrastructure_setup
+      - policy_research
+      - targeting
+    outputs:
+      - "3 campaigns executed"
+      - "100+ outreach attempts"
+      - "Response data"
+      - "A/B test results"
+    cost: "$40-80"
+    duration: "Week 4-9"
+
+  - name: learning_system
+    file: learning_system.yaml
+    purpose: "Systematically improve campaign effectiveness"
+    triggers:
+      - "Campaign completed"
+      - "Sufficient data for analysis"
+    dependencies:
+      - outreach_campaigns
+    outputs:
+      - "Campaign analysis reports"
+      - "10+ validated learnings"
+      - "Optimization recommendations"
+    cost: "$0"
+    duration: "Ongoing"
+
+  - name: fundraising_advocacy
+    file: ../topics/fundraising/variants/advocacy.yaml
+    purpose: "Build self-sustaining funding"
+    triggers:
+      - "Need sustainable operations"
+      - "Campaign showing traction"
+    dependencies:
+      - infrastructure_setup
+      - outreach_campaigns
+    outputs:
+      - "Donation links"
+      - "Transparency dashboard"
+      - "Grant applications"
+      - "Sustainability roadmap"
+    cost: "$0"
+    duration: "Week 4+"
+
+execution_flow:
+  diagram: |
+    ┌─────────────────────┐
+    │ INFRASTRUCTURE      │
+    │ (Foundation)        │
+    └─────────┬───────────┘
+              │
+              ▼
+    ┌─────────────────────┐     ┌─────────────────────┐
+    │ POLICY RESEARCH     │────▶│ TARGETING           │
+    │ (What to advocate)  │     │ (Who to contact)    │
+    └─────────────────────┘     └─────────┬───────────┘
+                                          │
+              ┌───────────────────────────┘
+              ▼
+    ┌─────────────────────┐
+    │ OUTREACH CAMPAIGNS  │
+    │ (Execute)           │
+    └─────────┬───────────┘
+              │
+       ┌──────┴──────┐
+       ▼             ▼
+    ┌───────────┐ ┌───────────┐
+    │ LEARNING  │ │FUNDRAISING│
+    │ (Improve) │ │(Sustain)  │
+    └─────┬─────┘ └───────────┘
+          │
+          └──────▶ Back to OUTREACH
+
+reusability:
+  - procedure: infrastructure_setup
+    reusable_for: "Any autonomous outreach project"
+
+  - procedure: policy_research
+    reusable_for: "Any evidence-based advocacy effort"
+
+  - procedure: targeting
+    reusable_for: "Any legislative or stakeholder outreach"
+
+  - procedure: outreach_campaigns
+    reusable_for: "Any multi-channel persuasion campaign"
+
+  - procedure: learning_system
+    reusable_for: "Any iterative optimization process"
+
+  - procedure: fundraising_advocacy
+    reusable_for: "Any mission-driven sustainability effort"
+
+key_innovations:
+  - name: "Staff-first targeting"
+    description: "Prioritize legislative staff over legislators for accessibility"
+
+  - name: "Value-first outreach"
+    description: "Offer useful resources before making asks"
+
+  - name: "AI phone follow-up"
+    description: "Use Bland AI for cost-effective follow-up calls"
+
+  - name: "Systematic learning"
+    description: "A/B testing and knowledge base for continuous improvement"
+
+  - name: "Integrated fundraising"
+    description: "Funding mechanism built into campaign communications"
+
+total_estimated_cost: "$85-135 for full system"
+total_timeline: "10 weeks to first results"
+
+related_procedures:
+  from_autonomous:
+    - "human_delegation.yaml (for delegated tasks)"
+    - "capability_gate.yaml (for feasibility checks)"
+    - "event_driven_automation.yaml (for continuity)"
+    - "outreach_communication.yaml (email templates)"

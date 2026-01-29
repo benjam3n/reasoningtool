@@ -1,0 +1,313 @@
+# Procedure Effectiveness - Unified tracking and measurement
+# Combines operational tracking (logging, tiering) with empirical analysis (correlation, ROI)
+# Version 2.0 - Merged from procedure_effectiveness.yaml + procedure_effectiveness_tracking.yaml
+
+id: procedure_effectiveness
+name: Procedure Effectiveness
+version: "2.0.0"
+domain: meta
+
+description: |
+  Unified framework for procedure effectiveness tracking.
+
+  Combines two approaches:
+  - OPERATIONAL: Usage logging, value ratings, tier assignments, action items
+  - EMPIRICAL: Correlation analysis, outcome tracking, statistical thresholds
+
+  Use operational tracking after each significant procedure use.
+  Use empirical analysis when you have 5+ projects with structured data.
+
+tags:
+  - meta
+  - quality
+  - measurement
+  - improvement
+  - analytics
+  - correlation
+
+# ============================================
+# WHEN TO USE
+# ============================================
+when_to_use:
+  operational_tracking:
+    - After completing any significant procedure (>15 minutes)
+    - When a procedure produced meaningful insight or deliverable
+    - When a procedure failed or was abandoned
+    - During quarterly library reviews
+
+  empirical_analysis:
+    - After completing 5+ projects with structured data
+    - Quarterly procedure review
+    - When deciding to keep/archive procedures
+    - When procedure effectiveness is disputed
+
+when_not_to_use:
+  - For trivial procedure uses under 15 minutes
+  - When procedure use is purely exploratory
+  - During emergencies where logging would slow response
+  - For empirical analysis with fewer than 5 data points
+
+# ============================================
+# PART 1: OPERATIONAL TRACKING
+# ============================================
+operational_tracking:
+
+  step_1_log_usage:
+    action: |
+      After completing a procedure, create a usage log entry:
+
+      1. Record procedure name/ID
+      2. Record project/context where used
+      3. Capture time spent
+      4. Assess value produced (HIGH/MEDIUM/LOW/NEGATIVE)
+      5. Note specific outcomes
+      6. Document issues encountered
+
+    value_ratings:
+      HIGH: "Critical insight or deliverable produced"
+      MEDIUM: "Helpful but not essential"
+      LOW: "Minimal value, might skip next time"
+      NEGATIVE: "Waste of time, actively unhelpful"
+
+    log_format: |
+      | Date | Procedure | Project | Value | Time | Notes |
+      |------|-----------|---------|-------|------|-------|
+      | YYYY-MM-DD | [name] | [project] | [H/M/L/N] | [Xm] | [notes] |
+
+  step_2_categorize:
+    action: |
+      Classify each procedure based on usage and value:
+
+      HIGH VALUE, HIGH USE (Protect):
+      - Criteria: Used 3+ times, average value HIGH
+      - Action: Protect, consider enhancement
+
+      HIGH VALUE, LOW USE (Promote):
+      - Criteria: Used 0-2 times, HIGH value when used
+      - Action: Increase awareness, check barriers
+
+      LOW VALUE, HIGH USE (Investigate):
+      - Criteria: Used 3+ times, average value LOW
+      - Action: Why used if low value? Improve or stop
+
+      LOW VALUE, LOW USE (Retire candidate):
+      - Criteria: Used 0-2 times, LOW value
+      - Action: Candidate for retirement review
+
+  step_3_tier_assignment:
+    tiers:
+      tier_1_essential:
+        criteria: "Top 20% by ROI, 3+ uses"
+        action: "Always use when applicable"
+      tier_2_valuable:
+        criteria: "Above median ROI"
+        action: "Use when applicable"
+      tier_3_situational:
+        criteria: "Below median but positive ROI"
+        action: "Use in specific cases"
+      tier_4_under_review:
+        criteria: "Negative or near-zero ROI"
+        action: "Review for improvement or retirement"
+
+    roi_formula: "(value_score * use_count) / time_invested"
+    value_scores: "HIGH=3, MEDIUM=2, LOW=1, NEGATIVE=-1"
+
+  step_4_action_items:
+    for_protect: "Add examples, document edge cases, enhance failure modes"
+    for_promote: "Review when_to_use triggers, add to onboarding"
+    for_investigate: "Analyze why used despite low value, simplify or split"
+    for_retire: "Verify no unique capability lost, archive with rationale"
+
+# ============================================
+# PART 2: EMPIRICAL ANALYSIS
+# ============================================
+empirical_analysis:
+
+  description: |
+    Statistical correlation of procedure use with project outcomes.
+
+    Problem solved: "HIGH value" is subjective assessment, not measured.
+    This framework correlates procedure use with actual project success.
+
+  tracking_schema:
+    project_record:
+      project_id: "unique identifier"
+      goal_type: "category of goal"
+      outcome:
+        achievement_level: "FULL|SUBSTANTIAL|PARTIAL|MINIMAL|FAILURE"
+        achievement_percentage: "0-100+"
+      procedures_used:
+        - procedure_id: "id"
+          usage_type: "MANDATORY|OPTIONAL|SKIPPED"
+          time_spent: "estimated minutes"
+          subjective_value: "HELPFUL|NEUTRAL|UNHELPFUL"
+      failure_type: "if failure: GOAL|STRATEGY|PLANNING|EXECUTION|EXTERNAL|LUCK"
+
+  metrics:
+    usage_rate:
+      formula: "projects_using / total_projects"
+      interpretation: "How often is this used?"
+
+    success_correlation:
+      formula: "success_rate_with_procedure - success_rate_without"
+      interpretation: "Does using it improve outcomes?"
+      positive: "> 0.05 suggests procedure helps"
+      negative: "< -0.05 suggests procedure hurts"
+      neutral: "-0.05 to 0.05 is inconclusive"
+
+    empirical_roi:
+      formula: "success_correlation / average_time_investment"
+      interpretation: "Is the time worth it?"
+
+    subjective_alignment:
+      formula: "helpful_ratings / total_ratings"
+      interpretation: "Do users think it helps?"
+
+  decision_thresholds:
+    keep_mandatory:
+      criteria:
+        - "success_correlation > 0.1"
+        - "OR: critical for compliance/safety"
+        - "AND: subjective_alignment > 0.5"
+
+    keep_optional:
+      criteria:
+        - "success_correlation > 0"
+        - "AND: subjective_alignment > 0.3"
+
+    archive_candidate:
+      criteria:
+        - "success_correlation < 0"
+        - "OR: usage_rate < 0.1 for 2+ quarters"
+        - "OR: subjective_alignment < 0.3"
+
+    improve_candidate:
+      criteria:
+        - "subjective_alignment < 0.5"
+        - "BUT: success_correlation > 0"
+        - "interpretation: Helps but feels painful - improve UX"
+
+  minimum_sample_sizes:
+    for_correlation_claims: "n >= 10 projects"
+    for_archive_decision: "n >= 5 projects"
+    for_improvement_decision: "n >= 8 projects"
+
+    insufficient_data_action: |
+      If sample size insufficient:
+      1. Note that data is preliminary
+      2. Continue collecting
+      3. Don't make major changes yet
+
+# ============================================
+# COMBINED QUARTERLY REVIEW
+# ============================================
+quarterly_review:
+  description: "Unified review combining operational and empirical data"
+
+  steps:
+    - id: 1
+      name: "Gather all data"
+      action: |
+        1. Collect usage logs from PROCEDURE_USAGE.md
+        2. Collect project_record.json from completed projects
+        3. Aggregate by procedure
+
+    - id: 2
+      name: "Calculate operational metrics"
+      action: |
+        For each procedure:
+        - Count uses
+        - Average value rating
+        - Total time invested
+        - Operational ROI
+
+    - id: 3
+      name: "Calculate empirical metrics (if sufficient data)"
+      action: |
+        If 5+ projects with structured data:
+        - Success correlation per procedure
+        - Subjective alignment
+        - Empirical ROI
+
+    - id: 4
+      name: "Cross-reference"
+      action: |
+        Look for discrepancies:
+        - High subjective value but low success correlation?
+        - High success correlation but low subjective value?
+        - High operational ROI but low empirical ROI?
+
+        These discrepancies are the most interesting findings.
+
+    - id: 5
+      name: "Generate unified recommendations"
+      action: |
+        Combine operational and empirical insights:
+        - If both agree → high confidence action
+        - If they disagree → investigate
+        - If only operational data → tentative action
+
+        Priority order:
+        1. Retire: negative on both operational and empirical
+        2. Improve: helps but painful (high correlation, low satisfaction)
+        3. Promote: high value but unknown (high operational, no empirical)
+        4. Protect: high on both
+
+# ============================================
+# FAILURE MODES
+# ============================================
+failure_modes:
+  - mode: "Logging fatigue"
+    symptom: "Usage logs become sparse"
+    resolution: "Simplify logging, integrate into workflow"
+
+  - mode: "Value rating inflation"
+    symptom: "Everything rated HIGH"
+    resolution: "Require specific outcome for HIGH rating"
+
+  - mode: "Small sample overconfidence"
+    symptom: "Strong claims from 3 data points"
+    resolution: "Enforce minimum sample sizes"
+
+  - mode: "Survivorship bias"
+    symptom: "Only successful uses logged"
+    resolution: "Explicitly prompt for failure logging"
+
+  - mode: "Confounding factors"
+    symptom: "Success due to executor skill, not procedure"
+    resolution: "Look for patterns across different executors"
+
+# ============================================
+# BOOTSTRAPPING
+# ============================================
+bootstrapping:
+  description: "Starting from zero data"
+
+  initial_period: "First 10 projects"
+
+  approach: |
+    During bootstrap:
+    1. Use current procedure recommendations
+    2. Collect data religiously (both operational and structured)
+    3. Don't archive anything yet
+    4. After 10 projects, run first combined analysis
+
+  initial_assumptions:
+    - "Mandatory procedures assumed helpful until data says otherwise"
+    - "Optional procedures assumed neutral"
+    - "Track everything to enable future analysis"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  related_procedures:
+    - procedure_extraction: "New procedures get tracked from first use"
+    - weekly_review: "Includes procedure logging prompt"
+    - cross_project_pattern_detection: "Uses this data for pattern analysis"
+    - structured_output: "Provides project_record.json format"
+
+  gates:
+    - usage_logged: "Was this procedure use logged?"
+    - quarterly_review_complete: "Has quarterly review been done?"
+    - sufficient_data: "Do we have enough data for empirical claims?"

@@ -1,0 +1,833 @@
+# Vertical vs Horizontal Integration Decision Framework
+# Purpose: Determine when to go deep (improve existing) vs wide (add new)
+# Domain: Meta-procedure for GOSM library development
+
+id: vertical_horizontal_decision
+name: Vertical vs Horizontal Integration Decision
+version: "1.0.0"
+domain: meta
+
+description: |
+  Framework for deciding when to improve existing procedures/categories (vertical)
+  versus when to add new procedures/categories (horizontal) in GOSM.
+
+long_description: |
+  When developing and maintaining the GOSM procedure library, a fundamental tension
+  exists between two modes of growth:
+
+  1. VERTICAL INTEGRATION: Going deeper into existing territory
+     - Improving existing procedures
+     - Adding detail to existing categories
+     - Refining what already exists
+
+  2. HORIZONTAL INTEGRATION: Going wider into new territory
+     - Creating new procedures
+     - Adding new categories/domains
+     - Expanding coverage breadth
+
+  This framework provides systematic criteria and tools for making this decision
+  at both the individual procedure level and the portfolio level.
+
+tags:
+  - meta
+  - decision
+  - portfolio
+  - library-management
+  - strategy
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Deciding what to work on next in GOSM library development
+  - Planning a development sprint or work session
+  - Evaluating whether to improve existing procedures or add new ones
+  - During extraction sessions to decide source depth vs breadth
+  - At portfolio review points to assess overall library balance
+  - When allocating limited time between quality and coverage
+  - After completing a body of work to decide next direction
+
+when_not_to_use:
+  - Single obvious decision (clearly broken procedure or glaring gap)
+  - Resource-constrained situation where only one option is feasible
+  - External requirement dictates direction
+  - Very early in GOSM development (just build anything)
+  - When a specific user request determines work priority
+  - For non-library development tasks
+
+# ============================================
+# DEFINITIONS
+# ============================================
+definitions:
+  sub_goal_creation:
+    concept: "Going deeper - improving what exists"
+    description: |
+      Vertical integration operates INSIDE existing categories and procedures.
+      It improves depth, quality, and effectiveness of current capabilities.
+
+    characteristics:
+      - Operates within existing taxonomy boundaries
+      - Enhances existing procedures rather than creating new ones
+      - Adds detail, examples, failure modes, edge cases
+      - Improves procedure effectiveness metrics
+      - Deepens expertise in known domains
+
+    examples:
+      - name: "Improve validation procedure"
+        before: "Basic validation with 3 checks"
+        after: "Comprehensive validation with 12 checks, examples, failure modes"
+        value: "Higher quality validations in existing domain"
+
+      - name: "Add failure modes to decomposition"
+        before: "Decomposition steps without failure handling"
+        after: "Decomposition with 8 failure modes and recovery strategies"
+        value: "More robust decomposition in existing domain"
+
+      - name: "Enhance engineering procedures"
+        before: "5 engineering procedures at Bronze tier"
+        after: "5 engineering procedures at Gold tier"
+        value: "Better engineering outcomes, same scope"
+
+    in_gosm_context:
+      - Upgrading procedure tier (Bronze -> Silver -> Gold)
+      - Adding examples to existing procedures
+      - Improving step granularity
+      - Adding verification criteria
+      - Expanding failure_modes sections
+      - Refining when_to_use conditions
+
+  horizontal_integration:
+    concept: "Going wider - adding new capabilities"
+    description: |
+      Horizontal integration creates NEW categories and procedures.
+      It expands the breadth of what GOSM can address.
+
+    characteristics:
+      - Creates new taxonomy categories
+      - Adds entirely new procedures
+      - Expands into unexplored domains
+      - Increases coverage breadth
+      - Addresses previously unhandled goal types
+
+    examples:
+      - name: "Add biology procedures"
+        before: "No biology domain in GOSM"
+        after: "New biology/ directory with domain-specific procedures"
+        value: "GOSM can now handle biology research goals"
+
+      - name: "Create advocacy procedures"
+        before: "No procedures for advocacy/campaigns"
+        after: "6 new procedures for policy advocacy"
+        value: "GOSM can now support advocacy projects"
+
+      - name: "Add autonomous agent procedures"
+        before: "GOSM requires human execution"
+        after: "Procedures for autonomous MCP-based execution"
+        value: "GOSM can operate with less human intervention"
+
+    in_gosm_context:
+      - Creating new procedure categories
+      - Adding domain-specific procedure sets
+      - Extracting procedures from new sources
+      - Adding new goal approach selections
+      - Expanding into new goal types
+
+# ============================================
+# DECISION CRITERIA
+# ============================================
+decision_criteria:
+  when_to_go_vertical:
+    description: "Signals that improving existing procedures is the right choice"
+
+    criteria:
+      - id: underperformance
+        name: "Existing procedure is underperforming"
+        description: |
+          A procedure exists but isn't delivering expected value.
+          Users report issues, outcomes are subpar, or it's rarely used despite relevance.
+        indicators:
+          - Users skip the procedure despite applicability
+          - Outcomes from procedure are poor quality
+          - Procedure fails frequently during execution
+          - Feedback indicates confusion or gaps
+        weight: high
+
+      - id: high_value_gaps
+        name: "High-value area with gaps"
+        description: |
+          The domain is important (high usage, critical outcomes) but procedures
+          are incomplete or low-tier.
+        indicators:
+          - Core procedures still at Bronze tier
+          - High-frequency procedures lack examples
+          - Critical procedures missing failure modes
+          - Domain is frequently used but poorly supported
+        weight: high
+
+      - id: diminishing_horizontal_returns
+        name: "Diminishing returns from horizontal expansion"
+        description: |
+          Adding new procedures no longer provides proportional value.
+          The easy wins have been captured.
+        indicators:
+          - New procedures serve narrow use cases
+          - Extraction yields low-generalizability procedures
+          - Coverage is already broad
+          - New domains have low expected usage
+        weight: medium
+
+      - id: deep_expertise_available
+        name: "Deep expertise available in area"
+        description: |
+          You or your sources have deep knowledge in an existing domain
+          that could significantly improve procedures.
+        indicators:
+          - Subject matter expertise available
+          - Rich source material for domain
+          - Recent experience with domain procedures
+          - Clear path to improvement
+        weight: medium
+
+      - id: technical_debt
+        name: "Technical debt in existing procedures"
+        description: |
+          Existing procedures have accumulated issues that impede effectiveness.
+        indicators:
+          - Procedures reference outdated approaches
+          - Steps are unclear or ambiguous
+          - Structure doesn't match current schema
+          - Integration points are broken
+        weight: medium
+
+  when_to_go_horizontal:
+    description: "Signals that adding new procedures/categories is the right choice"
+
+    criteria:
+      - id: obvious_gap
+        name: "Obvious gap in coverage"
+        description: |
+          A common goal type or domain has no procedures at all.
+          Users are left without guidance for frequent needs.
+        indicators:
+          - Goals in domain require ad-hoc approaches
+          - Users frequently ask "how do I do X?"
+          - Common activities have no procedures
+          - Entire domains are absent from library
+        weight: high
+
+      - id: low_hanging_fruit
+        name: "Low-hanging fruit in new domain"
+        description: |
+          A new domain offers easy, high-value procedure extraction.
+          Clear patterns exist that can be quickly codified.
+        indicators:
+          - Well-documented domain with clear patterns
+          - Source material readily available
+          - Procedures would be highly generalizable
+          - Expected high usage if added
+        weight: high
+
+      - id: existing_well_covered
+        name: "Existing categories well-covered"
+        description: |
+          Current categories are already at high quality (Silver/Gold tier).
+          Further improvement offers marginal returns.
+        indicators:
+          - Most procedures at Silver or Gold tier
+          - Comprehensive examples in place
+          - Failure modes well-documented
+          - Users satisfied with existing procedures
+        weight: medium
+
+      - id: strategic_breadth_need
+        name: "Strategic need for breadth"
+        description: |
+          GOSM's value proposition requires broader coverage.
+          Being a "general" system requires handling diverse goals.
+        indicators:
+          - GOSM feels too narrow for general use
+          - Many user goals fall outside current scope
+          - Competitive systems have broader coverage
+          - Vision requires more domains
+        weight: medium
+
+      - id: source_opportunity
+        name: "High-value source available"
+        description: |
+          A rich source of procedures has become available in a new domain.
+        indicators:
+          - New book/course/paper with extractable content
+          - Domain expert available for consultation
+          - Successful project completed in new area
+          - Partnership opportunity in new domain
+        weight: medium
+
+# ============================================
+# ASSESSMENT QUESTIONS
+# ============================================
+assessment:
+  quick_decision_tree:
+    description: "Fast path for obvious decisions"
+    steps:
+      - question: "Is there a critical gap - a common need with NO procedure?"
+        if_yes: "Go HORIZONTAL - fill the gap first"
+        if_no: "Continue to next question"
+
+      - question: "Is a core procedure broken or severely underperforming?"
+        if_yes: "Go VERTICAL - fix critical issues first"
+        if_no: "Continue to next question"
+
+      - question: "Are most procedures at Gold tier with comprehensive coverage?"
+        if_yes: "Lean HORIZONTAL - improvement returns are diminishing"
+        if_no: "Continue to scoring"
+
+  scoring_method:
+    description: "When quick decision is unclear, score systematically"
+
+    vertical_score:
+      name: "Sub-goal Creation Score"
+      factors:
+        - factor: "Quality gap in existing procedures"
+          scoring:
+            0: "All procedures Gold tier"
+            1: "Most procedures Silver+"
+            2: "Mix of tiers"
+            3: "Most procedures Bronze or below"
+          weight: 3
+
+        - factor: "Usage of existing domain"
+          scoring:
+            0: "Rarely used domain"
+            1: "Occasional use"
+            2: "Regular use"
+            3: "Daily/constant use"
+          weight: 2
+
+        - factor: "Available expertise for improvement"
+          scoring:
+            0: "No expertise available"
+            1: "Basic knowledge"
+            2: "Good understanding"
+            3: "Deep expertise available"
+          weight: 2
+
+        - factor: "User feedback on existing"
+          scoring:
+            0: "No issues reported"
+            1: "Minor improvements suggested"
+            2: "Significant gaps identified"
+            3: "Critical problems reported"
+          weight: 2
+
+        - factor: "Time since last improvement"
+          scoring:
+            0: "Recently improved"
+            1: "Improved last month"
+            2: "Improved last quarter"
+            3: "Stale for 6+ months"
+          weight: 1
+
+      max_score: 30
+
+    horizontal_score:
+      name: "Horizontal Integration Score"
+      factors:
+        - factor: "Coverage gap severity"
+          scoring:
+            0: "No gaps - all domains covered"
+            1: "Minor gaps - edge cases"
+            2: "Notable gaps - some goal types unhandled"
+            3: "Major gaps - common needs unaddressed"
+          weight: 3
+
+        - factor: "Source availability for new domain"
+          scoring:
+            0: "No sources available"
+            1: "Basic information exists"
+            2: "Good sources available"
+            3: "Excellent sources ready"
+          weight: 2
+
+        - factor: "Expected usage of new domain"
+          scoring:
+            0: "Rare use expected"
+            1: "Occasional use expected"
+            2: "Regular use expected"
+            3: "High use expected"
+          weight: 2
+
+        - factor: "Generalizability potential"
+          scoring:
+            0: "Very domain-specific"
+            1: "Limited generalizability"
+            2: "Good generalizability"
+            3: "Highly generalizable patterns"
+          weight: 2
+
+        - factor: "Strategic alignment"
+          scoring:
+            0: "Doesn't align with vision"
+            1: "Weakly aligned"
+            2: "Aligned with goals"
+            3: "Critical to vision"
+          weight: 1
+
+      max_score: 30
+
+    interpretation:
+      description: "Compare vertical and horizontal scores"
+      rules:
+        - condition: "vertical_score > horizontal_score + 5"
+          decision: "Strong signal for VERTICAL integration"
+
+        - condition: "horizontal_score > vertical_score + 5"
+          decision: "Strong signal for HORIZONTAL integration"
+
+        - condition: "scores within 5 points"
+          decision: "Mixed signal - consider portfolio balance and current momentum"
+
+# ============================================
+# PORTFOLIO BALANCE
+# ============================================
+portfolio_balance:
+  description: |
+    Beyond individual decisions, manage the overall balance of vertical
+    vs horizontal effort across the GOSM library.
+
+  recommended_allocation:
+    early_stage:
+      description: "GOSM library is new or sparse"
+      horizontal: "70%"
+      vertical: "30%"
+      rationale: "Breadth matters more when coverage is limited"
+
+    growth_stage:
+      description: "GOSM has basic coverage, building out"
+      horizontal: "50%"
+      vertical: "50%"
+      rationale: "Balance expansion with quality improvement"
+
+    mature_stage:
+      description: "GOSM has broad coverage"
+      horizontal: "30%"
+      vertical: "70%"
+      rationale: "Depth and quality become differentiators"
+
+    maintenance_stage:
+      description: "GOSM is comprehensive"
+      horizontal: "20%"
+      vertical: "80%"
+      rationale: "Focus on excellence, add new only for gaps"
+
+  stage_indicators:
+    early_stage:
+      - "Less than 30 procedures"
+      - "Less than 5 domains covered"
+      - "Most common goal types have no procedures"
+
+    growth_stage:
+      - "30-100 procedures"
+      - "5-10 domains covered"
+      - "Core goal types have basic procedures"
+
+    mature_stage:
+      - "100+ procedures"
+      - "10+ domains covered"
+      - "Most goal types have procedures"
+
+    maintenance_stage:
+      - "Comprehensive coverage"
+      - "Most procedures at Silver+ tier"
+      - "Active user base with feedback"
+
+  rebalancing_triggers:
+    shift_toward_vertical:
+      - "User complaints about procedure quality increasing"
+      - "Procedure failure rates rising"
+      - "Core procedures still at Bronze tier"
+      - "Recent horizontal additions poorly received"
+      - "Expertise available for deep improvement"
+
+    shift_toward_horizontal:
+      - "Users frequently encounter uncovered goal types"
+      - "New domain opportunities emerging"
+      - "Existing procedures feel 'good enough'"
+      - "Rich new sources become available"
+      - "Strategic need for broader coverage"
+
+  warning_signs:
+    too_deep:
+      description: "Excessive vertical focus"
+      symptoms:
+        - "Gold-plating procedures that are rarely used"
+        - "Diminishing returns on improvements"
+        - "Users asking for capabilities that don't exist"
+        - "Procedure improvements becoming pedantic"
+        - "Missing obvious domain gaps"
+
+    too_shallow:
+      description: "Excessive horizontal focus"
+      symptoms:
+        - "Many procedures at Bronze tier only"
+        - "Procedures lack examples and fail frequently"
+        - "Jack of all trades, master of none"
+        - "Users complain about procedure quality"
+        - "Extraction without improvement"
+
+# ============================================
+# APPLICATION TO PROCEDURE EXTRACTION
+# ============================================
+procedure_extraction_application:
+  description: |
+    When extracting procedures from sources (books, courses, papers),
+    the vertical/horizontal decision applies at multiple levels.
+
+  source_level_decision:
+    question: "Should I go deeper into this source or move to a new source?"
+
+    go_deeper_when:
+      - name: "Rich unexploited content remains"
+        indicator: "Source has chapters/sections not yet extracted"
+        threshold: "More than 30% of relevant content unextracted"
+
+      - name: "High-value procedures identified but not captured"
+        indicator: "Clear high-value patterns visible but not codified"
+        threshold: "3+ valuable procedures waiting"
+
+      - name: "Current extraction improving existing domain"
+        indicator: "Extracted content fills gaps in established category"
+        threshold: "Directly improves priority domain"
+
+      - name: "Extraction quality improving with depth"
+        indicator: "Later extractions from source are better quality"
+        threshold: "Quality trend is upward"
+
+    move_to_new_source_when:
+      - name: "Diminishing returns detected"
+        indicator: "Recent extractions yield marginal value"
+        measurement: "Last 3 extractions scored below threshold"
+
+      - name: "Source exhausted for generalizable content"
+        indicator: "Remaining content too domain-specific"
+        threshold: "Generalizability score < 3.0"
+
+      - name: "Domain well-covered"
+        indicator: "Category has sufficient procedures"
+        threshold: "Category at 80%+ coverage"
+
+      - name: "Higher-value source available"
+        indicator: "New source offers better value/effort ratio"
+        comparison: "Expected value of new > remaining value of current"
+
+  diminishing_returns_detection:
+    description: "How to detect when vertical extraction is exhausted"
+
+    metrics:
+      - metric: "Extraction rate"
+        calculation: "Valuable procedures per hour of extraction work"
+        diminishing_signal: "Rate drops below 0.5 procedures/hour"
+
+      - metric: "Generalizability score"
+        calculation: "Average generalizability of recent extractions"
+        diminishing_signal: "Average drops below 3.0/5.0"
+
+      - metric: "Novelty score"
+        calculation: "How different from existing procedures"
+        diminishing_signal: "Overlap with existing > 70%"
+
+      - metric: "Tier potential"
+        calculation: "What tier can extracted procedures reach"
+        diminishing_signal: "Can't reach Silver without heavy editing"
+
+    decision_rule: |
+      If 2+ metrics show diminishing signals for 3+ consecutive extractions,
+      consider moving to a new source (horizontal) rather than continuing
+      to extract from current source (vertical).
+
+  balanced_extraction_strategy:
+    description: "How to balance during extraction campaigns"
+
+    approach: |
+      1. Select diverse sources covering different domains (horizontal breadth)
+      2. Extract core procedures from each source (establish coverage)
+      3. Track value metrics per source
+      4. Deepen extraction on highest-value sources
+      5. Move on when diminishing returns detected
+      6. Periodically re-assess source priorities
+
+    time_boxing:
+      per_source_minimum: "2 hours - enough to assess value"
+      per_source_maximum: "8 hours - before reassessment required"
+      portfolio_review: "After 20 hours of extraction work"
+
+# ============================================
+# INPUTS AND OUTPUTS
+# ============================================
+inputs:
+  - name: current_library_state
+    type: object
+    description: "Overview of current procedure library (counts, tiers, domains)"
+    required: true
+
+  - name: candidate_vertical_work
+    type: list
+    description: "Potential vertical improvements to consider"
+    required: false
+
+  - name: candidate_horizontal_work
+    type: list
+    description: "Potential horizontal additions to consider"
+    required: false
+
+  - name: recent_work_log
+    type: list
+    description: "Recent development work for portfolio balance assessment"
+    required: false
+
+  - name: user_feedback
+    type: list
+    description: "User feedback on current procedures and gaps"
+    required: false
+
+outputs:
+  - name: decision
+    type: enum
+    values: [vertical, horizontal, balanced]
+    description: "The recommended direction"
+
+  - name: decision_rationale
+    type: string
+    description: "Explanation for the decision"
+
+  - name: vertical_score
+    type: number
+    description: "Score for sub-goal creation"
+
+  - name: horizontal_score
+    type: number
+    description: "Score for horizontal integration"
+
+  - name: portfolio_assessment
+    type: object
+    description: "Current stage and recommended balance"
+
+  - name: specific_recommendations
+    type: list
+    description: "Concrete next actions based on decision"
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  decision_quality:
+    - "Decision aligns with assessment scores"
+    - "Portfolio balance was considered"
+    - "Rationale is documented and logical"
+    - "Both vertical and horizontal options were genuinely considered"
+    - "Scoring factors were evaluated independently"
+
+  execution_check:
+    - "Selected work matches decision direction"
+    - "Resources allocated appropriately"
+    - "Progress tracked against direction"
+
+  retrospective:
+    - "After 2-4 weeks, did decision prove correct?"
+    - "What signals did we miss?"
+    - "Should assessment weights be adjusted?"
+
+failure_modes:
+  - mode: "Analysis paralysis"
+    symptom: "Endless scoring without decision"
+    resolution: |
+      Use quick decision tree first. If clear signal, act.
+      Only use full scoring for genuinely ambiguous cases.
+      Set time limit for decision (15 minutes max).
+
+  - mode: "Score gaming"
+    symptom: "Adjusting scores to justify preferred direction"
+    resolution: |
+      Score each factor independently before summing.
+      Have different person validate scores.
+      Document reasoning for each score.
+
+  - mode: "Ignoring portfolio balance"
+    symptom: "Individual decisions optimal but portfolio imbalanced"
+    resolution: |
+      Always check portfolio balance as tiebreaker.
+      Track cumulative direction over time.
+      Periodic portfolio reviews (monthly).
+
+  - mode: "False precision"
+    symptom: "Treating close scores as definitive"
+    resolution: |
+      Scores within 5 points are "too close to call."
+      Use secondary factors (portfolio, momentum) for close calls.
+      Accept that some decisions are judgment calls.
+
+  - mode: "Stale assessment data"
+    symptom: "Decisions based on outdated library state"
+    resolution: |
+      Refresh library assessment monthly.
+      Update after significant work completed.
+      Keep running metrics on procedure quality.
+
+  - mode: "Momentum bias"
+    symptom: "Continuing in same direction due to inertia"
+    resolution: |
+      Explicitly consider switching cost vs benefit.
+      Schedule regular direction reviews.
+      Question assumptions from previous decisions.
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: "Choose to improve core procedures (Vertical)"
+    context: |
+      GOSM has 80 procedures. Core procedures (validation, decomposition,
+      comparison) are at Bronze tier but used daily. New domain opportunity
+      exists in finance procedures.
+
+    assessment:
+      vertical_score:
+        quality_gap: 3  # Core at Bronze
+        usage: 3        # Daily use
+        expertise: 2    # Good understanding
+        feedback: 2     # Users report issues
+        staleness: 2    # Not improved recently
+        total: 24       # Out of 30
+
+      horizontal_score:
+        coverage_gap: 1  # Finance is nice-to-have
+        sources: 2       # Good sources available
+        expected_usage: 1 # Occasional finance goals
+        generalizability: 2 # Moderate
+        strategic: 1     # Weakly aligned
+        total: 15       # Out of 30
+
+    decision: "VERTICAL - Improve core procedures to Silver tier"
+    rationale: |
+      The 9-point gap strongly favors vertical. Core procedures are
+      used daily but underperforming. Finance can wait until core is solid.
+
+  - name: "Choose to add new domain (Horizontal)"
+    context: |
+      GOSM has 40 procedures across engineering and analysis. Most are
+      Silver tier. Users frequently ask about advocacy/campaign procedures
+      which don't exist. Rich source material available.
+
+    assessment:
+      vertical_score:
+        quality_gap: 1  # Most at Silver
+        usage: 2        # Regular use
+        expertise: 2    # Good
+        feedback: 1     # Minor issues only
+        staleness: 1    # Recently improved
+        total: 12       # Out of 30
+
+      horizontal_score:
+        coverage_gap: 3  # Advocacy completely missing
+        sources: 3       # Excellent sources ready
+        expected_usage: 2 # Regular use expected
+        generalizability: 3 # Highly generalizable
+        strategic: 2     # Aligned with growth
+        total: 25       # Out of 30
+
+    decision: "HORIZONTAL - Add advocacy procedures"
+    rationale: |
+      The 13-point gap strongly favors horizontal. Common need is
+      completely unaddressed, excellent sources available, and existing
+      procedures are in good shape.
+
+  - name: "Mixed signal - use portfolio balance"
+    context: |
+      GOSM has 60 procedures. Mix of tiers. Some gaps in research domain.
+      Some core procedures could be improved. No clear winner.
+
+    assessment:
+      vertical_score: 18
+      horizontal_score: 20
+      gap: 2  # Within 5 points
+
+    decision: "Check portfolio balance"
+    process: |
+      1. Assess current stage: Growth stage (60 procedures, 7 domains)
+      2. Recommended split: 50/50
+      3. Recent work: 70% horizontal last month
+      4. Decision: Shift toward VERTICAL to rebalance
+
+    rationale: |
+      Scores are close, so portfolio balance breaks the tie. Recent work
+      was heavily horizontal, so vertical work restores balance.
+
+  - name: "Extraction session - when to switch sources"
+    context: |
+      Extracting from "Systems Thinking" book for 6 hours.
+      First 4 hours yielded 5 high-value procedures.
+      Last 2 hours yielded 1 marginal procedure.
+
+    metrics:
+      extraction_rate_hours_1_4: "1.25 procedures/hour"
+      extraction_rate_hours_5_6: "0.5 procedures/hour"
+      generalizability_trend: "Declining (4.2 -> 3.1)"
+      remaining_content: "20% - mostly domain-specific examples"
+
+    decision: "Switch to new source (Horizontal)"
+    rationale: |
+      Extraction rate dropped below threshold, generalizability declining,
+      remaining content is mostly examples. Diminishing returns detected.
+      Move to next source on priority list.
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - "Library maintenance - deciding what to work on next"
+    - "Procedure extraction - source selection and depth"
+    - "Quality improvement - prioritizing improvements"
+    - "Strategic planning - library development roadmap"
+    - "Resource allocation - time/effort budgeting"
+
+  decision_points:
+    library_development:
+      question: "Should I improve existing procedures or add new ones?"
+      use_this_procedure: "Apply scoring method and portfolio balance"
+
+    extraction_session:
+      question: "Continue with current source or switch to new source?"
+      use_this_procedure: "Apply procedure_extraction_application section"
+
+    weekly_review:
+      question: "What's the right balance of work this week?"
+      use_this_procedure: "Check portfolio balance and rebalancing triggers"
+
+  related_procedures:
+    - procedure: procedure_improvement
+      relationship: "Use for sub-goal creation work"
+
+    - procedure: procedure_extraction
+      relationship: "Use for horizontal integration work"
+
+    - procedure: procedure_extraction_from_source
+      relationship: "Apply vertical/horizontal at source level"
+
+    - procedure: source_prioritization
+      relationship: "Informs horizontal source selection"
+
+    - procedure: taxonomy_maintenance
+      relationship: "Informs horizontal category creation"
+
+    - procedure: procedure_effectiveness
+      relationship: "Measures vertical improvement impact"
+
+  gates:
+    - gate: portfolio_balance_check
+      question: "Is current work aligned with recommended portfolio balance?"
+
+    - gate: diminishing_returns_check
+      question: "Are we seeing diminishing returns on current direction?"
+
+    - gate: strategic_alignment_check
+      question: "Does this direction support GOSM's strategic goals?"

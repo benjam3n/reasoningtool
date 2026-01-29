@@ -1,0 +1,124 @@
+# Effort/Impact Gate
+# Prioritizes actions by effort required vs impact achieved
+
+id: effort_impact_gate
+name: Effort/Impact Prioritization Gate
+version: "1.0.0"
+domain: core
+tags: ["prioritization", "strategy", "efficiency"]
+
+description: |
+  Classifies actions/claims by effort required and potential impact.
+  Ensures LOW effort + HIGH impact actions are done FIRST.
+  Prevents busy work traps (HIGH effort + LOW impact).
+
+core_principle: |
+  Many high-impact actions feel uncomfortable but are LOW effort.
+  Low-impact actions often feel safe and productive.
+  Override feelings with explicit analysis.
+
+quadrant_map: |
+                      HIGH IMPACT
+                           │
+      ┌────────────────────┼────────────────────┐
+      │                    │                    │
+      │   DO SECOND        │    DO FIRST        │
+      │   (worth the       │    (obvious        │
+      │    investment)     │     wins)          │
+      │                    │                    │
+  LOW ─┼────────────────────┼────────────────────┼─ HIGH
+  EFFORT                   │                    EFFORT
+      │                    │                    │
+      │   MAYBE            │    AVOID           │
+      │   (if nothing      │    (busy work      │
+      │    better)         │    trap)           │
+      │                    │                    │
+      └────────────────────┼────────────────────┘
+                           │
+                      LOW IMPACT
+
+questions:
+  - id: effort_assessment
+    question: "How much effort to execute this action?"
+    options:
+      - LOW: "Quick check, single action, minimal resources"
+      - MEDIUM: "Multiple steps, some coordination, days of work"
+      - HIGH: "Major undertaking, significant resources, weeks/months"
+    output: effort_level
+
+  - id: impact_assessment
+    question: "If successful, how much would this change the outcome?"
+    options:
+      - LOW: "Minor improvement, doesn't really move the needle"
+      - MEDIUM: "Meaningful progress, noticeable difference"
+      - HIGH: "Significant shift, could be decisive"
+    output: impact_level
+
+  - id: direct_path
+    question: "Is there a DIRECT path to this outcome?"
+    options:
+      - DIRECT: "Can go straight to target/source"
+      - INDIRECT: "Requires intermediaries, reputation building, waiting"
+    output: path_type
+
+  - id: discomfort_check
+    question: "Does this action feel uncomfortable despite being low effort?"
+    note: "Discomfort often indicates high-impact actions we're avoiding"
+    output: discomfort_flag
+
+outputs:
+  - name: priority_classification
+    type: enum
+    values:
+      - DO_FIRST: "LOW effort + HIGH impact - obvious win"
+      - DO_SECOND: "HIGH effort + HIGH impact - worth investment"
+      - MAYBE: "LOW effort + LOW impact - if nothing better"
+      - AVOID: "HIGH effort + LOW impact - busy work trap"
+
+  - name: action_order
+    type: list
+    description: "Ordered list with DO_FIRST items first"
+
+decision_logic: |
+  IF effort == LOW AND impact == HIGH:
+    → DO_FIRST (priority 1)
+    NOTE: If this feels uncomfortable, that's a signal it's important
+
+  IF effort == HIGH AND impact == HIGH:
+    → DO_SECOND (priority 2)
+    NOTE: Worth the investment, but do obvious wins first
+
+  IF effort == LOW AND impact == LOW:
+    → MAYBE (priority 3)
+    NOTE: Only if no better options available
+
+  IF effort == HIGH AND impact == LOW:
+    → AVOID (priority 4)
+    NOTE: Busy work trap - feels productive but isn't
+
+  BONUS: If path_type == DIRECT, increase priority
+  BONUS: If discomfort_flag == true AND effort == LOW, strongly consider DO_FIRST
+
+common_traps:
+  - trap: "Start a blog / create content"
+    reality: "HIGH effort, INDIRECT, uncertain impact"
+    alternative: "Direct outreach to decision makers"
+
+  - trap: "Build comprehensive system first"
+    reality: "HIGH effort before validation"
+    alternative: "Test core assumption with minimal prototype"
+
+  - trap: "Research more before acting"
+    reality: "Often avoidance of uncomfortable action"
+    alternative: "Take smallest possible action, learn from feedback"
+
+  - trap: "Perfect the message"
+    reality: "Diminishing returns on polish"
+    alternative: "Send good-enough message now, iterate if needed"
+
+verification: |
+  Before classifying:
+  1. Is the effort estimate honest? (not inflated to avoid discomfort)
+  2. Is the impact estimate honest? (not deflated to justify avoidance)
+  3. Is there a more direct path we're ignoring?
+  4. Are we avoiding this because it's hard or because it's uncomfortable?

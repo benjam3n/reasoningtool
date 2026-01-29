@@ -1,0 +1,124 @@
+id: boolean_vs_type_logic
+name: Boolean vs Type Logic - Formal Specification
+version: 1.0.0
+description: |
+  Formal specification of the fundamental distinction between ARAW and Universalization.
+
+  [O:source araw_2026-01-28_araw-vs-universalization.md]
+
+  This is the DEEPEST distinction between the two methods.
+  All other differences derive from this.
+
+formal_definitions:
+  boolean_logic:
+    name: "Boolean (2-valued) Logic"
+    values: [true, false]
+    operations: [negation, conjunction, disjunction]
+    characteristic: "Every claim resolves to exactly one of two values"
+    epistemology: "Popperian falsification - test claims by trying to disprove"
+    cognitive_mode: "Convergent - narrows toward binary resolution"
+    question_form: "Is X true or false?"
+
+  type_logic:
+    name: "Type Theory (N-valued) Logic"
+    values: "Set of instances belonging to a type"
+    operations: [instance_of, subtype_of, type_union, type_intersection]
+    characteristic: "Claims map to equivalence classes with multiple members"
+    epistemology: "Aristotelian taxonomy - classify instances into categories"
+    cognitive_mode: "Divergent - expands to enumerate possibilities"
+    question_form: "What is X an instance of? What else is in that class?"
+
+derivations:
+  - claim: "ARAW uses Boolean logic"
+    derivation: |
+      ASSUME RIGHT = claim is TRUE
+      ASSUME WRONG = claim is FALSE
+      Binary choice, exhaustive and mutually exclusive
+      [D: AR XOR AW, no third option in standard ARAW]
+
+  - claim: "Universalization uses Type logic"
+    derivation: |
+      "What is X an instance of?" = find type T such that X ∈ T
+      "What else is in that class?" = enumerate instances of T
+      N instances possible, not binary
+      [D: Instance-to-category operation is type membership]
+
+  - claim: "Boolean cannot discover dimensions; Type cannot validate truth"
+    derivation: |
+      Boolean: Given dimensions, tests claims within them
+      Type: Given claims, finds dimensions they belong to
+      Boolean blindspot: Unknown dimensions (can't negate what you don't know)
+      Type blindspot: Unvalidated claims (membership ≠ truth)
+      [D: Logical consequence of the value spaces]
+
+implications:
+  for_araw:
+    strengths:
+      - "Rigorous validation through exhaustive negation"
+      - "Forces commitment (must be one or the other)"
+      - "Surfaces contradictions (claim can't be both)"
+    weaknesses:
+      - "Only explores known dimensions"
+      - "Binary framing may miss nuance"
+      - "Can't find 'neither' options without reframing"
+    enhancement: "Add type logic to AW branches (multi-valued AW)"
+
+  for_universalization:
+    strengths:
+      - "Discovers full possibility space within dimensions"
+      - "Finds analogies through type membership"
+      - "Enables transfer from sibling instances"
+    weaknesses:
+      - "Doesn't validate which instances are true/valuable"
+      - "Framework blindness for unknown dimensions"
+      - "Can produce complete-but-wrong outputs"
+    enhancement: "Add Boolean testing to derived instances (AR/AW mini-test)"
+
+combination_principle: |
+  OPTIMAL REASONING ALTERNATES BETWEEN BOTH LOGICS
+
+  1. Type logic to MAP the space (divergent)
+  2. Boolean logic to TEST claims in the space (convergent)
+  3. Type logic to EXPAND from validated claims (divergent)
+  4. Boolean logic to VALIDATE expansions (convergent)
+
+  This is the UAUA pattern: Universalize → ARAW → Universalize → ARAW
+  [D: UAUA derived from alternating Boolean and Type operations]
+
+formal_operations:
+  boolean:
+    - name: "Negation"
+      symbol: "¬P"
+      meaning: "If P is true, ¬P is false; if P is false, ¬P is true"
+      araw_use: "ASSUME WRONG = ¬(ASSUME RIGHT)"
+
+    - name: "Conjunction"
+      symbol: "P ∧ Q"
+      meaning: "Both P and Q are true"
+      araw_use: "Multiple claims that must all hold"
+
+    - name: "Disjunction"
+      symbol: "P ∨ Q"
+      meaning: "At least one of P or Q is true"
+      araw_use: "Alternative possibilities in AW branch"
+
+  type:
+    - name: "Instance membership"
+      symbol: "x ∈ T"
+      meaning: "x is an instance of type T"
+      universalization_use: "Input belongs to universal category"
+
+    - name: "Subtype"
+      symbol: "S <: T"
+      meaning: "All instances of S are also instances of T"
+      universalization_use: "Hierarchy of universalizations"
+
+    - name: "Type enumeration"
+      symbol: "∀x ∈ T"
+      meaning: "All instances x belonging to type T"
+      universalization_use: "Derive all specific instances from universal"
+
+verification:
+  "[O:source]": "araw_2026-01-28_araw-vs-universalization.md"
+  "[D:derivation]": "Each claim derived from formal logic definitions"
+  "[T:result]": "Distinction validated through application to test cases"

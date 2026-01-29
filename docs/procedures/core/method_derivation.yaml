@@ -1,0 +1,213 @@
+# Method Derivation Procedure
+# How to determine approach without assuming one is best
+
+id: method_derivation
+name: Method Derivation
+version: "0.1.0"
+tier: core
+
+description: |
+  Derive the appropriate method from the situation rather than
+  assuming a method and applying it. The method should follow
+  from what is known about the problem, not from habit or
+  familiarity.
+
+# ============================================
+# THE PROBLEM THIS SOLVES
+# ============================================
+
+problem: |
+  Most failures come from applying the wrong method:
+  - Using a familiar method when the situation doesn't fit
+  - Assuming "best practice" applies without checking
+  - Skipping method selection and jumping to execution
+  - Not questioning whether the method itself is appropriate
+
+  The method should be derived, not assumed.
+
+# ============================================
+# THE PROCESS
+# ============================================
+
+steps:
+  - id: step_1_characterize
+    name: "Characterize the situation"
+    action: |
+      Before choosing any method, identify:
+      - What kind of problem is this?
+      - What are the actual constraints?
+      - What resources are available?
+      - What does success look like?
+      - What has been tried before (if anything)?
+
+    grounding: |
+      Each characterization should be verifiable:
+      - "This is a communication problem" - how do I know?
+      - "The constraint is time" - is this stated or assumed?
+      - "Success means X" - according to whom?
+
+  - id: step_2_consider_multiple
+    name: "Consider multiple methods"
+    action: |
+      Generate at least three distinct approaches:
+      - One that seems natural/obvious
+      - One that is opposite or contrarian
+      - One from a different domain entirely
+
+    purpose: |
+      Considering multiple methods prevents fixation on one.
+      The "obvious" method is often familiar, not appropriate.
+
+  - id: step_3_evaluate_fit
+    name: "Evaluate fit to situation"
+    action: |
+      For each method, ask:
+      - What does this method assume about the situation?
+      - Do those assumptions hold here?
+      - What would this method fail to address?
+      - What would tell me this method is wrong?
+
+    grounding: |
+      Evaluation should be based on observable characteristics,
+      not on preference or familiarity.
+
+  - id: step_4_derive_method
+    name: "Derive the method"
+    action: |
+      The method follows from the situation, not the reverse:
+      - Given these characteristics + constraints → this approach
+      - The reasoning chain should be visible
+      - The method should be questionable (can be wrong)
+
+    anti_pattern: |
+      "I usually do X for problems like this" - method assumed, not derived
+      "Best practice says Y" - authority, not derivation
+      "Let's just try Z" - random, not derived
+
+  - id: step_5_question_derivation
+    name: "Question the derivation"
+    action: |
+      The derivation itself can be wrong:
+      - Did I characterize the situation correctly?
+      - Did I consider genuinely different methods?
+      - Is my evaluation of fit based on evidence?
+      - Am I still defaulting to familiarity?
+
+      If any doubt: revisit earlier steps.
+
+# ============================================
+# RELATION TO ASSUMPTION ELIMINATION
+# ============================================
+
+connection_to_assumption_elimination:
+  principle: |
+    Method derivation is assumption elimination applied to
+    approach selection. The same pattern applies:
+    - Ground in observable
+    - Flag inferences
+    - Present assumptions as hypotheses
+    - Question the method of questioning
+
+  integration: |
+    Apply assumption_elimination at each step of method_derivation:
+    - Is my characterization grounded or assumed?
+    - Are my method options genuinely different or variations?
+    - Is my evaluation based on evidence or preference?
+    - Is my derivation a derivation or a rationalization?
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1:
+    situation: "Need to improve LLM response quality"
+
+    assumed_method: |
+      "Let's add more procedures to the library"
+      [Assumes: more procedures = better quality]
+      [Assumes: the library approach is correct]
+      [Doesn't question: is the library the right method?]
+
+    derived_method: |
+      Characterize:
+      - The problem is LLM makes ungrounded assertions
+      - The constraint is changing LLM behavior
+      - Success = grounded, quality responses
+
+      Methods considered:
+      - Add content procedures (familiar)
+      - Add meta-procedures that constrain reasoning (different)
+      - Change the prompting approach entirely (contrarian)
+      - Train a different model (different domain)
+
+      Fit evaluation:
+      - Content procedures don't change HOW reasoning happens
+      - Meta-procedures could constrain reasoning patterns
+      - Prompting changes are external, may not stick
+      - Training is out of scope
+
+      Derived: Meta-procedures + gates that enforce grounded reasoning
+      [This is derived from the situation, not assumed]
+
+  example_2:
+    situation: "User asks for advice"
+
+    assumed_method: |
+      "Here's what you should do: ..."
+      [Assumes: advice is what's needed]
+      [Assumes: I know enough to advise]
+      [Doesn't question: is advice the right response?]
+
+    derived_method: |
+      Characterize:
+      - User used the word "advice"
+      - But what problem are they solving?
+      - What do they already know?
+      - What would actually help?
+
+      Methods considered:
+      - Give advice directly (familiar)
+      - Ask clarifying questions (common alternative)
+      - Present options and tradeoffs (different)
+      - Help them think through it themselves (contrarian)
+
+      Fit evaluation:
+      - Direct advice assumes I know their situation
+      - Clarifying questions could be deferral
+      - Options require knowing what options exist
+      - Helping them think depends on their engagement
+
+      Derived: Depends on what I know about the situation.
+      If I have enough context → present grounded options
+      If I don't → gather what's needed, then respond
+      [Method follows from situation, not habit]
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  how_to_know_its_working:
+    - "Methods fit situations rather than being forced"
+    - "Multiple approaches genuinely considered"
+    - "Reasoning chain from situation to method is visible"
+    - "Method can be questioned and revised"
+
+  how_to_know_its_not_working:
+    - "Same method applied to different situations"
+    - "Method chosen before situation understood"
+    - "No visible reasoning for why this method"
+    - "Method defended instead of questioned"
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+related_procedures:
+  - id: assumption_elimination
+    relationship: "Apply to each step of method derivation"
+  - id: meta_reasoning_core
+    relationship: "Method derivation is part of step 4 (hypothesis generation)"
+
+gate_reference: method_derivation_gate

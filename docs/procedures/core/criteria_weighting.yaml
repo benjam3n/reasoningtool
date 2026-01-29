@@ -1,0 +1,302 @@
+# Criteria Weighting Decision Matrix
+# Intelligence Reduction: 80%
+# Version: 1.0.0
+
+id: criteria_weighting
+name: Criteria Weighting Decision Matrix
+version: "1.0.0"
+domain: core
+intelligence_reduction: "80%"
+
+goal: |
+  Make decisions by decomposing into criteria, weighting by importance,
+  rating options on each criterion, and calculating weighted scores.
+  Decomposition makes evaluation tractable; aggregation is mechanical.
+
+description: |
+  Also known as: Weighted scoring model, Decision matrix, Pugh matrix.
+
+  Complex decisions become manageable when broken into:
+  1. Independent criteria
+  2. Importance weights
+  3. Option ratings
+  4. Mechanical aggregation
+
+  Each individual judgment is simple; the math does the combining.
+
+when_to_use:
+  - Choosing between multiple options
+  - Making decisions with multiple criteria
+  - Need to justify decision transparently
+  - Want to reduce bias from single-factor focus
+  - Team needs to align on priorities
+
+inputs:
+  - name: options
+    type: list
+    description: "Options to choose between"
+  - name: criteria
+    type: list
+    description: "Factors that matter for the decision"
+
+outputs:
+  - name: decision_matrix
+    type: table
+    description: "Options × Criteria with weights and scores"
+  - name: ranking
+    type: ordered_list
+    description: "Options ranked by weighted score"
+  - name: sensitivity_analysis
+    type: description
+    description: "How robust is the ranking to weight changes?"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Define the Decision"
+    action: |
+      Clearly state what you're deciding.
+      What choice are you making? What's the goal?
+    output: "Decision statement"
+
+  - id: 2
+    name: "List All Options"
+    action: |
+      Enumerate all options being considered.
+      Include "do nothing" or "status quo" if relevant.
+    output: "Option list"
+    template: |
+      OPTIONS:
+      A: [Option A description]
+      B: [Option B description]
+      C: [Option C description]
+      ...
+
+  - id: 3
+    name: "Identify Criteria"
+    action: |
+      List all factors that matter for this decision.
+
+      Good criteria are:
+      - Relevant (actually affects decision quality)
+      - Measurable (can rate options on it)
+      - Independent (not redundant with other criteria)
+
+      Common criteria types:
+      - Cost/price
+      - Quality/performance
+      - Time/speed
+      - Risk
+      - Ease/convenience
+      - Alignment with goals
+      - Stakeholder preference
+    output: "Criteria list"
+    template: |
+      CRITERIA:
+      1. [Criterion 1]: [What it means]
+      2. [Criterion 2]: [What it means]
+      ...
+
+  - id: 4
+    name: "Assign Weights"
+    action: |
+      Distribute 100 points across criteria by importance.
+      Higher weight = more important in decision.
+
+      Methods:
+      - Direct allocation: Just assign points
+      - Pairwise: Compare criteria pairs to derive weights
+      - Ranking: Rank criteria, assign points by rank
+
+      Weights should sum to 100 (or 1.0).
+    output: "Weighted criteria"
+    template: |
+      CRITERIA WEIGHTS (must sum to 100):
+      1. [Criterion 1]: [Weight] points
+      2. [Criterion 2]: [Weight] points
+      ...
+      Total: 100 points
+
+  - id: 5
+    name: "Rate Options on Each Criterion"
+    action: |
+      For each option, for each criterion:
+      Rate on scale of 1-10 (or 1-5).
+
+      1 = Worst possible on this criterion
+      10 = Best possible on this criterion
+
+      Rate consistently across options.
+    output: "Rating matrix"
+    template: |
+      RATINGS (1-10 scale):
+
+                    | Criterion 1 | Criterion 2 | Criterion 3 |
+      --------------|-------------|-------------|-------------|
+      Option A      |     [X]     |     [X]     |     [X]     |
+      Option B      |     [X]     |     [X]     |     [X]     |
+      Option C      |     [X]     |     [X]     |     [X]     |
+
+  - id: 6
+    name: "Calculate Weighted Scores"
+    action: |
+      For each option:
+      Weighted Score = Σ (Weight_i × Rating_i)
+
+      If weights sum to 100 and ratings are 1-10,
+      max possible score = 1000.
+    output: "Weighted scores"
+    template: |
+      WEIGHTED SCORES:
+
+      Option A: (W1×R1) + (W2×R2) + ... = [Total]
+      Option B: (W1×R1) + (W2×R2) + ... = [Total]
+      Option C: (W1×R1) + (W2×R2) + ... = [Total]
+
+  - id: 7
+    name: "Rank Options"
+    action: |
+      Sort options by weighted score (descending).
+      Highest score = recommended option.
+    output: "Final ranking"
+    template: |
+      RANKING:
+      1. [Option] - [Score] points
+      2. [Option] - [Score] points
+      3. [Option] - [Score] points
+
+      RECOMMENDED: [Top option]
+
+  - id: 8
+    name: "Sensitivity Analysis"
+    action: |
+      Test how robust the ranking is:
+      - What if weights changed?
+      - What if ratings changed?
+      - How close are the top options?
+
+      If top two are very close, decision is sensitive.
+      If top option wins by large margin, decision is robust.
+    output: "Sensitivity assessment"
+    template: |
+      SENSITIVITY ANALYSIS:
+
+      Score gap between #1 and #2: [X] points ([Y]%)
+
+      If [Criterion A] weight doubled:
+      - New ranking: [Would it change?]
+
+      If [Option X] rating on [Criterion Y] dropped 2 points:
+      - New ranking: [Would it change?]
+
+      Robustness: [High/Medium/Low]
+
+  - id: 9
+    name: "Sanity Check"
+    action: |
+      Does the recommended option feel right?
+      If not, examine:
+      - Are criteria missing?
+      - Are weights wrong?
+      - Are ratings inaccurate?
+
+      The matrix is a tool to structure thinking, not replace judgment.
+    output: "Final decision"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  decision: "Which project management tool to adopt"
+
+  options:
+    A: "Jira"
+    B: "Asana"
+    C: "Linear"
+    D: "Notion"
+
+  criteria:
+    - name: "Ease of use"
+      weight: 25
+    - name: "Features"
+      weight: 20
+    - name: "Price"
+      weight: 15
+    - name: "Integration"
+      weight: 20
+    - name: "Team preference"
+      weight: 20
+
+  ratings: |
+    | Ease | Features | Price | Integration | Team Pref |
+    +------+----------+-------+-------------+-----------+
+    Jira   |   5  |    9     |   6   |      9      |     4     |
+    Asana  |   8  |    7     |   7   |      7      |     7     |
+    Linear |   9  |    7     |   8   |      6      |     8     |
+    Notion |   7  |    6     |   9   |      5      |     6     |
+
+  calculation: |
+    Jira:   (25×5) + (20×9) + (15×6) + (20×9) + (20×4) = 635
+    Asana:  (25×8) + (20×7) + (15×7) + (20×7) + (20×7) = 725
+    Linear: (25×9) + (20×7) + (15×8) + (20×6) + (20×8) = 765
+    Notion: (25×7) + (20×6) + (15×9) + (20×5) + (20×6) = 650
+
+  ranking:
+    1: "Linear - 765 points"
+    2: "Asana - 725 points"
+    3: "Notion - 650 points"
+    4: "Jira - 635 points"
+
+  sensitivity: |
+    Gap between Linear and Asana: 40 points (5.2%)
+    If "Ease of use" weight dropped to 15 and "Features" rose to 30:
+    - Linear: 735, Asana: 735 (tie!)
+    Robustness: Medium - close race, weight changes matter
+
+# ============================================
+# WEIGHT ASSIGNMENT METHODS
+# ============================================
+
+weight_methods:
+  direct_allocation:
+    how: "Simply assign points to each criterion"
+    when: "Quick decisions, clear priorities"
+
+  swing_weighting:
+    how: |
+      1. Imagine worst case on all criteria
+      2. Which criterion would you most want to "swing" to best?
+      3. That gets 100 points
+      4. Repeat for remaining criteria relative to first
+    when: "When importance is hard to judge directly"
+
+  pairwise_weight:
+    how: |
+      Compare each pair of criteria: "Is A more important than B?"
+      Count wins for each criterion
+      Convert to weights proportionally
+    when: "When direct weighting is difficult"
+
+  rank_then_weight:
+    how: |
+      1. Rank criteria from most to least important
+      2. Assign weights: 1st = 100/(rank sum) × n, etc.
+      Or use: 1st = 40, 2nd = 25, 3rd = 20, 4th = 10, 5th = 5
+    when: "Quick approximation"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "All relevant criteria are included"
+  - "Criteria are independent (not double-counting)"
+  - "Weights sum to 100 (or 1.0)"
+  - "Ratings are consistent across options"
+  - "Calculations are correct"
+  - "Sensitivity analysis performed"
+  - "Result passes sanity check"

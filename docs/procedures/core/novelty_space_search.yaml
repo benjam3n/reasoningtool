@@ -1,0 +1,313 @@
+# Novelty Space Search
+# Generate novel possibilities, search for valuable ones
+# Version: 1.0.0
+
+id: novelty_space_search
+name: Novelty Space Search
+version: "1.0.0"
+domain: core
+
+goal: |
+  Systematically generate novel ideas/possibilities,
+  then search for those that are valuable, feasible, and timely.
+
+description: |
+  Creativity = novelty + value.
+  This procedure separates the two:
+  1. Generate novelty (systematic combination, variation, import)
+  2. Filter for value (criteria-based selection)
+
+  By separating, we can be exhaustive in generation and rigorous in selection.
+
+when_to_use:
+  - Innovation/ideation
+  - Finding new approaches
+  - Breaking out of local optimum
+  - Exploring possibility space
+  - Product/feature development
+
+inputs:
+  - name: domain
+    type: string
+    description: "What area are we innovating in?"
+  - name: constraints
+    type: list
+    description: "Hard constraints that must be satisfied"
+
+outputs:
+  - name: novel_ideas
+    type: list
+    description: "All generated novel possibilities"
+  - name: promising_ideas
+    type: list
+    description: "Ideas passing value criteria"
+
+# ============================================
+# CRITERIA FOR VALUABLE NOVELTY
+# ============================================
+
+criteria:
+  novelty_criteria:
+    - name: "Not already done"
+      question: "Is this genuinely new, not just repackaged?"
+      weight: 20
+      test: "Quick search for prior art"
+
+    - name: "Different from obvious"
+      question: "Would someone not think of this immediately?"
+      weight: 10
+      test: "Is it non-obvious?"
+
+  value_criteria:
+    - name: "Solves real problem"
+      question: "Does this address an actual need?"
+      weight: 25
+      test: "Can you name specific users with this problem?"
+
+    - name: "Better than alternatives"
+      question: "Is this superior to existing solutions?"
+      weight: 20
+      test: "10x better on some dimension?"
+
+  feasibility_criteria:
+    - name: "Technically possible"
+      question: "Can this actually be built/done?"
+      weight: 15
+      test: "No physical law violations, known how"
+
+    - name: "Resource feasible"
+      question: "Do we have or can we get needed resources?"
+      weight: 10
+      test: "Time, money, skills available?"
+
+  timing_criteria:
+    - name: "Right time"
+      question: "Is now the right time for this?"
+      weight: 10
+      test: "Enabling conditions exist, market ready"
+
+    - name: "Sustainable advantage"
+      question: "Can we maintain advantage if successful?"
+      weight: 10
+      test: "Not easily copied, has moat"
+
+# ============================================
+# GENERATION METHODS
+# ============================================
+
+generation_methods:
+  combinatorial:
+    description: "Combine existing elements in new ways"
+    method: |
+      1. List elements in the domain
+      2. Systematically combine 2, 3, 4 elements
+      3. For each combination, ask: Is this new? Is it coherent?
+    example: "Smartphone = phone + computer + camera + GPS"
+
+  attribute_variation:
+    description: "Vary attributes of existing things"
+    method: |
+      1. List attributes of existing solution
+      2. For each attribute, ask: What if different?
+      3. Generate variations: bigger, smaller, faster, slower, inverted, etc.
+    example: "Fast food → slow food (inversion)"
+
+  analogy_import:
+    description: "Import solutions from other domains"
+    method: |
+      1. Abstract the problem structure
+      2. Search other domains for similar structure
+      3. Import and adapt their solutions
+    example: "Assembly line from meatpacking to automobiles"
+
+  constraint_removal:
+    description: "Remove assumed constraints"
+    method: |
+      1. List all constraints (real and assumed)
+      2. For each assumed constraint, ask: What if this didn't exist?
+      3. Generate ideas that violate the removed constraint
+    example: "What if software didn't have to be installed? → SaaS"
+
+  extreme_parameters:
+    description: "Take parameters to extremes"
+    method: |
+      1. List key parameters
+      2. Push each to extreme (0, infinity, negative)
+      3. Ask: What would this enable?
+    example: "What if cost = 0? → Free with ads/freemium"
+
+  problem_inversion:
+    description: "Solve the opposite problem"
+    method: |
+      1. State the problem
+      2. Invert it: solve opposite, or cause the problem
+      3. Invert solution back
+    example: "How to not lose customers → How to make them leave → Don't do those things"
+
+  user_behavior_observation:
+    description: "What are users already doing?"
+    method: |
+      1. Observe users closely
+      2. What workarounds do they create?
+      3. Productize the workaround
+    example: "Users tagging files with keywords → built-in tagging"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Define the Innovation Space"
+    action: |
+      Specify:
+      - What domain/problem
+      - What hard constraints
+      - What would make an idea valuable
+    output: "Innovation brief"
+
+  - id: 2
+    name: "List Existing Solutions"
+    action: |
+      What already exists in this space?
+      These are the baseline to be more novel than.
+    output: "Existing solution inventory"
+
+  - id: 3
+    name: "Apply Combinatorial Generation"
+    action: |
+      List key elements/components.
+      Systematically combine in new ways.
+    output: "Combinatorial ideas"
+
+  - id: 4
+    name: "Apply Attribute Variation"
+    action: |
+      For existing solutions, vary each attribute.
+      Use SCAMPER or similar.
+    output: "Variation ideas"
+
+  - id: 5
+    name: "Apply Analogy Import"
+    action: |
+      Search other domains for analogous problems.
+      Import their solutions.
+    output: "Imported ideas"
+
+  - id: 6
+    name: "Apply Constraint Removal"
+    action: |
+      List assumed constraints.
+      Generate ideas that violate them.
+    output: "Constraint-free ideas"
+
+  - id: 7
+    name: "Apply Extreme Parameters"
+    action: |
+      Push key parameters to extremes.
+      What does this enable?
+    output: "Extreme parameter ideas"
+
+  - id: 8
+    name: "Compile All Ideas"
+    action: |
+      Combine all generated ideas.
+      Remove duplicates.
+      State each clearly.
+    output: "Master idea list"
+    template: |
+      IDEA [N]:
+      Description: [What it is]
+      Generation method: [How it was generated]
+      Key insight: [What makes it interesting]
+
+  - id: 9
+    name: "Quick Novelty Filter"
+    action: |
+      For each idea, quick check:
+      - Already exists? → Remove
+      - Obvious? → Flag but keep
+    output: "Novel ideas"
+
+  - id: 10
+    name: "Score on Value Criteria"
+    action: |
+      For each novel idea, score on criteria:
+      - Solves real problem
+      - Better than alternatives
+      - Technically feasible
+      - Resource feasible
+      - Right timing
+      - Sustainable advantage
+    output: "Scored ideas"
+
+  - id: 11
+    name: "Rank and Select"
+    action: |
+      Rank by total score.
+      Select top ideas for further development.
+    output: "Promising ideas"
+    template: |
+      TOP IDEAS:
+
+      1. [Idea name]
+         Description: [What]
+         Key insight: [Why interesting]
+         Scores: Novelty [X], Problem [X], Feasibility [X], Timing [X]
+         Total: [Sum]
+         Next step: [What to do next]
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  domain: "Personal productivity tools"
+
+  existing_solutions:
+    - "To-do lists"
+    - "Calendar apps"
+    - "Note-taking apps"
+    - "Time tracking"
+    - "Pomodoro timers"
+
+  generation_results:
+    combinatorial:
+      - "To-do + calendar + time tracking in one view"
+      - "Notes that automatically become tasks"
+
+    attribute_variation:
+      - "To-do list that removes items instead of adding (inversion)"
+      - "Calendar that shows energy not time"
+
+    analogy_import:
+      - "Kanban from manufacturing to personal tasks"
+      - "Triage from medicine to task prioritization"
+
+    constraint_removal:
+      - "What if you didn't have to input tasks? (auto-capture)"
+      - "What if tasks organized themselves? (AI prioritization)"
+
+    extreme_parameters:
+      - "What if task list was always empty? (immediate action philosophy)"
+      - "What if you could only have 3 tasks?"
+
+  top_ideas:
+    1:
+      idea: "Energy-based scheduling"
+      description: "Calendar shows your energy levels, schedules tasks to match"
+      novelty: 8
+      problem: 9
+      feasibility: 6
+      total: 184
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Multiple generation methods were applied"
+  - "Ideas are genuinely novel (not already done)"
+  - "Ideas address real problems"
+  - "Feasibility was honestly assessed"
+  - "Top ideas have clear next steps"

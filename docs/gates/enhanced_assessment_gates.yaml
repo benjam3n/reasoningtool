@@ -1,0 +1,548 @@
+# Enhanced Assessment Gates
+# These gates extend SMART with additional frameworks
+# All are optional based on goal complexity
+
+gates:
+  # ============================================
+  # GOAL CLASSIFICATION
+  # ============================================
+  - id: goal_classification
+    name: Goal Classification
+    sequence: 1.5  # After SMART, before complexity
+    question: Has the goal been classified on key dimensions?
+
+    purpose: |
+      Categorize goals to apply appropriate strategies and procedures.
+      Different goal types require different approaches.
+
+    evaluation_criteria:
+      - Goal classified on all 6 dimensions
+      - Implications noted for each dimension
+      - Appropriate procedures identified based on classification
+
+    dimensions:
+      domain:
+        options:
+          - engineering: "Building/creating technical systems"
+          - scientific: "Discovering/testing knowledge"
+          - social: "Changing human behavior or relationships"
+          - political: "Influencing power structures or policy"
+          - personal: "Individual improvement or achievement"
+          - creative: "Producing artistic or novel works"
+          - business: "Organizational/commercial objectives"
+          - meta: "Improving systems or processes themselves"
+        implications:
+          engineering: "Use engineering procedures, focus on specifications"
+          scientific: "Hypothesis-driven, falsifiable predictions"
+          social: "Stakeholder-heavy, behavior change models"
+          political: "Long timeline, multiple parties, probabilistic"
+          personal: "High control, motivation-dependent"
+          creative: "Subjective success criteria, iteration"
+          business: "Resource-constrained, measurable outcomes"
+          meta: "Self-referential, be careful of infinite loops"
+
+      control_type:
+        options:
+          - controllable: "Direct action achieves result"
+          - influenceable: "Can affect probability but not determine"
+          - observable: "Can only watch and respond"
+        implications:
+          controllable: "Plan deterministically, track execution"
+          influenceable: "Probabilistic outcomes, multiple approaches"
+          observable: "Focus on response strategies, monitoring"
+
+      temporality:
+        options:
+          - finite: "Has defined end state"
+          - ongoing: "Maintain indefinitely"
+          - cyclic: "Recurring periodically"
+        implications:
+          finite: "Clear completion criteria, project structure"
+          ongoing: "Sustainable practices, habit formation"
+          cyclic: "Templates, continuous improvement"
+
+      agency:
+        options:
+          - individual: "One person can achieve"
+          - team: "Requires coordinated group"
+          - organization: "Requires organizational change"
+          - multi_party: "Requires multiple independent parties"
+          - systemic: "Requires system-level change"
+        implications:
+          individual: "Personal accountability, simpler planning"
+          team: "Coordination, communication, roles"
+          organization: "Change management, politics"
+          multi_party: "Negotiation, alignment, incentives"
+          systemic: "Very long term, indirect influence"
+
+      reversibility:
+        options:
+          - reversible: "Can easily undo if wrong"
+          - partially_reversible: "Some aspects can be undone"
+          - irreversible: "Cannot undo once done"
+        implications:
+          reversible: "Experiment freely, iterate"
+          partially_reversible: "Careful with irreversible parts"
+          irreversible: "High confidence required before action"
+
+      novelty:
+        options:
+          - routine: "Done many times before"
+          - variant: "Similar to past but different"
+          - novel: "Significant new territory"
+          - unprecedented: "Never been done"
+        implications:
+          routine: "Apply existing procedures"
+          variant: "Adapt existing procedures"
+          novel: "More exploration, expect surprises"
+          unprecedented: "Maximum uncertainty, probe carefully"
+
+    skip_conditions:
+      - Goal is obviously simple and well-understood
+      - Classification is self-evident from context
+      - Time constraints make classification overhead too high
+
+    on_pass: complexity_assessment
+    on_fail: goal_classification_procedure
+    on_skip: complexity_assessment
+
+  # ============================================
+  # COMPLEXITY ASSESSMENT (CYNEFIN)
+  # ============================================
+  - id: complexity_assessment
+    name: Complexity Assessment
+    sequence: 1.6
+    question: What is the complexity level of this goal?
+
+    purpose: |
+      Match planning approach to problem complexity.
+      Over-planning simple problems wastes effort.
+      Under-planning complex problems causes failure.
+
+    evaluation_criteria:
+      - Complexity level determined (Simple/Complicated/Complex/Chaotic)
+      - Appropriate planning approach selected
+      - Planning depth adjusted accordingly
+
+    levels:
+      simple:
+        description: "Clear cause-effect, best practices exist"
+        indicators:
+          - "We've done this exact thing many times"
+          - "Standard procedures exist and work"
+          - "Outcomes are predictable"
+          - "Experts agree on approach"
+        approach: "Apply best practices, execute efficiently"
+        planning_depth: "Light - use existing templates"
+
+      complicated:
+        description: "Cause-effect discoverable through analysis"
+        indicators:
+          - "Experts can figure this out with analysis"
+          - "Multiple right answers exist"
+          - "Requires expertise but is knowable"
+          - "Good practice (not best practice)"
+        approach: "Analyze, consult experts, plan thoroughly"
+        planning_depth: "Medium - full gate sequence, expert input"
+
+      complex:
+        description: "Cause-effect only visible in retrospect"
+        indicators:
+          - "We'll learn as we go"
+          - "Emergent behavior expected"
+          - "Small changes can have big effects"
+          - "Cannot predict outcomes reliably"
+        approach: "Probe-sense-respond, safe-to-fail experiments"
+        planning_depth: "Adaptive - plan in short cycles, iterate"
+
+      chaotic:
+        description: "No perceivable cause-effect, crisis mode"
+        indicators:
+          - "Everything is on fire"
+          - "No time for analysis"
+          - "Need to stabilize first"
+          - "Any action better than no action"
+        approach: "Act-sense-respond, stabilize, then analyze"
+        planning_depth: "Minimal - act first, plan after stabilizing"
+
+    assessment_questions:
+      - question: "Have we solved this exact problem before?"
+        simple: "Yes, many times"
+        complicated: "Similar problems, not exact"
+        complex: "No, but we have some relevant experience"
+        chaotic: "Everything is different"
+
+      - question: "Can experts reliably predict outcomes?"
+        simple: "Yes, with high confidence"
+        complicated: "Yes, with analysis"
+        complex: "No, too many variables"
+        chaotic: "No one knows anything right now"
+
+      - question: "Do small changes produce proportional results?"
+        simple: "Yes, predictably"
+        complicated: "Generally yes"
+        complex: "No, nonlinear effects common"
+        chaotic: "Completely unpredictable"
+
+    skip_conditions:
+      - Goal is obviously routine/simple
+      - Already operating in clear best-practice domain
+
+    on_pass: stakeholder_mapping
+    on_fail: complexity_assessment_procedure
+    on_skip: stakeholder_mapping
+
+  # ============================================
+  # STAKEHOLDER MAPPING
+  # ============================================
+  - id: stakeholder_mapping
+    name: Stakeholder Mapping
+    sequence: 1.7
+    question: Have all relevant stakeholders been identified?
+
+    purpose: |
+      Identify all parties who affect or are affected by the goal.
+      Missed stakeholders are a common cause of project failure.
+
+    evaluation_criteria:
+      - All stakeholder categories considered
+      - Key stakeholders identified with influence/interest assessed
+      - Engagement strategies defined for key stakeholders
+
+    categories:
+      beneficiaries:
+        definition: "Who gains if we succeed?"
+        questions:
+          - "What specifically do they gain?"
+          - "How much do they care?"
+          - "Are they aware of this potential benefit?"
+
+      contributors:
+        definition: "Who can help achieve the goal?"
+        questions:
+          - "What can they provide?"
+          - "What resources can they provide? Use N/A if none."
+          - "What expertise can they provide? Use N/A if none."
+          - "What access can they provide? Use N/A if none."
+          - "What do they need in return?"
+          - "How do we engage them?"
+
+      blockers:
+        definition: "Who might resist or obstruct?"
+        questions:
+          - "Why would they block this?"
+          - "How much power do they have?"
+          - "Can they be converted?"
+          - "Can they be neutralized?"
+
+      affected:
+        definition: "Who is impacted (positive or negative)?"
+        questions:
+          - "How are they affected?"
+          - "Do they know they'll be affected?"
+          - "Do we need their buy-in?"
+
+      decision_makers:
+        definition: "Who must approve key steps?"
+        questions:
+          - "What are their approval criteria?"
+          - "When do we need their decision?"
+          - "What's our relationship with them?"
+
+    stakeholder_attributes:
+      - name_or_role: "Who is this?"
+      - categories: "Which categories do they belong to?"
+      - interest_level: "1-5 how much they care"
+      - influence_level: "1-5 how much power they have"
+      - current_stance: "Supporter / Neutral / Opponent"
+      - engagement_strategy: "How will we work with them?"
+
+    skip_conditions:
+      - Individual goal with no external dependencies
+      - All stakeholders already well-known and engaged
+      - Simple goal where stakeholder analysis adds no value
+
+    on_pass: assumption_register
+    on_fail: stakeholder_mapping_procedure
+    on_skip: assumption_register
+
+  # ============================================
+  # ASSUMPTION REGISTER
+  # ============================================
+  - id: assumption_register
+    name: Assumption Register
+    sequence: 1.8
+    question: Have key assumptions been identified and documented?
+
+    purpose: |
+      Track what we're assuming vs what we've verified.
+      Unexamined assumptions are a major source of failure.
+
+    evaluation_criteria:
+      - Key assumptions explicitly listed
+      - Each assumption has confidence level and impact rating
+      - High-risk assumptions have verification plans
+      - Dependencies documented
+
+    categories:
+      known_knowns:
+        definition: "Verified facts we're confident in"
+        example: "The budget is $500 (confirmed)"
+        action: "Document as foundation"
+
+      known_unknowns:
+        definition: "Questions we know we need to answer"
+        example: "How long will shipping take?"
+        action: "Plan to find out, schedule discovery"
+
+      assumptions:
+        definition: "Unverified beliefs we're treating as true"
+        example: "Users will want this feature"
+        action: "Flag for verification, plan contingency"
+
+      dependencies:
+        definition: "External factors we're relying on"
+        example: "AWS will remain available"
+        action: "Assess reliability, plan alternatives"
+
+    assumption_attributes:
+      - statement: "What we're assuming"
+      - category: "known_known / known_unknown / assumption / dependency"
+      - confidence: "0-100% how sure are we"
+      - impact_if_wrong: "1-5 how bad if this is false"
+      - risk_score: "(100 - confidence) × impact"
+      - verification_method: "How to check if true"
+      - verification_timing: "When to verify"
+      - contingency: "What to do if wrong"
+
+    skip_conditions:
+      - Very simple goal with few assumptions
+      - Routine goal where assumptions are well-validated historically
+
+    on_pass: strategy_exists_check
+    on_fail: assumption_analysis_procedure
+    on_skip: strategy_exists_check
+
+  # ============================================
+  # PRE-MORTEM ANALYSIS
+  # ============================================
+  - id: anticipated_failures_analysis_analysis
+    name: Anticipated Failures Analysis Analysis
+    sequence: 2.5  # After strategy, before failures_anticipated
+    question: Have we imagined failure and identified preventions?
+
+    purpose: |
+      Identify failure modes by imagining failure first.
+      Works backward from failure to find causes we'd otherwise miss.
+      Complements traditional risk analysis with creative failure thinking.
+
+    evaluation_criteria:
+      - Conducted "time travel" exercise imagining failure
+      - Generated diverse failure reasons
+      - Categorized failures by type
+      - Identified preventive actions
+      - Added preventions to plan
+
+    process:
+      step_1:
+        name: "Time Travel"
+        instruction: "Imagine it's [end date]. The project has failed completely. Not partially - total failure."
+        output: "Emotional engagement with failure scenario"
+
+      step_2:
+        name: "Generate Failure Reasons"
+        instruction: "Why did it fail? Brainstorm all possible reasons without filtering."
+        technique: "Each person writes reasons independently, then share"
+        output: "List of 10-20 failure reasons"
+
+      step_3:
+        name: "Categorize Failures"
+        categories:
+          - execution: "We did something wrong"
+          - planning: "We planned wrong"
+          - external: "Something outside our control happened"
+          - assumption: "We believed something false"
+          - stakeholder: "Someone we needed didn't cooperate"
+        output: "Categorized failure list"
+
+      step_4:
+        name: "Assess Each Failure"
+        for_each:
+          - likelihood: "How likely is this? (0-100%)"
+          - impact: "How bad if it happens? (1-5)"
+          - detectability: "Would we see it coming? (1-5, 5=no warning)"
+        output: "Prioritized failure list"
+
+      step_5:
+        name: "Identify Preventions"
+        instruction: "For top failures: What would have prevented this?"
+        output: "Prevention action list"
+
+      step_6:
+        name: "Update Plan"
+        instruction: "Add preventive actions to project plan"
+        output: "Enhanced plan with preventions"
+
+    skip_conditions:
+      - Very routine goal with well-known failure modes
+      - Failure anticipation gate already thorough
+      - Simple goal where pre-mortem adds no value
+
+    on_pass: confidence_calibration
+    on_fail: anticipated_failures_analysis_procedure
+    on_skip: confidence_calibration
+
+  # ============================================
+  # CONFIDENCE CALIBRATION
+  # ============================================
+  - id: confidence_calibration
+    name: Confidence Calibration
+    sequence: 2.6  # After pre-mortem, before failures_anticipated
+    question: Have we calibrated our confidence in key decisions?
+
+    purpose: |
+      Track certainty levels and what would change our minds.
+      Overconfidence is a major source of planning failure.
+      Identifying "cruxes" focuses attention on what matters most.
+
+    evaluation_criteria:
+      - Key decisions identified
+      - Confidence levels assigned (not all 90%!)
+      - Evidence for and against documented
+      - Falsification criteria defined
+      - Cruxes identified
+
+    for_each_decision:
+      statement: "What we believe or decided"
+      confidence: "0-100% (be honest, not all decisions are 90%)"
+      evidence_for: "What supports this?"
+      evidence_against: "What argues against?"
+      falsification: "What would prove us wrong?"
+      crux: "Is this a key uncertainty that affects many downstream decisions?"
+
+    calibration_principles:
+      - "If you're always right when you say 90%, you're well-calibrated"
+      - "If you're wrong half the time at 90%, you're overconfident"
+      - "Spread your confidence levels - not everything is 80-90%"
+      - "50% confidence is not ignorance - it's honest uncertainty"
+
+    crux_identification:
+      definition: "A crux is an uncertainty that, if resolved differently, would change the plan significantly"
+      examples:
+        - "If users don't want feature X, the whole product strategy changes"
+        - "If motor torque is insufficient, we need different motors"
+        - "If Denmark refuses to negotiate, the entire approach shifts"
+      action: "Prioritize resolving cruxes early"
+
+    skip_conditions:
+      - Very simple goal with obvious decisions
+      - Decisions are easily reversible (low cost of being wrong)
+      - Routine goal where confidence is empirically validated
+
+    on_pass: specification_depth_assessment
+    on_fail: confidence_calibration_procedure
+    on_skip: specification_depth_assessment
+
+  # ============================================
+  # SPECIFICATION DEPTH ASSESSMENT
+  # ============================================
+  - id: specification_depth_assessment
+    name: Specification Depth Assessment
+    sequence: 2.7  # After confidence calibration, before failures_anticipated
+    question: How much of this goal can be specified upfront vs. discovered during execution?
+
+    purpose: |
+      Different goals allow different levels of upfront specification.
+      This affects planning depth, confirmation checkpoints, and
+      when to request human approval during execution.
+
+    evaluation_criteria:
+      - Specification depth level determined
+      - Known vs. emergent elements identified
+      - Confirmation points planned appropriately
+      - Resource allocation considered
+
+    levels:
+      full:
+        description: "Everything can be specified now"
+        indicators:
+          - "All requirements are known"
+          - "Similar work has been done before"
+          - "No significant unknowns"
+          - "Deliverables can be fully described"
+        examples:
+          - "Build robot with these exact specs"
+          - "Implement this specified API"
+          - "Follow this documented procedure"
+        planning_approach: "Detailed upfront planning, execute as planned"
+        confirmation_frequency: "At phase boundaries only"
+        decomposition_confidence: "90-100%"
+
+      partial:
+        description: "Core known, details will emerge"
+        indicators:
+          - "High-level structure is clear"
+          - "Some details depend on earlier work"
+          - "Known unknowns exist"
+          - "Scope may need adjustment"
+        examples:
+          - "Write comprehensive document on topic"
+          - "Design system to solve X"
+          - "Research and recommend approach"
+        planning_approach: "Plan structure, iterate on content"
+        confirmation_frequency: "After each major phase"
+        decomposition_confidence: "60-90%"
+
+      emergent:
+        description: "Only direction is known, path will emerge"
+        indicators:
+          - "Exploring unknown territory"
+          - "Learning as we go"
+          - "Scope will change based on discoveries"
+          - "Unknown unknowns expected"
+        examples:
+          - "Explore market opportunity"
+          - "Investigate root cause of X"
+          - "Find solution to novel problem"
+        planning_approach: "Probe-sense-respond, short cycles"
+        confirmation_frequency: "Every major decision point"
+        decomposition_confidence: "0-60%"
+
+    assessment_template:
+      level: "full | partial | emergent"
+
+      what_is_known:
+        - description: "List elements that are clear now"
+
+      what_will_emerge:
+        - description: "List elements that will become clear during execution"
+
+      decomposition_confidence:
+        score: "0-100%"
+        rationale: "Why this confidence level"
+
+      confirmation_points:
+        - after: "Phase or milestone name"
+          question: "What to confirm"
+          decision_options:
+            - "Continue as planned"
+            - "Adjust scope"
+            - "Spawn sub-goal"
+            - "Pivot approach"
+
+    resource_awareness:
+      description: "Track resource implications of decomposition"
+      considerations:
+        - available_effort: "How much time/effort is available"
+        - decomposition_overhead: "~30-60 min per sub-goal for full GOSM"
+        - minimum_subgoal_size: "Don't spawn sub-goals for tasks < 2 hours"
+        - context_switching_cost: "Consider overhead of managing hierarchy"
+
+    skip_conditions:
+      - Goal is clearly fully specifiable (routine)
+      - Already assessed during complexity assessment
+      - Simple goal where depth tracking adds no value
+
+    on_pass: failures_anticipated_check
+    on_fail: specification_depth_procedure
+    on_skip: failures_anticipated_check

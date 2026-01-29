@@ -1,0 +1,188 @@
+# Communication & Narrative Orderings
+# Orderings for presentations and audience engagement
+
+category_id: communication_narrative
+category_name: "Communication & Narrative Orderings"
+description: |
+  Orderings for presentations, writing, and communication where
+  the sequence affects audience engagement and comprehension.
+  Use when structuring content for human consumption.
+
+when_to_consider: |
+  - Presentations or pitches
+  - Status updates and reports
+  - Content that may be truncated
+  - Need to engage and satisfy audience
+  - Executive communication
+
+variations:
+
+  # ----------------------------------------
+  # TENSION-ARC ORDERING
+  # ----------------------------------------
+  tension_arc:
+    id: tension_arc_ordering
+    name: "Tension-Arc Ordering (Narrative Structure)"
+    category: communication_narrative
+
+    philosophy: |
+      Structure work to build toward a climax, then resolve.
+      From storytelling: setup establishes context, rising action
+      builds stakes, climax is the peak moment, resolution ties
+      up loose ends. Good for presentations, persuasion, and any
+      work with an audience.
+
+    when_to_use:
+      - Presentations or pitches
+      - User experiences with a journey
+      - Persuasive writing or communication
+      - Any work that needs to engage and satisfy an audience
+      - Project narratives for stakeholders
+
+    three_act_structure:
+      act_1_setup:
+        purpose: "Establish context, characters, stakes"
+        proportion: "~25% of total"
+        tasks: "Background, problem definition, why it matters"
+
+      act_2_rising_action:
+        purpose: "Build tension, escalate stakes, complications"
+        proportion: "~50% of total"
+        tasks: "Main work, challenges, progression, obstacles overcome"
+
+      act_3_resolution:
+        purpose: "Climax and resolution, payoff"
+        proportion: "~25% of total"
+        tasks: "Key reveal, solution, conclusion, call to action"
+
+    prioritization_rules:
+      1_setup_first:
+        rule: "Establish context before diving into details"
+        reason: "Audience needs orientation before engagement"
+
+      2_escalate_progressively:
+        rule: "Each step should raise stakes higher"
+        reason: "Maintains engagement, builds toward climax"
+
+      3_save_best_for_climax:
+        rule: "Most impactful content at the ~75% mark"
+        reason: "Peak tension before resolution"
+
+      4_resolve_cleanly:
+        rule: "Don't end abruptly; provide closure"
+        reason: "Satisfying conclusion cements the experience"
+
+    anti_patterns:
+      - "Burying the lead (climax too late)"
+      - "Front-loading all good content (anticlimactic)"
+      - "No setup (audience confused)"
+      - "No resolution (unsatisfying)"
+
+    example:
+      context: "Product demo presentation"
+      tension_arc_order:
+        setup:
+          - "Establish the problem users face"
+          - "Show the pain points and stakes"
+        rising_action:
+          - "Introduce solution concept"
+          - "Show basic functionality"
+          - "Add complexity and capability"
+          - "Demonstrate edge case handling"
+        climax:
+          - "Show the 'wow' feature"
+          - "Reveal unexpected capability"
+        resolution:
+          - "Summarize benefits"
+          - "Call to action"
+          - "Q&A"
+      rationale: "Audience engagement peaks at climax, leaves satisfied"
+
+    source: "Storytelling - Three-act structure, narrative arc"
+
+  # ----------------------------------------
+  # INVERTED-PYRAMID ORDERING
+  # ----------------------------------------
+  inverted_pyramid:
+    id: inverted_pyramid_ordering
+    name: "Inverted-Pyramid Ordering (Journalism)"
+    category: communication_narrative
+
+    philosophy: |
+      Most important information first, details in descending order.
+      From journalism: assume readers might stop at any point. Lead
+      with the conclusion, then supporting facts, then background.
+      If truncated, the most important content survives.
+
+    when_to_use:
+      - Executive communication
+      - Reports that might be skimmed
+      - Breaking news or urgent updates
+      - Documentation with varied reader depth
+      - Anything that might be truncated
+
+    structure:
+      lead:
+        content: "Most important facts - who, what, when, where, why"
+        proportion: "First paragraph or section"
+        rule: "Could stand alone as complete communication"
+
+      body:
+        content: "Supporting details in decreasing importance"
+        proportion: "Middle sections"
+        rule: "Each section less critical than previous"
+
+      tail:
+        content: "Background, context, nice-to-have details"
+        proportion: "Final sections"
+        rule: "Can be cut without losing key message"
+
+    prioritization_rules:
+      1_conclusion_first:
+        rule: "Lead with the answer, recommendation, or news"
+        reason: "Busy readers get value immediately"
+        anti_pattern: "Building up to the point"
+
+      2_descending_importance:
+        rule: "Each subsequent item less important than previous"
+        reason: "Truncation at any point preserves most value"
+        test: "If I stop here, have I got the key message?"
+
+      3_self_contained_sections:
+        rule: "Each section should make sense without later sections"
+        reason: "Readers skip around; sections must stand alone"
+
+      4_background_last:
+        rule: "Context and history at the end"
+        reason: "Only interested readers go that deep"
+
+    comparison_to_tension_arc:
+      tension_arc: "Builds to climax - for engaged audiences"
+      inverted_pyramid: "Leads with climax - for busy/scanning readers"
+      choice: "Depends on audience attention commitment"
+
+    anti_patterns:
+      - "Building up to the main point"
+      - "Saving the conclusion for last"
+      - "Equal treatment of all details"
+      - "Critical information in the middle"
+
+    example:
+      context: "Status update email"
+      inverted_pyramid_order:
+        lead: "Project is on track for March 15 launch. One risk: API dependency."
+        body:
+          - "Development 90% complete, testing begins next week"
+          - "API partner confirmed timeline, but integration not yet tested"
+          - "Marketing assets ready, pending final product screenshots"
+        tail:
+          - "Budget utilization at 78%"
+          - "Team morale high after successful sprint"
+          - "Historical context: this is 2 weeks ahead of last year's timeline"
+      truncation_test:
+        just_lead: "Reader knows project status and key risk"
+        lead_plus_body: "Reader understands details of each area"
+        full_email: "Reader has complete context"
+      rationale: "Executive reads first line, knows what matters"
+
+    source: "Journalism - Inverted Pyramid structure"

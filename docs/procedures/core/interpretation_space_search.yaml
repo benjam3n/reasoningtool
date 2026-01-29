@@ -1,0 +1,288 @@
+# Interpretation Space Search
+# Generate possible interpretations, search for best
+# Version: 1.0.0
+
+id: interpretation_space_search
+name: Interpretation Space Search
+version: "1.0.0"
+domain: core
+
+goal: |
+  When input is ambiguous, generate all possible interpretations
+  and search for the best one using explicit criteria.
+
+description: |
+  Ambiguity means multiple interpretations are possible.
+  Instead of guessing, systematically:
+  1. Generate all plausible interpretations
+  2. Score each against criteria
+  3. Select the best-supported interpretation
+
+when_to_use:
+  - Ambiguous communication
+  - Unclear requirements
+  - Multiple possible meanings
+  - Conflicting signals
+  - Need to understand intent
+
+inputs:
+  - name: input
+    type: string
+    description: "The ambiguous input to interpret"
+  - name: context
+    type: description
+    description: "Available context information"
+
+outputs:
+  - name: interpretations
+    type: list
+    description: "All generated interpretations"
+  - name: best_interpretation
+    type: string
+    description: "Highest-scoring interpretation"
+  - name: confidence
+    type: number
+    description: "How confident (score gap to second-best)"
+
+# ============================================
+# CRITERIA FOR GOOD INTERPRETATIONS
+# ============================================
+
+criteria:
+  must_have:
+    - name: "Consistency with input"
+      question: "Does this interpretation account for what was actually said/observed?"
+      weight: 25
+
+    - name: "Internal coherence"
+      question: "Is the interpretation internally consistent (no contradictions)?"
+      weight: 20
+
+  should_have:
+    - name: "Consistency with context"
+      question: "Does it fit the broader context?"
+      weight: 15
+
+    - name: "Simplicity"
+      question: "Does it require minimal extra assumptions?"
+      weight: 15
+
+    - name: "Plausibility"
+      question: "Is it probable given background knowledge?"
+      weight: 15
+
+  nice_to_have:
+    - name: "Explains anomalies"
+      question: "Does it account for puzzling aspects?"
+      weight: 5
+
+    - name: "Predictive"
+      question: "Does it predict other things we could check?"
+      weight: 5
+
+# ============================================
+# GENERATION METHODS
+# ============================================
+
+generation_methods:
+  literal_variations:
+    description: "Different literal readings"
+    prompts:
+      - "What could each word/phrase mean?"
+      - "What are the different grammatical parsings?"
+      - "What referents could pronouns/terms point to?"
+
+  intent_variations:
+    description: "Different possible intents"
+    prompts:
+      - "What might the speaker/source be trying to achieve?"
+      - "What need might this be expressing?"
+      - "What goal could this serve?"
+
+  context_variations:
+    description: "Different contextual framings"
+    prompts:
+      - "What if this is responding to X?"
+      - "What if this is in context of Y?"
+      - "What background assumption would make this make sense?"
+
+  perspective_variations:
+    description: "Different perspectives"
+    prompts:
+      - "How would stakeholder A interpret this?"
+      - "How would a skeptic interpret this?"
+      - "How would an optimist interpret this?"
+      - "What's the most charitable interpretation?"
+      - "What's the least charitable interpretation?"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Capture the Input"
+    action: |
+      Record exactly what was said/observed.
+      Don't interpret yet - just capture.
+    output: "Raw input"
+
+  - id: 2
+    name: "Note the Context"
+    action: |
+      Record all available context:
+      - Who/what is the source?
+      - What preceded this?
+      - What's the broader situation?
+      - What do we know about the source?
+    output: "Context summary"
+
+  - id: 3
+    name: "Generate Interpretations"
+    action: |
+      Using generation methods, produce all plausible interpretations.
+      Be comprehensive - include interpretations you doubt.
+
+      For each interpretation, state:
+      - The interpretation in clear terms
+      - What assumptions it requires
+    output: "List of interpretations"
+    template: |
+      INTERPRETATION 1:
+      Reading: [What it means under this interpretation]
+      Assumptions required: [What must be true for this reading]
+
+      INTERPRETATION 2:
+      ...
+
+  - id: 4
+    name: "Apply Obvious Filters"
+    action: |
+      Remove interpretations that:
+      - Contradict known facts
+      - Are logically impossible
+      - Require absurd assumptions
+
+      Don't remove just because unlikely - keep for scoring.
+    output: "Filtered interpretations"
+
+  - id: 5
+    name: "Score Each Interpretation"
+    action: |
+      For each interpretation, score on each criterion (1-10).
+      Be consistent across interpretations.
+    output: "Scored interpretations"
+    template: |
+      INTERPRETATION: [Description]
+
+      Criteria Scores:
+      - Consistency with input: [1-10]
+      - Internal coherence: [1-10]
+      - Consistency with context: [1-10]
+      - Simplicity: [1-10]
+      - Plausibility: [1-10]
+      - Explains anomalies: [1-10]
+      - Predictive: [1-10]
+
+      Weighted Total: [Calculate]
+
+  - id: 6
+    name: "Rank Interpretations"
+    action: |
+      Sort by weighted total score.
+      Note the gap between #1 and #2.
+    output: "Ranked interpretations"
+
+  - id: 7
+    name: "Assess Confidence"
+    action: |
+      Confidence based on:
+      - Score gap (large gap = high confidence)
+      - Absolute score (high score = good interpretation)
+      - Number of viable alternatives (fewer = higher confidence)
+
+      If confidence is low, consider:
+      - Seeking more information
+      - Testing interpretations
+      - Accepting ambiguity
+    output: "Confidence assessment"
+
+  - id: 8
+    name: "Select and Verify"
+    action: |
+      Select best interpretation.
+      Verify it accounts for all key aspects of input.
+      Note what would change the interpretation.
+    output: "Selected interpretation with caveats"
+    template: |
+      BEST INTERPRETATION: [Description]
+      Confidence: [High/Medium/Low]
+      Score: [X] (next best: [Y])
+
+      Key assumptions: [What this requires]
+      Would reconsider if: [What would change it]
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  input: "Customer email: 'This isn't working for us anymore.'"
+
+  context:
+    - "Long-term customer (3 years)"
+    - "Recent price increase"
+    - "Their company had layoffs"
+    - "Used to have weekly calls, now monthly"
+
+  interpretations_generated:
+    1:
+      reading: "They want to cancel the service entirely"
+      assumptions: "They've found alternative or eliminating need"
+      scores:
+        consistency_input: 9
+        coherence: 9
+        context: 7
+        simplicity: 8
+        plausibility: 6
+      total: 770
+
+    2:
+      reading: "The current pricing/plan doesn't fit their reduced budget"
+      assumptions: "They want to stay but need adjustment"
+      scores:
+        consistency_input: 8
+        coherence: 9
+        context: 9
+        simplicity: 7
+        plausibility: 8
+      total: 810
+
+    3:
+      reading: "The product features no longer match their needs"
+      assumptions: "Their needs have changed"
+      scores:
+        consistency_input: 8
+        coherence: 8
+        context: 6
+        simplicity: 7
+        plausibility: 7
+      total: 720
+
+  best_interpretation: |
+    #2: "The current pricing/plan doesn't fit their reduced budget"
+    - Best fits context (layoffs, price increase)
+    - Suggests action (offer adjustment)
+    - Would verify by asking directly
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Multiple interpretations were generated (not just the obvious one)"
+  - "Interpretations cover literal, intent, and context variations"
+  - "Each interpretation is internally coherent"
+  - "Scoring was consistent across interpretations"
+  - "Confidence assessment accounts for score gaps"
+  - "Selected interpretation accounts for key input features"

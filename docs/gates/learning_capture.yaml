@@ -1,0 +1,207 @@
+# GOSM v2: Project Review Phase
+# Systematic capture of lessons when projects complete
+
+project_review:
+  purpose: |
+    Projects shouldn't just end - they should teach.
+    Systematically capture what was learned for future projects.
+
+  trigger: "When project reaches end state (success, failure, or abandoned)"
+
+  # ============================================
+  # COMPLETION GATES
+  # ============================================
+  gates:
+    # ============================================
+    - id: outcome_documented
+      question: "What was the actual outcome?"
+
+      captures:
+        intended: "What we set out to do"
+        actual: "What we actually achieved"
+        gap: "Difference between intended and actual"
+        reasons: "Why the gap (if any)"
+
+      assessment:
+        exceeded: "Did more than planned"
+        achieved: "Met goals"
+        partial: "Some goals met"
+        failed: "Goals not met"
+        abandoned: "Stopped before completion"
+
+      all_valid: "Each outcome has value if we learn from it"
+
+    # ============================================
+    - id: lessons_captured
+      question: "What did we learn?"
+
+      categories:
+        what_worked:
+          description: "Approaches to repeat"
+          questions:
+            - "What went well?"
+            - "What would we do again?"
+            - "What made success possible?"
+
+        what_didnt:
+          description: "Approaches to avoid"
+          questions:
+            - "What didn't work?"
+            - "What would we skip next time?"
+            - "What were false starts?"
+
+        surprises:
+          description: "What we didn't expect"
+          questions:
+            - "What surprised us?"
+            - "What was harder than expected?"
+            - "What was easier than expected?"
+
+        would_do_differently:
+          description: "With hindsight"
+          questions:
+            - "Knowing what we know now, what would we change?"
+            - "What would we do sooner?"
+            - "What would we skip entirely?"
+
+    # ============================================
+    - id: procedures_extracted
+      question: "Any reusable procedures worth extracting?"
+
+      action: "Run procedure_extraction procedure"
+
+      criteria:
+        - "Novel approach developed"
+        - "Generalizable to other projects"
+        - "Worth the effort to document"
+
+    # ============================================
+    - id: assumptions_validated
+      question: "What is the status of each assumption?"
+
+      process:
+        - "Review initial assumption register"
+        - "Mark each as validated/invalidated/unknown"
+        - "Update default assumptions for future"
+
+      output:
+        - "Calibrated assumptions for similar projects"
+        - "Known blind spots"
+
+    # ============================================
+    - id: estimates_compared
+      question: "How accurate were our estimates?"
+
+      captures:
+        time:
+          estimated: "What we thought"
+          actual: "What happened"
+          ratio: "actual / estimated"
+
+        difficulty:
+          estimated: "How hard we thought"
+          actual: "How hard it was"
+
+        resources:
+          estimated: "What we thought we'd need"
+          actual: "What we used"
+
+      calibration:
+        - "Pattern: We underestimate by ~X%"
+        - "Pattern: Type Y tasks take longer than expected"
+        - "Use for future estimates"
+
+    # ============================================
+    - id: emotional_closure
+      question: "How do we feel about this?"
+
+      purpose: "Emotional processing for motivation maintenance"
+
+      if_success:
+        - "Acknowledge achievement"
+        - "Celebrate appropriately"
+        - "Note what made it possible"
+
+      if_partial:
+        - "Recognize progress made"
+        - "Acknowledge what didn't work"
+        - "Extract learning value"
+
+      if_failure:
+        - "Failure is data, not judgment"
+        - "What can we extract from this?"
+        - "What would we need to try again?"
+
+      if_abandoned:
+        - "Was abandoning the right call?"
+        - "What would have been needed to continue?"
+        - "Any sunk cost fallacy in play?"
+
+  # ============================================
+  # LEARNING DATABASE
+  # ============================================
+  learning_database:
+    purpose: "Accumulate lessons across projects"
+
+    entry_structure:
+      project_id: "Reference to project"
+      domain: "What type of goal"
+      outcome: "exceeded | achieved | partial | failed | abandoned"
+
+      key_lessons:
+        - lesson: "The lesson"
+          applicability: "When this applies"
+          confidence: "How sure (based on repetition)"
+
+      estimation_calibration:
+        time: "Pattern in time estimates"
+        difficulty: "Pattern in difficulty estimates"
+
+      pattern_observations:
+        - "Recurring pattern noticed"
+
+    queries:
+      by_domain: "What have we learned in domain X?"
+      by_lesson_type: "All 'what didn't work' lessons"
+      estimation_history: "How accurate are we generally?"
+
+  # ============================================
+  # PROJECT END TEMPLATE
+  # ============================================
+  completion_document:
+    template: |
+      # Project Completion: {project_name}
+
+      ## Outcome
+      - **Intended**: {what we wanted}
+      - **Actual**: {what happened}
+      - **Assessment**: {exceeded | achieved | partial | failed | abandoned}
+
+      ## What Worked
+      {bulleted list}
+
+      ## What Didn't Work
+      {bulleted list}
+
+      ## Surprises
+      {bulleted list}
+
+      ## Would Do Differently
+      {bulleted list}
+
+      ## Estimation Accuracy
+      | Dimension | Estimated | Actual | Ratio |
+      |-----------|-----------|--------|-------|
+      | Time | {X} | {Y} | {Y/X} |
+
+      ## Assumptions Validated/Invalidated
+      | Assumption | Expected | Actual |
+      |------------|----------|--------|
+      | {assumption} | {true/false} | {true/false} |
+
+      ## Extracted Procedures
+      - {list of any extracted procedures}
+
+      ## Key Takeaways for Future
+      1. {takeaway 1}
+      2. {takeaway 2}

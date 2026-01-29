@@ -1,0 +1,240 @@
+id: universalization_solutions
+name: Solution-Finding Universalization Procedure
+version: 1.0.0
+description: |
+  Apply universalization to find solutions by identifying problem class,
+  deeper goals, and constraint patterns, then deriving solutions that work
+  for the class.
+
+  VALIDATED: Tested on "How do I ship this feature on time?" - produced
+  non-obvious solution "renegotiate scope, not timeline" by universalizing
+  to "resource-time tradeoff" problem class.
+
+inputs:
+  - name: problem
+    type: string
+    description: The problem or goal seeking solution
+  - name: constraints
+    type: array
+    description: Known constraints (explicit or implicit)
+  - name: prior_attempts
+    type: array
+    description: Solutions already tried or considered
+
+outputs:
+  - name: problem_class
+    type: string
+    description: Universal category this problem belongs to
+  - name: deeper_goal
+    type: string
+    description: The goal behind the stated goal
+  - name: universal_solutions
+    type: array
+    description: Solutions that work for this problem class
+  - name: filtered_solutions
+    type: array
+    description: Universal solutions applicable to this specific case
+  - name: novel_solutions
+    type: array
+    description: Solutions that emerged only through universalization
+
+gates:
+  - id: problem_clear
+    type: entry
+    check: Is the problem stated clearly enough to universalize?
+    fail_action: Ask user to clarify what outcome they want
+
+  - id: problem_universalized
+    type: process
+    check: Was the problem classified into a universal problem class?
+    fail_action: Apply instance-to-category to the problem
+
+  - id: goal_universalized
+    type: process
+    check: Was the deeper goal identified behind the stated goal?
+    fail_action: Ask "Why do you want this?" recursively until deeper goal found
+
+  - id: constraints_examined
+    type: process
+    check: Were constraints universalized to find which are negotiable?
+    fail_action: Apply existence check and boundary dissolution to constraints
+
+  - id: solution_transfer_attempted
+    type: quality
+    check: Were solutions from sibling problems in the class considered?
+    fail_action: Identify sibling problems and import their solutions
+
+  - id: novel_solution_found
+    type: exit
+    check: Did at least one solution emerge that wasn't in prior_attempts?
+    fail_action: Go one level higher in abstraction; try different problem framing
+
+steps:
+  - id: identify_problem_components
+    prompt: |
+      Parse the problem into components:
+
+      Problem: "{problem}"
+
+      Identify:
+      - GOAL: What outcome is desired?
+      - CURRENT STATE: What's the situation now?
+      - GAP: What's the distance between current and goal?
+      - CONSTRAINTS: What limits the solution space?
+      - STAKEHOLDERS: Who cares about this?
+
+      List each component explicitly.
+    gate: problem_clear
+
+  - id: universalize_problem
+    prompt: |
+      UNIVERSALIZE THE PROBLEM
+
+      Apply instance-to-category:
+      - What is this problem an instance of?
+      - What class of problems does it belong to?
+
+      Common problem classes:
+      - Resource allocation (not enough of X)
+      - Coordination (multiple parties must align)
+      - Information (don't know something needed)
+      - Capability (can't do something needed)
+      - Optimization (tradeoff between competing values)
+      - Timing (wrong sequence or speed)
+      - Scope (too much or too little included)
+
+      Example:
+      "Ship feature on time" → "Complete deliverable by deadline"
+      → Class: Resource-time tradeoff / Optimization problem
+
+      Record:
+      - Problem class: [name]
+      - What makes it this class: [reasoning]
+      - [T:result] Problem universalized to class: [name]
+    gate: problem_universalized
+
+  - id: universalize_goal
+    prompt: |
+      UNIVERSALIZE THE GOAL (find deeper goal)
+
+      Stated goal: [from step 1]
+
+      Ask recursively:
+      - "Why do you want [stated goal]?"
+      - "What would achieving [stated goal] give you?"
+      - "If you got [stated goal], what would you do with it?"
+
+      Keep going until you hit a terminal value (something wanted for itself).
+
+      Example:
+      "Ship on time" → Why? → "Meet commitment" → Why? → "Customer trust"
+      → Why? → "Business success" → Terminal: valued for itself
+
+      Record:
+      - Stated goal: [original]
+      - Deeper goal 1: [first why]
+      - Deeper goal 2: [second why]
+      - Terminal goal: [deepest level]
+      - [T:result] Goal chain: [stated] → [1] → [2] → [terminal]
+    gate: goal_universalized
+
+  - id: universalize_constraints
+    prompt: |
+      UNIVERSALIZE AND EXAMINE CONSTRAINTS
+
+      Constraints: {constraints}
+
+      For each constraint, apply:
+
+      1. EXISTENCE CHECK: Is this constraint real?
+         - Externally imposed or self-imposed?
+         - Explicit or assumed?
+         - Current or outdated?
+
+      2. BOUNDARY DISSOLUTION: What if constraint scope changed?
+         - Could constraint be narrowed?
+         - Could constraint be broadened to include solutions?
+
+      3. INSTANCE-TO-CATEGORY: What class of constraint is this?
+         - Resource constraint (not enough X)
+         - Policy constraint (rule says can't)
+         - Physical constraint (laws of nature)
+         - Preference constraint (don't want to)
+
+      Mark each constraint:
+      - HARD: Cannot be changed (physical, legal)
+      - SOFT: Could be negotiated (preferences, assumptions)
+      - FAKE: Assumed but not real (should be eliminated)
+
+      [T:result] Of [N] constraints, [H] hard, [S] soft, [F] fake
+    gate: constraints_examined
+
+  - id: find_sibling_problems
+    prompt: |
+      FIND SIBLING PROBLEMS AND THEIR SOLUTIONS
+
+      Problem class: [from step 2]
+
+      What other specific problems belong to this class?
+      List 3-5 sibling problems from:
+      - Same domain, different context
+      - Different domain, same structure
+      - Historical examples
+
+      For each sibling:
+      - What was the problem?
+      - How was it solved?
+      - Could that solution transfer here?
+
+      Example for "resource-time tradeoff":
+      - Sibling: Building a house on budget
+        Solution: Phase construction; MVP first
+        Transfer: Ship MVP feature, enhance later
+
+      - Sibling: Writing dissertation on deadline
+        Solution: Reduce scope to fit time
+        Transfer: Cut feature scope to fit timeline
+
+      Record each sibling and potential solution transfer.
+    gate: solution_transfer_attempted
+
+  - id: derive_solutions
+    prompt: |
+      DERIVE SOLUTIONS FROM UNIVERSALS
+
+      From problem class: What solutions work for this class generally?
+      From deeper goal: What other ways could deeper goal be achieved?
+      From constraints: Which soft/fake constraints can be changed?
+      From siblings: What solutions transferred from sibling problems?
+
+      List ALL solutions derived.
+
+      Then compare to prior_attempts: {prior_attempts}
+
+      Mark each solution:
+      - TRIED: Already in prior attempts
+      - OBVIOUS: Not tried but would be first thought
+      - NOVEL: Only emerged through universalization
+
+      [T:result] Derived [N] solutions: [T] tried, [O] obvious, [V] novel
+    gate: novel_solution_found
+
+  - id: filter_and_rank
+    prompt: |
+      FILTER AND RANK SOLUTIONS
+
+      For each NOVEL solution, evaluate:
+      - Does it satisfy HARD constraints?
+      - Does it achieve DEEPER goal (not just stated goal)?
+      - What's the cost/effort?
+      - What's the risk?
+
+      Rank remaining solutions by:
+      1. Likelihood of achieving deeper goal
+      2. Feasibility within hard constraints
+      3. Cost/effort ratio
+
+      Verification:
+      - [T:result] Top solution: [describe]
+      - [T:result] Why novel: [what made it emerge through universalization]
+      - [T:result] Achieves deeper goal: [how]

@@ -1,0 +1,393 @@
+# Question Analysis Framework v2: For Deductive Strategy Selection
+# Purpose: Use questions as instruments to DERIVE strategies rather than guess them
+
+version: "2.0"
+description: |
+  This framework uses philosophical questions as tools for deductive strategy selection.
+
+  Key shift from v1:
+  - Questions are INSTRUMENTS, not ends
+  - Foundationality is GOAL-RELATIVE, not objective
+  - Prior art means PROVEN STRATEGIES, not philosophical literature
+  - Verification means STRATEGY TESTING, not epistemological certainty
+  - Dependencies are STRATEGIC IMPLICATIONS, not conceptual relations
+
+  The goal: Given a situation, derive the LOGICALLY NECESSARY strategy
+  rather than choosing among possibilities.
+
+# ====================
+# THE CORE PROBLEM
+# ====================
+
+core_problem:
+  statement: |
+    Most strategy selection is INDUCTIVE:
+    - Look at situation
+    - Consider possible strategies
+    - Evaluate which seems best
+    - Choose (with uncertainty)
+
+    We want DEDUCTIVE strategy selection:
+    - Identify the logical structure of the situation
+    - Identify constraints that eliminate strategies
+    - Identify requirements that mandate strategies
+    - DERIVE the necessary strategy (with certainty)
+
+  key_question: |
+    What would make a strategy LOGICALLY NECESSARY rather than merely plausible?
+
+  answer_structure: |
+    A strategy S is logically necessary for goal G in situation X if:
+    1. G requires certain conditions to be achieved
+    2. X has certain properties that constrain what can work
+    3. S is the ONLY strategy that:
+       a. Satisfies all conditions required by G
+       b. Is compatible with all properties of X
+       c. Does not violate any logical or physical constraints
+
+    If multiple strategies satisfy (a), (b), (c), then:
+    - Either the constraints are incomplete (find more)
+    - Or the strategies are equivalent (choose arbitrarily)
+    - Or there is genuine optionality (document it)
+
+# ====================
+# QUESTION CLASSIFICATION (REVISED)
+# ====================
+
+classification_dimensions:
+
+  strategic_relevance:
+    description: "Does answering this question constrain the strategy space?"
+    levels:
+      - level: 5
+        name: "Eliminative"
+        definition: "Answer eliminates one or more strategies as impossible"
+        example: "What physical constraints apply?" → eliminates strategies that violate physics
+      - level: 4
+        name: "Mandatory"
+        definition: "Answer mandates that certain elements must be in any valid strategy"
+        example: "What must be preserved?" → mandates strategies that preserve it
+      - level: 3
+        name: "Preferential"
+        definition: "Answer ranks strategies but doesn't eliminate any"
+        example: "What is more efficient?" → prefers but doesn't mandate
+      - level: 2
+        name: "Contextual"
+        definition: "Answer provides information but doesn't directly constrain strategies"
+        example: "What is the history of this situation?" → context only
+      - level: 1
+        name: "Irrelevant"
+        definition: "Answer has no bearing on strategy selection"
+        example: "What is the etymology of 'strategy'?" → interesting but irrelevant
+
+  constraint_type:
+    description: "What kind of constraint does this question reveal?"
+    types:
+      - type: "logical"
+        definition: "Cannot be violated without contradiction"
+        strength: "Absolute"
+        example: "Can a strategy both achieve X and prevent X?"
+      - type: "physical"
+        definition: "Cannot be violated given laws of physics"
+        strength: "Absolute within physics"
+        example: "Can this be done faster than light?"
+      - type: "resource"
+        definition: "Cannot be violated given available resources"
+        strength: "Conditional on resources"
+        example: "Can this be done with available budget?"
+      - type: "temporal"
+        definition: "Cannot be violated given time constraints"
+        strength: "Conditional on deadlines"
+        example: "Can this be done before the deadline?"
+      - type: "normative"
+        definition: "Should not be violated given values/rules"
+        strength: "Conditional on accepting the norm"
+        example: "Does this violate ethical constraints?"
+      - type: "preferential"
+        definition: "Would prefer not to violate but can if necessary"
+        strength: "Weak - can be overridden"
+        example: "Is this the most elegant solution?"
+
+  derivation_power:
+    description: "How much does answering this question narrow the strategy space?"
+    measurement: |
+      Before answering: N possible strategies
+      After answering: M possible strategies
+      Derivation power = (N - M) / N
+
+      Power = 1.0: Answer determines unique strategy
+      Power = 0.5: Answer eliminates half of strategies
+      Power = 0.0: Answer eliminates no strategies
+
+  dependency_for_derivation:
+    description: "What must be established before this question can constrain strategies?"
+    structure:
+      - "What prior questions must be answered?"
+      - "What facts must be known?"
+      - "What definitions must be established?"
+      - "What values must be committed to?"
+
+# ====================
+# STRATEGY DERIVATION PROCESS
+# ====================
+
+derivation_process:
+
+  phase_1_situation_analysis:
+    goal: "Identify all properties of the situation that constrain strategies"
+    questions:
+      - "What is the current state? (Precise, observable terms)"
+      - "What is the goal state? (Precise, observable terms)"
+      - "What resources are available? (Exhaustive list)"
+      - "What time constraints exist? (Specific deadlines)"
+      - "What must NOT change? (Preservation constraints)"
+      - "What external factors cannot be controlled? (Environmental constraints)"
+    output: "Situation model with all relevant properties"
+
+  phase_2_constraint_identification:
+    goal: "Identify all constraints that eliminate or mandate strategies"
+    questions:
+      - "What is logically impossible? (Contradictions)"
+      - "What is physically impossible? (Laws of nature)"
+      - "What is resource-impossible? (Insufficient inputs)"
+      - "What is time-impossible? (Cannot be done fast enough)"
+      - "What is normatively forbidden? (Violates accepted rules)"
+      - "What is required by the goal definition? (Necessary conditions)"
+    output: "Constraint set that any valid strategy must satisfy"
+
+  phase_3_strategy_enumeration:
+    goal: "List all strategies that have not been eliminated"
+    method:
+      - "Start with the broadest possible strategy space"
+      - "Apply each constraint as a filter"
+      - "Document which strategies are eliminated by which constraints"
+      - "What remains is the feasible strategy set"
+    output: "Set of strategies that satisfy all constraints"
+
+  phase_4_uniqueness_check:
+    goal: "Determine if there is exactly one feasible strategy"
+    cases:
+      - case: "Zero strategies remain"
+        meaning: "Goal is impossible given constraints"
+        action: "Either relax constraints or change goal"
+      - case: "One strategy remains"
+        meaning: "Strategy is DERIVED - it is logically necessary"
+        action: "Execute with confidence"
+      - case: "Multiple strategies remain"
+        meaning: "Constraints are insufficient for unique derivation"
+        action: "Go to phase 5"
+
+  phase_5_additional_constraint_search:
+    goal: "Find additional constraints to achieve unique derivation"
+    questions:
+      - "What distinguishes the remaining strategies?"
+      - "Is there a constraint that applies to that distinction?"
+      - "Is there prior art showing one strategy succeeds where others fail?"
+      - "Is there a meta-criterion (simplicity, robustness) that selects one?"
+      - "Are the remaining strategies actually equivalent? (Then choose arbitrarily)"
+    output: "Either unique strategy or documented genuine optionality"
+
+  phase_6_derivation_documentation:
+    goal: "Record the logical chain from situation to strategy"
+    structure:
+      - premises: "All situation properties and constraints used"
+      - reasoning: "How constraints eliminated strategies"
+      - conclusion: "The derived strategy (or set if optionality remains)"
+      - confidence: "Certainty in the derivation (see below)"
+      - assumptions: "What was assumed that could be wrong"
+
+# ====================
+# USING PURE_REGRESS QUESTIONS
+# ====================
+
+question_usage:
+
+  purpose: |
+    The 400,000+ questions in pure_regress files serve as a CHECKLIST:
+    "Have I considered this constraint?"
+    "Have I questioned this assumption?"
+    "Is there a distinction I'm missing?"
+
+  how_to_use:
+    - step: "Identify the domain of your situation"
+      example: "Strategy for a business decision → check economics, ethics files"
+
+    - step: "Scan questions for relevance to YOUR situation"
+      filter: "Does answering this question constrain MY strategy space?"
+
+    - step: "For relevant questions, determine constraint type"
+      action: "Is it logical, physical, resource, temporal, normative, preferential?"
+
+    - step: "Answer the question for your specific situation"
+      action: "Not in general, but for THIS case"
+
+    - step: "Apply the answer as a constraint"
+      action: "Which strategies does this eliminate? Which does it mandate?"
+
+    - step: "Continue until strategy space is sufficiently narrowed"
+      target: "Ideally one strategy; at minimum, documented optionality"
+
+  question_priority:
+    highest: "Questions that could eliminate strategies (eliminative)"
+    high: "Questions that could mandate strategy elements (mandatory)"
+    medium: "Questions that rank strategies (preferential)"
+    low: "Questions that provide context (contextual)"
+    skip: "Questions unrelated to this situation (irrelevant)"
+
+# ====================
+# CERTAINTY IN DERIVATION
+# ====================
+
+certainty_levels:
+
+  level_1_proven:
+    name: "Logically Derived"
+    definition: "Strategy follows necessarily from established constraints"
+    confidence: 1.0
+    requirements:
+      - "All constraints are verified (not assumed)"
+      - "All constraint applications are valid logical inferences"
+      - "Strategy space was exhaustively enumerated"
+      - "Uniqueness was verified"
+
+  level_2_empirically_supported:
+    name: "Empirically Derived"
+    definition: "Strategy is uniquely selected by empirically verified constraints"
+    confidence: 0.9
+    requirements:
+      - "Constraints are empirically verified (tested, observed)"
+      - "Inference from constraints to strategy elimination is valid"
+      - "No known counterexamples"
+
+  level_3_prior_art_supported:
+    name: "Prior Art Derived"
+    definition: "Strategy matches what has worked in similar situations"
+    confidence: 0.7
+    requirements:
+      - "Similar situations identified"
+      - "Strategy success in those situations documented"
+      - "Relevant similarity established"
+    caution: "Similarity judgment may be wrong"
+
+  level_4_analytically_supported:
+    name: "Analytically Derived"
+    definition: "Strategy selected by reasoning from plausible constraints"
+    confidence: 0.5
+    requirements:
+      - "Constraints are plausible but not verified"
+      - "Reasoning is valid"
+    caution: "Constraints may be wrong"
+
+  level_5_heuristically_selected:
+    name: "Heuristically Selected"
+    definition: "Strategy selected by rules of thumb"
+    confidence: 0.3
+    note: "This is inductive selection, not deductive derivation"
+
+  level_6_guessed:
+    name: "Guessed"
+    definition: "Strategy selected without systematic constraint analysis"
+    confidence: 0.1
+    note: "Avoid this - it's what we're trying to escape"
+
+# ====================
+# FAILURE MODES
+# ====================
+
+failure_modes:
+
+  incomplete_constraint_identification:
+    symptom: "Multiple strategies remain after analysis"
+    cause: "Not all relevant constraints were identified"
+    fix: "Use pure_regress files to find missed questions"
+
+  false_constraint:
+    symptom: "Zero strategies remain (impossible)"
+    cause: "A constraint was assumed that doesn't actually hold"
+    fix: "Verify each constraint; find the false one"
+
+  missed_strategy:
+    symptom: "Derived strategy fails in execution"
+    cause: "A viable strategy was not in the enumeration"
+    fix: "Expand strategy enumeration method"
+
+  invalid_elimination:
+    symptom: "Derived strategy fails; an 'eliminated' strategy would have worked"
+    cause: "Constraint was misapplied to eliminate a viable strategy"
+    fix: "Verify constraint application logic"
+
+  situation_misunderstanding:
+    symptom: "Constraints don't match reality"
+    cause: "Situation analysis was wrong"
+    fix: "Return to phase 1; verify situation model"
+
+# ====================
+# INTEGRATION WITH GOSM
+# ====================
+
+gosm_integration:
+
+  when_to_use_this_framework:
+    - "When selecting a strategy for any GOSM goal"
+    - "When evaluating whether a proposed strategy is correct"
+    - "When a strategy fails and you need to understand why"
+    - "When you want to prove a strategy is necessary (not just plausible)"
+
+  relationship_to_universal_goal_analysis_v6:
+    - "UGA v6 generates the situation model (phase 1 input)"
+    - "UGA v6 identifies constraints (phase 2 input)"
+    - "This framework uses those inputs to DERIVE strategy"
+    - "This framework outputs to UGA v6 execution tracking"
+
+  relationship_to_pure_regress_files:
+    - "Pure regress files are CONSTRAINT CHECKLISTS"
+    - "Scan for questions relevant to your situation"
+    - "Answer relevant questions to identify constraints"
+    - "Use constraints to eliminate strategies"
+
+# ====================
+# EXAMPLE APPLICATION
+# ====================
+
+example:
+  situation: "Need to choose a programming language for a new project"
+
+  phase_1_situation:
+    current_state: "No code exists"
+    goal_state: "Working software that solves problem X"
+    resources: "Team knows Python, JavaScript; 3 month deadline"
+    constraints: "Must integrate with existing Python backend"
+
+  phase_2_constraints:
+    logical: "Language must be able to express the required logic"
+    physical: "N/A"
+    resource: "Team must know the language (Python, JavaScript)"
+    temporal: "Must be productive within 3 months"
+    normative: "Company policy: no new languages without approval"
+    required: "Must integrate with Python backend"
+
+  phase_3_enumeration:
+    initial_space: "All programming languages"
+    after_team_knowledge: "Python, JavaScript"
+    after_integration: "Python (integrates natively), JavaScript (requires bridge)"
+
+  phase_4_uniqueness:
+    remaining: "Python, JavaScript"
+    status: "Multiple strategies remain"
+
+  phase_5_additional:
+    question: "What distinguishes Python vs JavaScript for this case?"
+    constraint_found: "Native Python integration is simpler than bridge"
+    meta_criterion: "Simplicity (fewer moving parts = fewer failure modes)"
+    result: "Python is uniquely selected"
+
+  phase_6_documentation:
+    premises:
+      - "Team knows Python and JavaScript"
+      - "Must integrate with Python backend"
+      - "Native integration is simpler than bridge"
+      - "Simpler solutions are preferred (fewer failure modes)"
+    reasoning: "Python is the only language satisfying all constraints"
+    conclusion: "Use Python"
+    confidence: "Analytically Derived (0.5) - simplicity preference is soft"
+    assumptions: "JavaScript bridge would actually be more complex"

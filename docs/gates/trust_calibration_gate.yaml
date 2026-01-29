@@ -1,0 +1,231 @@
+# Trust Calibration Gate
+# How to calibrate trust vs distrust?
+# Derived from ARAW synthesis tension: trust vs distrust
+
+id: trust_calibration_gate
+name: Trust Calibration Gate
+version: "1.0.0"
+domain: core
+tags: ["decision", "trust", "relationships", "risk"]
+
+description: |
+  Gate for calibrating appropriate trust level in a relationship/situation.
+
+  The tension: Too much trust enables exploitation. Too little trust
+  prevents cooperation. This gate helps find the right calibration.
+
+when_to_use:
+  - Starting new relationships/partnerships
+  - Evaluating existing relationships
+  - Deciding how much to rely on others
+  - Setting verification/oversight levels
+
+# ============================================
+# CURRENT TRUST ASSESSMENT
+# ============================================
+current_state:
+  description: What is the current trust situation?
+
+  trust_level:
+    - "What is your current trust level? (NONE, LOW, MODERATE, HIGH, COMPLETE)"
+    - "What is this level based on?"
+    - "How confident are you in this assessment?"
+
+  trust_basis:
+    - "Is trust based on track record (evidence) or assumption?"
+    - "How long have you observed this party?"
+    - "In what contexts have you observed them?"
+    - "Have they been tested in situations where defection was tempting?"
+
+  trust_asymmetry:
+    - "Do they trust you? To what degree?"
+    - "Is trust reciprocal or one-directional?"
+    - "Who is more vulnerable in this relationship?"
+
+# ============================================
+# TRUSTWORTHINESS INDICATORS
+# ============================================
+trustworthiness_indicators:
+  description: What signals trustworthiness?
+
+  positive_indicators:
+    behavioral:
+      - "Keeps commitments even when inconvenient"
+      - "Discloses negative information proactively"
+      - "Admits mistakes and uncertainty"
+      - "Actions match stated intentions"
+      - "Consistent behavior across contexts"
+
+    structural:
+      - "Reputation matters to them (repeated game)"
+      - "Interests are aligned with yours"
+      - "Defection is detectable"
+      - "Defection has consequences for them"
+      - "They've invested in the relationship"
+
+    situational:
+      - "They've had opportunities to defect and didn't"
+      - "They've sacrificed for the relationship"
+      - "They've taken risks based on trusting you"
+
+  negative_indicators:
+    behavioral:
+      - "Commitments not kept"
+      - "Negative information hidden until discovered"
+      - "Excuses rather than accountability"
+      - "Says different things to different audiences"
+      - "Behavior changes based on who's watching"
+
+    structural:
+      - "One-time interaction (no reputation stake)"
+      - "Interests are opposed to yours"
+      - "Defection is hard to detect"
+      - "No consequences for defection"
+      - "No investment in relationship"
+
+    situational:
+      - "They've defected before"
+      - "They've exploited others' trust"
+      - "They're in desperate circumstances (high temptation)"
+
+# ============================================
+# TRUST COST-BENEFIT
+# ============================================
+trust_costs_benefits:
+  description: What are the stakes?
+
+  cost_of_misplaced_trust:
+    - "What happens if you trust and they defect?"
+    - "Is the damage recoverable?"
+    - "What is the magnitude of potential loss?"
+    - "Does trust create vulnerability?"
+
+  cost_of_misplaced_distrust:
+    - "What happens if you distrust and they were trustworthy?"
+    - "What cooperation opportunities are lost?"
+    - "Does distrust become self-fulfilling?"
+    - "What is the cost of verification/protection?"
+
+  asymmetry:
+    - "Which mistake is more costly: trust too much or trust too little?"
+    - "Can you afford to be wrong in either direction?"
+    - "What is the default when uncertain?"
+
+# ============================================
+# CALIBRATION STRATEGIES
+# ============================================
+calibration_strategies:
+  description: How to calibrate trust appropriately
+
+  graduated_trust:
+    description: "Build trust incrementally"
+    method: |
+      1. Start with low-stakes trust (testable)
+      2. Observe behavior under temptation
+      3. Increase trust if passed, decrease if failed
+      4. Never skip steps (don't jump to high trust)
+    questions:
+      - "What low-stakes test could you start with?"
+      - "What would success look like?"
+      - "What would failure look like?"
+      - "What's the next level if they pass?"
+
+  trust_but_verify:
+    description: "Trust for cooperation, verify for protection"
+    method: |
+      1. Extend trust to enable cooperation
+      2. Maintain monitoring to detect defection
+      3. Make monitoring visible (deters defection)
+      4. Reduce monitoring as trust is earned
+    questions:
+      - "What verification is appropriate?"
+      - "Is verification visible or hidden?"
+      - "What triggers increased verification?"
+      - "What triggers decreased verification?"
+
+  conditional_trust:
+    description: "Trust contingent on specific conditions"
+    method: |
+      1. Identify conditions that make trust safe
+      2. Extend trust when conditions hold
+      3. Withdraw trust when conditions change
+      4. Be explicit about conditions
+    questions:
+      - "What conditions make trust appropriate?"
+      - "How would you know if conditions changed?"
+      - "What's the response to condition change?"
+
+  distributed_trust:
+    description: "Don't put all trust in one party"
+    method: |
+      1. Spread vulnerability across multiple parties
+      2. No single defection is catastrophic
+      3. Creates redundancy and cross-checking
+      4. Reduces temptation (less to gain from defection)
+    questions:
+      - "Is trust concentrated or distributed?"
+      - "What happens if any single party defects?"
+      - "Can trust be spread further?"
+
+# ============================================
+# DECISION LOGIC
+# ============================================
+decision_logic: |
+  INCREASE TRUST if:
+  - Track record is positive (passed tests)
+  - Structural incentives favor trustworthiness
+  - Cost of misplaced distrust exceeds cost of misplaced trust
+  - Current verification is burdensome with low return
+
+  DECREASE TRUST if:
+  - Red flags observed (behavioral or structural)
+  - Circumstances changed (one-time situation, desperate)
+  - Cost of misplaced trust exceeds cost of misplaced distrust
+  - They're in position to do significant harm
+
+  MAINTAIN CURRENT LEVEL if:
+  - No new information
+  - Current calibration is working
+  - Costs are balanced
+
+  USE GRADUATED APPROACH if:
+  - New relationship, uncertain trustworthiness
+  - High stakes, need to build trust safely
+  - Previous trust was violated, testing recovery
+
+# ============================================
+# RECALIBRATION TRIGGERS
+# ============================================
+recalibration_triggers:
+  increase_trust:
+    - "Kept commitment when defection was tempting"
+    - "Proactively disclosed negative information"
+    - "Sacrificed for the relationship"
+    - "Defended you when it cost them"
+
+  decrease_trust:
+    - "Commitment not kept"
+    - "Discovered hidden negative information"
+    - "Behavior changed when stakes increased"
+    - "Evidence of deception"
+    - "Circumstances changed (desperation, one-time)"
+
+  reassess_entirely:
+    - "Discovered information that changes interpretation of past"
+    - "Context has fundamentally changed"
+    - "Relationship structure has changed"
+
+# ============================================
+# OUTPUT
+# ============================================
+outputs:
+  - name: trust_level
+    options: [NONE, LOW, MODERATE, HIGH, COMPLETE]
+  - name: calibration_strategy
+    options: [GRADUATED, VERIFY, CONDITIONAL, DISTRIBUTED]
+  - name: verification_level
+    description: "What monitoring/verification is appropriate"
+  - name: test_proposal
+    description: "If graduated, what's the next trust test"
+  - name: recalibration_triggers
+    description: "What would cause trust level to change"

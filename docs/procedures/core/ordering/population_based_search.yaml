@@ -1,0 +1,285 @@
+# Population-Based Search Orderings
+# Orderings maintaining multiple candidate solutions
+
+category_id: population_based_search
+category_name: "Population-Based Search Orderings"
+description: |
+  Orderings that maintain multiple candidate solutions or use
+  iterative deepening. Use when exploring multiple regions
+  simultaneously or when memory/optimality trade-offs matter.
+
+when_to_consider: |
+  - Complex optimization with many local optima
+  - Need to explore multiple regions simultaneously
+  - Limited memory but need optimal solution
+  - Large branching factor, limited resources
+  - Parallel evaluation possible
+
+variations:
+
+  # ----------------------------------------
+  # GENETIC-EVOLUTIONARY ORDERING
+  # ----------------------------------------
+  genetic_evolutionary:
+    id: genetic_evolutionary_ordering
+    name: "Genetic-Evolutionary Ordering (Population Evolution)"
+    category: population_based_search
+
+    philosophy: |
+      Maintain a population of solutions, evolve them over generations.
+      From evolution: select the fittest, combine their traits (crossover),
+      introduce random variation (mutation), repeat. Population maintains
+      diversity while converging toward good solutions. Parallel exploration
+      of search space through population.
+
+    when_to_use:
+      - Complex optimization with large search space
+      - Multiple local optima to avoid
+      - Can encode solutions as "chromosomes"
+      - Fitness function available
+      - Parallelizable evaluation
+
+    key_concepts:
+      population: "Collection of candidate solutions"
+      chromosome: "Encoding of one solution"
+      fitness: "How good is this solution"
+      selection: "Choose parents based on fitness"
+      crossover: "Combine two parents to make offspring"
+      mutation: "Random changes to add variation"
+      generation: "One iteration of the evolutionary process"
+
+    algorithm:
+      initialize: "Random population of N solutions"
+      evaluate: "Compute fitness for each"
+      loop_until_termination:
+        select: "Choose parents (fitness-proportionate, tournament)"
+        crossover: "Combine pairs to create offspring"
+        mutate: "Small random changes to offspring"
+        evaluate: "Compute fitness of offspring"
+        replace: "Next generation from offspring (maybe keep elites)"
+      return: "Best individual found"
+
+    prioritization_rules:
+      1_fitness_drives_selection:
+        rule: "Better solutions more likely to reproduce"
+        methods:
+          roulette: "Probability proportional to fitness"
+          tournament: "Best of random subset"
+          rank: "Based on rank, not absolute fitness"
+
+      2_crossover_combines:
+        rule: "Mix traits from two good solutions"
+        hope: "Offspring inherits best of both"
+        types: ["one-point", "two-point", "uniform"]
+
+      3_mutation_explores:
+        rule: "Random changes prevent premature convergence"
+        rate: "Usually low (1-5% per gene)"
+        balance: "Enough to explore, not so much to destroy"
+
+      4_elitism_preserves:
+        rule: "Keep best individuals across generations"
+        reason: "Don't lose good solutions"
+
+    anti_patterns:
+      - "Population too small (premature convergence)"
+      - "Mutation too high (random search)"
+      - "No selection pressure (random drift)"
+      - "Poor encoding (crossover not meaningful)"
+
+    example:
+      context: "Optimizing neural network architecture"
+      encoding: "Chromosome = [layers, neurons, activation, ...]"
+      process:
+        generation_0:
+          population: "100 random architectures"
+          fitness: "Validation accuracy"
+          best: "78% accuracy"
+        generation_10:
+          selection: "Top 50% more likely to reproduce"
+          crossover: "Combine layer configs from two parents"
+          mutation: "Randomly change activation function"
+          best: "85% accuracy"
+        generation_50:
+          best: "91% accuracy"
+      advantage: "Explored many architectures in parallel"
+
+    source: "Evolutionary Computation - Genetic Algorithms"
+
+  # ----------------------------------------
+  # BEAM-SEARCH ORDERING
+  # ----------------------------------------
+  beam_search:
+    id: beam_search_ordering
+    name: "Beam-Search Ordering (Bounded-Width Search)"
+    category: population_based_search
+
+    philosophy: |
+      Keep only the best k candidates at each level. From search:
+      like BFS but prune to fixed "beam width" at each step.
+      Memory-efficient (O(k * depth) vs O(b^d)) but not complete -
+      optimal solution might be pruned early. Trade-off between
+      quality and resources.
+
+    when_to_use:
+      - BFS too memory-intensive
+      - Have good heuristic to evaluate partial solutions
+      - Good-enough solution acceptable
+      - Sequence generation (NLP, code completion)
+      - Large branching factor with limited resources
+
+    key_concepts:
+      beam_width_k: "Number of candidates kept at each level"
+      candidate: "Partial solution being extended"
+      pruning: "Discard all but top k at each step"
+      heuristic: "Estimate quality of partial solution"
+
+    algorithm:
+      initialize: "Beam = [start state]"
+      loop:
+        expand: "Generate all successors of beam items"
+        score: "Evaluate all successors"
+        prune: "Keep only top k by score"
+        check: "If any complete solution, may terminate"
+      return: "Best complete solution found"
+
+    prioritization_rules:
+      1_expand_all:
+        rule: "Generate all children of current beam"
+        branching: "May be large (b * k successors)"
+
+      2_score_all:
+        rule: "Evaluate every successor"
+        requirement: "Need good scoring function"
+
+      3_keep_top_k:
+        rule: "Prune to beam width"
+        aggressive: "Most candidates discarded"
+
+      4_iterate:
+        rule: "Repeat until depth reached or solutions found"
+        complete: "Not guaranteed - may prune optimal path"
+
+    beam_width_trade_off:
+      small_k:
+        memory: "Less"
+        quality: "Lower (aggressive pruning)"
+        speed: "Faster"
+      large_k:
+        memory: "More"
+        quality: "Higher (less pruning)"
+        speed: "Slower"
+      k_equals_infinity: "Becomes BFS"
+      k_equals_1: "Becomes greedy search"
+
+    anti_patterns:
+      - "Beam too small (prunes good solutions)"
+      - "Poor scoring function (keeps wrong candidates)"
+      - "Using when completeness required"
+      - "Not considering diverse candidates"
+
+    example:
+      context: "Machine translation"
+      task: "Translate sentence, generate word by word"
+      beam_width: "5"
+      process:
+        step_1:
+          expand: "Generate first words"
+          candidates: "['The', 'A', 'That', 'This', 'It']"
+        step_2:
+          expand: "Add second word to each"
+          all_candidates: "25 options"
+          keep_top_5: "['The dog', 'The cat', ...]"
+        step_n:
+          continue: "Until end-of-sentence"
+          final: "Best complete translation"
+      result: "Good translation without exploring all paths"
+
+    source: "Search Algorithms - Beam Search"
+
+  # ----------------------------------------
+  # ITERATIVE-DEEPENING ORDERING
+  # ----------------------------------------
+  iterative_deepening:
+    id: iterative_deepening_ordering
+    name: "Iterative-Deepening Ordering (Memory-Efficient BFS)"
+    category: population_based_search
+
+    philosophy: |
+      Combine DFS memory efficiency with BFS optimality. Run DFS
+      with depth limit 1, then 2, then 3, etc. Each iteration
+      explores all nodes at that depth before going deeper.
+      Seems wasteful but re-exploration is cheap. O(d) memory
+      like DFS, finds shortest path like BFS.
+
+    when_to_use:
+      - Memory is severely constrained
+      - Need optimal (shortest) solution
+      - Depth of solution unknown
+      - Tree search with large branching factor
+      - When BFS memory is prohibitive
+
+    key_concepts:
+      depth_limit: "Maximum depth for current iteration"
+      iterative: "Increase limit and search again"
+      re_exploration: "Nodes visited multiple times"
+      optimality: "First solution found is shallowest"
+
+    algorithm:
+      for_depth_limit_d_from_0_to_max:
+        run_dfs: "DFS with max depth d"
+        if_found: "Return solution (optimal)"
+      return: "No solution exists (up to max depth)"
+
+    prioritization_rules:
+      1_start_shallow:
+        rule: "Begin with depth limit 1"
+        reason: "Find shallow solutions first"
+
+      2_increment_depth:
+        rule: "If not found, increase limit by 1"
+        repeat: "Until solution or max depth"
+
+      3_dfs_within_limit:
+        rule: "Use DFS which has O(d) memory"
+        prune: "Don't explore beyond current limit"
+
+      4_first_found_is_optimal:
+        rule: "Solution at depth d means no solution at depth < d"
+        reason: "We checked all shallower depths"
+
+    complexity_analysis:
+      memory: "O(bd) same as DFS"
+      time: "O(b^d) same as BFS"
+      re_expansion_overhead:
+        calculation: "Nodes at depth d expanded once, d-1 twice, etc."
+        result: "Only (b/(b-1)) overhead factor"
+        intuition: "Most nodes are at deepest level anyway"
+
+    comparison:
+      vs_bfs: "Same optimality, much less memory"
+      vs_dfs: "Same memory, but optimal"
+      vs_iddfs: "This IS IDDFS"
+
+    anti_patterns:
+      - "Using when solution depth is known (just use BFS to that depth)"
+      - "When re-expansion is expensive (node generation costly)"
+      - "Graph search without visited tracking"
+      - "When memory isn't actually constrained"
+
+    example:
+      context: "Puzzle solving with memory constraints"
+      tree:
+        branching_factor: "4"
+        solution_depth: "10"
+        bfs_memory: "4^10 = 1 million nodes"
+        iddfs_memory: "4 * 10 = 40 nodes"
+      iterative_process:
+        iteration_1: "DFS to depth 1 - no solution"
+        iteration_2: "DFS to depth 2 - no solution"
+        "...": "..."
+        iteration_10: "DFS to depth 10 - FOUND SOLUTION"
+      overhead: "~33% more node expansions but fits in memory"
+      result: "Optimal solution with minimal memory"
+
+    source: "Search Algorithms - Iterative Deepening DFS"

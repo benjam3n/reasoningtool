@@ -1,0 +1,825 @@
+# Outreach Campaigns Procedure - Executing multi-channel advocacy
+# GOSM procedure for running persuasion campaigns with email, phone, and follow-up
+
+id: outreach_campaigns
+name: Outreach Campaigns
+version: "1.0.0"
+domain: advocacy
+
+description: Execute multi-channel persuasion campaigns for policy advocacy
+
+long_description: |
+  The Outreach Campaigns procedure executes coordinated multi-channel contact
+  sequences to advocacy targets. It includes wave strategy, email and phone
+  templates, A/B testing, response handling, and campaign analysis.
+
+  Effective outreach combines personalization with systematic execution.
+  This procedure ensures consistent quality while enabling learning through
+  structured testing and measurement.
+
+  Key principles:
+  - Personalized outreach dramatically outperforms generic templates
+  - Multi-channel follow-up increases response rates
+  - Wave strategy prevents overwhelming capacity
+  - A/B testing enables continuous improvement
+  - Prompt response handling maintains momentum
+
+tags:
+  - advocacy
+  - outreach
+  - campaigns
+  - email
+  - phone
+  - persuasion
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After completing targeting with full target database
+  - When ready to execute coordinated advocacy outreach
+  - Running multi-policy campaign requiring systematic approach
+  - Testing messaging effectiveness through A/B experiments
+  - Following up on initial contact attempts
+  - Building relationships with legislative staff over time
+
+when_not_to_use:
+  - Single informal outreach to known contact
+  - Crisis response requiring immediate unstructured action
+  - Target database not yet populated
+  - Infrastructure not set up (email deliverability, phone)
+  - Policy briefs not prepared
+  - Insufficient capacity to handle responses
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: campaign_policy
+    type: string
+    required: true
+    description: Policy this campaign advocates for
+
+  - name: target_list
+    type: list
+    required: true
+    description: Targets from targeting procedure with tier assignments
+
+  - name: policy_brief
+    type: string
+    required: true
+    description: Path to one-page brief for this policy
+
+  - name: evidence_summary
+    type: string
+    required: false
+    description: Path to detailed evidence summary
+
+  - name: ab_test_config
+    type: dict
+    required: false
+    description: A/B test configuration (variable, variants)
+
+outputs:
+  - name: campaign_metrics
+    type: dict
+    description: Complete campaign performance metrics
+
+  - name: response_log
+    type: list
+    description: All responses with classification and follow-up status
+
+  - name: ab_test_results
+    type: dict
+    description: Results of any A/B tests run
+
+  - name: meetings_scheduled
+    type: list
+    description: List of meetings resulting from campaign
+
+  - name: learnings
+    type: list
+    description: Key learnings from campaign execution
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Campaign preparation
+    action: |
+      Prepare all materials and verify readiness:
+
+      Materials check:
+      1. One-page brief finalized and formatted as PDF
+      2. Evidence summary ready for detailed questions
+      3. Email templates drafted (3 variants for A/B testing)
+      4. Phone script written and tested
+      5. Follow-up templates ready (positive, neutral, final)
+      6. Calendar link or scheduling method ready
+
+      Target verification:
+      1. Verify target list is current (check for staff changes)
+      2. Confirm contact information accuracy
+      3. Review personalization notes for Tier 1
+      4. Assign A/B test variants randomly
+
+      Infrastructure check:
+      1. Email deliverability confirmed (recent test)
+      2. Phone/AI calling system tested
+      3. Database ready for logging
+      4. Response monitoring process defined
+    inputs:
+      - campaign_policy
+      - target_list
+      - policy_brief
+      - ab_test_config (optional)
+    outputs:
+      - prepared_materials: all materials ready
+      - verified_targets: current, accurate target list
+      - ab_assignments: test variant assignments
+    verification: |
+      All checklists complete; no blocking issues identified
+
+  - id: 2
+    name: Wave 1-2 execution (Tier 1 email)
+    action: |
+      Execute initial email outreach to Tier 1 targets:
+
+      Wave 1 (Day 1):
+      - Send to first 5-7 Tier 1 targets
+      - Use personalization notes for each
+      - Include policy brief as attachment
+      - Log send in database with timestamp and variant
+
+      Wave 2 (Day 2):
+      - Send to remaining 8-10 Tier 1 targets
+      - Same personalization and logging process
+
+      Email structure:
+      1. Subject: Specific, compelling (test question vs statement)
+      2. Hook: Personalized opening referencing their work
+      3. Value offer: What we're providing before asking
+      4. The ask: Specific, actionable request (usually meeting)
+      5. WIIFM: Why it benefits them
+      6. How-to: Step-by-step to take action
+      7. Evidence teaser: One compelling stat
+      8. Attachment: One-page brief PDF
+
+      Monitor for immediate responses; respond within 2 hours.
+    inputs:
+      - verified_targets (from Step 1)
+      - prepared_materials (from Step 1)
+    outputs:
+      - wave_1_2_sent: list of sent emails with details
+      - immediate_responses: any same-day responses
+    verification: |
+      All Tier 1 targets contacted; all sends logged
+
+  - id: 3
+    name: Wave 3 execution (AI phone follow-up)
+    action: |
+      Execute AI phone follow-up to non-responders:
+
+      Day 4: Call Wave 1-2 non-responders using Bland AI
+
+      Phone script structure:
+      1. Opening: "Hi, this is [Name] from [Org]. I sent an email
+         earlier this week about [topic] - wanted to follow up briefly.
+         Is now a good time for a 2-minute conversation?"
+
+      2. If yes: Brief value proposition, request for meeting
+
+      3. If busy: Offer callback time or email preference
+
+      4. Objection handling:
+         - "No meetings": Offer one-page summary instead
+         - "Not relevant": Ask what areas are relevant
+         - "Who are you?": Clear identity and mission statement
+
+      5. Closing: Confirm next step, thank them
+
+      Log all calls with outcome (reached, voicemail, callback, declined).
+    inputs:
+      - wave_1_2_sent (from Step 2)
+    outputs:
+      - wave_3_calls: list of calls with outcomes
+      - callbacks_scheduled: any scheduled callbacks
+    verification: |
+      All non-responders called; outcomes logged
+
+  - id: 4
+    name: Wave 4-5 execution (Tier 2 and final)
+    action: |
+      Expand to Tier 2 and make final attempts:
+
+      Wave 4 (Day 5):
+      - Send to 10-15 Tier 2 targets
+      - Less personalization but still relevant framing
+      - Include policy brief
+
+      Wave 5 (Day 7):
+      - Final email to all remaining non-responders
+      - Shorter, more direct message
+      - Single most compelling point
+      - Clear opt-out language
+
+      Final attempt template:
+      "One last follow-up on [policy]. Key takeaway: [single compelling point].
+       If ever relevant, feel free to reach out. Best, [Name]"
+    inputs:
+      - verified_targets (from Step 1)
+      - wave_3_calls (from Step 3)
+    outputs:
+      - wave_4_5_sent: list of sent emails
+      - total_outreach: complete outreach summary
+    verification: |
+      All tiers contacted; final attempts sent to non-responders
+
+  - id: 5
+    name: Response handling
+    action: |
+      Process all responses systematically:
+
+      Response classification:
+      - Positive: Meeting scheduled, clear interest expressed
+        -> Send confirmation with prep materials
+      - Neutral: Request for info, not committed
+        -> Send requested materials, follow up in 3 days
+      - Busy: Interested but timing bad
+        -> Schedule future contact date
+      - No response: No reply after 2+ attempts
+        -> Archive, may revisit in future campaign
+      - Negative: Explicit decline
+        -> Thank them, remove from active campaign
+
+      For each response:
+      1. Classify immediately
+      2. Send appropriate follow-up within 24 hours
+      3. Log response type and follow-up in database
+      4. Update target status
+
+      Follow-up templates:
+      - After positive: Meeting confirmation + prep materials
+      - After neutral: Materials + "Would a brief call help?"
+      - Final attempt: Single compelling point + graceful close
+    inputs:
+      - total_outreach (from Step 4)
+    outputs:
+      - response_log: all responses classified and handled
+      - meetings_scheduled: confirmed meetings with details
+    verification: |
+      All responses processed within 24 hours; follow-ups sent
+
+  - id: 6
+    name: Meeting execution
+    action: |
+      Execute scheduled meetings effectively:
+
+      Pre-meeting:
+      1. Review dossier and recent activity
+      2. Prepare tailored talking points
+      3. Anticipate likely questions/objections
+      4. Have evidence summary ready
+
+      Meeting structure (10-15 minutes):
+      1. Thank them for their time (30 sec)
+      2. Brief context on organization (30 sec)
+      3. Present key findings from research (3-5 min)
+      4. Specific policy ask (1 min)
+      5. Q&A and objection handling (3-5 min)
+      6. Next steps and how we can help (1 min)
+
+      Post-meeting:
+      1. Send thank-you email within 2 hours
+      2. Provide any promised materials
+      3. Log meeting notes in database
+      4. Schedule any follow-up actions
+    inputs:
+      - meetings_scheduled (from Step 5)
+    outputs:
+      - meeting_notes: detailed notes from each meeting
+      - follow_up_actions: committed next steps
+    verification: |
+      All meetings completed; notes logged; follow-ups scheduled
+
+  - id: 7
+    name: Campaign analysis
+    action: |
+      Compile comprehensive campaign metrics:
+
+      Outreach metrics:
+      - Total attempts by channel (email, phone)
+      - Delivery rate (successful sends)
+      - Response rate by channel
+      - Response rate by tier
+
+      Conversion metrics:
+      - Meetings scheduled / total contacted
+      - Contact-to-meeting conversion rate
+      - Meeting-to-action conversion rate
+
+      Cost metrics:
+      - Total campaign spend
+      - Cost per contact
+      - Cost per response
+      - Cost per meeting
+
+      A/B test analysis:
+      - Response rate by variant
+      - Statistical significance assessment
+      - Winner determination
+
+      Calculate all metrics and compile into campaign report.
+    inputs:
+      - response_log (from Step 5)
+      - ab_assignments (from Step 1)
+      - meeting_notes (from Step 6)
+    outputs:
+      - campaign_metrics: full metrics report
+      - ab_test_results: test outcomes and interpretation
+    verification: |
+      All metrics calculated; A/B test results documented
+
+  - id: 8
+    name: Learning extraction
+    action: |
+      Extract and document learnings for future campaigns:
+
+      Analyze patterns:
+      - What subject lines performed best?
+      - Which personalization approaches worked?
+      - What objections came up repeatedly?
+      - Which targets were most receptive?
+      - What timing patterns emerged?
+
+      Document learnings:
+      - State finding clearly
+      - Include supporting evidence (sample size, effect size)
+      - Assess confidence level (High/Medium/Low)
+      - Define implication for future campaigns
+
+      Update knowledge base:
+      - Add new learnings to database
+      - Update confidence on existing learnings
+      - Archive outdated findings
+
+      Create recommendations:
+      - Specific changes for next campaign
+      - Templates to update
+      - Targeting adjustments
+    inputs:
+      - campaign_metrics (from Step 7)
+      - ab_test_results (from Step 7)
+    outputs:
+      - learnings: documented insights with evidence
+      - recommendations: specific improvements for next campaign
+    verification: |
+      At least 3 learnings documented; recommendations are actionable
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All targets contacted according to wave schedule
+  - All sends logged in database with timestamp and variant
+  - All responses processed within 24 hours
+  - Meetings have complete notes and follow-up actions
+  - A/B test properly executed with random assignment
+  - Campaign metrics fully calculated
+  - Learnings extracted and documented
+
+failure_modes:
+  - mode: Email deliverability problems
+    symptom: Low open rates, bounces, spam folder placement
+    resolution: Check mail-tester score; verify DNS records; reduce send volume; warm up domain
+
+  - mode: Response handling delays
+    symptom: Responses sitting unprocessed, momentum lost
+    resolution: Set up response monitoring alerts; dedicate time blocks for response handling
+
+  - mode: A/B test contamination
+    symptom: Variants not properly randomized, results unreliable
+    resolution: Assign variants before campaign start; log variant with every send; don't change mid-campaign
+
+  - mode: Meeting no-shows
+    symptom: Confirmed meetings not happening
+    resolution: Send calendar invite immediately; confirm day before; have backup contact method
+
+  - mode: Follow-up fatigue
+    symptom: Diminishing response quality in later waves
+    resolution: Space waves appropriately; don't over-contact; respect explicit opt-outs
+
+  - mode: Insufficient sample for A/B conclusions
+    symptom: Can't determine winner with confidence
+    resolution: Run longer or combine with next campaign; document as preliminary finding
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Cash bail reform campaign
+    context: First campaign for bail reform policy targeting Senate Judiciary staff
+    inputs:
+      campaign_policy: "Cash Bail Reform"
+      target_list: "18 Tier 1, 25 Tier 2, 12 Tier 3"
+      policy_brief: "briefs/cash_bail_reform.pdf"
+      ab_test_config:
+        variable: "subject_line"
+        variant_a: "Question: What if pretrial detention costs dropped 40%?"
+        variant_b: "New research on pretrial detention cost savings"
+    process: |
+      Step 1: Preparation (Days 1-3)
+        - Brief finalized, templates ready
+        - 55 targets verified current
+        - A/B assigned: 28 variant A, 27 variant B
+        - Email deliverability: 9/10
+
+      Step 2: Wave 1-2 (Days 4-5)
+        - Wave 1: 8 Tier 1 emails sent
+        - Wave 2: 10 Tier 1 emails sent
+        - Immediate responses: 2 positive, 1 neutral
+        - All logged with variants
+
+      Step 3: Wave 3 (Day 7)
+        - AI phone calls to 15 non-responders
+        - Reached: 9, Voicemail: 4, Declined: 2
+        - 3 additional positive responses
+
+      Step 4: Wave 4-5 (Days 8-10)
+        - Wave 4: 25 Tier 2 emails
+        - Wave 5: 20 final attempts
+        - 5 additional responses
+
+      Step 5: Response handling
+        - Total responses: 11 (20% rate)
+        - Positive: 6, Neutral: 3, Busy: 2
+        - 4 meetings scheduled
+
+      Step 6: Meetings executed
+        - 4 meetings completed (1 rescheduled)
+        - 2 offices expressed interest in co-sponsorship
+        - 2 requested additional materials
+
+      Step 7: Campaign analysis
+        Outreach:
+          - 55 contacted, 11 responses (20%)
+          - Email: 55 sent, 8 responses (15%)
+          - Phone: 15 called, 3 responses (20% of reached)
+        A/B Results:
+          - Variant A (question): 6/28 responses (21%)
+          - Variant B (statement): 5/27 responses (19%)
+          - Difference not statistically significant
+
+        Cost:
+          - Total: $12.60 (14 AI calls at $0.90 avg)
+          - Cost per meeting: $3.15
+
+      Step 8: Learnings
+        - L001: Phone follow-up doubles email-only response
+        - L002: Tier 1 response rate (33%) >> Tier 2 (12%)
+        - L003: Question subject lines slight edge (needs more data)
+    expected_output:
+      campaign_metrics:
+        total_contacted: 55
+        total_responses: 11
+        response_rate: 0.20
+        meetings_scheduled: 4
+        cost_total: 12.60
+        cost_per_meeting: 3.15
+      ab_test_results:
+        variant_a_rate: 0.21
+        variant_b_rate: 0.19
+        winner: "Inconclusive - need larger sample"
+      learnings:
+        - finding: "AI phone follow-up increases response rate"
+          evidence: "20% phone response vs 15% email-only"
+          confidence: "Medium"
+
+  - name: Healthcare transparency rapid campaign
+    context: Time-compressed campaign for healthcare pricing transparency
+    inputs:
+      campaign_policy: "Hospital Price Transparency"
+      target_list: "8 Tier 1, 15 Tier 2, 7 Tier 3"
+      policy_brief: "briefs/hospital_transparency.pdf"
+    process: |
+      Compressed 5-day campaign:
+
+      Day 1: All Tier 1 emails sent (8)
+      Day 2: Tier 2 emails (15)
+      Day 3: AI phone follow-up to Tier 1 non-responders (5)
+      Day 4: Response handling
+      Day 5: Final attempts + analysis
+
+      Results:
+        - 7 responses (23% rate)
+        - 2 meetings scheduled
+        - Strong interest from Health Subcommittee staff
+
+      Note: Compressed timeline reduced follow-up effectiveness
+      but met urgent deadline for hearing input
+    expected_output:
+      campaign_metrics:
+        total_contacted: 30
+        total_responses: 7
+        response_rate: 0.23
+        meetings_scheduled: 2
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Executing advocacy outreach after targeting complete
+    - Running A/B tests to optimize messaging
+    - Building relationships with legislative staff
+    - Following up on previous campaign non-responders
+    - Coordinating multi-policy campaign execution
+
+  gates:
+    - gate: campaign_prepared
+      question: "Are all materials and targets ready for outreach?"
+
+    - gate: waves_executed
+      question: "Have all planned waves been executed on schedule?"
+
+    - gate: responses_handled
+      question: "Are all responses processed within 24 hours?"
+
+    - gate: learnings_documented
+      question: "Are campaign learnings extracted and documented?"
+
+  related_procedures:
+    - targeting: Provides target database for campaigns
+    - infrastructure_setup: Email and phone systems for execution
+    - policy_research: Policy briefs used in outreach
+    - learning_system: Captures and analyzes campaign learnings
+
+# ============================================
+# CAMPAIGN STRUCTURE
+# ============================================
+campaign_structure:
+  phases:
+    preparation:
+      duration: "2-3 days"
+      activities:
+        - "Finalize materials"
+        - "Verify target list"
+        - "Set up tracking"
+        - "A/B test setup"
+
+    execution:
+      duration: "5-7 days"
+      activities:
+        - "Initial outreach waves"
+        - "Multi-channel follow-up"
+        - "Response monitoring"
+        - "A/B test tracking"
+
+    follow_up:
+      duration: "5-7 days"
+      activities:
+        - "Response handling"
+        - "Meeting scheduling"
+        - "Non-responder follow-up"
+        - "Thank-you messages"
+
+    analysis:
+      duration: "2-3 days"
+      activities:
+        - "Compile metrics"
+        - "A/B test results"
+        - "Document learnings"
+        - "Prepare report"
+
+# ============================================
+# CHANNELS
+# ============================================
+channels:
+  email:
+    cost: "$0"
+    expected_response: "10-15%"
+    best_for: "Initial contact, detailed information"
+
+  ai_phone:
+    cost: "$0.09/minute"
+    expected_response: "15-25% if reached"
+    best_for: "Follow-up with non-responders"
+    service: "Bland AI"
+
+  sms:
+    cost: "$0.0075/message"
+    expected_response: "5-10%"
+    best_for: "Quick reminders"
+    service: "Twilio"
+
+  physical_mail:
+    cost: "$3-5/piece"
+    expected_response: "10-20%"
+    best_for: "High-value targets, formal outreach"
+
+# ============================================
+# TEMPLATES
+# ============================================
+email_template:
+  required_elements:
+    hook:
+      description: "Personalized opening referencing their work"
+      example: "I'm reaching out because of your recent work on [specific item]"
+
+    value_offer:
+      description: "What you're giving before asking"
+      example: "I wanted to share research that may be useful for [their goal]"
+
+    the_ask:
+      description: "Specific, actionable request"
+      example: "Would you be open to a 10-minute call next week?"
+
+    wiifm:
+      description: "Why it benefits THEM"
+      example: "This research has helped similar offices achieve [outcome]"
+
+    how_to:
+      description: "Step-by-step instructions to take action"
+      example: "To schedule: 1) Reply with preferred time, or 2) Click [link]"
+
+    evidence_teaser:
+      description: "One compelling stat that creates curiosity"
+      example: "Key finding: [Stat that makes them want to know more]"
+
+  structure: |
+    Subject: [Specific, compelling subject line]
+
+    Dear [Name],
+
+    [HOOK - Why contacting them specifically]
+
+    [VALUE OFFER - What we're giving]
+
+    [THE ASK - Specific, actionable]
+
+    [WIIFM - Why it benefits them]
+
+    [HOW TO - Step by step]
+
+    [EVIDENCE TEASER - One compelling stat]
+
+    Best,
+    [Name]
+    [Organization]
+
+    [Attachment: One-pager PDF]
+
+ai_phone_script:
+  structure:
+    opening: |
+      Hi, this is [Name] calling from [Organization]. I sent an email
+      earlier this week about [topic] - I wanted to follow up briefly.
+      Is now a good time for a 2-minute conversation?
+
+    if_yes: |
+      Great. I'm reaching out because [brief value proposition].
+      I'd love to schedule a 10-minute call to share some research
+      that's been helpful for similar offices. Would sometime next
+      week work?
+
+    if_busy: |
+      I understand. Would it be better if I call back at a specific
+      time, or would you prefer I send the information via email?
+
+    objection_handling:
+      no_meetings: "Would a one-page summary via email be helpful instead?"
+      not_relevant: "What policy areas are most relevant right now?"
+      who_are_you: "[Clear identity statement, organizational mission]"
+
+    closing: |
+      Thank you for your time. I'll [confirmed next step]. Have a great day.
+
+follow_up_templates:
+  after_positive: |
+    Subject: Re: [Original] - Meeting confirmation
+
+    Hi [Name],
+
+    Thank you for agreeing to speak! Confirming our call for [Date/Time].
+
+    For our conversation, I'll:
+    - Share 3 key findings (5 min)
+    - Answer questions (5 min)
+    - Discuss next steps if relevant
+
+    Attached: One-page brief and evidence summary
+
+    Looking forward to speaking with you.
+
+  after_neutral: |
+    Subject: Re: [Original] - Materials as requested
+
+    Hi [Name],
+
+    Thank you for your interest. As requested:
+    [Specific materials]
+
+    Key points:
+    1. [Most compelling finding]
+    2. [Addresses their likely concern]
+    3. [Actionable]
+
+    Would a brief call next week be helpful?
+
+  final_attempt: |
+    Subject: Re: [Original] - Last follow-up
+
+    Hi [Name],
+
+    One last follow-up on [policy].
+
+    Key takeaway: [Single most compelling point]
+
+    If ever relevant, feel free to reach out.
+
+    Best,
+    [Name]
+
+# ============================================
+# WAVE STRATEGY
+# ============================================
+wave_strategy:
+  waves:
+    - wave: 1
+      day: 1
+      targets: "Tier 1 (5-7)"
+      channel: "Email"
+      purpose: "Initial contact"
+
+    - wave: 2
+      day: 2
+      targets: "Tier 1 (8-10)"
+      channel: "Email"
+      purpose: "Expand reach"
+
+    - wave: 3
+      day: 4
+      targets: "Wave 1-2 non-responders"
+      channel: "AI Phone"
+      purpose: "Follow-up"
+
+    - wave: 4
+      day: 5
+      targets: "Tier 2 (10-15)"
+      channel: "Email"
+      purpose: "Secondary tier"
+
+    - wave: 5
+      day: 7
+      targets: "All non-responders"
+      channel: "Email"
+      purpose: "Final attempt"
+
+# ============================================
+# RESPONSE CLASSIFICATION
+# ============================================
+response_classification:
+  types:
+    positive:
+      definition: "Meeting scheduled, interest expressed"
+      follow_up: "Confirm meeting, send prep materials"
+
+    neutral:
+      definition: "Request for info, not committed"
+      follow_up: "Send materials, follow up in 3 days"
+
+    busy:
+      definition: "Interested but timing bad"
+      follow_up: "Schedule future contact"
+
+    no_response:
+      definition: "No reply after 2 attempts"
+      follow_up: "Final email, then archive"
+
+    negative:
+      definition: "Explicit decline"
+      follow_up: "Thank, remove from campaign"
+
+# ============================================
+# A/B TESTING
+# ============================================
+a_b_testing:
+  variables_to_test:
+    - "Subject lines (question vs statement)"
+    - "Opening hooks (personal vs institutional)"
+    - "Call-to-action (call vs email vs link)"
+    - "Evidence framing (stat vs story)"
+
+  protocol:
+    sample_size: "30+ per variant (ideal: 50+)"
+    assignment: "Random by target_id"
+    tracking: "Log variant in outreach table"
+    analysis: "Compare response rates"
+
+dependencies:
+  - "infrastructure_setup (email, phone, database)"
+  - "policy_research (briefs, evidence)"
+  - "targeting (target list, dossiers)"
+
+next_procedure: "learning_system"

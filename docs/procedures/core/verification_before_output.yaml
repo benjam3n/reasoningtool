@@ -1,0 +1,335 @@
+# Verification Before Output Procedure
+# Purpose: Eliminate all guessing from GOSM outputs
+# Intelligence Reduction: 80%
+# Version: 1.0.0
+
+id: verification_before_output
+name: Verification Before Output
+version: "1.0.0"
+domain: core
+intelligence_reduction: "80%"
+
+goal: |
+  Ensure that NOTHING in any GOSM output is a guess.
+
+  Every claim is either:
+  - DERIVED (logically follows from verified premises)
+  - OBSERVED (directly witnessed or stated by source)
+  - TESTED (executed and confirmed)
+
+  If something cannot be verified, it is EXCLUDED, not flagged.
+
+description: |
+  This procedure is the culmination of the no-guessing philosophy.
+
+  Previous GOSM versions documented uncertainty well:
+  - "Confidence: LOW, needs validation"
+  - "Flagged for review"
+  - "Tacit knowledge inferred"
+
+  But documented uncertainty still propagated into outputs.
+  The system FLAGGED AND PROCEEDED.
+
+  This procedure changes the paradigm:
+  - VERIFY BEFORE INCLUDING
+  - NO FLAGGING AND PROCEEDING
+  - EXCLUDE WHAT CANNOT BE VERIFIED
+
+  The cost is speed. The benefit is zero guessing.
+
+when_to_use:
+  - For ALL outputs in high-stakes contexts
+  - When user has requested no guessing
+  - When building foundations for other work
+  - When output will be acted upon without further review
+
+when_not_to_use:
+  - Exploratory brainstorming (use separate mode)
+  - When flagging for human review is acceptable
+  - Low-stakes context where guessing cost is low
+
+# ============================================
+# THE VERIFICATION STANDARD
+# ============================================
+
+verification_standard:
+
+  every_claim_must_be:
+    option_1:
+      type: DERIVED
+      requirements:
+        - All premises are themselves verified
+        - Inference is valid (modus ponens, etc.)
+        - No hidden premises
+        - Derivation chain documented
+      marker: "[D: <premises> → <conclusion>]"
+
+    option_2:
+      type: OBSERVED
+      requirements:
+        - Source identified
+        - Observation method documented
+        - No interpretation added
+        - Verbatim if quoting
+      marker: "[O: <source>]"
+
+    option_3:
+      type: TESTED
+      requirements:
+        - Test conditions documented
+        - Test result documented
+        - Test is reproducible
+        - Test matches claim
+      marker: "[T: N=<count>, <result>]"
+
+  if_none_apply:
+    action: EXCLUDE from output
+    not_acceptable:
+      - "Flagged for review"
+      - "Confidence: LOW"
+      - "Needs validation"
+      - "Expert can fill in"
+      - "Probably true"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+
+  - id: 1
+    name: "Identify All Claims"
+    action: |
+      Extract every claim in the output:
+      - Factual assertions
+      - Confidence statements
+      - Causal claims
+      - Procedural steps
+      - Recommendations
+
+      Each claim must be verified individually.
+    output: "List of claims to verify"
+
+  - id: 2
+    name: "Attempt Verification - OBSERVED"
+    action: |
+      For each claim, can it be OBSERVED?
+
+      Ask:
+      - Is there a source that directly states this?
+      - Did we witness this directly?
+      - Is there documentary evidence?
+
+      If YES:
+      - Document source and method
+      - Mark as [O: <source>]
+
+      If NO:
+      - Move to next verification type
+    output: "Claims marked [O] or moved to next step"
+
+  - id: 3
+    name: "Attempt Verification - TESTED"
+    action: |
+      For each unverified claim, can it be TESTED?
+
+      Ask:
+      - Can we execute something to verify this?
+      - Is there historical test data?
+      - Can we run a simulation?
+
+      If YES:
+      - Run the test (or document existing test)
+      - Document conditions and result
+      - Mark as [T: N=<count>, <result>]
+
+      If NO:
+      - Move to next verification type
+    output: "Claims marked [T] or moved to next step"
+
+  - id: 4
+    name: "Attempt Verification - DERIVED"
+    action: |
+      For each unverified claim, can it be DERIVED?
+
+      Ask:
+      - What premises would imply this?
+      - Are those premises themselves verified?
+      - Is the inference valid?
+
+      If YES:
+      - Document premises and inference
+      - Verify each premise is [O], [T], or [D]
+      - Mark as [D: <premises> → <conclusion>]
+
+      If NO:
+      - Claim is UNVERIFIABLE
+    output: "Claims marked [D] or flagged UNVERIFIABLE"
+
+  - id: 5
+    name: "Exclude Unverifiable Claims"
+    action: |
+      For each UNVERIFIABLE claim:
+
+      Options:
+      1. GO VERIFY IT - Find observation, test, or derivation
+      2. EXCLUDE IT - Remove from output entirely
+      3. MARK AS UNKNOWN - "We do not know X" (honest uncertainty)
+
+      NOT acceptable:
+      - Include with "low confidence"
+      - Include with "needs review"
+      - Include with "probably"
+
+      The output must contain ONLY verified claims or
+      honest acknowledgments of what is unknown.
+    output: "Clean output with verified claims only"
+
+  - id: 6
+    name: "Verify Verification"
+    action: |
+      Final check:
+
+      For each [O] marker:
+      - Is source actually documented?
+      - Is observation method clear?
+
+      For each [T] marker:
+      - Is test actually documented?
+      - Is result clear?
+
+      For each [D] marker:
+      - Are premises actually verified?
+      - Is inference actually valid?
+
+      If any marker lacks documentation → BLOCK
+    output: "Verified output ready for emission"
+
+# ============================================
+# HANDLING COMMON CASES
+# ============================================
+
+common_cases:
+
+  tacit_knowledge_inference:
+    old_behavior: "Mark 'confidence: LOW', include in output"
+    new_behavior: |
+      1. Can we verify the tacit knowledge exists?
+         - Ask the source directly
+         - Test if procedure works without it
+      2. If verified → Include with [O] or [T]
+      3. If not verified → Exclude
+    example: |
+      Old: "Expert practitioners also check X (tacit knowledge, LOW confidence)"
+      New: Either verify they check X, or exclude claim
+
+  gap_filling:
+    old_behavior: Reconstruct missing steps, mark "MEDIUM confidence"
+    new_behavior: |
+      1. Can we verify the gap-fill is correct?
+         - Ask the source what the missing step is
+         - Test if procedure works with gap-filled step
+      2. If verified → Include with [O] or [T]
+      3. If not verified → Mark as [UNKNOWN GAP]
+    example: |
+      Old: "Step B reconstructed (MEDIUM confidence)"
+      New: Either verify step B, or mark "[UNKNOWN: step between A and C]"
+
+  confidence_without_test:
+    old_behavior: Assign confidence 0-100% based on feeling
+    new_behavior: |
+      Confidence ONLY from:
+      - Test pass rate: confidence = successes / attempts
+      - Adversarial survival: confidence = attacks survived
+      - Precedent: confidence = historical success rate
+
+      No test data → No confidence claim → Mark as [UNTESTED]
+    example: |
+      Old: "Strategy confidence: 85%"
+      New: "Strategy [T: N=10, 8/10 succeeded] → 80% empirical confidence"
+
+  default_assumptions:
+    old_behavior: Use defaults when actual value unknown
+    new_behavior: |
+      1. Can we derive actual value? → Derive it
+      2. Can we test which value is appropriate? → Test it
+      3. If neither → Mark as [UNKNOWN VALUE, using default X for Y reason]
+
+      Default is documented as DEFAULT, not as verified value
+    example: |
+      Old: "Attribution: 30/30/30/10"
+      New: "[UNKNOWN: actual attribution] [DEFAULT: 30/30/30/10 used because <reason>]"
+
+  expert_fill_in:
+    old_behavior: Allow "expert can figure it out"
+    new_behavior: |
+      1. Have expert demonstrate gap-filling on test case
+      2. Document what expert did to fill gap
+      3. Only then mark as adequate
+
+      "Expert can probably figure it out" → [UNVERIFIED]
+      "Expert demonstrated filling gap by X" → [T: expert test]
+    example: |
+      Old: "Expert can fill in deployment details"
+      New: "Expert demonstrated deployment steps on staging: [T: dry run succeeded]"
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+
+output_format: |
+  Every output using this procedure has:
+
+  1. VERIFIED CLAIMS section
+     - Each claim with [O], [T], or [D] marker
+     - Each marker with documentation
+
+  2. UNKNOWN section (if any)
+     - Honest acknowledgment of what we don't know
+     - No pretense of knowledge
+
+  3. DEFAULTS section (if any)
+     - Defaults used with explicit justification
+     - Marked clearly as defaults, not verified values
+
+  4. EXCLUDED section (optional, for transparency)
+     - What was excluded due to unverifiability
+     - Why it couldn't be verified
+
+# ============================================
+# GATES INVOKED
+# ============================================
+
+invokes_gates:
+  - no_guessing_gate
+  - test_based_confidence_gate
+  - execution_verified_adequacy_gate
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - Every claim in output has verification marker
+  - Every marker has documentation
+  - No "flagged for review" without resolution
+  - No "low confidence" without actual test data
+  - Unknown items explicitly marked as unknown
+  - Defaults explicitly marked as defaults
+
+failure_modes:
+  - mode: Verification fatigue
+    symptom: Skipping verification to save time
+    resolution: Use when_not_to_use criteria; don't apply when speed matters more
+
+  - mode: False verification
+    symptom: Markers added without actual verification
+    resolution: Spot-check verification claims; require reproducible evidence
+
+  - mode: Over-exclusion
+    symptom: Too much excluded, output is empty
+    resolution: Invest in actual verification; observation/testing/derivation
+
+  - mode: Hidden guessing
+    symptom: Guessing disguised as derivation
+    resolution: Verify that derivation premises are themselves verified

@@ -1,0 +1,544 @@
+# Music Composition & Performance Orderings
+# Orderings inspired by musical forms and performance
+
+category_id: music_composition_performance
+category_name: "Music Composition & Performance Orderings"
+description: |
+  Orderings inspired by musical forms and performance practices.
+  Use when content needs narrative structure, thematic development,
+  or audience engagement over extended experiences.
+
+when_to_consider: |
+  - Content needs introduce-develop-resolve narrative arc
+  - Teaching same concept through multiple examples/contexts
+  - Multiple voices/perspectives must combine harmoniously
+  - Key message needs reinforcement through repetition
+  - Work proceeds through dialogic exchange
+  - Building toward climactic reveal or announcement
+  - Extended experience needs energy management
+
+variations:
+
+  # ----------------------------------------
+  # SONATA-FORM ORDERING
+  # ----------------------------------------
+  sonata_form:
+    id: sonata_form_ordering
+    name: "Sonata-Form Ordering (Introduce-Develop-Recapitulate)"
+    category: music_composition_performance
+
+    philosophy: |
+      Structure work in three main sections: exposition (introduce themes),
+      development (explore and transform themes), recapitulation (return
+      themes with resolution). From classical music: the most influential
+      formal structure in Western music, providing dramatic arc through
+      thematic development and return.
+
+    when_to_use:
+      - Complex content needing clear structure
+      - Presentations with multiple ideas to integrate
+      - Arguments that need to be developed then resolved
+      - Teaching complex concepts
+      - Any work benefiting from ABA structure with transformation
+
+    three_sections:
+      exposition:
+        purpose: "Introduce main themes/ideas"
+        content: "Present first theme (home key), transition, second theme (related key)"
+        proportion: "~25-30%"
+        task: "Establish the key concepts clearly"
+
+      development:
+        purpose: "Explore, transform, create tension"
+        content: "Fragment themes, modulate through keys, build intensity"
+        proportion: "~30-40%"
+        task: "Show depth, connections, implications"
+
+      recapitulation:
+        purpose: "Return themes with resolution"
+        content: "Both themes now in home key, coda for closure"
+        proportion: "~25-30%"
+        task: "Integrate and conclude with resolution"
+
+    prioritization_rules:
+      1_clear_exposition:
+        rule: "Establish themes clearly before developing"
+        reason: "Development only works if themes are known"
+
+      2_meaningful_development:
+        rule: "Development should reveal new aspects"
+        examples: "Combine themes, show implications, address objections"
+
+      3_transformed_return:
+        rule: "Recapitulation isn't mere repetition"
+        change: "Themes return transformed by development"
+
+      4_resolution_in_recap:
+        rule: "Tension built in development resolves"
+        closure: "Audience feels completion"
+
+    example:
+      context: "Technical presentation on system architecture"
+      sonata_structure:
+        exposition:
+          theme_1: "Current system problems (pain points)"
+          transition: "Why change is needed"
+          theme_2: "Proposed new architecture"
+        development:
+          explore: "How new architecture addresses each problem"
+          transform: "Show edge cases, trade-offs, alternatives considered"
+          build: "Evidence, benchmarks, case studies"
+        recapitulation:
+          theme_1_return: "Problems are now solved"
+          theme_2_return: "Architecture proven through development"
+          coda: "Call to action, next steps"
+      rationale: "Complex topic gets clear structure with dramatic development"
+
+    source: "Music Theory - Sonata Form (Classical Period)"
+
+  # ----------------------------------------
+  # THEME-AND-VARIATIONS ORDERING
+  # ----------------------------------------
+  theme_and_variations:
+    id: theme_and_variations_ordering
+    name: "Theme-and-Variations Ordering (Same Concept, Multiple Lenses)"
+    category: music_composition_performance
+
+    philosophy: |
+      Present a theme, then show it through multiple variations.
+      From music: state a melody, then repeat with different
+      harmonies, rhythms, keys, textures. Each variation reveals
+      new aspects while maintaining connection to the theme.
+      Excellent for teaching one concept through multiple examples.
+
+    when_to_use:
+      - Teaching one concept through multiple examples
+      - Showing same idea in different contexts
+      - Building deep understanding through repetition with variation
+      - Design explorations maintaining core identity
+      - When audience needs multiple angles on one idea
+
+    structure:
+      theme:
+        purpose: "State the core idea clearly"
+        character: "Should be memorable and well-defined"
+        proportion: "~15-20%"
+
+      variations:
+        purpose: "Each explores one aspect"
+        variety: "Different angle, context, or application"
+        count: "Typically 3-7 variations"
+        proportion: "~60-70%"
+
+      finale:
+        purpose: "Synthesis or most elaborate variation"
+        character: "Often combines elements from variations"
+        proportion: "~15-20%"
+
+    prioritization_rules:
+      1_clear_theme_first:
+        rule: "Theme must be understood before variations"
+        test: "Can audience recognize theme in variations?"
+
+      2_progressive_complexity:
+        rule: "Variations often increase in complexity"
+        pattern: "Simple -> complex -> synthesis"
+
+      3_each_variation_distinct:
+        rule: "Each variation should add something new"
+        variety: "Different context, example, or perspective"
+
+      4_maintain_thread:
+        rule: "Theme should be recognizable throughout"
+        connection: "Variations shouldn't lose the original"
+
+    variation_types:
+      simplification: "Strip to essence"
+      elaboration: "Add complexity and detail"
+      recontextualization: "Same idea, different domain"
+      inversion: "Flip or negate aspects"
+      combination: "Merge with another concept"
+
+    example:
+      context: "Teaching recursion in programming"
+      theme: "Recursion = function that calls itself"
+      variations:
+        var_1_simple: "Factorial (simplest example)"
+        var_2_tree: "Directory traversal (practical application)"
+        var_3_visual: "Fractals (visual intuition)"
+        var_4_mutual: "Mutual recursion (variation on structure)"
+        var_5_tail: "Tail recursion (optimization angle)"
+        var_6_dp: "Memoization (connection to DP)"
+      finale: "Design your own recursive solution (synthesis)"
+      rationale: "Same concept, multiple angles = deep understanding"
+
+    source: "Music Theory - Theme and Variations Form"
+
+  # ----------------------------------------
+  # FUGUE-CONSTRUCTION ORDERING
+  # ----------------------------------------
+  fugue_construction:
+    id: fugue_construction_ordering
+    name: "Fugue-Construction Ordering (Polyphonic Voices)"
+    category: music_composition_performance
+
+    philosophy: |
+      Introduce voices one at a time, then combine contrapuntally.
+      From Baroque music: fugue begins with single subject, each new
+      voice enters with the subject while others continue with
+      counterpoint. Results in complex texture built from simple
+      elements. For integrating multiple perspectives into harmony.
+
+    when_to_use:
+      - Multiple independent voices/perspectives to integrate
+      - Want cumulative complexity from simple beginnings
+      - Team presentations where each person contributes
+      - Showing how ideas relate and combine
+      - Building complex argument from simple premises
+
+    fugue_sections:
+      exposition:
+        purpose: "Introduce subject in each voice"
+        pattern: "Voice 1 states subject, voice 2 enters with subject while 1 continues"
+        result: "All voices established with shared theme"
+
+      development_episodes:
+        purpose: "Explore combinations and modulations"
+        content: "Voices interact, subject appears in various ways"
+        techniques: "Stretto (overlapping entries), inversion, augmentation"
+
+      final_section:
+        purpose: "Return to home key, full texture"
+        content: "All voices combine, often climactic stretto"
+        resolution: "Strong cadence bringing voices together"
+
+    prioritization_rules:
+      1_clear_subject:
+        rule: "Subject must be distinctive and recognizable"
+        test: "Can you identify subject when voices combine?"
+
+      2_successive_entry:
+        rule: "Add voices one at a time"
+        reason: "Listener tracks each voice separately"
+
+      3_maintain_independence:
+        rule: "Each voice has its own melodic interest"
+        not: "Simple harmony; true counterpoint"
+
+      4_combine_meaningfully:
+        rule: "When voices combine, result is more than sum"
+        effect: "New meaning emerges from interaction"
+
+    example:
+      context: "Panel discussion on AI ethics"
+      fugue_structure:
+        subject: "Core ethical principle (autonomy)"
+        voice_1_entry: "Technical perspective states principle"
+        voice_2_entry: "Legal perspective enters with principle, tech continues"
+        voice_3_entry: "Social perspective enters, others continue"
+        development: "Perspectives interact, debate, find connections"
+        stretto: "Rapid exchange showing how all views relate"
+        conclusion: "Integration of all three perspectives"
+      rationale: "Complex integration built from simple, clear beginnings"
+
+    source: "Music Theory - Fugue (Bach, Baroque)"
+
+  # ----------------------------------------
+  # RONDO-FORM ORDERING
+  # ----------------------------------------
+  rondo_form:
+    id: rondo_form_ordering
+    name: "Rondo-Form Ordering (Recurring Refrain)"
+    category: music_composition_performance
+
+    philosophy: |
+      Alternate between recurring main theme and contrasting episodes.
+      From music: ABACADA... structure where A always returns.
+      Main theme provides anchor and coherence while episodes provide
+      variety. Audience always knows where they are because refrain
+      returns. Good for reinforcing key message with variety.
+
+    when_to_use:
+      - Key message needs reinforcement through repetition
+      - Want variety without losing focus
+      - Audience needs regular anchor points
+      - Extended presentations needing structure
+      - When main point should be memorable
+
+    structure:
+      refrain_A:
+        role: "Main theme that always returns"
+        character: "Most important, memorable content"
+        returns: "Multiple times throughout"
+
+      episodes_BCD:
+        role: "Contrasting sections between refrains"
+        variety: "Each episode explores different aspect"
+        contrast: "Different from refrain and each other"
+
+    common_patterns:
+      simple_rondo: "ABACA"
+      sonata_rondo: "ABACABA (with development)"
+      extended_rondo: "ABACADAEA..."
+
+    prioritization_rules:
+      1_strong_refrain:
+        rule: "A section must be memorable and clear"
+        reason: "It's the anchor of the whole structure"
+        test: "Can audience anticipate/recognize return?"
+
+      2_contrasting_episodes:
+        rule: "Each episode should feel different"
+        from_refrain: "Clear contrast with A"
+        from_each_other: "B, C, D each distinct"
+
+      3_strategic_returns:
+        rule: "Refrain returns at key moments"
+        effect: "Reinforcement, orientation, satisfaction"
+
+      4_final_refrain:
+        rule: "End with refrain (often elaborated)"
+        closure: "Return to home provides satisfaction"
+
+    example:
+      context: "Product launch presentation"
+      rondo_structure:
+        A_refrain: "Our product solves X (core value proposition)"
+        B_episode: "Customer problem exploration"
+        A_return: "Our product solves X (reinforcement)"
+        C_episode: "Technical deep-dive"
+        A_return: "Our product solves X (different angle)"
+        D_episode: "Competitive landscape"
+        A_final: "Our product solves X (call to action)"
+      audience_experience: "Clear main message reinforced between explorations"
+      rationale: "Key message repeated without boring repetition"
+
+    source: "Music Theory - Rondo Form"
+
+  # ----------------------------------------
+  # CALL-AND-RESPONSE ORDERING
+  # ----------------------------------------
+  call_and_response:
+    id: call_and_response_ordering
+    name: "Call-and-Response Ordering (Dialogic Exchange)"
+    category: music_composition_performance
+
+    philosophy: |
+      Alternate between statement and response, question and answer.
+      From African music, gospel, jazz: one voice calls, another
+      responds. Creates dialogue, engagement, and distributed
+      authorship. Can be leader-group or two parties. Builds
+      energy through exchange.
+
+    when_to_use:
+      - Interactive sessions with audience participation
+      - Team work proceeding through dialogue
+      - Teaching through Socratic questioning
+      - Building energy and engagement
+      - When distributed contribution is valuable
+
+    patterns:
+      leader_group:
+        leader: "States the call"
+        group: "Responds collectively"
+        example: "Preacher/congregation, teacher/class"
+
+      antiphonal:
+        group_a: "First group states"
+        group_b: "Second group responds"
+        example: "Choir sections, team debates"
+
+      solo_trading:
+        soloist_a: "First solo statement"
+        soloist_b: "Second solo response"
+        example: "Jazz solos, point/counterpoint"
+
+    prioritization_rules:
+      1_clear_call:
+        rule: "Call must invite response"
+        types: "Question, incomplete phrase, prompt"
+
+      2_space_for_response:
+        rule: "Leave room for response"
+        timing: "Don't fill all the space"
+
+      3_response_builds:
+        rule: "Response should add to call"
+        growth: "Dialogue accumulates meaning"
+
+      4_escalation:
+        rule: "Energy often builds through exchanges"
+        pattern: "Calls and responses intensify"
+
+    example:
+      context: "Workshop facilitation"
+      call_and_response_flow:
+        call_1: "What problems do you face with X?"
+        response_1: "Participants share problems"
+        call_2: "How have you tried to solve them?"
+        response_2: "Participants share attempts"
+        call_3: "What if we tried Y approach?"
+        response_3: "Participants react and build"
+        call_4: "Let's design a solution together"
+        response_4: "Collaborative creation"
+      energy: "Engagement builds through dialogue"
+      outcome: "Solutions emerge from exchange, not lecture"
+
+    source: "Music/Communication - Call and Response tradition"
+
+  # ----------------------------------------
+  # CRESCENDO-BUILDING ORDERING
+  # ----------------------------------------
+  crescendo_building:
+    id: crescendo_building_ordering
+    name: "Crescendo-Building Ordering (Progressive Intensification)"
+    category: music_composition_performance
+
+    philosophy: |
+      Start soft, build progressively to climax. From music:
+      crescendo is gradual increase in volume and intensity.
+      Applied to structure: layer in complexity, stakes, or
+      revelation progressively. The endpoint is most powerful
+      because of the journey to reach it.
+
+    when_to_use:
+      - Building toward climactic reveal or announcement
+      - Progressive disclosure of information
+      - Generating excitement for launch or reveal
+      - Persuasion building to conclusion
+      - Any content where ending should have maximum impact
+
+    intensity_dimensions:
+      volume: "Quiet to loud (literal or metaphorical)"
+      complexity: "Simple to complex"
+      stakes: "Low to high"
+      revelation: "General to specific"
+      emotion: "Calm to intense"
+
+    prioritization_rules:
+      1_start_restrained:
+        rule: "Begin at lower intensity"
+        reason: "Room to grow is essential"
+
+      2_consistent_direction:
+        rule: "Always building, never retreating"
+        allowance: "Small dips for variety, not major drops"
+
+      3_controlled_pace:
+        rule: "Build steadily, not too fast"
+        trap: "Peaking too early leaves nowhere to go"
+
+      4_climax_payoff:
+        rule: "Climax must justify the buildup"
+        disappointment: "Weak climax feels like letdown"
+
+    anti_patterns:
+      - "Starting at maximum (nowhere to go)"
+      - "Climax in the middle (anticlimactic end)"
+      - "Building then dropping then building (confusing)"
+      - "Build without payoff (frustrating)"
+
+    example:
+      context: "Product announcement event"
+      crescendo_structure:
+        opening_soft: "Thank attendees, set context (low key)"
+        first_layer: "Industry trends and challenges (building interest)"
+        second_layer: "Hints at what's coming (building anticipation)"
+        third_layer: "Customer stories and pain points (building stakes)"
+        fourth_layer: "Teaser features (building excitement)"
+        fifth_layer: "Core reveal (high intensity)"
+        climax: "Main announcement - 'One more thing...' (maximum impact)"
+        resolution: "Call to action, availability"
+      energy_curve: "Continuously rises to climax"
+      effect: "Announcement has maximum emotional impact"
+
+    source: "Music Dynamics - Crescendo"
+
+  # ----------------------------------------
+  # CONCERT-SETLIST ORDERING
+  # ----------------------------------------
+  concert_setlist:
+    id: concert_setlist_ordering
+    name: "Concert-Setlist Ordering (Performance Arc)"
+    category: music_composition_performance
+
+    philosophy: |
+      Structure an extended experience for maximum engagement.
+      From live music: setlist designs the emotional journey
+      through an evening. Opener grabs attention, hits maintain
+      energy, breathers allow recovery, encore provides climax.
+      Pacing and variety maintain audience engagement over time.
+
+    when_to_use:
+      - Extended sessions or events (conferences, workshops)
+      - Need to maintain energy over long period
+      - Multiple segments of varying intensity
+      - Audience stamina is a concern
+      - Want designed emotional journey
+
+    setlist_elements:
+      opener:
+        role: "Grab attention, set tone"
+        character: "Strong but not climax"
+        purpose: "Audience knows they're in good hands"
+
+      early_hits:
+        role: "Build energy, satisfy expectations"
+        character: "Known crowd-pleasers"
+        timing: "While audience fresh"
+
+      deep_cuts:
+        role: "Reward engaged audience"
+        character: "Less known, more complex"
+        timing: "Middle when attention established"
+
+      breathers:
+        role: "Allow recovery"
+        character: "Slower, lower intensity"
+        timing: "After high-energy sequences"
+
+      closer:
+        role: "Big finish before encore"
+        character: "Major hit, high energy"
+        setup: "For encore to exceed"
+
+      encore:
+        role: "Climactic return"
+        character: "Best saved for last"
+        experience: "Peak of the evening"
+
+    prioritization_rules:
+      1_strong_opener:
+        rule: "First impression sets expectations"
+        not: "Your biggest hit (save that)"
+        goal: "Attention captured, trust established"
+
+      2_manage_energy:
+        rule: "Vary intensity to prevent fatigue"
+        pattern: "High-medium-high-low-high"
+        valleys: "Enable higher peaks"
+
+      3_know_your_audience:
+        rule: "Balance familiar and new"
+        familiar: "Maintains engagement"
+        new: "Provides discovery"
+
+      4_close_strong:
+        rule: "Last impression matters most"
+        build: "Closer and encore are peaks"
+
+    example:
+      context: "Day-long conference"
+      setlist_structure:
+        opener_9am: "Engaging keynote (attention-grabbing)"
+        hit_10am: "Popular topic deep-dive (crowd-pleaser)"
+        deep_11am: "Technical session (engaged audience)"
+        breather_lunch: "Networking, recovery"
+        hit_1pm: "Case study (re-energize)"
+        deep_2pm: "Workshop (active participation)"
+        breather_3pm: "Break, snacks"
+        closer_4pm: "Panel with key insights"
+        encore_5pm: "Surprise announcement + celebration"
+      design: "Energy managed throughout day for maximum impact"
+
+    source: "Concert Production - Setlist Design"

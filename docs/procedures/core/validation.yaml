@@ -1,0 +1,250 @@
+# Validation - Verify outputs meet requirements
+# Core GOSM procedure for checking that deliverables satisfy requirements
+
+id: validation
+name: Validation
+version: "1.0.0"
+domain: core
+
+description: Verify that an output meets its requirements
+
+long_description: |
+  Validates that something (design, implementation, decision) actually
+  meets the requirements it was supposed to satisfy.
+
+  Validation asks: "Did we build the right thing?"
+  (vs Verification which asks: "Did we build the thing right?")
+
+tags:
+  - validation
+  - quality
+  - requirements
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After completing a deliverable to verify it meets requirements
+  - Before accepting work from others
+  - At phase gates to confirm phase objectives achieved
+  - When transitioning from planning to execution
+  - To close out a goal or project
+
+when_not_to_use:
+  - For checking technical correctness (use verification instead)
+  - When requirements don't exist or aren't clear
+  - For continuous monitoring (use monitoring procedures instead)
+  - For testing specific functionality (use testing procedures instead)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: validation_target
+    type: object
+    required: true
+    description: The thing being validated (document, design, code, decision)
+
+  - name: requirements
+    type: list
+    required: true
+    description: The requirements the target should satisfy
+
+  - name: acceptance_criteria
+    type: list
+    required: false
+    description: Specific criteria for each requirement (more granular than requirements)
+
+  - name: context
+    type: dict
+    required: false
+    description: Additional context (constraints, stakeholders, purpose)
+
+outputs:
+  - name: validation_result
+    type: enum
+    values: [pass, partial, fail]
+    description: Overall validation outcome
+
+  - name: validation_coverage
+    type: float
+    description: Percentage of requirements covered (0.0 to 1.0)
+
+  - name: validation_issues
+    type: list
+    description: List of requirements not met, with details
+
+  - name: recommendations
+    type: list
+    description: Suggested actions to address gaps
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Gather inputs
+    action: |
+      Collect the validation target and its requirements.
+      If acceptance_criteria not provided, derive from requirements.
+    inputs:
+      - validation_target
+      - requirements
+      - acceptance_criteria (optional)
+    outputs:
+      - prepared_requirements: list of {requirement, acceptance_criteria}
+    verification: |
+      All requirements have at least one acceptance criterion
+
+  - id: 2
+    name: Check each requirement
+    action: |
+      For each requirement:
+      1. State the requirement clearly
+      2. Identify where in the target this should be satisfied
+      3. Check if acceptance criteria are met
+      4. Document finding: met, partially met, or not met
+    inputs:
+      - validation_target
+      - prepared_requirements (from Step 1)
+    outputs:
+      - requirement_results: list of {requirement, status, evidence, gaps}
+    verification: |
+      Every requirement has a documented status with evidence or gap explanation
+
+  - id: 3
+    name: Calculate coverage
+    action: |
+      Count requirements by status:
+      - met: count as 1.0
+      - partially met: count as 0.5
+      - not met: count as 0.0
+      Calculate: coverage = sum / total_requirements
+    inputs:
+      - requirement_results (from Step 2)
+    outputs:
+      - validation_coverage: float 0.0-1.0
+    verification: |
+      Coverage percentage calculated and is a valid number
+
+  - id: 4
+    name: Determine overall result
+    action: |
+      Based on coverage and criticality:
+      - pass: All requirements met (coverage = 1.0)
+      - partial: Some requirements met (0 < coverage < 1.0)
+      - fail: Critical requirements not met (coverage = 0 or critical gap)
+    inputs:
+      - requirement_results (from Step 2)
+      - validation_coverage (from Step 3)
+    outputs:
+      - validation_result: pass | partial | fail
+    verification: |
+      Result aligns with coverage and requirement criticality
+
+  - id: 5
+    name: Generate recommendations
+    action: |
+      For each gap (partial or not met):
+      1. Identify what's missing
+      2. Suggest specific action to address
+      3. Estimate effort if possible
+    inputs:
+      - requirement_results (from Step 2)
+    outputs:
+      - recommendations: list of actionable suggestions
+      - validation_issues: list of gaps
+    verification: |
+      Each gap has at least one recommendation
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All requirements examined (none skipped)
+  - Evidence provided for each "met" determination
+  - Gaps clearly explained for each "not met" determination
+  - Recommendations are actionable (not vague)
+
+failure_modes:
+  - mode: Requirements unclear or incomplete
+    symptom: Can't determine if requirement is met
+    resolution: Clarify requirements first, then re-validate
+
+  - mode: Target doesn't exist or isn't complete
+    symptom: Nothing to validate against
+    resolution: Wait for target completion, or validate partial
+
+  - mode: Acceptance criteria too vague
+    symptom: Subjective "met/not met" determinations
+    resolution: Define concrete, observable criteria
+
+  - mode: Validator lacks domain expertise
+    symptom: Wrong determinations due to misunderstanding
+    resolution: Involve domain expert in validation
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Validate API endpoint implementation
+    context: After implementing a REST endpoint, validate it meets spec
+    inputs:
+      validation_target: "GET /users endpoint implementation"
+      requirements:
+        - "Returns list of users"
+        - "Supports pagination via limit/offset"
+        - "Returns 200 on success"
+        - "Returns 401 if not authenticated"
+      acceptance_criteria:
+        - "Response is JSON array of user objects"
+        - "limit parameter limits results (default 10)"
+        - "offset parameter skips results (default 0)"
+        - "Missing auth header returns 401"
+    process: |
+      Check each requirement against implementation.
+      Test pagination with various values.
+      Test auth scenarios.
+    expected_output:
+      validation_result: partial
+      validation_coverage: 0.75
+      validation_issues:
+        - "Pagination implemented but default limit is 20, not 10"
+      recommendations:
+        - "Update default limit in endpoint handler to 10"
+
+  - name: Validate project plan meets goal
+    context: Before starting execution, validate plan covers all goal requirements
+    inputs:
+      validation_target: "COMPLETE_PLAN.md for income goal"
+      requirements:
+        - "Plan achieves $2000/month target"
+        - "Plan is achievable within 6 months"
+        - "Plan requires only laptop and internet"
+        - "Plan has measurable milestones"
+    expected_output:
+      validation_result: pass
+      validation_coverage: 1.0
+      validation_issues: []
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - At phase completion to verify phase deliverables
+    - Before strategy selection to validate each strategy meets constraints
+    - At project completion to validate goal achievement
+    - During STEPS execution to validate step outputs
+
+  gates:
+    - gate: phase_gate
+      question: "Does phase output satisfy phase requirements?"
+
+    - gate: completion_gate
+      question: "Does final output satisfy goal requirements?"
+
+  related_procedures:
+    - verification: Technical correctness checking
+    - requirements_gathering: Getting requirements to validate against
+    - decomposition: Breaking requirements into checkable criteria

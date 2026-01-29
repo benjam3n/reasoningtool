@@ -1,0 +1,237 @@
+# Limitation Analysis Procedure
+# Systematically identify and prioritize limitations of any system/method
+
+id: limitation_analysis
+name: Limitation Analysis
+version: "1.0.0"
+domain: core
+tags: ["meta", "analysis", "improvement", "strategy"]
+
+description: |
+  Systematically identify limitations across multiple dimensions,
+  assess their impact, and prioritize which to address.
+
+  Key insight: Most systems have many limitations, but only a few
+  matter enough to fix. This procedure separates identification
+  from prioritization to avoid premature filtering.
+
+core_principle: |
+  1. Enumerate ALL limitations first (don't filter while listing)
+  2. Categorize by type (what kind of limitation)
+  3. Assess impact (what happens if we don't fix it)
+  4. Assess effort (what would fixing require)
+  5. Apply effort/impact gate to prioritize
+  6. Identify which limitations are INHERENT vs FIXABLE
+
+# ============================================
+# LIMITATION CATEGORIES
+# ============================================
+limitation_categories:
+  - id: ARCHITECTURAL
+    name: "Architectural Limitations"
+    description: "Fundamental design constraints that would require major restructuring"
+    examples:
+      - "System assumes X but reality is Y"
+      - "Core data model can't represent Z"
+      - "Single point of failure at W"
+    typical_effort: HIGH
+
+  - id: METHODOLOGICAL
+    name: "Methodological Limitations"
+    description: "Limitations in the approach/algorithm/process itself"
+    examples:
+      - "Method assumes linear causation"
+      - "No handling of uncertainty"
+      - "Greedy algorithm misses global optima"
+    typical_effort: MEDIUM-HIGH
+
+  - id: OPERATIONAL
+    name: "Operational Limitations"
+    description: "Limitations in how the system is run/used day-to-day"
+    examples:
+      - "Requires manual intervention at step X"
+      - "No monitoring/alerting"
+      - "Slow feedback loops"
+    typical_effort: LOW-MEDIUM
+
+  - id: INTEGRATION
+    name: "Integration Limitations"
+    description: "Limitations in connecting with other systems/data/people"
+    examples:
+      - "No API for external access"
+      - "Can't import from format X"
+      - "No human-in-the-loop checkpoints"
+    typical_effort: MEDIUM
+
+  - id: SCALING
+    name: "Scaling Limitations"
+    description: "Limitations that emerge at larger scale"
+    examples:
+      - "O(n²) algorithm won't scale"
+      - "Single-threaded bottleneck"
+      - "Memory grows unbounded"
+    typical_effort: MEDIUM-HIGH
+
+  - id: KNOWLEDGE
+    name: "Knowledge/Data Limitations"
+    description: "Limitations due to missing information or data"
+    examples:
+      - "No ground truth to validate against"
+      - "Training data doesn't cover edge cases"
+      - "No access to proprietary data"
+    typical_effort: VARIES
+
+  - id: HUMAN
+    name: "Human Factor Limitations"
+    description: "Limitations involving human users, operators, or stakeholders"
+    examples:
+      - "Requires expertise to use effectively"
+      - "Output not interpretable by non-experts"
+      - "No trust/adoption without explanation"
+    typical_effort: MEDIUM
+
+# ============================================
+# ANALYSIS QUESTIONS
+# ============================================
+analysis_questions:
+  # What IS the limitation
+  - id: enumerate
+    phase: "Identification"
+    questions:
+      - "What can this system NOT do that it should?"
+      - "What assumptions does it make that might be wrong?"
+      - "Where does it fail or produce poor results?"
+      - "What edge cases aren't handled?"
+      - "What would a critic say is wrong with this?"
+      - "What would make this 10x better if solved?"
+
+  # What TYPE of limitation
+  - id: categorize
+    phase: "Categorization"
+    questions:
+      - "Is this architectural, methodological, operational, etc.?"
+      - "Is this inherent to the approach or just current implementation?"
+      - "Is this a limitation or a deliberate tradeoff?"
+
+  # What's the IMPACT
+  - id: impact
+    phase: "Impact Assessment"
+    questions:
+      - "What happens if we never fix this?"
+      - "Who is affected and how severely?"
+      - "Does this block any critical use cases?"
+      - "Is this a showstopper or an inconvenience?"
+      - "Does this limitation compound over time?"
+
+  # What's the EFFORT
+  - id: effort
+    phase: "Effort Assessment"
+    questions:
+      - "What would fixing this require?"
+      - "Is there a partial fix that's much easier?"
+      - "What dependencies does the fix have?"
+      - "Can we work around it instead of fixing it?"
+
+  # What's the PRIORITY
+  - id: prioritize
+    phase: "Prioritization"
+    questions:
+      - "LOW effort + HIGH impact = DO FIRST"
+      - "HIGH effort + HIGH impact = DO SECOND"
+      - "LOW effort + LOW impact = MAYBE"
+      - "HIGH effort + LOW impact = AVOID"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+steps:
+  - id: 1
+    name: "Define scope"
+    action: |
+      Clearly state what system/method/process you're analyzing.
+      Include: purpose, current state, context of use.
+
+  - id: 2
+    name: "Enumerate limitations freely"
+    action: |
+      List ALL limitations you can think of without filtering.
+      Use the analysis_questions.enumerate prompts.
+      Don't worry about categorization or priority yet.
+      Aim for completeness over precision.
+
+  - id: 3
+    name: "Categorize each limitation"
+    action: |
+      For each limitation, assign a category from limitation_categories.
+      Mark whether it's INHERENT (can't be fixed) or FIXABLE.
+      Note if it's a TRADEOFF (fixing it would break something else).
+
+  - id: 4
+    name: "Assess impact of each"
+    action: |
+      Rate impact: CRITICAL / HIGH / MEDIUM / LOW / NEGLIGIBLE
+
+      CRITICAL: Blocks core use case, causes harm
+      HIGH: Significantly degrades value
+      MEDIUM: Noticeable but workable
+      LOW: Minor inconvenience
+      NEGLIGIBLE: Theoretical only
+
+  - id: 5
+    name: "Assess effort to fix each"
+    action: |
+      Rate effort: TRIVIAL / LOW / MEDIUM / HIGH / MASSIVE
+
+      TRIVIAL: < 1 hour, no dependencies
+      LOW: < 1 day, minimal dependencies
+      MEDIUM: Days to weeks, some coordination
+      HIGH: Weeks to months, significant resources
+      MASSIVE: Months+, major restructuring
+
+  - id: 6
+    name: "Apply effort/impact prioritization"
+    action: |
+      Create priority matrix:
+
+      DO FIRST:  TRIVIAL/LOW effort  + HIGH/CRITICAL impact
+      DO SECOND: MEDIUM/HIGH effort  + HIGH/CRITICAL impact
+      MAYBE:     TRIVIAL/LOW effort  + LOW/MEDIUM impact
+      AVOID:     MEDIUM/HIGH effort  + LOW/NEGLIGIBLE impact
+      ACCEPT:    INHERENT limitations (can't fix, work around)
+
+  - id: 7
+    name: "Identify quick wins"
+    action: |
+      From DO FIRST, identify the single most impactful fix.
+      Ask: "If we could only fix ONE thing, what would it be?"
+
+  - id: 8
+    name: "Document workarounds"
+    action: |
+      For limitations we won't fix, document:
+      - How to work around it
+      - When it matters vs when it doesn't
+      - Who needs to know about it
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+outputs:
+  - name: limitation_inventory
+    type: list
+    schema: |
+      - limitation: string
+        category: enum[ARCHITECTURAL, METHODOLOGICAL, OPERATIONAL, INTEGRATION, SCALING, KNOWLEDGE, HUMAN]
+        inherent: boolean
+        impact: enum[CRITICAL, HIGH, MEDIUM, LOW, NEGLIGIBLE]
+        effort: enum[TRIVIAL, LOW, MEDIUM, HIGH, MASSIVE]
+        priority: enum[DO_FIRST, DO_SECOND, MAYBE, AVOID, ACCEPT]
+        notes: string
+
+  - name: action_plan
+    type: list
+    description: "Ordered list of limitations to address"
+
+  - name: accepted_limitations
+    type: list
+    description: "Limitations we consciously choose not to fix"

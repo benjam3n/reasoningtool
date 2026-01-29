@@ -1,0 +1,1135 @@
+MAKING CHOICES: A MECHANICAL DECISION PROCEDURE
+=================================================
+
+This procedure routes you from "I have a decision to make" to "here is what
+I will do" without requiring any expertise in decision science.
+
+Follow each step exactly. Do what it says, not what you think it means.
+When a step says "write down," write it down -- on paper, in a document,
+wherever. Do not skip the writing. The writing IS the thinking.
+
+Parenthetical notes (like this) explain WHY a step exists. You can ignore
+them. The procedure works without them.
+
+
+================================================================================
+STEP 0: QUICK CLASSIFICATION
+================================================================================
+
+Answer these four questions. Circle or write down the letter for each.
+
+QUESTION 0A: Can you undo this decision easily?
+  (Y) Yes -- you can reverse it with little cost or effort.
+      Examples: trying a new restaurant, signing up for a free trial,
+      rearranging furniture, choosing which book to read next.
+  (N) No -- reversing it would be difficult, expensive, or impossible.
+      Examples: quitting a job, having surgery, signing a lease,
+      publishing something publicly.
+  (?) You are not sure.
+
+QUESTION 0B: How much time do you have?
+  (H) Hours or less -- you must decide very soon.
+  (D) Days to weeks -- you have some time but a real deadline.
+  (W) Weeks or more -- no pressing deadline.
+  (?) You are not sure.
+
+QUESTION 0C: If you get this wrong, how bad is it?
+  (L) Low -- minor inconvenience, costs under a day's pay, easily fixed.
+  (M) Medium -- real consequences but survivable. Costs weeks of pay,
+      causes meaningful disruption, affects others.
+  (H) High -- major life impact. Costs months/years of pay, affects health,
+      affects many people, or cannot be undone.
+  (?) You are not sure.
+
+QUESTION 0D: Do you feel stuck, confused about what you want, or
+             overwhelmed right now?
+  (Y) Yes -- you have been going in circles, or you do not know what
+      outcome you actually want, or the decision feels paralyzing.
+  (N) No -- you are clear on what you want and can think about this calmly.
+
+---------------------------------------
+ROUTING TABLE: Find your combination.
+---------------------------------------
+
+If 0D = Y (stuck/confused/overwhelmed):
+  --> Go to SECTION E: Stuck Decisions (page down to Section E).
+
+If 0B = H (hours or less) AND 0C = M or H:
+  --> Go to SECTION D: Emergency Decisions.
+
+If 0A = Y AND 0C = L:
+  --> Go to SECTION A: Fast-Track Decisions.
+
+If 0C = H AND 0A = N:
+  --> Go to SECTION C: High-Stakes Decisions.
+
+If 0A = ? OR 0B = ? OR 0C = ?:
+  --> Go to STEP 0.5: Clarification (immediately below).
+
+Everything else:
+  --> Go to SECTION B: Standard Decisions.
+
+---------------------------------------
+STEP 0.5: CLARIFICATION (only if you answered "?" to any question above)
+---------------------------------------
+
+For each "?" answer, do the following:
+
+0.5a: Write down: "I am not sure about [reversibility / time / stakes]
+because ___________."
+
+0.5b: For reversibility (?): Ask -- "If I decided this and then changed
+my mind tomorrow, what would I have to do to undo it?" Write down the
+specific actions. If those actions take less than a day and cost less than
+a day's pay, answer (Y). Otherwise answer (N).
+
+0.5c: For time (?): Ask -- "What is the latest I could decide without
+losing any options?" Write down that date. If it is more than 2 weeks
+away, answer (W). If 1-14 days, answer (D). If today, answer (H).
+
+0.5d: For stakes (?): Ask -- "If I pick the worst option, what specifically
+happens?" Write the worst realistic outcome. Rate it (L), (M), or (H)
+using the definitions above.
+
+Now return to the routing table with your new answers.
+
+
+================================================================================
+SECTION A: FAST-TRACK DECISIONS
+================================================================================
+(For: reversible + low stakes. Pattern: Two-Way Door.)
+(Goal: Decide in under 5 minutes. Overthinking these wastes more than
+choosing wrong.)
+
+---ASSUMPTION CHECK A0---
+(Protects against Assumption #1: "The decision is correctly framed.")
+
+Write down the decision in one sentence: "I am deciding between ___ and ___."
+Read it back. Ask: "Is this actually what I am deciding, or is there a
+bigger decision hiding behind this one?"
+
+  If there is a bigger decision --> Write it down. Re-do Step 0 for THAT
+  decision instead.
+
+  If this is the real decision --> Continue to A1.
+
+---
+
+STEP A1: List your options.
+
+Write them down. You need at least two. If you only have one, you are not
+making a decision -- you are deciding whether to act or not. Reframe it as:
+"Do [thing]" vs. "Do not do [thing]."
+
+What you should see: 2-5 concrete options written down.
+
+---
+
+STEP A2: Pick the one your gut says.
+
+Do not analyze. Which option are you leaning toward right now? Circle it.
+
+What you should see: One option circled.
+
+---
+
+STEP A3: Quick ruin check.
+
+Ask: "Is there any realistic scenario where this circled option causes
+serious, hard-to-reverse harm?"
+
+  (Y) Yes --> This is NOT a fast-track decision. Go to SECTION B.
+  (N) No --> Continue to A4.
+
+(Protects against Assumption #12: "I should optimize for the best outcome"
+-- sometimes you need to avoid ruin, not find the best.)
+
+---
+
+STEP A4: Set a review date.
+
+Write down: "I will check whether this was a good decision on [date
+2 weeks from now]."
+
+---
+
+STEP A5: Decide.
+
+Do the circled option. You are done.
+
+If it turns out badly, it is reversible -- you will fix it at the review
+date or sooner.
+
+What you should see: A decision made in under 5 minutes with a review date
+written down.
+
+
+================================================================================
+SECTION B: STANDARD DECISIONS
+================================================================================
+(For: most decisions that are not emergencies, not trivially reversible,
+and not highest-stakes.)
+
+---ASSUMPTION CHECK B0---
+(Protects against Assumption #1: "The decision is correctly framed" and
+Assumption #2: "I have identified all the options.")
+
+B0a: Write down the decision in one sentence.
+
+B0b: Write down who told you this was the decision. Was it you? A boss?
+A situation? Write the source.
+
+B0c: Ask: "What would a very different person (different background,
+different values, different expertise) say this decision is actually about?"
+Write their version.
+
+  If their version is substantially different --> Write both versions down.
+  Use THEIR version for the rest of this section. (People who reframe your
+  decisions are often seeing something you missed.)
+
+  If their version is basically the same --> Continue with your original
+  framing.
+
+---
+
+STEP B1: List ALL options you can think of.
+
+Write them down. Include options you have already dismissed. Include
+"do nothing / keep things as they are." Include "delay the decision."
+
+What you should see: 3-8 options listed. If you have fewer than 3, do B1b.
+
+B1b (only if fewer than 3 options): Ask someone who is not involved in
+this decision: "I am deciding about [topic]. What options am I missing?"
+Write down whatever they say, even if it seems wrong.
+
+(Protects against Assumption #2: "I have identified all the options.")
+
+---
+
+STEP B2: Write down what you want the outcome to be.
+
+Not which option you want to pick -- what you want to be TRUE after you
+decide. Write 2-5 outcomes that matter to you, stated as things you could
+check later.
+
+Good: "I want to spend less than $500/month on this."
+Bad: "I want the best value." (You cannot check "best.")
+
+What you should see: 2-5 checkable outcome statements.
+
+(Protects against Assumption #5: "I know what I want." If you cannot write
+checkable outcomes, go to SECTION E.)
+
+---
+
+STEP B3: Check if you should delegate this decision.
+
+Answer these two questions:
+
+B3a: "Is there someone who has made this exact type of decision
+     successfully at least 5 times before?"
+B3b: "Is the outcome important enough that getting it wrong matters?"
+
+  If BOTH are yes --> Go to SECTION F: When to Delegate.
+  If either is no --> Continue to B4.
+
+---
+
+STEP B4: For each option, write the BEST and WORST realistic outcome.
+
+Make a table:
+
+| Option | Best realistic outcome | Worst realistic outcome |
+|--------|----------------------|------------------------|
+| ...    | ...                  | ...                    |
+
+"Realistic" means: has happened before to real people, or could plausibly
+happen. Not fantasy best or catastrophe worst.
+
+What you should see: A filled table with 2 columns per option.
+
+---
+
+STEP B5: Eliminate any option where the worst outcome is unacceptable.
+
+Look at each "worst realistic outcome." Ask: "Could I live with this?"
+
+  Cross out any option where the answer is no.
+
+(Protects against Assumption #12: optimizing for best while ignoring ruin.)
+
+What you should see: Some options may be crossed out. At least one remains.
+If ALL are crossed out, go to SECTION E (you may need to reframe).
+
+---
+
+STEP B6: Check if getting more information would actually change your choice.
+
+---ASSUMPTION CHECK B6---
+(Protects against Assumption #3: "More information will improve the
+decision.")
+
+Ask: "Is there a specific piece of information that, if I learned it,
+would change which option I pick?"
+
+  (Y) Yes, I can name the specific information --> Write it down.
+      Can you get this information in less than 1/3 of your remaining
+      decision time?
+        (Y) Yes --> Get the information. Then return to B4 and redo
+            with the new information.
+        (N) No --> Continue to B7. (The information is not worth the delay.)
+
+  (N) No, or I cannot name what would change my mind --> Continue to B7.
+      (You already have enough information. More research is procrastination.)
+
+---
+
+STEP B7: Rank remaining options against your outcomes from B2.
+
+For each option, score it against each outcome:
+  (+) This option makes this outcome more likely.
+  (0) This option does not affect this outcome.
+  (-) This option makes this outcome less likely.
+
+| Option   | Outcome 1 | Outcome 2 | Outcome 3 |
+|----------|-----------|-----------|-----------|
+| Option A | +         | 0         | -         |
+| Option B | 0         | +         | +         |
+
+What you should see: A grid with +, 0, and - marks.
+
+---
+
+STEP B8: Read the grid. Which option has the most (+) marks and fewest
+(-) marks?
+
+  If one option is clearly best --> Continue to B9 with that option.
+
+  If two or more options look similar --> Ask: "Which of my outcomes in B2
+  matters MOST to me?" Use that outcome as the tiebreaker. The option that
+  scores (+) on that outcome wins.
+
+  If you STILL cannot pick --> Go to SECTION E (you may have a values
+  confusion, not a decision problem).
+
+---
+
+STEP B9: Pre-mortem.
+
+Write down: "I have decided on [option]. It is now 6 months later and this
+decision turned out badly. What went wrong?"
+
+Write 2-3 things that could go wrong.
+
+For each one, ask: "Can I do something NOW to reduce this risk?"
+
+  If yes --> Write down the action and do it.
+  If no --> Accept the risk and continue.
+
+---
+
+---ASSUMPTION CHECK B10---
+(Protects against Assumption #4: "I am being rational about this" and
+Assumption #18: "The stated reasons are the real reasons.")
+
+B10a: Write down WHY you are choosing this option. List 2-3 reasons.
+
+B10b: Now ask: "If someone who disagrees with me read these reasons,
+what would they say my REAL reason is?"
+
+Write their version. Read both versions.
+
+  If their version feels uncomfortably accurate --> Pause. You may be
+  rationalizing. Consider whether the "real reason" is actually a good
+  reason. If it is, proceed. If it is not, return to B7.
+
+  If their version seems wrong or irrelevant --> Proceed to B11.
+
+---
+
+STEP B11: State your decision and act.
+
+Write down: "I am choosing [option] because [top 2 reasons from B10a].
+I will know this was a good decision if [checkable outcome from B2]
+by [date]."
+
+What you should see: One sentence with the decision, reasons, success
+criteria, and a date.
+
+---
+
+STEP B12: Set a review date.
+
+Write down a date to check the outcomes from B2. Put it on your calendar.
+
+You are done.
+
+
+================================================================================
+SECTION C: HIGH-STAKES DECISIONS
+================================================================================
+(For: irreversible + high stakes. Pattern: Bet the Farm.)
+(Goal: Maximum deliberation. Use all the time available.)
+
+---ASSUMPTION CHECK C0---
+(Protects against Assumption #1: "The decision is correctly framed" and
+Assumption #17: "Choosing not to decide is not a decision.")
+
+C0a: Write down the decision in one sentence.
+
+C0b: Write down: "The last possible date I can decide is ___."
+     Write down: "The cost of deciding one week later is ___."
+
+  If the cost of one week's delay is low --> Use that week. Do not rush.
+
+C0c: Write down: "What happens if I make NO decision and let the default
+play out?"
+
+  If the default outcome is acceptable --> You may not need to decide at
+  all. Ask: "Am I making this decision because I should, or because I feel
+  like I should?" If only the latter, seriously consider doing nothing.
+
+  If the default is unacceptable --> Continue to C1.
+
+---
+
+STEP C1: List ALL options, including ones you have dismissed.
+
+Same as B1, but add these extra prompts:
+
+C1a: "What option would someone with twice my budget choose?"
+C1b: "What option would someone with half my budget choose?"
+C1c: "What option would someone with completely different values choose?"
+C1d: "What option involves combining two of my current options?"
+
+Write all of these down even if they seem impractical.
+
+What you should see: 5-15 options listed.
+
+---
+
+STEP C2: Write down your desired outcomes (same as B2) but add:
+
+C2a: "What outcome am I MOST afraid of?" (Write it down specifically.)
+C2b: "What outcome would I be ashamed to want?" (Write it if there is one.)
+
+(Protects against Assumption #5: "I know what I want" and Assumption #18:
+"The stated reasons are the real reasons.")
+
+What you should see: 3-7 outcome statements including uncomfortable ones.
+
+---
+
+STEP C3: Identify who else is affected.
+
+Write a list of every person or group affected by this decision.
+For each, write what THEY would want the outcome to be.
+
+What you should see: A list of people/groups with their desired outcomes.
+
+  If any of these people have relevant expertise --> Go to SECTION F
+  for THAT person, then return here.
+
+---
+
+STEP C4: For each option, write the best, worst, AND most likely outcome.
+
+| Option | Best realistic | Worst realistic | Most likely |
+|--------|---------------|-----------------|-------------|
+| ...    | ...           | ...             | ...         |
+
+What you should see: A table with 3 columns filled in per option.
+
+---
+
+STEP C5: Eliminate options with unacceptable worst outcomes.
+
+Same as B5, but stricter: for high-stakes decisions, ask "Could I live
+with this for 5+ years?" since these are hard to reverse.
+
+What you should see: Remaining options all have survivable worst cases.
+
+---
+
+STEP C6: For remaining options, get outside input.
+
+This is NOT optional for high-stakes decisions.
+
+C6a: Describe the decision and your options to someone who is NOT
+     emotionally involved and who will not just agree with you.
+
+C6b: Ask them: "What am I not seeing?"
+
+C6c: Write down what they say, even if you disagree.
+
+C6d: Ask them: "If you had to argue AGAINST the option I seem to prefer,
+     what would you say?"
+
+Write down their argument.
+
+What you should see: Written notes from at least one outside perspective.
+
+---
+
+---ASSUMPTION CHECK C7---
+(Protects against Assumption #4: "I am being rational about this.")
+
+C7a: Name the emotion you feel most strongly about this decision.
+     Write it down. (Examples: fear, excitement, guilt, obligation, desire
+     to prove something, desire to avoid conflict.)
+
+C7b: Ask: "If I did NOT feel [that emotion], would I choose differently?"
+
+  (Y) Yes --> The emotion may be driving the decision, not the facts.
+      Before proceeding, sleep on it (literally -- decide tomorrow).
+      If you still feel the same way after sleeping, continue to C8.
+  (N) No --> Continue to C8.
+
+---
+
+STEP C8: Score options against outcomes (same as B7), but weight them.
+
+C8a: Rank your outcomes from B2/C2 in order of importance (1 = most
+important).
+
+C8b: Score each option against each outcome using:
+  (++) Strongly supports this outcome
+  (+)  Somewhat supports
+  (0)  Neutral
+  (-)  Somewhat undermines
+  (--) Strongly undermines
+
+C8c: For your #1 most important outcome, any option scoring (-) or (--)
+is eliminated unless it scores (++) on your #2 outcome.
+
+What you should see: A weighted grid with a clear or near-clear winner.
+
+---
+
+STEP C9: Extended pre-mortem.
+
+Write: "I chose [option]. It is 2 years later and I deeply regret it.
+Write the story of what went wrong."
+
+Write the full story -- at least a paragraph.
+
+Then write: "I chose [option]. It is 2 years later and it was the best
+decision I ever made. Write the story of what went right."
+
+Write the full story.
+
+Read both stories. Ask: "Is there anything in the regret story I can
+prevent NOW?"
+
+  If yes --> Write down the preventive action.
+  If no --> Accept the risk.
+
+---
+
+STEP C10: Final gut check.
+
+After all this analysis, what does your gut say? Write it down.
+
+  If your gut agrees with the analysis --> Go to C11.
+  If your gut disagrees with the analysis --> Ask: "Does my gut know
+  something the analysis missed, or is my gut just scared?"
+    If it knows something --> Write down what. Re-evaluate that factor.
+    If it is just scared --> Proceed with the analysis answer. Fear of
+    change is not information.
+
+---
+
+STEP C11: State your decision.
+
+Write down: "I am choosing [option] because [top 3 reasons].
+The biggest risk is [from C9]. I am mitigating it by [action].
+I will know this was a good decision if [checkable outcome] by [date].
+I consulted [name from C6] who [agreed/disagreed/added perspective]."
+
+You are done.
+
+
+================================================================================
+SECTION D: EMERGENCY DECISIONS
+================================================================================
+(For: must decide NOW + stakes are not trivial. Pattern: Emergency.)
+(Goal: Make a defensible decision in minutes, not hours.)
+
+---
+
+STEP D1: STOP and breathe. Set a timer for 60 seconds. Do nothing for
+those 60 seconds except breathe.
+
+(This is not optional. Emergencies trigger fight-or-flight responses that
+impair decision-making. 60 seconds of breathing partially counteracts
+this.)
+
+What you should see: A 60-second pause completed.
+
+---
+
+STEP D2: Write the decision in one sentence. Use pen and paper if
+possible -- it is faster under stress than typing.
+
+---
+
+STEP D3: Do you have a pre-existing plan, policy, or protocol for this
+situation?
+
+  (Y) Yes --> Follow that plan. Skip to D7.
+  (N) No --> Continue to D4.
+
+(Pre-committed defaults exist for exactly this reason -- emergencies are
+the worst time to make novel decisions.)
+
+---
+
+STEP D4: Is there someone available RIGHT NOW who has more expertise
+than you in this situation?
+
+  (Y) Yes --> Delegate to them. Tell them: "I need you to decide [one
+      sentence from D2]. You have [time available]. I will support
+      whatever you choose." Skip to D7.
+  (N) No --> Continue to D5.
+
+---
+
+STEP D5: List options. In an emergency, you get 2 minutes for this.
+Write fast. You need at least 2 options. "Do nothing" counts as an option.
+
+---
+
+STEP D6: For each option, answer only this: "Which option is LEAST
+likely to cause irreversible harm?"
+
+Choose that option.
+
+(In emergencies, minimize downside. Do not try to optimize for the best
+outcome -- avoid the worst one.)
+
+---
+
+STEP D7: Act immediately.
+
+---
+
+STEP D8: As soon as the emergency has passed, schedule 30 minutes to
+review the decision using SECTION B. Write down what happened and what
+you would do differently. This is how you build better pre-existing plans
+(D3) for next time.
+
+What you should see: A fast decision made, an action taken, and a review
+scheduled.
+
+
+================================================================================
+SECTION E: STUCK DECISIONS
+================================================================================
+(For: feeling paralyzed, going in circles, or unclear about what you want.
+Patterns: Paralysis Trap, Values First.)
+
+The fact that you are in this section means the problem is probably NOT
+"which option is best." The problem is usually one of:
+  (a) You do not know what you actually want.
+  (b) You have too many options.
+  (c) You are afraid of choosing wrong.
+  (d) The stated decision is not the real decision.
+
+This section figures out which one and routes you accordingly.
+
+---
+
+STEP E1: Write down what you have been going back and forth about.
+No structure needed -- just dump it out.
+
+---
+
+STEP E2: Read what you wrote. Answer this question:
+
+"Can I clearly describe what a GOOD outcome looks like?"
+
+  (Y) Yes, I know what I want, I just cannot pick the path -->
+      The problem is too many options or fear of choosing. Go to E5.
+  (N) No, I am not even sure what I want --> Go to E3.
+
+---
+
+STEP E3: Values clarification.
+
+(Protects against Assumption #5: "I know what I want.")
+
+Do this exercise:
+
+E3a: Think of a time you felt deeply satisfied with a decision you made.
+Write down what made it satisfying. Not WHAT you decided -- what about
+the RESULT felt good?
+
+E3b: Think of a decision you deeply regret. Write down what made it
+bad. Not what you decided -- what about the RESULT felt wrong?
+
+E3c: Look at what you wrote. The satisfying result tells you what you
+value. The regretful result tells you what you want to avoid.
+
+Write down: "In this decision, what I actually want is _________ and
+what I want to avoid is _________."
+
+  If you can fill in those blanks --> Go to SECTION B, Step B2, using
+  these as your desired outcomes.
+
+  If you still cannot fill in those blanks --> Go to E4.
+
+---
+
+STEP E4: Get outside help.
+
+If you have done E3 and still do not know what you want, this decision
+may involve value conflicts that are hard to sort out alone.
+
+E4a: Talk to someone you trust -- not about the DECISION, but about what
+you want from life in the area this decision affects. (Career, relationships,
+money, health -- whatever it touches.)
+
+E4b: Specifically ask them: "What do you think I actually care about
+in this area?" Listen to their answer. Write it down.
+
+E4c: Does their answer resonate, even if you would not have said it
+yourself?
+
+  (Y) Yes --> Use their framing. Return to E3c.
+  (N) No --> You may need more time, a therapist, or a coach. This
+      procedure has reached its limit. Write down: "I am not ready to
+      make this decision yet" and set a date to revisit it.
+
+---
+
+STEP E5: Reducing option overload.
+
+(For when you know what you want but have too many options or are afraid
+to commit.)
+
+E5a: How many options are you considering?
+
+  2 options --> Go to E6.
+  3-5 options --> Go to E5b.
+  6+ options --> Go to E5c.
+
+E5b (3-5 options): Eliminate options using the "hell yes or no" test.
+For each option, ask: "Am I excited about this, or am I keeping it because
+I feel like I should?" Cross off anything that is not a genuine "yes."
+
+  If 1-2 remain --> Go to E6.
+  If all remain --> Pick the 2 you would be MOST disappointed to lose
+  and cross off the rest. Go to E6.
+
+E5c (6+ options): You have too many options to evaluate. Cut to 3:
+  - Which option would you pick if you had to decide RIGHT NOW?
+  - Which option would you MOST regret not trying?
+  - Which option is most different from the first two?
+  Keep these 3. Cross off the rest. Go to E5b.
+
+---
+
+STEP E6: The coin flip test.
+
+(This does not make the decision for you. It tells you what you actually
+want.)
+
+E6a: Assign option 1 to heads and option 2 to tails.
+
+E6b: Flip a coin (or use a random number generator).
+
+E6c: It landed on [option X]. Notice your IMMEDIATE emotional reaction:
+
+  Relief ("oh good") --> That is your answer. Choose that option.
+      Go to SECTION B, Step B9 (pre-mortem) to check for risks, then decide.
+
+  Disappointment ("oh no") --> You wanted the OTHER option. Choose that one.
+      Go to SECTION B, Step B9.
+
+  Nothing / neutral --> The options are genuinely equivalent. Pick either
+      one. Go to SECTION A, Step A4.
+
+---
+
+---ASSUMPTION CHECK E7---
+(Protects against Assumption #17: "Choosing not to decide is not a
+decision.")
+
+Before leaving this section, ask: "Am I still not deciding? Am I about
+to go back to circling?"
+
+  If yes --> You are choosing the default by not choosing. Write down:
+  "By not deciding, I am effectively choosing [whatever happens if I
+  do nothing]." Ask: "Is that what I want?"
+    If yes --> You have decided. Write it down. You are done.
+    If no --> Pick the option from E6 and act on it today. Imperfect
+    action beats perfect paralysis.
+
+
+================================================================================
+SECTION F: WHEN TO DELEGATE
+================================================================================
+(For: when someone else should make or heavily influence this decision.
+Pattern: Delegate.)
+
+You are here because the decision has real stakes AND someone with
+more expertise exists.
+
+---
+
+STEP F1: Identify the expert.
+
+Write down the name of the person (or type of person) who has made this
+type of decision successfully multiple times.
+
+What you should see: A specific name or a role (e.g., "a tax attorney,"
+"my doctor," "a structural engineer").
+
+---
+
+STEP F2: Check for conflicts of interest.
+
+Ask: "Does this expert benefit from me choosing a particular option?"
+
+  (Y) Yes --> They can inform but should not decide. Get a SECOND
+      expert who does not benefit. Then continue to F3 using the
+      unconflicted expert.
+  (N) No --> Continue to F3.
+
+---
+
+STEP F3: Give them the right information.
+
+Before asking the expert, prepare:
+
+F3a: The decision in one sentence.
+F3b: Your desired outcomes from B2 or C2.
+F3c: The options you have identified.
+F3d: Any constraints (budget, time, values) they need to respect.
+
+Present ALL of this. Do not just say "what should I do?" -- that gives
+them too little to work with.
+
+---
+
+STEP F4: Ask the right question.
+
+Do NOT ask: "What should I do?"
+DO ask: "Given what I have told you, what option would you choose and why?"
+
+Write down their answer AND their reasoning.
+
+---
+
+STEP F5: Check their reasoning, not just their answer.
+
+Ask: "What could go wrong with this recommendation?"
+
+If they say "nothing" or get defensive, their recommendation may be
+overconfident. Get a second opinion.
+
+If they give you concrete risks, you now have the information you need.
+
+---
+
+STEP F6: Make the decision.
+
+You have expert input. Now return to wherever you came from (SECTION B
+or SECTION C) and incorporate what you learned. The expert informs your
+decision -- unless you explicitly choose to hand the decision to them
+entirely (which is itself a decision you are making).
+
+
+================================================================================
+QUICK REFERENCE CARDS
+================================================================================
+
+CARD 1: THE 60-SECOND SORT
+---
+Reversible + low stakes? --> Decide now, review later. (SECTION A)
+Must decide NOW + real stakes? --> 60 seconds breathing, then minimize harm. (SECTION D)
+Stuck or confused? --> Clarify what you want first. (SECTION E)
+Expert available + high stakes? --> Get their input. (SECTION F)
+High stakes + irreversible? --> Full deliberation. (SECTION C)
+Everything else? --> Standard process. (SECTION B)
+---
+
+CARD 2: THE FIVE QUESTIONS THAT PROTECT YOU
+---
+1. "Is this actually the decision I need to make?" (Assumption check #1)
+2. "What options am I missing?" (Assumption check #2)
+3. "What would I choose if I were not afraid?" (Assumption check #4)
+4. "What do I actually want to be true afterward?" (Assumption check #5)
+5. "Could the worst case ruin me?" (Assumption check #12)
+---
+
+CARD 3: RED FLAGS -- STOP AND REASSESS
+---
+- You keep researching but not deciding. (Procrastination disguised as thoroughness.)
+- Everyone you ask agrees with you. (You are only asking allies.)
+- You cannot explain your choice to a skeptic. (You may not have real reasons.)
+- You feel rushed but there is no actual deadline. (Manufactured urgency.)
+- The "obvious" choice makes you feel uneasy. (Your gut is flagging something.)
+---
+
+
+================================================================================
+COMMON MISTAKES
+================================================================================
+
+MISTAKE 1: Treating a reversible decision as irreversible.
+What it looks like: Spending days agonizing over something you could
+easily change later.
+Fix: Re-do Step 0. If 0A = Y, go to Section A.
+
+MISTAKE 2: Gathering more information when you already have enough.
+What it looks like: Reading one more article, asking one more person,
+running one more analysis -- and never deciding.
+Fix: Do Step B6 honestly. If you cannot name the specific information
+that would change your choice, you have enough.
+
+MISTAKE 3: Optimizing for the best outcome instead of avoiding the
+worst outcome.
+What it looks like: Choosing the option with the highest upside while
+ignoring that it also has the worst downside.
+Fix: Always do the elimination step (B5 or C5) BEFORE the ranking step
+(B7 or C8).
+
+MISTAKE 4: Letting emotions drive without noticing.
+What it looks like: Having strong "logical" reasons that happen to
+align perfectly with what you already wanted emotionally.
+Fix: Do Step B10 or C7 honestly.
+
+MISTAKE 5: Confusing "I cannot decide" with "the options are equal."
+What it looks like: Going in circles, unable to pick, assuming this
+means the options are equivalent.
+Reality: Usually means you do not know what you want (values confusion)
+or you are afraid of the wrong choice.
+Fix: Go to Section E.
+
+MISTAKE 6: Skipping the writing.
+What it looks like: Doing this procedure "in your head."
+Why it fails: Your head lies to you. It skips steps, rationalizes, and
+forgets what it concluded 5 minutes ago. The writing is what makes this
+procedure work. If you did not write it down, you did not do the step.
+
+MISTAKE 7: Deciding not to decide and pretending that is not a decision.
+What it looks like: Saying "I will decide later" repeatedly until the
+options narrow by themselves.
+Fix: Assumption Check E7. Write down what happens by default. Own it.
+
+MISTAKE 8: Asking for advice from people who will just agree with you.
+What it looks like: "I talked to three friends and they all think I
+should do it!"
+Fix: Step C6d -- specifically ask someone to argue AGAINST your
+preference.
+
+
+================================================================================
+WHEN TO OVERRIDE THIS PROCEDURE
+================================================================================
+
+This procedure is a tool, not a law. Override it when:
+
+1. YOU ARE IN PHYSICAL DANGER.
+   Get safe first. Procedures are for when you have the luxury of
+   thinking.
+
+2. A DOMAIN EXPERT TELLS YOU THE PROCEDURE IS WRONG FOR THIS CASE.
+   A doctor, lawyer, engineer, or other qualified specialist may have
+   domain-specific procedures that are better. Use theirs.
+
+3. YOU HAVE DEEP EXPERTISE AND PATTERN RECOGNITION IN THIS EXACT
+   DECISION TYPE.
+   If you have made this exact type of decision successfully 20+ times,
+   your intuition may be better than this procedure. (But: "I have
+   opinions about this" is not the same as "I have expertise in this."
+   Expertise means track record.)
+
+4. THE DECISION INVOLVES MORAL OR LEGAL OBLIGATIONS.
+   Some decisions have a right answer that is not about optimizing
+   outcomes. If the law requires X, or your deepest moral convictions
+   require X, this procedure may route you to a "better" outcome that
+   violates those commitments. Override.
+
+5. YOU DISCOVER THE REAL DECISION IS DIFFERENT FROM THE ONE YOU STARTED
+   WITH.
+   Any assumption check that reveals a reframing means you should restart
+   the procedure with the new framing, not push through with the old one.
+
+
+================================================================================
+WORKED EXAMPLES
+================================================================================
+
+EXAMPLE 1: "Should I switch to a new phone plan?"
+-----
+
+Step 0:
+  0A: Can I undo it? --> (Y) I can switch back.
+  0B: Time? --> (W) No deadline.
+  0C: Stakes? --> (L) Minor cost difference.
+  0D: Stuck? --> (N) Just want to make a good choice.
+
+Routing: 0A=Y, 0C=L --> SECTION A.
+
+Assumption Check A0: "I am deciding between my current plan and the new
+plan." Is there a bigger decision? No, this is straightforward.
+
+A1: Options: (1) Keep current plan. (2) Switch to new plan.
+A2: Gut says: Switch -- the new plan is cheaper.
+A3: Ruin check? No, switching phone plans causes no serious harm.
+A4: Review date: 1 month from now.
+A5: Decision: Switch to the new plan.
+
+Total time: 3 minutes.
+
+-----
+
+EXAMPLE 2: "Should I accept this job offer?"
+-----
+
+Step 0:
+  0A: Reversible? --> (N) Quitting my current job is hard to undo.
+  0B: Time? --> (D) They want an answer by Friday.
+  0C: Stakes? --> (H) Affects income, career, daily life.
+  0D: Stuck? --> (N) Not stuck, just want to think carefully.
+
+Routing: 0C=H, 0A=N --> SECTION C.
+
+C0a: "I am deciding whether to accept a job offer at Company X."
+C0b: Last possible date: Friday. Cost of one more day: low (I can ask
+     for the weekend). --> Ask for the weekend.
+C0c: Default (no decision): I stay at current job. Is that acceptable?
+     Yes, my current job is fine. But I want to evaluate the opportunity.
+
+C1: Options:
+  (1) Accept the offer as-is.
+  (2) Decline the offer.
+  (3) Negotiate the offer (higher salary, remote days, etc.).
+  (4) Ask for a 2-week trial or probation period.
+  (5) Accept but negotiate a delayed start date.
+  C1a (twice my budget person): Would hire a career coach to evaluate.
+  C1c (different values): Would ask "which job lets me travel more?"
+
+C2: Desired outcomes:
+  - Earn at least $X/year. (Checkable.)
+  - Have flexibility to work from home 2+ days/week. (Checkable.)
+  - Work on problems I find interesting. (Somewhat checkable.)
+  C2a: Most afraid of: Hating the new job and having burned bridges.
+  C2b: Ashamed to want: Honestly, the prestige of the company name.
+
+C3: Who is affected: My spouse (wants stability), my team at current
+job (loses a member), my future team (gains one).
+
+C4: Table:
+| Option     | Best            | Worst               | Most likely    |
+|------------|-----------------|----------------------|----------------|
+| Accept     | Dream job       | Hate it, stuck       | Good, not great|
+| Decline    | Current job ok  | Regret for years     | Status quo     |
+| Negotiate  | Better offer    | They rescind         | Modest bump    |
+
+C5: "Hate it, stuck" -- can I live with this for 5 years? Not really,
+but I COULD leave within a year. So worst case is survivable but painful.
+None eliminated.
+
+C6: Called my mentor. She said: "You always do this -- you focus on
+salary but what actually matters to you is autonomy. Ask about decision-
+making authority, not just money." (This reframed my evaluation.)
+
+C7: Strongest emotion: Excitement. Would I choose differently without it?
+Maybe -- I might negotiate harder instead of just accepting.
+--> Sleep on it. Next morning: Still want to negotiate + accept.
+
+C8: Weighted ranking (Autonomy ranked #1 after mentor's input):
+Negotiate scores (++) on salary, (+) on autonomy if I negotiate for
+decision authority too.
+
+C9: Pre-mortem: "I accepted and 2 years later regret it. What happened?
+The role was micromanaged. My boss left and the replacement was terrible.
+The company culture was not what interviews showed." Preventable: Ask
+about management style. Ask to meet the team before accepting. Ask about
+turnover.
+
+C10: Gut agrees with analysis: Negotiate for salary + autonomy + meet
+the team first.
+
+C11: "I am choosing to negotiate the offer, specifically asking for
+(1) a 10% salary increase, (2) clarity on decision-making authority,
+and (3) a chance to meet the team. The biggest risk is they rescind.
+I am mitigating it by framing requests as enthusiasm, not demands.
+I will know this was good if I feel engaged and autonomous at 6 months.
+I consulted my mentor who redirected me toward autonomy as the key factor."
+
+Total time: 3 days (including sleeping on it). Appropriate for stakes.
+
+-----
+
+EXAMPLE 3: "I have been trying to decide whether to go back to school
+for 6 months and I cannot choose."
+-----
+
+Step 0:
+  0A: Reversible? --> (N) Major time and money commitment.
+  0B: Time? --> (W) Applications due in 3 months.
+  0C: Stakes? --> (H) Years of time, significant money.
+  0D: Stuck? --> (Y) Going in circles for 6 months.
+
+Routing: 0D=Y --> SECTION E.
+
+E1: "I keep going back and forth. Some days I think school would open
+doors, other days I think it is a waste of money. I have looked at
+programs but cannot commit to applying. My partner thinks I should go.
+My boss thinks I should stay."
+
+E2: Can I describe a good outcome? Not really -- I do not know if I want
+the degree for career advancement, for learning, for a credential, or
+just because I feel stuck in my current role.
+
+--> Go to E3.
+
+E3a: Satisfying past decision: Moved to a new city 5 years ago. What
+felt good: Having a fresh start. Learning new things. Proving I could
+handle it.
+
+E3b: Regretted past decision: Stayed in a job I hated for 2 years. What
+felt bad: Feeling trapped. Not growing. Doing the same thing every day.
+
+E3c: Pattern: I value growth, novelty, and challenge. I want to avoid
+stagnation. "In this decision, what I actually want is to STOP FEELING
+STAGNANT and what I want to avoid is ANOTHER PERIOD OF DOING THE SAME
+THING."
+
+Wait -- this reframes the decision. The decision is not "should I go
+back to school." The decision is "how do I stop feeling stagnant."
+School is ONE option. Others: new role at current company, career switch
+without a degree, sabbatical, side project.
+
+--> Return to Section C (high stakes, irreversible) with the reframed
+decision: "How do I create growth and challenge in my career?"
+
+This is Section E doing its job -- it revealed that the original framing
+was wrong (Assumption #1) and that the stated goal was not the real goal
+(Assumption #18).
+
+
+================================================================================
+VALIDATION STATUS
+================================================================================
+
+This procedure has not been validated by domain experts in decision
+science, behavioral economics, or psychology. It is a synthesis of
+established decision-making frameworks (two-way door / one-way door
+classification, pre-mortem technique, values clarification, expected
+value reasoning, satisficing vs. maximizing) organized into a mechanical
+format.
+
+Use it as a starting point. Improve it based on your experience. If a
+step consistently gives you bad results, drop it or modify it.
+
+The procedure is versioned. This is version 1.0.
+
+================================================================================
+END OF PROCEDURE
+================================================================================

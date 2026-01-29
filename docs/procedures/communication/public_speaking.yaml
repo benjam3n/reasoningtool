@@ -1,0 +1,763 @@
+# Public Speaking Procedure - Deliver impactful presentations and speeches
+# GOSM Communication procedure for preparing and delivering effective talks
+
+id: public_speaking
+name: Public Speaking
+version: "1.0.0"
+domain: communication
+
+description: Systematic procedure for preparing and delivering impactful presentations, speeches, and talks
+
+long_description: |
+  The Public Speaking procedure provides a comprehensive framework for preparing,
+  practicing, and delivering effective presentations across various contexts including
+  conference talks, team meetings, executive briefings, and keynote speeches.
+
+  This procedure integrates:
+  - Content preparation (structuring ideas for maximum impact)
+  - Delivery techniques (voice, body language, pacing)
+  - Audience engagement (connecting and adapting in real-time)
+  - Anxiety management (channeling nerves into energy)
+  - Q&A handling (responding effectively under pressure)
+
+  Key principles:
+  - Know your audience and their context deeply
+  - One core message, repeated and reinforced
+  - Stories and examples trump abstract concepts
+  - Practice out loud, not just in your head
+  - Nervousness is energy waiting to be channeled
+
+tags:
+  - communication
+  - presentation
+  - speaking
+  - leadership
+  - influence
+  - delivery
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Presenting at conferences, meetups, or industry events
+  - Delivering keynote speeches or opening remarks
+  - Leading team meetings or all-hands presentations
+  - Pitching to investors, clients, or executives
+  - Teaching workshops or training sessions
+  - Giving toasts, eulogies, or ceremonial speeches
+  - Presenting project updates or proposals to stakeholders
+  - Defending thesis or presenting research findings
+  - Speaking at panel discussions or fireside chats
+  - Recording video presentations or webinars
+
+when_not_to_use:
+  - For one-on-one conversations (use active listening instead)
+  - When written communication would be more appropriate
+  - For casual team discussions without presentation component
+  - When the situation calls for facilitation rather than presentation
+  - For brainstorming sessions where you should listen more than speak
+  - When the audience needs to read and analyze detailed documents
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: topic
+    type: string
+    required: true
+    description: The subject matter of the presentation
+
+  - name: audience
+    type: string
+    required: true
+    description: Who will be listening (size, role, knowledge level, expectations)
+
+  - name: duration
+    type: integer
+    required: true
+    description: Time allocated for the presentation in minutes
+
+  - name: context
+    type: enum
+    values: [conference, team_meeting, executive_briefing, pitch, workshop, ceremonial, webinar]
+    required: false
+    description: The setting and format of the presentation
+
+  - name: desired_outcome
+    type: string
+    required: true
+    description: What you want the audience to think, feel, or do after your talk
+
+  - name: constraints
+    type: list
+    required: false
+    description: Limitations such as no slides, specific format, remote vs in-person
+
+outputs:
+  - name: presentation_outline
+    type: document
+    description: Structured outline with opening, main points, and close
+
+  - name: speaker_notes
+    type: document
+    description: Detailed notes including transitions and timing cues
+
+  - name: practice_plan
+    type: document
+    description: Rehearsal schedule and focus areas
+
+  - name: delivery_notes
+    type: document
+    description: Post-presentation reflection and improvement areas
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Analyze audience and context
+    action: |
+      Before creating any content, understand your audience deeply:
+      1. Who will be in the room? (roles, demographics, group size)
+      2. What do they already know about this topic?
+      3. What do they expect from this presentation?
+      4. What are their pain points or concerns related to your topic?
+      5. What would make this talk valuable TO THEM?
+      6. What's the physical/virtual setup? (room size, AV, remote)
+      7. What happens before and after your talk? (context matters)
+    inputs:
+      - audience
+      - context (optional)
+    outputs:
+      - audience_profile: detailed understanding of who you're speaking to
+      - context_analysis: physical and situational factors
+      - audience_needs: what they want to gain from your talk
+    verification: |
+      Can describe what success looks like from the AUDIENCE's perspective
+      Know the room setup and technical constraints
+
+  - id: 2
+    name: Define your core message
+    action: |
+      Distill your talk to one essential message:
+      1. If the audience remembers only ONE thing, what should it be?
+      2. Write your core message in one sentence (15 words or less)
+      3. Test: Would someone who missed your talk understand it from this sentence?
+      4. This message should appear at least 3 times in your talk
+      5. All content should support or illustrate this message
+      6. If content doesn't serve the core message, cut it
+    inputs:
+      - topic
+      - desired_outcome
+      - audience_needs (from Step 1)
+    outputs:
+      - core_message: single sentence capturing your main point
+      - supporting_themes: 2-4 sub-points that reinforce the core message
+    verification: |
+      Core message is memorable and fits in one sentence
+      Can explain why this message matters to THIS audience
+
+  - id: 3
+    name: Structure your content
+    action: |
+      Build the architecture of your talk:
+
+      Opening (10-15% of time):
+      - Hook: Grab attention in first 30 seconds (story, question, surprising fact)
+      - Establish credibility and relevance
+      - Preview: Tell them what you'll tell them
+      - State your core message
+
+      Body (70-80% of time):
+      - Limit to 3 main points (audiences can't absorb more)
+      - Each point follows: Claim -> Evidence -> Example -> Relevance
+      - Include stories and concrete examples (not just abstract concepts)
+      - Build in transitions between sections
+      - Return to core message after each main point
+
+      Close (10-15% of time):
+      - Signal you're concluding ("In closing..." not "So, yeah...")
+      - Summarize: Tell them what you told them
+      - Restate core message powerfully
+      - Call to action: What should they do with this information?
+      - Strong final line (not "Any questions?")
+    inputs:
+      - duration
+      - core_message (from Step 2)
+      - supporting_themes (from Step 2)
+    outputs:
+      - presentation_outline: complete structure with timing allocations
+      - opening_options: 2-3 possible hooks to consider
+      - closing_line: memorable final statement
+    verification: |
+      Total time allocation matches duration
+      No more than 3 main points in body
+      Each main point has at least one concrete example or story
+
+  - id: 4
+    name: Develop stories and examples
+    action: |
+      Make abstract concepts concrete and memorable:
+      1. For each main point, find at least one specific story or example
+      2. Stories should have: character, conflict, resolution, lesson
+      3. Use the "STAR" format: Situation, Task, Action, Result
+      4. Personal stories are more compelling than hypotheticals
+      5. Make examples relevant to THIS audience's experience
+      6. Include sensory details that help people visualize
+      7. Practice telling each story until it flows naturally
+    inputs:
+      - presentation_outline (from Step 3)
+      - audience_profile (from Step 1)
+    outputs:
+      - story_library: developed stories and examples for each point
+      - example_alternatives: backup examples if main ones don't land
+    verification: |
+      Each main point has at least one concrete story or example
+      Stories are appropriate length for your time allocation
+      Can tell each story without notes
+
+  - id: 5
+    name: Create visual aids (if applicable)
+    action: |
+      Design slides or visuals that enhance, not compete with, your message:
+      1. Slides support YOU, not replace you (you are the presentation)
+      2. One idea per slide maximum
+      3. Use images over text whenever possible
+      4. If using text: 6 words or fewer per slide
+      5. No bullet points if you can avoid them
+      6. Data should be visualized, not shown in tables
+      7. Use consistent, simple design (no busy templates)
+      8. Include blank/pause slides for key moments
+      9. Number slides for easy navigation during Q&A
+    inputs:
+      - presentation_outline (from Step 3)
+      - constraints (optional)
+    outputs:
+      - visual_aids: slides or other visual materials
+      - slide_notes: what to say with each slide
+    verification: |
+      Could deliver talk if slides failed completely
+      No slide has more than 6 words (except necessary quotes)
+      Slides advance your message, not distract from it
+
+  - id: 6
+    name: Prepare for Q&A
+    action: |
+      Anticipate and prepare for audience questions:
+      1. List 10 questions you might be asked (hardest ones first)
+      2. Prepare concise answers for each (30-60 seconds)
+      3. Practice bridging from hostile questions to your message
+      4. Prepare "I don't know" responses that maintain credibility
+      5. Plan for common Q&A challenges (tangential questions, hostile questioners)
+      6. Prepare 2-3 questions to seed if audience is quiet
+      7. Decide how you'll handle questions during vs after the talk
+    inputs:
+      - presentation_outline (from Step 3)
+      - audience_profile (from Step 1)
+    outputs:
+      - anticipated_questions: list with prepared responses
+      - bridging_phrases: ways to redirect to your message
+      - backup_questions: questions to prompt if silence
+    verification: |
+      Have responses for at least 5 likely questions
+      Know how to gracefully say "I don't know"
+
+  - id: 7
+    name: Practice delivery
+    action: |
+      Rehearse until delivery is natural, not memorized:
+
+      Practice sequence:
+      1. Read through silently (content familiarization)
+      2. Talk through sections out loud (find your words)
+      3. Full run-through standing up with slides (timing)
+      4. Record yourself and review (identify weak spots)
+      5. Practice in front of someone and get feedback
+      6. Final run-throughs focusing on weak spots
+
+      Delivery elements to practice:
+      - Opening: Practice until it's automatic under stress
+      - Transitions: Know exactly how to move between sections
+      - Stories: Tell them until they flow naturally
+      - Closing: Memorize your final line word-for-word
+      - Timing: Know which sections to cut if running long
+
+      Volume: Minimum 3 full run-throughs, more for important talks
+    inputs:
+      - presentation_outline (from Step 3)
+      - visual_aids (from Step 5)
+      - duration
+    outputs:
+      - practice_plan: rehearsal schedule
+      - timing_checkpoints: where you should be at key time marks
+      - cut_list: sections to shorten if running long
+    verification: |
+      Completed at least 3 full run-throughs
+      Can deliver opening and closing without notes
+      Know timing checkpoints (where you should be at 25%, 50%, 75%)
+
+  - id: 8
+    name: Manage nerves and energy
+    action: |
+      Channel anxiety into positive energy:
+
+      Before the talk:
+      - Reframe: Nervousness is excitement, your body preparing to perform
+      - Prepare obsessively: Confidence comes from preparation
+      - Arrive early: Familiarize yourself with room and equipment
+      - Move your body: Walk, stretch, do light exercise to burn adrenaline
+      - Breathe: 4 counts in, 4 counts hold, 4 counts out (repeat 5x)
+      - Power pose: 2 minutes of expansive posture before going on
+      - Visualize success: See yourself delivering confidently
+
+      During the talk:
+      - Focus on serving the audience, not on yourself
+      - Find friendly faces to speak to
+      - If you lose your place, pause and breathe (feels longer to you)
+      - Move purposefully to channel nervous energy
+      - Remember: Audience wants you to succeed
+
+      After the talk:
+      - Adrenaline will spike - this is normal
+      - Don't immediately critique yourself harshly
+      - Write down what worked while it's fresh
+    inputs:
+      - context (optional)
+    outputs:
+      - pre_talk_routine: personal calming and energizing sequence
+      - recovery_strategies: what to do if you stumble during the talk
+    verification: |
+      Have a specific pre-talk routine planned
+      Know at least 2 recovery strategies for common stumbles
+
+  - id: 9
+    name: Deliver the presentation
+    action: |
+      Execute your preparation with presence and connection:
+
+      Physical presence:
+      - Stand grounded, feet shoulder-width apart
+      - Make eye contact (3-5 seconds per person, or sections for large rooms)
+      - Use purposeful gestures (avoid fidgeting or repetitive movements)
+      - Move with intention (not pacing)
+      - Vary your position in the room
+
+      Vocal delivery:
+      - Speak louder and slower than feels natural
+      - Pause before and after key points (silence is powerful)
+      - Vary pace and pitch to maintain interest
+      - Emphasize key words with volume or pause
+      - Avoid filler words (um, uh, like, so)
+
+      Audience connection:
+      - Start with the audience, not your slides
+      - Read the room and adapt (energy level, confusion, engagement)
+      - Ask questions to involve the audience
+      - Acknowledge reactions (laughter, nodding, confusion)
+      - Be genuinely present, not performing a script
+    inputs:
+      - presentation_outline (from Step 3)
+      - visual_aids (from Step 5)
+      - pre_talk_routine (from Step 8)
+    outputs:
+      - delivery_execution: the actual presentation
+    verification: |
+      Maintained eye contact with audience (not slides or notes)
+      Delivered within allocated time
+      Landed the closing with strength
+
+  - id: 10
+    name: Handle Q&A effectively
+    action: |
+      Manage questions with confidence and clarity:
+
+      Receiving questions:
+      - Listen fully before formulating response
+      - Repeat or paraphrase question for large audiences
+      - Thank the questioner genuinely (not perfunctorily)
+      - If unclear, ask for clarification
+
+      Answering questions:
+      - Keep answers concise (30-60 seconds typical)
+      - Structure: Answer, Evidence, Bridge back to message
+      - It's okay to say "I don't know, but I'll find out"
+      - Redirect off-topic questions: "That's interesting - let's discuss offline"
+      - Address the whole room, not just the questioner
+
+      Difficult situations:
+      - Hostile questioner: Stay calm, acknowledge their point, bridge to your message
+      - Long-winded questioner: Wait for breath, summarize their question, answer briefly
+      - No questions: Ask your seeded question, or "A question I often get is..."
+      - Wrong question: Answer the question they should have asked
+    inputs:
+      - anticipated_questions (from Step 6)
+      - bridging_phrases (from Step 6)
+    outputs:
+      - qa_performance: questions received and how they were handled
+    verification: |
+      Kept answers under 90 seconds
+      Did not get defensive with difficult questions
+      Ended Q&A on strong note (not trailing off)
+
+  - id: 11
+    name: Reflect and improve
+    action: |
+      Capture learnings while they're fresh:
+      1. What went well? (specific moments, audience reactions)
+      2. What would you do differently?
+      3. Where did the audience engage most? Least?
+      4. Did the core message land?
+      5. How was your pacing and timing?
+      6. What questions revealed gaps in your content?
+      7. Get feedback from trusted observers if possible
+      8. Watch recording if available (painful but valuable)
+    inputs:
+      - delivery_execution (from Step 9)
+      - qa_performance (from Step 10)
+    outputs:
+      - delivery_notes: structured reflection and improvement areas
+      - future_improvements: specific changes for next time
+    verification: |
+      Captured at least 2 specific learnings
+      Identified 1-2 focus areas for next presentation
+
+# ============================================
+# DELIVERY TECHNIQUES
+# ============================================
+delivery_techniques:
+  voice:
+    volume:
+      principle: "Speak louder than conversational - it conveys confidence"
+      technique: "Project to the back of the room, not to the front row"
+      common_mistake: "Speaking too softly, especially when nervous"
+
+    pace:
+      principle: "Slower feels more confident and allows processing"
+      technique: "Aim for 120-150 words per minute (conversation is 180+)"
+      common_mistake: "Racing through material when nervous"
+
+    pauses:
+      principle: "Silence is powerful - use it strategically"
+      technique: "Pause before key points, after questions, to let ideas land"
+      common_mistake: "Filling silence with 'um' or rushing through"
+
+    variety:
+      principle: "Monotone loses audiences - vary pitch, pace, volume"
+      technique: "Speed up for excitement, slow down for emphasis, raise pitch for questions"
+      common_mistake: "Speaking in the same tone throughout"
+
+  body_language:
+    eye_contact:
+      principle: "Connection happens through the eyes"
+      technique: "3-5 seconds per person, cover all sections of room"
+      common_mistake: "Looking at slides, ceiling, or just one section"
+
+    posture:
+      principle: "How you stand affects how you feel and how you're perceived"
+      technique: "Feet planted, shoulders back, weight centered"
+      common_mistake: "Shifting weight, crossing arms, hunching"
+
+    gestures:
+      principle: "Purposeful movement reinforces message"
+      technique: "Use open gestures that match your words, hands visible"
+      common_mistake: "Hands in pockets, repetitive gestures, fidgeting"
+
+    movement:
+      principle: "Strategic movement holds attention and shows confidence"
+      technique: "Move toward audience for key points, use stage purposefully"
+      common_mistake: "Pacing nervously, staying frozen behind podium"
+
+  engagement:
+    questions:
+      types:
+        - "Rhetorical: 'Have you ever...?' (no answer expected)"
+        - "Polling: 'How many of you...?' (hands raised)"
+        - "Direct: 'What do you think about...?' (specific answer)"
+      technique: "Use questions to re-engage attention every 10 minutes"
+
+    interaction:
+      types:
+        - "Turn to neighbor and discuss"
+        - "Quick poll or show of hands"
+        - "Invite questions during the talk"
+        - "Live demonstration with volunteer"
+      technique: "Build in interaction points for talks over 20 minutes"
+
+    reading_the_room:
+      signs_of_engagement: "Eye contact, nodding, leaning forward, note-taking"
+      signs_of_disengagement: "Phone checking, slouching, side conversations, glazed eyes"
+      response: "Adjust pace, ask a question, move to a story, or acknowledge directly"
+
+# ============================================
+# HANDLING CHALLENGES
+# ============================================
+challenging_situations:
+  technical_failures:
+    slides_fail:
+      response: "Your talk should work without slides - proceed confidently"
+      prevention: "Know your content, have backup (printed notes, PDF on phone)"
+
+    microphone_fails:
+      response: "Project naturally, move closer to audience, or wait for fix"
+      prevention: "Test equipment before, have backup plan"
+
+    time_cut:
+      response: "Know what to cut, skip to conclusion gracefully"
+      prevention: "Have cut list prepared, know timing checkpoints"
+
+  audience_challenges:
+    hostile_questioner:
+      response: |
+        - Stay calm and don't get defensive
+        - Acknowledge their point: "That's a valid concern..."
+        - Bridge to your message: "What I've found is..."
+        - Offer to continue offline if needed
+      prevention: "Anticipate objections and address proactively in your talk"
+
+    silent_audience:
+      response: |
+        - Ask an easier question first
+        - Use think-pair-share (discuss with neighbor first)
+        - Seed with "A question I often get is..."
+        - Allow longer wait time (count to 10)
+      prevention: "Build in low-risk interaction early to warm them up"
+
+    distracted_audience:
+      response: |
+        - Change something: move, change volume, ask a question
+        - Tell a story (stories recapture attention)
+        - Address directly: "I want to make sure this is valuable..."
+        - Cut to the most important content
+      prevention: "Build in engagement points every 7-10 minutes"
+
+  speaker_challenges:
+    losing_place:
+      response: |
+        - Pause and breathe (feels longer to you than them)
+        - Glance at notes or slides
+        - Summarize what you've covered: "So, we've discussed..."
+        - Move to the next point you remember
+      prevention: "Know your transitions cold, have clear notes"
+
+    going_overtime:
+      response: |
+        - Skip to your conclusion
+        - Summarize remaining points briefly
+        - Never say "I'm running out of time"
+        - Land your closing strongly
+      prevention: "Know timing checkpoints, have cut list ready"
+
+    mind_blank:
+      response: |
+        - Take a breath and a sip of water
+        - Ask the audience a question
+        - Repeat your last point to buy time
+        - It feels much longer to you than to them
+      prevention: "Memorize opening and key transitions"
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Core message is clear and stated multiple times
+  - Opening grabs attention in first 30 seconds
+  - No more than 3 main points in the body
+  - Each point has at least one concrete story or example
+  - Closing is strong and includes call to action
+  - Practiced at least 3 times out loud
+  - Prepared for likely Q&A questions
+  - Timing has been checked and fits allocation
+
+failure_modes:
+  - mode: Information overload
+    symptom: Too many points, audience glazes over, nothing is memorable
+    resolution: Ruthlessly cut to 3 main points supporting one core message
+
+  - mode: Abstract concepts without examples
+    symptom: Audience nods but doesn't connect or remember
+    resolution: Add specific stories and examples for every main point
+
+  - mode: Weak opening
+    symptom: Starting with "Today I'm going to talk about..." or throat-clearing
+    resolution: Craft a hook (story, question, surprising fact) and memorize it
+
+  - mode: Trailing close
+    symptom: Ending with "So, yeah..." or "Any questions?"
+    resolution: Memorize a strong final line and signal conclusion clearly
+
+  - mode: Reading slides
+    symptom: Back to audience, reading text from slides
+    resolution: Reduce slide text to 6 words max, know content without slides
+
+  - mode: Monotonous delivery
+    symptom: Same pace, pitch, and energy throughout, audience disengages
+    resolution: Practice varying voice, add strategic pauses, move purposefully
+
+  - mode: Under-preparation
+    symptom: Fumbling, losing place, running over time, weak Q&A
+    resolution: Minimum 3 full run-throughs, practice out loud not just in head
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Conference presentation on technical topic
+    context: 30-minute talk at industry conference, 200 attendees, mixed experience levels
+    inputs:
+      topic: "Implementing observability in microservices"
+      audience: "200 software engineers, mixed senior/junior, at DevOps conference"
+      duration: 30
+      context: "conference"
+      desired_outcome: "Attendees leave with 3 actionable practices they can implement Monday"
+    process: |
+      Step 1 - Audience Analysis:
+      - 200 engineers, varied experience (30% junior, 50% mid, 20% senior)
+      - They know microservices basics, want practical guidance
+      - Pain points: debugging distributed systems, alert fatigue, tool overwhelm
+      - They want: actionable takeaways, not theory
+
+      Step 2 - Core Message:
+      "Effective observability starts with three pillars: logs, metrics, and traces
+      working together, not separately."
+
+      Step 3 - Structure:
+      - Opening (4 min): Story of 3am incident, hook with pain point
+      - Point 1 (7 min): Logs - structured logging, what to log, example
+      - Point 2 (7 min): Metrics - key metrics, alerting principles, example
+      - Point 3 (7 min): Traces - distributed tracing, connecting the pillars, example
+      - Close (5 min): Summary, 3 actions for Monday, resources
+
+      Step 4 - Stories:
+      - Opening: My worst 3am incident and what I learned
+      - Logs: How structured logging cut our debug time by 60%
+      - Metrics: The alert that cried wolf (alert fatigue story)
+      - Traces: Finding the needle - one trace that saved us
+
+      Step 7 - Practice:
+      - 5 full run-throughs over 2 weeks
+      - Recorded and reviewed once
+      - Dry run with team for feedback
+      - Timing checkpoints: 8 min, 15 min, 22 min
+    expected_output:
+      presentation_outline:
+        opening:
+          hook: "3am incident story"
+          credibility: "Brief intro, 5 years building observability at scale"
+          preview: "Three practices you can implement Monday"
+          core_message: "First statement of core message"
+          time: "4 minutes"
+        body:
+          point_1:
+            claim: "Structured logs are the foundation"
+            evidence: "60% faster debugging metric"
+            example: "Specific log format and query"
+            relevance: "What you can do Monday"
+            time: "7 minutes"
+          point_2:
+            claim: "Metrics should drive action, not noise"
+            evidence: "Alert fatigue statistics"
+            example: "Key metrics and alerting rules"
+            relevance: "How to audit your alerts"
+            time: "7 minutes"
+          point_3:
+            claim: "Traces connect the dots"
+            evidence: "Needle in haystack story"
+            example: "Trace propagation setup"
+            relevance: "Getting started with tracing"
+            time: "7 minutes"
+        close:
+          summary: "Three pillars working together"
+          core_message: "Final restatement"
+          call_to_action: "Three things to do Monday"
+          final_line: "The best time to improve observability was yesterday. The second best time is Monday."
+          time: "5 minutes"
+
+  - name: Executive briefing on project status
+    context: 15-minute update to C-suite on project progress and blockers
+    inputs:
+      topic: "Q2 platform migration project status"
+      audience: "5 C-level executives, limited technical depth, focused on business impact"
+      duration: 15
+      context: "executive_briefing"
+      desired_outcome: "Get approval for additional resources and timeline extension"
+    process: |
+      Step 1 - Audience Analysis:
+      - Busy executives, want bottom line first
+      - Limited time for details, will ask questions if interested
+      - Care about: timeline, budget, risk, business impact
+      - Decision-makers for resources requested
+
+      Step 2 - Core Message:
+      "We're on track for success, but need 2 additional engineers and 3 more weeks
+      to manage risk and ensure quality."
+
+      Step 3 - Structure (BLUF format for executives):
+      - Bottom Line (2 min): Status, ask, recommendation
+      - Context (3 min): Where we are, what's changed
+      - Details (5 min): Progress, risks, mitigation
+      - Ask (3 min): Specific request with rationale
+      - Discussion (2 min): Buffer for questions
+
+      Step 6 - Q&A Prep:
+      - "Why didn't we anticipate this?" (scope discovered during migration)
+      - "What happens if we don't extend?" (quality risk, technical debt)
+      - "Can we cut scope instead?" (yes, here are options)
+      - "What's the cost of delay?" (quantified business impact)
+    expected_output:
+      presentation_outline:
+        bottom_line:
+          status: "70% complete, on budget, need timeline adjustment"
+          ask: "2 additional engineers, 3-week extension"
+          recommendation: "Approve to ensure quality and manage risk"
+          time: "2 minutes"
+        context:
+          where_we_are: "Key milestones completed"
+          what_changed: "Technical complexity discovered"
+          time: "3 minutes"
+        details:
+          progress: "Completed phases with metrics"
+          risks: "Top 3 risks with likelihood and impact"
+          mitigation: "How additional resources address risks"
+          time: "5 minutes"
+        ask:
+          request: "Specific resources and timeline"
+          rationale: "Why this is the right investment"
+          alternatives: "Options if request not approved"
+          time: "3 minutes"
+        discussion:
+          buffer: "Questions and clarifications"
+          time: "2 minutes"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When strategy requires presenting to stakeholders or decision-makers
+    - During execution phase for progress updates and demonstrations
+    - When goals require influencing groups through spoken communication
+    - For communication milestones involving presentations
+    - When pivoting requires presenting the new direction to teams
+
+  gates:
+    - gate: audience_understood
+      question: "Do I understand who I'm presenting to and what they need?"
+
+    - gate: message_clear
+      question: "Can I state my core message in one sentence?"
+
+    - gate: structure_solid
+      question: "Is my talk structured with clear opening, 3 points, and strong close?"
+
+    - gate: practice_complete
+      question: "Have I practiced out loud at least 3 times?"
+
+    - gate: qa_prepared
+      question: "Am I prepared for likely questions?"
+
+  related_procedures:
+    - presentation_design: Creating effective visual aids for presentations
+    - persuasive_writing: When presentation content needs to be persuasive
+    - storytelling: Incorporating narrative elements into presentations
+    - active_listening: For Q&A and reading the audience
+    - feedback_delivery: When presenting performance feedback

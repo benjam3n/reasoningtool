@@ -1,0 +1,64 @@
+# GOSM v2.1: Strategy Gates
+# Mandates the Innovation and Testing phases
+
+gates:
+  # ============================================
+  # INNOVATION PHASE GATES
+  # ============================================
+
+  - id: strategy_innovation_check
+    name: Strategy Search Check
+    phase: strategy
+    category: meta
+    
+    question: "Has the mandatory Strategy Search been completed?"
+    
+    logic: |
+      GOSM v2.1 MANDATE:
+      You cannot proceed to selection without running the Innovation Engine.
+      This prevents defaulting to obvious/conventional strategies.
+      
+      Must have:
+      - Cross-domain search
+      - Strategy inversion
+      - Unexplored gap search
+      
+    trigger_conditions:
+      - type: context_has
+        key: strategy_search_completed
+        
+    on_pass: next
+    on_fail: innovation_engine  # Call the procedure to do it
+
+  # ============================================
+  # BUILDER-BREAKER TESTING GATES
+  # ============================================
+
+  - id: strategy_testing_check
+    name: Adversarial Review Testing Check
+    phase: strategy
+    category: quality
+    
+    question: "Has a strategy survived Adversarial Review testing at Level 2+?"
+    
+    logic: |
+      GOSM v2.1 MANDATE:
+      Strategies must be adversarially tested before selection.
+      
+      Confidence Levels:
+      0 - Hypothesis (Untested) -> REJECT
+      1 - Contested (Valid counter-argument) -> REJECT
+      2 - Defended (Attack refuted) -> ACCEPT
+      3 - Battle-tested (Multiple attacks defeated) -> PREFERRED
+      4 - Axiom-derived -> STRONGEST
+      
+    trigger_conditions:
+      - type: context_has
+        key: adversarial_review_completed
+        
+    on_pass: next
+    on_fail: adversarial_review  # Call the procedure to do it
+    
+    evaluation_criteria:
+      - "Strategy has Confidence Level >= 2"
+      - "At least one Red Team attack was attempted and refuted"

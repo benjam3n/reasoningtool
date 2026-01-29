@@ -1,0 +1,680 @@
+# Automated Extraction Pipeline - Industrial-scale procedure extraction
+# Meta-procedure for automated extraction from 70+ sources
+
+id: automated_extraction_pipeline
+name: Automated Extraction Pipeline
+version: "1.0.0"
+domain: meta
+
+description: Industrial-scale automation pipeline for extracting procedures from 70+ YouTube channels and other sources using the Ralph Wiggum / Conductor pattern for iterative LLM-driven extraction.
+
+long_description: |
+  This is the "factory" that turns raw content into GOSM-compatible procedures
+  at industrial scale. A single human extracting procedures manually might
+  process 2-3 hours of content per day. An automated pipeline can process
+  100+ hours per day with human review only on edge cases.
+
+  The key insight: LLMs are good at extraction but need iteration to get it right.
+  The Ralph Wiggum pattern (loop until done) combined with multiple extraction
+  passes (explicit -> implicit -> meta -> tacit) maximizes capture rate.
+
+  Extraction is not a single pass - it's an iterative refinement process.
+  Each pass surfaces different types of knowledge:
+  - Pass 1: What they SAY (explicit)
+  - Pass 2: What they DO (implicit)
+  - Pass 3: HOW they think (meta)
+  - Pass 4: What they ASSUME (tacit)
+
+  The system knows when to stop through convergence detection.
+
+  Architecture has 6 major subsystems:
+  1. Transcript Acquisition - Get clean text from any source
+  2. LLM Extraction Loop - Iterative procedure extraction (Ralph Wiggum)
+  3. Batch Processing - Queue and parallel execution
+  4. Quality Control - Validation and human review triggers
+  5. Integration - File creation and index updates
+  6. Cost Management - Budget tracking and optimization
+
+tags:
+  - meta
+  - extraction
+  - automation
+  - scaling
+  - llm
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - When processing more than 10 sources at once
+  - When building initial procedure library at scale
+  - When systematically processing a YouTube channel backlog
+  - When you have approved budget for automated extraction
+  - When sources have been prioritized and queued
+  - When rapid library expansion is needed
+  - After completing pilot extraction to validate prompts
+  - When diminishing returns on manual extraction
+
+when_not_to_use:
+  - For one-off extractions (use procedure_extraction_from_source instead)
+  - When budget is severely constrained (manual may be cheaper)
+  - For highly specialized content requiring domain expertise
+  - When source quality is unknown (triage first)
+  - Before validating extraction prompts on sample data
+  - When human interpretation is critical for every extraction
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: source_queue
+    type: list
+    required: true
+    description: |
+      Prioritized list of sources to extract from, each with:
+      - source_id: Unique identifier
+      - type: youtube_video | pdf_paper | book | podcast | tool_docs
+      - url_or_path: Location of source
+      - priority: 1-5 tier from source_prioritization
+      - estimated_tokens: Predicted token usage
+
+  - name: extraction_config
+    type: object
+    required: true
+    description: |
+      Pipeline configuration:
+      - model: LLM model to use (default: claude-sonnet-4-20250514)
+      - budget_limit_usd: Maximum spend
+      - parallel_workers: Number of concurrent extractions
+      - passes: Which extraction passes to run
+
+  - name: output_directory
+    type: string
+    required: true
+    description: Where to write extracted procedure files
+
+outputs:
+  - name: extracted_procedures
+    type: list
+    description: All procedures extracted across all sources
+
+  - name: extraction_report
+    type: document
+    description: Summary of extraction run with statistics
+
+  - name: flagged_for_review
+    type: list
+    description: Procedures requiring human review
+
+  - name: cost_report
+    type: dict
+    description: Budget usage breakdown by source and pass
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Acquire transcripts
+    action: |
+      For each source in queue, get clean text:
+
+      YOUTUBE VIDEOS:
+      1. Try YouTube Transcript API (manual captions preferred)
+      2. Fall back to Whisper transcription if needed
+      3. Store with timestamps for source location
+
+      PDF PAPERS:
+      1. Extract text with PyMuPDF or pdfplumber
+      2. Fall back to OCR for scanned documents
+      3. Preserve page numbers
+
+      PODCASTS/AUDIO:
+      1. Download audio
+      2. Transcribe with Whisper (medium model recommended)
+      3. Store with timestamps
+
+      TOOL DOCUMENTATION:
+      1. Scrape with requests + BeautifulSoup
+      2. Convert HTML to Markdown
+      3. Preserve structure
+
+      Output standardized format:
+      - source_type, source_id, source_metadata
+      - full_text, segments (with timestamps/pages)
+      - quality assessment (manual | auto | whisper | ocr)
+    inputs:
+      - source_queue
+    outputs:
+      - transcripts: dict of source_id -> transcript data
+      - acquisition_errors: list of sources that failed with reasons
+    verification: |
+      All queued sources have transcripts or documented failures
+
+  - id: 2
+    name: Run extraction loop (Pass 1 - Explicit)
+    action: |
+      For each transcript, run iterative explicit extraction:
+
+      PROMPT TEMPLATE:
+      "Find ALL explicitly stated procedures. Look for:
+       'Here's how to...', 'The steps are...', numbered lists,
+       direct explanations of HOW to do something.
+       Output in YAML format with name, type, confidence, steps, gaps."
+
+      ITERATION LOGIC (Ralph Wiggum Pattern):
+      1. Call LLM with transcript + prompt
+      2. Parse YAML procedures from response
+      3. Check for "EXTRACTION_STATUS: COMPLETE" signal
+      4. If not complete, loop with accumulated extractions as context
+      5. Stop when: complete signal, max 3 iterations, or diminishing returns
+
+      Mark all procedures with:
+      - type: explicit
+      - confidence: HIGH (verbatim quotes support it)
+      - source_location: timestamp or page
+    inputs:
+      - transcripts (from Step 1)
+      - extraction_config
+    outputs:
+      - explicit_procedures: dict of source_id -> procedure list
+      - pass_1_tokens: tokens used
+    verification: |
+      Each transcript processed, completion signal received or max iterations hit
+
+  - id: 3
+    name: Run extraction loop (Pass 2 - Implicit)
+    action: |
+      Extract procedures hidden in behavior and examples:
+
+      PROMPT TEMPLATE:
+      "Find procedures NOT explicitly stated but inferred from:
+       Pattern matching (every time X, they do Y)
+       Consistent behaviors, unstated steps,
+       Decision criteria, error handling.
+       Output with observed_pattern, evidence, reconstructed_steps."
+
+      ITERATION LOGIC:
+      1. Include explicit extractions as context
+      2. Focus on what they DO vs what they SAY
+      3. Max 3 iterations
+      4. Require evidence from source for each inference
+
+      Mark all procedures with:
+      - type: implicit
+      - confidence: MEDIUM
+      - uncertainty: what's not sure
+      - validation_needed: how to verify
+    inputs:
+      - transcripts (from Step 1)
+      - explicit_procedures (from Step 2)
+    outputs:
+      - implicit_procedures: dict of source_id -> procedure list
+      - pass_2_tokens: tokens used
+    verification: |
+      Each implicit procedure has evidence from source
+
+  - id: 4
+    name: Run extraction loop (Pass 3 - Meta)
+    action: |
+      Extract HOW they think, learn, teach, and improve:
+
+      PROMPT TEMPLATE:
+      "Find META-PROCEDURES about:
+       Learning (how they acquire knowledge)
+       Teaching (how they explain things)
+       Thinking (how they reason and decide)
+       Improvement (how they get better)
+       These are procedures about procedures."
+
+      FOCUS AREAS:
+      - How do they introduce complex topics?
+      - What examples do they choose and why?
+      - How do they handle potential objections?
+      - What mental models do they use?
+
+      Mark all procedures with:
+      - type: meta
+      - category: learning | teaching | thinking | improvement
+      - why_valuable: how this can be applied elsewhere
+    inputs:
+      - transcripts (from Step 1)
+      - explicit_procedures (from Step 2)
+      - implicit_procedures (from Step 3)
+    outputs:
+      - meta_procedures: dict of source_id -> procedure list
+      - pass_3_tokens: tokens used
+    verification: |
+      Meta-procedures capture thinking process, not just actions
+
+  - id: 5
+    name: Run extraction loop (Pass 4 - Tacit)
+    action: |
+      Surface knowledge they have but don't state:
+
+      PROMPT TEMPLATE:
+      "Excavate TACIT KNOWLEDGE through:
+       Assumption surfacing (what must be true?)
+       Expert blind spot detection (what do they skip?)
+       Failure mode inference (what could go wrong?)
+       Context dependency mapping (when would this NOT work?)"
+
+      TECHNIQUES:
+      - "What would a beginner miss?"
+      - "What do they 'just know'?"
+      - "What warnings would an expert give?"
+
+      Mark all extractions with:
+      - type: tacit
+      - confidence: LOW (needs validation)
+      - what_is_assumed: the unstated knowledge
+      - if_missing_consequence: what goes wrong without it
+    inputs:
+      - transcripts (from Step 1)
+      - all previous procedures (from Steps 2-4)
+    outputs:
+      - tacit_knowledge: dict of source_id -> knowledge list
+      - pass_4_tokens: tokens used
+    verification: |
+      Tacit knowledge explicitly marked as inference requiring validation
+
+  - id: 6
+    name: Validate extractions
+    action: |
+      Run automated validation on all extractions:
+
+      STRUCTURAL CHECKS:
+      - YAML parses correctly
+      - Required fields present (name, type, steps)
+      - Steps are non-empty
+      - No placeholder text ([brackets], TODO)
+
+      SEMANTIC CHECKS:
+      - Name is descriptive (3+ words)
+      - Steps start with verbs (actionable)
+      - Source citations are valid
+
+      CONSISTENCY CHECKS:
+      - No exact duplicates within source
+      - HIGH confidence has verbatim quote
+      - Type matches extraction characteristics
+
+      CALCULATE CONFIDENCE:
+      - explicit_quote: present/partial/absent
+      - multiple_evidence: 3+/2/1/inference
+      - step_completeness: all clear/some gaps/major gaps
+      - source_clarity: directly stated/implied/inferred/speculation
+
+      Flag for human review if:
+      - Average confidence < MEDIUM
+      - >50% are tacit type
+      - >3 validation issues
+      - Contradictory procedures found
+    inputs:
+      - all procedures (from Steps 2-5)
+    outputs:
+      - validated_procedures: procedures passing validation
+      - flagged_for_review: procedures needing human input
+      - validation_report: issues by source and type
+    verification: |
+      Every procedure has validation result and confidence score
+
+  - id: 7
+    name: Deduplicate across sources
+    action: |
+      Prevent duplicate procedures across sources:
+
+      DETECTION METHODS:
+      1. Name similarity (fuzzy match, threshold 0.85)
+      2. Step similarity (longest common subsequence, threshold 0.80)
+      3. Embedding similarity (cosine distance, threshold 0.90)
+
+      RESOLUTION STRATEGIES:
+      - Exact duplicate: Keep first, discard duplicate
+      - Cross-source duplicate: Keep both, link as variants
+      - Similar but different: Keep both, create procedure family
+      - Enhanced version: Merge, keeping best parts
+
+      Document all deduplication decisions.
+    inputs:
+      - validated_procedures (from Step 6)
+    outputs:
+      - deduplicated_procedures: final procedure list
+      - deduplication_log: what was merged/linked/discarded
+    verification: |
+      No near-duplicate procedures remain unexplained
+
+  - id: 8
+    name: Create procedure files
+    action: |
+      Write GOSM-compatible YAML files:
+
+      PATH DETERMINATION:
+      - YouTube: library/procedures/extracted/youtube/{channel}/{procedure}.yaml
+      - Papers: library/procedures/extracted/papers/{author}_{year}/{procedure}.yaml
+      - Books: library/procedures/extracted/books/{author}/{procedure}.yaml
+      - Tools: library/procedures/extracted/tools/{tool}/{procedure}.yaml
+
+      FILE CONTENT:
+      - id, name, version, domain, description
+      - source (origin, type, creator, url, location, extraction_date, confidence)
+      - when_to_use, when_not_to_use
+      - inputs, outputs
+      - steps (with action, details, reasoning)
+      - verification, failure_modes
+      - notes (extraction metadata, gaps, confidence)
+
+      Validate YAML syntax before writing.
+    inputs:
+      - deduplicated_procedures (from Step 7)
+      - output_directory
+    outputs:
+      - procedure_files: list of created file paths
+      - file_creation_errors: any files that failed to create
+    verification: |
+      All procedures have valid YAML files in correct locations
+
+  - id: 9
+    name: Update indexes
+    action: |
+      Keep library indexes current:
+
+      INDEXES TO UPDATE:
+      1. library/procedures/extracted/EXTRACTED_PROCEDURES_INDEX.md
+         - Total procedures by source type
+         - Recent additions
+         - Domain groupings
+
+      2. library/procedures/extracted/EXTRACTION_LOG.md
+         - Date, source, creator
+         - Procedures extracted by type
+         - Time, tokens, cost
+
+      3. Source-specific indexes
+         - library/procedures/extracted/youtube/{channel}/INDEX.md
+         - Videos processed, procedures by video
+
+      Include in log:
+      - Source metadata
+      - Extraction statistics
+      - Files created
+      - Cost breakdown
+    inputs:
+      - procedure_files (from Step 8)
+      - extraction metrics from all steps
+    outputs:
+      - updated_indexes: list of modified index files
+      - extraction_log_entry: new log entry
+    verification: |
+      All indexes reflect current extraction
+
+  - id: 10
+    name: Generate extraction report
+    action: |
+      Create comprehensive report of extraction run:
+
+      SUMMARY:
+      - Sources processed / failed
+      - Procedures extracted (by type: explicit/implicit/meta/tacit)
+      - Procedures flagged for review
+      - Time elapsed
+      - Tokens used
+      - Cost incurred
+
+      BY SOURCE:
+      - Each source with procedures extracted
+      - Confidence distribution
+      - Notable findings
+
+      QUALITY METRICS:
+      - Validation pass rate
+      - Confidence distribution
+      - Deduplication rate
+
+      RECOMMENDATIONS:
+      - Sources worth re-processing
+      - Prompt improvements needed
+      - Budget projections for remaining queue
+
+      Save report to output_directory/EXTRACTION_REPORT.md
+    inputs:
+      - all metrics from previous steps
+    outputs:
+      - extraction_report: complete report document
+    verification: |
+      Report covers all sources with accurate statistics
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All queued sources processed or documented as failed
+  - Each pass ran to convergence for each source
+  - Validation checks ran on all extractions
+  - Duplicates identified and resolved
+  - Procedure files are valid YAML
+  - Indexes updated with all new procedures
+  - Cost stayed within budget
+  - Extraction report is accurate and complete
+
+failure_modes:
+  - mode: API rate limiting
+    symptom: Requests failing with 429 errors
+    resolution: Implement exponential backoff with jitter, reduce parallel workers
+
+  - mode: Budget exhaustion
+    symptom: Cost exceeds limit mid-extraction
+    resolution: Set lower thresholds for warnings, checkpoint frequently, allow resume
+
+  - mode: Convergence failure
+    symptom: Extraction loops never terminate
+    resolution: Hard cap on iterations, detect diminishing returns, force stop
+
+  - mode: Low quality transcripts
+    symptom: Extraction results are nonsensical
+    resolution: Check transcript quality before extraction, use Whisper for auto-captions
+
+  - mode: Hallucinated procedures
+    symptom: Procedures not actually in source
+    resolution: Require source citations, validate against transcript, human review
+
+  - mode: Duplicate explosion
+    symptom: Same procedure extracted many times
+    resolution: Run deduplication after each source, not just at end
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Pilot extraction (10 channels)
+    context: Validating pipeline before full scale
+    inputs:
+      source_queue:
+        - source_id: "veritasium_abc123"
+          type: youtube_video
+          priority: 1
+        - source_id: "tom_scott_def456"
+          type: youtube_video
+          priority: 1
+        # ... 8 more high-priority videos
+      extraction_config:
+        model: "claude-sonnet-4-20250514"
+        budget_limit_usd: 50
+        parallel_workers: 3
+        passes: ["explicit", "implicit", "meta", "tacit"]
+      output_directory: "library/procedures/extracted"
+    process: |
+      1. Acquire transcripts:
+         - 9/10 via YouTube API
+         - 1/10 via Whisper (auto-captions poor)
+         - Total: 2.5 hours content
+
+      2. Pass 1 (Explicit):
+         - 15 procedures found
+         - Average 2 iterations per source
+         - Tokens: 45,000
+
+      3. Pass 2 (Implicit):
+         - 12 procedures found
+         - Tokens: 52,000
+
+      4. Pass 3 (Meta):
+         - 8 procedures found
+         - Tokens: 38,000
+
+      5. Pass 4 (Tacit):
+         - 5 knowledge items found
+         - Tokens: 30,000
+
+      6. Validation:
+         - 35/40 pass automated checks
+         - 5 flagged for review
+
+      7. Deduplication:
+         - 2 cross-source duplicates merged
+         - Final: 38 unique procedures
+
+      8. File creation:
+         - 38 YAML files created
+         - 0 errors
+
+      9. Index updates:
+         - EXTRACTED_PROCEDURES_INDEX.md updated
+         - 10 channel indexes created
+
+      10. Report:
+          - 10 sources, 38 procedures
+          - $12.50 spent (25% of budget)
+          - 4.5 hours elapsed
+    expected_output:
+      extracted_procedures: 38
+      extraction_report: "10 sources processed, 38 procedures, $12.50"
+      flagged_for_review: 5
+      cost_report:
+        total_usd: 12.50
+        tokens_total: 165000
+
+  - name: Full scale extraction (70 channels)
+    context: Building complete library
+    inputs:
+      source_queue: "[7000 videos from 70 channels]"
+      extraction_config:
+        model: "claude-sonnet-4-20250514"
+        budget_limit_usd: 800
+        parallel_workers: 10
+        passes: ["explicit", "implicit", "meta", "tacit"]
+    process: |
+      Phase approach:
+      1. Week 1: Tier 1 sources (highest ROI)
+      2. Week 2-3: Tier 2 sources
+      3. Week 4: Tier 3 sources + human review backlog
+
+      Expected results:
+      - ~2000 procedures extracted
+      - ~300 flagged for review
+      - ~$600-800 total cost
+      - ~25 hours processing time (parallel)
+    expected_output:
+      extracted_procedures: "~2000"
+      cost_report:
+        total_usd: "~700"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Building initial procedure library from curated sources
+    - Continuously extracting from new content
+    - Rapid procedure development for new domains
+    - Keeping library current with creator output
+
+  gates:
+    - gate: sources_prioritized
+      question: "Have sources been prioritized using source_prioritization?"
+
+    - gate: budget_approved
+      question: "Is extraction budget approved?"
+
+    - gate: prompts_validated
+      question: "Have extraction prompts been validated on sample data?"
+
+    - gate: quality_threshold_met
+      question: "Do extractions meet minimum quality standards?"
+
+    - gate: human_review_complete
+      question: "Have flagged items been reviewed?"
+
+  related_procedures:
+    - source_prioritization: Decides which sources to extract first
+    - procedure_extraction_from_source: Manual version of this process
+    - procedure_improvement: Post-extraction enhancement
+    - procedure_effectiveness: Track usage of extracted procedures
+
+# ============================================
+# SCALING CONSIDERATIONS
+# ============================================
+scaling:
+  volume_estimates:
+    total_channels: 70
+    avg_videos_per_channel: 100
+    avg_video_length_minutes: 12
+    total_content_hours: 1400
+
+    estimated_procedures:
+      conservative: 700  # 0.5 per hour
+      moderate: 2100     # 1.5 per hour
+      optimistic: 4200   # 3 per hour
+
+    estimated_cost:
+      at_20k_tokens_per_video: "~$1260 unoptimized"
+      with_optimization: "~$600-800"
+
+  recommended_phases:
+    pilot:
+      scope: "Top 10 channels"
+      budget: "$50"
+      time: "1 week"
+      goal: "Validate pipeline"
+
+    scale_up:
+      scope: "Top 30 channels"
+      budget: "$200"
+      time: "2 weeks"
+      goal: "Bulk extraction"
+
+    full_extraction:
+      scope: "All 70+ channels"
+      budget: "$500-800"
+      time: "1 month"
+      goal: "Complete library"
+
+    maintenance:
+      scope: "New videos"
+      budget: "$50/month"
+      time: "Ongoing"
+      goal: "Keep current"
+
+# ============================================
+# COST MANAGEMENT
+# ============================================
+cost_management:
+  token_estimation:
+    per_10_min_video: "~20,000 tokens total (all passes)"
+    cost_per_video_sonnet: "~$0.20"
+
+  budget_alerts:
+    - threshold: 50
+      action: "Log warning"
+    - threshold: 80
+      action: "Notify user, slow processing"
+    - threshold: 95
+      action: "Pause, require approval"
+    - threshold: 100
+      action: "Stop all processing"
+
+  optimization_strategies:
+    - "Use Haiku for triage, Sonnet for extraction"
+    - "Chunk long transcripts"
+    - "Early stop on diminishing returns"
+    - "Cache transcripts and embeddings"

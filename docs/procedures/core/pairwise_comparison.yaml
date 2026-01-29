@@ -1,0 +1,217 @@
+# Pairwise Comparison
+# Intelligence Reduction: 85%
+# Version: 1.0.0
+
+id: pairwise_comparison
+name: Pairwise Comparison Matrix
+version: "1.0.0"
+domain: core
+intelligence_reduction: "85%"
+
+goal: |
+  Rank options by comparing all pairs and counting wins.
+  Each individual comparison is simple; aggregation is mechanical.
+  Avoids the difficulty of absolute rating.
+
+description: |
+  Instead of rating each option absolutely (hard), compare pairs
+  directly (easier). "Is A better than B?" is easier than "How good is A?"
+  Aggregate comparisons to produce ranking.
+
+when_to_use:
+  - Ranking options when absolute scoring is difficult
+  - Prioritizing features/tasks
+  - Multi-criteria decision making
+  - Reducing bias from anchoring
+  - When options are hard to rate but easy to compare
+
+inputs:
+  - name: options
+    type: list
+    description: "Items to rank"
+  - name: criterion
+    type: string
+    description: "What are we comparing on? (can be multiple)"
+
+outputs:
+  - name: comparison_matrix
+    type: matrix
+    description: "All pairwise comparisons"
+  - name: ranking
+    type: ordered_list
+    description: "Options ranked by wins"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "List All Options"
+    action: |
+      Enumerate all options to be compared.
+      Label them for easy reference (A, B, C... or 1, 2, 3...).
+    output: "Labeled option list"
+    template: |
+      OPTIONS TO COMPARE:
+      A: [Option A description]
+      B: [Option B description]
+      C: [Option C description]
+      ...
+
+      Total options: [N]
+      Comparisons needed: [N × (N-1) / 2]
+
+  - id: 2
+    name: "Define Comparison Criterion"
+    action: |
+      Clearly state what you're comparing on.
+      Can be single criterion or composite.
+
+      Single: "Which is more important?"
+      Composite: "Considering cost, quality, and time, which is better?"
+    output: "Criterion statement"
+
+  - id: 3
+    name: "Create Comparison Matrix"
+    action: |
+      Create N×N matrix with options on both axes.
+      Diagonal is empty (don't compare to self).
+      Only need to fill upper triangle (lower is symmetric).
+    output: "Empty matrix"
+    template: |
+      | A | B | C | D |
+      +---+---+---+---+
+      A | - |   |   |   |
+      B |   | - |   |   |
+      C |   |   | - |   |
+      D |   |   |   | - |
+
+  - id: 4
+    name: "Compare Each Pair"
+    action: |
+      For each pair (i, j) where i < j:
+      Ask: "Is [Option i] better than [Option j] on [criterion]?"
+
+      Record:
+      - "1" in cell (i,j) if i wins
+      - "0" in cell (i,j) if j wins
+      - "0.5" each if tie
+
+      Be consistent. If A > B and B > C, then A > C (transitivity).
+    output: "Filled comparison matrix"
+    template: |
+      COMPARISON: [Option A] vs [Option B]
+      Winner: [A / B / Tie]
+      Reason: [Brief justification]
+
+  - id: 5
+    name: "Check for Inconsistencies"
+    action: |
+      Look for intransitive cycles: A > B > C > A
+      If found, reconsider those comparisons.
+      Some intransitivity may be acceptable (different criteria).
+    output: "Consistency check result"
+
+  - id: 6
+    name: "Calculate Scores"
+    action: |
+      For each option, sum its wins.
+      Win = 1 point, Tie = 0.5 points, Loss = 0 points
+      Total possible points = N - 1
+    output: "Score for each option"
+    template: |
+      SCORES:
+      Option A: [X] wins out of [N-1] comparisons
+      Option B: [Y] wins out of [N-1] comparisons
+      ...
+
+  - id: 7
+    name: "Produce Ranking"
+    action: |
+      Sort options by score (descending).
+      Handle ties by re-comparing or accepting tie.
+    output: "Final ranking"
+    template: |
+      RANKING:
+      1. [Option] - [Score] points
+      2. [Option] - [Score] points
+      3. [Option] - [Score] points
+      ...
+
+# ============================================
+# MULTI-CRITERIA VARIANT
+# ============================================
+
+multi_criteria_variant:
+  description: |
+    When comparing on multiple criteria, can either:
+    1. Do separate pairwise for each criterion, then combine
+    2. Do composite comparison ("considering all factors")
+
+  method_1_separate:
+    steps:
+      - "For each criterion, do full pairwise comparison"
+      - "Weight the criteria"
+      - "Calculate weighted sum of ranks"
+
+  method_2_composite:
+    steps:
+      - "Define all criteria upfront"
+      - "For each pair, consider all criteria to decide winner"
+      - "Single pairwise matrix"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  problem: "Prioritize 5 features for next sprint"
+
+  options:
+    A: "User authentication"
+    B: "Dashboard redesign"
+    C: "Export functionality"
+    D: "Performance optimization"
+    E: "Mobile support"
+
+  criterion: "Business value relative to effort"
+
+  comparisons:
+    A_vs_B: "A wins - auth is blocker, dashboard is nice-to-have"
+    A_vs_C: "A wins - auth is blocker"
+    A_vs_D: "A wins - auth enables more users"
+    A_vs_E: "A wins - auth is prerequisite"
+    B_vs_C: "C wins - export requested by key customer"
+    B_vs_D: "D wins - performance affects all users"
+    B_vs_E: "E wins - mobile is larger market"
+    C_vs_D: "D wins - performance is more fundamental"
+    C_vs_E: "Tie - different user segments"
+    D_vs_E: "D wins - performance helps mobile too"
+
+  matrix: |
+    | A | B | C | D | E | Score
+    +---+---+---+---+---+------
+    A | - | 1 | 1 | 1 | 1 | 4
+    B | 0 | - | 0 | 0 | 0 | 0
+    C | 0 | 1 | - | 0 |.5 | 1.5
+    D | 0 | 1 | 1 | - | 1 | 3
+    E | 0 | 1 |.5 | 0 | - | 1.5
+
+  ranking:
+    1: "A: User authentication (4 points)"
+    2: "D: Performance optimization (3 points)"
+    3: "C: Export functionality (1.5 points) - tie"
+    3: "E: Mobile support (1.5 points) - tie"
+    5: "B: Dashboard redesign (0 points)"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "All pairs were compared"
+  - "Criterion was applied consistently"
+  - "No significant intransitivity"
+  - "Scores sum correctly"
+  - "Ranking reflects scores"

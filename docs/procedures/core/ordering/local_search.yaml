@@ -1,0 +1,369 @@
+# Local Search Orderings
+# Orderings based on local search optimization
+
+category_id: local_search
+category_name: "Local Search Orderings"
+description: |
+  Orderings based on local search optimization: improving from
+  current position, escaping local optima, and systematic exploration
+  with memory. Use for optimization without global structure.
+
+when_to_consider: |
+  - Optimization with clear neighbor structure
+  - Need to escape local optima
+  - Many local optima exist
+  - Good-enough solution acceptable
+  - Want to avoid cycling in search
+
+variations:
+
+  # ----------------------------------------
+  # HILL-CLIMBING ORDERING
+  # ----------------------------------------
+  hill_climbing:
+    id: hill_climbing_ordering
+    name: "Hill-Climbing Ordering (Local Search)"
+    category: local_search
+
+    philosophy: |
+      Always move to the best neighboring state. From local search:
+      start somewhere, look at neighbors, move to the best one,
+      repeat until no neighbor is better. Simple and fast but can
+      get stuck in local optima. No backtracking - purely greedy
+      local moves.
+
+    when_to_use:
+      - Optimization with clear neighbor structure
+      - Good-enough solution acceptable (not necessarily optimal)
+      - Fast iteration more important than optimality
+      - Landscape is relatively smooth (few local optima)
+      - As baseline before trying fancier methods
+
+    key_concepts:
+      current_state: "Where you are now"
+      neighbors: "States reachable by one move"
+      evaluation: "How good is each state?"
+      local_optimum: "No neighbor is better (may not be global)"
+      plateau: "Neighbors have same value (no gradient)"
+
+    variants:
+      simple: "Move to any better neighbor"
+      steepest_ascent: "Move to BEST neighbor"
+      stochastic: "Random choice among better neighbors"
+      first_choice: "Move to first better neighbor found"
+
+    prioritization_rules:
+      1_evaluate_current:
+        rule: "Compute fitness/value of current state"
+        baseline: "This is what we're trying to beat"
+
+      2_generate_neighbors:
+        rule: "Find all states one step away"
+        method: "Problem-specific neighbor function"
+
+      3_select_best_neighbor:
+        rule: "Pick neighbor with highest evaluation"
+        variant: "Or first improvement, or random better"
+
+      4_move_if_better:
+        rule: "If best neighbor > current, move there"
+        if_not: "Stop - at local optimum"
+
+      5_repeat:
+        rule: "Continue until stuck"
+        no_backtrack: "Never undo a move"
+
+    problems:
+      local_optima: "Better than neighbors but not best overall"
+      plateaus: "Flat regions with no gradient"
+      ridges: "Narrow paths to optimum"
+
+    anti_patterns:
+      - "Using when global optimum required"
+      - "Landscapes with many local optima"
+      - "Not trying random restarts"
+      - "Expecting completeness"
+
+    example:
+      context: "Optimizing neural network weights locally"
+      process:
+        start: "Random initial weights"
+        neighbors: "Weights +/- small delta"
+        evaluate: "Loss function"
+        iterate:
+          step_1: "Current loss: 0.5"
+          step_2: "Best neighbor loss: 0.45 -> move"
+          step_3: "Best neighbor loss: 0.42 -> move"
+          step_4: "Best neighbor loss: 0.41 -> move"
+          step_5: "All neighbors >= 0.41 -> STUCK"
+      result: "Local optimum at 0.41 (may not be global best)"
+      rationale: "Fast but may miss better solutions"
+
+    source: "Optimization - Local Search, Hill Climbing"
+
+  # ----------------------------------------
+  # SIMULATED-ANNEALING ORDERING
+  # ----------------------------------------
+  simulated_annealing:
+    id: simulated_annealing_ordering
+    name: "Simulated-Annealing Ordering (Probabilistic Escape)"
+    category: local_search
+
+    philosophy: |
+      Like hill climbing but occasionally accept worse moves to
+      escape local optima. From metallurgy: high temperature allows
+      atoms to move freely; cooling slowly lets them settle into
+      low-energy configurations. Start with high "temperature"
+      (accept bad moves), gradually cool (become more selective).
+
+    when_to_use:
+      - Optimization with many local optima
+      - Global optimum important but exact not required
+      - Can define neighbor structure and energy function
+      - TSP, scheduling, VLSI design
+      - When hill climbing gets stuck
+
+    key_concepts:
+      temperature: "Controls probability of accepting worse moves"
+      cooling_schedule: "How temperature decreases over time"
+      acceptance_probability: "exp(-deltaE/T) for worse moves"
+      annealing: "Slow cooling to reach good configuration"
+
+    algorithm:
+      initialize: "Start with random solution, high temperature"
+      loop:
+        1_generate_neighbor: "Pick a random neighbor"
+        2_compute_delta: "deltaE = E(neighbor) - E(current)"
+        3_accept_or_reject:
+          if_better: "Always accept (deltaE < 0)"
+          if_worse: "Accept with probability exp(-deltaE/T)"
+        4_cool: "Reduce temperature according to schedule"
+        5_repeat: "Until temperature ~ 0 or time limit"
+
+    prioritization_rules:
+      1_high_temp_exploration:
+        rule: "At high T, explore widely (accept bad moves)"
+        reason: "Escape local optima early"
+        probability: "Most moves accepted"
+
+      2_gradual_cooling:
+        rule: "Reduce T slowly"
+        schedules:
+          linear: "T = T - alpha"
+          geometric: "T = T * alpha (e.g., alpha = 0.95)"
+          logarithmic: "T = T0 / log(1 + t)"
+        trade_off: "Faster cooling = faster but worse results"
+
+      3_low_temp_exploitation:
+        rule: "At low T, be selective (mostly accept improvements)"
+        reason: "Converge to good solution"
+        probability: "Only better moves accepted"
+
+      4_final_quench:
+        rule: "At T ~ 0, do pure hill climbing"
+        effect: "Fine-tune final solution"
+
+    anti_patterns:
+      - "Cooling too fast (acts like hill climbing)"
+      - "Cooling too slow (wastes computation)"
+      - "Temperature too low initially (no exploration)"
+      - "Not tuning acceptance probability"
+
+    example:
+      context: "Traveling Salesman Problem"
+      process:
+        initial_tour: "Random - distance 500"
+        high_temp_T_1000:
+          neighbor: "Swap two cities - distance 520"
+          delta: "+20 (worse)"
+          probability: "exp(-20/1000) = 0.98 -> ACCEPT"
+        medium_temp_T_100:
+          neighbor: "Swap two cities - distance 490"
+          delta: "-10 (better) -> ACCEPT"
+        low_temp_T_10:
+          neighbor: "Swap - distance 495"
+          delta: "+5"
+          probability: "exp(-5/10) = 0.61 -> maybe accept"
+        very_low_T_1:
+          only_improvements: "accepted"
+      final: "Tour distance 420 (better than hill climbing's 450)"
+
+    source: "Optimization - Simulated Annealing (Kirkpatrick 1983)"
+
+  # ----------------------------------------
+  # RANDOM-RESTART ORDERING
+  # ----------------------------------------
+  random_restart:
+    id: random_restart_ordering
+    name: "Random-Restart Ordering (Multi-Start Local Search)"
+    category: local_search
+
+    philosophy: |
+      Run local search multiple times from different starting
+      points. From optimization: if stuck in local optimum, just
+      try again from somewhere else. Simple but effective - covers
+      more of the search space by random initial positions. Keep
+      the best result across all restarts.
+
+    when_to_use:
+      - Local search gets stuck in local optima
+      - Many local optima exist
+      - Good-enough solution acceptable
+      - Can afford multiple runs
+      - When simulated annealing too complex
+
+    key_concepts:
+      restart: "Begin local search from new random point"
+      best_so_far: "Best solution found across all restarts"
+      independence: "Each restart is independent"
+      coverage: "More restarts = better coverage of space"
+
+    algorithm:
+      best_overall: "None"
+      for_k_restarts:
+        1_random_start: "Generate random initial solution"
+        2_local_search: "Run hill climbing to local optimum"
+        3_update_best: "If better than best_overall, update"
+      return: "best_overall"
+
+    prioritization_rules:
+      1_diversify_starts:
+        rule: "Ensure starting points are spread out"
+        method: "Random, grid, or stratified sampling"
+
+      2_run_to_convergence:
+        rule: "Let each local search reach its optimum"
+        reason: "Don't stop early"
+
+      3_track_best:
+        rule: "Remember best across all restarts"
+        guarantee: "Output is best of all local optima found"
+
+      4_enough_restarts:
+        rule: "More restarts = higher chance of global optimum"
+        diminishing: "Returns diminish as space gets covered"
+
+    how_many_restarts:
+      formula: "P(find global) = 1 - (1-p)^k"
+      where: "p = probability one restart finds global"
+      example: "If p=0.01, need ~230 restarts for 90% chance"
+
+    anti_patterns:
+      - "Too few restarts (poor coverage)"
+      - "Not running local search to convergence"
+      - "Starting points not diverse enough"
+      - "Using when single run usually succeeds"
+
+    example:
+      context: "Optimizing function with many local minima"
+      restarts:
+        restart_1:
+          start: "x = 0.15"
+          local_min: "f(0.23) = 0.45"
+        restart_2:
+          start: "x = 0.67"
+          local_min: "f(0.72) = 0.31"
+        restart_3:
+          start: "x = 0.34"
+          local_min: "f(0.41) = 0.52"
+        restart_4:
+          start: "x = 0.89"
+          local_min: "f(0.85) = 0.18"  # best!
+      result: "Best found: f(0.85) = 0.18"
+      comparison: "Single run might have stopped at 0.45"
+
+    source: "Optimization - Multi-Start Local Search, Random Restarts"
+
+  # ----------------------------------------
+  # TABU-SEARCH ORDERING
+  # ----------------------------------------
+  tabu_search:
+    id: tabu_search_ordering
+    name: "Tabu-Search Ordering (Memory-Based Local Search)"
+    category: local_search
+
+    philosophy: |
+      Like hill climbing but with memory to avoid revisiting
+      recent solutions. From optimization (Glover): maintain a
+      "tabu list" of forbidden moves to escape cycles and local
+      optima. Can accept worse moves if all good moves are tabu.
+      Memory guides search away from already-explored regions.
+
+    when_to_use:
+      - Local search cycles back to same solutions
+      - Want smarter escape than random restarts
+      - Combinatorial optimization
+      - Job shop scheduling, graph coloring, TSP
+      - When simulated annealing too random
+
+    key_concepts:
+      tabu_list: "Recently visited solutions or moves"
+      tabu_tenure: "How long a move stays forbidden"
+      aspiration: "Override tabu if move is exceptionally good"
+      intensification: "Focus on good region"
+      diversification: "Force exploration of new regions"
+
+    algorithm:
+      initialize: "Start solution, empty tabu list"
+      loop:
+        1_generate_neighbors: "All possible moves"
+        2_filter_tabu: "Remove moves in tabu list"
+        3_evaluate: "Score remaining moves"
+        4_select_best: "Take best non-tabu move (even if worse)"
+        5_update_tabu: "Add move to tabu list"
+        6_aspiration: "Override tabu if solution is best ever"
+        7_manage_list: "Remove old entries (FIFO, tenure)"
+      terminate: "After iterations or no improvement"
+
+    prioritization_rules:
+      1_avoid_recent:
+        rule: "Don't undo recent moves"
+        mechanism: "Tabu list forbids recent moves"
+        reason: "Prevents cycling"
+
+      2_accept_worse_if_needed:
+        rule: "If all good moves are tabu, take best worse one"
+        effect: "Escapes local optima"
+
+      3_aspiration_criteria:
+        rule: "Override tabu if move leads to best-ever solution"
+        reason: "Don't forbid genuinely good discoveries"
+
+      4_tune_tenure:
+        rule: "Tabu tenure affects search behavior"
+        short: "More intensification (local focus)"
+        long: "More diversification (explore widely)"
+
+    tabu_list_options:
+      solution_based: "Forbid entire solutions"
+      move_based: "Forbid specific moves (more common)"
+      attribute_based: "Forbid moves with certain attributes"
+
+    anti_patterns:
+      - "Tabu tenure too short (still cycles)"
+      - "Tabu tenure too long (over-constrained)"
+      - "No aspiration criteria (miss good solutions)"
+      - "Not tracking enough history"
+
+    example:
+      context: "Graph coloring optimization"
+      process:
+        step_1:
+          current: "Coloring with 5 conflicts"
+          neighbors: "Recolor vertex v from red to blue"
+          tabu_list: "[]"
+          best_move: "v: red->blue, reduces to 3 conflicts"
+          action: "Accept, add to tabu"
+        step_2:
+          current: "3 conflicts"
+          tabu_list: "[v: blue->red]"  # reverse is forbidden
+          best_move: "w: green->red, reduces to 2"
+          action: "Accept"
+        step_5:
+          current: "2 conflicts (stuck)"
+          all_good_moves: "Tabu"
+          action: "Take best tabu move with aspiration"
+        final: "0 conflicts found"
+      rationale: "Memory prevents cycling back to 5 conflicts"
+
+    source: "Metaheuristics - Tabu Search (Glover)"

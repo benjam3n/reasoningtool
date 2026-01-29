@@ -1,0 +1,300 @@
+# Graph Traversal Orderings
+# Orderings from fundamental graph traversal algorithms
+
+category_id: graph_traversal
+category_name: "Graph Traversal Orderings"
+description: |
+  Orderings derived from fundamental graph traversal algorithms.
+  Use when problems have explicit dependency structures, need
+  shortest paths, or involve exploring tree/graph structures.
+
+when_to_consider: |
+  - Tasks have explicit dependencies (DAG)
+  - Need shortest path (fewest steps)
+  - Need to explore all paths exhaustively
+  - Know both start and goal states
+  - Building/compiling with dependencies
+
+variations:
+
+  # ----------------------------------------
+  # TOPOLOGICAL-SORT ORDERING
+  # ----------------------------------------
+  topological_sort:
+    id: topological_sort_ordering
+    name: "Topological-Sort Ordering"
+    category: graph_traversal
+
+    philosophy: |
+      Respect dependency structure. If A depends on B, B must complete
+      before A. From computer science: topological sort orders a DAG
+      so all edges point forward. This is the mathematically correct
+      way to sequence dependent tasks.
+
+    when_to_use:
+      - Build systems with dependencies
+      - Course prerequisites
+      - Task dependencies that must be strictly honored
+      - Package installation order
+
+    prioritization_rules:
+      1_dependency_mapping:
+        rule: "Map all dependencies between tasks"
+        output: "Directed Acyclic Graph (DAG)"
+
+      2_topological_order:
+        rule: "Order so that all dependencies are satisfied"
+        algorithm: "Kahn's algorithm or DFS-based"
+
+      3_parallel_levels:
+        rule: "Tasks at same 'level' can run in parallel"
+        reason: "No dependencies between them"
+
+    algorithm:
+      kahns:
+        1: "Find all nodes with no incoming edges"
+        2: "Remove them (add to output)"
+        3: "Update graph, repeat"
+        4: "If graph not empty at end, cycle exists"
+
+    anti_patterns:
+      - "Ignoring dependencies"
+      - "Circular dependencies (topological sort impossible)"
+      - "Over-specifying dependencies (unnecessary constraints)"
+
+    example:
+      context: "Compiling a project with module dependencies"
+      dependencies:
+        A: "depends on nothing"
+        B: "depends on A"
+        C: "depends on A"
+        D: "depends on B, C"
+      topological_order: "A, B, C, D (or A, C, B, D)"
+      parallel_opportunity: "B and C can compile in parallel after A"
+      rationale: "Mathematically guarantees all dependencies met"
+
+    source: "Computer Science - Topological Sort, DAG"
+
+  # ----------------------------------------
+  # BREADTH-FIRST ORDERING
+  # ----------------------------------------
+  breadth_first:
+    id: breadth_first_ordering
+    name: "Breadth-First Ordering"
+    category: graph_traversal
+
+    philosophy: |
+      Explore all options at current depth before going deeper.
+      From BFS: visit all nodes at distance 1, then distance 2, etc.
+      Guarantees shortest path to goal (in unweighted graphs).
+      Good when you want to find the quickest solution or don't
+      know how deep to go.
+
+    when_to_use:
+      - Finding shortest path (fewest steps)
+      - Don't know which branch has the goal
+      - Want to explore systematically
+      - Solution likely to be shallow
+
+    algorithm:
+      queue_based:
+        1: "Start with root in queue"
+        2: "Dequeue node, process it"
+        3: "Enqueue all children"
+        4: "Repeat until queue empty or goal found"
+
+    prioritization_rules:
+      1_level_by_level:
+        rule: "Complete current level before starting next"
+        reason: "Guarantees shortest path"
+
+      2_fifo_queue:
+        rule: "Use queue (first-in-first-out)"
+        reason: "Ensures level-order processing"
+
+      3_visit_once:
+        rule: "Mark nodes as visited to avoid cycles"
+        reason: "Prevents infinite loops"
+
+    properties:
+      completeness: "Will find solution if it exists"
+      optimality: "Finds shortest path (unweighted)"
+      memory: "O(branching_factor ^ depth) - can be large"
+
+    comparison:
+      vs_dfs: "BFS is wide-first, DFS is deep-first"
+      vs_dijkstra: "BFS for unweighted, Dijkstra for weighted"
+
+    anti_patterns:
+      - "Using when depth-first would be more memory-efficient"
+      - "Very deep graphs with shallow solutions not guaranteed"
+      - "Weighted graphs (use Dijkstra instead)"
+
+    example:
+      context: "Finding shortest introduction path to someone"
+      graph: "Social network of connections"
+      bfs_process:
+        level_0: "Me"
+        level_1: "My direct connections"
+        level_2: "Friends of friends"
+        level_3: "3 degrees away"
+      goal: "Find target person at shallowest level"
+      result: "First occurrence is guaranteed shortest path"
+
+    source: "Computer Science - Breadth-First Search"
+
+  # ----------------------------------------
+  # DEPTH-FIRST ORDERING
+  # ----------------------------------------
+  depth_first:
+    id: depth_first_ordering
+    name: "Depth-First Ordering"
+    category: graph_traversal
+
+    philosophy: |
+      Explore one path as deep as possible before backtracking.
+      From DFS: go deep into one branch, backtrack when stuck,
+      try next branch. Uses less memory than BFS (only stores
+      current path). Good when exploring all possibilities or
+      solutions are deep.
+
+    when_to_use:
+      - Exploring all possibilities (permutations, combinations)
+      - Memory constrained (can't store all paths)
+      - Solution is deep in the tree
+      - Puzzle solving, maze traversal
+
+    algorithm:
+      stack_based:
+        1: "Start with root on stack"
+        2: "Pop node, process it"
+        3: "Push all children onto stack"
+        4: "Repeat until stack empty or goal found"
+
+      recursive:
+        1: "Process current node"
+        2: "Recursively visit each child"
+        3: "Return when all children processed"
+
+    prioritization_rules:
+      1_go_deep:
+        rule: "Follow one branch as far as possible"
+        reason: "Explores complete subtrees"
+
+      2_backtrack_on_dead_end:
+        rule: "When stuck, return to last choice point"
+        mechanism: "Stack naturally handles this"
+
+      3_lifo_stack:
+        rule: "Use stack (last-in-first-out)"
+        reason: "Ensures depth-first behavior"
+
+    properties:
+      completeness: "Complete for finite graphs (with cycle detection)"
+      optimality: "Not optimal - may not find shortest path"
+      memory: "O(depth) - much better than BFS"
+
+    variants:
+      pre_order: "Process node before children"
+      post_order: "Process node after children"
+      in_order: "Process between children (binary trees)"
+
+    anti_patterns:
+      - "Using when shortest path needed (use BFS)"
+      - "Infinite graphs without depth limit"
+      - "Forgetting to mark visited (infinite loop)"
+
+    example:
+      context: "Generating all permutations of [1, 2, 3]"
+      dfs_tree:
+        root: "[]"
+        level_1: "[1], [2], [3]"
+        level_2: "[1,2], [1,3], [2,1], [2,3], [3,1], [3,2]"
+        level_3: "[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]"
+      dfs_order: "Explores [1] branch completely before [2]"
+      memory: "Only stores current path, not entire tree"
+
+    source: "Computer Science - Depth-First Search"
+
+  # ----------------------------------------
+  # BIDIRECTIONAL-SEARCH ORDERING
+  # ----------------------------------------
+  bidirectional_search:
+    id: bidirectional_search_ordering
+    name: "Bidirectional-Search Ordering (Meet in the Middle)"
+    category: graph_traversal
+
+    philosophy: |
+      Search from both start and goal simultaneously, stop when
+      they meet. From pathfinding: two smaller searches are faster
+      than one big one. If BFS takes O(b^d), two half-depth searches
+      take O(2 x b^(d/2)) which is much smaller for large d.
+
+    when_to_use:
+      - Know both start and goal states
+      - Goal is reversible (can search backward)
+      - Large search depth
+      - Pathfinding, puzzle solving
+      - When unidirectional search is too slow
+
+    key_concepts:
+      forward_search: "From start toward goal"
+      backward_search: "From goal toward start"
+      frontier: "Current boundary of each search"
+      meeting: "When frontiers intersect"
+      path_reconstruction: "Combine forward + backward paths"
+
+    algorithm:
+      initialize:
+        forward: "Start from initial state"
+        backward: "Start from goal state"
+      loop:
+        1_expand_forward: "One step of forward search"
+        2_check_meeting: "Does forward frontier intersect backward?"
+        3_expand_backward: "One step of backward search"
+        4_check_meeting: "Does backward frontier intersect forward?"
+      when_meet: "Reconstruct path through meeting point"
+
+    prioritization_rules:
+      1_alternate_directions:
+        rule: "Expand forward and backward alternately"
+        variant: "Or expand smaller frontier first"
+
+      2_check_intersection:
+        rule: "After each expansion, check for meeting"
+        method: "Hash table lookup of other frontier"
+
+      3_ensure_optimality:
+        rule: "Don't stop at first meeting (might not be shortest)"
+        correct: "Continue until shortest guaranteed"
+
+      4_reconstruct_path:
+        rule: "Combine forward path + backward path at meeting"
+        output: "Complete path from start to goal"
+
+    complexity_improvement:
+      unidirectional: "O(b^d) nodes"
+      bidirectional: "O(2 x b^(d/2)) nodes"
+      example: "b=10, d=10: 10B vs 200K nodes"
+
+    anti_patterns:
+      - "Goal not reversible (can't search backward)"
+      - "Multiple/abstract goals (no clear backward search)"
+      - "Forgetting to check optimality at meeting"
+      - "When depth is small (overhead not worth it)"
+
+    example:
+      context: "Finding path between two cities on map"
+      setup:
+        start: "New York"
+        goal: "Los Angeles"
+        edge_count: "Thousands of roads"
+      bidirectional:
+        forward_frontier: "NY -> cities 1 hop away"
+        backward_frontier: "LA -> cities 1 hop away"
+        expand_alternately: "Each grows toward other"
+        meeting: "Frontiers meet in Kansas City"
+      path: "NY -> ... -> Kansas City -> ... -> LA"
+      savings: "Explored 10% of nodes compared to unidirectional"
+
+    source: "AI/Pathfinding - Bidirectional Search"

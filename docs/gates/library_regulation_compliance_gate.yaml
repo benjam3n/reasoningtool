@@ -1,0 +1,34 @@
+# GOSM: Execution-enforced library regulation compliance gate
+# Fails early if regulated library artifacts violate drafting rules.
+
+gates:
+  - id: library_regulation_compliance_check
+    name: Library Regulation Compliance Check
+    description: |
+      Enforces drafting regulations for regulated library artifacts (like standardized forms).
+      This gate runs before any planning/execution to ensure the engine is not operating on
+      ambiguous, bundled, or conditionally-scaffolded prompts.
+
+      Rules and scopes are defined under:
+      - library/regulations/enforcement.yaml
+      - library/regulations/quality_rules.yaml
+      - library/FORM_DRAFTING_STANDARD.md
+
+    is_meta: true
+    affects_system: true
+    phase: initialization
+    sequence_order: 0
+    tags:
+      - meta
+      - quality
+      - regulations
+      - initialization
+
+    trigger_conditions:
+      - type: always
+
+    question: "Do regulated library artifacts comply with drafting regulations?"
+
+    on_pass: next
+    on_fail: system_improvement_gate
+

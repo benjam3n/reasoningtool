@@ -1,0 +1,91 @@
+# Disclosure Scope Gate
+# Determines what information to share vs withhold
+
+id: disclosure_scope_gate
+name: Disclosure Scope Gate
+version: "1.0.0"
+domain: core
+tags: ["strategic", "communication", "opsec"]
+
+description: |
+  Determines the minimum necessary disclosure for a given communication.
+  Share what they need to know, understand, and do. Nothing more.
+
+core_principle: |
+  Like chess - you don't share your strategy, your responses to their moves,
+  or your long-term plan. Not because you're hiding, but because that
+  information isn't necessary and could be exploited.
+
+questions:
+  - id: need_to_know
+    question: "What does the recipient NEED TO KNOW to take the desired action?"
+    output: required_knowledge
+
+  - id: need_to_understand
+    question: "What does the recipient NEED TO UNDERSTAND (why it matters to THEM)?"
+    output: required_understanding
+
+  - id: need_to_do
+    question: "What does the recipient NEED TO DO? (specific, actionable)"
+    output: required_actions
+
+  - id: exploitation_risk
+    question: "What information, if shared, could be used against us?"
+    output: withhold_list
+
+  - id: unnecessary_info
+    question: "What information is true but not necessary for the outcome?"
+    output: optional_list
+
+outputs:
+  - name: disclosure_set
+    type: object
+    description: |
+      MUST_SHARE: What they need to know/understand/do
+      MAY_SHARE: Optional, share if asked or builds rapport
+      WITHHOLD: Do not share unless specifically required
+
+categories:
+  hard_limit_never_reveal:
+    description: "Core vulnerabilities, exploitation vectors, full strategic picture"
+    rule: "Absolute protection - never disclose"
+    examples:
+      - "Full decision tree of contingency plans"
+      - "What we'll do if they refuse"
+      - "Our actual constraints and deadlines"
+
+  soft_limit_reveal_if_necessary:
+    description: "Detailed reasoning, motivation sources, long-term plans"
+    rule: "Default to withhold, reveal only if genuinely needed"
+    examples:
+      - "Why we chose this approach over alternatives"
+      - "Our broader strategic goals"
+      - "Timeline of our internal planning"
+
+  flexible_context_dependent:
+    description: "Timing, sources, intermediate goals"
+    rule: "Judgment call based on situation and relationship"
+    examples:
+      - "When we first started thinking about this"
+      - "Who else we've talked to"
+      - "Our confidence level"
+
+  default_share:
+    description: "What they need to act, why it helps them, how to verify"
+    rule: "Share unless specific risk identified"
+    examples:
+      - "The specific action we're recommending"
+      - "Why this benefits them"
+      - "How they can verify it works"
+
+verification: |
+  For each piece of information:
+  1. Is this in MUST_SHARE? → Include it
+  2. Is this in WITHHOLD? → Exclude it
+  3. Is this in MAY_SHARE? → Include only if serves rapport/trust
+  4. Anything else? → Default exclude (minimal disclosure)
+
+integration:
+  - Called before any strategic communication
+  - Output feeds into message composition
+  - Cross-check with Defensive vs Offensive Gate

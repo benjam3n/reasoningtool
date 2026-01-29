@@ -1,0 +1,397 @@
+# Resource Optimization Orderings
+# Orderings focused on maximizing throughput and efficiency
+
+category_id: resource_optimization
+category_name: "Resource Optimization Orderings"
+description: |
+  Orderings focused on maximizing throughput, minimizing waste,
+  and efficiently utilizing available resources. Use when efficiency
+  and resource utilization are primary concerns.
+
+when_to_consider: |
+  - Many tasks of varying duration
+  - Team execution with multiple people
+  - Need to maximize completions per unit time
+  - Want to minimize context-switching costs
+  - Uneven distribution of value across tasks
+
+variations:
+
+  # ----------------------------------------
+  # THROUGHPUT-OPTIMIZED ORDERING
+  # ----------------------------------------
+  throughput_optimized:
+    id: throughput_optimized_ordering
+    name: "Throughput-Optimized Ordering (SPT)"
+    category: resource_optimization
+
+    philosophy: |
+      Minimize average completion time by doing shortest tasks first.
+      From operations research: Shortest Processing Time (SPT) is
+      mathematically optimal for minimizing average flow time. This
+      maximizes the number of tasks completed per unit time.
+
+    when_to_use:
+      - Many tasks of varying duration
+      - Goal is to maximize completions
+      - Need to reduce average wait time
+      - Reporting on "tasks completed" matters
+
+    different_from_momentum: |
+      Momentum ordering is psychological (build confidence).
+      Throughput ordering is mathematical (minimize average completion time).
+      Momentum might pick a visible task over a shorter invisible one.
+      Throughput always picks shortest regardless of visibility.
+
+    prioritization_rules:
+      1_shortest_first:
+        rule: "Tasks with shortest processing time go first"
+        reason: "Mathematically minimizes average completion time"
+        formula: "Sort by estimated_duration ASC"
+
+      2_preemption_optional:
+        rule: "Consider whether to preempt long tasks for new short ones"
+        reason: "Shortest Remaining Processing Time (SRPT) variant"
+
+      3_starvation_prevention:
+        rule: "Add aging factor to prevent long tasks from never running"
+        reason: "Pure SPT can starve long tasks indefinitely"
+        formula: "adjusted_priority = duration - (wait_time * aging_factor)"
+
+    example:
+      context: "Processing support tickets"
+      tasks:
+        - "Complex bug investigation (4 hours)"
+        - "Password reset (5 minutes)"
+        - "Feature question (15 minutes)"
+        - "Account setup (30 minutes)"
+        - "Quick clarification (2 minutes)"
+      throughput_order:
+        1: "Quick clarification (2 min)"
+        2: "Password reset (5 min)"
+        3: "Feature question (15 min)"
+        4: "Account setup (30 min)"
+        5: "Complex bug investigation (4 hours)"
+      rationale: "4 customers served in first hour vs 0 if we start with the bug"
+
+    source: "Operations Research - Shortest Processing Time rule"
+
+  # ----------------------------------------
+  # PARALLEL-MAXIMIZING ORDERING
+  # ----------------------------------------
+  parallel_maximizing:
+    id: parallel_maximizing_ordering
+    name: "Parallel-Maximizing Ordering"
+    category: resource_optimization
+
+    philosophy: |
+      Minimize wall-clock time by maximizing parallel execution.
+      When multiple people are available, order work to keep everyone
+      busy with non-blocking tasks. The goal is minimum elapsed time,
+      not minimum total person-hours.
+
+    when_to_use:
+      - Team execution with multiple people
+      - Steps have varying dependencies
+      - Wall-clock time matters more than person-hours
+      - Want to reduce idle waiting
+
+    prioritization_rules:
+      1_identify_parallelizable:
+        rule: "Find steps that can run concurrently"
+        reason: "Parallelism reduces wall-clock time"
+
+      2_launch_parallel_early:
+        rule: "Start independent work streams as early as possible"
+        reason: "Earlier start means earlier finish"
+
+      3_critical_path_focus:
+        rule: "Keep the longest sequential chain (critical path) unblocked"
+        reason: "Critical path determines minimum duration"
+
+      4_load_balance:
+        rule: "Distribute work to keep all workers busy"
+        reason: "Idle workers increase elapsed time"
+
+    anti_patterns:
+      - "Doing everything sequentially"
+      - "Blocking on reviews or approvals"
+      - "Not identifying independent work streams"
+
+    example:
+      context: "Building a feature with 3 developers"
+      steps:
+        - "Design API (A, prerequisite for B, C)"
+        - "Build backend (B, depends on A)"
+        - "Build frontend (C, depends on A)"
+        - "Write tests (D, can start anytime)"
+        - "Integration (E, depends on B, C)"
+        - "Documentation (F, can start anytime)"
+      parallel_execution:
+        phase_1: "A (Dev1), D (Dev2), F (Dev3) - all independent"
+        phase_2: "B (Dev1), C (Dev2) - parallel after A, Dev3 continues F"
+        phase_3: "E (Dev1) - after B and C complete"
+      elapsed_time: "3 phases vs. 6 sequential steps"
+      rationale: "Parallel work cuts wall-clock time nearly in half"
+
+  # ----------------------------------------
+  # DEPENDENCY-FANOUT ORDERING
+  # ----------------------------------------
+  dependency_fanout:
+    id: dependency_fanout_ordering
+    name: "Dependency-Fanout Ordering"
+    category: resource_optimization
+
+    philosophy: |
+      Prioritize steps that unblock the most other steps. A step that
+      enables 5 other steps should happen before a step that enables 1.
+      Maximizes the rate at which work becomes unblocked.
+
+    when_to_use:
+      - Complex dependency graphs
+      - Multiple people waiting for inputs
+      - Want to maximize options at each point
+      - Reduce blocking and waiting time
+
+    prioritization_rules:
+      1_count_dependents:
+        rule: "Steps with more dependents go first"
+        reason: "Unblock more work sooner"
+        formula: "priority = count(steps_waiting_on_this)"
+
+      2_transitive_impact:
+        rule: "Consider indirect dependents too"
+        reason: "Step A enables B, which enables C, D, E"
+        formula: "priority = count(all_downstream_steps)"
+
+      3_weighted_by_value:
+        rule: "High-value dependents count more"
+        reason: "Unblocking important work > unblocking trivial work"
+
+    example:
+      context: "API development with multiple consumers"
+      steps:
+        A: "Define API schema (enables: B, C, D, E)"
+        B: "Build endpoint 1 (enables: F)"
+        C: "Build endpoint 2 (enables: G)"
+        D: "Write client SDK (enables: H, I, J)"
+        E: "Write docs (enables: K)"
+      fanout_analysis:
+        A: "4 direct dependents"
+        D: "3 direct dependents"
+        B: "1 direct dependent"
+        C: "1 direct dependent"
+        E: "1 direct dependent"
+      fanout_order:
+        1: "A - Define API schema (unblocks 4)"
+        2: "D - Write client SDK (unblocks 3)"
+        3: "[B, C, E] - Build endpoints and docs (each unblocks 1)"
+      rationale: "A unblocks the most work, so it goes first"
+
+  # ----------------------------------------
+  # VITAL-FEW-FIRST ORDERING
+  # ----------------------------------------
+  vital_few_first:
+    id: vital_few_first_ordering
+    name: "Vital-Few-First Ordering (Pareto)"
+    category: resource_optimization
+
+    philosophy: |
+      Do the 20% of work that delivers 80% of value first. From
+      Pareto principle: most value comes from a few items. Identify
+      and prioritize the vital few over the trivial many. Stop when
+      marginal value drops below threshold.
+
+    when_to_use:
+      - Value distribution is uneven (some items much more valuable)
+      - Time or resources are limited
+      - Need to maximize value delivered early
+      - Want to identify and cut low-value work
+
+    prioritization_rules:
+      1_value_rank:
+        rule: "Rank all items by expected value"
+        reason: "Can't prioritize vital few without ranking"
+
+      2_vital_few_first:
+        rule: "Do highest-value items first"
+        reason: "Capture most value early"
+        guideline: "Typically top 20% deliver 80% of value"
+
+      3_diminishing_returns_cutoff:
+        rule: "Consider stopping when value/effort ratio drops"
+        reason: "The long tail may not be worth the effort"
+        question: "Is finishing this item worth more than starting the next project?"
+
+    anti_patterns:
+      - "Treating all items as equal priority"
+      - "Doing items in order received (FIFO)"
+      - "Completing low-value items for completeness"
+      - "Not measuring or estimating value"
+
+    example:
+      context: "Feature backlog prioritization"
+      features:
+        A: "Expected value: $100K"
+        B: "Expected value: $80K"
+        C: "Expected value: $5K"
+        D: "Expected value: $5K"
+        E: "Expected value: $5K"
+        F: "Expected value: $5K"
+      pareto_analysis:
+        vital_few: "A, B (90% of value in 33% of features)"
+        trivial_many: "C, D, E, F (10% of value in 67% of features)"
+      vital_few_order:
+        1: "A - Highest value"
+        2: "B - Second highest"
+        then: "Reassess: is C-F worth building, or move to next project?"
+      rationale: "Two features capture 90% of the value"
+
+    source: "Pareto Principle - Vital few vs trivial many"
+
+  # ----------------------------------------
+  # BATCH VS STREAM ORDERING
+  # ----------------------------------------
+  batch_vs_stream:
+    id: batch_vs_stream_ordering
+    name: "Batch vs. Stream Ordering (Batch Size Optimization)"
+    category: resource_optimization
+
+    philosophy: |
+      Choose optimal batch size to balance setup costs against
+      holding/delay costs. From operations: small batches reduce
+      inventory but increase setup frequency. Large batches amortize
+      setup but increase work-in-progress and delay feedback.
+      The optimal batch size minimizes total cost.
+
+    when_to_use:
+      - Significant setup/context-switch costs exist
+      - Holding/delay costs are meaningful
+      - Can choose how many items to process at once
+      - Want to optimize flow efficiency
+
+    key_concepts:
+      setup_cost: "Fixed cost per batch (context switch, deployment, etc.)"
+      holding_cost: "Cost of items waiting in queue"
+      batch_size: "Number of items processed together"
+      flow_time: "Time from item arrival to completion"
+      throughput: "Items completed per unit time"
+
+    economic_analysis:
+      large_batches:
+        pros: "Lower setup cost per item"
+        cons: "Higher holding cost, delayed feedback, more WIP"
+        good_when: "Setup cost >> holding cost"
+
+      small_batches:
+        pros: "Lower holding cost, faster feedback, less WIP"
+        cons: "Higher setup cost per item"
+        good_when: "Holding cost >> setup cost"
+
+      single_piece_flow:
+        extreme: "Batch size = 1"
+        best_when: "Setup cost is near zero"
+        example: "Continuous deployment vs. monthly releases"
+
+    prioritization_rules:
+      1_identify_costs:
+        rule: "Estimate setup cost and holding cost"
+        reason: "Can't optimize without understanding cost drivers"
+
+      2_economic_batch_size:
+        rule: "Calculate optimal batch size"
+        formula: "EOQ formula or similar"
+        principle: "Balance setup and holding costs"
+
+      3_reduce_setup_cost:
+        rule: "Invest in reducing setup costs to enable smaller batches"
+        reason: "Smaller batches improve flow and feedback"
+        examples: "Faster deployments, better tooling, reduced context switch"
+
+      4_measure_flow_time:
+        rule: "Track end-to-end time, not just processing time"
+        reason: "Items waiting in batch are delayed"
+
+    example:
+      context: "Code review and deployment process"
+      current_state:
+        batch_size: "10 PRs batched for weekly deployment"
+        setup_cost: "4 hours for deployment process"
+        holding_cost: "Each PR waits average 3 days"
+        flow_time: "7 days average (3 wait + 4 process/deploy)"
+      analysis:
+        per_pr_setup: "24 minutes (4 hours / 10 PRs)"
+        total_delay: "30 PR-days waiting per week"
+      investment: "Automate deployment to reduce setup to 20 minutes"
+      new_state:
+        batch_size: "2 PRs, deploy daily"
+        flow_time: "1 day average"
+        setup_cost_per_pr: "10 minutes"
+      rationale: "Smaller batches enabled by lower setup cost improve flow"
+
+    source: "Operations Research - Economic Order Quantity, Lean batch sizing"
+
+  # ----------------------------------------
+  # DEMAND-DRIVEN ORDERING
+  # ----------------------------------------
+  demand_driven:
+    id: demand_driven_ordering
+    name: "Demand-Driven Ordering (Pull System)"
+    category: resource_optimization
+
+    philosophy: |
+      Don't do work until downstream actually needs it. Inspired by
+      Toyota's Kanban/JIT system: work is "pulled" by demand rather
+      than "pushed" by availability. Avoids doing work that may never
+      be needed or becomes obsolete.
+
+    when_to_use:
+      - Requirements are uncertain or evolving
+      - Work might become unnecessary
+      - Want to minimize waste (wasted effort)
+      - Downstream consumer signals when ready
+      - Just-in-time delivery is acceptable
+
+    when_not_to_use:
+      - Long lead times make late start impossible
+      - Downstream has no way to signal demand
+      - Work must be done speculatively (research)
+
+    prioritization_rules:
+      1_wait_for_signal:
+        rule: "Don't start work until downstream requests it"
+        reason: "Avoid doing work that isn't needed"
+
+      2_limit_wip:
+        rule: "Limit work-in-progress to prevent overload"
+        reason: "Focus on completion over starting"
+        guideline: "WIP limit = 1-3 items per person"
+
+      3_takt_time:
+        rule: "Match pace of work to pace of demand"
+        reason: "Sustainable flow without buildup"
+
+      4_pull_chain:
+        rule: "Each step pulls from previous step"
+        reason: "No speculative inventory at any stage"
+
+    anti_patterns:
+      - "Building features before they're requested"
+      - "Preparing all materials 'just in case'"
+      - "Push mentality: 'We might need this'"
+      - "Starting many things, finishing few"
+
+    example:
+      context: "Building features for a product"
+      push_approach:
+        - "Build all planned features"
+        - "Some features never used"
+        - "Resources wasted on unused work"
+      pull_approach:
+        - "Build minimal version"
+        - "Wait for user feedback/requests"
+        - "Build next feature when demand clear"
+        - "Resources focused on validated needs"
+      rationale: "Only do work when you know it's needed"
+
+    source: "Toyota Production System - Kanban, JIT"

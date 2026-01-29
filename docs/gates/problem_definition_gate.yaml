@@ -1,0 +1,208 @@
+# Problem Definition Gate
+# Before building a solution, verify the problem is real, understood, and at the right level
+
+id: problem_definition_gate
+name: Problem Definition Gate
+version: "1.1.0"
+domain: core
+tags: ["meta", "validation", "strategy", "prioritization"]
+
+related:
+  - problem_identification  # Full procedure for finding the right problem
+  - effort_impact_gate      # Prioritization
+  - assumeright_assumewrong_search  # Tool for exploring if this is the real problem
+
+description: |
+  Before building a solution, verify:
+  1. The problem actually exists (not hypothetical)
+  2. The problem is clearly defined (not vague)
+  3. We're solving at the RIGHT LEVEL (not surface symptom)
+  4. We're solving the RIGHT PROBLEM (not the obvious one)
+  5. At the RIGHT TIME (not premature or too late)
+  6. In the RIGHT ORDER (dependencies handled)
+  7. With RIGHT PRIORITIZATION (effort/impact justified)
+
+  If you can't articulate the problem, you shouldn't build the solution.
+  If you're solving the wrong problem, the solution is waste.
+
+core_principle: |
+  Solutions without problems are waste.
+  Solutions to the wrong problem are worse than no solution.
+  The obvious problem is often not the real problem.
+
+  Use ARAW to verify:
+  - ASSUME RIGHT: This IS the problem → what follows?
+  - ASSUME WRONG: This ISN'T the real problem → what is?
+
+# ============================================
+# GATE QUESTIONS
+# ============================================
+questions:
+  - id: problem_exists
+    question: "Does this problem actually exist RIGHT NOW?"
+    options:
+      - ACTUAL: "We have observed this problem happening"
+      - ANTICIPATED: "This problem doesn't exist yet but likely will"
+      - HYPOTHETICAL: "This problem might exist under certain conditions"
+      - IMAGINED: "We haven't actually seen this problem"
+    output: problem_status
+    action_by_status:
+      ACTUAL: "Proceed - real problems deserve solutions"
+      ANTICIPATED: "Define trigger conditions - when would this become actual?"
+      HYPOTHETICAL: "Defer - wait for evidence before building"
+      IMAGINED: "Stop - don't solve imagined problems"
+
+  - id: problem_specific
+    question: "Can you state the problem in one concrete sentence?"
+    test: "Avoid vague words: 'better', 'improved', 'issues', 'problems'"
+    example_good: "ARAW generates claims that contradict verified facts 15% of the time"
+    example_bad: "ARAW has accuracy issues"
+    output: problem_statement
+
+  - id: problem_observable
+    question: "How would you observe this problem happening?"
+    test: "What would you see/measure that tells you the problem is occurring?"
+    output: observable_signal
+
+  - id: problem_impact
+    question: "What happens if this problem is NOT solved?"
+    options:
+      - CRITICAL: "System fails, harms occur, goals blocked"
+      - SIGNIFICANT: "Major degradation but system still works"
+      - MODERATE: "Noticeable issues but workarounds exist"
+      - MINOR: "Slight inconvenience"
+      - NONE: "Nothing bad happens"
+    output: unsolved_impact
+
+  - id: solution_matches
+    question: "Does the proposed solution address the STATED problem?"
+    test: "If the solution worked perfectly, would the problem go away?"
+    warning: "Often we build solutions that address a DIFFERENT problem than stated"
+    output: solution_fit
+
+  - id: simpler_exists
+    question: "Is there a simpler solution that would also work?"
+    test: "What's the minimal intervention that addresses the core issue?"
+    output: simpler_alternative
+
+  # RIGHT LEVEL questions
+  - id: right_level
+    question: "Are we solving at the right level?"
+    levels:
+      - SYMPTOM: "Observable effect - don't solve here, find cause"
+      - PROXIMATE: "Immediate cause - may solve if local and fixable"
+      - ROOT: "Fundamental reason - often the right level"
+      - SYSTEMIC: "System allowing root causes - high leverage, high effort"
+      - ASSUMPTION: "Belief shaping what we see - questioning can dissolve problem"
+    test: "Would solving at this level actually fix it, or would it recur?"
+    output: problem_level
+
+  - id: right_problem
+    question: "Is this the RIGHT problem (not just the obvious one)?"
+    method: |
+      Use ARAW:
+      - ASSUME RIGHT: This is the problem → what follows?
+      - ASSUME WRONG: This isn't the real problem → what is?
+      If ASSUME WRONG branches are more compelling, reconsider.
+    output: problem_validation
+
+  - id: right_time
+    question: "Is this the right TIME to solve this?"
+    factors:
+      - urgency: "Is harm increasing? Is there a closing window?"
+      - readiness: "Do we have what we need?"
+      - dependencies: "Are prerequisites solved?"
+      - learning: "Should we learn more first?"
+    output: timing_assessment
+
+  - id: right_order
+    question: "Is this the right ORDER (dependencies, prerequisites)?"
+    test: "What must be solved first? What does solving this unlock?"
+    output: order_assessment
+
+# ============================================
+# ANTICIPATED PROBLEMS (Special handling)
+# ============================================
+anticipated_problem_protocol:
+  description: |
+    Problems that don't exist yet but might in the future.
+    These deserve analysis but not necessarily building.
+
+  questions:
+    - id: trigger
+      question: "What would cause this problem to become actual?"
+      output: trigger_condition
+
+    - id: timeline
+      question: "When might this trigger occur?"
+      options:
+        - IMMINENT: "Very soon, we should prepare now"
+        - MEDIUM: "Months away, can plan but not build yet"
+        - DISTANT: "Far future, track but don't invest"
+        - UNKNOWN: "No clear timeline"
+      output: trigger_timeline
+
+    - id: signal
+      question: "What signal would tell us the problem is becoming actual?"
+      output: early_signal
+
+    - id: prepare_vs_build
+      question: "Should we PREPARE (design) or BUILD (implement)?"
+      logic: |
+        IMMINENT + HIGH impact → BUILD now
+        MEDIUM + HIGH impact → PREPARE design, build on signal
+        DISTANT or LOW impact → TRACK only, don't invest
+
+  output: anticipated_action
+
+# ============================================
+# DECISION LOGIC
+# ============================================
+decision_logic: |
+  IF problem_status == IMAGINED:
+    → STOP: Don't solve imagined problems
+
+  IF problem_status == HYPOTHETICAL:
+    → DEFER: Wait for evidence, define what evidence would look like
+
+  IF problem_status == ANTICIPATED:
+    → Apply anticipated_problem_protocol
+    → Result determines PREPARE vs BUILD vs TRACK
+
+  IF problem_status == ACTUAL:
+    IF unsolved_impact in [NONE, MINOR]:
+      → DEPRIORITIZE: Solve only if nothing better
+    IF solution_fit == NO:
+      → REFRAME: Proposed solution doesn't match problem, reconsider
+    IF simpler_alternative exists:
+      → SIMPLIFY: Use simpler solution first
+    ELSE:
+      → PROCEED: Build the solution
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - scenario: "Add external verification to ARAW"
+    analysis:
+      problem_exists: ANTICIPATED (we haven't seen factual errors causing harm yet)
+      problem_specific: "ARAW claims might be factually wrong and we might act on them"
+      trigger: "When we start executing on ARAW-derived actions"
+      timeline: MEDIUM (execution not implemented yet)
+      early_signal: "First time ARAW output leads to wasted action"
+    decision: "PREPARE design but don't BUILD yet. Track for when execution happens."
+
+  - scenario: "Add domain balancing to ARAW"
+    analysis:
+      problem_exists: ACTUAL? Let's check data
+      problem_specific: "Some domains are over-explored, missing insights in others"
+      observable_signal: "Domain distribution is heavily skewed"
+      check_data: "Data shows domains are fairly balanced (13-14% each)"
+    decision: "IMAGINED - data shows problem doesn't exist. Don't build."
+
+  - scenario: "Add synthesis across ARAW runs"
+    analysis:
+      problem_exists: ACTUAL (user explicitly asked)
+      problem_specific: "Insights from multiple ARAW runs aren't combined"
+      unsolved_impact: MODERATE (can manually review but tedious)
+    decision: "PROCEED - real problem, user requested, moderate impact"

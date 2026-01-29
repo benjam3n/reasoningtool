@@ -1,0 +1,675 @@
+# System Health Check - Evaluate the GOSM system itself
+# Core meta-procedure for self-assessment and continuous improvement
+
+id: system_health_check
+name: System Health Check
+version: "1.0.0"
+domain: meta
+
+description: Evaluate if the GOSM system needs improvement
+
+long_description: |
+  The System Health Check is a meta-cognitive procedure that examines the GOSM
+  system's own health, effectiveness, and areas for improvement. This is the
+  foundation of GOSM's self-improvement capability.
+
+  Health dimensions evaluated:
+  1. Procedure Health: Success rates, gaps, redundancies, quality
+  2. Gate Health: Calibration, coverage, accuracy, false positive/negative rates
+  3. Execution Efficiency: Path length, loops, bottlenecks, time to completion
+  4. Knowledge Quality: Accuracy of stored information, staleness, gaps
+  5. Learning & Adaptation: Is the system getting better over time?
+  6. Self-Referential Integrity: Can the system improve itself reliably?
+
+  The procedure produces a comprehensive health report with specific,
+  actionable recommendations for system improvement. It identifies what's
+  working well (to preserve), what's degraded (to fix), and what's missing
+  (to add).
+
+  This enables GOSM to be a living, evolving system rather than a static
+  framework. Regular health checks ensure the system remains effective as
+  contexts, goals, and requirements change over time.
+
+tags:
+  - meta
+  - health
+  - self_improvement
+  - system
+  - monitoring
+  - quality
+  - introspection
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Scheduled periodic health assessment (weekly/monthly)
+  - After a sequence of execution failures
+  - When system performance seems degraded
+  - Before major system updates or changes
+  - When adding new domains or capabilities
+  - After significant usage period to calibrate
+  - When procedures consistently fail or produce poor results
+  - When user satisfaction or trust appears to decline
+  - After recovering from a critical failure
+
+when_not_to_use:
+  - During active execution (would interrupt flow)
+  - When no execution history exists yet (nothing to evaluate)
+  - Immediately after system initialization (not enough data)
+  - When external factors (not system) caused issues
+  - For debugging a specific procedure (use procedure-specific diagnostics)
+  - When time-critical actions are pending
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: system_stats
+    type: dict
+    required: false
+    description: Current system statistics (goals processed, procedures run, etc.)
+
+  - name: procedure_performance
+    type: dict
+    required: false
+    description: Procedure success rates and performance metrics
+
+  - name: gate_performance
+    type: dict
+    required: false
+    description: Gate evaluation statistics and calibration data
+
+  - name: recent_history
+    type: list
+    required: false
+    description: Recent execution history (last N goals/plans/executions)
+
+  - name: user_feedback
+    type: list
+    required: false
+    description: Any user feedback on system performance
+
+  - name: time_period
+    type: string
+    required: false
+    description: Time period to evaluate (e.g., "last_30_days")
+
+outputs:
+  - name: overall_health
+    type: string
+    description: "healthy | needs_attention | critical"
+
+  - name: health_score
+    type: float
+    description: 0.0-1.0 overall health score
+
+  - name: dimension_scores
+    type: dict
+    description: Health score for each dimension evaluated
+
+  - name: strengths
+    type: list
+    description: Areas where system is performing well
+
+  - name: concerns
+    type: list
+    description: Areas showing degradation or problems
+
+  - name: immediate_actions
+    type: list
+    description: Actions that should be taken now
+
+  - name: improvement_roadmap
+    type: list
+    description: Prioritized improvements for the future
+
+  - name: new_procedures_needed
+    type: list
+    description: Procedures that should be added to the library
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Gather system telemetry
+    action: |
+      Collect all available system data for analysis:
+
+      1. Execution metrics:
+         - Goals processed (attempted, completed, failed)
+         - Strategies selected and their outcomes
+         - Procedures executed and their success rates
+         - Average time to goal completion
+
+      2. Quality indicators:
+         - User satisfaction signals (if available)
+         - Rework rate (how often plans/approaches changed)
+         - Error rate by type
+
+      3. Coverage data:
+         - Domains active vs inactive
+         - Procedure library utilization
+         - Gate coverage and activation
+
+      4. Trend data:
+         - Metrics over time (improving? degrading?)
+         - Anomalies or sudden changes
+    inputs:
+      - system_stats (optional)
+      - procedure_performance (optional)
+      - gate_performance (optional)
+      - recent_history (optional)
+      - time_period (optional)
+    outputs:
+      - telemetry_data: consolidated system metrics
+      - data_gaps: what data is missing
+    verification: |
+      Key metrics collected; data gaps documented
+
+  - id: 2
+    name: Evaluate procedure health
+    action: |
+      Analyze the health of the procedure library:
+
+      1. Success rate analysis:
+         - Which procedures succeed most/least?
+         - Are failure rates increasing for any procedures?
+         - Are there patterns in failures?
+
+      2. Coverage analysis:
+         - Which domains have good procedure coverage?
+         - What operations lack procedures?
+         - Are there redundant procedures?
+
+      3. Quality analysis:
+         - Do procedures produce quality outputs?
+         - Are procedures well-documented?
+         - Do procedures have proper verification?
+
+      4. Usage analysis:
+         - Which procedures are most/least used?
+         - Are there procedures that should be retired?
+         - Are there procedures that need updating?
+    inputs:
+      - telemetry_data (from Step 1)
+      - procedure_performance (optional)
+    outputs:
+      - procedure_health_score: 0.0-1.0 score
+      - procedure_issues: list of specific problems
+      - procedure_recommendations: suggested fixes
+    verification: |
+      All procedures evaluated; issues have specific recommendations
+
+  - id: 3
+    name: Evaluate gate health
+    action: |
+      Analyze the health of gate evaluations:
+
+      1. Calibration analysis:
+         - Are gates passing when they should?
+         - Are gates failing when they should?
+         - False positive rate (passes that shouldn't)
+         - False negative rate (fails that shouldn't)
+
+      2. Coverage analysis:
+         - Are all critical decision points gated?
+         - Are there missing gates?
+         - Are there redundant gates?
+
+      3. Accuracy analysis:
+         - Do gate outcomes correlate with actual success?
+         - Are gate criteria well-defined?
+         - Are gate thresholds appropriate?
+
+      4. Performance analysis:
+         - Are gates adding value or just overhead?
+         - Time spent on gate evaluations
+         - Gates that consistently rubber-stamp
+    inputs:
+      - telemetry_data (from Step 1)
+      - gate_performance (optional)
+    outputs:
+      - gate_health_score: 0.0-1.0 score
+      - gate_issues: list of specific problems
+      - gate_recommendations: suggested fixes
+    verification: |
+      All gates evaluated; calibration issues identified
+
+  - id: 4
+    name: Evaluate execution efficiency
+    action: |
+      Analyze how efficiently goals are being achieved:
+
+      1. Path efficiency:
+         - Average steps to goal completion
+         - Unnecessary detours or loops
+         - Optimal vs actual path comparison
+
+      2. Time efficiency:
+         - Time to first meaningful output
+         - Time to goal completion
+         - Bottleneck identification
+
+      3. Resource efficiency:
+         - Compute/effort per goal
+         - Rework and waste
+         - Parallelization opportunities
+
+      4. Decision quality:
+         - Strategy selection accuracy
+         - Procedure selection accuracy
+         - Course correction frequency
+    inputs:
+      - telemetry_data (from Step 1)
+      - recent_history (optional)
+    outputs:
+      - efficiency_score: 0.0-1.0 score
+      - efficiency_issues: list of bottlenecks and waste
+      - efficiency_recommendations: suggested optimizations
+    verification: |
+      Execution paths analyzed; bottlenecks identified
+
+  - id: 5
+    name: Evaluate learning and adaptation
+    action: |
+      Analyze if the system is improving over time:
+
+      1. Trend analysis:
+         - Is success rate improving?
+         - Is efficiency improving?
+         - Is quality improving?
+
+      2. Learning indicators:
+         - Are new procedures being added effectively?
+         - Are procedures being refined based on feedback?
+         - Is the system adapting to user patterns?
+
+      3. Knowledge quality:
+         - Is stored knowledge accurate?
+         - Is information becoming stale?
+         - Are knowledge gaps being filled?
+
+      4. Meta-learning:
+         - Is the system better at self-assessment?
+         - Are health checks leading to improvements?
+         - Is the improvement process itself improving?
+    inputs:
+      - telemetry_data (from Step 1)
+      - recent_history (optional)
+    outputs:
+      - learning_score: 0.0-1.0 score
+      - learning_issues: barriers to improvement
+      - learning_recommendations: how to learn better
+    verification: |
+      Trends analyzed; learning effectiveness assessed
+
+  - id: 6
+    name: Assess self-referential integrity
+    action: |
+      Evaluate if the system can reliably improve itself:
+
+      1. Meta-procedure health:
+         - Are meta-procedures (like this one) working?
+         - Can the system discover new procedures?
+         - Can the system refine goals effectively?
+
+      2. Self-assessment accuracy:
+         - Do health checks identify real problems?
+         - Are recommendations actionable?
+         - Are improvements actually implemented?
+
+      3. Stability analysis:
+         - Could self-modification cause instability?
+         - Are there safeguards against degradation?
+         - Is there a recovery path if improvements fail?
+
+      4. Completeness check:
+         - Can the system assess all its components?
+         - Are there blind spots in self-awareness?
+         - What can't the system evaluate about itself?
+    inputs:
+      - procedure_health_score (from Step 2)
+      - gate_health_score (from Step 3)
+      - efficiency_score (from Step 4)
+      - learning_score (from Step 5)
+    outputs:
+      - integrity_score: 0.0-1.0 score
+      - integrity_issues: self-improvement barriers
+      - integrity_recommendations: how to improve self-improvement
+    verification: |
+      Meta-capabilities assessed; blind spots identified
+
+  - id: 7
+    name: Calculate overall health
+    action: |
+      Synthesize dimension scores into overall assessment:
+
+      1. Calculate weighted health score:
+         - Procedure health: 25%
+         - Gate health: 15%
+         - Execution efficiency: 25%
+         - Learning & adaptation: 20%
+         - Self-referential integrity: 15%
+
+      2. Determine health status:
+         - healthy: score >= 0.8, no critical issues
+         - needs_attention: 0.6 <= score < 0.8, or moderate issues
+         - critical: score < 0.6, or any critical issues
+
+      3. Identify strengths:
+         - Dimensions scoring > 0.8
+         - Areas showing improvement trend
+         - Things working as designed
+
+      4. Identify concerns:
+         - Dimensions scoring < 0.7
+         - Areas showing declining trend
+         - Patterns in failures
+    inputs:
+      - procedure_health_score (from Step 2)
+      - gate_health_score (from Step 3)
+      - efficiency_score (from Step 4)
+      - learning_score (from Step 5)
+      - integrity_score (from Step 6)
+      - All issues from previous steps
+    outputs:
+      - health_score: weighted overall score
+      - overall_health: healthy | needs_attention | critical
+      - dimension_scores: all dimension scores
+      - strengths: list of strong areas
+      - concerns: list of concerning areas
+    verification: |
+      Score calculated correctly; status matches score and issues
+
+  - id: 8
+    name: Generate improvement plan
+    action: |
+      Create actionable improvement recommendations:
+
+      1. Immediate actions (do now):
+         - Critical issues that need immediate attention
+         - Quick wins with high impact
+         - Safety or stability concerns
+
+      2. Short-term improvements (this week/month):
+         - High-priority procedure gaps
+         - Calibration adjustments
+         - Efficiency optimizations
+
+      3. Long-term roadmap (this quarter):
+         - New capabilities to add
+         - Major refactoring needed
+         - Learning system improvements
+
+      4. New procedures needed:
+         - Gaps identified during analysis
+         - Priority and complexity
+         - Dependencies
+    inputs:
+      - All issues and recommendations from previous steps
+      - strengths (from Step 7)
+      - concerns (from Step 7)
+    outputs:
+      - immediate_actions: critical actions for now
+      - improvement_roadmap: prioritized future improvements
+      - new_procedures_needed: procedures to create
+    verification: |
+      Actions are specific and actionable; priorities are justified
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All health dimensions have been evaluated with scores
+  - Data gaps are acknowledged and don't invalidate conclusions
+  - Issues are specific enough to act on
+  - Recommendations are prioritized by impact and urgency
+  - Health status matches the evidence
+  - Self-referential limitations are acknowledged
+
+failure_modes:
+  - mode: Insufficient data
+    symptom: Not enough execution history to draw conclusions
+    resolution: Flag data gaps; make conditional recommendations; schedule re-check
+
+  - mode: False positive health
+    symptom: Reporting healthy when problems exist
+    resolution: Add adversarial checks; look for hidden issues; validate with outcomes
+
+  - mode: False negative health
+    symptom: Reporting problems when system is working fine
+    resolution: Calibrate against actual outcomes; avoid over-sensitivity
+
+  - mode: Analysis paralysis
+    symptom: So many issues identified that nothing gets fixed
+    resolution: Force prioritization; limit to top 3 immediate actions
+
+  - mode: Self-serving recommendations
+    symptom: Recommending more complexity that doesn't help
+    resolution: Require evidence that recommendations would improve outcomes
+
+  - mode: Blind spot in self-assessment
+    symptom: Missing obvious problems because can't see them
+    resolution: Include external validation step; seek user feedback
+
+  - mode: Recommendation without action
+    symptom: Same issues appearing in multiple health checks
+    resolution: Track recommendation implementation; escalate unaddressed issues
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Healthy system check
+    context: Monthly health check on a well-functioning GOSM instance
+    inputs:
+      system_stats:
+        goals_processed: 47
+        goals_completed: 44
+        goals_failed: 3
+        average_completion_time: "4.2 days"
+      procedure_performance:
+        generation: {calls: 89, success_rate: 0.96}
+        validation: {calls: 156, success_rate: 0.94}
+        decomposition: {calls: 34, success_rate: 0.91}
+      gate_performance:
+        smart_check: {evaluations: 47, pass_rate: 0.72}
+        feasibility_check: {evaluations: 44, pass_rate: 0.89}
+      recent_history:
+        - "Goal: Launch website - COMPLETED in 5 days"
+        - "Goal: Write documentation - COMPLETED in 3 days"
+        - "Goal: Setup CI/CD - COMPLETED in 4 days"
+      time_period: "last_30_days"
+    process: |
+      Step 1 - Telemetry:
+      - 94% goal completion rate (excellent)
+      - Core procedures working well
+      - Gates are appropriately selective
+
+      Step 2 - Procedure Health:
+      - High success rates across core procedures
+      - Good coverage for software development domain
+      - Minor gap in deployment procedures
+
+      Step 3 - Gate Health:
+      - SMART check properly filtering vague goals
+      - Feasibility check well-calibrated
+
+      Step 4 - Efficiency:
+      - Average 4.2 days is reasonable
+      - No major bottlenecks identified
+      - Some parallelization opportunity
+
+      Step 5 - Learning:
+      - Success rates stable/improving
+      - New procedures being added
+      - User patterns being recognized
+
+      Step 6 - Integrity:
+      - Meta-procedures working
+      - Self-assessment accurate
+      - No stability concerns
+
+      Step 7 - Overall Health:
+      - Score: 0.87 (healthy)
+      - Strengths: procedure execution, gate calibration
+      - Concerns: minor efficiency opportunities
+
+      Step 8 - Improvements:
+      - Add deployment procedures (medium priority)
+      - Optimize parallel execution (low priority)
+    expected_output:
+      overall_health: "healthy"
+      health_score: 0.87
+      dimension_scores:
+        procedure_health: 0.92
+        gate_health: 0.85
+        execution_efficiency: 0.82
+        learning_adaptation: 0.88
+        self_referential_integrity: 0.85
+      strengths:
+        - "High procedure success rates (94% average)"
+        - "Well-calibrated gates filtering appropriately"
+        - "Strong goal completion rate (94%)"
+      concerns:
+        - "Minor gap in deployment procedure coverage"
+        - "Some execution could be parallelized for speed"
+      immediate_actions: []
+      improvement_roadmap:
+        - priority: "medium"
+          item: "Add kubernetes_deployment procedure"
+          rationale: "Would close deployment coverage gap"
+        - priority: "low"
+          item: "Implement parallel step execution"
+          rationale: "Could reduce completion time by ~15%"
+
+  - name: System needing attention
+    context: Health check after series of failures
+    inputs:
+      system_stats:
+        goals_processed: 23
+        goals_completed: 14
+        goals_failed: 9
+        average_completion_time: "8.5 days"
+      procedure_performance:
+        generation: {calls: 45, success_rate: 0.87}
+        validation: {calls: 67, success_rate: 0.79}
+        strategy_discovery: {calls: 23, success_rate: 0.65}
+      gate_performance:
+        smart_check: {evaluations: 23, pass_rate: 0.91}
+        feasibility_check: {evaluations: 21, pass_rate: 0.95}
+      recent_history:
+        - "Goal: Build mobile app - FAILED (wrong strategy selected)"
+        - "Goal: Scale database - FAILED (procedure missing)"
+        - "Goal: Optimize performance - FAILED (unclear requirements)"
+      time_period: "last_14_days"
+    process: |
+      Step 1 - Telemetry:
+      - 61% goal completion rate (concerning)
+      - strategy_discovery has low success rate
+      - Gates may be too permissive
+
+      Step 2 - Procedure Health:
+      - strategy_discovery at 65% (needs attention)
+      - validation declining (79% from 94%)
+      - Missing database scaling procedures
+
+      Step 3 - Gate Health:
+      - Gates passing too much (91-95% pass rate)
+      - Not catching unclear requirements
+      - Feasibility check not catching missing procedures
+
+      Step 4 - Efficiency:
+      - 8.5 days average is too long
+      - Many goals going through multiple iterations
+      - Rework rate is high
+
+      Step 5 - Learning:
+      - Success rate declining (was 85%, now 61%)
+      - Not learning from failures
+      - Same types of failures recurring
+
+      Step 6 - Integrity:
+      - Meta-procedures not catching issues early enough
+      - Feedback loop may be broken
+
+      Step 7 - Overall Health:
+      - Score: 0.64 (needs_attention)
+      - Multiple concerning trends
+
+      Step 8 - Improvements:
+      - Immediate: Fix gate calibration
+      - Immediate: Review strategy_discovery procedure
+      - Short-term: Add missing database procedures
+    expected_output:
+      overall_health: "needs_attention"
+      health_score: 0.64
+      dimension_scores:
+        procedure_health: 0.71
+        gate_health: 0.55
+        execution_efficiency: 0.58
+        learning_adaptation: 0.62
+        self_referential_integrity: 0.72
+      strengths:
+        - "Generation procedure still performing well"
+        - "Meta-procedures functioning"
+      concerns:
+        - "Strategy discovery success rate too low (65%)"
+        - "Gates not catching issues early (too permissive)"
+        - "High rework rate extending completion time"
+        - "Success rate declining over time"
+      immediate_actions:
+        - "Tighten feasibility gate to check procedure coverage"
+        - "Add requirements clarity check to SMART gate"
+        - "Review recent strategy_discovery failures for pattern"
+      improvement_roadmap:
+        - priority: "high"
+          item: "Refactor strategy_discovery procedure"
+          rationale: "65% success rate is root cause of many failures"
+        - priority: "high"
+          item: "Recalibrate gates"
+          rationale: "Too permissive, letting bad inputs through"
+        - priority: "medium"
+          item: "Add database scaling procedures"
+          rationale: "Recurring gap causing failures"
+      new_procedures_needed:
+        - name: "database_scaling"
+          priority: "high"
+          rationale: "Direct cause of recent failure"
+        - name: "requirements_clarification"
+          priority: "medium"
+          rationale: "Would reduce unclear requirements failures"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Scheduled periodic health assessment (recommend weekly or biweekly)
+    - After a critical failure to diagnose root cause
+    - Before major system changes to establish baseline
+    - After system changes to verify improvement
+    - When user reports dissatisfaction with system
+    - At the start of a new project or domain
+
+  gates:
+    - gate: health_acceptable
+      question: "Is the system healthy enough to process new goals?"
+
+    - gate: critical_issues
+      question: "Are there any critical issues requiring immediate attention?"
+
+    - gate: improvement_tracked
+      question: "Are improvement recommendations being implemented?"
+
+    - gate: regression_detected
+      question: "Has health declined since last check?"
+
+  related_procedures:
+    - goal_refinement: Health of goal refinement affects goal completion
+    - strategy_discovery: Core procedure that health check evaluates
+    - procedure_discovery: Identifies procedures needed based on health gaps
+    - validation: Used to validate health check findings
+    - generation: Used to generate improvement options

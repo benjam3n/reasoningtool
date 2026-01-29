@@ -1,0 +1,402 @@
+# Journey Validation Gate
+# Validates that a GOAL JOURNEY (purpose chain) is valid and satisfying
+# v2.0.0 - Rewritten to focus on goal chains, not narrative arcs
+
+id: journey_validation_gate
+name: Journey Validation Gate
+version: "2.0.0"
+domain: core
+
+description: |
+  A GOAL JOURNEY is a chain of goals where each serves the next,
+  terminating at an intrinsic goal.
+
+  A journey is VALID if:
+  1. Semi-generalizable - pattern transfers to other situations
+  2. Satisfying - the goal chain is coherent and terminates properly
+
+  IMPORTANT: This is NOT about narrative shape (climax, resolution, arc).
+  It's about PURPOSE CHAINS (each step serves the next).
+
+  From goal_journey_system.yaml:
+  - Narrative asks: "What happens next?"
+  - Goal journey asks: "What does this serve?"
+
+purpose: |
+  Validate extracted goal journeys for quality.
+  Ensure goal chains are coherent and transferable.
+  Maintain journey library quality.
+
+key_distinction: |
+  v1.0 error: Used narrative concepts (emotional arc, build-up, climax)
+  v2.0 fix: Uses goal chain concepts (service, terminus, coherence)
+
+  A satisfying goal journey is NOT:
+  - "Person faces trial, overcomes, transforms" (narrative)
+
+  A satisfying goal journey IS:
+  - "Action → Goal → Goal → Intrinsic Goal" with clear service at each step
+
+# ============================================
+# THE GATE
+# ============================================
+
+question: Is this goal journey semi-generalizable AND satisfying?
+
+# ============================================
+# CHECK 1: GENERALIZABILITY
+# ============================================
+
+check_1_generalizability:
+  question: "Is the goal chain pattern transferable?"
+
+  step_level_checks:
+    too_specific_indicators:
+      - Contains proper nouns (names, places, brands)
+      - References unique situations that can't recur
+      - Would only make sense to someone who knows the source
+      - The SERVICE relationship is too context-dependent
+
+    too_abstract_indicators:
+      - Goal is so vague it could mean anything
+      - Service relationship is unclear ("somehow serves")
+      - No specificity about what goal means
+      - Could apply to literally everything
+
+    semi_generalizable_indicators:
+      - Uses role terms (person, agent, seeker)
+      - Uses category terms (capability, resource, obstacle)
+      - Service relationship is clear and transferable
+      - Could instantiate in 10-1000 specific ways
+      - The PATTERN of the chain is recognizable
+
+  chain_level_checks:
+    transfer_test:
+      description: "Can this goal chain apply to other situations?"
+      method: |
+        Try instantiating in three different contexts:
+        1. Different domain (if career → personal growth; if art → business)
+        2. Different scale (if individual → team; if small → large)
+        3. Different context (if modern → historical)
+
+        For each, check:
+        - Does the GOAL CHAIN still make sense?
+        - Would the SERVICE relationships still hold?
+
+      pass: "Chain structure makes sense in at least 2 of 3 test contexts"
+      fail: "Chain only makes sense in original context"
+
+    pattern_recognition:
+      description: "Is the goal chain pattern recognizable?"
+      method: |
+        The pattern is the SHAPE of the goal chain:
+        - How many levels from action to intrinsic?
+        - What type of chain? (direct, extended, branching, etc.)
+        - What kind of service relationships?
+
+        Would someone in a similar situation recognize this pattern?
+
+      pass: "Pattern would be recognized as familiar"
+      fail: "Pattern seems arbitrary or unique to this case"
+
+  grading:
+    passes:
+      - All steps are semi-generalizable
+      - Passes transfer test (works in 2+ contexts)
+      - Pattern is recognizable
+
+    partial:
+      - Most steps semi-generalizable (1-2 need adjustment)
+      - Passes one test
+      - Clear path to improvement
+
+    fails:
+      - Multiple steps too specific or too abstract
+      - Fails both tests
+      - Needs fundamental rework
+
+# ============================================
+# CHECK 2: SATISFACTION (Goal Chain Coherence)
+# ============================================
+
+check_2_satisfaction:
+  question: "Is the goal chain coherent and well-formed?"
+
+  note: |
+    "Satisfying" does NOT mean "has narrative shape."
+    "Satisfying" means "the goal chain is coherent and I can see
+    why I'm doing what I'm doing."
+
+    From goal_journey_system.yaml:
+    - Satisfaction comes from COHERENCE and LEGITIMACY.
+    - Coherence: The chain holds together
+    - Legitimacy: The terminus is truly valued
+
+  service_checks:
+    step_service:
+      question: "Does each step clearly serve the next?"
+      pass: "Service relationship is explicit and clear"
+      fail: "Jump between steps - why does A serve B?"
+      repair: "Find the missing link or question the connection"
+
+    chain_direction:
+      question: "Does the chain move toward intrinsic goals?"
+      pass: "Each level is closer to intrinsic than the previous"
+      fail: "Chain seems to go sideways or backward"
+      repair: "Reorder or identify the actual goal hierarchy"
+
+  terminus_checks:
+    reaches_intrinsic:
+      question: "Does the chain reach an intrinsic goal?"
+      pass: "Terminates at something valued for itself"
+      fail: "Chain ends at something instrumental"
+      repair: "Keep asking 'what does that serve?'"
+
+    intrinsic_legitimate:
+      question: "Is the intrinsic goal legitimate?"
+      pass: "Reasonable people would value this"
+      fail: "Goal is unusual or questionable"
+      repair: "Either find deeper goal or acknowledge unusual values"
+
+    intrinsic_examples:
+      legitimate:
+        - "Wellbeing / flourishing"
+        - "Meaning / purpose"
+        - "Connection / love"
+        - "Knowledge / understanding"
+        - "Beauty / aesthetic experience"
+      questionable:
+        - Goals that only serve the agent at others' expense
+        - Goals that loop back on themselves
+        - Goals that no one would share
+
+  completeness_checks:
+    no_missing_links:
+      question: "Are all intermediate goals present?"
+      pass: "Can trace from action to intrinsic without gaps"
+      fail: "There's a jump - missing intermediate goal"
+      repair: "Fill in the missing goals"
+
+    no_redundant_links:
+      question: "Is every step necessary?"
+      pass: "Removing any step would break the chain"
+      fail: "Some steps don't add anything"
+      repair: "Remove redundant steps"
+
+  grading:
+    satisfying:
+      - All service relationships are clear
+      - Chain reaches legitimate intrinsic goal
+      - No missing or redundant links
+      - "I can see why I'm doing this"
+
+    partial:
+      - Most service relationships clear
+      - Reaches intrinsic but minor gaps
+      - Could be more complete
+
+    unsatisfying:
+      - Service relationships unclear
+      - Doesn't reach intrinsic, or intrinsic is questionable
+      - Major gaps or redundancies
+      - "I don't know why I'm doing this"
+
+# ============================================
+# COMBINED ASSESSMENT
+# ============================================
+
+combined_assessment:
+  valid:
+    criteria:
+      - Generalizability: passes
+      - Satisfaction: satisfying
+    action: "Goal journey is valid. Add to library."
+
+  valid_with_notes:
+    criteria:
+      - Generalizability: passes or partial
+      - Satisfaction: satisfying or partial
+      - At least one is "passes/satisfying"
+    action: "Journey is usable. Note limitations. Consider improvement."
+
+  needs_work:
+    criteria:
+      - Generalizability: partial
+      - Satisfaction: partial
+    action: "Journey has potential but needs rework. See specific issues."
+
+  invalid:
+    criteria:
+      - Generalizability: fails
+      - OR Satisfaction: unsatisfying
+    action: "Goal journey is not valid. Either too specific/abstract or chain is broken."
+
+# ============================================
+# REPAIR GUIDANCE
+# ============================================
+
+repair_guidance:
+  for_too_specific:
+    issue: "Goal chain contains too-specific elements"
+    fixes:
+      - "Replace specific goals with goal types"
+      - "Abstract the service relationships"
+      - "Keep the PATTERN, remove the specifics"
+    test: "After abstraction: still meaningful? still shows service?"
+
+  for_too_abstract:
+    issue: "Goal chain is too abstract to be meaningful"
+    fixes:
+      - "Add specificity to service relationships"
+      - "Clarify what achieving each goal actually means"
+      - "Show what the goals require or enable"
+    test: "After additions: can you instantiate this chain?"
+
+  for_broken_service:
+    issue: "Service relationship is unclear"
+    fixes:
+      - "Ask: How exactly does A serve B?"
+      - "Find intermediate goals between A and B"
+      - "Or question whether A really serves B at all"
+    test: "Can you explain the service in one sentence?"
+
+  for_missing_intrinsic:
+    issue: "Chain doesn't reach intrinsic goal"
+    fixes:
+      - "Keep asking: What does that serve?"
+      - "Apply intrinsic_goal_termination_gate"
+      - "The chain isn't done until you hit bedrock"
+    test: "Would 'why?' make sense for the terminus? If yes, not intrinsic."
+
+  for_questionable_intrinsic:
+    issue: "Intrinsic goal is unusual"
+    fixes:
+      - "Either: Find the deeper, more widely-shared goal"
+      - "Or: Acknowledge this is an unusual value and justify"
+    test: "Would reasonable people share this value?"
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  valid_goal_journey:
+    journey:
+      action: "Learning music theory"
+      chain:
+        - level: action
+          description: "Studying harmony and scales"
+          serves: "Understand how music works"
+        - level: low_instrumental
+          description: "Understand how music works"
+          serves: "Improve ability to create sounds"
+        - level: mid_instrumental
+          description: "Improve ability to create sounds"
+          serves: "Have deeper musical experiences"
+        - level: high_instrumental
+          description: "Have deeper musical experiences"
+          serves: "Flourishing / rich life"
+        - level: intrinsic
+          description: "Flourishing / rich life"
+          serves: null  # Terminus
+      chain_type: extended
+    assessment:
+      generalizability: passes
+      generalizability_notes: |
+        - Pattern: "Acquire knowledge → Improve capability → Deepen experience → Flourishing"
+        - Transfers to: any craft, any skill-based pursuit
+        - Semi-generalizable at each level
+      satisfaction: satisfying
+      satisfaction_notes: |
+        - Each step clearly serves the next
+        - Reaches legitimate intrinsic goal (flourishing)
+        - No missing links
+        - "I can see why learning theory matters"
+    result: VALID
+
+  needs_work_journey:
+    journey:
+      action: "Going to the gym"
+      chain:
+        - level: action
+          description: "Working out"
+          serves: "???"
+    assessment:
+      generalizability: partial
+      satisfaction: unsatisfying
+      satisfaction_notes: |
+        - Chain is incomplete - only has action
+        - What goal does gym serve?
+        - → Physical fitness → Health → Wellbeing?
+        - Need to trace the full chain
+    result: NEEDS WORK
+    repair: "Complete the goal chain. What does gym serve? What does THAT serve?"
+
+  invalid_goal_journey:
+    journey:
+      action: "Doing task"
+      chain:
+        - level: action
+          description: "Performing work"
+          serves: "Task is done"
+        - level: goal
+          description: "Task is done"
+          serves: "???"
+    assessment:
+      generalizability: fails (too abstract, "task" means nothing)
+      satisfaction: unsatisfying (chain doesn't reach intrinsic)
+    result: INVALID
+    repair: |
+      This isn't a goal journey, it's a circular definition.
+      "Doing task to have task done" doesn't serve anything.
+      Start over: What GOAL does the task serve? Trace from there.
+
+# ============================================
+# COMPARISON: v1.0 vs v2.0
+# ============================================
+
+version_comparison:
+  v1_0_concepts_removed:
+    - "Emotional arc"
+    - "Build-up → climax → resolution"
+    - "Narrative rhythm"
+    - "Turning points as story beats"
+    - "Beginning/middle/end as narrative structure"
+
+  v2_0_concepts_added:
+    - "Service relationships (each step serves the next)"
+    - "Terminus at intrinsic goal"
+    - "Goal chain types (direct, extended, branching)"
+    - "Legitimacy of intrinsic goal"
+    - "Completeness of chain (no gaps)"
+
+  key_insight: |
+    v1.0 asked: "Does this feel like a good story?"
+    v2.0 asks: "Does each step serve the next, reaching intrinsic goal?"
+
+    The difference is PURPOSE vs PLOT.
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+integration:
+  with_goal_journey_system:
+    description: "Uses goal_journey_system definitions and chain types"
+    relationship: "goal_journey_system defines; this gate validates"
+
+  with_journey_extraction:
+    description: "Apply after extraction to validate output"
+    when: "After journey_extraction completes"
+
+  with_story_coherence_gate:
+    description: "Story coherence is similar but simpler"
+    relationship: |
+      story_coherence_gate: Quick coherence check during planning
+      journey_validation_gate: Thorough validation for library
+
+      Both now use goal chain concepts (v2.0 alignment).
+
+  with_intrinsic_goal_termination_gate:
+    description: "Uses to check if terminus is legitimate intrinsic goal"
+    when: "In terminus_checks.reaches_intrinsic"

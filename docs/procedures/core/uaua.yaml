@@ -1,0 +1,238 @@
+id: uaua
+name: UAUA Combined Exploration Procedure
+version: 1.0.0
+description: |
+  Universalize → ARAW → Universalize → ARAW
+
+  Alternates between divergent (Universalization) and convergent (ARAW) thinking
+  to achieve both complete space coverage AND rigorous validation.
+
+  [D: derived from araw_2026-01-28_araw-vs-universalization.md]
+  [O: UAUA pattern discovered in comparison of Boolean vs Type logic approaches]
+
+  RATIONALE:
+  - Universalization alone: Complete within known dimensions, but untested
+  - ARAW alone: Rigorously tested, but may miss dimensions
+  - UAUA: Combines completeness AND rigor through alternation
+
+inputs:
+  - name: input
+    type: string
+    description: The claim, question, goal, or problem to analyze
+  - name: depth
+    type: enum
+    values: [light, standard, deep]
+    default: standard
+    description: How many iterations of UAUA
+
+outputs:
+  - name: space_map
+    type: object
+    description: Complete possibility space from universalizations
+  - name: validated_candidates
+    type: array
+    description: Candidates that survived ARAW testing
+  - name: edge_cases
+    type: array
+    description: Edge cases found in second universalization
+  - name: final_validated
+    type: array
+    description: Final outputs that survived all rounds
+  - name: rejected
+    type: array
+    description: Options rejected by ARAW with reasons
+
+gates:
+  - id: input_clear
+    type: entry
+    check: Is the input specific enough to universalize?
+    fail_action: Ask user to clarify what they want to analyze
+
+  - id: u1_productive
+    type: process
+    check: Did U1 produce at least 5 distinct universalizations?
+    fail_action: Input may be too abstract; try more specific framing
+
+  - id: a1_decisive
+    type: process
+    check: Did A1 eliminate at least 1 candidate or validate at least 1?
+    fail_action: ARAW may be at wrong level; adjust abstraction
+
+  - id: u2_novel
+    type: quality
+    check: Did U2 find at least 1 edge case not in U1?
+    fail_action: Second universalization added value
+
+  - id: a2_final
+    type: exit
+    check: Do final candidates have clear survival rationale?
+    fail_action: Strengthen validation reasoning
+
+steps:
+  - id: u1_universalize
+    name: "U1: Map the Space"
+    prompt: |
+      UNIVERSALIZE THE INPUT
+
+      Input: "{input}"
+
+      Apply all 12 universalization techniques:
+      1. STATE SPACE: What states could this be in?
+      2. INSTANCE-TO-CATEGORY: What is this an instance of?
+      3. PARAMETER VARIATION: What if parameters varied?
+      4. ROLE REVERSAL: What if roles reversed?
+      5. EXISTENCE CHECK: Does this exist/is this true?
+      6. CAUSAL REVERSAL: What if cause/effect reversed?
+      7. TEMPORAL VARIATION: What if timing varied?
+      8. BOUNDARY DISSOLUTION: What if scope changed?
+      9. MODALITY SHIFT: What certainty level?
+      10. PERSPECTIVE ROTATION: Whose view?
+      11. SCALE VARIATION: At what level?
+      12. NEGATION REFRAME: Problem or opportunity?
+
+      From the 12 outputs:
+      - Select the most productive universalizations (those that reveal new territory)
+      - For each, derive 3-5 specific instances/candidates
+
+      Output:
+      - SPACE MAP: [list of productive universalizations]
+      - CANDIDATES: [list of derived instances to test]
+      - [T:result] U1 produced [N] universalizations, [M] candidates
+
+    gate: u1_productive
+
+  - id: a1_araw
+    name: "A1: Test Top Candidates"
+    prompt: |
+      ARAW THE TOP CANDIDATES
+
+      For each candidate from U1 (up to 5 most promising):
+
+      CANDIDATE: [name]
+
+      ├── ASSUME RIGHT (this candidate is best/true)
+      │   ├── What follows if true?
+      │   ├── What must also be true?
+      │   └── What evidence supports this?
+      │
+      └── ASSUME WRONG (this candidate is flawed/false)
+          ├── What's the failure mode?
+          ├── What alternative is better?
+          └── What evidence contradicts this?
+
+      For each candidate, mark:
+      - VALIDATED: Survived ARAW (AR stronger than AW)
+      - REJECTED: Failed ARAW (AW stronger than AR)
+      - UNCERTAIN: AR and AW both strong
+
+      Output:
+      - VALIDATED: [list with reasons]
+      - REJECTED: [list with reasons]
+      - UNCERTAIN: [list with key questions]
+      - [T:result] A1: [V] validated, [R] rejected, [U] uncertain
+
+    gate: a1_decisive
+
+  - id: u2_edge_cases
+    name: "U2: Find Edge Cases"
+    prompt: |
+      UNIVERSALIZE THE VALIDATED CANDIDATES
+
+      For each VALIDATED or UNCERTAIN candidate from A1:
+
+      Apply universalization to find EDGE CASES:
+      - BOUNDARY: Where does this candidate break?
+      - SCALE: At what scale does it fail?
+      - TEMPORAL: When does it not apply?
+      - STAKEHOLDER: Who would disagree?
+
+      Also universalize REJECTED candidates:
+      - WHEN WOULD THEY WORK? Under what conditions would rejected options become valid?
+
+      Output:
+      - EDGE CASES for validated: [list]
+      - CONDITIONS for rejected: [list of when they'd work]
+      - NOVEL INSIGHTS: [anything not discovered in U1]
+      - [T:result] U2 found [N] edge cases, [M] novel insights
+
+    gate: u2_novel
+
+  - id: a2_final
+    name: "A2: Final Validation"
+    prompt: |
+      ARAW THE EDGE CASES
+
+      For each edge case from U2:
+
+      ├── ASSUME RIGHT (edge case matters)
+      │   └── How does this change our validated candidates?
+      │
+      └── ASSUME WRONG (edge case doesn't matter)
+          └── Why can we ignore this?
+
+      Then for each originally VALIDATED candidate:
+      - Does it survive the edge cases?
+      - What conditions/constraints apply?
+
+      Output:
+      - FINAL VALIDATED: [candidates that survived all rounds]
+      - WITH CONDITIONS: [candidates valid under specific conditions]
+      - FINAL REJECTED: [candidates that failed edge case testing]
+
+      For each FINAL VALIDATED:
+      - WHY VALIDATED: [reasoning]
+      - KEY CONSTRAINTS: [when it applies]
+      - REMAINING UNCERTAINTY: [what's still unknown]
+
+      [T:result] Final: [V] validated, [C] conditional, [R] rejected
+
+    gate: a2_final
+
+  - id: synthesize
+    name: "Synthesis"
+    prompt: |
+      UAUA SYNTHESIS
+
+      Original input: "{input}"
+
+      SPACE COVERAGE (from U1, U2):
+      - Dimensions explored: [list]
+      - Total candidates considered: [count]
+      - Edge cases found: [count]
+
+      VALIDATION (from A1, A2):
+      - Candidates tested: [count]
+      - Survived testing: [count]
+      - Rejected with reason: [count]
+
+      FINAL ANSWER:
+      - Best option(s): [list with reasons]
+      - Key conditions: [when they apply]
+      - Key uncertainties: [what remains unknown]
+
+      UAUA VALUE ADDED:
+      - What U1 found that ARAW alone wouldn't: [list]
+      - What A1 found that Universalization alone wouldn't: [list]
+      - What U2 found that first pass missed: [list]
+      - What A2 found that validated/rejected: [list]
+
+      Verification:
+      - [T:result] UAUA produced [N] final validated options
+      - [D:derivation] Options derived through 4-step UAUA process
+      - [T:result] [M] candidates rejected through ARAW testing
+
+depth_variants:
+  light:
+    description: "Single pass - U → A"
+    steps: [u1_universalize, a1_araw, synthesize]
+    when: "Time-constrained or lower stakes"
+
+  standard:
+    description: "Full UAUA - U → A → U → A"
+    steps: [u1_universalize, a1_araw, u2_edge_cases, a2_final, synthesize]
+    when: "Default for most analyses"
+
+  deep:
+    description: "UAUA × 2 - U → A → U → A → U → A"
+    steps: "Repeat u2 and a2 once more on survivors"
+    when: "High stakes, irreversible decisions"

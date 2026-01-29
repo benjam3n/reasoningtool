@@ -1,0 +1,230 @@
+# Execution-Verified Adequacy Gate
+# Purpose: Steps must be executed (or simulated) before marked adequate
+# Version: 1.0.0
+
+id: execution_verified_adequacy_gate
+name: Execution-Verified Adequacy Gate
+version: "1.0.0"
+domain: core
+type: blocking_gate
+
+description: |
+  A step specification is NOT adequate until it has been:
+  1. Executed (actually performed), OR
+  2. Simulated (walked through with test case), OR
+  3. Traced (logically verified step-by-step)
+
+  "Scoring" a step as adequate is not acceptable.
+  "Expert can fill gaps" is not acceptable.
+
+  Adequacy is DEMONSTRATED, not ASSESSED.
+
+# ============================================
+# THE PROBLEM
+# ============================================
+
+problem_statement: |
+  Current system scores specifications as "adequate" based on:
+  - Completeness score (are fields present?)
+  - Clarity score (is language unambiguous?)
+  - Verifiability score (can we check if done?)
+
+  These are NECESSARY but NOT SUFFICIENT.
+
+  A specification can score highly on all dimensions
+  and still fail in execution because:
+  - A dependency was missing
+  - An edge case wasn't covered
+  - The order was wrong
+  - A resource wasn't available
+
+  Only execution reveals these problems.
+
+# ============================================
+# VERIFICATION METHODS
+# ============================================
+
+verification_methods:
+
+  actual_execution:
+    description: Perform the step for real
+    when_to_use: When reversible or low-cost
+    evidence_required:
+      - Execution log/record
+      - Observed result
+      - Comparison to expected result
+    adequacy_marker: "[EXECUTED: <date> <result>]"
+
+  dry_run_simulation:
+    description: Walk through step with real inputs, stop before irreversible action
+    when_to_use: When execution is costly or irreversible
+    evidence_required:
+      - Each sub-action identified
+      - Each input value confirmed available
+      - Each decision point resolved
+      - Only the final "commit" action skipped
+    adequacy_marker: "[DRY-RUN: <date> <stopped at>]"
+
+  test_case_walkthrough:
+    description: Apply step to concrete example case
+    when_to_use: When real execution not possible
+    evidence_required:
+      - Specific example case defined
+      - Each action applied to example
+      - Result for example case documented
+      - Edge cases of example explored
+    adequacy_marker: "[TEST-CASE: <case name> <result>]"
+
+  logical_trace:
+    description: Formal verification of step logic
+    when_to_use: When step is deterministic and formal
+    evidence_required:
+      - Preconditions listed and verified satisfiable
+      - Each action's effect on state documented
+      - Postconditions derived from actions
+      - No logical gaps in trace
+    adequacy_marker: "[TRACED: <preconditions> → <actions> → <postconditions>]"
+
+# ============================================
+# FORBIDDEN ADEQUACY CLAIMS
+# ============================================
+
+forbidden_claims:
+
+  scoring_based:
+    example: "Step scores 12/15 on adequacy rubric"
+    why_forbidden: Score is assessment, not verification
+
+  expert_fill_in:
+    example: "Domain expert can figure out details"
+    why_forbidden: Untested assumption about expert capability
+
+  plausibility_based:
+    example: "Step seems complete and clear"
+    why_forbidden: Seeming complete is not being complete
+
+  comparison_based:
+    example: "Similar to other steps that worked"
+    why_forbidden: Similarity is not identity
+
+  tool_based:
+    example: "Linter/validator passed"
+    why_forbidden: Syntax is not semantics; format is not execution
+
+# ============================================
+# GATE PROCEDURE
+# ============================================
+
+procedure:
+
+  step_1_identify_adequacy_claims:
+    action: |
+      Find all claims that a step/specification is "adequate":
+      - Explicit "adequate" labels
+      - "Ready for execution" claims
+      - "Complete" claims
+      - Implied by proceeding to execution phase
+
+  step_2_check_verification_method:
+    action: |
+      For each adequacy claim:
+      1. Which verification method was used?
+         - actual_execution
+         - dry_run_simulation
+         - test_case_walkthrough
+         - logical_trace
+      2. Is evidence documented?
+
+  step_3_verify_evidence:
+    action: |
+      Check that evidence meets requirements:
+      - actual_execution: Log, result, comparison
+      - dry_run: Sub-actions, inputs, decisions
+      - test_case: Case definition, application, result
+      - logical_trace: Pre/post conditions, no gaps
+
+  step_4_block_or_pass:
+    action: |
+      If any adequacy claim:
+      - Has no verification method → BLOCK
+      - Uses forbidden claim type → BLOCK
+      - Has incomplete evidence → BLOCK
+
+      Otherwise → PASS with verification marker
+
+# ============================================
+# ADEQUACY OUTPUT FORMAT
+# ============================================
+
+output_format: |
+  Each adequate step must include:
+
+  STEP: [step name]
+  ADEQUACY: VERIFIED
+  METHOD: [actual_execution | dry_run | test_case | logical_trace]
+  EVIDENCE:
+    [method-specific evidence as documented]
+  VERIFIED_BY: [who performed verification]
+  VERIFIED_ON: [date]
+
+  Example:
+
+  STEP: Deploy to staging
+  ADEQUACY: VERIFIED
+  METHOD: dry_run_simulation
+  EVIDENCE:
+    - Sub-actions: checkout, build, upload, configure, activate
+    - Inputs: commit hash abc123 available, credentials valid
+    - Decisions: zero-downtime deploy selected
+    - Stopped at: activate (would make live)
+  VERIFIED_BY: developer walkthrough
+  VERIFIED_ON: 2026-01-26
+
+# ============================================
+# EXPERT FILL-IN ELIMINATION
+# ============================================
+
+expert_fill_in_elimination:
+
+  problem: |
+    Current system allows "expert can fill gaps" for high-skill executors.
+    This is an untested assumption that the expert CAN fill those specific gaps.
+
+  solution: |
+    If a step has gaps that require expert judgment:
+    1. Document specifically what the gap is
+    2. Have the expert demonstrate gap-filling on test case
+    3. Only then mark adequate
+
+    "Expert could probably figure it out" → NOT ADEQUATE
+    "Expert demonstrated filling gap X on case Y" → ADEQUATE
+
+  procedure: |
+    For each gap in specification:
+    1. Identify: "What is not specified?"
+    2. Test: "Can expert fill this gap? Prove it."
+    3. Document: "Expert filled gap by [method] producing [result]"
+    4. Only then: Mark as adequate with expert verification
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+integration:
+
+  replaces: specification_adequacy_gate (scoring portion)
+
+  keeps: Scoring gates remain for initial filtering
+
+  adds: Execution verification before final adequacy determination
+
+  flow: |
+    1. Initial adequacy scoring (quick filter)
+    2. Execution verification (this gate)
+    3. Only then: Mark as adequate
+
+  minimum_verification_by_stakes:
+    low_stakes: test_case_walkthrough
+    medium_stakes: dry_run_simulation
+    high_stakes: actual_execution (if reversible) or dry_run + test_case
+    critical_stakes: actual_execution + dry_run + logical_trace

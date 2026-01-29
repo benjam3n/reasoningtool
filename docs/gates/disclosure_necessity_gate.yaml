@@ -1,0 +1,143 @@
+# Disclosure Necessity Gate
+# When is transparency/disclosure actually needed vs unnecessary?
+# Derived from ARAW synthesis tension: necessary vs unnecessary
+
+id: disclosure_necessity_gate
+name: Disclosure Necessity Gate
+version: "1.0.0"
+domain: core
+tags: ["decision", "transparency", "disclosure", "trust"]
+
+description: |
+  Gate for deciding when disclosure/transparency is necessary vs unnecessary.
+
+  The tension: More disclosure isn't always better. Sometimes it helps,
+  sometimes it hurts. This gate helps determine which applies.
+
+when_to_use:
+  - Deciding what to share with stakeholders
+  - Evaluating transparency requests
+  - Designing communication strategies
+  - Setting information policies
+
+# ============================================
+# DISCLOSURE EXISTENCE CHECK
+# ============================================
+disclosure_existence:
+  description: Is there something to disclose?
+
+  questions:
+    - "Is there information that could be disclosed?"
+    - "Is there a specific disclosure being considered or requested?"
+    - "Who is requesting or would receive the disclosure?"
+    - "What is the nature of what would be disclosed?"
+      # Types: facts, plans, uncertainties, mistakes, constraints, motivations
+
+# ============================================
+# DISCLOSURE BENEFIT ASSESSMENT
+# ============================================
+disclosure_benefits:
+  description: What value does disclosure provide?
+
+  trust_building:
+    - "Does the recipient need this information to trust us?"
+    - "Would withholding erode trust if discovered later?"
+    - "Is there a pattern of withheld information that damages credibility?"
+    - "Would disclosure demonstrate alignment of interests?"
+
+  decision_quality:
+    - "Does the recipient need this information to make good decisions?"
+    - "Would incomplete information lead to suboptimal choices?"
+    - "Is the recipient acting on assumptions that are wrong?"
+    - "Would disclosure enable better coordination?"
+
+  accountability:
+    - "Is disclosure required for legitimate oversight?"
+    - "Is someone entitled to this information (legal, contractual, ethical)?"
+    - "Does accountability serve a valid purpose here?"
+    - "Would opacity enable bad behavior (by us or others)?"
+
+  error_correction:
+    - "Could disclosure surface errors we don't know about?"
+    - "Does the recipient have information that could correct our understanding?"
+    - "Is there feedback we're not getting due to opacity?"
+
+# ============================================
+# DISCLOSURE COST ASSESSMENT
+# ============================================
+disclosure_costs:
+  description: What harm could disclosure cause?
+
+  exploitation_risk:
+    - "Could this information be used against us?"
+    - "Who specifically would benefit from exploiting this?"
+    - "What is the realistic probability of exploitation?"
+    - "What would be the magnitude of harm from exploitation?"
+
+  premature_action:
+    - "Is the information incomplete or preliminary?"
+    - "Could disclosure trigger premature reactions?"
+    - "Would disclosure lock in positions before understanding is complete?"
+    - "Is the situation still evolving?"
+
+  cognitive_overload:
+    - "Does the recipient need this information?"
+    - "Would disclosure add noise rather than signal?"
+    - "Is the recipient equipped to process this information?"
+    - "Would disclosure distract from more important matters?"
+
+  relationship_damage:
+    - "Could disclosure harm necessary relationships?"
+    - "Is there sensitive information about third parties?"
+    - "Would disclosure violate confidentiality obligations?"
+    - "Could disclosure create conflict that serves no purpose?"
+
+# ============================================
+# DISCLOSURE TIMING
+# ============================================
+disclosure_timing:
+  description: Is now the right time?
+
+  questions:
+    - "Is there urgency to disclose now vs later?"
+    - "Would delay increase or decrease the costs?"
+    - "Would delay increase or decrease the benefits?"
+    - "Is there a natural moment for disclosure?"
+    - "Are we waiting because it's genuinely better to wait, or avoiding discomfort?"
+
+# ============================================
+# DECISION LOGIC
+# ============================================
+decision_logic: |
+  DISCLOSE if:
+  - Recipient needs it for decisions they must make
+  - Withholding would damage trust if discovered
+  - Accountability requires it (legitimate oversight)
+  - Benefits clearly outweigh costs
+
+  WITHHOLD if:
+  - High exploitation risk with low benefit
+  - Information is premature/incomplete
+  - Recipient doesn't need it (noise not signal)
+  - Legitimate confidentiality obligations
+
+  PARTIAL DISCLOSURE if:
+  - Some aspects are needed, others are not
+  - Summary is sufficient, details are not needed
+  - Timing is right for some, not all
+
+  DELAY if:
+  - Information is still forming
+  - Better moment is imminent
+  - Current timing would cause harm that waiting would avoid
+
+# ============================================
+# OUTPUT
+# ============================================
+outputs:
+  - name: disclosure_decision
+    options: [DISCLOSE, WITHHOLD, PARTIAL, DELAY]
+  - name: rationale
+    description: "Why this decision"
+  - name: conditions_for_change
+    description: "What would change this decision"

@@ -1,0 +1,147 @@
+# Architecture & Design Orderings
+# Orderings for software development direction
+
+category_id: architecture_design
+category_name: "Architecture & Design Orderings"
+description: |
+  Orderings for software development that determine whether to
+  start from interfaces (outside-in) or domain logic (inside-out).
+  Use when building systems with external consumers or complex domains.
+
+when_to_consider: |
+  - Building systems with external consumers
+  - Contract or interface must be stable
+  - Complex business rules that must be correct
+  - Multiple teams need to integrate
+  - Need to decide build direction
+
+variations:
+
+  # ----------------------------------------
+  # OUTSIDE-IN ORDERING
+  # ----------------------------------------
+  outside_in:
+    id: outside_in_ordering
+    name: "Outside-In Ordering (API-First)"
+    category: architecture_design
+
+    philosophy: |
+      Start from the user/consumer interface and work inward. From
+      API-first development: define contracts before implementation.
+      Ensures system meets consumer needs rather than forcing consumers
+      to adapt to implementation details.
+
+    when_to_use:
+      - Multiple consumers of your system
+      - Contract must be stable and well-defined
+      - Consumer experience is paramount
+      - Working with external teams who need to integrate
+      - Want to parallelize consumer and implementation work
+
+    build_sequence:
+      1: "Consumer needs and use cases"
+      2: "API contract / interface definition"
+      3: "API validation with mock implementations"
+      4: "Implementation behind the interface"
+      5: "Internal details and optimizations"
+
+    prioritization_rules:
+      1_consumer_first:
+        rule: "Understand consumer needs before designing"
+        reason: "Interface should serve consumers, not implementation"
+
+      2_contract_before_code:
+        rule: "Define and agree on interface before implementing"
+        reason: "Stable contracts enable parallel work"
+
+      3_mock_before_real:
+        rule: "Validate interface with mocks before building real thing"
+        reason: "Cheaper to change interface when nothing is built"
+
+      4_implementation_serves_contract:
+        rule: "Build implementation to serve contract, not vice versa"
+        reason: "Interface stability for consumers"
+
+    anti_patterns:
+      - "Building internals then exposing them as API"
+      - "API that leaks implementation details"
+      - "Changing interface after consumers integrate"
+      - "Implementation-driven design"
+
+    example:
+      context: "Building a payment service"
+      outside_in_order:
+        1_understand_consumers: "What do mobile app, web app, partners need?"
+        2_design_api: "POST /payments, GET /payments/{id}, webhooks"
+        3_document_contract: "OpenAPI spec, examples, error codes"
+        4_mock_validation: "Mock server, consumer teams integrate early"
+        5_implement: "Build actual payment processing"
+        6_optimize: "Performance, scaling, monitoring"
+      parallel_work: "Consumer teams can integrate with mock while you build"
+      rationale: "API stability enables consumer team progress"
+
+    source: "API-First Development, Contract-First Design"
+
+  # ----------------------------------------
+  # INSIDE-OUT ORDERING
+  # ----------------------------------------
+  inside_out:
+    id: inside_out_ordering
+    name: "Inside-Out Ordering (Domain-First)"
+    category: architecture_design
+
+    philosophy: |
+      Start from the core domain logic and work outward. From DDD:
+      get the domain model right first, then expose it through interfaces.
+      Ensures business rules are correct before worrying about delivery
+      mechanisms. The domain is stable; interfaces can adapt.
+
+    when_to_use:
+      - Complex business domain
+      - Business rules must be correct above all
+      - Domain understanding is evolving
+      - Want to avoid domain model shaped by UI needs
+      - Core logic that will have multiple interfaces
+
+    build_sequence:
+      1: "Domain model and business rules"
+      2: "Domain services and use cases"
+      3: "Application services"
+      4: "API/interface layer"
+      5: "Delivery mechanisms (UI, API, events)"
+
+    prioritization_rules:
+      1_domain_first:
+        rule: "Model the business domain before thinking about interfaces"
+        reason: "Domain logic is the stable core"
+
+      2_rules_before_exposure:
+        rule: "Get business rules right before exposing them"
+        reason: "Changing exposed rules is expensive"
+
+      3_ports_and_adapters:
+        rule: "Domain defines ports; delivery mechanisms are adapters"
+        reason: "Domain doesn't depend on delivery"
+
+      4_multiple_interfaces:
+        rule: "Same domain can serve web, mobile, API, events"
+        reason: "Domain is reused; interfaces are specialized"
+
+    anti_patterns:
+      - "UI-driven domain model"
+      - "Database-shaped domain"
+      - "Business rules in controllers/UI"
+      - "Anemic domain model"
+
+    example:
+      context: "Building an order management system"
+      inside_out_order:
+        1_domain_model: "Order, LineItem, Customer, pricing rules"
+        2_domain_services: "PlaceOrder, CancelOrder, CalculateTotal"
+        3_application_services: "OrderApplicationService, use cases"
+        4_api_layer: "REST endpoints exposing application services"
+        5_ui_layer: "Web UI, mobile app consuming API"
+      domain_stability: "Pricing rules don't change when UI changes"
+      rationale: "Business rules are correct regardless of delivery mechanism"
+
+    source: "Domain-Driven Design - Eric Evans, Hexagonal Architecture"

@@ -1,0 +1,370 @@
+# Plan Space Search
+# Generate possible plans, search for optimal
+# Version: 1.0.0
+
+id: plan_space_search
+name: Plan Space Search
+version: "1.0.0"
+domain: core
+
+goal: |
+  Generate multiple possible plans to achieve a goal,
+  then search for the one that best satisfies optimization criteria.
+
+description: |
+  There are always multiple ways to achieve a goal.
+  Instead of committing to the first plan that seems workable:
+  1. Generate diverse plans
+  2. Evaluate against comprehensive criteria
+  3. Select the optimal plan
+
+  This avoids local optima and premature commitment.
+
+when_to_use:
+  - Planning a project
+  - Strategy development
+  - Resource allocation decisions
+  - Route/path finding
+  - Any situation with multiple approaches
+
+inputs:
+  - name: goal
+    type: string
+    description: "What are we trying to achieve?"
+  - name: constraints
+    type: list
+    description: "Hard constraints that must be satisfied"
+  - name: resources
+    type: list
+    description: "Available resources"
+
+outputs:
+  - name: plans
+    type: list
+    description: "All generated plans"
+  - name: optimal_plan
+    type: plan
+    description: "Plan with highest score"
+  - name: plan_comparison
+    type: table
+    description: "How plans compare"
+
+# ============================================
+# CRITERIA FOR GOOD PLANS
+# ============================================
+
+criteria:
+  effectiveness:
+    - name: "Achieves goal"
+      question: "Does this plan actually achieve the goal?"
+      weight: 25
+      test: "Walk through: does it end at goal state?"
+
+    - name: "Complete"
+      question: "Does it handle all aspects needed?"
+      weight: 15
+      test: "Any gaps or missing pieces?"
+
+  efficiency:
+    - name: "Resource efficient"
+      question: "Does it minimize resource use?"
+      weight: 15
+      test: "Compare resource needs across plans"
+
+    - name: "Time efficient"
+      question: "Does it minimize time to goal?"
+      weight: 15
+      test: "Estimate total time"
+
+  robustness:
+    - name: "Handles uncertainty"
+      question: "Does it work under different conditions?"
+      weight: 10
+      test: "What if assumptions are wrong?"
+
+    - name: "Has fallbacks"
+      question: "Are there contingencies if steps fail?"
+      weight: 10
+      test: "What's plan B for each critical step?"
+
+  simplicity:
+    - name: "Simple to execute"
+      question: "Is it easy to follow?"
+      weight: 10
+      test: "How many steps? How complex?"
+
+    - name: "Few dependencies"
+      question: "Does it minimize external dependencies?"
+      weight: 5
+      test: "What could block progress?"
+
+  reversibility:
+    - name: "Exit possible"
+      question: "Can we exit if it's not working?"
+      weight: 5
+      test: "What's lost if we abandon at each stage?"
+
+# ============================================
+# PLAN GENERATION METHODS
+# ============================================
+
+generation_methods:
+  forward_planning:
+    description: "Start from current state, work toward goal"
+    method: |
+      1. What can I do from here?
+      2. For each action, what state does it reach?
+      3. Repeat until goal reached
+    when: "Clear actions, unknown path"
+
+  backward_planning:
+    description: "Start from goal, work backward"
+    method: |
+      1. What state must exist right before goal?
+      2. What creates that state?
+      3. Repeat until current state reached
+    when: "Clear goal, unclear how to start"
+
+  means_ends:
+    description: "Reduce difference between current and goal"
+    method: |
+      1. What's the biggest gap between current and goal?
+      2. What action reduces that gap?
+      3. Repeat
+    when: "Can identify and reduce differences"
+
+  analogical_planning:
+    description: "Copy plans from similar situations"
+    method: |
+      1. What similar goals have been achieved?
+      2. What plans were used?
+      3. Adapt to current situation
+    when: "Similar problems have been solved"
+
+  hierarchical:
+    description: "Plan at multiple levels of abstraction"
+    method: |
+      1. High-level plan (phases)
+      2. For each phase, mid-level plan (steps)
+      3. For each step, low-level plan (actions)
+    when: "Complex goals"
+
+  parallel_paths:
+    description: "Multiple independent paths to goal"
+    method: |
+      1. Identify different approaches
+      2. Develop each as complete plan
+      3. Can pursue multiple simultaneously
+    when: "Multiple viable approaches exist"
+
+  incremental:
+    description: "Plan in small increments"
+    method: |
+      1. What's the smallest useful step?
+      2. Plan that step
+      3. Execute, then plan next
+    when: "High uncertainty, need to learn"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Define Goal and Constraints"
+    action: |
+      Clearly state:
+      - What success looks like
+      - Hard constraints (must satisfy)
+      - Soft preferences (want to satisfy)
+      - Available resources
+    output: "Planning brief"
+    template: |
+      GOAL: [What we're trying to achieve]
+      SUCCESS CRITERIA: [How we know we've achieved it]
+
+      HARD CONSTRAINTS:
+      - [Must satisfy 1]
+      - [Must satisfy 2]
+
+      PREFERENCES:
+      - [Prefer 1]
+      - [Prefer 2]
+
+      RESOURCES:
+      - Time: [Available]
+      - Money: [Budget]
+      - People: [Team]
+      - Other: [List]
+
+  - id: 2
+    name: "Generate Plan via Forward Planning"
+    action: |
+      Start from current state.
+      What actions lead toward goal?
+      Build sequence to goal.
+    output: "Forward plan"
+
+  - id: 3
+    name: "Generate Plan via Backward Planning"
+    action: |
+      Start from goal state.
+      What must happen right before?
+      Work back to current state.
+    output: "Backward plan"
+
+  - id: 4
+    name: "Generate Analogical Plans"
+    action: |
+      What similar goals have been achieved?
+      How were they achieved?
+      Adapt those plans.
+    output: "Analogical plans"
+
+  - id: 5
+    name: "Generate Radical Alternatives"
+    action: |
+      What's a completely different approach?
+      Challenge assumptions:
+      - What if we did it in half the time?
+      - What if we had 10x budget?
+      - What if we had no budget?
+      - What if it had to be done by one person?
+    output: "Alternative plans"
+
+  - id: 6
+    name: "Validate Constraint Satisfaction"
+    action: |
+      For each plan, check:
+      - Does it satisfy all hard constraints?
+      - If not, can it be modified?
+      - If not modifiable, discard.
+    output: "Valid plans"
+
+  - id: 7
+    name: "Estimate Resources"
+    action: |
+      For each valid plan, estimate:
+      - Time required
+      - Money required
+      - People required
+      - Other resources
+    output: "Resource estimates"
+
+  - id: 8
+    name: "Score Each Plan"
+    action: |
+      Score on criteria:
+      - Achieves goal
+      - Complete
+      - Resource efficient
+      - Time efficient
+      - Handles uncertainty
+      - Has fallbacks
+      - Simple to execute
+      - Few dependencies
+      - Exit possible
+    output: "Scored plans"
+
+  - id: 9
+    name: "Compare Plans"
+    action: |
+      Create comparison table.
+      Identify which plan wins on which criteria.
+      Look for dominant plan.
+    output: "Plan comparison"
+    template: |
+      PLAN COMPARISON:
+
+               | Achieve | Resource | Time | Robust | Simple | Total
+      ---------|---------|----------|------|--------|--------|------
+      Plan A   |    9    |    7     |  8   |   6    |   8    | 312
+      Plan B   |    8    |    9     |  6   |   7    |   7    | 298
+      Plan C   |    7    |    8     |  9   |   8    |   6    | 296
+
+  - id: 10
+    name: "Sensitivity Analysis"
+    action: |
+      How robust is the ranking?
+      - What if time was more important?
+      - What if resources were scarcer?
+      - What if uncertainty was higher?
+    output: "Sensitivity assessment"
+
+  - id: 11
+    name: "Select and Refine"
+    action: |
+      Select top plan.
+      Can it incorporate strengths from other plans?
+      Refine the plan with details.
+    output: "Final plan"
+
+  - id: 12
+    name: "Document Contingencies"
+    action: |
+      For the selected plan:
+      - What could go wrong?
+      - What are the triggers for Plan B?
+      - What parts of rejected plans serve as fallbacks?
+    output: "Contingency documentation"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  goal: "Launch MVP in 3 months"
+
+  constraints:
+    - "Budget: $50,000"
+    - "Team: 2 developers, 1 designer"
+    - "Must have core features A, B, C"
+
+  plans_generated:
+    1:
+      name: "Waterfall"
+      approach: "Design → Build → Test → Launch"
+      time: "12 weeks"
+      risk: "Late discovery of issues"
+      score: 285
+
+    2:
+      name: "Agile sprints"
+      approach: "2-week sprints, iterate"
+      time: "12 weeks"
+      risk: "Scope creep"
+      score: 310
+
+    3:
+      name: "No-code MVP"
+      approach: "Use no-code tools for MVP"
+      time: "6 weeks"
+      risk: "Technical debt, limitations"
+      score: 295
+
+    4:
+      name: "Outsource + integrate"
+      approach: "Outsource components, integrate"
+      time: "10 weeks"
+      risk: "Coordination overhead"
+      score: 270
+
+  selected: |
+    Plan 2: "Agile sprints" (310 points)
+    - Best balance of speed and flexibility
+    - Allows course correction
+    - Team familiar with approach
+
+    Contingency: If behind at week 8, switch to Plan 3 (no-code) for remaining features
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Multiple plan generation methods used"
+  - "Plans satisfy hard constraints"
+  - "Resource estimates are realistic"
+  - "Scoring is consistent"
+  - "Sensitivity analysis performed"
+  - "Contingencies documented"

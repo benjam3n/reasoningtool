@@ -1,0 +1,829 @@
+# Goal Journey System
+# Every action serves a goal. The journey is the chain of goals.
+# v2.0.0 - Added diverse intrinsic goals, proper step granularity, value elicitation
+
+id: goal_journey_system
+name: Goal Journey System
+version: "2.0.0"
+domain: core
+tier: platinum
+
+description: |
+  A goal journey is NOT a narrative arc. It's a CHAIN OF GOALS.
+
+  Every action serves a goal.
+  Every goal serves another goal.
+  The chain terminates at intrinsic goals (valued for themselves).
+
+  The journey IS the goal chain. Understanding the journey means
+  understanding what goals are being served all the way up to
+  intrinsic values.
+
+core_insight: |
+  The insight from the mission statement:
+  - All language has a goal
+  - Every action is trying to achieve something
+  - You can trace backward: "What goal does this serve?"
+
+  A goal journey traces this chain from current action to intrinsic goal.
+
+  This is NOT the same as a "story structure" like Hero's Journey.
+  Story structures are about narrative beats.
+  Goal journeys are about PURPOSE CHAINS.
+
+# ============================================
+# WHAT IS A GOAL JOURNEY?
+# ============================================
+
+definition:
+  a_goal_journey_is: |
+    A chain of goals where each goal serves the next, terminating
+    at an intrinsic goal.
+
+    Example:
+    - Action: Learning music theory
+    - Serves goal: Improve at music
+    - Serves goal: Deepen meaningful experience
+    - Serves goal: Have meaningful experiences
+    - Serves goal: Flourish/wellbeing (INTRINSIC - STOP)
+
+    The JOURNEY is this chain: Action → Goal → Goal → ... → Intrinsic Goal
+
+  a_goal_journey_is_not:
+    - A sequence of events (that's a narrative)
+    - A list of steps to complete (that's a procedure)
+    - A story arc (that's narrative structure)
+    - A timeline (that's chronology)
+
+  the_difference: |
+    Narrative: "First this happened, then that happened"
+    Goal journey: "This serves that, which serves that, which serves..."
+
+    Narrative asks: What comes next?
+    Goal journey asks: What does this serve?
+
+# ============================================
+# GOAL JOURNEY STRUCTURE
+# ============================================
+
+structure:
+  levels:
+    intrinsic_goal:
+      description: "Goals valued for themselves, not for what they lead to"
+      note: |
+        IMPORTANT: "Flourishing" is NOT the only intrinsic goal.
+        Different people have different intrinsic goals.
+        These may conflict with each other.
+        Some people have "anti-flourishing" goals (and that's valid).
+
+        Use value elicitation: "What's important to you about X?"
+        Keep asking until you get circularity (terminus).
+
+        See intrinsic_goal_termination_gate for full details.
+
+      categories:
+        positive_states: [Pleasure, Happiness, Peace, Joy, Excitement]
+        relational: [Love, Connection, Belonging, Recognition, Acceptance]
+        meaning_based: [Meaning, Purpose, Significance, Legacy, Contribution]
+        freedom_based: [Freedom, Autonomy, Independence, Self-determination]
+        security_based: [Security, Safety, Stability, Control, Predictability]
+        achievement_based: [Achievement, Mastery, Power, Status, Excellence]
+        aesthetic: [Beauty, Knowledge, Understanding, Truth, Novelty]
+        anti_flourishing:
+          description: "Valid goals that oppose conventional wellbeing"
+          examples: [Asceticism, Sacrifice, Simplicity, "Playing to lose", Tradition]
+          note: "Monks, priests, martyrs - these are valid intrinsic goals"
+
+      termination: |
+        The chain stops when asking "why?" leads to circularity:
+        "Why do you want X?" → "Because X is what I value"
+
+        Different people terminate at different values:
+        - Some at Freedom
+        - Some at Security
+        - Some at Connection
+        - Some at Achievement
+        - Some at Spiritual purity
+
+        There is no universal "correct" terminus.
+
+    high_instrumental:
+      description: "Goals that broadly serve intrinsic goals"
+      examples:
+        - Have meaningful experiences (serves wellbeing)
+        - Build deep relationships (serves connection)
+        - Develop capabilities (serves flourishing)
+        - Create valuable things (serves meaning)
+      note: "These are still somewhat abstract but clearly instrumental"
+
+    mid_instrumental:
+      description: "Goals that serve high-instrumental goals"
+      examples:
+        - Improve at a skill (serves developing capabilities)
+        - Engage with a community (serves building relationships)
+        - Work on important problems (serves creating value)
+      note: "More specific, but still applicable across many domains"
+
+    low_instrumental:
+      description: "Goals close to specific actions"
+      examples:
+        - Learn music theory (serves improving at music)
+        - Attend the meetup (serves engaging with community)
+        - Fix this bug (serves completing the project)
+      note: "Domain-specific, close to action level"
+
+    action:
+      description: "The specific thing being done"
+      examples:
+        - Reading this chapter on harmony
+        - Sending this email to the organizer
+        - Writing this function
+      note: "This is where goal chains connect to reality"
+
+  chain_format: |
+    A goal journey is written as a chain:
+
+    [Action]
+      ↓ serves
+    [Low Instrumental Goal]
+      ↓ serves
+    [Mid Instrumental Goal]
+      ↓ serves
+    [High Instrumental Goal]
+      ↓ serves
+    [Intrinsic Goal] ← TERMINUS
+
+    The chain can have more or fewer levels depending on how
+    direct the path from action to intrinsic goal is.
+
+# ============================================
+# TYPES OF GOAL CHAINS
+# ============================================
+
+chain_types:
+  direct:
+    description: "Action directly serves intrinsic goal"
+    structure: "Action → Intrinsic"
+    example: |
+      Eating delicious food → Pleasure (intrinsic)
+    characteristics:
+      - Short chain
+      - Immediate satisfaction
+      - No intermediate goals
+    common_in: "Basic needs, immediate pleasures"
+
+  simple:
+    description: "One or two intermediate goals"
+    structure: "Action → Goal → Intrinsic"
+    example: |
+      Going for a walk → Feel better → Wellbeing (intrinsic)
+    characteristics:
+      - Clear path
+      - Easy to trace
+      - Obvious connection
+    common_in: "Daily activities, simple self-care"
+
+  extended:
+    description: "Multiple intermediate goals"
+    structure: "Action → Goal → Goal → Goal → Intrinsic"
+    example: |
+      Learning music theory
+        → Improve at music
+        → Create meaningful art
+        → Express myself
+        → Flourish (intrinsic)
+    characteristics:
+      - Longer path
+      - Each step clearly serves next
+      - Common in skill development
+    common_in: "Learning, career, long-term projects"
+
+  branching:
+    description: "One action serves multiple goal chains"
+    structure: |
+      Action → Goal A → Intrinsic X
+            ↘ Goal B → Intrinsic Y
+    example: |
+      Starting a business
+        → Financial security → Wellbeing
+        → Creative expression → Meaning
+        → Build something lasting → Purpose
+    characteristics:
+      - Multiple payoffs
+      - Robust (if one chain breaks, others remain)
+      - Common in major life choices
+    common_in: "Career choices, relationships, big decisions"
+
+  convergent:
+    description: "Multiple actions serve the same goal"
+    structure: |
+      Action A ↘
+      Action B → Goal → Intrinsic
+      Action C ↗
+    example: |
+      Exercise     ↘
+      Good sleep   → Health → Wellbeing
+      Good food    ↗
+    characteristics:
+      - Redundancy
+      - Multiple paths to same goal
+      - Flexibility in methods
+    common_in: "Health, learning, any goal with multiple approaches"
+
+  conflicting:
+    description: "One action serves one goal but undermines another"
+    structure: |
+      Action → Goal A → Intrinsic X
+           ↘ Undermines Goal B → Intrinsic Y
+    example: |
+      Working long hours
+        → Career success → Achievement
+        → But undermines: Family time → Connection
+    characteristics:
+      - Tradeoffs required
+      - Can't optimize both
+      - Requires value prioritization
+    common_in: "Work-life balance, any situation with tradeoffs"
+
+  recursive:
+    description: "Achieving the goal requires the goal"
+    structure: "To achieve A, need A"
+    example: |
+      To get experience, need a job
+      To get a job, need experience
+    characteristics:
+      - Bootstrap problem
+      - Requires breaking the loop
+      - Often solved by finding alternative entry
+    common_in: "Career starts, skill chicken-and-egg problems"
+
+  transforming:
+    description: "Achieving the goal changes what you want"
+    structure: "Action → Goal A → Achieve A → Now want Goal B"
+    example: |
+      Pursue wealth → Get wealthy → Realize wanted meaning, not wealth
+    characteristics:
+      - Goals shift after achievement
+      - Original chain becomes obsolete
+      - New chain emerges
+    common_in: "Major life achievements, any 'arrival fallacy' situation"
+
+# ============================================
+# STEP QUALITY AND GRANULARITY
+# ============================================
+
+step_quality:
+  description: |
+    Each step in a goal journey must be:
+    1. A proper verb phrase (action) or goal statement (outcome)
+    2. Non-reducible without circling back
+    3. Clear service relationship to next step
+    4. No skipped steps
+
+  bad_examples:
+    sloppy_chain:
+      chain: "Building → Structures → Reliable → Decisions → Action"
+      problems:
+        - "'Structures' is a noun, not a goal"
+        - "'Reliable' is an adjective, not a goal"
+        - "'Decisions' is a noun, not a goal"
+        - "Steps are skipped - how does 'reliable' lead to 'decisions'?"
+        - "No verb forms - what action is being taken?"
+
+    too_abstract:
+      chain: "Do thing → Get result → Be happy"
+      problems:
+        - "What thing? What result?"
+        - "No specificity - could mean anything"
+        - "Not falsifiable or evaluable"
+
+  good_examples:
+    proper_form:
+      chain: |
+        Perform action X
+          ↓ serves
+        Achieve immediate outcome Y
+          ↓ serves
+        Enable capability Z
+          ↓ serves
+        Attain valued state W
+          ↓ serves
+        Experience intrinsic value V (TERMINUS)
+
+      note: "Each step is a verb phrase or clear outcome, with explicit service"
+
+    manufacturing_style:
+      description: "Example from manufacturing - shows proper granularity"
+      chain: |
+        A2 (Planning):
+        1. Decide materials, processes, and resources needed
+           → Selection, matching, comparison, optimizing, costs
+        2. Decide production path
+           → Reorder, reroute, constraint check, feasibility check, optimize
+        3. Decide instructions and setups for processing equipment
+           → Diagram, program, parameter setting, documentation
+        4. Decide changes in existing material flows
+           → Analyzing, redesign, optimization, simulation, streamlining
+        5. Create floor layout
+           → Arranging, allocating, optimizing, visualizing, integrating
+        6. Change design to improve manufacturability
+           → Evaluation, modification, simplification, standardization
+
+      note: |
+        Each step:
+        - Is a specific verb phrase (Decide, Create, Change)
+        - Cannot be reduced further without circling back
+        - Has clear activities that compose it
+        - Serves the next step in manufacturing process
+
+  granularity_test: |
+    For each step, ask:
+    1. Can this step be broken into sub-steps? If yes, is each sub-step
+       necessary, or are they just activities within this step?
+    2. Can this step be removed? If yes, does the chain still work?
+    3. Does removing this step create a gap in service?
+
+    A step is at the right granularity when:
+    - Breaking it down further creates redundancy or circularity
+    - Removing it breaks the service chain
+    - It clearly serves the next step (no gaps)
+
+  verb_requirement: |
+    Each goal should be expressed as either:
+    1. Verb phrase: "Achieve X", "Acquire Y", "Enable Z", "Experience W"
+    2. Outcome statement: "X is achieved", "Y is acquired", "Z is enabled"
+
+    NOT:
+    - Nouns alone: "Structures", "Decisions", "Reliability"
+    - Adjectives: "Reliable", "Better", "Effective"
+    - Abstract labels: "Success", "Improvement"
+
+# ============================================
+# VALUE ELICITATION
+# ============================================
+
+value_elicitation:
+  description: |
+    Technique for discovering someone's intrinsic goals.
+    See intrinsic_goal_termination_gate for full details.
+
+  core_questions:
+    - "What's important to you about [X]?"
+    - "When you have [X], what does that give you?"
+    - "Why is [X] important to you?"
+
+  usage: |
+    Keep asking until you get circularity:
+
+    "What's important to you about owning a business?"
+    → "Freedom from employment constraints"
+    "What's important to you about freedom?"
+    → "Being free is what I value" (TERMINUS - circularity)
+
+    Different people reach different terminus points.
+
+  key_insight: |
+    The same action can serve different intrinsic goals for different people:
+
+    Person A: Business → Freedom (intrinsic)
+    Person B: Business → Security (intrinsic)
+    Person C: Business → Recognition (intrinsic)
+
+    Don't assume. Use value elicitation to discover.
+
+# ============================================
+# MULTIPLE AND CONFLICTING INTRINSIC GOALS
+# ============================================
+
+multiple_goals:
+  description: |
+    People typically have MULTIPLE intrinsic goals.
+    These often CONFLICT with each other.
+
+  examples:
+    - '"I want Freedom AND Security" (often trade-offs)'
+    - '"I want Achievement AND Peace" (often trade-offs)'
+    - '"I want Connection AND Independence" (often trade-offs)'
+
+  implications:
+    - A single action may serve some intrinsic goals while undermining others
+    - This creates TENSION in the goal journey
+    - Satisfaction may require balancing, not maximizing one goal
+    - Different decisions may prioritize different intrinsic goals
+
+  chain_type: "conflicting"
+  note: "See chain_types section for conflicting chain structure"
+
+# ============================================
+# GOAL JOURNEY EXTRACTION
+# ============================================
+
+extraction:
+  description: |
+    Given an action, statement, or situation, extract the goal journey.
+
+  steps:
+    - id: 1
+      name: "Identify the action or statement"
+      action: |
+        What is being done or said?
+        Be specific: not "working on project" but "writing this function"
+
+    - id: 2
+      name: "Ask: What goal does this serve?"
+      action: |
+        What is this action trying to achieve?
+        Not "what happens next" but "what is this FOR?"
+
+    - id: 3
+      name: "Ask: What goal does THAT serve?"
+      action: |
+        The goal you identified is also instrumental.
+        What does achieving that goal enable or serve?
+
+    - id: 4
+      name: "Continue until intrinsic goal"
+      action: |
+        Keep asking "what does that serve?"
+        Stop when you reach something valued for itself:
+        - Wellbeing
+        - Meaning
+        - Connection
+        - Understanding
+        - etc.
+
+        Apply intrinsic_goal_termination_gate if unsure.
+
+    - id: 5
+      name: "Verify the chain"
+      action: |
+        Read the chain from bottom (action) to top (intrinsic):
+        - Does each step clearly serve the next?
+        - Are there missing links?
+        - Is the intrinsic goal legitimate?
+
+    - id: 6
+      name: "Identify chain type"
+      action: |
+        Is this chain:
+        - Direct (very short)?
+        - Simple (1-2 intermediates)?
+        - Extended (many intermediates)?
+        - Branching (serves multiple goals)?
+        - Conflicting (undermines other goals)?
+        - etc.
+
+  output_format: |
+    ```yaml
+    goal_journey:
+      action: "[Specific action]"
+      chain:
+        - level: action
+          description: "[What's being done]"
+          serves: "[Next level]"
+        - level: low_instrumental
+          description: "[Immediate goal]"
+          serves: "[Next level]"
+        - level: mid_instrumental
+          description: "[Intermediate goal]"
+          serves: "[Next level]"
+        - level: high_instrumental
+          description: "[Broad goal]"
+          serves: "[Next level]"
+        - level: intrinsic
+          description: "[Terminal goal]"
+          serves: null  # Terminus
+      chain_type: "[direct|simple|extended|branching|etc.]"
+      validation:
+        each_step_serves_next: true/false
+        intrinsic_is_legitimate: true/false
+        no_missing_links: true/false
+    ```
+
+# ============================================
+# GOAL JOURNEY VALIDATION
+# ============================================
+
+validation:
+  question: "Is this goal journey valid?"
+
+  checks:
+    service_check:
+      question: "Does each level clearly serve the next?"
+      pass: "Yes, the connection is clear"
+      fail: "There's a jump - why does A serve B?"
+      repair: "Find the missing link or question the connection"
+
+    terminus_check:
+      question: "Does the chain reach an intrinsic goal?"
+      pass: "Yes, terminates at something valued for itself"
+      fail: "Chain ends at something instrumental"
+      repair: "Keep asking 'what does that serve?'"
+
+    legitimacy_check:
+      question: "Is the intrinsic goal legitimate?"
+      pass: "Yes, reasonable people would value this"
+      fail: "Goal is unusual or questionable"
+      repair: "Either find deeper goal or acknowledge unusual values"
+
+    completeness_check:
+      question: "Are all the links present?"
+      pass: "Yes, no jumps in the chain"
+      fail: "There's a gap between levels"
+      repair: "Fill in the missing intermediate goals"
+
+  overall: |
+    A goal journey is VALID if:
+    - Each step serves the next (service)
+    - Chain reaches intrinsic goal (terminus)
+    - Intrinsic goal is legitimate (legitimacy)
+    - No missing links (completeness)
+
+# ============================================
+# WHAT MAKES A GOAL JOURNEY SATISFYING?
+# ============================================
+
+satisfaction:
+  description: |
+    A goal journey is SATISFYING when:
+    1. You can see WHY you're doing what you're doing
+    2. The chain makes sense - each step clearly serves the next
+    3. The terminus is something you actually value
+    4. The current action is actually serving the chain
+
+  satisfying_indicators:
+    - "Now I understand why I'm doing this"
+    - "This connects to what I actually care about"
+    - "Each step makes sense"
+    - "I can see the path from here to what matters"
+
+  unsatisfying_indicators:
+    - "I'm doing this but I don't know why"
+    - "This doesn't connect to anything I care about"
+    - "There's a jump I can't explain"
+    - "The end goal doesn't feel like MY goal"
+
+  the_key_insight: |
+    Satisfaction comes from COHERENCE and LEGITIMACY.
+
+    Coherence: The chain holds together
+    Legitimacy: The terminus is truly valued
+
+    If someone can see their goal journey clearly, and it connects
+    their current action to something they genuinely value, that's
+    satisfying.
+
+    If there are gaps, or the terminus doesn't resonate, that's
+    unsatisfying - and points to something worth examining.
+
+# ============================================
+# SEMI-GENERALIZABILITY FOR GOAL JOURNEYS
+# ============================================
+
+generalizability:
+  description: |
+    What makes a goal journey semi-generalizable?
+
+    NOT the specific actions or goals.
+    BUT the PATTERN of the chain.
+
+  example: |
+    Specific journey:
+      Learning music theory → Improve at guitar → Create music →
+      Express myself → Flourish
+
+    Generalized pattern:
+      Acquiring foundational knowledge → Improve at craft →
+      Create in domain → Self-expression → Flourishing
+
+    The pattern applies to:
+    - Learning programming → Improve at coding → Build software → Create value → Flourishing
+    - Studying writing → Improve at prose → Write stories → Express truth → Meaning
+    - Learning cooking → Improve at food → Feed people → Nurture connection → Love
+
+  the_semi_generalizable_part: |
+    The LEVELS and their RELATIONSHIPS are generalizable.
+    The SPECIFIC CONTENT is not.
+
+    Pattern: "Foundational knowledge → Craft improvement → Creation → Expression → Intrinsic"
+
+    This pattern is semi-generalizable because:
+    - It's not so specific that it only applies to music
+    - It's not so abstract that it applies to everything
+    - It captures a recognizable path that many people walk
+
+# ============================================
+# RELATIONSHIP TO STORY COHERENCE
+# ============================================
+
+vs_narrative_structures:
+  hero_journey:
+    what_it_is: "Narrative arc with stages (call, threshold, ordeal, return)"
+    why_not_goal_journey: |
+      Hero's Journey describes EVENTS and their SEQUENCE.
+      Goal journey describes GOALS and their SERVICE RELATIONSHIPS.
+
+      Hero's Journey: "First the hero refuses the call, then accepts..."
+      Goal journey: "This action serves this goal, which serves..."
+
+      Different questions:
+      - Narrative: What happens next?
+      - Goal: What does this serve?
+
+  when_narrative_matters: |
+    Narrative structures are useful for TELLING stories about goal journeys.
+    But the goal journey itself is not a narrative - it's a purpose chain.
+
+    You might TELL the story of how someone discovered their goal journey
+    using narrative structure. But the journey itself is the chain of goals.
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1:
+    situation: "User played in a band, wanted to make better sounds, learned theory"
+
+    goal_journey:
+      action: "Learning music theory"
+      chain:
+        - level: action
+          description: "Studying harmony and scales"
+          serves: "Understand how music works"
+        - level: low_instrumental
+          description: "Understand how music works"
+          serves: "Improve ability to create sounds"
+        - level: mid_instrumental
+          description: "Improve ability to create sounds"
+          serves: "Have deeper musical experiences"
+        - level: high_instrumental
+          description: "Have deeper musical experiences"
+          serves: "Flourishing / rich life"
+        - level: intrinsic
+          description: "Flourishing / rich life"
+          serves: null
+
+      chain_type: extended
+      validation:
+        each_step_serves_next: true
+        intrinsic_is_legitimate: true
+        no_missing_links: true
+
+    generalized_pattern: |
+      Acquiring knowledge → Understanding domain → Improving capability →
+      Deepening experience → Flourishing
+
+    applies_to:
+      - Any craft learning (writing, coding, cooking)
+      - Any hobby deepening
+      - Any skill where understanding enhances experience
+
+  example_2:
+    situation: "GOSM development"
+
+    goal_journey:
+      action: "Writing procedure files for GOSM"
+      chain:
+        - level: action
+          description: "Create YAML files defining procedures and gates"
+          serves: "Provide structured guidance for LLM reasoning"
+        - level: low_instrumental
+          description: "Provide structured guidance for LLM reasoning"
+          serves: "Enable LLMs to follow consistent reasoning patterns"
+        - level: mid_instrumental_1
+          description: "Enable LLMs to follow consistent reasoning patterns"
+          serves: "Produce more reliable and thorough outputs"
+        - level: mid_instrumental_2
+          description: "Produce more reliable and thorough outputs"
+          serves: "Support making well-informed decisions"
+        - level: high_instrumental_1
+          description: "Support making well-informed decisions"
+          serves: "Take actions aligned with actual goals"
+        - level: high_instrumental_2
+          description: "Take actions aligned with actual goals"
+          serves: "Achieve valued outcomes"
+        - level: intrinsic
+          description: "[Person-specific terminus: Freedom / Security / Meaning / etc.]"
+          serves: null
+          note: "Use value elicitation to discover actual terminus"
+
+      chain_type: extended
+      validation:
+        each_step_serves_next: true
+        no_missing_links: true
+        note: "Intrinsic goal must be discovered via value elicitation, not assumed"
+
+    proper_form_note: |
+      Notice this chain:
+      - Each step is a verb phrase or clear outcome
+      - No nouns used as steps ("Structures", "Decisions")
+      - No adjectives used as steps ("Reliable", "Better")
+      - Each service relationship is explicit
+      - No steps skipped
+
+    generalized_pattern: |
+      Create tool → Provide guidance → Enable consistent process →
+      Produce reliable outputs → Support decisions → Align actions →
+      Achieve outcomes → [Intrinsic terminus]
+
+    applies_to:
+      - Any tool-building for decision support
+      - Any process improvement effort
+      - Any system designed to help people achieve goals
+
+  example_4_different_termini:
+    situation: "Same action, different people, different intrinsic goals"
+
+    action: "Starting a business"
+
+    person_A:
+      chain:
+        - "Start business"
+        - "→ Generate income independent of employer"
+        - "→ Control own schedule and decisions"
+        - "→ Experience freedom from external constraints"
+        - "→ FREEDOM (intrinsic)"
+      terminus: Freedom
+
+    person_B:
+      chain:
+        - "Start business"
+        - "→ Build asset with predictable cash flow"
+        - "→ Create financial buffer against uncertainty"
+        - "→ Feel safe from economic volatility"
+        - "→ SECURITY (intrinsic)"
+      terminus: Security
+
+    person_C:
+      chain:
+        - "Start business"
+        - "→ Create something visible and measurable"
+        - "→ Receive validation from customers and peers"
+        - "→ Be seen as successful and capable"
+        - "→ RECOGNITION (intrinsic)"
+      terminus: Recognition
+
+    key_insight: |
+      Same action, three different intrinsic goals.
+      Never assume "flourishing" or any single terminus.
+      Use value elicitation to discover actual intrinsic goal.
+
+  example_3_unsatisfying:
+    situation: "Someone doing task they don't know why"
+
+    goal_journey:
+      action: "Filling out TPS reports"
+      chain:
+        - level: action
+          description: "Completing the report"
+          serves: "???"  # They don't know
+        - level: ???
+          description: "???"
+          serves: "???"
+
+    why_unsatisfying: |
+      The chain doesn't connect to anything.
+      The person can't see what goal this serves.
+      There's no path to intrinsic value.
+
+      This is why it feels meaningless - the goal journey
+      is incomplete or absent.
+
+    repair: |
+      Either:
+      1. Find the actual goal chain (maybe it exists but isn't visible)
+      2. Realize there is no chain (task is actually pointless)
+      3. Create a chain (find a way to make it serve something valued)
+
+# ============================================
+# INTEGRATION WITH OTHER PROCEDURES
+# ============================================
+
+integration:
+  with_goal_structure_reconstruction:
+    description: |
+      Goal-structure reconstruction IS goal journey extraction.
+      They're the same thing with different names.
+
+      "Reconstructing the goal-structure" = "Extracting the goal journey"
+
+  with_backward_reasoning:
+    description: |
+      Backward reasoning is the METHOD for extracting goal journeys.
+      "What does this serve?" asked repeatedly = tracing the journey
+
+  with_story_coherence_gate:
+    description: |
+      Story coherence checks if a goal journey is valid:
+      - Connection = Each step serves the next
+      - Legitimacy = Intrinsic goal is reasonable
+      - Service = Conclusion serves the goals
+      - Necessity = The journey was needed
+      - Validity = This is a reasonable path
+
+  with_honest_question_gate:
+    description: |
+      A question has an identifiable goal = its goal journey can be traced.
+      If you can't trace the goal journey, the question may be
+      unclear or pointless.

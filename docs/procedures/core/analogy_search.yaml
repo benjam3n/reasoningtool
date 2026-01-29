@@ -1,0 +1,332 @@
+# Analogy Search
+# Intelligence Reduction: 70%
+# Version: 1.0.0
+
+id: analogy_search
+name: Analogy Search (Cross-Domain Transfer)
+version: "1.0.0"
+domain: core
+intelligence_reduction: "70%"
+
+goal: |
+  Find solutions by searching for analogous problems in other domains
+  and transferring their solutions. Systematic domain list reduces
+  the intelligence needed.
+
+description: |
+  Many problems have been solved before - just in different domains.
+  Velcro from burrs, sonar from bats, assembly lines from meatpacking.
+  This procedure systematizes the search for useful analogies.
+
+when_to_use:
+  - Stuck on a problem
+  - Looking for innovative solutions
+  - Want to avoid reinventing the wheel
+  - Need fresh perspective
+  - Problem seems unique (probably isn't)
+
+inputs:
+  - name: problem
+    type: string
+    description: "The problem you're trying to solve"
+  - name: problem_structure
+    type: description
+    description: "Abstract structure of the problem"
+
+outputs:
+  - name: analogies_found
+    type: list
+    description: "Problems from other domains that are structurally similar"
+  - name: transferred_solutions
+    type: list
+    description: "Solutions adapted from analogous domains"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Describe the Problem"
+    action: |
+      State the problem concretely.
+      Include: What's the situation? What's wrong? What do you need?
+    output: "Concrete problem description"
+
+  - id: 2
+    name: "Extract Problem Structure"
+    action: |
+      Abstract the problem to its structural elements.
+      Remove domain-specific details, keep the pattern.
+
+      Ask:
+      - What is the core challenge? (optimization, matching, search, etc.)
+      - What are the inputs and outputs?
+      - What are the constraints?
+      - What makes it hard?
+    output: "Abstract problem structure"
+    template: |
+      CONCRETE: [Specific problem]
+
+      ABSTRACT STRUCTURE:
+      - Challenge type: [optimization/matching/search/allocation/etc.]
+      - Inputs: [What you start with]
+      - Outputs: [What you need]
+      - Constraints: [What limits solutions]
+      - What makes it hard: [Core difficulty]
+
+  - id: 3
+    name: "Search Domains Systematically"
+    action: |
+      For each domain in the list, ask:
+      "What problem in [domain] has similar structure?"
+      "How do they solve it?"
+
+      Don't skip domains - even unlikely ones may have insights.
+    output: "Analogies from each domain"
+
+  - id: 4
+    name: "Evaluate Analogies"
+    action: |
+      For each analogy found, assess:
+      - Structural similarity (how well does it map?)
+      - Solution quality (does it work well in source domain?)
+      - Transferability (can it be adapted to our domain?)
+    output: "Evaluated analogies"
+    template: |
+      ANALOGY: [Problem from domain X]
+      Structural match: [High/Medium/Low]
+      Their solution: [How they solve it]
+      Transferability: [High/Medium/Low]
+      How it might transfer: [Adaptation ideas]
+
+  - id: 5
+    name: "Transfer Solutions"
+    action: |
+      For promising analogies, work out how to transfer:
+      - What maps directly?
+      - What needs adaptation?
+      - What doesn't transfer?
+    output: "Transferred solutions"
+
+  - id: 6
+    name: "Evaluate Transferred Solutions"
+    action: |
+      Assess each transferred solution:
+      - Does it actually solve the problem?
+      - What are the limitations?
+      - What would need to change?
+    output: "Solution evaluation"
+
+# ============================================
+# DOMAIN LIST FOR SYSTEMATIC SEARCH
+# ============================================
+
+domain_list:
+  nature_biology:
+    examples:
+      - "How do organisms solve this?"
+      - "How does evolution solve this?"
+      - "How do ecosystems handle this?"
+    famous_transfers:
+      - "Velcro from burrs"
+      - "Sonar from bats/dolphins"
+      - "Swarm algorithms from ants/bees"
+      - "Neural networks from brains"
+
+  military_warfare:
+    examples:
+      - "How do armies handle this?"
+      - "What's the military strategy equivalent?"
+      - "How does warfare deal with this constraint?"
+    famous_transfers:
+      - "Project management from military logistics"
+      - "Strategy frameworks (Sun Tzu, Clausewitz)"
+      - "OODA loop from fighter pilots"
+
+  sports_games:
+    examples:
+      - "How do athletes/teams optimize this?"
+      - "What's the game theory angle?"
+      - "How do coaches handle this?"
+    famous_transfers:
+      - "Moneyball statistics to business"
+      - "Game theory to economics"
+      - "Team dynamics research"
+
+  medicine_healthcare:
+    examples:
+      - "How do doctors diagnose this type of problem?"
+      - "How does the body handle this?"
+      - "What's the treatment protocol pattern?"
+    famous_transfers:
+      - "Checklists from surgery to aviation"
+      - "Triage to priority systems"
+      - "Diagnostic trees to troubleshooting"
+
+  engineering_manufacturing:
+    examples:
+      - "How do factories handle this?"
+      - "What's the engineering solution?"
+      - "How is this built at scale?"
+    famous_transfers:
+      - "Assembly line to software development"
+      - "Quality control to other domains"
+      - "Lean manufacturing principles"
+
+  economics_markets:
+    examples:
+      - "How do markets solve this allocation?"
+      - "What's the incentive structure?"
+      - "How does pricing handle this?"
+    famous_transfers:
+      - "Auction mechanisms"
+      - "Price signals for coordination"
+      - "Market design to matching problems"
+
+  law_governance:
+    examples:
+      - "How does law handle this dispute?"
+      - "What's the governance mechanism?"
+      - "How are rights/responsibilities allocated?"
+    famous_transfers:
+      - "Contracts to software agreements"
+      - "Precedent systems"
+      - "Checks and balances"
+
+  psychology_behavior:
+    examples:
+      - "How do people naturally handle this?"
+      - "What biases affect this?"
+      - "What motivational patterns apply?"
+    famous_transfers:
+      - "Behavioral nudges"
+      - "Habit formation research"
+      - "Decision-making heuristics"
+
+  computer_science:
+    examples:
+      - "What algorithm solves this?"
+      - "How do distributed systems handle this?"
+      - "What's the data structure for this?"
+    famous_transfers:
+      - "Algorithms to business processes"
+      - "Database concepts to organization"
+      - "Network theory applications"
+
+  physics_chemistry:
+    examples:
+      - "What physical process is analogous?"
+      - "How do materials behave this way?"
+      - "What's the thermodynamic analog?"
+    famous_transfers:
+      - "Equilibrium concepts"
+      - "Phase transitions to social change"
+      - "Entropy to information"
+
+  art_design:
+    examples:
+      - "How do artists solve this creative problem?"
+      - "What's the design pattern?"
+      - "How is this aesthetic achieved?"
+    famous_transfers:
+      - "Design thinking to business"
+      - "Iterative prototyping"
+      - "User-centered approaches"
+
+  history:
+    examples:
+      - "What historical situation is similar?"
+      - "How was this handled in the past?"
+      - "What can we learn from history?"
+    famous_transfers:
+      - "Historical case studies"
+      - "Pattern recognition from events"
+      - "Cyclical models"
+
+  other_industries:
+    prompt: |
+      Consider industries far from yours:
+      - Agriculture, Construction, Hospitality
+      - Entertainment, Education, Transportation
+      - Finance, Retail, Energy
+      - Telecommunications, Real Estate, etc.
+
+# ============================================
+# STRUCTURE MAPPING TEMPLATE
+# ============================================
+
+mapping_template:
+  format: |
+    SOURCE DOMAIN: [Domain name]
+    SOURCE PROBLEM: [Problem in that domain]
+
+    STRUCTURAL MAPPING:
+    | My Problem Element | Their Problem Element |
+    |--------------------|----------------------|
+    | [My input]         | [Their input]        |
+    | [My output]        | [Their output]       |
+    | [My constraint]    | [Their constraint]   |
+    | [My difficulty]    | [Their difficulty]   |
+
+    THEIR SOLUTION: [How they solve it]
+
+    TRANSFERRED SOLUTION:
+    [How to adapt their solution to my problem]
+
+    WHAT TRANSFERS: [Elements that map directly]
+    WHAT DOESN'T: [Elements that don't apply]
+    ADAPTATIONS NEEDED: [What needs to change]
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  problem: "How to onboard new employees quickly"
+
+  structure:
+    challenge: "Transfer knowledge efficiently"
+    inputs: "Raw person, existing knowledge in company"
+    outputs: "Productive employee"
+    constraints: "Limited time, experts are busy"
+    difficulty: "Knowledge is tacit, distributed"
+
+  analogies_searched:
+    biology:
+      analogy: "How do immune cells learn to recognize threats?"
+      solution: "Exposure to samples + feedback"
+      transfer: "Expose new hires to real problems early, provide feedback"
+
+    military:
+      analogy: "How do armies train soldiers?"
+      solution: "Boot camp, simulation, graduated responsibility"
+      transfer: "Intensive initial period, simulated projects, mentorship"
+
+    medicine:
+      analogy: "How do residents learn?"
+      solution: "See one, do one, teach one"
+      transfer: "Observe → Perform with supervision → Train others"
+
+    games:
+      analogy: "How do games teach players?"
+      solution: "Tutorial levels, progressive difficulty, immediate feedback"
+      transfer: "Structured first tasks, increasing complexity, quick feedback loops"
+
+  transferred_solution: |
+    Combine insights:
+    1. Intensive first week (military boot camp)
+    2. Real problems early with feedback (immune system)
+    3. See one, do one, teach one progression (medicine)
+    4. Progressive difficulty with immediate feedback (games)
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Problem structure was abstracted (not just surface features)"
+  - "Multiple domains were searched systematically"
+  - "Structural similarity was assessed, not just surface similarity"
+  - "Transfer was explicit about what maps and what doesn't"
+  - "Transferred solution addresses the actual problem"

@@ -1,0 +1,288 @@
+# GOSM Approach Audit
+# Applying the unassailable standard to GOSM itself
+# Version: 1.0.0
+
+id: gosm_approach_audit
+name: GOSM Approach Audit
+version: "1.0.0"
+domain: meta
+tier: gold
+
+description: |
+  An honest audit of GOSM's approach, claims, and limitations.
+  Applying the unassailable standard to the system itself.
+
+# ============================================
+# WHAT GOSM CLAIMS
+# ============================================
+
+claims:
+
+  claim_1:
+    statement: "Procedures extracted from books can improve LLM reasoning"
+    strength: Moderate
+    attack_vectors:
+      - "Tacit knowledge doesn't transfer via explicit procedures"
+      - "LLMs already know this - procedures are redundant"
+      - "Context-dependence means procedures don't generalize"
+    defense:
+      - "Procedures constrain reasoning, preventing bad patterns"
+      - "External procedures can be questioned/audited unlike implicit knowledge"
+      - "Compression makes knowledge more accessible, not less valuable"
+    verdict: |
+      Defensible but unproven. The claim is that procedures help, not that
+      they're sufficient. Empirical testing needed.
+
+  claim_2:
+    statement: "Meta-procedures (how to think) are more valuable than content procedures (what to do)"
+    strength: Strong
+    attack_vectors:
+      - "Without content, meta-procedures are empty"
+      - "How do you know meta is better without testing both?"
+    defense:
+      - "Meta-procedures apply across domains, content is domain-specific"
+      - "Meta-procedures enable correct use of content procedures"
+      - "Quality of 10 meta-procedures > quantity of 10,000 content procedures (if content is applied badly)"
+    verdict: |
+      Defensible. The hierarchy (meta > content) is architecturally sound.
+      Content is still needed but subordinate to meta.
+
+  claim_3:
+    statement: "The unassailable standard produces better outputs"
+    strength: Strong
+    attack_vectors:
+      - "Too strict - may produce nothing"
+      - "Who decides what's unassailable?"
+      - "Unassailable ≠ useful"
+    defense:
+      - "Zero questionable outputs > many casual outputs (for important decisions)"
+      - "Symmetric critic (critic must also be unassailable) handles 'who decides'"
+      - "If unassailable AND useful is possible, that's the target"
+    verdict: |
+      Defensible as an aspiration. The standard is strict intentionally.
+      Producing nothing is better than producing wrong.
+
+  claim_4:
+    statement: "Gates and procedures can prevent bad LLM decisions"
+    strength: Moderate
+    attack_vectors:
+      - "LLM can ignore or misapply gates"
+      - "Gates add overhead without guaranteed benefit"
+      - "Garbage in, garbage out - gates can't fix bad input"
+    defense:
+      - "External checkpoints are auditable"
+      - "Gates make decision points explicit"
+      - "Overhead is worth it for important decisions"
+    verdict: |
+      Defensible for important decisions. Overhead may not be worth it
+      for trivial tasks. Need to specify when to apply.
+
+  claim_5:
+    statement: "Recursive causal interrogation (RCI) is a reliable reasoning method"
+    strength: Moderate
+    attack_vectors:
+      - "Infinite regress possible"
+      - "What about intuition, pattern recognition, empirical investigation?"
+      - "Not all problems are causal"
+    defense:
+      - "RCI has termination criteria (brute fact, loop, emergence)"
+      - "RCI is one method, not the only method"
+      - "Claims about RCI being 'THE key' have been softened"
+    verdict: |
+      Defensible as one method among several. Not a universal solution.
+
+  claim_6:
+    statement: "The epistemic hierarchy provides reliable certainty levels"
+    strength: Strong
+    attack_vectors:
+      - "Level 0 is too thin to derive anything useful"
+      - "The gap between levels is where uncertainty hides"
+    defense:
+      - "The hierarchy acknowledges that lower levels are uncertain"
+      - "It doesn't claim to derive useful content from Level 0 alone"
+      - "It classifies certainty, doesn't inflate it"
+    verdict: |
+      Defensible. The hierarchy is descriptive (what certainty levels exist)
+      not prescriptive (what to do with them).
+
+# ============================================
+# WHAT GOSM CANNOT DO
+# ============================================
+
+limitations:
+
+  limitation_1:
+    name: "Cannot generate domain-specific strategies"
+    description: |
+      GOSM provides framework (how to think) not content (what to do).
+      It can't tell you the correct health intervention, career move, etc.
+    implication: |
+      Need domain knowledge + GOSM framework. GOSM alone is insufficient.
+    status: Acknowledged in system_gaps_and_scaling.md
+
+  limitation_2:
+    name: "Cannot validate its own outputs"
+    description: |
+      GOSM can produce recommendations but can't verify they're correct
+      without external feedback.
+    implication: |
+      Need empirical testing and outcome tracking.
+    status: Acknowledged. Convergent validation helps but doesn't solve.
+
+  limitation_3:
+    name: "Cannot solve the n+1 critic problem definitively"
+    description: |
+      Any termination criterion can be criticized.
+      Convergent validation helps but doesn't eliminate the problem.
+    implication: |
+      Must operate under irreducible uncertainty. Make uncertainty explicit.
+    status: Acknowledged. Convergent validation is best available approach.
+
+  limitation_4:
+    name: "Cannot account for individual context automatically"
+    description: |
+      Generic procedures don't know your specific situation, history,
+      constraints, preferences.
+    implication: |
+      Need personal calibration and context-specific application.
+    status: Acknowledged. This is user's responsibility.
+
+  limitation_5:
+    name: "Untested at scale"
+    description: |
+      GOSM is a theoretical framework with limited real-world testing.
+      120+ versions of pure_regress suggest iteration without convergence.
+    implication: |
+      Claims about effectiveness are theoretical, not empirical.
+    status: This audit acknowledges this. Testing needed.
+
+# ============================================
+# HONEST ASSESSMENT
+# ============================================
+
+honest_assessment:
+
+  what_gosm_is:
+    - "A framework for thinking about how to think"
+    - "A collection of procedures for constraining reasoning"
+    - "A set of gates for explicit decision checkpoints"
+    - "A meta-level system, not a content system"
+
+  what_gosm_is_not:
+    - "An oracle that tells you what to do"
+    - "A replacement for domain expertise"
+    - "Proven to produce better outcomes"
+    - "Complete or finished"
+
+  the_core_bet: |
+    GOSM bets that explicit procedures, gates, and meta-reasoning
+    produce better outcomes than implicit intuition for complex decisions.
+
+    This bet is reasonable but unproven.
+
+    The appropriate response is: test it. Track outcomes. Compare to baseline.
+
+  what_would_invalidate_gosm: |
+    1. If applying GOSM produces worse outcomes than intuition
+    2. If the overhead exceeds the benefit
+    3. If the meta-procedures are fundamentally flawed
+    4. If the n+1 problem makes any termination impossible
+
+    So far, none of these have been demonstrated. But neither has GOSM
+    been validated.
+
+  what_would_validate_gosm: |
+    1. Applying to real goals with measurable outcomes
+    2. Better outcomes than baseline/intuition
+    3. Acceptable overhead for the benefit
+    4. Convergent evidence across multiple tests
+
+# ============================================
+# THE AUDIT'S OWN LIMITATIONS
+# ============================================
+
+audit_limitations:
+  - "Self-audit has bias - may be too lenient or too harsh"
+  - "External audit would be stronger but not available"
+  - "This audit is one person's perspective at one time"
+  - "The audit itself can be audited (n+1 applies here too)"
+
+response_to_limitations: |
+    These limitations are acknowledged, not hidden.
+    The audit applies the symmetric critic: criticisms of the audit
+    must also be defensible.
+
+    "Self-audit is biased" is true but the alternative (no audit) is worse.
+    "External audit is stronger" is true but not available.
+
+    This audit is better than nothing. It is not presented as definitive.
+
+# ============================================
+# RECOMMENDED NEXT STEPS
+# ============================================
+
+recommended_next_steps:
+
+  high_priority:
+    - action: "Pick one specific, measurable goal and apply GOSM fully"
+      rationale: "Empirical testing is needed. Theory without testing is speculation."
+      deliverable: "Documented application with predictions, tracking, outcomes"
+
+    - action: "Compare outcomes to baseline"
+      rationale: "Need to know if GOSM is better than intuition"
+      deliverable: "Comparison analysis"
+
+  medium_priority:
+    - action: "Update extraction pipeline with unassailable standard"
+      rationale: "Future extractions should meet higher quality bar"
+      deliverable: "Modified extraction script with v6 prompts"
+
+    - action: "Triage existing procedure library"
+      rationale: "18,000 procedures of varying quality. Identify high-quality subset."
+      deliverable: "Stratified library with quality ratings"
+
+  low_priority:
+    - action: "Build domain-specific causal models"
+      rationale: "GOSM framework needs domain content to be useful"
+      deliverable: "One domain's causal model as proof of concept"
+
+    - action: "Meta-analysis of pure_regress versions"
+      rationale: "120+ versions suggest something. Understand what."
+      deliverable: "Analysis document"
+
+# ============================================
+# APPLYING CONVERGENT VALIDATION TO THIS AUDIT
+# ============================================
+
+convergent_validation_of_audit:
+
+  grounding_check:
+    result: PASS
+    notes: |
+      Claims trace to observable facts (code exists, procedures exist,
+      system_gaps_and_scaling.md exists and says these things).
+      Assessments are grounded in specific file contents.
+
+  fixed_point_check:
+    result: PASS
+    notes: |
+      The audit acknowledges its own limitations (self-referential).
+      Applying "audit the approach" to "audit the approach" produces
+      the limitation section, which is consistent.
+
+  convergence_check:
+    result: PARTIAL
+    notes: |
+      This is one person's audit. No independent audits to converge with.
+      However, the system_gaps_and_scaling.md reached similar conclusions
+      through different process, which is weak convergence.
+
+  practical_check:
+    result: UNKNOWN
+    notes: |
+      This audit is newly created. No outcome data yet.
+      Practical value will be determined by whether it helps improve GOSM.
+
+  overall:
+    agreement: "2 pass, 1 partial, 1 unknown"
+    decision: "Accept with moderate confidence. Convergence and practical checks need more evidence."

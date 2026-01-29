@@ -1,0 +1,75 @@
+# GOSM v2.2: Completion Gates
+# Gates for proper project closure
+
+gates:
+  # ============================================
+  # LEARNING CAPTURE GATE
+  # ============================================
+
+  - id: project_review_check
+    name: Project Review Check
+    phase: completion
+    category: closure
+
+    question: "Have lessons been captured from this project?"
+
+    description: |
+      GOSM v2.2 MANDATE:
+      No project is complete without learning capture.
+      This ensures knowledge is extracted for future projects.
+
+      Must capture:
+      - What worked / didn't work
+      - Surprises
+      - What would do differently
+      - Assumption validation
+      - Estimation accuracy
+
+    trigger_conditions:
+      - type: goal_status
+        value: ["achieved", "failed", "abandoned"]
+
+    on_pass: outcome_verification_check
+    on_fail: project_review  # Call the learning capture procedure
+    on_skip: outcome_verification_check
+
+    evaluation_criteria:
+      - "What worked has been documented"
+      - "What didn't work has been documented"
+      - "Surprises have been noted"
+      - "Assumptions have been validated or invalidated"
+
+  # ============================================
+  # OUTCOME VERIFICATION GATE
+  # ============================================
+
+  - id: outcome_verification_check
+    name: Outcome Verification Check
+    phase: completion
+    category: closure
+
+    question: "Has the actual outcome been verified against the plan?"
+
+    description: |
+      GOSM v2.2 MANDATE:
+      Plans are excellent, but did they work?
+      Verify actual results vs planned metrics before closing.
+
+      Must verify:
+      - Actual vs planned metrics
+      - Achievement status (ACHIEVED/PARTIAL/NOT_ACHIEVED/ABANDONED)
+      - Attribution analysis (what drove the outcome)
+
+    trigger_conditions:
+      - type: goal_status
+        value: ["achieved", "failed", "abandoned"]
+
+    on_pass: project_complete
+    on_fail: outcome_verification  # Call the outcome verification procedure
+    on_skip: project_complete
+
+    evaluation_criteria:
+      - "All target metrics have been measured"
+      - "Actual values have been compared to targets"
+      - "Achievement status has been determined"
+      - "Attribution analysis has been completed"

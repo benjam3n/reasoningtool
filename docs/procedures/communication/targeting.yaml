@@ -1,0 +1,665 @@
+# Targeting Procedure - Building advocacy target database
+# GOSM procedure for identifying and profiling outreach targets
+
+id: targeting
+name: Targeting
+version: "1.0.0"
+domain: advocacy
+
+description: Build comprehensive database of advocacy targets with personalized dossiers
+
+long_description: |
+  The Targeting procedure builds a prioritized database of legislative staff,
+  legislators, and other influencers to contact for advocacy campaigns. It
+  emphasizes staff over legislators for higher accessibility and real influence.
+
+  Effective targeting is the foundation of efficient advocacy. By focusing on
+  the right people with personalized approaches, campaigns achieve higher
+  response rates and more meaningful engagement.
+
+  Key principles:
+  - Staff are gatekeepers with significant policy influence
+  - Prioritization ensures effort goes to highest-value targets
+  - Personalization dramatically improves response rates
+  - Comprehensive dossiers enable informed conversations
+  - Tiered approach balances depth with coverage
+
+tags:
+  - advocacy
+  - targeting
+  - outreach
+  - staff
+  - legislators
+  - dossiers
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After selecting policies for advocacy campaigns
+  - When building outreach target database from scratch
+  - Refreshing target list for new legislative session
+  - Expanding outreach to new committees or jurisdictions
+  - Preparing for coordinated multi-target campaign
+  - After major staff turnover in target offices
+
+when_not_to_use:
+  - Already have established relationships with key targets
+  - Single-target outreach not requiring database
+  - Targets predetermined by coalition or funder
+  - Operating in jurisdiction where targeting data unavailable
+  - Grassroots campaign focused on constituent volume over targeting
+  - Crisis response requiring immediate action without research
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: selected_policies
+    type: list
+    required: true
+    description: Policies from policy_research procedure to build targets for
+
+  - name: target_count
+    type: number
+    required: false
+    description: Target number of contacts to identify (default 50+)
+
+  - name: geographic_focus
+    type: string
+    required: false
+    description: Geographic constraints (federal, specific states, etc.)
+
+  - name: existing_contacts
+    type: list
+    required: false
+    description: Any existing contacts or relationships to integrate
+
+outputs:
+  - name: target_database
+    type: dict
+    description: Complete database of all identified targets
+
+  - name: tier_1_dossiers
+    type: list
+    description: Full dossiers for highest-priority targets (15-20)
+
+  - name: tier_2_profiles
+    type: list
+    description: Basic profiles for medium-priority targets (20-30)
+
+  - name: tier_3_contacts
+    type: list
+    description: Contact list for lower-priority targets (10+)
+
+  - name: personalization_notes
+    type: list
+    description: Custom approach notes for each Tier 1 target
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Committee mapping
+    action: |
+      Map relevant congressional committees for each selected policy:
+      1. Identify primary House committee with jurisdiction
+      2. Identify primary Senate committee with jurisdiction
+      3. Identify relevant subcommittees
+      4. Note committee chairs and ranking members
+      5. Identify recent relevant hearings or markup activity
+      6. Document committee staff leadership
+
+      Create committee-policy mapping matrix.
+    inputs:
+      - selected_policies
+      - geographic_focus (optional)
+    outputs:
+      - committee_map: policies mapped to committees
+      - key_members: committee leaders by policy
+      - staff_leadership: committee staff directors
+    verification: |
+      Each policy mapped to at least one House and one Senate committee
+
+  - id: 2
+    name: Staff identification
+    action: |
+      Build comprehensive staff target list:
+
+      Committee Staff (from committee websites, LegiStorm):
+      - Staff Director
+      - Chief Counsel
+      - Policy Director
+      - Professional staff for relevant issue areas
+
+      Member Office Staff (from LegiStorm, office websites):
+      - Legislative Directors (LDs)
+      - Legislative Assistants (LAs) for relevant policy areas
+      - Policy advisors
+
+      For each staff member found:
+      - Record name, title, office
+      - Find email (firstname.lastname@mail.house.gov format)
+      - Note policy portfolio
+      - Check LinkedIn for background
+    inputs:
+      - committee_map (from Step 1)
+    outputs:
+      - staff_list: all identified staff with basic info
+      - contact_info: verified email and phone where available
+    verification: |
+      100+ potential staff targets identified across committees
+
+  - id: 3
+    name: Initial scoring and tiering
+    action: |
+      Score all targets for prioritization:
+
+      Scoring factors:
+      - On relevant committee: +3 points
+      - Committee chair/ranking member staff: +2 points
+      - Known swing vote legislator staff: +2 points
+      - Stated interest in policy area: +2 points
+      - Staff (vs legislator): +1 point (accessibility)
+      - Recent relevant activity: +1 point
+
+      Tier assignment:
+      - Tier 1: 7+ points (highest priority)
+      - Tier 2: 4-6 points (medium priority)
+      - Tier 3: 1-3 points (lower priority)
+
+      Sort targets within each tier by score.
+    inputs:
+      - staff_list (from Step 2)
+    outputs:
+      - scored_targets: all targets with scores
+      - tier_assignments: targets grouped by tier
+    verification: |
+      All targets scored; 15-20 in Tier 1, 20-30 in Tier 2
+
+  - id: 4
+    name: Tier 1 dossier creation
+    action: |
+      Build comprehensive dossiers for each Tier 1 target:
+
+      Basic Information:
+      - Full name, current position, organization
+      - Party affiliation (if applicable), state
+      - Contact: email, phone, office address, LinkedIn, Twitter
+
+      Background:
+      - Education (degree, school, year)
+      - Career history (previous positions)
+      - Policy focus areas
+      - Notable achievements or publications
+
+      Positions and Activity (for legislators):
+      - Relevant votes
+      - Public statements on policy area
+      - Committee assignments
+      - Sponsored/cosponsored bills
+
+      Influences:
+      - Top donors (if legislator)
+      - Key endorsements
+      - Important relationships/allies
+
+      Opportunity Analysis:
+      - Why they might support this policy
+      - Potential objections with prepared counters
+      - Best framing approach for their values
+      - Timing considerations (upcoming hearings, elections)
+    inputs:
+      - tier_assignments (from Step 3)
+    outputs:
+      - tier_1_dossiers: 15-20 comprehensive dossiers
+    verification: |
+      Each Tier 1 dossier includes all sections; opportunity analysis is specific
+
+  - id: 5
+    name: Tier 2 profile creation
+    action: |
+      Build basic profiles for Tier 2 targets:
+
+      Required fields:
+      - Name, title, organization
+      - Email and phone
+      - Party (if applicable), state
+      - Committee assignments
+      - Brief background (2-3 sentences)
+      - Policy interests
+      - Initial receptivity assessment (High/Medium/Low)
+      - Recommended approach (brief notes)
+
+      Skip deep research; focus on actionable contact information.
+    inputs:
+      - tier_assignments (from Step 3)
+    outputs:
+      - tier_2_profiles: 20-30 basic profiles
+    verification: |
+      Each Tier 2 profile has verified contact info and approach notes
+
+  - id: 6
+    name: Tier 3 contact compilation
+    action: |
+      Compile contact list for Tier 3 targets:
+
+      Required fields only:
+      - Name
+      - Title
+      - Organization
+      - Email
+      - Phone
+      - Brief relevance note (1 sentence)
+
+      These serve as backup targets and for volume outreach.
+    inputs:
+      - tier_assignments (from Step 3)
+    outputs:
+      - tier_3_contacts: 10+ contacts with basic info
+    verification: |
+      All Tier 3 contacts have verified email
+
+  - id: 7
+    name: Personalization development
+    action: |
+      Create personalization notes for each Tier 1 target:
+
+      Opening Hook:
+      - Personalized first sentence referencing their specific work
+      - Connection to their stated interests or recent activity
+
+      Key Relevance Point:
+      - Why this policy matters to them specifically
+      - Connection to their constituents or committee work
+
+      Value Offer:
+      - What we can provide that helps them
+      - Research, briefings, constituent connections
+
+      Specific Ask:
+      - Tailored ask based on their position/influence
+      - Appropriate for their role (staff vs legislator)
+
+      Tone:
+      - Formal vs conversational based on their style
+      - Political framing appropriate to their perspective
+    inputs:
+      - tier_1_dossiers (from Step 4)
+    outputs:
+      - personalization_notes: detailed approach for each Tier 1
+    verification: |
+      Each personalization is specific to the individual, not generic
+
+  - id: 8
+    name: Database population
+    action: |
+      Enter all targets into advocacy database:
+
+      For each target, populate:
+      - name, title, organization, org_type
+      - email, phone
+      - party, state, committees
+      - interests, profile_notes
+      - tier, status (default: "not_contacted")
+
+      Verify data integrity:
+      - No duplicate entries
+      - All required fields populated
+      - Email format validated
+    inputs:
+      - tier_1_dossiers (from Step 4)
+      - tier_2_profiles (from Step 5)
+      - tier_3_contacts (from Step 6)
+    outputs:
+      - target_database: complete database records
+      - data_quality_report: validation results
+    verification: |
+      50+ targets in database; all required fields populated
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - At least 50 targets identified across all tiers
+  - All Tier 1 targets have comprehensive dossiers with opportunity analysis
+  - All Tier 2 targets have verified contact information
+  - Personalization notes are specific to individuals, not generic templates
+  - Committee coverage is complete for all selected policies
+  - Database is fully populated with validated data
+  - Tier distribution matches targets (15-20 T1, 20-30 T2, 10+ T3)
+
+failure_modes:
+  - mode: Staff turnover invalidates data
+    symptom: Emails bouncing, wrong people in roles
+    resolution: Verify key contacts before campaign launch; check LegiStorm for recent changes
+
+  - mode: Contact information incomplete
+    symptom: Missing emails or phones for key targets
+    resolution: Try multiple sources (LegiStorm, LinkedIn, direct office calls); use standard email format
+
+  - mode: Personalization too generic
+    symptom: Outreach reads like form letter despite personalization
+    resolution: Reference specific votes, statements, or recent activity; make opening sentence unique
+
+  - mode: Tier 1 overloaded
+    symptom: Too many targets in Tier 1, can't research all thoroughly
+    resolution: Strict scoring cutoff; better to have fewer deep dossiers than many shallow ones
+
+  - mode: Committee mapping errors
+    symptom: Targeting staff on wrong committees
+    resolution: Verify committee jurisdiction on congress.gov; check recent hearings
+
+  - mode: Accessibility misjudged
+    symptom: Targeting legislators directly when staff more accessible
+    resolution: Default to staff; only move to legislator if staff unresponsive after 2+ attempts
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Criminal justice reform targeting
+    context: Building target database for bail reform and reentry policies
+    inputs:
+      selected_policies:
+        - "Cash Bail Reform"
+        - "Reentry Employment Programs"
+      target_count: 60
+      geographic_focus: "federal"
+    process: |
+      Step 1: Committee mapping
+        Cash Bail Reform:
+          - House Judiciary Committee (primary)
+          - Senate Judiciary Committee (primary)
+          - Subcommittee on Crime, Terrorism, and Homeland Security
+
+        Reentry Employment Programs:
+          - House Education and Labor Committee
+          - Senate HELP Committee
+          - Judiciary committees (secondary)
+
+      Step 2: Staff identification
+        - Committee staff: 25 identified
+        - Member office staff: 89 identified
+        - Total: 114 potential targets
+
+      Step 3: Scoring and tiering
+        Example scores:
+          - Senate Judiciary majority counsel (policy match): 8 points -> Tier 1
+          - House Judiciary LD for swing member: 7 points -> Tier 1
+          - General member LA with CJ portfolio: 4 points -> Tier 2
+
+        Distribution:
+          - Tier 1: 18 targets
+          - Tier 2: 28 targets
+          - Tier 3: 14 targets
+
+      Step 4: Tier 1 dossier example
+        Name: Sarah Johnson (fictional)
+        Title: Counsel, Senate Judiciary Committee (Majority)
+        Background: JD Georgetown, former public defender, 4 years on committee
+        Policy focus: Pretrial justice, sentencing reform
+        Recent activity: Staffed hearing on bail reform (March 2024)
+        Opportunity: Strong alignment with reform; helped draft previous bail bill
+        Objection prep: May want to wait for CBO score on new bill
+        Best framing: Evidence from Arnold Foundation studies
+        Ask: 15-minute briefing on latest research
+
+      Step 5-6: Completed profiles and contact lists
+
+      Step 7: Personalization for Sarah Johnson
+        Hook: "Following your excellent questions at the March hearing on
+               pretrial detention costs..."
+        Relevance: "The new Arnold Foundation data directly addresses
+                   the CBO scoring question you raised"
+        Value: "We can provide a summary memo comparing state implementations"
+        Ask: "Would 15 minutes work to walk through the key findings?"
+        Tone: Formal, evidence-focused
+
+      Step 8: All 60 targets entered in database
+    expected_output:
+      target_database: 60 records
+      tier_1_dossiers: 18
+      tier_2_profiles: 28
+      tier_3_contacts: 14
+      personalization_notes: 18 (one per Tier 1)
+
+  - name: Healthcare transparency rapid targeting
+    context: Quick targeting for time-sensitive healthcare campaign
+    inputs:
+      selected_policies:
+        - "Hospital Price Transparency Enforcement"
+      target_count: 30
+      geographic_focus: "federal"
+      existing_contacts:
+        - name: "Mike Chen"
+          title: "Health LA"
+          office: "Sen. Smith"
+          relationship: "Met at conference"
+    process: |
+      Step 1: Committee mapping (1 day)
+        - House Energy and Commerce (Health subcommittee)
+        - Senate HELP Committee
+        - House Ways and Means (Health subcommittee)
+
+      Step 2: Rapid staff identification (1 day)
+        - Focused on health policy staff only
+        - 45 potential targets identified
+
+      Step 3: Abbreviated scoring
+        - Prioritized existing relationship (Mike Chen -> Tier 1)
+        - Quick assessment based on committee role
+        - Tier 1: 8, Tier 2: 15, Tier 3: 7
+
+      Step 4: Dossiers for Tier 1 only
+        - Abbreviated format given timeline
+        - Focus on recent healthcare activity
+
+      Step 5-8: Standard process, compressed timeline
+
+      Note: Existing contact provides warm introduction path
+    expected_output:
+      target_database: 30 records
+      tier_1_dossiers: 8
+      tier_2_profiles: 15
+      tier_3_contacts: 7
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - After policy selection to identify outreach targets
+    - When refreshing targets for new legislative session
+    - When expanding into new policy areas or committees
+    - Before major campaign launch requiring fresh targeting
+    - When previous targets have become unresponsive
+
+  gates:
+    - gate: targets_identified
+      question: "Have we identified 50+ targets across committees?"
+
+    - gate: tier_1_ready
+      question: "Do all Tier 1 targets have comprehensive dossiers?"
+
+    - gate: personalization_complete
+      question: "Are personalization notes specific to each individual?"
+
+    - gate: database_populated
+      question: "Is the target database fully populated and validated?"
+
+  related_procedures:
+    - policy_research: Provides selected policies for targeting
+    - infrastructure_setup: Database must exist for population
+    - outreach_campaigns: Uses target database for campaign execution
+    - learning_system: Captures target-level response patterns
+
+# ============================================
+# DATA SOURCES
+# ============================================
+data_sources:
+  free:
+    - name: "Congress.gov"
+      data: "Official bios, committees"
+      url: "congress.gov"
+
+    - name: "LegiStorm"
+      data: "Staff directories, salaries"
+      url: "legistorm.com"
+      notes: "Free limited access"
+
+    - name: "OpenSecrets"
+      data: "Donor data, lobbying"
+      url: "opensecrets.org"
+
+    - name: "VoteSmart"
+      data: "Voting records, positions"
+      url: "votesmart.org"
+
+    - name: "LinkedIn"
+      data: "Staff backgrounds"
+      notes: "Free limited access"
+
+    - name: "Committee websites"
+      data: "Staff lists"
+
+    - name: "GovTrack"
+      data: "Bill tracking, votes"
+      url: "govtrack.us"
+
+# ============================================
+# TARGET HIERARCHY
+# ============================================
+target_hierarchy:
+  tier_1:
+    name: "Highest Priority"
+    targets:
+      - "Staff on relevant committees"
+      - "Staff for swing-vote legislators"
+      - "Staff for potential champions"
+    rationale: "Staff are gatekeepers with significant influence"
+
+  tier_2:
+    name: "Medium Priority"
+    targets:
+      - "Committee members (legislators)"
+      - "Related caucus members"
+      - "Key influencers"
+    rationale: "Decision-makers but less accessible"
+
+  tier_3:
+    name: "Lower Priority"
+    targets:
+      - "General legislators in relevant states"
+      - "Think tank contacts"
+      - "Journalists covering area"
+    rationale: "Amplifiers and secondary influencers"
+
+# ============================================
+# TEMPLATES
+# ============================================
+staff_profile_template:
+  basic:
+    - "Name"
+    - "Office (Legislator or Committee)"
+    - "Title/Position"
+    - "Email"
+    - "Phone"
+  background:
+    - "Education"
+    - "Previous roles"
+    - "Focus areas/policy interests"
+    - "LinkedIn URL"
+  relevance:
+    - "Why contact for this policy"
+    - "Likely receptivity (High/Medium/Low)"
+    - "Best framing/approach"
+
+full_dossier_template:
+  sections:
+    basic_information:
+      - "Full name"
+      - "Current position"
+      - "Organization"
+      - "Party (if applicable)"
+      - "State"
+
+    contact:
+      - "Primary email"
+      - "Office phone"
+      - "Office address"
+      - "LinkedIn URL"
+      - "Twitter handle"
+
+    background:
+      - "Education (degree, school, year)"
+      - "Career history"
+      - "Policy focus areas"
+      - "Notable achievements"
+
+    positions_and_votes:
+      - "Relevant votes (if legislator)"
+      - "Public statements"
+      - "Committee assignments"
+
+    influences:
+      - "Top donors (if legislator)"
+      - "Endorsements"
+      - "Key relationships"
+
+    opportunity_analysis:
+      - "Why they might support"
+      - "Potential objections with counters"
+      - "Best framing approach"
+      - "Timing considerations"
+
+    outreach_history:
+      - "Date, channel, summary, response"
+
+    prioritization:
+      - "Tier (1/2/3)"
+      - "Rationale"
+
+personalization_notes_template:
+  fields:
+    - name: "Opening Hook"
+      description: "Personalized first sentence referencing their work/interests"
+
+    - name: "Key Relevance Point"
+      description: "Why this policy matters specifically to them/their constituents"
+
+    - name: "Value Offer"
+      description: "What we can provide that would help them"
+
+    - name: "Specific Ask"
+      description: "Tailored ask based on their position/influence"
+
+    - name: "Tone"
+      description: "Formal/Conversational based on their style"
+
+scoring_for_prioritization:
+  factors:
+    - factor: "On relevant committee"
+      points: "+3"
+    - factor: "Committee chair/ranking member"
+      points: "+2"
+    - factor: "Known swing vote"
+      points: "+2"
+    - factor: "Stated interest in policy area"
+      points: "+2"
+    - factor: "Accessible (staff vs legislator)"
+      points: "+1"
+    - factor: "Recent relevant activity"
+      points: "+1"
+
+  tier_assignment:
+    tier_1: "7+ points"
+    tier_2: "4-6 points"
+    tier_3: "1-3 points"
+
+dependencies:
+  - "infrastructure_setup (database)"
+  - "policy_research (selected policies)"
+
+next_procedure: "outreach_campaigns"

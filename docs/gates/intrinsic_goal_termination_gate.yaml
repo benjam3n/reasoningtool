@@ -1,0 +1,416 @@
+# Intrinsic Goal Termination Gate
+# Checks if we've reached an intrinsic goal where "why?" regress terminates
+# v2.0.0 - Added value elicitation, diverse intrinsic goals, multiple/conflicting goals
+
+id: intrinsic_goal_termination_gate
+name: Intrinsic Goal Termination Gate
+version: "2.0.0"
+domain: core
+
+description: |
+  The regress of "why?" terminates at intrinsic goals - things valued
+  for themselves, not for what they lead to. This gate checks whether
+  we've reached such a goal.
+
+  v2.0 Updates:
+  - Diverse intrinsic goals (not just "flourishing")
+  - Value elicitation techniques
+  - Circularity test for terminus
+  - Multiple/conflicting intrinsic goals
+  - Anti-flourishing goals as valid
+
+purpose: |
+  Provide principled termination for goal-tracing and "why?" chains.
+  Intrinsic goals are the terminus because asking "why?" leads to
+  circular reasoning - the goal is valued because it's that goal.
+
+# ============================================
+# THE GATE
+# ============================================
+
+question: Have we reached an intrinsic goal where "why?" terminates?
+
+core_test: |
+  **The Circularity Test**:
+  Keep asking "What's important to you about X?" or "What does X give you?"
+
+  When the answer circles back to itself, you've reached terminus:
+  - "Why do you want pleasure?" → "Because it's pleasurable" (TERMINUS)
+  - "Why do you want freedom?" → "Because I value being free" (TERMINUS)
+  - "Why do you want security?" → "Because feeling secure matters" (TERMINUS)
+
+  The circular answer indicates: This IS the point. It doesn't serve something else.
+
+# ============================================
+# VALUE ELICITATION METHODS
+# ============================================
+
+value_elicitation:
+  description: |
+    Techniques for discovering someone's intrinsic goals.
+    Different people have different terminus points.
+
+  methods:
+    whats_important:
+      question: "What's important to you about [X]?"
+      usage: |
+        Keep asking until you get circularity:
+        "What's important to you about owning a business?"
+        → "Freedom from constraints"
+        "What's important to you about freedom?"
+        → "Being free is what matters to me" (TERMINUS)
+
+    what_does_it_give:
+      question: "When you have [X], what does that give you?"
+      usage: |
+        "When you have success, what does that give you?"
+        → "Recognition"
+        "When you have recognition, what does that give you?"
+        → "I feel valued"
+        "When you feel valued, what does that give you?"
+        → "That's just what I want" (TERMINUS)
+
+    why_is_that_important:
+      question: "Why is [X] important to you?"
+      usage: |
+        Similar to above, trace until circularity.
+
+    would_you_want_if:
+      question: "Would you want [X] even if it led to nothing else?"
+      usage: |
+        If yes → likely intrinsic
+        If no → instrumental, keep tracing
+
+  key_insight: |
+    Different people stop at different values:
+    - Some stop at FREEDOM
+    - Some stop at SECURITY
+    - Some stop at CONNECTION
+    - Some stop at PLEASURE
+    - Some stop at MEANING
+    - Some stop at POWER
+    - Some stop at PEACE
+
+    There is no "correct" intrinsic goal.
+    Intrinsic goals are personal, not universal.
+
+# ============================================
+# DIVERSE INTRINSIC GOALS
+# ============================================
+
+intrinsic_goal_categories:
+  note: |
+    "Flourishing" is NOT the only intrinsic goal.
+    Below are categories of diverse intrinsic goals.
+    People may have one, several, or many.
+    They may conflict with each other.
+
+  positive_states:
+    description: States people pursue for themselves
+    examples:
+      - Pleasure / enjoyment
+      - Happiness
+      - Peace / tranquility
+      - Excitement / stimulation
+      - Joy
+
+  relational:
+    description: Connection-based intrinsic goals
+    examples:
+      - Love / being loved
+      - Connection / belonging
+      - Recognition / being seen
+      - Acceptance
+      - Intimacy
+
+  meaning_based:
+    description: Purpose and significance
+    examples:
+      - Meaning / purpose
+      - Significance / mattering
+      - Legacy / lasting impact
+      - Contribution
+
+  freedom_based:
+    description: Autonomy and independence
+    examples:
+      - Freedom / liberty
+      - Autonomy / self-determination
+      - Independence
+      - Non-constraint
+
+  security_based:
+    description: Stability and safety
+    examples:
+      - Security / safety
+      - Stability
+      - Predictability
+      - Control
+
+  achievement_based:
+    description: Accomplishment and mastery
+    examples:
+      - Achievement / success
+      - Mastery / excellence
+      - Power / influence
+      - Status / respect
+
+  aesthetic:
+    description: Beauty and experience
+    examples:
+      - Beauty / aesthetic experience
+      - Novelty / discovery
+      - Understanding / knowledge
+      - Truth
+
+  anti_flourishing:
+    description: |
+      Goals that oppose conventional "flourishing."
+      These are VALID intrinsic goals for some people.
+    examples:
+      - Asceticism / self-denial (monks, priests, spiritual seekers)
+      - Sacrifice / martyrdom (for a cause)
+      - Suffering as meaningful (certain religious traditions)
+      - Simplicity / minimalism (rejection of acquisition)
+      - Playing to lose (failure as art, anti-success)
+      - Victimhood (for some, being wronged is identity-defining)
+      - Tradition / purity (even at cost of personal wellbeing)
+    note: |
+      These may seem strange from outside, but the circularity test
+      still applies. If someone says "Why do you want to suffer?"
+      and answers "Because suffering purifies" → keep tracing
+      But if they answer "Because that's what matters" → terminus
+
+# ============================================
+# MULTIPLE AND CONFLICTING GOALS
+# ============================================
+
+multiple_intrinsic_goals:
+  description: |
+    People typically have MULTIPLE intrinsic goals.
+    These often CONFLICT with each other.
+
+  examples:
+    - "I want freedom AND security" (often trade-offs)
+    - "I want achievement AND peace" (often trade-offs)
+    - "I want connection AND independence" (often trade-offs)
+    - "I want meaning AND pleasure" (can conflict)
+
+  implications:
+    - A single goal chain may terminate at multiple intrinsic goals
+    - Actions may serve some intrinsic goals while undermining others
+    - "Conflicting" chain type exists for this reason
+    - Satisfaction may require balancing, not maximizing one
+
+  how_to_handle: |
+    When tracing goal chains:
+    1. Trace to ALL intrinsic goals, not just the first one
+    2. Note conflicts between them
+    3. The person must weigh/balance - we can't resolve for them
+    4. Different decisions may prioritize different intrinsic goals
+
+# ============================================
+# TERMINATING GOAL TYPES
+# ============================================
+
+terminating_goal_types:
+  intrinsic_values:
+    description: Things valued for themselves (see categories above)
+    test: |
+      "What's important to you about X?"
+      If answer circles back → intrinsic, terminate
+      If answer points to Y → instrumental, trace Y
+
+  practical_necessities:
+    description: Required for functioning regardless of specific goals
+    examples:
+      - Food/water (biological necessity)
+      - Reasoning (epistemic necessity)
+      - Agency (action necessity)
+    test: |
+      "Can you pursue ANY goal without X?"
+      If no → practical necessity, terminate
+      If yes → not necessary, continue tracing
+
+  transcendental_conditions:
+    description: Required for any goal-pursuit to be possible
+    examples:
+      - Experience exists
+      - Distinction/structure exists
+      - Preference is possible
+    test: |
+      Denying this is self-undermining.
+      You can't coherently deny X while using X.
+      → Transcendental condition, terminate
+
+# ============================================
+# THE CHECKS
+# ============================================
+
+checks:
+  check_1_circularity:
+    question: Does asking "why?" lead back to itself?
+    method: |
+      "Why do you want X?"
+      If answer is "Because X is what I want" → TERMINUS
+      If answer is "Because it leads to Y" → Continue, trace Y
+    circularity_indicators:
+      - "Because that's what matters to me"
+      - "Because it's [X]" (tautology)
+      - "I just do"
+      - "That's the point"
+      - Can't articulate further reason
+
+  check_2_would_want_anyway:
+    question: Would you want this even if it led to nothing else?
+    yes: Likely intrinsic → consider terminating
+    no: Instrumental → keep tracing
+
+  check_3_grounds_others:
+    question: Does this goal ground other goals?
+    grounds_others: Foundational → consider terminating
+    derived: Not foundational → keep tracing
+
+  check_4_necessity:
+    question: Is this required for any goal pursuit?
+    required: Practical necessity → terminate
+    optional: Not necessary → keep tracing
+
+  check_5_self_undermining:
+    question: Is denying this self-undermining?
+    self_undermining: Transcendental → terminate
+    coherently_deniable: Not transcendental → keep tracing
+
+# ============================================
+# OUTCOMES
+# ============================================
+
+on_pass:
+  condition: Check 1 (circularity) indicates terminus
+  action: |
+    Terminate the chain here.
+    State: "Intrinsic goal reached: [X]. The chain terminates because
+    asking 'why X?' returns to X."
+
+    Note: There may be multiple intrinsic goals. Check if the chain
+    also leads to other termini.
+
+on_fail:
+  condition: No circularity detected
+  action: |
+    Continue tracing. Use value elicitation:
+    - "What's important to you about [current goal]?"
+    - "What does [current goal] give you?"
+    Apply the gate again at the next level.
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1_freedom:
+    chain: "Why do you want to own a business?"
+    trace:
+      - "To have freedom from employment constraints"
+      - "What's important about freedom?"
+      - "Being free is what I value"
+    result: TERMINUS at Freedom
+    note: For this person, freedom is intrinsic
+
+  example_2_security:
+    chain: "Why do you want to own a business?"
+    trace:
+      - "To have financial security"
+      - "What's important about security?"
+      - "Feeling secure is what matters to me"
+    result: TERMINUS at Security
+    note: Same action, different intrinsic goal than example 1
+
+  example_3_multiple:
+    chain: "Why do you work so hard?"
+    trace_1:
+      - "To achieve success"
+      - "What does success give you?"
+      - "Recognition and respect"
+      - "What's important about recognition?"
+      - "Being valued is what I want"
+    trace_2:
+      - "To provide for my family"
+      - "What's important about providing?"
+      - "Their security and wellbeing"
+      - "What's important about their wellbeing?"
+      - "I love them - their wellbeing IS what matters"
+    result: Multiple termini - Recognition AND Love
+    note: These may conflict (work more for recognition vs spend time with family)
+
+  example_4_anti_flourishing:
+    chain: "Why do you practice such strict asceticism?"
+    trace:
+      - "To purify myself"
+      - "What's important about purification?"
+      - "Spiritual purity is the highest value"
+      - "What's important about spiritual purity?"
+      - "It's the point of existence"
+    result: TERMINUS at Spiritual purity (even at cost of comfort/pleasure)
+    note: This is a valid intrinsic goal even if unconventional
+
+  example_5_playing_to_lose:
+    chain: "Why do you deliberately fail?"
+    trace:
+      - "Because succeeding by conventional measures feels hollow"
+      - "What's important about avoiding that?"
+      - "Authenticity - being true to myself"
+      - "What's important about authenticity?"
+      - "That IS what matters"
+    result: TERMINUS at Authenticity
+    note: "Playing to lose" serves authenticity for this person
+
+# ============================================
+# CAUTIONS
+# ============================================
+
+cautions:
+  assuming_flourishing:
+    risk: Defaulting to "flourishing" as if universal
+    mitigation: |
+      Use value elicitation. Don't assume.
+      Different people have different intrinsic goals.
+      Some have anti-flourishing goals.
+
+  single_terminus:
+    risk: Stopping at first intrinsic goal found
+    mitigation: |
+      Check for multiple intrinsic goals.
+      Actions often serve several.
+      Note potential conflicts.
+
+  judging_intrinsic_goals:
+    risk: Dismissing unusual intrinsic goals as "wrong"
+    mitigation: |
+      The gate tests STRUCTURE (does it terminate?), not CONTENT.
+      If circularity is reached, it's a valid terminus for that person.
+      Asceticism, victimhood, playing to lose are all valid.
+
+  false_terminus:
+    risk: Accepting circular language that isn't genuine circularity
+    mitigation: |
+      Probe further. "I just do" might be laziness, not terminus.
+      Try: "What would be missing if you didn't have X?"
+      If they can articulate what's missing, there's more to trace.
+
+# ============================================
+# CONNECTION TO GOAL JOURNEYS
+# ============================================
+
+goal_journey_connection: |
+  Every goal journey terminates at one or more intrinsic goals.
+
+  A chain that doesn't reach intrinsic goal is INCOMPLETE.
+  A chain with conflicting intrinsic goals has TENSION.
+  A chain with anti-flourishing terminus is still VALID.
+
+  Use this gate to:
+  1. Check if goal chain is complete
+  2. Identify ALL intrinsic goals, not just one
+  3. Note conflicts between multiple termini
+  4. Validate unusual intrinsic goals without judgment

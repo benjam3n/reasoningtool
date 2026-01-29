@@ -1,0 +1,451 @@
+# Diversity Search Orderings
+# Orderings prioritizing behavioral diversity and novelty
+
+category_id: diversity_search
+category_name: "Diversity Search Orderings"
+description: |
+  Orderings that prioritize behavioral diversity, novelty, and
+  coverage of solution space. Use when you need multiple diverse
+  solutions or when objectives are deceptive.
+
+when_to_consider: |
+  - Want diverse solutions, not just one
+  - Objective is deceptive (many local optima)
+  - Need to illuminate solution landscape
+  - Building repertoire of options
+  - Targets are sparse and randomly distributed
+
+variations:
+
+  # ----------------------------------------
+  # NOVELTY-SEARCH ORDERING
+  # ----------------------------------------
+  novelty_search:
+    id: novelty_search_ordering
+    name: "Novelty-Search Ordering (Behavioral Diversity)"
+    category: diversity_search
+
+    philosophy: |
+      Reward behavioral novelty, not fitness toward objective.
+      From evolutionary robotics: deceptive fitness landscapes
+      trap search in local optima. Ignoring fitness and maximizing
+      behavioral diversity can paradoxically find better solutions.
+      "What is interesting is novel."
+
+    when_to_use:
+      - Objective is deceptive (local optima traps)
+      - Want diverse solutions, not single best
+      - Exploring behavior space
+      - Creative applications
+      - When traditional optimization fails
+
+    key_concepts:
+      behavior_characterization: "What does solution DO (not its parameters)"
+      novelty_metric: "Distance from previously seen behaviors"
+      archive: "Collection of novel behaviors found"
+      no_objective: "Fitness = novelty, not task performance"
+
+    algorithm:
+      initialize: "Random population, empty archive"
+      evaluate:
+        run_each: "Execute solution, observe behavior"
+        compute_novelty: "Distance to k-nearest in archive + population"
+      select: "Prefer high-novelty individuals"
+      evolve: "Standard genetic operators"
+      archive_update: "Add sufficiently novel behaviors"
+      repeat: "Until diverse archive built"
+
+    prioritization_rules:
+      1_characterize_behavior:
+        rule: "Describe what solution does, not what it is"
+        examples:
+          - "Robot: final position, path taken"
+          - "Controller: states visited"
+          - "Strategy: sequence of actions"
+
+      2_compute_novelty:
+        rule: "Novelty = average distance to k nearest neighbors"
+        neighbors: "From archive and current population"
+        metric: "Domain-specific behavior distance"
+
+      3_ignore_fitness:
+        rule: "Selection based purely on novelty"
+        counterintuitive: "Don't optimize for goal"
+        reason: "Avoids deceptive gradients"
+
+      4_build_archive:
+        rule: "Save sufficiently novel behaviors"
+        effect: "Archive covers behavior space"
+        discovery: "Goals found as side effect"
+
+    when_novelty_wins:
+      deceptive_landscapes: "Fitness gradient leads away from goal"
+      multiple_solutions: "Want all ways to solve problem"
+      open_ended: "Exploring what's possible"
+      creativity: "Generating diverse outputs"
+
+    anti_patterns:
+      - "Using when fitness landscape is smooth"
+      - "Poor behavior characterization"
+      - "Archive grows too fast (everything is novel)"
+      - "k-nearest too small (insufficient pressure)"
+
+    example:
+      context: "Robot maze navigation"
+      fitness_based_failure:
+        gradient: "Toward visible goal"
+        trap: "Gets stuck in dead end near goal"
+        problem: "Dead end is local optimum"
+      novelty_based_success:
+        ignores: "Distance to goal"
+        rewards: "Visiting new areas of maze"
+        explores: "Entire maze systematically"
+        finds: "Goal as side effect of exploration"
+      insight: "Sometimes ignoring the goal is the best way to find it"
+
+    source: "Evolutionary Computation - Novelty Search (Lehman & Stanley)"
+
+  # ----------------------------------------
+  # GO-EXPLORE ORDERING
+  # ----------------------------------------
+  go_explore:
+    id: go_explore_ordering
+    name: "Go-Explore Ordering (Detach-Return-Explore)"
+    category: diversity_search
+
+    philosophy: |
+      Remember interesting states, return to them, explore from there.
+      From hard exploration RL: save "cells" (abstracted states),
+      return to under-explored cells, take random actions to find
+      new cells. Separates exploration from learning. Finds sparse
+      rewards that defeat standard RL.
+
+    when_to_use:
+      - Sparse rewards (needle in haystack)
+      - Standard exploration fails
+      - Can return to previous states (deterministic or save/load)
+      - Want systematic coverage of state space
+      - Montezuma's Revenge, hard exploration problems
+
+    key_concepts:
+      cell: "Abstract representation of state (e.g., room + objects)"
+      archive: "Collection of discovered cells with trajectories"
+      go: "Return to a cell in the archive"
+      explore: "Take random/directed actions from there"
+      trajectory: "Sequence of actions to reach cell"
+
+    algorithm:
+      phase_1_exploration:
+        select_cell: "Choose under-explored cell from archive"
+        return: "Execute trajectory to reach cell (or load state)"
+        explore: "Take random actions from cell"
+        discover: "If new cell found, add to archive with trajectory"
+        repeat: "Until state space well covered"
+
+      phase_2_robustification:
+        train_policy: "Learn to reliably reach discovered cells"
+        method: "Imitation learning on trajectories"
+
+    prioritization_rules:
+      1_cell_abstraction:
+        rule: "Define meaningful state abstraction"
+        examples:
+          - "Game: room + inventory + key items"
+          - "Robot: discrete position + gripper state"
+        purpose: "Make exploration tractable"
+
+      2_select_to_return:
+        rule: "Choose cells based on visit count or novelty"
+        weighting: "Explore from less-visited cells"
+
+      3_deterministic_return:
+        rule: "Execute stored trajectory to reach cell"
+        requirement: "Environment must be deterministic (or use save/load)"
+
+      4_random_explore:
+        rule: "Random actions from reached cell"
+        duration: "Fixed number of steps"
+        discover: "New cells added to archive"
+
+    comparison_to_novelty:
+      novelty: "Rewards novel behavior in evolution"
+      go_explore: "Explicitly returns to frontier for further exploration"
+      advantage: "Doesn't forget how to reach interesting states"
+
+    anti_patterns:
+      - "Cell abstraction too fine (too many cells)"
+      - "Cell abstraction too coarse (misses important distinctions)"
+      - "Stochastic environment without save states"
+      - "Using when dense rewards available"
+
+    example:
+      context: "Montezuma's Revenge (hard exploration game)"
+      challenge: "Must collect keys, unlock doors, sparse reward"
+      go_explore_approach:
+        cells: "room_id, keys_held, doors_opened"
+        iteration_1:
+          cell: "room_1, no_keys"
+          explore: "Random actions -> find key in room_1"
+          new_cell: "room_1, key_1"
+        iteration_50:
+          cell: "room_1, key_1"
+          explore: "Random -> unlock door -> room_2"
+          new_cell: "room_2, no_keys"
+        iteration_500:
+          archive: "50 cells covering first 10 rooms"
+          progress: "Systematic exploration despite sparse reward"
+      result: "Superhuman performance on previously unsolved game"
+
+    source: "Deep RL - Go-Explore (Ecoffet et al., Uber AI)"
+
+  # ----------------------------------------
+  # MAP-ELITES ORDERING
+  # ----------------------------------------
+  map_elites:
+    id: map_elites_ordering
+    name: "MAP-Elites Ordering (Quality-Diversity Grid)"
+    category: diversity_search
+
+    philosophy: |
+      Fill a map of elite solutions across behavior dimensions.
+      From quality-diversity: define a space of behavior dimensions
+      (e.g., speed vs. stability), divide into cells, find the best
+      solution for each cell. Results in diverse repertoire of
+      high-quality solutions.
+
+    when_to_use:
+      - Want diverse high-quality solutions
+      - Can define meaningful behavior dimensions
+      - Building repertoire of options
+      - Robot gaits, game strategies, designs
+      - Understanding solution landscape
+
+    key_concepts:
+      behavior_space: "Dimensions characterizing behavior"
+      cell: "Region of behavior space"
+      elite: "Best solution found for that cell"
+      map: "Grid of cells with their elites"
+      illumination: "Filling the map with high-performing solutions"
+
+    algorithm:
+      initialize: "Generate random solutions, place best in cells"
+      loop:
+        select: "Random solution from map"
+        mutate: "Create offspring"
+        evaluate: "Determine offspring behavior and fitness"
+        place: "If offspring's cell empty or offspring better, update"
+      result: "Map of diverse high-performing solutions"
+
+    prioritization_rules:
+      1_define_behavior_space:
+        rule: "Choose 2-3 meaningful behavior dimensions"
+        examples:
+          - "Robot: speed, stability, energy"
+          - "Strategy: aggression, economy, timing"
+        guideline: "Dimensions should be meaningful and continuous"
+
+      2_discretize_into_cells:
+        rule: "Divide behavior space into grid"
+        resolution: "Trade-off: more cells = finer grain but sparser"
+
+      3_maintain_elites:
+        rule: "Each cell stores only best solution for that behavior"
+        effect: "Map shows optimal solution for each behavior type"
+
+      4_random_selection:
+        rule: "Pick parents randomly from populated cells"
+        no_fitness_selection: "Diversity maintained by map structure"
+
+    comparison:
+      vs_novelty_search: "MAP-Elites also maximizes fitness within cells"
+      vs_pareto: "MAP-Elites uses discrete cells, not Pareto front"
+      vs_standard_ea: "Maintains diversity explicitly through map"
+
+    anti_patterns:
+      - "Too many behavior dimensions (curse of dimensionality)"
+      - "Behavior dimensions not meaningful"
+      - "Grid too fine (cells never filled)"
+      - "Grid too coarse (insufficient diversity)"
+
+    example:
+      context: "Evolving robot walking gaits"
+      behavior_space:
+        dimension_1: "Forward speed (0-5 m/s)"
+        dimension_2: "Turning ability (0-180 deg/s)"
+      grid: "10x10 = 100 cells"
+      result:
+        cell_fast_straight: "Best gait for fast, straight walking"
+        cell_slow_agile: "Best gait for slow, high-turn walking"
+        cell_medium_medium: "Best balanced gait"
+        total: "60 cells filled with distinct gaits"
+      repertoire: "Robot can select appropriate gait for situation"
+      insight: "One optimization gave 60 useful solutions"
+
+    source: "Quality-Diversity - MAP-Elites (Mouret & Clune)"
+
+  # ----------------------------------------
+  # LEVY-FLIGHT ORDERING
+  # ----------------------------------------
+  levy_flight:
+    id: levy_flight_ordering
+    name: "Levy-Flight Ordering (Scale-Free Exploration)"
+    category: diversity_search
+
+    philosophy: |
+      Mix many small steps with occasional large jumps. From animal
+      foraging: Levy flight patterns (power-law step sizes) are
+      optimal for finding randomly distributed sparse targets.
+      Neither pure local search nor pure random search - a mixture
+      that balances exploitation with occasional exploration.
+
+    when_to_use:
+      - Sparse targets scattered in large space
+      - Don't know where good solutions are
+      - Local search gets stuck, random is wasteful
+      - Optimization landscapes with scattered optima
+      - When optimal search strategy is unknown
+
+    key_concepts:
+      levy_distribution: "Power-law step sizes"
+      small_steps: "Most steps are local (exploitation)"
+      large_jumps: "Occasional big moves (exploration)"
+      scale_free: "Same pattern at all scales"
+      optimal_foraging: "Maximizes target encounters"
+
+    mathematical_definition:
+      step_size_distribution: "P(s) ~ s^(-alpha)"
+      alpha: "Usually 1 < alpha < 3 (alpha ~ 2 often optimal)"
+      heavy_tail: "Large steps have non-negligible probability"
+
+    prioritization_rules:
+      1_draw_step_size:
+        rule: "Sample from Levy distribution"
+        implementation: "Inverse transform or Mantegna algorithm"
+        property: "Most small, few large"
+
+      2_random_direction:
+        rule: "Step direction is uniform random"
+        combined: "Levy walk in N dimensions"
+
+      3_evaluate_new_position:
+        rule: "Check if new position is better"
+        move: "Accept better, or use SA-style acceptance"
+
+      4_repeat:
+        rule: "Continue levy walks until termination"
+        pattern: "Intensive local search, occasional teleports"
+
+    comparison:
+      vs_local_search: "Levy escapes local optima via large jumps"
+      vs_random_search: "Levy exploits local regions with small steps"
+      vs_fixed_step: "Levy adapts scale automatically"
+
+    when_levy_optimal:
+      sparse_targets: "Targets scattered, not clustered"
+      no_gradient: "Can't follow fitness gradient"
+      unknown_structure: "Don't know where optima are"
+      theory: "Optimal for random uniform target distribution"
+
+    anti_patterns:
+      - "Using when targets are dense (local search better)"
+      - "Using when gradient available (follow gradient)"
+      - "Wrong alpha parameter"
+      - "Not combining with local improvement"
+
+    example:
+      context: "Search for good hyperparameter combinations"
+      search_space: "100-dimensional hyperparameter space"
+      levy_flight_process:
+        step_1: "Small step in random direction"
+        step_2: "Small step"
+        step_3: "Small step"
+        step_4: "LARGE jump to different region"
+        step_5: "Small step in new region"
+        step_6: "Small step"
+        step_7: "LARGE jump again"
+      pattern: "Explore local regions thoroughly, occasionally leap to new areas"
+      advantage: "Finds good regions that local search would never reach"
+
+    source: "Optimal Foraging - Levy Flight Search (Viswanathan et al.)"
+
+  # ----------------------------------------
+  # QUALITY-DIVERSITY ORDERING
+  # ----------------------------------------
+  quality_diversity:
+    id: quality_diversity_ordering
+    name: "Quality-Diversity Ordering (QD Optimization)"
+    category: diversity_search
+
+    philosophy: |
+      Simultaneously maximize both quality AND diversity of solutions.
+      From QD algorithms: instead of single optimal solution, find
+      archive of diverse high-performing solutions. Each niche of
+      behavior space gets its best representative. Illuminates the
+      possible, not just the optimal.
+
+    when_to_use:
+      - Want collection of good diverse solutions
+      - Single optimum isn't sufficient
+      - Building repertoire, portfolio, or options
+      - Understanding what's possible
+      - Robot adaptation, game AI, creative tools
+
+    key_concepts:
+      quality: "Performance on objective (fitness)"
+      diversity: "Spread across behavior space"
+      archive: "Collection of elite solutions"
+      illumination: "Covering behavior space with quality solutions"
+      fitness_plus_diversity: "Both matter, neither dominates"
+
+    unifying_principle: |
+      Novelty search ignores fitness entirely.
+      MAP-Elites discretizes behavior into cells.
+      NSGA-II uses Pareto dominance for multi-objective.
+      QD is the broader field encompassing these approaches.
+
+    prioritization_rules:
+      1_define_objectives:
+        rule: "Specify fitness AND behavior characterization"
+        fitness: "How good is this solution?"
+        behavior: "How does this solution behave?"
+
+      2_maintain_archive:
+        rule: "Keep diverse set of high-quality solutions"
+        mechanism: "Cells (MAP-Elites) or Pareto front"
+
+      3_drive_both:
+        rule: "Selection pressure for quality and diversity"
+        balance: "Neither should completely dominate"
+
+      4_output_repertoire:
+        rule: "Result is set of solutions, not single best"
+        use: "Select from repertoire based on context"
+
+    qd_algorithms:
+      novelty_search: "Pure diversity (fitness = novelty)"
+      map_elites: "Grid of elites"
+      nslc: "Novelty Search with Local Competition"
+      cma_me: "CMA-ES variant for MAP-Elites"
+      pga_me: "Policy gradient for MAP-Elites"
+
+    anti_patterns:
+      - "Using when single best is sufficient"
+      - "Behavior dimensions not meaningful"
+      - "Quality completely ignored (pure novelty)"
+      - "Diversity completely ignored (pure optimization)"
+
+    example:
+      context: "Designing robot morphologies for locomotion"
+      qd_result:
+        archive_contents:
+          - "Fast runner (4 legs, streamlined)"
+          - "Stable walker (6 legs, wide base)"
+          - "Climber (4 legs with grippers)"
+          - "Swimmer (flexible body, fins)"
+          - "Jumper (powerful rear legs)"
+        quality: "Each is high-performing in its niche"
+        diversity: "Cover different morphology/behavior space"
+      application: "Select morphology based on terrain encountered"
+      insight: "More valuable than single 'best' design"
+
+    source: "Quality-Diversity Optimization (Pugh, Soros, Stanley)"

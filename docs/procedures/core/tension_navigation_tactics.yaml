@@ -1,0 +1,466 @@
+# Tension Navigation Tactics
+# Purpose: Specific, actionable tactics for common value tensions
+# Version: 1.0.0
+
+id: tension_navigation_tactics
+name: Tension Navigation Tactics
+version: "1.0.0"
+domain: core
+
+description: |
+  While value_conflict_decomposition provides the framework for understanding conflicts,
+  this procedure provides specific, tested tactics for navigating the most common tensions.
+
+  These are not abstract strategies - they are concrete actions that have worked.
+
+when_to_use:
+  - After identifying a value conflict
+  - When you need specific tactics, not just frameworks
+  - When the abstract strategies feel too vague
+
+tags:
+  - core
+  - tactics
+  - navigation
+  - practical
+
+# ============================================
+# SECURITY VS ACHIEVEMENT
+# ============================================
+
+security_vs_achievement:
+  description: |
+    Security: Stability, predictability, risk avoidance, preservation
+    Achievement: Growth, challenge, risk-taking, transformation
+
+  tactics:
+
+    runway_model:
+      name: "Build Runway, Then Take Off"
+      description: |
+        Build explicit security buffer (time, money, options), then take risks
+        within the buffer. The buffer defines how much risk you can take.
+      implementation:
+        - "Calculate minimum security requirement (e.g., 6 months expenses)"
+        - "Build to 1.5x minimum before taking major risks"
+        - "Define risk budget: What you can lose and still be secure"
+        - "Take risks only up to the risk budget"
+        - "Rebuild buffer if it drops below 1x minimum"
+      success_criteria: "Risk-taking happens AND security is maintained"
+      example: |
+        Save $30K (6 months buffer) before leaving job.
+        Can afford to fail for 6 months. Take risks accordingly.
+
+    reversible_risks:
+      name: "Reversible Risks First"
+      description: |
+        Prioritize risks that can be undone if they fail.
+        Security comes from reversibility, not from avoiding risk.
+      implementation:
+        - "For each risk, ask: Can this be reversed? At what cost?"
+        - "Take reversible risks with high upside first"
+        - "Reserve irreversible risks for high-confidence situations"
+        - "Design exit paths before entering risky situations"
+      success_criteria: "Taking risks that don't permanently compromise security"
+      example: |
+        Start side project (reversible) before quitting job (less reversible).
+        Test idea with minimum commitment before betting everything.
+
+    barbell_approach:
+      name: "Barbell: Extreme Safety + Extreme Risk"
+      description: |
+        Don't optimize for moderate risk/moderate return.
+        Be extremely safe with most resources, extremely risky with a small portion.
+      implementation:
+        - "Allocate 80-90% to safe, stable, secure positions"
+        - "Allocate 10-20% to high-risk, high-reward positions"
+        - "Never risk the 80-90% portion"
+        - "Be willing to lose the 10-20% entirely"
+      success_criteria: "Secure core is never threatened, but upside capture is possible"
+      example: |
+        Stable job (80%) + speculative investments (20%)
+        Reliable income (90%) + experimental projects (10%)
+
+    staged_commitment:
+      name: "Staged Commitment"
+      description: |
+        Don't commit all at once. Stage commitment with checkpoints.
+        Each stage provides information before more commitment.
+      implementation:
+        - "Define commitment stages (e.g., research, prototype, pilot, full)"
+        - "Define go/no-go criteria for each stage"
+        - "Commit minimum resources for each stage"
+        - "Increase commitment only when previous stage succeeds"
+      success_criteria: "Large risks broken into smaller validated steps"
+      example: |
+        Business: Research (1 week) → Landing page (1 week) → MVP (1 month) → Full launch
+        Each stage has exit criteria before next commitment.
+
+# ============================================
+# FREEDOM VS SECURITY
+# ============================================
+
+freedom_vs_security:
+  description: |
+    Freedom: Options, autonomy, independence, flexibility
+    Security: Stability, predictability, structure, safety
+
+  tactics:
+
+    freedom_through_security:
+      name: "Freedom Through Security"
+      description: |
+        Build security that enables freedom, not security that constrains it.
+        The right kind of security is a platform for freedom.
+      implementation:
+        - "Ask: What security would make me MORE free, not less?"
+        - "Build that security first"
+        - "Avoid security that comes with freedom-limiting conditions"
+        - "Design security that has exit options"
+      success_criteria: "Security that expands rather than contracts options"
+      example: |
+        Financial runway = freedom to say no to bad opportunities
+        Reputation/skills = freedom to change directions
+        Avoid: Golden handcuffs, non-compete agreements, heavy mortgages
+
+    option_portfolio:
+      name: "Option Portfolio"
+      description: |
+        Instead of one big commitment, maintain portfolio of smaller options.
+        Security comes from diversification, not from any single commitment.
+      implementation:
+        - "List all options currently available"
+        - "Identify which options would be lost by any commitment"
+        - "Prefer commitments that preserve other options"
+        - "Actively maintain 3+ viable paths"
+      success_criteria: "Never down to one option; always have alternatives"
+      example: |
+        Keep 3 income streams viable, even if one is primary
+        Maintain skills in 2+ areas, even if one is current focus
+        Preserve key relationships that represent different paths
+
+    structured_flexibility:
+      name: "Structured Flexibility"
+      description: |
+        Create structure that defines WHEN to be flexible, not IF.
+        Structure and flexibility at different levels.
+      implementation:
+        - "Create long-term commitments (direction)"
+        - "Create short-term flexibility (tactics)"
+        - "Define explicit review points when direction can change"
+        - "Between review points, commit fully"
+      success_criteria: "Commitment when appropriate, flexibility when appropriate"
+      example: |
+        Commit to career direction for 2 years (security)
+        But choose projects quarterly based on what's interesting (freedom)
+        Explicit 2-year review point to reconsider direction
+
+    exit_clauses:
+      name: "Exit Clauses in All Commitments"
+      description: |
+        Make commitments with explicit exit conditions.
+        Security of knowing you can leave + freedom to leave if needed.
+      implementation:
+        - "For every commitment, define exit criteria"
+        - "Define the cost of exit (make it acceptable)"
+        - "Never enter commitments without exit understanding"
+        - "Review exits periodically - are they still viable?"
+      success_criteria: "All commitments have known exit paths"
+      example: |
+        Employment: Know what severance/notice period is
+        Lease: Know early termination terms
+        Projects: Define "kill criteria" before starting
+
+# ============================================
+# INDIVIDUAL VS RELATIONAL
+# ============================================
+
+individual_vs_relational:
+  description: |
+    Individual: Personal development, autonomy, self-expression, boundaries
+    Relational: Connection, belonging, contribution, interdependence
+
+  tactics:
+
+    explicit_boundaries:
+      name: "Explicit Boundaries Enable Connection"
+      description: |
+        Clear boundaries make deeper connection possible.
+        Without boundaries, connection becomes resentment.
+      implementation:
+        - "Define what you need for yourself (non-negotiable)"
+        - "Communicate boundaries clearly, not as rejection"
+        - "Honor your boundaries consistently"
+        - "Boundaries enable more generous giving when present"
+      success_criteria: "Relationships where both individual needs and connection exist"
+      example: |
+        "I need 2 hours alone each morning" - communicated clearly
+        This enables full presence during together time
+        Partners respect boundary; don't take it as rejection
+
+    rhythmic_alternation:
+      name: "Rhythmic Alternation"
+      description: |
+        Alternate between individual and relational focus.
+        Both get full attention at different times.
+      implementation:
+        - "Define individual time blocks (sacred, protected)"
+        - "Define relational time blocks (fully present)"
+        - "Make rhythm explicit and shared"
+        - "Don't blend - be fully in one mode or the other"
+      success_criteria: "Neither loneliness nor depletion"
+      example: |
+        Mornings: Individual work (alone, focused)
+        Evenings: Relational (family, friends, fully present)
+        Weekly: One full day alone, one full day social
+
+    selective_depth:
+      name: "Selective Depth Over Broad Coverage"
+      description: |
+        Fewer deep relationships rather than many shallow ones.
+        Deep relationships can honor both individual and relational needs.
+      implementation:
+        - "Identify 3-5 relationships that matter most"
+        - "Invest deeply in these; less in others"
+        - "Deep relationships can hold your individuality"
+        - "Shallow relationships often demand conformity"
+      success_criteria: "Deep connections that don't require hiding yourself"
+      example: |
+        3 close friends who know you fully, rather than 30 acquaintances
+        These friends support your individual path
+        Less time maintaining surface relationships
+
+    parallel_presence:
+      name: "Parallel Presence"
+      description: |
+        Be individual AND relational simultaneously.
+        Connection doesn't require interaction.
+      implementation:
+        - "Find activities where both can happen (parallel play)"
+        - "Being in same space while doing individual things"
+        - "Shared context without demanding attention"
+        - "Companionship without conversation"
+      success_criteria: "Connected without depleted; alone without lonely"
+      example: |
+        Both working in same room on different projects
+        Shared meals followed by individual activities
+        Travel together with individual exploration time
+
+# ============================================
+# MEANING VS PLEASURE
+# ============================================
+
+meaning_vs_pleasure:
+  description: |
+    Meaning: Purpose, contribution, significance, legacy
+    Pleasure: Enjoyment, comfort, satisfaction, ease
+
+  tactics:
+
+    craft_orientation:
+      name: "Craft Orientation: Pleasure IN Meaning"
+      description: |
+        Find the pleasure that exists within meaningful work.
+        Mastery, flow, and craft satisfaction are pleasurable.
+      implementation:
+        - "Identify the craft elements in meaningful work"
+        - "Develop skills until flow states are common"
+        - "Appreciate the satisfaction of quality work"
+        - "Meaning work done well IS pleasurable"
+      success_criteria: "Meaningful work that is also enjoyable"
+      example: |
+        Writing: The craft of a good sentence (pleasurable)
+        Teaching: The moment of student understanding (pleasurable)
+        Building: The elegance of a good solution (pleasurable)
+
+    recovery_rituals:
+      name: "Recovery Rituals"
+      description: |
+        Build explicit pleasure/recovery into meaningful work rhythm.
+        Meaning work is sustainable when recovery is built in.
+      implementation:
+        - "Define recovery activities (pure pleasure, no meaning required)"
+        - "Schedule recovery as non-negotiable"
+        - "No guilt during recovery - it enables meaning work"
+        - "Recovery ratio: 1:4 to 1:7 (recovery:work)"
+      success_criteria: "Sustainable meaningful work without burnout"
+      example: |
+        4 hours meaningful work → 1 hour pure pleasure
+        Daily: Small pleasures built into routine
+        Weekly: Full recovery time (no meaning pressure)
+
+    meaning_in_pleasure:
+      name: "Meaning IN Pleasure"
+      description: |
+        Find meaning in pleasure activities themselves.
+        Relationships, appreciation, presence are meaningful.
+      implementation:
+        - "Reframe pleasure as relational (shared enjoyment)"
+        - "Reframe pleasure as gratitude (appreciation)"
+        - "Reframe pleasure as presence (being alive)"
+        - "Pleasure itself can serve meaning goals"
+      success_criteria: "Pleasure that doesn't feel empty"
+      example: |
+        Dinner with friends: Pleasure + connection + gratitude
+        Walk in nature: Pleasure + presence + appreciation
+        Entertainment: Pleasure + shared experience + bonding
+
+    minimum_viable_meaning:
+      name: "Minimum Viable Meaning"
+      description: |
+        Not all meaningful work needs to be world-changing.
+        Small meanings add up; don't need maximum meaning all the time.
+      implementation:
+        - "Define minimum meaning threshold (small contributions count)"
+        - "Accept that some work is just pleasant, not meaningful"
+        - "Don't burden every activity with meaning requirement"
+        - "Some meaning + some pleasure = sustainable life"
+      success_criteria: "Meaning without meaning-pressure"
+      example: |
+        Not every project needs to change the world
+        Being kind to one person = sufficient meaning
+        Some days are just for living, not meaning
+
+# ============================================
+# PROCESS VS OUTCOME
+# ============================================
+
+process_vs_outcome:
+  description: |
+    Outcome: Results, achievement, completion, success
+    Process: Experience, journey, growth, presence
+
+  tactics:
+
+    process_goals:
+      name: "Process Goals (Not Just Outcome Goals)"
+      description: |
+        Define success in process terms, not just outcome terms.
+        "Did I work well?" not just "Did I win?"
+      implementation:
+        - "For each outcome goal, define parallel process goal"
+        - "Process goal: What quality of work/experience do you want?"
+        - "Measure both outcome AND process"
+        - "Celebrate process success even when outcome fails"
+      success_criteria: "Can feel successful regardless of outcome"
+      example: |
+        Outcome: Win the contract
+        Process: Give best presentation I'm capable of
+        Both measured; process success is real success
+
+    outcome_checkpoints:
+      name: "Outcome Checkpoints, Process Between"
+      description: |
+        Define outcome checkpoints, but focus on process between them.
+        Outcome focus at specific moments; process focus rest of time.
+      implementation:
+        - "Define explicit outcome review points (weekly, monthly)"
+        - "Between checkpoints, focus entirely on process"
+        - "At checkpoints, assess outcomes and adjust"
+        - "Don't let outcome anxiety invade process time"
+      success_criteria: "Outcomes tracked without process-destroying anxiety"
+      example: |
+        Weekly review: Check outcomes, adjust as needed
+        Daily work: Pure process focus, quality work
+        Don't check metrics mid-day (outcome anxiety)
+
+    process_design:
+      name: "Design Process for Its Own Sake"
+      description: |
+        Design the process to be worth doing regardless of outcome.
+        If the journey itself is valuable, outcome pressure decreases.
+      implementation:
+        - "Ask: Would I do this even if the outcome failed?"
+        - "Design process to be enjoyable/meaningful"
+        - "Include learning that's valuable regardless of outcome"
+        - "Process is the certain payoff; outcome is the uncertain bonus"
+      success_criteria: "Process that's worth doing whether or not outcome succeeds"
+      example: |
+        Writing book: Learning from research is valuable (process win)
+        Even if book fails, the learning remains
+        Starting business: Skills developed are valuable even if business fails
+
+# ============================================
+# KNOWN VS UNKNOWN
+# ============================================
+
+known_vs_unknown:
+  description: |
+    Known: Expertise, mastery, competence, reliability
+    Unknown: Exploration, discovery, novelty, learning
+
+  tactics:
+
+    t_shape:
+      name: "T-Shaped Competence"
+      description: |
+        Deep expertise in one area, broad exploration in many.
+        The deep area gives security; the breadth gives freedom.
+      implementation:
+        - "Identify your vertical (deep expertise area)"
+        - "Maintain deep competence in vertical (known)"
+        - "Explore broadly in other areas (unknown)"
+        - "Breadth informs depth; depth funds breadth"
+      success_criteria: "Expert in something, curious about everything"
+      example: |
+        Deep: Software engineering (mastery, security)
+        Broad: Psychology, economics, design, writing (exploration)
+        The broad areas inform the deep area
+
+    exploration_budget:
+      name: "Exploration Budget"
+      description: |
+        Explicit allocation for exploration (time, money, energy).
+        Exploration is budgeted, not squeezed out by exploitation.
+      implementation:
+        - "Allocate 10-20% of resources to exploration"
+        - "Exploration budget is protected, not discretionary"
+        - "Track exploration separately from production"
+        - "Exploration doesn't need to justify itself in production terms"
+      success_criteria: "Regular exploration that doesn't threaten known mastery"
+      example: |
+        10% time for learning new things (Google's 20% time)
+        One new skill per quarter, regardless of utility
+        Exploration budget spent without guilt
+
+    serial_mastery:
+      name: "Serial Mastery"
+      description: |
+        Master one thing, then move to next.
+        Known and unknown are sequenced, not simultaneous.
+      implementation:
+        - "Define mastery threshold (when is area 'known'?)"
+        - "Focus until threshold is met"
+        - "Then move to next area"
+        - "Preserve mastery through periodic practice"
+      success_criteria: "Multiple areas of depth over time"
+      example: |
+        Year 1-3: Master programming
+        Year 4-6: Master product design
+        Year 7-9: Master business strategy
+        Each builds on previous; none is abandoned
+
+# ============================================
+# HOW TO USE
+# ============================================
+
+usage:
+  step_1: "Identify the tension from value_conflict_decomposition"
+  step_2: "Find the relevant tension section above"
+  step_3: "Review tactics - which resonates with your situation?"
+  step_4: "Implement selected tactic with specific details"
+  step_5: "Monitor: Is the tactic working? Adjust or try different tactic."
+
+selection_criteria:
+  - "Which tactic matches your current resources?"
+  - "Which tactic addresses your specific manifestation of the tension?"
+  - "Which tactic have you not tried before?"
+  - "Which tactic do you resist? (Sometimes that's the one to try)"
+
+combination: |
+  Tactics can combine. You might use:
+  - runway_model (Security vs Achievement) AND
+  - option_portfolio (Freedom vs Security) AND
+  - rhythmic_alternation (Individual vs Relational)
+
+  The combinations should be coherent, not contradictory.

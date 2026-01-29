@@ -1,0 +1,270 @@
+# Deductive Adversarial Review Integration
+# Purpose: Integrate deductive strategy system with adversarial review testing
+# Version: 1.0.0
+
+id: deductive_adversarial_review_integration
+name: Deductive Adversarial Review Integration
+domain: planning
+version: "1.0.0"
+tags: ["deductive", "adversarial_review", "integration", "testing"]
+
+description: |
+  Bridges the deductive strategy system with adversarial adversarial review testing.
+
+  The deductive system provides logical derivations (proofs).
+  Builder-breaker provides adversarial attacks.
+  Together, they produce strategies that are both:
+  - Logically derived (not guessed)
+  - Battle-tested (survived attacks)
+
+  This is the highest level of strategy confidence.
+
+when_to_use:
+  - After deductive strategy discovery
+  - Before final strategy selection
+  - When you need maximum confidence in a strategy
+
+core_insight: |
+  Deductive derivation ensures the strategy COULD be correct.
+  Builder-breaker ensures the strategy IS robust.
+
+  A logically derived strategy might have hidden flaws.
+  A battle-tested strategy might be based on weak reasoning.
+  Together, they catch both types of problems.
+
+# ============================================
+# INTEGRATION FLOW
+# ============================================
+
+integration_flow:
+
+  phase_1_deductive:
+    name: Deductive Strategy Discovery
+    procedure: deductive_strategy_discovery
+    outputs:
+      - problem_axioms: Formalized problem definition
+      - strategy_proofs: Strategies with logical derivations
+      - deductive_strength: How necessary each strategy is
+
+  phase_2_evaluation:
+    name: Deductive Strategy Evaluation
+    procedure: deductive_strategy_evaluation
+    inputs:
+      - strategy_proofs: From phase 1
+      - problem_axioms: From phase 1
+    outputs:
+      - proof_levels: Initial confidence level for each strategy
+      - weakness_analysis: Identified logical weaknesses
+      - critical_assumptions: Assumptions that could break strategies
+
+  phase_3_builder:
+    name: Builder Phase (Strengthen)
+    procedure: adversarial_review (build_thesis)
+    inputs:
+      - strategy_proofs: From phase 1
+      - weakness_analysis: From phase 2
+    process: |
+      For each strategy:
+      1. Take the deductive chain as the thesis
+      2. Strengthen weak premises with additional evidence
+      3. Shore up weak inferences with additional steps
+      4. Document improvements made
+    outputs:
+      - strengthened_proofs: Improved deductive chains
+      - builder_confidence: Builder's confidence level
+
+  phase_4_breaker:
+    name: Breaker Phase (Attack)
+    procedure: adversarial_review (break_thesis)
+    inputs:
+      - strengthened_proofs: From phase 3
+    process: |
+      For each strengthened proof:
+      1. Attack premises:
+         - Are any premises false or unverified?
+         - What evidence contradicts them?
+      2. Attack inferences:
+         - Does conclusion actually follow?
+         - Are there counterexamples?
+         - What's the weakest link?
+      3. Attack necessity:
+         - Are there better alternatives?
+         - Is this really the only/best option?
+      4. Record all attacks and their outcomes
+    outputs:
+      - attack_results: Which attacks succeeded/failed
+      - surviving_strategies: Strategies that survived
+      - failed_strategies: Strategies that were defeated
+
+  phase_5_synthesis:
+    name: Synthesis Phase (Integrate)
+    procedure: adversarial_review (synthesize)
+    inputs:
+      - attack_results: From phase 4
+      - surviving_strategies: From phase 4
+    process: |
+      For surviving strategies:
+      1. Update confidence level based on attacks survived
+      2. Document which attacks were defeated and how
+      3. Identify remaining weaknesses (acceptable risks)
+      4. Assign final confidence level (0-4)
+    outputs:
+      - final_proof_levels: Battle-tested confidence levels
+      - attack_summary: Summary of attacks survived
+      - risk_acceptance: Documented accepted risks
+
+# ============================================
+# ATTACK TYPES FOR DEDUCTIVE PROOFS
+# ============================================
+
+deductive_attack_types:
+
+  premise_attacks:
+    - name: False Premise Attack
+      question: "Is any premise actually false?"
+      impact: If true, proof is unsound
+      response_if_attacked: Verify premise or remove from chain
+
+    - name: Unverified Assumption Attack
+      question: "Is this assumption actually verified?"
+      impact: Reduces confidence in conclusion
+      response_if_attacked: Find evidence or mark as risk
+
+    - name: Hidden Premise Attack
+      question: "Is there a hidden premise not made explicit?"
+      impact: Proof may be invalid without it
+      response_if_attacked: Make premise explicit and verify
+
+  inference_attacks:
+    - name: Invalid Inference Attack
+      question: "Does conclusion actually follow from premises?"
+      impact: Proof is invalid if inference fails
+      response_if_attacked: Show the inference step explicitly
+
+    - name: Weak Inference Attack
+      question: "Is this inference strong enough to rely on?"
+      impact: Reduces confidence
+      response_if_attacked: Strengthen with additional premises
+
+    - name: Counterexample Attack
+      question: "Is there a case where premises are true but conclusion false?"
+      impact: Proves inference is invalid
+      response_if_attacked: Revise inference or add conditions
+
+  necessity_attacks:
+    - name: Alternative Strategy Attack
+      question: "Is there another strategy that also works?"
+      impact: Strategy is not necessary (but might still be best)
+      response_if_attacked: Show why this strategy is preferred
+
+    - name: Better Alternative Attack
+      question: "Is there a strictly better strategy?"
+      impact: Should switch to better strategy
+      response_if_attacked: Switch or show why this is actually better
+
+    - name: Overkill Attack
+      question: "Is this strategy more than necessary?"
+      impact: Might be wasting resources
+      response_if_attacked: Simplify or show why complexity is needed
+
+# ============================================
+# PROOF LEVEL UPGRADING
+# ============================================
+
+proof_level_rules:
+
+  level_0_to_1:
+    requirement: "Breaker attempted attack"
+    if_attack_succeeded: "Stays at level 1 (contested)"
+    if_attack_failed: "Upgrades to level 2 (defended)"
+
+  level_1_to_2:
+    requirement: "Defend against successful attack"
+    process: |
+      1. Address the successful attack
+      2. Strengthen the proof
+      3. Have breaker try again
+      4. If attack now fails, upgrade to level 2
+
+  level_2_to_3:
+    requirement: "Survive 3+ different attacks"
+    process: |
+      1. Document each attack type attempted
+      2. Document how each was defended
+      3. When 3+ attacks fail, upgrade to level 3
+
+  level_3_to_4:
+    requirement: "Derive directly from axioms only"
+    criteria: |
+      - All premises are axioms or definitional facts
+      - All inferences are deductive (modus ponens, contraposition)
+      - No assumptions in the chain
+      - Conclusion is logically necessary
+
+# ============================================
+# INTEGRATION WITH GOSM SEQUENCE
+# ============================================
+
+gosm_integration:
+
+  sequence_order:
+    step_8: deductive_strategy_discovery
+    step_8b: deductive_strategy_evaluation
+    step_9: innovation_engine (expand on deductive strategies)
+    step_10: deductive_adversarial_review_integration
+    step_11: strategy_selection (select level 2+ strategies)
+
+  context_flow:
+    deductive_discovery_outputs:
+      - problem_axioms
+      - strategy_proofs
+      - deductive_discovery_completed: true
+
+    deductive_evaluation_outputs:
+      - proof_levels (initial)
+      - weakness_analysis
+      - deductive_evaluation_completed: true
+
+    adversarial_review_inputs:
+      - strategy_proofs (from deductive)
+      - weakness_analysis (targets for attack)
+
+    adversarial_review_outputs:
+      - strategy_proof_level (final)
+      - adversarial_review_completed: true
+      - attack_summary
+
+    final_context:
+      - deductive_discovery_completed: true
+      - deductive_evaluation_completed: true
+      - adversarial_review_completed: true
+      - strategy_proof_level: int (0-4)
+      - selected_strategy_proof: StrategyProof
+
+# ============================================
+# QUALITY
+# ============================================
+
+verification:
+  - Deductive derivation completed before adversarial review
+  - Weaknesses from evaluation used as attack targets
+  - All attack types attempted
+  - Proof level updated based on attacks survived
+  - Final confidence level is honest assessment
+
+failure_modes:
+  - mode: Skipping deductive phase
+    symptom: Builder-breaker attacks unfocused
+    resolution: Always run deductive first to identify targets
+
+  - mode: Weak builder
+    symptom: Easy attacks not attempted
+    resolution: Use systematic attack checklist
+
+  - mode: Weak breaker
+    symptom: Obvious flaws not caught
+    resolution: Use all attack types from deductive_attack_types
+
+  - mode: Proof level inflation
+    symptom: Claiming level 3 without 3 attacks
+    resolution: Document each attack explicitly

@@ -1,0 +1,246 @@
+# Bounded Inquiry Procedure
+# Structures inquiry with explicit boundaries to enable termination
+
+id: bounded_inquiry
+name: Bounded Inquiry
+version: "1.0.0"
+domain: core
+tier: platinum
+
+description: |
+  Unbounded inquiry cannot terminate - every answer opens new questions.
+  Bounded inquiry can terminate - closure is possible within scope.
+
+  This procedure establishes explicit boundaries for any inquiry,
+  enabling satisfying closure rather than infinite regress.
+
+core_insight: |
+  Satisfaction comes from closure within boundaries.
+
+  The unsatisfying feeling of infinite regress comes from UNBOUNDED inquiry.
+  If inquiry has no boundaries, every answer opens new questions.
+  If inquiry has boundaries, answers within boundaries provide closure.
+
+# ============================================
+# WHAT PROVIDES BOUNDARIES
+# ============================================
+
+boundary_types:
+  goals:
+    description: What we're trying to achieve
+    function: Defines what "success" means
+    example: '"Understand how X works" vs "Understand everything"'
+    unbounded_symptom: No clear success criterion
+
+  scope:
+    description: What we're asking about
+    function: Defines what's in/out of bounds
+    example: '"How does this code work?" vs "How does everything work?"'
+    unbounded_symptom: Everything is fair game
+
+  rules:
+    description: How we're conducting inquiry
+    function: Defines valid moves
+    example: '"Using logic and evidence" vs "Anything goes"'
+    unbounded_symptom: No standard for accepting/rejecting
+
+  stakes:
+    description: Why we need to terminate
+    function: Creates practical pressure for closure
+    example: '"Need to decide by Friday" vs "No deadline"'
+    unbounded_symptom: No cost to continuing forever
+
+# ============================================
+# THE PROCEDURE
+# ============================================
+
+steps:
+  - id: 1
+    name: Establish goal boundary
+    action: |
+      Before beginning inquiry, explicitly state:
+      - What are we trying to achieve?
+      - What would count as success?
+      - What would this achievement enable?
+
+      Be specific. "Understand X" is too vague.
+      "Be able to predict Y given Z" is specific.
+    output: goal_statement
+
+  - id: 2
+    name: Establish scope boundary
+    action: |
+      Explicitly state:
+      - What is IN scope for this inquiry?
+      - What is OUT of scope?
+      - Where are the edges?
+
+      Questions outside scope are acknowledged but deferred:
+      "That's outside this inquiry. We can address it separately."
+    output: scope_definition
+
+  - id: 3
+    name: Establish rules boundary
+    action: |
+      Explicitly state:
+      - What counts as valid reasoning here?
+      - What evidence standards apply?
+      - What would we accept as an answer?
+
+      This prevents moving goalposts and endless "but what if?"
+    output: rules_definition
+
+  - id: 4
+    name: Establish stakes boundary
+    action: |
+      Explicitly state:
+      - Why does this inquiry matter?
+      - What depends on its completion?
+      - What's the cost of not terminating?
+
+      If there are no stakes, ask: Why are we doing this?
+    output: stakes_definition
+
+  - id: 5
+    name: Conduct inquiry within boundaries
+    action: |
+      Pursue the inquiry, but check against boundaries:
+      - Is this question within scope?
+      - Does this answer serve the goal?
+      - Does this reasoning follow the rules?
+      - Are we respecting the stakes?
+
+      Out-of-scope questions: Acknowledge and defer.
+      Goal-irrelevant tangents: Note and return.
+      Rule-violating moves: Reject or flag.
+    output: inquiry_process
+
+  - id: 6
+    name: Recognize termination
+    action: |
+      Inquiry terminates when:
+      - Goal is achieved (success)
+      - Goal is shown unachievable within scope (bounded failure)
+      - Stakes require decision now (practical closure)
+      - Remaining questions are out of scope (scoped completion)
+
+      State the termination explicitly:
+      "This inquiry is complete because [criterion]."
+    output: termination_statement
+
+# ============================================
+# HANDLING BOUNDARY CHALLENGES
+# ============================================
+
+boundary_challenges:
+  challenge_1:
+    type: "Why these boundaries?"
+    description: Someone questions the boundaries themselves
+    response: |
+      Questioning boundaries is DIFFERENT inquiry from the current one.
+      "Should these be the boundaries?" is meta-inquiry.
+
+      Options:
+      1. Note and defer: "We can discuss boundaries after this inquiry."
+      2. Suspend and address: "Let's establish boundaries first, then inquire."
+      3. Acknowledge legitimacy: "That's a valid meta-question, but not this inquiry."
+
+  challenge_2:
+    type: "But what about...?"
+    description: Someone raises out-of-scope question
+    response: |
+      Acknowledge and defer:
+      "That's outside our current scope. We're focused on [scope].
+       We can address that in a separate inquiry."
+
+      Don't expand scope mid-inquiry unless there's good reason.
+
+  challenge_3:
+    type: "I don't accept your rules"
+    description: Someone rejects the rules of inquiry
+    response: |
+      Rules disagreement is a boundary disagreement.
+      Either:
+      1. Negotiate rules before continuing
+      2. Acknowledge the disagreement and proceed with stated rules
+      3. Recognize that inquiry can't proceed without shared rules
+
+  challenge_4:
+    type: "There are no stakes"
+    description: Inquiry seems to have no practical import
+    response: |
+      If genuinely no stakes, ask: Why do this inquiry?
+      Possible answers:
+      - Intellectual pleasure (intrinsic stake)
+      - Future applicability (deferred stake)
+      - Practice (skill-building stake)
+
+      If no answer, maybe the inquiry isn't needed.
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1:
+    inquiry: "How do I fix this bug?"
+    goal: Make the code work correctly
+    scope: This specific bug, this codebase
+    rules: Standard debugging (reproduce, isolate, fix, verify)
+    stakes: Feature needs to ship
+    termination: Bug is fixed and verified
+
+  example_2:
+    inquiry: "What is consciousness?"
+    goal: Have a working model of consciousness
+    scope: Phenomenal consciousness, not all mental phenomena
+    rules: Philosophical argument, empirical evidence from neuroscience
+    stakes: Intellectual understanding (intrinsic value)
+    termination: |
+      Have a model that:
+      - Accounts for key features (qualia, unity, etc.)
+      - Is consistent with evidence
+      - Makes testable predictions
+      Note: May terminate at "best current model" not "final answer"
+
+  example_3:
+    inquiry: "How should I live?"
+    goal: Have practical guidance for decisions
+    scope: My life, my values, my circumstances
+    rules: Reflection, coherence with values, practical feasibility
+    stakes: Quality of life
+    termination: |
+      Have principles that:
+      - Reflect my values
+      - Provide guidance in common situations
+      - Can be refined with experience
+      Note: Not "final answer" but "working answer"
+
+# ============================================
+# CONNECTION TO N+1
+# ============================================
+
+n_plus_1_connection: |
+  Bounded inquiry addresses n+1 by:
+
+  1. Scope boundary: "Why?" questions outside scope are deferred
+  2. Goal boundary: Once goal is achieved, no need to continue
+  3. Rules boundary: Moves that violate rules don't count
+  4. Stakes boundary: At some point, must decide/act
+
+  The regress continues only WITHIN boundaries. Boundaries make closure possible.
+
+# ============================================
+# THE GAME METAPHOR
+# ============================================
+
+game_metaphor: |
+  Inquiry is like a game:
+  - Games have rules (what's valid)
+  - Rules define what's in bounds
+  - Winning = achieving goal within rules
+  - You don't ask "why these rules?" while playing
+  - You can question rules before/after, but that's a different game
+
+  Questioning the rules of inquiry ISN'T PART of the inquiry.
+  It's meta-inquiry. Recognize the level shift.

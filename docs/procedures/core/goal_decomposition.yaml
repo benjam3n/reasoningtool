@@ -1,0 +1,373 @@
+# Goal Decomposition Methodology
+# Purpose: Break down high-level goals into actionable components without losing nuance
+# Version: 1.0.0
+
+id: goal_decomposition
+name: Goal Decomposition Methodology
+domain: core
+version: "1.0.0"
+tags: ["decomposition", "goals", "planning", "nuance", "tradeoffs"]
+
+description: |
+  A methodology for decomposing abstract goals into specific, actionable components
+  while preserving important information about dimensions, tradeoffs, and constraints.
+
+  The problem with naive decomposition: "Make the world better" becomes "Make people
+  happier" - this loses almost everything. What does "better" mean? Better for whom?
+  In what dimension? At what cost? Who decides?
+
+  Good decomposition preserves information, not destroys it. You should be able to
+  trace from any action back to why it serves the original goal, through explicit
+  reasoning, without hidden assumptions.
+
+core_insight: |
+  Decomposition should unpack information, make it explicit, and maintain it through
+  to action. If your decomposition loses nuance, hides conflicts, or enables
+  rationalization - it's bad decomposition.
+
+when_to_use:
+  - When a goal is abstract or vague
+  - Before committing to a plan
+  - When "obvious" decomposition feels too simple
+  - When you need to understand tradeoffs
+  - During GOSM Goal Definition (Step 2)
+
+# ============================================
+# PHASE 1: UNDERSTAND THE GOAL
+# ============================================
+
+phase_1_understand:
+  name: What Does The Goal Actually Mean?
+  description: Before decomposing, understand what you're decomposing.
+
+  step_1_1_dimensions:
+    name: Identify All Dimensions
+    question: What aspects does this goal touch?
+    process: |
+      For any significant goal, consider all relevant dimensions:
+      - Material wellbeing (resources, health, security)
+      - Psychological wellbeing (happiness, meaning, satisfaction)
+      - Social wellbeing (relationships, community, belonging)
+      - Freedom (autonomy, options, self-determination)
+      - Justice (fairness, equality, rights)
+      - Knowledge (understanding, truth, wisdom)
+      - Beauty (aesthetics, art, nature)
+      - Virtue (character, ethics, integrity)
+      - Sustainability (long-term, future generations)
+
+      Don't collapse prematurely. The abstract term contains multiple dimensions.
+    output: List of dimensions this goal touches
+
+  step_1_2_perspective:
+    name: Identify Whose Perspective
+    question: Better/successful for whom?
+    options:
+      - Yourself
+      - People you know
+      - Your community
+      - Your nation
+      - Humanity
+      - Future generations
+      - Non-human animals
+      - Life in general
+      - Abstract values
+    note: These can conflict. Being explicit about scope matters.
+    output: Explicit scope of beneficiaries
+
+  step_1_3_timeframe:
+    name: Identify Timeframe
+    question: When does success need to manifest?
+    options:
+      - Immediately
+      - Short-term (months)
+      - Medium-term (years)
+      - Long-term (decades)
+      - Indefinite future
+    note: Short-term and long-term often conflict.
+    output: Explicit timeframe with reasoning
+
+  step_1_4_constraints:
+    name: Identify Constraints
+    question: What limits the goal?
+    categories:
+      physical: Laws of nature, resource limits
+      ethical: What you won't do even for the goal
+      practical: Your capabilities, position, resources
+      knowledge: What's known about how to achieve it
+      social: What others will accept or resist
+    output: List of constraints by category
+
+  step_1_5_expanded_definition:
+    name: Write The Expanded Definition
+    process: |
+      Take the abstract goal and write out what it actually means given:
+      - All dimensions identified
+      - Explicit perspective/scope
+      - Explicit timeframe
+      - All constraints
+    example:
+      original: "Make the world a better place"
+      expanded: |
+        Improve material, psychological, and social wellbeing for as many people
+        as possible, with particular attention to those worst off, while respecting
+        human freedom and justice, in ways that are sustainable long-term, without
+        causing harm to achieve short-term gains, within my actual capabilities
+        and resources.
+    output: Expanded goal definition
+
+# ============================================
+# PHASE 2: IDENTIFY SUBGOALS
+# ============================================
+
+phase_2_subgoals:
+  name: Identify Subgoals
+  description: Now decompose - but carefully.
+
+  step_2_1_derive_from_dimensions:
+    name: Derive Subgoals From Dimensions
+    process: For each dimension identified, ask what it would mean to advance it.
+    example:
+      material_wellbeing:
+        - Reduce poverty
+        - Improve health outcomes
+        - Increase security
+        - Provide basic needs
+      psychological_wellbeing:
+        - Reduce suffering
+        - Increase meaning and purpose
+        - Enable satisfaction with life
+        - Support mental health
+      freedom:
+        - Expand options
+        - Protect autonomy
+        - Remove coercion
+        - Enable self-determination
+    output: Subgoals for each dimension
+
+  step_2_2_dependencies:
+    name: Identify Subgoal Dependencies
+    question: Which subgoals enable or block others?
+    examples:
+      - Material wellbeing enables psychological wellbeing (hard to be happy while starving)
+      - Freedom enables material wellbeing (autonomy allows pursuit of resources)
+      - Justice enables sustainability (unfair systems get overthrown)
+      - Knowledge enables everything (can't improve what you don't understand)
+    output: Dependency graph of subgoals
+
+  step_2_3_conflicts:
+    name: Identify Subgoal Conflicts
+    question: Which subgoals trade off against each other?
+    common_conflicts:
+      - Short-term happiness vs long-term wellbeing
+      - Individual freedom vs collective outcomes
+      - Local benefit vs global fairness
+      - Current generations vs future generations
+      - Efficiency vs resilience
+    note: Be explicit about these. Naive decomposition hides them.
+    output: List of subgoal conflicts
+
+  step_2_4_document_relationships:
+    name: Write Subgoal Relationships
+    document:
+      - What enables what
+      - What conflicts with what
+      - What is foundational
+      - What is downstream
+    note: This creates a graph, not a list.
+    output: Subgoal relationship graph
+
+# ============================================
+# PHASE 3: PRIORITIZE SUBGOALS
+# ============================================
+
+phase_3_prioritize:
+  name: Prioritize Subgoals
+  description: Not all subgoals are equal. How to prioritize.
+
+  step_3_1_criteria:
+    name: Apply Prioritization Criteria
+    criteria:
+      ease: How hard to advance this?
+      ethics: How clearly good is advancing this?
+      accessibility: Can you actually work on this?
+      amplification: Does this enable other subgoals?
+      overlooked: Is this underserved by others?
+      probability: How likely to succeed?
+      impact: How much does advancing this matter?
+    output: Scored subgoals
+
+  step_3_2_weight_by_dependencies:
+    name: Weight By Dependencies
+    principle: Foundational subgoals (that enable others) get priority.
+    examples:
+      - If knowledge enables everything, advancing knowledge might be highest priority
+      - If justice enables sustainability, justice might come before sustainability
+    output: Dependency-weighted priorities
+
+  step_3_3_account_for_conflicts:
+    name: Account For Conflicts
+    when_subgoals_conflict:
+      - Which matters more? (value judgment)
+      - Can the conflict be mitigated? (creative solution)
+      - At what cost is each achievable? (practical reality)
+      - What's the acceptable tradeoff? (explicit choice)
+    note: Document these decisions. They're part of the plan.
+    output: Documented tradeoff decisions
+
+  step_3_4_comparative_advantage:
+    name: Consider Comparative Advantage
+    question: Where can YOU specifically contribute?
+    prompts:
+      - What do you know that others don't?
+      - What can you do that others can't?
+      - What position do you have that's unique?
+      - Where is your effort unusually valuable?
+    formula: Priority = importance * your_ability_to_contribute
+    output: Personal priority ranking
+
+# ============================================
+# PHASE 4: SPECIFY ACTIONS
+# ============================================
+
+phase_4_actions:
+  name: Specify Action-Level Goals
+  description: Translate subgoals to concrete actions.
+
+  step_4_1_for_each_subgoal:
+    name: Generate Action Options
+    question: What would I actually DO to advance this?
+    example:
+      subgoal: Reduce poverty
+      actions:
+        - Donate to effective charities
+        - Build businesses that employ people
+        - Advocate for better policies
+        - Develop technologies that reduce costs
+    note: These are still choices. Different approaches to the same subgoal.
+    output: Action options per subgoal
+
+  step_4_2_apply_constraints:
+    name: Filter Actions By Constraints
+    filter_by:
+      - Can I actually do this? (capability)
+      - Do I have the resources? (practical)
+      - Is it ethical? (constraint)
+      - Does it conflict with other actions? (coordination)
+      - What's the realistic impact? (effectiveness)
+    output: Filtered action list
+
+  step_4_3_sequence:
+    name: Sequence Actions
+    dependencies:
+      - Build capability before deploying it
+      - Gather information before acting on it
+      - Establish trust before collaborating
+    output: Sequenced action plan
+
+  step_4_4_success_criteria:
+    name: Define Success Criteria
+    for_each_action:
+      - What would success look like?
+      - How would you know you've succeeded?
+      - What's the minimum viable outcome?
+      - What's the stretch goal?
+    note: Make it concrete and measurable where possible.
+    output: Success criteria per action
+
+# ============================================
+# COMMON TRAPS
+# ============================================
+
+common_traps:
+  stopping_at_slogans:
+    description: '"Address inequality" is a slogan, not a goal.'
+    fix: Keep decomposing until you have something you could measure and act on.
+
+  hiding_value_judgments:
+    description: Choosing "happiness" over "freedom" is a value judgment, not obvious truth.
+    fix: Make every value judgment explicit. Write it down. Justify it.
+
+  ignoring_conflicts:
+    description: Pretending there are no tradeoffs makes them invisible, not resolved.
+    fix: Actively look for conflicts. Document them. Decide how to handle them.
+
+  confusing_levels:
+    description: '"Make the world better" and "donate $100" are different levels.'
+    fix: Keep levels explicit. Know which level you're operating at.
+
+  forgetting_constraints:
+    description: The perfect decomposition that's impossible to execute is worthless.
+    fix: Apply constraints at every level. Filter for what's actually achievable.
+
+  losing_the_whole:
+    description: Getting so focused on subgoals that you forget the original goal.
+    fix: Regularly check - do the subgoals actually add up to the original goal?
+
+  analysis_paralysis:
+    description: Decomposing forever instead of acting.
+    fix: Good enough decomposition executed beats perfect decomposition never started.
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+
+gosm_integration:
+  goal_definition_phase:
+    - Expand abstract goals before committing
+    - Identify dimensions, scope, timeframe, constraints
+    - Decompose into subgoals with explicit relationships
+    - Prioritize based on criteria
+    - Specify action-level goals with success criteria
+
+  context_assessment:
+    - What constraints apply?
+    - What dependencies exist?
+    - What tradeoffs are relevant?
+
+  strategy_generation:
+    - Which subgoal does this strategy advance?
+    - How does it handle tradeoffs?
+    - What's the expected impact?
+
+  review:
+    - Are the subgoals still right?
+    - Have tradeoffs shifted?
+    - Is anything missing?
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+
+output_format:
+  structure: |
+    ## Goal Decomposition: [Original Goal]
+
+    ### Expanded Definition
+    [Full expanded definition with dimensions, scope, timeframe, constraints]
+
+    ### Subgoals
+    | Subgoal | Dimension | Enables | Conflicts With | Priority |
+    |---------|-----------|---------|----------------|----------|
+    | ... | ... | ... | ... | ... |
+
+    ### Subgoal Relationships
+    [Graph or list of dependencies and conflicts]
+
+    ### Tradeoff Decisions
+    | Conflict | Decision | Reasoning |
+    |----------|----------|-----------|
+    | ... | ... | ... |
+
+    ### Action Plan
+    | Action | Subgoal | Success Criteria | Sequence |
+    |--------|---------|------------------|----------|
+    | ... | ... | ... | ... |
+
+key_principle: |
+  Decomposition should preserve information, not destroy it.
+
+  The abstract goal contains information about what matters. Decomposition should
+  unpack that information, make it explicit, and maintain it through to action.
+
+  Good decomposition: you can trace from any action back to why it serves the
+  original goal, through explicit reasoning, without hidden assumptions.

@@ -1,0 +1,277 @@
+# Time & Deadline Management Orderings
+# Orderings driven by temporal constraints and deadlines
+
+category_id: time_deadline
+category_name: "Time & Deadline Management Orderings"
+description: |
+  Orderings driven by temporal constraints, deadlines, and timing
+  requirements. Use when external time pressures dominate or when
+  multiple workstreams must converge at specific moments.
+
+when_to_consider: |
+  - Hard external deadlines exist
+  - Multiple deliverables with different due dates
+  - Peak performance needed at specific time (demos, launches)
+  - Multiple parallel workstreams that must converge
+  - Dynamic environment where priorities shift
+
+variations:
+
+  # ----------------------------------------
+  # DEADLINE-DRIVEN ORDERING
+  # ----------------------------------------
+  deadline_driven:
+    id: deadline_driven_ordering
+    name: "Deadline-Driven Ordering"
+    category: time_deadline
+
+    philosophy: |
+      Work backward from deadline constraints. What must be done by when?
+      Sequence work to meet all deadlines, building in buffers for
+      uncertainty. The deadline is the anchor; work flows backward.
+
+    when_to_use:
+      - Hard external deadlines
+      - Multiple sequential dependencies with time constraints
+      - Launch dates, demo dates, regulatory deadlines
+      - When deadline cannot slip under any circumstances
+
+    prioritization_rules:
+      1_work_backward:
+        rule: "Start from deadline, work backward to today"
+        reason: "Ensures feasibility is assessed"
+
+      2_buffer_allocation:
+        rule: "Risky steps get more buffer, routine steps less"
+        reason: "Absorb variance where it's likely"
+
+      3_deadline_stacking:
+        rule: "When multiple deadlines, work backward from each"
+        reason: "Don't let one deadline crowd another"
+
+      4_milestone_ordering:
+        rule: "Intermediate milestones create forcing functions"
+        reason: "Progress checkpoints prevent last-minute crunch"
+
+    example:
+      context: "Product launch with fixed date"
+      constraints:
+        - "Launch: Day 30"
+        - "Marketing assets needed: Day 25"
+        - "Code freeze: Day 20"
+        - "Testing complete: Day 18"
+      backward_planning:
+        day_1_10: "Development (requires 10 days)"
+        day_11_18: "Testing (requires 7 days + 1 buffer)"
+        day_15_25: "Marketing asset creation (parallel with testing)"
+        day_19_20: "Code freeze prep"
+        day_26_30: "Launch prep and buffer"
+      rationale: "Work backward from each constraint to ensure nothing is late"
+
+  # ----------------------------------------
+  # CRITICAL-RATIO DYNAMIC ORDERING
+  # ----------------------------------------
+  critical_ratio_dynamic:
+    id: critical_ratio_ordering
+    name: "Critical-Ratio Dynamic Ordering"
+    category: time_deadline
+
+    philosophy: |
+      Continuously rebalance task priority based on urgency relative
+      to work remaining. Unlike static ordering, priorities shift as
+      time passes and work completes. Tasks with low critical ratio
+      (little slack, much work) get priority.
+
+    formula: |
+      Critical Ratio (CR) = (Time until due date) / (Work time remaining)
+
+      CR < 1.0: Behind schedule (HIGH PRIORITY)
+      CR = 1.0: Exactly on schedule
+      CR > 1.0: Ahead of schedule (can defer)
+
+    when_to_use:
+      - Multiple tasks with different deadlines
+      - Deadlines and work estimates are known
+      - Environment is dynamic (new tasks arrive)
+      - Need to balance urgency and workload
+      - Want adaptive, not static, scheduling
+
+    prioritization_rules:
+      1_calculate_ratios:
+        rule: "Compute CR for all active tasks"
+        formula: "CR = time_remaining / work_remaining"
+        frequency: "Recalculate at each decision point"
+
+      2_priority_by_ratio:
+        rule: "Lowest CR gets highest priority"
+        reason: "Tasks with least slack need attention"
+        ordering: "Sort tasks by CR ascending"
+
+      3_dynamic_updates:
+        rule: "Recompute when circumstances change"
+        triggers:
+          - "Task completed"
+          - "New task added"
+          - "Deadline changed"
+          - "Work estimate revised"
+          - "Significant time passed"
+
+      4_threshold_alerts:
+        rule: "Alert when any CR drops below threshold"
+        thresholds:
+          warning: "CR < 1.2 (getting tight)"
+          critical: "CR < 1.0 (behind schedule)"
+          emergency: "CR < 0.5 (crisis mode)"
+
+    example:
+      context: "Managing multiple project deliverables"
+      tasks_at_day_0:
+        A: "Due day 10, needs 5 days work - CR = 10/5 = 2.0"
+        B: "Due day 6, needs 4 days work - CR = 6/4 = 1.5"
+        C: "Due day 8, needs 6 days work - CR = 8/6 = 1.33"
+      initial_priority: "C (1.33) -> B (1.5) -> A (2.0)"
+      after_day_3_completed_C:
+        A: "Due day 10, needs 5 days - CR = 7/5 = 1.4"
+        B: "Due day 6, needs 4 days - CR = 3/4 = 0.75 (CRITICAL)"
+      rebalanced_priority: "B (0.75) -> A (1.4)"
+      rationale: "B's ratio dropped below 1.0, needs immediate attention"
+
+    source: "Operations Research - Critical Ratio scheduling rule"
+
+  # ----------------------------------------
+  # PEAK-TARGETING ORDERING
+  # ----------------------------------------
+  peak_targeting:
+    id: peak_targeting_ordering
+    name: "Peak-Targeting Ordering (Periodization)"
+    category: time_deadline
+
+    philosophy: |
+      Structure work in phases to peak at specific target times.
+      From sports periodization: you can't maintain peak performance
+      indefinitely, so plan backward from when peak matters. Build
+      from high-volume/low-intensity to low-volume/high-intensity.
+
+    when_to_use:
+      - Specific events where peak performance matters (demos, launches)
+      - Cannot maintain maximum effort indefinitely
+      - Need to time peak capability precisely
+      - Building toward a known culmination point
+
+    key_concepts:
+      macrocycle: "Entire period leading to peak (months/year)"
+      mesocycle: "Training blocks with specific focus (weeks)"
+      microcycle: "Weekly patterns"
+      taper: "Reducing volume before peak to recover"
+
+    prioritization_rules:
+      1_identify_peak_date:
+        rule: "When must you perform at maximum?"
+        reason: "All planning works backward from this"
+
+      2_phase_structure:
+        rule: "Divide time into preparation, build, and peak phases"
+        pattern:
+          early: "Foundation work - high volume, general skills"
+          middle: "Specific work - moderate volume, targeted skills"
+          late: "Peak work - low volume, high intensity, specifics"
+
+      3_taper_before_peak:
+        rule: "Reduce volume before peak event"
+        reason: "Recover energy while maintaining sharpness"
+        guideline: "7-14 days reduced volume before peak"
+
+      4_accept_non_peak:
+        rule: "Performance will be lower in early phases"
+        reason: "Building foundation requires accepting temporary lower output"
+
+    example:
+      context: "Preparing for a major product launch"
+      peak_date: "Day 60"
+      periodization:
+        days_1_20:
+          phase: "Foundation"
+          focus: "Architecture, research, prototyping"
+          intensity: "High volume, exploratory"
+        days_21_45:
+          phase: "Build"
+          focus: "Core implementation, integration"
+          intensity: "Moderate volume, focused"
+        days_46_55:
+          phase: "Peak preparation"
+          focus: "Polish, testing, edge cases"
+          intensity: "Low volume, high quality"
+        days_56_60:
+          phase: "Taper"
+          focus: "Final checks, rest, preparation"
+          intensity: "Minimal new work, preserve energy"
+      rationale: "Peak performance on launch day, not exhaustion"
+
+    source: "Sports Science - Periodization training"
+
+  # ----------------------------------------
+  # CONVERGENCE-TIMING ORDERING
+  # ----------------------------------------
+  convergence_timing:
+    id: convergence_timing_ordering
+    name: "Convergence-Timing Ordering (Mise en Place)"
+    category: time_deadline
+
+    philosophy: |
+      Time multiple workstreams to converge at the right moment.
+      From culinary arts (mise en place): when preparing a meal,
+      all dishes must be ready simultaneously. Plan backward from
+      the serving moment, accounting for different preparation and
+      cooking times. Some items can wait; others cannot.
+
+    when_to_use:
+      - Multiple parallel workstreams that must converge
+      - Different tasks have different durations
+      - Final delivery requires simultaneous completion
+      - Some outputs degrade if completed too early
+
+    key_concepts:
+      convergence_point: "The moment when all streams must meet"
+      buffer_tasks: "Tasks that can wait without degradation"
+      critical_timing: "Tasks that must complete at precise moment"
+      prep_vs_execution: "What can be done ahead vs. last minute"
+
+    prioritization_rules:
+      1_identify_convergence:
+        rule: "When must everything come together?"
+        reason: "All planning works backward from this moment"
+
+      2_classify_timing_sensitivity:
+        rule: "Which tasks can wait? Which must be just-in-time?"
+        categories:
+          can_wait: "Prep work, setup, things that don't degrade"
+          buffer_zone: "Can be early by 10-30%, stays warm"
+          precise: "Must complete at exact moment"
+
+      3_start_times_not_order:
+        rule: "Calculate start times, not just sequence"
+        formula: "start_time = convergence - duration - buffer"
+        reason: "A 2-hour task starting now vs. 15-min task starting later"
+
+      4_parallel_with_stagger:
+        rule: "Start long-running tasks early, short tasks late"
+        reason: "All finish at convergence point"
+
+    example:
+      context: "Preparing dinner - main course, sides, sauce"
+      convergence: "7:00 PM serving time"
+      workstreams:
+        roast: "90 min cook + 15 min rest - start 5:15 PM"
+        vegetables: "20 min cook - start 6:40 PM"
+        sauce: "30 min + can hold warm - start 6:15 PM"
+        table_setting: "10 min + no degradation - start anytime"
+        bread_warming: "5 min + degrades fast - start 6:55 PM"
+      order_by_start_time:
+        1: "Table setting (anytime before 7 PM)"
+        2: "Roast (5:15 PM - long duration)"
+        3: "Sauce (6:15 PM - can buffer)"
+        4: "Vegetables (6:40 PM - moderate timing)"
+        5: "Bread warming (6:55 PM - precise timing)"
+      rationale: "Everything ready at 7 PM, nothing cold or overcooked"
+
+    source: "Culinary Arts - Mise en place, professional kitchen workflow"

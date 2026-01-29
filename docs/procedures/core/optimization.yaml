@@ -1,0 +1,437 @@
+# Optimization Procedure - Fourth step in the decision-making sequence
+# Core GOSM procedure for ranking viable options using multi-criteria optimization
+
+id: optimization
+name: Optimization
+version: "1.0.0"
+domain: core
+
+description: Rank viable options from best to worst using multi-criteria optimization
+
+long_description: |
+  The Optimization procedure is the fourth step in the systematic decision-making
+  sequence (Generation -> Matching -> Comparison -> Optimization -> Selection).
+
+  Its purpose is to RANK the viable options that passed comparison. This is
+  multi-criteria optimization that considers trade-offs between competing values.
+
+  Key principles:
+  - Weighted scoring: Apply importance weights to criteria scores
+  - Pareto analysis: Identify options that dominate others on all dimensions
+  - Sensitivity analysis: Test how stable the ranking is under different weights
+  - Trade-off identification: Make explicit what we give up with each choice
+  - Transparency: Show the math so the ranking can be questioned
+
+  Optimization transforms "these options all work" into "here's the best order."
+
+tags:
+  - decision
+  - optimization
+  - ranking
+  - multi-criteria
+  - fourth_step
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - When multiple viable options remain after comparison
+  - When trade-offs between options need to be made explicit
+  - When stakeholders disagree on which option is best
+  - When the decision has significant consequences
+  - At strategy selection to rank competing strategies
+  - When you need a defensible, transparent ranking method
+
+when_not_to_use:
+  - When only one option remains (nothing to rank)
+  - When options are clearly dominated (one is best on all criteria)
+  - When the decision is trivial or easily reversible
+  - When criteria weights are completely unknown
+  - When comparison phase has not been completed
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: viable_options
+    type: list
+    required: true
+    description: Options that passed comparison (each with comparison scores)
+
+  - name: criteria
+    type: list
+    required: true
+    description: Criteria used in comparison, with scores for each option
+
+  - name: criteria_weights
+    type: dict
+    required: false
+    description: Importance weights for each criterion (default to equal weights)
+
+  - name: optimization_goals
+    type: list
+    required: false
+    description: What we're optimizing for (e.g., "maximize value", "minimize risk")
+
+  - name: context
+    type: dict
+    required: false
+    description: Additional context (constraints, stakeholder preferences, risk tolerance)
+
+outputs:
+  - name: ranked_options
+    type: list
+    description: Options in ranked order with composite scores
+
+  - name: pareto_optimal
+    type: list
+    description: Options on the Pareto frontier (not dominated by any other)
+
+  - name: trade_off_analysis
+    type: dict
+    description: What you gain/lose choosing each top option over alternatives
+
+  - name: sensitivity_analysis
+    type: dict
+    description: How stable the rankings are under different weight assumptions
+
+  - name: ranking_rationale
+    type: string
+    description: Explanation of why the top-ranked option is ranked first
+
+preconditions:
+  - type: context_has
+    key: viable_options
+
+postconditions:
+  - type: context_has
+    key: ranked_options
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Prepare scoring matrix
+    action: |
+      Organize inputs into a decision matrix:
+      1. List all viable options as rows
+      2. List all criteria as columns
+      3. Fill in scores from comparison phase
+      4. Normalize scores to comparable scale (0-10 or 0-100)
+    inputs:
+      - viable_options
+      - criteria
+    outputs:
+      - scoring_matrix: options x criteria with normalized scores
+      - score_scale: the normalization scale used
+    verification: |
+      All options have scores for all criteria; scores are on consistent scale
+
+  - id: 2
+    name: Establish criteria weights
+    action: |
+      Determine importance weight for each criterion:
+      1. If weights provided, validate they sum to 1.0 (or normalize)
+      2. If not provided, start with equal weights
+      3. Consider stakeholder preferences in weighting
+      4. Document rationale for each weight
+
+      Weight assignment approaches:
+      - Direct assignment: stakeholder states importance
+      - Pairwise comparison: compare criteria in pairs
+      - Swing weighting: how much does best-to-worst matter?
+    inputs:
+      - criteria
+      - criteria_weights (optional)
+      - context (optional)
+    outputs:
+      - final_weights: normalized weights summing to 1.0
+      - weight_rationale: explanation for each weight
+    verification: |
+      Weights sum to 1.0; each criterion has documented weight rationale
+
+  - id: 3
+    name: Calculate composite scores
+    action: |
+      For each option, calculate weighted composite score:
+      1. Multiply each criterion score by its weight
+      2. Sum the weighted scores
+      3. Record the composite score
+
+      Formula: composite_score = sum(score_i * weight_i)
+
+      Also track component contributions to understand what's driving the score.
+    inputs:
+      - scoring_matrix (from Step 1)
+      - final_weights (from Step 2)
+    outputs:
+      - composite_scores: score for each option
+      - score_breakdown: contribution of each criterion to each score
+    verification: |
+      Composite scores calculated; breakdown shows which criteria drive each score
+
+  - id: 4
+    name: Identify Pareto optimal set
+    action: |
+      Find options that are not dominated by any other option:
+      1. Option A dominates Option B if A is >= B on all criteria AND > on at least one
+      2. Pareto optimal options are those not dominated by any other
+      3. If optimizing for different goals (max value vs min risk), find Pareto frontier
+
+      Options on the Pareto frontier represent genuinely different trade-offs,
+      not clearly inferior choices.
+    inputs:
+      - scoring_matrix (from Step 1)
+      - optimization_goals (optional)
+    outputs:
+      - pareto_optimal: list of non-dominated options
+      - dominated_options: options dominated by others (with dominator noted)
+    verification: |
+      Pareto set identified; dominated options clearly marked with what dominates them
+
+  - id: 5
+    name: Perform sensitivity analysis
+    action: |
+      Test ranking stability under different assumptions:
+      1. Vary each weight by +/- 20% and recompute rankings
+      2. Try alternative weighting schemes (equal weights, extreme weights)
+      3. Identify which weight changes would change the top-ranked option
+      4. Note "robust" rankings (stable) vs "fragile" rankings (weight-sensitive)
+
+      Key questions:
+      - Does the top option change if we care more about X?
+      - How much would weights need to change to alter the ranking?
+    inputs:
+      - scoring_matrix (from Step 1)
+      - final_weights (from Step 2)
+      - composite_scores (from Step 3)
+    outputs:
+      - sensitivity_analysis: ranking stability under weight variations
+      - critical_weights: weight thresholds where ranking changes
+      - robust_rankings: which rankings are stable vs fragile
+    verification: |
+      Sensitivity tested; know which weight changes would alter top ranking
+
+  - id: 6
+    name: Analyze trade-offs
+    action: |
+      For top 2-3 options, make trade-offs explicit:
+      1. Compare top option vs second option: what do we gain? lose?
+      2. Identify criteria where top option is weaker
+      3. Quantify the trade-off (e.g., "20% more cost for 50% less risk")
+      4. Consider non-quantified factors that might affect the trade-off
+
+      Trade-off analysis helps stakeholders understand what they're choosing.
+    inputs:
+      - ranked_options (partial, from Step 3)
+      - scoring_matrix (from Step 1)
+    outputs:
+      - trade_off_analysis: explicit gains/losses for top options
+      - hidden_factors: qualitative factors not captured in scores
+    verification: |
+      Trade-offs between top options clearly articulated and quantified
+
+  - id: 7
+    name: Compile final ranking
+    action: |
+      Produce the final ranked list:
+      1. Order options by composite score (highest first)
+      2. Annotate each with: rank, score, Pareto status, key strengths/weaknesses
+      3. Write rationale for top-ranked option
+      4. Note any caveats or conditions on the ranking
+
+      The ranking should be defensible and transparent.
+    inputs:
+      - composite_scores (from Step 3)
+      - pareto_optimal (from Step 4)
+      - sensitivity_analysis (from Step 5)
+      - trade_off_analysis (from Step 6)
+    outputs:
+      - ranked_options: final ordered list with annotations
+      - ranking_rationale: explanation of why top option ranks first
+    verification: |
+      All options ranked; top option has clear rationale; caveats noted
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All viable options are ranked (none dropped)
+  - Composite scores are calculated correctly (math is right)
+  - Pareto analysis identifies non-dominated options
+  - Sensitivity analysis tests ranking robustness
+  - Trade-offs are explicit and quantified
+  - Ranking rationale is clear and defensible
+
+failure_modes:
+  - mode: Equal scores (ties)
+    symptom: Multiple options have identical or near-identical composite scores
+    resolution: Add discriminating criteria, or acknowledge true tie and defer to Selection
+
+  - mode: Weight manipulation
+    symptom: Weights seem chosen to justify a predetermined favorite
+    resolution: Use sensitivity analysis to show robustness; involve neutral party
+
+  - mode: Criterion omission
+    symptom: Important factor not included in scoring
+    resolution: Add missing criterion, reassess scores, recalculate
+
+  - mode: Score inconsistency
+    symptom: Scores from comparison don't use same scale or meaning
+    resolution: Normalize scores; ensure consistent interpretation
+
+  - mode: Over-reliance on composite score
+    symptom: Ignoring that top option has serious weakness on one criterion
+    resolution: Review Pareto analysis; consider if weakness is disqualifying
+
+  - mode: False precision
+    symptom: Treating small score differences as meaningful
+    resolution: Use sensitivity analysis; if within noise, treat as tie
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Rank database options for web application
+    context: After comparing databases, need to rank for final selection
+    inputs:
+      viable_options:
+        - PostgreSQL
+        - MongoDB
+        - DynamoDB
+      criteria:
+        - scalability
+        - cost
+        - team_familiarity
+        - query_flexibility
+      criteria_weights:
+        scalability: 0.3
+        cost: 0.25
+        team_familiarity: 0.25
+        query_flexibility: 0.2
+    process: |
+      Scoring matrix (0-10 scale):
+                      Scalability  Cost  Team_Familiarity  Query_Flex
+      PostgreSQL          7         8          9              9
+      MongoDB             8         7          6              7
+      DynamoDB            9         6          5              5
+
+      Weighted scores:
+      PostgreSQL: 7*0.3 + 8*0.25 + 9*0.25 + 9*0.2 = 2.1 + 2.0 + 2.25 + 1.8 = 8.15
+      MongoDB:    8*0.3 + 7*0.25 + 6*0.25 + 7*0.2 = 2.4 + 1.75 + 1.5 + 1.4 = 7.05
+      DynamoDB:   9*0.3 + 6*0.25 + 5*0.25 + 5*0.2 = 2.7 + 1.5 + 1.25 + 1.0 = 6.45
+
+      Pareto analysis:
+      - PostgreSQL: Not dominated (best on cost, team_familiarity, query_flexibility)
+      - MongoDB: Not dominated (middle on scalability)
+      - DynamoDB: Dominated by PostgreSQL on 3 of 4 criteria
+
+      Sensitivity: If scalability weight increased to 0.5, DynamoDB moves up but PostgreSQL still leads.
+    expected_output:
+      ranked_options:
+        - rank: 1
+          option: PostgreSQL
+          score: 8.15
+          pareto: true
+          rationale: "Highest composite score; strong across all criteria"
+        - rank: 2
+          option: MongoDB
+          score: 7.05
+          pareto: true
+          rationale: "Good scalability but weaker team familiarity"
+        - rank: 3
+          option: DynamoDB
+          score: 6.45
+          pareto: false
+          rationale: "Best scalability but team unfamiliarity and limited query flexibility"
+      pareto_optimal:
+        - PostgreSQL
+        - MongoDB
+      trade_off_analysis:
+        postgresql_vs_mongodb: "Choosing PostgreSQL gains +2 team familiarity, +2 query flexibility; loses -1 scalability"
+      sensitivity_analysis:
+        stable: true
+        critical_threshold: "Scalability weight would need to be >0.6 for DynamoDB to rank first"
+      ranking_rationale: "PostgreSQL ranks first due to strong team familiarity and query flexibility, which together outweigh its slightly lower scalability."
+
+  - name: Rank strategy options for market entry
+    context: Comparing strategies for entering new market segment
+    inputs:
+      viable_options:
+        - Direct sales team
+        - Partnership model
+        - Self-serve freemium
+      criteria:
+        - time_to_revenue
+        - long_term_margin
+        - risk_level
+        - resource_requirement
+      criteria_weights:
+        time_to_revenue: 0.35
+        long_term_margin: 0.25
+        risk_level: 0.25
+        resource_requirement: 0.15
+    process: |
+      Scoring (higher = better, risk inverted so low risk = high score):
+                          Time_Rev  LT_Margin  Risk(inv)  Resources
+      Direct_sales            6         8          5          4
+      Partnership             8         5          7          8
+      Self_serve              4         9          6          6
+
+      Weighted scores:
+      Direct_sales: 6*0.35 + 8*0.25 + 5*0.25 + 4*0.15 = 5.95
+      Partnership:  8*0.35 + 5*0.25 + 7*0.25 + 8*0.15 = 7.00
+      Self_serve:   4*0.35 + 9*0.25 + 6*0.25 + 6*0.15 = 6.05
+
+      Pareto: Partnership and Self-serve are Pareto optimal (different trade-offs)
+      Direct_sales is dominated by Partnership on 3 criteria
+    expected_output:
+      ranked_options:
+        - rank: 1
+          option: Partnership model
+          score: 7.00
+        - rank: 2
+          option: Self-serve freemium
+          score: 6.05
+        - rank: 3
+          option: Direct sales team
+          score: 5.95
+      pareto_optimal:
+        - Partnership model
+        - Self-serve freemium
+      trade_off_analysis:
+        partnership_vs_selfserve: "Partnership is faster to revenue (+4) but lower long-term margin (-4)"
+      ranking_rationale: "Partnership ranks first due to fast time-to-revenue and low resource needs, despite lower long-term margin."
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - At strategy selection to rank competing strategies
+    - During Strategy Search to prioritize experiments
+    - When choosing between multiple acceptable solutions
+    - At resource allocation to prioritize investments
+    - When stakeholder preferences conflict
+
+  gates:
+    - gate: ranking_complete
+      question: "Have all viable options been ranked with composite scores?"
+
+    - gate: pareto_identified
+      question: "Have we identified which options are Pareto optimal?"
+
+    - gate: sensitivity_tested
+      question: "Is the ranking robust under different weight assumptions?"
+
+    - gate: trade_offs_explicit
+      question: "Are the trade-offs between top options clearly articulated?"
+
+  related_procedures:
+    - generation: First step - generate all options
+    - matching: Second step - filter options against requirements
+    - comparison: Third step - score options against criteria
+    - selection: Fifth step - make final choice from ranked options
+    - decomposition: Breaking goals into criteria for weighting
+    - stakeholder_analysis: Understanding different stakeholder weights

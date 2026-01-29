@@ -1,0 +1,264 @@
+# Queue & Scheduling Orderings
+# Orderings for managing queues and priorities
+
+category_id: queue_scheduling
+category_name: "Queue & Scheduling Orderings"
+description: |
+  Orderings for managing queues, processing items by priority,
+  and systematic debugging. Use when items have priorities or
+  when searching for root causes.
+
+when_to_consider: |
+  - Items have varying priorities
+  - Weighted graph shortest path needed
+  - Root cause unknown among many possibilities
+  - Priorities may change dynamically
+  - Need efficient access to highest priority
+
+variations:
+
+  # ----------------------------------------
+  # PRIORITY-QUEUE ORDERING
+  # ----------------------------------------
+  priority_queue:
+    id: priority_queue_ordering
+    name: "Priority-Queue Ordering (Heap-Based)"
+    category: queue_scheduling
+
+    philosophy: |
+      Always process the highest-priority item next. From heap
+      data structures: maintain items in priority order, extract
+      max/min in O(log n). Dynamic priority handling - new items
+      inserted in correct position, priorities can be updated.
+
+    when_to_use:
+      - Items have varying priorities
+      - Priorities may change or new items arrive
+      - Need efficient access to highest priority
+      - Dijkstra's algorithm, event simulation
+      - Task scheduling, hospital triage
+
+    key_concepts:
+      heap: "Tree-based structure maintaining heap property"
+      priority: "Value determining processing order"
+      extract: "Remove and return highest priority item"
+      insert: "Add new item in O(log n)"
+      update: "Change priority, reheapify"
+
+    heap_types:
+      max_heap: "Highest priority = highest value"
+      min_heap: "Highest priority = lowest value"
+      use_case: "Depends on problem (min for Dijkstra)"
+
+    prioritization_rules:
+      1_define_priority:
+        rule: "What determines priority?"
+        examples:
+          - "Deadline (earliest = highest)"
+          - "Importance score"
+          - "Distance from goal (smallest = highest)"
+          - "Severity level"
+
+      2_insert_with_priority:
+        rule: "Add items with their priority values"
+        complexity: "O(log n)"
+
+      3_extract_highest:
+        rule: "Process highest priority item"
+        complexity: "O(log n)"
+
+      4_update_if_needed:
+        rule: "Reprioritize items when circumstances change"
+        example: "Dijkstra updates distances when shorter path found"
+
+    comparison_to_sorting:
+      full_sort: "O(n log n) upfront, then O(1) access"
+      priority_queue: "O(log n) per operation, dynamic"
+      when_pq_wins: "Items arrive over time, priorities change"
+      when_sort_wins: "All items known upfront, process once"
+
+    anti_patterns:
+      - "Using unsorted list (O(n) extract)"
+      - "Full sort when items arrive dynamically"
+      - "Not updating priorities when they change"
+      - "Using when FIFO/LIFO would suffice"
+
+    example:
+      context: "Emergency room triage"
+      patients:
+        A: "Chest pain - priority 10 (critical)"
+        B: "Broken finger - priority 3"
+        C: "Difficulty breathing - priority 9"
+        D: "Minor cut - priority 1"
+      heap_state: "[A:10, C:9, B:3, D:1]"
+      processing:
+        1: "Extract A (priority 10) - treat first"
+        new_arrival: "E: allergic reaction - priority 8"
+        heap_state: "[C:9, E:8, B:3, D:1]"
+        2: "Extract C (priority 9) - treat second"
+      rationale: "Always treating most critical patient"
+
+    source: "Data Structures - Heap, Priority Queue"
+
+  # ----------------------------------------
+  # UNIFORM-COST ORDERING
+  # ----------------------------------------
+  uniform_cost:
+    id: uniform_cost_ordering
+    name: "Uniform-Cost Ordering (Dijkstra's Algorithm)"
+    category: queue_scheduling
+
+    philosophy: |
+      Always expand the node with lowest path cost so far.
+      From shortest path: like BFS but for weighted graphs.
+      Guarantees optimal path when all edges have non-negative
+      costs. Uses priority queue ordered by g(n) - cost from
+      start to node n.
+
+    when_to_use:
+      - Weighted graphs with non-negative costs
+      - Need optimal (lowest cost) path
+      - No heuristic available (or don't trust it)
+      - Road networks, network routing
+      - When A* heuristic is hard to design
+
+    key_concepts:
+      g_n: "Cost from start to node n"
+      priority_queue: "Ordered by g(n), lowest first"
+      relaxation: "Update cost if better path found"
+      optimal: "First time goal is popped, path is optimal"
+
+    algorithm:
+      initialize: "g(start)=0, all others=inf, PQ=[start]"
+      loop:
+        1_extract_min: "Pop node with lowest g"
+        2_goal_test: "If goal, return path (optimal)"
+        3_expand: "For each neighbor"
+        4_relax: "If g(current) + edge < g(neighbor), update"
+        5_add_to_pq: "Add/update neighbor in priority queue"
+      return: "Path when goal popped"
+
+    prioritization_rules:
+      1_cost_priority:
+        rule: "Always expand lowest g(n) node"
+        mechanism: "Priority queue (min-heap)"
+
+      2_relax_edges:
+        rule: "Update g(n) if better path found"
+        formula: "g(n) = min(g(n), g(parent) + cost(parent, n))"
+
+      3_goal_at_extraction:
+        rule: "Test for goal when popping, not when adding"
+        reason: "Might find shorter path later"
+
+      4_never_re_expand:
+        rule: "Once expanded, node's cost is final"
+        precondition: "Only true for non-negative edges"
+
+    comparison:
+      vs_bfs: "BFS for unweighted, UCS for weighted"
+      vs_a_star: "A* adds heuristic h(n) to guide search"
+      vs_dijkstra: "Same algorithm, different presentation"
+
+    anti_patterns:
+      - "Using with negative edge weights (use Bellman-Ford)"
+      - "Not using priority queue (inefficient)"
+      - "Testing goal at insertion (suboptimal)"
+      - "Re-expanding settled nodes (wasteful)"
+
+    example:
+      context: "Finding cheapest flight route"
+      graph:
+        "NYC->Chicago": "$150"
+        "NYC->Denver": "$300"
+        "Chicago->Denver": "$100"
+        "Chicago->LA": "$250"
+        "Denver->LA": "$150"
+      uniform_cost_search:
+        step_1: "Start NYC, g=0"
+        step_2: "Expand NYC: Chicago(150), Denver(300)"
+        step_3: "Pop Chicago(150), expand: Denver(250), LA(400)"
+        step_4: "Pop Denver(250), expand: LA(400) - no update"
+        step_5: "Pop LA(400) - GOAL REACHED"
+      optimal_path: "NYC -> Chicago -> LA, cost $400"
+      note: "NYC->Denver->LA = $450, correctly rejected"
+
+    source: "Graph Algorithms - Dijkstra's Algorithm, Uniform Cost Search"
+
+  # ----------------------------------------
+  # BISECTION-DEBUGGING ORDERING
+  # ----------------------------------------
+  bisection_debugging:
+    id: bisection_debugging_ordering
+    name: "Bisection-Debugging Ordering (Binary Search)"
+    category: queue_scheduling
+
+    philosophy: |
+      Find the root cause by repeatedly eliminating half the
+      possibilities. From debugging: if you have 100 possible
+      causes, don't check them one by one. Find a test that
+      eliminates half, then half again. O(log n) tests instead
+      of O(n). Classic application: git bisect.
+
+    when_to_use:
+      - Root cause is unknown among many possibilities
+      - Can design tests that eliminate half
+      - Regression in codebase (git bisect)
+      - Configuration debugging
+      - Any sequential search space
+
+    key_concepts:
+      search_space: "Set of possible causes"
+      bisection_test: "Test that eliminates half"
+      good_bad_boundary: "Finding where behavior changed"
+      logarithmic: "O(log n) tests needed"
+
+    algorithm:
+      git_bisect_style:
+        1: "Identify known good point and known bad point"
+        2: "Test the midpoint"
+        3: "If bad, new bad point is midpoint"
+        4: "If good, new good point is midpoint"
+        5: "Repeat until single commit identified"
+
+    prioritization_rules:
+      1_define_boundaries:
+        rule: "Establish known good and known bad states"
+        reason: "Need search boundaries"
+
+      2_bisect_efficiently:
+        rule: "Test the midpoint of remaining range"
+        reason: "Eliminates half regardless of result"
+
+      3_binary_search:
+        rule: "Halve the search space each iteration"
+        math: "1000 possibilities -> 10 tests max"
+
+      4_automate_if_possible:
+        rule: "Automate the good/bad test"
+        example: "git bisect run script"
+
+    anti_patterns:
+      - "Linear search through possibilities"
+      - "Bisecting non-monotonic properties"
+      - "No clear good/bad test"
+      - "Manual process when automation possible"
+
+    example:
+      context: "Finding which commit broke the build"
+      setup:
+        good_commit: "abc123 (last known working)"
+        bad_commit: "xyz789 (current broken)"
+        commits_between: "128"
+      bisect_process:
+        test_1: "Middle commit (64) - BAD"
+        test_2: "Commit 32 - GOOD"
+        test_3: "Commit 48 - BAD"
+        test_4: "Commit 40 - GOOD"
+        test_5: "Commit 44 - GOOD"
+        test_6: "Commit 46 - BAD"
+        test_7: "Commit 45 - GOOD"
+        result: "Commit 46 introduced the bug"
+      efficiency: "7 tests instead of 128 (linear)"
+
+    source: "Debugging - Binary Search, Git Bisect"

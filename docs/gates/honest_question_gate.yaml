@@ -1,0 +1,173 @@
+# Honest Question Gate
+# Checks if a question has an identifiable goal before engaging with it
+
+id: honest_question_gate
+name: Honest Question Gate
+version: "1.0.0"
+domain: core
+
+description: |
+  A question is "honest" (in the special sense) when its goal is identifiable.
+  This gate checks whether a question's goal can be identified before engaging.
+
+  Questions with identifiable goals are evaluable.
+  Questions with hidden/unclear goals cannot be properly evaluated.
+
+purpose: |
+  Filter out questions that cannot be meaningfully engaged with because
+  their purpose is unclear. This prevents wasted effort on questions
+  that may be:
+  - Rhetorical (not seeking an answer)
+  - Confused (asker doesn't know what they want)
+  - Deceptive (hiding true intent)
+  - Noise (not really a question)
+
+# ============================================
+# THE GATE
+# ============================================
+
+question: Can the goal of this question be identified?
+
+evaluation_criteria:
+  - The question's purpose can be stated explicitly
+  - The type of answer that would satisfy the question is clear
+  - The reason for asking is identifiable
+  - What the asker would do with the answer is understandable
+
+# ============================================
+# CHECKS
+# ============================================
+
+checks:
+  check_1_purpose:
+    question: What is this question trying to achieve?
+    pass_condition: A specific purpose can be articulated
+    fail_condition: No clear purpose; vague "just wondering"
+    example_pass: "I want to know X so I can decide Y"
+    example_fail: "I don't know, I'm just asking"
+
+  check_2_satisfaction:
+    question: What kind of answer would satisfy this question?
+    pass_condition: The form of a satisfying answer is clear
+    fail_condition: Any answer could be rejected; goalposts movable
+    example_pass: "An answer that explains the mechanism"
+    example_fail: "I'll know it when I see it" (with no criteria)
+
+  check_3_reason:
+    question: Why is this question being asked now?
+    pass_condition: A reason can be given for the timing/context
+    fail_condition: No apparent reason; arbitrary
+    example_pass: "I need to make a decision by Friday"
+    example_fail: "No reason, just curious" (when stakes are high)
+
+  check_4_use:
+    question: What will the asker do with the answer?
+    pass_condition: A concrete use is identifiable
+    fail_condition: Answer would just... exist; no use
+    example_pass: "I'll use it to update my plan"
+    example_fail: "Nothing, I just want to know"
+
+# ============================================
+# OUTCOMES
+# ============================================
+
+on_pass:
+  action: Engage with the question
+  notes: |
+    The question has an identifiable goal. Can now:
+    - Evaluate if the question is necessary for the goal
+    - Evaluate if this is the right question for the goal
+    - Evaluate if the answer actually serves the goal
+
+on_fail:
+  action: Request clarification before engaging
+  response: |
+    Before I can engage with this question, I need to understand:
+    - What are you trying to achieve by asking this?
+    - What kind of answer would satisfy you?
+    - What will you do with the answer?
+
+    Without this, I can't tell if any answer would actually help.
+
+on_partial:
+  action: Note uncertainty and engage cautiously
+  notes: |
+    Goal is partially identifiable. Engage, but check back:
+    - Is this answer serving the goal?
+    - Should we clarify the goal further?
+
+# ============================================
+# SPECIAL CASES
+# ============================================
+
+special_cases:
+  exploratory_questions:
+    description: Questions asked to learn, not to solve specific problem
+    handling: |
+      "What is X?" can be honest even without specific use.
+      The goal is: expand understanding.
+      This is identifiable. Pass.
+
+  rhetorical_questions:
+    description: Questions not seeking answers
+    handling: |
+      Rhetorical questions have a goal (emphasize a point), but
+      engaging as if they're real questions wastes effort.
+      Recognize and respond to the actual point being made.
+
+  loaded_questions:
+    description: Questions with hidden assumptions
+    handling: |
+      "Have you stopped beating your wife?" has a hidden goal.
+      Identify the assumption. Address the assumption.
+      Don't accept the frame of the question.
+
+  socratic_questions:
+    description: Questions designed to lead to discovery
+    handling: |
+      Goal is: help the person discover something.
+      This is identifiable. Engage with the discovery process.
+
+# ============================================
+# CONNECTION TO N+1
+# ============================================
+
+n_plus_1_connection: |
+  The n+1 regress often manifests as endless "but why?" questions.
+
+  Applying this gate:
+  - "What is the goal of asking 'why?' again?"
+  - If goal is: test the claim → engage until claim survives or fails
+  - If goal is: achieve certainty → note that certainty is unachievable
+  - If goal is: just keep asking → no legitimate goal, don't engage
+
+  The gate filters illegitimate continuation of regress.
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1:
+    question: "How do I improve my code's performance?"
+    check_1: Goal is to have faster code. Clear.
+    check_2: Answer showing specific optimizations would satisfy.
+    check_3: Currently code is too slow for requirements.
+    check_4: Will implement the optimizations.
+    result: PASS
+
+  example_2:
+    question: "But how do you REALLY know?"
+    check_1: Goal unclear. Test the claim? Achieve certainty? Be difficult?
+    check_2: What would satisfy? Probably nothing - will just ask again.
+    check_3: Why now? Not clear.
+    check_4: Unknown.
+    result: FAIL - request clarification
+
+  example_3:
+    question: "What is consciousness?"
+    check_1: Goal is to understand a phenomenon. Clear.
+    check_2: A satisfying explanation would describe what it is.
+    check_3: Intellectual curiosity (legitimate).
+    check_4: Update mental model of the world.
+    result: PASS (even though question is hard)

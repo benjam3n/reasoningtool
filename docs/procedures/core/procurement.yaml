@@ -1,0 +1,297 @@
+# Procurement Procedures
+# Domain: Core
+# Purpose: Systematic procedures for ordering and receiving components
+
+id: procurement_procedures
+name: Procurement Procedures
+domain: core
+version: 1.0
+
+description: |
+  Procedures for managing the procurement of components and materials,
+  including ordering, tracking, receiving, and verification.
+
+procedures:
+  # ===========================================
+  # BOM PREPARATION
+  # ===========================================
+  - id: bom_preparation
+    name: BOM Preparation
+    purpose: Create a complete, ordered bill of materials
+
+    inputs:
+      - name: design_outputs
+        description: Component selections from design phase
+
+      - name: budget
+        description: Available funds
+
+    outputs:
+      - name: bom
+        description: Complete bill of materials
+
+      - name: sourcing_plan
+        description: Where to order each item
+
+    steps:
+      - id: consolidate_components
+        name: Consolidate Component List
+        description: Gather all components from design
+        sub_steps:
+          - List all selected components
+          - Add quantities needed
+          - Add spare quantities (typically 10-20% for small parts)
+          - Include consumables (wire, solder, etc.)
+          - Include hardware (screws, standoffs, etc.)
+        outputs:
+          - raw_component_list
+
+      - id: add_specifications
+        name: Add Specifications
+        description: Ensure each item is fully specified
+        sub_steps:
+          - Add part numbers where available
+          - Add exact specifications (voltage, current, etc.)
+          - Add critical dimensions
+          - Note acceptable substitutes
+        outputs:
+          - specified_bom
+
+      - id: identify_sources
+        name: Identify Sources
+        description: Find suppliers for each item
+        considerations:
+          - Reliability of supplier
+          - Shipping time
+          - Cost including shipping
+          - Minimum order quantities
+          - Return policy
+        common_sources:
+          electronics:
+            - Amazon (fast shipping)
+            - AliExpress (cheap, slow)
+            - Adafruit, SparkFun (quality, support)
+            - Digi-Key, Mouser (wide selection)
+          hardware:
+            - Local hardware store
+            - McMaster-Carr
+            - Amazon
+          3d_printing:
+            - Local filament
+            - Printed Solid
+            - Amazon
+        outputs:
+          - sourcing_plan
+
+      - id: cost_estimation
+        name: Cost Estimation
+        description: Calculate total cost
+        sub_steps:
+          - Add item costs
+          - Add shipping costs
+          - Add tax if applicable
+          - Compare to budget
+          - Identify cost reduction options if over budget
+        outputs:
+          - cost_estimate
+
+    templates:
+      bom_table: |
+        | Item | Spec | Qty | Source | Unit Cost | Total | Link |
+        |------|------|-----|--------|-----------|-------|------|
+
+  # ===========================================
+  # ORDERING EXECUTION
+  # ===========================================
+  - id: ordering_execution
+    name: Ordering Execution
+    purpose: Place orders and track shipments
+
+    inputs:
+      - name: bom
+        description: Approved bill of materials
+
+      - name: budget_approval
+        description: Confirmation of funds available
+
+    outputs:
+      - name: orders
+        description: List of placed orders
+
+      - name: tracking_info
+        description: Shipment tracking details
+
+    steps:
+      - id: group_by_supplier
+        name: Group by Supplier
+        description: Organize orders for efficiency
+        sub_steps:
+          - Group BOM items by supplier
+          - Calculate per-supplier totals
+          - Check for free shipping thresholds
+          - Adjust grouping to optimize shipping costs
+        outputs:
+          - supplier_orders
+
+      - id: place_orders
+        name: Place Orders
+        description: Execute purchases
+        sub_steps:
+          - Place order with each supplier
+          - Save order confirmation
+          - Record order number
+          - Note expected delivery date
+          - Save receipt for records
+        outputs:
+          - order_confirmations
+
+      - id: track_shipments
+        name: Track Shipments
+        description: Monitor order progress
+        sub_steps:
+          - Enter tracking numbers in tracking table
+          - Check status periodically
+          - Note any delays
+          - Update expected delivery dates
+        outputs:
+          - tracking_status
+
+    templates:
+      order_tracking: |
+        | Supplier | Order # | Items | Total | Status | Expected | Tracking |
+        |----------|---------|-------|-------|--------|----------|----------|
+
+  # ===========================================
+  # RECEIVING AND VERIFICATION
+  # ===========================================
+  - id: receiving_verification
+    name: Receiving and Verification
+    purpose: Receive shipments and verify contents
+
+    inputs:
+      - name: orders
+        description: Expected orders
+
+      - name: packages
+        description: Received packages
+
+    outputs:
+      - name: received_items
+        description: Verified received inventory
+
+      - name: issues
+        description: Any problems found
+
+    steps:
+      - id: package_receipt
+        name: Receive Package
+        description: Process incoming shipment
+        sub_steps:
+          - Note receipt date
+          - Check package condition
+          - Open and inventory contents
+          - Match against packing slip
+          - Match against order
+        outputs:
+          - receipt_record
+
+      - id: item_verification
+        name: Verify Items
+        description: Check each item
+        sub_steps:
+          - Verify correct item received
+          - Check quantity
+          - Visual inspection for damage
+          - Basic function test (if applicable)
+          - Note any issues
+        outputs:
+          - verification_results
+
+      - id: issue_resolution
+        name: Resolve Issues
+        description: Handle any problems
+        issue_types:
+          missing_item:
+            - Contact supplier
+            - Request shipment or refund
+          wrong_item:
+            - Contact supplier for return
+            - Order correct item
+          damaged_item:
+            - Document with photos
+            - Contact supplier for replacement
+          defective_item:
+            - Document failure
+            - Request replacement
+            - Order backup if critical
+        outputs:
+          - resolution_actions
+
+      - id: inventory_update
+        name: Update Inventory
+        description: Track what's available
+        sub_steps:
+          - Mark items as received in BOM
+          - Store items safely
+          - Update project status
+          - Identify any remaining orders
+        outputs:
+          - inventory_status
+
+    templates:
+      receiving_checklist: |
+        Package from: {supplier}
+        Order #: {order_number}
+        Received: {date}
+
+        | Item | Ordered | Received | Verified | Issue |
+        |------|---------|----------|----------|-------|
+
+        Notes: {notes}
+
+  # ===========================================
+  # INVENTORY MANAGEMENT
+  # ===========================================
+  - id: inventory_management
+    name: Inventory Management
+    purpose: Track available components throughout project
+
+    inputs:
+      - name: received_items
+        description: Items received from orders
+
+      - name: project_usage
+        description: Items used in build
+
+    outputs:
+      - name: current_inventory
+        description: What's available
+
+      - name: reorder_list
+        description: Items needing reorder
+
+    steps:
+      - id: track_usage
+        name: Track Usage
+        description: Record when items are used
+        sub_steps:
+          - Note items used in each build step
+          - Update quantities remaining
+          - Flag low stock items
+        outputs:
+          - usage_log
+
+      - id: identify_reorders
+        name: Identify Reorders
+        description: Determine what needs reordering
+        triggers:
+          - Item quantity below minimum
+          - Item damaged/defective
+          - Design change requires different part
+        outputs:
+          - reorder_list
+
+    templates:
+      inventory_table: |
+        | Item | Ordered | Received | Used | Remaining | Status |
+        |------|---------|----------|------|-----------|--------|

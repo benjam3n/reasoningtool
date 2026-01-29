@@ -1,0 +1,186 @@
+# Opacity Appropriateness Gate
+# When is transparency vs opacity the right choice?
+# Derived from ARAW synthesis tension: transparency vs opacity
+
+id: opacity_appropriateness_gate
+name: Opacity Appropriateness Gate
+version: "1.0.0"
+domain: core
+tags: ["decision", "transparency", "opacity", "strategy"]
+
+description: |
+  Gate for deciding between transparency and opacity for a given situation.
+
+  The tension: Both transparency and opacity have legitimate uses.
+  Transparency isn't always virtuous; opacity isn't always deceptive.
+  This gate helps determine which is appropriate.
+
+when_to_use:
+  - Setting information sharing policies
+  - Deciding what to include in communications
+  - Designing organizational transparency levels
+  - Evaluating "default to open" vs "need to know"
+
+# ============================================
+# SITUATION CLASSIFICATION
+# ============================================
+situation:
+  description: What type of situation is this?
+
+  information_type:
+    - "What type of information is being considered?"
+    types:
+      - PERSONAL: "Individual private information"
+      - OPERATIONAL: "How things work internally"
+      - STRATEGIC: "Plans, intentions, capabilities"
+      - PERFORMANCE: "Results, outcomes, metrics"
+      - DELIBERATIVE: "Thinking process, uncertainties, drafts"
+      - RELATIONAL: "Information about relationships, trust levels"
+
+  stakeholder_type:
+    - "Who would receive this information?"
+    types:
+      - INTERNAL: "Team members, colleagues"
+      - PARTNERS: "Collaborators, allies"
+      - NEUTRAL: "Public, observers"
+      - COMPETITORS: "Those who could use information against us"
+      - ADVERSARIES: "Those actively working against us"
+
+  reversibility:
+    - "Can disclosed information be 'un-disclosed'?"
+    - "Once known, does it stay known?"
+    - "Is there a path back to opacity if transparency fails?"
+
+# ============================================
+# TRANSPARENCY APPROPRIATENESS
+# ============================================
+transparency_appropriate_when:
+  description: Conditions favoring transparency
+
+  trust_context:
+    - "Recipient has demonstrated trustworthiness"
+    - "Relationship is ongoing (reputation matters)"
+    - "Recipient has aligned interests"
+    - "Transparency is reciprocated"
+
+  functional_need:
+    - "Recipient needs information to do their job"
+    - "Coordination requires shared understanding"
+    - "Accountability requires visibility"
+    - "Errors need detection that opacity prevents"
+
+  ethical_requirement:
+    - "Recipient has a right to know"
+    - "Withholding would be deceptive"
+    - "Opacity would harm the recipient"
+    - "Public interest requires disclosure"
+
+# ============================================
+# OPACITY APPROPRIATE WHEN
+# ============================================
+opacity_appropriate_when:
+  description: Conditions favoring opacity
+
+  protection_need:
+    - "Information could be used to harm us or others"
+    - "Disclosure would violate others' privacy"
+    - "Competitive disadvantage from disclosure"
+    - "Premature disclosure would lock in positions"
+
+  deliberative_space:
+    - "Thinking is still in progress"
+    - "Position is still forming"
+    - "Revealing draft would be mistaken for final"
+    - "Space to change mind is valuable"
+
+  relationship_protection:
+    - "Disclosure would damage necessary relationships"
+    - "Some truths are not constructive to share"
+    - "Timing is wrong for difficult information"
+    - "Recipient is not equipped to handle information"
+
+  no_legitimate_need:
+    - "Recipient doesn't need this information"
+    - "Disclosure serves curiosity, not function"
+    - "Information is noise, not signal for recipient"
+
+# ============================================
+# CALIBRATION QUESTIONS
+# ============================================
+calibration:
+  description: Questions to calibrate the decision
+
+  necessity_test:
+    - "Would the recipient's situation be worse for not knowing?"
+    - "Would our situation be worse for them knowing?"
+    - "Is there a specific decision this information affects?"
+
+  harm_test:
+    - "What is the worst case if we are transparent?"
+    - "What is the worst case if we are opaque?"
+    - "Which worst case is more recoverable?"
+
+  pattern_test:
+    - "Is this consistent with our stated principles?"
+    - "Would we be comfortable if our decision process were known?"
+    - "Are we rationalizing opacity because it's convenient?"
+    - "Are we demanding transparency we wouldn't accept ourselves?"
+
+# ============================================
+# DECISION LOGIC
+# ============================================
+decision_logic: |
+  DEFAULT TO TRANSPARENCY if:
+  - Internal stakeholders with aligned interests
+  - Information needed for coordination/decisions
+  - Opacity would be deceptive or harmful
+  - Pattern of opacity would erode trust
+
+  DEFAULT TO OPACITY if:
+  - Competitive/adversarial stakeholders
+  - No legitimate need for information
+  - Deliberative process still active
+  - Disclosure would harm third parties
+
+  SELECTIVE TRANSPARENCY if:
+  - Some stakeholders should know, others not
+  - Some aspects shareable, others not
+  - Timing matters (now vs later)
+
+  STRUCTURED OPACITY if:
+  - Opacity is appropriate but should be bounded
+  - Clear criteria for what's opaque and why
+  - Path to transparency when conditions change
+  - Accountability for opacity decisions
+
+# ============================================
+# COMMON MISTAKES
+# ============================================
+common_mistakes:
+  false_transparency:
+    - "Sharing noise while withholding signal"
+    - "Transparency theater (looks open, is actually controlled)"
+    - "Selective transparency that misleads"
+
+  false_opacity:
+    - "Withholding for convenience, not legitimate reason"
+    - "Opacity as power play rather than protection"
+    - "Claiming deliberative space to avoid accountability"
+
+  calibration_errors:
+    - "Treating all stakeholders the same"
+    - "Treating all information types the same"
+    - "Not updating as relationship/situation changes"
+
+# ============================================
+# OUTPUT
+# ============================================
+outputs:
+  - name: appropriateness
+    options: [TRANSPARENCY, OPACITY, SELECTIVE, STRUCTURED_OPACITY]
+  - name: rationale
+    description: "Why this choice for this situation"
+  - name: boundaries
+    description: "What specifically is transparent/opaque and why"
+  - name: review_trigger
+    description: "What would cause reconsideration"

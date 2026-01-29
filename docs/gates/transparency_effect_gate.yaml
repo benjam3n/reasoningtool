@@ -1,0 +1,142 @@
+# Transparency Effect Gate
+# Does transparency enable or prevent the desired outcome?
+# Derived from ARAW synthesis tension: enables vs prevents
+
+id: transparency_effect_gate
+name: Transparency Effect Gate
+version: "1.0.0"
+domain: core
+tags: ["decision", "transparency", "trust", "strategy"]
+
+description: |
+  Gate for predicting whether transparency will enable or prevent outcomes.
+
+  The tension: Transparency can build trust that enables cooperation.
+  But it can also enable exploitation that prevents success.
+  This gate helps predict which effect will dominate.
+
+when_to_use:
+  - Designing negotiation strategies
+  - Setting organizational transparency policies
+  - Deciding what to reveal to competitors/adversaries
+  - Evaluating trust-building approaches
+
+# ============================================
+# CONTEXT ASSESSMENT
+# ============================================
+context:
+  description: What is the situation?
+
+  relationship_type:
+    - "What is the nature of the relationship with the other party?"
+    - "Is this cooperative, competitive, or mixed?"
+    - "Is this a one-time interaction or ongoing?"
+    - "What is the power differential?"
+
+  game_structure:
+    - "Is this a zero-sum situation (one gains = other loses)?"
+    - "Is this positive-sum (can both gain)?"
+    - "Are there repeated interactions (reputation matters)?"
+    - "Can defection be detected and punished?"
+
+  current_trust_level:
+    - "What is the current level of trust?"
+    - "Has trust been violated before?"
+    - "Is there a history of cooperation or conflict?"
+    - "What signals have each party sent about trustworthiness?"
+
+# ============================================
+# TRANSPARENCY ENABLING PATHS
+# ============================================
+enabling_paths:
+  description: How might transparency enable success?
+
+  trust_building:
+    - "Would transparency signal good faith?"
+    - "Would it demonstrate aligned interests?"
+    - "Would it reduce the other party's uncertainty about us?"
+    - "Would it invite reciprocal transparency?"
+
+  coordination_improvement:
+    - "Does the other party need this information to coordinate with us?"
+    - "Would shared understanding improve joint outcomes?"
+    - "Are we missing opportunities due to information asymmetry?"
+
+  commitment_credibility:
+    - "Would transparency make our commitments more credible?"
+    - "Would it reduce the other party's need to protect themselves?"
+    - "Would it enable agreements that aren't possible with opacity?"
+
+# ============================================
+# TRANSPARENCY PREVENTING PATHS
+# ============================================
+preventing_paths:
+  description: How might transparency prevent success?
+
+  exploitation_enabling:
+    - "Could the other party use this information against us?"
+    - "Do they have incentive to exploit rather than cooperate?"
+    - "Would transparency reveal vulnerabilities they would target?"
+    - "Is there a competitive element where our information helps them compete?"
+
+  leverage_elimination:
+    - "Does uncertainty about us give us leverage?"
+    - "Would transparency eliminate strategic ambiguity we need?"
+    - "Are we stronger when our capabilities/intentions are unknown?"
+
+  commitment_undermining:
+    - "Would transparency reveal that our commitments are contingent?"
+    - "Would it expose bluffs or negotiating positions?"
+    - "Would it make it harder to walk away?"
+
+# ============================================
+# RECIPROCITY ASSESSMENT
+# ============================================
+reciprocity:
+  description: Will transparency be reciprocated?
+
+  questions:
+    - "If we are transparent, will they be transparent in return?"
+    - "What evidence do we have about their reciprocity pattern?"
+    - "What happens if we are transparent and they are not?"
+    - "Can we make transparency conditional (reveal if they reveal)?"
+    - "Is there a way to test their reciprocity with low-stakes disclosure first?"
+
+# ============================================
+# DECISION LOGIC
+# ============================================
+decision_logic: |
+  TRANSPARENCY ENABLES if:
+  - Relationship is positive-sum (both can gain from cooperation)
+  - Interactions are repeated (reputation matters)
+  - Other party has incentive to reciprocate
+  - Trust building is more valuable than information protection
+  - Defection is detectable and punishable
+
+  TRANSPARENCY PREVENTS if:
+  - Relationship is zero-sum (they gain from our loss)
+  - One-time interaction (no reputation consequences)
+  - Other party has incentive to exploit
+  - Information is usable as weapon against us
+  - Strategic ambiguity is an asset
+
+  CONDITIONAL TRANSPARENCY if:
+  - Both effects are possible depending on their response
+  - Can reveal incrementally based on reciprocation
+  - Can verify their use of information before revealing more
+
+  SELECTIVE TRANSPARENCY if:
+  - Some aspects enable, others prevent
+  - Can separate signal (builds trust) from substance (exploitable)
+  - Can be transparent about intentions while protecting tactics
+
+# ============================================
+# OUTPUT
+# ============================================
+outputs:
+  - name: transparency_effect
+    options: [ENABLES, PREVENTS, CONDITIONAL, SELECTIVE]
+  - name: recommended_approach
+    description: "What to reveal, to whom, in what sequence"
+  - name: monitoring_signals
+    description: "What would indicate the effect is different than predicted"

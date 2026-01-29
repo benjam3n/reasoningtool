@@ -1,0 +1,514 @@
+# Value Conflict Decomposition Procedure
+# Purpose: Detect, analyze, and navigate fundamental value tensions
+# Version: 1.0.0
+
+id: value_conflict_decomposition
+name: Value Conflict Decomposition
+version: "1.0.0"
+domain: core
+tier: platinum
+
+description: |
+  Goals often serve multiple intrinsic values that conflict with each other.
+  This procedure helps detect these conflicts, understand their structure,
+  and find navigation strategies that don't require abandoning either value.
+
+  Key insight: Most value conflicts are not "pick one" situations.
+  They are tensions to be navigated, not problems to be solved.
+
+when_to_use:
+  - Goal feels stuck between two directions
+  - Strategy selection paralysis
+  - Recurring oscillation between approaches
+  - Sense of "damned if I do, damned if I don't"
+  - Goal chain analysis revealed multiple termini
+
+tags:
+  - core
+  - values
+  - conflict
+  - navigation
+  - intrinsic-goals
+
+# ============================================
+# CORE VALUE TENSIONS
+# ============================================
+
+core_tensions:
+  description: |
+    These are fundamental tensions that appear across many goal structures.
+    They are not bugs - they are features of having multiple values.
+
+  security_vs_achievement:
+    name: Security vs Achievement
+    description: |
+      Security wants: Stability, predictability, risk avoidance, preservation
+      Achievement wants: Growth, challenge, risk-taking, transformation
+
+      The conflict: Achievement requires risking what security wants to protect.
+
+    manifestations:
+      - "I want to start a business but I need income stability"
+      - "I want to learn new skills but I'm good at current ones"
+      - "I want to try bold strategies but safe ones are... safe"
+      - "I want to change but I don't want to lose what I have"
+
+    false_framings:
+      - "I must choose between security and achievement"
+      - "Security is cowardice, achievement is courage"
+      - '"I''ll achieve first, then get secure" (often fails)'
+      - '"I''ll get secure first, then achieve" (often never happens)'
+
+    actual_structure:
+      - Security and achievement exist on different timescales
+      - Short-term security can enable long-term achievement
+      - Short-term risk can create long-term security
+      - The question is sequencing and sizing, not choosing
+
+  freedom_vs_security:
+    name: Freedom vs Security
+    description: |
+      Freedom wants: Options, autonomy, independence, flexibility
+      Security wants: Stability, predictability, structure, safety
+
+      The conflict: Security often requires commitment that constrains freedom.
+      Freedom often requires accepting risks that threaten security.
+
+    manifestations:
+      - "I want freedom to choose but also want guaranteed outcomes"
+      - "I want independence but also want support structures"
+      - "I want flexibility but also want reliable routines"
+      - "I want to keep options open but also want to commit deeply"
+
+    false_framings:
+      - "Freedom means no constraints"
+      - "Security means total predictability"
+      - "I must choose between freedom and security"
+      - "Freedom is irresponsible, security is mature"
+
+    actual_structure:
+      - Some freedoms enable security (freedom to exit bad situations)
+      - Some security enables freedom (financial security enables risk-taking)
+      - The question is which freedoms and which securities, not freedom vs security
+      - Often the conflict is between different kinds of freedom or different kinds of security
+
+  individual_vs_relational:
+    name: Individual vs Relational
+    description: |
+      Individual wants: Personal development, autonomy, self-expression, boundaries
+      Relational wants: Connection, belonging, contribution, interdependence
+
+      The conflict: Deep relationships require compromise of individual preferences.
+      Strong individuality can create distance from others.
+
+    manifestations:
+      - "I want deep relationships but I need my space"
+      - "I want to help others but I need to take care of myself"
+      - "I want to belong but I don't want to conform"
+      - "I want connection but I don't want obligation"
+
+    false_framings:
+      - "Selfishness vs selflessness"
+      - "I must sacrifice myself for relationships"
+      - "I must protect myself from relationships"
+      - "Independence means not needing anyone"
+
+    actual_structure:
+      - Healthy relationships require healthy individuals
+      - Healthy individuals exist in relationships
+      - The question is boundaries and integration, not choosing
+      - Often the conflict is about specific relationships, not relationships in general
+
+  meaning_vs_pleasure:
+    name: Meaning vs Pleasure
+    description: |
+      Meaning wants: Purpose, contribution, significance, legacy
+      Pleasure wants: Enjoyment, comfort, satisfaction, ease
+
+      The conflict: Meaningful work is often difficult and uncomfortable.
+      Pleasant activities often feel empty or insignificant.
+
+    manifestations:
+      - "I want work that matters but I also want to enjoy my life"
+      - "I feel guilty when I relax instead of doing important things"
+      - "I feel burned out from only doing meaningful work"
+      - "Easy things feel hollow, hard things feel exhausting"
+
+    false_framings:
+      - "Meaning requires suffering"
+      - "Pleasure is shallow"
+      - "I must choose between a meaningful life and an enjoyable life"
+      - "Rest is laziness"
+
+    actual_structure:
+      - Meaning and pleasure are complementary at different timescales
+      - Sustainable meaning requires pleasure/rest
+      - Deep pleasure often comes from meaningful activity
+      - The question is rhythm and integration, not choosing
+
+  process_vs_outcome:
+    name: Process vs Outcome
+    description: |
+      Outcome wants: Results, achievement, completion, success
+      Process wants: Experience, journey, growth, presence
+
+      The conflict: Outcome focus can make the process miserable.
+      Process focus can neglect the goal entirely.
+
+    manifestations:
+      - "I want to achieve X but I also want to enjoy getting there"
+      - "I'm so focused on the goal I'm not present to the journey"
+      - "I'm so focused on the journey I never reach the goal"
+      - "Success feels empty, but failure during enjoyable process still feels like failure"
+
+    false_framings:
+      - "The outcome is all that matters"
+      - "The journey is all that matters"
+      - "You can't have both"
+
+    actual_structure:
+      - Good processes tend to produce good outcomes
+      - Good outcomes achieved through bad processes often don't last
+      - The question is integration, not choosing
+      - Process and outcome inform each other
+
+  known_vs_unknown:
+    name: Known vs Unknown
+    description: |
+      Known wants: Expertise, mastery, competence, reliability
+      Unknown wants: Exploration, discovery, novelty, learning
+
+      The conflict: Mastery requires depth in known areas.
+      Discovery requires venturing into unknown areas.
+
+    manifestations:
+      - "I want to be excellent at something but I also want to try new things"
+      - "I'm bored with what I know but scared of what I don't"
+      - "I want to specialize but I also want to be versatile"
+      - "Deep expertise vs broad capability"
+
+    false_framings:
+      - "Jack of all trades, master of none"
+      - "Specialists are better than generalists"
+      - "You must choose between depth and breadth"
+
+    actual_structure:
+      - T-shaped: depth in one area, breadth across many
+      - Serial mastery: deep in one, then another
+      - Exploration phases and exploitation phases
+      - The question is sequencing and allocation, not choosing
+
+# ============================================
+# CONFLICT DETECTION
+# ============================================
+
+detection:
+  description: How to identify when a value conflict is present
+
+  symptoms:
+    - Oscillation between two approaches
+    - Feeling stuck despite clear options
+    - '"Yes, but..." responses to every strategy'
+    - Recurring dissatisfaction with any choice
+    - Goal feels impossible despite being feasible
+    - Strategies that address one thing make another worse
+    - Feeling of internal division or parts
+    - Repeated revisiting of "resolved" decisions
+
+  questions:
+    - "When I imagine achieving this goal, what feels threatened?"
+    - "When I imagine NOT pursuing this goal, what feels threatened?"
+    - "What would I have to give up to fully commit to this approach?"
+    - "What two things do I want that seem incompatible?"
+    - "What part of me wants this? What part of me resists?"
+    - "If I could only have one thing, what would I lose by giving up the other?"
+
+  conflict_identification:
+    step_1: "List all intrinsic values this goal serves (from goal chain analysis)"
+    step_2: "For each pair of values, ask: Does pursuing one threaten the other?"
+    step_3: "For each tension found, name it using the core tensions above or create new name"
+    step_4: "Rate the tension: Mild (noticeable) / Moderate (blocking) / Severe (paralyzing)"
+
+# ============================================
+# CONFLICT ANALYSIS
+# ============================================
+
+analysis:
+  description: Deep understanding of a specific conflict
+
+  decomposition_questions:
+    nature:
+      - "What specifically does Value A want in this situation?"
+      - "What specifically does Value B want in this situation?"
+      - "What is the specific incompatibility? (Not abstract, concrete)"
+      - "Is this a resource conflict (can't allocate to both) or a direction conflict (can't go both ways)?"
+
+    temporality:
+      - "Does this conflict exist at all timescales, or only some?"
+      - "Is Value A more short-term and Value B more long-term, or vice versa?"
+      - "Could sequencing resolve the conflict? (A first, then B? B first, then A?)"
+      - "Is this conflict permanent or situational?"
+
+    dimensionality:
+      - "Is this really one conflict or multiple conflicts bundled?"
+      - "Can I get 80% of Value A without threatening Value B?"
+      - "Can I get 80% of Value B without threatening Value A?"
+      - "What is the minimum of each that I actually need?"
+
+    history:
+      - "When has this conflict appeared before in my life?"
+      - "What did I do then? What happened?"
+      - "Have I ever successfully navigated this conflict? How?"
+      - "What would someone who's good at this conflict do?"
+
+    false_dichotomy_check:
+      - "Is this really either/or, or does it only appear that way?"
+      - "What would BOTH look like? Even partially?"
+      - "Who has achieved both? What did they do differently?"
+      - "What assumption makes this feel like a forced choice?"
+
+  output_format:
+    conflict_name: "[Name from core tensions or custom]"
+    value_a: "[Specific value and what it wants]"
+    value_b: "[Specific value and what it wants]"
+    specific_incompatibility: "[Concrete description of the conflict]"
+    conflict_type: "[Resource / Direction / Timing / Both]"
+    timescale_pattern: "[Same timescale / Different timescales / Situational]"
+    decomposition: "[Can it be split into sub-conflicts?]"
+    minimum_requirements: "[Minimum of each value needed]"
+    historical_pattern: "[How has this been handled before?]"
+    false_dichotomy_assessment: "[Is this a real either/or?]"
+
+# ============================================
+# NAVIGATION STRATEGIES
+# ============================================
+
+navigation:
+  description: |
+    Strategies for navigating value conflicts without abandoning either value.
+    Navigation is not resolution - the conflict may persist, but you can move through it.
+
+  strategies:
+
+    temporal_sequencing:
+      name: Temporal Sequencing
+      description: Address values at different times
+      when_to_use: "When values don't conflict at all timescales"
+      approach:
+        - "Identify which value is more urgent vs which is more important"
+        - "Create explicit phases for each value"
+        - "Define transition criteria between phases"
+        - "Ensure later phase actually happens (schedule, commitment)"
+      example: |
+        Security vs Achievement: Build 6 months runway (security), then take risks (achievement)
+        Freedom vs Security: Explore options (freedom), then commit with exit criteria (security)
+      risks:
+        - "Later phase never happens"
+        - "Earlier phase expands indefinitely"
+        - "Transition criteria never met"
+
+    partial_satisfaction:
+      name: Partial Satisfaction
+      description: Get enough of both, not maximum of either
+      when_to_use: "When 80% of each is acceptable and achievable"
+      approach:
+        - "Define minimum acceptable level for each value"
+        - "Find strategies that meet both minimums"
+        - "Accept that maximum of either is not the goal"
+        - "Optimize for the combination, not the individual values"
+      example: |
+        Individual vs Relational: 3 nights/week social, 4 nights/week alone
+        Process vs Outcome: Enjoy the work AND hit the deadline
+      risks:
+        - "Neither value feels fully honored"
+        - "Resentment at not getting maximum"
+        - "Creeping expansion of one at expense of other"
+
+    domain_separation:
+      name: Domain Separation
+      description: Honor different values in different life areas
+      when_to_use: "When conflict is not about the same resource or domain"
+      approach:
+        - "Identify domains where Value A can dominate"
+        - "Identify domains where Value B can dominate"
+        - "Create clear boundaries between domains"
+        - "Resist bleeding between domains"
+      example: |
+        Security vs Achievement: Secure salary job + risky side project
+        Known vs Unknown: Expert in work domain + beginner in hobbies
+      risks:
+        - "Domains bleed into each other"
+        - "One domain expands to consume others"
+        - "Integration problems between domains"
+
+    reframing:
+      name: Reframing
+      description: Dissolve false dichotomy by seeing the conflict differently
+      when_to_use: "When the conflict is based on a false assumption"
+      approach:
+        - "Question the assumption that creates the conflict"
+        - "Look for third options that weren't visible"
+        - "Examine if the values are actually opposed or just appear so"
+        - "Consider what both values ultimately want"
+      example: |
+        "I need stability (security) OR I need to take risks (achievement)"
+        Reframe: "What if small risks create stability? What if stability enables larger risks?"
+
+        "I need to be independent (individual) OR connected (relational)"
+        Reframe: "What if healthy relationships require independence? What if independence exists within connection?"
+      risks:
+        - "Reframing that papers over real conflict"
+        - "Intellectualizing without actual resolution"
+        - "Avoiding the real tension"
+
+    integration:
+      name: Integration
+      description: Find approaches that honor both values simultaneously
+      when_to_use: "When the values are complementary at a deeper level"
+      approach:
+        - "Look for what both values are ultimately trying to achieve"
+        - "Find strategies that serve the deeper goal"
+        - "Design for the combination, not the compromise"
+        - "Test if the integration actually satisfies both"
+      example: |
+        Meaning vs Pleasure: Find work that is both meaningful AND enjoyable
+        Process vs Outcome: Design processes that are enjoyable AND effective
+      risks:
+        - "Integration that doesn't actually satisfy either"
+        - "Rare strategies that only work in ideal conditions"
+        - "Ignoring real tradeoffs that integration can't solve"
+
+    dynamic_balancing:
+      name: Dynamic Balancing
+      description: Consciously oscillate between values based on feedback
+      when_to_use: "When the right balance changes over time"
+      approach:
+        - "Define indicators that signal need for Value A"
+        - "Define indicators that signal need for Value B"
+        - "Create explicit check-in points to assess balance"
+        - "Have ready strategies for shifting in either direction"
+      example: |
+        Freedom vs Security: Check quarterly - if feeling trapped, increase freedom; if feeling unstable, increase security
+        Individual vs Relational: If lonely, increase connection; if depleted, increase solitude
+      risks:
+        - "Oscillation without progress"
+        - "Indicators that are lagging or misleading"
+        - "Reactive instead of proactive"
+
+    acceptance:
+      name: Acceptance
+      description: Accept that some tension is permanent and live with it consciously
+      when_to_use: "When the conflict is real and unsolvable"
+      approach:
+        - "Acknowledge that the tension is real"
+        - "Stop trying to solve what can't be solved"
+        - "Develop capacity to hold both values simultaneously"
+        - "Find meaning in the navigation itself"
+      example: |
+        "I will always want both security and achievement. The tension itself is part of being human.
+        I don't need to resolve it. I need to navigate it wisely."
+      risks:
+        - "Premature acceptance when resolution is possible"
+        - "Learned helplessness"
+        - "Using acceptance to avoid action"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: Detect Conflict
+    action: |
+      Use the detection questions and symptoms to identify if a value conflict is present.
+      If goal chain analysis has been done, review the intrinsic termini for conflicts.
+    output: "Conflict present? (yes/no/maybe). If yes, initial naming."
+
+  - id: 2
+    name: Name the Conflict
+    action: |
+      Match the conflict to core tensions above, or create a custom name.
+      Use format: "[Value A] vs [Value B]"
+      Be specific about what each value wants in THIS situation.
+    output: "Named conflict with specific descriptions"
+
+  - id: 3
+    name: Analyze the Conflict
+    action: |
+      Use the decomposition questions to understand:
+      - Nature of incompatibility
+      - Temporal patterns
+      - Whether it's really one conflict or several
+      - Historical patterns
+      - False dichotomy check
+    output: "Completed conflict analysis in output_format"
+
+  - id: 4
+    name: Select Navigation Strategy
+    action: |
+      Review the navigation strategies above.
+      For each, ask: Does this apply to this conflict?
+      Often multiple strategies combine.
+    output: "Selected strategy or combination with rationale"
+
+  - id: 5
+    name: Design Specific Approach
+    action: |
+      Given the selected strategy, design concrete approach:
+      - What specifically will you do?
+      - How will you know if it's working?
+      - What are the risks and mitigations?
+      - What would cause you to try a different strategy?
+    output: "Concrete approach with success criteria and pivot triggers"
+
+  - id: 6
+    name: Integrate into Goal Plan
+    action: |
+      The conflict navigation becomes part of the goal plan.
+      Add check-in points to assess if navigation is working.
+      Document the conflict and approach for future reference.
+    output: "Updated goal plan with conflict navigation integrated"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Both values are named and described specifically"
+  - "The specific incompatibility is articulated (not vague)"
+  - "False dichotomy check was performed"
+  - "Navigation strategy selected with rationale"
+  - "Concrete approach designed, not just abstract strategy"
+  - "Success criteria and pivot triggers defined"
+  - "Plan includes check-in points for the navigation"
+
+failure_modes:
+  - mode: "Picking one value, ignoring the other"
+    symptom: "Approach only serves one value"
+    resolution: "Revisit the conflict - both values are real"
+
+  - mode: "False resolution"
+    symptom: "Claims conflict is solved but tension persists"
+    resolution: "Acceptance may be more honest than false resolution"
+
+  - mode: "Over-analysis without action"
+    symptom: "Perfect understanding of conflict, no navigation"
+    resolution: "Pick a strategy and try it. Adjust based on results."
+
+  - mode: "Premature acceptance"
+    symptom: "Accepting conflict as unsolvable before trying strategies"
+    resolution: "Try temporal sequencing, partial satisfaction, reframing first"
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+related_procedures:
+  - goal_journey_system: "Goal chains often reveal value conflicts"
+  - goal_structure_reconstruction: "Terminus analysis surfaces conflicting values"
+  - recursive_causal_interrogation: "Traces conflicts to their roots"
+  - adversarial_review: "Tests whether navigation strategies actually work"
+
+related_gates:
+  - story_coherence_gate: "Navigation should cohere with overall journey"
+  - intrinsic_goal_termination_gate: "Helps identify the values at play"

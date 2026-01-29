@@ -1,0 +1,284 @@
+# Outcome Verification Framework
+# Rigorous verification that a goal was actually achieved
+# Addresses gap: current outcome_verification_check is 30 lines, needs 300+
+
+id: outcome_verification_framework
+name: Outcome Verification Framework
+version: "1.0.0"
+domain: core
+tags: ["completion", "verification", "rigor", "mandatory"]
+
+description: |
+  Comprehensive framework for verifying goal achievement.
+
+  Current gap: GOSM captures "what worked" but doesn't answer "did this work?"
+  This framework ensures honest assessment of success vs. failure.
+
+when_to_use:
+  - Project completion (MANDATORY)
+  - Mid-project checkpoints
+  - Post-mortem analysis
+
+# ============================================
+# STEP 1: RECALL ORIGINAL SUCCESS CRITERIA
+# ============================================
+recall_criteria:
+  description: What did we say success would look like?
+
+  questions:
+    - "What was the original goal statement?"
+    - "What specific success criteria were defined at planning time?"
+    - "Were there quantitative metrics? What were the targets?"
+    - "Were there qualitative criteria? What would 'good' look like?"
+    - "Were success criteria modified during execution? Document changes."
+
+  if_criteria_undefined: |
+    If no success criteria were defined:
+    1. This is a process failure - note it for learning
+    2. Retrospectively define: "What would have counted as success?"
+    3. Apply those criteria honestly (don't game the definition)
+    4. Add "define success criteria at start" to lessons learned
+
+# ============================================
+# STEP 2: MEASURE ACTUAL OUTCOMES
+# ============================================
+measure_outcomes:
+  description: What actually happened?
+
+  for_quantitative_goals:
+    - "What were the target metrics?"
+    - "What were the actual achieved values?"
+    - "Calculate: achievement_percentage = (actual / target) * 100"
+    - "If multiple metrics, calculate weighted average"
+    - "Document measurement methodology (how did you get these numbers?)"
+
+  for_qualitative_goals:
+    - "What was the qualitative description of success?"
+    - "Does the outcome match that description?"
+    - "Get external assessment if possible (not just self-assessment)"
+    - "Document evidence for qualitative judgment"
+
+  for_mixed_goals:
+    - "Assess quantitative and qualitative separately"
+    - "Weight each component appropriately"
+    - "Don't let strong qualitative override missed quantitative (or vice versa)"
+
+# ============================================
+# STEP 3: CLASSIFY ACHIEVEMENT LEVEL
+# ============================================
+achievement_classification:
+  description: How much of the goal was achieved?
+
+  levels:
+    FULL_SUCCESS:
+      definition: "All success criteria met or exceeded"
+      threshold: "100%+ of targets achieved"
+      action: "Proceed to attribution analysis"
+
+    SUBSTANTIAL_SUCCESS:
+      definition: "Most criteria met, minor gaps acceptable"
+      threshold: "75-99% of targets achieved"
+      action: "Document gaps, proceed to attribution"
+
+    PARTIAL_SUCCESS:
+      definition: "Some criteria met, significant gaps"
+      threshold: "50-74% of targets achieved"
+      action: "Analyze which criteria failed and why"
+
+    MINIMAL_SUCCESS:
+      definition: "Few criteria met, mostly failed"
+      threshold: "25-49% of targets achieved"
+      action: "This is effectively a failure - analyze root cause"
+
+    FAILURE:
+      definition: "Success criteria not met"
+      threshold: "<25% of targets achieved"
+      action: "Full failure analysis required"
+
+    AMBIGUOUS:
+      definition: "Cannot determine success/failure"
+      conditions:
+        - "Criteria were never defined"
+        - "Metrics unavailable"
+        - "Goal was changed so much original criteria don't apply"
+      action: "Document why ambiguous, define what we learned anyway"
+
+# ============================================
+# STEP 4: ATTRIBUTION ANALYSIS
+# ============================================
+attribution_analysis:
+  description: What caused the outcome (success or failure)?
+
+  attribution_factors:
+    process_factors:
+      description: "GOSM process contribution"
+      questions:
+        - "Did the GOSM process identify the right goal?"
+        - "Did strategy discovery find a good strategy?"
+        - "Did planning produce executable steps?"
+        - "Were gates and checkpoints helpful?"
+      attribution_weight: "What % of outcome came from process quality?"
+
+    execution_factors:
+      description: "Execution quality contribution"
+      questions:
+        - "Were the steps followed as specified?"
+        - "Was execution quality high?"
+        - "Were adaptation decisions good?"
+        - "Did execution skill affect outcome?"
+      attribution_weight: "What % of outcome came from execution quality?"
+
+    external_factors:
+      description: "Factors outside our control"
+      questions:
+        - "Did external events help or hurt?"
+        - "Did other parties behave as expected?"
+        - "Were there timing factors (market, opportunity windows)?"
+        - "Were there resource changes (budget, people, tools)?"
+      attribution_weight: "What % of outcome came from external factors?"
+
+    luck_factors:
+      description: "Random/unpredictable factors"
+      questions:
+        - "Were there lucky breaks?"
+        - "Were there unlucky obstacles?"
+        - "Would the same approach produce same outcome if repeated?"
+        - "What was the role of chance?"
+      attribution_weight: "What % of outcome came from luck?"
+
+  attribution_validation: |
+    Weights must sum to 100%.
+
+    If attribution is unclear:
+    - Default to process (30%) + execution (30%) + external (30%) + luck (10%)
+    - Adjust based on specific evidence
+
+    Be honest about luck - most outcomes have luck component.
+
+# ============================================
+# STEP 5: FAILURE ANALYSIS (if applicable)
+# ============================================
+failure_analysis:
+  description: If outcome was failure or partial, what went wrong?
+
+  failure_type_identification:
+    goal_failure:
+      definition: "Wrong goal was pursued"
+      symptoms:
+        - "Achieved what we set out to do, but it didn't help"
+        - "Success criteria were met but real problem remains"
+        - "Would do something completely different in hindsight"
+      root_cause: "Goal definition or RCI phase failed"
+
+    strategy_failure:
+      definition: "Right goal, wrong approach"
+      symptoms:
+        - "Strategy seemed sound but didn't work"
+        - "Assumptions in strategy proved false"
+        - "Alternative strategy would have worked"
+      root_cause: "Strategy discovery or adversarial testing failed"
+
+    planning_failure:
+      definition: "Right strategy, poor plan"
+      symptoms:
+        - "Strategy was good but steps were wrong"
+        - "Dependencies or prerequisites were missed"
+        - "Timeline or resource estimates were wildly off"
+      root_cause: "Planning phase or specification depth was inadequate"
+
+    execution_failure:
+      definition: "Good plan, poor execution"
+      symptoms:
+        - "Steps were clear but not followed"
+        - "Quality of work was insufficient"
+        - "Execution skill was lacking"
+      root_cause: "Executor capability or discipline"
+
+    external_failure:
+      definition: "Everything right, external factor killed it"
+      symptoms:
+        - "Unpredictable external event occurred"
+        - "Other party behaved unexpectedly"
+        - "Environment changed"
+      root_cause: "Uncontrollable external factors"
+
+    luck_failure:
+      definition: "Random bad outcome"
+      symptoms:
+        - "Same approach would succeed most of the time"
+        - "Improbable negative event occurred"
+        - "No way to have predicted or prevented"
+      root_cause: "Variance, bad luck"
+
+  failure_action_by_type:
+    goal_failure: "Improve RCI, goal-structure reconstruction"
+    strategy_failure: "Improve adversarial review, cross-domain search"
+    planning_failure: "Improve specification depth, steps generation"
+    execution_failure: "Improve executor selection, skill assessment"
+    external_failure: "Improve risk assessment, contingency planning"
+    luck_failure: "Accept variance, no system change needed"
+
+# ============================================
+# STEP 6: LEARNING EXTRACTION
+# ============================================
+learning_extraction:
+  description: What should we learn from this outcome?
+
+  categories:
+    process_learnings:
+      - "What would we do differently in GOSM process?"
+      - "Which gates/procedures were helpful vs. unhelpful?"
+      - "What was missing from the process?"
+      - "Should any procedures be added or modified?"
+
+    domain_learnings:
+      - "What did we learn about this problem domain?"
+      - "What assumptions proved true/false?"
+      - "What would we tell someone attempting similar goal?"
+
+    execution_learnings:
+      - "What execution challenges were unexpected?"
+      - "What skills were needed that we didn't have?"
+      - "What would have made execution easier?"
+
+    meta_learnings:
+      - "How accurate was our initial confidence?"
+      - "Were we overconfident or underconfident?"
+      - "Did we learn things that change our worldview?"
+
+# ============================================
+# STEP 7: DOCUMENTATION
+# ============================================
+documentation_requirements:
+  description: What must be documented?
+
+  mandatory_outputs:
+    - name: achievement_level
+      options: [FULL_SUCCESS, SUBSTANTIAL, PARTIAL, MINIMAL, FAILURE, AMBIGUOUS]
+
+    - name: achievement_percentage
+      description: "0-100%+ against original success criteria"
+
+    - name: attribution_weights
+      description: "Process %, Execution %, External %, Luck %"
+
+    - name: failure_type
+      description: "If applicable: goal/strategy/planning/execution/external/luck"
+
+    - name: key_learnings
+      description: "Top 3 lessons for future projects"
+
+    - name: process_recommendations
+      description: "What should change in GOSM for next time?"
+
+# ============================================
+# QUICK CHECKLIST
+# ============================================
+quick_checklist:
+  - "[ ] Original success criteria recalled"
+  - "[ ] Actual outcomes measured (not estimated)"
+  - "[ ] Achievement level classified honestly"
+  - "[ ] Attribution weights assigned (sum to 100%)"
+  - "[ ] If failure: root cause identified"
+  - "[ ] Learnings documented"
+  - "[ ] Process recommendations made"

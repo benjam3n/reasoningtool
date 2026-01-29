@@ -1,0 +1,195 @@
+# Framework Extension Procedure
+# Use this for all GOSM system improvement projects
+
+id: framework_extension
+name: Framework Extension
+version: "1.0.0"
+domain: meta
+
+description: |
+  Systematic process for extending the GOSM framework with new procedures, gates, or capabilities.
+
+purpose: |
+  Ensures consistent, high-quality additions to the GOSM library by following
+  a defined process for specification, implementation, validation, and integration.
+
+when_to_use:
+  - Adding a new procedure to the library
+  - Creating new gates or gate categories
+  - Extending GOSM capabilities (e.g., new goal approach selections)
+  - Improving existing framework components
+
+when_not_to_use:
+  - Minor bug fixes (use direct edit)
+  - Documentation-only updates
+  - Project-specific customizations (not reusable)
+
+inputs:
+  - name: extension_specification
+    type: dict
+    required: true
+    description: What capability is being added
+    source: User request or identified gap
+
+  - name: existing_library
+    type: string
+    required: true
+    description: Path to current library for context
+    source: /home/ben/Documents/projects/GOSM/library/
+
+outputs:
+  - name: new_artifacts
+    type: list
+    description: New YAML files added to library
+    destination: library/procedures/ or library/gates/
+
+  - name: updated_index
+    type: file
+    description: Updated INDEX.md with new entries
+    destination: library/INDEX.md
+
+steps:
+  - id: 1
+    name: Gap Analysis
+    action: |
+      Search existing library for similar functionality:
+      1. Check INDEX.md for related procedures/gates
+      2. Search procedures/ directory for similar names
+      3. Review PROCEDURE_CONSOLIDATION.md for cluster overlap
+      4. Confirm this is genuinely new vs. enhancement of existing
+    outputs:
+      - gap_confirmed (boolean)
+      - similar_existing (list)
+
+  - id: 2
+    name: Specification
+    action: |
+      Define the extension precisely:
+      1. Write purpose statement (1-2 sentences)
+      2. List inputs and outputs
+      3. Define 3-5 core steps
+      4. Identify integration points with existing framework
+    outputs:
+      - extension_spec (dict)
+
+  - id: 3
+    name: Template Selection
+    action: |
+      Choose appropriate template:
+      - Procedure: templates/procedure_template.yaml
+      - Gate: gates/core/requirement_verification_gates.yaml (as example)
+      - Domain handler: procedures/goal_approach_selections/ (as examples)
+    outputs:
+      - template_path (string)
+
+  - id: 4
+    name: Implementation
+    action: |
+      Create the artifact following template:
+      1. Copy template to appropriate directory
+      2. Fill in all BRONZE fields (required)
+      3. Fill in SILVER fields (recommended)
+      4. Add at least one example
+    verification: |
+      All required fields populated, YAML is valid
+
+  - id: 5
+    name: Schema Validation
+    action: |
+      Validate against procedure_schema.yaml:
+      1. Check all required fields present
+      2. Verify tier requirements met (Bronze minimum)
+      3. Confirm naming conventions followed
+    inputs:
+      - schemas/procedure_schema.yaml
+    verification: |
+      Passes Bronze tier validation
+
+  - id: 6
+    name: Integration Test
+    action: |
+      Test integration with framework:
+      1. Reference from a test project STATE.md
+      2. Verify procedure can be invoked
+      3. Check outputs match specification
+      4. Confirm no conflicts with existing procedures
+
+  - id: 7
+    name: Index Update
+    action: |
+      Update library indexes:
+      1. Add entry to INDEX.md in appropriate section
+      2. Update PROCEDURE_CONSOLIDATION.md if applicable
+      3. Add to EXTRACTED_PROCEDURES_INDEX.md if in extracted/
+
+  - id: 8
+    name: Documentation
+    action: |
+      Ensure discoverability:
+      1. Write clear description field
+      2. Add tags for searchability
+      3. Link related_procedures
+      4. Update any dependent documentation
+
+verification:
+  - New YAML file exists in correct directory
+  - INDEX.md contains new entry
+  - Schema validation passes
+  - At least one example provided
+
+failure_modes:
+  - mode: Duplicate functionality
+    symptom: Similar procedure already exists
+    resolution: Enhance existing procedure instead of creating new
+
+  - mode: Poor integration
+    symptom: New procedure not referenced by any project
+    resolution: Update relevant project STATE.md files
+
+  - mode: Invalid schema
+    symptom: YAML parsing errors or missing fields
+    resolution: Compare against template and fix missing fields
+
+examples:
+  - name: Adding Assumption Register Procedure
+    description: Creating procedure for tracking project assumptions
+    context: GOSM improvement project
+    inputs:
+      extension_specification:
+        type: procedure
+        name: assumption_register
+        purpose: Track and verify assumptions
+    process: |
+      1. Check library - no existing assumption tracking
+      2. Specify: inputs (goal, context), outputs (assumption list)
+      3. Use procedure_template.yaml
+      4. Create procedures/meta/assumption_register.yaml
+      5. Validate against schema
+      6. Test with sample project
+      7. Update INDEX.md
+    expected_output: |
+      New file: library/procedures/meta/assumption_register.yaml
+      INDEX.md updated with entry in Meta Procedures section
+
+gosm_integration:
+  use_cases:
+    - All gosm-* improvement projects
+    - Library enhancement work
+    - Framework capability additions
+
+  gates:
+    - gate: library_check
+      question: Is this extension genuinely new to the library?
+    - gate: complete_plan
+      question: Does the extension have complete specification?
+
+  related_procedures:
+    - procedure_extraction
+    - procedure_improvement
+    - procedure_schema
+
+tags:
+  - meta
+  - library
+  - extension
+  - framework

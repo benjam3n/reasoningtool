@@ -1,0 +1,731 @@
+# Search Paradigm Extensions
+# Reinterpreting cognitive activities as search + identifying high-value procedures
+# Version: 1.0.0
+
+id: search_paradigm_extensions
+name: Search Paradigm Extensions and Procedure Candidates
+version: "1.0.0"
+domain: core
+
+description: |
+  Many activities not traditionally framed as "search" can be productively
+  reinterpreted through the search lens. This file:
+  1. Extends the search paradigm to non-obvious domains
+  2. Identifies which search methods should become procedures
+  3. Prioritizes by "intelligence reduction" - which structures do all the work
+
+# ============================================
+# NON-OBVIOUS SEARCH ACTIVITIES
+# ============================================
+
+extended_search_paradigm:
+
+  questioning_as_search:
+    description: "Asking questions is search through answer space"
+
+    reframe: |
+      A question defines a search space (possible answers) and
+      criteria (what would satisfy the question).
+
+      Asking the RIGHT question = defining the RIGHT search space.
+      This is why question quality matters more than answer quality.
+
+    types:
+      - name: "Clarifying Questions"
+        search_for: "The actual meaning/intent"
+        space: "Possible interpretations"
+        strategy: "Eliminate ambiguity"
+
+      - name: "Diagnostic Questions"
+        search_for: "Root cause"
+        space: "Possible causes"
+        strategy: "Binary search through cause tree"
+
+      - name: "Socratic Questions"
+        search_for: "Hidden assumptions, contradictions"
+        space: "Belief structure"
+        strategy: "Follow implications until inconsistency"
+
+      - name: "Generative Questions"
+        search_for: "New possibilities"
+        space: "Adjacent possible"
+        strategy: "Expand search space itself"
+
+      - name: "Convergent Questions"
+        search_for: "Single best answer"
+        space: "Known options"
+        strategy: "Narrow down"
+
+      - name: "Divergent Questions"
+        search_for: "Many possible answers"
+        space: "Unbounded"
+        strategy: "Expand"
+
+    key_insight: |
+      The quality of search is bounded by the quality of the question.
+      "What's the answer?" assumes a single answer exists.
+      "What are the possible answers?" searches more broadly.
+      "Is this the right question?" is meta-search.
+
+  consciousness_as_search:
+    description: "Awareness might be a search process"
+
+    reframe: |
+      Consciousness could be understood as:
+      - Search for relevant information (attention)
+      - Search for coherent interpretation (perception)
+      - Search for appropriate response (action selection)
+      - Search for self-model consistency (self-awareness)
+
+    components:
+      - name: "Attention"
+        search_for: "What matters right now"
+        space: "All sensory input + memory"
+        strategy: "Relevance filtering, salience detection"
+        bandwidth: "~40 bits/second conscious, 10^7 bits/second unconscious"
+
+      - name: "Perception"
+        search_for: "Best interpretation of sensory data"
+        space: "Possible world-states"
+        strategy: "Predictive processing, hypothesis testing"
+        evidence: "Perception is inference, not direct access"
+
+      - name: "Working Memory"
+        search_for: "Relevant items to hold active"
+        space: "All memory"
+        strategy: "Chunking, rehearsal"
+        limit: "~4 items"
+
+      - name: "Stream of Consciousness"
+        search_for: "Next thought"
+        space: "Associatively connected thoughts"
+        strategy: "Spreading activation, relevance"
+        nature: "Continuous search, not static state"
+
+      - name: "Self-Model"
+        search_for: "Who am I? What do I want?"
+        space: "Possible self-interpretations"
+        strategy: "Narrative coherence"
+        function: "Prediction of own behavior"
+
+    speculative: |
+      If consciousness is search, then:
+      - Meditation = changing search parameters
+      - Flow state = search locked onto relevant space
+      - Mind-wandering = undirected search
+      - Insight = search breakthrough
+      - Dreams = search without reality constraints
+
+  prediction_as_search:
+    description: "Prediction is search through future possibility space"
+
+    reframe: |
+      Prediction = "Given what I know, what will happen?"
+      This is searching the space of possible futures for the most likely one.
+
+    types:
+      - name: "Extrapolation"
+        search_for: "Continuation of pattern"
+        space: "Possible continuations"
+        strategy: "Extend trend"
+
+      - name: "Simulation"
+        search_for: "Outcome of process"
+        space: "Possible end states"
+        strategy: "Run model forward"
+
+      - name: "Analogy-Based"
+        search_for: "Similar past situations"
+        space: "Historical cases"
+        strategy: "Match and transfer"
+
+      - name: "Model-Based"
+        search_for: "Implications of model"
+        space: "Model's output space"
+        strategy: "Deduction from model"
+
+      - name: "Ensemble"
+        search_for: "Robust prediction"
+        space: "Multiple model outputs"
+        strategy: "Combine diverse predictions"
+
+    key_insight: |
+      Better prediction = better search through:
+      1. Better space definition (what could happen)
+      2. Better evaluation (how likely is each)
+      3. Better strategy (how to explore efficiently)
+
+      A good predictive model IS a search space definition.
+
+  communication_as_search:
+    description: "Communication is mutual search for shared understanding"
+
+    reframe: |
+      Communication = two agents searching for:
+      - Common ground (shared knowledge)
+      - Right words (expressions that map to intended meaning)
+      - Successful transmission (did they get it?)
+
+    components:
+      - name: "Word Selection"
+        search_for: "Expression that maps to intended meaning"
+        space: "Vocabulary + combinations"
+        strategy: "Match meaning to available expressions"
+
+      - name: "Common Ground Search"
+        search_for: "What does the other know?"
+        space: "Possible knowledge states"
+        strategy: "Theory of mind, inference from responses"
+
+      - name: "Interpretation"
+        search_for: "What did they mean?"
+        space: "Possible intended meanings"
+        strategy: "Context + literal meaning + pragmatics"
+
+      - name: "Clarification"
+        search_for: "Mutual understanding"
+        space: "Possible misunderstandings"
+        strategy: "Check, repair, confirm"
+
+      - name: "Persuasion"
+        search_for: "Arguments that will convince"
+        space: "Possible argument paths"
+        strategy: "Model other's beliefs, find leverage points"
+
+    key_insight: |
+      Communication failure = search failure
+      - Didn't find common ground
+      - Didn't find right expression
+      - Didn't find intended interpretation
+
+      Better communication = better search heuristics for meaning.
+
+  learning_as_search:
+    description: "Learning is search through hypothesis/skill space"
+
+    reframe: |
+      Learning = finding a model/skill that works
+      This is search through the space of possible models/skills.
+
+    types:
+      - name: "Supervised Learning"
+        search_for: "Function that maps inputs to outputs"
+        space: "Function space (model class)"
+        strategy: "Minimize error on examples"
+
+      - name: "Unsupervised Learning"
+        search_for: "Structure in data"
+        space: "Possible structures (clusters, dimensions, etc.)"
+        strategy: "Optimize internal criteria"
+
+      - name: "Reinforcement Learning"
+        search_for: "Policy that maximizes reward"
+        space: "Policy space"
+        strategy: "Trial and error with credit assignment"
+
+      - name: "Skill Acquisition"
+        search_for: "Motor program that achieves goal"
+        space: "Possible movement patterns"
+        strategy: "Practice with feedback"
+
+      - name: "Concept Learning"
+        search_for: "Rule that captures category"
+        space: "Possible rules"
+        strategy: "Positive/negative examples"
+
+  reasoning_as_search:
+    description: "Reasoning is search through inference space"
+
+    types:
+      - name: "Deduction"
+        search_for: "Conclusions that follow from premises"
+        space: "Logical consequences"
+        strategy: "Apply inference rules"
+        property: "Truth-preserving"
+
+      - name: "Induction"
+        search_for: "General rule from specific cases"
+        space: "Possible generalizations"
+        strategy: "Find pattern that fits cases"
+        property: "Ampliative but fallible"
+
+      - name: "Abduction"
+        search_for: "Explanation for observations"
+        space: "Possible causes/hypotheses"
+        strategy: "Find best explanation"
+        property: "Inference to best explanation"
+
+      - name: "Analogical"
+        search_for: "Source analog that maps to target"
+        space: "Known situations"
+        strategy: "Structure mapping"
+        property: "Similarity-based"
+
+  creativity_as_search:
+    description: "Creativity is search through novelty space"
+
+    reframe: |
+      Creativity = finding novel combinations that are valuable.
+      This is search with two criteria: novelty AND value.
+
+    types:
+      - name: "Combinatorial"
+        search_for: "New combinations of existing elements"
+        space: "Combinations of known elements"
+        strategy: "Systematic or random combination"
+
+      - name: "Exploratory"
+        search_for: "Possibilities within a style/space"
+        space: "Defined creative space"
+        strategy: "Explore boundaries"
+
+      - name: "Transformational"
+        search_for: "New creative space itself"
+        space: "Possible spaces"
+        strategy: "Change the rules"
+
+    techniques_as_search:
+      - name: "Brainstorming"
+        search_strategy: "Breadth-first, no pruning"
+
+      - name: "SCAMPER"
+        search_strategy: "Systematic variations along dimensions"
+
+      - name: "Random Input"
+        search_strategy: "Jump to random point, find path back"
+
+      - name: "Constraint Relaxation"
+        search_strategy: "Expand search space by removing constraints"
+
+      - name: "Analogy"
+        search_strategy: "Import solution from distant domain"
+
+  emotion_as_search:
+    description: "Emotions guide search by providing evaluation signals"
+
+    reframe: |
+      Emotions might be search heuristics:
+      - Fear = "Search for escape/avoidance"
+      - Curiosity = "Search for information"
+      - Frustration = "Current search strategy failing"
+      - Satisfaction = "Search goal reached"
+      - Anxiety = "Search space feels too large/uncertain"
+
+    function: |
+      Emotions provide fast evaluation without deliberation.
+      They're pre-computed search guidance:
+      - What to approach (positive emotion)
+      - What to avoid (negative emotion)
+      - What to explore (curiosity)
+      - What to exploit (satisfaction)
+
+  decision_making_as_search:
+    description: "Deciding is searching for the best option"
+
+    reframe: |
+      Decision = search through options for best one
+      - Define option space
+      - Define evaluation criteria
+      - Search for maximum
+
+    complexity:
+      - single_criterion: "Search for maximum on one dimension"
+      - multi_criteria: "Search Pareto frontier"
+      - uncertainty: "Search expected value or robust option"
+      - strategic: "Search Nash equilibrium"
+
+  memory_as_search_infrastructure:
+    description: "Memory is a searchable database of experience"
+
+    reframe: |
+      Memory = the search space for cognition
+      - Episodic memory = searchable event database
+      - Semantic memory = searchable fact database
+      - Procedural memory = searchable skill database
+
+      Memory retrieval = search query
+      Forgetting = pruning search space
+      Consolidation = reorganizing for better search
+
+  language_as_search_tool:
+    description: "Language compresses and structures search"
+
+    reframe: |
+      Words are pointers to concepts, enabling:
+      - Compression: "chair" vs describing every chair
+      - Communication: share search results
+      - Reasoning: manipulate symbols = manipulate search space
+
+      Language enables "search by reference" - point to a region
+      of concept space without exhaustively describing it.
+
+  understanding_as_search:
+    description: "Understanding is finding a model that fits"
+
+    reframe: |
+      "I understand X" = "I found a model of X that:
+      - Explains observations
+      - Makes correct predictions
+      - Connects to other knowledge
+      - Feels coherent"
+
+      Understanding is search through model space for one that fits.
+
+# ============================================
+# HIGH-VALUE PROCEDURE CANDIDATES
+# ============================================
+
+procedure_candidates:
+  description: |
+    Which search methods should become GOSM procedures?
+    Prioritized by: How much does the structure reduce intelligence required?
+
+  tier_1_highest_value:
+    description: "Structure does almost all the work"
+
+    candidates:
+      - name: "Binary Elimination Questions"
+        from: "Diagnostic questioning"
+        why_high_value: |
+          Structure: Ask questions that cut search space in half.
+          No intelligence needed to FOLLOW - just ask the next question.
+          Intelligence only needed to CONSTRUCT the question tree.
+        procedure_outline:
+          - "Define the search space (what are we looking for?)"
+          - "Construct binary questions that divide space"
+          - "Ask questions in order of information gain"
+          - "Follow the path until one option remains"
+        intelligence_reduction: "95% - just follow decision tree"
+
+      - name: "Checklist Search"
+        from: "Systematic enumeration"
+        why_high_value: |
+          Structure: Check each item against criteria.
+          No inference, no judgment - just match.
+        procedure_outline:
+          - "Enumerate all items in search space"
+          - "Define pass/fail criteria for each"
+          - "Check each item"
+          - "Return items that pass"
+        intelligence_reduction: "99% - pure mechanical matching"
+
+      - name: "Template Fill-In"
+        from: "Constraint satisfaction"
+        why_high_value: |
+          Structure: Slots with defined acceptable values.
+          Just fill each slot with valid value.
+        procedure_outline:
+          - "Define template with slots"
+          - "Define valid values for each slot"
+          - "Fill each slot"
+          - "Check constraints between slots"
+        intelligence_reduction: "90% - just fill blanks"
+
+      - name: "SCAMPER Variation"
+        from: "Systematic variation"
+        why_high_value: |
+          Structure: Apply each transformation systematically.
+          Substitute, Combine, Adapt, Modify, Put to other use, Eliminate, Reverse.
+          No creativity needed - just apply each operation.
+        procedure_outline:
+          - "Take existing solution"
+          - "Apply Substitute: What can be replaced?"
+          - "Apply Combine: What can be merged?"
+          - "Apply Adapt: What can be adjusted?"
+          - "Apply Modify: What can be changed?"
+          - "Apply Put to other use: Different context?"
+          - "Apply Eliminate: What can be removed?"
+          - "Apply Reverse: What can be inverted?"
+          - "Evaluate all variations"
+        intelligence_reduction: "80% - mechanical application of transformations"
+
+      - name: "Pairwise Comparison Matrix"
+        from: "Tournament selection"
+        why_high_value: |
+          Structure: Compare all pairs, count wins.
+          Each comparison is simple; aggregation is mechanical.
+        procedure_outline:
+          - "List all options"
+          - "For each pair, ask: Which is better on criterion X?"
+          - "Count wins for each option"
+          - "Rank by win count"
+        intelligence_reduction: "85% - each comparison is simple"
+
+      - name: "Morphological Box"
+        from: "Combinatorial search"
+        why_high_value: |
+          Structure: Define dimensions, list values, combine.
+          Systematic generation of all combinations.
+        procedure_outline:
+          - "Identify independent dimensions"
+          - "List possible values for each dimension"
+          - "Generate all combinations"
+          - "Filter by constraints"
+          - "Evaluate remaining combinations"
+        intelligence_reduction: "85% - generation is mechanical"
+
+  tier_2_high_value:
+    description: "Structure does most of the work, some judgment needed"
+
+    candidates:
+      - name: "Analogy Search"
+        from: "Structure mapping"
+        why_high_value: |
+          Structure: List source domains, map systematically.
+          Some judgment in mapping, but process is guided.
+        procedure_outline:
+          - "Define target problem structure"
+          - "List potential source domains (provided list)"
+          - "For each source: What is the analogous problem?"
+          - "For each source: What is their solution?"
+          - "For each solution: How does it map to target?"
+          - "Evaluate mapped solutions"
+        intelligence_reduction: "70% - mapping requires some judgment"
+
+      - name: "Root Cause Analysis (5 Whys)"
+        from: "Causal chain search"
+        why_high_value: |
+          Structure: Ask "why" 5 times, follow causal chain.
+          Simple to follow; judgment in identifying true cause.
+        procedure_outline:
+          - "State the problem"
+          - "Ask: Why did this happen? (Answer 1)"
+          - "Ask: Why did Answer 1 happen? (Answer 2)"
+          - "Continue 5 times"
+          - "Identify which answer is the root cause"
+        intelligence_reduction: "60% - following is easy, root identification harder"
+
+      - name: "Assumption Surfacing"
+        from: "Hidden constraint search"
+        why_high_value: |
+          Structure: Prompt list triggers assumption identification.
+          Prompts do most work; recognition requires some insight.
+        procedure_outline:
+          - "State the goal/plan"
+          - "For each prompt in list: Does this apply?"
+          - "Prompts: What am I taking for granted? What if the opposite? What would make this fail? What must be true?"
+          - "List all surfaced assumptions"
+          - "Test each assumption"
+        intelligence_reduction: "65% - prompts guide, recognition varies"
+
+      - name: "Pre-Mortem"
+        from: "Failure search"
+        why_high_value: |
+          Structure: Assume failure, search for causes.
+          Inversion makes search easier.
+        procedure_outline:
+          - "Assume the project failed"
+          - "List all reasons it could have failed"
+          - "For each reason: How likely? How preventable?"
+          - "Address high-likelihood preventable causes"
+        intelligence_reduction: "70% - inversion is powerful trick"
+
+      - name: "Inversion"
+        from: "Search space transformation"
+        why_high_value: |
+          Structure: Instead of "how to succeed," ask "how to fail."
+          Then don't do those things. Often easier.
+        procedure_outline:
+          - "State the goal"
+          - "Invert: How would I guarantee failure?"
+          - "List all ways to fail"
+          - "Invert each: What is the opposite?"
+          - "Do the opposites"
+        intelligence_reduction: "75% - inversion is mechanical"
+
+      - name: "Criteria Weighting"
+        from: "Multi-criteria search"
+        why_high_value: |
+          Structure: Rate options on criteria, weight and sum.
+          Decomposition makes evaluation tractable.
+        procedure_outline:
+          - "List criteria"
+          - "Weight criteria by importance (allocate 100 points)"
+          - "Rate each option on each criterion (1-10)"
+          - "Calculate weighted sum"
+          - "Rank by total"
+        intelligence_reduction: "80% - decomposition + arithmetic"
+
+  tier_3_moderate_value:
+    description: "Structure helps, significant judgment still needed"
+
+    candidates:
+      - name: "Socratic Questioning"
+        from: "Assumption search via dialogue"
+        why_moderate: "Questions are structured but follow-up requires judgment"
+        intelligence_reduction: "50%"
+
+      - name: "Scenario Planning"
+        from: "Future space search"
+        why_moderate: "Structure for generating scenarios, judgment for evaluation"
+        intelligence_reduction: "50%"
+
+      - name: "Devil's Advocate"
+        from: "Adversarial search"
+        why_moderate: "Role is structured, but arguments require creativity"
+        intelligence_reduction: "45%"
+
+      - name: "Opportunity Cost Analysis"
+        from: "Alternative search"
+        why_moderate: "Structure to consider alternatives, judgment to evaluate"
+        intelligence_reduction: "55%"
+
+# ============================================
+# RECOMMENDED PROCEDURES TO CREATE
+# ============================================
+
+recommended_procedures:
+  description: |
+    Based on intelligence reduction and value, these should be created first.
+
+  immediate_priority:
+    - name: "binary_elimination_search"
+      intelligence_reduction: "95%"
+      description: "Construct and follow binary question trees"
+      template_needed: "Question tree format, traversal rules"
+
+    - name: "systematic_variation_scamper"
+      intelligence_reduction: "80%"
+      description: "Apply SCAMPER transformations systematically"
+      template_needed: "SCAMPER checklist, variation capture format"
+
+    - name: "morphological_analysis"
+      intelligence_reduction: "85%"
+      description: "Define dimensions, enumerate combinations"
+      template_needed: "Dimension matrix, combination generator"
+
+    - name: "pairwise_comparison"
+      intelligence_reduction: "85%"
+      description: "Compare all pairs, aggregate preferences"
+      template_needed: "Comparison matrix, aggregation rules"
+
+    - name: "checklist_search"
+      intelligence_reduction: "99%"
+      description: "Check items against criteria"
+      template_needed: "Checklist format, criteria definition"
+
+  high_priority:
+    - name: "inversion_method"
+      intelligence_reduction: "75%"
+      description: "How to fail? Don't do that."
+      template_needed: "Inversion prompts, negation rules"
+
+    - name: "analogy_search"
+      intelligence_reduction: "70%"
+      description: "Find analogous problems in other domains"
+      template_needed: "Domain list, mapping template"
+
+    - name: "pre_mortem"
+      intelligence_reduction: "70%"
+      description: "Assume failure, find causes"
+      template_needed: "Failure prompts, prevention mapping"
+
+    - name: "criteria_weighting"
+      intelligence_reduction: "80%"
+      description: "Rate on criteria, weight and sum"
+      template_needed: "Criteria matrix, weighting method"
+
+  medium_priority:
+    - name: "assumption_surfacing"
+      intelligence_reduction: "65%"
+      description: "Use prompts to find hidden assumptions"
+      template_needed: "Assumption prompt list"
+
+    - name: "root_cause_5_whys"
+      intelligence_reduction: "60%"
+      description: "Follow causal chain backward"
+      template_needed: "5 Whys format, root identification criteria"
+
+# ============================================
+# PROCEDURE DESIGN PRINCIPLES
+# ============================================
+
+procedure_design_for_intelligence_reduction:
+  principle_1:
+    name: "Enumerate, Don't Generate"
+    description: |
+      Provide lists to select from rather than asking for generation.
+      "Which of these 10 applies?" vs "What might apply?"
+    intelligence_reduction: "High"
+
+  principle_2:
+    name: "Compare, Don't Evaluate Absolutely"
+    description: |
+      "Is A better than B?" is easier than "How good is A?"
+      Relative judgments are more reliable than absolute ones.
+    intelligence_reduction: "Medium-High"
+
+  principle_3:
+    name: "Decompose Into Binary"
+    description: |
+      Turn complex decisions into series of yes/no questions.
+      Each question is trivial; sequence finds answer.
+    intelligence_reduction: "Very High"
+
+  principle_4:
+    name: "Provide Transformations"
+    description: |
+      Give specific operations to apply.
+      "Reverse this" vs "Think of alternatives"
+    intelligence_reduction: "High"
+
+  principle_5:
+    name: "Make Criteria Explicit"
+    description: |
+      Define exactly what "good" means.
+      Removes need for judgment about quality.
+    intelligence_reduction: "High"
+
+  principle_6:
+    name: "Constrain Output Format"
+    description: |
+      Specify exactly what output looks like.
+      Fill-in-blank vs open-ended.
+    intelligence_reduction: "Very High"
+
+  principle_7:
+    name: "Provide Exhaustive Options"
+    description: |
+      If the option space is finite, list all options.
+      Selection is easier than generation.
+    intelligence_reduction: "Very High"
+
+  principle_8:
+    name: "Use Mechanical Aggregation"
+    description: |
+      Sum, average, count - not "synthesize" or "integrate."
+      Math doesn't require intelligence.
+    intelligence_reduction: "Very High"
+
+# ============================================
+# META-OBSERVATION
+# ============================================
+
+meta_observation: |
+  The search paradigm unifies many cognitive activities:
+  - Questions = search space definition
+  - Answers = search results
+  - Understanding = finding fitting model
+  - Creativity = search in novelty space
+  - Decision = search for best option
+  - Learning = search for good model
+  - Communication = search for shared understanding
+  - Prediction = search through future space
+  - Reasoning = search through inference space
+  - Memory = searchable database
+  - Attention = search relevance filter
+  - Consciousness = ongoing search process
+
+  If this unification is valid, then:
+  1. All cognitive improvement = search improvement
+  2. GOSM procedures = search algorithms for human cognition
+  3. Intelligence reduction = making search trivial via structure
+  4. The goal of GOSM = provide search structures so good that intelligence is unnecessary
+
+  The most valuable procedures are those where:
+  - Search space is well-defined
+  - Search strategy is mechanical
+  - Evaluation criteria are explicit
+  - Output format is constrained
+
+  These procedures "do all the work" - the executor just follows instructions.

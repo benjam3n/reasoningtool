@@ -1,0 +1,290 @@
+# Risk Management Orderings
+# Orderings focused on managing uncertainty, preserving options, and handling irreversible decisions
+
+category_id: risk_management
+category_name: "Risk Management Orderings"
+description: |
+  Orderings focused on managing uncertainty, preserving options, and
+  handling irreversible decisions. Use these when the stakes are high
+  and you need to minimize downside risk or maintain flexibility.
+
+when_to_consider: |
+  - High uncertainty about feasibility or outcomes
+  - Expensive consequences of wrong decisions
+  - Irreversible actions that foreclose options
+  - Safety-critical systems requiring redundancy
+  - Need to validate assumptions before major investment
+
+variations:
+
+  # ----------------------------------------
+  # FAIL-FAST ORDERING
+  # ----------------------------------------
+  fail_fast:
+    id: fail_fast_ordering
+    name: "Fail-Fast Ordering"
+    category: risk_management
+
+    philosophy: |
+      Do the most uncertain, risky, or likely-to-fail steps FIRST.
+      If something will fail, find out immediately before investing
+      more effort. Preserves optionality and avoids sunk cost.
+
+    when_to_use:
+      - High uncertainty about feasibility
+      - Expensive later steps that would be wasted on failure
+      - Multiple possible paths, need to validate one early
+      - Limited resources that shouldn't be wasted
+
+    prioritization_rules:
+      1_highest_uncertainty:
+        rule: "Steps with unknown outcomes go first"
+        reason: "Resolve uncertainty before committing"
+
+      2_highest_risk:
+        rule: "Steps most likely to fail go early"
+        reason: "Fail before investing more effort"
+
+      3_blocking_decisions:
+        rule: "Decision points that affect later steps go first"
+        reason: "Don't do work that depends on unknown decisions"
+
+      4_assumption_tests:
+        rule: "Steps that test key assumptions go early"
+        reason: "Validate assumptions before building on them"
+
+    anti_patterns:
+      - "Saving risky work for later"
+      - "Hoping problems will resolve themselves"
+      - "Doing easy comfortable work first to feel productive"
+
+    example:
+      context: "Building a startup product"
+      steps:
+        - "Build full feature set"
+        - "Talk to potential customers"
+        - "Create polished UI"
+        - "Set up infrastructure"
+      fail_fast_order:
+        1: "Talk to potential customers (highest uncertainty - do they want this?)"
+        2: "Build minimal prototype"
+        3: "Set up infrastructure (only if validated)"
+        4: "Create polished UI (only if validated)"
+      rationale: "Customer validation is highest risk - find out before building"
+
+  # ----------------------------------------
+  # REVERSIBILITY ORDERING
+  # ----------------------------------------
+  reversibility:
+    id: reversibility_ordering
+    name: "Reversibility Ordering"
+    category: risk_management
+
+    philosophy: |
+      Do reversible actions before irreversible ones. If you can undo
+      something easily, do it earlier. If something is hard or impossible
+      to undo, do it later after more certainty. Preserves optionality.
+
+    when_to_use:
+      - High-stakes decisions with irreversible components
+      - Uncertainty about the right approach
+      - Want to preserve ability to change course
+      - Multiple stakeholders who might object later
+
+    prioritization_rules:
+      1_fully_reversible:
+        rule: "Easily undoable steps can go anytime"
+        reason: "No lasting commitment"
+
+      2_costly_to_reverse:
+        rule: "Steps that are expensive to undo go later"
+        reason: "Delay commitment until more certain"
+
+      3_irreversible_last:
+        rule: "Cannot-undo steps go as late as possible"
+        reason: "Maximum information before point of no return"
+
+      4_create_before_destroy:
+        rule: "Creation before deletion, backup before modification"
+        reason: "Preserve ability to recover"
+
+    reversibility_categories:
+      easily_reversible:
+        examples: ["Write draft", "Create branch", "Make config change", "Add feature flag"]
+        timing: "Can do early, easy to undo"
+
+      costly_to_reverse:
+        examples: ["Send announcement", "Deploy to production", "Hire someone", "Sign contract"]
+        timing: "Delay until confident"
+
+      irreversible:
+        examples: ["Delete data", "End partnership", "Public statement", "Ship physical product"]
+        timing: "Last possible moment after all validation"
+
+    example:
+      context: "Launching a major feature"
+      steps:
+        - "Write press release"
+        - "Build feature"
+        - "Send press release"
+        - "Deploy behind feature flag"
+        - "Remove feature flag (general availability)"
+        - "Delete old code paths"
+      reversibility_order:
+        1: "Build feature (can abandon)"
+        2: "Deploy behind feature flag (reversible)"
+        3: "Write press release (not sent yet)"
+        4: "Remove feature flag (harder to reverse)"
+        5: "Send press release (irreversible)"
+        6: "Delete old code paths (irreversible)"
+      rationale: "Each step increases commitment; delay irreversible until confident"
+
+  # ----------------------------------------
+  # OPTION-PRESERVING ORDERING
+  # ----------------------------------------
+  option_preserving:
+    id: option_preserving_ordering
+    name: "Option-Preserving Ordering (Real Options)"
+    category: risk_management
+
+    philosophy: |
+      Delay decisions that close options; preserve flexibility for
+      as long as it's valuable. From real options theory: options
+      have value. An irreversible decision made today forecloses
+      futures that might be better. Defer commitment until the
+      value of deciding exceeds the value of waiting.
+
+    different_from_reversibility: |
+      Reversibility asks: "Can I undo this?"
+      Option-preserving asks: "What futures am I foreclosing?"
+      A reversible action might still close valuable options.
+      An irreversible action might be fine if no valuable options lost.
+
+    when_to_use:
+      - High uncertainty about future states
+      - Options have value that increases with information
+      - Some paths foreclose others permanently
+      - Cost of waiting is lower than value of optionality
+
+    key_concepts:
+      option_value: "Value of being able to choose later"
+      exercise_decision: "When to commit vs. keep waiting"
+      foreclosure: "Paths that become impossible after a decision"
+      information_arrival: "New info that changes optimal choice"
+
+    prioritization_rules:
+      1_identify_foreclosures:
+        rule: "What options does each action close?"
+        questions:
+          - "After this, what becomes impossible?"
+          - "What futures am I giving up?"
+          - "Is this one-way or two-way door?"
+
+      2_value_remaining_options:
+        rule: "Estimate value of keeping options open"
+        factors:
+          - "Uncertainty remaining"
+          - "Time until more information arrives"
+          - "Cost of being wrong if decided now"
+
+      3_compare_to_waiting_cost:
+        rule: "Decide when option value < waiting cost"
+        formula: "Commit when: value_of_deciding > value_of_waiting"
+        reason: "Sometimes you must decide despite uncertainty"
+
+      4_order_by_option_preservation:
+        rule: "Do option-preserving actions before option-closing"
+        reason: "Maintain flexibility as long as valuable"
+
+    anti_patterns:
+      - "Committing early 'to be decisive' (premature foreclosure)"
+      - "Waiting forever (analysis paralysis)"
+      - "Ignoring foreclosed options"
+      - "Treating all decisions as equally reversible"
+
+    example:
+      context: "Career decisions while exploring options"
+      decisions:
+        A: "Take generalist role (preserves many paths)"
+        B: "Take specialist role (forecloses other specialties)"
+        C: "Start PhD (forecloses industry for years)"
+        D: "Take sabbatical (preserves all, costs time)"
+      option_preserving_order:
+        1: "A - Generalist role (explore while preserving options)"
+        2: "D - Sabbatical (only if info will arrive)"
+        defer: "B, C - Specialist/PhD (decide when uncertainty lower)"
+      rationale: "Keep doors open until you know which to walk through"
+
+    source: "Finance/Decision Theory - Real Options, Option Value"
+
+  # ----------------------------------------
+  # DEFENSE-IN-DEPTH ORDERING
+  # ----------------------------------------
+  defense_in_depth:
+    id: defense_in_depth_ordering
+    name: "Defense-in-Depth Ordering (Swiss Cheese)"
+    category: risk_management
+
+    philosophy: |
+      Layer defenses so no single failure causes catastrophe.
+      From safety engineering (Swiss Cheese Model): every defense
+      has holes. Stack multiple independent defenses so a threat
+      must pass through all holes simultaneously to cause harm.
+      Order matters: outer defenses catch most, inner catch rest.
+
+    when_to_use:
+      - Safety-critical systems
+      - Security implementations
+      - Quality assurance processes
+      - Any context where failure is costly
+      - Risk mitigation strategies
+
+    key_concepts:
+      defense_layer: "One mechanism that can stop a threat"
+      hole: "Weakness or failure mode in a defense"
+      independence: "Defenses fail for different reasons"
+      alignment: "When holes line up, threat passes through"
+
+    prioritization_rules:
+      1_identify_threats:
+        rule: "What are you defending against?"
+        reason: "Defenses must address actual threats"
+
+      2_layer_from_outer_to_inner:
+        rule: "Broad defenses first, specific defenses later"
+        pattern:
+          outer: "Catch most common threats cheaply"
+          middle: "Catch threats that passed outer layer"
+          inner: "Catch rare threats that passed all outer"
+
+      3_ensure_independence:
+        rule: "Each layer should fail for different reasons"
+        reason: "Correlated failures = useless redundancy"
+        test: "If layer N fails, does it cause layer N+1 to fail?"
+
+      4_dont_over_layer:
+        rule: "More layers isn't always better"
+        reason: "Complexity can introduce new failure modes"
+        guideline: "Enough layers that aligned holes are rare"
+
+    anti_patterns:
+      - "Single point of failure (no redundancy)"
+      - "Correlated defenses (fail together)"
+      - "So many layers that system is brittle"
+      - "Assuming one perfect defense is enough"
+
+    example:
+      context: "Preventing production deployment failures"
+      defense_layers:
+        layer_1_outer: "Code review (catches obvious errors)"
+        layer_2: "Automated tests (catches logic errors)"
+        layer_3: "Staging environment (catches integration errors)"
+        layer_4: "Canary deployment (catches production-only errors)"
+        layer_5_inner: "Rollback capability (catches everything else)"
+      independence_check:
+        - "Review and tests catch different things"
+        - "Staging and production differ, so some pass staging"
+        - "Canary and rollback are last-resort defenses"
+      rationale: "Failure must pass all 5 layers to cause outage"
+
+    source: "Safety Engineering - Swiss Cheese Model, Defense in Depth"

@@ -1,0 +1,279 @@
+# Comprehensive Aspects Procedure
+# Ensuring any analysis/procedure covers all relevant dimensions
+
+id: comprehensive_aspects
+name: Comprehensive Aspects
+version: "1.0.0"
+domain: meta
+tags: ["meta", "completeness", "quality", "checklist"]
+
+description: |
+  Meta-procedure for ensuring any analysis, procedure, or decision
+  covers all relevant aspects without blind spots.
+
+  Apply this AFTER creating any procedure/analysis to verify completeness.
+  Apply this DURING analysis to ensure you're not missing angles.
+
+core_principle: |
+  Incomplete analysis leads to incomplete solutions.
+  The aspects you don't consider are the ones that bite you.
+
+  But: Not every aspect is relevant to every situation.
+  Comprehensive doesn't mean exhaustive - it means "no blind spots."
+
+# ============================================
+# UNIVERSAL ASPECTS
+# These apply to almost everything
+# ============================================
+universal_aspects:
+
+  # WHO
+  - category: actors
+    questions:
+      - "Who is affected by this?"
+      - "Who has power/control over this?"
+      - "Who benefits? Who is harmed?"
+      - "Who is missing from this analysis?"
+      - "Whose perspective haven't we considered?"
+    blind_spot: "Assuming your perspective is the only one"
+
+  # WHAT
+  - category: scope
+    questions:
+      - "What exactly are we talking about?"
+      - "What is included? What is excluded?"
+      - "What are the boundaries?"
+      - "What are we assuming is out of scope that might not be?"
+    blind_spot: "Vague scope that shifts during analysis"
+
+  # WHEN
+  - category: temporal
+    questions:
+      - "When does this apply?"
+      - "When did this start? When might it end?"
+      - "What's the timeline?"
+      - "What changes over time?"
+      - "Is this urgent? Is there a window?"
+    blind_spot: "Treating dynamic situations as static"
+
+  # WHERE
+  - category: context
+    questions:
+      - "Where does this apply?"
+      - "What context makes this true/false?"
+      - "What conditions must hold?"
+      - "Where does this NOT apply?"
+    blind_spot: "Overgeneralizing from specific context"
+
+  # WHY
+  - category: purpose
+    questions:
+      - "Why does this matter?"
+      - "Why are we doing this?"
+      - "What's the goal?"
+      - "What happens if we don't?"
+    blind_spot: "Losing sight of purpose, solving wrong problem"
+
+  # HOW
+  - category: mechanism
+    questions:
+      - "How does this work?"
+      - "How would we do this?"
+      - "What's the mechanism/process?"
+      - "How do we know it worked?"
+    blind_spot: "Vague action without clear mechanism"
+
+# ============================================
+# ANALYTICAL ASPECTS
+# For claims, arguments, decisions
+# ============================================
+analytical_aspects:
+
+  - category: evidence
+    questions:
+      - "What evidence supports this?"
+      - "What evidence contradicts this?"
+      - "How strong is the evidence?"
+      - "What evidence would change our mind?"
+    blind_spot: "Confirmation bias, ignoring counterevidence"
+
+  - category: assumptions
+    questions:
+      - "What are we assuming?"
+      - "Which assumptions are we not questioning?"
+      - "What if the opposite were true?"
+      - "What would make this assumption false?"
+    blind_spot: "Unexamined assumptions treated as facts"
+
+  - category: alternatives
+    questions:
+      - "What other options exist?"
+      - "What's the opposite approach?"
+      - "What would someone who disagrees suggest?"
+      - "Have we considered doing nothing?"
+    blind_spot: "Tunnel vision on one approach"
+
+  - category: consequences
+    questions:
+      - "What happens if this works?"
+      - "What happens if this fails?"
+      - "What are the second-order effects?"
+      - "What unintended consequences might occur?"
+    blind_spot: "Only considering intended outcomes"
+
+  - category: dependencies
+    questions:
+      - "What does this depend on?"
+      - "What must be true for this to work?"
+      - "What other things does this affect?"
+      - "What's upstream? What's downstream?"
+    blind_spot: "Treating things as isolated when they're connected"
+
+  - category: constraints
+    questions:
+      - "What limits what we can do?"
+      - "What's non-negotiable?"
+      - "What resources are required?"
+      - "What obstacles exist?"
+    blind_spot: "Ignoring real constraints, or inventing fake ones"
+
+# ============================================
+# QUALITY ASPECTS
+# For evaluating ideas, solutions, outputs
+# ============================================
+quality_aspects:
+
+  - category: validity
+    questions:
+      - "Is this true/correct?"
+      - "Is this internally consistent?"
+      - "Is this externally consistent with known facts?"
+    test: "Could a critic find a flaw?"
+
+  - category: completeness
+    questions:
+      - "Is anything missing?"
+      - "Are all cases covered?"
+      - "Are edge cases handled?"
+    test: "Is there a situation this doesn't address?"
+
+  - category: clarity
+    questions:
+      - "Is this clear and unambiguous?"
+      - "Could someone misunderstand this?"
+      - "Is the language precise?"
+    test: "Would two people interpret this the same way?"
+
+  - category: actionability
+    questions:
+      - "Can this be acted on?"
+      - "Is it clear what to do?"
+      - "Is it practical to implement?"
+    test: "Could someone execute this without asking questions?"
+
+  - category: value
+    questions:
+      - "Is this worth doing?"
+      - "What's the benefit?"
+      - "Does the value justify the cost?"
+    test: "Would we do this if we had to pay for it?"
+
+# ============================================
+# RISK ASPECTS
+# For decisions with downside potential
+# ============================================
+risk_aspects:
+
+  - category: failure_modes
+    questions:
+      - "How could this fail?"
+      - "What's the worst case?"
+      - "What's the most likely failure?"
+      - "What would we do if it fails?"
+
+  - category: reversibility
+    questions:
+      - "Can we undo this?"
+      - "How hard is it to reverse?"
+      - "What's locked in once we start?"
+
+  - category: uncertainty
+    questions:
+      - "What don't we know?"
+      - "What could we learn that would change this?"
+      - "How confident are we?"
+      - "What's the cost of being wrong?"
+
+# ============================================
+# META ASPECTS
+# For the analysis itself
+# ============================================
+meta_aspects:
+
+  - category: source
+    questions:
+      - "Where did this come from?"
+      - "Is the source reliable?"
+      - "What biases might the source have?"
+      - "Has this been independently verified?"
+
+  - category: recency
+    questions:
+      - "Is this current?"
+      - "Has anything changed since this was created?"
+      - "Is this still applicable?"
+
+  - category: level
+    questions:
+      - "Are we at the right level of abstraction?"
+      - "Should we go more concrete or more abstract?"
+      - "Is this too detailed or too vague?"
+
+  - category: framing
+    questions:
+      - "How is this being framed?"
+      - "What other framings are possible?"
+      - "Is the framing biasing the analysis?"
+
+# ============================================
+# USAGE
+# ============================================
+usage:
+  when_to_apply: |
+    1. After creating any procedure - check for missing aspects
+    2. After making any decision - verify completeness
+    3. When something feels off - find the blind spot
+    4. Before committing significant resources - comprehensive check
+
+  how_to_apply: |
+    1. Select relevant aspect categories (not all apply to everything)
+    2. Ask each question in selected categories
+    3. Note any aspects that reveal gaps
+    4. Address gaps or document why they don't apply
+
+  efficiency: |
+    Don't mechanically ask every question for every situation.
+
+    Instead:
+    - Skim categories, note which seem relevant
+    - Focus on questions that feel uncomfortable
+    - The aspects you want to skip are often the important ones
+
+  output: |
+    Either:
+    - "Comprehensive check passed - these aspects covered: [list]"
+    - "Gap found in [aspect] - need to address: [what]"
+
+# ============================================
+# QUICK CHECKLIST
+# For rapid completeness check
+# ============================================
+quick_checklist:
+  - "Who's affected that we haven't considered?"
+  - "What's out of scope that shouldn't be?"
+  - "What are we assuming without questioning?"
+  - "What's the opposite view?"
+  - "What could go wrong?"
+  - "What would change our mind?"
+  - "Is this actionable?"
+  - "Is this the right level?"

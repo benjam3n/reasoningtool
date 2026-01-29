@@ -1,0 +1,685 @@
+# Source Prioritization - Prioritize which sources to extract procedures from
+# Meta-procedure for optimizing extraction effort allocation
+
+id: source_prioritization
+name: Source Prioritization
+version: "1.0.0"
+domain: meta
+
+description: Given limited time to extract procedures from sources, prioritize which sources to process for maximum procedure value.
+
+long_description: |
+  Not all sources are equally valuable for procedure extraction. This procedure
+  provides a systematic approach to prioritizing extraction effort:
+
+  1. Assess each source on key dimensions
+  2. Calculate expected value per hour of extraction
+  3. Rank sources by ROI
+  4. Allocate extraction time accordingly
+
+  Key insight: A 3-hour extraction from a great source beats thirty 6-minute
+  extractions from mediocre sources. Quality trumps quantity.
+
+  Philosophy: Not all sources are equal. Some have:
+  - Higher procedure density (more "how to" per minute)
+  - More unique insights (can't get elsewhere)
+  - Better relevance to your goals
+  - Easier extraction (clear explanations, transcripts available)
+
+  Prioritize ruthlessly to get maximum value from limited extraction time.
+
+tags:
+  - meta
+  - extraction
+  - prioritization
+  - planning
+  - resource-allocation
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - When you have multiple sources waiting for extraction
+  - Before starting a procedure extraction sprint
+  - When building extraction queue from content backlog
+  - When deciding whether to process new source vs queued sources
+  - During quarterly library planning
+  - When extraction time is limited and must be optimized
+  - After accumulating "watch later" or "read later" items
+  - When onboarding to GOSM and choosing initial extraction targets
+
+when_not_to_use:
+  - When you have only one source to extract from
+  - For urgent extractions needed for active projects
+  - When source is already determined by external requirement
+  - For quick, obvious extractions that take minimal time
+  - When exploration/serendipity is the goal (not efficiency)
+  - When learning is more important than library building
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: source_list
+    type: list
+    required: true
+    description: |
+      List of potential sources to prioritize, each with:
+      - name: Source name/title
+      - type: youtube_video | research_paper | book | tool_docs | etc.
+      - creator: Who made it
+      - domain: What field
+      - length: Duration/pages
+      - notes: Why this was added to queue
+
+  - name: extraction_goals
+    type: string
+    required: true
+    description: What kind of procedures you're looking for
+    examples:
+      - "Teaching procedures"
+      - "Research methods"
+      - "Problem-solving approaches"
+      - "All procedures"
+
+  - name: time_budget
+    type: string
+    required: false
+    description: How much time available for extraction
+
+  - name: library_gaps
+    type: list
+    required: false
+    description: Known gaps in current procedure library
+
+outputs:
+  - name: prioritized_list
+    type: list
+    description: Sources ranked by extraction value
+
+  - name: tier_assignments
+    type: dict
+    description: Sources grouped into priority tiers
+
+  - name: extraction_schedule
+    type: document
+    description: Recommended order and time allocation
+
+  - name: skip_list
+    type: list
+    description: Sources not worth extracting with reasons
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Gather source metadata
+    action: |
+      For each candidate source, collect or estimate:
+
+      1. Basic information:
+         - Title, creator, type, URL
+         - Length (duration/pages)
+         - Publication date
+         - Initial reason for adding to queue
+
+      2. Quick assessment (don't deep-dive yet):
+         - Skim description/abstract/table of contents
+         - Check creator credentials
+         - Note topic areas covered
+         - Estimate procedure density (HIGH/MEDIUM/LOW)
+
+      3. Volume metrics:
+         - Total videos/items (for channels)
+         - Total hours of content
+         - Estimated transcript characters (hours x 9000)
+
+      Create standardized metadata for each source.
+    inputs:
+      - source_list
+    outputs:
+      - source_metadata: standardized info for each candidate
+    verification: |
+      All candidates have sufficient metadata for scoring
+
+  - id: 2
+    name: Score procedure density
+    action: |
+      Rate how rich each source is in extractable procedures (1-5):
+
+      5 - Almost entirely procedural (tutorials, courses, how-tos)
+      4 - Mostly procedural with some context
+      3 - Mix of procedural and informational
+      2 - Mostly informational with some procedures
+      1 - Almost entirely informational/entertainment
+
+      High density signals:
+      - Tutorial channels, course creators
+      - "How to" in most titles
+      - Step-by-step format common
+      - Practical demonstrations
+
+      Low density signals:
+      - News/commentary
+      - Entertainment focus
+      - Opinion/reaction content
+      - Abstract theory without application
+    inputs:
+      - source_metadata (from Step 1)
+    outputs:
+      - density_scores: 1-5 score per source with reasoning
+    verification: |
+      Each score based on actual source evidence
+
+  - id: 3
+    name: Score uniqueness
+    action: |
+      Assess whether this source has knowledge unavailable elsewhere (1-5):
+
+      5 - Completely unique - only source for this knowledge
+      4 - Rare - few others have this perspective/access
+      3 - Somewhat unique - different angle on common topics
+      2 - Common - similar to many other sources
+      1 - Commodity - same as everyone else
+
+      High uniqueness signals:
+      - Original research/data
+      - Unique professional access
+      - Contrarian successful approaches
+      - Proprietary methods
+      - Decades of specialized experience
+
+      Low uniqueness signals:
+      - Summarizes others' work
+      - Common knowledge packaged
+      - Follows trends
+      - No original insight
+    inputs:
+      - source_metadata (from Step 1)
+    outputs:
+      - uniqueness_scores: 1-5 score per source with evidence
+    verification: |
+      Each score has specific justification for uniqueness claim
+
+  - id: 4
+    name: Score relevance
+    action: |
+      Assess how relevant to YOUR specific goals (1-5):
+
+      5 - Directly applicable to current goals
+      4 - Highly relevant to goals
+      3 - Moderately relevant
+      2 - Tangentially relevant
+      1 - Interesting but not relevant
+
+      NOTE: This is PERSONAL - depends on what you're trying to achieve.
+      Cross-reference with extraction_goals and library_gaps.
+    inputs:
+      - source_metadata (from Step 1)
+      - extraction_goals
+      - library_gaps
+    outputs:
+      - relevance_scores: 1-5 score per source with reasoning
+    verification: |
+      Scores tied to specific goals and gaps
+
+  - id: 5
+    name: Score credibility
+    action: |
+      Rate creator's track record of producing results (1-5):
+
+      5 - Proven exceptional results, widely recognized
+      4 - Strong track record, credible in field
+      3 - Some evidence of results
+      2 - Claims results but limited evidence
+      1 - No evidence, unverified claims
+
+      Credibility signals:
+      - Verifiable achievements
+      - Peer recognition
+      - Students/followers with results
+      - Published/cited work
+      - Professional credentials used
+
+      Low credibility signals:
+      - Only self-reported success
+      - No verifiable outcomes
+      - Sells without substance
+      - Contradicted by evidence
+    inputs:
+      - source_metadata (from Step 1)
+    outputs:
+      - credibility_scores: 1-5 score per source with evidence
+    verification: |
+      Each score supported by verifiable evidence
+
+  - id: 6
+    name: Score extractability
+    action: |
+      Rate how easy it is to extract procedures (1-5, higher = easier):
+
+      5 - Very easy - clear explanations, transcripts, structured
+      4 - Easy - good explanations, some structure
+      3 - Moderate - requires inference
+      2 - Hard - implicit, scattered, unstructured
+      1 - Very hard - no transcripts, unclear, heavily visual
+
+      Factors that improve extractability:
+      - Transcripts available
+      - Clear step-by-step explanations
+      - Written summaries/notes
+      - Consistent format
+      - Explicit about methods
+
+      Factors that reduce extractability:
+      - No transcripts, heavy accent
+      - Visual demonstrations without explanation
+      - Scattered across many videos
+      - Personality-heavy, procedure-light
+      - Assumes high prior knowledge
+    inputs:
+      - source_metadata (from Step 1)
+    outputs:
+      - extractability_scores: 1-5 score per source with factors
+    verification: |
+      Scores accurately predict extraction effort
+
+  - id: 7
+    name: Calculate composite scores and ROI
+    action: |
+      Calculate weighted score for each source:
+
+      raw_score = (procedure_density x 0.25) +
+                  (uniqueness x 0.25) +
+                  (relevance x 0.20) +
+                  (credibility x 0.15) +
+                  (extractability x 0.15)
+
+      Then estimate extraction metrics:
+
+      estimated_procedures = content_hours x density_factor
+      - density_factor: score_5=3.0, score_4=2.0, score_3=1.0, score_2=0.5, score_1=0.2
+
+      unique_procedures = estimated_procedures x (uniqueness / 5)
+
+      extraction_value = unique_procedures x (relevance / 5)
+
+      extraction_hours = content_hours x extraction_multiplier
+      - manual_deep: 3.0 hours per 1 hour content
+      - manual_quick: 1.5 hours per 1 hour content
+      - automated_review: 0.5 hours per 1 hour content
+
+      adjusted_cost = extraction_hours / extractability_score
+
+      ROI = extraction_value / adjusted_cost
+
+      ROI interpretation:
+      - excellent: > 2.0 procedures per hour
+      - good: 1.0 - 2.0 procedures per hour
+      - acceptable: 0.5 - 1.0 procedures per hour
+      - poor: < 0.5 procedures per hour
+    inputs:
+      - all scores from Steps 2-6
+      - source_metadata (for length)
+    outputs:
+      - composite_scores: raw_score per source (1.0 to 5.0)
+      - extraction_metrics: estimated procedures, hours, ROI
+    verification: |
+      All sources have composite and ROI scores
+
+  - id: 8
+    name: Assign tiers
+    action: |
+      Assign each source to a tier based on scores:
+
+      TIER 1 - EXTRACT NOW:
+      - Criteria: ROI > 2.0 OR (raw_score > 4.0 AND relevance = 5)
+      - Action: Extract immediately, high priority
+
+      TIER 2 - EXTRACT SOON:
+      - Criteria: ROI 1.0-2.0 OR raw_score 3.5-4.0
+      - Action: Extract when Tier 1 complete
+
+      TIER 3 - EXTRACT LATER:
+      - Criteria: ROI 0.5-1.0 OR raw_score 3.0-3.5
+      - Action: Extract if time permits
+
+      TIER 4 - MAYBE:
+      - Criteria: ROI 0.25-0.5 OR raw_score 2.5-3.0
+      - Action: Only if specifically needed
+
+      TIER 5 - SKIP:
+      - Criteria: ROI < 0.25 OR raw_score < 2.5
+      - Action: Do not extract
+
+      Special considerations:
+      - Foundational sources: bump to Tier 1 if Tier 2-3
+      - Time-sensitive: bump priority if may become unavailable
+      - Bundled value: extract early if unlocks other sources
+      - Diminishing returns: after 10 procedures from one source, reassess
+    inputs:
+      - composite_scores (from Step 7)
+      - extraction_metrics (from Step 7)
+    outputs:
+      - tier_assignments: tier per source with rationale
+    verification: |
+      Every source has tier assignment with clear criteria match
+
+  - id: 9
+    name: Create extraction schedule
+    action: |
+      Build ordered extraction schedule:
+
+      1. Within Tier 1, sequence by:
+         - Foundational sources first
+         - Quick wins early (high ROI, low volume)
+         - Batch similar sources for efficiency
+
+      2. Allocate time based on budget:
+         - Sum hours needed for each tier
+         - If budget limited, may not reach lower tiers
+         - Leave buffer for unexpected difficulty
+
+      3. Set checkpoints:
+         - After every 10 procedures extracted
+         - After completing each source
+         - Weekly review of priorities
+
+      4. Create schedule document with:
+         - Rank, source name, ROI, hours, expected procedures
+         - Cumulative totals
+         - Summary statistics
+    inputs:
+      - tier_assignments (from Step 8)
+      - extraction_metrics (from Step 7)
+      - time_budget
+    outputs:
+      - extraction_schedule: ordered list with time allocation
+      - schedule_summary: total hours, expected procedures by tier
+    verification: |
+      Schedule fits within time budget with clear sequence
+
+  - id: 10
+    name: Document skip list
+    action: |
+      For Tier 5 sources and any dropped from lower tiers:
+
+      1. Record why skipped:
+         - Below ROI threshold
+         - Insufficient time
+         - Redundant with existing library
+         - Low credibility
+
+      2. Decide retention:
+         - KEEP FOR LATER: Still valuable, review next quarter
+         - DROP: Remove from queue entirely
+         - CONDITIONAL: Keep if specific need arises
+
+      3. Create skip list table:
+         | Source | Raw Score | ROI | Reason | Disposition |
+    inputs:
+      - tier_assignments (from Step 8)
+      - extraction_metrics (from Step 7)
+    outputs:
+      - skip_list: sources not to extract with reasons
+      - queue_updates: sources to remove from backlog
+    verification: |
+      Each skipped source has clear reason and disposition
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All sources scored on all dimensions with evidence
+  - Weights reflect current priorities
+  - ROI calculation is consistent across sources
+  - Top priorities align with actual needs
+  - Time allocation is realistic and complete
+  - Skipped sources have clear rationale
+
+failure_modes:
+  - mode: Score inflation
+    symptom: All sources score 4-5, no differentiation
+    resolution: Force rank within categories, require evidence for high scores
+
+  - mode: Familiarity bias
+    symptom: Prioritizing sources you already know
+    resolution: Score blind where possible, have someone else review
+
+  - mode: Recency bias
+    symptom: Recently added sources always ranked higher
+    resolution: Score in batches, compare across time periods
+
+  - mode: Completion neglect
+    symptom: Starting many extractions, completing few
+    resolution: Include completion time, don't start new until finished
+
+  - mode: Gap blindness
+    symptom: Not accounting for library gaps in scoring
+    resolution: Explicitly list gaps before scoring, increase relevance weight
+
+  - mode: Over-optimization
+    symptom: Spending more time prioritizing than extracting
+    resolution: Time-box prioritization (max 30 min), extract > prioritize
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Weekly extraction planning
+    context: 10 hours available, 8 sources in queue
+    inputs:
+      source_list:
+        - name: "Veritasium learning video"
+          type: youtube_video
+          creator: "Derek Muller"
+          domain: learning
+          length: "15 min"
+        - name: "Thinking in Systems (book)"
+          type: book
+          creator: "Donella Meadows"
+          domain: systems thinking
+          length: "240 pages"
+        - name: "Random productivity blog"
+          type: blog
+          creator: "Unknown"
+          domain: productivity
+          length: "10 articles"
+      extraction_goals: "Learning and thinking procedures"
+      time_budget: "10 hours"
+      library_gaps: ["learning procedures", "systems thinking"]
+    process: |
+      1. Gather metadata for all 8 sources
+
+      2-6. Score each source on all dimensions:
+         Veritasium:
+           density=4, uniqueness=4, relevance=5, credibility=5, extractability=5
+           Raw score: 4.5
+
+         Systems book:
+           density=3, uniqueness=5, relevance=5, credibility=5, extractability=3
+           Raw score: 4.2
+
+         Random blog:
+           density=3, uniqueness=2, relevance=3, credibility=2, extractability=4
+           Raw score: 2.7
+
+      7. Calculate ROI:
+         Veritasium: 4.5 x high density / 0.5hr = 9.0
+         Systems book: 4.2 x medium density / 8hr = 0.5
+         Random blog: 2.7 x low density / 3hr = 0.5
+
+      8. Assign tiers:
+         Tier 1: Veritasium (ROI 9.0)
+         Tier 3: Systems book (high value but slow extraction)
+         Tier 5: Random blog (low uniqueness, low credibility)
+
+      9. Schedule:
+         1. Veritasium: 0.5 hours (quick win)
+         2. [Next highest ROI sources...]
+         Total: 10 hours allocated
+
+      10. Skip list:
+         Random blog - low credibility, common content
+    expected_output:
+      tier_assignments:
+        tier_1: ["Veritasium learning video"]
+        tier_5: ["Random productivity blog"]
+      extraction_schedule:
+        sources: 5
+        total_hours: 10
+        expected_procedures: 15
+      skip_list:
+        - source: "Random productivity blog"
+          reason: "Low credibility, common content"
+
+  - name: Quick triage (5 minutes per source)
+    context: Need rapid assessment for many sources
+    inputs:
+      source_list: [15 sources]
+      time_budget: "Must decide quickly"
+    process: |
+      Use quick questions for each source:
+      Q1: Is this mostly tutorials/how-tos? (Y=+2, N=+0)
+      Q2: Does this person have unique access/experience? (Y=+2, N=+0)
+      Q3: Is this directly relevant to my current goals? (Y=+2, N=+0)
+      Q4: Does this person have proven results? (Y=+1, N=+0)
+      Q5: Are transcripts available and clear? (Y=+1, N=+0)
+
+      Quick scoring:
+      8+: Tier 1 - Extract now
+      6-7: Tier 2 - Extract soon
+      4-5: Tier 3 - Extract later
+      2-3: Tier 4 - Maybe
+      0-1: Tier 5 - Skip
+
+      Time: 5 minutes per source = 75 minutes total
+    expected_output:
+      tier_assignments:
+        tier_1: 3 sources
+        tier_2: 4 sources
+        tier_3: 3 sources
+        tier_5: 5 sources
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Before any extraction sprint
+    - During quarterly library planning
+    - When extraction backlog grows too large
+    - When starting new project and identifying extraction needs
+
+  gates:
+    - gate: all_scored
+      question: "Have all candidates been scored on all dimensions?"
+
+    - gate: weights_justified
+      question: "Do weights reflect current priorities?"
+
+    - gate: time_allocated
+      question: "Is extraction time allocated to prioritized sources?"
+
+    - gate: skip_documented
+      question: "Are skipped sources documented with reasons?"
+
+  related_procedures:
+    - procedure_extraction_from_source: Execute extractions for prioritized sources
+    - automated_extraction_pipeline: For high-volume extraction
+    - procedure_effectiveness: Track value of extracted procedures
+    - weekly_review: Include extraction planning in review
+
+# ============================================
+# TEMPLATES
+# ============================================
+templates:
+  prioritized_source_entry: |
+    ## [Source Name]
+    **Type**: [YouTube / Paper / Book / Tool / Person]
+    **Creator**: [Name]
+    **URL**: [Link]
+
+    ### Scores
+    | Dimension | Score | Notes |
+    |-----------|-------|-------|
+    | Procedure Density | X/5 | [notes] |
+    | Uniqueness | X/5 | [notes] |
+    | Relevance | X/5 | [notes] |
+    | Credibility | X/5 | [notes] |
+    | Extractability | X/5 | [notes] |
+    | **Raw Score** | X.XX | |
+
+    ### Volume Estimate
+    - Videos/Items: [N]
+    - Content Hours: [N]
+    - Estimated Procedures: [N]
+    - Extraction Hours: [N]
+
+    ### ROI
+    - Value: [N procedures]
+    - Cost: [N hours]
+    - **ROI**: [X.XX procedures/hour]
+
+    ### Tier: [1-5]
+    **Recommendation**: [Extract now / Soon / Later / Maybe / Skip]
+    **Notes**: [Any special considerations]
+
+  extraction_schedule: |
+    # Extraction Schedule
+
+    ## Tier 1: Extract Now (ROI > 2.0)
+    | Rank | Source | ROI | Hours | Procedures | Cumulative |
+    |------|--------|-----|-------|------------|------------|
+    | 1 | [Name] | X.X | N | N | N |
+
+    ## Tier 2: Extract Soon
+    [Same format]
+
+    ## Summary
+    - Tier 1 sources: [N] -> [X hours] -> [Y procedures]
+    - Tier 2 sources: [N] -> [X hours] -> [Y procedures]
+    - Total if extract Tier 1+2: [X hours] -> [Y procedures]
+
+    ## Recommended Sequence
+    1. [Source] - [Reason for first]
+    2. [Source] - [Reason]
+
+  skip_list: |
+    # Sources to Skip
+
+    | Source | Raw Score | ROI | Reason | Disposition |
+    |--------|-----------|-----|--------|-------------|
+    | [Name] | X.X | X.X | [Why skipping] | [Keep/Drop/Conditional] |
+
+# ============================================
+# QUICK REFERENCE
+# ============================================
+quick_reference:
+  scoring_dimensions:
+    - Procedure Density (0.25): How much is "how to" vs "what is"
+    - Uniqueness (0.25): Can you get this elsewhere?
+    - Relevance (0.20): Does this match YOUR goals?
+    - Credibility (0.15): Track record of results
+    - Extractability (0.15): How easy to extract?
+
+  roi_interpretation:
+    excellent: "> 2.0 procedures per hour"
+    good: "1.0 - 2.0 procedures per hour"
+    acceptable: "0.5 - 1.0 procedures per hour"
+    poor: "< 0.5 procedures per hour"
+
+  tier_thresholds:
+    tier_1: "ROI > 2.0 OR (raw_score > 4.0 AND relevance = 5)"
+    tier_2: "ROI 1.0-2.0 OR raw_score 3.5-4.0"
+    tier_3: "ROI 0.5-1.0 OR raw_score 3.0-3.5"
+    tier_4: "ROI 0.25-0.5 OR raw_score 2.5-3.0"
+    tier_5: "ROI < 0.25 OR raw_score < 2.5"
+
+  quick_questions:
+    - "Is this mostly tutorials/how-tos? (Y=+2)"
+    - "Unique access/experience? (Y=+2)"
+    - "Directly relevant to goals? (Y=+2)"
+    - "Proven results? (Y=+1)"
+    - "Transcripts available? (Y=+1)"

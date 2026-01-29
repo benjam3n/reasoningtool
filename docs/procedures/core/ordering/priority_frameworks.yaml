@@ -1,0 +1,228 @@
+# Priority Framework Orderings
+# Classic priority frameworks for systematic ranking
+
+category_id: priority_frameworks
+category_name: "Priority Framework Orderings"
+description: |
+  Orderings based on classic priority frameworks that classify
+  items by urgency, importance, constraints, or recency.
+  Use when you need a systematic way to rank items.
+
+when_to_consider: |
+  - Overwhelmed with mixed priorities
+  - Scheduling with many constraints
+  - Context-switching between workstreams
+  - Urgency crowding out importance
+  - Items have restricted choices/options
+
+variations:
+
+  # ----------------------------------------
+  # URGENCY-IMPORTANCE ORDERING (EISENHOWER)
+  # ----------------------------------------
+  urgency_importance:
+    id: urgency_importance_ordering
+    name: "Urgency-Importance Ordering (Eisenhower Matrix)"
+    category: priority_frameworks
+
+    philosophy: |
+      Classify tasks by urgency AND importance to prevent urgent-but-
+      unimportant tasks from crowding out important-but-not-urgent ones.
+      From Eisenhower: "What is important is seldom urgent and what is
+      urgent is seldom important."
+
+    when_to_use:
+      - Overwhelmed with competing demands
+      - Urgency keeps crowding out strategic work
+      - Need to reclaim time for important work
+      - Decision fatigue about what to do next
+
+    four_quadrants:
+      q1_urgent_important:
+        name: "Do First (Crisis)"
+        action: "Handle immediately"
+        examples: "Deadlines, emergencies, critical bugs"
+
+      q2_not_urgent_important:
+        name: "Schedule (Strategy)"
+        action: "Plan time for these"
+        examples: "Planning, relationships, skill-building, prevention"
+
+      q3_urgent_not_important:
+        name: "Delegate (Distraction)"
+        action: "Minimize or delegate"
+        examples: "Most emails, some meetings, interruptions"
+
+      q4_not_urgent_not_important:
+        name: "Eliminate (Waste)"
+        action: "Stop doing these"
+        examples: "Time-wasters, trivial busy work"
+
+    prioritization_rules:
+      1_classify_all_tasks:
+        rule: "Put every task in a quadrant"
+        reason: "Can't prioritize without categorization"
+
+      2_protect_q2:
+        rule: "Block time for important-not-urgent work"
+        reason: "This is where strategic progress happens"
+        trap: "Q2 always loses to Q1 and Q3 without protection"
+
+      3_minimize_q3:
+        rule: "Question whether urgent tasks are truly your responsibility"
+        reason: "Others' urgency isn't your emergency"
+
+      4_eliminate_q4:
+        rule: "Stop doing unimportant, non-urgent tasks"
+        reason: "These only masquerade as work"
+
+    anti_patterns:
+      - "Living in Q1 (constant crisis mode)"
+      - "No time for Q2 (strategic work never happens)"
+      - "Treating Q3 as Q1 (other people's urgency)"
+      - "Hiding in Q4 (avoidance through busywork)"
+
+    example:
+      context: "Weekly task prioritization"
+      tasks:
+        client_deadline: "Q1 - Urgent + Important (Do today)"
+        strategic_plan: "Q2 - Important + Not Urgent (Schedule 2 hours Thursday)"
+        most_emails: "Q3 - Urgent + Not Important (Batch process, delegate)"
+        social_media_scrolling: "Q4 - Neither (Eliminate)"
+      weekly_structure:
+        monday_am: "Q2 strategic work (protected time)"
+        crisis_buffer: "Afternoon buffer for Q1 as it arises"
+        email_batch: "Q3 in 30-min blocks, twice daily"
+      rationale: "Important work happens when urgency doesn't crowd it out"
+
+    source: "Eisenhower Matrix - Time Management"
+
+  # ----------------------------------------
+  # MOST-CONSTRAINED-FIRST ORDERING
+  # ----------------------------------------
+  most_constrained_first:
+    id: most_constrained_first_ordering
+    name: "Most-Constrained-First Ordering (MRV)"
+    category: priority_frameworks
+
+    philosophy: |
+      Address items with fewest options first. From constraint
+      satisfaction: the variable with the minimum remaining values
+      (MRV) should be assigned first because it's most likely to
+      fail, revealing problems early. Highly constrained items
+      have less flexibility, so resolve them before they become
+      impossible.
+
+    when_to_use:
+      - Scheduling with many constraints
+      - Resource allocation with limited options
+      - Any problem where some items have restricted choices
+      - Planning where early decisions constrain later ones
+
+    prioritization_rules:
+      1_count_options:
+        rule: "For each item, count how many valid options exist"
+        reason: "Items with fewer options are more constrained"
+
+      2_most_constrained_first:
+        rule: "Address items with fewest options first"
+        reason: "Less flexibility = higher risk of failure"
+        formula: "priority = 1 / count(valid_options)"
+
+      3_degree_tiebreaker:
+        rule: "Among equally constrained items, pick most constraining"
+        reason: "Resolving it will simplify other decisions"
+        formula: "tiebreaker = count(other_items_this_affects)"
+
+      4_propagate_constraints:
+        rule: "After each assignment, update remaining options"
+        reason: "Constraints cascade; keep counts current"
+
+    anti_patterns:
+      - "Addressing unconstrained items first (easy but wasteful)"
+      - "Ignoring constraint propagation"
+      - "Not reassessing after decisions"
+      - "Treating all items as equally flexible"
+
+    example:
+      context: "Scheduling conference room bookings"
+      bookings:
+        A: "Must be Tuesday or Wednesday (2 options)"
+        B: "Any day works (5 options)"
+        C: "Must be Tuesday (1 option)"
+        D: "Monday, Tuesday, or Wednesday (3 options)"
+      mcf_order:
+        1: "C - only 1 option, schedule first"
+        2: "A - only 2 options, schedule second"
+        3: "D - 3 options, schedule third"
+        4: "B - most flexible, schedule last"
+      after_scheduling_C:
+        A: "Now only Wednesday (C took Tuesday)"
+        D: "Now Monday or Wednesday"
+        B: "Now 4 options"
+      rationale: "Most constrained reveals failures fastest"
+
+    source: "AI/Constraint Satisfaction - Minimum Remaining Values (MRV) heuristic"
+
+  # ----------------------------------------
+  # RECENCY-WEIGHTED ORDERING
+  # ----------------------------------------
+  recency_weighted:
+    id: recency_weighted_ordering
+    name: "Recency-Weighted Ordering (LRU-style)"
+    category: priority_frameworks
+
+    philosophy: |
+      Prioritize based on recent access patterns. From cache
+      algorithms: what was relevant recently is likely relevant
+      again. Recent context is more valuable than distant context.
+      "Hot" items stay prioritized; "cold" items drift down.
+
+    when_to_use:
+      - Context-switching between multiple workstreams
+      - Maintaining working memory across sessions
+      - When recent work predicts future needs
+      - Managing attention across many items
+
+    prioritization_rules:
+      1_track_last_access:
+        rule: "Record when each item was last touched"
+        reason: "Recency is a proxy for relevance"
+
+      2_recently_touched_up:
+        rule: "Items accessed recently get priority"
+        reason: "Working context is fresh"
+
+      3_cold_items_drift:
+        rule: "Untouched items gradually lose priority"
+        reason: "If not needed recently, likely not needed soon"
+
+      4_explicit_pinning:
+        rule: "Allow manual override for known-important items"
+        reason: "Some items are important despite not being recent"
+
+    variants:
+      lru: "Least Recently Used - pure recency"
+      lfu: "Least Frequently Used - pure frequency"
+      arc: "Adaptive - balances recency and frequency dynamically"
+
+    anti_patterns:
+      - "Ignoring recency (old context overwhelms new)"
+      - "Pure recency (important but dormant items forgotten)"
+      - "No eviction (attention spread too thin)"
+
+    example:
+      context: "Managing multiple open projects"
+      projects:
+        A: "Touched today"
+        B: "Touched yesterday"
+        C: "Touched last week"
+        D: "Touched last month"
+      recency_order:
+        1: "A - current context, prioritize"
+        2: "B - recent context, keep warm"
+        3: "C - cooling, deprioritize but don't forget"
+        4: "D - cold, consider archiving or explicit keep"
+      rationale: "Focus on active work; dormant work can wait"
+
+    source: "Computer Science - Cache eviction policies (LRU, LFU, ARC)"

@@ -1,0 +1,305 @@
+# Negotiation & Strategy Orderings
+# Orderings for strategic interactions and negotiations
+
+category_id: negotiation_strategy
+category_name: "Negotiation & Strategy Orderings"
+description: |
+  Orderings for strategic interactions, negotiations, and situations
+  where the sequence of actions affects others' responses. Use when
+  dealing with counterparties or optimizing trade-offs.
+
+when_to_consider: |
+  - Negotiation or competitive contexts
+  - Need to shape how others respond
+  - Trade-offs where giving up something
+  - Iterative work with decreasing returns
+  - When observation before action is valuable
+
+variations:
+
+  # ----------------------------------------
+  # COMMITMENT-FIRST ORDERING
+  # ----------------------------------------
+  commitment_first:
+    id: commitment_first_ordering
+    name: "Commitment-First Ordering (Stackelberg)"
+    category: negotiation_strategy
+
+    philosophy: |
+      Make strategic commitments early to shape others' responses.
+      From game theory: the first mover in a sequential game can
+      gain advantage by committing, forcing followers to adapt.
+      Sometimes you WANT irreversibility to create leverage.
+
+    different_from_reversibility: |
+      Reversibility ordering says: "do reversible things first."
+      Commitment ordering says: "sometimes do irreversible things
+      first to create strategic advantage." The right choice depends
+      on whether you're optimizing for optionality or leverage.
+
+    when_to_use:
+      - Negotiation or competitive contexts
+      - Need to establish position before others
+      - Want to shape how others respond
+      - Credible commitment creates advantage
+      - Moving first prevents others from preempting
+
+    prioritization_rules:
+      1_commitment_value:
+        rule: "Identify actions that create binding commitments"
+        reason: "Commitments shape follower responses"
+
+      2_first_mover_analysis:
+        rule: "Assess first-mover advantage vs disadvantage"
+        reason: "Not all moves benefit from going first"
+        questions:
+          - "Does moving first constrain others favorably?"
+          - "Can the commitment be credibly enforced?"
+          - "Is the commitment observable to others?"
+
+      3_credibility:
+        rule: "Commitments must be credible to be effective"
+        reason: "Empty threats don't shape behavior"
+
+      4_sequential_ordering:
+        rule: "Order moves to maximize strategic leverage"
+        reason: "Each move sets context for next"
+
+    anti_patterns:
+      - "Committing without strategic purpose"
+      - "Making commitments that aren't credible"
+      - "Waiting when first-mover advantage exists"
+      - "Committing in ways that can be ignored"
+
+    example:
+      context: "Negotiating a contract"
+      tasks:
+        - "Send initial offer"
+        - "Research market rates"
+        - "Prepare alternatives (BATNA)"
+        - "Set public deadline"
+        - "Make final proposal"
+      commitment_order:
+        1: "Research market rates (information)"
+        2: "Prepare alternatives (strengthen position)"
+        3: "Set public deadline (credible commitment)"
+        4: "Send initial offer (anchoring move)"
+        5: "Make final proposal (after observing response)"
+      rationale: "Public deadline commits you but also pressures counterparty"
+
+    source: "Game Theory - Stackelberg competition, commitment devices"
+
+  # ----------------------------------------
+  # CONCESSION-PATTERNED ORDERING
+  # ----------------------------------------
+  concession_patterned:
+    id: concession_patterned_ordering
+    name: "Concession-Patterned Ordering"
+    category: negotiation_strategy
+
+    philosophy: |
+      Sequence concessions to shape the negotiation trajectory.
+      From negotiation theory: the pattern of concessions affects
+      counterpart expectations. Start with larger concessions that
+      get progressively smaller, signaling approach to bottom line.
+      Never make unilateral concessions without getting something back.
+
+    when_to_use:
+      - Multi-round negotiations
+      - Need to signal flexibility while protecting interests
+      - Want to shape counterpart expectations
+      - Building toward agreement through give-and-take
+
+    key_concepts:
+      concession_curve: "Pattern of decreasing concession sizes"
+      reciprocity: "Expecting concession in return for concession"
+      anchoring: "First offer sets expectations for negotiation range"
+      signaling: "Concession pattern communicates reservation price"
+
+    prioritization_rules:
+      1_anchor_first:
+        rule: "Make ambitious first offer (anchor)"
+        reason: "Sets frame for entire negotiation"
+        caution: "Not so extreme as to lose credibility"
+
+      2_decreasing_concessions:
+        rule: "Each concession smaller than the last"
+        pattern: "Large, medium, small, smaller"
+        reason: "Signals approaching limit, creates urgency"
+
+      3_require_reciprocity:
+        rule: "Don't concede without getting concession in return"
+        reason: "Unilateral concessions signal weakness"
+        exception: "Small goodwill gestures to build relationship"
+
+      4_save_easy_concessions:
+        rule: "Hold back concessions that are cheap for you but valuable to them"
+        reason: "Easy concessions are trading chips for late-stage deadlock"
+
+    anti_patterns:
+      - "Conceding without reciprocity"
+      - "Constant concession size (no urgency signal)"
+      - "Giving best offer first (nowhere to go)"
+      - "Too many concessions (seems dishonest about true bottom)"
+
+    example:
+      context: "Salary negotiation"
+      anchoring: "Request $150K (ambitious but credible)"
+      concession_pattern:
+        round_1: "$150K -> $140K (-$10K, large concession)"
+        round_2: "$140K -> $135K (-$5K, medium concession)"
+        round_3: "$135K -> $133K (-$2K, small concession)"
+        round_4: "$133K -> $132K (-$1K, tiny concession - near limit)"
+        signal: "Pattern shows approaching bottom, creates pressure to close"
+      reciprocity: "Each salary drop tied to benefit gained (equity, flexibility)"
+      rationale: "Counterpart sees convergence, knows to close or lose deal"
+
+    source: "Negotiation Theory - Concession patterns, anchoring"
+
+  # ----------------------------------------
+  # INFORMATION-POSITION ORDERING
+  # ----------------------------------------
+  information_position:
+    id: information_position_ordering
+    name: "Information-Position Ordering (Scout Before Strike)"
+    category: negotiation_strategy
+
+    philosophy: |
+      Gather information before making irreversible moves. Like a
+      chess principle: develop your pieces and understand the position
+      before launching an attack. Poor early moves made in ignorance
+      create lasting disadvantages. Invest in position before action.
+
+    when_to_use:
+      - Strategic decisions with lasting consequences
+      - Information asymmetry exists
+      - Can afford time to gather intelligence
+      - Reversing course would be costly
+
+    key_concepts:
+      position: "Strategic advantage from information and placement"
+      development: "Building capabilities before commitment"
+      intelligence: "Information about counterpart, market, situation"
+      premature_commitment: "Acting before position is strong"
+
+    prioritization_rules:
+      1_scout:
+        rule: "Information-gathering moves before commitment moves"
+        reason: "Better information -> better decisions"
+        examples: "Research, questions, trial offers, prototypes"
+
+      2_develop:
+        rule: "Build capabilities before needing them"
+        reason: "Options require preparation"
+        examples: "Train skills, build relationships, prepare alternatives"
+
+      3_position:
+        rule: "Get into favorable position before engaging"
+        reason: "Position advantage compounds"
+        examples: "Secure resources, establish credibility, create leverage"
+
+      4_strike:
+        rule: "Commit only when position is strong"
+        reason: "Information + position = high-quality decisions"
+        examples: "Make the pitch, close the deal, launch the product"
+
+    anti_patterns:
+      - "Acting before understanding situation"
+      - "Committing before developing options"
+      - "Skipping information phase under time pressure"
+      - "All scouting, no striking (analysis paralysis)"
+
+    example:
+      context: "Entering a new market"
+      scout_phase:
+        - "Research customer needs and pain points"
+        - "Map competitor landscape"
+        - "Interview potential customers"
+        - "Test pricing sensitivity"
+      develop_phase:
+        - "Build prototype"
+        - "Establish key relationships"
+        - "Prepare go-to-market materials"
+      position_phase:
+        - "Secure early customers"
+        - "Get testimonials and case studies"
+        - "Build credibility through content"
+      strike_phase:
+        - "Full launch with confidence"
+        - "Scale marketing spend"
+        - "Aggressive customer acquisition"
+      rationale: "Position built on information enables confident action"
+
+    source: "Strategy - Chess development principles, military reconnaissance"
+
+  # ----------------------------------------
+  # DIMINISHING-RETURNS AWARE ORDERING
+  # ----------------------------------------
+  diminishing_returns:
+    id: diminishing_returns_ordering
+    name: "Diminishing-Returns Aware Ordering"
+    category: negotiation_strategy
+
+    philosophy: |
+      Know when to stop or switch before returns decline below
+      opportunity cost. From optimal foraging theory: leave a "patch"
+      when the marginal return drops below the average return of
+      switching to a new patch. Prevents over-investment in declining
+      activities.
+
+    when_to_use:
+      - Iterative improvement work (optimization, polishing)
+      - Research with decreasing discoveries
+      - Any activity with diminishing marginal returns
+      - When opportunity cost of continuing is high
+      - Multiple "patches" to explore
+
+    prioritization_rules:
+      1_marginal_value_check:
+        rule: "Monitor marginal return of current activity"
+        reason: "Detect when returns are declining"
+        formula: "Continue while marginal_return > average_return_of_switching"
+
+      2_switch_threshold:
+        rule: "Define threshold for switching activities"
+        reason: "Prevents over-exploitation"
+        examples:
+          - "Stop optimizing when gains < 1% per iteration"
+          - "Stop researching when last 3 sources added nothing"
+          - "Stop debugging when cost exceeds rewrite cost"
+
+      3_patch_quality:
+        rule: "Estimate quality of alternative activities"
+        reason: "Switching cost must be worth it"
+
+      4_sunk_cost_immunity:
+        rule: "Ignore sunk costs when deciding to switch"
+        reason: "Past investment doesn't affect future returns"
+
+    signals_to_switch:
+      - "Last few iterations produced minimal improvement"
+      - "Effort required is increasing while gains decrease"
+      - "Other activities have higher expected return"
+      - "You're in maintenance mode, not growth mode"
+
+    anti_patterns:
+      - "Polishing endlessly (perfectionism)"
+      - "Abandoning too early (impatience)"
+      - "Ignoring opportunity cost of continuing"
+      - "Sunk cost fallacy ('already invested so much')"
+
+    example:
+      context: "Researching a topic"
+      activities:
+        A: "Reading papers in domain X"
+        B: "Reading papers in domain Y"
+        C: "Talking to experts"
+      diminishing_returns_approach:
+        - "Start with domain X (most promising)"
+        - "After 5 papers: 3 new insights"
+        - "After 10 papers: 1 new insight"
+        - "After 12 papers: 0 new insights - SWITCH"
+        - "Switch to domain Y or expert interviews"
+      rationale: "Don't read paper 13-20 in X when returns have dropped"
+
+    source: "Optimal Foraging Theory - Marginal Value Theorem"

@@ -1,0 +1,770 @@
+# Learning System Procedure - Campaign analysis and knowledge capture
+# GOSM procedure for systematic learning from advocacy campaigns
+
+id: learning_system
+name: Learning System
+version: "1.0.0"
+domain: advocacy
+
+description: Systematically capture, analyze, and apply learnings to improve campaign effectiveness
+
+long_description: |
+  The Learning System procedure transforms campaign data into actionable insights
+  that improve future advocacy effectiveness. It covers A/B testing analysis,
+  segment comparisons, pattern identification, and knowledge base management.
+
+  Continuous learning is the key differentiator between advocacy that stagnates
+  and advocacy that improves over time. This procedure ensures insights are
+  captured, validated, and applied systematically.
+
+  Key principles:
+  - Data without analysis is wasted effort
+  - Confidence levels prevent overreacting to noise
+  - Cross-campaign patterns reveal deeper truths
+  - Knowledge bases compound value over time
+  - Learnings must translate to specific actions
+
+tags:
+  - advocacy
+  - learning
+  - analysis
+  - optimization
+  - knowledge
+  - testing
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After completing an outreach campaign with sufficient data
+  - When A/B test results need analysis and interpretation
+  - At regular intervals to identify cross-campaign patterns
+  - When building or updating advocacy knowledge base
+  - Before planning next campaign to apply learnings
+  - When onboarding new team members to advocacy methodology
+
+when_not_to_use:
+  - Insufficient campaign data for meaningful analysis (under 30 contacts)
+  - Mid-campaign when analysis would disrupt execution
+  - When no structured data collection occurred
+  - For one-off advocacy actions without systematic tracking
+  - When immediate action is needed without time for analysis
+  - When previous learnings haven't been applied yet
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: campaign_data
+    type: dict
+    required: true
+    description: Complete campaign data including outreach, responses, and outcomes
+
+  - name: ab_test_data
+    type: dict
+    required: false
+    description: A/B test assignments and results if tests were run
+
+  - name: existing_learnings
+    type: list
+    required: false
+    description: Current knowledge base to update and validate
+
+  - name: analysis_scope
+    type: enum
+    values: [single_campaign, cross_campaign, quarterly_review]
+    required: false
+    description: Scope of analysis to perform
+
+outputs:
+  - name: campaign_analysis_report
+    type: dict
+    description: Complete analysis of campaign performance
+
+  - name: new_learnings
+    type: list
+    description: New insights extracted from analysis
+
+  - name: updated_knowledge_base
+    type: list
+    description: Knowledge base with new learnings added
+
+  - name: recommendations
+    type: list
+    description: Specific recommendations for next campaign
+
+  - name: confidence_updates
+    type: list
+    description: Updated confidence levels for existing learnings
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Data collection and validation
+    action: |
+      Ensure all campaign data is captured and valid:
+
+      Required data points:
+      1. All outreach attempts with timestamps
+      2. All responses with classification
+      3. A/B variant assignments (if applicable)
+      4. Channel for each contact
+      5. Tier for each target
+      6. Cost data
+      7. Meeting outcomes
+
+      Validation checks:
+      - No missing required fields
+      - Timestamps are logical (response after send)
+      - A/B assignments are balanced
+      - All responses are classified
+      - Costs are documented
+
+      Flag any data quality issues for resolution.
+    inputs:
+      - campaign_data
+      - ab_test_data (optional)
+    outputs:
+      - validated_data: clean, complete dataset
+      - data_quality_issues: any problems identified
+    verification: |
+      All required fields populated; no logical inconsistencies
+
+  - id: 2
+    name: Metrics calculation
+    action: |
+      Calculate comprehensive campaign metrics:
+
+      Outreach metrics:
+      - Total contacts attempted
+      - Contacts by channel (email, phone, etc.)
+      - Contacts by tier (1, 2, 3)
+      - Delivery rate (successful sends)
+
+      Response metrics:
+      - Total responses
+      - Response rate overall
+      - Response rate by channel
+      - Response rate by tier
+      - Response classification breakdown (positive, neutral, etc.)
+
+      Conversion metrics:
+      - Meetings scheduled / total contacted
+      - Meeting rate by tier
+      - Meeting-to-action conversion
+
+      Cost metrics:
+      - Total campaign spend
+      - Cost per contact
+      - Cost per response
+      - Cost per meeting
+
+      Timing metrics:
+      - Average response time
+      - Response rate by day of week
+      - Response rate by wave
+    inputs:
+      - validated_data (from Step 1)
+    outputs:
+      - calculated_metrics: all metrics computed
+    verification: |
+      All metrics calculated; no division by zero errors
+
+  - id: 3
+    name: Segment analysis
+    action: |
+      Analyze performance across segments to identify patterns:
+
+      By Tier:
+      - Compare response rates across Tier 1, 2, 3
+      - Identify if tier prioritization is correct
+      - Calculate efficiency (response rate per research hour)
+
+      By Channel:
+      - Compare email vs phone vs other channels
+      - Identify optimal channel sequences
+      - Calculate cost-effectiveness by channel
+
+      By Role:
+      - Compare staff vs legislator response
+      - Compare committee staff vs personal office
+      - Identify most responsive role types
+
+      By Party/Region (if applicable):
+      - Compare response rates across parties
+      - Identify regional patterns
+      - Note any surprising findings
+
+      By Timing:
+      - Compare response rates by day of week
+      - Compare response rates by time of day
+      - Identify legislative calendar effects
+
+      For each segment comparison:
+      - Calculate rate difference
+      - Assess sample size adequacy
+      - Note confidence level
+    inputs:
+      - validated_data (from Step 1)
+      - calculated_metrics (from Step 2)
+    outputs:
+      - segment_analysis: performance by each segment
+      - segment_insights: notable patterns identified
+    verification: |
+      Each segment has at least 10 contacts for meaningful comparison
+
+  - id: 4
+    name: A/B test analysis
+    action: |
+      Analyze A/B test results (if tests were run):
+
+      For each test:
+      1. Confirm random assignment was maintained
+      2. Calculate response rate for each variant
+      3. Calculate absolute and relative difference
+      4. Assess statistical significance:
+         - >20% difference with n=50+ each: likely real
+         - 10-20% difference: needs more data
+         - <10% difference: probably noise
+      5. Determine winner or "inconclusive"
+      6. Document interpretation
+
+      If inconclusive:
+      - Note sample size achieved
+      - Recommend continuation in next campaign
+      - Document preliminary direction
+
+      If clear winner:
+      - Document winning variant
+      - Update default templates
+      - Archive losing variant
+    inputs:
+      - ab_test_data
+      - validated_data (from Step 1)
+    outputs:
+      - ab_test_results: complete test analysis
+      - test_conclusions: winner/inconclusive for each test
+    verification: |
+      Each test has documented conclusion with confidence level
+
+  - id: 5
+    name: Learning extraction
+    action: |
+      Extract specific learnings from all analyses:
+
+      Sources for learnings:
+      - Segment analysis patterns
+      - A/B test results
+      - Unexpected outcomes
+      - Qualitative observations (meeting feedback, etc.)
+
+      For each potential learning:
+      1. State finding clearly in one sentence
+      2. Document evidence:
+         - Sample size
+         - Effect size (percentage difference)
+         - Data source
+      3. Assess confidence level:
+         - High: Large sample, clear effect, consistent with theory
+         - Medium: Moderate sample, notable effect, plausible
+         - Low: Small sample, modest effect, could be noise
+      4. Define implication for future campaigns
+      5. Specify status: Validated / Preliminary / Needs more data
+
+      Target: 3-5 learnings per campaign
+    inputs:
+      - segment_analysis (from Step 3)
+      - ab_test_results (from Step 4)
+      - campaign_data
+    outputs:
+      - new_learnings: documented insights with evidence
+    verification: |
+      Each learning has evidence, confidence level, and implication
+
+  - id: 6
+    name: Knowledge base update
+    action: |
+      Integrate new learnings into knowledge base:
+
+      For new learnings:
+      1. Assign unique ID (L001, L002, etc.)
+      2. Categorize (message, channel, target, timing, policy)
+      3. Add to knowledge base with full documentation
+      4. Link to source campaign
+
+      For existing learnings:
+      1. Check if new data supports or contradicts
+      2. Update confidence level if warranted
+      3. Add new evidence to existing learning
+      4. Mark as "validated" if consistently supported
+
+      Maintenance:
+      - Archive contradicted learnings
+      - Consolidate related learnings
+      - Flag learnings that need more data
+      - Remove outdated learnings
+    inputs:
+      - new_learnings (from Step 5)
+      - existing_learnings (optional)
+    outputs:
+      - updated_knowledge_base: complete learning repository
+      - confidence_updates: changes to existing learning confidence
+    verification: |
+      All new learnings added; existing learnings reviewed
+
+  - id: 7
+    name: Recommendation development
+    action: |
+      Translate learnings into specific recommendations:
+
+      Categories of recommendations:
+      1. Message improvements
+         - Template updates based on test results
+         - Subject line changes
+         - Call-to-action modifications
+
+      2. Channel mix changes
+         - Adjust channel sequence
+         - Change channel allocation
+         - Add or remove channels
+
+      3. Targeting adjustments
+         - Modify tier thresholds
+         - Change target prioritization
+         - Adjust personalization depth
+
+      4. Timing optimizations
+         - Adjust send days/times
+         - Modify wave spacing
+         - Align with legislative calendar
+
+      5. Process improvements
+         - Response handling changes
+         - Follow-up sequence modifications
+         - Meeting preparation updates
+
+      Each recommendation should be:
+      - Specific (not vague guidance)
+      - Actionable (can implement immediately)
+      - Measurable (can verify in next campaign)
+      - Linked to learning that supports it
+    inputs:
+      - new_learnings (from Step 5)
+      - updated_knowledge_base (from Step 6)
+    outputs:
+      - recommendations: specific changes for next campaign
+    verification: |
+      Each recommendation is specific, actionable, and linked to evidence
+
+  - id: 8
+    name: Report compilation
+    action: |
+      Create comprehensive campaign analysis report:
+
+      Report sections:
+      1. Executive Summary (3-5 bullets)
+         - Key metrics (contacts, responses, meetings)
+         - Headline findings
+         - Critical recommendations
+
+      2. Performance Metrics
+         - All calculated metrics in tables
+         - Comparison to benchmarks/previous campaigns
+         - Visual charts where helpful
+
+      3. Segment Analysis
+         - Performance by tier, channel, role, timing
+         - Notable patterns with interpretation
+
+      4. A/B Test Results
+         - Each test with results and conclusion
+         - Implications for future tests
+
+      5. Key Learnings
+         - Numbered list with evidence
+         - Confidence levels noted
+         - Implications stated
+
+      6. Recommendations
+         - Prioritized list of changes
+         - Implementation notes
+
+      7. Open Questions
+         - What to investigate next
+         - Tests to run in future campaigns
+
+      Format as document suitable for team review and archive.
+    inputs:
+      - calculated_metrics (from Step 2)
+      - segment_analysis (from Step 3)
+      - ab_test_results (from Step 4)
+      - new_learnings (from Step 5)
+      - recommendations (from Step 7)
+    outputs:
+      - campaign_analysis_report: complete report document
+    verification: |
+      Report includes all sections; executive summary is actionable
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All campaign data validated and complete
+  - All metrics calculated correctly
+  - Segment analysis covers key dimensions (tier, channel, timing)
+  - A/B tests have documented conclusions with confidence levels
+  - Each learning has evidence, confidence, and implication
+  - Knowledge base is updated and maintained
+  - Recommendations are specific and actionable
+  - Report is comprehensive and suitable for team review
+
+failure_modes:
+  - mode: Insufficient sample size
+    symptom: Can't draw meaningful conclusions from data
+    resolution: Combine with next campaign data; document as preliminary; lower confidence
+
+  - mode: Data quality issues
+    symptom: Missing fields, inconsistent data, logical errors
+    resolution: Clean data before analysis; document limitations; improve tracking for next campaign
+
+  - mode: Overconfident conclusions
+    symptom: Strong claims from weak data; treating noise as signal
+    resolution: Apply strict confidence criteria; require larger samples for high confidence
+
+  - mode: Learning without action
+    symptom: Learnings documented but not applied to next campaign
+    resolution: Create explicit recommendation checklist; review before campaign planning
+
+  - mode: Contradictory learnings
+    symptom: New data conflicts with established learning
+    resolution: Document both; note conditions where each applies; reduce confidence until resolved
+
+  - mode: Analysis paralysis
+    symptom: Too much analysis, not enough action
+    resolution: Set analysis time limit; focus on 3-5 key learnings; defer deep dives
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Post-campaign analysis for bail reform
+    context: Analyzing results from first bail reform campaign
+    inputs:
+      campaign_data:
+        total_contacts: 55
+        responses: 11
+        meetings: 4
+        cost: 12.60
+      ab_test_data:
+        variable: "subject_line"
+        variant_a: 28 contacts, 6 responses
+        variant_b: 27 contacts, 5 responses
+      analysis_scope: "single_campaign"
+    process: |
+      Step 1: Data validation
+        - All 55 contacts have complete records
+        - All 11 responses classified
+        - A/B assignment balanced (28/27)
+        - No data quality issues
+
+      Step 2: Metrics calculation
+        Overall:
+          - Response rate: 20% (11/55)
+          - Meeting rate: 7.3% (4/55)
+          - Cost per meeting: $3.15
+
+        By tier:
+          - Tier 1: 33% response (6/18)
+          - Tier 2: 12% response (3/25)
+          - Tier 3: 17% response (2/12)
+
+        By channel:
+          - Email only: 15%
+          - Email + phone: 25%
+
+      Step 3: Segment analysis
+        Key finding: Tier 1 response rate 2.7x Tier 2
+        Key finding: Phone follow-up adds ~10 percentage points
+        Timing: Tuesday sends outperformed Monday
+
+      Step 4: A/B test analysis
+        Variant A (question): 21% response
+        Variant B (statement): 19% response
+        Difference: 2 percentage points
+        Conclusion: Inconclusive - need larger sample
+        Recommendation: Continue test in next campaign
+
+      Step 5: Learning extraction
+        L001: "Phone follow-up increases response rate by ~10pp"
+          Evidence: 25% with phone vs 15% email-only (n=55)
+          Confidence: Medium
+          Implication: Include phone follow-up for all Tier 1
+
+        L002: "Tier 1 targets respond at 2-3x rate of Tier 2"
+          Evidence: 33% vs 12% (n=43)
+          Confidence: Medium
+          Implication: Invest more in Tier 1 personalization
+
+        L003: "Question subject lines may outperform statements"
+          Evidence: 21% vs 19% (n=55) - not significant
+          Confidence: Low
+          Implication: Continue testing; slight edge to questions
+
+      Step 6: Knowledge base update
+        - Added L001, L002, L003 to database
+        - Linked to campaign "Bail Reform - Q1 2024"
+        - Set initial confidence levels
+
+      Step 7: Recommendations
+        1. Add phone follow-up as standard step for Tier 1
+        2. Increase Tier 1 target count (they're worth it)
+        3. Continue question vs statement A/B test
+        4. Try Tuesday sends for next campaign
+
+      Step 8: Report compiled with all sections
+    expected_output:
+      campaign_analysis_report:
+        response_rate: 0.20
+        meeting_rate: 0.073
+        cost_per_meeting: 3.15
+      new_learnings:
+        - id: "L001"
+          finding: "Phone follow-up increases response rate"
+          confidence: "Medium"
+        - id: "L002"
+          finding: "Tier 1 responds at 2-3x rate of Tier 2"
+          confidence: "Medium"
+        - id: "L003"
+          finding: "Question subject lines may outperform"
+          confidence: "Low"
+      recommendations:
+        - "Add phone follow-up for Tier 1"
+        - "Increase Tier 1 targets"
+        - "Continue subject line A/B test"
+
+  - name: Quarterly cross-campaign review
+    context: Analyzing patterns across 3 campaigns in Q1
+    inputs:
+      campaign_data:
+        campaign_1: { contacts: 55, responses: 11 }
+        campaign_2: { contacts: 42, responses: 9 }
+        campaign_3: { contacts: 38, responses: 10 }
+      existing_learnings:
+        - id: "L001"
+          finding: "Phone follow-up increases response"
+          confidence: "Medium"
+      analysis_scope: "quarterly_review"
+    process: |
+      Aggregate analysis across 3 campaigns (135 total contacts)
+
+      Cross-campaign patterns:
+        - Phone follow-up consistently adds 8-12pp to response
+        - Tier 1 consistently outperforms (avg 2.5x Tier 2)
+        - Tuesday-Wednesday sends consistently best
+
+      Confidence updates:
+        - L001 (phone follow-up): Elevated to "High" confidence
+          - Consistent across 3 campaigns
+          - Effect size 8-12pp in all campaigns
+
+      New learnings from aggregated data:
+        - L004: "Mid-week sends outperform Monday/Friday"
+          Evidence: 22% mid-week vs 14% Mon/Fri (n=135)
+          Confidence: High (consistent across campaigns)
+
+      Recommendations for Q2:
+        1. Make phone follow-up standard (validated)
+        2. Shift all sends to Tue-Wed
+        3. Test time of day within Tue-Wed
+    expected_output:
+      confidence_updates:
+        - learning: "L001"
+          old_confidence: "Medium"
+          new_confidence: "High"
+          reason: "Consistent across 3 campaigns"
+      new_learnings:
+        - id: "L004"
+          finding: "Mid-week sends outperform Monday/Friday"
+          confidence: "High"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - After each campaign to capture learnings
+    - At regular intervals for cross-campaign analysis
+    - When planning new campaigns to apply learnings
+    - When onboarding team members to methodology
+    - During strategic reviews to assess advocacy effectiveness
+
+  gates:
+    - gate: data_validated
+      question: "Is all campaign data complete and validated?"
+
+    - gate: analysis_complete
+      question: "Have all segments and tests been analyzed?"
+
+    - gate: learnings_documented
+      question: "Are learnings documented with evidence and confidence?"
+
+    - gate: recommendations_actionable
+      question: "Are recommendations specific and ready to implement?"
+
+  related_procedures:
+    - outreach_campaigns: Provides data for analysis
+    - infrastructure_setup: Database stores learnings
+    - targeting: Learnings inform targeting improvements
+    - policy_research: Learnings inform policy selection
+
+# ============================================
+# LEARNING CATEGORIES
+# ============================================
+learning_categories:
+  message_effectiveness:
+    what_we_measure:
+      - "Subject line open rates"
+      - "Email body response rates"
+      - "Phone script engagement"
+      - "Call-to-action conversion"
+    analysis_method: "A/B testing"
+
+  channel_effectiveness:
+    what_we_measure:
+      - "Response rate by channel"
+      - "Cost per response by channel"
+      - "Quality of response by channel"
+      - "Optimal channel sequences"
+    analysis_method: "Cohort comparison"
+
+  target_effectiveness:
+    what_we_measure:
+      - "Response rates by tier"
+      - "Response rates by party"
+      - "Response rates by role"
+      - "Response rates by committee"
+    analysis_method: "Segmentation analysis"
+
+  timing_effectiveness:
+    what_we_measure:
+      - "Response rates by day of week"
+      - "Response rates by time of day"
+      - "Response rates by legislative calendar"
+    analysis_method: "Calendar analysis"
+
+  policy_effectiveness:
+    what_we_measure:
+      - "Which policies generate most interest"
+      - "Which framings resonate"
+      - "Cross-policy patterns"
+    analysis_method: "Cross-campaign comparison"
+
+# ============================================
+# A/B TESTING PROTOCOL
+# ============================================
+ab_testing_protocol:
+  setup:
+    hypothesis: "Clear statement of what we expect"
+    variable: "Single variable being tested"
+    variants: "Exactly 2 (control vs treatment)"
+    sample_size: "Minimum 30 per variant (ideal: 50+)"
+    assignment: "Random by target_id or alternating"
+    stratification: "Optional: by party, tier, state"
+
+  execution:
+    - "Assign variants before campaign start"
+    - "Log variant in outreach table"
+    - "Ensure even distribution"
+    - "Don't change mid-campaign"
+
+  analysis:
+    metrics:
+      - "Open rate (if trackable)"
+      - "Reply rate"
+      - "Meeting rate"
+    significance: |
+      For quick assessment:
+      - >20% difference with n=50+ each: likely real
+      - 10-20% difference: needs more data
+      - <10% difference: probably noise
+
+  documentation:
+    - "Record hypothesis, variants, results"
+    - "Note confidence level"
+    - "Document interpretation"
+    - "Define action to take"
+
+# ============================================
+# TEMPLATES
+# ============================================
+learning_entry_template:
+  fields:
+    id: "Unique identifier (L001, L002, etc.)"
+    title: "Short descriptive title"
+    date: "When discovered"
+    campaign: "Which campaign"
+    category: "message/channel/target/timing/policy"
+    finding: "Clear statement of what was learned"
+    evidence:
+      sample_size: "Number in analysis"
+      effect_size: "Percentage difference"
+      data_source: "Which campaign/test"
+    confidence: "High/Medium/Low"
+    implications: "How this affects future campaigns"
+    status: "Validated/Preliminary/Needs more data"
+
+campaign_analysis_report_template:
+  sections:
+    executive_summary:
+      content: "3-5 bullet summary of outcomes and learnings"
+
+    performance_metrics:
+      content: "All metrics from campaign"
+
+    segment_analysis:
+      content: "Performance by tier, channel, timing, etc."
+
+    ab_test_results:
+      content: "Summary of each test and outcome"
+
+    key_learnings:
+      content: "Numbered list with evidence"
+
+    recommendations:
+      content: "Specific changes for next campaign"
+
+    open_questions:
+      content: "What to investigate next"
+
+# ============================================
+# ANALYSIS SCHEDULE
+# ============================================
+analysis_schedule:
+  daily: "Response monitoring, quick metrics"
+  weekly: "A/B test check-ins, interim results"
+  per_campaign: "Full campaign analysis, report"
+  monthly: "Cross-campaign patterns, insights"
+  quarterly: "Knowledge base review, strategy update"
+
+# ============================================
+# KNOWLEDGE BASE MANAGEMENT
+# ============================================
+knowledge_base_management:
+  organization:
+    by_category: "message, channel, target, timing, policy"
+    by_confidence: "validated, preliminary, needs_data"
+    by_campaign: "which campaign generated"
+
+  maintenance:
+    - "Review quarterly"
+    - "Update confidence as data accumulates"
+    - "Remove contradicted learnings"
+    - "Consolidate related learnings"
+
+dependencies:
+  - "outreach_campaigns (data to analyze)"
+  - "infrastructure_setup (database)"
+
+next_procedure: "outreach_campaigns (continuous loop)"

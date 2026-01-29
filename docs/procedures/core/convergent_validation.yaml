@@ -1,0 +1,298 @@
+# Convergent Validation Procedure
+# Addresses the n+1 critic problem through multiple independent termination criteria
+# Version: 1.0.0
+
+id: convergent_validation
+name: Convergent Validation
+version: "1.0.0"
+domain: core
+tier: gold
+
+description: |
+  Addresses the n+1 critic problem: any critic can be criticized, infinitely.
+
+  Instead of seeking one termination criterion, apply multiple INDEPENDENT criteria.
+  Accept when they converge. Investigate when they diverge. This doesn't eliminate
+  uncertainty but makes it explicit and manageable.
+
+core_insight: |
+  The n+1 problem may be genuinely unresolvable in principle. The question isn't
+  "how to achieve certainty" but "how to operate under irreducible uncertainty."
+
+  The answer: converge from multiple independent methods. When they agree, that's
+  stronger evidence than any single method. When they disagree, that reveals
+  where genuine uncertainty lies.
+
+# ============================================
+# THE FOUR INDEPENDENT CHECKS
+# ============================================
+
+termination_criteria:
+
+  1_grounding_check:
+    name: "Grounding Check"
+    question: "Can this be traced to verifiable foundations?"
+    method: |
+      1. Identify the key claims/conclusions
+      2. For each claim, ask: what is this based on?
+      3. Trace backward to foundations
+      4. Classify foundation level (using epistemic_hierarchy):
+         - Level 0: Undeniable (experience exists)
+         - Level 1: Pragmatic necessity (invariant across metaphysical views)
+         - Level 1.5: Ethical constraints (hard to reject coherently)
+         - Level 2: Empirical regularities (testable)
+         - Level 3: Situation-specific derivation
+    pass_condition: |
+      All claims trace to Level 0-2 foundations without gaps.
+      If gaps exist, they are flagged as assumptions.
+    independence: |
+      Grounding is about tracing to foundations.
+      This is independent of whether the claim is useful (practical check),
+      survives self-application (fixed-point), or others agree (convergence).
+
+  2_fixed_point_check:
+    name: "Fixed-Point Check"
+    question: "Does this survive self-application?"
+    method: |
+      1. Apply the claim/method to itself
+      2. Does the output contradict the input?
+      3. Does it return something equivalent?
+    examples:
+      - claim: "All claims should be questioned"
+        self_application: "Should this claim be questioned?"
+        result: "Yes, and questioning it doesn't undermine it - it's consistent"
+      - claim: "Only believe things with evidence"
+        self_application: "What evidence supports this claim?"
+        result: "Pragmatic evidence - acting on it produces better outcomes"
+    pass_condition: |
+      Claim survives self-application without contradiction.
+      Note: fixed-point doesn't mean correct, just self-consistent.
+    independence: |
+      Self-consistency is independent of grounding (circular arguments are
+      self-consistent but poorly grounded), practical outcomes, and others' agreement.
+
+  3_convergence_check:
+    name: "Convergence Check"
+    question: "Do independent derivations agree?"
+    method: |
+      1. Identify claim/conclusion
+      2. Find independent sources/derivations of similar claims
+         - Different authors, different eras, different domains
+         - Different methodologies reaching same conclusion
+      3. Assess degree of convergence
+    convergence_levels:
+      strong: "Multiple independent derivations, same conclusion"
+      moderate: "Some independent support, some disagreement"
+      weak: "Only one derivation, or derivations are not independent"
+      divergent: "Independent derivations reach contradictory conclusions"
+    pass_condition: |
+      Strong or moderate convergence. Weak is flagged. Divergent fails.
+    independence: |
+      Convergence is about agreement across sources.
+      Independent of grounding (many people can be wrong together),
+      self-consistency (convergent claims can be inconsistent),
+      and practical outcomes (convergent beliefs can be impractical).
+
+  4_practical_check:
+    name: "Practical Check"
+    question: "Does this produce better outcomes than alternatives?"
+    method: |
+      1. Identify what "better outcomes" means for this domain
+      2. Compare outcomes when applying claim vs not applying
+      3. Assess evidence quality for this comparison
+    evidence_types:
+      empirical: "Tested and measured outcomes"
+      theoretical: "Predicted but not yet tested"
+      absent: "No evidence either way"
+    pass_condition: |
+      Empirical or strong theoretical evidence of better outcomes.
+      Absent evidence is flagged, not automatic fail.
+    independence: |
+      Practical outcomes are independent of philosophical grounding,
+      self-consistency, and what others believe. A well-grounded,
+      self-consistent, convergent belief can still fail practically.
+
+# ============================================
+# THE DECISION PROTOCOL
+# ============================================
+
+decision_protocol:
+
+  all_pass:
+    condition: "All four checks pass"
+    action: "Accept with high confidence"
+    rationale: |
+      Grounded + self-consistent + convergent + practical is strong.
+      No single method is perfect, but agreement across four
+      independent methods is robust evidence.
+
+  three_pass:
+    condition: "Three of four checks pass"
+    action: "Accept with moderate confidence, investigate the failure"
+    questions:
+      - "Which check failed and why?"
+      - "Is the failure revealing a genuine problem or a limitation of that check?"
+      - "Can the output be modified to pass all four?"
+
+  two_pass:
+    condition: "Two of four checks pass"
+    action: "Flag significant uncertainty, investigate before accepting"
+    questions:
+      - "Which two failed?"
+      - "Are the failures related or independent?"
+      - "What would it take to resolve the failures?"
+
+  one_or_zero_pass:
+    condition: "One or zero checks pass"
+    action: "Do not accept. Investigate fundamental issues."
+    questions:
+      - "Why does this fail multiple independent checks?"
+      - "Is the output fundamentally flawed?"
+      - "Should the approach be reconsidered?"
+
+  disagreement_investigation:
+    principle: |
+      When checks disagree, the disagreement itself is information.
+      Don't force resolution - understand what the disagreement reveals.
+    process:
+      - Identify which checks agree vs disagree
+      - Characterize the nature of disagreement
+      - Ask: what assumption would need to be true for each check?
+      - The conflicting assumptions reveal where uncertainty lies
+      - Document the uncertainty explicitly rather than hiding it
+
+# ============================================
+# HANDLING THE n+1 PROBLEM
+# ============================================
+
+n_plus_1_handling:
+
+  the_problem: |
+    Any critic can be criticized. The critic of the critic can be criticized.
+    This regress appears infinite.
+
+  why_this_helps: |
+    Multiple independent termination criteria create convergent evidence.
+    If grounding says "accept," fixed-point says "accept," convergence says
+    "accept," and practical says "accept" - that's four independent reasons.
+
+    A critic attacking the output must now attack all four, or explain why
+    their agreement is coincidental.
+
+  remaining_uncertainty: |
+    This doesn't eliminate the n+1 problem. The four checks themselves can
+    be criticized. But:
+    1. Criticizing all four independently is harder than criticizing one
+    2. The checks are chosen to be independent - attacking one doesn't
+       automatically attack others
+    3. If a criticism survives all four counter-checks, it's likely legitimate
+
+  loop_detection: |
+    If critique-of-critique-of-critique loops without adding new information,
+    the loop itself is evidence of exhaustion. No new criticism is available.
+
+    Signs of loop:
+    - Same objection reworded
+    - Meta-objection without object-level content
+    - "But how do you know THAT?" without specific concern
+
+    When loop detected: flag as exhausted, accept tentatively.
+
+  symmetric_critic_integration: |
+    From unassailable_output: the critic must also be unassailable.
+    This filters weak criticisms before they enter the n+1 chain.
+
+    A criticism is weak if:
+    - It uses worse logic than what it criticizes
+    - It could itself be attacked with a stronger argument
+    - It's pedantic without substantive concern
+    - It's vague where the output is specific
+
+    Only legitimate criticisms proceed to the convergent validation.
+
+# ============================================
+# INTEGRATION WITH OTHER PROCEDURES
+# ============================================
+
+integration:
+
+  with_unassailable_output:
+    relationship: |
+      Unassailable output sets the standard.
+      Convergent validation provides the termination criteria.
+      Use unassailable's symmetric critic to filter, then
+      convergent validation to decide acceptance.
+
+  with_assumption_elimination:
+    relationship: |
+      The grounding check IS assumption elimination applied.
+      If assumptions remain ungrounded, grounding check fails.
+
+  with_epistemic_hierarchy:
+    relationship: |
+      Grounding check uses epistemic hierarchy levels.
+      Level 0-2 foundations are acceptable grounds.
+      Level 3 (situation-specific) requires Level 0-2 support.
+
+  with_recursive_causal_interrogation:
+    relationship: |
+      RCI can be used to trace claims backward to grounding.
+      Convergent validation evaluates whether that tracing succeeded.
+
+# ============================================
+# PRACTICAL APPLICATION
+# ============================================
+
+practical_application:
+
+  when_to_use:
+    - Before finalizing important decisions
+    - When facing persistent disagreement
+    - When n+1 regress threatens to continue indefinitely
+    - When need explicit confidence assessment
+
+  quick_version:
+    steps:
+      - "Is this grounded? (trace to verifiable)"
+      - "Is this self-consistent? (apply to self)"
+      - "Do others agree? (check convergence)"
+      - "Does it work? (check outcomes)"
+      - "If all yes: accept. If mixed: investigate disagreement."
+
+  output_format: |
+    ## Convergent Validation Result
+
+    **Claim/Output**: [what is being validated]
+
+    | Check | Result | Notes |
+    |-------|--------|-------|
+    | Grounding | PASS/FAIL/FLAG | [tracing notes] |
+    | Fixed-Point | PASS/FAIL/FLAG | [self-application notes] |
+    | Convergence | PASS/FAIL/FLAG | [agreement notes] |
+    | Practical | PASS/FAIL/FLAG | [outcome notes] |
+
+    **Agreement**: [X of 4 pass]
+    **Decision**: [Accept / Accept with caveat / Investigate / Reject]
+    **Remaining Uncertainty**: [what isn't resolved]
+
+# ============================================
+# LIMITATIONS
+# ============================================
+
+limitations:
+  - The four checks share some assumptions (e.g., that grounding is possible)
+  - '"Independence" is approximate, not perfect'
+  - "Doesn't guarantee correctness, only convergent evidence"
+  - Requires effort to apply all four checks
+  - Legitimate criticisms may still be missed
+
+honest_assessment: |
+  This procedure doesn't solve the n+1 problem definitively.
+  It makes progress by:
+  1. Using multiple independent criteria (harder to defeat all)
+  2. Making uncertainty explicit (not hiding disagreement)
+  3. Providing termination conditions (when to stop)
+  4. Acknowledging limitations (not claiming perfection)
+
+  The remaining uncertainty is irreducible. Operating well under
+  irreducible uncertainty is the best achievable outcome.

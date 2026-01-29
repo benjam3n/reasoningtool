@@ -1,0 +1,724 @@
+# High-Quality Long-Form Writing Procedure
+# Produces logically sound, well-structured, insightful writing
+
+procedure:
+  id: high_quality_writing
+  name: High-Quality Long-Form Writing Procedure
+  version: "1.0"
+
+  purpose: |
+    Reliably produce long-form writing (2000-10000 words) that is:
+    - Logically sound (clear thesis, valid arguments, no fallacies)
+    - Well-structured (coherent flow, clear sections)
+    - Insightful (non-obvious analysis, goes beyond surface)
+    - Evidence-based (claims supported)
+    - Clear (appropriate for audience)
+
+  inputs:
+    required:
+      - topic: "The subject to write about"
+      - purpose: "Why this is being written (inform, persuade, analyze, explain)"
+    optional:
+      - audience: "Who will read this (default: informed generalist)"
+      - length: "Target word count (default: 3000-5000 words)"
+      - sources: "Available research, data, examples"
+      - constraints: "Tone, format, or other requirements"
+
+  output:
+    format: "Markdown document"
+    contents:
+      - "Title"
+      - "Abstract/Summary (if appropriate)"
+      - "Main body with sections"
+      - "Conclusion"
+      - "Sources/References (if applicable)"
+
+  # ============================================
+  # PHASE 1: PREPARATION
+  # ============================================
+  phase_1_preparation:
+    name: "Preparation"
+    purpose: "Define scope and gather raw material"
+
+    steps:
+      - id: define_core_question
+        prompt: |
+          Given the topic "{topic}" and purpose "{purpose}":
+
+          What is the ONE core question this piece must answer?
+
+          Requirements:
+          - Must be a genuine question (not rhetorical)
+          - Answer should not be obvious
+          - Should be answerable within the scope
+
+          Write the question clearly.
+
+      - id: define_audience
+        prompt: |
+          Who is the audience for this piece?
+
+          For the audience, specify:
+          1. What do they already know about this topic?
+          2. What do they likely believe or assume?
+          3. What level of expertise should I assume?
+          4. What do they care about (motivations)?
+
+          Be specific - "general audience" is not specific enough.
+
+      - id: gather_raw_material
+        prompt: |
+          List all raw material available for this piece:
+
+          1. Key facts, data, or evidence
+          2. Examples (concrete instances)
+          3. Relevant concepts or frameworks
+          4. Counterarguments or alternative views
+          5. Personal observations or experiences (if relevant)
+          6. Sources to cite
+
+          For each item, note:
+          - What it is
+          - How reliable/strong it is
+          - How it might support the argument
+
+      - id: identify_key_tensions
+        prompt: |
+          What are the key tensions, contradictions, or complexities in this topic?
+
+          Look for:
+          - Things that seem true but contradict each other
+          - Conventional wisdom that may be wrong
+          - Trade-offs with no easy answer
+          - Perspectives that conflict
+
+          These tensions are often where insight lives.
+
+    gate:
+      id: preparation_complete
+      question: "Do we have enough material to begin structuring?"
+
+      criteria:
+        - "Core question is clear and non-trivial"
+        - "Audience is specifically defined"
+        - "At least 5 substantive pieces of raw material"
+        - "At least 1 key tension or complexity identified"
+
+      if_pass: "Proceed to Phase 2"
+      if_fail: "Return to preparation - need more material or clarity"
+
+  # ============================================
+  # PHASE 2: THESIS & STRUCTURE
+  # ============================================
+  phase_2_structure:
+    name: "Thesis & Structure"
+    purpose: "Formulate thesis and build logical structure"
+
+    steps:
+      - id: formulate_thesis
+        prompt: |
+          Based on the core question "{core_question}" and the material gathered:
+
+          STEP 1 - Generate obvious thesis:
+          What is the OBVIOUS answer to the core question?
+          What thesis would most writers default to?
+
+          STEP 2 - ASSUME WRONG (ARAW):
+          Assume the obvious thesis is wrong or incomplete.
+          What alternative theses exist?
+          What would the opposite thesis be? Could it be true?
+          What thesis would a contrarian argue?
+
+          STEP 3 - Evaluate:
+          Which thesis (obvious, opposite, alternative, or contrarian) is:
+          - Most defensible with your evidence?
+          - Most valuable to your audience?
+          - Most genuinely arguable (not trivially true)?
+
+          STEP 4 - Formulate:
+          State your chosen thesis in ONE clear sentence.
+          Template: "I argue that [specific claim] because [key reason]."
+
+          Requirements:
+          - It should be arguable (not obvious or trivially true)
+          - It should be specific (not vague)
+          - It should be supportable with your evidence
+
+      - id: apply_scqa
+        prompt: |
+          Structure the opening using the SCQA framework:
+
+          **Situation**: What is the context everyone agrees on?
+          (Set the scene - time, place, background that's uncontroversial)
+
+          **Complication**: What is the problem or tension?
+          (Why does this matter now? What's at stake?)
+
+          **Question**: What question does this naturally raise?
+          (Should align with your core question)
+
+          **Answer**: What is your thesis?
+          (Your main argument/conclusion)
+
+          Write each component in 1-3 sentences.
+
+      - id: build_argument_pyramid
+        prompt: |
+          Build your argument pyramid supporting the thesis "{thesis}":
+
+          LEVEL 1 (Thesis): {thesis}
+
+          LEVEL 2 (Supporting Arguments):
+          List 3-5 main supporting arguments.
+
+          Requirements (MECE principle):
+          - Mutually Exclusive: Arguments don't overlap
+          - Collectively Exhaustive: Together they fully support the thesis
+
+          For each argument:
+          - State it clearly
+          - Explain how it supports the thesis
+          - Note what evidence supports it
+
+          LEVEL 3 (Evidence):
+          For each Level 2 argument, list the specific evidence/examples.
+
+      - id: determine_logical_order
+        prompt: |
+          What is the best logical order for your supporting arguments?
+
+          STEP 1 - Identify the expected order:
+          What order would most writers use for these arguments?
+          What's the conventional structure for this type of piece?
+
+          STEP 2 - ASSUME WRONG (ARAW):
+          Assume the expected order is suboptimal.
+          What other orderings could work?
+          What if you started with the weakest argument? The most controversial?
+          What order would create the most surprise or tension?
+
+          STEP 3 - Evaluate orderings:
+          Standard options:
+          1. **Time order**: Chronological or causal sequence
+          2. **Structural order**: Parts of a whole (economic, social, political)
+          3. **Importance order**: Most compelling first, or build to it
+
+          Non-standard options (from Step 2):
+          4. **Surprise order**: Lead with the unexpected, explain later
+          5. **Problem-solution pairs**: Each argument has its tension
+          6. **[Other orders you generated]**
+
+          STEP 4 - Choose:
+          Which ordering best serves your thesis and audience?
+          Consider: Would the unexpected order be more engaging?
+
+          Justify your choice and list arguments in that order.
+
+      - id: create_outline
+        prompt: |
+          Create a detailed outline:
+
+          # Title
+
+          ## Introduction
+          - Hook
+          - SCQA setup
+          - Thesis statement
+          - Roadmap of what's to come
+
+          ## Section 1: [First supporting argument]
+          - Main point
+          - Evidence 1
+          - Evidence 2
+          - Transition to next section
+
+          ## Section 2: [Second supporting argument]
+          [same structure]
+
+          ## Section 3: [Third supporting argument]
+          [same structure]
+
+          ## Addressing Counterarguments
+          - Strongest counterargument
+          - Response/refutation
+
+          ## Conclusion
+          - Restate thesis (different words)
+          - Synthesize implications
+          - "So what?" - why this matters
+          - (Optional) Call to action or future directions
+
+          Be specific about what goes in each section.
+
+    gate:
+      id: structure_sound
+      question: "Is the logical structure sound?"
+
+      criteria:
+        - "Thesis is clear, arguable, and specific"
+        - "Supporting arguments are MECE"
+        - "Evidence exists for each argument"
+        - "Logical order is justified"
+        - "Outline covers all necessary components"
+
+      verification:
+        - "Could someone disagree with the thesis? (if not, too weak)"
+        - "Do the supporting arguments actually support the thesis?"
+        - "Are there any logical gaps?"
+
+      if_pass: "Proceed to Phase 3"
+      if_fail: "Revise structure until sound"
+
+  # ============================================
+  # PHASE 3: INSIGHT GENERATION
+  # ============================================
+  phase_3_insight:
+    name: "Insight Generation"
+    purpose: "Push beyond surface analysis to genuine insight"
+
+    steps:
+      - id: so_what_cascade
+        prompt: |
+          For each of your main points, apply the "So What?" cascade:
+
+          Point: [state the point]
+          So what? [why does this matter?]
+          So what? [go deeper]
+          So what? [even deeper]
+
+          Keep asking until you reach something that:
+          - Affects how someone might think or act
+          - Reveals a non-obvious truth
+          - Connects to something larger
+
+          Do this for your thesis AND each supporting argument.
+
+      - id: find_universal_insight
+        prompt: |
+          Find insight through UNIVERSALIZATION using validated 12-technique procedure.
+
+          Your thesis: "{thesis}"
+
+          STEP 1 - APPLY 12 UNIVERSALIZATION TECHNIQUES:
+          For your thesis, apply each technique:
+
+          1. STATE SPACE: What states could your claim be in?
+             → [enumerate: true, false, partial, conditional, changing]
+
+          2. INSTANCE-TO-CATEGORY: What is this thesis an instance of?
+             → [find category: e.g., "AI replaces programmers" → "Technology affects labor"]
+
+          3. PARAMETER VARIATION: What if key terms varied?
+             → [vary: AI→any tech; programmers→any role; replace→any change]
+
+          4. ROLE REVERSAL: What if roles reversed?
+             → [reverse: What if programmers affected AI?]
+
+          5. EXISTENCE CHECK: Is the claim even true?
+             → [check: Is replacement actually happening?]
+
+          6. CAUSAL REVERSAL: What if causation reversed?
+             → [reverse: Does programmer scarcity drive AI development?]
+
+          7. TEMPORAL VARIATION: What if timing varied?
+             → [vary: past/present/future/never/cyclical]
+
+          8. BOUNDARY DISSOLUTION: What if scope changed?
+             → [expand: some programmers → all knowledge workers → all workers]
+
+          9. MODALITY SHIFT: What certainty level?
+             → [shift: will → might → could → should]
+
+          10. PERSPECTIVE ROTATION: Other viewpoints?
+              → [rotate: company, worker, user, society]
+
+          11. SCALE VARIATION: Different scales?
+              → [vary: individual, team, industry, economy]
+
+          12. NEGATION REFRAME: Problem or opportunity?
+              → [flip: threat → evolution/opportunity]
+
+          Record the 3-4 most useful universalizations.
+
+          STEP 2 - DERIVE FROM BEST UNIVERSAL:
+          From your best universalization, derive specific instances:
+          - What specific cases fall under this category?
+          - What historical examples share this pattern?
+          - What variations exist?
+
+          STEP 3 - CHECK EXPECTED VS UNEXPECTED:
+          Mark each derived instance:
+          - EXPECTED: Would have thought of anyway
+          - UNEXPECTED: Emerged through universalization
+
+          STEP 4 - SELECT FOR INSIGHT:
+          From all derived possibilities:
+          - Which is TRUE given your evidence?
+          - Which would SURPRISE your audience?
+          - Which DIFFERENTIATES from generic AI output?
+
+          [T:result] Selected insight: [describe]
+          [T:result] Why this emerged through universalization: [explain]
+
+      - id: examine_counterarguments
+        prompt: |
+          Steel-man the counterarguments:
+
+          1. What is the STRONGEST argument against your thesis?
+             (Not a strawman - the real objection a smart critic would raise)
+
+          2. What is the best evidence for this counterargument?
+
+          3. How do you respond?
+             Options:
+             - Show why it's wrong
+             - Show why it's less important than your argument
+             - Acknowledge partial validity but explain limitations
+             - Show how your argument actually accounts for it
+
+          4. Are there any counterarguments you cannot fully address?
+             (Acknowledging limits builds credibility)
+
+      - id: find_connections
+        prompt: |
+          What connections exist that aren't immediately apparent?
+
+          Look for:
+          - Analogies to other domains (this is like X in field Y)
+          - Patterns that repeat across examples
+          - Underlying principles that explain surface phenomena
+          - Implications that follow logically but aren't obvious
+          - How this connects to broader trends or themes
+
+          List at least 2 non-obvious connections.
+          Consider adding them to your piece.
+
+      - id: embrace_complexity
+        prompt: |
+          Where have you oversimplified?
+
+          Real insight often comes from embracing complexity:
+
+          1. What nuances are you glossing over?
+          2. Where is the truth "it depends"?
+          3. What tensions remain unresolved?
+          4. What don't you know that matters?
+
+          You don't need to resolve all complexity, but you should:
+          - Acknowledge it exists
+          - Explain why your argument holds despite it
+          - Or show how complexity is actually part of your point
+
+    gate:
+      id: insight_present
+      question: "Does this contain genuine insight?"
+
+      criteria:
+        - "At least one non-obvious point is clearly stated"
+        - "'So what?' is answered convincingly"
+        - "Strongest counterargument is addressed"
+        - "Complexity is acknowledged, not hidden"
+
+      verification:
+        - "Would a knowledgeable reader learn something new?"
+        - "Is there an 'aha' moment?"
+        - "Does it go beyond summarizing what's already known?"
+
+      if_pass: "Proceed to Phase 4"
+      if_fail: "Return to insight generation - dig deeper"
+
+  # ============================================
+  # PHASE 4: DRAFTING
+  # ============================================
+  phase_4_drafting:
+    name: "Drafting"
+    purpose: "Write the full piece following the structure"
+
+    steps:
+      - id: write_introduction
+        prompt: |
+          Write the introduction:
+
+          Components:
+          1. **Hook** (1-2 sentences): Start with something that grabs attention
+             - A surprising fact
+             - A provocative question
+             - A vivid scene
+             - A bold claim
+
+          2. **SCQA setup** (2-4 sentences): Situation, Complication, Question
+
+          3. **Thesis statement** (1 sentence): Your main argument, clearly stated
+
+          4. **Roadmap** (1-2 sentences): Brief preview of what's to come
+
+          Total: 150-300 words
+
+          The reader should know exactly what you'll argue and why it matters.
+
+      - id: write_body_sections
+        prompt: |
+          For each section in your outline, write the full section:
+
+          Structure for each section:
+
+          1. **Topic sentence**: State the main point of this section
+             (Should directly support the thesis)
+
+          2. **Explanation**: Elaborate on the point (2-4 sentences)
+
+          3. **Evidence**: Provide specific evidence
+             - Quote, data, example, or logical argument
+             - Cite source if applicable
+
+          4. **Analysis**: Explain what the evidence means
+             - Don't just present evidence - interpret it
+             - Connect back to the thesis
+
+          5. **Transition**: Bridge to next section (1 sentence)
+
+          For each claim, ask: "Is this supported? Could I defend this?"
+
+      - id: write_counterargument_section
+        prompt: |
+          Write the counterargument section:
+
+          1. Introduce the counterargument fairly
+             "Some might argue that..." or "A common objection is..."
+
+          2. Present it in its strongest form (steel-man)
+
+          3. Respond to it:
+             - If refuting: explain why it's wrong, with evidence
+             - If partially accepting: acknowledge what's valid, then explain limits
+
+          4. Explain why your thesis still holds
+
+          This section builds credibility by showing you've considered alternatives.
+
+      - id: write_conclusion
+        prompt: |
+          Write the conclusion:
+
+          Components:
+
+          1. **Restate thesis** (different words than intro)
+             Don't copy-paste - synthesize
+
+          2. **Summarize key points** (briefly - 2-3 sentences)
+             What were the main supporting arguments?
+
+          3. **"So what?"** - Implications
+             Why does this matter? What follows from this?
+
+          4. **Closing thought**
+             Options:
+             - Call to action
+             - Future directions
+             - Broader connection
+             - Provocative final thought
+             - Circle back to opening hook
+
+          Total: 150-250 words
+
+          Leave the reader thinking.
+
+      - id: add_concrete_examples
+        prompt: |
+          Review the draft for abstract sections.
+
+          For any abstract concept or claim, ask:
+          "Can I add a concrete example?"
+
+          Good examples:
+          - Specific instances, not generic categories
+          - Vivid and memorable
+          - Directly illustrate the point
+          - Come from real cases, data, or scenarios
+
+          Add at least one concrete example per major section.
+
+    gate:
+      id: draft_complete
+      question: "Is the draft complete?"
+
+      criteria:
+        - "All sections from outline are written"
+        - "Word count is in target range"
+        - "Introduction has hook, SCQA, thesis, roadmap"
+        - "Each body section has topic sentence, evidence, analysis"
+        - "Counterarguments are addressed"
+        - "Conclusion synthesizes and answers 'so what?'"
+
+      if_pass: "Proceed to Phase 5"
+      if_fail: "Complete missing sections"
+
+  # ============================================
+  # PHASE 5: EVALUATION & REFINEMENT
+  # ============================================
+  phase_5_evaluation:
+    name: "Evaluation & Refinement"
+    purpose: "Apply quality rubric and refine until passing"
+
+    evaluation_rubric:
+      criteria:
+        logical_soundness:
+          weight: 25
+          levels:
+            excellent: |
+              Thesis is clear and arguable. All claims are supported by evidence.
+              Arguments are valid with no logical fallacies. Counterarguments are
+              addressed comprehensively. Reasoning is airtight.
+            good: |
+              Thesis is clear. Most claims supported. Arguments are generally valid.
+              Main counterarguments addressed. Minor gaps in reasoning.
+            adequate: |
+              Thesis present but could be sharper. Some claims unsupported.
+              Arguments mostly valid. Counterarguments mentioned but not fully addressed.
+            weak: |
+              Thesis unclear or too broad. Multiple unsupported claims.
+              Logical fallacies present. Counterarguments ignored.
+            missing: |
+              No clear thesis. Claims without evidence. Fundamentally illogical.
+
+        structure_flow:
+          weight: 20
+          levels:
+            excellent: |
+              Perfect logical flow. Each section clearly supports thesis.
+              Transitions are smooth. Reader always knows where they are and why.
+              MECE structure evident. Easy to follow.
+            good: |
+              Clear structure. Sections mostly flow logically. Transitions present.
+              Reader can follow the argument. Minor organizational issues.
+            adequate: |
+              Structure present but some sections feel out of place.
+              Transitions sometimes abrupt. Reader occasionally loses thread.
+            weak: |
+              Disorganized. Sections don't clearly support thesis.
+              Hard to follow. Missing transitions.
+            missing: |
+              No discernible structure. Stream of consciousness.
+
+        insight_depth:
+          weight: 25
+          levels:
+            excellent: |
+              Multiple non-obvious insights. Goes well beyond surface analysis.
+              "So what?" answered compellingly. Reader learns something surprising.
+              Original framing or connections.
+            good: |
+              At least one clear insight. Goes beyond obvious.
+              "So what?" answered. Reader gains new perspective.
+            adequate: |
+              Attempts insight but mostly stays at surface.
+              "So what?" partially answered. Some new information but not surprising.
+            weak: |
+              No real insight. Summarizes known information.
+              "So what?" not answered. Reader doesn't learn anything new.
+            missing: |
+              Pure summary or truisms. No analysis. No value-add.
+
+        evidence_quality:
+          weight: 15
+          levels:
+            excellent: |
+              Every claim supported by strong evidence. Sources are credible.
+              Evidence is specific and well-chosen. Properly cited.
+            good: |
+              Most claims supported. Evidence generally strong.
+              Sources credible. Minor citation gaps.
+            adequate: |
+              Key claims supported but some gaps. Evidence sometimes weak.
+              Sources mostly credible.
+            weak: |
+              Many unsupported claims. Evidence weak or poorly chosen.
+              Sources questionable.
+            missing: |
+              No evidence provided. Pure assertion.
+
+        clarity_style:
+          weight: 15
+          levels:
+            excellent: |
+              Crystal clear. Appropriate for audience. No unnecessary jargon.
+              Concrete examples throughout. Engaging to read. Elegant prose.
+            good: |
+              Clear and readable. Audience-appropriate. Good examples.
+              Minor clarity issues. Generally engaging.
+            adequate: |
+              Understandable but some confusion. Some jargon. Examples present
+              but could be better. Readable but not engaging.
+            weak: |
+              Confusing in places. Too much jargon. Few examples.
+              Tedious to read.
+            missing: |
+              Incomprehensible. Wrong for audience. No examples.
+
+    steps:
+      - id: apply_rubric
+        prompt: |
+          Evaluate the draft against each criterion:
+
+          For each criterion, provide:
+          1. Level (Excellent/Good/Adequate/Weak/Missing)
+          2. Specific evidence from the text supporting that rating
+          3. What would improve it (if not Excellent)
+
+          Be honest and specific.
+
+      - id: identify_weakest
+        prompt: |
+          Which criterion scored lowest?
+
+          This is your priority for revision.
+
+          What specific changes would raise it by one level?
+          Be concrete - point to specific sections/sentences.
+
+      - id: revise_for_weaknesses
+        prompt: |
+          Make the specific revisions identified.
+
+          After revising, re-evaluate that criterion.
+          Did it improve?
+
+          Repeat until no criterion is "Weak" or "Missing".
+
+      - id: final_polish
+        prompt: |
+          Final polish:
+
+          1. Read aloud (or simulate) - do any sentences stumble?
+          2. Cut unnecessary words - is every word earning its place?
+          3. Check opening and closing - are they strong?
+          4. Verify thesis is prominent - could someone skim and get the point?
+          5. Proofread for errors
+
+    gate:
+      id: passes_rubric
+      question: "Does the writing pass the rubric?"
+
+      pass_criteria:
+        - "No criterion is 'Missing'"
+        - "At most one criterion is 'Weak'"
+        - "Weighted average is 'Adequate' or better"
+
+      if_pass: "Writing is complete"
+      if_fail: "Return to revision - address failing criteria"
+
+  # ============================================
+  # OUTPUT CHECKLIST
+  # ============================================
+  final_checklist:
+    before_delivery:
+      - "Thesis is stated in introduction AND supported throughout"
+      - "Every claim has evidence"
+      - "Counterarguments are addressed"
+      - "At least one genuine insight is present"
+      - "Structure is logical and MECE"
+      - "'So what?' is answered"
+      - "Concrete examples are included"
+      - "Appropriate for target audience"
+      - "Word count is in range"
+      - "No obvious errors"

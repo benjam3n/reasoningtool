@@ -1,0 +1,160 @@
+id: goal_understanding
+name: Goal Understanding Pre-Processor
+version: "1.0"
+domain: core
+description: |
+  MANDATORY first step before attempting any goal.
+  Don't try to solve - first UNDERSTAND what's actually being asked.
+
+  This reduces uncertainty by narrowing down:
+  - What domain does this live in?
+  - What is the user REALLY asking for?
+  - What techniques exist for this type of problem?
+  - What does the user hope to gain?
+  - What would success look like to THEM?
+
+when_to_use:
+  - Before any goal planning begins
+  - When goal seems vague, philosophical, or hard to approach
+  - When you're tempted to give generic advice
+  - When the "obvious" solution feels unsatisfying
+
+tags:
+  - mandatory
+  - core
+  - pre-processing
+  - understanding
+  - decomposition
+
+inputs:
+  - Raw goal statement from user
+  - Any context about user's situation
+
+outputs:
+  - Domain classification (with confidence)
+  - User intent analysis
+  - Applicable technique domains
+  - Success criteria from user's perspective
+  - Refined goal ready for planning
+
+process:
+  step_1_surface_vs_deep:
+    description: Distinguish surface request from deep intent
+    questions:
+      - "What did they literally say?"
+      - "What might they MEAN by this?"
+      - "What problem are they trying to solve?"
+      - "What pain are they trying to avoid?"
+      - "What would make them say 'yes, that's exactly what I wanted'?"
+    example:
+      surface: "How do I live authentically?"
+      possible_meanings:
+        - "I feel like I'm living someone else's life"
+        - "I don't know what I actually want"
+        - "I'm doing things I don't believe in"
+        - "I want permission to be different"
+        - "I'm exhausted from pretending"
+      deep_intent: "Reduce the gap between who I am and how I act"
+
+  step_2_domain_mapping:
+    description: Identify which knowledge domains apply
+    domain_categories:
+      psychology:
+        signals: ["feel", "authentic", "identity", "meaning", "purpose", "happy"]
+        sub_domains: ["self-concept", "motivation", "behavior change", "values clarification"]
+      strategy:
+        signals: ["achieve", "win", "compete", "grow", "scale", "dominate"]
+        sub_domains: ["game theory", "positioning", "resource allocation", "timing"]
+      systems:
+        signals: ["change", "influence", "policy", "organization", "culture"]
+        sub_domains: ["leverage points", "feedback loops", "incentive design"]
+      technical:
+        signals: ["build", "create", "implement", "design", "engineer"]
+        sub_domains: ["architecture", "requirements", "verification", "iteration"]
+      interpersonal:
+        signals: ["relationship", "trust", "persuade", "negotiate", "team"]
+        sub_domains: ["communication", "influence", "conflict resolution"]
+      financial:
+        signals: ["money", "income", "invest", "wealth", "business"]
+        sub_domains: ["valuation", "risk", "cash flow", "capital"]
+      health:
+        signals: ["health", "fitness", "energy", "sleep", "stress", "weight"]
+        sub_domains: ["behavior", "physiology", "habit", "measurement"]
+    action: "Map goal to 1-3 primary domains with confidence levels"
+
+  step_3_technique_inventory:
+    description: What approaches exist for this type of problem?
+    questions:
+      - "What do experts in this domain do?"
+      - "What frameworks exist?"
+      - "What has worked for similar problems?"
+      - "What are the competing schools of thought?"
+      - "What's the current best practice?"
+    output: "List of 3-5 applicable techniques with brief descriptions"
+
+  step_4_user_success_criteria:
+    description: What would success look like TO THEM?
+    questions:
+      - "How will they know they succeeded?"
+      - "What will be different in their life?"
+      - "What will they be able to do that they can't now?"
+      - "How will they FEEL?"
+      - "What would make them say 'this was worth it'?"
+    warning: |
+      Don't impose YOUR success criteria.
+      "Live authentically" might mean:
+      - To one person: Quit job and travel
+      - To another: Have difficult conversation with family
+      - To another: Stop pretending to like things they don't
+      The USER defines success, not the system.
+
+  step_5_narrow_uncertainty:
+    description: Reduce the solution space
+    process:
+      - "Given domains identified, which sub-domains are most relevant?"
+      - "Given techniques, which 1-2 are most applicable?"
+      - "Given user success criteria, what's the minimum viable outcome?"
+      - "What would a 'good enough' solution look like?"
+    output: "Narrowed problem definition ready for planning"
+
+  step_6_refined_goal:
+    description: Synthesize into actionable goal
+    template: |
+      **Original**: [raw goal]
+      **Domain**: [primary domain] / [sub-domain]
+      **User Intent**: [what they actually want]
+      **Success Looks Like**: [their criteria]
+      **Applicable Techniques**: [1-2 approaches]
+      **Refined Goal**: [specific, actionable version]
+
+examples:
+  - input: "How do I live authentically?"
+    output:
+      domain: "Psychology / Values Clarification"
+      user_intent: "Reduce gap between internal values and external behavior"
+      success_criteria: "Feel less internal conflict; actions align with beliefs"
+      techniques: ["Values clarification exercises", "Identity mapping", "Small experiments"]
+      refined_goal: "Identify 3 areas where behavior conflicts with values and design experiments to close the gap"
+
+  - input: "How do I take over the world?"
+    output:
+      domain: "Strategy / Influence at Scale"
+      user_intent: "Achieve significant impact or control"
+      success_criteria: "Have meaningful influence over important outcomes"
+      techniques: ["Leverage point identification", "Network building", "Compounding influence"]
+      refined_goal: "Build significant influence in one domain through leverage and compounding"
+
+  - input: "How do I prove God exists/doesn't exist?"
+    output:
+      domain: "Epistemology / Belief Justification"
+      user_intent: "Resolve personal uncertainty OR convince others"
+      success_criteria: "Have justified confidence in belief; be able to articulate reasoning"
+      techniques: ["Argument mapping", "Evidence evaluation", "Steelmanning both sides"]
+      refined_goal: "Build justified confidence by evaluating best arguments on both sides"
+
+anti_patterns:
+  - "Jumping straight to 'here's the plan' without understanding"
+  - "Imposing your interpretation of success"
+  - "Treating vague goals as unsolvable instead of decomposable"
+  - "Giving generic advice that could apply to any goal"
+  - "Assuming the literal request is the real request"

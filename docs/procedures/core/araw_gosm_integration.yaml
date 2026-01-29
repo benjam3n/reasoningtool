@@ -1,0 +1,218 @@
+# ARAW → GOSM Integration Procedure
+# Systematic mapping from exploration (ARAW) to execution (GOSM)
+
+id: araw_gosm_integration
+name: ARAW to GOSM Integration
+version: "1.0.0"
+domain: core
+tags: ["integration", "bridge", "araw", "mandatory"]
+
+description: |
+  Systematic procedure for translating ARAW exploration outputs
+  into GOSM execution inputs.
+
+  ARAW = Exploration engine (maps possibility space)
+  GOSM = Execution engine (turns insights into action)
+
+  This bridge ensures ARAW findings automatically populate GOSM structures.
+
+when_to_use:
+  - After ARAW exploration on a problem/goal
+  - Before starting GOSM planning phase
+  - When ARAW identifies tensions or crux nodes
+
+# ============================================
+# ARAW OUTPUT → GOSM INPUT MAPPING
+# ============================================
+mapping:
+  - araw_output: "Crux nodes"
+    gosm_input: "Assumption Register"
+    rationale: "Crux nodes are claims that, if wrong, change everything"
+    action: |
+      For each crux node from ARAW:
+      1. Add to GOSM Assumption Register
+      2. Mark as CRITICAL (requires validation before execution)
+      3. Define validation method
+      4. Define contingency if assumption is false
+
+  - araw_output: "DO_FIRST actions"
+    gosm_input: "Early validation tasks"
+    rationale: "Low effort + high impact = validate before committing"
+    action: |
+      For each DO_FIRST action:
+      1. Create GOSM task: "Validate: [action summary]"
+      2. Schedule before strategy commitment
+      3. Define what pass/fail looks like
+      4. Gate: Cannot proceed until DO_FIRST items resolved
+
+  - araw_output: "Tensions/contradictions"
+    gosm_input: "Decision points"
+    rationale: "Tensions are forks that require resolution"
+    action: |
+      For each tension:
+      1. Add to GOSM Decision Tree as branch point
+      2. Document both sides of tension
+      3. Define criteria for resolution
+      4. If unresolvable, pick side and document risk
+
+  - araw_output: "High-leverage unexplored"
+    gosm_input: "Research tasks / Strategy alternatives"
+    rationale: "High potential but not yet explored"
+    action: |
+      For high-leverage unexplored nodes:
+      1. If relevant to current goal: Add as research task
+      2. If suggests alternative strategy: Add to Strategy Discovery candidates
+      3. Note leverage score from ARAW
+
+  - araw_output: "Common themes (across runs)"
+    gosm_input: "High-confidence assumptions"
+    rationale: "Independent convergence = higher confidence"
+    action: |
+      For themes appearing in 2+ ARAW runs:
+      1. Mark as higher confidence in Assumption Register
+      2. Reduce validation burden (already cross-verified)
+      3. Use as foundation for strategy
+
+  - araw_output: "Probability estimates"
+    gosm_input: "Risk Register"
+    rationale: "ARAW estimates become risk probabilities"
+    action: |
+      For claims with probability < 0.7:
+      1. Add to Risk Register
+      2. Probability = ARAW estimate
+      3. Impact = based on leverage score
+      4. Define mitigation if applicable
+
+  - araw_output: "Drifted/rejected claims"
+    gosm_input: "Out of scope markers"
+    rationale: "Explicitly mark what we're NOT addressing"
+    action: |
+      For relevancy-filtered claims:
+      1. Document as "out of scope for this project"
+      2. Note why it drifted (tangent, abstract, sideways)
+      3. May be relevant for different project
+
+# ============================================
+# INTEGRATION PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: "Run ARAW synthesis"
+    action: |
+      If multiple ARAW databases exist:
+        python synthesize.py *.db --find-tensions --extract-actions actions.json
+
+      This produces:
+      - Summary of each database
+      - Cross-database themes
+      - Tensions and contradictions
+      - Consolidated action items (DO_FIRST, DO_SECOND, crux nodes)
+
+  - id: 2
+    name: "Extract MUST_VERIFY items"
+    action: |
+      From synthesis output, identify:
+
+      MUST_VERIFY (before strategy commitment):
+      - All crux nodes
+      - All DO_FIRST actions
+      - All unresolved tensions
+
+      These become GOSM gates that must pass before proceeding.
+
+  - id: 3
+    name: "Populate Assumption Register"
+    action: |
+      For each crux node:
+
+      assumption:
+        id: [from ARAW]
+        claim: [original claim text]
+        confidence: [ARAW probability estimate]
+        criticality: CRITICAL | HIGH | MEDIUM | LOW
+        validation_method: [how to test]
+        validation_status: UNVALIDATED
+        if_false_action: [contingency]
+        source: ARAW:[database_name]
+
+  - id: 4
+    name: "Populate Risk Register"
+    action: |
+      For each claim with probability < 0.7:
+
+      risk:
+        id: [generated]
+        description: [claim might be false]
+        probability: [1 - ARAW probability]
+        impact: [from leverage score]
+        mitigation: [if applicable]
+        contingency: [ARAW ASSUME_WRONG branch]
+        source: ARAW:[database_name]
+
+  - id: 5
+    name: "Identify Strategy Candidates"
+    action: |
+      From ARAW branches, extract:
+      - High-leverage ASSUME_RIGHT branches = Strategy candidates
+      - High-leverage ASSUME_WRONG branches = Alternative approaches
+
+      Feed into Strategy Discovery phase.
+
+  - id: 6
+    name: "Create Decision Tree Branches"
+    action: |
+      For each ARAW tension:
+
+      decision_point:
+        id: [generated]
+        question: [tension summary]
+        option_a: [one side of tension]
+        option_b: [other side of tension]
+        resolution_criteria: [how to decide]
+        current_choice: UNRESOLVED
+        source: ARAW_TENSION
+
+  - id: 7
+    name: "Mark High-Confidence Foundations"
+    action: |
+      For themes appearing in 2+ ARAW runs:
+
+      foundation:
+        claim: [theme summary]
+        confidence: HIGH (cross-verified)
+        sources: [list of ARAW databases]
+        validation_needed: MINIMAL
+
+      These can be treated as near-axioms for planning.
+
+# ============================================
+# VALIDATION GATES
+# ============================================
+integration_gates:
+  - name: "Crux nodes addressed"
+    check: "All ARAW crux nodes are in Assumption Register"
+    fail_action: "Cannot proceed - critical assumptions not tracked"
+
+  - name: "DO_FIRST resolved"
+    check: "All DO_FIRST actions validated or scheduled"
+    fail_action: "Cannot commit to strategy - quick wins not verified"
+
+  - name: "Tensions resolved or accepted"
+    check: "All tensions either resolved or explicitly accepted with risk"
+    fail_action: "Cannot plan - contradictions not handled"
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+output:
+  gosm_context_additions:
+    assumptions: "[list of assumptions from ARAW]"
+    risks: "[list of risks from ARAW probabilities]"
+    decision_points: "[list of tensions as decisions]"
+    strategy_candidates: "[list from high-leverage branches]"
+    out_of_scope: "[list of drifted claims]"
+    foundations: "[list of high-confidence themes]"
+
+  validation_tasks:
+    must_verify_before_strategy: "[DO_FIRST + crux nodes]"
+    should_verify_during_planning: "[DO_SECOND + high-leverage unexplored]"

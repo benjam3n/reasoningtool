@@ -1,0 +1,325 @@
+# Generation Procedure - First step in the decision-making sequence
+# Core GOSM procedure for generating comprehensive option sets
+
+id: generation
+name: Generation
+version: "1.0.0"
+domain: core
+
+description: Generate all possible options for a decision or selection
+
+long_description: |
+  The Generation procedure is the first step in the systematic decision-making
+  sequence (Generation → Matching → Comparison → Optimization → Selection).
+
+  Its purpose is to create a comprehensive list of ALL possible options before
+  any filtering or evaluation occurs. This ensures we don't miss potential
+  solutions due to premature judgment.
+
+  Key principles:
+  - Breadth over depth: list many options, don't detail each
+  - Include unconventional options: creative and unusual approaches
+  - Don't filter yet: that's what Matching is for
+  - Consider variations: different scales, speeds, approaches
+  - Look across domains: what works elsewhere might apply here
+
+tags:
+  - decision
+  - options
+  - brainstorm
+  - first_step
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Generating solution options for a problem
+  - Brainstorming approaches to a goal
+  - Listing possible materials, resources, or methods
+  - Finding all possible paths forward
+  - At strategy discovery phase in GOSM
+  - When feeling stuck with only obvious options
+
+when_not_to_use:
+  - When you already know the exact solution
+  - When generating options would waste time
+  - When there's only one viable option by definition
+  - For routine decisions with established answers
+  - When constraints make all but one option impossible
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: generation_target
+    type: string
+    required: true
+    description: What we are generating options for (e.g., "methods to acquire customers")
+
+  - name: domain
+    type: string
+    required: false
+    description: The domain or category to constrain search (e.g., "software", "marketing")
+
+  - name: constraints
+    type: list
+    required: false
+    description: Known constraints to consider (options must be compatible)
+
+  - name: context
+    type: dict
+    required: false
+    description: Additional context (resources available, past attempts, stakeholders)
+
+outputs:
+  - name: generated_options
+    type: list
+    description: List of options with brief descriptions
+
+  - name: categories_covered
+    type: list
+    description: Categories of options that were generated (for completeness check)
+
+  - name: generation_gaps
+    type: list
+    description: Areas that might have been missed and should be explored
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Clarify generation target
+    action: |
+      State clearly what options we're generating for.
+      - What decision needs options?
+      - What are we choosing between?
+      - What level of specificity? (categories vs specific items)
+    inputs:
+      - generation_target
+      - context (optional)
+    outputs:
+      - clarified_target: precise statement of what we're generating
+    verification: |
+      Can complete: "We need a list of _____ options for _____"
+
+  - id: 2
+    name: Identify option categories
+    action: |
+      Before generating individual options, map the space of possibilities:
+      - What dimensions do options vary on? (cost, speed, risk, etc.)
+      - What categories of solutions exist?
+      - What domains might have relevant approaches?
+    inputs:
+      - clarified_target (from Step 1)
+      - domain (optional)
+    outputs:
+      - option_dimensions: axes along which options vary
+      - option_categories: high-level groupings
+    verification: |
+      At least 3 distinct categories identified
+
+  - id: 3
+    name: Generate within each category
+    action: |
+      For each category:
+      1. List obvious options (what comes to mind first)
+      2. List unconventional options (what's unusual or creative)
+      3. List extreme options (what if time/money were no object)
+      4. List cross-domain options (what works in other fields)
+    inputs:
+      - option_categories (from Step 2)
+      - constraints (optional)
+    outputs:
+      - raw_options: unfiltered list of all options by category
+    verification: |
+      Each category has at least 3 options
+
+  - id: 4
+    name: Cross-pollinate
+    action: |
+      Look for combinations and variations:
+      - Can options from different categories be combined?
+      - Are there variations (bigger/smaller, faster/slower)?
+      - What would the opposite of common options look like?
+    inputs:
+      - raw_options (from Step 3)
+    outputs:
+      - combined_options: hybrid and variant options
+    verification: |
+      At least 2 novel combinations identified
+
+  - id: 5
+    name: Check completeness
+    action: |
+      Review option list for gaps:
+      - Are any obvious categories missing?
+      - Did we consider all relevant domains?
+      - Are constraints artificially limiting us?
+    inputs:
+      - raw_options (from Step 3)
+      - combined_options (from Step 4)
+      - option_categories (from Step 2)
+    outputs:
+      - generation_gaps: areas not well covered
+      - categories_covered: complete category list
+    verification: |
+      Explicit statement about what might be missing
+
+  - id: 6
+    name: Compile final list
+    action: |
+      Merge all options into single list:
+      1. Combine raw_options and combined_options
+      2. Remove exact duplicates
+      3. Add brief description to each
+      4. Tag with category for later filtering
+    inputs:
+      - raw_options (from Step 3)
+      - combined_options (from Step 4)
+    outputs:
+      - generated_options: final option list ready for Matching phase
+    verification: |
+      Each option has: name, brief description, category tag
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Option list has breadth (multiple categories represented)
+  - Unconventional options included (not just obvious choices)
+  - No premature filtering (options aren't judged/removed)
+  - Generation gaps acknowledged (know what might be missing)
+
+failure_modes:
+  - mode: Anchoring on first idea
+    symptom: List is dominated by variations of one approach
+    resolution: Force at least 3 completely different categories
+
+  - mode: Premature filtering
+    symptom: '"Bad" options excluded during generation'
+    resolution: Include all options, mark concerns for Matching phase
+
+  - mode: Category blindness
+    symptom: Missing obvious category of solutions
+    resolution: Use cross-domain search, ask "what would X do?"
+
+  - mode: Constraints too tight
+    symptom: Very few options generated
+    resolution: Temporarily relax constraints, generate freely, then check
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Generate customer acquisition options
+    context: Startup needs to find first 100 customers
+    inputs:
+      generation_target: "Methods to acquire first 100 customers"
+      domain: "B2B SaaS"
+      constraints:
+        - "Budget under $5000"
+        - "Team of 2"
+    process: |
+      Categories identified: Outbound, Inbound, Referral, Partnerships, Product-led
+
+      Outbound options:
+      - Cold email campaigns
+      - LinkedIn outreach
+      - Cold calling (extreme - unusual for SaaS)
+      - Conference booth (extreme - over budget)
+
+      Inbound options:
+      - SEO content
+      - Paid ads
+      - Social media presence
+      - Podcast appearances
+
+      Referral options:
+      - Customer referral program
+      - Investor introductions
+      - Advisor network
+
+      Partnerships options:
+      - Integration partners
+      - Complementary product bundles
+      - Affiliate program
+
+      Product-led options:
+      - Free tier
+      - Open source component
+      - Community building
+
+      Cross-domain (military): "Asymmetric warfare" → Avoid competing where big players are strong, attack niches
+
+      Combinations: Content marketing + referral = case studies featuring customers who refer
+    expected_output:
+      generated_options:
+        - "Cold email to ICP list"
+        - "LinkedIn Sales Navigator outreach"
+        - "SEO content for problem keywords"
+        - "Customer case study co-marketing"
+        - "Integration partner announcements"
+        - "Free tier with upgrade path"
+        - "Niche community building"
+      categories_covered:
+        - Outbound
+        - Inbound
+        - Referral
+        - Partnerships
+        - Product-led
+      generation_gaps:
+        - "Didn't explore offline channels deeply"
+        - "May be missing industry-specific channels"
+
+  - name: Generate architecture options
+    context: Need to decide on data storage approach
+    inputs:
+      generation_target: "Database options for user data"
+      domain: "Web application"
+      constraints:
+        - "Must handle 10k concurrent users"
+        - "Budget for managed service"
+    expected_output:
+      generated_options:
+        - "PostgreSQL (relational)"
+        - "MongoDB (document)"
+        - "DynamoDB (key-value)"
+        - "Redis (cache + persistence)"
+        - "SQLite (simple, embedded)"
+        - "Multiple databases (hybrid)"
+        - "File-based + CDN (extreme minimalist)"
+      categories_covered:
+        - Relational
+        - Document
+        - Key-value
+        - In-memory
+        - Embedded
+        - Hybrid
+      generation_gaps:
+        - "Graph databases not considered"
+        - "Time-series not relevant but wasn't checked"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - At strategy discovery to generate strategy options
+    - During Strategy Search to expand beyond obvious
+    - When stuck to force consideration of alternatives
+    - At any decision point before selection
+
+  gates:
+    - gate: options_generated
+      question: "Do we have a comprehensive set of options?"
+
+    - gate: no_premature_filtering
+      question: "Were options generated without judgment?"
+
+  related_procedures:
+    - matching: Next step - filter options against requirements
+    - comparison: Compare filtered options
+    - selection: Choose final option
+    - innovation_engine: More structured cross-domain generation
+    - cross_domain_bridge: Deep cross-domain strategy translation

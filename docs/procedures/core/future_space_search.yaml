@@ -1,0 +1,314 @@
+# Future Space Search
+# Generate possible futures, search for likely/optimal
+# Version: 1.0.0
+
+id: future_space_search
+name: Future Space Search
+version: "1.0.0"
+domain: core
+
+goal: |
+  Generate a comprehensive space of possible futures,
+  then search for most likely, most desirable, or most important to prepare for.
+
+description: |
+  The future is uncertain but not arbitrary.
+  Systematically generate possible futures, then:
+  - Find most likely (prediction)
+  - Find most desirable (goal-setting)
+  - Find most important to prepare for (risk management)
+
+when_to_use:
+  - Strategic planning
+  - Risk assessment
+  - Scenario planning
+  - Decision-making under uncertainty
+  - Preparing for multiple outcomes
+
+inputs:
+  - name: domain
+    type: string
+    description: "What future are we exploring?"
+  - name: timeframe
+    type: string
+    description: "How far ahead?"
+  - name: search_goal
+    type: enum
+    values: ["most_likely", "most_desirable", "highest_impact", "most_different"]
+
+outputs:
+  - name: future_space
+    type: list
+    description: "Generated possible futures"
+  - name: selected_futures
+    type: list
+    description: "Futures matching search goal"
+
+# ============================================
+# CRITERIA FOR FUTURES
+# ============================================
+
+criteria:
+  for_likelihood:
+    - name: "Causal plausibility"
+      question: "Is there a plausible causal path from now to this future?"
+      weight: 30
+
+    - name: "Trend alignment"
+      question: "Does it align with current trends?"
+      weight: 25
+
+    - name: "Precedent"
+      question: "Has something similar happened before?"
+      weight: 15
+
+    - name: "Expert consensus"
+      question: "Do knowledgeable people consider this likely?"
+      weight: 15
+
+    - name: "Few dependencies"
+      question: "Does it require few things to go a specific way?"
+      weight: 15
+
+  for_desirability:
+    - name: "Goal achievement"
+      question: "Does this future achieve our goals?"
+      weight: 40
+
+    - name: "Value alignment"
+      question: "Does it align with our values?"
+      weight: 30
+
+    - name: "Sustainability"
+      question: "Is it stable/maintainable?"
+      weight: 15
+
+    - name: "Optionality"
+      question: "Does it preserve or expand options?"
+      weight: 15
+
+  for_impact:
+    - name: "Magnitude of change"
+      question: "How different is this from current state?"
+      weight: 30
+
+    - name: "Irreversibility"
+      question: "Would it be hard to change from this state?"
+      weight: 25
+
+    - name: "Stakeholder effect"
+      question: "How many people/things does it affect?"
+      weight: 25
+
+    - name: "Preparation value"
+      question: "Would preparing for this help with other futures too?"
+      weight: 20
+
+# ============================================
+# GENERATION METHODS
+# ============================================
+
+generation_methods:
+  trend_extrapolation:
+    description: "Extend current trends"
+    prompts:
+      - "If current trends continue, what happens?"
+      - "What if trend X accelerates?"
+      - "What if trend X reverses?"
+      - "What if trend X plateaus?"
+
+  driver_variation:
+    description: "Vary key drivers independently"
+    steps:
+      - "Identify 3-5 key drivers of change"
+      - "For each driver, identify 2-3 possible states"
+      - "Combine into scenario matrix"
+    example: |
+      Drivers: Technology (fast/slow), Regulation (tight/loose), Economy (growth/recession)
+      2³ = 8 scenario combinations
+
+  wild_card_injection:
+    description: "Consider low-probability high-impact events"
+    prompts:
+      - "What wild cards could disrupt everything?"
+      - "What black swans should we consider?"
+      - "What's the thing we're not considering?"
+
+  historical_analogy:
+    description: "Futures based on historical patterns"
+    prompts:
+      - "What historical situation is analogous?"
+      - "How did that play out?"
+      - "What would the equivalent be today?"
+
+  stakeholder_projection:
+    description: "Futures based on stakeholder actions"
+    prompts:
+      - "What will competitor X do?"
+      - "What will regulator Y do?"
+      - "How will customers respond to Z?"
+
+  constraint_relaxation:
+    description: "What if current constraints disappeared?"
+    prompts:
+      - "What if cost wasn't a constraint?"
+      - "What if time wasn't a constraint?"
+      - "What if technology advanced faster?"
+      - "What if regulation changed?"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Define the Future Space"
+    action: |
+      Specify:
+      - What domain/question
+      - What timeframe
+      - What you're optimizing for (likely/desirable/important)
+    output: "Future space definition"
+
+  - id: 2
+    name: "Identify Key Drivers"
+    action: |
+      List the main forces that will shape this future:
+      - Technology changes
+      - Economic factors
+      - Social/demographic shifts
+      - Political/regulatory changes
+      - Environmental factors
+      - Competitive dynamics
+    output: "List of 3-7 key drivers"
+    template: |
+      KEY DRIVERS:
+      1. [Driver]: [Current state] → [Possible states: A, B, C]
+      2. [Driver]: [Current state] → [Possible states: A, B, C]
+      ...
+
+  - id: 3
+    name: "Generate Baseline Futures"
+    action: |
+      Generate systematic combinations of driver states.
+      Use morphological approach if 3-5 drivers.
+    output: "Baseline future scenarios"
+
+  - id: 4
+    name: "Add Trend Extrapolations"
+    action: |
+      For each major trend, generate:
+      - Continuation scenario
+      - Acceleration scenario
+      - Reversal scenario
+    output: "Trend-based futures"
+
+  - id: 5
+    name: "Add Wild Cards"
+    action: |
+      Brainstorm low-probability high-impact events.
+      For each, describe the resulting future.
+    output: "Wild card futures"
+
+  - id: 6
+    name: "Filter Obviously Impossible"
+    action: |
+      Remove futures that:
+      - Violate physical laws
+      - Are internally contradictory
+      - Require impossible sequences
+    output: "Plausible future set"
+
+  - id: 7
+    name: "Score Futures"
+    action: |
+      Based on search goal, score each future:
+      - If seeking likely: use likelihood criteria
+      - If seeking desirable: use desirability criteria
+      - If seeking important: use impact criteria
+    output: "Scored futures"
+    template: |
+      FUTURE: [Description]
+
+      If searching for LIKELY:
+      - Causal plausibility: [1-10]
+      - Trend alignment: [1-10]
+      - Precedent: [1-10]
+      - Expert consensus: [1-10]
+      - Few dependencies: [1-10]
+      Total: [weighted sum]
+
+  - id: 8
+    name: "Select Target Futures"
+    action: |
+      Select futures based on search goal:
+      - Most likely: top 3 by likelihood
+      - Most desirable: top 3 by desirability
+      - Highest impact: top 3 by impact
+      - Most different: pick diverse set for scenario planning
+    output: "Selected futures"
+
+  - id: 9
+    name: "Describe Selected Futures"
+    action: |
+      For each selected future, write detailed description:
+      - What characterizes this future
+      - How we got there (causal path)
+      - Key indicators we'd see along the way
+      - Implications for us
+    output: "Future narratives"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  domain: "Future of remote work in 5 years"
+
+  drivers:
+    - "Technology (VR/AR maturity)"
+    - "Corporate culture (flexibility acceptance)"
+    - "Real estate economics (office vs home)"
+    - "Regulation (labor law evolution)"
+
+  futures_generated:
+    1:
+      name: "Hybrid Normal"
+      description: "2-3 days office, rest remote becomes standard"
+      likelihood: 85
+      desirability: 70
+
+    2:
+      name: "Full Remote Dominance"
+      description: "Most knowledge work fully remote"
+      likelihood: 30
+      desirability: 60
+
+    3:
+      name: "Office Comeback"
+      description: "Return to mostly office, remote is exception"
+      likelihood: 20
+      desirability: 40
+
+    4:
+      name: "VR Workplace"
+      description: "VR replaces physical office"
+      likelihood: 10
+      desirability: 50
+
+  selected:
+    most_likely: "Hybrid Normal (85%)"
+    most_desirable: "Hybrid Normal (70)"
+    wild_card_to_prepare: "Full Remote Dominance"
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Key drivers were identified systematically"
+  - "Multiple generation methods were used"
+  - "Futures are internally consistent"
+  - "Scoring criteria match search goal"
+  - "Selected futures span important possibilities"
+  - "Futures have clear descriptions and implications"

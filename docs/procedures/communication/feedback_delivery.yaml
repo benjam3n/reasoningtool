@@ -1,0 +1,712 @@
+# Feedback Delivery Procedure - Give and receive feedback effectively
+# GOSM Communication procedure for productive feedback conversations
+
+id: feedback_delivery
+name: Feedback Delivery
+version: "1.0.0"
+domain: communication
+
+description: Systematic procedure for delivering feedback that is heard, received, and acted upon, and for receiving feedback gracefully
+
+long_description: |
+  The Feedback Delivery procedure provides a framework for giving and receiving
+  feedback in a way that improves performance, strengthens relationships, and
+  creates growth. Poor feedback damages relationships; effective feedback
+  transforms them.
+
+  This procedure covers:
+  - SBI Model (Situation-Behavior-Impact) for clear, specific feedback
+  - Radical Candor framework (caring personally while challenging directly)
+  - Receiving feedback (hearing without defending)
+  - Performance conversations (formal reviews and development discussions)
+  - Real-time feedback (in-the-moment coaching)
+
+  Key principles:
+  - Feedback is a gift, even when it's uncomfortable
+  - Care personally AND challenge directly (not one or the other)
+  - Specific is kind, vague is cruel
+  - Timely feedback is more valuable than perfect feedback
+  - How you deliver is as important as what you deliver
+
+tags:
+  - communication
+  - feedback
+  - leadership
+  - performance
+  - coaching
+  - development
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Providing performance feedback to direct reports
+  - Giving peer feedback on work or collaboration
+  - Delivering constructive criticism that might be difficult to hear
+  - Sharing positive feedback and recognition
+  - Receiving feedback from managers, peers, or reports
+  - Conducting formal performance reviews
+  - Coaching in real-time after observing something
+  - Addressing behavior that needs to change
+  - Following up on previous feedback conversations
+
+when_not_to_use:
+  - When you're too angry or upset to be constructive
+  - In public settings where it would embarrass the recipient
+  - When you don't have specific observations (just vague impressions)
+  - For systemic issues requiring process change, not individual feedback
+  - When the issue is a one-time mistake that's already been corrected
+  - If the feedback is really about your preferences, not their performance
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: feedback_type
+    type: enum
+    values: [developmental, reinforcing, corrective, performance_review]
+    required: true
+    description: The nature of feedback being given
+
+  - name: recipient
+    type: string
+    required: true
+    description: Who is receiving feedback (relationship, context, history)
+
+  - name: specific_observations
+    type: list
+    required: true
+    description: Specific situations and behaviors you've observed
+
+  - name: desired_outcome
+    type: string
+    required: true
+    description: What change or continuation you want to see
+
+  - name: relationship_context
+    type: string
+    required: false
+    description: Any relevant history or relationship factors
+
+  - name: feedback_setting
+    type: enum
+    values: [scheduled_meeting, real_time, written, performance_review]
+    required: false
+    description: How and when the feedback will be delivered
+
+outputs:
+  - name: feedback_preparation
+    type: document
+    description: Prepared feedback using SBI or other framework
+
+  - name: conversation_plan
+    type: document
+    description: How to open, deliver, and close the feedback conversation
+
+  - name: follow_up_plan
+    type: document
+    description: How to support change and check on progress
+
+  - name: feedback_notes
+    type: document
+    description: Record of what was discussed and agreed
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Assess the feedback situation
+    action: |
+      Before preparing feedback, assess the context:
+
+      Situation assessment:
+      1. What type of feedback is this? (developmental, reinforcing, corrective)
+      2. How urgent is this? (needs immediate attention vs can wait for right moment)
+      3. What's the relationship context? (new hire vs tenured, trust level)
+      4. What's their likely receptivity? (open to feedback vs defensive)
+      5. Is this a pattern or a one-time event?
+      6. What's the potential impact if not addressed?
+
+      Self-assessment:
+      1. Am I calm enough to deliver this constructively?
+      2. Is this about their performance or my preferences?
+      3. Am I trying to help them or just vent frustration?
+      4. Do I have specific observations, not just impressions?
+      5. Am I willing to hear their perspective?
+      6. Is my intent to help them grow?
+
+      Check your position on Radical Candor grid:
+      - Caring personally + Challenging directly = Radical Candor (goal)
+      - Caring personally + Not challenging = Ruinous Empathy (feels nice, doesn't help)
+      - Not caring + Challenging directly = Obnoxious Aggression (damages relationship)
+      - Not caring + Not challenging = Manipulative Insincerity (worst of all)
+    inputs:
+      - feedback_type
+      - recipient
+      - relationship_context (optional)
+    outputs:
+      - feedback_assessment: type, urgency, and context
+      - readiness_check: your mental state and intent
+      - candor_position: where you are on caring/challenging grid
+    verification: |
+      Confirmed this is about their growth, not your frustration
+      Have specific observations, not vague impressions
+      In the right mental state to deliver constructively
+
+  - id: 2
+    name: Prepare feedback using SBI model
+    action: |
+      Structure feedback using Situation-Behavior-Impact:
+
+      SITUATION: When and where did this happen?
+      - Be specific: "In yesterday's client meeting..."
+      - Not vague: "Recently..." or "Sometimes you..."
+      - Helps them recall the specific instance
+
+      BEHAVIOR: What specific behavior did you observe?
+      - Observable actions, not interpretations
+      - "You interrupted three times" not "You were rude"
+      - "You delivered the report two days late" not "You're unreliable"
+      - Avoid: character judgments, mind-reading, generalizations
+
+      IMPACT: What was the effect of this behavior?
+      - On you: "I felt frustrated because..."
+      - On others: "The team lost confidence in..."
+      - On outcomes: "This caused the client to question..."
+      - Be honest about impact, don't exaggerate or minimize
+
+      For reinforcing feedback (positive):
+      - Same structure: what they did well and why it mattered
+      - "In the presentation yesterday, when you handled the tough question calmly, it reassured the whole room and we won the deal"
+
+      Prepare multiple SBI examples if this is a pattern
+    inputs:
+      - specific_observations
+      - feedback_type
+    outputs:
+      - sbi_feedback: structured feedback with situation, behavior, impact
+      - supporting_examples: additional instances if pattern
+    verification: |
+      Behavior is specific and observable (not interpretation)
+      Impact is honest and connected to behavior
+      No character judgments or generalizations
+
+  - id: 3
+    name: Plan the conversation
+    action: |
+      Prepare how you'll deliver the feedback:
+
+      Timing:
+      - Soon after the event (timely feedback is more valuable)
+      - But not when either of you is emotional or rushed
+      - Private setting for constructive feedback
+      - For reinforcing feedback, can be public if appropriate
+
+      Opening approach:
+      - State your intent: "I want to share some feedback that I think will help"
+      - Ask permission if peer: "Can I share an observation from the meeting?"
+      - Set collaborative tone: "I care about your success and want to help"
+      - For positive: "I wanted to tell you something I noticed..."
+
+      Conversation structure:
+      1. Open with care and intent
+      2. Deliver SBI feedback clearly
+      3. PAUSE - let them respond
+      4. Listen to their perspective
+      5. Discuss what to do differently (for developmental/corrective)
+      6. Agree on path forward
+      7. Express confidence and support
+
+      Prepare for resistance:
+      - They may have context you don't know
+      - They may be defensive initially
+      - Stay curious: "Help me understand..."
+      - Don't back down from the feedback, but listen to their view
+    inputs:
+      - sbi_feedback (from Step 2)
+      - feedback_setting (optional)
+      - recipient
+    outputs:
+      - conversation_plan: structured approach for the conversation
+      - opening_statement: how you'll begin
+      - resistance_responses: how to handle defensiveness
+    verification: |
+      Have a clear, caring opening statement
+      Prepared to listen to their perspective
+      Know how to maintain message if they push back
+
+  - id: 4
+    name: Deliver the feedback
+    action: |
+      Execute the feedback conversation:
+
+      Delivery principles:
+      - Be direct but kind (don't bury the message in softeners)
+      - Use "I" language ("I observed" not "You always")
+      - Maintain eye contact and open body language
+      - Speak calmly and at measured pace
+      - Pause after key points to let them land
+
+      The conversation:
+      1. Open: "I have some feedback I think will be helpful. Can we talk now?"
+      2. Deliver SBI: State situation, behavior, and impact clearly
+      3. Pause: Give them space to respond
+      4. Listen: Hear their perspective without defending
+      5. Discuss: Explore what happened and what could be different
+      6. Agree: "Going forward, what will you do differently?"
+      7. Support: "How can I help you with this?"
+      8. Close: "I appreciate you hearing this. I believe in your ability to..."
+
+      If they get defensive:
+      - Acknowledge their feeling: "I can see this is hard to hear"
+      - Restate your intent: "I'm sharing this because I want to help you succeed"
+      - Stay with the facts: "What I observed was..."
+      - Invite dialogue: "Help me understand what was going on for you"
+
+      If you delivered it wrong:
+      - It's okay to pause and reset: "Let me try that again"
+      - Acknowledge if you were unclear: "I don't think I said that well"
+    inputs:
+      - conversation_plan (from Step 3)
+      - sbi_feedback (from Step 2)
+    outputs:
+      - conversation_summary: what was said and how it was received
+      - their_perspective: what they shared in response
+      - agreements_made: what they committed to do differently
+    verification: |
+      Delivered specific, behavioral feedback
+      Listened to their perspective
+      Reached some agreement on path forward
+
+  - id: 5
+    name: Discuss development path
+    action: |
+      Move from feedback to forward action:
+
+      For developmental/corrective feedback:
+      1. Ask their ideas first: "What do you think you could do differently?"
+      2. Build on their ideas: "Yes, and you might also try..."
+      3. Offer specific suggestions if they're stuck
+      4. Make it actionable: "What specifically will you do next time?"
+      5. Discuss how to practice: "When's the next opportunity to try this?"
+
+      Creating accountability:
+      - "What will success look like?"
+      - "How will you know if it's working?"
+      - "What support do you need?"
+      - "When should we check in on this?"
+
+      For reinforcing feedback:
+      - Help them understand WHY it worked
+      - Discuss how to replicate in other situations
+      - Ask how they can share this skill with others
+
+      Avoid:
+      - Prescribing solutions without their input
+      - Vague suggestions ("just be more collaborative")
+      - Creating dependency ("check with me before every meeting")
+    inputs:
+      - conversation_summary (from Step 4)
+      - desired_outcome
+    outputs:
+      - development_plan: specific actions and practice opportunities
+      - success_criteria: how you'll both know it's working
+      - support_offered: how you'll help them succeed
+    verification: |
+      Action plan is specific and actionable
+      They contributed to the solution
+      Clear check-in scheduled
+
+  - id: 6
+    name: Follow up and reinforce
+    action: |
+      Complete the feedback loop:
+
+      Immediate follow-up (same day or next):
+      - Send brief note thanking them for the conversation
+      - Summarize key agreements in writing
+      - Reaffirm your support and confidence
+
+      Ongoing follow-up:
+      - Look for evidence of change (notice and acknowledge it)
+      - Give reinforcing feedback when you see improvement
+      - Check in at agreed interval
+      - Provide coaching if they're struggling
+
+      If no improvement:
+      - Have another conversation, more direct
+      - Discuss pattern: "We talked about this before and I'm still seeing..."
+      - Explore obstacles: "What's getting in the way?"
+      - May need to escalate severity of consequences
+
+      Document:
+      - Keep notes on feedback conversations
+      - Track agreements and follow-through
+      - Useful for performance reviews and development planning
+    inputs:
+      - development_plan (from Step 5)
+      - agreements_made (from Step 4)
+    outputs:
+      - follow_up_plan: scheduled check-ins and what to look for
+      - feedback_notes: documentation of conversation and agreements
+    verification: |
+      Follow-up is scheduled
+      Looking for opportunities to reinforce improvement
+
+# ============================================
+# RECEIVING FEEDBACK
+# ============================================
+receiving_feedback:
+  mindset:
+    - "Feedback is data, not attack"
+    - "They're telling you something useful, even if it's hard to hear"
+    - "Getting feedback is how you grow"
+    - "It takes courage to give feedback - appreciate it"
+    - "Your first reaction is rarely your best reaction"
+
+  in_the_moment:
+    listen:
+      - "Listen fully without formulating your defense"
+      - "Take notes if helpful (shows you're taking it seriously)"
+      - "Notice your physical reactions (tensing up, heart racing)"
+      - "Let them finish before responding"
+
+    clarify:
+      - "'Can you give me a specific example?'"
+      - "'When you say X, what do you mean by that?'"
+      - "'What would you like to see instead?'"
+      - "'Help me understand the impact...'"
+
+    acknowledge:
+      - "'Thank you for telling me'"
+      - "'I can see how that would be frustrating'"
+      - "'I hadn't realized that was the impact'"
+      - "You don't have to agree to acknowledge"
+
+    avoid:
+      - "Don't defend immediately ('But I...')"
+      - "Don't explain away ('The reason was...')"
+      - "Don't deflect ('Well, you also...')"
+      - "Don't dismiss ('That's just your opinion')"
+
+  after:
+    process:
+      - "Take time before responding if you need it"
+      - "Assume at least some of it is valid"
+      - "Ask others if they see the same thing"
+      - "Separate valid criticism from unfair attack"
+
+    respond:
+      - "Follow up with thanks (even if it was hard)"
+      - "Share what you're going to do differently"
+      - "Ask for their help: 'Can you let me know if you see improvement?'"
+
+    if_unfair:
+      - "You can disagree after reflection, but do so calmly"
+      - "'I've thought about this, and I see it differently because...'"
+      - "Seek input from others to reality-check"
+      - "If pattern of unfair feedback, address the pattern"
+
+# ============================================
+# FEEDBACK FRAMEWORKS
+# ============================================
+frameworks:
+  sbi:
+    name: "Situation-Behavior-Impact"
+    description: "Most versatile feedback framework for specific, actionable feedback"
+    structure:
+      situation: "When and where"
+      behavior: "What you observed (not interpreted)"
+      impact: "The effect on you, others, or outcomes"
+    example: |
+      "In yesterday's team meeting (Situation), when you presented the data
+      without acknowledging Lisa's contribution (Behavior), she seemed deflated
+      and less engaged for the rest of the meeting (Impact)."
+
+  sbi_i:
+    name: "Situation-Behavior-Impact-Intent"
+    description: "Extended SBI for when you want to understand their intention"
+    addition: "Follow SBI with: 'What was your intention?' or 'Help me understand what happened'"
+    when_to_use: "When behavior seems out of character or you might be missing context"
+
+  radical_candor:
+    name: "Radical Candor"
+    description: "Care personally while challenging directly"
+    quadrants:
+      radical_candor:
+        caring: "High"
+        challenging: "High"
+        description: "The goal - honest feedback delivered with genuine care"
+      ruinous_empathy:
+        caring: "High"
+        challenging: "Low"
+        description: "Feels nice but doesn't help - avoiding hard truths because you care"
+      obnoxious_aggression:
+        caring: "Low"
+        challenging: "High"
+        description: "Direct but hurtful - challenging without caring"
+      manipulative_insincerity:
+        caring: "Low"
+        challenging: "Low"
+        description: "Worst of all - neither honest nor caring"
+
+  feedforward:
+    name: "Feedforward"
+    description: "Focus on future behavior rather than past performance"
+    structure:
+      - "Ask: 'What would you like to be better at?'"
+      - "Listen without judgment"
+      - "Offer suggestions for the future (not critique of past)"
+      - "They take what's useful, leave what's not"
+    when_to_use: "For development conversations, coaching, or when past focus isn't productive"
+
+  stop_start_continue:
+    name: "Stop-Start-Continue"
+    description: "Simple framework for balanced feedback"
+    structure:
+      stop: "What should you stop doing?"
+      start: "What should you start doing?"
+      continue: "What should you continue doing?"
+    when_to_use: "For 360 feedback, team retrospectives, or development planning"
+
+# ============================================
+# PERFORMANCE CONVERSATIONS
+# ============================================
+performance_conversations:
+  regular_one_on_ones:
+    purpose: "Ongoing feedback and development"
+    frequency: "Weekly or bi-weekly"
+    feedback_approach:
+      - "Make feedback normal, not special"
+      - "Balance reinforcing and developmental"
+      - "Connect to their goals and development"
+      - "Quick hits - don't save up for big conversations"
+
+  performance_reviews:
+    purpose: "Formal assessment and goal setting"
+    approach:
+      before:
+        - "Gather feedback from multiple sources"
+        - "Review goals and metrics"
+        - "Prepare specific examples for each point"
+        - "No surprises - review content should echo ongoing feedback"
+      during:
+        - "Start with self-assessment: 'How do you think you did?'"
+        - "Share your assessment with specific examples"
+        - "Discuss development areas and growth opportunities"
+        - "Set goals for next period together"
+        - "End with confidence and support"
+      after:
+        - "Document key points and agreements"
+        - "Follow up on development plan"
+        - "Adjust goals if needed"
+
+  difficult_performance_conversations:
+    approaching:
+      - "Be direct about the seriousness"
+      - "Document thoroughly"
+      - "Involve HR if appropriate"
+      - "Focus on specific behaviors and impact"
+      - "Be clear about consequences and timeline"
+    structure:
+      - "Open: State the purpose clearly ('This is a serious conversation about...')"
+      - "Context: 'We've discussed this before on X and Y dates'"
+      - "Current state: 'Despite our previous conversations, I'm still seeing...'"
+      - "Expectations: 'What needs to change is...'"
+      - "Consequences: 'If this doesn't change by [date], then...'"
+      - "Support: 'Here's how I can help...'"
+      - "Commitment: 'What will you commit to?'"
+    after:
+      - "Document the conversation"
+      - "Follow up at agreed intervals"
+      - "Be prepared to follow through on consequences"
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Feedback is specific (SBI or similar structure)
+  - Behavior is observable, not interpreted
+  - Delivered with care for the person
+  - Listened to their perspective
+  - Agreed on specific actions forward
+  - Follow-up is planned
+  - Documentation captured
+
+failure_modes:
+  - mode: Vague feedback
+    symptom: '"You need to be more collaborative" with no specifics'
+    resolution: Use SBI to provide specific situation, behavior, and impact
+
+  - mode: Character attack
+    symptom: '"You''re unreliable" (judging character, not behavior)'
+    resolution: Focus on observable behaviors and their impact
+
+  - mode: Feedback sandwich
+    symptom: Burying criticism between compliments, message gets lost
+    resolution: Be direct; separate positive and developmental feedback
+
+  - mode: Delayed feedback
+    symptom: Waiting months to address issue, details forgotten
+    resolution: Give feedback as close to the event as possible
+
+  - mode: Public criticism
+    symptom: Calling out problems in front of others
+    resolution: Praise in public, critique in private
+
+  - mode: Ruinous empathy
+    symptom: Avoiding hard feedback because you don't want to hurt feelings
+    resolution: Remember that honest feedback is a gift; silence doesn't help them
+
+  - mode: Hit and run
+    symptom: Delivering feedback and leaving without discussion or support
+    resolution: Make it a conversation; listen and plan together
+
+  - mode: No follow-up
+    symptom: Feedback given but never revisited
+    resolution: Schedule check-in; look for improvement and reinforce it
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Developmental feedback on presentation skills
+    context: Direct report gave a presentation that didn't go well; want to help them improve
+    inputs:
+      feedback_type: "developmental"
+      recipient: "Direct report, 1 year on team, generally strong performer"
+      specific_observations:
+        - "In the executive presentation, spoke very quickly when Q&A started"
+        - "Didn't make eye contact with the CFO when answering her question"
+        - "Said 'I don't know' to two questions without offering to follow up"
+      desired_outcome: "More confident, effective presence in executive presentations"
+    process: |
+      Step 1 - Assessment:
+      - Type: Developmental (skill building, not corrective)
+      - Urgency: Moderate (want to address before next big presentation)
+      - Relationship: Good trust, generally open to feedback
+      - Candor check: I care about their growth, this is to help them
+
+      Step 2 - SBI Preparation:
+      SBI 1: "In yesterday's exec presentation (S), when the CFO asked about
+      the budget assumptions, you spoke quickly and didn't make eye contact (B).
+      It may have come across as less confident, and she followed up with more
+      questions than usual (I)."
+
+      SBI 2: "When you were asked about timeline risks and said 'I don't know' (B),
+      without offering to follow up, it left the question hanging and the execs
+      may have less confidence in our planning (I)."
+
+      Step 3 - Conversation Plan:
+      Opening: "I wanted to debrief the exec presentation. You had some strong
+      points, and I also noticed some things that might help you be even more
+      effective. Can we talk about it?"
+
+      Step 5 - Development:
+      - "What would you do differently?"
+      - Suggest: Prepare for likely tough questions; practice saying "Great
+        question - I'll look into that and follow up by EOD"
+      - Practice: Do a mock Q&A before next exec presentation
+    expected_output:
+      sbi_feedback:
+        situation: "In yesterday's executive presentation during Q&A"
+        behaviors:
+          - "Speaking quickly when questioned"
+          - "Not making eye contact with CFO"
+          - "Saying 'I don't know' without follow-up commitment"
+        impacts:
+          - "May have appeared less confident"
+          - "CFO asked more follow-up questions than usual"
+          - "Left uncertainty about our preparedness"
+      conversation_plan:
+        opening: "I wanted to debrief the presentation - you did some things well and I noticed some opportunities to be even more effective"
+        tone: "Developmental, supportive, forward-looking"
+        key_message: "Executive presence in Q&A is a skill you can build"
+      development_plan:
+        actions:
+          - "Prepare list of likely tough questions before exec presentations"
+          - "Practice 'I'll follow up' responses instead of 'I don't know'"
+          - "Practice with me doing mock Q&A before next presentation"
+        follow_up: "Mock Q&A session before next exec meeting"
+
+  - name: Corrective feedback on repeated behavior
+    context: Team member has been late to meetings multiple times; affecting the team
+    inputs:
+      feedback_type: "corrective"
+      recipient: "Peer team member, different manager, 2nd conversation about this"
+      specific_observations:
+        - "Late to 4 of last 5 team meetings (5-15 minutes each time)"
+        - "Yesterday's meeting, we waited 10 minutes, then had to rush"
+        - "Previously discussed 3 weeks ago with no improvement"
+      desired_outcome: "On-time attendance at team meetings"
+      relationship_context: "Generally good relationship; had one conversation about this before"
+    process: |
+      Step 1 - Assessment:
+      - Type: Corrective (need behavior change)
+      - Urgency: High (pattern continuing, affecting team)
+      - Pattern: Yes, and previous feedback didn't stick
+      - Need to be more direct this time
+
+      Step 2 - SBI Preparation:
+      "We talked about this three weeks ago, but I'm still seeing the same pattern.
+      In the last five team meetings (S), you've been late to four of them,
+      ranging from 5 to 15 minutes (B). Yesterday we waited 10 minutes and then
+      had to rush through the agenda, which meant we didn't finish the planning
+      discussion (I). The team is frustrated, and honestly, so am I."
+
+      Step 3 - Conversation:
+      - Be more direct: "This needs to change"
+      - Ask what's going on: "Help me understand - is there something blocking you?"
+      - Set clear expectation: "Going forward, I need you in meetings on time"
+      - Discuss consequences if it continues
+    expected_output:
+      sbi_feedback:
+        context: "This is a follow-up to our conversation 3 weeks ago"
+        situation: "The last 5 team meetings"
+        behavior: "Late to 4 of them (5-15 minutes each)"
+        impact: "Team waits and rushes; frustration building; we missed the planning discussion yesterday"
+      conversation_plan:
+        opening: "I need to talk about meeting punctuality again. I'm concerned that our last conversation didn't lead to change."
+        tone: "Direct, serious, but still caring"
+        key_message: "This needs to change; what's getting in the way?"
+        if_excuse: "I hear that, and I still need you on time. What will you do differently?"
+      agreements:
+        expectation: "On time to all team meetings starting now"
+        their_action: "[Whatever they commit to]"
+        consequence: "If continues, will need to involve their manager"
+        follow_up: "Check in after next 3 meetings"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When strategy execution requires improving team performance
+    - During execution for ongoing coaching and development
+    - When goals require behavior changes in team members
+    - For communication milestones involving performance discussions
+    - When pivoting requires giving feedback about what didn't work
+
+  gates:
+    - gate: feedback_assessed
+      question: "Have I checked my intent and prepared specific observations?"
+
+    - gate: sbi_prepared
+      question: "Is my feedback structured with specific situation, behavior, and impact?"
+
+    - gate: conversation_planned
+      question: "Do I know how to open, deliver, and discuss path forward?"
+
+    - gate: feedback_delivered
+      question: "Did I deliver the feedback, listen to their perspective, and agree on actions?"
+
+    - gate: follow_up_planned
+      question: "Have I scheduled check-in and know what improvement to look for?"
+
+  related_procedures:
+    - active_listening: Essential for receiving feedback and hearing their perspective
+    - conflict_resolution: When feedback conversation becomes difficult
+    - public_speaking: Feedback often happens in presentation context
+    - negotiation: Feedback conversations involve reaching agreement
+    - coaching: Feedback is core to coaching relationships

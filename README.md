@@ -1,0 +1,142 @@
+# reasoning-toolkit
+
+207 thinking skills for Claude Code. Each skill is a structured prompt that guides you through a specific type of thinking, decision, or analysis.
+
+## Installation
+
+### Option 1: Run from this directory
+
+```bash
+git clone https://github.com/benjam3n/reasoning-toolkit.git
+cd reasoning-toolkit/claude-code-plugin
+claude
+```
+
+Claude reads the `CLAUDE.md` file and all skills become available.
+
+### Option 2: Copy into your project
+
+```bash
+cp -r path/to/reasoning-toolkit/claude-code-plugin/skills your-project/
+cp path/to/reasoning-toolkit/claude-code-plugin/CLAUDE.md your-project/
+cd your-project
+claude
+```
+
+## Usage
+
+In a Claude Code session, type `/skillname` followed by your input:
+
+```
+/space_enumeration what are all the ways I could approach this product launch
+/assumption_extraction we need to hire 3 more engineers by Q2
+/comparison React vs Svelte for this project
+/root_cause_analysis our deploy pipeline keeps failing
+/decision_procedure should I take this job offer
+```
+
+## Skills by tier
+
+Skills are ranked by how much structured thinking they add — how likely they are to surface something you wouldn't have found on your own.
+
+### Tier 1: Start here
+
+These are the most generally useful skills. They work on almost any problem and consistently produce non-obvious results.
+
+| Skill | What it does |
+|-------|-------------|
+| `space_enumeration` | Systematically lists all options in a problem space so nothing gets missed |
+| `assumption_extraction` | Surfaces the hidden assumptions in any claim, plan, or argument |
+| `comparison` | Structured comparison of options with explicit criteria and trade-offs |
+| `hypothesis_testing` | Tests claims by examining what would be true if right vs. wrong |
+| `decision_procedure` | Builds a step-by-step flowchart anyone can follow for a recurring decision |
+| `decomposition` | Breaks complex problems into smaller, solvable parts |
+| `root_cause_analysis` | Finds the actual cause of a problem, not just symptoms |
+| `dimension_discovery` | Identifies all the dimensions along which something can vary |
+| `mece_validation` | Checks that a breakdown is mutually exclusive and collectively exhaustive |
+| `insight_synthesis` | Combines findings from multiple analyses into coherent conclusions |
+| `cost_benefit_analysis` | Structured evaluation of costs vs. benefits with explicit trade-offs |
+| `goal_understanding` | Clarifies what someone actually wants vs. what they said they want |
+
+### Tier 2: Deep reasoning
+
+These go deeper on specific types of thinking. Use them when you need thoroughness on a particular kind of problem.
+
+| Skill | What it does |
+|-------|-------------|
+| `procedure_validation` | Checks whether a procedure actually works by testing each step |
+| `assumption_inversion` | Flips assumptions to discover what happens if the opposite is true |
+| `topological_ordering` | Finds the correct order to do things when tasks depend on each other |
+| `cross_domain_analogy` | Applies solutions from one field to problems in another |
+| `morphological_analysis` | Generates combinations by varying parameters across dimensions |
+| `systems_analysis` | Maps how parts of a system interact and where leverage points are |
+| `backward_reasoning` | Works backward from the goal to figure out what steps are needed |
+| `pre_mortem` | Imagines the project failed and asks why, before it actually starts |
+| `failure_anticipation` | Identifies likely failure modes before they happen |
+| `possibility_analysis` | Explores what's possible, not just what's likely |
+| `inference_space_search` | Searches the space of valid inferences from given premises |
+| `recursive_causal_interrogation` | Keeps asking "why" until you reach the actual root |
+| `limitation_analysis` | Identifies the real constraints and which ones can be changed |
+| `verification_before_output` | Checks every claim for evidence before presenting it |
+| `convergent_validation` | Uses multiple independent checks to validate a conclusion |
+
+### Tier 3: Specialized tools
+
+These solve specific types of problems well. They're less general but very effective in their domain.
+
+**Research & Analysis**
+`literature_review` · `qualitative_research` · `data_collection` · `statistical_analysis` · `experimental_design` · `field_analysis` · `competitive_analysis` · `market_research` · `source_credibility` · `source_prioritization` · `economic_research` · `policy_research`
+
+**Writing & Communication**
+`high_quality_writing` · `persuasive_writing` · `storytelling` · `public_speaking` · `presentation_design` · `content_strategy` · `outreach_communication` · `feedback_delivery` · `active_listening`
+
+**Planning & Projects**
+`project_initiation` · `project_scoping` · `project_closure` · `dependency_extraction` · `progress_tracking` · `risk_assessment` · `deployment` · `retrospective` · `stakeholder_management`
+
+**Business**
+`customer_discovery` · `marketing_funnel` · `positioning` · `competitive_analysis` · `negotiation` · `client_retention` · `financial_modeling` · `budget_management` · `investment_strategy` · `roi_analysis`
+
+**Software**
+`code_review` · `debugging` · `refactoring` · `architecture_design` · `architecture_patterns` · `api_design` · `testing_strategy` · `security_practices`
+
+**Career & Learning**
+`career_path_planning` · `interview_preparation` · `resume_optimization` · `salary_negotiation` · `skill_acquisition` · `deliberate_practice` · `spaced_repetition` · `active_recall` · `learning_system`
+
+**Decision Making**
+`decision_trees` · `selection` · `criteria_weighting` · `pairwise_comparison` · `expected_value` · `multi_criteria_decision` · `reversibility_analysis` · `better_option_check`
+
+### Tier 4: Everything else
+
+The remaining skills cover specific use cases: `procedure_engine` · `procedure_extraction` · `procedure_discovery` · `finder` · `guess_generation` · `question_about_guesses` · `domain_template` · `template_maintenance` · `template_registry` · `taxonomy_maintenance` · `goal_decomposition` · `goal_refinement` · `goal_reframing` · `goal_journey_system` · `goal_structure_reconstruction` · `value_elicitation` · `value_conflict_decomposition` · `preference_elicitation` · `universal_goal_analysis` · `space_discovery` · `strategy_discovery` · `leverage_point_discovery` · `novelty_space_search` · `future_space_search` · `model_space_search` · `plan_space_search` · `analogy_search` · `binary_elimination_search` · `checklist_search` · `swot_analysis` · `scenario_planning` · `conflict_resolution` · `group_decision_making` · `human_delegation` · `networking` · `freelancing` · `growth_experiments` · `viral_mechanics` · `social_media_strategy` · `seo_basics` · `grant_writing` · `fundraising_advocacy` · `fundraising_financial` · `email_acquisition` · `phone_acquisition` · `outreach_campaigns` · `advocacy_infrastructure_setup` · `income_stream_development` · `cash_flow_management` · `budgeting` · `event_driven_automation` · `automated_extraction_pipeline` · `adaptive_extraction_pipeline` · `journey_extraction` · `journey_matching` · `cross_domain_report` · `cross_project_pattern_detection` · `session_review` · `weekly_review` · `after_action_review` · `self_audit_detector_sweep` · `self_audit_two_run_divergence_audit` · `self_audit_apply_analysis_protocol_clarity_and_validity` · `self_audit_apply_evidence_standard_application` · `self_audit_gate_schema_consistency_audit` · and more
+
+Browse `claude-code-plugin/skills/` for the complete list.
+
+## Experimental: ARAW, UAUA, and GOSM
+
+These three skills use a different approach. They treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.
+
+| Skill | What it does |
+|-------|-------------|
+| `araw` | **Assume Right / Assume Wrong.** Takes a claim and explores both branches: what if this is true? What if it's false? Recurses on interesting sub-claims. Produces a tree of tested claims. |
+| `uaua` | **Universalize → ARAW → Universalize → ARAW.** First maps the complete possibility space, then tests the top candidates with ARAW, then finds edge cases, then validates again. For complex problems where you need both breadth and depth. |
+| `gosm` | **Goal-Oriented State Machine.** Routes any input (goal, problem, question, decision, situation) through the appropriate analysis chain. Orchestrates other skills. |
+
+These are worth trying. They're more opinionated than the other skills — they have a specific view about how to test thinking rigorously — but they tend to surface things other approaches miss. Use `/araw [your claim]` to try it.
+
+There are also bridging skills (`araw_gosm_integration`, `araw_to_gosm_bridge`) that connect these with the rest of the toolkit.
+
+## Documentation
+
+The `docs/` directory contains supporting material:
+
+- **`docs/methodology/`** — Design principles, process documentation, and the rationale behind the approach
+- **`docs/examples/`** — Worked examples showing the skills applied to real problems (problem-solving, writing quality, scaling analysis, methodology comparisons)
+- **`docs/reference/`** — Reference material including 200+ fundamental tensions/trade-offs, question categories, and comparison frameworks
+
+## Background
+
+See [improvedreasoningwritingexample.txt](improvedreasoningwritingexample.txt) for an essay on the thinking behind these tools.
+
+## License
+
+CC BY-NC 4.0

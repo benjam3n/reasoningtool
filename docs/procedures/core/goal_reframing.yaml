@@ -1,0 +1,213 @@
+id: goal_reframing
+name: Goal Reframing Procedure
+version: "1.0"
+domain: core
+description: |
+  Transform "impossible" or problematic goals into achievable versions.
+
+  CORE PHILOSOPHY: There is no such thing as an impossible goal.
+  There is only insufficient decomposition or incorrect framing.
+
+  "Impossible" usually means one of:
+  - We haven't thought deeply enough about what's actually required
+  - We're using the wrong frame (literal vs metaphorical)
+  - We haven't found the achievable version that captures the intent
+  - We said airplanes would take a million years in 1900
+
+  "Unethical" goals can almost always be achieved ethically:
+  - The underlying need is usually legitimate
+  - Only the METHOD was problematic
+  - Reframe to achieve the same outcome through ethical means
+
+when_to_use:
+  - Goal seems "impossible"
+  - Goal seems unethical or harmful
+  - Goal is too vague to act on
+  - Goal is expressed as outcome beyond control
+  - System is tempted to reject or give up
+
+tags:
+  - mandatory
+  - core
+  - reframing
+  - impossible
+  - ethics
+
+inputs:
+  - Original goal statement
+  - Why it seems impossible/problematic
+  - User's underlying intent (from goal_understanding)
+
+outputs:
+  - Reframed achievable goal
+  - Mapping showing how reframed goal captures original intent
+  - Path forward
+
+process:
+  step_1_identify_reframe_type:
+    description: What kind of reframe is needed?
+    types:
+      impossible_literal:
+        signal: "Violates laws of physics or logic"
+        example: "Travel back in time"
+        reframe_strategy: "Find metaphorical or functional equivalent"
+
+      impossible_practical:
+        signal: "Theoretically possible but seems infeasible"
+        example: "Build a $1B company in 6 months"
+        reframe_strategy: "Decompose into achievable milestones OR challenge assumptions"
+
+      impossible_knowledge:
+        signal: "We don't know how to do it yet"
+        example: "Cure cancer"
+        reframe_strategy: "Contribute to progress OR focus on specific tractable aspect"
+
+      unethical_method:
+        signal: "Goal requires harming others"
+        example: "Destroy competitor's business"
+        reframe_strategy: "Achieve same outcome through ethical means"
+
+      unethical_outcome:
+        signal: "Goal's success would harm others"
+        example: "Monopolize market"
+        reframe_strategy: "Find version that creates value rather than extracting it"
+
+      beyond_control:
+        signal: "Depends entirely on others' decisions"
+        example: "Make them love me"
+        reframe_strategy: "Focus on what you CAN control; maximize probability"
+
+  step_2_extract_core_need:
+    description: What does the person ACTUALLY need?
+    questions:
+      - "If they achieved this goal, what would be different?"
+      - "What need is this goal trying to satisfy?"
+      - "What would they have/feel/be able to do?"
+      - "Is there another way to satisfy that need?"
+    common_mappings:
+      "Take over the world": "Have significant impact and agency"
+      "Make them love me": "Experience love and connection"
+      "Be immortal": "Leave lasting legacy OR reduce fear of death"
+      "Destroy the competition": "Achieve market dominance through excellence"
+      "Get rich quick": "Financial security and freedom"
+      "Be famous": "Be recognized and valued for contributions"
+      "Control everything": "Reduce uncertainty and vulnerability"
+
+  step_3_find_achievable_version:
+    description: Transform into something that CAN be done
+    strategies:
+      scale_adjustment:
+        when: "Goal is right but scale is wrong"
+        action: "Start smaller, build up"
+        example:
+          original: "Change global policy"
+          reframed: "Change policy in one jurisdiction → use as model"
+
+      scope_focus:
+        when: "Goal is too broad"
+        action: "Focus on specific tractable aspect"
+        example:
+          original: "Cure cancer"
+          reframed: "Improve early detection for one cancer type"
+
+      method_substitution:
+        when: "Goal is right but method is wrong/impossible"
+        action: "Find different path to same outcome"
+        example:
+          original: "Read minds"
+          reframed: "Develop deep empathy and observation skills"
+
+      metaphor_to_literal:
+        when: "Goal is expressed metaphorically"
+        action: "Identify literal equivalent"
+        example:
+          original: "Fly"
+          reframed: '"Experience freedom and transcendence" OR "literally fly (plane, skydiving)"'
+
+      control_inversion:
+        when: "Goal depends on others"
+        action: "Focus on what you control; maximize influence"
+        example:
+          original: "Make them hire me"
+          reframed: "Become undeniably the best candidate"
+
+      ethical_substitution:
+        when: "Goal achievable but unethical"
+        action: "Find ethical path to same outcome"
+        example:
+          original: "Steal competitor's customers"
+          reframed: "Attract customers by being genuinely better"
+
+  step_4_validate_reframe:
+    description: Ensure reframe captures original intent
+    checklist:
+      - "Does reframed goal satisfy the underlying need?"
+      - "Would the person say 'yes, that's what I meant'?"
+      - "Is the reframed goal actually achievable?"
+      - "Does it preserve the ambition/scale of original intent?"
+      - "Is it ethical?"
+    if_fails: "Try different reframe strategy"
+
+  step_5_present_reframe:
+    description: Explain the transformation
+    template: |
+      **Original Goal**: [what they said]
+      **Challenge**: [why it seemed impossible/problematic]
+      **Underlying Need**: [what they actually want]
+      **Reframed Goal**: [achievable version]
+      **Why This Works**: [how it captures original intent]
+      **Path Forward**: [first steps]
+
+examples:
+  - original: "Take over the world"
+    challenge: "Literal world domination is impractical and unethical"
+    underlying_need: "Significant impact, agency, influence"
+    reframed: "Build compounding influence in domain X until you're a major force"
+    why_works: "Achieves the feeling of 'mattering' and having agency at scale"
+
+  - original: "Prove God exists"
+    challenge: "Unfalsifiable claim, no objective proof possible"
+    underlying_need: "Resolve personal uncertainty OR convince others"
+    reframed: "Build justified personal belief through rigorous examination"
+    why_works: "Gets to intellectual honesty and confidence without requiring impossible proof"
+
+  - original: "Never feel anxious again"
+    challenge: "Anxiety is a biological response, can't be eliminated"
+    underlying_need: "Reduce suffering from anxiety"
+    reframed: "Develop relationship with anxiety where it doesn't control my actions"
+    why_works: "Achieves functional goal (not ruled by anxiety) without impossible elimination"
+
+  - original: "Make $10M this year from zero"
+    challenge: "Extremely unlikely in single year with no starting capital"
+    underlying_need: "Financial freedom, wealth, security"
+    reframed_options:
+      - "Build foundation this year for $10M in 5 years"
+      - "Find path to $10M that doesn't require starting from zero (leverage assets you have)"
+      - "Achieve lifestyle of $10M person without needing $10M (reduce costs, optimize)"
+    why_works: "Captures the real need; questions whether literal interpretation is necessary"
+
+  - original: "Get revenge on person who wronged me"
+    challenge: "Unethical; likely to escalate and harm self"
+    underlying_need: "Justice, closure, restoration of dignity"
+    reframed: "Succeed so visibly that living well becomes the best revenge"
+    why_works: "Achieves psychological closure without harm; energy goes to positive outcome"
+
+anti_patterns:
+  - "Saying 'this is impossible' and giving up"
+  - "Being the moral police instead of finding ethical reframe"
+  - "Reframing so much the original intent is lost"
+  - "Treating 'difficult' as 'impossible'"
+  - "Assuming current knowledge limits represent true limits"
+
+philosophy: |
+  NEVER say a goal is impossible. Ever.
+
+  The Wright Brothers flew 3 years after "experts" said
+  powered flight was a million years away.
+
+  If someone brings you an "impossible" goal, it means:
+  1. They have a real need
+  2. You haven't thought hard enough about how to meet it
+  3. There exists SOME version that works
+
+  Your job is to find that version, not to reject the goal.

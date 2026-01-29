@@ -1,0 +1,467 @@
+# Comparison Procedure - Third step in the decision-making sequence
+# Core GOSM procedure for systematically evaluating options against criteria
+
+id: comparison
+name: Comparison
+version: "1.0.0"
+domain: core
+
+description: Evaluate each option against each criterion to identify viable candidates
+
+long_description: |
+  The Comparison procedure is the third step in the systematic decision-making
+  sequence (Generation -> Matching -> Comparison -> Optimization -> Selection).
+
+  Its purpose is to evaluate EACH option against EACH criterion from the Matching
+  step. This is systematic filtering that eliminates options that don't meet
+  requirements and ranks those that do.
+
+  The evaluation process:
+  1. First pass: Apply all REQUIRED criteria (must-have) - eliminates non-viable
+  2. Second pass: Apply EXCLUSION criteria (must-not-have) - eliminates disqualified
+  3. Third pass: Evaluate against PREFERRED criteria - builds score
+  4. Final pass: Note OPTIONAL criteria satisfaction - adds bonus points
+
+  Key principles:
+  - Systematic: Every option checked against every criterion
+  - Transparent: Document why options pass or fail
+  - Fair: Same criteria applied to all options
+  - Evidence-based: Cite specific reasons for each evaluation
+  - Non-destructive: Keep eliminated options with reasons (may revisit)
+
+tags:
+  - decision
+  - comparison
+  - filtering
+  - evaluation
+  - third_step
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After Matching has established criteria for filtering options
+  - When you have multiple options and need to narrow down
+  - To systematically eliminate options that don't meet requirements
+  - When you need transparent, defensible filtering decisions
+  - To identify which options are viable before optimization
+  - When stakeholders need to understand why options were kept or eliminated
+
+when_not_to_use:
+  - Before Generation (no options to compare)
+  - Before Matching (no criteria to compare against)
+  - When there's only one option (no comparison needed)
+  - When all options are obviously equal on all criteria
+  - For final selection (use Selection procedure after Optimization)
+  - When criteria themselves need to be discovered (use Matching first)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: generated_options
+    type: list
+    required: true
+    description: The options from Generation step (list of option objects with name, description, category)
+
+  - name: matching_criteria
+    type: list
+    required: true
+    description: The criteria from Matching step (list of criterion objects with name, type, weight)
+
+  - name: context
+    type: dict
+    required: false
+    description: Additional context (constraints, stakeholders, domain knowledge)
+
+  - name: evaluation_depth
+    type: enum
+    values: [quick, standard, thorough]
+    required: false
+    default: standard
+    description: How deeply to evaluate each option-criterion pair
+
+outputs:
+  - name: evaluation_matrix
+    type: matrix
+    description: Full option x criterion evaluation matrix with scores and notes
+
+  - name: viable_options
+    type: list
+    description: Options that passed all required criteria, ranked by score
+
+  - name: eliminated_options
+    type: list
+    description: Options that were eliminated with specific elimination reasons
+
+  - name: comparison_summary
+    type: string
+    description: Human-readable summary of the comparison results
+
+preconditions:
+  - type: context_has
+    key: generated_options
+  - type: context_has
+    key: matching_criteria
+
+postconditions:
+  - type: context_has
+    key: viable_options
+  - type: context_has
+    key: evaluation_matrix
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Prepare evaluation framework
+    action: |
+      Set up the comparison structure:
+      1. List all options from generated_options
+      2. List all criteria from matching_criteria
+      3. Group criteria by type: REQUIRED, EXCLUSION, PREFERRED, OPTIONAL
+      4. Confirm weights for each criterion (default to equal if not specified)
+      5. Create empty evaluation matrix (options x criteria)
+    inputs:
+      - generated_options
+      - matching_criteria
+    outputs:
+      - option_list: numbered list of options to evaluate
+      - criteria_by_type: criteria grouped by REQUIRED/EXCLUSION/PREFERRED/OPTIONAL
+      - evaluation_matrix: empty matrix ready for scoring
+    verification: |
+      - All options from input are in option_list
+      - All criteria from input are categorized
+      - Matrix has correct dimensions (options x criteria)
+
+  - id: 2
+    name: Apply REQUIRED criteria
+    action: |
+      For each option, check each REQUIRED criterion:
+      1. State the criterion requirement
+      2. Examine option for evidence of meeting requirement
+      3. Score: PASS (meets), FAIL (doesn't meet), UNCERTAIN (unclear)
+      4. Document evidence or reason for each score
+
+      An option FAILS overall if it fails ANY required criterion.
+      Mark failed options as eliminated but continue evaluating for learning.
+    inputs:
+      - option_list (from Step 1)
+      - criteria_by_type.REQUIRED (from Step 1)
+    outputs:
+      - required_results: per-option results for required criteria
+      - first_pass_eliminations: options that failed required criteria
+    verification: |
+      - Every option has a score for every REQUIRED criterion
+      - Each score has documented reasoning
+      - Eliminated options have clear elimination reason
+
+  - id: 3
+    name: Apply EXCLUSION criteria
+    action: |
+      For each remaining option, check each EXCLUSION criterion:
+      1. State what the criterion excludes
+      2. Check if option has the excluded characteristic
+      3. Score: PASS (doesn't have exclusion), FAIL (has exclusion)
+      4. Document evidence
+
+      An option FAILS if it matches ANY exclusion criterion.
+    inputs:
+      - option_list (from Step 1)
+      - criteria_by_type.EXCLUSION (from Step 1)
+      - first_pass_eliminations (from Step 2)
+    outputs:
+      - exclusion_results: per-option results for exclusion criteria
+      - second_pass_eliminations: additional options eliminated by exclusions
+    verification: |
+      - Every non-eliminated option checked against all exclusions
+      - Each exclusion check has documented evidence
+      - New eliminations have clear exclusion reason
+
+  - id: 4
+    name: Score PREFERRED criteria
+    action: |
+      For each viable option, score each PREFERRED criterion:
+      1. State the criterion preference
+      2. Evaluate how well option satisfies preference
+      3. Score on scale: 0 (not at all), 1 (partially), 2 (fully), 3 (exceeds)
+      4. Apply criterion weight to get weighted score
+      5. Document reasoning for score
+
+      This builds the ranking basis for viable options.
+    inputs:
+      - option_list (from Step 1)
+      - criteria_by_type.PREFERRED (from Step 1)
+      - first_pass_eliminations (from Step 2)
+      - second_pass_eliminations (from Step 3)
+    outputs:
+      - preferred_scores: weighted scores per option per preferred criterion
+      - running_totals: cumulative score per viable option
+    verification: |
+      - Every viable option scored on every PREFERRED criterion
+      - Scores are justified with reasoning
+      - Weighted calculations are correct
+
+  - id: 5
+    name: Evaluate OPTIONAL criteria
+    action: |
+      For each viable option, note OPTIONAL criteria satisfaction:
+      1. Check if option satisfies optional criterion
+      2. Score: YES (has it), NO (doesn't have it)
+      3. Add small bonus to score for YES (typically 0.5)
+      4. Document which optionals are satisfied
+
+      Optional criteria are tie-breakers, not primary ranking factors.
+    inputs:
+      - option_list (from Step 1)
+      - criteria_by_type.OPTIONAL (from Step 1)
+      - running_totals (from Step 4)
+    outputs:
+      - optional_results: which optionals each option satisfies
+      - final_scores: total score per viable option including optional bonuses
+    verification: |
+      - All viable options checked for all optional criteria
+      - Bonus points applied correctly
+      - Final scores calculated
+
+  - id: 6
+    name: Compile comparison results
+    action: |
+      Assemble final outputs:
+      1. Complete evaluation_matrix with all scores and notes
+      2. Rank viable_options by final_score (highest first)
+      3. Compile eliminated_options with specific reasons
+      4. Write comparison_summary highlighting:
+         - How many options evaluated
+         - How many passed/failed
+         - Top viable options and why
+         - Key differentiators between top options
+    inputs:
+      - evaluation_matrix (from Step 1, now filled)
+      - final_scores (from Step 5)
+      - first_pass_eliminations (from Step 2)
+      - second_pass_eliminations (from Step 3)
+    outputs:
+      - evaluation_matrix: complete matrix with all evaluations
+      - viable_options: ranked list of options that passed all required/exclusion criteria
+      - eliminated_options: list with elimination reasons
+      - comparison_summary: human-readable summary
+    verification: |
+      - Matrix is complete (no empty cells)
+      - Viable options are correctly ranked
+      - All eliminations have documented reasons
+      - Summary accurately reflects the evaluation
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Every option evaluated against every criterion (completeness)
+  - Required criteria strictly enforced (no exceptions without documentation)
+  - Scores have documented reasoning (transparency)
+  - Eliminated options have specific elimination reasons (traceability)
+  - Viable options clearly ranked with score breakdown (decision support)
+
+failure_modes:
+  - mode: Incomplete evaluation
+    symptom: Some option-criterion pairs not evaluated
+    resolution: Ensure matrix is fully populated before proceeding
+
+  - mode: Inconsistent scoring
+    symptom: Same evidence leads to different scores for different options
+    resolution: Re-evaluate with consistent rubric, compare similar options
+
+  - mode: Missing evidence
+    symptom: Scores assigned without documented reasoning
+    resolution: Go back and document evidence for each score
+
+  - mode: Criteria confusion
+    symptom: REQUIRED criterion treated as PREFERRED or vice versa
+    resolution: Re-check Matching output for criterion types
+
+  - mode: Premature elimination
+    symptom: Options eliminated on PREFERRED criteria (not REQUIRED)
+    resolution: Only eliminate on REQUIRED and EXCLUSION criteria
+
+  - mode: Score inflation
+    symptom: All options score similarly high, no differentiation
+    resolution: Re-calibrate scoring rubric, be more critical
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Compare customer acquisition strategies
+    context: Startup comparing options from Generation against criteria from Matching
+    inputs:
+      generated_options:
+        - name: "Cold email outreach"
+          description: "Direct email to target customer list"
+          category: "Outbound"
+        - name: "Content marketing"
+          description: "SEO blog posts targeting problem keywords"
+          category: "Inbound"
+        - name: "Paid social ads"
+          description: "LinkedIn and Facebook advertising"
+          category: "Paid"
+        - name: "Partner referrals"
+          description: "Leverage existing partner networks"
+          category: "Partnerships"
+      matching_criteria:
+        - name: "Budget under $5000"
+          type: REQUIRED
+          weight: 1.0
+        - name: "No cold calling"
+          type: EXCLUSION
+          weight: 1.0
+        - name: "Fast results (< 30 days)"
+          type: PREFERRED
+          weight: 0.8
+        - name: "Scalable"
+          type: PREFERRED
+          weight: 0.6
+        - name: "Builds brand"
+          type: OPTIONAL
+          weight: 0.3
+    process: |
+      Step 1: Set up matrix (4 options x 5 criteria)
+
+      Step 2: REQUIRED - Budget under $5000
+      - Cold email: PASS (tools ~$100/month)
+      - Content marketing: PASS (time investment, minimal tools)
+      - Paid social ads: UNCERTAIN (could exceed quickly)
+      - Partner referrals: PASS (mostly relationship-based)
+
+      Step 3: EXCLUSION - No cold calling
+      - All PASS (none involve cold calling)
+
+      Step 4: PREFERRED scoring
+      Fast results:
+      - Cold email: 3 (can start immediately, responses in days)
+      - Content marketing: 0 (SEO takes months)
+      - Paid social ads: 2 (fast but needs optimization)
+      - Partner referrals: 1 (depends on partner timelines)
+
+      Scalable:
+      - Cold email: 2 (can scale with automation)
+      - Content marketing: 3 (scales very well long-term)
+      - Paid social ads: 3 (scales with budget)
+      - Partner referrals: 1 (limited by partner count)
+
+      Step 5: OPTIONAL - Builds brand
+      - Cold email: NO
+      - Content marketing: YES (+0.5)
+      - Paid social ads: YES (+0.5)
+      - Partner referrals: NO
+
+      Step 6: Final scores
+      - Cold email: 3*0.8 + 2*0.6 = 3.6
+      - Content marketing: 0*0.8 + 3*0.6 + 0.5 = 2.3
+      - Paid social ads: 2*0.8 + 3*0.6 + 0.5 = 4.0 (but UNCERTAIN on required)
+      - Partner referrals: 1*0.8 + 1*0.6 = 1.4
+    expected_output:
+      evaluation_matrix:
+        headers: ["Option", "Budget<$5k", "No cold call", "Fast", "Scalable", "Brand", "Total"]
+        rows:
+          - ["Cold email", "PASS", "PASS", "3", "2", "NO", "3.6"]
+          - ["Content marketing", "PASS", "PASS", "0", "3", "YES", "2.3"]
+          - ["Paid social ads", "UNCERTAIN", "PASS", "2", "3", "YES", "4.0*"]
+          - ["Partner referrals", "PASS", "PASS", "1", "1", "NO", "1.4"]
+      viable_options:
+        - name: "Cold email outreach"
+          score: 3.6
+          rank: 1
+        - name: "Content marketing"
+          score: 2.3
+          rank: 2
+        - name: "Partner referrals"
+          score: 1.4
+          rank: 3
+      eliminated_options:
+        - name: "Paid social ads"
+          reason: "UNCERTAIN on required budget criterion - needs verification before including"
+      comparison_summary: |
+        Evaluated 4 options against 5 criteria.
+        3 options viable, 1 flagged for budget verification.
+        Top option: Cold email (3.6) - fast results, moderate scalability.
+        Runner-up: Content marketing (2.3) - slow start but excellent long-term.
+
+  - name: Compare database technology options
+    context: Technical decision for new application data storage
+    inputs:
+      generated_options:
+        - name: "PostgreSQL"
+          description: "Relational database"
+        - name: "MongoDB"
+          description: "Document database"
+        - name: "SQLite"
+          description: "Embedded database"
+      matching_criteria:
+        - name: "Handle 10k concurrent users"
+          type: REQUIRED
+        - name: "Managed service available"
+          type: REQUIRED
+        - name: "Low operational complexity"
+          type: PREFERRED
+        - name: "Team familiarity"
+          type: PREFERRED
+    process: |
+      REQUIRED: Handle 10k concurrent
+      - PostgreSQL: PASS (well proven at scale)
+      - MongoDB: PASS (designed for horizontal scale)
+      - SQLite: FAIL (single-writer, not for concurrent load)
+
+      REQUIRED: Managed service
+      - PostgreSQL: PASS (AWS RDS, Supabase, etc.)
+      - MongoDB: PASS (Atlas)
+      - SQLite: FAIL (no managed services)
+
+      SQLite eliminated by both REQUIRED criteria.
+
+      PREFERRED: Low complexity
+      - PostgreSQL: 2 (mature, well-documented)
+      - MongoDB: 2 (good tooling, Atlas simplifies)
+
+      PREFERRED: Team familiarity
+      - PostgreSQL: 3 (team knows SQL well)
+      - MongoDB: 1 (no MongoDB experience)
+    expected_output:
+      viable_options:
+        - name: "PostgreSQL"
+          score: 5
+          rank: 1
+        - name: "MongoDB"
+          score: 3
+          rank: 2
+      eliminated_options:
+        - name: "SQLite"
+          reason: "Failed REQUIRED: Cannot handle 10k concurrent users; No managed service available"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - At strategy selection to compare strategy options against constraints
+    - During resource allocation to compare resource options against requirements
+    - When evaluating vendors or tools against selection criteria
+    - At any decision point after options are generated and criteria are defined
+    - To create audit trail of why certain options were chosen or rejected
+
+  gates:
+    - gate: comparison_complete
+      question: "Have all options been evaluated against all criteria?"
+
+    - gate: viable_options_identified
+      question: "Do we have at least one viable option that passes all required criteria?"
+
+    - gate: eliminations_justified
+      question: "Are all eliminated options documented with specific reasons?"
+
+  related_procedures:
+    - generation: Previous step - generates the options to compare
+    - matching: Previous step - defines the criteria to compare against
+    - optimization: Next step - optimize viable options before selection
+    - selection: Final step - choose from optimized viable options
+    - validation: Can validate that comparison was done correctly

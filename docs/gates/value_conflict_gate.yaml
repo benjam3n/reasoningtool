@@ -1,0 +1,119 @@
+# Value Conflict Gate
+# Purpose: Ensure value conflicts are identified and addressed before strategy selection
+# Version: 1.0.0
+
+id: value_conflict_gate
+name: Value Conflict Gate
+version: "1.0.0"
+domain: gates
+phase: strategy
+
+description: |
+  This gate checks whether value conflicts have been identified and addressed
+  before committing to a strategy. Many stuck goals are stuck because of
+  unacknowledged value conflicts, not because of execution problems.
+
+when_applied: "Before final strategy selection, after goal chain analysis"
+
+pass_criteria:
+  required:
+    - name: "Conflict Scan Complete"
+      question: "Have you checked whether this goal serves conflicting values?"
+      pass_if: "Yes, conflict scan was performed"
+
+    - name: "Conflicts Named"
+      question: "If conflicts exist, are they explicitly named and described?"
+      pass_if: "No conflicts found, OR conflicts are named using Value A vs Value B format"
+
+    - name: "Navigation Strategy Selected"
+      question: "If conflicts exist, has a navigation strategy been selected?"
+      pass_if: "No conflicts found, OR navigation strategy selected from: temporal_sequencing, partial_satisfaction, domain_separation, reframing, integration, dynamic_balancing, acceptance"
+
+  recommended:
+    - name: "Strategy Addresses Both Values"
+      question: "Does the selected strategy honor both conflicting values?"
+      pass_if: "Strategy design shows how both values are served"
+
+    - name: "Check-in Points Defined"
+      question: "Are there check-in points to assess if navigation is working?"
+      pass_if: "Specific times/triggers for reviewing the conflict navigation"
+
+on_pass: "Proceed to strategy commitment"
+on_fail: "Return to value_conflict_decomposition procedure"
+
+# ============================================
+# QUICK SCAN QUESTIONS
+# ============================================
+
+quick_scan:
+  description: "Fast check for common value conflicts"
+
+  questions:
+    - question: "Does achieving this goal require risking something you want to protect?"
+      if_yes: "Possible Security vs Achievement conflict"
+
+    - question: "Does achieving this goal require commitment that limits options?"
+      if_yes: "Possible Freedom vs Security conflict"
+
+    - question: "Does achieving this goal require less time with people you care about?"
+      if_yes: "Possible Individual vs Relational conflict"
+
+    - question: "Does achieving this goal require doing things that aren't enjoyable?"
+      if_yes: "Possible Meaning vs Pleasure conflict"
+
+    - question: "Are you trying to get a result but also want to enjoy the process?"
+      if_yes: "Possible Process vs Outcome conflict"
+
+    - question: "Does achieving this goal require staying in your expertise vs exploring new areas?"
+      if_yes: "Possible Known vs Unknown conflict"
+
+  interpretation: |
+    If any questions are "yes", a value conflict may be present.
+    This doesn't mean the goal is bad - it means the conflict should be acknowledged and navigated.
+
+# ============================================
+# GATE CHECKLIST
+# ============================================
+
+checklist:
+  - id: 1
+    item: "Goal chain analysis completed (intrinsic goals identified)"
+    required: true
+
+  - id: 2
+    item: "Quick scan questions answered"
+    required: true
+
+  - id: 3
+    item: "Any conflicts identified are named explicitly"
+    required: true
+
+  - id: 4
+    item: "For each conflict: Is it real or false dichotomy?"
+    required: true
+
+  - id: 5
+    item: "For each real conflict: Navigation strategy selected"
+    required: true
+
+  - id: 6
+    item: "Strategy addresses both values (not just one)"
+    required: false
+
+  - id: 7
+    item: "Check-in points for navigation defined"
+    required: false
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+
+output:
+  gate_result: "PASS / FAIL / NEEDS_WORK"
+  conflicts_found:
+    - conflict_name: "[Value A] vs [Value B]"
+      real_or_false: "Real conflict / False dichotomy"
+      navigation_strategy: "[Selected strategy]"
+      how_both_values_served: "[Description]"
+  no_conflicts_found: "true/false"
+  notes: "[Any observations about the conflict scan]"

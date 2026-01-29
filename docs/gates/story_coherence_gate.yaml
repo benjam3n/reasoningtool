@@ -1,0 +1,273 @@
+# Story Coherence Gate
+# Evaluates whether a reconstructed goal-structure (story) is coherent
+
+id: story_coherence_gate
+name: Story Coherence Gate
+version: "2.0.0"
+domain: core
+
+description: |
+  After reconstructing the goal-structure (story) behind a conclusion,
+  this gate evaluates whether the story is coherent and valid.
+
+  A coherent story makes the conclusion meaningful and evaluable.
+  An incoherent story suggests the conclusion may be arbitrary or confused.
+
+  v2.0: Integrates with journey_system for richer evaluation.
+  Stories are now evaluated as JOURNEYS with archetypes, steps,
+  and validation criteria.
+
+purpose: |
+  Validate goal-structure reconstructions.
+  Filter out conclusions that lack coherent justification.
+  Enable evaluation of the JOURNEY, not just the endpoint.
+
+  With journey system integration:
+  - Stories can be matched to journey archetypes
+  - Steps can be validated for semi-generalizability
+  - Deeper satisfaction checks can be applied
+
+related_procedures:
+  - journey_system: Provides journey archetypes and step format
+  - journey_extraction: How to extract journeys from sources
+  - journey_matching: Finding applicable journeys
+
+related_gates:
+  - journey_validation_gate: Deeper journey-specific validation
+
+# ============================================
+# THE GATE
+# ============================================
+
+question: Is the reconstructed goal-structure (story) coherent?
+
+evaluation_criteria:
+  - Chapters connect logically (each follows from previous)
+  - Goals are legitimate (reasonable people would share them)
+  - The conclusion serves the goals (ending fits the journey)
+  - The journey was necessary (goals required addressing)
+  - This was a valid path (not the only way, but a reasonable way)
+
+# ============================================
+# COHERENCE CHECKS
+# ============================================
+
+checks:
+  check_1_connection:
+    name: Chapter Connection
+    question: Does each chapter follow from the previous?
+    pass_condition: |
+      Each step in the story has a clear connection to the next.
+      "Given Chapter N, Chapter N+1 makes sense."
+    fail_indicators:
+      - Jumps in reasoning without explanation
+      - Chapters that don't relate to adjacent chapters
+      - Missing steps that would be needed
+    example_pass: |
+      Ch1: We want wellbeing → Ch2: Wellbeing requires good decisions →
+      Ch3: Good decisions require reliable beliefs
+      (Each follows from previous)
+    example_fail: |
+      Ch1: We want wellbeing → Ch2: Therefore we should use logic
+      (Missing: why does wellbeing require logic?)
+
+  check_2_legitimacy:
+    name: Goal Legitimacy
+    question: Are the foundational goals legitimate?
+    pass_condition: |
+      The intrinsic goals (Chapter 1) are ones reasonable people would share.
+      They don't require unusual values or assumptions.
+    fail_indicators:
+      - Goals that only a few people would endorse
+      - Goals that depend on controversial assumptions
+      - Goals that seem confused or contradictory
+    example_pass: "We want to flourish" (widely shared)
+    example_fail: "We want to maximize paperclips" (unusual, needs justification)
+
+  check_3_service:
+    name: Goal Service
+    question: Does the conclusion actually serve the goals?
+    pass_condition: |
+      If the conclusion is true/accepted, the goals are advanced.
+      The ending "earns" the journey.
+    fail_indicators:
+      - Conclusion doesn't connect to goals
+      - Conclusion undermines the stated goals
+      - Achieving the conclusion wouldn't help
+    example_pass: |
+      Goal: Reliable knowledge
+      Conclusion: "Some things can't be coherently denied"
+      Service: If true, provides foundation for reliable knowledge ✓
+    example_fail: |
+      Goal: Reliable knowledge
+      Conclusion: "Everything is uncertain"
+      Service: Undermines rather than serves the goal ✗
+
+  check_4_necessity:
+    name: Journey Necessity
+    question: Was the journey necessary?
+    pass_condition: |
+      The goals genuinely needed addressing.
+      The problem was real, not manufactured.
+    fail_indicators:
+      - Goals that don't need pursuing
+      - Problems that were constructed just to solve them
+      - Solutions in search of problems
+    example_pass: |
+      "We need to act effectively" → Yes, this is a genuine need
+    example_fail: |
+      "We need to count all grains of sand" → Why?
+
+  check_5_validity:
+    name: Path Validity
+    question: Was this a valid path to the destination?
+    pass_condition: |
+      This is a reasonable route even if not the only route.
+      The steps are justified, not arbitrary.
+    fail_indicators:
+      - Arbitrary choices without justification
+      - Better paths obviously available
+      - Steps that don't serve the goal
+    note: |
+      "Valid" doesn't mean "only" or "best." Multiple paths can be valid.
+      But SOME justification for this path is needed.
+
+# ============================================
+# OUTCOMES
+# ============================================
+
+on_pass:
+  condition: All five checks pass
+  action: |
+    The story is coherent. The conclusion is:
+    - Grounded in legitimate goals
+    - Connected through valid reasoning
+    - Actually serving those goals
+
+    The conclusion can be accepted as meaningful (though not necessarily true -
+    coherent stories can still be wrong about facts).
+
+on_partial_pass:
+  condition: 3-4 checks pass
+  action: |
+    The story is mostly coherent but has weaknesses.
+    Identify which checks failed and why.
+    Consider: Can the story be repaired? Or is the weakness fatal?
+
+on_fail:
+  condition: 2 or fewer checks pass
+  action: |
+    The story is not coherent. The conclusion may be:
+    - Arbitrary (not connected to legitimate goals)
+    - Confused (steps don't follow)
+    - Self-undermining (conclusion contradicts goals)
+
+    Either repair the story or question the conclusion.
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1:
+    conclusion: "Better reasoning should beat worse reasoning"
+    story:
+      ch1: We value wellbeing (intrinsic)
+      ch2: Wellbeing requires effective action
+      ch3: Effective action requires good decisions
+      ch4: Good decisions require discriminating better from worse
+      ch5: This applies to reasoning too
+      ch6: Conclusion
+    checks:
+      connection: PASS - each step follows
+      legitimacy: PASS - wellbeing is legitimate goal
+      service: PASS - the criterion enables better decisions
+      necessity: PASS - we genuinely need to make decisions
+      validity: PASS - this is a reasonable path
+    result: PASS - coherent story
+
+  example_2:
+    conclusion: "Everything is meaningless"
+    story:
+      ch1: We want truth (intrinsic?)
+      ch2: Examining things reveals no inherent meaning
+      ch3: Therefore everything is meaningless
+    checks:
+      connection: WEAK - jump from "no inherent meaning" to "meaningless"
+      legitimacy: PASS - wanting truth is legitimate
+      service: FAIL - "meaningless" undermines pursuit of truth
+      necessity: PARTIAL - truth-seeking is real, but this framing may not be
+      validity: WEAK - other paths from "no inherent meaning" exist
+    result: FAIL - story undermines itself
+
+# ============================================
+# CONNECTION TO MISSION
+# ============================================
+
+mission_connection: |
+  From the mission statement:
+  "The conclusion only makes sense as an ending to THIS journey.
+   With the journey known, we can evaluate whether the journey was necessary,
+   whether this was the right path, and whether the destination was reached."
+
+  This gate operationalizes that evaluation:
+  - Connection check: Was the journey coherent?
+  - Legitimacy check: Was the starting point valid?
+  - Service check: Did we reach the destination?
+  - Necessity check: Did the journey need to happen?
+  - Validity check: Was this the right path?
+
+# ============================================
+# JOURNEY SYSTEM INTEGRATION (v2.0)
+# ============================================
+
+journey_integration:
+  description: |
+    Story coherence is NECESSARY but not SUFFICIENT for journey validity.
+    This gate provides the basic coherence check.
+    For deeper validation, use journey_validation_gate.
+
+  enhanced_checks:
+    archetype_matching:
+      description: |
+        Does this story match a known journey archetype?
+        - Simple, complicated, complex, chaotic?
+        - Easy, challenging, hard, seemingly impossible?
+        - Predictable, twist, reversal, emergent?
+
+        Matching an archetype suggests the story has a recognized shape.
+        Not matching doesn't mean invalid - could be novel.
+
+    step_generalizability:
+      description: |
+        Are the steps semi-generalizable?
+        - Not too specific (only applies to one case)
+        - Not too abstract (could mean anything)
+        - Could apply to 10-1000 other situations
+
+        Use journey_validation_gate for detailed step checking.
+
+    satisfaction:
+      description: |
+        Does the story feel satisfying?
+        - Has shape/rhythm (build-up, climax, resolution)
+        - Has emotional arc (tension, release)
+        - Evokes recognition ("yes, that's how it goes")
+
+        Use journey_validation_gate for detailed satisfaction checking.
+
+  when_to_use_journey_validation:
+    - Story passes coherence but needs deeper validation
+    - Story will be added to journey library
+    - Story will be used as template for planning
+    - High-stakes decisions based on the story
+
+  relationship: |
+    story_coherence_gate → Basic pass/fail on coherence
+    journey_validation_gate → Detailed validation for library-quality journeys
+
+    Story coherence is a QUICK CHECK.
+    Journey validation is a THOROUGH CHECK.
+
+    Use story coherence during normal planning.
+    Use journey validation for extraction and library building.

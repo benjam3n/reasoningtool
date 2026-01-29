@@ -1,0 +1,404 @@
+# Military Strategy Orderings
+# Orderings from military doctrine and strategic principles
+
+category_id: military_strategy
+category_name: "Military Strategy Orderings"
+description: |
+  Orderings derived from military doctrine and strategic principles.
+  Use when facing active competition, time pressure, distributed
+  execution, or when decisive action at key points is required.
+
+when_to_consider: |
+  - Active competitor/adversary will react to your actions
+  - Need to act faster than environment changes
+  - There is a decisive point where victory makes everything easier
+  - Execution will be distributed with local autonomy needed
+  - Resources insufficient for all objectives simultaneously
+  - Facing multiple separated threats/competitors
+  - Risk of overextension or unsustainable commitments
+  - Work has distinct preparation, execution, and sustain phases
+
+variations:
+
+  # ----------------------------------------
+  # OODA LOOP ORDERING
+  # ----------------------------------------
+  ooda_loop:
+    id: ooda_loop_ordering
+    name: "OODA Loop Ordering (Observe-Orient-Decide-Act)"
+    category: military_strategy
+
+    philosophy: |
+      Cycle rapidly through Observe-Orient-Decide-Act loops, faster than
+      the environment or adversary can adapt. From John Boyd's fighter
+      pilot theory: victory goes to whoever completes decision cycles
+      fastest. The Orient phase is critical - it's where mental models
+      are updated and mismatches with reality are corrected.
+
+    when_to_use:
+      - Competitive or adversarial situations
+      - Rapidly changing environments
+      - Need to maintain initiative
+      - Information is incomplete but time-sensitive
+
+    key_concepts:
+      observe: "Gather raw information from environment"
+      orient: "Analyze, synthesize, update mental models"
+      decide: "Select course of action from alternatives"
+      act: "Execute the decision"
+      tempo: "Speed of cycling through the loop"
+
+    algorithm:
+      continuous_loop:
+        - "OBSERVE: Gather current state information"
+        - "ORIENT: Update mental model, analyze implications"
+        - "DECIDE: Choose next action from options"
+        - "ACT: Execute quickly, don't over-plan"
+        - "REPEAT: Immediately begin next cycle"
+
+    prioritization_rules:
+      1_observe_first:
+        rule: "Always start with fresh observation"
+        reason: "Acting on stale information leads to poor decisions"
+
+      2_orient_deeply:
+        rule: "Invest most effort in orientation/analysis"
+        reason: "This is where competitive advantage is built"
+
+      3_decide_quickly:
+        rule: "Make good-enough decisions fast"
+        reason: "Perfect decisions too late are worthless"
+
+      4_act_immediately:
+        rule: "Execute without hesitation once decided"
+        reason: "Delay erodes the value of the decision"
+
+      5_maximize_tempo:
+        rule: "Complete cycles faster than environment changes"
+        reason: "Faster cycles = staying ahead of the situation"
+
+    source: "Military Strategy - Boyd's OODA Loop (John Boyd, 1976)"
+
+  # ----------------------------------------
+  # SCHWERPUNKT ORDERING
+  # ----------------------------------------
+  schwerpunkt:
+    id: schwerpunkt_ordering
+    name: "Schwerpunkt Ordering (Main Effort Focus)"
+    category: military_strategy
+
+    philosophy: |
+      Identify the decisive point and concentrate overwhelming effort there.
+      From German military doctrine: schwerpunkt (focus of effort) is where
+      you mass resources to achieve breakthrough. Everything else is secondary
+      or economy of force.
+
+    when_to_use:
+      - Resources are limited relative to total requirements
+      - One area determines overall success or failure
+      - Need decisive breakthrough rather than incremental progress
+      - Multiple fronts competing for attention
+
+    prioritization_rules:
+      1_identify_decisive_point:
+        rule: "Find where success would be transformative"
+        question: "If we win here, does everything else become easier?"
+
+      2_concentrate_resources:
+        rule: "Put 70%+ of effort on schwerpunkt"
+        reason: "Superiority at one point beats mediocrity everywhere"
+
+      3_accept_risk_elsewhere:
+        rule: "Deliberately under-resource secondary areas"
+        reason: "Cannot be strong everywhere - accept trade-offs"
+
+      4_exploit_breakthrough:
+        rule: "When schwerpunkt succeeds, pour through the gap"
+        reason: "Victory is amplified by rapid exploitation"
+
+    source: "Military Strategy - German Schwerpunkt Doctrine"
+
+  # ----------------------------------------
+  # AUFTRAGSTAKTIK ORDERING
+  # ----------------------------------------
+  auftragstaktik:
+    id: auftragstaktik_ordering
+    name: "Auftragstaktik Ordering (Commander's Intent)"
+    category: military_strategy
+
+    philosophy: |
+      Define the intent and desired end-state, then let executors determine
+      how to achieve it. Tell subordinates what to accomplish and why, not
+      how. Local decision-makers have better information about their situation.
+
+    when_to_use:
+      - Distributed execution with local variability
+      - Situation is complex and evolving
+      - Central planning can't anticipate all conditions
+      - Want to encourage initiative and ownership
+
+    prioritization_rules:
+      1_define_intent_first:
+        rule: "Clarify end-state before any detailed planning"
+        reason: "Intent guides all subsequent decisions"
+
+      2_provide_context:
+        rule: "Explain why this intent matters (two levels up)"
+        reason: "Enables intelligent adaptation to situations"
+
+      3_specify_boundaries:
+        rule: "Define what must NOT happen (constraints)"
+        reason: "Freedom within limits, not unlimited freedom"
+
+      4_trust_execution:
+        rule: "Don't prescribe methods; judge by results"
+        reason: "Local knowledge beats central planning"
+
+    source: "Military Strategy - Prussian/German Auftragstaktik"
+
+  # ----------------------------------------
+  # ECONOMY-OF-FORCE ORDERING
+  # ----------------------------------------
+  economy_of_force:
+    id: economy_of_force_ordering
+    name: "Economy of Force Ordering"
+    category: military_strategy
+
+    philosophy: |
+      Allocate minimum necessary resources to secondary efforts, preserving
+      maximum for the main effort. No part of the force should be left
+      without purpose, but not every objective deserves equal resources.
+
+    when_to_use:
+      - Resources insufficient for all objectives
+      - Must maintain presence in multiple areas
+      - Some objectives are clearly more important
+      - Need to free resources for concentration elsewhere
+
+    prioritization_rules:
+      1_categorize_all_tasks:
+        rule: "Every task is main, supporting, holding, or abandon"
+        reason: "Can't economize without categorization"
+
+      2_question_holding_tasks:
+        rule: "What's the minimum that actually maintains position?"
+        trap: "Tendency to over-resource 'just in case'"
+
+      3_supporting_enables_main:
+        rule: "Supporting tasks sized to enable, not excel"
+        reason: "Supporting excellence doesn't help if main fails"
+
+      4_document_accepted_risk:
+        rule: "Explicitly state what might fail due to economy"
+        reason: "Conscious risk-taking, not negligent under-resourcing"
+
+    source: "Military Strategy - Economy of Force Principle (Clausewitz)"
+
+  # ----------------------------------------
+  # CONCENTRATION-OF-FORCE ORDERING
+  # ----------------------------------------
+  concentration_of_force:
+    id: concentration_of_force_ordering
+    name: "Concentration of Force Ordering (Lanchester's Laws)"
+    category: military_strategy
+
+    philosophy: |
+      Achieve local superiority by concentrating forces at decisive points.
+      From Lanchester's Laws: fighting power scales with the square of
+      numbers. A 2:1 advantage yields 4:1 effectiveness.
+
+    when_to_use:
+      - Competition follows square law dynamics (winner-take-all)
+      - Multiple engagement points with choice of where to fight
+      - Concentration is physically/logistically possible
+      - Can afford to be weak elsewhere
+
+    prioritization_rules:
+      1_identify_decisive_points:
+        rule: "Find where concentrated effort can achieve breakthrough"
+        question: "Where does local victory cascade to overall victory?"
+
+      2_mass_for_superiority:
+        rule: "Concentrate until you have clear local advantage"
+        ratio: "3:1 often cited as attack success threshold"
+
+      3_sequence_engagements:
+        rule: "Fight one battle at a time with concentrated force"
+        reason: "Serial concentration beats parallel dilution"
+
+      4_avoid_fair_fights:
+        rule: "Never engage without local superiority"
+        reason: "Fair fights are expensive; unfair fights are decisive"
+
+    source: "Military Strategy - Lanchester's Laws"
+
+  # ----------------------------------------
+  # INTERIOR-LINES ORDERING
+  # ----------------------------------------
+  interior_lines:
+    id: interior_lines_ordering
+    name: "Interior Lines Ordering"
+    category: military_strategy
+
+    philosophy: |
+      Operate from a central position to engage dispersed opponents
+      sequentially. The central force can mass against one opponent,
+      defeat them, then turn to face another before they can combine.
+
+    when_to_use:
+      - Multiple opponents/challenges that are separated
+      - Central position available between them
+      - Can move/respond faster than opponents can combine
+      - Sequential engagement is feasible
+
+    prioritization_rules:
+      1_secure_central_position:
+        rule: "Establish position that enables rapid concentration"
+        advantage: "Interior lines = shorter movement to any point"
+
+      2_prevent_combination:
+        rule: "Engage before separated opponents can unite"
+        danger: "Combined opponents eliminate interior lines advantage"
+
+      3_defeat_weakest_first:
+        rule: "Often start with most vulnerable opponent"
+        reason: "Quick victory frees resources for next engagement"
+
+      4_maintain_tempo:
+        rule: "Move fast enough to prevent recombination"
+        reason: "Speed preserves interior lines advantage"
+
+    source: "Military Strategy - Napoleonic Interior Lines"
+
+  # ----------------------------------------
+  # CULMINATING-POINT ORDERING
+  # ----------------------------------------
+  culminating_point:
+    id: culminating_point_ordering
+    name: "Culminating Point Ordering"
+    category: military_strategy
+
+    philosophy: |
+      Every attack reaches a culminating point where the attacker's strength
+      is exhausted. Recognize and stop at the culminating point; don't
+      overextend into vulnerability.
+
+    when_to_use:
+      - Extended campaigns with finite resources
+      - Success creates new vulnerabilities
+      - Diminishing returns on continued effort
+      - Need to consolidate before advancing further
+
+    prioritization_rules:
+      1_track_offensive_strength:
+        rule: "Continuously monitor resources and momentum"
+        metrics: "Budget burn rate, team energy, technical debt"
+
+      2_anticipate_culmination:
+        rule: "Plan for where culmination will occur"
+        reason: "Surprised culmination leads to overextension"
+
+      3_recognize_symptoms:
+        rule: "Watch for signs of approaching culmination"
+        symptoms: ["Slowing progress", "Rising costs", "Team fatigue"]
+
+      4_consolidate_then_resume:
+        rule: "Pause, consolidate gains, rebuild strength"
+        reason: "Fresh offense beats exhausted advance"
+
+    source: "Military Strategy - Clausewitz's Culminating Point"
+
+  # ----------------------------------------
+  # CENTER-OF-GRAVITY ORDERING
+  # ----------------------------------------
+  center_of_gravity:
+    id: center_of_gravity_ordering
+    name: "Center of Gravity Ordering"
+    category: military_strategy
+
+    philosophy: |
+      Identify and attack the enemy's center of gravity - the source of their
+      strength and cohesion. Attacking it directly can collapse the entire
+      system. Conversely, protect your own center of gravity.
+
+    when_to_use:
+      - Need to understand what to attack or defend
+      - Complex system with many components
+      - Want maximum effect from limited resources
+      - Looking for leverage points
+
+    prioritization_rules:
+      1_identify_cog_first:
+        rule: "Cannot attack effectively without knowing true COG"
+        trap: "Attacking symptoms instead of cause"
+
+      2_trace_critical_chain:
+        rule: "COG -> Capabilities -> Requirements -> Vulnerabilities"
+        method: "Work backward from observed capabilities"
+
+      3_attack_vulnerabilities:
+        rule: "Often can't attack COG directly - attack requirements"
+        reason: "Vulnerabilities are accessible weaknesses"
+
+      4_protect_own_cog:
+        rule: "Understand and defend your own center of gravity"
+        reason: "You're also vulnerable to COG analysis"
+
+    source: "Military Strategy - Clausewitz's Center of Gravity"
+
+  # ----------------------------------------
+  # PHASES-OF-OPERATIONS ORDERING
+  # ----------------------------------------
+  phases_of_operations:
+    id: phases_of_operations_ordering
+    name: "Phases of Operations Ordering"
+    category: military_strategy
+
+    philosophy: |
+      Structure campaigns into distinct phases with different objectives.
+      Operations proceed through Shape (set conditions), Decisive (achieve
+      objectives), and Sustain (maintain gains) phases.
+
+    when_to_use:
+      - Long campaigns with distinct stages
+      - Different phases need different approaches
+      - Need clear transition criteria
+      - Building toward decisive moment
+
+    phase_structure:
+      phase_0_shape:
+        purpose: "Set conditions for success"
+        activities: "Preparation, positioning, resource gathering"
+
+      phase_1_deter_seize_initiative:
+        purpose: "Establish position, begin decisive operations"
+        activities: "Initial moves, establishing presence"
+
+      phase_2_decisive_operations:
+        purpose: "Achieve primary objectives"
+        activities: "Main effort, concentrated resources"
+
+      phase_3_stabilize_sustain:
+        purpose: "Maintain and consolidate gains"
+        activities: "Defense, maintenance, transition"
+
+    prioritization_rules:
+      1_complete_shaping:
+        rule: "Don't begin decisive phase until conditions set"
+        reason: "Premature action wastes resources"
+
+      2_clear_transitions:
+        rule: "Define criteria for phase transitions"
+        reason: "Know when to shift approach"
+
+      3_phase_appropriate_actions:
+        rule: "Different phases require different activities"
+        shape: "Reconnaissance, planning, resource prep"
+        decisive: "Concentrated execution, risk acceptance"
+        sustain: "Consolidation, defense, handoff"
+
+      4_plan_for_sustain:
+        rule: "Victory means nothing without sustaining gains"
+        trap: "Planning only for decisive phase"
+
+    source: "Military Doctrine - Joint Operations Phasing"

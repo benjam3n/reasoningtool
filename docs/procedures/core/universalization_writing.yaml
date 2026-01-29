@@ -1,0 +1,208 @@
+id: universalization_writing
+name: Writing Universalization Procedure
+version: 1.0.0
+description: |
+  Apply universalization to improve writing quality.
+  Universalize thesis components to find non-obvious angles and avoid generic output.
+
+  VALIDATED: Tested on "AI will make programmers obsolete" - produced
+  non-obvious thesis "AI will fragment programmer role, not eliminate it"
+  through universalization of "make obsolete" predicate.
+
+inputs:
+  - name: thesis
+    type: string
+    description: The thesis, claim, or topic to write about
+  - name: audience
+    type: string
+    description: Who will read this
+  - name: purpose
+    type: enum
+    values: [persuade, inform, challenge, explore]
+    description: What the writing should achieve
+
+outputs:
+  - name: original_thesis
+    type: string
+    description: The input thesis
+  - name: universal_thesis
+    type: string
+    description: The universalized form of the thesis
+  - name: derived_angles
+    type: array
+    description: Alternative angles derived from universal
+  - name: selected_angle
+    type: string
+    description: The most valuable angle for this piece
+  - name: differentiation
+    type: string
+    description: How this angle differs from obvious/generic approach
+
+gates:
+  - id: thesis_has_claim
+    type: entry
+    check: Does the thesis make a claim (not just describe a topic)?
+    fail_action: Convert topic to claim before proceeding
+
+  - id: subject_universalized
+    type: process
+    check: Was the subject universalized to find category?
+    fail_action: Apply instance-to-category to subject
+
+  - id: predicate_universalized
+    type: process
+    check: Was the predicate universalized to find alternatives?
+    fail_action: Apply state space expansion to predicate
+
+  - id: derivation_non_obvious
+    type: quality
+    check: Did derivation produce at least one non-obvious angle?
+    fail_action: Go one level higher in abstraction; try different dimension
+
+  - id: differentiated_from_generic
+    type: exit
+    check: Is selected angle clearly different from what generic AI would produce?
+    fail_action: Select different angle or derive more alternatives
+
+steps:
+  - id: parse_thesis
+    prompt: |
+      Parse the thesis into components:
+
+      Thesis: "{thesis}"
+
+      Identify:
+      - SUBJECT: What is the thesis about? (noun/entity)
+      - PREDICATE: What is being claimed about it? (verb/action/state)
+      - OBJECT: What is the subject acting on or related to?
+      - QUALIFIER: Any time, degree, or condition markers?
+
+      Example:
+      "AI will make programmers obsolete"
+      - Subject: AI
+      - Predicate: will make obsolete
+      - Object: programmers
+      - Qualifier: (none specified = implied "eventually/inevitably")
+    gate: thesis_has_claim
+
+  - id: universalize_subject
+    prompt: |
+      UNIVERSALIZE THE SUBJECT
+
+      Subject: [from step 1]
+
+      Apply instance-to-category:
+      - What is "{subject}" an instance of?
+      - What category does it belong to?
+      - What other instances exist in that category?
+
+      Example:
+      "AI" → "Automation technology" → "Labor-affecting technology"
+      Other instances: printing press, assembly line, computers, internet
+
+      Record:
+      - Universal category: [name]
+      - Sibling instances: [list]
+      - [T:result] Subject universalized to category with [N] sibling instances
+    gate: subject_universalized
+
+  - id: universalize_predicate
+    prompt: |
+      UNIVERSALIZE THE PREDICATE
+
+      Predicate: [from step 1]
+
+      Apply state space expansion:
+      - What states could this predicate be in?
+      - What other predicates are possible for this subject-object pair?
+
+      Apply instance-to-category:
+      - What is "{predicate}" an instance of?
+      - What's the broader category of this action/state?
+
+      Example:
+      "make obsolete" → possible states: replace, augment, partner with, require, spawn new roles
+      Category: "change relationship with"
+
+      Record:
+      - Universal category: [name]
+      - Alternative predicates: [list]
+      - [T:result] Predicate universalized to [N] alternatives
+    gate: predicate_universalized
+
+  - id: derive_angles
+    prompt: |
+      DERIVE WRITING ANGLES FROM UNIVERSALS
+
+      Subject universal: [from step 2]
+      Subject siblings: [from step 2]
+      Predicate universal: [from step 3]
+      Predicate alternatives: [from step 3]
+
+      Derivation questions:
+      1. What happened when SIBLING SUBJECTS encountered similar situations?
+         → Historical analogy angles
+
+      2. What if the ALTERNATIVE PREDICATES are more accurate?
+         → Reframing angles
+
+      3. What do ALL instances of the subject universal have in common?
+         → Pattern angles
+
+      4. What makes THIS specific instance DIFFERENT from siblings?
+         → Differentiation angles
+
+      List all derived angles with brief description of each.
+    gate: derivation_non_obvious
+
+  - id: mark_obvious_vs_novel
+    prompt: |
+      MARK OBVIOUS VS NOVEL ANGLES
+
+      For each derived angle, mark:
+      - OBVIOUS: Would appear in first-page Google results; anyone would think of this
+      - NOVEL: Emerged only through universalization; not commonly discussed
+
+      Be honest about what's obvious. The goal is to find genuinely non-obvious angles.
+
+      Example:
+      - "AI will take programming jobs" → OBVIOUS
+      - "AI will fragment programmer role like electricity fragmented craftsman role" → NOVEL
+
+  - id: select_angle
+    prompt: |
+      SELECT BEST ANGLE FOR THIS WRITING
+
+      Purpose: {purpose}
+      Audience: {audience}
+
+      Selection criteria:
+      - Is it TRUE or defensible? (not just novel for novelty's sake)
+      - Is it RELEVANT to this audience?
+      - Does it serve the PURPOSE?
+      - Is it sufficiently DIFFERENTIATED from generic?
+
+      Select ONE angle and explain why.
+
+      Record:
+      - Selected angle: [description]
+      - Why selected: [reasoning]
+      - How it differs from generic: [explicit comparison]
+    gate: differentiated_from_generic
+
+  - id: rewrite_thesis
+    prompt: |
+      REWRITE THESIS USING SELECTED ANGLE
+
+      Original thesis: "{thesis}"
+      Selected angle: [from step 6]
+
+      Rewrite the thesis to:
+      1. Incorporate the non-obvious angle
+      2. Maintain truth/defensibility
+      3. Be specific enough to be interesting
+      4. Be general enough to have implications
+
+      Verification:
+      - [T:result] New thesis differs from original by [describe difference]
+      - [T:result] Differentiation from generic: [how this wouldn't be AI's default]

@@ -1,0 +1,585 @@
+# Failure Recovery - Structured recovery from project failures
+# Meta-procedure for systematic failure response
+
+id: failure_recovery
+name: Failure Recovery
+version: "1.0.0"
+domain: meta
+
+description: Structured recovery procedures when projects encounter failures, providing clear decision trees and specific actions for common failure modes.
+
+long_description: |
+  Every project will encounter failures. This procedure provides systematic
+  approaches to diagnose, respond to, and recover from common failure modes.
+
+  Key principles:
+  1. Failures are learning opportunities, not dead ends
+  2. Every failure has a recovery path
+  3. Diagnose before acting - understand the failure first
+  4. Preserve optionality during recovery
+  5. Document for future learning
+
+  The procedure covers five major failure categories:
+  - Validation failed (discovery shows no viable path)
+  - Timeline blown (significantly behind schedule)
+  - Strategy not working (execution not producing results)
+  - Resource exhausted (budget, time, or energy depleted)
+  - External shock (unexpected events invalidate plan)
+
+tags:
+  - meta
+  - recovery
+  - failure
+  - resilience
+  - decision
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - When a project encounters a complete blocker
+  - When key assumptions are invalidated
+  - When timeline is more than 50% over estimate
+  - When strategy execution consistently fails to produce expected results
+  - When resources (budget, time, energy) are exhausted before completion
+  - When external events significantly change project conditions
+  - When feeling stuck with no clear path forward
+  - During retrospectives to analyze past failures
+
+when_not_to_use:
+  - For minor setbacks that can be handled with small adjustments
+  - When the "failure" is actually just normal iteration
+  - For routine problems with known solutions
+  - When quick fixes are obvious and low-risk
+  - During panic - wait for calm before applying this procedure
+  - For hypothetical failures (use risk assessment instead)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: failure_description
+    type: string
+    required: true
+    description: Clear description of what failed and how it manifested
+
+  - name: project_context
+    type: dict
+    required: true
+    description: Current project state including goal, strategy, plan, and progress
+
+  - name: failure_type
+    type: enum
+    values: [validation_failed, timeline_blown, strategy_not_working, resource_exhausted, external_shock]
+    required: false
+    description: Category of failure if known (procedure will help identify if not)
+
+  - name: recovery_constraints
+    type: list
+    required: false
+    description: Constraints on recovery options (time, budget, non-negotiables)
+
+outputs:
+  - name: failure_diagnosis
+    type: dict
+    description: Analysis of failure root cause and category
+
+  - name: recovery_recommendation
+    type: dict
+    description: Recommended recovery path with rationale
+
+  - name: recovery_plan
+    type: document
+    description: Concrete steps to execute recovery
+
+  - name: learnings
+    type: list
+    description: Insights to prevent similar failures
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Identify and classify failure
+    action: |
+      Use the master decision tree to classify the failure:
+
+      1. Is this a complete blocker? (Cannot proceed at all)
+         - YES: Continue to step 2
+         - NO: Continue with workaround, document risk, exit procedure
+
+      2. Is the goal still valid? (Do you still want this outcome?)
+         - YES: Continue to step 3
+         - NO: Archive project, complete LEARNINGS.md, exit procedure
+
+      3. Is the strategy still valid? (Is approach fundamentally sound?)
+         - YES: Continue to step 4
+         - NO: Return to Strategy Phase, run Strategy Search again
+
+      4. Is the plan still valid? (Are steps right, just need better execution?)
+         - YES: Fix execution issue, add safeguards, continue
+         - NO: Return to Planning Phase, revise gates
+
+      Classify into failure type:
+      - validation_failed: Discovery shows no viable path
+      - timeline_blown: Significantly behind schedule
+      - strategy_not_working: Execution not producing results
+      - resource_exhausted: Budget, time, or energy depleted
+      - external_shock: External event invalidates plan
+    inputs:
+      - failure_description
+      - project_context
+    outputs:
+      - failure_classification: type and severity
+      - blocker_assessment: is this a true blocker
+      - validity_assessment: goal, strategy, and plan validity
+    verification: |
+      Failure has clear classification and severity assessment
+
+  - id: 2
+    name: Diagnose root cause
+    action: |
+      For each failure type, answer diagnostic questions:
+
+      VALIDATION FAILED:
+      - Was the niche too narrow or too broad?
+      - Were you talking to the right people?
+      - Was the value proposition clear?
+      - Is the problem real but your solution wrong?
+
+      TIMELINE BLOWN:
+      - Was the estimate unrealistic?
+      - Did scope creep occur?
+      - Were there unexpected blockers?
+      - Is effort/time allocation sufficient?
+
+      STRATEGY NOT WORKING:
+      - Is the strategy wrong, or execution wrong?
+      - Did market conditions change?
+      - Were Adversarial Review assumptions violated?
+      - Is there new information that invalidates strategy?
+
+      RESOURCE EXHAUSTED:
+      - Which resource is the binding constraint?
+      - Is the goal achievable with remaining resources?
+      - What's the minimum viable completion?
+
+      EXTERNAL SHOCK:
+      - Is this temporary or permanent?
+      - Does this affect the goal or just the strategy?
+      - Can we adapt or must we wait?
+
+      Document answers to build diagnosis.
+    inputs:
+      - failure_classification (from Step 1)
+      - project_context
+    outputs:
+      - root_cause_analysis: primary and contributing causes
+      - diagnostic_findings: answers to relevant questions
+    verification: |
+      Root cause is identified with supporting evidence
+
+  - id: 3
+    name: Evaluate recovery options
+    action: |
+      Based on failure type and diagnosis, evaluate recovery options:
+
+      VALIDATION FAILED OPTIONS:
+      A. Pivot to adjacent niche (2-3 weeks)
+         - When: Core problem valid, wrong audience
+         - Steps: List adjacent audiences, run discovery, score, restart Phase 2
+
+      B. Pivot to different problem (3-4 weeks)
+         - When: This problem isn't real or big enough
+         - Steps: Review notes for other pain points, select alternative, return to Assessment
+
+      C. Switch to cloning strategy (1-2 weeks)
+         - When: Niche discovery systematically failing
+         - Steps: Identify successful products, find underserved segments, switch strategy
+
+      D. Abandon this goal (1-2 days)
+         - When: Fundamental assumption was wrong
+         - Steps: Complete LEARNINGS.md, archive project, start fresh
+
+      TIMELINE BLOWN OPTIONS:
+      A. Reduce scope (1-2 days planning)
+         - When: Trying to do too much
+         - Steps: List deliverables, categorize MUST/SHOULD/COULD, cut to MUST
+
+      B. Extend timeline (immediate)
+         - When: Scope correct, just slower than expected
+         - Steps: Calculate realistic time, update milestones, communicate
+
+      C. Increase resources (varies)
+         - When: Time-resource tradeoff available
+         - Steps: Identify parallelizable work, determine if help possible
+
+      STRATEGY NOT WORKING OPTIONS:
+      A. Adjust strategy parameters (1-2 weeks)
+         - When: Strategy sound, needs tuning
+         - Steps: Identify parameters, run experiments, adopt best variation
+
+      B. Switch to backup strategy (1 week)
+         - When: Pre-identified backup exists
+         - Steps: Review backup, verify assumptions, run Adversarial Review, switch
+
+      C. Return to Strategy Search (2-3 weeks)
+         - When: Need fundamentally different approach
+         - Steps: Document why current failed, use as input to new Strategy Search
+
+      RESOURCE EXHAUSTED OPTIONS:
+      A. Minimum viable completion (varies)
+         - When: Can achieve partial goal with remaining resources
+         - Steps: Define MVP, cut to essentials, focus remaining resources
+
+      B. Pause and replenish (pause period + ramp-up)
+         - When: Goal still valuable, just need to recover
+         - Steps: Document state, set pause period, replenish, resume
+
+      C. Pivot to lower-resource approach (1-2 weeks)
+         - When: Different path requires fewer resources
+         - Steps: Identify alternatives, evaluate, switch approach
+
+      EXTERNAL SHOCK OPTIONS:
+      A. Wait it out (disruption duration)
+         - When: Temporary disruption
+         - Steps: Estimate duration, pause project, monitor, resume when clear
+
+      B. Adapt to new reality (1-3 weeks)
+         - When: Permanent change but goal still achievable
+         - Steps: Analyze new landscape, update strategy, continue
+
+      C. Abandon and learn (1-2 days)
+         - When: Change makes goal unachievable or undesirable
+         - Steps: Accept, document learnings, archive, consider new goal
+    inputs:
+      - failure_classification (from Step 1)
+      - root_cause_analysis (from Step 2)
+      - recovery_constraints
+    outputs:
+      - viable_options: list of applicable recovery options
+      - option_analysis: pros, cons, time/resource cost for each
+    verification: |
+      At least 2 viable options identified with trade-off analysis
+
+  - id: 4
+    name: Select recovery path
+    action: |
+      Choose the best recovery option based on:
+
+      1. Alignment with root cause
+         - Does this option address the actual problem?
+
+      2. Resource requirements
+         - Do you have the time/money/energy for this option?
+
+      3. Risk profile
+         - What could go wrong with this recovery?
+         - Is failure of recovery acceptable?
+
+      4. Learning potential
+         - What will you learn from this path?
+
+      5. Goal preservation
+         - Does this keep you moving toward the original goal?
+         - Or does it require goal adjustment?
+
+      Make explicit selection with documented rationale.
+      Get stakeholder buy-in if applicable.
+    inputs:
+      - viable_options (from Step 3)
+      - recovery_constraints
+    outputs:
+      - selected_recovery: chosen option with rationale
+      - stakeholder_alignment: confirmation of buy-in
+    verification: |
+      Selection has clear rationale addressing all criteria
+
+  - id: 5
+    name: Create recovery plan
+    action: |
+      Build concrete recovery plan:
+
+      1. Define recovery milestones
+         - What does "recovered" look like?
+         - What are intermediate checkpoints?
+
+      2. List specific actions
+         - What needs to happen in what order?
+         - Who does what?
+
+      3. Set timeline
+         - When will each milestone be hit?
+         - Add buffer for recovery-specific uncertainty
+
+      4. Define abort criteria
+         - When would you abandon this recovery?
+         - What signals that recovery isn't working?
+
+      5. Update project documents
+         - STATE.md: reflect recovery mode
+         - DECISION_TREE.md: document recovery decision
+    inputs:
+      - selected_recovery (from Step 4)
+      - project_context
+    outputs:
+      - recovery_plan: milestones, actions, timeline, abort criteria
+      - updated_state: project in recovery mode
+    verification: |
+      Plan has clear milestones, actions, and abort criteria
+
+  - id: 6
+    name: Execute recovery
+    action: |
+      Execute the recovery plan:
+
+      1. Update STATE.md to reflect recovery in progress
+      2. Follow recovery milestones
+      3. Regular check-ins against abort criteria
+      4. Watch for signs recovery isn't working:
+         - Missing recovery milestones
+         - New blockers appearing
+         - Resource burn higher than expected
+
+      If abort criteria triggered:
+      - Stop current recovery
+      - Return to Step 3 with updated information
+      - Select different recovery option
+    inputs:
+      - recovery_plan (from Step 5)
+    outputs:
+      - recovery_progress: status against milestones
+      - recovery_issues: any problems encountered
+    verification: |
+      Regular progress checks completed, issues documented
+
+  - id: 7
+    name: Document learnings
+    action: |
+      After recovery (successful or not):
+
+      1. Document what caused the failure
+         - Root cause
+         - Warning signs that were missed
+         - What could have prevented it
+
+      2. Document what recovery worked (or didn't)
+         - Which option was selected
+         - How well it addressed the root cause
+         - What would you do differently
+
+      3. Update LEARNINGS.md with failure/recovery
+         - Add to project's learnings
+         - Consider adding to library if generalizable
+
+      4. Consider procedure improvements
+         - Should any procedures be updated?
+         - Should new failure modes be added?
+         - Should triggers be refined?
+    inputs:
+      - failure_diagnosis (from Steps 1-2)
+      - recovery_progress (from Step 6)
+    outputs:
+      - learnings_documented: entries in LEARNINGS.md
+      - procedure_improvements: suggestions for library updates
+    verification: |
+      Learnings are specific, actionable, and documented
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Failure is clearly identified and named with classification
+  - Diagnosis is complete using relevant questions
+  - Recovery option selected with documented reasoning
+  - Time/resource cost is estimated for recovery
+  - Decision is documented in DECISION_TREE.md
+  - STATE.md reflects recovery mode during execution
+  - LEARNINGS.md updated after recovery completes
+
+failure_modes:
+  - mode: Panic-driven decisions
+    symptom: Rushing to recovery without proper diagnosis
+    resolution: Force diagnostic questions before options, time-box calm-down period
+
+  - mode: Abandoning viable projects
+    symptom: Giving up when recovery was possible
+    resolution: Require evaluation of at least 2 options before abandonment
+
+  - mode: Sunk cost fallacy
+    symptom: Continuing failing project because of prior investment
+    resolution: Evaluate goal validity independently of past investment
+
+  - mode: Recovery recursion
+    symptom: Recovery fails, new recovery fails, spiraling
+    resolution: Set maximum recovery attempts, escalate or abandon after limit
+
+  - mode: Incomplete diagnosis
+    symptom: Treating symptoms instead of root cause
+    resolution: Require answers to all diagnostic questions for failure type
+
+  - mode: Learning not captured
+    symptom: Same failures repeat across projects
+    resolution: Mandatory LEARNINGS.md update, periodic review of past failures
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Validation failure recovery
+    context: B2B SaaS startup, 8 weeks into discovery, no validation signal
+    inputs:
+      failure_description: "50 discovery calls completed, no clear willingness to pay"
+      project_context:
+        goal: "Build SaaS for dentist appointment scheduling"
+        strategy: "Niche discovery with dentists"
+        progress: "Discovery Phase, 50 calls, <10 quality conversations"
+      failure_type: validation_failed
+    process: |
+      1. Classify: Complete blocker (can't proceed without validation)
+         - Goal still valid? Yes, still want to build something
+         - Strategy still valid? Questionable - dentists may be wrong niche
+
+      2. Diagnose:
+         - Niche too narrow? Maybe - dentists are specific
+         - Right people? Unclear - talking to office managers, not owners
+         - Value proposition? Weak - many existing solutions
+         - Problem real? Yes, but competitive market
+
+      3. Options:
+         A. Pivot to adjacent: Try veterinarians or optometrists
+         B. Different problem: Note that dentists mentioned inventory pain
+         C. Cloning: Build better Calendly for healthcare
+         D. Abandon: Stop and pick different domain
+
+      4. Select: Option A - Try veterinarians
+         - Rationale: Less competitive, same core workflow
+         - Cost: 2-3 weeks of new discovery
+
+      5. Recovery plan:
+         - Week 1: Build vet contact list, outreach
+         - Week 2-3: 20 discovery calls with vets
+         - Abort if: <5 calls show interest by end of Week 2
+         - Success: 3+ vets willing to pilot
+
+      6. Execute: Pivoted to vets, found strong validation signal
+
+      7. Learnings:
+         - Should validate competition before extensive discovery
+         - Office managers != decision makers
+         - Adjacent niches can be dramatically different
+    expected_output:
+      failure_diagnosis:
+        type: validation_failed
+        root_cause: "Wrong niche - too competitive, wrong contacts"
+      recovery_recommendation:
+        option: "Pivot to adjacent niche (veterinarians)"
+        time_cost: "2-3 weeks"
+      learnings:
+        - "Validate competition early"
+        - "Identify true decision makers before discovery"
+
+  - name: Resource exhaustion recovery
+    context: Side project, 3 months in, burnout setting in
+    inputs:
+      failure_description: "Cannot sustain 20 hours/week alongside full-time job"
+      project_context:
+        goal: "Launch newsletter with 1000 subscribers"
+        strategy: "Content marketing on LinkedIn + SEO"
+        progress: "400 subscribers, weekly publishing, exhausted"
+      failure_type: resource_exhausted
+    process: |
+      1. Classify: Blocker - cannot continue at current pace
+         - Goal still valid? Yes, still want the newsletter
+         - Strategy still valid? Yes, it's working
+         - Plan still valid? No, unsustainable pace
+
+      2. Diagnose:
+         - Which resource? Time/energy (not money)
+         - Achievable with remaining? Maybe at slower pace
+         - Minimum viable? 600 subscribers to attract sponsors
+
+      3. Options:
+         A. Minimum viable: Reduce to 600 subscriber goal, then pause
+         B. Pause and replenish: 1 month break, then resume
+         C. Lower-resource approach: Switch to biweekly, reduce quality bar
+
+      4. Select: Option C - Switch to biweekly
+         - Rationale: Maintains momentum, reduces load by ~40%
+         - Cost: Slower growth, may lose some engagement
+
+      5. Recovery plan:
+         - Announce schedule change to subscribers
+         - Build 2-week content buffer during transition
+         - Monitor engagement for 1 month
+         - Abort if: Subscriber growth stops completely
+
+      6. Execute: Switched to biweekly, maintained ~70% of growth rate
+
+      7. Learnings:
+         - Started too aggressively for sustainable side project
+         - Buffer content should be built before launch
+         - Energy is the real constraint, not time
+    expected_output:
+      failure_diagnosis:
+        type: resource_exhausted
+        root_cause: "Unsustainable pace for side project"
+      recovery_recommendation:
+        option: "Lower-resource approach - biweekly publishing"
+        time_cost: "Immediate change, 1 month to validate"
+      learnings:
+        - "Side projects need sustainable pace from start"
+        - "Build buffer before committing to schedule"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When any GOSM project encounters significant failure
+    - During project retrospectives to analyze past failures
+    - When deciding whether to continue or abandon a project
+    - As input to risk assessment for new projects
+
+  gates:
+    - gate: failure_diagnosed
+      question: "Has the failure been properly classified and diagnosed?"
+
+    - gate: options_evaluated
+      question: "Have at least 2 recovery options been evaluated?"
+
+    - gate: recovery_selected
+      question: "Is there a selected recovery path with documented rationale?"
+
+    - gate: learnings_captured
+      question: "Have learnings been documented in LEARNINGS.md?"
+
+  related_procedures:
+    - adversarial_review: Used to validate backup strategies during recovery
+    - innovation_engine: Used when recovery requires new strategy
+    - weekly_review: Can catch failures early before they become critical
+    - procedure_effectiveness: Document procedure failures for improvement
+
+# ============================================
+# RECOVERY CHECKLISTS
+# ============================================
+checklists:
+  before_recovery:
+    - "[ ] Failure clearly identified and named"
+    - "[ ] Diagnosis complete (used questions above)"
+    - "[ ] Recovery option selected with reasoning"
+    - "[ ] Time/resource cost estimated"
+    - "[ ] Decision documented in DECISION_TREE.md"
+
+  during_recovery:
+    - "[ ] STATE.md updated to reflect recovery"
+    - "[ ] Clear recovery milestones set"
+    - "[ ] Regular check-ins scheduled"
+    - "[ ] Watching for signs recovery isn't working"
+
+  after_recovery:
+    - "[ ] Document what caused failure"
+    - "[ ] Document what recovery worked"
+    - "[ ] Update LEARNINGS.md with failure/recovery"
+    - "[ ] Consider procedure improvements"

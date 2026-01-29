@@ -1,0 +1,293 @@
+# Motivation & Psychology Orderings
+# Orderings that account for human psychological factors
+
+category_id: motivation_psychology
+category_name: "Motivation & Psychology Orderings"
+description: |
+  Orderings that account for human psychological factors like energy,
+  motivation, habits, and engagement. Essential for human executors
+  who need to maintain sustainable performance over time.
+
+when_to_consider: |
+  - Human executor (not automated)
+  - Low motivation or energy levels
+  - Long work sessions requiring pacing
+  - Building new habits or routines
+  - Need to maintain stakeholder engagement
+
+variations:
+
+  # ----------------------------------------
+  # MOMENTUM ORDERING
+  # ----------------------------------------
+  momentum:
+    id: momentum_ordering
+    name: "Momentum Ordering (Quick Wins First)"
+    category: motivation_psychology
+
+    philosophy: |
+      Start with easy, completable tasks to build momentum and confidence.
+      Progress begets progress. Completed tasks provide psychological fuel
+      for tackling harder ones. Particularly good for human executors prone
+      to procrastination or overwhelm.
+
+    when_to_use:
+      - Human executor feeling overwhelmed
+      - Need to demonstrate early progress (stakeholder visibility)
+      - Low motivation or energy
+      - Long project needing sustained engagement
+
+    prioritization_rules:
+      1_quick_completables:
+        rule: "Tasks that can be finished quickly go first"
+        reason: "Build sense of progress and accomplishment"
+
+      2_high_visibility:
+        rule: "Tasks with visible outputs go early"
+        reason: "Tangible progress maintains motivation"
+
+      3_unblock_easy_chains:
+        rule: "Easy tasks that unblock other easy tasks go first"
+        reason: "Creates cascade of completions"
+
+      4_defer_big_ambiguous:
+        rule: "Large uncertain tasks come after momentum established"
+        reason: "Tackle hard things from position of strength"
+
+    anti_patterns:
+      - "Starting with the hardest task (leads to paralysis)"
+      - "Saving all easy tasks for later (no early wins)"
+      - "Deprioritizing visible tasks (lose stakeholder support)"
+
+    example:
+      context: "Learning a new programming language"
+      steps:
+        - "Build a complex project"
+        - "Read entire documentation"
+        - "Write Hello World"
+        - "Complete 5 small tutorials"
+        - "Set up development environment"
+      momentum_order:
+        1: "Set up development environment (quick, necessary)"
+        2: "Write Hello World (instant success)"
+        3: "Complete 5 small tutorials (building confidence)"
+        4: "Read documentation (with context from tutorials)"
+        5: "Build complex project (momentum established)"
+      rationale: "Build confidence through small wins before tackling complexity"
+
+  # ----------------------------------------
+  # ENERGY-AWARE ORDERING
+  # ----------------------------------------
+  energy_aware:
+    id: energy_aware_ordering
+    name: "Energy-Aware Ordering"
+    category: motivation_psychology
+
+    philosophy: |
+      Match task difficulty to executor energy levels. Hard cognitive
+      work when fresh, routine work when tired. For human executors,
+      this can dramatically improve output quality and reduce burnout.
+
+    when_to_use:
+      - Human solo executor
+      - Long work sessions
+      - Mix of cognitively demanding and routine tasks
+      - Preventing burnout on long projects
+
+    prioritization_rules:
+      1_hard_when_fresh:
+        rule: "Cognitively demanding tasks at start of session"
+        reason: "Best cognitive resources for hardest problems"
+
+      2_creative_after_warm_up:
+        rule: "Creative tasks after brief warm-up period"
+        reason: "Creativity flows after initial engagement"
+
+      3_routine_when_tired:
+        rule: "Routine/mechanical tasks late in session"
+        reason: "Can execute on autopilot"
+
+      4_breaks_before_complexity:
+        rule: "Schedule breaks before returning to hard problems"
+        reason: "Restore cognitive resources"
+
+    energy_profiles:
+      morning_person:
+        - "Hard analytical work: 8am-12pm"
+        - "Creative work: 10am-2pm"
+        - "Meetings/collaboration: 2pm-4pm"
+        - "Routine work: 4pm-6pm"
+
+      evening_person:
+        - "Warm-up/routine: morning"
+        - "Creative work: afternoon"
+        - "Hard analytical: evening"
+
+    example:
+      context: "Full day of coding work"
+      steps:
+        - "Architecture design (hard)"
+        - "Code review (medium)"
+        - "Fix minor bugs (routine)"
+        - "Write documentation (medium)"
+        - "Implement complex feature (hard)"
+        - "Update dependencies (routine)"
+      energy_aware_order:
+        1: "Architecture design (fresh morning energy)"
+        2: "Implement complex feature (still fresh)"
+        3: "Code review (moderate post-lunch)"
+        4: "Write documentation (can do somewhat tired)"
+        5: "Fix minor bugs (low energy OK)"
+        6: "Update dependencies (mechanical, end of day)"
+      rationale: "Hard thinking when fresh, routine when depleted"
+
+  # ----------------------------------------
+  # ENERGY-ENVELOPE ORDERING
+  # ----------------------------------------
+  energy_envelope:
+    id: energy_envelope_ordering
+    name: "Energy-Envelope Ordering (Setlist Pacing)"
+    category: motivation_psychology
+
+    philosophy: |
+      Plan energy peaks and valleys; don't exhaust the audience
+      or executor. From concert setlist design: sustained high
+      energy leads to fatigue. Strategic valleys allow recovery
+      for bigger peaks. The goal is maximum total engagement,
+      not maximum instantaneous intensity.
+
+    different_from_energy_aware: |
+      Energy-aware matches task difficulty to available energy.
+      Energy-envelope plans the shape of energy across time.
+      Energy-aware is reactive; energy-envelope is proactive design.
+
+    when_to_use:
+      - Extended sessions (presentations, workshops, projects)
+      - Audience or executor stamina is limited
+      - Want to maximize engagement over time
+      - Multiple phases with different intensity needs
+
+    key_concepts:
+      peak: "High-intensity moment requiring full attention"
+      valley: "Lower-intensity recovery period"
+      envelope: "The shape of energy across the session"
+      climax: "The single highest peak (usually near end)"
+
+    prioritization_rules:
+      1_map_energy_requirements:
+        rule: "Classify each item as peak, valley, or moderate"
+        reason: "Know what you're working with"
+
+      2_design_the_envelope:
+        rule: "Plan the shape: opening, build, valleys, climax, close"
+        patterns:
+          gradual_build: "Start low, steadily increase to climax"
+          u_shape: "High open, dip to middle, high close"
+          wave: "Multiple peaks with valleys between"
+          bookend: "Strong open and close, moderate middle"
+
+      3_insert_valleys_strategically:
+        rule: "Place recovery moments before and after peaks"
+        reason: "Recovery enables higher peaks"
+        guideline: "No more than 2-3 high-intensity items consecutively"
+
+      4_save_best_for_climax:
+        rule: "Position the biggest peak at ~75-85% of timeline"
+        reason: "End strong, not exhausted"
+
+    anti_patterns:
+      - "All peaks, no valleys (exhaustion)"
+      - "Climax too early (anticlimactic end)"
+      - "Random energy levels (no coherent arc)"
+      - "Ending on a valley (weak finish)"
+
+    example:
+      context: "Half-day workshop (4 hours)"
+      energy_envelope:
+        hour_1:
+          - "Opening hook (peak - grab attention)"
+          - "Context setting (moderate)"
+          - "First exercise (moderate-high)"
+        hour_2:
+          - "Break (valley - recovery)"
+          - "Core concept 1 (moderate)"
+          - "Discussion (valley)"
+        hour_3:
+          - "Core concept 2 (moderate)"
+          - "Challenging exercise (peak)"
+          - "Debrief (valley - recovery)"
+        hour_4:
+          - "Advanced application (peak - climax)"
+          - "Q&A (moderate)"
+          - "Strong closing (moderate-high)"
+      rationale: "Peaks at hours 1, 3, 4; valleys enable recovery"
+
+    source: "Music/Performance - Concert setlist design, audience energy management"
+
+  # ----------------------------------------
+  # ANCHOR-BASED ORDERING
+  # ----------------------------------------
+  anchor_based:
+    id: anchor_based_ordering
+    name: "Anchor-Based Ordering (Habit Chaining)"
+    category: motivation_psychology
+
+    philosophy: |
+      Attach new work to existing routines. From behavior design
+      (BJ Fogg's Tiny Habits): "After I [existing behavior], I will
+      [new behavior]." Sequence tasks so each completed step
+      naturally triggers the next. Reduces activation energy.
+
+    when_to_use:
+      - Building new habits or routines
+      - Onboarding processes
+      - Checklists that must flow naturally
+      - When motivation is limited
+      - Creating reliable sequences
+
+    key_concepts:
+      anchor: "Existing reliable behavior that triggers new behavior"
+      tiny_behavior: "New behavior scaled down to require minimal effort"
+      celebration: "Positive emotion that reinforces the sequence"
+      chain: "Multiple behaviors linked in sequence"
+
+    prioritization_rules:
+      1_identify_anchors:
+        rule: "Find existing reliable behaviors to attach to"
+        examples:
+          - "After I pour my coffee..."
+          - "After I sit at my desk..."
+          - "After I finish a meeting..."
+
+      2_sequence_by_natural_flow:
+        rule: "Order so each step flows naturally to the next"
+        reason: "Reduce friction between steps"
+        test: "Does completing step N naturally lead to step N+1?"
+
+      3_start_tiny:
+        rule: "Scale down first step to require minimal motivation"
+        reason: "Activation energy is highest at start"
+        principle: "Make it so easy you can't say no"
+
+      4_build_chains:
+        rule: "Link behaviors: A triggers B triggers C"
+        reason: "One anchor can cascade through entire routine"
+
+    anti_patterns:
+      - "Orphan tasks with no trigger"
+      - "Requiring high motivation for first step"
+      - "Breaking natural flow with context switches"
+      - "Chains that are too long without reinforcement"
+
+    example:
+      context: "Morning code review routine"
+      anchor_chain:
+        anchor: "After I open my laptop"
+        step_1: "I will open the PR dashboard (tiny - 2 seconds)"
+        step_2: "After dashboard opens, I will pick one PR"
+        step_3: "After picking PR, I will read the description"
+        step_4: "After reading description, I will leave one comment"
+        celebration: "Check off daily code review"
+      rationale: "Each step triggers the next; no orphan tasks"
+
+    source: "Behavior Design - BJ Fogg's Tiny Habits, Implementation Intentions"

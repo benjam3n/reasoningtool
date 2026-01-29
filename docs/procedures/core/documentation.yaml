@@ -1,0 +1,426 @@
+# Documentation Procedures
+# Domain: Core
+# Purpose: Procedures for creating project documentation
+
+id: documentation_procedures
+name: Documentation Procedures
+domain: core
+version: 1.0
+
+description: |
+  Procedures for creating comprehensive project documentation that allows
+  others to understand, reproduce, and maintain the project.
+
+procedures:
+  # ===========================================
+  # ASSEMBLY DOCUMENTATION
+  # ===========================================
+  - id: assembly_documentation
+    name: Assembly Documentation
+    purpose: Create step-by-step assembly instructions
+
+    inputs:
+      - name: completed_assembly
+        description: The built system to document
+
+      - name: design_files
+        description: CAD files, wiring diagrams
+
+      - name: build_notes
+        description: Notes from the build process
+
+    outputs:
+      - name: assembly_guide
+        description: Complete assembly instructions
+
+      - name: photo_documentation
+        description: Photos of each step
+
+    steps:
+      - id: outline_steps
+        name: Outline Assembly Steps
+        description: Break assembly into logical steps
+        sub_steps:
+          - List major assembly phases
+          - Break each phase into discrete steps
+          - Order steps for logical progression
+          - Identify dependencies between steps
+          - Note tools needed for each step
+        outputs:
+          - assembly_outline
+
+      - id: write_instructions
+        name: Write Instructions
+        description: Create detailed instructions for each step
+        guidelines:
+          - Use numbered steps
+          - Start each step with action verb
+          - Include orientation clues (left, right, top)
+          - Reference specific components by name
+          - Note common mistakes and how to avoid them
+          - Include verification step after each section
+        outputs:
+          - written_instructions
+
+      - id: photo_documentation
+        name: Create Photo Documentation
+        description: Take photos to illustrate steps
+        guidelines:
+          - Good lighting, clear focus
+          - Show component orientation
+          - Show before and after for complex steps
+          - Include ruler/reference for scale
+          - Annotate photos with labels/arrows
+        outputs:
+          - photo_set
+
+      - id: combine_and_review
+        name: Combine and Review
+        description: Assemble final guide
+        sub_steps:
+          - Insert photos into instructions
+          - Review for completeness
+          - Have someone unfamiliar review
+          - Incorporate feedback
+        outputs:
+          - assembly_guide
+
+    templates:
+      assembly_step: |
+        ## Step {number}: {title}
+
+        **Tools needed**: {tools}
+
+        **Components**: {components}
+
+        **Instructions**:
+        1. {instruction_1}
+        2. {instruction_2}
+        ...
+
+        **Photo**: {photo_reference}
+
+        **Verification**: {what_to_check}
+
+        **Common issues**: {issues_and_fixes}
+
+  # ===========================================
+  # WIRING DOCUMENTATION
+  # ===========================================
+  - id: wiring_documentation
+    name: Wiring Documentation
+    purpose: Create complete wiring reference
+
+    inputs:
+      - name: wired_system
+        description: The wired system to document
+
+      - name: pin_assignments
+        description: Controller pin to peripheral mapping
+
+    outputs:
+      - name: wiring_diagram
+        description: Visual connection diagram
+
+      - name: connection_table
+        description: Tabular connection reference
+
+    steps:
+      - id: create_schematic
+        name: Create Schematic
+        description: Draw system schematic
+        sub_steps:
+          - Choose schematic tool (Fritzing, draw.io, etc.)
+          - Place component symbols
+          - Draw connections between components
+          - Label all connections
+          - Add power distribution
+        outputs:
+          - schematic_diagram
+
+      - id: create_physical_diagram
+        name: Create Physical Diagram
+        description: Show actual physical connections
+        sub_steps:
+          - Show actual component positions
+          - Draw wires with colors
+          - Show connector pinouts
+          - Label wire functions
+        outputs:
+          - physical_wiring_diagram
+
+      - id: create_connection_table
+        name: Create Connection Table
+        description: Tabular reference for all connections
+        sub_steps:
+          - List every connection
+          - Include wire color
+          - Include pin numbers
+          - Include signal name
+        outputs:
+          - connection_table
+
+    templates:
+      connection_table: |
+        | Signal | From (Component.Pin) | To (Component.Pin) | Wire Color |
+        |--------|----------------------|--------------------|------------|
+
+      connector_pinout: |
+        Connector: {name}
+
+        | Pin | Signal | Direction | Notes |
+        |-----|--------|-----------|-------|
+
+  # ===========================================
+  # SOFTWARE DOCUMENTATION
+  # ===========================================
+  - id: software_documentation
+    name: Software Documentation
+    purpose: Document code and software setup
+
+    inputs:
+      - name: source_code
+        description: Project source code
+
+      - name: development_setup
+        description: How to set up development environment
+
+    outputs:
+      - name: readme
+        description: Project readme file
+
+      - name: api_documentation
+        description: Function/class documentation
+
+      - name: setup_guide
+        description: Development environment setup
+
+    steps:
+      - id: write_readme
+        name: Write README
+        description: Create main project readme
+        sections:
+          - Project title and description
+          - Features list
+          - Hardware requirements
+          - Software requirements
+          - Installation instructions
+          - Basic usage
+          - Configuration options
+          - Troubleshooting
+          - License
+        outputs:
+          - readme_file
+
+      - id: document_api
+        name: Document API
+        description: Document all public functions
+        for_each_function:
+          - Function name and signature
+          - Brief description
+          - Parameters with types and descriptions
+          - Return value
+          - Example usage
+        outputs:
+          - api_documentation
+
+      - id: document_setup
+        name: Document Setup
+        description: How to set up development environment
+        include:
+          - Required software versions
+          - Installation steps
+          - Configuration steps
+          - How to upload code
+          - How to run tests
+        outputs:
+          - setup_guide
+
+    templates:
+      function_doc: |
+        ### {function_name}
+
+        ```
+        {signature}
+        ```
+
+        {description}
+
+        **Parameters**:
+        - `{param_name}` ({type}): {description}
+
+        **Returns**: {return_description}
+
+        **Example**:
+        ```
+        {example_code}
+        ```
+
+      readme_template: |
+        # {Project Name}
+
+        {One-line description}
+
+        ## Features
+        - {feature_1}
+        - {feature_2}
+
+        ## Hardware Requirements
+        - {component_1}
+        - {component_2}
+
+        ## Software Requirements
+        - {software_1}
+        - {software_2}
+
+        ## Installation
+        1. {step_1}
+        2. {step_2}
+
+        ## Usage
+        {usage_instructions}
+
+        ## Configuration
+        {configuration_options}
+
+        ## Troubleshooting
+        {common_issues}
+
+        ## License
+        {license}
+
+  # ===========================================
+  # TROUBLESHOOTING GUIDE
+  # ===========================================
+  - id: troubleshooting_guide
+    name: Troubleshooting Guide
+    purpose: Document common problems and solutions
+
+    inputs:
+      - name: build_experience
+        description: Problems encountered during build
+
+      - name: test_results
+        description: Issues found during testing
+
+    outputs:
+      - name: troubleshooting_guide
+        description: Problem/solution reference
+
+    steps:
+      - id: catalog_issues
+        name: Catalog Issues
+        description: List all known issues
+        categories:
+          - Power issues
+          - Motor issues
+          - Sensor issues
+          - Communication issues
+          - Software issues
+          - Mechanical issues
+        outputs:
+          - issue_catalog
+
+      - id: document_solutions
+        name: Document Solutions
+        description: Write solution for each issue
+        for_each_issue:
+          - Symptom description
+          - Possible causes
+          - Diagnostic steps
+          - Solution
+          - Prevention tips
+        outputs:
+          - troubleshooting_entries
+
+    templates:
+      troubleshooting_entry: |
+        ### {Symptom}
+
+        **Possible causes**:
+        - {cause_1}
+        - {cause_2}
+
+        **Diagnosis**:
+        1. {diagnostic_step_1}
+        2. {diagnostic_step_2}
+
+        **Solution**:
+        {solution_steps}
+
+        **Prevention**:
+        {prevention_tips}
+
+  # ===========================================
+  # VIDEO DOCUMENTATION
+  # ===========================================
+  - id: video_documentation
+    name: Video Documentation
+    purpose: Create video demonstrations
+
+    inputs:
+      - name: working_system
+        description: System to demonstrate
+
+      - name: key_features
+        description: What to show
+
+    outputs:
+      - name: demo_video
+        description: Video demonstration
+
+    steps:
+      - id: plan_video
+        name: Plan Video Content
+        description: Outline what to show
+        sub_steps:
+          - List key features to demonstrate
+          - Plan sequence of demonstrations
+          - Write brief script/narration points
+          - Identify best camera angles
+        outputs:
+          - video_plan
+
+      - id: record_video
+        name: Record Video
+        description: Capture footage
+        tips:
+          - Use stable camera (tripod)
+          - Good lighting
+          - Clean background
+          - Multiple takes of each segment
+          - Capture close-ups of key details
+        outputs:
+          - raw_footage
+
+      - id: edit_video
+        name: Edit Video
+        description: Assemble final video
+        sub_steps:
+          - Select best takes
+          - Arrange in sequence
+          - Add text overlays for labels
+          - Add narration or captions
+          - Add intro/outro
+        outputs:
+          - demo_video
+
+    templates:
+      video_outline: |
+        # Demo Video Outline
+
+        **Duration target**: {minutes} minutes
+
+        ## Intro ({seconds} sec)
+        - {intro_content}
+
+        ## Feature 1: {name} ({seconds} sec)
+        - {what_to_show}
+        - {narration_points}
+
+        ## Feature 2: {name} ({seconds} sec)
+        - {what_to_show}
+        - {narration_points}
+
+        ## Outro ({seconds} sec)
+        - {outro_content}

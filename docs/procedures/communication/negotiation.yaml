@@ -1,0 +1,594 @@
+# Negotiation Procedure - Systematic approach to reaching agreements
+# GOSM Communication procedure for preparing and conducting negotiations
+
+id: negotiation
+name: Negotiation
+version: "1.0.0"
+domain: communication
+
+description: Systematic procedure for preparing and conducting negotiations to reach mutually beneficial agreements
+
+long_description: |
+  The Negotiation procedure provides a comprehensive framework for preparing,
+  conducting, and closing negotiations across various scenarios including
+  salary discussions, contract terms, business deals, and dispute resolution.
+
+  Based on principled negotiation (Getting to Yes) combined with practical
+  tactics, this procedure emphasizes:
+  - Understanding underlying interests (not just positions)
+  - Developing strong alternatives (BATNA)
+  - Creating value before claiming it
+  - Using objective criteria for fairness
+  - Building relationships while achieving outcomes
+
+  Key concepts:
+  - BATNA: Best Alternative To Negotiated Agreement
+  - ZOPA: Zone of Possible Agreement
+  - Reservation Point: Your walkaway threshold
+  - Aspiration Point: Your best realistic outcome
+
+tags:
+  - communication
+  - negotiation
+  - agreement
+  - conflict_resolution
+  - persuasion
+  - business
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Negotiating salary, compensation, or benefits with an employer
+  - Reaching agreement on contract terms with clients or vendors
+  - Resolving disputes where parties have conflicting interests
+  - Making business deals involving price, scope, or timeline
+  - Negotiating partnership terms or joint venture agreements
+  - Handling difficult conversations where interests conflict
+  - Buying or selling significant items (real estate, vehicles, equipment)
+  - Resolving workplace conflicts between team members
+  - Negotiating project scope or deadlines with stakeholders
+  - Renegotiating existing agreements or renewals
+
+when_not_to_use:
+  - When there is no real conflict of interest (just miscommunication)
+  - For routine transactions with fixed, non-negotiable prices
+  - When the relationship is more important than any possible outcome
+  - For ethical or legal matters where compromise is inappropriate
+  - When you have zero leverage and no alternatives whatsoever
+  - For trivial matters where negotiation effort exceeds potential gain
+  - When the other party is acting in bad faith with no intent to agree
+  - For emergency situations requiring immediate action
+  - When cultural norms make negotiation inappropriate or offensive
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: negotiation_context
+    type: string
+    required: true
+    description: What is being negotiated (salary, contract, dispute, deal)
+
+  - name: your_interests
+    type: list
+    required: true
+    description: Your underlying needs and priorities (not positions)
+
+  - name: their_likely_interests
+    type: list
+    required: false
+    description: Best estimate of the other party's underlying needs
+
+  - name: your_batna
+    type: string
+    required: false
+    description: Your best alternative if negotiation fails
+
+  - name: constraints
+    type: list
+    required: false
+    description: Non-negotiable limits (budget caps, deadlines, legal requirements)
+
+  - name: relationship_importance
+    type: enum
+    values: [one_time, ongoing, critical]
+    required: false
+    description: How important is preserving/building the relationship
+
+outputs:
+  - name: preparation_worksheet
+    type: document
+    description: Complete negotiation preparation including positions, interests, BATNA
+
+  - name: strategy_document
+    type: document
+    description: Negotiation strategy with opening, concession pattern, and tactics
+
+  - name: negotiated_agreement
+    type: document
+    description: Final documented agreement terms
+
+  - name: debrief_notes
+    type: document
+    description: Lessons learned and relationship notes for future
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Research and gather information
+    action: |
+      Before any negotiation, gather critical information:
+      1. Research market data (rates, standards, precedents)
+      2. Learn about the other party (their situation, pressures, constraints)
+      3. Identify alternatives for both parties
+      4. Find objective criteria that could apply
+      5. Understand the timeline and any deadlines
+    inputs:
+      - negotiation_context
+      - constraints (optional)
+    outputs:
+      - market_data: relevant benchmarks and standards
+      - counterpart_profile: what you know about their situation
+      - objective_criteria: external standards to reference
+    verification: |
+      Can answer: "What would a neutral third party consider fair?"
+
+  - id: 2
+    name: Define your position completely
+    action: |
+      Work through your complete negotiation position:
+      1. List your interests (underlying needs, not positions)
+      2. Prioritize interests (must-have vs nice-to-have)
+      3. Define your BATNA (best alternative if no deal)
+      4. Set your reservation point (worst acceptable outcome)
+      5. Set your aspiration point (best realistic outcome)
+      6. Plan your opening position (ambitious but justifiable)
+    inputs:
+      - your_interests
+      - your_batna (optional)
+      - constraints (optional)
+    outputs:
+      - prioritized_interests: ranked list of what you need
+      - batna_assessment: your walkaway alternative with honest evaluation
+      - reservation_point: the line you will not cross
+      - aspiration_point: your target outcome
+      - opening_position: where you will start
+    verification: |
+      Opening position is justified by objective criteria
+      Reservation point is above BATNA value
+      Interests are distinguished from positions
+
+  - id: 3
+    name: Analyze the counterpart
+    action: |
+      Develop hypotheses about the other party:
+      1. What are their likely underlying interests?
+      2. What is their likely BATNA?
+      3. What pressures or constraints do they face?
+      4. What would they consider a win?
+      5. What is their likely opening position?
+      6. Where might there be shared interests?
+    inputs:
+      - their_likely_interests (optional)
+      - counterpart_profile (from Step 1)
+    outputs:
+      - counterpart_analysis: estimated interests, BATNA, constraints
+      - zopa_estimate: estimated zone of possible agreement
+      - shared_interests: areas where both parties want same thing
+    verification: |
+      Can articulate their perspective as they would state it
+      Identified at least one shared interest
+
+  - id: 4
+    name: Develop negotiation strategy
+    action: |
+      Plan your approach to the negotiation:
+      1. Decide who makes first offer (anchor if well-informed)
+      2. Plan your concession pattern (start high, concede slowly)
+      3. Identify potential tradeoffs (logrolling opportunities)
+      4. Prepare responses to likely tactics they might use
+      5. Plan information gathering questions
+      6. Decide on framing (gain vs loss, fairness appeal)
+    inputs:
+      - prioritized_interests (from Step 2)
+      - counterpart_analysis (from Step 3)
+      - relationship_importance (optional)
+    outputs:
+      - anchoring_strategy: whether and how to anchor
+      - concession_plan: planned pattern of concessions
+      - tradeoff_options: potential trades to propose
+      - tactical_responses: how to handle hardball tactics
+      - key_questions: information to gather during negotiation
+    verification: |
+      Strategy accounts for relationship importance
+      Have prepared response for at least 3 potential tactics
+
+  - id: 5
+    name: Conduct the negotiation
+    action: |
+      Execute the negotiation conversation:
+      1. Opening: Build rapport, set positive tone, establish agenda
+      2. Information exchange: Ask questions, listen actively, share strategically
+      3. Propose: Make or respond to opening offer with justification
+      4. Bargain: Exchange proposals, make conditional concessions
+      5. Problem-solve: Look for value creation opportunities
+      6. Handle tactics: Recognize and respond to hardball moves
+    inputs:
+      - All preparation outputs
+      - The actual negotiation conversation
+    outputs:
+      - information_learned: new insights about their position
+      - proposals_exchanged: record of offers and counteroffers
+      - value_created: any new value discovered through discussion
+    verification: |
+      Made conditional concessions ("if you... then I...")
+      Asked at least 3 open-ended questions about their interests
+      Did not go below reservation point
+
+  - id: 6
+    name: Close and document
+    action: |
+      Finalize and secure the agreement:
+      1. Summarize agreed terms clearly
+      2. Address any remaining open issues
+      3. Document agreement in writing
+      4. Discuss implementation and next steps
+      5. Confirm mutual understanding
+      6. Set follow-up if needed
+    inputs:
+      - proposals_exchanged (from Step 5)
+      - Final agreed terms
+    outputs:
+      - negotiated_agreement: written documentation of terms
+      - implementation_plan: who does what by when
+      - follow_up_items: anything requiring future attention
+    verification: |
+      Both parties confirm same understanding of terms
+      Agreement is documented in writing
+      Implementation responsibilities are clear
+
+  - id: 7
+    name: Debrief and learn
+    action: |
+      After negotiation concludes, capture learnings:
+      1. What worked well in your approach?
+      2. What would you do differently?
+      3. What did you learn about the other party?
+      4. How does actual outcome compare to your targets?
+      5. What's the state of the relationship?
+      6. What to remember for future negotiations with this party?
+    inputs:
+      - negotiated_agreement (from Step 6)
+      - aspiration_point (from Step 2)
+      - reservation_point (from Step 2)
+    outputs:
+      - debrief_notes: lessons learned and relationship notes
+      - outcome_assessment: how result compares to targets
+    verification: |
+      Captured at least 2 specific learnings for future negotiations
+
+# ============================================
+# NEGOTIATION CONCEPTS
+# ============================================
+negotiation_types:
+  distributive:
+    description: "Fixed pie - one party's gain is other's loss"
+    examples: ["Price negotiation", "Single-issue haggling"]
+    key_dynamic: "Claiming value"
+
+  integrative:
+    description: "Expandable pie - create value together"
+    examples: ["Partnership terms", "Multi-issue deals"]
+    key_dynamic: "Creating and claiming value"
+
+  mixed_motive:
+    description: "Both competitive and cooperative elements"
+    examples: ["Most real negotiations"]
+    key_dynamic: "Balance creation and claiming"
+
+tactics:
+  anchoring:
+    description: "First number influences final outcome"
+    when_to_use: "When you have good information"
+    how:
+      - "Make first offer if well-informed"
+      - "Anchor ambitiously but justifiably"
+      - "Support with rationale"
+    counter:
+      - "Ignore their anchor"
+      - "Re-anchor with your number"
+      - "Call out the anchor"
+
+  framing:
+    description: "How you present affects perception"
+    techniques:
+      gain_frame: "Emphasize what they gain"
+      loss_frame: "Emphasize what they lose without deal"
+      fairness_frame: "Appeal to objective standards"
+
+  logrolling:
+    description: "Trade low-priority for high-priority items"
+    process:
+      - "Identify items you value differently"
+      - "Propose trades"
+      - "Both parties gain"
+    example: "I'll give on price if you give on timeline"
+
+  expanding_the_pie:
+    description: "Add issues to create value"
+    techniques:
+      - "Add issues where interests align"
+      - "Include contingent terms"
+      - "Add future opportunities"
+    example: "Include volume discount option"
+
+  objective_criteria:
+    description: "Use external standards"
+    types:
+      - "Market rates"
+      - "Industry standards"
+      - "Precedent"
+      - "Expert opinion"
+      - "Legal standards"
+    benefit: "Depersonalizes the negotiation"
+
+  conditional_concessions:
+    description: "Trade, don't give away"
+    format: "If you can do X, then I can do Y"
+    benefit: "Maintains leverage, signals flexibility"
+
+  strategic_silence:
+    description: "Pause after important points"
+    when: "After making offer, asking question"
+    benefit: "Creates pressure, reveals information"
+
+difficult_situations:
+  hardball_tactics:
+    types:
+      - "Good cop/bad cop"
+      - "Lowballing then escalating"
+      - "Take it or leave it"
+      - "Extreme anchors"
+    responses:
+      - "Name the tactic"
+      - "Refocus on interests"
+      - "Don't reciprocate"
+      - "Be willing to walk away"
+
+  emotional_counterparts:
+    approach:
+      - "Acknowledge emotions"
+      - "Don't get triggered"
+      - "Take breaks if needed"
+      - "Focus on problem, not person"
+
+  power_imbalance:
+    if_weaker:
+      - "Strengthen your BATNA"
+      - "Use objective criteria"
+      - "Build coalitions"
+      - "Appeal to their interests"
+    if_stronger:
+      - "Use power wisely"
+      - "Leave something on table"
+      - "Consider relationship"
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - BATNA is honestly assessed (not inflated or ignored)
+  - Interests are distinguished from positions (asking "why" behind wants)
+  - Reservation point is set before negotiation (not moved during)
+  - Objective criteria identified and used (not just power-based)
+  - Concessions are conditional (traded, not given away)
+  - Agreement is documented in writing
+  - Both parties' interests are addressed (not just yours)
+
+failure_modes:
+  - mode: Inadequate preparation
+    symptom: Making concessions without knowing your limits, surprised by their arguments
+    resolution: Complete full preparation worksheet before any negotiation conversation
+
+  - mode: Positional bargaining
+    symptom: Stuck arguing positions ("I want X" / "I want Y") without progress
+    resolution: Ask "why" to uncover underlying interests, look for creative solutions
+
+  - mode: Overestimating your BATNA
+    symptom: Walking away from deals better than your actual alternative
+    resolution: Honestly evaluate BATNA before negotiation, test it if possible
+
+  - mode: Emotional hijacking
+    symptom: Making decisions based on anger, fear, or pride rather than interests
+    resolution: Take breaks when emotional, separate people from problem
+
+  - mode: Winner's curse
+    symptom: They accepted your first offer immediately (you could have done better)
+    resolution: Always start with ambitious but justifiable opening, anchor appropriately
+
+  - mode: Leaving value on the table
+    symptom: Single-issue focus when multiple issues could create trades
+    resolution: Expand issues, look for different valuations to enable logrolling
+
+  - mode: Agreement without documentation
+    symptom: Different understandings of what was agreed emerge later
+    resolution: Always document agreements in writing, confirm mutual understanding
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Salary negotiation for new job offer
+    context: Received job offer at $95,000, believe market rate is higher based on research
+    inputs:
+      negotiation_context: "Salary negotiation for Senior Developer position"
+      your_interests:
+        - "Compensation reflecting market value"
+        - "Career growth opportunity"
+        - "Work-life balance"
+        - "Interesting technical challenges"
+      their_likely_interests:
+        - "Fill critical role quickly"
+        - "Stay within budget"
+        - "Hire someone who will stay"
+        - "Get strong technical skills"
+      your_batna: "Current job at $88,000 with good work-life balance"
+      constraints:
+        - "Need decision within 1 week"
+        - "Must be at least $95,000 to consider move"
+    process: |
+      Step 1 - Research:
+      - Market data shows Senior Developer: $100-120k in this market
+      - Company recently raised funding, likely has budget
+      - Glassdoor shows similar roles at company: $105-115k
+      - Hiring manager mentioned urgency to fill role
+
+      Step 2 - Define position:
+      - Interests: Fair pay, growth, interesting work, flexibility
+      - BATNA: Stay at current job ($88k, but comfortable)
+      - Reservation: $98k (enough to justify switching costs)
+      - Aspiration: $115k + signing bonus
+      - Opening: $118k (justified by market data + my experience)
+
+      Step 3 - Analyze counterpart:
+      - Their interest: Fill role quickly with strong candidate
+      - Their BATNA: Continue searching (costly delay)
+      - Their constraint: Likely salary band, need approval for exceptions
+      - Shared interest: Long-term fit, not just filling seat
+
+      Step 4 - Strategy:
+      - They made first offer, so I counter with justified higher number
+      - Emphasize total compensation (base, bonus, equity, benefits)
+      - Prepare to trade on non-salary items if base is capped
+      - Questions: "What's the typical career path?" "How are raises determined?"
+
+      Step 5 - Negotiation:
+      - "Thank you for the offer. I'm excited about this opportunity."
+      - "Based on my research and experience, I was expecting something closer to $115-118k."
+      - "I've seen market data showing this range for similar roles, and I bring X, Y, Z experience."
+      - Listen to their response, ask about total compensation
+      - If base capped: "If the base is constrained, could we discuss a signing bonus or accelerated review?"
+
+      Step 6 - Close:
+      - Agreed: $108k base + $5k signing bonus + early review at 6 months
+      - Documented in revised offer letter
+      - Start date confirmed
+    expected_output:
+      negotiated_agreement:
+        base_salary: "$108,000"
+        signing_bonus: "$5,000"
+        review_timeline: "6 months instead of 12"
+        total_first_year: "$113,000"
+      outcome_vs_targets:
+        vs_aspiration: "93% of target achieved"
+        vs_reservation: "Well above reservation point"
+      key_learnings:
+        - "Non-salary items provided flexibility when base was constrained"
+        - "Market data was persuasive to hiring manager"
+
+  - name: Vendor contract renewal with price increase
+    context: Key software vendor requesting 25% price increase at renewal
+    inputs:
+      negotiation_context: "Annual SaaS contract renewal, vendor requesting price increase"
+      your_interests:
+        - "Control costs within budget"
+        - "Maintain service continuity"
+        - "Get value for spend"
+        - "Avoid painful migration"
+      their_likely_interests:
+        - "Increase revenue per customer"
+        - "Retain customer"
+        - "Lock in multi-year deal"
+        - "Maintain good reference"
+      your_batna: "Competitor product (6-month migration, $20k switching cost)"
+      constraints:
+        - "Budget allows max 10% increase"
+        - "Contract expires in 30 days"
+        - "200 users dependent on system"
+      relationship_importance: "ongoing"
+    process: |
+      Step 1 - Research:
+      - Competitor pricing gathered: 15% less than current vendor
+      - Industry standard increase: 3-5% annually
+      - Vendor's churn rate is high, they value retention
+      - Our usage has grown 40%, we're now larger customer
+
+      Step 2 - Define position:
+      - Interests: Cost control, continuity, value
+      - BATNA: Migrate to competitor (painful but doable)
+      - Reservation: 10% increase maximum
+      - Aspiration: 5% increase with added features
+      - Opening: Request 0% increase given our growth
+
+      Step 3 - Analyze counterpart:
+      - Their interest: Revenue, but also retention
+      - Their BATNA: Find new customer (expensive)
+      - Their constraint: Sales quota, pricing guidelines
+      - Shared interest: Long-term partnership, reference value
+
+      Step 4 - Strategy:
+      - Don't accept first ask, counter with data
+      - Offer multi-year in exchange for price lock
+      - Request additional features/support to justify any increase
+      - Mention competitor evaluation (credible alternative)
+
+      Step 5 - Negotiation:
+      - "We've been happy with the product, but 25% increase is above market."
+      - "Industry standard is 3-5%, and we've actually evaluated alternatives."
+      - "Given our growth, we'd expect to be treated as a valued customer."
+      - "What can you do to keep this partnership strong?"
+      - If they hold: "We could consider a 2-year commitment if that helps justify better pricing."
+
+      Step 6 - Close:
+      - Agreed: 8% increase Year 1, 5% Year 2, premium support included
+      - 2-year agreement with 30-day notice termination clause
+      - Documented in contract amendment
+    expected_output:
+      negotiated_agreement:
+        year_1_increase: "8% (vs 25% requested)"
+        year_2_increase: "5%"
+        term: "2 years"
+        added_value: "Premium support tier included"
+        protection: "30-day termination clause"
+      outcome_vs_targets:
+        vs_aspiration: "Close to target with added support value"
+        vs_reservation: "Within 10% budget constraint"
+        value_created: "Multi-year for price stability trade benefited both"
+      key_learnings:
+        - "Credible BATNA (competitor evaluation) created leverage"
+        - "Multi-year commitment was valuable currency for them"
+        - "Asking 'what can you do' invited creative solutions"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - When strategy requires reaching agreement with external parties
+    - During execution phase for vendor/partner negotiations
+    - When goals require resources controlled by others
+    - For conflict resolution within teams or organizations
+    - When pivoting strategy requires renegotiating existing commitments
+
+  gates:
+    - gate: preparation_complete
+      question: "Do I have a clear BATNA, reservation point, and opening position?"
+
+    - gate: interests_understood
+      question: "Have I identified underlying interests for both parties?"
+
+    - gate: strategy_defined
+      question: "Do I have a clear approach for creating and claiming value?"
+
+    - gate: agreement_documented
+      question: "Is the agreement written and confirmed by both parties?"
+
+  related_procedures:
+    - persuasive_writing: For written proposals that support negotiations
+    - stakeholder_analysis: Understanding negotiation counterparts
+    - decision_making: Evaluating whether to accept negotiated terms
+    - conflict_resolution: When negotiation is part of dispute resolution
+    - communication_planning: Planning how to communicate during negotiation

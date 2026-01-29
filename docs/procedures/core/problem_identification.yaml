@@ -1,0 +1,307 @@
+# Problem Identification Procedure
+# Finding the RIGHT problem at the RIGHT level
+
+id: problem_identification
+name: Problem Identification
+version: "1.0.0"
+domain: core
+tags: ["meta", "analysis", "strategy", "fundamental"]
+
+description: |
+  Before solving, identify:
+  - Is this the RIGHT problem? (not the obvious one)
+  - At the RIGHT level? (not too surface, not too abstract)
+  - At the RIGHT time? (now vs later vs never)
+  - In the RIGHT order? (dependencies, prerequisites)
+  - With RIGHT prioritization? (effort/impact)
+
+  ARAW is a tool for problem identification:
+  - ASSUME RIGHT: This IS the problem → what follows?
+  - ASSUME WRONG: This ISN'T the real problem → what is?
+
+core_principle: |
+  The obvious problem is often not the real problem.
+  The real problem is often:
+  - One level upstream (what caused this symptom?)
+  - One level downstream (why does this symptom matter?)
+  - In a different domain (system issue, not local issue)
+  - Not actually a problem (assumption we haven't questioned)
+
+# ============================================
+# PROBLEM LEVELS
+# ============================================
+problem_levels:
+  - level: SYMPTOM
+    description: "Observable effect that something is wrong"
+    example: "The code is slow"
+    question: "What's causing this symptom?"
+    action: "Don't solve at this level - find cause"
+
+  - level: PROXIMATE_CAUSE
+    description: "Immediate cause of the symptom"
+    example: "There's an O(n²) loop"
+    question: "Why does this exist? Is fixing it enough?"
+    action: "May solve here if cause is local and fixable"
+
+  - level: ROOT_CAUSE
+    description: "Fundamental reason the proximate cause exists"
+    example: "No performance testing in CI"
+    question: "Is this the deepest useful level?"
+    action: "Often the right level to solve"
+
+  - level: SYSTEMIC_CAUSE
+    description: "System/process that allows root causes to persist"
+    example: "Culture doesn't value performance"
+    question: "Can we change the system? Is it worth it?"
+    action: "High leverage but high effort"
+
+  - level: ASSUMPTION
+    description: "Belief we hold that shapes what we see as problems"
+    example: "We assume this code needs to be fast"
+    question: "Is this assumption valid?"
+    action: "Questioning here can dissolve the 'problem'"
+
+# ============================================
+# RIGHT PROBLEM IDENTIFICATION
+# ============================================
+right_problem_questions:
+
+  - id: obvious_vs_real
+    question: "Is the obvious problem the real problem?"
+    method: |
+      1. State the obvious problem
+      2. Ask: "Why is this a problem?" (go upstream)
+      3. Ask: "What would happen if we didn't solve this?" (test if it matters)
+      4. Ask: "What else could explain the symptom?" (alternative causes)
+    output: real_problem_candidate
+
+  - id: level_check
+    question: "Are we at the right level?"
+    method: |
+      1. Can we solve at this level? (Is it actionable?)
+      2. Would solving at this level actually fix it? (Or would it recur?)
+      3. Is there a higher-leverage level? (System vs instance?)
+      4. Is there a lower level we're missing? (Are we too abstract?)
+    output: correct_level
+
+  - id: problem_vs_symptom
+    question: "Is this a problem or a symptom?"
+    test: |
+      If you fixed this, would the underlying issue persist?
+      YES → This is a symptom, keep looking
+      NO → This might be the problem
+    output: problem_type
+
+  - id: problem_vs_preference
+    question: "Is this a problem or a preference?"
+    test: |
+      Is there actual harm/waste/failure?
+      Or do we just wish it were different?
+      Preferences are valid but lower priority than problems.
+    output: problem_or_preference
+
+  - id: whose_problem
+    question: "Whose problem is this actually?"
+    test: |
+      Who experiences the negative effects?
+      Who has the power to solve it?
+      Who should own solving it?
+    output: problem_owner
+
+# ============================================
+# RIGHT TIME IDENTIFICATION
+# ============================================
+right_time_questions:
+
+  - id: now_vs_later
+    question: "Should we solve this now?"
+    factors:
+      - urgency: "Is harm increasing over time?"
+      - dependency: "Are other things blocked by this?"
+      - readiness: "Do we have what we need to solve it?"
+      - opportunity: "Is there a window that will close?"
+    output: timing_recommendation
+
+  - id: premature_optimization
+    question: "Are we solving a problem that doesn't exist yet?"
+    test: |
+      Is this problem ACTUAL (happening now)?
+      Or ANTICIPATED (might happen)?
+      Or IMAGINED (we think it might maybe happen)?
+    output: problem_actuality
+
+  - id: will_it_matter
+    question: "Will this still be a problem if we wait?"
+    test: |
+      Some problems resolve themselves.
+      Some problems need to get worse before they can be solved.
+      Some problems have windows that close.
+    output: waiting_assessment
+
+# ============================================
+# RIGHT ORDER IDENTIFICATION
+# ============================================
+right_order_questions:
+
+  - id: dependencies
+    question: "What must be solved first?"
+    method: |
+      1. List all related problems
+      2. For each pair: does solving A require solving B first?
+      3. Build dependency graph
+      4. Find problems with no unsolved dependencies
+    output: solvable_now
+
+  - id: unlocks
+    question: "What does solving this unlock?"
+    method: |
+      1. If this problem is solved, what becomes possible?
+      2. What other problems become solvable?
+      3. What opportunities open up?
+    output: downstream_value
+
+  - id: learning_order
+    question: "What do we need to learn before solving?"
+    method: |
+      1. What information would change how we solve this?
+      2. Can we get that information cheaply?
+      3. Should we learn first, then solve?
+    output: learning_prerequisites
+
+# ============================================
+# RIGHT PRIORITIZATION
+# ============================================
+right_prioritization:
+
+  - id: effort_impact
+    question: "What's the effort/impact ratio?"
+    matrix: |
+      LOW effort + HIGH impact → DO FIRST
+      HIGH effort + HIGH impact → DO SECOND
+      LOW effort + LOW impact → MAYBE
+      HIGH effort + LOW impact → AVOID
+    output: priority_quadrant
+
+  - id: reversibility
+    question: "How reversible is solving this?"
+    factors:
+      - reversible: "Easy to undo, low risk to try"
+      - irreversible: "Hard to undo, high risk, need more certainty"
+    output: risk_tolerance
+
+  - id: compounding
+    question: "Does this problem compound over time?"
+    test: |
+      Is the cost of this problem increasing?
+      Is it getting harder to solve?
+      Early problems in compounding chains should be prioritized.
+    output: compounding_flag
+
+# ============================================
+# ARAW CONNECTION
+# ============================================
+araw_for_problem_identification:
+  description: |
+    ARAW is naturally suited for problem identification because
+    assume right / assume wrong explores both:
+    - What if this IS the problem? (consequences, solutions)
+    - What if this ISN'T the problem? (alternatives, root causes)
+
+  usage:
+    find_real_problem: |
+      Seed: "[Obvious problem statement]"
+      ASSUME RIGHT: This is the real problem → explore solutions
+      ASSUME WRONG: This isn't the real problem → what else could it be?
+
+      The ASSUME WRONG branches identify alternative framings.
+      The highest-leverage branch is likely closest to the real problem.
+
+    find_right_level: |
+      Seed: "[Problem at current level]"
+      ASSUME RIGHT: This is the right level → solve here
+      ASSUME WRONG: This isn't the right level → what level should it be?
+
+      Branches reveal upstream (root) and downstream (why it matters) levels.
+
+    validate_problem_exists: |
+      Seed: "[Claimed problem]"
+      ASSUME RIGHT: This problem exists → explore impact
+      ASSUME WRONG: This problem doesn't actually exist → what's really happening?
+
+      If ASSUME WRONG branches are more compelling, the problem may be imagined.
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+steps:
+  - id: 1
+    name: "State the obvious problem"
+    action: "Write down what seems to be the problem, without filtering"
+
+  - id: 2
+    name: "Question the framing"
+    action: |
+      Apply ARAW: ASSUME WRONG that this is the real problem
+      What alternative framings exist?
+      What's upstream of this symptom?
+
+  - id: 3
+    name: "Identify the level"
+    action: |
+      Is this symptom, proximate cause, root cause, systemic, or assumption?
+      What level should we solve at?
+
+  - id: 4
+    name: "Verify problem is actual"
+    action: |
+      Is this ACTUAL (happening now)?
+      Or ANTICIPATED (will happen if...)?
+      Or IMAGINED (might maybe happen)?
+
+  - id: 5
+    name: "Check timing"
+    action: |
+      Should we solve now, later, or never?
+      What's the cost of waiting?
+      Are we ready to solve it?
+
+  - id: 6
+    name: "Check order"
+    action: |
+      What must be solved first?
+      What does solving this unlock?
+      Are there dependencies?
+
+  - id: 7
+    name: "Prioritize"
+    action: |
+      What's the effort/impact?
+      Is this compounding?
+      What's the risk tolerance?
+
+  - id: 8
+    name: "Decide"
+    action: |
+      SOLVE NOW: Right problem, right level, right time, high priority
+      DEFER: Right problem, wrong time or blocked by dependencies
+      REFRAME: Wrong problem or wrong level, go back to step 1
+      DROP: Not actually a problem, or too low priority
+
+# ============================================
+# OUTPUTS
+# ============================================
+outputs:
+  - name: problem_statement
+    description: "The validated, correctly-framed problem"
+
+  - name: problem_level
+    description: "Which level we're solving at and why"
+
+  - name: timing_decision
+    description: "Now, later, or never, with reasoning"
+
+  - name: priority_ranking
+    description: "Where this ranks against other problems"
+
+  - name: action_decision
+    description: "SOLVE NOW / DEFER / REFRAME / DROP"

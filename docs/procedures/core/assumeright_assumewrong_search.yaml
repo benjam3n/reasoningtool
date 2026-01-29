@@ -1,0 +1,480 @@
+# Assume Right Assume Wrong Search
+# A recursive branching search strategy for exploring possibility space
+# Core innovation: For every claim, explore both "what if right" and "what if wrong"
+
+id: assumeright_assumewrong_search
+name: Assume Right Assume Wrong Search
+version: "1.0.0"
+domain: core
+
+description: |
+  A recursive search strategy that explores possibility space by branching
+  on every claim's validity. For each claim/guess, the system explores:
+
+  - ASSUME RIGHT: Treat claim as closed (true, no alternatives), explore that world
+  - ASSUME WRONG: Treat claim as open (false, has alternatives), explore alternatives
+
+  This is applied recursively at every level, even to "foundations" that seem certain.
+  The result is a complete map of possibility space.
+
+purpose: |
+  - Find alternatives that weren't visible
+  - Uncover hidden assumptions at every level
+  - Identify high-leverage points (assumptions that change everything if wrong)
+  - Ensure no possibility is missed
+  - Generate options the user didn't know they had
+
+when_to_use: |
+  - When processing any user input (goals, problems, questions, decisions)
+  - When a situation seems to have "only one option"
+  - When you want to stress-test assumptions
+  - When exploring what could be different
+
+# ============================================
+# THE CORE MECHANISM
+# ============================================
+
+core_mechanism:
+  description: |
+    For every claim, create two branches:
+
+    CLAIM: "X is true"
+    ├── ASSUME RIGHT: X is true (closed, no alternatives)
+    │   └── Explore: What follows from X being true?
+    │
+    └── ASSUME WRONG: X is false/uncertain (open, has alternatives)
+        └── Explore: What alternatives to X exist?
+
+    Then RECURSE on each branch, applying the same split.
+
+  the_split:
+    assume_right:
+      meaning: "This claim is CLOSED - no alternatives exist"
+      action: "Accept and explore what follows"
+      question: "Given this is true, what's next?"
+
+    assume_wrong:
+      meaning: "This claim is OPEN - alternatives exist"
+      action: "Find alternatives, explore each"
+      question: "What if this isn't true? What else could be?"
+
+  recursion: |
+    Even "foundations" can be split:
+
+    Level 0: "Doctor diagnosed condition X"
+    ├── ASSUME RIGHT: Diagnosis is correct
+    │   └── Explore treatment options
+    └── ASSUME WRONG: Diagnosis might be incorrect
+        ├── Level 1: "Doctor's certainty"
+        │   ├── ASSUME RIGHT: Doctor was certain
+        │   └── ASSUME WRONG: Doctor was guessing
+        │       ├── Level 2: "Doctor's competence"
+        │       │   ├── ASSUME RIGHT: Doctor is competent
+        │       │   └── ASSUME WRONG: Doctor might not be competent
+        │       │       ├── Level 3: "Doctor's training"
+        │       │       │   ├── ASSUME RIGHT: Training was good
+        │       │       │   └── ASSUME WRONG: Training was inadequate
+        │       │       │       └── Level 4: "Training institution"
+        │       │       │           └── ... continues ...
+
+# ============================================
+# THE PROCESS
+# ============================================
+
+process:
+  step_1_parse:
+    name: "Parse Input into Claims"
+    action: |
+      Take user input and identify all claims (explicit and implicit).
+      Each claim is a candidate for the ASSUME RIGHT / ASSUME WRONG split.
+
+    example:
+      input: "I need $50k in 6 months for mom's surgery"
+      claims:
+        - "Mom needs surgery"
+        - "Surgery costs $50k"
+        - "Timeline is 6 months"
+        - "I need to be the one to provide the money"
+        - "Making money is the way to get $50k"
+        - implicit: "Surgery is the only treatment option"
+        - implicit: "This hospital is the only option"
+        - implicit: "Doctor's diagnosis is correct"
+
+  step_2_branch:
+    name: "Create Branches for Each Claim"
+    action: |
+      For each claim, create the ASSUME RIGHT and ASSUME WRONG branches.
+
+    example:
+      claim: "Mom needs surgery"
+      branches:
+        assume_right:
+          description: "Surgery is necessary"
+          explore: "How to fund/execute surgery"
+        assume_wrong:
+          description: "Surgery might not be necessary"
+          alternatives:
+            - "Other treatments exist"
+            - "Condition might resolve"
+            - "Diagnosis might be wrong"
+            - "Different procedure might work"
+
+  step_3_recurse:
+    name: "Recurse on Each Branch"
+    action: |
+      For each branch, identify new claims and apply the split again.
+      Continue until hitting termination conditions.
+
+    example:
+      branch: "Diagnosis might be wrong"
+      new_claims:
+        - "Doctor made the diagnosis"
+        - "Doctor used standard tests"
+        - "Tests are accurate"
+      each_claim_splits:
+        - '"Doctor made diagnosis" → ASSUME RIGHT / ASSUME WRONG'
+        - '"Doctor used standard tests" → ASSUME RIGHT / ASSUME WRONG'
+        - '"Tests are accurate" → ASSUME RIGHT / ASSUME WRONG'
+
+  step_4_map:
+    name: "Build Possibility Tree"
+    action: |
+      Collect all branches into a tree structure.
+      Track which paths have been explored.
+      Identify high-leverage nodes (where ASSUME WRONG changes everything).
+
+  step_5_filter:
+    name: "Filter by User Context"
+    action: |
+      Not all branches are relevant to all users.
+      Filter based on:
+      - What can this user act on?
+      - What would help vs. overwhelm?
+      - What's the user's role/expertise?
+
+    example:
+      user_is_patient:
+        show: "Funding options, hospital choices, timeline flexibility"
+        hide: "Questioning diagnosis validity (not their expertise)"
+      user_is_doctor:
+        show: "Treatment alternatives, diagnostic certainty"
+        hide: "Funding details (not their domain)"
+
+  step_6_synthesize:
+    name: "Synthesize Findings"
+    action: |
+      Combine insights from explored branches:
+      - What alternatives were discovered?
+      - What assumptions are high-leverage?
+      - What questions should be asked?
+      - What options does the user now have?
+
+# ============================================
+# TERMINATION CONDITIONS
+# ============================================
+
+termination:
+  description: |
+    The recursion must stop somewhere. Termination conditions:
+
+  conditions:
+    true_foundation:
+      description: "Claim that cannot productively be questioned further"
+      examples:
+        - '"User stated they want X" (their preference is foundational)'
+        - '"Document exists showing Y" (physical evidence)'
+        - '"Law of physics Z" (cannot be assumed wrong)'
+      note: "Even these CAN be questioned, but returns diminish"
+
+    depth_limit:
+      description: "Maximum recursion depth reached"
+      default: 5
+      note: "Configurable based on context"
+
+    diminishing_returns:
+      description: "Further branching unlikely to change outcomes"
+      heuristic: "If ASSUME WRONG leads to same action as ASSUME RIGHT, stop"
+
+    practical_irrelevance:
+      description: "Branch doesn't affect what user can do"
+      example: "Questioning medical training quality doesn't help patient decide"
+
+    circular_reference:
+      description: "Branch loops back to earlier claim"
+      action: "Mark as circular, don't re-explore"
+
+# ============================================
+# HANDLING COMBINATORIAL EXPLOSION
+# ============================================
+
+combinatorial_explosion:
+  problem: |
+    With N claims and 2 branches each, the tree has 2^N leaves.
+    10 claims = 1024 branches. 20 claims = 1 million branches.
+
+  solutions:
+    prioritization:
+      description: "Explore high-leverage branches first"
+      method: |
+        Score each claim by: "If this is wrong, how much does it change?"
+        Explore highest-impact claims first.
+
+    pruning:
+      description: "Cut branches that don't matter"
+      method: |
+        If ASSUME RIGHT and ASSUME WRONG lead to same action → prune
+        If branch is outside user's control → prune (but note it)
+        If branch has been explored before → reference, don't re-explore
+
+    lazy_evaluation:
+      description: "Don't explore until needed"
+      method: |
+        Generate branch structure but don't fully explore all paths.
+        Explore on-demand when user asks or when relevant.
+
+    parallel_exploration:
+      description: "Explore multiple branches simultaneously"
+      method: |
+        If resources allow, explore branches in parallel.
+        Combine findings at synthesis step.
+
+    depth_limiting:
+      description: "Cap recursion depth"
+      method: |
+        Default depth limit of 5 levels.
+        Can be increased for critical decisions.
+
+# ============================================
+# INTEGRATION WITH GOSM
+# ============================================
+
+integration:
+  with_quickstart:
+    description: "ARAW Search is the engine behind Step 1 input processing"
+    flow: |
+      1. User provides input
+      2. Parse into claims
+      3. Run ARAW Search on each claim
+      4. Filter results by user context
+      5. Present relevant alternatives and questions
+
+  with_goal_journey:
+    description: "Each step in goal journey can be ARAW searched"
+    flow: |
+      Goal Journey: Action → Goal → Goal → Intrinsic
+
+      For each step:
+      - ASSUME RIGHT: This step is correct
+      - ASSUME WRONG: This step might be wrong
+        - Are there alternative actions?
+        - Are there alternative goals?
+        - Is the connection between steps valid?
+
+  with_failure_detection:
+    description: "ARAW Search can reveal failure patterns"
+    flow: |
+      Claim: "I want to achieve X"
+      ASSUME RIGHT: User wants X → proceed
+      ASSUME WRONG: User might not actually want X
+        → Check for sustainable failure
+        → Check for strategic suboptimization
+        → Maybe the goal IS the failure
+
+  with_value_elicitation:
+    description: "ARAW Search applies to intrinsic goals too"
+    flow: |
+      Claim: "My intrinsic goal is Freedom"
+      ASSUME RIGHT: Freedom is the terminus → plan for freedom
+      ASSUME WRONG: Freedom might not be the real terminus
+        → Did value elicitation go deep enough?
+        → Are there conflicting intrinsic goals?
+        → Is "freedom" actually serving something else?
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1_surgery:
+    input: "I need $50k in 6 months for mom's surgery"
+
+    araw_tree: |
+      ROOT: "I need $50k in 6 months for mom's surgery"
+      │
+      ├── Claim: "Mom needs surgery"
+      │   ├── ASSUME RIGHT → Explore funding options
+      │   └── ASSUME WRONG → What alternatives to surgery?
+      │       ├── Other treatments?
+      │       ├── Different diagnosis?
+      │       └── Different provider/approach?
+      │
+      ├── Claim: "$50k is the cost"
+      │   ├── ASSUME RIGHT → Need to acquire $50k
+      │   └── ASSUME WRONG → Cost might be different
+      │       ├── Other hospitals cheaper?
+      │       ├── Insurance coverage?
+      │       ├── Payment plans?
+      │       └── Medical tourism?
+      │
+      ├── Claim: "6 months is the timeline"
+      │   ├── ASSUME RIGHT → Must act within 6 months
+      │   └── ASSUME WRONG → Timeline might flex
+      │       ├── Can it be sooner? (condition worsening)
+      │       ├── Can it be later? (more time to prepare)
+      │       └── What determines the timeline?
+      │
+      ├── Claim: "I must provide the money"
+      │   ├── ASSUME RIGHT → I need to earn/acquire $50k
+      │   └── ASSUME WRONG → Others might contribute
+      │       ├── Family members?
+      │       ├── Insurance?
+      │       ├── Assistance programs?
+      │       ├── Crowdfunding?
+      │       └── Hospital financial aid?
+      │
+      └── Claim: "Making money is the solution"
+          ├── ASSUME RIGHT → Explore income options
+          └── ASSUME WRONG → Other ways to get $50k
+              ├── Borrow?
+              ├── Sell assets?
+              ├── Reduce cost instead?
+              └── Combination approach?
+
+    high_leverage_findings:
+      - '"Surgery" assumed as only option - alternatives may exist'
+      - '"$50k" assumed as fixed - negotiable'
+      - '"I must provide" - others can help'
+      - '"Making money" - many paths to $50k'
+
+  example_2_quit_job:
+    input: "I want to quit my job"
+
+    araw_tree: |
+      ROOT: "I want to quit my job"
+      │
+      ├── Claim: "I want to quit"
+      │   ├── ASSUME RIGHT → Explore what's next
+      │   │   ├── What job do you want?
+      │   │   ├── What characteristics matter?
+      │   │   ├── Timeline and runway?
+      │   │   └── Options: new field, same field, freelance, break
+      │   │
+      │   └── ASSUME WRONG → Maybe quitting isn't the goal
+      │       ├── What specifically is bad?
+      │       ├── Could it be fixed without quitting?
+      │       ├── Is it the job, role, boss, company, or field?
+      │       └── What would make you want to stay?
+      │
+      ├── Claim: "This job is the problem"
+      │   ├── ASSUME RIGHT → Job is the issue
+      │   └── ASSUME WRONG → Problem might be elsewhere
+      │       ├── Is it you, not the job?
+      │       ├── Would any job have this issue?
+      │       ├── Is it life circumstances, not work?
+      │       └── Is it a temporary phase?
+      │
+      └── Claim: "Quitting solves the problem"
+          ├── ASSUME RIGHT → Quitting will help
+          └── ASSUME WRONG → Quitting might not solve it
+              ├── Will you recreate the same situation?
+              ├── Is the problem portable?
+              ├── What specifically does quitting solve?
+              └── What new problems does quitting create?
+
+    high_leverage_findings:
+      - '"Quitting" assumed as solution - might not solve real problem'
+      - '"Job is the problem" - might be something else'
+      - '"Want to quit" - might actually want something else (recognition, growth, change)'
+
+  example_3_something_feels_off:
+    input: "Something feels off"
+
+    araw_tree: |
+      ROOT: "Something feels off"
+      │
+      ├── Claim: "Something is actually wrong"
+      │   ├── ASSUME RIGHT → Identify what's wrong
+      │   │   ├── What domain? Work, relationship, health, direction?
+      │   │   ├── What triggered the feeling?
+      │   │   ├── What would "right" feel like?
+      │   │   └── Explore each domain systematically
+      │   │
+      │   └── ASSUME WRONG → Maybe nothing is wrong
+      │       ├── Is this anxiety without cause?
+      │       ├── Is this a temporary mood?
+      │       ├── Is this comparison to others?
+      │       └── Is this unrealistic expectations?
+      │
+      ├── Claim: "The feeling is accurate signal"
+      │   ├── ASSUME RIGHT → Trust the feeling, investigate
+      │   └── ASSUME WRONG → Feeling might be misleading
+      │       ├── Past trauma creating false alarms?
+      │       ├── Cognitive distortion?
+      │       ├── Physical cause (sleep, diet, health)?
+      │       └── Environmental factors?
+      │
+      └── Claim: "I should fix this"
+          ├── ASSUME RIGHT → Take action to address
+          └── ASSUME WRONG → Maybe don't need to fix
+              ├── Will it resolve on its own?
+              ├── Is acceptance the answer?
+              ├── Is it growing pains (good discomfort)?
+              └── Is investigation itself the answer?
+
+    high_leverage_findings:
+      - '"Something is wrong" - might be unfounded anxiety'
+      - '"Feeling is accurate" - might be misleading'
+      - '"Should fix" - might not need fixing'
+
+# ============================================
+# OUTPUT FORMAT
+# ============================================
+
+output_format:
+  tree_structure:
+    description: "Full possibility tree"
+    use: "Internal processing, complete mapping"
+
+  high_leverage_summary:
+    description: "Claims where ASSUME WRONG changes everything"
+    use: "Focus user attention on what matters"
+
+  filtered_questions:
+    description: "Questions for user, filtered by context"
+    use: "Presented to user for confirmation/correction"
+
+  discovered_alternatives:
+    description: "Options user didn't know they had"
+    use: "Expand user's choice set"
+
+  action_recommendations:
+    description: "Suggested next steps based on exploration"
+    use: "Guide user toward action"
+
+# ============================================
+# SELF-VALIDATION
+# ============================================
+
+self_validation:
+  goal_journey:
+    action: "Create Assume Right Assume Wrong Search procedure"
+    serves: "Enable systematic exploration of possibility space"
+    serves: "Find alternatives users didn't know existed"
+    serves: "Uncover hidden assumptions at every level"
+    serves: "Make GOSM more effective at serving actual goals"
+    intrinsic: "Understanding / Effectiveness"
+
+  applying_araw_to_itself:
+    claim: "ARAW Search is a good approach"
+    assume_right: "Use it, develop it, integrate it"
+    assume_wrong: "What are alternatives to ARAW?"
+    alternatives:
+      - "Linear questioning (less complete)"
+      - "Random exploration (less systematic)"
+      - "Expert intuition (less transparent)"
+      - "Single-path analysis (misses alternatives)"
+    finding: "ARAW is more complete than alternatives"
+
+  chain_is_clear: true
+  each_step_serves_next: true
+  satisfying: true

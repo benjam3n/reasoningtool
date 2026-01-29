@@ -1,0 +1,556 @@
+# Procedure Discovery - Find or create needed procedures
+# Core meta-procedure for identifying and creating operational procedures
+
+id: procedure_discovery
+name: Procedure Discovery
+version: "1.0.0"
+domain: meta
+
+description: Find or create the procedures needed to execute a plan
+
+long_description: |
+  The Procedure Discovery procedure finds or designs the procedures needed
+  to execute a strategy or plan. It bridges the gap between high-level strategy
+  and concrete execution by ensuring all necessary operations have defined,
+  repeatable procedures.
+
+  Discovery approaches (in order of preference):
+  1. Direct Match: Existing procedure for the exact operation needed
+  2. Composition Match: Combine existing procedures to achieve the operation
+  3. Adaptation Match: Adapt a similar procedure from the same domain
+  4. Cross-Domain Transfer: Port a procedure from another domain
+  5. Synthesis: Design a new procedure from scratch using first principles
+
+  This procedure is foundational to GOSM's self-improvement capability. By
+  systematically identifying procedure gaps, the system can prioritize which
+  new procedures to develop, maintain procedure library coverage, and ensure
+  execution plans are actually executable.
+
+  The output includes a coverage analysis showing which operations are covered,
+  which require new procedures, and the effort required to fill gaps.
+
+tags:
+  - procedure
+  - discovery
+  - meta
+  - planning
+  - library
+  - operations
+  - self_improvement
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Plan requires procedures not currently in the library
+  - Verifying procedure availability before execution begins
+  - Creating new procedures to fill identified gaps
+  - Assessing feasibility of a strategy based on procedure coverage
+  - Periodic library audit to identify coverage gaps
+  - After strategy selection to ensure execution is possible
+  - When an execution step fails due to missing procedure
+  - Onboarding a new domain and building initial procedure set
+
+when_not_to_use:
+  - All required procedures are known to exist
+  - Execution is already underway with working procedures
+  - Goal is exploratory and procedures would be premature
+  - Quick action needed and procedure design would delay
+  - Operation is truly one-time and procedure wouldn't be reused
+  - External system provides the capability (no internal procedure needed)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: required_operations
+    type: list
+    required: true
+    description: Operations needed for the plan (from execution outline)
+
+  - name: available_procedures
+    type: list
+    required: false
+    description: Currently available procedures in the library
+
+  - name: domain
+    type: string
+    required: false
+    description: Primary domain of operations (helps narrow search)
+
+  - name: execution_context
+    type: dict
+    required: false
+    description: Context about how operations will be executed
+
+  - name: quality_requirements
+    type: dict
+    required: false
+    description: Quality, reliability, or performance requirements
+
+  - name: procedure_library_path
+    type: string
+    required: false
+    description: Path to procedure library for searching
+
+outputs:
+  - name: operation_coverage
+    type: list
+    description: How each operation is covered (matched, composed, needs_creation)
+
+  - name: matched_procedures
+    type: list
+    description: Existing procedures that directly match operations
+
+  - name: composed_procedures
+    type: list
+    description: Procedure compositions that cover operations
+
+  - name: new_procedures_needed
+    type: list
+    description: Specifications for new procedures that need creation
+
+  - name: coverage_summary
+    type: dict
+    description: Summary statistics of coverage status
+
+  - name: creation_priority
+    type: list
+    description: Prioritized list of procedures to create
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Catalog required operations
+    action: |
+      Analyze each operation from the plan to understand what's needed:
+
+      For each operation:
+      1. What is the operation's purpose?
+      2. What are the inputs and expected outputs?
+      3. What level of reliability is required?
+      4. How frequently will this be performed?
+      5. Are there variations or edge cases?
+
+      Categorize operations:
+      - Core: Essential for plan success
+      - Supporting: Helps but not critical
+      - Contingency: Only needed if something goes wrong
+    inputs:
+      - required_operations
+      - execution_context (optional)
+      - quality_requirements (optional)
+    outputs:
+      - operation_catalog: detailed breakdown of each operation
+      - operation_criticality: categorization by importance
+    verification: |
+      All operations catalogued; criticality assigned; inputs/outputs defined
+
+  - id: 2
+    name: Search for direct matches
+    action: |
+      Search procedure library for exact matches:
+
+      1. For each operation, search by:
+         - Operation name/type
+         - Input/output signature
+         - Domain tags
+         - Use case descriptions
+
+      2. Evaluate match quality:
+         - Perfect match: Procedure does exactly what's needed
+         - Close match: Minor adaptation required
+         - Partial match: Covers part of the operation
+
+      3. Document matches:
+         - Which procedure
+         - Match quality
+         - Any gaps or adaptations needed
+    inputs:
+      - operation_catalog (from Step 1)
+      - available_procedures (optional)
+      - domain (optional)
+      - procedure_library_path (optional)
+    outputs:
+      - direct_matches: operations with existing procedures
+      - close_matches: operations with adaptable procedures
+      - unmatched_operations: operations with no direct match
+    verification: |
+      All operations searched; match quality documented
+
+  - id: 3
+    name: Explore procedure compositions
+    action: |
+      For unmatched operations, explore if combinations of procedures work:
+
+      1. Can the operation be decomposed into smaller steps?
+      2. Do procedures exist for each smaller step?
+      3. Can procedures be chained or composed?
+
+      Composition patterns:
+      - Sequential: A then B then C
+      - Parallel: A and B simultaneously
+      - Conditional: If X then A else B
+      - Loop: Repeat A until condition
+
+      Evaluate compositions:
+      - Does composition achieve the operation's goal?
+      - Are there interface mismatches between procedures?
+      - Is the composition efficient (not overly complex)?
+    inputs:
+      - unmatched_operations (from Step 2)
+      - available_procedures (optional)
+    outputs:
+      - composed_solutions: operations covered by procedure compositions
+      - composition_specs: how to compose procedures for each operation
+      - still_unmatched: operations that can't be composed from existing
+    verification: |
+      Composition attempted for all unmatched; specs are complete
+
+  - id: 4
+    name: Cross-domain transfer analysis
+    action: |
+      For remaining gaps, search for transferable procedures:
+
+      1. What would this operation look like in other domains?
+         - Software engineering
+         - Project management
+         - Manufacturing
+         - Science
+         - Military
+         - Nature/biology
+
+      2. Are there procedures in those domains?
+         - Search library by analogy
+         - Search external sources
+
+      3. How would we adapt them?
+         - What's domain-specific vs universal?
+         - What translation is needed?
+         - What assumptions change?
+    inputs:
+      - still_unmatched (from Step 3)
+      - operation_catalog (from Step 1)
+    outputs:
+      - transferable_procedures: procedures from other domains that could work
+      - adaptation_requirements: what changes are needed
+      - truly_novel: operations with no precedent
+    verification: |
+      Cross-domain search completed; adaptation requirements documented
+
+  - id: 5
+    name: Specify new procedures needed
+    action: |
+      For operations that need new procedures, create specifications:
+
+      For each new procedure:
+      1. Name and description
+      2. Inputs and outputs (detailed)
+      3. Success criteria
+      4. Key steps (high-level)
+      5. Verification approach
+      6. Estimated complexity (simple/moderate/complex)
+      7. Dependencies on other procedures
+      8. Reuse potential (one-time vs widely useful)
+    inputs:
+      - truly_novel (from Step 4)
+      - transferable_procedures (from Step 4)
+      - operation_catalog (from Step 1)
+    outputs:
+      - new_procedures_needed: specifications for new procedures
+      - procedure_dependencies: what each new procedure depends on
+    verification: |
+      Each new procedure has complete specification; dependencies identified
+
+  - id: 6
+    name: Prioritize procedure creation
+    action: |
+      Rank new procedures by creation priority:
+
+      Priority factors:
+      1. Criticality: Is it blocking a core operation?
+      2. Reuse: Will it be used beyond this plan?
+      3. Complexity: How hard is it to create?
+      4. Dependencies: Does it block other procedures?
+      5. Risk: What's the cost of not having it?
+
+      Scoring:
+      - High priority: Critical, blocks execution, relatively simple
+      - Medium priority: Important but has workarounds
+      - Low priority: Nice to have, complex, limited reuse
+
+      Create prioritized backlog with effort estimates
+    inputs:
+      - new_procedures_needed (from Step 5)
+      - procedure_dependencies (from Step 5)
+      - operation_criticality (from Step 1)
+    outputs:
+      - creation_priority: ordered list of procedures to create
+      - effort_estimates: estimated effort for each
+    verification: |
+      All new procedures prioritized; estimates provided
+
+  - id: 7
+    name: Compile coverage report
+    action: |
+      Create comprehensive coverage analysis:
+
+      1. Coverage summary:
+         - Total operations
+         - Directly matched
+         - Covered by composition
+         - Covered by adaptation
+         - Require new procedures
+
+      2. Coverage metrics:
+         - Overall coverage percentage
+         - Critical operation coverage
+         - Supporting operation coverage
+
+      3. Gap analysis:
+         - Which domains have gaps?
+         - Are gaps clustered (same type of operation)?
+         - What's the pattern?
+
+      4. Recommendations:
+         - Proceed with plan (if coverage sufficient)
+         - Create procedures first (if critical gaps)
+         - Reconsider strategy (if coverage too low)
+    inputs:
+      - direct_matches (from Step 2)
+      - composed_solutions (from Step 3)
+      - transferable_procedures (from Step 4)
+      - new_procedures_needed (from Step 5)
+      - creation_priority (from Step 6)
+    outputs:
+      - operation_coverage: final coverage mapping
+      - matched_procedures: all matched procedures
+      - composed_procedures: all composition specs
+      - coverage_summary: statistics and metrics
+    verification: |
+      All operations accounted for; metrics calculated; recommendation made
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All required operations have been analyzed for coverage
+  - Matches are accurate (procedure actually does what's claimed)
+  - Compositions are valid (interfaces align, no logical gaps)
+  - New procedure specifications are complete and actionable
+  - Priority ordering considers all relevant factors
+  - Coverage summary accurately reflects the analysis
+
+failure_modes:
+  - mode: False positive match
+    symptom: Procedure appears to match but doesn't actually work
+    resolution: Verify match with detailed input/output comparison; test if possible
+
+  - mode: Over-composition
+    symptom: Composition of 10+ procedures to do something simple
+    resolution: Consider this a gap; create dedicated procedure instead
+
+  - mode: Domain blindness
+    symptom: Missing obvious cross-domain procedures
+    resolution: Explicitly search 3+ other domains; use analogy prompts
+
+  - mode: Specification vagueness
+    symptom: New procedure specs too vague to implement
+    resolution: Require concrete examples; define inputs/outputs precisely
+
+  - mode: Priority inversion
+    symptom: Creating nice-to-have procedures before critical ones
+    resolution: Force-rank by criticality first; defer low-reuse procedures
+
+  - mode: Coverage inflation
+    symptom: Claiming high coverage but plan still can't execute
+    resolution: Validate coverage with dry-run; test composed procedures
+
+  - mode: Eternal procedure creation
+    symptom: Always finding more procedures needed; never executing
+    resolution: Set minimum viable coverage threshold; proceed with gaps documented
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Procedure discovery for content marketing strategy
+    context: Discovering procedures needed for a content marketing execution plan
+    inputs:
+      required_operations:
+        - "Research target audience"
+        - "Generate content ideas"
+        - "Write blog posts"
+        - "Optimize for SEO"
+        - "Publish to website"
+        - "Promote on social media"
+        - "Track analytics"
+        - "Iterate based on data"
+      domain: "marketing"
+      available_procedures:
+        - "generation (core)"
+        - "validation (core)"
+        - "decomposition (core)"
+        - "goal_refinement (meta)"
+    process: |
+      Step 1 - Catalog:
+      - Core: Research, Write, Publish, Track (must have)
+      - Supporting: Generate ideas, Optimize SEO (helps quality)
+      - Contingency: Iterate (for improvement)
+
+      Step 2 - Direct matches:
+      - "Generate content ideas" -> generation procedure (close match)
+      - No other direct matches
+
+      Step 3 - Compositions:
+      - "Research target audience" -> generation + validation
+        (generate audience hypotheses, validate against data)
+      - "Iterate based on data" -> validation + decomposition
+        (validate current approach, decompose into improvements)
+
+      Step 4 - Cross-domain:
+      - "Write blog posts" -> Technical writing procedures? Documentation?
+        Found: writing_guide from documentation domain (adaptable)
+      - "Optimize for SEO" -> No cross-domain match
+
+      Step 5 - New procedures needed:
+      - seo_optimization (specific to SEO)
+      - content_publishing (specific to web publishing)
+      - social_media_promotion (specific to social)
+      - analytics_tracking (specific to metrics)
+    expected_output:
+      operation_coverage:
+        - operation: "Research target audience"
+          coverage: "composition"
+          method: "generation + validation"
+        - operation: "Generate content ideas"
+          coverage: "direct_match"
+          procedure: "generation"
+        - operation: "Write blog posts"
+          coverage: "adaptation"
+          procedure: "writing_guide (adapt from documentation)"
+        - operation: "Optimize for SEO"
+          coverage: "needs_creation"
+        - operation: "Publish to website"
+          coverage: "needs_creation"
+        - operation: "Promote on social media"
+          coverage: "needs_creation"
+        - operation: "Track analytics"
+          coverage: "needs_creation"
+        - operation: "Iterate based on data"
+          coverage: "composition"
+          method: "validation + decomposition"
+
+      coverage_summary:
+        total_operations: 8
+        directly_matched: 1
+        composed: 2
+        adapted: 1
+        needs_creation: 4
+        coverage_percentage: 0.50
+        critical_coverage: 0.25
+
+      creation_priority:
+        - name: "seo_optimization"
+          priority: "high"
+          rationale: "Core to content marketing; reusable"
+          effort: "moderate"
+        - name: "analytics_tracking"
+          priority: "high"
+          rationale: "Required for iteration; enables data-driven"
+          effort: "moderate"
+        - name: "content_publishing"
+          priority: "medium"
+          rationale: "Simple; could use manual process initially"
+          effort: "simple"
+        - name: "social_media_promotion"
+          priority: "medium"
+          rationale: "Important but has manual workaround"
+          effort: "moderate"
+
+  - name: Procedure discovery for software deployment
+    context: Discovering procedures for deploying a new microservice
+    inputs:
+      required_operations:
+        - "Build Docker image"
+        - "Run unit tests"
+        - "Run integration tests"
+        - "Deploy to staging"
+        - "Run smoke tests"
+        - "Deploy to production"
+        - "Monitor health"
+        - "Rollback if needed"
+      domain: "software_engineering"
+    process: |
+      Step 1 - Catalog all operations with criticality
+      Step 2 - Search existing DevOps/CI-CD procedures
+      Step 3 - Explore compositions (e.g., test suite = unit + integration)
+      Step 4 - Check for Kubernetes/cloud deployment procedures
+      Step 5 - Specify any new procedures needed
+      Step 6 - Prioritize (health monitoring, rollback are critical)
+      Step 7 - Compile report
+    expected_output:
+      coverage_summary:
+        total_operations: 8
+        directly_matched: 5
+        composed: 1
+        needs_creation: 2
+        coverage_percentage: 0.75
+
+      new_procedures_needed:
+        - name: "kubernetes_deployment"
+          description: "Deploy containerized service to K8s cluster"
+          inputs: ["docker_image", "k8s_config", "environment"]
+          outputs: ["deployment_status", "service_url"]
+          complexity: "moderate"
+          reuse_potential: "high"
+
+        - name: "automated_rollback"
+          description: "Automatically rollback deployment on failure"
+          inputs: ["deployment_id", "failure_trigger", "previous_version"]
+          outputs: ["rollback_status", "restored_version"]
+          complexity: "moderate"
+          reuse_potential: "high"
+
+      creation_priority:
+        - name: "kubernetes_deployment"
+          priority: "high"
+          rationale: "Blocks all deployment operations"
+        - name: "automated_rollback"
+          priority: "high"
+          rationale: "Critical for production safety"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - After strategy discovery produces an execution outline
+    - Before execution begins to verify all procedures exist
+    - During GOSM system setup to build initial procedure library
+    - When execution fails due to missing procedure
+    - Periodic library audit to identify coverage gaps
+    - When planning to add new domain support
+
+  gates:
+    - gate: procedures_available
+      question: "Do all required operations have available procedures?"
+
+    - gate: critical_coverage
+      question: "Are all critical operations covered (matched or composed)?"
+
+    - gate: creation_planned
+      question: "Are new procedures needed documented and prioritized?"
+
+    - gate: execution_feasible
+      question: "Is procedure coverage sufficient to begin execution?"
+
+  related_procedures:
+    - strategy_discovery: Provides the execution outline with required operations
+    - generation: Used for generating procedure specifications
+    - validation: Used for validating procedure matches
+    - decomposition: Used for breaking operations into procedure-sized pieces
+    - system_health_check: Monitors procedure library health
+    - procedure_template: Template for creating new procedures

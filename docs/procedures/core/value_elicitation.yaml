@@ -1,0 +1,416 @@
+# Value Elicitation Procedure
+# Discover intrinsic goal(s) behind any stated goal
+# Core technique for finding the terminus of a goal journey
+
+id: value_elicitation
+name: Value Elicitation
+version: "1.0.0"
+domain: core
+tier: platinum
+
+description: |
+  Value elicitation discovers what someone ACTUALLY values - their intrinsic goals.
+
+  Most people state instrumental goals ("I want to start a business").
+  Value elicitation traces to intrinsic goals ("I want freedom" or "I want security").
+
+  Different people have different intrinsic goals.
+  The same stated goal can serve different intrinsic goals for different people.
+  People often have MULTIPLE intrinsic goals that may CONFLICT.
+
+purpose: |
+  - Discover the intrinsic goal(s) behind any stated goal
+  - Ensure plans serve what the person actually values
+  - Surface conflicts between multiple intrinsic goals
+  - Avoid assuming "flourishing" or any default terminus
+
+when_to_use: |
+  - At the start of any goal-setting process
+  - When someone states a goal but the "why" is unclear
+  - When you suspect the stated goal is instrumental, not intrinsic
+  - When planning seems disconnected from what matters
+  - When verifying that actions serve actual values
+
+# ============================================
+# CORE QUESTIONS
+# ============================================
+
+core_questions:
+  primary:
+    question: "What's important to you about [X]?"
+    usage: |
+      Take the stated goal and ask what's important about it.
+      Take the answer and ask again.
+      Continue until circularity.
+    example: |
+      "What's important to you about starting a business?"
+      → "Having control over my time"
+      "What's important to you about having control over your time?"
+      → "Being free to do what I want"
+      "What's important to you about being free?"
+      → "Freedom is just what I value" ← CIRCULARITY = TERMINUS
+
+  alternative_1:
+    question: "When you have [X], what does that give you?"
+    usage: |
+      Similar to primary, but frames in terms of outcomes.
+    example: |
+      "When you have a successful business, what does that give you?"
+      → "Financial independence"
+      "When you have financial independence, what does that give you?"
+      → "Security - knowing I'm safe"
+      "When you have security, what does that give you?"
+      → "That's just what I want" ← TERMINUS
+
+  alternative_2:
+    question: "Why is [X] important to you?"
+    usage: |
+      Direct "why" - may get instrumental or intrinsic answer.
+
+  probe_for_more:
+    question: "Is there anything else important about [X]?"
+    usage: |
+      After finding one intrinsic goal, check for others.
+      People often have multiple intrinsic goals.
+
+  conflict_check:
+    question: "Do these ever conflict for you?"
+    usage: |
+      When multiple intrinsic goals found, surface conflicts.
+
+# ============================================
+# THE PROCEDURE
+# ============================================
+
+steps:
+  - id: 1
+    name: "State the goal"
+    action: |
+      What is the stated goal?
+      Write it down exactly as expressed.
+    output: stated_goal
+    example: "I want to start a business"
+
+  - id: 2
+    name: "Ask what's important"
+    action: |
+      Ask: "What's important to you about [stated_goal]?"
+
+      Listen for the answer. It may be:
+      - Another instrumental goal → continue
+      - An intrinsic goal → check with step 4
+      - Confusion → rephrase question
+    output: first_answer
+    example: "Having freedom and flexibility"
+
+  - id: 3
+    name: "Continue tracing"
+    action: |
+      Take the answer from step 2.
+      Ask: "What's important to you about [answer]?"
+
+      Repeat until you detect circularity.
+    output: chain_of_answers
+    example: |
+      "What's important about freedom and flexibility?"
+      → "Being able to do what I want, when I want"
+      "What's important about being able to do what you want?"
+      → "That's just... freedom. That's what matters to me."
+
+  - id: 4
+    name: "Detect circularity (terminus)"
+    action: |
+      Circularity is reached when the answer refers back to itself:
+
+      Circularity indicators:
+      - "Because that's what I value"
+      - "Because it's [X]" (tautology)
+      - "I just do"
+      - "That's the point"
+      - "That's what matters"
+      - Can't articulate further reason
+
+      If circularity detected: This is an intrinsic goal.
+      If not: Continue tracing (step 3).
+    output: intrinsic_goal_1
+    example: "Freedom (intrinsic)"
+
+  - id: 5
+    name: "Check for additional intrinsic goals"
+    action: |
+      Ask: "Is there anything else important about [original_stated_goal]?"
+
+      If yes: Go back to step 2 with this new answer.
+      If no: Proceed to step 6.
+
+      People often have multiple intrinsic goals.
+      Don't stop at the first one.
+    output: additional_answers (if any)
+    example: |
+      "Is there anything else important about starting a business?"
+      → "Yes - building something that lasts, having impact"
+      (New chain to trace)
+
+  - id: 6
+    name: "Trace additional chains"
+    action: |
+      For each additional answer from step 5:
+      - Repeat steps 2-4
+      - Find additional intrinsic goals
+
+      Continue until person says "no" to step 5.
+    output: all_intrinsic_goals
+    example: |
+      First chain: Freedom
+      Second chain: Meaning/Legacy
+      Third chain: (none - "that's all")
+
+      Intrinsic goals: Freedom, Meaning
+
+  - id: 7
+    name: "Check for conflicts"
+    action: |
+      If multiple intrinsic goals found:
+      Ask: "Do these ever conflict for you?"
+
+      Common conflicts:
+      - Freedom vs Security
+      - Achievement vs Peace
+      - Connection vs Independence
+      - Meaning vs Pleasure
+
+      If conflicts exist, note them.
+      The person will need to prioritize or balance.
+    output: conflicts (if any)
+    example: |
+      "Freedom and Meaning - do these ever conflict?"
+      → "Sometimes. Building something meaningful requires commitment,
+         which limits my freedom in the short term."
+
+      Conflict noted: Freedom ↔ Meaning (short-term vs long-term)
+
+  - id: 8
+    name: "Document the value map"
+    action: |
+      Create a value map showing:
+      - Stated goal
+      - All intrinsic goals found
+      - The chains from stated goal to each intrinsic goal
+      - Any conflicts between intrinsic goals
+    output: value_map
+    format: |
+      ```yaml
+      value_map:
+        stated_goal: "[Original goal]"
+        intrinsic_goals:
+          - goal: "[Intrinsic goal 1]"
+            chain: "[Stated] → [Step] → [Step] → [Intrinsic 1]"
+          - goal: "[Intrinsic goal 2]"
+            chain: "[Stated] → [Step] → [Step] → [Intrinsic 2]"
+        conflicts:
+          - between: ["[Goal 1]", "[Goal 2]"]
+            nature: "[Description of conflict]"
+      ```
+
+# ============================================
+# COMMON INTRINSIC GOALS
+# ============================================
+
+common_intrinsic_goals:
+  note: |
+    Reference list - do NOT assume these.
+    Discover through elicitation.
+    Some people have goals not on this list.
+    Some people have anti-flourishing goals.
+
+  categories:
+    positive_states:
+      - Pleasure / Enjoyment
+      - Happiness
+      - Peace / Tranquility
+      - Joy
+      - Excitement
+
+    relational:
+      - Love / Being loved
+      - Connection / Belonging
+      - Recognition / Being seen
+      - Acceptance
+      - Intimacy
+
+    meaning_based:
+      - Meaning / Purpose
+      - Significance / Mattering
+      - Legacy / Impact
+      - Contribution
+      - Service
+
+    freedom_based:
+      - Freedom / Liberty
+      - Autonomy
+      - Independence
+      - Self-determination
+      - Non-constraint
+
+    security_based:
+      - Security / Safety
+      - Stability
+      - Predictability
+      - Control
+      - Certainty
+
+    achievement_based:
+      - Achievement / Success
+      - Mastery / Excellence
+      - Power / Influence
+      - Status / Respect
+      - Competence
+
+    aesthetic:
+      - Beauty
+      - Knowledge / Understanding
+      - Truth
+      - Novelty / Discovery
+      - Creativity
+
+    anti_flourishing:
+      note: "Valid for some people - do not dismiss"
+      examples:
+        - Asceticism / Self-denial
+        - Sacrifice / Martyrdom
+        - Simplicity / Minimalism
+        - Tradition / Purity
+        - Playing to lose / Anti-success
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1_single_intrinsic:
+    stated_goal: "I want to get promoted"
+    elicitation:
+      - "What's important about getting promoted?"
+      - → "More money and respect"
+      - "What's important about more money and respect?"
+      - → "Being valued, recognized for what I do"
+      - "What's important about being recognized?"
+      - → "That's just what matters to me"
+    intrinsic_goal: Recognition
+    value_map:
+      stated_goal: "Get promoted"
+      intrinsic_goals:
+        - goal: "Recognition"
+          chain: "Promotion → Money/Respect → Being valued → Recognition"
+      conflicts: none
+
+  example_2_multiple_intrinsic:
+    stated_goal: "I want to write a book"
+    elicitation_chain_1:
+      - "What's important about writing a book?"
+      - → "Sharing ideas that could help people"
+      - "What's important about helping people?"
+      - → "Making a difference, contributing something"
+      - "What's important about contributing?"
+      - → "That's meaningful to me"
+    intrinsic_goal_1: Meaning/Contribution
+
+    elicitation_chain_2:
+      - "Is there anything else important about writing a book?"
+      - → "Yes - proving I can do it"
+      - "What's important about proving you can do it?"
+      - → "Knowing I'm capable, that I can achieve hard things"
+      - "What's important about knowing you're capable?"
+      - → "That's just important"
+    intrinsic_goal_2: Achievement/Mastery
+
+    conflict_check:
+      - "Do Meaning and Achievement ever conflict?"
+      - → "Sometimes - I might write what's meaningful but not impressive,
+           or write what's impressive but not meaningful"
+
+    value_map:
+      stated_goal: "Write a book"
+      intrinsic_goals:
+        - goal: "Meaning/Contribution"
+          chain: "Book → Share ideas → Help people → Contribute → Meaning"
+        - goal: "Achievement/Mastery"
+          chain: "Book → Prove capability → Know I'm capable → Achievement"
+      conflicts:
+        - between: ["Meaning", "Achievement"]
+          nature: "Meaningful content vs impressive execution"
+
+  example_3_anti_flourishing:
+    stated_goal: "I want to live simply"
+    elicitation:
+      - "What's important about living simply?"
+      - → "Not being caught up in materialism and complexity"
+      - "What's important about avoiding materialism?"
+      - → "Purity, not being corrupted by wants"
+      - "What's important about purity?"
+      - → "That's what matters - being uncorrupted"
+    intrinsic_goal: Purity/Simplicity (anti-flourishing by conventional standards)
+    note: |
+      This person's intrinsic goal is NOT pleasure, success, or achievement.
+      They value simplicity/purity for itself.
+      This is a valid intrinsic goal. Do not try to "correct" it.
+
+# ============================================
+# INTEGRATION
+# ============================================
+
+integration:
+  with_goal_journey_system:
+    when: "At the start of goal journey extraction"
+    how: |
+      Before tracing the goal journey, use value elicitation to discover
+      the intrinsic goal(s). Then trace the chain to those termini.
+
+  with_requirement_verification:
+    when: "During 'why now' and 'success definition' assessment"
+    how: |
+      Value elicitation can clarify what success actually means
+      and why this goal matters now (it serves intrinsic goals).
+
+  with_steps_generation:
+    when: "Before finalizing steps"
+    how: |
+      Verify each step serves the intrinsic goal(s).
+      If conflicting intrinsic goals, note which each step serves.
+
+  with_honest_question_gate:
+    when: "When checking if question has identifiable goal"
+    how: |
+      Value elicitation can reveal the goal behind a question
+      that seems goalless on the surface.
+
+# ============================================
+# CAUTIONS
+# ============================================
+
+cautions:
+  assuming_goals:
+    risk: "Assuming you know their intrinsic goals"
+    mitigation: "Always elicit. Never assume 'flourishing' or any default."
+
+  stopping_early:
+    risk: "Stopping at first intrinsic goal found"
+    mitigation: "Always ask 'Is there anything else important about X?'"
+
+  judging_goals:
+    risk: "Dismissing unusual intrinsic goals"
+    mitigation: |
+      If circularity is reached, it's a valid terminus.
+      Asceticism, simplicity, playing to lose - all valid.
+
+  leading_questions:
+    risk: "Leading person to expected answer"
+    mitigation: |
+      Use open questions: "What's important about X?"
+      Not: "So you want freedom, right?"
+
+  false_circularity:
+    risk: "Accepting 'I don't know' as terminus"
+    mitigation: |
+      "I don't know" is not circularity. Try rephrasing.
+      "What would be missing if you didn't have X?"

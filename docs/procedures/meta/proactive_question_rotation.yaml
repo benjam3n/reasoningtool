@@ -1,0 +1,330 @@
+# Proactive Question Rotation
+# Purpose: Structured weekly self-interrogation covering all key domains
+# Version: 1.0.0
+
+id: proactive_question_rotation
+name: Proactive Question Rotation
+domain: meta
+version: "1.0.0"
+tags: ["review", "questions", "self-examination", "weekly", "meta"]
+
+description: |
+  A 24-week rotating list of questions for weekly review. Each week, engage with
+  one question from the current category. After cycling through all categories,
+  start again.
+
+  Categories cover: Situation, Goals, Strategy, Values, Action, and Meta.
+
+  The rotation ensures systematic coverage of all important domains without
+  overwhelming any single review session.
+
+usage: |
+  1. At the start of each week, note which question is current
+  2. During weekly review, spend 5-10 minutes genuinely engaging with the question
+  3. Write down thoughts, even if incomplete
+  4. Note any implications for action
+  5. If a question doesn't resonate, note why and adapt
+  6. After 24 weeks, review patterns in answers and update rotation if needed
+
+# ============================================
+# WEEKS 1-4: SITUATION QUESTIONS
+# ============================================
+
+weeks_1_4_situation:
+  category: Situation
+  purpose: Understand your current reality accurately
+
+  week_1:
+    name: State Accuracy
+    primary_question: What am I not seeing about my current situation?
+    prompts:
+      - What would someone outside my situation notice?
+      - What data am I not collecting?
+      - What am I assuming is stable that might not be?
+      - What changed recently that I haven't processed?
+
+  week_2:
+    name: Resource Reality
+    primary_question: What resources do I actually have vs think I have?
+    prompts:
+      time: How much discretionary time do I actually have?
+      energy: What's my real energy budget?
+      money: What's my actual financial flexibility?
+      relationships: Who would actually help if asked?
+      skills: What can I actually do, not just theoretically?
+
+  week_3:
+    name: Constraint Check
+    primary_question: What constraints am I treating as fixed that aren't?
+    prompts:
+      - What "rules" am I following that could be broken?
+      - What limitations are self-imposed?
+      - What would I do if [constraint X] disappeared?
+      - What constraints do others in my situation ignore?
+
+  week_4:
+    name: Environment Scan
+    primary_question: What's changing in my environment that I should notice?
+    prompts:
+      - What trends are developing?
+      - What's becoming easier or harder?
+      - Who is gaining or losing influence?
+      - What assumptions about the world are becoming outdated?
+
+# ============================================
+# WEEKS 5-8: GOAL QUESTIONS
+# ============================================
+
+weeks_5_8_goals:
+  category: Goals
+  purpose: Examine your goals for authenticity and coherence
+
+  week_5:
+    name: Goal Source
+    primary_question: Why do I want what I want?
+    prompts:
+      - Is this goal mine or absorbed from others?
+      - What need is this goal trying to meet?
+      - What would achieving this actually give me?
+      - Would a different goal meet the same underlying need better?
+
+  week_6:
+    name: Goal Conflict
+    primary_question: Which of my goals conflict with each other?
+    prompts:
+      - What can't I have both of?
+      - What trade-offs am I implicitly making?
+      - Which goals get sacrificed when resources are scarce?
+      - Am I trying to be multiple incompatible things?
+
+  week_7:
+    name: Goal Achievability
+    primary_question: What actually has to happen for me to achieve this goal?
+    prompts:
+      - What's the critical path?
+      - What could block the path?
+      - What's outside my control?
+      - What's the realistic timeline, not the optimistic one?
+
+  week_8:
+    name: Goal Worthiness
+    primary_question: If I achieve this goal, will it actually be worth it?
+    prompts:
+      - What will I have sacrificed?
+      - Will achieving it be satisfying or empty?
+      - What will I do after achieving it?
+      - Am I pursuing this or running from something?
+
+# ============================================
+# WEEKS 9-12: STRATEGY QUESTIONS
+# ============================================
+
+weeks_9_12_strategy:
+  category: Strategy
+  purpose: Examine your approaches for validity and alternatives
+
+  week_9:
+    name: Strategy Assumptions
+    primary_question: What is my current strategy assuming?
+    prompts:
+      - What must be true for this to work?
+      - What am I assuming about how the world works?
+      - What am I assuming about myself?
+      - What am I assuming about others?
+
+  week_10:
+    name: Strategy Alternatives
+    primary_question: What strategies have I not considered?
+    prompts:
+      - What would someone else try?
+      - What's the opposite approach?
+      - What's the minimum viable strategy?
+      - What's the unconventional strategy?
+
+  week_11:
+    name: Strategy Failure
+    primary_question: How might my current strategy fail?
+    prompts:
+      - What's the most likely failure mode?
+      - What's the worst case failure mode?
+      - What would cause me to abandon this strategy?
+      - What early signs would indicate failure?
+
+  week_12:
+    name: Strategy Fit
+    primary_question: Is this strategy right for me specifically?
+    prompts:
+      - Does it match my strengths and weaknesses?
+      - Does it fit my energy patterns?
+      - Does it align with my values?
+      - Have similar strategies worked for me before?
+
+# ============================================
+# WEEKS 13-16: VALUE QUESTIONS
+# ============================================
+
+weeks_13_16_values:
+  category: Values
+  purpose: Understand what you actually value and how well you're honoring it
+
+  week_13:
+    name: Value Clarity
+    primary_question: What do I actually value, not just claim to value?
+    prompts:
+      - Where do I spend my time/money/energy?
+      - What do I protect when resources are scarce?
+      - What would I sacrifice other things for?
+      - What makes me feel alive?
+
+  week_14:
+    name: Value Conflict
+    primary_question: How are my values in tension?
+    prompts:
+      - Which values compete for the same resources?
+      - Which values pull me in different directions?
+      - Which values have I suppressed?
+      - How do I resolve value conflicts in practice?
+
+  week_15:
+    name: Value Change
+    primary_question: How have my values changed, and how might they change?
+    prompts:
+      - What did I used to value that I don't anymore?
+      - What do I value now that I didn't before?
+      - What might I value in 10 years?
+      - What's driving my value changes?
+
+  week_16:
+    name: Value Satisfaction
+    primary_question: How well is my life serving my values?
+    prompts:
+      - Which values are well-served?
+      - Which values are neglected?
+      - What would better serve my values?
+      - What's blocking value fulfillment?
+
+# ============================================
+# WEEKS 17-20: ACTION QUESTIONS
+# ============================================
+
+weeks_17_20_action:
+  category: Action
+  purpose: Understand the gap between intention and execution
+
+  week_17:
+    name: Action-Intention Gap
+    primary_question: Why do I sometimes not do what I intend to do?
+    prompts:
+      - What patterns of non-action exist?
+      - What triggers the gap?
+      - What would close the gap?
+      - Is the intention wrong or the action system?
+
+  week_18:
+    name: Action Environment
+    primary_question: How does my environment affect what I do?
+    prompts:
+      - What does my environment make easy/hard?
+      - What's present in my environment that shouldn't be?
+      - What's absent from my environment that should be present?
+      - How could I redesign my environment?
+
+  week_19:
+    name: Action Patterns
+    primary_question: What are my automatic patterns, and are they serving me?
+    prompts:
+      - What do I do without thinking?
+      - Which habits help vs hurt?
+      - How did these patterns develop?
+      - What patterns would I design if starting fresh?
+
+  week_20:
+    name: Action Capacity
+    primary_question: What affects my capacity to act?
+    prompts:
+      - What states enable action?
+      - What states disable action?
+      - How do I get into enabling states?
+      - What depletes my capacity?
+
+# ============================================
+# WEEKS 21-24: META QUESTIONS
+# ============================================
+
+weeks_21_24_meta:
+  category: Meta
+  purpose: Examine your thinking and systems themselves
+
+  week_21:
+    name: Self-Knowledge
+    primary_question: How well do I actually know myself?
+    prompts:
+      - What surprised me about myself recently?
+      - What do others see that I don't?
+      - What am I in denial about?
+      - What would I want to know about myself?
+
+  week_22:
+    name: System Performance
+    primary_question: How well is my thinking/planning/review system working?
+    prompts:
+      - Am I more or less on track than before this system?
+      - What's working about the system?
+      - What's not working?
+      - What should change?
+
+  week_23:
+    name: Prediction Accuracy
+    primary_question: How accurate are my predictions?
+    prompts:
+      - What did I predict correctly recently?
+      - What did I get wrong?
+      - What biases affect my predictions?
+      - How could I predict better?
+
+  week_24:
+    name: Unknown Unknowns
+    primary_question: What might I be missing entirely?
+    prompts:
+      - What questions haven't I thought to ask?
+      - What would someone with different background see?
+      - What's obvious that I'm not seeing?
+      - Where have I stopped looking?
+
+# ============================================
+# CUSTOMIZATION
+# ============================================
+
+customization:
+  add_questions:
+    - Add questions that repeatedly prove useful
+    - Add domain-specific questions for active goals
+  remove_questions:
+    - Remove questions that consistently don't resonate
+  adjust_timing:
+    - Some questions might warrant monthly rather than weekly
+    - Adjust based on what produces insight
+
+# ============================================
+# TRACKING
+# ============================================
+
+tracking_template: |
+  | Week | Date | Question | Key Insight | Action Taken |
+  |------|------|----------|-------------|--------------|
+  | 1 | | State Accuracy | | |
+  | 2 | | Resource Reality | | |
+  | ... | | | | |
+
+integration_with_weekly_review: |
+  This procedure integrates with the weekly_review.yaml procedure.
+  Use one question from this rotation as part of each weekly review session.
+
+gosm_connection: |
+  Questions map to GOSM phases:
+  - Situation questions → Context Assessment
+  - Goal questions → Goal Definition
+  - Strategy questions → Strategy Phase
+  - Value questions → Goal Approach Selection
+  - Action questions → Execution Phase
+  - Meta questions → Project Review

@@ -1,0 +1,226 @@
+# Language Goal Identification Procedure
+# Identifies the goal of any statement, question, or piece of language
+
+id: language_goal_identification
+name: Language Goal Identification
+version: "1.0.0"
+domain: core
+tier: platinum
+
+description: |
+  All language has a goal - it's trying to achieve something.
+  This procedure identifies what that goal is, which enables:
+  - Evaluation of whether the language achieves its goal
+  - Understanding WHY something was said
+  - Filtering illegitimate or confused communication
+
+core_principle: |
+  The goal of language is more sophisticated than surface categories
+  like "inform," "persuade," "express." The deeper question is:
+  What state is the speaker trying to bring about?
+
+# ============================================
+# GOAL LAYERS
+# ============================================
+
+goal_layers:
+  surface_layer:
+    description: The obvious, grammatical function
+    categories:
+      - Declarative: States something
+      - Interrogative: Asks something
+      - Imperative: Commands something
+      - Exclamatory: Expresses something
+    limitation: |
+      Too shallow. A declarative sentence can persuade.
+      A question can assert. Surface doesn't reveal goal.
+
+  functional_layer:
+    description: What the language is functionally doing
+    categories:
+      - Inform: Transfer information
+      - Persuade: Change belief/behavior
+      - Express: Communicate internal state
+      - Direct: Get someone to do something
+      - Commit: Bind the speaker to something
+      - Declare: Make something the case by saying it
+    limitation: |
+      Better, but still doesn't capture the FULL goal.
+      WHY inform? WHY persuade? What's the deeper need?
+
+  need_layer:
+    description: What need the speaker is trying to meet
+    categories:
+      - Epistemic: Need to know/understand
+      - Practical: Need to act/decide
+      - Social: Need for connection/recognition
+      - Emotional: Need to process/express feeling
+      - Defensive: Need to protect self/position
+      - Strategic: Need to achieve specific outcome
+    insight: |
+      This layer reveals WHY the functional goal is pursued.
+      "I'm informing you" → WHY? → "So you can help me" → Practical need.
+
+  intrinsic_layer:
+    description: The foundational values being served
+    examples:
+      - Wellbeing (for self or others)
+      - Truth/knowledge
+      - Connection/belonging
+      - Security/safety
+      - Meaning/purpose
+    insight: |
+      This is where goal-tracing terminates.
+      "Why do you want X?" → Eventually → "Because I value Y intrinsically."
+
+# ============================================
+# THE PROCEDURE
+# ============================================
+
+steps:
+  - id: 1
+    name: Receive the language
+    action: |
+      Take the statement, question, or communication to analyze.
+      Note the exact wording and context.
+
+  - id: 2
+    name: Identify surface layer
+    action: |
+      What is the grammatical form?
+      - Declarative, interrogative, imperative, exclamatory?
+
+      This is the starting point, not the answer.
+
+  - id: 3
+    name: Identify functional layer
+    action: |
+      What is this language DOING?
+
+      Ask: If this language "succeeds," what has changed?
+      - Someone knows something they didn't? (Inform)
+      - Someone believes something they didn't? (Persuade)
+      - Someone does something they wouldn't have? (Direct)
+      - A relationship state changes? (Social function)
+      - The speaker has expressed something? (Express)
+
+  - id: 4
+    name: Identify need layer
+    action: |
+      WHY is the speaker pursuing this function?
+
+      Ask: What need is met if the function succeeds?
+      - Need to know/understand? (Epistemic)
+      - Need to act/decide? (Practical)
+      - Need for connection? (Social)
+      - Need to process feeling? (Emotional)
+      - Need to protect position? (Defensive)
+      - Need specific outcome? (Strategic)
+
+  - id: 5
+    name: Trace to intrinsic layer (if needed)
+    action: |
+      For deeper analysis, ask: WHY this need?
+
+      Keep asking "why?" until reaching intrinsic values:
+      - Wellbeing, truth, connection, security, meaning, etc.
+
+      This is optional for most applications but necessary for
+      goal-structure reconstruction.
+
+  - id: 6
+    name: State the goal
+    action: |
+      Synthesize the layers into a goal statement:
+
+      "[Speaker] is [doing X] because they [need Y] in service of [value Z]."
+
+      Or shorter: "The goal is [Y]."
+
+# ============================================
+# APPLICATIONS
+# ============================================
+
+applications:
+  evaluating_questions:
+    description: Determine if a question is worth engaging
+    method: |
+      1. Identify the goal of the question
+      2. Evaluate if the goal is legitimate
+      3. Evaluate if this question serves the goal
+      4. Engage or request clarification
+
+  evaluating_criticisms:
+    description: Determine if a criticism is legitimate
+    method: |
+      1. Identify the goal of the criticism
+      2. If goal is epistemic improvement → legitimate
+      3. If goal is defensive/strategic without substance → filter
+      4. If goal unclear → request clarification
+
+  understanding_disagreement:
+    description: Clarify what's actually being disagreed about
+    method: |
+      1. Identify goal of each party's statements
+      2. Are they pursuing the same goal? (substantive disagreement)
+      3. Are they pursuing different goals? (talking past each other)
+      4. Address the actual disagreement
+
+  improving_own_communication:
+    description: Ensure your language achieves its goal
+    method: |
+      1. Identify your goal before speaking
+      2. Choose language that serves that goal
+      3. Check if the listener understood the goal
+      4. Adjust if goal is being misread
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+examples:
+  example_1:
+    language: "I think therefore I am"
+    surface: Declarative (states something)
+    functional: Inform (transfers a conclusion)
+    need: Epistemic (establish certain knowledge) + Defensive (counter skepticism)
+    intrinsic: Truth, security of knowledge
+    goal_statement: |
+      Descartes is asserting a conclusion to establish that at least one thing
+      can be known with certainty, countering radical skepticism, in service
+      of building reliable knowledge (epistemic security).
+
+  example_2:
+    language: "But how do you REALLY know?"
+    surface: Interrogative (asks something)
+    functional: Challenge (tests a claim)
+    need: Could be epistemic (genuine inquiry) OR defensive (protect own position) OR aggressive (undermine without offering alternative)
+    goal_unclear: |
+      Need to ask: What would satisfy this question?
+      If nothing would satisfy → not genuine epistemic need
+      If specific answer would satisfy → legitimate inquiry
+
+  example_3:
+    language: "We should reduce carbon emissions"
+    surface: Declarative (states something)
+    functional: Persuade/Direct (change behavior)
+    need: Practical (address climate problem) + Social (collective action)
+    intrinsic: Wellbeing, survival, responsibility to future
+    goal_statement: |
+      Speaker is advocating for action because of practical need to address
+      climate change, in service of wellbeing and responsibility.
+
+# ============================================
+# CONNECTION TO MISSION
+# ============================================
+
+mission_connection: |
+  This procedure operationalizes the mission statement's insight that
+  "all language has a goal." By identifying goals:
+
+  1. Statements become evaluable (does it achieve the goal?)
+  2. Questions become filterable (is the goal legitimate?)
+  3. Conclusions become understandable (why was this said?)
+  4. Criticisms become assessable (is this serving inquiry?)
+
+  This is foundational to bounded inquiry and n+1 termination.

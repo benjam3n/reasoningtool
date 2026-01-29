@@ -1,0 +1,346 @@
+# Model Space Search
+# Generate possible models, search for best fit
+# Version: 1.0.0
+
+id: model_space_search
+name: Model Space Search
+version: "1.0.0"
+domain: core
+
+goal: |
+  Generate multiple possible models/explanations for a phenomenon,
+  then search for the one that best fits the evidence.
+
+description: |
+  Understanding = finding a model that fits.
+  Instead of settling on first model that seems plausible:
+  1. Generate multiple competing models
+  2. Score each against fit criteria
+  3. Select the model with best support
+
+  This prevents premature closure on a suboptimal model.
+
+when_to_use:
+  - Trying to understand a phenomenon
+  - Multiple explanations seem plausible
+  - Need to choose between theories
+  - Building mental models
+  - Scientific/analytical inquiry
+
+inputs:
+  - name: phenomenon
+    type: description
+    description: "What are we trying to model/explain?"
+  - name: observations
+    type: list
+    description: "Data/observations the model must account for"
+
+outputs:
+  - name: models
+    type: list
+    description: "All generated models"
+  - name: best_model
+    type: model
+    description: "Model with highest support"
+  - name: model_comparison
+    type: table
+    description: "How models compare on criteria"
+
+# ============================================
+# CRITERIA FOR GOOD MODELS
+# ============================================
+
+criteria:
+  empirical_fit:
+    - name: "Explains observations"
+      question: "Does the model account for all key observations?"
+      weight: 30
+      test: "For each observation, does model predict it?"
+
+    - name: "No contradictions"
+      question: "Does the model contradict any observations?"
+      weight: 25
+      test: "Any observations the model says shouldn't happen?"
+
+    - name: "Predictive accuracy"
+      question: "Does the model make accurate predictions?"
+      weight: 20
+      test: "Can we test predictions? Do they come true?"
+
+  theoretical_virtues:
+    - name: "Simplicity (Occam's razor)"
+      question: "Does it use minimal assumptions/entities?"
+      weight: 15
+      test: "Count assumptions, entities, free parameters"
+
+    - name: "Generalizability"
+      question: "Does it apply beyond the specific case?"
+      weight: 10
+      test: "Does it explain similar phenomena?"
+
+    - name: "Coherence"
+      question: "Does it fit with other knowledge?"
+      weight: 10
+      test: "Consistent with established understanding?"
+
+    - name: "Mechanism"
+      question: "Does it explain HOW, not just WHAT?"
+      weight: 10
+      test: "Is there a causal mechanism specified?"
+
+# ============================================
+# MODEL GENERATION METHODS
+# ============================================
+
+generation_methods:
+  causal_hypotheses:
+    description: "Generate possible causes"
+    method: |
+      For the phenomenon:
+      1. What could cause this?
+      2. List all plausible causes
+      3. For each cause, build model around it
+    prompts:
+      - "What would have to be true for this to happen?"
+      - "What changes would produce this effect?"
+      - "What similar things have known causes?"
+
+  mechanistic_models:
+    description: "Generate possible mechanisms"
+    method: |
+      1. What components are involved?
+      2. How could they interact?
+      3. What processes could produce the observations?
+    prompts:
+      - "What are the parts of this system?"
+      - "How could the parts interact?"
+      - "What process could produce this pattern?"
+
+  analogical_models:
+    description: "Import models from similar phenomena"
+    method: |
+      1. What is this similar to?
+      2. What models explain those similar things?
+      3. Could those models apply here?
+    prompts:
+      - "What else behaves this way?"
+      - "What's the established model for that?"
+      - "Does that model fit here?"
+
+  parametric_variations:
+    description: "Vary parameters of existing models"
+    method: |
+      1. Take a base model
+      2. What parameters could vary?
+      3. Generate models with different parameter values
+    prompts:
+      - "What if [parameter] were different?"
+      - "What if [relationship] were reversed?"
+      - "What if [factor] were added/removed?"
+
+  null_models:
+    description: "Generate simple baseline models"
+    method: |
+      1. What's the simplest explanation?
+      2. Random chance?
+      3. Regression to mean?
+      4. Simple trend?
+    purpose: "Baseline to compare complex models against"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Describe the Phenomenon"
+    action: |
+      Clearly state what you're trying to model.
+      What patterns, behaviors, or outcomes need explaining?
+    output: "Phenomenon description"
+
+  - id: 2
+    name: "List Observations"
+    action: |
+      Document all relevant observations/data.
+      These are what models must account for.
+    output: "Observation list"
+    template: |
+      OBSERVATIONS:
+      O1: [Observation] - [Confidence: High/Medium/Low]
+      O2: [Observation] - [Confidence: High/Medium/Low]
+      ...
+
+      KEY PATTERNS:
+      - [Pattern 1]
+      - [Pattern 2]
+
+      ANOMALIES/PUZZLES:
+      - [Anomaly 1]
+      - [Anomaly 2]
+
+  - id: 3
+    name: "Generate Null Model"
+    action: |
+      What's the simplest explanation?
+      This is the baseline to beat.
+    output: "Null model"
+    template: |
+      NULL MODEL:
+      Explanation: [Simplest possible explanation]
+      Predictions: [What this model predicts]
+      Limitations: [What it doesn't explain]
+
+  - id: 4
+    name: "Generate Causal Models"
+    action: |
+      For each plausible cause, build a model.
+      State cause, mechanism, predictions.
+    output: "Causal models"
+
+  - id: 5
+    name: "Generate Mechanistic Models"
+    action: |
+      What mechanisms could produce the observations?
+      Build models around different mechanisms.
+    output: "Mechanistic models"
+
+  - id: 6
+    name: "Generate Analogical Models"
+    action: |
+      What similar phenomena have known models?
+      Import and adapt.
+    output: "Analogical models"
+
+  - id: 7
+    name: "Compile Model List"
+    action: |
+      List all generated models.
+      State each clearly with:
+      - Core claim
+      - Mechanism
+      - Key predictions
+      - Required assumptions
+    output: "Master model list"
+    template: |
+      MODEL [N]: [Name]
+      Core claim: [What it says is happening]
+      Mechanism: [How it works]
+      Predictions: [What it predicts beyond observations]
+      Assumptions: [What must be true for this model]
+
+  - id: 8
+    name: "Score Each Model"
+    action: |
+      For each model, score on criteria:
+      - Explains observations
+      - No contradictions
+      - Predictive accuracy
+      - Simplicity
+      - Generalizability
+      - Coherence
+      - Mechanism clarity
+    output: "Scored models"
+
+  - id: 9
+    name: "Compare Models"
+    action: |
+      Create comparison table.
+      Identify which model wins on which criteria.
+      Look for dominant model (wins on most).
+    output: "Model comparison"
+    template: |
+      MODEL COMPARISON:
+
+                  | Fit | Contradict | Predict | Simple | General | Total
+      ------------|-----|------------|---------|--------|---------|------
+      Model A     |  8  |     9      |    7    |   6    |    7    |  296
+      Model B     |  7  |     8      |    8    |   8    |    6    |  287
+      Model C     |  6  |     7      |    6    |   9    |    8    |  272
+      Null        |  4  |     9      |    3    |  10    |    5    |  215
+
+  - id: 10
+    name: "Select Best Model"
+    action: |
+      Select model with highest score.
+      Note:
+      - Confidence (how much better than alternatives?)
+      - What would change the selection?
+      - What further evidence would help?
+    output: "Selected model"
+
+  - id: 11
+    name: "State Implications"
+    action: |
+      If this model is correct:
+      - What else should be true?
+      - What should we expect to see?
+      - What actions does this suggest?
+    output: "Model implications"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  phenomenon: "New feature launched but engagement is flat"
+
+  observations:
+    - "Feature was launched 2 weeks ago"
+    - "Usage metrics haven't increased"
+    - "No increase in support tickets"
+    - "Marketing announced the feature"
+    - "Beta testers loved it"
+
+  models_generated:
+    1:
+      name: "Discovery problem"
+      claim: "Users don't know about the feature"
+      mechanism: "Announcement didn't reach users"
+      predictions: "In-app announcement would increase usage"
+      assumptions: "Users would use it if they knew"
+
+    2:
+      name: "Usability problem"
+      claim: "Feature is hard to use"
+      mechanism: "Users try but give up"
+      predictions: "High bounce rate on feature pages"
+      assumptions: "Users know about it and try it"
+
+    3:
+      name: "Value problem"
+      claim: "Feature doesn't solve real problem"
+      mechanism: "Beta testers were biased sample"
+      predictions: "Users don't engage even when guided"
+      assumptions: "Users know about it and can use it"
+
+    4:
+      name: "Measurement problem"
+      claim: "Engagement is actually up, we're not measuring right"
+      mechanism: "Wrong metrics tracked"
+      predictions: "Different metrics show engagement"
+      assumptions: "Our metrics are incomplete"
+
+  scores:
+    discovery: 285
+    usability: 265
+    value: 245
+    measurement: 220
+
+  best_model: |
+    "Discovery problem" (285 points)
+    - Best explains flat metrics despite beta success
+    - Testable: Run in-app announcement
+    - Action: Improve feature visibility
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Multiple models were generated (not just favorite)"
+  - "Null model was included as baseline"
+  - "Models are clearly stated with mechanisms"
+  - "Scoring was consistent across models"
+  - "Best model accounts for anomalies"
+  - "Implications and next steps identified"

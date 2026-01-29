@@ -1,0 +1,492 @@
+# GOSM v2: Atomic Assessment Gates
+# Each gate checks ONE dimension with categorical (not numeric) assessment
+
+# Scoring: CLEAR | ADEQUATE | WEAK | MISSING
+# No arbitrary thresholds - just "needs refinement? yes/no with reasoning"
+
+gates:
+  # ============================================
+  # GOAL CLARITY GATES (Replaces "Specific" dimension)
+  # ============================================
+
+  - id: success_definition
+    name: Is Success Clearly Defined?
+    category: clarity
+    atomic: true  # Checks ONE thing
+
+    question: "Can we unambiguously recognize success when we see it?"
+
+    assessment:
+      CLEAR:
+        description: "Success is unambiguous"
+        indicators:
+          - "Could explain to someone else exactly what 'done' looks like"
+          - "No reasonable disagreement about whether we succeeded"
+          - "Concrete deliverable or state described"
+
+      ADEQUATE:
+        description: "Success is mostly clear, minor ambiguity"
+        indicators:
+          - "General direction clear, some details TBD"
+          - "Could be interpreted 2-3 ways, all acceptable"
+
+      WEAK:
+        description: "Significant ambiguity about success"
+        indicators:
+          - "Multiple conflicting interpretations"
+          - "Different stakeholders would disagree on success"
+        action: "Clarify before proceeding"
+
+      MISSING:
+        description: "No success definition"
+        indicators:
+          - "Can't describe what 'done' looks like"
+          - "Just a direction, not a destination"
+        action: "Must define before proceeding"
+
+    refinement_prompt: |
+      The success definition is unclear. To clarify:
+      - What specifically exists when you're done?
+      - How would you prove to someone you succeeded?
+      - What's definitely NOT success (helps clarify boundaries)?
+
+  # ============================================
+
+  - id: progress_measurability
+    name: Can Progress Be Measured?
+    category: clarity
+    atomic: true
+
+    question: "Can we measure progress toward the goal?"
+
+    assessment:
+      CLEAR:
+        description: "Progress is objectively measurable"
+        indicators:
+          - "Quantifiable metrics exist"
+          - "Milestones clearly defined"
+          - "Can answer 'are we on track?' at any point"
+
+      ADEQUATE:
+        description: "Progress can be assessed, not perfectly measured"
+        indicators:
+          - "Qualitative checkpoints exist"
+          - "Can roughly gauge progress"
+
+      WEAK:
+        description: "Hard to tell if we're progressing"
+        indicators:
+          - "No clear milestones"
+          - "Progress only visible at end"
+        action: "Define intermediate checkpoints"
+
+      MISSING:
+        description: "No way to measure progress"
+        action: "Define how you'll know you're moving forward"
+
+  # ============================================
+
+  - id: viable_path_exists
+    name: Is There A Viable Path?
+    category: feasibility
+    atomic: true
+
+    question: "Does at least one realistic path to success exist?"
+
+    assessment:
+      CLEAR:
+        description: "Clear path exists"
+        indicators:
+          - "Know the steps"
+          - "Have done similar before"
+          - "Resources exist"
+
+      ADEQUATE:
+        description: "Path exists but has uncertainties"
+        indicators:
+          - "General approach known"
+          - "Some unknowns to figure out"
+          - "Reasonable belief it's possible"
+
+      WEAK:
+        description: "Path unclear or highly uncertain"
+        indicators:
+          - "Don't know how to start"
+          - "Major obstacles with no known solution"
+        action: "Need to find or create a viable path"
+
+      MISSING:
+        description: "No known path"
+        indicators:
+          - "No one has done this"
+          - "Fundamental obstacles"
+        action: "Research if any path exists; may need to refine goal"
+
+  # ============================================
+
+  - id: resources_available
+    name: Are Necessary Resources Available?
+    category: feasibility
+    atomic: true
+
+    question: "List necessary resources. Mark each as available, obtainable, unavailable."
+
+    dimensions:
+      time:
+        question: "Enough time available?"
+        assessment: "CLEAR | ADEQUATE | WEAK | MISSING"
+
+      money:
+        question: "Enough budget if needed?"
+        assessment: "CLEAR | ADEQUATE | WEAK | MISSING | N/A"
+
+      skills:
+        question: "Necessary skills available?"
+        assessment: "CLEAR | ADEQUATE | WEAK | MISSING"
+
+      tools:
+        question: "Required tools accessible?"
+        assessment: "CLEAR | ADEQUATE | WEAK | MISSING"
+
+      dependencies:
+        question: "External dependencies reliable?"
+        assessment: "CLEAR | ADEQUATE | WEAK | MISSING | N/A"
+
+    overall:
+      CLEAR: "All resource dimensions CLEAR or ADEQUATE"
+      WEAK: "Any dimension WEAK"
+      MISSING: "Any critical dimension MISSING"
+
+  # ============================================
+
+  - id: worth_doing
+    name: Is This Worth Doing?
+    category: relevance
+    atomic: true
+
+    question: "Is achieving this goal worth the cost?"
+
+    assessment:
+      CLEAR:
+        description: "Obviously worth doing"
+        indicators:
+          - "Clear value if achieved"
+          - "Aligns with larger goals"
+          - "Cost is justified"
+
+      ADEQUATE:
+        description: "Probably worth doing"
+        indicators:
+          - "Value exists but not huge"
+          - "Reasonable use of resources"
+
+      WEAK:
+        description: "Questionable value"
+        indicators:
+          - "Unclear why this matters"
+          - "Might be better uses of resources"
+        action: "Articulate why this matters, or reconsider"
+
+      MISSING:
+        description: "No apparent value"
+        action: "Why are we doing this?"
+
+  # ============================================
+
+  - id: timeline_defined
+    name: Is There A Timeline?
+    category: clarity
+    atomic: true
+
+    question: "Do we know when this needs to be done?"
+
+    assessment:
+      CLEAR:
+        description: "Clear deadline or timeframe"
+        indicators:
+          - "Specific date"
+          - "Hard external deadline"
+
+      ADEQUATE:
+        description: "General timeframe"
+        indicators:
+          - "Within X weeks/months"
+          - "Soft deadline"
+
+      WEAK:
+        description: "Vague timing"
+        indicators:
+          - "Eventually"
+          - "When we get to it"
+        note: "May be fine for low-priority goals"
+
+      MISSING:
+        description: "No timeline"
+        note: "Not always a problem - some goals are ongoing"
+
+    flexibility:
+      - "Not all goals need hard deadlines"
+      - "Ongoing goals may not have timeline"
+      - "MISSING is not always bad here"
+
+  # ============================================
+  # DOMAIN CLASSIFICATION GATES
+  # ============================================
+
+  - id: structure_level
+    name: How Structured Is This Goal?
+    category: domain
+    atomic: true
+
+    question: "How well-defined is the path to success?"
+
+    options:
+      structured:
+        description: "Clear steps, known path"
+        indicators:
+          - "Done before"
+          - "Playbook exists"
+          - "Experts agree on approach"
+        planning: "Detailed upfront planning works"
+
+      semi_structured:
+        description: "General direction, flexible path"
+        indicators:
+          - "Similar things done before"
+          - "Need to adapt as we go"
+          - "Multiple valid approaches"
+        planning: "Plan structure, iterate on details"
+
+      unstructured:
+        description: "Exploratory, emergent"
+        indicators:
+          - "Novel territory"
+          - "Path will be discovered"
+          - "Can't know steps upfront"
+        planning: "Probe-sense-respond"
+
+  # ============================================
+
+  - id: measurability_type
+    name: Objective or Subjective Success?
+    category: domain
+    atomic: true
+
+    question: "Describe how success is measured. Identify objective measures and subjective measures."
+
+    options:
+      objective:
+        description: "Numbers, deliverables, external verification"
+        examples: ["Ship feature", "Run marathon", "Pass exam"]
+        approach: "Define metrics upfront"
+
+      subjective:
+        description: "Feel, quality, satisfaction"
+        examples: ["Write beautiful poem", "Feel confident", "Enjoy process"]
+        approach: "Iterative refinement with feedback"
+
+      mixed:
+        description: "Some of each"
+        examples: ["Write engaging blog post (views + feel)"]
+        approach: "Track objective, check in on subjective"
+
+  # ============================================
+
+  - id: volatility_level
+    name: How Stable Is The Environment?
+    category: domain
+    atomic: true
+
+    question: "How much will conditions change during execution?"
+
+    options:
+      stable:
+        description: "Environment won't change much"
+        indicators:
+          - "Established domain"
+          - "Predictable timeline"
+        planning: "Plan can be detailed"
+
+      moderate:
+        description: "Some changes expected"
+        indicators:
+          - "Normal project dynamics"
+          - "Occasional adjustments needed"
+        planning: "Build in review points"
+
+      high:
+        description: "Rapid, unpredictable changes"
+        indicators:
+          - "Market shifts"
+          - "Emerging technology"
+          - "Unstable dependencies"
+        planning: "Short cycles, loose plans, high adaptability"
+
+  # ============================================
+
+  - id: time_pressure
+    name: How Time-Pressured Are We?
+    category: domain
+    atomic: true
+
+    question: "How much time do we have to plan vs execute?"
+
+    options:
+      relaxed:
+        description: "Plenty of time to plan and execute"
+        ratio: "Planning can be thorough"
+
+      moderate:
+        description: "Normal timeline"
+        ratio: "Standard planning depth"
+
+      urgent:
+        description: "Planning time is limited"
+        ratio: "Quick planning, may iterate"
+
+      crisis:
+        description: "Must act now"
+        ratio: "Act first, plan in parallel"
+        handler: "Use crisis_handler"
+
+  # ============================================
+
+  - id: luck_component
+    name: How Luck-Dependent Is This?
+    category: domain
+    atomic: true
+
+    question: "How much of success is within our control?"
+
+    options:
+      controllable:
+        description: "Outcome mostly determined by our actions"
+        examples: ["Learn skill", "Complete project"]
+        approach: "Focus on execution"
+
+      influenceable:
+        description: "We can affect probability, not determine"
+        examples: ["Get job", "Grow business"]
+        approach: "Maximize controllable factors, prepare for variance"
+
+      high_luck:
+        description: "Significant random/external factors"
+        examples: ["Win competition", "Go viral"]
+        approach: "Consider luck_reduction_handler or reframe goal"
+
+    meta_question: "Can we reframe to make success more controllable?"
+
+  # ============================================
+
+  - id: relationship_intensity
+    name: How Relationship-Dependent Is This?
+    category: domain
+    atomic: true
+
+    question: "How central are relationships to this goal?"
+
+    options:
+      none:
+        description: "No significant relationship dynamics"
+        approach: "Standard planning"
+
+      present:
+        description: "Others involved but not central"
+        examples: ["Collaborate with team", "Get approval"]
+        approach: "Include stakeholder considerations"
+
+      central:
+        description: "Relationship IS the goal"
+        examples: ["Improve marriage", "Build friendship"]
+        approach: "Use relationship_goal_handler"
+
+  # ============================================
+  # ADAPTATION GATES (Between Phases)
+  # ============================================
+
+  - id: learning_checkpoint
+    name: What Have We Learned?
+    category: adaptation
+    trigger: "After each major phase"
+
+    questions:
+      - id: discoveries
+        question: "What did we discover?"
+        captures: ["New information", "Surprises", "Changed understanding"]
+
+      - id: assumption_check
+        question: "Which assumptions proved true/false?"
+        updates: "assumption_register"
+
+      - id: plan_still_valid
+        question: "Does the plan still make sense?"
+        options:
+          - "Yes, continue as planned"
+          - "Minor adjustments needed"
+          - "Major revision needed"
+          - "Goal itself should change"
+
+  # ============================================
+
+  - id: pivot_persist_pause
+    name: Should We Pivot, Persist, or Pause?
+    category: adaptation
+    trigger: "When approach isn't working or major uncertainty"
+
+    options:
+      persist:
+        description: "Continue current approach"
+        when: "Evidence suggests it's working or will work"
+
+      pivot:
+        description: "Change approach significantly"
+        when: "Current approach unlikely to work"
+        requires: "Identify new approach"
+
+      pause:
+        description: "Stop and reassess"
+        when: "Need more information or resources"
+        requires: "Define what would resume"
+
+      abandon:
+        description: "Stop pursuing this goal"
+        when: "Goal no longer worth pursuing"
+        requires: "Acknowledge and document decision"
+
+  # ============================================
+  # REFINEMENT DECISION (Replaces Arbitrary Threshold)
+  # ============================================
+
+  - id: needs_refinement
+    name: Does This Goal Need Refinement?
+    category: meta
+    atomic: true
+
+    question: "Should we refine the goal before proceeding?"
+
+    logic: |
+      NOT a numeric threshold!
+
+      Needs refinement if:
+      - Any CLARITY gate is WEAK or MISSING
+      - FEASIBILITY gates show critical gaps
+      - Goal is unclear to stakeholders
+
+      Probably fine if:
+      - All gates CLEAR or ADEQUATE
+      - Gaps are minor and manageable
+      - Stakeholders agree on direction
+
+    decision:
+      yes_refine:
+        reasons: ["List specific issues"]
+        action: "Address issues, then reassess"
+
+      no_proceed:
+        reasons: ["Why it's good enough"]
+        caveats: ["Any minor issues to track"]
+
+    output:
+      decision: "yes_refine | no_proceed"
+      reasoning: "Why"
+      specific_issues: ["If any"]

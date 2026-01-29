@@ -1,0 +1,642 @@
+# Procedure Extraction - Extract reusable procedures from completed projects
+# Meta-procedure for creating reusable procedures from completed work
+
+id: procedure_extraction
+name: Extract and Generalize Procedures
+version: "1.0.0"
+domain: meta
+
+description: After completing a goal, extract reusable procedures and generalize them for storage in the library, enabling GOSM to learn from completed work.
+
+long_description: |
+  The Procedure Extraction procedure turns project-specific work into
+  reusable library assets. After completing a project, this procedure:
+
+  1. Reviews completed phases and gates for extractable procedures
+  2. Scores candidates for generalizability and value
+  3. Identifies project-specific elements to parameterize
+  4. Generalizes steps into reusable format
+  5. Documents applicability and examples
+  6. Integrates into the GOSM library
+
+  Key insight: Every completed project contains implicit procedures that
+  could benefit future work. Extraction makes this tacit knowledge explicit.
+
+  This procedure focuses on extracting from YOUR OWN completed work.
+  For extracting from external sources (books, videos, etc.), use
+  procedure_extraction_from_source instead.
+
+tags:
+  - meta
+  - extraction
+  - library
+  - learning
+  - generalization
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After completing any project successfully
+  - When novel approaches were developed during a project
+  - When existing procedures were significantly adapted
+  - During project retrospectives
+  - When a repeatable pattern emerges across projects
+  - When asked "how did you do that?" and realizing others could benefit
+  - Before archiving a completed project
+  - When noticing similar work being done repeatedly
+
+when_not_to_use:
+  - For project-specific procedures that won't transfer
+  - When the procedure is already well-documented in the library
+  - For trivial or obvious procedures
+  - When the project failed (extract learnings instead, not procedures)
+  - For one-off approaches unlikely to be repeated
+  - When the procedure requires domain expertise you can't document
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: completed_project
+    type: string
+    required: true
+    description: Path to the completed project folder
+
+  - name: phases
+    type: list
+    required: true
+    description: List of phases from COMPLETE_PLAN.md with their procedures
+
+  - name: gates
+    type: list
+    required: false
+    description: List of gates that were passed, especially custom ones
+
+  - name: focus_areas
+    type: list
+    required: false
+    description: Specific areas to prioritize for extraction
+
+outputs:
+  - name: extracted_procedures
+    type: list
+    description: List of generalized procedures ready for library
+
+  - name: library_updates
+    type: list
+    description: Files added to library/procedures/
+
+  - name: index_updates
+    type: list
+    description: Changes made to INDEX.md and related indexes
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Review project phases
+    action: |
+      Go through each phase in COMPLETE_PLAN.md and identify:
+
+      1. What procedure was followed for each phase?
+         - Was it an existing library procedure?
+         - Was it ad-hoc / invented for this project?
+         - Was it adapted from something else?
+
+      2. Rate each procedure for extraction potential:
+         - Was it structured (clear steps) or intuitive?
+         - Could it apply to other projects?
+         - Did it produce good results?
+
+      3. Note any novel approaches:
+         - What was done differently than usual?
+         - What worked surprisingly well?
+         - What workarounds became standard practice?
+
+      Create candidate list with context for each.
+    inputs:
+      - completed_project
+      - phases
+    outputs:
+      - phase_procedures: list of procedures used per phase
+      - extraction_candidates: initial list of candidates
+    verification: |
+      Every phase has associated procedure identified
+
+  - id: 2
+    name: Review custom gates
+    action: |
+      Check the gates/ folder for custom or adapted gates:
+
+      1. Identify any gates created for this project:
+         - What checks were performed?
+         - Were they project-specific or general?
+         - Could they apply to other projects?
+
+      2. Note gates that were particularly valuable:
+         - Which gates caught real issues?
+         - Which gates would have helped earlier?
+         - Which gates could become standard?
+
+      3. Add valuable gates to candidate list
+
+      Gates often contain implicit procedures (the process of evaluation).
+    inputs:
+      - completed_project
+      - gates
+    outputs:
+      - custom_gates: list of custom gates created
+      - gate_candidates: gates worth extracting as procedures
+    verification: |
+      All custom gates reviewed and assessed
+
+  - id: 3
+    name: Score candidates
+    action: |
+      For each candidate procedure or gate, score 1-5 on:
+
+      GENERALIZABILITY (weight: 0.3)
+      - Could this apply to other projects?
+      - 5: Universal - applies across many domains
+      - 3: Moderate - applies within a domain
+      - 1: Specific - only this project type
+
+      VALUE (weight: 0.3)
+      - How much effort does this save?
+      - 5: Major - saves days/weeks of work
+      - 3: Moderate - saves hours
+      - 1: Minor - saves minutes
+
+      COMPLETENESS (weight: 0.2)
+      - How well is it documented?
+      - 5: Fully documented with examples
+      - 3: Key steps clear, some gaps
+      - 1: Mostly implicit knowledge
+
+      ABSTRACTION POTENTIAL (weight: 0.2)
+      - Can specifics be removed without losing value?
+      - 5: Easy to parameterize
+      - 3: Some specifics can be abstracted
+      - 1: Heavily dependent on specifics
+
+      Calculate weighted average. Extract if >= 3.0
+    inputs:
+      - extraction_candidates (from Step 1)
+      - gate_candidates (from Step 2)
+    outputs:
+      - scored_candidates: candidates with scores and rankings
+      - extract_decisions: which candidates to extract
+    verification: |
+      All candidates have scores and extract/skip decision
+
+  - id: 4
+    name: Identify specific elements
+    action: |
+      For each procedure to extract, identify project-specific elements:
+
+      1. List all project-specific references:
+         - Named entities (people, products, companies)
+         - Domain-specific terminology
+         - Hardcoded values or thresholds
+         - Specific tools or technologies
+
+      2. Map specifics to parameter names:
+
+         Project-specific → Parameter
+         ---------------------------------
+         "atheism" → {topic}
+         "philosophy" → {domain}
+         "theist responses" → {counterposition}
+         "10 interviews" → {sample_size}
+         "3 weeks" → {duration}
+
+      3. Note which specifics are truly variable vs. essential:
+         - Some specifics are examples, not requirements
+         - Some are constraints that should remain
+    inputs:
+      - extract_decisions (from Step 3)
+    outputs:
+      - specific_elements: mapping per procedure
+      - parameter_mappings: specific → parameter for each
+    verification: |
+      All project-specific elements identified and mapped
+
+  - id: 5
+    name: Create parameters
+    action: |
+      Define formal parameters for the generalized procedure:
+
+      For each identified specific element, create parameter definition:
+
+      ```yaml
+      parameters:
+        - name: topic
+          description: "The subject being analyzed"
+          type: string
+          required: true
+          example: "climate change"
+
+        - name: domain
+          description: "The field or area of focus"
+          type: string
+          required: false
+          default: "general"
+
+        - name: sample_size
+          description: "Number of items to collect"
+          type: integer
+          required: false
+          default: 10
+          constraints:
+            min: 5
+            max: 100
+      ```
+
+      Parameters should be:
+      - Clearly named (what it represents)
+      - Typed (string, integer, list, etc.)
+      - Required or optional with defaults
+      - Constrained where appropriate
+    inputs:
+      - parameter_mappings (from Step 4)
+    outputs:
+      - parameter_definitions: formal parameter specs per procedure
+    verification: |
+      All parameters have name, description, type, and required flag
+
+  - id: 6
+    name: Generalize steps
+    action: |
+      Rewrite each step using parameters:
+
+      BEFORE (project-specific):
+      "Research atheist philosophical arguments from academic sources"
+
+      AFTER (generalized):
+      "Research arguments supporting {position} on {topic} from {source_type} sources"
+
+      Generalization principles:
+      1. Replace specific nouns with parameters
+      2. Keep action verbs unchanged
+      3. Preserve structure and sequence
+      4. Maintain clarity - generalized should be as clear as specific
+      5. Add notes for context where helpful
+
+      Check that generalized steps are still actionable:
+      - Would someone know what to do?
+      - Is it clear what the output should be?
+      - Are there hidden dependencies?
+    inputs:
+      - extract_decisions (from Step 3)
+      - parameter_definitions (from Step 5)
+    outputs:
+      - generalized_steps: steps with parameters for each procedure
+    verification: |
+      Steps are generalized but remain clear and actionable
+
+  - id: 7
+    name: Document applicability
+    action: |
+      Define when this procedure should be used:
+
+      ```yaml
+      when_to_use:
+        - "When creating persuasive content on any topic"
+        - "When analyzing competing positions"
+        - "When building argumentative documents"
+
+      when_not_to_use:
+        - "For purely descriptive content"
+        - "When positions are not in contention"
+        - "For technical documentation"
+
+      applicability:
+        domains:
+          - "philosophical analysis"
+          - "policy arguments"
+          - "competitive analysis"
+
+        goal_types:
+          - "argumentative document"
+          - "position paper"
+          - "debate preparation"
+
+        triggers:
+          - "when asked to argue for a position"
+          - "when comparing competing options"
+      ```
+
+      Be specific enough to help with procedure discovery,
+      but not so narrow that it's rarely triggered.
+    inputs:
+      - generalized_steps (from Step 6)
+      - completed_project (for context)
+    outputs:
+      - applicability_definition: when_to_use, domains, triggers
+    verification: |
+      Applicability is specific enough to be useful for discovery
+
+  - id: 8
+    name: Add examples
+    action: |
+      Create 2-3 concrete instantiations showing the procedure in use:
+
+      ```yaml
+      examples:
+        - name: "Climate policy analysis"
+          context: "Analyzing carbon tax proposal"
+          parameters:
+            topic: "climate change policy"
+            position: "carbon tax"
+            counterposition: "market-only solutions"
+            domain: "environmental economics"
+          expected_output: "Position paper with counterargument analysis"
+
+        - name: "Database selection"
+          context: "Choosing database for new application"
+          parameters:
+            topic: "database selection"
+            position: "PostgreSQL"
+            counterposition: "MongoDB"
+            domain: "software architecture"
+          expected_output: "Technical comparison with recommendation"
+      ```
+
+      Examples should:
+      - Cover different domains to show generalizability
+      - Include realistic parameter values
+      - Show expected outputs
+      - Be different from the source project
+    inputs:
+      - generalized_steps (from Step 6)
+      - parameter_definitions (from Step 5)
+    outputs:
+      - example_instantiations: 2-3 examples per procedure
+    verification: |
+      At least 2 examples from different domains
+
+  - id: 9
+    name: Write to library
+    action: |
+      Create procedure file in library:
+
+      1. Determine correct location:
+         - library/procedures/extracted/{domain}/{procedure_id}.yaml
+         - Domain should match procedure's primary domain
+
+      2. Use standard procedure template format with all sections:
+         - id, name, version, domain, description
+         - long_description
+         - tags
+         - when_to_use, when_not_to_use
+         - inputs, outputs
+         - steps (with id, name, action, inputs, outputs, verification)
+         - verification
+         - failure_modes
+         - examples
+         - gosm_integration
+
+      3. Add source attribution:
+         ```yaml
+         source:
+           project: "{project_name}"
+           extracted_date: "{date}"
+           original_context: "{brief description}"
+         ```
+
+      4. Validate YAML syntax before saving
+    inputs:
+      - All outputs from previous steps
+    outputs:
+      - procedure_file: path to created file
+    verification: |
+      File exists, YAML is valid, all required fields present
+
+  - id: 10
+    name: Update index
+    action: |
+      Add new procedure to library indexes:
+
+      1. Update library/INDEX.md:
+         - Add to "Extracted Procedures" section
+         - Include procedure ID, name, purpose, source
+
+      2. Update library/procedures/extracted/EXTRACTED_PROCEDURES_INDEX.md:
+         - Add entry with full details
+
+      3. Update domain-specific index if exists:
+         - E.g., library/procedures/extracted/{domain}/INDEX.md
+
+      Format for INDEX.md:
+      | Procedure ID | Name | Purpose | Source |
+      |--------------|------|---------|--------|
+      | {id} | {name} | {purpose} | {source_project} |
+    inputs:
+      - procedure_file (from Step 9)
+    outputs:
+      - index_updates: list of files updated
+    verification: |
+      Procedure appears in all relevant indexes
+
+  - id: 11
+    name: Tag source project
+    action: |
+      Update the source project to record what was extracted:
+
+      1. Update project's context.json or metadata:
+         ```json
+         {
+           "extracted_procedures": [
+             "{procedure_id_1}",
+             "{procedure_id_2}"
+           ],
+           "extraction_date": "YYYY-MM-DD"
+         }
+         ```
+
+      2. Update project's LEARNINGS.md:
+         - Note which procedures were extracted
+         - Link to library locations
+
+      3. This creates traceability:
+         - Can find procedures by source project
+         - Can find projects that contributed to library
+    inputs:
+      - completed_project
+      - procedure_file (from Step 9)
+    outputs:
+      - project_updated: confirmation of source tagging
+    verification: |
+      Source project has extraction recorded
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Procedure is genuinely reusable (not just project-specific with placeholders)
+  - Parameters are clearly defined with types and constraints
+  - Steps are abstract but remain actionable
+  - Applicability is well-defined and specific
+  - Examples demonstrate usage across domains
+  - Library location is correct for the domain
+  - Index is updated in all relevant places
+  - Source project is tagged for traceability
+
+failure_modes:
+  - mode: Over-generalization
+    symptom: Procedure is too abstract to be actionable
+    resolution: Keep some specificity, add more examples, test with instantiation
+
+  - mode: Under-generalization
+    symptom: Procedure still contains project-specific elements
+    resolution: Review for hidden specifics, create more parameters
+
+  - mode: Low value extraction
+    symptom: Extracted procedure rarely used, low effectiveness scores
+    resolution: Use scoring criteria strictly, be willing to skip candidates
+
+  - mode: Duplicate functionality
+    symptom: Similar procedure already exists in library
+    resolution: Check library thoroughly before extracting, merge if similar
+
+  - mode: Lost context
+    symptom: Extracted procedure unclear without original project knowledge
+    resolution: Add more long_description, include "why" not just "how"
+
+  - mode: Invalid parameterization
+    symptom: Some parameter combinations don't make sense
+    resolution: Add constraints to parameters, document invalid combinations
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Extract argument analysis procedure
+    context: Completed philosophy paper project
+    inputs:
+      completed_project: "projects/2025-10-15_atheism-paper"
+      phases:
+        - name: "Research"
+          procedure: "Ad-hoc research gathering"
+        - name: "Argument mapping"
+          procedure: "Custom argument structure"
+        - name: "Counterargument"
+          procedure: "Systematic objection handling"
+    process: |
+      1. Review phases:
+         - Research: Standard, not novel
+         - Argument mapping: Novel, structured approach
+         - Counterargument: Novel, systematic process
+
+      2. Review gates:
+         - Custom "Steel man test" gate was valuable
+
+      3. Score candidates:
+         - Argument mapping: 4.2 (high value, generalizable)
+         - Counterargument handling: 3.8 (valuable, transferable)
+         - Steel man gate: 3.5 (useful for any argumentative work)
+
+      4. Identify specifics:
+         - "atheism" → {position}
+         - "theist" → {opposing_view}
+         - "philosophy" → {domain}
+
+      5. Create parameters:
+         - position: string, required
+         - opposing_view: string, required
+         - domain: string, optional, default "general"
+
+      6. Generalize steps:
+         - "Map atheist arguments" → "Map arguments for {position}"
+         - "Identify theist objections" → "Identify {opposing_view} objections"
+
+      7. Document applicability:
+         - Domains: philosophy, policy, competitive analysis
+         - Triggers: when arguing for position, when comparing views
+
+      8. Add examples:
+         - Climate policy debate
+         - Technology comparison
+         - Business strategy argument
+
+      9. Write to library:
+         - library/procedures/extracted/analysis/argument_mapping.yaml
+         - library/procedures/extracted/analysis/counterargument_handling.yaml
+
+      10. Update index
+
+      11. Tag source project
+    expected_output:
+      extracted_procedures:
+        - "argument_mapping"
+        - "counterargument_handling"
+      library_updates:
+        - "library/procedures/extracted/analysis/argument_mapping.yaml"
+        - "library/procedures/extracted/analysis/counterargument_handling.yaml"
+
+  - name: Extract technical implementation procedure
+    context: Completed software project
+    inputs:
+      completed_project: "projects/2025-12-01_api-integration"
+      phases:
+        - name: "API analysis"
+          procedure: "Systematic API documentation review"
+        - name: "Integration design"
+          procedure: "Adapter pattern implementation"
+        - name: "Testing"
+          procedure: "Contract testing approach"
+    process: |
+      1. Review phases:
+         - API analysis: Novel systematic approach
+         - Integration design: Standard pattern
+         - Testing: Novel contract testing process
+
+      2. Score candidates:
+         - API analysis: 4.0 (very transferable)
+         - Testing approach: 3.6 (valuable for integrations)
+
+      3. Identify specifics:
+         - "Stripe API" → {api_name}
+         - "payment" → {domain}
+         - "webhook" → {integration_type}
+
+      4. Generalize:
+         - "Analyze Stripe documentation" →
+           "Analyze {api_name} documentation for {integration_type} patterns"
+
+      5. Write and index
+    expected_output:
+      extracted_procedures:
+        - "api_documentation_analysis"
+        - "contract_testing_integration"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - After completing any significant GOSM project
+    - During project archival process
+    - When building library from accumulated experience
+    - When onboarding to extract procedures from past work
+
+  gates:
+    - gate: candidates_scored
+      question: "Have all extraction candidates been scored objectively?"
+
+    - gate: generalization_complete
+      question: "Are procedures generalized without project-specific elements?"
+
+    - gate: examples_diverse
+      question: "Do examples cover multiple domains?"
+
+    - gate: library_updated
+      question: "Is the procedure in the library and all indexes?"
+
+  related_procedures:
+    - procedure_extraction_from_source: Extract from external sources
+    - procedure_improvement: Improve extracted procedures over time
+    - procedure_effectiveness: Track usage of extracted procedures
+    - framework_extension: For adding new framework capabilities

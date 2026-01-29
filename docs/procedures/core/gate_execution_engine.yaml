@@ -1,0 +1,234 @@
+# Gate Execution Engine
+# Automated enforcement of GOSM gates
+# Converts gates from advice to enforced checkpoints
+
+id: gate_execution_engine
+name: Gate Execution Engine
+version: "1.0.0"
+domain: core
+tags: ["execution", "enforcement", "gates", "mandatory"]
+
+description: |
+  Systematic execution of GOSM gates with enforcement.
+
+  Current problem: Gates are YAML documents (advice), not automated checks.
+  Rigor depends entirely on user discipline.
+
+  This procedure makes gates mandatory checkpoints that must pass before
+  proceeding to next phase.
+
+# ============================================
+# GATE EXECUTION FLOW
+# ============================================
+execution_flow:
+  description: How gates are executed
+
+  phases:
+    - phase: ASSESSMENT
+      gates:
+        - requirement_verification
+        - goal_structure_reconstruction
+        - complexity_assessment
+      enforcement: "Cannot proceed to STRATEGY until all pass"
+
+    - phase: STRATEGY
+      gates:
+        - strategy_discovery_check
+        - innovation_check
+        - adversarial_review_check
+      enforcement: "Cannot proceed to PLANNING until all pass"
+
+    - phase: PLANNING
+      gates:
+        - story_coherence_gate
+        - specification_adequacy_gate
+        - procedures_referenced_check
+      enforcement: "Cannot proceed to STEPS until all pass"
+
+    - phase: STEPS
+      gates:
+        - steps_completeness_check
+        - steps_executability_check
+      enforcement: "Cannot proceed to EXECUTION until all pass"
+
+    - phase: COMPLETION
+      gates:
+        - outcome_verification_framework
+        - learning_capture_check
+      enforcement: "Cannot close project until all pass"
+
+# ============================================
+# GATE EXECUTION PROTOCOL
+# ============================================
+execution_protocol:
+  for_each_gate:
+    step_1_announce:
+      action: "State: 'Running gate: [gate_name]'"
+      purpose: "Make gate execution visible"
+
+    step_2_execute:
+      action: "Work through gate questions/checks systematically"
+      output: "Document each check and result"
+
+    step_3_determine_result:
+      options:
+        PASS: "All criteria met"
+        CONDITIONAL_PASS: "Minor issues, acceptable to proceed with noted risks"
+        FAIL: "Criteria not met, cannot proceed"
+
+    step_4_if_fail:
+      action: |
+        1. Document why gate failed
+        2. Identify what needs to change
+        3. Make the change
+        4. Re-run the gate
+        5. Repeat until PASS or CONDITIONAL_PASS
+
+    step_5_record:
+      action: "Record gate result in project state"
+      format: |
+        gate: [gate_name]
+        result: [PASS|CONDITIONAL_PASS|FAIL]
+        notes: [any important observations]
+
+# ============================================
+# ENFORCEMENT LEVELS
+# ============================================
+enforcement_levels:
+  MANDATORY:
+    description: "Gate must pass before proceeding"
+    behavior: "Block progression until pass"
+    override: "No override - must pass"
+    examples:
+      - requirement_verification
+      - adversarial_review_check
+      - outcome_verification_framework
+
+  CONDITIONAL:
+    description: "Gate should pass, but can proceed with documented risk"
+    behavior: "Warn if fail, allow proceed with acknowledgment"
+    override: "Can override with documented rationale"
+    examples:
+      - innovation_check (if time-constrained)
+      - procedures_referenced_check
+
+  ADVISORY:
+    description: "Gate provides information, doesn't block"
+    behavior: "Run gate, record result, proceed regardless"
+    override: "N/A - doesn't block"
+    examples:
+      - complexity_assessment (informs, doesn't block)
+
+# ============================================
+# PHASE TRANSITION REQUIREMENTS
+# ============================================
+phase_transitions:
+  ASSESSMENT_to_STRATEGY:
+    required_gates:
+      - requirement_verification: MANDATORY
+      - goal_structure_reconstruction: MANDATORY
+    optional_gates:
+      - complexity_assessment: ADVISORY
+    transition_check: "All MANDATORY gates passed?"
+
+  STRATEGY_to_PLANNING:
+    required_gates:
+      - strategy_discovery_check: MANDATORY
+      - adversarial_review_check: MANDATORY
+    optional_gates:
+      - innovation_check: CONDITIONAL
+    transition_check: "All MANDATORY gates passed? CONDITIONAL gates passed or overridden with rationale?"
+
+  PLANNING_to_STEPS:
+    required_gates:
+      - story_coherence_gate: MANDATORY
+      - specification_adequacy_gate: MANDATORY
+    transition_check: "All MANDATORY gates passed?"
+
+  STEPS_to_EXECUTION:
+    required_gates:
+      - steps_completeness_check: MANDATORY
+    transition_check: "Steps are complete and executable?"
+
+  EXECUTION_to_COMPLETION:
+    required_gates:
+      - outcome_verification_framework: MANDATORY
+      - learning_capture_check: MANDATORY
+    transition_check: "Outcome verified? Learnings captured?"
+
+# ============================================
+# GATE FAILURE HANDLING
+# ============================================
+failure_handling:
+  on_mandatory_fail:
+    step_1: "Document the failure clearly"
+    step_2: "Identify what needs to change"
+    step_3: "Make the change (may require going back to earlier phase)"
+    step_4: "Re-run the gate"
+    step_5: "If still failing, escalate (is the goal achievable?)"
+
+  on_conditional_fail:
+    step_1: "Document the failure"
+    step_2: "Assess: Can we proceed with this risk?"
+    step_3_if_yes: "Document rationale, proceed with risk noted"
+    step_3_if_no: "Treat as MANDATORY failure, fix before proceeding"
+
+  on_repeated_failure:
+    trigger: "Same gate fails 3+ times"
+    action: |
+      Stop and reassess:
+      1. Is the goal achievable?
+      2. Are we at the wrong level of the problem?
+      3. Is there a fundamental issue not being addressed?
+      4. Should we abandon or reframe?
+
+# ============================================
+# MINIMAL IMPLEMENTATION
+# ============================================
+minimal_implementation:
+  description: "Simplest way to use this"
+
+  for_each_phase:
+    - "Before starting phase, list required gates"
+    - "Execute each gate, document result"
+    - "If any MANDATORY gate fails, fix before proceeding"
+    - "Move to next phase only when all required gates pass"
+
+  documentation_format: |
+    ## Phase: [PHASE_NAME]
+
+    ### Gate: [gate_name]
+    - Result: [PASS/CONDITIONAL_PASS/FAIL]
+    - Notes: [any observations]
+
+    ### Gate: [gate_name_2]
+    ...
+
+    ### Phase Transition
+    - All mandatory gates passed: [YES/NO]
+    - Proceeding to: [NEXT_PHASE]
+
+# ============================================
+# WHEN TO SKIP GATES
+# ============================================
+skip_conditions:
+  description: "Some gates can be skipped in specific conditions"
+
+  examples:
+    innovation_check:
+      skip_if: "Goal is highly constrained with single viable approach"
+      rationale: "Innovation search adds no value when solution is determined"
+
+    complexity_assessment:
+      skip_if: "Goal is clearly simple/clearly complex"
+      rationale: "Assessment adds no value when obvious"
+
+    procedures_referenced_check:
+      skip_if: "No relevant procedures exist in library"
+      rationale: "Can't reference what doesn't exist"
+
+  skip_documentation: |
+    When skipping a gate, document:
+    - Gate name
+    - Reason for skip
+    - What skip condition applies

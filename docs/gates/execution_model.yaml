@@ -1,0 +1,306 @@
+# GOSM v2: Execution Model Framework
+# Who/what executes the goal: human, AI, team, automated, hybrid
+
+execution_model:
+  purpose: |
+    Goals must account for WHO or WHAT will execute them.
+    Different executors have different capabilities, constraints, and costs.
+    Planning must match the executor's characteristics.
+
+  # ============================================
+  # EXECUTOR TYPES
+  # ============================================
+  executor_types:
+    human_solo:
+      description: "Single human executing alone"
+      characteristics:
+        - "Limited attention and energy"
+        - "Needs motivation and breaks"
+        - "Can exercise judgment and creativity"
+        - "Has context and tacit knowledge"
+        - "Can adapt on the fly"
+      constraints:
+        - "Working hours limited"
+        - "Cognitive load limits parallel work"
+        - "Subject to illness, fatigue, mood"
+      best_for:
+        - "Creative work"
+        - "Judgment-heavy tasks"
+        - "Novel situations"
+        - "Relationship building"
+
+    ai_agent:
+      description: "AI system executing tasks"
+      characteristics:
+        - "Can work continuously"
+        - "Consistent (same input → same output)"
+        - "No fatigue but has context limits"
+        - "Follows instructions literally"
+        - "May miss context humans would catch"
+      constraints:
+        - "Limited to trained capabilities"
+        - "Can't exercise true judgment"
+        - "May hallucinate or make confident errors"
+        - "Needs clear success criteria"
+      best_for:
+        - "Well-defined tasks"
+        - "High-volume work"
+        - "24/7 availability needed"
+        - "Tasks with clear verification"
+
+    team:
+      description: "Multiple humans working together"
+      characteristics:
+        - "Combined capacity exceeds individual"
+        - "Can parallelize work"
+        - "Diverse perspectives and skills"
+        - "Coordination overhead"
+        - "Communication is critical"
+      constraints:
+        - "Coordination costs scale with size"
+        - "Alignment challenges"
+        - "Scheduling complexity"
+        - "Decision-making can be slow"
+      best_for:
+        - "Large scope projects"
+        - "Multi-skill requirements"
+        - "Tight deadlines (parallelize)"
+        - "High stakes (multiple perspectives)"
+
+    automated:
+      description: "Deterministic systems (scripts, pipelines)"
+      characteristics:
+        - "Perfectly repeatable"
+        - "Very fast for routine tasks"
+        - "No judgment, just execution"
+        - "Requires clear specification"
+      constraints:
+        - "Can't handle exceptions"
+        - "Brittle to environment changes"
+        - "Setup cost before benefit"
+        - "Maintenance burden"
+      best_for:
+        - "Repetitive tasks"
+        - "High-frequency operations"
+        - "Tasks requiring consistency"
+        - "After process is well-understood"
+
+    hybrid:
+      description: "Combination of executor types"
+      patterns:
+        human_ai:
+          description: "Human directs, AI executes"
+          example: "Human sets strategy, AI drafts content"
+          division: "Judgment to human, volume to AI"
+
+        ai_human:
+          description: "AI proposes, human approves"
+          example: "AI generates options, human selects"
+          division: "Generation to AI, decision to human"
+
+        human_automated:
+          description: "Human handles exceptions, automation handles routine"
+          example: "Automated tests, human reviews failures"
+
+        team_ai:
+          description: "Team augmented by AI tools"
+          example: "Team planning with AI research support"
+
+  # ============================================
+  # EXECUTOR SELECTION GATE
+  # ============================================
+  executor_selection:
+    question: "Who will execute this goal?"
+
+    assessment_criteria:
+      task_characteristics:
+        - "Does it require judgment? → Human"
+        - "Is it well-defined and repetitive? → Automated"
+        - "Does it need 24/7 availability? → AI/Automated"
+        - "Is scope too large for one person? → Team"
+        - "Does it require creativity? → Human"
+        - "Does it need diverse perspectives? → Team"
+
+      resource_availability:
+        - "Human time available?"
+        - "AI capabilities sufficient?"
+        - "Team assembled?"
+        - "Automation infrastructure exists?"
+
+      risk_tolerance:
+        - "What happens if executor fails?"
+        - "Can errors be caught and corrected?"
+        - "Is verification built in?"
+
+  # ============================================
+  # EXECUTOR-SPECIFIC PLANNING
+  # ============================================
+  planning_by_executor:
+    human_solo:
+      planning_considerations:
+        - "Task breakdown fits working sessions"
+        - "Built-in breaks and recovery"
+        - "Motivation sustenance"
+        - "Avoid burnout"
+      scheduling:
+        - "Match energy levels to task demands"
+        - "Creative work when fresh"
+        - "Admin when tired"
+      tracking:
+        - "Progress visible to maintain momentum"
+        - "Rewards and milestones"
+
+    ai_agent:
+      planning_considerations:
+        - "Clear, unambiguous instructions"
+        - "Explicit success criteria"
+        - "Verification steps built in"
+        - "Human checkpoints for judgment calls"
+      constraints:
+        - "Context window limits"
+        - "May need task decomposition"
+        - "Error handling defined"
+      tracking:
+        - "Automated progress tracking"
+        - "Human review at checkpoints"
+
+    team:
+      planning_considerations:
+        - "Clear ownership for each task"
+        - "Dependencies mapped"
+        - "Communication cadence defined"
+        - "Decision-making process clear"
+      coordination:
+        - "Handoffs explicit"
+        - "Blocking issues surfaced quickly"
+        - "Regular sync meetings"
+      tracking:
+        - "Shared visibility into progress"
+        - "Individual accountability"
+
+    automated:
+      planning_considerations:
+        - "Specification complete and unambiguous"
+        - "Error handling for all cases"
+        - "Monitoring and alerting"
+        - "Maintenance plan"
+      setup:
+        - "Development and testing time"
+        - "Deployment infrastructure"
+      tracking:
+        - "Automated monitoring"
+        - "Human alerted on exceptions"
+
+    hybrid:
+      planning_considerations:
+        - "Clear interface between executor types"
+        - "Handoff criteria defined"
+        - "Escalation paths clear"
+        - "Overall orchestration owned by someone"
+      coordination:
+        - "Which executor for which task type"
+        - "How to handle edge cases"
+        - "Human override capability"
+
+  # ============================================
+  # GATES
+  # ============================================
+  gates:
+    - id: executor_identified
+      question: "Who/what will execute this goal?"
+      options:
+        - "human_solo"
+        - "ai_agent"
+        - "team"
+        - "automated"
+        - "hybrid"
+      if_not_clear: "Define before planning details"
+
+    - id: executor_capable
+      question: "Can this executor actually do this?"
+
+      human_check:
+        - "Has necessary skills?"
+        - "Has necessary time?"
+        - "Motivated to do it?"
+
+      ai_check:
+        - "Within AI capabilities?"
+        - "Can verify output quality?"
+        - "Clear enough to specify?"
+
+      team_check:
+        - "Team has collective skills?"
+        - "Team available and aligned?"
+        - "Coordination manageable?"
+
+      automated_check:
+        - "Process well-understood enough?"
+        - "Infrastructure exists?"
+        - "Worth the setup cost?"
+
+    - id: executor_constraints_acknowledged
+      question: "Have we planned around executor limitations?"
+
+      examples:
+        human: "Planned for limited hours, energy cycles"
+        ai: "Built in verification, human checkpoints"
+        team: "Coordination overhead included"
+        automated: "Maintenance planned, exceptions handled"
+
+    - id: handoffs_defined
+      question: "For hybrid execution, are handoffs clear?"
+      relevant_for: "hybrid"
+
+      checklist:
+        - "When does work pass between executors?"
+        - "What format for handoff?"
+        - "Who handles exceptions?"
+        - "Who has final authority?"
+
+  # ============================================
+  # COMMON MISTAKES
+  # ============================================
+  common_mistakes:
+    - mistake: "Planning for AI as if it were human"
+      symptom: "Expecting judgment, context awareness"
+      fix: "Build in explicit verification, clear criteria"
+
+    - mistake: "Planning for human as if unlimited"
+      symptom: "Unrealistic hours, no recovery time"
+      fix: "Realistic capacity, energy management"
+
+    - mistake: "Team without coordination"
+      symptom: "Assuming work will naturally flow"
+      fix: "Explicit ownership, communication cadence"
+
+    - mistake: "Automating before understanding"
+      symptom: "Automating process that isn't stable"
+      fix: "Manual first, automate proven processes"
+
+  # ============================================
+  # EXAMPLES
+  # ============================================
+  examples:
+    - goal: "Write comprehensive documentation"
+      executor: "hybrid (human_ai)"
+      division:
+        ai: "Draft initial content, format consistently"
+        human: "Review for accuracy, add context, judge completeness"
+      handoffs: "AI drafts → Human reviews → AI incorporates feedback"
+
+    - goal: "Process 10,000 customer records"
+      executor: "hybrid (automated_human)"
+      division:
+        automated: "Process standard cases (95%)"
+        human: "Handle exceptions (5%), review samples"
+      handoffs: "Automated processes, flags exceptions, human reviews"
+
+    - goal: "Launch new product"
+      executor: "team"
+      division:
+        product: "Specification, prioritization"
+        engineering: "Build, test"
+        marketing: "Go-to-market"
+        sales: "Customer conversations"
+      coordination: "Weekly sync, shared roadmap, clear milestones"

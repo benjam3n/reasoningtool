@@ -1,0 +1,929 @@
+# Comprehensive Search Methods
+# An exhaustive catalog of search methods across all known domains
+# Version: 1.0.0
+
+id: search_methods_comprehensive
+name: Comprehensive Search Methods Catalog
+version: "1.0.0"
+domain: core
+
+description: |
+  An exhaustive inventory of search methods found in nature, science,
+  technology, and human systems. Understanding these methods enables
+  borrowing strategies across domains.
+
+  Meta-question: Is intelligence just "how well you can search"?
+
+# ============================================
+# COMPUTER SCIENCE / ALGORITHMS
+# ============================================
+
+computer_science:
+
+  uninformed_search:
+    description: "Search without domain knowledge"
+    methods:
+      - name: "Linear/Sequential Search"
+        how: "Check each element one by one"
+        when: "Unsorted data, small datasets"
+        cost: "O(n)"
+
+      - name: "Binary Search"
+        how: "Divide sorted space in half repeatedly"
+        when: "Sorted data"
+        cost: "O(log n)"
+
+      - name: "Breadth-First Search (BFS)"
+        how: "Explore all neighbors before going deeper"
+        when: "Finding shortest path, exhaustive exploration"
+        cost: "O(V+E) for graphs"
+
+      - name: "Depth-First Search (DFS)"
+        how: "Go deep before going wide"
+        when: "Memory-constrained, solution likely deep"
+        cost: "O(V+E) for graphs"
+
+      - name: "Iterative Deepening"
+        how: "DFS with increasing depth limits"
+        when: "Unknown solution depth, space-constrained"
+        cost: "O(b^d) but optimal memory"
+
+      - name: "Bidirectional Search"
+        how: "Search from both start and goal, meet in middle"
+        when: "Known goal state"
+        cost: "O(b^(d/2))"
+
+  informed_search:
+    description: "Search using heuristics/domain knowledge"
+    methods:
+      - name: "Best-First Search"
+        how: "Expand most promising node according to heuristic"
+        when: "Good heuristic available"
+        cost: "Depends on heuristic quality"
+
+      - name: "A* Search"
+        how: "f(n) = g(n) + h(n), actual cost + estimated remaining"
+        when: "Need optimal path with admissible heuristic"
+        cost: "Optimal if heuristic admissible"
+
+      - name: "Greedy Best-First"
+        how: "Expand node closest to goal (ignore path cost)"
+        when: "Speed over optimality"
+        cost: "Fast but may not be optimal"
+
+      - name: "Beam Search"
+        how: "Keep only k best candidates at each level"
+        when: "Memory-constrained, approximate OK"
+        cost: "O(k*b*d)"
+
+      - name: "IDA* (Iterative Deepening A*)"
+        how: "A* with iterative deepening on f-cost"
+        when: "Memory-constrained but need optimality"
+        cost: "Optimal, linear memory"
+
+  local_search:
+    description: "Search by improving current solution"
+    methods:
+      - name: "Hill Climbing"
+        how: "Move to better neighbor, stop at peak"
+        when: "Single solution needed, local optima acceptable"
+        problem: "Gets stuck at local maxima"
+
+      - name: "Steepest Ascent Hill Climbing"
+        how: "Evaluate all neighbors, pick best"
+        when: "Can afford neighbor evaluation"
+        problem: "Still gets stuck"
+
+      - name: "Random Restart Hill Climbing"
+        how: "Hill climb from random starting points"
+        when: "Many local optima, global optimum needed"
+        benefit: "Escapes local optima via restarts"
+
+      - name: "Simulated Annealing"
+        how: "Accept worse moves with decreasing probability"
+        when: "Need to escape local optima"
+        benefit: "Provably converges to global optimum"
+
+      - name: "Tabu Search"
+        how: "Hill climb but forbid recent moves"
+        when: "Cycling is a problem"
+        benefit: "Avoids revisiting same states"
+
+      - name: "Gradient Descent"
+        how: "Follow negative gradient of objective function"
+        when: "Continuous optimization, differentiable"
+        cost: "Converges to local minimum"
+
+      - name: "Stochastic Gradient Descent"
+        how: "Gradient descent with random sampling"
+        when: "Large datasets, neural networks"
+        benefit: "Faster, escapes some local minima"
+
+  population_based:
+    description: "Maintain population of candidate solutions"
+    methods:
+      - name: "Genetic Algorithm"
+        how: "Selection, crossover, mutation on population"
+        when: "Complex search space, parallelizable"
+        inspired_by: "Biological evolution"
+
+      - name: "Evolution Strategies"
+        how: "Mutation-based evolution with self-adaptation"
+        when: "Continuous optimization"
+        inspired_by: "Evolution without crossover"
+
+      - name: "Particle Swarm Optimization"
+        how: "Particles move toward personal and global best"
+        when: "Continuous optimization"
+        inspired_by: "Bird flocking, fish schooling"
+
+      - name: "Ant Colony Optimization"
+        how: "Pheromone trails guide future searches"
+        when: "Combinatorial optimization, routing"
+        inspired_by: "Ant foraging"
+
+      - name: "Differential Evolution"
+        how: "Difference vectors drive mutation"
+        when: "Continuous, non-differentiable"
+        benefit: "Few parameters to tune"
+
+  probabilistic_search:
+    description: "Search using probability models"
+    methods:
+      - name: "Monte Carlo Search"
+        how: "Random sampling to estimate"
+        when: "High-dimensional spaces"
+        benefit: "Scales better than exhaustive"
+
+      - name: "Monte Carlo Tree Search (MCTS)"
+        how: "Selection, expansion, simulation, backpropagation"
+        when: "Game playing, planning"
+        famous: "AlphaGo"
+
+      - name: "Bayesian Optimization"
+        how: "Build probabilistic model, optimize acquisition function"
+        when: "Expensive evaluations, hyperparameter tuning"
+        benefit: "Sample-efficient"
+
+      - name: "Thompson Sampling"
+        how: "Sample from posterior, act on sample"
+        when: "Multi-armed bandit, exploration-exploitation"
+        benefit: "Optimal exploration"
+
+      - name: "MCMC (Markov Chain Monte Carlo)"
+        how: "Random walk that converges to target distribution"
+        when: "Sampling from complex distributions"
+        methods: "Metropolis-Hastings, Gibbs sampling"
+
+  constraint_based:
+    description: "Search satisfying constraints"
+    methods:
+      - name: "Constraint Propagation"
+        how: "Reduce domains using constraint implications"
+        when: "CSP with tight constraints"
+        benefit: "Prunes search space"
+
+      - name: "Backtracking"
+        how: "DFS with constraint checking, undo on failure"
+        when: "Discrete choices, constraints"
+        benefit: "Systematic, complete"
+
+      - name: "Arc Consistency"
+        how: "Ensure all binary constraints satisfiable"
+        when: "Preprocessing for CSP"
+        algorithms: "AC-3, AC-4"
+
+      - name: "SAT Solving"
+        how: "DPLL, CDCL, unit propagation"
+        when: "Boolean satisfiability"
+        power: "Many problems reduce to SAT"
+
+      - name: "SMT Solving"
+        how: "SAT + theory solvers"
+        when: "Constraints with arithmetic, arrays, etc."
+        power: "Formal verification"
+
+# ============================================
+# EVOLUTION / BIOLOGY
+# ============================================
+
+evolution:
+  description: "Nature's search through fitness landscape"
+
+  variation_generation:
+    - name: "Point Mutation"
+      how: "Random single-bit changes to genome"
+      when: "Continuous exploration"
+      rate: "~1 per 10^8-10^9 base pairs per generation"
+
+    - name: "Sexual Recombination"
+      how: "Combine parts of two solutions"
+      when: "Building blocks can recombine"
+      benefit: "Explores combinations efficiently"
+
+    - name: "Gene Duplication"
+      how: "Copy gene, then diverge"
+      when: "New function needed without losing old"
+      benefit: "Safe exploration"
+
+    - name: "Horizontal Gene Transfer"
+      how: "Import genes from other organisms"
+      when: "Bacteria, rapid adaptation"
+      benefit: "Shortcut to good solutions"
+
+    - name: "Transposition"
+      how: "Jumping genes move within genome"
+      when: "Genome reorganization"
+      benefit: "Large-scale exploration"
+
+    - name: "Polyploidy"
+      how: "Whole genome duplication"
+      when: "Plants especially"
+      benefit: "Massive variation potential"
+
+  selection_mechanisms:
+    - name: "Natural Selection"
+      how: "Differential survival and reproduction"
+      what: "Filter on fitness"
+      timescale: "Generations"
+
+    - name: "Sexual Selection"
+      how: "Mate choice creates selection pressure"
+      what: "Filter on attractiveness/signals"
+      result: "Peacock tails, elaborate displays"
+
+    - name: "Kin Selection"
+      how: "Helping relatives spreads shared genes"
+      what: "Filter on inclusive fitness"
+      result: "Altruism toward relatives"
+
+    - name: "Group Selection"
+      how: "Groups compete, affecting member genes"
+      what: "Filter on group success"
+      status: "Controversial but real in some cases"
+
+    - name: "Frequency-Dependent Selection"
+      how: "Fitness depends on how common you are"
+      what: "Rare variants may be favored"
+      result: "Maintains diversity"
+
+  exploration_strategies:
+    - name: "Adaptive Radiation"
+      how: "Rapid diversification into niches"
+      when: "New opportunity (island, extinction)"
+      example: "Darwin's finches"
+
+    - name: "Convergent Evolution"
+      how: "Different lineages find same solution"
+      evidence: "Eyes evolved 40+ times"
+      implication: "Some solutions are attractors"
+
+    - name: "Punctuated Equilibrium"
+      how: "Long stasis, rapid change"
+      when: "Major environmental shifts"
+      vs: "Phyletic gradualism"
+
+    - name: "Neutral Drift"
+      how: "Random walk in neutral fitness space"
+      when: "No selection pressure"
+      benefit: "Explores without fitness cost"
+
+    - name: "Evolvability"
+      how: "Evolution of the ability to evolve"
+      what: "Modularity, robustness, variability"
+      meta: "Search for better search"
+
+# ============================================
+# ORGANISMS / BEHAVIOR
+# ============================================
+
+organisms:
+  description: "How living things search their environment"
+
+  movement_patterns:
+    - name: "Levy Flight"
+      how: "Many short moves, occasional long jumps"
+      who: "Albatross, sharks, humans in unfamiliar areas"
+      why: "Optimal for sparse, random targets"
+
+    - name: "Brownian Motion / Random Walk"
+      how: "Random direction each step"
+      who: "Bacteria, pollen"
+      why: "No information, covers area eventually"
+
+    - name: "Chemotaxis"
+      how: "Follow chemical gradient"
+      who: "Bacteria, sperm, immune cells"
+      how_works: "Run longer when gradient improves"
+
+    - name: "Phototaxis"
+      how: "Move toward/away from light"
+      who: "Moths, phytoplankton"
+      mechanism: "Compare light intensity"
+
+    - name: "Thermotaxis"
+      how: "Follow temperature gradient"
+      who: "Many organisms"
+      mechanism: "Temperature-sensitive neurons"
+
+    - name: "Magnetotaxis"
+      how: "Follow magnetic field"
+      who: "Bacteria, birds, sea turtles"
+      mechanism: "Magnetite crystals or cryptochrome"
+
+  foraging_strategies:
+    - name: "Area-Restricted Search"
+      how: "Intensify search near successful find"
+      who: "Most foragers"
+      why: "Resources often clustered"
+
+    - name: "Trapline Foraging"
+      how: "Repeated route through known resources"
+      who: "Bees, hummingbirds, primates"
+      why: "Exploit known, occasionally explore"
+
+    - name: "Central Place Foraging"
+      how: "Radiate from home base"
+      who: "Nesting animals"
+      constraint: "Must return to nest"
+
+    - name: "Optimal Foraging"
+      how: "Maximize energy gain per time"
+      who: "Most animals approximate this"
+      theory: "Marginal value theorem"
+
+    - name: "Risk-Sensitive Foraging"
+      how: "Adjust based on variance, not just mean"
+      who: "Animals near starvation"
+      when: "High risk when desperate"
+
+  social_search:
+    - name: "Following"
+      how: "Copy others' search paths"
+      who: "Fish schools, bird flocks"
+      why: "Others may have information"
+
+    - name: "Recruitment"
+      how: "Signal others to good location"
+      who: "Ants, bees"
+      method: "Pheromones, waggle dance"
+
+    - name: "Eavesdropping"
+      how: "Monitor others' signals without permission"
+      who: "Many species"
+      why: "Free information"
+
+    - name: "Producer-Scrounger"
+      how: "Some search, others exploit finders"
+      who: "Birds, primates"
+      game_theory: "Frequency-dependent equilibrium"
+
+# ============================================
+# CELLULAR / MOLECULAR
+# ============================================
+
+cellular:
+  description: "Search at the molecular level"
+
+  molecular_recognition:
+    - name: "Lock and Key"
+      how: "Shape complementarity"
+      what: "Enzyme-substrate, antibody-antigen"
+      search: "Diffusion brings molecules together"
+
+    - name: "Induced Fit"
+      how: "Shape changes upon binding"
+      what: "More flexible recognition"
+      search: "Approximate match triggers refinement"
+
+    - name: "Conformational Selection"
+      how: "Pre-existing conformations get selected"
+      what: "Dynamic equilibrium of shapes"
+      search: "Right shape gets stabilized"
+
+  immune_system:
+    - name: "V(D)J Recombination"
+      how: "Random combination of gene segments"
+      what: "Generates antibody diversity"
+      search_space: "~10^11 possible antibodies"
+
+    - name: "Clonal Selection"
+      how: "Expand cells that recognize antigen"
+      what: "Amplify successful searchers"
+      mechanism: "Antigen binding triggers proliferation"
+
+    - name: "Somatic Hypermutation"
+      how: "Rapid mutation in antibody genes"
+      what: "Local search around good solutions"
+      result: "Affinity maturation"
+
+    - name: "Class Switching"
+      how: "Change antibody effector function"
+      what: "Same recognition, different action"
+      search: "Find best response type"
+
+  gene_regulation:
+    - name: "Transcription Factor Binding"
+      how: "Proteins find specific DNA sequences"
+      search: "Sliding, hopping, 3D diffusion"
+      speed: "Faster than diffusion limit"
+
+    - name: "Stochastic Gene Expression"
+      how: "Random fluctuations in expression"
+      what: "Bet-hedging, exploration"
+      example: "Bacterial persistence"
+
+    - name: "Epigenetic Search"
+      how: "Heritable changes without DNA change"
+      what: "Explore phenotype space"
+      mechanisms: "Methylation, histone modification"
+
+  protein_folding:
+    - name: "Folding Funnel"
+      how: "Energy landscape guides folding"
+      search: "Not random - biased toward native state"
+      paradox: "Levinthal's paradox resolved"
+
+    - name: "Chaperone-Assisted Folding"
+      how: "Proteins help other proteins fold"
+      search: "Prevent wrong paths, allow restart"
+      example: "GroEL/GroES"
+
+# ============================================
+# HUMAN COGNITION
+# ============================================
+
+human_cognition:
+  description: "How humans search mentally"
+
+  memory_search:
+    - name: "Free Recall"
+      how: "Retrieve without cues"
+      pattern: "Primacy, recency effects"
+      mechanism: "Spreading activation"
+
+    - name: "Cued Recall"
+      how: "Use cue to access memory"
+      mechanism: "Cue activates related memories"
+      effectiveness: "Much better than free recall"
+
+    - name: "Recognition"
+      how: "Identify if seen before"
+      mechanism: "Familiarity + recollection"
+      easier_than: "Recall"
+
+    - name: "Spreading Activation"
+      how: "Activation spreads through semantic network"
+      result: "Related concepts primed"
+      evidence: "Semantic priming experiments"
+
+  problem_solving:
+    - name: "Means-Ends Analysis"
+      how: "Reduce difference between current and goal"
+      when: "Clear goal state"
+      mechanism: "Find operator that reduces biggest difference"
+
+    - name: "Working Backward"
+      how: "Start from goal, find predecessors"
+      when: "Goal clearer than path"
+      example: "Maze solving"
+
+    - name: "Analogical Reasoning"
+      how: "Map solution from similar problem"
+      mechanism: "Structure mapping"
+      famous: "Duncker's radiation problem"
+
+    - name: "Generate and Test"
+      how: "Generate candidates, test each"
+      when: "Generation easy, testing easy"
+      problem: "Combinatorial explosion"
+
+    - name: "Trial and Error"
+      how: "Try things, learn from feedback"
+      when: "No good model"
+      famous: "Thorndike's cats"
+
+    - name: "Insight"
+      how: "Sudden restructuring of problem"
+      mechanism: "Unclear, possibly incubation"
+      experience: "Aha! moment"
+
+  heuristics:
+    - name: "Availability"
+      how: "Judge by ease of recall"
+      fast: "Yes"
+      accurate: "Sometimes"
+
+    - name: "Representativeness"
+      how: "Judge by similarity to prototype"
+      fast: "Yes"
+      bias: "Base rate neglect"
+
+    - name: "Anchoring"
+      how: "Adjust from initial value"
+      fast: "Yes"
+      bias: "Insufficient adjustment"
+
+    - name: "Recognition"
+      how: "Choose recognized option"
+      when: "Recognition correlates with criterion"
+      example: "Which city is larger?"
+
+    - name: "Take-the-Best"
+      how: "Search cues by validity, stop at first discriminating"
+      mechanism: "One-reason decision making"
+      surprisingly: "Often as accurate as complex models"
+
+  attention_as_search:
+    - name: "Feature Search"
+      how: "Parallel search for single feature"
+      speed: "Independent of set size"
+      example: "Find red among green"
+
+    - name: "Conjunction Search"
+      how: "Serial search for feature combinations"
+      speed: "Linear with set size"
+      example: "Find red circle among red squares and blue circles"
+
+    - name: "Guided Search"
+      how: "Top-down guidance biases attention"
+      mechanism: "Activation map"
+      benefit: "Faster than pure bottom-up"
+
+# ============================================
+# SCIENTIFIC / RESEARCH
+# ============================================
+
+scientific:
+  description: "How science searches for truth"
+
+  hypothesis_space:
+    - name: "Hypothetico-Deductive Method"
+      how: "Generate hypothesis, derive predictions, test"
+      mechanism: "Falsification narrows space"
+      famous: "Popper"
+
+    - name: "Abduction/Inference to Best Explanation"
+      how: "Infer hypothesis that best explains data"
+      mechanism: "Explanatory virtues"
+      famous: "Peirce"
+
+    - name: "Bayesian Updating"
+      how: "Update probability based on evidence"
+      mechanism: "P(H|E) = P(E|H)P(H)/P(E)"
+      benefit: "Quantitative belief revision"
+
+  literature_search:
+    - name: "Citation Chaining"
+      how: "Follow references forward and backward"
+      mechanism: "Network traversal"
+      tools: "Google Scholar, Semantic Scholar"
+
+    - name: "Keyword Search"
+      how: "Search by terms"
+      mechanism: "Index lookup"
+      problem: "Vocabulary mismatch"
+
+    - name: "Systematic Review"
+      how: "Exhaustive search with inclusion criteria"
+      mechanism: "Defined protocol, multiple databases"
+      benefit: "Reproducible, comprehensive"
+
+    - name: "Snowball Sampling"
+      how: "Find sources through other sources"
+      mechanism: "Exponential reach"
+      risk: "Bias toward connected work"
+
+  experimental_search:
+    - name: "Factorial Design"
+      how: "Test all combinations of factors"
+      benefit: "Detects interactions"
+      cost: "Exponential in factors"
+
+    - name: "Fractional Factorial"
+      how: "Test subset of combinations"
+      benefit: "Efficient"
+      cost: "May miss some interactions"
+
+    - name: "Response Surface Methodology"
+      how: "Fit surface, optimize"
+      when: "Continuous factors"
+      mechanism: "Sequential experimentation"
+
+    - name: "Adaptive Design"
+      how: "Adjust experiment based on interim results"
+      benefit: "More efficient"
+      example: "Adaptive clinical trials"
+
+  peer_review_as_search:
+    - name: "Peer Review"
+      how: "Experts evaluate work"
+      mechanism: "Distributed error detection"
+      limitation: "Biases, false negatives"
+
+    - name: "Replication"
+      how: "Repeat experiment"
+      mechanism: "Verify findings"
+      crisis: "Many findings don't replicate"
+
+    - name: "Meta-Analysis"
+      how: "Aggregate across studies"
+      mechanism: "Statistical combination"
+      benefit: "Higher power, detect publication bias"
+
+# ============================================
+# SOCIAL / ECONOMIC
+# ============================================
+
+social_economic:
+  description: "How societies search for solutions"
+
+  market_mechanisms:
+    - name: "Price Discovery"
+      how: "Prices aggregate distributed information"
+      mechanism: "Bids and asks converge"
+      famous: "Hayek's knowledge problem"
+
+    - name: "Auction"
+      how: "Competitive bidding reveals values"
+      types: "English, Dutch, sealed-bid, Vickrey"
+      benefit: "Efficient allocation"
+
+    - name: "Prediction Market"
+      how: "Bet on outcomes"
+      mechanism: "Prices reflect probability"
+      accuracy: "Often better than polls"
+
+  collective_search:
+    - name: "Voting"
+      how: "Aggregate preferences"
+      mechanisms: "Majority, ranked choice, approval"
+      problem: "Arrow's impossibility theorem"
+
+    - name: "Wisdom of Crowds"
+      how: "Average independent estimates"
+      when: "Diversity, independence, decentralization"
+      famous: "Galton's ox"
+
+    - name: "Deliberation"
+      how: "Discussion refines views"
+      mechanism: "Argument exchange"
+      risk: "Groupthink"
+
+    - name: "Crowdsourcing"
+      how: "Distribute search to many"
+      examples: "Wikipedia, open source, citizen science"
+      mechanism: "Parallel exploration"
+
+  matching:
+    - name: "Job Search"
+      how: "Workers and firms find each other"
+      frictions: "Information, mobility"
+      theory: "Search and matching models"
+
+    - name: "Mate Search"
+      how: "Find compatible partner"
+      mechanisms: "Signaling, screening, matching"
+      modern: "Dating apps as search optimization"
+
+    - name: "Stable Matching"
+      how: "Match without blocking pairs"
+      algorithm: "Gale-Shapley"
+      applications: "Medical residency, school choice"
+
+# ============================================
+# MANUFACTURING / ENGINEERING
+# ============================================
+
+manufacturing:
+  description: "How industry searches for quality"
+
+  quality_search:
+    - name: "Statistical Process Control"
+      how: "Monitor process, detect deviations"
+      mechanism: "Control charts"
+      benefit: "Early problem detection"
+
+    - name: "Acceptance Sampling"
+      how: "Sample to decide accept/reject batch"
+      mechanism: "Statistical inference"
+      tradeoff: "Inspection cost vs defect cost"
+
+    - name: "Six Sigma"
+      how: "Reduce variation, search for defect causes"
+      mechanism: "DMAIC process"
+      target: "3.4 defects per million"
+
+    - name: "Root Cause Analysis"
+      how: "Search for underlying causes"
+      methods: "5 Whys, fishbone diagram, fault tree"
+      goal: "Fix cause, not symptom"
+
+  optimization:
+    - name: "Design of Experiments"
+      how: "Systematic factor testing"
+      benefit: "Efficient causal inference"
+      pioneer: "Fisher, Taguchi"
+
+    - name: "Lean Manufacturing"
+      how: "Search for and eliminate waste"
+      types: "Transportation, inventory, motion, waiting, overproduction, overprocessing, defects"
+      origin: "Toyota Production System"
+
+    - name: "Continuous Improvement (Kaizen)"
+      how: "Ongoing incremental search"
+      mechanism: "Small experiments, PDCA"
+      philosophy: "Never satisfied"
+
+# ============================================
+# MATHEMATICAL / FORMAL
+# ============================================
+
+mathematical:
+  description: "Formal search methods"
+
+  optimization:
+    - name: "Linear Programming"
+      how: "Optimize linear objective over linear constraints"
+      algorithm: "Simplex, interior point"
+      power: "Many problems are LP"
+
+    - name: "Integer Programming"
+      how: "LP with integer constraints"
+      hardness: "NP-hard in general"
+      methods: "Branch and bound, cutting planes"
+
+    - name: "Convex Optimization"
+      how: "Optimize convex objective over convex set"
+      benefit: "Local optimum is global"
+      algorithms: "Gradient descent works"
+
+    - name: "Dynamic Programming"
+      how: "Optimal substructure, overlapping subproblems"
+      mechanism: "Build solution from subproblems"
+      benefit: "Polynomial for many exponential problems"
+
+  proof_search:
+    - name: "Resolution"
+      how: "Derive contradiction from negated goal"
+      mechanism: "Resolve clauses"
+      complete: "For first-order logic"
+
+    - name: "Tableau Method"
+      how: "Systematic case analysis"
+      mechanism: "Branch on disjunctions"
+      benefit: "Intuitive"
+
+    - name: "Automated Theorem Proving"
+      how: "Computer searches for proofs"
+      modern: "Neural-guided search"
+      examples: "Lean, Coq, Isabelle"
+
+  number_theory_search:
+    - name: "Sieve Methods"
+      how: "Filter out non-solutions"
+      example: "Sieve of Eratosthenes"
+      power: "Prime number theorems"
+
+    - name: "Modular Arithmetic"
+      how: "Reduce search space via residues"
+      mechanism: "Work modulo small numbers"
+      application: "Cryptography"
+
+# ============================================
+# META-QUESTION: IS INTELLIGENCE JUST SEARCH?
+# ============================================
+
+intelligence_as_search:
+  description: |
+    Is intelligence fundamentally "how well you can search"?
+
+    This is a deep question with arguments on both sides.
+
+  arguments_for:
+    - point: "Problem solving IS search"
+      detail: "Finding solutions = searching solution space"
+
+    - point: "Learning IS search"
+      detail: "Finding good hypotheses = searching hypothesis space"
+
+    - point: "Creativity IS search"
+      detail: "Finding novel ideas = searching possibility space"
+
+    - point: "Perception IS search"
+      detail: "Finding patterns = searching interpretation space"
+
+    - point: "IQ tests measure search"
+      detail: "Pattern finding, solution finding, inference = search tasks"
+
+    - point: "Evolution found intelligence via search"
+      detail: "Intelligence itself is a search solution"
+
+    - point: "AI success via better search"
+      detail: "Deep learning = better search in weight space"
+      detail2: "MCTS + neural nets = AlphaGo's intelligence"
+
+  arguments_against:
+    - point: "Intelligence includes WHAT to search for"
+      detail: "Problem formulation precedes search"
+      counter: "But formulation is also search (in problem space)"
+
+    - point: "Intelligence includes representation"
+      detail: "Good representations make search easier"
+      counter: "Finding good representations is search"
+
+    - point: "Intelligence includes judgment"
+      detail: "Knowing when you've found the answer"
+      counter: "This is search termination condition"
+
+    - point: "Intelligence includes compression"
+      detail: "Abstracting patterns reduces search"
+      counter: "Finding good compressions is search"
+
+    - point: "Some intelligence seems non-search"
+      detail: "Intuition, emotion, embodiment"
+      counter: "May be implicit/parallel search"
+
+  synthesis:
+    claim: |
+      Intelligence might be characterized as:
+
+      1. Choosing WHAT to search (problem selection)
+      2. Choosing WHERE to search (space definition)
+      3. Choosing HOW to search (strategy selection)
+      4. ACTUALLY searching (execution)
+      5. Knowing WHEN to stop (termination)
+      6. USING the result (application)
+
+      If all of these are themselves search problems, then intelligence
+      reduces to search at multiple levels (meta-search).
+
+      But there may be something more:
+      - The unity of experience
+      - The having of goals in the first place
+      - The caring about outcomes
+
+      These may not be "search" in any meaningful sense.
+
+  implications_for_GOSM:
+    - "If intelligence is search, GOSM should optimize search"
+    - "Procedures are search strategies"
+    - "Gates are search termination conditions"
+    - "Goal structure is search space definition"
+    - "The quality of GOSM = quality of search it enables"
+    - "Making search easy = making intelligence less necessary"
+
+  the_key_insight: |
+    Even if intelligence is MORE than search, the search component
+    can be externalized and systematized.
+
+    A well-designed system makes the search component trivial,
+    leaving only the non-search components (if any) to the agent.
+
+    This is GOSM's value proposition:
+    - Externalize the searchable
+    - Structure the space
+    - Make finding easy
+    - Let cheap models succeed
+
+# ============================================
+# SEARCH STRATEGY SELECTION
+# ============================================
+
+choosing_search_method:
+  description: "How to choose the right search method"
+
+  by_search_space_properties:
+    - property: "Discrete vs Continuous"
+      discrete: "Combinatorial methods, branch and bound"
+      continuous: "Gradient methods, Bayesian optimization"
+
+    - property: "Convex vs Non-convex"
+      convex: "Gradient descent finds global optimum"
+      non_convex: "Need global methods (annealing, evolutionary)"
+
+    - property: "Small vs Large"
+      small: "Exhaustive search may be feasible"
+      large: "Need heuristics, sampling"
+
+    - property: "Structured vs Unstructured"
+      structured: "Exploit structure (tree, graph, hierarchy)"
+      unstructured: "Random sampling, evolutionary"
+
+  by_evaluation_cost:
+    - cheap_evaluation: "Try many candidates (evolutionary, random)"
+    - expensive_evaluation: "Bayesian optimization, careful selection"
+    - noisy_evaluation: "Multiple samples, robust methods"
+
+  by_prior_knowledge:
+    - no_knowledge: "Uninformed search (BFS, DFS, random)"
+    - heuristic_available: "Informed search (A*, best-first)"
+    - model_available: "Model-based optimization"
+    - gradient_available: "Gradient methods"
+
+  general_principles:
+    - "Match method to structure of space"
+    - "Exploit symmetries and invariances"
+    - "Balance exploration and exploitation"
+    - "Start simple, add complexity as needed"
+    - "Combine methods (portfolios, hybrids)"

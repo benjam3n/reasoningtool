@@ -1,0 +1,207 @@
+# Binary Elimination Search
+# Intelligence Reduction: 95%
+# Version: 1.0.0
+
+id: binary_elimination_search
+name: Binary Elimination Search
+version: "1.0.0"
+domain: core
+intelligence_reduction: "95%"
+
+goal: |
+  Find the correct answer/option by asking binary questions that
+  cut the search space in half each time. Structure does all the work -
+  just follow the decision tree.
+
+description: |
+  Like playing "20 Questions" - each yes/no question eliminates half
+  the possibilities. For a space of N options, at most log2(N) questions
+  needed. No intelligence required to FOLLOW - just ask the next question.
+
+when_to_use:
+  - Diagnosing a problem from many possible causes
+  - Selecting from many options when criteria are clear
+  - Finding root cause
+  - Debugging
+  - Classification
+
+inputs:
+  - name: search_space
+    type: list
+    description: "All possible answers/options to consider"
+  - name: goal
+    type: string
+    description: "What are we trying to find?"
+
+outputs:
+  - name: answer
+    type: item
+    description: "The identified answer"
+  - name: question_path
+    type: list
+    description: "Questions asked and answers given"
+
+# ============================================
+# PROCEDURE STEPS
+# ============================================
+
+steps:
+  - id: 1
+    name: "Define Search Space"
+    action: |
+      List ALL possible answers/options.
+      Be exhaustive - if the answer isn't in the list, you won't find it.
+    output: "Numbered list of all options"
+    template: |
+      SEARCH SPACE:
+      1. [Option 1]
+      2. [Option 2]
+      ...
+      N. [Option N]
+
+      Total options: [N]
+      Questions needed (max): [log2(N) rounded up]
+
+  - id: 2
+    name: "Identify Discriminating Attribute"
+    action: |
+      Find an attribute/question that divides the remaining options
+      roughly in half.
+
+      Good question: Splits options ~50/50
+      Bad question: Splits options 90/10 (wastes a question)
+    output: "A yes/no question"
+    tips:
+      - "Look for categorical distinctions (type, category, location)"
+      - "Look for numeric thresholds (greater/less than X)"
+      - "Look for presence/absence of features"
+
+  - id: 3
+    name: "Ask Question"
+    action: |
+      Ask the binary question.
+      Answer must be clearly YES or NO.
+    output: "YES or NO"
+
+  - id: 4
+    name: "Eliminate Options"
+    action: |
+      Based on the answer, eliminate all options that don't match.
+
+      If YES: Keep only options where the attribute is true
+      If NO: Keep only options where the attribute is false
+    output: "Reduced list of remaining options"
+    template: |
+      Question: [Question asked]
+      Answer: [YES/NO]
+      Eliminated: [List of eliminated options]
+      Remaining: [List of remaining options]
+      Remaining count: [N]
+
+  - id: 5
+    name: "Check Termination"
+    action: |
+      If exactly 1 option remains → DONE, that's the answer
+      If 0 options remain → ERROR, answer wasn't in search space
+      If >1 options remain → Go to Step 2
+    output: "Continue or Done"
+
+  - id: 6
+    name: "Record Answer"
+    action: |
+      Document the final answer and the path taken.
+    output: "Final answer with justification"
+    template: |
+      ANSWER FOUND: [The answer]
+
+      QUESTION PATH:
+      Q1: [Question] → [Answer] → Eliminated [N] options
+      Q2: [Question] → [Answer] → Eliminated [N] options
+      ...
+
+      Total questions asked: [N]
+      Starting options: [N]
+
+# ============================================
+# QUESTION CONSTRUCTION TEMPLATES
+# ============================================
+
+question_templates:
+  categorical:
+    - "Is it in category [A] (vs categories [B, C, D])?"
+    - "Is it a type of [X]?"
+    - "Does it belong to [group]?"
+
+  presence_absence:
+    - "Does it have [feature]?"
+    - "Is [component] present?"
+    - "Does it involve [element]?"
+
+  numeric:
+    - "Is [measurement] greater than [threshold]?"
+    - "Did it happen before [date]?"
+    - "Is the count more than [N]?"
+
+  location:
+    - "Is it in [location/file/section]?"
+    - "Does it occur in [context]?"
+
+  temporal:
+    - "Did it happen before [event]?"
+    - "Is it recent (within [timeframe])?"
+
+  causal:
+    - "Is it caused by [factor]?"
+    - "Does it depend on [condition]?"
+
+# ============================================
+# EXAMPLE
+# ============================================
+
+example:
+  goal: "Find why the build is failing"
+  search_space:
+    - "Missing dependency"
+    - "Syntax error in code"
+    - "Type error"
+    - "Configuration file wrong"
+    - "Environment variable missing"
+    - "Network issue"
+    - "Permissions issue"
+    - "Disk space full"
+
+  trace:
+    - question: "Is it a code issue (vs environment/config)?"
+      answer: "NO"
+      eliminated: ["Syntax error", "Type error"]
+      remaining: 6
+
+    - question: "Is it related to the machine state (vs external/config)?"
+      answer: "YES"
+      eliminated: ["Network issue", "Configuration file wrong", "Missing dependency"]
+      remaining: 3
+
+    - question: "Is it a resource issue (vs permissions)?"
+      answer: "YES"
+      eliminated: ["Permissions issue"]
+      remaining: 2
+
+    - question: "Is it disk space (vs environment variable)?"
+      answer: "YES"
+      eliminated: ["Environment variable missing"]
+      remaining: 1
+
+  answer: "Disk space full"
+  questions_asked: 4
+  theoretical_minimum: 3  # log2(8) = 3
+
+# ============================================
+# VERIFICATION
+# ============================================
+
+verification:
+  - "Search space was exhaustive (answer was included)"
+  - "Each question was truly binary (yes/no)"
+  - "Questions divided space roughly in half"
+  - "Elimination was consistent with answers"
+  - "Single answer remained at end"

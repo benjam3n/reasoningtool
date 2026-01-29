@@ -1,0 +1,294 @@
+# Detection & Verification Orderings
+# Orderings for detecting cheating, fraud, and anomalies
+
+category_id: detection_verification
+category_name: "Detection & Verification Orderings"
+description: |
+  Orderings optimized for detecting cheating, fraud, deception, and anomalies.
+  Use when investigating potential malfeasance, verifying integrity, or
+  establishing whether someone or something can be trusted.
+
+when_to_consider: |
+  - Investigating potential fraud, cheating, or deception
+  - Auditing financial records or transactions
+  - Verifying academic or professional integrity
+  - Detecting anomalies in behavioral or statistical patterns
+  - Conducting interviews where deception is possible
+  - Vetting individuals for sensitive access
+  - Building verification systems for high-stakes decisions
+  - Counter-intelligence or security screening
+
+variations:
+
+  # ----------------------------------------
+  # FORENSIC-AUDIT ORDERING
+  # ----------------------------------------
+  forensic_audit:
+    id: forensic_audit_ordering
+    name: "Forensic Audit Ordering (Follow the Money)"
+    category: detection_verification
+
+    philosophy: |
+      Investigate financial irregularities through systematic analysis of
+      records, transactions, and relationships. From forensic accounting:
+      start with automated red flags, then trace flows, then interview.
+      Documents first, confrontation last. Build the case before revealing
+      your hand.
+
+    when_to_use:
+      - Financial fraud investigation
+      - Embezzlement detection
+      - Tax fraud analysis
+      - Insurance claim verification
+      - Any investigation involving money trails
+
+    prioritization_rules:
+      1_automated_red_flags:
+        rule: "Start with data analysis for anomalies"
+        methods: ["Benford's law", "Duplicate detection", "Round number analysis"]
+
+      2_document_analysis:
+        rule: "Review records before interviewing"
+        reason: "Build case from evidence, don't tip off"
+
+      3_transaction_tracing:
+        rule: "Follow money flows through system"
+        technique: "Trace backward from unusual transactions"
+
+      4_relationship_mapping:
+        rule: "Identify connections between parties"
+        look_for: "Hidden relationships, conflicts of interest"
+
+      5_confrontation_last:
+        rule: "Interview suspect only when case is built"
+        reason: "Prevents evidence destruction, allows targeted questions"
+
+    source: "Forensic Accounting - Financial Investigation Methods"
+
+  # ----------------------------------------
+  # BENFORD-ANOMALY ORDERING
+  # ----------------------------------------
+  benford_anomaly:
+    id: benford_anomaly_ordering
+    name: "Benford Anomaly Ordering (Statistical Fingerprinting)"
+    category: detection_verification
+
+    philosophy: |
+      Use statistical tests to identify fabricated or manipulated data.
+      From forensic statistics: natural data follows predictable patterns
+      (Benford's law for leading digits). Fabricated data often fails
+      these tests. Statistical anomalies guide deeper investigation.
+
+    when_to_use:
+      - Large datasets that should follow natural distributions
+      - Suspicion of data fabrication
+      - Financial statement analysis
+      - Election result verification
+      - Scientific data integrity
+
+    prioritization_rules:
+      1_benford_first_digit:
+        rule: "Test leading digit distribution"
+        expected: "~30% ones, ~17% twos, decreasing"
+        suspicious: "Uniform or unusual distribution"
+
+      2_last_digit_test:
+        rule: "Check last digit uniformity"
+        natural_data: "Should be roughly uniform"
+        fabricated: "Often shows patterns (round numbers)"
+
+      3_duplicates_and_gaps:
+        rule: "Look for too many duplicates or suspicious gaps"
+        natural: "Some duplicates, natural variation"
+        fabricated: "Patterns in what's present and absent"
+
+      4_investigate_anomalies:
+        rule: "Statistical flags guide deeper investigation"
+        not_proof: "Anomaly is not proof, just a signal"
+
+    source: "Forensic Statistics - Benford's Law Application"
+
+  # ----------------------------------------
+  # BASELINE-DEVIATION ORDERING
+  # ----------------------------------------
+  baseline_deviation:
+    id: baseline_deviation_ordering
+    name: "Baseline-Deviation Ordering (Establish Normal First)"
+    category: detection_verification
+
+    philosophy: |
+      Establish normal behavior/patterns first, then look for deviations.
+      From behavioral analysis: you can't identify anomalies without
+      knowing what's normal. Build comprehensive baseline before
+      investigating suspicious areas.
+
+    when_to_use:
+      - Behavioral anomaly detection
+      - Insider threat detection
+      - Interview deception detection
+      - Pattern-of-life analysis
+      - Any investigation requiring comparison to normal
+
+    prioritization_rules:
+      1_establish_baseline:
+        rule: "Gather data on normal patterns before investigation"
+        scope: "Comprehensive, multiple data types"
+
+      2_neutral_topics_first:
+        rule: "In interviews, establish baseline with non-threatening questions"
+        purpose: "Observe normal behavior without stress"
+
+      3_compare_to_baseline:
+        rule: "Analyze suspicious areas against established normal"
+        look_for: "Significant deviations"
+
+      4_calibrate_sensitivity:
+        rule: "Set thresholds that balance detection and false positives"
+        trade_off: "Too sensitive = noise; too loose = miss real issues"
+
+    source: "Behavioral Analysis - Baseline Comparison Methods"
+
+  # ----------------------------------------
+  # PEACE-MODEL ORDERING
+  # ----------------------------------------
+  peace_model:
+    id: peace_model_ordering
+    name: "PEACE Model Ordering (Ethical Interview)"
+    category: detection_verification
+
+    philosophy: |
+      Structure interviews to gather accurate information ethically.
+      From investigative interviewing: PEACE (Preparation, Engage, Account,
+      Closure, Evaluate) produces more reliable information than accusatory
+      methods. Get complete account before challenging.
+
+    phases:
+      preparation: "Plan interview, know the facts"
+      engage: "Build rapport, explain process"
+      account: "Free narrative, open questions, probing"
+      closure: "Summarize, opportunity to add, explain next steps"
+      evaluate: "Assess information gathered"
+
+    when_to_use:
+      - Witness or suspect interviews
+      - Internal investigations
+      - When accuracy matters more than confession
+      - Ethical interviewing requirements
+      - Complex cases requiring detailed accounts
+
+    prioritization_rules:
+      1_prepare_thoroughly:
+        rule: "Know case facts before interview"
+        includes: "Evidence, timeline, relationships"
+
+      2_rapport_before_content:
+        rule: "Build relationship before seeking information"
+        reason: "Cooperation produces better information"
+
+      3_free_narrative_first:
+        rule: "Let subject tell their account without interruption"
+        benefit: "Reveals their version without contamination"
+
+      4_probe_after_account:
+        rule: "Ask detailed questions only after full account"
+        technique: "Open questions, then specific clarification"
+
+      5_challenge_last:
+        rule: "Present contradictory evidence after full account"
+        reason: "Can't change story already told"
+
+    source: "Investigative Interviewing - PEACE Model (UK)"
+
+  # ----------------------------------------
+  # LAYERED-VERIFICATION ORDERING
+  # ----------------------------------------
+  layered_verification:
+    id: layered_verification_ordering
+    name: "Layered Verification Ordering (Defense in Depth)"
+    category: detection_verification
+
+    philosophy: |
+      Apply multiple independent verification methods. No single check
+      catches everything. Different methods catch different types of
+      deception. Layers should be independent - failure in one doesn't
+      affect others.
+
+    when_to_use:
+      - High-stakes verification decisions
+      - Building robust verification systems
+      - When single method has known weaknesses
+      - Vetting for sensitive access
+      - Claims that must be thoroughly verified
+
+    prioritization_rules:
+      1_identify_independent_methods:
+        rule: "Use verification methods that fail for different reasons"
+        example: "Document check + reference call + background check"
+
+      2_sequence_by_cost:
+        rule: "Cheap, fast checks before expensive, slow ones"
+        reason: "Filter early with low-cost methods"
+
+      3_ensure_independence:
+        rule: "Each layer should catch different failure modes"
+        test: "If layer N fails, would layer N+1 still catch the issue?"
+
+      4_combine_results:
+        rule: "Synthesize findings from all layers"
+        any_red_flag: "May warrant deeper investigation"
+
+    example:
+      context: "Employment verification"
+      layers:
+        layer_1: "Resume keyword and format analysis (automated)"
+        layer_2: "Credential verification (quick check)"
+        layer_3: "Reference calls (moderate effort)"
+        layer_4: "Background check (external service)"
+        layer_5: "Technical assessment (skill verification)"
+      independence: "Each catches different types of misrepresentation"
+
+    source: "Security - Defense in Depth, Multi-Factor Verification"
+
+  # ----------------------------------------
+  # TRUST-BUT-VERIFY ORDERING
+  # ----------------------------------------
+  trust_but_verify:
+    id: trust_but_verify_ordering
+    name: "Trust-but-Verify Ordering (Random Audit)"
+    category: detection_verification
+
+    philosophy: |
+      Extend trust but maintain verification through sampling. From audit
+      theory: can't verify everything, but random verification creates
+      deterrent effect. Unpredictable audits discourage cheating even
+      when most pass unexamined.
+
+    when_to_use:
+      - Ongoing relationships requiring trust
+      - Can't afford to verify everything
+      - Deterrence through audit risk
+      - Maintaining integrity of systems
+      - Scalable verification programs
+
+    prioritization_rules:
+      1_extend_default_trust:
+        rule: "Trust most transactions/people without full verification"
+        reason: "100% verification is often impractical"
+
+      2_random_sampling:
+        rule: "Randomly select items for full verification"
+        rate: "High enough to create deterrent (e.g., 5-15%)"
+
+      3_risk_weighted_selection:
+        rule: "Higher-risk items have higher audit probability"
+        factors: "Size, novelty, pattern anomalies"
+
+      4_unpredictable_timing:
+        rule: "Audits should be unpredictable"
+        reason: "Predictable audits can be gamed"
+
+      5_consequences_clear:
+        rule: "Discovered violations have meaningful consequences"
+        reason: "Deterrence requires expected cost > expected benefit"
+
+    source: "Audit Theory - Statistical Sampling, Deterrence"

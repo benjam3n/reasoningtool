@@ -1,0 +1,346 @@
+# Generate-Then-Search Meta-Pattern
+# The fundamental pattern underlying intelligent search
+# Version: 1.0.0
+
+id: generate_then_search
+name: Generate-Then-Search Meta-Pattern
+version: "1.0.0"
+domain: core
+
+description: |
+  The fundamental pattern for making cognitive tasks tractable:
+
+  1. GENERATE a comprehensive space of possibilities
+  2. SEARCH within that space using well-defined criteria
+
+  Key insights:
+  - The intelligence is in the CRITERIA, not the search
+  - Generation can be constrained to exclude obviously bad options
+  - Comparison/selection is easier than generation from scratch
+  - Matching to criteria requires less intelligence than judgment
+
+  This pattern applies to:
+  - Interpretation (generate interpretations → search for best)
+  - Prediction (generate futures → search for likely/optimal)
+  - Communication (generate expressions → search for clearest)
+  - Reasoning (generate inferences → search for valid)
+  - Creativity (generate novelty → search for valuable)
+  - Understanding (generate models → search for fitting)
+  - Planning (generate plans → search for optimal)
+
+the_core_insight: |
+  CRITERIA ARE THE INTELLIGENCE
+
+  If you have comprehensive, well-defined criteria:
+  - Generation becomes mechanical (enumerate what satisfies criteria)
+  - Search becomes mechanical (match against criteria)
+  - Selection becomes mechanical (rank by criteria match)
+
+  The hard work is done ONCE when creating the criteria.
+  Then the criteria can be reused infinitely with cheap models.
+
+# ============================================
+# THE META-PATTERN
+# ============================================
+
+meta_pattern:
+  step_1_define_criteria:
+    name: "Define Comprehensive Criteria"
+    description: |
+      Before generating anything, define what "good" means.
+      This is where intelligence is invested.
+    questions:
+      - "What properties must a good [X] have?"
+      - "What properties must it NOT have?"
+      - "How do we weight different properties?"
+      - "What would make something obviously bad?"
+      - "What would make something obviously good?"
+    output: "Criteria checklist with weights"
+
+  step_2_guided_generation:
+    name: "Guided Generation"
+    description: |
+      Generate possibilities guided by structure.
+      Structure tells you WHAT to generate (not what to avoid).
+
+      Note: You can't know something is "bad" without evaluation.
+      Filtering happens at evaluation, not generation.
+    methods:
+      - "Enumerate systematically (morphological)"
+      - "Vary from existing (SCAMPER)"
+      - "Import from other domains (analogy)"
+      - "Invert known failures"
+      - "Combine existing elements"
+      - "Fill in templates with valid values"
+    guidance_principle: |
+      Don't say: "Generate good options, avoid bad ones"
+      Do say: "Fill in these slots, where each slot has these valid values"
+
+      Generation is about COVERAGE, not quality judgment.
+      Quality judgment happens in evaluation step.
+
+  step_3_hierarchical_evaluation:
+    name: "Hierarchical Evaluation"
+    description: |
+      Evaluate efficiently by checking criteria in order of importance.
+      Don't fully evaluate candidates that fail early.
+
+    evaluation_order:
+      level_1_dealbreakers:
+        description: "Binary pass/fail, check first"
+        action: "If fail ANY dealbreaker → discard immediately"
+        examples: "Legal? Physically possible? Within hard constraints?"
+
+      level_2_must_haves:
+        description: "Threshold criteria, check second"
+        action: "If below minimum threshold → discard"
+        examples: "Minimum ROI? Minimum quality? Minimum feasibility?"
+
+      level_3_should_haves:
+        description: "Weighted scoring, check for viable candidates"
+        action: "Score and weight for ranking"
+        examples: "Efficiency, elegance, speed, cost"
+
+      level_4_nice_to_haves:
+        description: "Tiebreakers only"
+        action: "Use when Level 3 tied"
+        examples: "Aesthetic preference, minor conveniences"
+
+    efficiency_principle: |
+      This is NOT "don't generate obviously bad" (you can't know without evaluating).
+      This IS "order evaluation efficiently" - check disqualifying criteria first.
+      The efficiency comes from NOT fully scoring candidates that already failed.
+
+  step_4_rank_and_select:
+    name: "Rank and Select"
+    description: |
+      Aggregate criteria matches into ranking.
+      Select top options for further evaluation.
+    methods:
+      - "Weighted sum"
+      - "Pareto frontier"
+      - "Tournament"
+      - "Threshold filtering"
+
+why_this_works: |
+  1. CRITERIA EXTERNALIZE INTELLIGENCE
+     - Judgment is encoded in criteria
+     - Matching is mechanical
+
+  2. COMPARISON IS EASIER THAN GENERATION
+     - "Is A better than B?" is easier than "What is best?"
+     - Relative judgments more reliable than absolute
+
+  3. CONSTRAINED GENERATION REDUCES SPACE
+     - Don't waste time on obviously bad options
+     - Criteria guide what to even consider
+
+  4. CHEAP MODELS CAN EXECUTE
+     - Generation from templates = cheap
+     - Matching to criteria = cheap
+     - Aggregation = arithmetic = cheap
+
+# ============================================
+# CRITERIA DESIGN PRINCIPLES
+# ============================================
+
+criteria_design:
+  completeness:
+    description: "Cover all dimensions that matter"
+    how: |
+      - List all ways something could be good
+      - List all ways something could be bad
+      - Check for missing dimensions
+      - Get multiple perspectives
+
+  measurability:
+    description: "Each criterion must be checkable"
+    how: |
+      - Observable, not inferred
+      - Binary or scoreable
+      - Clear threshold for pass/fail
+      - Reproducible (different observers agree)
+
+  independence:
+    description: "Criteria should not double-count"
+    how: |
+      - Check for redundancy
+      - Ensure distinct dimensions
+      - Combine overlapping criteria
+
+  priority:
+    description: "Not all criteria equal"
+    how: |
+      - Identify must-haves vs nice-to-haves
+      - Assign weights
+      - Distinguish dealbreakers from preferences
+
+universal_criteria_categories:
+  effectiveness: "Does it achieve the goal?"
+  efficiency: "Does it use minimal resources?"
+  feasibility: "Can it actually be done?"
+  robustness: "Does it handle variation/failure?"
+  simplicity: "Is it as simple as possible?"
+  adaptability: "Can it adjust to changes?"
+  reversibility: "Can it be undone if wrong?"
+  speed: "How quickly does it work?"
+  scalability: "Does it work at different scales?"
+  compatibility: "Does it work with existing things?"
+
+# ============================================
+# APPLICATION TO EACH COGNITIVE DOMAIN
+# ============================================
+
+applications:
+  interpretation_space:
+    searching_for: "Best interpretation of ambiguous input"
+    generation: "All possible meanings/readings"
+    criteria:
+      - "Consistency with evidence"
+      - "Simplicity (fewer assumptions)"
+      - "Coherence with background knowledge"
+      - "Predictive power"
+      - "Plausibility"
+    procedure: "interpretation_space_search"
+
+  future_space:
+    searching_for: "Most likely or optimal futures"
+    generation: "All possible future states"
+    criteria:
+      - "Probability given current trends"
+      - "Consistency with causal models"
+      - "Sensitivity to interventions"
+      - "Desirability"
+    procedure: "future_space_search"
+
+  inference_space:
+    searching_for: "Valid and useful inferences"
+    generation: "All possible conclusions"
+    criteria:
+      - "Logical validity"
+      - "Soundness (true premises)"
+      - "Relevance to goal"
+      - "Informativeness"
+      - "Actionability"
+    procedure: "inference_space_search"
+
+  novelty_space:
+    searching_for: "Novel + valuable ideas"
+    generation: "All possible new combinations"
+    criteria:
+      - "Novelty (not already done)"
+      - "Value (solves real problem)"
+      - "Feasibility"
+      - "Timing (right time)"
+      - "Fit (matches capabilities)"
+    procedure: "novelty_space_search"
+
+  model_space:
+    searching_for: "Model that fits reality"
+    generation: "All possible explanatory models"
+    criteria:
+      - "Fit to data"
+      - "Simplicity (Occam)"
+      - "Predictive accuracy"
+      - "Generalizability"
+      - "Interpretability"
+    procedure: "model_space_search"
+
+  plan_space:
+    searching_for: "Optimal plan"
+    generation: "All possible action sequences"
+    criteria:
+      - "Achieves goal"
+      - "Minimal resources"
+      - "Robust to uncertainty"
+      - "Reversible if wrong"
+      - "Simple to execute"
+    procedure: "plan_space_search"
+
+  expression_space:
+    searching_for: "Clearest expression of meaning"
+    generation: "All possible ways to say it"
+    criteria:
+      - "Clarity"
+      - "Brevity"
+      - "Accuracy"
+      - "Audience fit"
+      - "Tone appropriateness"
+    procedure: "expression_space_search"
+
+# ============================================
+# HOW ARAW FITS THIS PATTERN
+# ============================================
+
+araw_integration:
+  description: |
+    ARAW already does generate-then-search:
+    - ASSUME RIGHT → generates implications
+    - ASSUME WRONG → generates alternatives
+    - Filtering → searches for relevant
+
+  enhancement: |
+    Make ARAW more explicitly criterion-driven:
+    1. Before exploration, define criteria for "interesting"
+    2. During generation, constrain by criteria
+    3. During filtering, match against criteria
+    4. Final selection by criteria ranking
+
+  new_capability_needed: |
+    ARAW generates claims/assumptions well.
+    Extend to generate:
+    - Interpretations
+    - Futures
+    - Inferences
+    - Novel ideas
+    - Models
+    - Plans
+    - Expressions
+
+# ============================================
+# IMPLEMENTATION ARCHITECTURE
+# ============================================
+
+implementation:
+  phase_1_criteria_definition:
+    input: "Domain + goal"
+    process: |
+      1. Load universal criteria
+      2. Add domain-specific criteria
+      3. Weight by importance
+      4. Define thresholds
+    output: "Criteria specification"
+
+  phase_2_constrained_generation:
+    input: "Seed + criteria"
+    process: |
+      1. Use generation method (morphological, SCAMPER, analogy, etc.)
+      2. Apply hard constraints during generation
+      3. Don't generate dominated options
+      4. Stop when space is sufficiently covered
+    output: "Candidate list"
+
+  phase_3_criteria_matching:
+    input: "Candidates + criteria"
+    process: |
+      1. For each candidate, score on each criterion
+      2. Apply weights
+      3. Calculate total score
+      4. Flag dealbreakers
+    output: "Scored candidates"
+
+  phase_4_selection:
+    input: "Scored candidates"
+    process: |
+      1. Filter by threshold
+      2. Rank by score
+      3. Select top N
+      4. Sensitivity check
+    output: "Selected candidates"
+
+  cheap_model_compatible: |
+    All phases can use cheap models because:
+    - Generation is from templates/combinations
+    - Matching is mechanical
+    - Arithmetic is arithmetic
+    - No judgment required

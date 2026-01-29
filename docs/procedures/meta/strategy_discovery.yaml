@@ -1,0 +1,602 @@
+# Strategy Discovery Procedure - Find or create a strategy for a goal
+# Core meta-procedure for identifying approaches to achieve goals
+
+id: strategy_discovery
+name: Strategy Discovery
+version: "1.0.0"
+domain: meta
+
+description: Find or create an approach to achieve a goal
+
+long_description: |
+  The Strategy Discovery procedure finds or synthesizes a strategy to achieve
+  a given goal. It uses multiple discovery approaches to ensure comprehensive
+  coverage of possible paths forward:
+
+  1. Precedent Search: Has this exact goal been achieved before? By whom? How?
+  2. Analogical Reasoning: What works for similar problems in same/different domains?
+  3. Decomposition-based: What sub-goals combine to achieve this?
+  4. Constraint-based: What approaches are possible within our limitations?
+  5. Resource-based: What can we do with what we have?
+  6. First Principles: What would we do if starting from scratch?
+  7. Synthesis: Can multiple approaches be combined for better results?
+
+  This procedure is foundational to GOSM because it bridges the gap between
+  "what we want" (goals) and "how to get there" (execution). Poor strategy
+  discovery leads to suboptimal paths, wasted resources, or unreachable goals.
+
+  The procedure outputs multiple candidate strategies, a recommended strategy
+  with rationale, and a high-level execution outline that can feed into
+  detailed planning and procedure discovery.
+
+tags:
+  - strategy
+  - discovery
+  - planning
+  - meta
+  - pathfinding
+  - options
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - No existing strategy exists for a newly defined goal
+  - Current strategy is failing and alternatives are needed
+  - Goal has been refined and needs a fresh strategic approach
+  - Multiple stakeholders have different ideas about approach
+  - Resources or constraints have changed significantly
+  - Exploring whether a goal is achievable before commitment
+  - Comparing strategic options before major resource investment
+  - Periodic strategic review reveals current path is suboptimal
+
+when_not_to_use:
+  - Strategy already exists and is working well
+  - Goal is simple enough that strategy is obvious
+  - Execution has already begun and switching strategies is costly
+  - Goal is not yet refined (run goal_refinement first)
+  - Time pressure requires immediate action over strategic planning
+  - Goal is routine with established best practices
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: goal
+    type: string
+    required: true
+    description: The goal to find strategy for (should be SMART-refined)
+
+  - name: success_criteria
+    type: list
+    required: false
+    description: How success is measured (from goal refinement)
+
+  - name: constraints
+    type: list
+    required: false
+    description: Limitations on solutions (budget, time, resources, ethics)
+
+  - name: available_resources
+    type: list
+    required: false
+    description: Resources available (skills, tools, money, time, connections)
+
+  - name: context
+    type: dict
+    required: false
+    description: Background context (market, competition, history, stakeholders)
+
+  - name: risk_tolerance
+    type: string
+    required: false
+    description: How much risk is acceptable (conservative/moderate/aggressive)
+
+  - name: existing_strategies
+    type: list
+    required: false
+    description: Previously considered or attempted strategies
+
+outputs:
+  - name: discovered_strategies
+    type: list
+    description: List of potential strategies with pros/cons
+
+  - name: recommended_strategy
+    type: dict
+    description: The best strategy with detailed rationale
+
+  - name: execution_outline
+    type: dict
+    description: High-level execution plan for recommended strategy
+
+  - name: strategy_risks
+    type: list
+    description: Identified risks and mitigation approaches
+
+  - name: alternative_ranking
+    type: list
+    description: Ordered list of alternatives if recommended fails
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Analyze goal and constraints
+    action: |
+      Deep analysis of what we're trying to achieve and what limits us:
+
+      Goal Analysis:
+      1. What is the core outcome required?
+      2. What are the success criteria?
+      3. What is the timeline?
+      4. Why does this goal matter (motivation)?
+
+      Constraint Analysis:
+      1. Hard constraints (cannot be violated)
+      2. Soft constraints (prefer to satisfy)
+      3. Resource constraints (what we have to work with)
+      4. Ethical/legal constraints
+      5. Dependencies (what must happen first)
+    inputs:
+      - goal
+      - success_criteria (optional)
+      - constraints (optional)
+      - available_resources (optional)
+    outputs:
+      - goal_analysis: structured breakdown of goal
+      - constraint_map: categorized constraints
+      - resource_inventory: available resources catalogued
+    verification: |
+      Goal is clearly understood; all constraint types considered
+
+  - id: 2
+    name: Precedent search
+    action: |
+      Search for existing solutions to this exact problem:
+
+      1. Has this goal been achieved before?
+         - By whom? When? In what context?
+         - What strategy did they use?
+         - What were the results?
+
+      2. Are there documented approaches?
+         - Best practices
+         - Case studies
+         - Academic research
+         - Industry standards
+
+      3. What can we learn from precedents?
+         - What worked well?
+         - What failed?
+         - What would they do differently?
+    inputs:
+      - goal_analysis (from Step 1)
+      - context (optional)
+      - existing_strategies (optional)
+    outputs:
+      - precedent_strategies: list of proven approaches
+      - precedent_lessons: key learnings from prior attempts
+    verification: |
+      Searched multiple sources; documented what was found (even if nothing)
+
+  - id: 3
+    name: Analogical reasoning
+    action: |
+      Find similar problems and adapt their solutions:
+
+      Same Domain:
+      1. What similar goals exist in this domain?
+      2. What strategies work for those?
+      3. How would we adapt them?
+
+      Cross-Domain:
+      1. What does this goal look like in other domains?
+         - If this were a military problem, what would it be?
+         - If this were a biological system, what would it be?
+         - If this were a business problem, what would it be?
+      2. What strategies work in those domains?
+      3. How can we translate them?
+
+      Pattern Matching:
+      1. Is this a "build vs buy" problem?
+      2. Is this a "growth vs optimization" problem?
+      3. Is this a "speed vs quality" tradeoff?
+    inputs:
+      - goal_analysis (from Step 1)
+      - constraint_map (from Step 1)
+    outputs:
+      - analogical_strategies: strategies derived from similar problems
+      - domain_translations: cross-domain strategy translations
+    verification: |
+      At least 2 same-domain and 2 cross-domain analogies explored
+
+  - id: 4
+    name: Decomposition-based discovery
+    action: |
+      Work backward from goal to identify strategic components:
+
+      1. What sub-goals must be achieved?
+         - List all necessary conditions for success
+         - Identify the critical path
+
+      2. For each sub-goal, what strategies exist?
+         - Map sub-goals to known strategies
+         - Identify gaps
+
+      3. How do sub-strategies combine?
+         - Sequential vs parallel execution
+         - Dependencies between strategies
+         - Potential conflicts
+    inputs:
+      - goal_analysis (from Step 1)
+      - precedent_strategies (from Step 2)
+      - analogical_strategies (from Step 3)
+    outputs:
+      - sub_goals: decomposed goal structure
+      - component_strategies: strategies for each sub-goal
+      - composition_options: ways to combine component strategies
+    verification: |
+      Goal is decomposed; strategies exist for critical sub-goals
+
+  - id: 5
+    name: Constraint and resource filtering
+    action: |
+      Filter and adapt strategies based on constraints and resources:
+
+      1. For each candidate strategy:
+         - Does it violate hard constraints? (eliminate if yes)
+         - Does it satisfy soft constraints? (note tradeoffs)
+         - Is it achievable with available resources?
+         - What resources would need to be acquired?
+
+      2. Resource gap analysis:
+         - What do we have vs what do we need?
+         - Can gaps be filled? At what cost?
+         - Are there resource-light alternatives?
+
+      3. Risk assessment:
+         - What could go wrong?
+         - How likely is each risk?
+         - What's the impact?
+    inputs:
+      - constraint_map (from Step 1)
+      - resource_inventory (from Step 1)
+      - precedent_strategies (from Step 2)
+      - analogical_strategies (from Step 3)
+      - composition_options (from Step 4)
+      - risk_tolerance (optional)
+    outputs:
+      - viable_strategies: strategies that pass constraint filter
+      - strategy_tradeoffs: pros/cons for each viable strategy
+      - resource_gaps: resources needed but not available
+    verification: |
+      All strategies evaluated against constraints; no impossible strategies remain
+
+  - id: 6
+    name: Strategy synthesis
+    action: |
+      Combine and refine strategies into final candidates:
+
+      1. Identify complementary strategies
+         - Which strategies could be combined?
+         - Do combinations create synergies?
+         - Do combinations eliminate weaknesses?
+
+      2. Create hybrid strategies
+         - Combine best elements of multiple approaches
+         - Ensure coherence (no internal conflicts)
+
+      3. Define each final strategy:
+         - Name and brief description
+         - Key components/phases
+         - Expected timeline
+         - Resource requirements
+         - Success probability estimate
+         - Key risks
+    inputs:
+      - viable_strategies (from Step 5)
+      - strategy_tradeoffs (from Step 5)
+    outputs:
+      - discovered_strategies: finalized list of candidate strategies
+    verification: |
+      At least 3 distinct strategies defined; each is internally coherent
+
+  - id: 7
+    name: Strategy evaluation and recommendation
+    action: |
+      Evaluate strategies and select recommendation:
+
+      Evaluation Criteria:
+      1. Likelihood of success (based on evidence)
+      2. Resource efficiency (output vs input)
+      3. Time to results
+      4. Risk level
+      5. Reversibility (can we change course?)
+      6. Learning value (what do we gain even if it fails?)
+
+      Scoring:
+      - Rate each strategy on each criterion (1-5)
+      - Weight criteria by importance to this goal
+      - Calculate weighted score
+
+      Recommendation:
+      - Select highest-scoring strategy
+      - Document rationale
+      - Identify when to reconsider this choice
+    inputs:
+      - discovered_strategies (from Step 6)
+      - goal_analysis (from Step 1)
+      - risk_tolerance (optional)
+    outputs:
+      - recommended_strategy: the selected strategy with full rationale
+      - alternative_ranking: ordered alternatives
+      - strategy_risks: risks of recommended strategy
+    verification: |
+      Recommendation is justified; alternatives are ranked
+
+  - id: 8
+    name: Create execution outline
+    action: |
+      Develop high-level execution plan for recommended strategy:
+
+      1. Phase breakdown:
+         - What are the major phases?
+         - What's the objective of each phase?
+         - What are the phase transitions?
+
+      2. Key milestones:
+         - What marks progress?
+         - What are the decision points?
+         - What would trigger strategy change?
+
+      3. Resource allocation:
+         - What resources needed when?
+         - What are the critical dependencies?
+
+      4. Risk mitigation:
+         - How will identified risks be managed?
+         - What are the contingency plans?
+    inputs:
+      - recommended_strategy (from Step 7)
+      - resource_inventory (from Step 1)
+      - strategy_risks (from Step 7)
+    outputs:
+      - execution_outline: high-level plan for the strategy
+    verification: |
+      Outline is actionable; milestones are defined; risks have mitigations
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Multiple discovery approaches used (not just one source of strategies)
+  - At least 3 viable strategies identified before recommendation
+  - Recommended strategy has clear rationale tied to goal and constraints
+  - Execution outline is detailed enough to begin procedure discovery
+  - Risks are identified with mitigation approaches
+  - Alternatives are ranked for fallback purposes
+
+failure_modes:
+  - mode: Single strategy fixation
+    symptom: Only one strategy considered, usually the most obvious
+    resolution: Force exploration of at least 3 different approaches
+
+  - mode: Analysis paralysis
+    symptom: Endless strategy generation without reaching recommendation
+    resolution: Set strategy limit; use scoring to force ranking
+
+  - mode: Constraint blindness
+    symptom: Recommended strategy violates hard constraints
+    resolution: Re-run constraint filter; validate against each constraint
+
+  - mode: Resource hallucination
+    symptom: Strategy assumes resources that don't exist
+    resolution: Explicitly map each resource need to actual inventory
+
+  - mode: Risk blindness
+    symptom: Strategy looks good but has hidden catastrophic risks
+    resolution: Adversarial review; ask "what would make this fail completely?"
+
+  - mode: Precedent worship
+    symptom: Following past approaches blindly without adapting to context
+    resolution: Explicitly note context differences; adapt for current situation
+
+  - mode: Novelty bias
+    symptom: Dismissing proven approaches for untested new ideas
+    resolution: Require evidence for why precedent doesn't apply
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Strategy for online income goal
+    context: User wants to generate $1000/month online income in 6 months
+    inputs:
+      goal: "Generate $1000/month in sustainable online income within 6 months"
+      success_criteria:
+        - "Receive $1000+ in a single month"
+        - "Income is from repeatable activities"
+      constraints:
+        - "Budget under $100 initial investment"
+        - "20 hours per week available"
+      available_resources:
+        - "Writing skills"
+        - "Basic Python programming"
+        - "Laptop and internet"
+    process: |
+      Step 1 - Analysis:
+      - Core outcome: Recurring online income
+      - Timeline: 6 months to $1000/month
+      - Hard constraints: $100 budget, 20hr/week
+      - Resources: Writing, Python, equipment
+
+      Step 2 - Precedent:
+      - Freelance writing: proven path, $50-200/article
+      - Technical writing: higher rates, needs portfolio
+      - Programming freelance: $25-100/hr, competitive
+      - Content sites: slow growth, long-term
+
+      Step 3 - Analogies:
+      - Business analogy: "Build audience or sell time?"
+      - Investment analogy: "Active income vs passive income"
+      - Cross-domain (farming): "Annual harvest vs perennial crops"
+
+      Step 4 - Decomposition:
+      - Sub-goal 1: Establish income channel
+      - Sub-goal 2: Build to $1000/month capacity
+      - Sub-goal 3: Make income sustainable/repeatable
+
+      Step 5 - Filtering:
+      - Strategies requiring > $100 investment: eliminated
+      - Strategies requiring > 20hr/week: eliminated
+      - Strategies requiring skills not held: flagged for skill development
+
+      Step 6 - Synthesis:
+      Strategy A: "Freelance Writing Sprint"
+      Strategy B: "Technical Tutorial Products"
+      Strategy C: "Hybrid Service + Product"
+    expected_output:
+      discovered_strategies:
+        - name: "Freelance Writing Sprint"
+          description: "Build freelance writing client base quickly"
+          timeline: "3 months to $1000/month"
+          pros: ["Fastest to revenue", "Low risk", "Uses existing skills"]
+          cons: ["Trading time for money", "Income stops if you stop"]
+
+        - name: "Technical Tutorial Products"
+          description: "Create Python tutorials/courses for passive income"
+          timeline: "6 months to $1000/month"
+          pros: ["Passive income potential", "Scalable", "Builds authority"]
+          cons: ["Slower start", "Requires marketing", "Platform dependency"]
+
+        - name: "Hybrid Service + Product"
+          description: "Freelance writing for cash flow while building products"
+          timeline: "4-5 months to combined $1000/month"
+          pros: ["Balanced risk", "Multiple income streams", "Sustainable"]
+          cons: ["Split focus", "More complex to manage"]
+
+      recommended_strategy:
+        name: "Hybrid Service + Product"
+        rationale: |
+          Best balance of speed (freelance cash flow), sustainability (products),
+          and risk management (multiple streams). Freelancing validates writing
+          skills and generates topics for products.
+        key_phases:
+          - "Months 1-2: Establish freelance writing ($300-500/month)"
+          - "Months 2-4: Create first tutorial product while freelancing"
+          - "Months 4-6: Launch product, scale to $1000/month combined"
+
+      execution_outline:
+        phases:
+          - phase: "Foundation"
+            duration: "Weeks 1-4"
+            objective: "Land first 3 freelance clients"
+            milestones: ["Portfolio live", "First paid article", "3 active clients"]
+          - phase: "Stabilization"
+            duration: "Weeks 5-12"
+            objective: "Steady $500/month + first product outline"
+            milestones: ["$500/month achieved", "Product outline complete"]
+          - phase: "Expansion"
+            duration: "Weeks 13-24"
+            objective: "$1000/month from combined sources"
+            milestones: ["Product launched", "First product sales", "$1000/month total"]
+
+  - name: Strategy for system architecture goal
+    context: Development team needs to scale application to handle 10x traffic
+    inputs:
+      goal: "Scale application to handle 10x current traffic within 3 months"
+      success_criteria:
+        - "Handle 100k concurrent users (up from 10k)"
+        - "Response time under 200ms at p95"
+        - "99.9% uptime maintained"
+      constraints:
+        - "Cannot rewrite core application"
+        - "Budget: $5000/month additional infrastructure"
+        - "Team: 2 developers part-time"
+      available_resources:
+        - "Current AWS infrastructure"
+        - "Python/Django application"
+        - "PostgreSQL database"
+    process: |
+      Step 1 - Analysis:
+      - Core outcome: 10x capacity, same performance
+      - Timeline: 3 months
+      - Hard constraint: No core rewrite
+      - Resources: AWS, 2 devs, $5k/month
+
+      Step 2 - Precedent:
+      - Horizontal scaling: add more servers
+      - Vertical scaling: bigger servers
+      - Caching: reduce database load
+      - CDN: offload static content
+
+      Step 3 - Analogies:
+      - Traffic analogy: "More lanes vs faster cars vs alternate routes"
+      - Restaurant analogy: "More tables vs faster service vs reservations"
+
+      Step 4 - Decomposition:
+      - Sub-goal 1: Handle compute load (application layer)
+      - Sub-goal 2: Handle data load (database layer)
+      - Sub-goal 3: Handle network load (delivery layer)
+
+      Step 5-8 - Strategy selection and outline
+    expected_output:
+      recommended_strategy:
+        name: "Cache + Horizontal Scale"
+        rationale: |
+          Caching addresses the likely bottleneck (database) with minimal code
+          changes. Horizontal scaling handles compute. Together they achieve
+          10x within budget and no rewrite constraint.
+        key_components:
+          - "Redis caching layer for frequent queries"
+          - "Read replicas for database scaling"
+          - "Auto-scaling application servers"
+          - "CDN for static assets"
+
+      execution_outline:
+        phases:
+          - phase: "Quick Wins"
+            duration: "Weeks 1-4"
+            objective: "Add caching, achieve 3x improvement"
+          - phase: "Infrastructure"
+            duration: "Weeks 5-8"
+            objective: "Database replicas, auto-scaling"
+          - phase: "Optimization"
+            duration: "Weeks 9-12"
+            objective: "Fine-tune to hit 10x, load testing"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - After goal refinement completes with a SMART goal
+    - When existing strategy fails and alternatives needed
+    - At project inception to select initial approach
+    - During periodic reviews to validate strategy is still optimal
+    - When constraints change significantly
+    - When multiple approaches are being debated
+
+  gates:
+    - gate: strategy_exists
+      question: "Do we have at least one viable strategy for this goal?"
+
+    - gate: strategy_validated
+      question: "Has the recommended strategy been validated against constraints?"
+
+    - gate: execution_ready
+      question: "Is the execution outline detailed enough to begin planning?"
+
+    - gate: alternatives_identified
+      question: "Do we have ranked alternatives if primary strategy fails?"
+
+  related_procedures:
+    - goal_refinement: Provides the SMART goal input
+    - procedure_discovery: Uses execution outline to find needed procedures
+    - decomposition: May be invoked for complex strategies
+    - generation: Used within this procedure for option generation
+    - matching: Used within this procedure for constraint filtering
+    - risk_assessment: Deep dive on strategy risks
+    - resource_planning: Detailed resource allocation

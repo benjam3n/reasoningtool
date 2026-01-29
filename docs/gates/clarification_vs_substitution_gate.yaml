@@ -1,0 +1,267 @@
+# GOSM v2.2: Clarification vs Substitution Gate
+# Three-way classification for goal refinement
+# Prevents accidental goal drift while allowing legitimate clarification
+
+# PURPOSE:
+# When refining a goal, this gate determines whether the refinement is:
+# - CLARIFICATION: Same goal, made clearer/more specific
+# - SUBSTITUTION: Different goal replacing the original (requires consent)
+# - UNCLEAR: Cannot determine without user input
+
+gates:
+  # ============================================
+  # MAIN CLARIFICATION VS SUBSTITUTION GATE
+  # ============================================
+
+  - id: clarification_vs_substitution
+    name: Is This Clarification or Substitution?
+    phase: goal_refinement
+    category: core
+    atomic: true
+
+    question: |
+      Compare the ORIGINAL goal to the REFINED goal.
+      Is the refined version the same goal (clearer) or a different goal (substituted)?
+
+    description: |
+      GOSM v2.2 MANDATE:
+      Goal refinement must distinguish between making a goal clearer vs changing it.
+      Substitution without consent is a failure mode that wastes user time.
+
+      The key test: If user achieved the refined goal but NOT the original,
+      would they feel:
+      - "That's what I meant" → CLARIFICATION
+      - "That's not what I asked for" → SUBSTITUTION
+
+    inputs:
+      - name: original_goal
+        type: string
+        description: "The user's original stated goal"
+      - name: refined_goal
+        type: string
+        description: "The proposed refined/clarified version"
+
+    assessment:
+      CLARIFICATION:
+        description: "Same goal, made more precise"
+        indicators:
+          - "Refined goal is a subset of original (narrows without excluding)"
+          - "Adding specificity to vague terms without changing meaning"
+          - "Setting concrete metrics for abstract outcomes"
+          - "Defining timeline without changing objective"
+          - "Breaking into sub-goals that together = original"
+          - "Making implicit requirements explicit"
+        examples:
+          - original: "I want to be healthier"
+            refined: "I want to exercise 3x/week and sleep 7+ hours"
+            why: "Concrete version of 'healthier' - still health goal"
+          - original: "Improve my writing"
+            refined: "Write 500 words daily for 30 days"
+            why: "Practice is clarification of improvement"
+        action: "Proceed with refined goal"
+
+      SUBSTITUTION:
+        description: "Different goal replacing original"
+        indicators:
+          - "Core outcome has changed"
+          - "Target/beneficiary has changed"
+          - "'Underlying need' analysis replaced stated goal"
+          - "Made goal 'achievable' by reducing ambition/scope"
+          - "Pivoted to related but different goal"
+          - "Achieving refined goal would NOT satisfy original"
+        examples:
+          - original: "I want to be CEO"
+            refined: "I want leadership influence"
+            why: "Leadership ≠ CEO - substituted easier goal"
+          - original: "I want $1M"
+            refined: "I want financial security"
+            why: "Security might require less than $1M - reduced ambition"
+          - original: "I want X to love me"
+            refined: "I want to feel valued"
+            why: "Feeling valued ≠ being loved by X - different goal"
+        action: "REQUIRES USER CONSENT before proceeding"
+
+      UNCLEAR:
+        description: "Cannot determine without more information"
+        indicators:
+          - "Original was too vague to compare"
+          - "Refined version has multiple interpretations"
+          - "Depends on user's internal criteria we don't know"
+          - "Edge case between clarification and substitution"
+        action: "Ask user to confirm intent"
+
+    # The key decision test
+    decision_test: |
+      SIMULATION TEST:
+      Imagine the user achieves the REFINED goal but NOT the ORIGINAL as stated.
+      What would they say?
+
+      A) "That's exactly what I meant" → CLARIFICATION
+      B) "That's not what I asked for" → SUBSTITUTION
+      C) "I'm not sure" → UNCLEAR
+
+    consent_template: |
+      **Goal Change Detected**
+
+      You asked for: [ORIGINAL]
+      I'm proposing: [REFINED]
+
+      This appears to be a SUBSTITUTION (different goal), not just clarification.
+
+      Differences:
+      - [Specific difference 1]
+      - [Specific difference 2]
+
+      Options:
+      1. **Proceed with substituted goal** (I understand it's different)
+      2. **Return to original goal** (help me achieve what I actually asked)
+      3. **Clarify what you meant** (I'll try again)
+
+      Which would you prefer?
+
+    # Patterns that commonly masquerade as clarification
+    substitution_red_flags:
+      - pattern: "underlying need"
+        risk: "Replaces stated goal with assumed deeper goal"
+        check: "Does user agree this is what they really want?"
+
+      - pattern: "achievable version"
+        risk: "Reduces ambition to make goal easier"
+        check: "Did user ask for an easier version?"
+
+      - pattern: "what you probably mean"
+        risk: "Imposes interpretation without verification"
+        check: "Is this interpretation confirmed?"
+
+      - pattern: "more realistic"
+        risk: "Substitutes easier goal for hard one"
+        check: "Did user ask for realistic alternative?"
+
+      - pattern: "similar to"
+        risk: "Adjacent goal, not same goal"
+        check: "Would achieving this satisfy original?"
+
+    # Edge cases requiring careful judgment
+    edge_cases:
+      - case: "Goal was genuinely unclear"
+        guidance: |
+          If original was too vague to have a 'true meaning', clarification
+          is more like co-creation. Default to CLARIFICATION but acknowledge
+          you're helping define, not just clarify.
+
+      - case: "User's goal is impossible"
+        guidance: |
+          Don't substitute silently. Options:
+          1. Honest rejection: "This goal as stated is impossible because [X]"
+          2. Explicit substitution with consent: "Would you consider [alternative]?"
+          Never: Silently change to 'achievable version'
+
+      - case: "Breaking down into sub-goals"
+        guidance: |
+          CLARIFICATION if: Sub-goals together = original
+          SUBSTITUTION if: Sub-goals are easier/different and don't add up to original
+
+    on_pass:
+      CLARIFICATION: "proceed_with_refined_goal"
+      SUBSTITUTION: "request_user_consent"
+      UNCLEAR: "ask_for_clarification"
+
+    evaluation_criteria:
+      - "Original and refined goals have been explicitly compared"
+      - "Simulation test has been applied"
+      - "Substitution red flags have been checked"
+      - "Edge cases have been considered"
+      - "Classification has reasoning attached"
+
+    output_format: |
+      ## Clarification vs Substitution Analysis
+
+      **Original Goal**: [original]
+      **Refined Goal**: [refined]
+
+      **Classification**: CLARIFICATION | SUBSTITUTION | UNCLEAR
+
+      **Reasoning**:
+      - Simulation test result: [A/B/C with explanation]
+      - Red flags checked: [any that apply]
+      - Edge cases: [any that apply]
+
+      **Action**: [proceed / request consent / ask for clarification]
+
+  # ============================================
+  # HONEST REJECTION GATE
+  # ============================================
+
+  - id: honest_rejection_check
+    name: Should We Honestly Reject?
+    phase: goal_refinement
+    category: core
+    follows: clarification_vs_substitution
+
+    question: |
+      Is this goal impossible or inadvisable to pursue?
+      Should we honestly say so instead of substituting?
+
+    description: |
+      Sometimes the best response to a goal is honest rejection.
+      This is better than silently substituting an 'achievable' alternative.
+
+    assessment:
+      HONEST_REJECTION:
+        description: "Goal is impossible or clearly inadvisable"
+        indicators:
+          - "Violates physical laws"
+          - "Requires resources that don't exist"
+          - "Would cause clear harm to user"
+          - "Self-contradictory goal"
+        action: "Explain why honestly, offer alternatives explicitly"
+
+      DIFFICULT_BUT_POSSIBLE:
+        description: "Hard but achievable"
+        indicators:
+          - "Low probability but not zero"
+          - "Requires unusual effort or luck"
+          - "Has been done by others"
+        action: "Acknowledge difficulty, proceed if user confirms"
+
+      PROCEED:
+        description: "Goal is reasonable"
+        action: "Continue with refinement process"
+
+    rejection_template: |
+      **Honest Assessment**
+
+      I need to be direct: [GOAL] as stated is [impossible/highly unlikely] because:
+      - [Reason 1]
+      - [Reason 2]
+
+      I could offer alternatives, but I want to be honest rather than silently
+      changing your goal.
+
+      Options:
+      1. **Hear alternatives**: I can suggest related achievable goals
+      2. **Explain obstacles**: I can detail exactly what makes this hard
+      3. **Proceed anyway**: You understand the odds and want to try
+
+      What would you prefer?
+
+# Integration notes for skills using this gate:
+#
+# USAGE:
+# At the start of goal refinement, before proposing changes:
+# 1. Capture original goal exactly as stated
+# 2. Generate refined version
+# 3. Run this gate
+# 4. If SUBSTITUTION: Use consent_template before proceeding
+# 5. If UNCLEAR: Ask for clarification
+# 6. If CLARIFICATION: Proceed
+#
+# SKILLS THAT SHOULD USE THIS GATE:
+# - goal_refinement (primary)
+# - goal_understanding
+# - goal_reframing
+# - goal_decomposition
+# - goal_structure_reconstruction
+# - Any skill that transforms user goals
+#
+# INVOKE: → GATE: clarification_vs_substitution [original] [refined]

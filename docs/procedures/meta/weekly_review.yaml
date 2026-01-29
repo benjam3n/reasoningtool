@@ -1,0 +1,587 @@
+# Weekly Review - Maintain project portfolio visibility
+# Meta-procedure for systematic weekly check-ins
+
+id: weekly_review
+name: Weekly Review
+version: "1.0.0"
+domain: meta
+
+description: Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuous progress.
+
+long_description: |
+  The Weekly Review is a recurring maintenance procedure that provides:
+
+  1. Portfolio visibility - see all projects at a glance
+  2. Stall detection - catch stalled projects early before they die
+  3. Progress momentum - maintain forward motion across all work
+  4. Blocker identification - surface issues before they become critical
+  5. Course correction - enable timely adjustments to plans
+
+  This procedure is inspired by GTD Weekly Review but adapted for GOSM's
+  project-centric approach. It should become a habit, scheduled at a
+  consistent time each week.
+
+  Recommended timing: Sunday evening or Monday morning
+  Expected duration: 30-60 minutes
+
+tags:
+  - meta
+  - review
+  - maintenance
+  - portfolio
+  - habit
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - Every week at a consistent scheduled time
+  - When returning from vacation or extended break
+  - After completing a major project milestone
+  - When feeling overwhelmed by multiple projects
+  - Before starting a new project to assess capacity
+  - When project status feels unclear or uncertain
+  - After any significant life or work change that affects capacity
+
+when_not_to_use:
+  - Mid-week as a substitute for daily check-ins
+  - When only one project is active and progress is clear
+  - During active crisis (handle crisis first, review after)
+  - As procrastination from doing actual project work
+  - When less than 5 days since last review (unless returning from break)
+  - If it would add stress rather than reduce it
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: projects_directory
+    type: string
+    required: true
+    description: Path to directory containing all GOSM projects
+    default: "projects/"
+
+  - name: review_period
+    type: string
+    required: false
+    description: Time period being reviewed
+    default: "last 7 days"
+
+  - name: previous_review
+    type: document
+    required: false
+    description: Previous week's review document for comparison
+
+outputs:
+  - name: portfolio_status
+    type: dict
+    description: Current status of all active projects
+
+  - name: flagged_projects
+    type: list
+    description: Projects requiring attention (stalled, blocked, at risk)
+
+  - name: weekly_focus
+    type: list
+    description: Priority projects and goals for coming week
+
+  - name: review_document
+    type: document
+    description: Complete weekly review output
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Gather project status
+    action: |
+      Review all active projects:
+
+      1. List all projects with status != COMPLETE/ARCHIVED
+
+      2. For each project, check STATE.md:
+         - Last updated date
+         - Current phase
+         - Health indicator
+         - Progress percentage
+         - Current blockers
+
+      3. Note key metrics:
+         - Days since last update
+         - Phase progress
+         - Any explicit blockers listed
+
+      Quick status check (can be automated):
+      - Run: find projects/ -name "STATE.md" -mtime +7
+      - This finds projects not updated in 7+ days
+    inputs:
+      - projects_directory
+    outputs:
+      - project_inventory: list of all active projects with status
+      - staleness_flags: projects not updated recently
+    verification: |
+      Every active project has current status captured
+
+  - id: 2
+    name: Identify issues
+    action: |
+      Flag projects needing attention using these criteria:
+
+      STALLED: STATE.md not updated in >7 days
+      - These projects are drifting
+      - Action: Update status or explicitly pause
+
+      BLOCKED: Has explicit blocker listed
+      - Progress cannot continue until resolved
+      - Action: Escalate or work around blocker
+
+      AT RISK: Health indicator is yellow or red
+      - Project is struggling but not blocked
+      - Action: Diagnose cause, consider recovery procedure
+
+      OFF TRACK: Behind milestone schedule
+      - Dates slipping from original plan
+      - Action: Adjust plan or increase focus
+
+      For each flagged project:
+      - Note the specific issue
+      - Identify potential action
+      - Estimate effort to address
+    inputs:
+      - project_inventory (from Step 1)
+    outputs:
+      - flagged_projects: categorized list of issues
+      - action_candidates: potential responses for each
+    verification: |
+      All flagged projects have identified issue and potential action
+
+  - id: 3
+    name: Update stale projects
+    action: |
+      For each project with stale STATE.md:
+
+      1. Open STATE.md and review current state
+
+      2. Update progress indicators:
+         - Progress percentages by phase
+         - Key metrics if defined
+         - Health indicator based on reality
+
+      3. Update blockers list:
+         - Add any new blockers discovered
+         - Remove resolved blockers
+         - Note blocker age if persisting
+
+      4. Update "Last Updated" timestamp
+
+      5. If project is actually paused:
+         - Change status to PAUSED
+         - Document why paused
+         - Set expected resume date if known
+
+      Goal: Every active project has STATE.md updated within last 7 days.
+    inputs:
+      - flagged_projects (from Step 2)
+    outputs:
+      - updated_projects: projects with refreshed STATE.md
+      - newly_paused: projects moved to PAUSED status
+    verification: |
+      No active project has STATE.md older than 7 days
+
+  - id: 4
+    name: Plan coming week
+    action: |
+      Set focus for the coming week:
+
+      1. Review capacity
+         - How many hours available for project work?
+         - Any scheduled commitments that affect capacity?
+         - Energy level and sustainability?
+
+      2. Select priority projects (1-3 max)
+         - Which projects need attention most?
+         - Which are closest to milestone/completion?
+         - Which have external dependencies or deadlines?
+
+      3. Set specific weekly goals for each priority
+         - What concrete deliverable by end of week?
+         - What would "good progress" look like?
+         - What's the minimum acceptable progress?
+
+      4. Schedule time blocks if helpful
+         - When will you work on each priority?
+         - Are there dependencies between projects?
+
+      5. Note dependencies and deadlines
+         - External meetings or reviews scheduled?
+         - Blockers that must be resolved first?
+    inputs:
+      - project_inventory (from Step 1)
+      - flagged_projects (from Step 2)
+    outputs:
+      - weekly_priorities: ordered list of 1-3 projects
+      - weekly_goals: specific goals for each priority
+      - time_allocation: planned hours per project
+    verification: |
+      Each priority project has specific, achievable weekly goal
+
+  - id: 5
+    name: Retrospect on last week
+    action: |
+      Review what happened last week:
+
+      1. What got completed?
+         - List accomplishments
+         - Celebrate progress (even small wins)
+
+      2. What didn't get done?
+         - List items that slipped
+         - Identify why they slipped
+         - Decide: reschedule, delegate, or drop
+
+      3. What worked well?
+         - Practices to continue
+         - Conditions that helped
+
+      4. What didn't work?
+         - Obstacles encountered
+         - Practices to change
+         - Patterns to watch
+
+      5. Procedure usage
+         - Which procedures were used?
+         - Log significant uses for effectiveness tracking
+    inputs:
+      - previous_review (if available)
+      - weekly_goals (from last week's review)
+    outputs:
+      - accomplishments: what got done
+      - slipped_items: what didn't get done with reasons
+      - insights: learnings from the week
+    verification: |
+      Last week's goals are accounted for (completed or explained)
+
+  - id: 6
+    name: Log procedure usage
+    action: |
+      If any procedures were used significantly this week:
+
+      1. For each procedure used:
+         - Which procedure?
+         - Which project?
+         - What was the outcome?
+         - How valuable was it? (HIGH/MEDIUM/LOW)
+
+      2. Add entries to PROCEDURE_USAGE.md
+
+      3. Note any procedure improvements needed
+         - Was anything unclear?
+         - Were any steps missing?
+         - Did it produce expected output?
+
+      This feeds the procedure_effectiveness tracking system.
+    inputs:
+      - insights (from Step 5)
+    outputs:
+      - usage_entries: new entries for PROCEDURE_USAGE.md
+      - improvement_notes: suggested procedure improvements
+    verification: |
+      Significant procedure uses are logged
+
+  - id: 7
+    name: Generate review document
+    action: |
+      Compile all findings into weekly review document:
+
+      1. Create document using template
+      2. Fill in all sections:
+         - Portfolio Status table
+         - Flags section (stalled, blocked, at risk)
+         - This Week's Focus (priorities and goals)
+         - Last Week Retrospective
+         - Notes and observations
+
+      3. Save to reviews/ directory or designated location
+         - Filename format: YYYY-MM-DD_weekly_review.md
+
+      4. Update any project STATE.md files with links to review
+    inputs:
+      - portfolio_status (compiled from all steps)
+      - flagged_projects (from Step 2)
+      - weekly_priorities (from Step 4)
+      - insights (from Step 5)
+    outputs:
+      - review_document: complete weekly review file
+    verification: |
+      Review document is complete and saved
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - All active projects have current status captured
+  - Stalled projects are either updated or explicitly paused
+  - 1-3 priority projects selected with specific goals
+  - Last week's goals are accounted for
+  - Review document is saved for future reference
+  - Time to complete review is reasonable (30-60 min)
+
+failure_modes:
+  - mode: Review becomes perfunctory
+    symptom: Just updating dates without real reflection
+    resolution: Add specific questions that require thought, vary the format
+
+  - mode: Review takes too long
+    symptom: Spending 2+ hours on weekly review
+    resolution: Time-box each step, focus on decisions not documentation
+
+  - mode: Review doesn't lead to action
+    symptom: Same issues flagged week after week
+    resolution: Add accountability mechanism, require one action per flagged item
+
+  - mode: Review feels like burden
+    symptom: Skipping reviews, dreading the process
+    resolution: Simplify, make it shorter, focus only on essential elements
+
+  - mode: Too many priorities
+    symptom: Selecting 5+ priority projects each week
+    resolution: Force max 3 priorities, accept that other projects wait
+
+  - mode: Ignoring paused projects
+    symptom: Projects stay "paused" indefinitely without review
+    resolution: Monthly audit of paused projects, decide to resume or archive
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Standard weekly review
+    context: Sunday evening, 5 active projects, normal week
+    inputs:
+      projects_directory: "projects/"
+      review_period: "2026-01-12 to 2026-01-19"
+    process: |
+      1. Gather status:
+         - Project A: ACTIVE, updated 2 days ago, Phase 3, 65%
+         - Project B: ACTIVE, updated 9 days ago, Phase 2, 30%
+         - Project C: ACTIVE, updated 1 day ago, Phase 4, 85%
+         - Project D: ACTIVE, updated 5 days ago, Phase 1, 15%
+         - Project E: PAUSED, explicit pause until Feb
+
+      2. Identify issues:
+         - STALLED: Project B (9 days since update)
+         - AT RISK: None
+         - BLOCKED: None
+
+      3. Update stale:
+         - Project B: Updated STATE.md, actually made progress on
+           research but forgot to update. Now shows 40%. Added blocker:
+           "Waiting for API access approval"
+
+      4. Plan week:
+         - Priority 1: Project C (close to completion)
+           Goal: Complete Phase 4, enter final review
+           Time: 8 hours
+         - Priority 2: Project A (steady progress)
+           Goal: Complete Phase 3 milestone 2
+           Time: 6 hours
+         - Priority 3: Project B (needs unblocking)
+           Goal: Follow up on API access, do what's possible
+           Time: 2 hours
+
+      5. Retrospect:
+         - Completed: Project C Phase 3, Project D kickoff
+         - Slipped: Project B progress (blocker emerged)
+         - Insight: Morning sessions more productive than evening
+
+      6. Log procedures:
+         - Used decomposition on Project D, HIGH value
+         - Used validation on Project C, MEDIUM value
+
+      7. Generate document: Saved to reviews/2026-01-19_weekly_review.md
+    expected_output:
+      portfolio_status:
+        active: 4
+        paused: 1
+        at_risk: 0
+        blocked: 1
+      flagged_projects:
+        - project: "Project B"
+          issue: "Stalled + blocked on API access"
+          action: "Follow up Monday, do offline prep"
+      weekly_focus:
+        - "Project C: Complete Phase 4"
+        - "Project A: Phase 3 milestone 2"
+        - "Project B: Unblock API access"
+
+  - name: Post-vacation catch-up review
+    context: Monday morning, returning after 2-week vacation
+    inputs:
+      projects_directory: "projects/"
+      review_period: "2025-12-22 to 2026-01-05"
+    process: |
+      1. Gather status:
+         - All 4 active projects show STATE.md >14 days old
+         - Need full status refresh on everything
+
+      2. Identify issues:
+         - All projects flagged as STALLED
+         - Check emails/messages for any urgent external blockers
+
+      3. Update stale:
+         - For each project:
+           - Review where it was before vacation
+           - Check if any external changes (emails, dependencies)
+           - Update STATE.md with current reality
+           - Decide: resume, pause, or deprioritize
+
+      4. Plan week:
+         - This is a re-ramp week, not normal capacity
+         - Priority 1: Most urgent/time-sensitive project
+           Goal: Get back up to speed, one meaningful task
+         - Priority 2: Project I'm most excited about
+           Goal: Rebuild momentum
+         - Explicitly PAUSE lower priority projects until next week
+
+      5. Retrospect:
+         - N/A for vacation period
+         - Note energy level and readiness to resume
+
+      6. Log procedures:
+         - weekly_review procedure used, will note value next week
+
+      7. Generate document with "post-vacation" note
+    expected_output:
+      portfolio_status:
+        active: 2  # Reduced focus for ramp-up
+        paused: 2  # Explicitly paused during ramp-up
+      flagged_projects: []  # Cleared after updates
+      weekly_focus:
+        - "Ramp-up week: reduced scope intentional"
+        - "Priority 1: Most urgent project"
+        - "Priority 2: Momentum rebuild"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Regular maintenance rhythm for GOSM practitioners
+    - Portfolio management across multiple projects
+    - Early warning system for project health
+    - Procedure effectiveness tracking integration
+
+  gates:
+    - gate: review_current
+      question: "Has a weekly review been completed in the last 7 days?"
+
+    - gate: priorities_set
+      question: "Are there clear priorities for the coming week?"
+
+    - gate: stalled_addressed
+      question: "Have stalled projects been updated or explicitly paused?"
+
+    - gate: retrospective_complete
+      question: "Has last week been reviewed for learnings?"
+
+  related_procedures:
+    - procedure_effectiveness: Log procedure uses during review
+    - failure_recovery: Escalate if flagged issues suggest failure
+    - system_health_check: Monthly deep-dive complements weekly review
+    - goal_refinement: Review may surface need to refine goals
+
+# ============================================
+# TEMPLATES
+# ============================================
+templates:
+  review_document: |
+    # Weekly Review: [Date]
+
+    ## Portfolio Status
+
+    ### Active Projects
+    | Project | Phase | Progress | Health | Last Updated | This Week |
+    |---------|-------|----------|--------|--------------|-----------|
+    | [name] | [phase] | [XX%] | [G/Y/R] | [date] | [Yes/No] |
+
+    ### Flags
+    **Stalled** (>7 days no update):
+    - [ ] [Project]: Last updated [date] - Action: [what to do]
+
+    **Blocked**:
+    - [ ] [Project]: [Blocker] - Action: [what to do]
+
+    **At Risk**:
+    - [ ] [Project]: [Risk] - Mitigation: [action]
+
+    ## This Week's Focus
+
+    ### Priority 1: [Project]
+    **Goal**: [Specific deliverable]
+    **Time allocated**: [X hours]
+    **Key actions**:
+    1. [Action]
+    2. [Action]
+
+    ### Priority 2: [Project]
+    **Goal**: [Specific deliverable]
+    **Time allocated**: [X hours]
+
+    ### Priority 3: [Project]
+    **Goal**: [Specific deliverable]
+    **Time allocated**: [X hours]
+
+    ## Last Week Retrospective
+
+    **Completed**:
+    - [x] [What got done]
+
+    **Not Completed**:
+    - [ ] [What didn't get done] - Reason: [why]
+
+    **What Worked**:
+    - [Practice or condition that helped]
+
+    **What Didn't Work**:
+    - [Obstacle or issue]
+
+    **Learnings**:
+    - [Insight 1]
+    - [Insight 2]
+
+    ## Procedure Usage
+    | Procedure | Project | Value | Notes |
+    |-----------|---------|-------|-------|
+    | [name] | [project] | [H/M/L] | [notes] |
+
+    ## Notes
+    [Any other observations, ideas, or concerns]
+
+# ============================================
+# AUTOMATION
+# ============================================
+automation:
+  description: |
+    Parts of the weekly review can be automated:
+
+  automated_tasks:
+    - name: "Stale project detection"
+      command: "find projects/ -name 'STATE.md' -mtime +7"
+      output: "List of projects not updated in 7+ days"
+
+    - name: "Portfolio summary generation"
+      approach: "Script that parses STATE.md files"
+      output: "Table of projects with phase, progress, health"
+
+    - name: "Review document template"
+      approach: "Generate pre-filled template with current data"
+      output: "Markdown file with project table populated"
+
+  script_location: "scripts/gosm-status.sh"
+
+  human_required:
+    - "Interpreting what 'stalled' means for each project"
+    - "Setting priorities and goals"
+    - "Retrospective reflection"
+    - "Deciding actions for flagged items"

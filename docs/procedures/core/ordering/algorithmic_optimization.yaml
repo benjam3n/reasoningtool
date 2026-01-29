@@ -1,0 +1,371 @@
+# Algorithmic Optimization Orderings
+# Orderings based on classic algorithm design paradigms
+
+category_id: algorithmic_optimization
+category_name: "Algorithmic Optimization Orderings"
+description: |
+  Orderings based on classic algorithm design paradigms: greedy,
+  dynamic programming, divide-and-conquer, and branch-and-bound.
+  Use when problems have optimal substructure or can be decomposed.
+
+when_to_consider: |
+  - Local optimum leads to global optimum (greedy)
+  - Overlapping subproblems exist (DP)
+  - Problem splits into independent parts (D&C)
+  - Optimization with computable bounds (B&B)
+  - Mathematical optimization problems
+
+variations:
+
+  # ----------------------------------------
+  # GREEDY-LOCAL ORDERING
+  # ----------------------------------------
+  greedy_local:
+    id: greedy_local_ordering
+    name: "Greedy-Local Ordering (Best-Looking-First)"
+    category: algorithmic_optimization
+
+    philosophy: |
+      At each step, make the locally optimal choice. From greedy
+      algorithms: don't look ahead, just pick what looks best now.
+      Works when local optima lead to global optimum (greedy-choice
+      property). Fast and simple, but not always optimal.
+
+    when_to_use:
+      - Greedy-choice property holds
+      - Optimal substructure exists
+      - Quick, good-enough solutions needed
+      - Scheduling, selection, covering problems
+      - As heuristic when optimal too expensive
+
+    key_concepts:
+      greedy_choice: "Locally optimal choice is globally safe"
+      optimal_substructure: "Optimal solution contains optimal sub-solutions"
+      irrevocable: "Once chosen, choice is not reconsidered"
+
+    prioritization_rules:
+      1_evaluate_options:
+        rule: "Score all available options at current step"
+        method: "Whatever metric defines 'best'"
+
+      2_choose_best:
+        rule: "Select the option with highest score"
+        no_lookahead: "Don't consider future implications"
+
+      3_commit:
+        rule: "Add choice to solution, update state"
+        irrevocable: "Never undo this choice"
+
+      4_repeat:
+        rule: "Continue until complete or no options left"
+
+    classic_examples:
+      activity_selection: "Pick earliest finishing activity"
+      huffman_coding: "Merge lowest frequency nodes"
+      minimum_spanning_tree: "Add cheapest edge"
+      coin_change: "Pick largest coin that fits (not always optimal!)"
+
+    when_greedy_fails:
+      coin_change_counterexample:
+        coins: "[25, 20, 1]"
+        target: "40"
+        greedy: "25 + 15x1 = 16 coins"
+        optimal: "20 + 20 = 2 coins"
+      lesson: "Verify greedy-choice property holds"
+
+    anti_patterns:
+      - "Using greedy when it doesn't guarantee optimum"
+      - "Not verifying greedy-choice property"
+      - "Reconsidering past choices (that's not greedy)"
+
+    example:
+      context: "Activity selection - maximize non-overlapping activities"
+      activities:
+        A: "[1-4]"
+        B: "[3-5]"
+        C: "[0-6]"
+        D: "[5-7]"
+        E: "[3-8]"
+        F: "[5-9]"
+        G: "[6-10]"
+        H: "[8-11]"
+      greedy_strategy: "Always pick activity that finishes earliest"
+      greedy_order: "A(1-4), D(5-7), H(8-11)"
+      result: "3 activities (optimal for this problem)"
+      rationale: "Earliest finish = leaves most room for future"
+
+    source: "Algorithm Design - Greedy Algorithms"
+
+  # ----------------------------------------
+  # DYNAMIC-SUBPROBLEM ORDERING
+  # ----------------------------------------
+  dynamic_subproblem:
+    id: dynamic_subproblem_ordering
+    name: "Dynamic-Subproblem Ordering (Bottom-Up DP)"
+    category: algorithmic_optimization
+
+    philosophy: |
+      Solve small subproblems first, build up to full solution.
+      From dynamic programming: if problem has overlapping subproblems
+      and optimal substructure, compute each subproblem once, store
+      results, reuse. Order computation so dependencies are ready.
+
+    when_to_use:
+      - Overlapping subproblems
+      - Optimal substructure
+      - Exponential naive recursion
+      - Fibonacci, knapsack, shortest paths, edit distance
+
+    key_concepts:
+      overlapping_subproblems: "Same subproblems computed multiple times"
+      optimal_substructure: "Optimal solution uses optimal sub-solutions"
+      memoization: "Store computed results for reuse"
+      bottom_up: "Solve small problems first, build up"
+
+    variants:
+      top_down_memoization:
+        style: "Recursive with caching"
+        order: "Compute on demand, cache results"
+        pros: "Only computes needed subproblems"
+        cons: "Recursion overhead, stack limits"
+
+      bottom_up_tabulation:
+        style: "Iterative table filling"
+        order: "Solve smallest subproblems first, build up"
+        pros: "No recursion overhead, can optimize space"
+        cons: "Must determine correct order, solves all subproblems"
+
+    prioritization_rules:
+      1_identify_subproblems:
+        rule: "What are the building blocks?"
+        examples:
+          - "Fibonacci: F(n-1), F(n-2)"
+          - "Knapsack: items 1..i with capacity j"
+          - "Edit distance: prefixes of both strings"
+
+      2_define_recurrence:
+        rule: "How does solution relate to subproblems?"
+        formula: "dp[i] = f(dp[smaller indices])"
+
+      3_determine_base_cases:
+        rule: "What are the smallest subproblems?"
+        examples:
+          - "Fibonacci: F(0)=0, F(1)=1"
+          - "Empty string has edit distance = length of other"
+
+      4_fill_table_in_order:
+        rule: "Ensure subproblems solved before they're needed"
+        typical: "Smaller indices before larger"
+
+      5_extract_answer:
+        rule: "Final answer is in specific cell"
+        location: "Usually dp[n] or dp[n][m]"
+
+    anti_patterns:
+      - "Recomputing subproblems (exponential time)"
+      - "Wrong order (using values not yet computed)"
+      - "Not recognizing overlapping subproblems"
+      - "Using DP when greedy works (overkill)"
+
+    example:
+      context: "Computing Fibonacci numbers"
+      naive_recursive:
+        F_5: "Calls F(4) and F(3)"
+        F_4: "Calls F(3) and F(2)"
+        F_3: "Called multiple times - redundant!"
+        complexity: "O(2^n) - exponential"
+
+      bottom_up_dp:
+        order: "F(0), F(1), F(2), F(3), F(4), F(5)"
+        table: "[0, 1, 1, 2, 3, 5]"
+        complexity: "O(n) - linear"
+
+      space_optimization:
+        insight: "Only need last two values"
+        space: "O(1) instead of O(n)"
+
+      rationale: "Solve small before large, store results"
+
+    source: "Algorithm Design - Dynamic Programming"
+
+  # ----------------------------------------
+  # DIVIDE-CONQUER ORDERING
+  # ----------------------------------------
+  divide_conquer:
+    id: divide_conquer_ordering
+    name: "Divide-Conquer Ordering (Split-Solve-Combine)"
+    category: algorithmic_optimization
+
+    philosophy: |
+      Break problem into independent subproblems, solve each
+      recursively, combine results. From divide and conquer:
+      the problem is divided until trivially solvable, then
+      solutions are merged. Enables parallelization and often
+      achieves O(n log n) complexity.
+
+    when_to_use:
+      - Problem can be split into independent parts
+      - Subproblems are same type as original
+      - Combining solutions is straightforward
+      - Sorting, searching, matrix operations
+      - Naturally parallelizable workloads
+
+    key_concepts:
+      divide: "Split problem into smaller subproblems"
+      conquer: "Solve subproblems recursively"
+      combine: "Merge subproblem solutions into final answer"
+      base_case: "Smallest subproblem solved directly"
+
+    classic_examples:
+      merge_sort:
+        divide: "Split array in half"
+        conquer: "Recursively sort each half"
+        combine: "Merge two sorted halves"
+        complexity: "O(n log n)"
+
+      quicksort:
+        divide: "Partition around pivot"
+        conquer: "Recursively sort partitions"
+        combine: "Nothing (sorted in place)"
+        complexity: "O(n log n) average"
+
+      binary_search:
+        divide: "Check middle, eliminate half"
+        conquer: "Search remaining half"
+        combine: "Nothing (just return result)"
+        complexity: "O(log n)"
+
+    prioritization_rules:
+      1_identify_divide_point:
+        rule: "How to split problem into parts?"
+        strategies:
+          - "Split in half (merge sort)"
+          - "Partition by value (quicksort)"
+          - "Split by dimension (matrix)"
+
+      2_ensure_independence:
+        rule: "Subproblems should not depend on each other"
+        reason: "Enables parallel execution"
+
+      3_solve_subproblems:
+        rule: "Apply same algorithm recursively"
+        base: "Stop at trivial size"
+
+      4_combine_efficiently:
+        rule: "Merging should not dominate complexity"
+        merge_sort: "O(n) merge step"
+        quicksort: "O(1) combine (nothing to do)"
+
+    parallelization:
+      opportunity: "Subproblems can be solved in parallel"
+      fork_join: "Fork subproblems, join results"
+      speedup: "Up to O(log n) with enough processors"
+
+    anti_patterns:
+      - "Subproblems not independent (can't parallelize)"
+      - "Expensive combine step (dominates complexity)"
+      - "Unbalanced divide (one subproblem much larger)"
+      - "Not reaching base case (infinite recursion)"
+
+    example:
+      context: "Sorting a large array"
+      merge_sort_order:
+        divide: "[5,2,8,1,9,3] -> [5,2,8] and [1,9,3]"
+        recurse_left: "[5,2,8] -> [5] [2,8] -> [5] [2] [8]"
+        combine_left: "[2] [8] -> [2,8] -> [2,5,8]"
+        recurse_right: "[1,9,3] -> [1] [9,3] -> [1] [3] [9]"
+        combine_right: "[3] [9] -> [3,9] -> [1,3,9]"
+        final_combine: "[2,5,8] + [1,3,9] -> [1,2,3,5,8,9]"
+      rationale: "Divide until trivial, combine back up"
+
+    source: "Algorithm Design - Divide and Conquer"
+
+  # ----------------------------------------
+  # BRANCH-BOUND ORDERING
+  # ----------------------------------------
+  branch_bound:
+    id: branch_bound_ordering
+    name: "Branch-and-Bound Ordering (Bound-Based Pruning)"
+    category: algorithmic_optimization
+
+    philosophy: |
+      Explore solution space systematically, pruning branches that
+      can't beat the best known solution. From optimization: maintain
+      a bound on each partial solution's potential. If bound is worse
+      than best complete solution, prune entire subtree. Guarantees
+      optimal solution while avoiding full enumeration.
+
+    when_to_use:
+      - Optimization problems (minimize/maximize)
+      - Can compute bounds on partial solutions
+      - Need guaranteed optimal solution
+      - TSP, knapsack, integer programming
+      - When heuristics alone aren't sufficient
+
+    key_concepts:
+      branching: "Split problem into subproblems"
+      bounding: "Compute optimistic bound on each branch"
+      pruning: "Skip branches that can't improve best"
+      incumbent: "Best complete solution found so far"
+
+    prioritization_rules:
+      1_compute_bound:
+        rule: "For each partial solution, compute optimistic bound"
+        property: "Bound must be <= optimal solution in subtree (minimizing)"
+        examples:
+          - "Relaxed LP solution for integer programs"
+          - "MST bound for TSP"
+          - "Fractional knapsack for 0/1 knapsack"
+
+      2_compare_to_incumbent:
+        rule: "If bound >= incumbent, prune branch"
+        reason: "Can't possibly beat best known solution"
+
+      3_select_next_branch:
+        strategies:
+          best_first: "Expand node with best bound"
+          depth_first: "Go deep to find incumbent fast"
+          breadth_first: "Systematic level-by-level"
+        trade_off: "Best-first finds optimal faster but uses more memory"
+
+      4_update_incumbent:
+        rule: "When complete solution found, update if better"
+        effect: "Tighter incumbent enables more pruning"
+
+    bounding_techniques:
+      relaxation: "Solve easier version of problem"
+      greedy: "Fast heuristic solution as bound"
+      lagrangian: "Dualize constraints"
+
+    anti_patterns:
+      - "Weak bounds (little pruning, near full enumeration)"
+      - "Expensive bound computation (overhead > savings)"
+      - "Not updating incumbent quickly (poor pruning)"
+      - "Using when better algorithms exist"
+
+    example:
+      context: "0/1 Knapsack optimization"
+      problem:
+        items: "[value:60,weight:10], [v:100,w:20], [v:120,w:30]"
+        capacity: "50"
+      branch_and_bound:
+        bound_function: "Fractional knapsack solution (upper bound)"
+        branching: "Include or exclude each item"
+        node_1:
+          state: "Include item 1"
+          bound: "60 + fractional(remaining) = 60 + 160 = 220"
+          incumbent: "None yet"
+          action: "Explore"
+        node_2:
+          state: "Include item 1, include item 2"
+          bound: "160 + fractional(remaining) = 160 + 40 = 200"
+          action: "Explore"
+        found_solution:
+          items: "[1, 2]"
+          value: "160"
+          incumbent: "160"
+        pruning:
+          other_branches: "If bound < 160, prune"
+      result: "Optimal found without exploring all 2^n subsets"
+
+    source: "Optimization - Branch and Bound"

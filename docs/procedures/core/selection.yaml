@@ -1,0 +1,530 @@
+# Selection Procedure - Fifth and final step in the decision-making sequence
+# Core GOSM procedure for making the final selection from ranked options
+
+id: selection
+name: Selection
+version: "1.0.0"
+domain: core
+
+description: Make the final selection from ranked options after all analysis is complete
+
+long_description: |
+  The Selection procedure is the fifth and FINAL step in the systematic
+  decision-making sequence (Generation -> Matching -> Comparison -> Optimization ->
+  Selection).
+
+  Its purpose is to make the FINAL selection based on the rankings produced by
+  Optimization and any additional real-world considerations that rankings alone
+  cannot capture.
+
+  Key principles:
+  - Rankings inform, don't dictate: Top-ranked isn't always the best choice
+  - Consider implementation reality: Can we actually execute this?
+  - Account for risk appetite: Is the organization ready for this option?
+  - Ensure reversibility awareness: What if this doesn't work?
+  - Get stakeholder buy-in: Will this be accepted and supported?
+  - Document the decision: Future self needs to know why
+
+  Selection considerations:
+  - Risk appetite: Is the top option too risky for current situation?
+  - Implementation readiness: Do we have resources/skills for top choice?
+  - Reversibility: Can we switch if this doesn't work?
+  - Stakeholder alignment: Will this be accepted by all parties?
+  - Timing: Is this the right choice for NOW vs. later?
+  - Confidence level: How certain are we in the rankings?
+
+tags:
+  - decision
+  - selection
+  - final_choice
+  - fifth_step
+  - commitment
+
+# ============================================
+# APPLICABILITY
+# ============================================
+when_to_use:
+  - After Optimization has produced ranked options
+  - When making a final commitment to a course of action
+  - At strategy selection in GOSM after all analysis complete
+  - When multiple stakeholders need to align on a decision
+  - Before resource allocation to a chosen path
+  - When the decision needs documentation and rationale
+
+when_not_to_use:
+  - When options haven't been ranked yet (use Optimization first)
+  - When the decision is trivial and rankings are clear
+  - When there's only one viable option remaining
+  - For exploratory/tentative choices (those don't need formal Selection)
+  - When you need to gather more information before deciding
+  - When constraints haven't been fully analyzed (go back to Matching)
+
+# ============================================
+# INTERFACE
+# ============================================
+inputs:
+  - name: ranked_options
+    type: list
+    required: true
+    description: Options in ranked order from Optimization procedure
+
+  - name: optimization_rationale
+    type: string
+    required: false
+    description: Why options were ranked this way (from Optimization output)
+
+  - name: selection_constraints
+    type: list
+    required: false
+    description: Any additional constraints on selection (beyond what Matching checked)
+
+  - name: selection_mode
+    type: string
+    required: false
+    default: single
+    description: |
+      How many options to select:
+      - single: Choose exactly one option
+      - multiple: Choose several options (parallel execution)
+      - conditional: Choose primary + fallbacks with trigger conditions
+
+  - name: stakeholders
+    type: list
+    required: false
+    description: Who needs to agree with or be informed of this decision
+
+  - name: context
+    type: dict
+    required: false
+    description: Additional context (resources, timing, organizational factors)
+
+outputs:
+  - name: primary_selection
+    type: string
+    description: The main chosen option
+
+  - name: backup_selection
+    type: string
+    description: Backup choice if primary fails or proves infeasible
+
+  - name: selected_options
+    type: list
+    description: All selected options (for multiple/conditional modes)
+
+  - name: selection_rationale
+    type: string
+    description: Why this option was chosen (documentation for future reference)
+
+  - name: implementation_notes
+    type: list
+    description: Key considerations for implementing the selection
+
+  - name: reversal_triggers
+    type: list
+    description: Conditions that would cause us to reconsider this selection
+
+# ============================================
+# PROCEDURE
+# ============================================
+steps:
+  - id: 1
+    name: Review rankings and context
+    action: |
+      Examine the input from Optimization:
+      - What is the top-ranked option and why?
+      - How close are the top options in score/ranking?
+      - What were the key differentiating factors?
+      - Are there any red flags in the optimization rationale?
+    inputs:
+      - ranked_options
+      - optimization_rationale (optional)
+      - context (optional)
+    outputs:
+      - ranking_summary: concise view of top options and their relative strengths
+      - ranking_confidence: how confident we are in the rankings (high/medium/low)
+    verification: |
+      Can state: "The top option is X because Y, followed by Z"
+
+  - id: 2
+    name: Apply real-world filters
+    action: |
+      Check top options against practical considerations that rankings may not capture:
+
+      For each top candidate (usually top 3):
+      1. Implementation readiness: Do we have skills, resources, time?
+      2. Risk tolerance: Does this match our risk appetite?
+      3. Reversibility: If this fails, can we recover?
+      4. Stakeholder acceptance: Will key people support this?
+      5. Timing fit: Is this right for NOW, or better for later?
+
+      Flag any option that fails a critical real-world filter.
+    inputs:
+      - ranking_summary (from Step 1)
+      - selection_constraints (optional)
+      - stakeholders (optional)
+    outputs:
+      - filtered_candidates: options that pass real-world filters
+      - filter_notes: why any top options were eliminated
+    verification: |
+      Each top option has explicit pass/fail on each filter
+
+  - id: 3
+    name: Consider selection mode
+    action: |
+      Based on selection_mode, determine what we're actually selecting:
+
+      - single: Pick one option, identify backup
+      - multiple: Pick set of options for parallel execution
+      - conditional: Pick primary + fallbacks with specific trigger conditions
+
+      If multiple options are very close AND compatible, consider whether
+      parallel execution makes sense (portfolio approach).
+
+      If there's high uncertainty, conditional selection with clear triggers
+      may be more appropriate than a single commitment.
+    inputs:
+      - selection_mode
+      - filtered_candidates (from Step 2)
+      - ranking_confidence (from Step 1)
+    outputs:
+      - selection_approach: how we'll make the final pick
+      - selection_count: how many options we're selecting
+    verification: |
+      Selection approach matches situation (don't force single when conditional is better)
+
+  - id: 4
+    name: Make the selection
+    action: |
+      Execute the selection based on the approach:
+
+      For single mode:
+      - Select the highest-ranked option that passed all filters
+      - Identify second-highest as backup
+
+      For multiple mode:
+      - Select all options that will be pursued in parallel
+      - Rank them by priority for resource allocation
+
+      For conditional mode:
+      - Select primary option
+      - Define fallback options with specific trigger conditions
+      - Specify what would cause switch to fallback
+
+      IMPORTANT: If top-ranked option is NOT selected, explicitly document why.
+    inputs:
+      - selection_approach (from Step 3)
+      - filtered_candidates (from Step 2)
+      - ranked_options
+    outputs:
+      - primary_selection: the main choice
+      - backup_selection: fallback option
+      - selected_options: all selections (list)
+    verification: |
+      Selection made; if not top-ranked, reason documented
+
+  - id: 5
+    name: Document rationale
+    action: |
+      Create clear documentation of the decision:
+
+      1. What was selected and why
+      2. What alternatives were considered
+      3. Why alternatives were not chosen
+      4. What assumptions underlie this choice
+      5. What would make us reconsider
+
+      This documentation serves:
+      - Future self understanding the decision
+      - Stakeholders who need to understand
+      - Post-decision review to learn from outcomes
+    inputs:
+      - primary_selection (from Step 4)
+      - backup_selection (from Step 4)
+      - filter_notes (from Step 2)
+      - ranking_summary (from Step 1)
+    outputs:
+      - selection_rationale: complete reasoning for the choice
+      - key_assumptions: what we're assuming is true
+    verification: |
+      Someone unfamiliar could understand why this was chosen
+
+  - id: 6
+    name: Define success criteria and reversal triggers
+    action: |
+      Establish what happens after selection:
+
+      Success criteria:
+      - How will we know the selection was good?
+      - What metrics indicate success?
+      - At what point is the selection "validated"?
+
+      Reversal triggers:
+      - What conditions would make us switch to backup?
+      - What's the "point of no return" if any?
+      - How long do we commit before reconsidering?
+
+      Implementation notes:
+      - What should whoever implements this know?
+      - What are the critical first steps?
+      - What dependencies need to be in place?
+    inputs:
+      - primary_selection (from Step 4)
+      - backup_selection (from Step 4)
+      - context (optional)
+    outputs:
+      - success_criteria: how we'll measure if selection was right
+      - reversal_triggers: when to switch to backup or reconsider
+      - implementation_notes: guidance for execution
+    verification: |
+      Clear criteria exist for evaluating the selection later
+
+# ============================================
+# QUALITY
+# ============================================
+verification:
+  - Selection is from the ranked options (not invented)
+  - Real-world filters were applied (not just accepting top rank)
+  - Rationale is documented and understandable
+  - Backup option is identified (unless single option scenario)
+  - Reversal triggers are defined (decision is not irreversible by default)
+  - Stakeholder considerations were addressed
+
+failure_modes:
+  - mode: Defaulting to top rank without thought
+    symptom: Selection always matches top-ranked option with no filter discussion
+    resolution: Force explicit real-world filter check for top 3 options
+
+  - mode: Analysis paralysis
+    symptom: Unable to make selection, keep seeking more information
+    resolution: Set decision deadline; accept uncertainty exists; document it
+
+  - mode: Ignoring rankings
+    symptom: Selection contradicts rankings without clear explanation
+    resolution: If not choosing top-ranked, must document specific reason
+
+  - mode: No backup plan
+    symptom: Selection made with no fallback identified
+    resolution: Always identify second choice and conditions for switching
+
+  - mode: Undocumented decision
+    symptom: Selection made but rationale unclear or missing
+    resolution: Require written rationale before selection is "final"
+
+  - mode: Stakeholder blindness
+    symptom: Selection made that key stakeholders won't accept
+    resolution: Identify stakeholders early; check acceptance before finalizing
+
+# ============================================
+# EXAMPLES
+# ============================================
+examples:
+  - name: Select customer acquisition strategy
+    context: Startup selecting from ranked marketing strategies
+    inputs:
+      ranked_options:
+        - "Content marketing (rank 1, score 8.5)"
+        - "Paid ads (rank 2, score 8.2)"
+        - "Partnership program (rank 3, score 7.8)"
+        - "Cold outreach (rank 4, score 6.5)"
+      optimization_rationale: "Content marketing scored highest on cost-efficiency and long-term value"
+      selection_mode: single
+      stakeholders:
+        - "CEO (final approval)"
+        - "Marketing lead (implementation)"
+      context:
+        budget: "$3000/month"
+        team_size: 2
+        timeline: "3 months to first results"
+    process: |
+      Step 1 - Review rankings:
+      Content marketing ranked #1, but only 0.3 points above paid ads.
+      Key differentiator was long-term value vs. immediate results.
+      Confidence: medium (close scores between top 2)
+
+      Step 2 - Apply real-world filters:
+      Content marketing:
+        - Implementation: Have writing skills, need SEO expertise -> PARTIAL
+        - Risk: Low risk but slow -> PASS
+        - Reversibility: Can always switch -> PASS
+        - Stakeholder: CEO wants faster results -> CONCERN
+        - Timing: 3 months is tight for content -> CONCERN
+
+      Paid ads:
+        - Implementation: Need to learn platform -> PARTIAL
+        - Risk: Could waste budget if targeting wrong -> MODERATE
+        - Reversibility: Can stop anytime -> PASS
+        - Stakeholder: CEO wants faster results -> PASS
+        - Timing: Can start seeing results week 1 -> PASS
+
+      Step 3 - Selection mode:
+      Single selection with backup makes sense given situation.
+
+      Step 4 - Make selection:
+      Despite content marketing ranking #1, selecting PAID ADS because:
+      - CEO's timeline pressure makes slow ramp unacceptable
+      - Can generate learning/data faster
+      - Content marketing becomes backup for month 2+
+
+      Step 5 - Document rationale:
+      Selected paid ads over top-ranked content marketing due to timeline pressure.
+      Will revisit content marketing after establishing baseline traction.
+
+      Step 6 - Success criteria and reversal:
+      Success: CAC under $50, 10+ qualified leads/month by month 2
+      Reversal trigger: CAC exceeds $100 for 2 consecutive weeks
+    expected_output:
+      primary_selection: "Paid ads"
+      backup_selection: "Content marketing"
+      selection_rationale: |
+        Selected paid ads despite content marketing ranking #1. Key factors:
+        1. CEO requires results within 3 months (content too slow)
+        2. Paid ads allow rapid learning and iteration
+        3. Can add content marketing in parallel once baseline established
+        4. Risk mitigated by clear reversal triggers
+      implementation_notes:
+        - "Start with small daily budget ($50) to test"
+        - "Focus on one platform initially (Google Ads)"
+        - "Set up conversion tracking before first dollar spent"
+      reversal_triggers:
+        - "CAC exceeds $100 for 2 consecutive weeks"
+        - "Unable to achieve positive ROAS after $500 spend"
+        - "Platform policy issues block our ads"
+
+  - name: Select database architecture
+    context: Engineering team choosing database after technical analysis
+    inputs:
+      ranked_options:
+        - "PostgreSQL (rank 1)"
+        - "MySQL (rank 2)"
+        - "MongoDB (rank 3)"
+      selection_mode: single
+      context:
+        team_expertise: "Strong SQL, limited NoSQL"
+        existing_infrastructure: "AWS-based"
+        data_model: "Relational with some JSON fields"
+    process: |
+      Step 1 - Review rankings:
+      PostgreSQL ranked #1 due to JSON support + relational strength.
+      Rankings feel solid given our data model requirements.
+      Confidence: high
+
+      Step 2 - Apply real-world filters:
+      PostgreSQL:
+        - Implementation: Team knows SQL well -> PASS
+        - Risk: Battle-tested, low risk -> PASS
+        - Reversibility: Data can migrate -> PASS
+        - Stakeholder: Devs prefer it -> PASS
+        - Timing: Can start immediately -> PASS
+
+      All filters pass for top option.
+
+      Step 3 - Selection mode:
+      Single selection. Clear winner.
+
+      Step 4 - Make selection:
+      Select PostgreSQL. Top-ranked and passes all filters.
+      MySQL as backup (similar enough for easy switch if needed).
+
+      Step 5 - Document rationale:
+      PostgreSQL selected as top-ranked option that met all criteria.
+
+      Step 6 - Success criteria:
+      Success: Handles expected load, team productive within 2 weeks
+      Reversal: Only if fundamental capability gap discovered
+    expected_output:
+      primary_selection: "PostgreSQL"
+      backup_selection: "MySQL"
+      selection_rationale: |
+        PostgreSQL selected as top-ranked option that passed all real-world
+        filters. Team expertise, infrastructure fit, and data model alignment
+        all support this choice.
+      implementation_notes:
+        - "Use AWS RDS for managed hosting"
+        - "Enable JSONB for semi-structured data"
+        - "Set up read replicas for scaling"
+      reversal_triggers:
+        - "Fundamental capability gap discovered (unlikely)"
+        - "Cost becomes prohibitive at scale"
+
+  - name: Select conditional strategy with fallbacks
+    context: Product launch with market uncertainty
+    inputs:
+      ranked_options:
+        - "Premium pricing (rank 1)"
+        - "Freemium model (rank 2)"
+        - "Usage-based pricing (rank 3)"
+      selection_mode: conditional
+      context:
+        market_data: "Limited - new category"
+        risk_tolerance: "Moderate"
+    process: |
+      Step 1 - Review rankings:
+      Premium pricing ranked #1 but based on limited market data.
+      Confidence: LOW due to market uncertainty.
+
+      Step 2 - Apply real-world filters:
+      Given low confidence, all top 3 options pass filters but with caveats.
+
+      Step 3 - Selection mode:
+      CONDITIONAL selection appropriate given uncertainty.
+      Define clear triggers for switching strategies.
+
+      Step 4 - Make selection:
+      Primary: Premium pricing (test the hypothesis)
+      Fallback 1: Freemium (if premium doesn't convert)
+      Fallback 2: Usage-based (if value varies significantly by user)
+
+      Step 5 - Rationale:
+      Start with premium to test willingness-to-pay.
+      Defined triggers prevent prolonged failure.
+
+      Step 6 - Triggers:
+      Switch to freemium if: conversion < 2% after 500 trials
+      Switch to usage-based if: high variance in usage patterns observed
+    expected_output:
+      primary_selection: "Premium pricing"
+      backup_selection: "Freemium model"
+      selected_options:
+        - "Premium pricing (primary)"
+        - "Freemium model (fallback 1, trigger: conversion < 2%)"
+        - "Usage-based pricing (fallback 2, trigger: high usage variance)"
+      selection_rationale: |
+        Conditional selection due to market uncertainty. Premium pricing
+        tests highest-value hypothesis first. Clear triggers defined for
+        pivoting to alternatives based on market feedback.
+      reversal_triggers:
+        - "Conversion rate below 2% after 500 trial signups"
+        - "Customer feedback indicates price objection in >50% of lost deals"
+        - "Usage patterns show >10x variance between customers"
+
+# ============================================
+# GOSM INTEGRATION
+# ============================================
+gosm_integration:
+  use_cases:
+    - Final step in strategy selection after all analysis phases
+    - Committing to a goal approach in GOSM initialization
+    - Choosing between alternative plans at planning phase
+    - Resource allocation decisions (which projects get priority)
+    - Any decision point where commitment is required
+
+  gates:
+    - gate: selection_made
+      question: "Has a clear selection been made from the options?"
+
+    - gate: rationale_documented
+      question: "Is the selection rationale documented and understandable?"
+
+    - gate: backup_identified
+      question: "Is there a backup option identified with switch conditions?"
+
+    - gate: stakeholder_alignment
+      question: "Do key stakeholders accept this selection?"
+
+  related_procedures:
+    - generation: First step - generates the initial option set
+    - matching: Second step - filters options against requirements
+    - comparison: Third step - evaluates options on criteria
+    - optimization: Fourth step - ranks options (input to Selection)
+    - validation: Use after selection to verify the choice meets requirements
+    - decision_matrix: Alternative structured approach for simpler decisions

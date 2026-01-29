@@ -1,0 +1,218 @@
+# GOSM v2: Resource Modeling Framework
+# Tracks binding constraints: time, money, energy, dependencies, opportunity cost
+
+resource_framework:
+  purpose: |
+    Track the resources that actually constrain goals.
+    Plans often fail not because of poor strategy but because of resource constraints.
+
+  dimensions:
+    # ============================================
+    # TIME
+    # ============================================
+    time:
+      questions:
+        available: "How much time can be allocated to this?"
+        committed: "How much is already committed elsewhere?"
+        deadline: "Is there a hard deadline?"
+        flexible: "Can time be reallocated from other things?"
+
+      assessment:
+        abundant:
+          description: "More time than needed"
+          implication: "Can be thorough, no rush"
+
+        sufficient:
+          description: "Enough time if managed well"
+          implication: "Normal planning, monitor progress"
+
+        tight:
+          description: "Limited margin for error"
+          implication: "Prioritize ruthlessly, cut scope if needed"
+
+        insufficient:
+          description: "Not enough time for current scope"
+          implication: "Must reduce scope or extend deadline"
+          action: "Negotiate scope/deadline OR acknowledge risk"
+
+      tracking:
+        estimated: "Time expected to complete"
+        actual: "Time actually spent"
+        variance: "Difference (for calibration)"
+
+    # ============================================
+    # MONEY / BUDGET
+    # ============================================
+    money:
+      questions:
+        budget: "What's the budget?"
+        flexibility: "Can budget be increased if needed?"
+        approval: "Who approves spending?"
+        risk: "What if we go over?"
+
+      assessment:
+        not_applicable:
+          description: "No monetary cost"
+          common_for: "Personal projects, learning"
+
+        budgeted:
+          description: "Clear budget, sufficient for plan"
+
+        constrained:
+          description: "Budget limits options"
+          implication: "Choose cheaper approaches"
+
+        blocker:
+          description: "Can't proceed without more money"
+          action: "Find money or change goal"
+
+      tracking:
+        budget: "Amount allocated"
+        spent: "Amount spent"
+        remaining: "Amount left"
+        forecast: "Expected total"
+
+    # ============================================
+    # ENERGY / ATTENTION
+    # ============================================
+    energy_attention:
+      questions:
+        current_load: "How loaded are we currently?"
+        peak_hours: "When is focus best?"
+        sustainability: "Can this pace continue?"
+        competing_demands: "What else needs attention?"
+
+      assessment:
+        fresh:
+          description: "Have capacity for new challenges"
+
+        loaded:
+          description: "Busy but manageable"
+          implication: "Don't overcommit"
+
+        stretched:
+          description: "Near capacity"
+          implication: "Something has to give"
+
+        overloaded:
+          description: "Already too much"
+          implication: "Can't add this without dropping something"
+          action: "What can we stop/delegate/defer?"
+
+      tracking:
+        not_numeric: true
+        check_in: "Regular self-assessment"
+
+    # ============================================
+    # DEPENDENCIES
+    # ============================================
+    dependencies:
+      questions:
+        what: "What external things do we need?"
+        who: "Who do we depend on?"
+        reliability: "How reliable are they?"
+        alternatives: "What if they fail?"
+        lead_time: "How much notice do they need?"
+
+      per_dependency:
+        entity: "Who/what we depend on"
+        type: "approval | resource | information | action"
+        reliability: "high | medium | low | unknown"
+        criticality: "blocker | important | nice_to_have"
+        alternative: "What's the backup?"
+        lead_time: "How much notice needed"
+
+      assessment:
+        clear:
+          description: "Dependencies identified, reliable, manageable"
+
+        risky:
+          description: "Some dependencies unreliable or unknown"
+          action: "Develop contingencies"
+
+        blocked:
+          description: "Waiting on dependency"
+          action: "Unblock or work around"
+
+    # ============================================
+    # OPPORTUNITY COST
+    # ============================================
+    opportunity_cost:
+      questions:
+        alternatives: "What else could we do with these resources?"
+        reversibility: "Can we switch later if this is wrong choice?"
+        information_value: "Would waiting teach us something?"
+
+      assessment:
+        low:
+          description: "No better alternatives, proceed"
+
+        moderate:
+          description: "Alternatives exist but this seems best"
+
+        high:
+          description: "Significant alternatives being given up"
+          action: "Verify this is right choice"
+
+        unclear:
+          description: "Don't know the alternatives well enough"
+          action: "Research alternatives before committing"
+
+  # ============================================
+  # RESOURCE-CONSTRAINED TASK PLANNING
+  # ============================================
+  task_resource_planning:
+    per_task:
+      name: "Task name"
+      resources:
+        time: "Estimated hours/days"
+        money: "Cost if any"
+        energy: "low | medium | high focus"
+        dependencies: ["What we need"]
+
+      if_constrained:
+        reduce_scope: "What's the minimal version?"
+        defer: "Can this wait?"
+        delegate: "Can someone/something else do it?"
+        eliminate: "Is it actually necessary?"
+
+  # ============================================
+  # RESOURCE CHECK GATE
+  # ============================================
+  resource_check_gate:
+    question: "Do we have the resources to execute this plan?"
+
+    assessment:
+      all_clear:
+        description: "Resources available for full plan"
+        action: "Proceed"
+
+      some_constraints:
+        description: "Constraints exist but manageable"
+        action: "Note constraints, plan within them"
+
+      significant_gaps:
+        description: "Major resource gaps"
+        action: "Address gaps or adjust plan"
+
+      not_feasible:
+        description: "Resources fundamentally insufficient"
+        action: "Rescope goal or acquire resources first"
+
+  # ============================================
+  # RESOURCE REALITY CHECK
+  # ============================================
+  reality_check:
+    trigger: "During execution, regularly"
+
+    questions:
+      - "Are we on track with time?"
+      - "Are we on track with budget?"
+      - "Is energy/attention sustainable?"
+      - "Are dependencies delivering?"
+
+    variance_actions:
+      under: "On track or ahead"
+      slight_over: "Monitor closely"
+      significant_over: "Adjust plan or expectations"
+      major_over: "Trigger adaptation gate"

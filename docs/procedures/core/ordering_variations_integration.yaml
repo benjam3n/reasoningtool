@@ -1,0 +1,1213 @@
+# Ordering Variations Integration Guide
+# How ordering_variations connects to and is used within GOSM
+#
+# This document provides practical guidance for applying ordering variations
+# during goal pursuit, with complete worked examples.
+
+id: ordering_variations_integration
+name: Ordering Variations Integration Guide
+version: "1.0.0"
+domain: core
+
+description: |
+  Comprehensive guide for integrating ordering_variations into the GOSM workflow.
+  Includes full worked examples showing the complete flow from goal to ordered STEPS.
+
+purpose: |
+  ordering_variations.yaml provides 68 different sequencing philosophies, but knowing
+  WHEN and HOW to apply them within GOSM is equally important. This document bridges
+  the gap between theory (the variations) and practice (using them in real goals).
+
+# ============================================
+# SECTION 1: FULL INTEGRATION GUIDE
+# ============================================
+
+integration_guide:
+
+  # ------------------------------------------
+  # WHERE IN THE 22-STEP GOSM SEQUENCE
+  # ------------------------------------------
+  position_in_gosm_sequence:
+    primary_application:
+      step: 19
+      name: "Generate STEPS Document"
+      description: |
+        Ordering variations are PRIMARILY applied during Step 19: STEPS Generation.
+
+        The STEPS Generation phase (from steps_generation.yaml) has a phase called
+        "phase_3_sequence" which calls for:
+        - Building dependency graph
+        - Topological sort for valid order
+        - Identifying parallel opportunities
+        - Numbering steps sequentially
+
+        This is where ordering_variations provides its 68 alternative approaches.
+        Instead of always doing basic topological sort, you SELECT a variation
+        that matches your context.
+
+    secondary_applications:
+      - step: 17
+        name: "Complete Plan"
+        usage: |
+          When structuring phases in COMPLETE_PLAN, ordering variations can
+          inform phase sequencing. Example: If building toward a launch event,
+          use peak_targeting to structure phases.
+
+      - step: 18
+        name: "Adaptation Gates"
+        usage: |
+          When defining adaptation triggers, consider which ordering variation
+          is in use. Different variations have different "signals to switch"
+          or rebalancing triggers.
+
+      - step: 20
+        name: "Regular Reality Checks"
+        usage: |
+          During execution, you may need to RE-ORDER remaining steps.
+          The selected variation informs how to reorder when circumstances change.
+
+  # ------------------------------------------
+  # INTERACTION WITH DECOMPOSITION
+  # ------------------------------------------
+  interaction_with_decomposition:
+    flow: |
+      1. DECOMPOSITION (decomposition.yaml) breaks goal into sub-goals
+      2. Each sub-goal may be decomposed further
+      3. Leaf-level sub-goals become STEPS
+      4. ORDERING (ordering_variations.yaml) determines step sequence
+
+    key_insight: |
+      Decomposition determines WHAT steps exist.
+      Ordering determines WHEN they execute.
+
+      Different decomposition strategies create different step structures:
+      - Temporal decomposition → often suggests scaffolded_progression
+      - Functional decomposition → often suggests parallel_maximizing
+      - Structural decomposition → often suggests dependency_fanout
+
+    integration_points:
+      after_decomposition:
+        - "Receive: sub_goals list with dependency_graph"
+        - "Receive: critical_path (longest dependency chain)"
+        - "Input these to ordering procedure"
+
+      ordering_output:
+        - "Produce: ordered_steps (respecting dependencies)"
+        - "Produce: ordering_rationale (why this sequence)"
+        - "Produce: parallel_opportunities (if applicable)"
+
+  # ------------------------------------------
+  # INTERACTION WITH STRATEGY SELECTION
+  # ------------------------------------------
+  interaction_with_strategy_selection:
+    connection: |
+      Strategy selection (Steps 8-11) influences ordering variation choice:
+
+      | Strategy Type | Suggests Ordering Variation |
+      |---------------|----------------------------|
+      | Risk-minimizing strategy | fail_fast, reversibility |
+      | Speed-to-market strategy | parallel_maximizing, deadline_driven |
+      | Learning-focused strategy | learning_optimized, scaffolded_progression |
+      | Innovation strategy | build_measure_learn, epsilon_greedy |
+      | Cost-minimizing strategy | demand_driven, throughput_optimized |
+
+    inheritance: |
+      If you chose a "fail-fast validation" strategy at Step 11,
+      that philosophy should carry through to ordering.
+
+      The ordering variation should REINFORCE the strategy, not contradict it.
+
+  # ------------------------------------------
+  # INTERACTION WITH ORDER PROCEDURE
+  # ------------------------------------------
+  interaction_with_order_procedure:
+    relationship: |
+      order_procedure.yaml defines the BASE algorithm:
+      - Dependency types (hard, soft, mutual exclusion, resource)
+      - Graph construction
+      - Cycle detection
+      - Basic prioritization rules
+
+      ordering_variations.yaml provides ALTERNATIVE prioritization:
+      - 68 different "philosophies" for breaking ties
+      - Context-specific optimizations
+      - Different optimization targets
+
+    when_to_override_default: |
+      The default order_procedure uses these priorities:
+      1. Blocking steps before blocked
+      2. Critical path priority
+      3. Risk first
+      4. Quick wins
+      5. Fan-out (steps enabling many others)
+
+      Override with a variation when:
+      - Context strongly favors one concern (deadline, learning, energy, etc.)
+      - Default order "feels wrong" for the situation
+      - Stakeholders need specific ordering justification
+      - Comparing alternative execution plans
+
+  # ------------------------------------------
+  # SELECTION QUESTIONNAIRE
+  # ------------------------------------------
+  selection_questionnaire:
+    description: |
+      Answer these questions to identify the right ordering variation.
+      Go through in order; first "Yes" typically determines variation.
+
+    questions:
+      - id: Q1
+        question: "Is there a hard external deadline that cannot move?"
+        if_yes: deadline_driven
+        if_no: continue
+
+      - id: Q2
+        question: "Is this a crisis or emergency with limited resources?"
+        if_yes: triage_severity
+        if_no: continue
+
+      - id: Q3
+        question: "Is there high uncertainty about whether this goal is achievable?"
+        if_yes: fail_fast
+        if_no: continue
+
+      - id: Q4
+        question: "Will there be high-stakes irreversible actions?"
+        if_yes: reversibility
+        if_no: continue
+
+      - id: Q5
+        question: "Is this a learning or skill-building goal?"
+        if_yes:
+          options:
+            - "If explicit prerequisites exist: prerequisite_chain"
+            - "If building complexity gradually: scaffolded_progression"
+            - "If exploring unknown domain: learning_optimized"
+        if_no: continue
+
+      - id: Q6
+        question: "Will multiple people/resources work in parallel?"
+        if_yes: parallel_maximizing
+        if_no: continue
+
+      - id: Q7
+        question: "Is there a specific peak event to target (demo, launch, presentation)?"
+        if_yes: peak_targeting
+        if_no: continue
+
+      - id: Q8
+        question: "Is motivation/energy a concern (human executor, long project)?"
+        if_yes:
+          options:
+            - "If need early wins: momentum"
+            - "If long sessions: energy_aware"
+            - "If all-day event: energy_envelope"
+        if_no: continue
+
+      - id: Q9
+        question: "Are requirements uncertain or likely to change?"
+        if_yes:
+          options:
+            - "If can wait for signals: demand_driven"
+            - "If need to validate hypotheses: build_measure_learn"
+            - "If preserving options important: option_preserving"
+        if_no: continue
+
+      - id: Q10
+        question: "Is this a negotiation or competitive context?"
+        if_yes: commitment_first
+        if_no: continue
+
+      - id: Q11
+        question: "Are there many small tasks to process efficiently?"
+        if_yes: throughput_optimized
+        if_no: continue
+
+      - id: Q12
+        question: "None of the above - use default ordering"
+        action: "Use order_procedure.yaml default prioritization"
+
+# ============================================
+# SECTION 2: WORKED EXAMPLES
+# ============================================
+
+worked_examples:
+
+  # ------------------------------------------
+  # EXAMPLE 1: SOFTWARE DEVELOPMENT
+  # ------------------------------------------
+  - id: example_1_software
+    name: "Building a REST API for a Startup MVP"
+    domain: Software Development
+
+    initial_goal:
+      statement: "Build and deploy a REST API for user management within 3 weeks"
+      context: |
+        - Small startup, 2 developers
+        - First product, uncertain if users will want this
+        - Need to demo to investors in 3 weeks
+        - Using FastAPI + PostgreSQL
+
+    decomposition:
+      strategy: functional
+      sub_goals:
+        - id: auth
+          name: "Implement authentication"
+          description: "JWT-based auth with signup/login"
+        - id: users
+          name: "Build user CRUD endpoints"
+          description: "GET/POST/PUT/DELETE for users"
+        - id: db
+          name: "Set up database"
+          description: "PostgreSQL schema and migrations"
+        - id: deploy
+          name: "Deploy to production"
+          description: "Docker + cloud hosting"
+        - id: docs
+          name: "Create API documentation"
+          description: "OpenAPI/Swagger docs"
+        - id: tests
+          name: "Write test suite"
+          description: "Unit and integration tests"
+
+      dependency_graph:
+        db: []
+        auth: [db]
+        users: [db, auth]
+        docs: [users, auth]
+        tests: [users, auth]
+        deploy: [tests]
+
+    context_analysis:
+      questionnaire_answers:
+        Q1_deadline: "YES - demo in 3 weeks"
+        Q3_uncertainty: "YES - uncertain if users want this"
+        Q6_parallel: "YES - 2 developers can work in parallel"
+
+      primary_concern: "Hard deadline (investor demo)"
+      secondary_concern: "Uncertainty about product-market fit"
+
+      variation_candidates:
+        - deadline_driven: "Ensures we hit the demo date"
+        - fail_fast: "Validates assumptions early"
+        - parallel_maximizing: "Uses both developers efficiently"
+
+    variation_selection:
+      selected: deadline_driven
+      rationale: |
+        Although there's uncertainty (suggesting fail_fast), the HARD deadline
+        dominates. We MUST have something working for the demo.
+
+        However, we'll incorporate fail_fast WITHIN deadline_driven by:
+        - Front-loading the user validation (can we actually demo auth flow?)
+        - Building minimal viable features first
+
+        parallel_maximizing is addressed by structuring for 2 devs.
+
+      trade_offs_accepted:
+        - "May build features before full validation"
+        - "Less exploration than pure fail_fast would allow"
+        - "Demo pressure may lead to technical debt"
+
+    ordered_steps:
+      sequence: |
+        Week 1 (Days 1-5):
+        ├── Day 1-2: [PARALLEL - Both devs]
+        │   ├── Dev1: Set up PostgreSQL + initial schema (db)
+        │   └── Dev2: Set up FastAPI project structure + auth scaffolding
+        ├── Day 3-4: [PARALLEL]
+        │   ├── Dev1: Complete auth implementation (auth)
+        │   └── Dev2: Begin user endpoints (users - basic GET)
+        └── Day 5: Integration point - auth + users connected
+
+        Week 2 (Days 6-10):
+        ├── Day 6-7: [PARALLEL]
+        │   ├── Dev1: Complete user CRUD (users)
+        │   └── Dev2: Write tests for auth (tests partial)
+        ├── Day 8-9: [PARALLEL]
+        │   ├── Dev1: Write tests for users (tests complete)
+        │   └── Dev2: Set up deployment pipeline (deploy prep)
+        └── Day 10: Deploy to staging, full integration test
+
+        Week 3 (Days 11-15):
+        ├── Day 11-12: Bug fixes from staging testing
+        ├── Day 13: Generate API docs (docs)
+        ├── Day 14: Deploy to production (deploy)
+        └── Day 15: BUFFER for unexpected issues
+
+        Demo: Day 15
+
+      critical_path: "db -> auth -> users -> tests -> deploy"
+      buffer: "Day 15 reserved as buffer (learned from pre-mortem)"
+
+    steps_document_excerpt: |
+      # STEPS: Build User Management API
+
+      **Ordering Variation**: deadline_driven
+      **Rationale**: Hard investor demo deadline on Day 15; all sequencing
+      works backward from that constraint.
+
+      ## Step 1: Initialize PostgreSQL Database
+
+      **Action**: Create PostgreSQL container and initial schema
+
+      **Inputs**:
+      - Docker installed [from: prerequisite check]
+      - Schema design doc [from: planning phase, /docs/schema.md]
+
+      **Process**:
+      1. Run: docker run -d --name gosm-db -e POSTGRES_PASSWORD=dev -p 5432:5432 postgres:15
+      2. Wait 10 seconds for container startup
+      3. Run: docker exec -i gosm-db psql -U postgres < /docs/schema.sql
+
+      **Output**: Running PostgreSQL with users table [format: Docker container]
+
+      **Verification**:
+      - [ ] docker ps shows gosm-db running
+      - [ ] psql -h localhost -U postgres -c "SELECT 1 FROM users LIMIT 1" succeeds
+
+      **If blocked**:
+      - If port 5432 in use: Change to 5433, update all connection strings
+      - If schema.sql missing: Create manually from /docs/schema.md
+
+      ---
+
+      ## Step 2: Set up FastAPI Project Structure
+
+      [... continues with full specification for each step ...]
+
+  # ------------------------------------------
+  # EXAMPLE 2: LEARNING/EDUCATION
+  # ------------------------------------------
+  - id: example_2_learning
+    name: "Learn Machine Learning in 3 Months"
+    domain: Learning/Education
+
+    initial_goal:
+      statement: "Gain practical ML skills to transition from web dev to ML engineering"
+      context: |
+        - Currently a web developer with Python experience
+        - Learning on evenings/weekends (10 hrs/week)
+        - Want to build portfolio projects, not just theory
+        - No hard deadline, but want efficient progress
+
+    decomposition:
+      strategy: structural
+      sub_goals:
+        - id: math_foundations
+          name: "Build math foundations"
+          description: "Linear algebra, calculus, statistics needed for ML"
+        - id: python_ml
+          name: "Learn Python ML stack"
+          description: "NumPy, Pandas, Scikit-learn, PyTorch"
+        - id: ml_concepts
+          name: "Understand ML concepts"
+          description: "Supervised, unsupervised, neural networks, etc."
+        - id: projects
+          name: "Build portfolio projects"
+          description: "3-5 projects demonstrating skills"
+        - id: interview_prep
+          name: "Prepare for ML interviews"
+          description: "Practice problems, system design"
+
+      dependency_graph:
+        math_foundations: []
+        python_ml: []
+        ml_concepts: [math_foundations]
+        projects: [python_ml, ml_concepts]
+        interview_prep: [projects]
+
+    context_analysis:
+      questionnaire_answers:
+        Q1_deadline: "NO - no hard deadline"
+        Q5_learning: "YES - this is explicitly a learning goal"
+        Q8_energy: "YES - evening/weekend study, energy matters"
+
+      primary_concern: "Learning efficiency - maximize skill gain per hour"
+      secondary_concern: "Sustained motivation over 3 months"
+
+      variation_candidates:
+        - prerequisite_chain: "Math before ML concepts, concepts before projects"
+        - scaffolded_progression: "Build complexity gradually"
+        - learning_optimized: "Maximize information gain per effort"
+        - energy_aware: "Match difficulty to energy levels"
+
+    variation_selection:
+      selected: scaffolded_progression
+      combined_with: [prerequisite_chain, energy_aware]
+      rationale: |
+        Primary: scaffolded_progression
+        - Learning a complex domain requires building from simple to complex
+        - Each step should work before adding complexity
+        - "Make it work, then make it better" applies to skills too
+
+        Combined with prerequisite_chain:
+        - Math genuinely must come before deep ML theory
+        - But can interleave: learn enough math for current ML topic
+
+        Combined with energy_aware:
+        - Hard theory when fresh (weekend mornings)
+        - Coding practice when tired (weekday evenings)
+
+      trade_offs_accepted:
+        - "Slower start (foundations before exciting stuff)"
+        - "May feel basic early on"
+        - "Not immediately building impressive projects"
+
+    ordered_steps:
+      sequence: |
+        Month 1: Foundations (Scaffolded from simple to complex)
+        ├── Week 1: Python refresher + NumPy basics
+        │   ├── [Weekend morning - fresh]: Linear algebra review
+        │   └── [Weekday evening - tired]: NumPy exercises
+        ├── Week 2: Statistics fundamentals + Pandas
+        │   ├── [Weekend]: Probability, distributions
+        │   └── [Weekday]: Pandas data manipulation exercises
+        ├── Week 3: Basic ML concepts + Scikit-learn intro
+        │   ├── [Weekend]: Supervised learning theory
+        │   └── [Weekday]: Scikit-learn tutorials
+        └── Week 4: First mini-project (iris classification)
+            └── Scaffold: Use template, just modify parameters
+
+        Month 2: Core Skills (Progressive complexity)
+        ├── Week 5: Regression deep-dive
+        │   └── Project: House price prediction (more complex than iris)
+        ├── Week 6: Classification deep-dive
+        │   └── Project: Sentiment analysis (text data = new complexity)
+        ├── Week 7: Neural network fundamentals + PyTorch intro
+        │   └── Project: MNIST digit recognition (scaffold from tutorial)
+        └── Week 8: CNN basics
+            └── Project: Image classifier (build on MNIST knowledge)
+
+        Month 3: Portfolio + Interview Prep
+        ├── Week 9-10: Capstone project (novel problem, full pipeline)
+        ├── Week 11: Code cleanup, documentation, GitHub portfolio
+        └── Week 12: Interview prep, mock interviews
+
+      scaffolding_pattern: |
+        Each topic follows this progression:
+        1. Theory (understand concepts)
+        2. Guided exercise (follow tutorial exactly)
+        3. Modified exercise (change one thing)
+        4. Independent exercise (solve similar problem alone)
+        5. Novel application (apply to new domain)
+
+    steps_document_excerpt: |
+      # STEPS: Learn Machine Learning
+
+      **Ordering Variation**: scaffolded_progression + energy_aware
+      **Rationale**: Complex skill acquisition requires progressive complexity.
+      Each step builds on previous, staying in "zone of proximal development."
+
+      ## Step 1: Linear Algebra Refresher (Day 1-2, Weekend)
+
+      **Action**: Complete 3Blue1Brown "Essence of Linear Algebra" series
+
+      **Inputs**:
+      - YouTube access
+      - Notebook for notes
+      - Khan Academy account (for exercises)
+
+      **Process**:
+      1. Watch videos 1-5 (vectors, linear combinations, matrices)
+      2. After each video, write 3-sentence summary in own words
+      3. Complete Khan Academy "Vectors and spaces" quiz
+      4. Watch videos 6-10 (determinants, inverse, column space)
+      5. Complete Khan Academy "Matrix transformations" quiz
+
+      **Output**: Notes on linear algebra concepts [format: handwritten/typed notes]
+
+      **Verification**:
+      - [ ] Can explain dot product geometrically (not just formula)
+      - [ ] Can explain what matrix multiplication "does" to a vector
+      - [ ] Score 80%+ on Khan Academy quizzes
+
+      **If blocked**:
+      - If concept unclear: Rewatch at 0.5x speed, pause and draw diagrams
+      - If quiz score low: Review specific topic, don't proceed until 80%+
+
+      ---
+
+      ## Step 2: NumPy Basics (Day 3-5, Weekday Evenings)
+
+      **Action**: Work through NumPy tutorial with exercises
+
+      **Inputs**:
+      - Linear algebra concepts [from: Step 1]
+      - Python environment with NumPy installed
+      - Tutorial: https://numpy.org/doc/stable/user/quickstart.html
+
+      [... continues ...]
+
+  # ------------------------------------------
+  # EXAMPLE 3: BUSINESS/STARTUP
+  # ------------------------------------------
+  - id: example_3_business
+    name: "Launch a Consulting Side Business"
+    domain: Business/Startup
+
+    initial_goal:
+      statement: "Launch technical consulting practice generating $5K/month within 6 months"
+      context: |
+        - Currently employed full-time as senior engineer
+        - Want to build income stream before potential job transition
+        - Have expertise in cloud architecture and DevOps
+        - Can dedicate 10 hrs/week to side business
+        - No existing client pipeline
+
+    decomposition:
+      strategy: temporal
+      sub_goals:
+        - id: positioning
+          name: "Define positioning and services"
+          description: "What specific problems do I solve? For whom?"
+        - id: legal
+          name: "Set up legal/business structure"
+          description: "LLC, contracts, insurance"
+        - id: presence
+          name: "Build online presence"
+          description: "Website, LinkedIn, content"
+        - id: pipeline
+          name: "Build client pipeline"
+          description: "Outreach, networking, referrals"
+        - id: first_client
+          name: "Land and serve first client"
+          description: "Close deal, deliver value"
+        - id: scale
+          name: "Scale to $5K/month"
+          description: "Optimize and grow"
+
+      dependency_graph:
+        positioning: []
+        legal: []
+        presence: [positioning]
+        pipeline: [positioning, presence]
+        first_client: [legal, pipeline]
+        scale: [first_client]
+
+    context_analysis:
+      questionnaire_answers:
+        Q1_deadline: "NO - 6 months is target, not hard deadline"
+        Q3_uncertainty: "YES - uncertain if can find clients"
+        Q4_irreversible: "YES - legal setup, public positioning"
+        Q9_requirements_uncertain: "YES - don't know exactly what clients want"
+
+      primary_concern: "Validating market exists before over-investing"
+      secondary_concern: "Preserving options (still employed)"
+
+      variation_candidates:
+        - fail_fast: "Find out if clients exist before building elaborate presence"
+        - build_measure_learn: "Lean startup approach to consulting"
+        - reversibility: "Do reversible things first"
+        - option_preserving: "Keep full-time job viable"
+
+    variation_selection:
+      selected: build_measure_learn
+      combined_with: [reversibility, fail_fast]
+      rationale: |
+        Primary: build_measure_learn (Lean Startup cycles)
+        - This is exactly the context Lean Startup addresses
+        - Build minimal thing, measure response, learn and iterate
+        - Don't build elaborate website before knowing anyone wants services
+
+        Combined with reversibility:
+        - Delay LLC formation until first paying client (reversible: just don't do it)
+        - Soft-launch positioning before public announcement
+
+        Combined with fail_fast:
+        - Talk to potential clients BEFORE building anything
+        - Validate demand exists
+
+      trade_offs_accepted:
+        - "May look less 'professional' initially"
+        - "Won't have polished brand from day 1"
+        - "Learning in public can be uncomfortable"
+
+    ordered_steps:
+      sequence: |
+        Build-Measure-Learn Cycle 1 (Weeks 1-4): Validate Demand Exists
+        ├── BUILD: Draft positioning statement (1 paragraph)
+        ├── BUILD: List 10 potential clients from network
+        ├── MEASURE: Have 5 conversations about their problems
+        └── LEARN: Do they have problems I can solve? Will they pay?
+
+        Decision Gate: If <3 conversations show interest → pivot or stop
+
+        Cycle 2 (Weeks 5-8): Validate Willingness to Pay
+        ├── BUILD: Create simple proposal template
+        ├── BUILD: Define 1 flagship service with price
+        ├── MEASURE: Pitch to 3 warm leads from Cycle 1
+        └── LEARN: Pricing feedback, objections, interest level
+
+        Decision Gate: If no verbal "yes" → adjust offering
+
+        Cycle 3 (Weeks 9-12): Land First Client
+        ├── BUILD: Simple 1-page website (only if needed for credibility)
+        ├── BUILD: Contract template (can use template, low effort)
+        ├── MEASURE: Close first deal
+        └── LEARN: What made them say yes? What almost made them say no?
+
+        Only AFTER first client (Week 13+):
+        ├── Set up LLC (now worth the cost/effort)
+        ├── Build proper website (now have testimonial)
+        └── Scale pipeline with proven positioning
+
+      key_insight: |
+        Notice that "set up legal structure" and "build website" - which
+        traditional planning might put first - are DELAYED until validated.
+
+        The ordering prioritizes LEARNING over BUILDING.
+
+    steps_document_excerpt: |
+      # STEPS: Launch Consulting Side Business
+
+      **Ordering Variation**: build_measure_learn
+      **Rationale**: High uncertainty about market demand. Each cycle
+      validates assumptions before investing more. Irreversible/expensive
+      actions (LLC, website) delayed until demand proven.
+
+      ## Step 1: Draft Initial Positioning Statement
+
+      **Action**: Write 1-paragraph positioning statement answering:
+      "I help [WHO] solve [WHAT PROBLEM] by [HOW]"
+
+      **Inputs**:
+      - Your expertise inventory (list your top 5 skills)
+      - Past problems you've solved professionally
+
+      **Process**:
+      1. List 5 specific problems you've solved at work
+      2. For each, identify: who had this problem? What was the cost of not solving it?
+      3. Pick the problem that: (a) you enjoy solving, (b) has clear business impact
+      4. Write: "I help [role] at [company type] [solve specific problem] by [your approach]"
+      5. Test: Is this specific enough that someone would say "I have that problem!"?
+
+      **Output**: 1-paragraph positioning statement [format: text]
+
+      **Verification**:
+      - [ ] Statement names a specific role (not "companies" or "people")
+      - [ ] Statement names a specific problem (not "digital transformation")
+      - [ ] You have personally solved this problem at least 3 times
+      - [ ] You can explain the business cost of this problem in dollars
+
+      **If blocked**:
+      - If can't pick one problem: Ask 3 colleagues what you're best at
+      - If problem seems too niche: Good! Niche is easier to sell
+
+      ---
+
+      ## Step 2: Identify 10 Potential Clients from Network
+
+      **Action**: List 10 people who might have the problem from Step 1
+
+      **Inputs**:
+      - Positioning statement [from: Step 1]
+      - LinkedIn connections
+      - Professional contacts
+
+      [... continues with BUILD-MEASURE-LEARN structure ...]
+
+  # ------------------------------------------
+  # EXAMPLE 4: PERSONAL PRODUCTIVITY
+  # ------------------------------------------
+  - id: example_4_productivity
+    name: "Establish a Morning Routine"
+    domain: Personal Productivity
+
+    initial_goal:
+      statement: "Create and maintain a consistent morning routine that includes exercise, journaling, and focused work"
+      context: |
+        - Currently chaotic mornings, rushed to work
+        - Want to reclaim mornings for high-value activities
+        - Have tried and failed before (motivation fades)
+        - Night owl trying to become morning person
+
+    decomposition:
+      strategy: structural
+      sub_goals:
+        - id: wake
+          name: "Wake up consistently at target time"
+          description: "6:00 AM, 7 days/week"
+        - id: exercise
+          name: "30 minutes exercise"
+          description: "Running, yoga, or strength training"
+        - id: journal
+          name: "10 minutes journaling"
+          description: "Reflection and planning"
+        - id: focus
+          name: "90 minutes deep work"
+          description: "Most important task before distractions"
+        - id: sustain
+          name: "Sustain for 30 days"
+          description: "Build into automatic habit"
+
+      dependency_graph:
+        wake: []
+        exercise: [wake]
+        journal: [wake]  # Can be parallel with exercise
+        focus: [wake]
+        sustain: [wake, exercise, journal, focus]  # All must be established first
+
+    context_analysis:
+      questionnaire_answers:
+        Q1_deadline: "NO - no external deadline"
+        Q5_learning: "YES - learning a new behavioral pattern"
+        Q8_energy: "YES - mornings are low energy currently"
+        Q9_requirements_uncertain: "PARTIALLY - know what I want, not sure what works"
+
+      primary_concern: "Habit formation requires specific sequencing strategies"
+      secondary_concern: "Preventing the typical 'tried and failed' pattern"
+
+      variation_candidates:
+        - anchor_based: "Attach new habits to existing anchors"
+        - scaffolded_progression: "Don't try everything at once"
+        - diminishing_returns: "Know when current habit is 'good enough'"
+        - momentum: "Build confidence through early wins"
+
+    variation_selection:
+      selected: anchor_based
+      combined_with: [scaffolded_progression, momentum]
+      rationale: |
+        Primary: anchor_based
+        - Habit research shows anchoring new behaviors to existing triggers is key
+        - "After I [EXISTING HABIT], I will [NEW HABIT]"
+        - Coffee → journaling, alarm → exercise clothes
+
+        Combined with scaffolded_progression:
+        - Don't install full routine at once (common failure mode)
+        - Week 1: Just wake time
+        - Week 2: Add exercise
+        - Week 3: Add journaling
+        - Week 4: Add focus block
+
+        Combined with momentum:
+        - Start with easiest habit (journaling = 10 min)
+        - Small wins build identity as "morning person"
+
+      trade_offs_accepted:
+        - "Takes 4+ weeks to have full routine (slower than desired)"
+        - "May feel like 'not doing enough' early on"
+        - "Some days won't be perfect"
+
+    ordered_steps:
+      sequence: |
+        Phase 1: Anchor Establishment (Week 1)
+        ├── Step 1: Identify existing morning anchors
+        │   └── Map current automatic behaviors (alarm, bathroom, coffee, phone)
+        ├── Step 2: Design anchor chain
+        │   └── Alarm → bathroom → exercise clothes (laid out night before)
+        └── Step 3: Practice wake time only (no other new habits)
+            └── Goal: 6 AM wake, 5/7 days
+
+        Phase 2: First Habit Layer (Week 2)
+        ├── Anchor: Exercise clothes trigger
+        ├── Step 4: Add 15-minute exercise (half the target)
+        │   └── Scaffold: Start with yoga (low activation energy)
+        └── Step 5: Track and celebrate
+            └── Momentum: Mark calendar, reward consistency
+
+        Phase 3: Second Habit Layer (Week 3)
+        ├── Anchor: Post-exercise (endorphin high)
+        ├── Step 6: Add 10-minute journaling
+        │   └── Pre-decided prompt (reduce friction)
+        └── Step 7: Increase exercise to 30 minutes
+
+        Phase 4: Full Routine (Week 4+)
+        ├── Anchor: After journaling
+        ├── Step 8: Add 90-minute focus block
+        │   └── Phone in different room, specific task pre-decided
+        └── Step 9: Sustain and adjust
+
+      anchor_chain: |
+        Alarm sounds
+        → Go to bathroom (existing)
+        → See exercise clothes laid out (environmental cue)
+        → Put on clothes (tiny habit)
+        → Exercise (new habit)
+        → Shower (existing)
+        → Coffee (existing anchor)
+        → Journal (new habit, anchored to coffee)
+        → Sit at desk (environmental cue)
+        → 90-min focus (new habit)
+
+    steps_document_excerpt: |
+      # STEPS: Establish Morning Routine
+
+      **Ordering Variation**: anchor_based + scaffolded_progression
+      **Rationale**: Habit formation requires anchoring to existing behaviors
+      and progressive layering. Trying to install full routine at once fails.
+
+      ## Step 1: Map Current Morning Anchors
+
+      **Action**: Document your existing automatic morning behaviors
+
+      **Inputs**:
+      - 3 days of observation (just notice, don't change anything)
+      - Notebook by bed
+
+      **Process**:
+      1. For 3 mornings, write down everything you do from alarm to leaving
+      2. Note which behaviors are truly automatic (no willpower needed)
+      3. Note the sequence: what naturally triggers what?
+      4. Identify the strongest anchors (e.g., "I ALWAYS make coffee")
+
+      **Output**: Morning anchor map [format: list with sequence arrows]
+
+      Example output:
+      - Alarm → snooze (automatic, bad)
+      - Eventually up → bathroom (strong anchor)
+      - Bathroom → kitchen (automatic)
+      - Kitchen → coffee (VERY strong anchor)
+      - Coffee → phone scroll (automatic, bad)
+
+      **Verification**:
+      - [ ] Listed at least 5 automatic behaviors
+      - [ ] Identified 2+ strong anchors (things that ALWAYS happen)
+      - [ ] Noted current "bad automatic" habits (scrolling, snoozing)
+
+      **If blocked**:
+      - If mornings too chaotic to observe: That's data! Note the chaos pattern
+      - If no strong anchors: Look for biological anchors (bathroom, hunger)
+
+      ---
+
+      ## Step 2: Design Anchor Chain for Exercise
+
+      [... continues with habit stacking structure ...]
+
+  # ------------------------------------------
+  # EXAMPLE 5: RESEARCH PROJECT
+  # ------------------------------------------
+  - id: example_5_research
+    name: "Write and Submit Academic Paper"
+    domain: Research Project
+
+    initial_goal:
+      statement: "Complete and submit research paper on ML interpretability to NeurIPS"
+      context: |
+        - PhD student with preliminary results
+        - Submission deadline in 10 weeks
+        - Need advisor approval before submission
+        - Have experimental data, need analysis and writing
+        - First major publication attempt
+
+    decomposition:
+      strategy: temporal
+      sub_goals:
+        - id: analysis
+          name: "Complete data analysis"
+          description: "Statistical analysis of experimental results"
+        - id: literature
+          name: "Comprehensive literature review"
+          description: "Position work relative to existing research"
+        - id: writing
+          name: "Write paper sections"
+          description: "Intro, methods, results, discussion"
+        - id: figures
+          name: "Create publication-quality figures"
+          description: "Visualizations for main results"
+        - id: review
+          name: "Internal review and revision"
+          description: "Advisor feedback, peer review"
+        - id: polish
+          name: "Final polish and submission"
+          description: "Format, proofread, submit"
+
+      dependency_graph:
+        analysis: []
+        literature: []
+        figures: [analysis]
+        writing: [analysis, literature]
+        review: [writing, figures]
+        polish: [review]
+
+    context_analysis:
+      questionnaire_answers:
+        Q1_deadline: "YES - NeurIPS deadline is immovable"
+        Q3_uncertainty: "MODERATE - have results, uncertain about framing"
+        Q5_learning: "PARTIALLY - learning academic writing process"
+        Q6_parallel: "NO - solo work (advisor reviews but doesn't co-write)"
+
+      primary_concern: "Hard deadline with review cycles needed"
+      secondary_concern: "First paper - learning the process"
+
+      variation_candidates:
+        - deadline_driven: "NeurIPS deadline is hard"
+        - learning_optimized: "First paper, learning as you go"
+        - diminishing_returns: "Know when 'good enough' for each section"
+        - critical_ratio_dynamic: "Multiple interdependent deadlines"
+
+    variation_selection:
+      selected: deadline_driven
+      combined_with: [diminishing_returns, critical_ratio_dynamic]
+      rationale: |
+        Primary: deadline_driven
+        - NeurIPS deadline cannot move
+        - Work backward: submission day -3 days (buffer), -7 days (advisor review), etc.
+        - Every task has derived deadline from this chain
+
+        Combined with diminishing_returns:
+        - Academic writing has strong diminishing returns
+        - First draft captures 80% of value; polishing captures 20%
+        - Must resist perfectionism on any single section
+        - "Good enough to submit" is the bar, not "perfect"
+
+        Combined with critical_ratio_dynamic:
+        - Weekly recalculation of CR for each section
+        - If analysis takes longer than expected, writing time shrinks
+        - Dynamic rebalancing as reality diverges from plan
+
+      trade_offs_accepted:
+        - "Some sections may not be 'perfect'"
+        - "May have to cut scope if behind schedule"
+        - "Less exploration of tangential ideas"
+
+    ordered_steps:
+      sequence: |
+        Week 1-2: Foundation (Parallel Start)
+        ├── [Parallel Track A]: Complete data analysis
+        │   └── Deadline: End of Week 2
+        └── [Parallel Track B]: Literature review (80% complete)
+            └── Deadline: End of Week 2
+
+        Week 3-4: Drafting
+        ├── [Week 3]: Write Methods + Results sections
+        │   └── Inputs from analysis complete
+        ├── [Week 3, parallel]: Create main figures
+        └── [Week 4]: Write Introduction + Discussion
+            └── Inputs from literature review
+
+        Week 5-6: Internal Review
+        ├── [Week 5]: Self-review and revision
+        │   └── Diminishing returns gate: max 3 revision passes
+        └── [Week 6]: Advisor review
+            └── Buffer built in for advisor delays
+
+        Week 7-8: Revision
+        ├── [Week 7]: Address advisor feedback
+        └── [Week 8]: Peer review (lab mate)
+
+        Week 9: Polish
+        ├── [Day 1-4]: Final revisions
+        ├── [Day 5]: Format check, reference cleanup
+        └── [Day 6-7]: BUFFER
+
+        Week 10: Submission
+        └── [Day 1-2]: Submit (not deadline day - buffer!)
+
+      critical_ratio_tracking: |
+        Week 4 check:
+        - Analysis: CR = ∞ (done)
+        - Literature: CR = 2.0 (ahead)
+        - Writing: CR = 1.2 (on track)
+        - Figures: CR = 0.9 (ALERT - behind, prioritize!)
+
+        Action: Shift 5 hours from literature polishing to figures
+
+    steps_document_excerpt: |
+      # STEPS: NeurIPS Paper Submission
+
+      **Ordering Variation**: deadline_driven + critical_ratio_dynamic
+      **Rationale**: Immovable conference deadline. Work backward from
+      submission date with buffers. Weekly CR recalculation to rebalance.
+
+      **Hard Deadline**: Week 10, Day 2 (2 days before actual deadline)
+      **Review Deadline**: Week 6, Day 1 (to advisor)
+      **Draft Deadline**: Week 4, Day 5 (to self)
+
+      ## Step 1: Set Up Deadline Chain
+
+      **Action**: Create backward-scheduled deadline chain in calendar
+
+      **Inputs**:
+      - NeurIPS submission deadline (exact date/time)
+      - Advisor availability for review (confirm)
+      - Your calendar for next 10 weeks
+
+      **Process**:
+      1. Enter submission deadline as Day 0 (actually submit Day -2 for buffer)
+      2. Block Day -7 to Day -2 for final polish
+      3. Block Day -14 to Day -7 for revision from advisor feedback
+      4. Confirm with advisor: they need draft by Day -28 (Week 6 start)
+      5. Set personal deadline for complete draft: Day -35 (Week 5 start)
+      6. Work backward for each section deadline
+
+      **Output**: Calendar with all intermediate deadlines [format: calendar entries]
+
+      **Verification**:
+      - [ ] Every intermediate deadline leads to meeting submission date
+      - [ ] Buffer time exists (min 2 days before final deadline)
+      - [ ] Advisor review time blocked and confirmed
+
+      **If blocked**:
+      - If advisor unavailable during planned review: Negotiate new date, adjust chain
+      - If chain doesn't fit: Reduce scope (fewer experiments, not fewer sections)
+
+      ---
+
+      ## Step 2: Batch Data Analysis Tasks
+
+      [... continues with deadline-driven structure and CR checkpoints ...]
+
+# ============================================
+# SECTION 3: QUICK REFERENCE CARD
+# ============================================
+
+quick_reference_card:
+  title: "Ordering Variation Selection - Quick Reference"
+  version: "1.0"
+
+  usage: |
+    1. Identify your PRIMARY constraint from the left column
+    2. Check if any SECONDARY factors apply
+    3. Use the recommended variation
+    4. Document your choice in STEPS.md
+
+  decision_table:
+    # Format: Constraint | Variation | Key Principle
+    - constraint: "Hard deadline exists"
+      variation: deadline_driven
+      principle: "Work backward from constraint"
+      secondary: "Can combine with parallel_maximizing if team available"
+
+    - constraint: "High uncertainty / might not work"
+      variation: fail_fast
+      principle: "Do risky things first, fail cheap"
+      secondary: "Pairs well with build_measure_learn"
+
+    - constraint: "Irreversible actions involved"
+      variation: reversibility
+      principle: "Reversible before irreversible"
+      secondary: "Opposite of commitment_first - choose based on context"
+
+    - constraint: "Learning/skill building goal"
+      variation: scaffolded_progression
+      principle: "Simple to complex, each step works"
+      secondary: "Use prerequisite_chain if explicit prerequisites"
+
+    - constraint: "Team execution / parallel resources"
+      variation: parallel_maximizing
+      principle: "Fan out early, minimize wait"
+      secondary: "Often combined with deadline_driven"
+
+    - constraint: "Human motivation concern"
+      variation: momentum
+      principle: "Quick wins first, build confidence"
+      secondary: "Use energy_aware for long sessions"
+
+    - constraint: "Requirements uncertain"
+      variation: demand_driven
+      principle: "Pull, don't push; wait for signal"
+      secondary: "Or build_measure_learn for validation cycles"
+
+    - constraint: "Peak event to target"
+      variation: peak_targeting
+      principle: "Periodize for maximum at specific time"
+      secondary: "Like training for competition"
+
+    - constraint: "Many small tasks"
+      variation: throughput_optimized
+      principle: "Shortest first (SPT rule)"
+      secondary: "Minimizes average completion time"
+
+    - constraint: "Negotiation / competitive"
+      variation: commitment_first
+      principle: "Strategic early commitments create leverage"
+      secondary: "Opposite of reversibility"
+
+    - constraint: "Crisis / limited resources"
+      variation: triage_severity
+      principle: "Maximize outcomes, not effort"
+      secondary: "Some things may be unsaveable"
+
+    - constraint: "Iterative improvement work"
+      variation: diminishing_returns
+      principle: "Know when to stop"
+      secondary: "Prevents over-polishing"
+
+    - constraint: "Building habits"
+      variation: anchor_based
+      principle: "Chain to existing behaviors"
+      secondary: "Combine with scaffolded_progression"
+
+    - constraint: "Complex dependencies"
+      variation: dependency_fanout
+      principle: "Do what unblocks the most first"
+      secondary: "Maximize parallel opportunity"
+
+  conflict_resolution:
+    principle: |
+      When multiple constraints apply, resolve in this order:
+      1. SAFETY concerns dominate (defense_in_depth, triage_severity)
+      2. HARD DEADLINES dominate (deadline_driven)
+      3. IRREVERSIBILITY constrains (reversibility or commitment_first, context-dependent)
+      4. UNCERTAINTY suggests (fail_fast, build_measure_learn)
+      5. EXECUTOR TYPE influences (energy_aware for humans, parallel for teams)
+      6. Default: Use base order_procedure prioritization
+
+  common_combinations:
+    - combo: "deadline_driven + parallel_maximizing"
+      when: "Team with hard deadline"
+
+    - combo: "fail_fast + build_measure_learn"
+      when: "Startup / new venture validation"
+
+    - combo: "scaffolded_progression + prerequisite_chain"
+      when: "Learning complex domain"
+
+    - combo: "anchor_based + momentum"
+      when: "Habit formation"
+
+    - combo: "deadline_driven + diminishing_returns"
+      when: "Academic/creative work with deadline"
+
+    - combo: "reversibility + option_preserving"
+      when: "High-stakes decisions with long-term impact"
+
+  red_flags:
+    - flag: "Using momentum when deadline is tight"
+      problem: "Quick wins may not be on critical path"
+      fix: "Use deadline_driven, accept some hard tasks early"
+
+    - flag: "Using fail_fast when deadline is immovable"
+      problem: "May spend time validating when should be executing"
+      fix: "Use deadline_driven, do validation in parallel if possible"
+
+    - flag: "Using energy_aware for AI/automated executor"
+      problem: "AI doesn't have energy fluctuations"
+      fix: "Use parallel_maximizing or throughput_optimized instead"
+
+    - flag: "Using reversibility in competitive context"
+      problem: "Delaying commitment may lose first-mover advantage"
+      fix: "Consider commitment_first for strategic moves"
+
+    - flag: "Using demand_driven with hard deadline"
+      problem: "Can't wait for signals if deadline exists"
+      fix: "Use deadline_driven, build what you estimate is needed"
+
+# ============================================
+# GOSM INTEGRATION METADATA
+# ============================================
+gosm_integration:
+  use_cases:
+    - "Training new GOSM users on ordering"
+    - "Quick reference during STEPS generation"
+    - "Justifying ordering choices to stakeholders"
+    - "Debugging when plans feel 'wrong order'"
+
+  gates:
+    - gate: variation_selected
+      question: "Has an appropriate ordering variation been selected for this context?"
+
+    - gate: variation_documented
+      question: "Is the ordering rationale documented in STEPS.md?"
+
+    - gate: conflicts_resolved
+      question: "Have any conflicting variation preferences been resolved?"
+
+  related_procedures:
+    - ordering_variations: "The 68 variations this guide explains"
+    - order_procedure: "Base ordering algorithm"
+    - steps_generation: "Consumer of ordered steps"
+    - decomposition: "Creates the steps to be ordered"
+    - adversarial_review: "Can test ordering decisions"

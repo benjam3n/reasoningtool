@@ -1,0 +1,237 @@
+# Learning & Discovery Orderings
+# Orderings optimized for acquiring knowledge and validation
+
+category_id: learning_discovery
+category_name: "Learning & Discovery Orderings"
+description: |
+  Orderings optimized for acquiring knowledge, validating hypotheses,
+  and iterative learning. Use when the goal is understanding rather
+  than just completion, or when requirements are uncertain.
+
+when_to_consider: |
+  - Exploratory projects with evolving requirements
+  - Research or investigation tasks
+  - Validating product-market fit
+  - Situations with many unknown unknowns
+  - When learning drives future decisions
+
+variations:
+
+  # ----------------------------------------
+  # LEARNING-OPTIMIZED ORDERING
+  # ----------------------------------------
+  learning_optimized:
+    id: learning_optimized_ordering
+    name: "Learning-Optimized Ordering (Information Gain)"
+    category: learning_discovery
+
+    philosophy: |
+      Prioritize steps that maximize information gain. Do things that
+      teach you the most first, even if they're not on the critical path.
+      Particularly valuable when operating under uncertainty or when
+      learning will inform later decisions.
+
+    when_to_use:
+      - Exploring new domains or technologies
+      - Requirements are unclear and evolving
+      - Need to validate approach before committing
+      - Research or investigation phases
+
+    prioritization_rules:
+      1_highest_information_gain:
+        rule: "Steps that resolve the most uncertainty go first"
+        reason: "Maximum learning per unit effort"
+
+      2_branch_points:
+        rule: "Steps that inform 'which path to take' go early"
+        reason: "Don't go down wrong path before knowing"
+
+      3_reduces_cone_of_uncertainty:
+        rule: "Steps that narrow the range of outcomes go first"
+        reason: "Tighter estimates enable better planning"
+
+      4_learning_loops:
+        rule: "Prefer steps that allow rapid feedback cycles"
+        reason: "Faster learning means faster convergence"
+
+    anti_patterns:
+      - "Doing 'easy' work that teaches you nothing"
+      - "Avoiding uncertain areas until too late"
+      - "Not updating plans based on what you learn"
+
+    example:
+      context: "Evaluating a new technology for a project"
+      steps:
+        - "Read all documentation"
+        - "Build production deployment"
+        - "Try the 'Hello World' tutorial"
+        - "Test with realistic workload"
+        - "Build proof-of-concept"
+      learning_optimized_order:
+        1: "Try the Hello World tutorial (quick, validates setup)"
+        2: "Build proof-of-concept (tests feasibility)"
+        3: "Test with realistic workload (validates assumptions)"
+        4: "Read documentation deeply (now you know what to look for)"
+        5: "Build production deployment (only if validated)"
+      rationale: "Each step informs whether to continue before investing more"
+
+  # ----------------------------------------
+  # CURIOSITY-DRIVEN ORDERING
+  # ----------------------------------------
+  curiosity_driven:
+    id: curiosity_driven_ordering
+    name: "Curiosity-Driven Ordering (Intrinsic Motivation)"
+    category: learning_discovery
+
+    philosophy: |
+      Prioritize tasks that maximize information gain or prediction
+      error - things that surprise you teach you the most. From
+      developmental robotics: agents with intrinsic curiosity explore
+      efficiently without external rewards. Learning progress itself
+      is the reward. Explore what you don't yet understand.
+
+    when_to_use:
+      - Sparse or no external rewards
+      - Learning is the goal, not just task completion
+      - Need to discover unknown unknowns
+      - Environment has rich, learnable structure
+      - Autonomous exploration without guidance
+
+    key_concepts:
+      prediction_error: "Difference between expected and actual outcome"
+      information_gain: "Reduction in uncertainty from observation"
+      learning_progress: "Rate of improvement in predictions"
+      intrinsic_reward: "Self-generated reward for discovery"
+
+    algorithm:
+      for_each_option:
+        - "Predict outcome if option is chosen"
+        - "Estimate prediction error or information gain"
+      select: "Choose option with highest curiosity signal"
+      execute: "Take action, observe actual outcome"
+      update: "Improve predictive model with new data"
+
+    prioritization_rules:
+      1_predict_outcomes:
+        rule: "For each option, predict what will happen"
+        model: "Forward model, world model, etc."
+
+      2_estimate_curiosity:
+        rule: "Calculate prediction error or uncertainty"
+        options:
+          prediction_error: "||predicted - actual||"
+          uncertainty: "Variance in prediction"
+          learning_progress: "delta(prediction accuracy)"
+
+      3_select_most_curious:
+        rule: "Choose option maximizing curiosity signal"
+        property: "Automatically explores unknown areas"
+
+      4_avoid_noise:
+        rule: "Distinguish learnable from random"
+        problem: "TV static has high error but no learning"
+
+    anti_patterns:
+      - "Seeking pure noise (unlearnable randomness)"
+      - "Ignoring diminishing returns on familiar areas"
+      - "No mechanism to exploit what's learned"
+      - "Curiosity about irrelevant features"
+
+    example:
+      context: "Exploring a new codebase"
+      areas:
+        authentication: "Prediction error: 0.2 (well understood)"
+        database_layer: "Prediction error: 0.8 (mysterious)"
+        api_routes: "Prediction error: 0.5 (partially known)"
+        config: "Prediction error: 0.1 (simple, understood)"
+      curiosity_ranking:
+        1: "database_layer (highest uncertainty)"
+        2: "api_routes (moderate uncertainty)"
+        3: "authentication (low uncertainty)"
+        4: "config (understood)"
+      decision: "Start exploring database_layer"
+      rationale: "Learn most where prediction error is highest"
+
+    source: "Developmental Robotics - Intrinsic Motivation (Schmidhuber, Oudeyer)"
+
+  # ----------------------------------------
+  # BUILD-MEASURE-LEARN ORDERING
+  # ----------------------------------------
+  build_measure_learn:
+    id: build_measure_learn_ordering
+    name: "Build-Measure-Learn Ordering (Lean Startup)"
+    category: learning_discovery
+
+    philosophy: |
+      Minimize time through the build-measure-learn cycle. From Lean
+      Startup: the goal isn't to build the product, it's to learn what
+      to build. Each cycle tests a hypothesis with minimum viable effort.
+      Learning, not deliverables, is the output.
+
+    when_to_use:
+      - High uncertainty about what users want
+      - Need to validate hypotheses before full build
+      - Want to minimize wasted development
+      - Iterative product development
+      - Exploring new markets or features
+
+    three_phases:
+      build:
+        purpose: "Create minimum viable artifact to test hypothesis"
+        principle: "Smallest thing that tests your assumption"
+        outputs: "MVP, prototype, mockup, landing page, wizard-of-oz"
+
+      measure:
+        purpose: "Collect data to validate or invalidate hypothesis"
+        principle: "Actionable metrics, not vanity metrics"
+        outputs: "Conversion rate, retention, NPS, user behavior"
+
+      learn:
+        purpose: "Update beliefs based on evidence"
+        principle: "Pivot or persevere decision"
+        outputs: "Validated learning, updated hypothesis"
+
+    prioritization_rules:
+      1_hypothesis_first:
+        rule: "Start with explicit testable hypothesis"
+        reason: "Can't measure if you don't know what you're testing"
+        format: "We believe [X]. We'll know we're right when [Y]."
+
+      2_minimum_viable_build:
+        rule: "Build smallest thing that tests hypothesis"
+        reason: "Over-building wastes resources and delays learning"
+        question: "What's the least we could build to learn this?"
+
+      3_measure_actionable:
+        rule: "Measure things that drive decisions"
+        reason: "Vanity metrics don't inform pivots"
+        test: "Will this metric tell us to change something?"
+
+      4_learn_and_loop:
+        rule: "Update beliefs, form new hypothesis, repeat"
+        reason: "Each cycle tightens understanding"
+
+    anti_patterns:
+      - "Building without hypothesis"
+      - "Measuring vanity metrics"
+      - "Not actually updating beliefs"
+      - "Over-building before measuring"
+      - "Ignoring negative results"
+
+    example:
+      context: "Testing new feature idea"
+      hypothesis: "Users will pay for advanced analytics"
+      bml_cycle:
+        build:
+          mvp: "Landing page describing analytics feature"
+          effort: "1 day"
+        measure:
+          metric: "% visitors who click 'notify me when available'"
+          success_threshold: ">10% click rate"
+        learn:
+          result: "3% clicked"
+          conclusion: "Hypothesis invalidated as positioned"
+          next_cycle: "New hypothesis - maybe they want X instead?"
+      rationale: "1 day to invalidate beats 2 months building wrong thing"
+
+    source: "Lean Startup - Eric Ries, Build-Measure-Learn"

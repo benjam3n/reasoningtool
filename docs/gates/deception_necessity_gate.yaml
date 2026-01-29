@@ -1,0 +1,97 @@
+# Deception Necessity Gate
+# Determines if deception/opacity is actually required
+
+id: deception_necessity_gate
+name: Deception Necessity Gate
+version: "1.0.0"
+domain: core
+tags: ["strategic", "ethics", "opsec"]
+
+description: |
+  Before assuming deception/opacity is necessary, systematically check
+  for non-deceptive alternatives. The goal is MINIMAL NECESSARY opacity.
+
+core_principle: |
+  If there's a non-deceptive path to the same outcome, use that instead.
+  Deception is expensive (trust, cognitive load, fragility) - avoid if possible.
+
+alternatives_to_check:
+  - id: defensive_opacity
+    name: "Defensive Opacity Without Exploitation"
+    description: "Don't reveal reasoning, but don't manipulate either"
+    test: "Can we simply not share certain information without creating false impressions?"
+
+  - id: mutual_benefit
+    name: "Mutual Benefit Framing"
+    description: "Genuinely align incentives so exploitation isn't attractive"
+    test: "Can we make it so helping us is obviously in their interest?"
+
+  - id: structural_protection
+    name: "Structural Protection"
+    description: "Design systems where exploitation isn't possible"
+    test: "Can we change the structure so deception isn't needed?"
+
+  - id: speed
+    name: "Speed"
+    description: "Move fast enough that exploitation can't keep up"
+    test: "Can we outrun the threat rather than hide from it?"
+
+  - id: compartmentalization
+    name: "Compartmentalization"
+    description: "Different actors get different pieces"
+    test: "Can we distribute information so no one can exploit the full picture?"
+
+  - id: transparency_with_boundaries
+    name: "Transparency With Clear Boundaries"
+    description: "Be open about what you will and won't share"
+    test: "Can we say 'I won't discuss X' instead of hiding that X exists?"
+
+questions:
+  - id: goal
+    question: "What outcome are we trying to achieve with this communication?"
+    output: desired_outcome
+
+  - id: threat
+    question: "What exploitation are we trying to prevent?"
+    output: exploitation_threat
+
+  - id: alternatives_exhausted
+    question: "For each alternative above, why won't it work here?"
+    output: alternative_analysis
+
+  - id: minimal_deception
+    question: "If deception is needed, what is the MINIMUM required?"
+    output: minimal_scope
+
+outputs:
+  - name: necessity_assessment
+    type: object
+    properties:
+      deception_required: boolean
+      alternative_found: string or null
+      minimal_scope: string
+      justification: string
+
+decision_logic: |
+  FOR EACH alternative in alternatives_to_check:
+    IF alternative would achieve desired_outcome
+       AND alternative prevents exploitation_threat
+    THEN → Use alternative, deception NOT required
+
+  IF no alternative works:
+    THEN → Deception may be required
+    BUT → Use minimal_scope only
+    AND → Document justification
+
+verification: |
+  Before approving deception:
+  1. Each alternative was genuinely considered (not dismissed superficially)
+  2. The "why it won't work" for each is specific, not vague
+  3. The minimal scope is actually minimal (not creeping)
+  4. The justification would satisfy a skeptical reviewer
+
+red_flags:
+  - Dismissing alternatives without real analysis
+  - "We've always done it this way"
+  - Minimal scope keeps expanding
+  - Justification requires paragraphs to explain
