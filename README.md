@@ -180,7 +180,8 @@ docs/
 
 ## Background
 
-- [Two Kinds of Search, and Why You Need Both](Two%20Kinds%20of%20Search%2C%20and%20Why%20You%20Need%20Both.md) — the philosophical grounding: why alternating between divergent exploration and convergent testing produces results neither can alone.
+- [Two Kinds of Search, and Why You Need Both](Two%20Kinds%20of%20Search%2C%20and%20Why%20You%20Need%20Both.md) — why alternating between divergent exploration and convergent testing produces results neither can alone.
+- [Universal Principles of Mathematical Problem Solving](universal_principles_of_mathematical_problem_solving.md) — the distinction between universal principles (entailed by definitions) and heuristics (contingent on context), and why it matters.
 - [The Structure of Careful Thought](docs/examples/the_structure_of_careful_thought.txt) — an earlier essay on asymmetric testing of claims.
 
 ## License
