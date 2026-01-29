@@ -1,0 +1,81 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Getting Started" activeNav="getting-started" description="Install reasoning-toolkit and run your first ARAW session in under 5 minutes.">
+  <h1>Getting started</h1>
+
+  <h2>Prerequisites</h2>
+  <p>You need <a href="https://docs.anthropic.com/en/docs/claude-code">Claude Code</a> installed. The skills run as structured prompts inside Claude Code sessions.</p>
+
+  <h2>Installation</h2>
+
+  <h3>Option 1: Run from the repo</h3>
+  <pre><code>git clone https://github.com/benjam3n/reasoning-toolkit.git
+cd reasoning-toolkit/claude-code-plugin
+claude</code></pre>
+  <p>Claude reads the <code>CLAUDE.md</code> file and all 207 skills become available.</p>
+
+  <h3>Option 2: Copy into your project</h3>
+  <pre><code>cp -r path/to/reasoning-toolkit/claude-code-plugin/skills your-project/
+cp path/to/reasoning-toolkit/claude-code-plugin/CLAUDE.md your-project/
+cd your-project
+claude</code></pre>
+
+  <h2>Your first session</h2>
+  <p>In a Claude Code session, type a skill name followed by your input:</p>
+  <pre><code>/araw should I change careers</code></pre>
+  <p>This runs an ARAW analysis: Claude takes the claim "I should change careers," assumes it's right (what follows?), assumes it's wrong (what are the alternatives?), and recurses on the most important sub-claims. The output is a tree of tested claims with crux points and action items.</p>
+
+  <h3>More examples</h3>
+  <pre><code># Map all options for a product launch
+/space_enumeration what are all the ways I could approach this product launch
+
+# Surface hidden assumptions
+/assumption_extraction we need to hire 3 more engineers by Q2
+
+# Structured comparison
+/comparison React vs Svelte for this project
+
+# Find the real cause
+/root_cause_analysis our deploy pipeline keeps failing
+
+# Full alternating search (exploration + testing + edge cases + validation)
+/uaua 4x what's the best approach to learning math</code></pre>
+
+  <h2>Depth scaling</h2>
+  <p>ARAW and UAUA support depth scaling. Higher depth = more thorough exploration:</p>
+  <table>
+    <thead>
+      <tr><th>Depth</th><th>What you get</th><th>Use for</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><code>/araw</code></td><td>Quick analysis, 3-4 levels deep</td><td>Simple claims, low stakes</td></tr>
+      <tr><td><code>/araw 2x</code></td><td>Deeper, 4-5 levels, more claims</td><td>Moderate complexity</td></tr>
+      <tr><td><code>/araw 4x</code></td><td>Thorough, 5-6 levels, edge cases</td><td>Important decisions</td></tr>
+      <tr><td><code>/araw 8x</code></td><td>Exhaustive, 6-8 levels</td><td>High-stakes analysis</td></tr>
+      <tr><td><code>/uaua 4x</code></td><td>Full alternating search at 4x depth</td><td>Complex problems needing both breadth and depth</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Python tools</h2>
+  <p>For programmatic exploration with persistence and visualization:</p>
+  <pre><code>pip install openai pyyaml
+export OPENAI_API_KEY="sk-your-key"
+cd src/araw
+
+# Auto-expand a claim into a branching tree
+python auto_expand_llm.py --db career.db --seed "Should I start a business?"
+
+# View in browser
+python visualize.py --db career.db --serve</code></pre>
+  <p>See <a href="/tools">Tools</a> for the full documentation.</p>
+
+  <h2>What to try next</h2>
+  <ul>
+    <li>Pick a decision you're facing and run <code>/araw</code> on it</li>
+    <li>Browse the <a href="/skills">207 skills</a> to see what's available</li>
+    <li>Read <a href="/essays/two-kinds-of-search">Two Kinds of Search</a> for the philosophy behind the alternation pattern</li>
+    <li>Try the <a href="/tools">Python tools</a> for persistent, visual exploration</li>
+  </ul>
+</Base>

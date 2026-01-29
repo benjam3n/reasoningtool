@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Essays" activeNav="essays" description="Three essays on the philosophy behind structured reasoning: alternation, universal principles, and careful thought.">
+  <h1>Essays</h1>
+  <p>The philosophical grounding for the toolkit. These explain <em>why</em> the methods work, not just <em>what</em> they do.</p>
+
+  <ul class="essay-list">
+    <li>
+      <h3><a href="/essays/two-kinds-of-search">Two Kinds of Search, and Why You Need Both</a></h3>
+      <p class="description">
+        Why alternating between divergent exploration and convergent testing produces results neither can alone. Covers the structural blind spots of each mode, why they don't overlap, and what the alternation pattern looks like in practice — with a worked example from modular arithmetic.
+      </p>
+    </li>
+    <li>
+      <h3><a href="/essays/universal-principles">Universal Principles of Mathematical Problem Solving</a></h3>
+      <p class="description">
+        The distinction between universal principles (entailed by definitions) and heuristics (contingent on context). Explores how definitions generate operations, why type-checking matters, what invariants tell you, and the hierarchy from definitions to solutions.
+      </p>
+    </li>
+    <li>
+      <h3><a href="/essays/structure-of-careful-thought">The Structure of Careful Thought</a></h3>
+      <p class="description">
+        An earlier essay on asymmetric testing of claims. How to test ideas by genuinely inhabiting the opposing position, and why knowing about confirmation bias doesn't provide a mechanism for correcting it.
+      </p>
+    </li>
+  </ul>
+</Base>

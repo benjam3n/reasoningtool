@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+}
+
+const { title, description = 'Structured reasoning tools for checking whether you\'re thinking in the right direction.', activeNav = '' } = Astro.props;
+const fullTitle = title === 'Home' ? 'reasoning-toolkit' : `${title} — reasoning-toolkit`;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={description} />
+  <title>{fullTitle}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="site-name">reasoning-toolkit</a>
+      <ul class="nav-links">
+        <li><a href="/essays" class:list={[{ active: activeNav === 'essays' }]}>Essays</a></li>
+        <li><a href="/skills" class:list={[{ active: activeNav === 'skills' }]}>Skills</a></li>
+        <li><a href="/tools" class:list={[{ active: activeNav === 'tools' }]}>Tools</a></li>
+        <li><a href="/getting-started" class:list={[{ active: activeNav === 'getting-started' }]}>Get Started</a></li>
+        <li><a href="/about" class:list={[{ active: activeNav === 'about' }]}>About</a></li>
+        <li><a href="https://github.com/benjam3n/reasoning-toolkit">GitHub</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <slot />
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>reasoning-toolkit — Apache 2.0</span>
+      <span><a href="https://github.com/benjam3n/reasoning-toolkit">Source on GitHub</a></span>
+    </div>
+  </footer>
+</body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>
