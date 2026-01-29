@@ -5,7 +5,7 @@ interface Props {
 const { activeNav = '' } = Astro.props;
 
 const links = [
-  { href: '/essays', label: 'Essays', id: 'essays' },
+  { href: '/foundations', label: 'Foundations', id: 'foundations' },
   { href: '/skills', label: 'Skills', id: 'skills' },
   { href: '/tools', label: 'Tools', id: 'tools' },
   { href: '/getting-started', label: 'Get Started', id: 'getting-started' },
@@ -38,10 +38,12 @@ const links = [
 
 <script is:inline>
   (function() {
-    const stored = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const theme = stored || (prefersDark ? 'dark' : 'light');
-    if (stored) document.documentElement.setAttribute('data-theme', theme);
+
+    function applyTheme() {
+      const stored = localStorage.getItem('theme');
+      if (stored) document.documentElement.setAttribute('data-theme', stored);
+    }
 
     function updateIcon() {
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
@@ -50,7 +52,8 @@ const links = [
       if (icon) icon.textContent = isDark ? '\u2600' : '\u263E';
     }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    function setupToggle() {
+      applyTheme();
       updateIcon();
       document.getElementById('theme-toggle')?.addEventListener('click', function() {
         const current = document.documentElement.getAttribute('data-theme');
@@ -60,6 +63,9 @@ const links = [
         localStorage.setItem('theme', next);
         updateIcon();
       });
-    });
+    }
+
+    document.addEventListener('DOMContentLoaded', setupToggle);
+    document.addEventListener('astro:after-swap', setupToggle);
   })();
 </script>

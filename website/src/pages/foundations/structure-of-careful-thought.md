@@ -2,7 +2,7 @@
 layout: ../../layouts/ProseLayout.astro
 title: The Structure of Careful Thought
 description: An essay on asymmetric testing of claims, and why knowing about confirmation bias doesn't provide a mechanism for correcting it.
-activeNav: essays
+activeNav: foundations
 ---
 
 # The Structure of Careful Thought

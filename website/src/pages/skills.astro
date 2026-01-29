@@ -87,10 +87,10 @@ const tier3Categories = [
     <p>These use a different approach. They treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.</p>
     <div class="skill-grid">
       {experimental.map(s => (
-        <div class="skill-item">
+        <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
           <code>{s.name}</code>
           <div class="desc">{s.desc}</div>
-        </div>
+        </a>
       ))}
     </div>
   </section>
@@ -100,10 +100,10 @@ const tier3Categories = [
     <p>The most generally useful skills. They work on almost any problem and consistently produce non-obvious results.</p>
     <div class="skill-grid">
       {tier1.map(s => (
-        <div class="skill-item">
+        <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
           <code>{s.name}</code>
           <div class="desc">{s.desc}</div>
-        </div>
+        </a>
       ))}
     </div>
   </section>
@@ -113,10 +113,10 @@ const tier3Categories = [
     <p>Go deeper on specific types of thinking. Use when you need thoroughness on a particular kind of problem.</p>
     <div class="skill-grid">
       {tier2.map(s => (
-        <div class="skill-item">
+        <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
           <code>{s.name}</code>
           <div class="desc">{s.desc}</div>
-        </div>
+        </a>
       ))}
     </div>
   </section>
@@ -128,10 +128,10 @@ const tier3Categories = [
       <div class="category-section">
         <h3>{cat.category}</h3>
         <div class="skill-grid">
-          {cat.skills.map(name => (
-            <div class="skill-item">
-              <code>{name}</code>
-            </div>
+          {cat.skills.map(skillName => (
+            <a href={`/skills/${skillName}`} class="skill-item skill-item--link">
+              <code>{skillName}</code>
+            </a>
           ))}
         </div>
       </div>
