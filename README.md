@@ -129,9 +129,23 @@ There are also bridging skills (`araw_gosm_integration`, `araw_to_gosm_bridge`) 
 
 The `docs/` directory contains supporting material:
 
-- **`docs/methodology/`** — Design principles, process documentation, and the rationale behind the approach
-- **`docs/examples/`** — Worked examples showing the skills applied to real problems (problem-solving, writing quality, scaling analysis, methodology comparisons)
-- **`docs/reference/`** — Reference material including 200+ fundamental tensions/trade-offs, question categories, and comparison frameworks
+```
+docs/
+├── methodology/          — Design principles, process docs, rationale
+├── examples/             — Worked examples applied to real problems
+├── reference/            — 200+ tensions, question categories, comparisons
+├── universal/            — 177 universal question files across all dimensions
+├── gates/                — 33 decision gates (checkpoints and quality controls)
+├── procedures/
+│   ├── core/             — 84 core reasoning procedures
+│   │   └── ordering/     — 26 ordering and sequencing procedures
+│   ├── communication/    — 14 communication procedures
+│   └── meta/             — 21 meta-procedures (discovery, extraction, review)
+└── previous-approaches/
+    ├── deductive-strategy/  — Deductive strategy system and templates
+    ├── pure-regress/        — 121 recursive philosophical explorations
+    └── swot-pure-regress/   — SWOT-specific recursive analysis
+```
 
 ## Background
 
