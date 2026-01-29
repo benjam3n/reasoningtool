@@ -9,8 +9,8 @@ interface Props {
   activeNav?: string;
 }
 
-const { title, description = 'Structured reasoning tools for checking whether you\'re thinking in the right direction.', activeNav = '' } = Astro.props;
-const fullTitle = title === 'Home' ? 'reasoningtool' : `${title} — reasoningtool`;
+const { title, description = '', activeNav = 'essays' } = Astro.props;
+const fullTitle = `${title} — reasoningtool`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
@@ -27,7 +27,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <!-- Open Graph -->
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:site_name" content="reasoningtool" />
 
@@ -39,8 +39,10 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <body>
   <Header activeNav={activeNav} />
 
-  <main class="container">
-    <slot />
+  <main class="container--prose">
+    <article class="prose">
+      <slot />
+    </article>
   </main>
 
   <Footer />

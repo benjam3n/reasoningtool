@@ -1,9 +1,8 @@
 ---
-import Base from '../../layouts/Base.astro';
+import ProseLayout from '../../layouts/ProseLayout.astro';
 ---
 
-<Base title="Two Kinds of Search, and Why You Need Both" activeNav="essays" description="Why alternating between divergent exploration and convergent testing produces results neither can alone.">
-  <article>
+<ProseLayout title="Two Kinds of Search, and Why You Need Both" activeNav="essays" description="Why alternating between divergent exploration and convergent testing produces results neither can alone.">
     <h1>Two Kinds of Search, and Why You Need Both</h1>
 
     <h2>The problem</h2>
@@ -98,6 +97,5 @@ Test (convergent, final) → what survived everything</code></pre>
       <li>Test the edge cases. Do they matter?</li>
     </ol>
     <p>If the process surfaces something you wouldn't have found otherwise, it's working. If it doesn't, either the problem was simpler than it looked, or the passes didn't go deep enough.</p>
-    <p>I've open-sourced a toolkit that implements this pattern and 200+ related reasoning procedures as structured prompts for Claude Code: <a href="https://github.com/benjam3n/reasoning-toolkit">reasoning-toolkit</a>. The toolkit is the implementation; this post is the philosophy behind it.</p>
-  </article>
-</Base>
+    <p>I've open-sourced a toolkit that implements this pattern and 200+ related reasoning procedures as structured prompts for Claude Code: <a href="https://github.com/benjam3n/reasoningtool">reasoningtool</a>. The toolkit is the implementation; this post is the philosophy behind it.</p>
+</ProseLayout>

@@ -1,17 +1,17 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
-  "name": "reasoning-toolkit",
+  "name": "reasoningtool",
   "description": "207 thinking skills for Claude Code",
   "owner": {
-    "name": "reasoning-toolkit"
+    "name": "reasoningtool"
   },
   "plugins": [
     {
-      "name": "reasoning-toolkit",
+      "name": "reasoningtool",
       "description": "207 thinking skills for decisions, problem solving, writing, research, planning, and more",
       "version": "1.0.0",
       "author": {
-        "name": "reasoning-toolkit"
+        "name": "reasoningtool"
       },
       "source": "./",
       "category": "productivity"

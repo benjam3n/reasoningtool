@@ -1,6 +1,6 @@
 # Welcome to r/reasoningtool
 
-**TL;DR**: This subreddit is about structured reasoning — methods for checking whether you're thinking in the right direction, not just thinking faster. [reasoning-toolkit](https://github.com/benjam3n/reasoning-toolkit) is an open-source implementation of these ideas. The sub is for sharing sessions, skills, improvements, discussion, and challenges to the approach.
+**TL;DR**: This subreddit is about structured reasoning — methods for checking whether you're thinking in the right direction, not just thinking faster. [reasoningtool](https://github.com/benjam3n/reasoningtool) is an open-source implementation of these ideas. The sub is for sharing sessions, skills, improvements, discussion, and challenges to the approach.
 
 ---
 
@@ -28,9 +28,9 @@ The alternation matters because the two operations have structural blind spots t
 
 This isn't a new philosophical observation. It's related to divergent/convergent thinking in design, generate-and-test in AI search, and Popperian falsification. What's less common is an implementation — actual tools that force the alternation rather than just describing it.
 
-## What reasoning-toolkit does
+## What reasoningtool does
 
-[reasoning-toolkit](https://github.com/benjam3n/reasoning-toolkit) is an open-source project that implements structured reasoning as 207 skills for Claude Code, plus Python tools for running deeper explorations programmatically.
+[reasoningtool](https://github.com/benjam3n/reasoningtool) is an open-source project that implements structured reasoning as 207 skills for Claude Code, plus Python tools for running deeper explorations programmatically.
 
 **The core methods:**
 
@@ -49,7 +49,7 @@ This isn't a new philosophical observation. It's related to divergent/convergent
 
 ## How it compares
 
-| | reasoning-toolkit | AI agents (AutoGPT, CrewAI) | Prompt libraries | Chain-of-thought (o1, etc.) |
+| | reasoningtool | AI agents (AutoGPT, CrewAI) | Prompt libraries | Chain-of-thought (o1, etc.) |
 |---|---|---|---|---|
 | Structured exploration | Yes (universalization) | No | No | Implicit |
 | Systematic testing | Yes (ARAW) | No | No | Implicit |
@@ -93,15 +93,15 @@ This is a place for:
 
 Three essays explore the philosophy in depth:
 
-- [Two Kinds of Search, and Why You Need Both](https://github.com/benjam3n/reasoning-toolkit/blob/main/Two%20Kinds%20of%20Search%2C%20and%20Why%20You%20Need%20Both.md) — why alternation between exploration and testing covers blind spots that either alone misses.
-- [Universal Principles of Mathematical Problem Solving](https://github.com/benjam3n/reasoning-toolkit/blob/main/Universal%20Principles%20of%20Mathematical%20Problem%20Solving.md) — the distinction between universal principles (entailed by definitions) and heuristics (contingent on context).
-- [The Structure of Careful Thought](https://github.com/benjam3n/reasoning-toolkit/blob/main/The%20Structure%20of%20Careful%20Thought.txt) — an earlier essay on asymmetric testing of claims.
+- [Two Kinds of Search, and Why You Need Both](https://github.com/benjam3n/reasoningtool/blob/main/Two%20Kinds%20of%20Search%2C%20and%20Why%20You%20Need%20Both.md) — why alternation between exploration and testing covers blind spots that either alone misses.
+- [Universal Principles of Mathematical Problem Solving](https://github.com/benjam3n/reasoningtool/blob/main/Universal%20Principles%20of%20Mathematical%20Problem%20Solving.md) — the distinction between universal principles (entailed by definitions) and heuristics (contingent on context).
+- [The Structure of Careful Thought](https://github.com/benjam3n/reasoningtool/blob/main/The%20Structure%20of%20Careful%20Thought.txt) — an earlier essay on asymmetric testing of claims.
 
 ## Getting started
 
 ```bash
-git clone https://github.com/benjam3n/reasoning-toolkit.git
-cd reasoning-toolkit/claude-code-plugin
+git clone https://github.com/benjam3n/reasoningtool.git
+cd reasoningtool/claude-code-plugin
 claude
 ```
 
@@ -113,7 +113,7 @@ For programmatic use (auto-expansion, visualization, synthesis), see `src/README
 
 Post here. That's the main thing. Share a session, propose a skill, challenge a premise, show where the toolkit fails. The toolkit gets better when people use it on problems the creator didn't anticipate.
 
-If you want to contribute code, the repo is [here](https://github.com/benjam3n/reasoning-toolkit). Apache 2.0 licensed.
+If you want to contribute code, the repo is [here](https://github.com/benjam3n/reasoningtool). Apache 2.0 licensed.
 
 ---
 

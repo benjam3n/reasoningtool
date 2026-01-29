@@ -1,5 +1,5 @@
 ---
-layout: ../../layouts/Base.astro
+layout: ../../layouts/ProseLayout.astro
 title: Universal Principles of Mathematical Problem Solving
 description: The distinction between universal principles (entailed by definitions) and heuristics (contingent on context), and why it matters.
 activeNav: essays

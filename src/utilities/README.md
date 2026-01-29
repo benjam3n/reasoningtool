@@ -1,6 +1,6 @@
 # Utilities
 
-Scripts for managing the reasoning-toolkit procedure library: clustering similar procedures, converting between formats, auditing for quality issues, and syncing to Claude Code.
+Scripts for managing the reasoningtool procedure library: clustering similar procedures, converting between formats, auditing for quality issues, and syncing to Claude Code.
 
 ## Scripts
 

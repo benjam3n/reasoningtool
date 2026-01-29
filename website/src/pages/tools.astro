@@ -3,11 +3,14 @@ import Base from '../layouts/Base.astro';
 ---
 
 <Base title="Tools" activeNav="tools" description="Python tools for running ARAW explorations programmatically — auto-expand, visualize, synthesize, and ground claims.">
-  <h1>Python Tools</h1>
-  <p>Run ARAW explorations programmatically — seed a claim, expand it with LLM-powered branching, visualize the results in an interactive browser viewer, and synthesize findings across runs.</p>
+  <div class="page-header">
+    <h1>Python Tools</h1>
+    <p class="lead">Run ARAW explorations programmatically &mdash; seed a claim, expand it with LLM-powered branching, visualize the results in an interactive browser viewer, and synthesize findings across runs.</p>
+  </div>
 
-  <h2>Quick start</h2>
-  <pre><code>pip install openai pyyaml
+  <section>
+    <h2>Quick start</h2>
+    <pre><code>pip install openai pyyaml
 export OPENAI_API_KEY="sk-your-key"
 cd src/araw
 
@@ -20,106 +23,119 @@ python auto_expand_llm.py --db my_analysis.db --continue --parallel 5
 # View in browser
 python visualize.py --db my_analysis.db --serve
 # Open http://localhost:8080</code></pre>
+  </section>
 
-  <h2>Interactive visualization</h2>
-  <p>
-    <code>visualize.py --serve</code> launches a full interactive graph viewer in your browser. You can:
-  </p>
-  <ul>
-    <li><strong>See the full tree</strong> — nodes color-coded by type: orange (root), blue (assume right), red (assume wrong), gold (crux), green (grounded), purple (epistemic limit)</li>
-    <li><strong>Filter</strong> — by branch type, depth (slider), grounded-only, crux-only, domain, or text search</li>
-    <li><strong>Click any node</strong> — see full claim text, depth, leverage score, children count, domain</li>
-    <li><strong>Export</strong> — PNG screenshot, JSON for D3.js/Sigma.js, GEXF for Gephi</li>
-  </ul>
+  <section>
+    <h2>Interactive visualization</h2>
+    <p>
+      <code>visualize.py --serve</code> launches a full interactive graph viewer in your browser. You can:
+    </p>
+    <ul>
+      <li><strong>See the full tree</strong> &mdash; nodes color-coded by type: orange (root), blue (assume right), red (assume wrong), gold (crux), green (grounded), purple (epistemic limit)</li>
+      <li><strong>Filter</strong> &mdash; by branch type, depth (slider), grounded-only, crux-only, domain, or text search</li>
+      <li><strong>Click any node</strong> &mdash; see full claim text, depth, leverage score, children count, domain</li>
+      <li><strong>Export</strong> &mdash; PNG screenshot, JSON for D3.js/Sigma.js, GEXF for Gephi</li>
+    </ul>
+  </section>
 
-  <h2>Core tools</h2>
-
-  <div class="card">
-    <h3>araw_engine.py — Core engine</h3>
-    <p>SQLite-based ARAW engine. Create searches, branch claims, query by strategy, export trees. Used as a library by all other tools and as a standalone CLI.</p>
-    <pre><code>python araw_engine.py create "I need to change careers" my_search.db
+  <section>
+    <h2>Core tools</h2>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h3>araw_engine.py</h3>
+        <p>SQLite-based ARAW engine. Create searches, branch claims, query by strategy, export trees. Used as a library by all other tools and as a standalone CLI.</p>
+        <pre><code>python araw_engine.py create "I need to change careers" my_search.db
 python araw_engine.py stats my_search.db
 python araw_engine.py export my_search.db</code></pre>
-  </div>
+      </div>
 
-  <div class="card">
-    <h3>auto_expand_llm.py — LLM-powered expansion</h3>
-    <p>Auto-expands ARAW trees using an LLM. Generates meaningful branches with leverage scores, crux detection, and domain classification across 18 domains.</p>
-    <pre><code>python auto_expand_llm.py --db career.db --seed "I should quit my job"
+      <div class="card">
+        <h3>auto_expand_llm.py</h3>
+        <p>Auto-expands ARAW trees using an LLM. Generates meaningful branches with leverage scores, crux detection, and domain classification across 18 domains.</p>
+        <pre><code>python auto_expand_llm.py --db career.db --seed "I should quit my job"
 python auto_expand_llm.py --db career.db --continue --parallel 5 --max-depth 6</code></pre>
-  </div>
+      </div>
 
-  <div class="card">
-    <h3>auto_expand.py — Rule-based expansion (no API needed)</h3>
-    <p>Pattern-based expansion that doesn't require an API key. Uses keyword matching to generate alternatives. Good for quick prototyping.</p>
-    <pre><code>python auto_expand.py --db quick.db --seed "I must learn to code" --duration 60</code></pre>
-  </div>
+      <div class="card">
+        <h3>auto_expand.py</h3>
+        <p>Pattern-based expansion that doesn't require an API key. Uses keyword matching to generate alternatives. Good for quick prototyping.</p>
+        <pre><code>python auto_expand.py --db quick.db --seed "I must learn to code" --duration 60</code></pre>
+      </div>
 
-  <div class="card">
-    <h3>visualize.py — Interactive viewer and export</h3>
-    <p>Launches a Sigma.js graph viewer in the browser, or exports to JSON/GEXF for external tools.</p>
-    <pre><code>python visualize.py --db my.db --serve
+      <div class="card">
+        <h3>visualize.py</h3>
+        <p>Launches a Sigma.js graph viewer in the browser, or exports to JSON/GEXF for external tools.</p>
+        <pre><code>python visualize.py --db my.db --serve
 python visualize.py --db my.db --export graph.json
 python visualize.py --db my.db --export graph.gexf --format gexf</code></pre>
-  </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>synthesize.py — Cross-database synthesis</h3>
-    <p>Analyzes multiple ARAW databases to find common themes, extract actionable items, and detect contradictions.</p>
-    <pre><code>python synthesize.py *.db
+  <section>
+    <h2>Analysis tools</h2>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h3>synthesize.py</h3>
+        <p>Analyzes multiple ARAW databases to find common themes, extract actionable items, and detect contradictions.</p>
+        <pre><code>python synthesize.py *.db
 python synthesize.py *.db --extract-actions actions.json
 python synthesize.py *.db --find-tensions</code></pre>
-  </div>
+      </div>
 
-  <h2>Analysis tools</h2>
-
-  <div class="card">
-    <h3>grounding.py — Evidence grounding</h3>
-    <p>Connects abstract claims to real-world evidence with epistemic quality tracking. Prioritizes by upstream influence, convergence, and decision-relevance.</p>
-    <pre><code>python grounding.py --db my.db --prioritize
+      <div class="card">
+        <h3>grounding.py</h3>
+        <p>Connects abstract claims to real-world evidence with epistemic quality tracking. Prioritizes by upstream influence, convergence, and decision-relevance.</p>
+        <pre><code>python grounding.py --db my.db --prioritize
 python grounding.py --db my.db --ground-top 10
 python grounding.py --db my.db --integrate</code></pre>
-  </div>
+      </div>
 
-  <div class="card">
-    <h3>evidence_engine.py — Tiered source cascade</h3>
-    <p>Systematic evidence gathering using progressively broader sources (Wikipedia, arXiv, PubMed, World Bank, LLM synthesis).</p>
-    <pre><code>python evidence_engine.py --claim "Global poverty has decreased"
+      <div class="card">
+        <h3>evidence_engine.py</h3>
+        <p>Systematic evidence gathering using progressively broader sources (Wikipedia, arXiv, PubMed, World Bank, LLM synthesis).</p>
+        <pre><code>python evidence_engine.py --claim "Global poverty has decreased"
 python evidence_engine.py --test-sources</code></pre>
-  </div>
+      </div>
 
-  <div class="card">
-    <h3>commitment_analyzer.py — Foundational vs. guess classifier</h3>
-    <p>Determines which claims can be committed to (all alternatives contradict) vs. which remain guesses (coherent alternatives exist).</p>
-    <pre><code>python commitment_analyzer.py --db my.db analyze
+      <div class="card">
+        <h3>commitment_analyzer.py</h3>
+        <p>Determines which claims can be committed to (all alternatives contradict) vs. which remain guesses (coherent alternatives exist).</p>
+        <pre><code>python commitment_analyzer.py --db my.db analyze
 python commitment_analyzer.py --db my.db foundations</code></pre>
-  </div>
+      </div>
+    </div>
+  </section>
 
-  <div class="card">
-    <h3>synthesis.py — LLM-powered query engine</h3>
-    <p>Ask natural language questions about an ARAW tree. Get answers grounded in the tree's data.</p>
-    <pre><code>python synthesis.py --db my.db "What are the key cruxes?"
+  <section>
+    <h2>Conversion and bridging</h2>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h3>synthesis.py</h3>
+        <p>Ask natural language questions about an ARAW tree. Get answers grounded in the tree's data.</p>
+        <pre><code>python synthesis.py --db my.db "What are the key cruxes?"
 python synthesis.py --db my.db "Where do branches converge?"</code></pre>
-  </div>
+      </div>
 
-  <h2>Conversion and bridging</h2>
-
-  <div class="card">
-    <h3>md_to_sqlite.py — Markdown to SQLite</h3>
-    <p>Convert conversational ARAW sessions (saved as markdown) into SQLite format.</p>
-    <pre><code>python md_to_sqlite.py session.md
+      <div class="card">
+        <h3>md_to_sqlite.py</h3>
+        <p>Convert conversational ARAW sessions (saved as markdown) into SQLite format.</p>
+        <pre><code>python md_to_sqlite.py session.md
 python md_to_sqlite.py sessions/*.md -o all.db</code></pre>
-  </div>
+      </div>
 
-  <div class="card">
-    <h3>bridge_to_gosm.py — Export to GOSM format</h3>
-    <p>Export findings as GOSM-compatible YAML. Extracts crux nodes, high-impact items, and verification targets.</p>
-    <pre><code>python bridge_to_gosm.py database.db --output assumptions.yaml</code></pre>
-  </div>
+      <div class="card">
+        <h3>bridge_to_gosm.py</h3>
+        <p>Export findings as GOSM-compatible YAML. Extracts crux nodes, high-impact items, and verification targets.</p>
+        <pre><code>python bridge_to_gosm.py database.db --output assumptions.yaml</code></pre>
+      </div>
+    </div>
+  </section>
 
-  <h2>Database</h2>
-  <p>All data is stored in SQLite. Query directly:</p>
-  <pre><code># High-leverage unexplored nodes
+  <section>
+    <h2>Database</h2>
+    <p>All data is stored in SQLite. Query directly:</p>
+    <pre><code># High-leverage unexplored nodes
 sqlite3 my.db "SELECT claim, leverage_score FROM nodes
   WHERE status='unexplored' ORDER BY leverage_score DESC LIMIT 10"
 
@@ -132,5 +148,6 @@ sqlite3 my.db "SELECT COUNT(*) as total,
   SUM(CASE WHEN status='explored' THEN 1 ELSE 0 END) as explored,
   MAX(depth) as max_depth FROM nodes"</code></pre>
 
-  <p>Full documentation: <a href="https://github.com/benjam3n/reasoning-toolkit/tree/main/src">src/README.md on GitHub</a></p>
+    <p>Full documentation: <a href="https://github.com/benjam3n/reasoningtool/tree/main/src">src/README.md on GitHub &rarr;</a></p>
+  </section>
 </Base>

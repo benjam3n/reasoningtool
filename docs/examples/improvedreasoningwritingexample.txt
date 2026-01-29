@@ -40,4 +40,4 @@ If any of this sounds interesting, the test is pretty straightforward. Pick some
 
 I'm still figuring this out myself, honestly. But the more I've paid attention to how I think, the more I've noticed the asymmetries, and the more I've wanted tools that force me to correct for them. This is one attempt at such a tool. I'm curious whether others have found similar things, or better things, or whether this is all just elaborate procrastination disguised as rigor.
 
-The tools described here are available at: https://github.com/benjam3n/reasoning-toolkit
+The tools described here are available at: https://github.com/benjam3n/reasoningtool

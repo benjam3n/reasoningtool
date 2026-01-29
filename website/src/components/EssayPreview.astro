@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  description: string;
+  readingTime?: string;
+}
+const { title, href, description, readingTime } = Astro.props;
+---
+
+<li class="essay-item">
+  <h3><a href={href}>{title}</a></h3>
+  <p class="description">{description}</p>
+  {readingTime && <p class="meta">{readingTime}</p>}
+</li>

@@ -4,56 +4,72 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Home">
   <section class="hero">
-    <h1>reasoning-toolkit</h1>
-    <p class="subtitle">
-      Every AI tool helps you think faster. This one helps you check whether you're thinking in the right direction.
+    <span class="hero__label">Open-source reasoning toolkit</span>
+    <h1>Check whether you're thinking in the right direction</h1>
+    <p class="hero__subtitle">
+      Every AI tool helps you think faster. This one helps you notice when what you're doing might be wrong &mdash; before the consequences show up.
     </p>
-    <div class="cta">
-      <a href="/getting-started" class="btn-primary">Get started</a>
-      <a href="/about" class="btn-secondary">How it works</a>
+    <div class="hero__actions">
+      <a href="/getting-started" class="btn btn--primary">Get started</a>
+      <a href="/essays" class="btn btn--secondary">Read the essays</a>
     </div>
   </section>
 
-  <h2>The problem</h2>
-  <p>
-    If you ask an AI to evaluate your plan, it evaluates your plan. It doesn't ask whether your plan is solving the right problem. If you ask it to brainstorm alternatives, it generates alternatives. It doesn't test whether those alternatives survive scrutiny. If you ask it to test your idea, it tests your idea. It doesn't tell you what ideas you never considered.
-  </p>
-  <p>
-    These aren't failures of intelligence. They're failures of <em>direction</em>. The tool does what you asked — but what you asked might be wrong, and the tool has no mechanism to notice.
-  </p>
+  <section>
+    <h2>The problem</h2>
+    <p>
+      If you ask an AI to evaluate your plan, it evaluates your plan. It doesn't ask whether your plan is solving the right problem. If you ask it to brainstorm alternatives, it generates alternatives. It doesn't test whether those alternatives survive scrutiny.
+    </p>
+    <p>
+      These aren't failures of intelligence. They're failures of <em>direction</em>. The tool does what you asked &mdash; but what you asked might be wrong, and the tool has no mechanism to notice.
+    </p>
+  </section>
 
-  <h2>What this does differently</h2>
-  <p>
-    There are two fundamentally different operations in reasoning: <strong>exploration</strong> (what options exist?) and <strong>testing</strong> (which ones survive scrutiny?). Most tools do one or the other. This toolkit does both — in alternation — because they have structural blind spots that don't overlap.
-  </p>
-  <p>
-    Exploration alone finds options but can't tell you which ones work. Testing alone validates what you're looking at but can't tell you what you're not looking at. Alternating covers both.
-  </p>
+  <section>
+    <h2>Two operations, in alternation</h2>
+    <p>
+      There are two fundamentally different operations in reasoning: <strong>exploration</strong> (what options exist?) and <strong>testing</strong> (which ones survive scrutiny?). Most tools do one or the other. This toolkit does both &mdash; in alternation &mdash; because they have structural blind spots that don't overlap.
+    </p>
+    <p>
+      Exploration alone finds options but can't tell you which ones work. Testing alone validates what you're looking at but can't tell you what you're not looking at. Alternating covers both.
+    </p>
+    <p><a href="/essays/two-kinds-of-search">Read the full argument &rarr;</a></p>
+  </section>
 
-  <h2>What's included</h2>
-  <div class="card">
-    <h3>207 structured reasoning skills</h3>
-    <p>Each skill guides you through a specific type of thinking. Skills are classified by universality — <a href="/skills">Tier 1</a> skills apply whenever their trigger condition exists. Tier 4 skills depend on context.</p>
-  </div>
-  <div class="card">
-    <h3>ARAW and UAUA</h3>
-    <p><strong>ARAW</strong> (Assume Right / Assume Wrong) takes any claim and tests both branches recursively. <strong>UAUA</strong> alternates between mapping the full possibility space and testing what it finds. <a href="/about#methods">Learn more</a>.</p>
-  </div>
-  <div class="card">
-    <h3>Python tools</h3>
-    <p>Auto-expand claims into branching trees. Visualize results in an interactive browser viewer. Synthesize findings across runs. Ground claims in evidence. <a href="/tools">See the tools</a>.</p>
-  </div>
-  <div class="card">
-    <h3>Three essays</h3>
-    <p>The philosophical grounding: why alternation works, what makes a reasoning principle universal vs. heuristic, and the structure of careful thought. <a href="/essays">Read them</a>.</p>
-  </div>
+  <section>
+    <h2>What's included</h2>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h3>207 reasoning skills</h3>
+        <p>Structured prompts for Claude Code covering analysis, writing, planning, research, and decision-making. Classified by universality &mdash; Tier 1 skills apply whenever their trigger condition exists.</p>
+        <p><a href="/skills">Browse skills &rarr;</a></p>
+      </div>
+      <div class="card">
+        <h3>ARAW and UAUA</h3>
+        <p><strong>ARAW</strong> takes any claim and tests both branches recursively. <strong>UAUA</strong> alternates between mapping the full possibility space and testing what it finds. Four passes, two different logics.</p>
+        <p><a href="/about#methods">How they work &rarr;</a></p>
+      </div>
+      <div class="card">
+        <h3>Python tools</h3>
+        <p>Auto-expand claims into branching trees. Visualize results in an interactive browser viewer. Synthesize findings across runs. Ground claims in evidence.</p>
+        <p><a href="/tools">See the tools &rarr;</a></p>
+      </div>
+      <div class="card">
+        <h3>Three essays</h3>
+        <p>The philosophical grounding: why alternation works, what makes a reasoning principle universal vs. heuristic, and the structure of careful thought.</p>
+        <p><a href="/essays">Read them &rarr;</a></p>
+      </div>
+    </div>
+  </section>
 
-  <h2>Quick start</h2>
-  <pre><code>git clone https://github.com/benjam3n/reasoning-toolkit.git
-cd reasoning-toolkit/claude-code-plugin
+  <section>
+    <h2>Quick start</h2>
+    <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
+cd reasoningtool/claude-code-plugin
 claude</code></pre>
-  <p>
-    Then type <code>/araw should I change careers</code> or <code>/uaua 4x what's the best approach to learning math</code> or any other question.
-  </p>
-  <p><a href="/getting-started">Full installation and usage guide</a></p>
+    <p>
+      Then type <code>/araw should I change careers</code> or <code>/uaua 4x what's the best approach to learning math</code> or any question worth thinking carefully about.
+    </p>
+    <p><a href="/getting-started">Full installation guide &rarr;</a></p>
+  </section>
 </Base>

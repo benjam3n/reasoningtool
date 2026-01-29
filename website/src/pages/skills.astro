@@ -43,88 +43,106 @@ const experimental = [
 const tier3Categories = [
   {
     category: 'Research & Analysis',
-    skills: 'literature_review, qualitative_research, data_collection, statistical_analysis, experimental_design, field_analysis, competitive_analysis, market_research, source_credibility, source_prioritization, economic_research, policy_research',
+    skills: ['literature_review', 'qualitative_research', 'data_collection', 'statistical_analysis', 'experimental_design', 'field_analysis', 'competitive_analysis', 'market_research', 'source_credibility', 'source_prioritization', 'economic_research', 'policy_research'],
   },
   {
     category: 'Writing & Communication',
-    skills: 'high_quality_writing, persuasive_writing, storytelling, public_speaking, presentation_design, content_strategy, outreach_communication, feedback_delivery, active_listening',
+    skills: ['high_quality_writing', 'persuasive_writing', 'storytelling', 'public_speaking', 'presentation_design', 'content_strategy', 'outreach_communication', 'feedback_delivery', 'active_listening'],
   },
   {
     category: 'Planning & Projects',
-    skills: 'project_initiation, project_scoping, project_closure, dependency_extraction, progress_tracking, risk_assessment, deployment, retrospective, stakeholder_management',
+    skills: ['project_initiation', 'project_scoping', 'project_closure', 'dependency_extraction', 'progress_tracking', 'risk_assessment', 'deployment', 'retrospective', 'stakeholder_management'],
   },
   {
     category: 'Business',
-    skills: 'customer_discovery, marketing_funnel, positioning, negotiation, client_retention, financial_modeling, budget_management, investment_strategy, roi_analysis',
+    skills: ['customer_discovery', 'marketing_funnel', 'positioning', 'negotiation', 'client_retention', 'financial_modeling', 'budget_management', 'investment_strategy', 'roi_analysis'],
   },
   {
     category: 'Software',
-    skills: 'code_review, debugging, refactoring, architecture_design, architecture_patterns, api_design, testing_strategy, security_practices',
+    skills: ['code_review', 'debugging', 'refactoring', 'architecture_design', 'architecture_patterns', 'api_design', 'testing_strategy', 'security_practices'],
   },
   {
     category: 'Career & Learning',
-    skills: 'career_path_planning, interview_preparation, resume_optimization, salary_negotiation, skill_acquisition, deliberate_practice, spaced_repetition, active_recall, learning_system',
+    skills: ['career_path_planning', 'interview_preparation', 'resume_optimization', 'salary_negotiation', 'skill_acquisition', 'deliberate_practice', 'spaced_repetition', 'active_recall', 'learning_system'],
   },
   {
     category: 'Decision Making',
-    skills: 'decision_trees, selection, criteria_weighting, pairwise_comparison, expected_value, multi_criteria_decision, reversibility_analysis, better_option_check',
+    skills: ['decision_trees', 'selection', 'criteria_weighting', 'pairwise_comparison', 'expected_value', 'multi_criteria_decision', 'reversibility_analysis', 'better_option_check'],
   },
 ];
 ---
 
 <Base title="Skills" activeNav="skills" description="207 structured reasoning skills for Claude Code, classified by universality.">
-  <h1>Skills</h1>
-  <p>207 structured reasoning skills for Claude Code. Each guides you through a specific type of thinking.</p>
-  <p>
-    Skills are classified by <strong>universality</strong>. <a href="/about">Tier 1</a> skills apply whenever their trigger condition exists — their applicability is entailed by the problem structure. Tier 4 skills depend on context. <a href="/about#universal-vs-heuristic">Learn more about the distinction</a>.
-  </p>
-  <p>Usage: type <code>/skillname your question</code> in a Claude Code session.</p>
-
-  <h2>Experimental: ARAW, UAUA, GOSM</h2>
-  <p>These use a different approach. They treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.</p>
-  <div class="skill-grid">
-    {experimental.map(s => (
-      <div class="skill-item">
-        <code>{s.name}</code>
-        <div class="desc">{s.desc}</div>
-      </div>
-    ))}
+  <div class="page-header">
+    <h1>Skills</h1>
+    <p class="lead">207 structured reasoning skills for Claude Code. Each guides you through a specific type of thinking, classified by <a href="/about#universal-vs-heuristic">universality</a>.</p>
   </div>
 
-  <h2><span class="tier-badge tier-1">Tier 1</span> Start here</h2>
-  <p>The most generally useful skills. They work on almost any problem and consistently produce non-obvious results.</p>
-  <div class="skill-grid">
-    {tier1.map(s => (
-      <div class="skill-item">
-        <code>{s.name}</code>
-        <div class="desc">{s.desc}</div>
-      </div>
-    ))}
+  <div class="callout">
+    <p><strong>Usage:</strong> type <code>/skillname your question</code> in a Claude Code session. For example: <code>/araw should I change careers</code></p>
   </div>
 
-  <h2><span class="tier-badge tier-2">Tier 2</span> Deep reasoning</h2>
-  <p>Go deeper on specific types of thinking. Use when you need thoroughness on a particular kind of problem.</p>
-  <div class="skill-grid">
-    {tier2.map(s => (
-      <div class="skill-item">
-        <code>{s.name}</code>
-        <div class="desc">{s.desc}</div>
-      </div>
-    ))}
-  </div>
-
-  <h2><span class="tier-badge tier-3">Tier 3</span> Specialized tools</h2>
-  <p>These solve specific types of problems well. Less general but very effective in their domain.</p>
-  {tier3Categories.map(cat => (
-    <div>
-      <h3>{cat.category}</h3>
-      <p><code>{cat.skills}</code></p>
+  <section>
+    <h2><span class="tier-badge tier-exp">Experimental</span> ARAW, UAUA, GOSM</h2>
+    <p>These use a different approach. They treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.</p>
+    <div class="skill-grid">
+      {experimental.map(s => (
+        <div class="skill-item">
+          <code>{s.name}</code>
+          <div class="desc">{s.desc}</div>
+        </div>
+      ))}
     </div>
-  ))}
+  </section>
 
-  <h2><span class="tier-badge tier-4">Tier 4</span> Everything else</h2>
-  <p>
-    The remaining skills cover specific use cases: goal decomposition, procedure extraction, search methods, strategy discovery, self-auditing, and more.
-    Browse <a href="https://github.com/benjam3n/reasoning-toolkit/tree/main/claude-code-plugin/skills"><code>claude-code-plugin/skills/</code></a> for the complete list.
-  </p>
+  <section>
+    <h2><span class="tier-badge tier-1">Tier 1</span> Start here</h2>
+    <p>The most generally useful skills. They work on almost any problem and consistently produce non-obvious results.</p>
+    <div class="skill-grid">
+      {tier1.map(s => (
+        <div class="skill-item">
+          <code>{s.name}</code>
+          <div class="desc">{s.desc}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="tier-badge tier-2">Tier 2</span> Deep reasoning</h2>
+    <p>Go deeper on specific types of thinking. Use when you need thoroughness on a particular kind of problem.</p>
+    <div class="skill-grid">
+      {tier2.map(s => (
+        <div class="skill-item">
+          <code>{s.name}</code>
+          <div class="desc">{s.desc}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="tier-badge tier-3">Tier 3</span> Specialized tools</h2>
+    <p>These solve specific types of problems well. Less general but very effective in their domain.</p>
+    {tier3Categories.map(cat => (
+      <div class="category-section">
+        <h3>{cat.category}</h3>
+        <div class="skill-grid">
+          {cat.skills.map(name => (
+            <div class="skill-item">
+              <code>{name}</code>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </section>
+
+  <section>
+    <h2><span class="tier-badge tier-4">Tier 4</span> Everything else</h2>
+    <p>
+      The remaining skills cover specific use cases: goal decomposition, procedure extraction, search methods, strategy discovery, self-auditing, and more.
+      Browse <a href="https://github.com/benjam3n/reasoningtool/tree/main/claude-code-plugin/skills"><code>claude-code-plugin/skills/</code></a> for the complete list.
+    </p>
+  </section>
 </Base>

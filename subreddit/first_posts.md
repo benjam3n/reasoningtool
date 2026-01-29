@@ -14,17 +14,17 @@ Launch with 5-7 posts over the first few days. These establish what good content
 **Flair**: Session
 **Title**: "ARAW session: Should I open-source this project?"
 
-Share the actual ARAW session that was run to evaluate making reasoning-toolkit public. This is a real session with a real outcome — it demonstrates the method by showing it applied to itself. Include commentary on what each phase surfaced and what would have been missed without the alternation.
+Share the actual ARAW session that was run to evaluate making reasoningtool public. This is a real session with a real outcome — it demonstrates the method by showing it applied to itself. Include commentary on what each phase surfaced and what would have been missed without the alternation.
 
 Why this is a good first post: it's meta (the tool analyzing whether to release the tool), it's honest (includes the limitations discovered), and it shows the actual output format so people know what to expect.
 
 ---
 
-## Post 3: Comparison — reasoning-toolkit vs. other approaches
+## Post 3: Comparison — reasoningtool vs. other approaches
 **Flair**: Comparison
-**Title**: "How reasoning-toolkit compares to chain-of-thought, AI agents, and prompt libraries"
+**Title**: "How reasoningtool compares to chain-of-thought, AI agents, and prompt libraries"
 
-Expand the comparison table from the intro into a full post. For each category (chain-of-thought, AI agents, prompt libraries, debate frameworks, knowledge management), explain: what it does well, what it can't do, and where reasoning-toolkit fills the gap. Be honest about where the alternatives are better — chain-of-thought is faster for simple questions, agents are better for execution-heavy tasks.
+Expand the comparison table from the intro into a full post. For each category (chain-of-thought, AI agents, prompt libraries, debate frameworks, knowledge management), explain: what it does well, what it can't do, and where reasoningtool fills the gap. Be honest about where the alternatives are better — chain-of-thought is faster for simple questions, agents are better for execution-heavy tasks.
 
 Why this is a good first post: it answers the first question every visitor has ("why should I use this instead of X?") and sets a tone of honest comparison rather than marketing.
 

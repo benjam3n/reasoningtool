@@ -130,4 +130,4 @@ If you want to test this yourself, pick a decision you're facing or a belief you
 
 If the process surfaces something you wouldn't have found otherwise, it's working. If it doesn't, either the problem was simpler than it looked, or the passes didn't go deep enough.
 
-I've open-sourced a toolkit that implements this pattern and 200+ related reasoning procedures as structured prompts for Claude Code: [reasoning-toolkit](https://github.com/benjam3n/reasoning-toolkit). The toolkit is the implementation; this post is the philosophy behind it.
+I've open-sourced a toolkit that implements this pattern and 200+ related reasoning procedures as structured prompts for Claude Code: [reasoningtool](https://github.com/benjam3n/reasoningtool). The toolkit is the implementation; this post is the philosophy behind it.

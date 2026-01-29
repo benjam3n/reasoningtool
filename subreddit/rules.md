@@ -2,7 +2,7 @@
 
 ## 1. Posts must relate to structured reasoning
 
-Everything posted here should connect to structured reasoning methods, tools, or principles. This includes the reasoning-toolkit specifically, but also other approaches to the same problem — comparisons, alternatives, and critiques are welcome.
+Everything posted here should connect to structured reasoning methods, tools, or principles. This includes the reasoningtool specifically, but also other approaches to the same problem — comparisons, alternatives, and critiques are welcome.
 
 Not in scope: general AI news, prompt engineering tips unrelated to reasoning structure, or "check out my chatbot."
 
