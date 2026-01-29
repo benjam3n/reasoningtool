@@ -1,0 +1,13 @@
+# Core dependencies
+pyyaml>=6.0
+
+# LLM API clients (for auto_expand_llm.py, synthesis.py, grounding.py, gosm_runner.py)
+openai>=1.0.0
+
+# Optional: Anthropic API (for gosm_agent.py)
+# anthropic>=0.20.0
+
+# Optional: Data processing (for consolidate_library.py)
+# pandas>=2.0.0
+
+# sqlite3 is built into Python
