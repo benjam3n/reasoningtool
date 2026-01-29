@@ -84,17 +84,17 @@ The novel part is the second exploration. By that point, you have tested candida
 
 ## An example
 
-I was evaluating whether to share a project publicly or send it directly to a specific organization.
+I was trying to find all integers n where n² + n + 1 is divisible by some target number — say 7. The naive approach is to test values: try n = 0, 1, 2, 3, ... and check. This is a heuristic. It works when the answer happens to appear in the range you search, and it gives you no information when it doesn't.
 
-**First exploration** mapped the options: anonymous email, non-anonymous email, blog post, warm introduction through a mutual contact, build a user base first, submit to a conference, post on a forum.
+**First exploration** mapped the approaches: brute-force search, algebraic manipulation (solve n² + n + 1 ≡ 0 mod 7), completing the square, factoring, checking whether the discriminant is a quadratic residue. These are the methods available — some heuristic (try values), some structural (use properties of modular arithmetic).
 
-**First testing** revealed that anonymous outreach is fundamentally in tension with credibility. You can't build trust while hiding your identity. Cold emails to organizations that don't have an intake process get ignored regardless. But public posting — blog post, forum post — provides attribution, wider reach, and organic discovery. Several options were rejected.
+**First testing** checked each approach. Brute force finds n = 2 and n = 4 work (mod 7), but can't tell me *why* or whether I've found all solutions. Completing the square transforms the problem: n² + n + 1 ≡ 0 becomes (2n + 1)² ≡ -3 mod 7, which asks whether -3 is a quadratic residue mod 7. Computing: -3 ≡ 4 mod 7, and 4 = 2², so yes. This structural approach finds both solutions and *proves* the list is complete — because quadratic residues are determined by the modulus, not by how many values you check.
 
-**Second exploration** found edge cases in the surviving options: public posting requires the content to withstand scrutiny (no unfalsifiable claims, no marketing language). The project contained some personal/project-specific files that would confuse external readers. Some mathematical claims were stated more strongly than the evidence supported.
+**Second exploration** asked: what are the edge cases of the structural approach? What if the target isn't 7 but some other prime? The method works for any prime — but the answer depends on whether -3 is a quadratic residue mod p, which varies. For p = 5: -3 ≡ 2 mod 5, and 2 is not a quadratic residue mod 5, so there are *no* solutions. Brute force would have told me the same thing eventually, but only after checking all residues without knowing when to stop. The structural approach gives a definitive no.
 
-**Second testing** validated that these edge cases mattered: unfalsifiable superlatives would get the post dismissed by a rigorous audience. Personal files would undermine professionalism. The conditions were clear — clean the content first, then post publicly.
+**Second testing** validated this: the quadratic residue criterion is both necessary and sufficient. It resolves the problem completely for any prime, including the cases where no solutions exist — which is exactly where brute force fails most badly, because you can never finish searching.
 
-Without the alternation, I would have either: (a) explored options but not rigorously tested the anonymous approach and discovered its fundamental flaw, or (b) tested "should I email them?" without considering that public posting was a strictly better option along every dimension.
+Without the alternation, I would have either: (a) explored approaches but never tested whether brute force could prove completeness (it can't), or (b) jumped straight to testing values and never discovered that the problem has a structural solution that works for all primes at once.
 
 ## Limitations
 
