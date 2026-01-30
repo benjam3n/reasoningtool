@@ -94,7 +94,7 @@ These solve specific types of problems well. They're less general but very effec
 `literature_review` · `qualitative_research` · `data_collection` · `statistical_analysis` · `experimental_design` · `field_analysis` · `competitive_analysis` · `market_research` · `source_credibility` · `source_prioritization` · `economic_research` · `policy_research`
 
 **Writing & Communication**
-`high_quality_writing` · `persuasive_writing` · `storytelling` · `public_speaking` · `presentation_design` · `content_strategy` · `outreach_communication` · `feedback_delivery` · `active_listening`
+`write` · `qo` · `persuasive_writing` · `storytelling` · `public_speaking` · `presentation_design` · `content_strategy` · `outreach_communication` · `feedback_delivery` · `active_listening`
 
 **Planning & Projects**
 `project_initiation` · `project_scoping` · `project_closure` · `dependency_extraction` · `progress_tracking` · `risk_assessment` · `deployment` · `retrospective` · `stakeholder_management`
@@ -117,28 +117,140 @@ The remaining skills cover specific use cases: `procedure_engine` · `procedure_
 
 Browse `claude-code-plugin/skills/` for the complete list.
 
-## Experimental: ARAW, UAUA, and GOSM
+## When to Use Each Analytical Skill
 
-These three skills use a different approach. They treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.
+These are the core analytical tools. Each one structures your thinking differently depending on what you already know.
+
+### Choosing by What You Know
+
+| You know... | Use | Command |
+|-------------|-----|---------|
+| Nothing — not even what the options are | `/uaua` | Full space mapping + rigorous testing |
+| You want a quick map of possibilities you haven't considered | `/u` | Breadth-first exploration |
+| You have a specific claim but don't know if it's right or wrong | `/araw` | Test both sides with equal rigor |
+| You believe something is right and want to know what it commits you to | `/ar` | Find implications, foreclosures, costs |
+| You suspect something is wrong and want to find exactly why | `/aw` | Find failure reasons, derive alternatives |
+
+### Detailed Guide
+
+**`/u` — Universalize**
+Use when you want to see what you're missing. U maps the space of possibilities — assumptions you didn't know you were making, alternatives you didn't know existed, dimensions you weren't thinking about. It's fast and wide. It does NOT evaluate — it just shows you what's there.
+
+- "What am I not considering?"
+- "What are my options?"
+- "What assumptions am I making?"
+- "Show me the space before I commit"
+
+**`/ar` — Assume Right**
+Use when you have a claim you believe is right and you want to know what follows. AR traces implications: if this is right, what must also be true? What does it commit you to? What does it foreclose? This is how you steelman a claim — by finding everything it implies, including the uncomfortable parts.
+
+- "I think X is true — what does that mean?"
+- "What am I committing to by believing this?"
+- "Steelman this claim — find everything it gets right"
+- "I want to give myself or someone else confidence in this claim"
+- "What do I lose by accepting this?"
+
+**`/aw` — Assume Wrong**
+Use when you have a claim you want to stress-test or you suspect is wrong. AW finds why something fails, then derives alternatives from those failure reasons. This is how you give yourself (or someone else) a reality check. The alternatives aren't pulled from thin air — they come from understanding exactly how the claim breaks.
+
+- "Why is this wrong?"
+- "Give me a reality check on this"
+- "I need to explain to someone why this doesn't work"
+- "Steelman why this claim fails"
+- "What should I do instead? (derived from why this fails)"
+
+**`/araw` — Assume Right / Assume Wrong**
+Use when you have a specific claim and don't lean either way. ARAW tests both sides with equal rigor — what follows if right, why it might be wrong, and what alternatives exist. This is the balanced analysis. Use it when you genuinely don't know.
+
+- "Is this true or not?"
+- "I have a claim — test it from both sides"
+- "I don't know if this is right and I don't have a gut feeling either way"
+
+**`/uaua` — Universalize → ARAW → Universalize → ARAW**
+Use when you're genuinely lost. You don't know what the options are, you don't know what's right, you don't know what to search for. UAUA first maps the entire space (U), then tests the top candidates (A), then finds where the survivors break (U), then validates the edge cases (A). It's the most thorough tool — breadth AND depth.
+
+- "I have no idea what to do"
+- "I don't even know what my options are"
+- "I need to explore every possibility before deciding"
+- "This problem is complex enough that I might miss something important"
+
+### Quick Decision Tree
+
+```
+Do you know what your options are?
+├── NO → Do you need thorough analysis?
+│   ├── YES → /uaua
+│   └── NO, just show me what exists → /u
+└── YES → Do you have a specific claim to test?
+    ├── YES → Do you lean one way?
+    │   ├── I think it's RIGHT → /ar
+    │   ├── I think it's WRONG → /aw
+    │   └── I genuinely don't know → /araw
+    └── NO → /u (map first, then /ar or /aw on what you find)
+```
+
+---
+
+## Diagnostic and Action Skills
+
+These skills handle common situations that need structured responses.
+
+### Problem Diagnosis
+
+| Skill | When to Use | What It Does |
+|-------|-------------|--------------|
+| `/sbfow` | Still bad, figure out why | Tests the rejected output against upstream/downstream criteria. Finds which criteria failed, diagnoses the root pattern, checks if you're repeating the same failed diagnosis. Derives what must change. |
+| `/fowwr` | Figure out what went wrong | Traces backward from symptoms to root causes. Tests each candidate cause with counterfactuals. Derives prevention measures. |
+
+**`/sbfow` — Still Bad, Figure Out Why**
+Specifically for when Claude's output was rejected. Instead of guessing at fixes, it systematically tests the output against the criteria it should have met (upstream first: question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion). If this is attempt N+1, it checks whether the diagnosis is the same as last time — because repeating the same diagnosis means you haven't found the actual problem.
+
+**`/fowwr` — Figure Out What Went Wrong**
+For any failure — a plan that didn't work, a process that broke, an outcome that wasn't what was expected. Traces backward from the visible symptoms through the causal chain to root causes (decisions, wrong assumptions, missing safeguards, external factors). Tests each candidate cause: "if this hadn't happened, would the failure still have occurred?" Produces prevention measures, not just explanations.
+
+### Goal and Method Discovery
+
+| Skill | When to Use | What It Does |
+|-------|-------------|--------------|
+| `/wantto` | I want to | Assumes the want is right — traces what it commits you to, what it requires, what paths it opens. Finds the actual want vs stated want. |
+| `/foht` | Figure out how to | Maps the full method space, surfaces prerequisites, AR/AW tests each method, produces verdicts. |
+
+**`/wantto` — I Want To**
+When someone says "I want to X," that statement bundles multiple claims. This skill assumes the want is right and traces what follows — what it commits you to, what prerequisites it requires, what paths open up, what gets foreclosed. It's AR-based: take the desire seriously, explore what it implies, find what the user actually wants (which may differ from what they said), and map the paths forward.
+
+**`/foht` — Figure Out How To**
+When you know the destination but not the route. Maps methods using multiple discovery techniques (direct approaches, category-level methods, inversion, exemplars, reframes, decomposition). Each method gets prerequisites surfaced and AR/AW tested. Produces verdicts: viable, conditional, blocked, or eliminated — with evidence.
+
+### Writing Pipeline
+
+| Skill | When to Use | What It Does |
+|-------|-------------|--------------|
+| `/qo` | Before writing — find the question and order | Finds the satisfying unresolved question that opens a document. Orders all sub-questions in a dependency chain using backward chaining. |
+| `/write` | Writing to criteria | Criteria-based writing with hierarchical upstream/downstream checks. Upstream (question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion) must pass before downstream (scope, voice, weak patterns, verification). |
+| `/propose` | After analysis — convert findings to plans | Takes output from `/ar`, `/aw`, `/u`, `/araw`, or `/uaua` and converts numbered findings into steelmanned, actionable plans with conditional recommendations and derivation chains. |
+
+Pipeline: `/qo` → `/write` → `/sbfow` (if rejected)
+
+### Utility
+
+| Skill | When to Use | What It Does |
+|-------|-------------|--------------|
+| `/savefile` | Save analysis output | Saves the most recent skill output to the library. For analytical skills, saves only the registry + synthesis (Phase 1 exploration is redundant with the registry). |
+
+---
+
+## ARAW, UAUA, and GOSM
+
+These skills treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.
 
 | Skill | What it does |
 |-------|-------------|
 | `araw` | **Assume Right / Assume Wrong.** Takes a claim and explores both branches: what if this is true? What if it's false? Recurses on interesting sub-claims. Numbers every finding, compiles a registry, derives synthesis only from the registry. |
 | `uaua` | **Universalize → ARAW → Universalize → ARAW.** First maps the complete possibility space, then tests the top candidates with ARAW, then finds edge cases, then validates again. For complex problems where you need both breadth and depth. |
 | `gosm` | **Goal-Oriented State Machine.** Routes any input (goal, problem, question, decision, situation) through the appropriate analysis chain. Orchestrates other skills. |
-| `u` | **Universalize.** Standalone breadth-first exploration. Takes a claim and extracts every assumption, dimension, alternative, and perspective. Numbers every finding. Use when you want to map the space without testing. Scales from 1x to 32x. |
-| `ar` | **Assume Right.** Standalone depth-first rightness search. Assumes a claim is right and recursively finds what must follow — implications, commitments, foreclosures, costs. Numbers every claim. Use when you want to push one direction deep. Scales from 1x to 32x. |
+| `u` | **Universalize.** Standalone breadth-first exploration. Takes a claim and extracts every assumption, dimension, alternative, and perspective. Numbers every finding. Scales from 1x to 32x. |
+| `ar` | **Assume Right.** Standalone depth-first rightness search. Assumes a claim is right and recursively finds what must follow — implications, commitments, foreclosures, costs. Numbers every claim. Scales from 1x to 32x. |
 | `aw` | **Assume Wrong.** Standalone depth-first wrongness search. Assumes a claim is wrong and recursively finds why — fatal flaws, serious problems, conditional failures. Derives alternatives from the analysis. Numbers every claim. Scales from 1x to 32x. |
-
-### When to use /ar, /aw, and /u
-
-Use `/ar` when you believe something is right but can't prove it. AR will recursively find what must follow if it's true — implications, commitments, foreclosures, costs. If the implications are absurd or the costs are hidden, you'll find out. If the implications hold all the way to bedrock, you've strengthened your case.
-
-Use `/aw` when you believe something is wrong but can't prove it. AW will recursively find why it's wrong — fatal flaws, serious problems, conditional failures. If the wrongness reasons don't reach bedrock, maybe it's not actually wrong. If they do, you've found the proof.
-
-Use `/u` when you're not sure what you're looking at. U maps the full space — every assumption, alternative, dimension, and perspective — so you can see what options exist before committing to testing any of them.
-
-Chain them: run `/u` first to map the space, then `/ar` or `/aw` on the highest-stakes finding.
 
 ### Why UAUA works
 
