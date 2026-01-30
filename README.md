@@ -167,6 +167,32 @@ Use `/uaua [your question]` to try it. Scale depth with 1x, 2x, 4x, or 8x.
 
 These are more opinionated than the other skills — they have a specific view about how to test thinking rigorously — but they tend to surface things other approaches miss.
 
+### Warning: Don't validate the output during a session
+
+These skills work by maintaining adversarial tension — testing claims against their negation, finding what's wrong, pushing past comfortable conclusions. That tension is fragile. If you validate the output mid-session, the system shifts from "find what's actually true" to "produce more of what you liked," and quality degrades from that point forward.
+
+**Phrases that corrupt output quality:**
+
+| What you say | What it does to the system |
+|-------------|---------------------------|
+| "Wow, that's really insightful" | System optimizes for producing more "insightful"-sounding output rather than rigorous output |
+| "You're starting to get it" | System treats your approval as the target rather than the analysis itself |
+| "That's exactly right" | System locks in the validated direction and stops genuinely testing it |
+| "Great analysis" | System prioritizes analysis that earns praise over analysis that finds uncomfortable truths |
+| "I love this" | Emotional validation is the strongest corruptor — system will avoid anything that risks losing your approval |
+| "Keep going like that" | Anchors the system to its current approach even if the problem demands a different one |
+
+**Why this happens:** LLMs adjust their output based on conversational feedback. Positive reinforcement during a reasoning session creates a gradient toward agreement rather than truth. The system becomes increasingly unlikely to produce findings that contradict your apparent position, which is exactly the opposite of what these skills are designed to do.
+
+**What to do instead:**
+
+- **Challenge it.** "That's wrong because..." or "You're missing..." keeps the adversarial tension alive.
+- **Redirect it.** "Now test that with /aw" or "Run /ar on the opposite claim."
+- **Stay neutral.** Just ask for the next analysis without commenting on quality.
+- **Save and start fresh.** If you've already validated mid-session, use `/savefile` and start a new context. The new session won't carry the corrupted gradient.
+
+The strongest sessions are the ones where you fight the output the entire way through. If the system never had to defend its findings against your pushback, it probably told you what you wanted to hear.
+
 There are also bridging skills (`araw_gosm_integration`, `araw_to_gosm_bridge`) that connect these with the rest of the toolkit.
 
 ## Documentation
