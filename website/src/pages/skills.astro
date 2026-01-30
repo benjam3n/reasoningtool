@@ -141,6 +141,211 @@ const tier3Categories = [
     ],
   },
 ];
+
+const tier4Categories = [
+  {
+    category: 'Core Exploration',
+    skills: [
+      { name: 'ar', title: 'Assume Right Search' },
+      { name: 'aw', title: 'Assume Wrong Search' },
+      { name: 'u', title: 'Universalize' },
+      { name: 'im', title: 'Inversion Method' },
+      { name: 'ans', title: 'Analogy Search' },
+      { name: 'met', title: 'Metaphor Method' },
+      { name: 'svs', title: 'Systematic Variation (SCAMPER)' },
+      { name: 'unx', title: 'Unexpected Solutions' },
+      { name: 'gen', title: 'Generate Candidates' },
+      { name: 'gn', title: 'Generation' },
+      { name: 'gg', title: 'Guess Generation' },
+      { name: 'foht', title: 'Figure Out How To' },
+      { name: 'md', title: 'Method Derivation' },
+      { name: 'fe', title: 'Framework Extension' },
+    ],
+  },
+  {
+    category: 'Search Methods',
+    skills: [
+      { name: 'bes', title: 'Binary Elimination Search' },
+      { name: 'cls', title: 'Checklist Search' },
+      { name: 'fss', title: 'Future Space Search' },
+      { name: 'ipss', title: 'Interpretation Space Search' },
+      { name: 'mss', title: 'Model Space Search' },
+      { name: 'nss', title: 'Novelty Space Search' },
+      { name: 'pss', title: 'Plan Space Search' },
+      { name: 'spd', title: 'Space Discovery' },
+      { name: 'std', title: 'Strategy Discovery' },
+      { name: 'fnd', title: 'Skill Finder' },
+      { name: 'm', title: 'Matching' },
+      { name: 'jm', title: 'Journey Matching' },
+    ],
+  },
+  {
+    category: 'Goal Processing',
+    skills: [
+      { name: 'gd', title: 'Goal Decomposition' },
+      { name: 'grf', title: 'Goal Refinement' },
+      { name: 'grfr', title: 'Goal Reframing' },
+      { name: 'gsr', title: 'Goal-Structure Reconstruction' },
+      { name: 'gjs', title: 'Goal Journey System' },
+      { name: 'lgi', title: 'Language Goal Identification' },
+      { name: 'uga', title: 'Universal Goal Analysis' },
+      { name: 'wt', title: 'Want To' },
+      { name: 'je', title: 'Journey Extraction' },
+      { name: 'agi', title: 'ARAW to GOSM Integration' },
+      { name: 'atgb', title: 'ARAW to GOSM Bridge' },
+    ],
+  },
+  {
+    category: 'Assumptions & Critique',
+    skills: [
+      { name: 'aa', title: 'Assumption Audit' },
+      { name: 'ael', title: 'Assumption Elimination' },
+      { name: 'asu', title: 'Assumption Surfacing' },
+      { name: 'ac', title: 'Adversarial Checklist' },
+      { name: 'cri', title: 'Critique' },
+      { name: 'mem', title: 'Mental Models' },
+      { name: 'bi', title: 'Bounded Inquiry' },
+    ],
+  },
+  {
+    category: 'Questions & Analysis',
+    skills: [
+      { name: 'qaf', title: 'Question Analysis Framework' },
+      { name: 'qag', title: 'Question About Guesses' },
+      { name: 'qo', title: 'Question Ordering' },
+      { name: 'cta', title: 'Category Analysis' },
+      { name: 'cdr', title: 'Cross-Domain Report' },
+      { name: 'pbr', title: 'Probabilistic Reasoning' },
+      { name: 'mrc', title: 'Meta-Reasoning Core' },
+      { name: 'pre', title: 'Preference Elicitation' },
+      { name: 've', title: 'Value Elicitation' },
+      { name: 'vcd', title: 'Value Conflict Decomposition' },
+    ],
+  },
+  {
+    category: 'Diagnosis & Recovery',
+    skills: [
+      { name: 'pbi', title: 'Problem Identification' },
+      { name: 'rc5w', title: 'Root Cause (Adaptive Why Chain)' },
+      { name: 'fowwr', title: 'Figure Out What Went Wrong' },
+      { name: 'sbfow', title: 'Still Bad, Figure Out Why' },
+      { name: 'fr', title: 'Failure Recovery' },
+      { name: 'lpd', title: 'Leverage Point Discovery' },
+      { name: 'cfr', title: 'Conflict Resolution' },
+      { name: 'shc', title: 'System Health Check' },
+    ],
+  },
+  {
+    category: 'Procedures & Meta',
+    skills: [
+      { name: 'pcd', title: 'Procedure Discovery' },
+      { name: 'pce', title: 'Procedure Engine' },
+      { name: 'pcex', title: 'Procedure Extraction' },
+      { name: 'pci', title: 'Procedure Improvement' },
+      { name: 'pefs', title: 'Procedure Extraction from Source' },
+      { name: 'prr', title: 'Procedure Registry Review' },
+      { name: 'dmt', title: 'Domain Template' },
+      { name: 'tpm', title: 'Template Maintenance' },
+      { name: 'tr', title: 'Template Registry' },
+      { name: 'txm', title: 'Taxonomy Maintenance' },
+      { name: 'adep', title: 'Adaptive Extraction Pipeline' },
+      { name: 'auep', title: 'Automated Extraction Pipeline' },
+    ],
+  },
+  {
+    category: 'Self-Audit',
+    skills: [
+      { name: 'saaapcav', title: 'Analysis Protocol Clarity + Validity' },
+      { name: 'saaesa', title: 'Evidence Standard Application' },
+      { name: 'sads', title: 'Detector Sweep' },
+      { name: 'sagsca', title: 'Gate Schema Consistency Audit' },
+      { name: 'satrda', title: 'Two-Run Divergence Audit' },
+    ],
+  },
+  {
+    category: 'Evaluation & Validation',
+    skills: [
+      { name: 'emv', title: 'Empirical Validation' },
+      { name: 'ver', title: 'Verification' },
+      { name: 'exc', title: 'Existence Check' },
+      { name: 'capg', title: 'Capability Gate' },
+      { name: 'mcg', title: 'Mentioned Coverage Gate' },
+      { name: 'spg', title: 'Specificity Gate' },
+      { name: 'skb', title: 'Skill Benchmarking' },
+      { name: 'fb', title: 'Filtered Feedback' },
+    ],
+  },
+  {
+    category: 'Strategy & Planning',
+    skills: [
+      { name: 'p', title: 'Propose (Plan Synthesis)' },
+      { name: 'mpa', title: 'Multi-Plan Aggregation' },
+      { name: 'stg', title: 'Steps Generation' },
+      { name: 'o', title: 'Optimization' },
+      { name: 'rqg', title: 'Requirements Gathering' },
+      { name: 'gdm', title: 'Group Decision Making' },
+      { name: 'cms', title: 'Component Selection' },
+      { name: 'swa', title: 'SWOT Analysis' },
+      { name: 'ssr', title: 'Session Review' },
+      { name: 'wr', title: 'Weekly Review' },
+    ],
+  },
+  {
+    category: 'Finance & Fundraising',
+    skills: [
+      { name: 'b', title: 'Budgeting' },
+      { name: 'cfm', title: 'Cash Flow Management' },
+      { name: 'ff', title: 'Fundraising (Financial)' },
+      { name: 'fua', title: 'Fundraising (Advocacy)' },
+      { name: 'gw', title: 'Grant Writing' },
+      { name: 'isd', title: 'Income Stream Development' },
+    ],
+  },
+  {
+    category: 'Personal Development',
+    skills: [
+      { name: 'hf', title: 'Habit Formation' },
+      { name: 'po', title: 'Personal Optimization' },
+      { name: 'lt', title: 'Learning Transfer' },
+      { name: 're', title: 'Reading Effectively' },
+      { name: 'am', title: 'Academic Mastery' },
+      { name: 'skp', title: 'Skill Plateaus' },
+      { name: 'ge', title: 'Growth Experiments' },
+    ],
+  },
+  {
+    category: 'Marketing & Growth',
+    skills: [
+      { name: 'sms', title: 'Social Media Strategy' },
+      { name: 'seb', title: 'SEO Fundamentals' },
+      { name: 'vm', title: 'Viral Mechanics' },
+      { name: 'vdp', title: 'Visual Design Principles' },
+      { name: 'net', title: 'Professional Networking' },
+      { name: 'fl', title: 'Freelancing' },
+      { name: 'jss', title: 'Job Search Strategy' },
+    ],
+  },
+  {
+    category: 'Advocacy & Outreach',
+    skills: [
+      { name: 'ais', title: 'Advocacy Infrastructure Setup' },
+      { name: 'orc', title: 'Outreach Campaigns' },
+      { name: 't', title: 'Targeting' },
+      { name: 'ea', title: 'Email Acquisition' },
+      { name: 'pha', title: 'Phone Acquisition' },
+      { name: 'hd', title: 'Human Delegation' },
+    ],
+  },
+  {
+    category: 'Utility & Integration',
+    skills: [
+      { name: 'sf', title: 'Save File' },
+      { name: 'mcs', title: 'MCP Setup' },
+      { name: 'ams', title: 'API Middleman Strategies' },
+      { name: 'eda', title: 'Event-Driven Automation' },
+    ],
+  },
+];
 ---
 
 <Base title="Skills" activeNav="skills" description="221 structured reasoning skills for Claude Code, classified by universality.">
@@ -211,9 +416,18 @@ const tier3Categories = [
 
   <section>
     <h2><span class="tier-badge tier-4">Tier 4</span> Everything else</h2>
-    <p>
-      The remaining skills cover specific use cases: goal decomposition, procedure extraction, search methods, strategy discovery, self-auditing, and more.
-      Browse <a href="https://github.com/benjam3n/reasoningtool/tree/main/claude-code-plugin/skills"><code>claude-code-plugin/skills/</code></a> for the complete list.
-    </p>
+    <p>The remaining skills cover specific use cases: goal processing, search methods, procedure management, self-auditing, and more.</p>
+    {tier4Categories.map(cat => (
+      <div class="category-section">
+        <h3>{cat.category}</h3>
+        <div class="skill-grid">
+          {cat.skills.map(s => (
+            <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
+              <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    ))}
   </section>
 </Base>
