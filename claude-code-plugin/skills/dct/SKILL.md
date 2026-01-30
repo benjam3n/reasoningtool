@@ -128,7 +128,7 @@ Before committing to the optimal strategy:
    Review date: [when we'll know]
    ```
 
-→ INVOKE: /empirical_validation [critical probability estimates]
+→ INVOKE: /emv [critical probability estimates]
 
 4. **Update tree if estimates change significantly**:
    - Recalculate expected values
@@ -161,6 +161,6 @@ Before committing to the optimal strategy:
 ---
 
 ## Integration Points
-- Often invoked from: /procedure_engine, /comparison
-- Routes to: /selection (final choice), /empirical_validation (probability validation)
-- Related: /expected_value, /risk_assessment, /probabilistic_reasoning
+- Often invoked from: /pce, /cmp
+- Routes to: /sel (final choice), /emv (probability validation)
+- Related: /exv, /ria, /pbr

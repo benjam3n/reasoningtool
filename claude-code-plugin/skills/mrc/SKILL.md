@@ -73,8 +73,8 @@ Meta-reasoning is not a skill you "run" — it's a lens you apply while running 
 
 - During `/araw`: Q3 — "Am I exploring or enumerating?"
 - During `/uaua`: Q1 — "Is this the right question to universalize?"
-- During `/generate`: Q2 — "Is generation the right step, or do I need to understand first?"
-- During `/critique`: Q3 — "Is this critique actionable or just commentary?"
+- During `/gen`: Q2 — "Is generation the right step, or do I need to understand first?"
+- During `/cri`: Q3 — "Is this critique actionable or just commentary?"
 
 ---
 

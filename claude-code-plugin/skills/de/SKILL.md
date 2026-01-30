@@ -16,7 +16,7 @@ Given a list of steps, tasks, or items, extract the **dependencies** between the
 - What can happen in parallel?
 - What are the hard blockers vs soft preferences?
 
-This enables `/topological_ordering` to generate valid sequences.
+This enables `/to` to generate valid sequences.
 
 ---
 
@@ -293,5 +293,5 @@ Before completing:
 ## Next Steps
 
 After dependency extraction:
-1. Use `/topological_ordering` to generate valid sequence
-2. Use `/procedure_validation` to verify all dependencies satisfiable
+1. Use `/to` to generate valid sequence
+2. Use `/pv` to verify all dependencies satisfiable

@@ -331,7 +331,7 @@ CHANGES BASED ON ANALYSIS:
    Reason: Emerged as critical in 8 uses
 
 3. SKILL CHAIN
-   Add: /dependency_extraction after /space_enumeration
+   Add: /de after /se
    Reason: Research often has task dependencies
 
 4. TRIGGERS
@@ -364,6 +364,6 @@ Before completing maintenance:
 ## Integration
 
 Use with:
-- `/domain_template` - Create templates to maintain
-- `/template_registry` - Store and retrieve templates
+- `/dmt` - Create templates to maintain
+- `/tr` - Store and retrieve templates
 - Learning infrastructure - Feed improvements into self-improvement pipeline

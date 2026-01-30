@@ -28,9 +28,9 @@ Insight synthesis can draw from:
 
 | Source | What It Provides | How to Invoke |
 |--------|-----------------|---------------|
-| **Assumption Extraction** | Hidden assumptions, risk ratings | `/assumption_extraction` |
-| **Assumption Inversion** | Blind spots, alternatives, failure modes | `/assumption_inversion` |
-| **Cross-Domain Analogy** | Imported solutions, fresh perspectives | `/cross_domain_analogy` |
+| **Assumption Extraction** | Hidden assumptions, risk ratings | `/aex` |
+| **Assumption Inversion** | Blind spots, alternatives, failure modes | `/ai` |
+| **Cross-Domain Analogy** | Imported solutions, fresh perspectives | `/cda` |
 | **ARAW Analysis** | Validated/invalidated claims | `/araw` |
 | **UAUA Analysis** | Comprehensive option exploration | `/uaua` |
 | **Direct Observation** | Empirical data, user statements | [O: source] markers |
@@ -413,22 +413,22 @@ Before completing:
 ## Integration
 
 This skill typically comes AFTER:
-- `/assumption_extraction` -> Surface hidden assumptions
-- `/assumption_inversion` -> Find blind spots
-- `/cross_domain_analogy` -> Import outside solutions
+- `/aex` -> Surface hidden assumptions
+- `/ai` -> Find blind spots
+- `/cda` -> Import outside solutions
 - `/araw` or `/uaua` -> Rigorous claim testing
 
 Full insight generation pipeline:
 ```
 [Input]
     ->
-/assumption_extraction -> Hidden assumptions
+/aex -> Hidden assumptions
     ->
-/assumption_inversion -> Blind spots, alternatives
+/ai -> Blind spots, alternatives
     ->
-/cross_domain_analogy -> Outside perspectives
+/cda -> Outside perspectives
     ->
-/insight_synthesis -> Combined, prioritized insights
+/ins -> Combined, prioritized insights
     ->
 [Actionable understanding]
 ```

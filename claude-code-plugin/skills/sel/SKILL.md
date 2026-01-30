@@ -31,7 +31,7 @@ Make the final selection from ranked options after all analysis is complete. Thi
 
 ## Step 1: Review Rankings and Context
 
-Examine the input from comparison/optimization.
+Examine the input from comparison/o.
 
 **What to examine**:
 1. Top-ranked option and why
@@ -374,6 +374,6 @@ Risks to monitor:
 
 ## Integration Points
 
-- **Often invoked from**: /comparison (after ranking), /multi_criteria_decision, /procedure_engine
-- **Routes to**: /steps_generation (to plan execution), /project_initiation (for larger initiatives)
-- **Related**: /comparison, /risk_assessment, /criteria_weighting
+- **Often invoked from**: /cmp (after ranking), /mcd, /pce
+- **Routes to**: /stg (to plan execution), /pji (for larger initiatives)
+- **Related**: /cmp, /ria, /crw

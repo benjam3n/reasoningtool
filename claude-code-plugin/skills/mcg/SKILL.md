@@ -207,7 +207,7 @@ Total: 5 items (4 content + 1 meta)
 ```
 CREATED:
 - DEGREE → 107_degree_magnitude.md (11Q, 51 entries)
-- coverage gate → skills/mentioned_coverage_gate/SKILL.md
+- coverage gate → skills/mcg/SKILL.md
 ```
 
 **Step 5 verify:**
@@ -235,10 +235,10 @@ Coverage: 5/5 items (100%)
 ## Integration
 
 This gate should be invoked:
-1. Automatically after `/space_discovery` (verify all discovered aspects addressed)
+1. Automatically after `/spd` (verify all discovered aspects addressed)
 2. Manually when user mentions multiple items
 3. As final check before declaring work complete
 
 → Pairs with: `/comprehensive_aspects` (general completeness)
-→ Pairs with: `/verification_before_output` (claim verification)
+→ Pairs with: `/vbo` (claim verification)
 → Pairs with: `100_coverage_strategy.md` (coverage modes)

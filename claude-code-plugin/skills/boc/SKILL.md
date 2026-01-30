@@ -238,10 +238,10 @@ Preference match score: [X]/[total]
 ## Next Procedure
 
 If EXPLORE_ALTERNATIVES:
-→ INVOKE: /category_analysis on the better options
+→ INVOKE: /cta on the better options
 
 If RECONSIDER:
-→ INVOKE: /value_elicitation to clarify what user actually wants
+→ INVOKE: /ve to clarify what user actually wants
 
 ---
 

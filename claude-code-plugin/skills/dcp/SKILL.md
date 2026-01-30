@@ -22,12 +22,12 @@ Some decisions are made repeatedly by many people, and most people navigate them
 ## The Chain
 
 ```
-Step 1: /dimension_discovery       -- What dimensions matter for this decision?
-Step 2: /space_enumeration         -- What are all the options within each dimension?
-Step 3: /assumption_extraction     -- What assumptions does the standard approach make?
-Step 4: /steps_generation          -- Create the step-by-step procedure
-Step 5: /failure_anticipation      -- What goes wrong when following this procedure?
-Step 6: /procedure_validation      -- Is every step executable without interpretation?
+Step 1: /dd       -- What dimensions matter for this decision?
+Step 2: /se         -- What are all the options within each dimension?
+Step 3: /aex     -- What assumptions does the standard approach make?
+Step 4: /stg          -- Create the step-by-step procedure
+Step 5: /fla      -- What goes wrong when following this procedure?
+Step 6: /pv      -- Is every step executable without interpretation?
 ```
 
 ---
@@ -36,7 +36,7 @@ Step 6: /procedure_validation      -- Is every step executable without interpret
 
 ### Step 1: Discover Decision Dimensions
 
--> INVOKE: /dimension_discovery $ARGUMENTS
+-> INVOKE: /dd $ARGUMENTS
 
 Map all the dimensions that matter for this decision:
 - What factors determine the right choice?
@@ -52,7 +52,7 @@ Map all the dimensions that matter for this decision:
 
 ### Step 2: Enumerate Options per Dimension
 
--> INVOKE: /space_enumeration [dimensions from Step 1]
+-> INVOKE: /se [dimensions from Step 1]
 
 For each dimension, enumerate the possible values:
 - What states can each dimension be in?
@@ -65,7 +65,7 @@ For each dimension, enumerate the possible values:
 
 ### Step 3: Surface Hidden Assumptions
 
--> INVOKE: /assumption_extraction [standard approach to this decision]
+-> INVOKE: /aex [standard approach to this decision]
 
 What does the conventional wisdom about this decision assume?
 - What do experts know implicitly that novices miss?
@@ -78,7 +78,7 @@ What does the conventional wisdom about this decision assume?
 
 ### Step 4: Generate the Procedure
 
--> INVOKE: /steps_generation [dimensions, options, assumptions from Steps 1-3]
+-> INVOKE: /stg [dimensions, options, assumptions from Steps 1-3]
 
 Create the actual step-by-step procedure:
 
@@ -112,7 +112,7 @@ QUICK REFERENCE: [Summary cards]
 
 ### Step 5: Anticipate Failures
 
--> INVOKE: /failure_anticipation [procedure from Step 4]
+-> INVOKE: /fla [procedure from Step 4]
 
 How can following this procedure go wrong?
 - Where might someone misidentify their situation?
@@ -130,7 +130,7 @@ For each failure mode:
 
 ### Step 6: Validate Executability
 
--> INVOKE: /procedure_validation [complete procedure from Steps 4-5]
+-> INVOKE: /pv [complete procedure from Steps 4-5]
 
 Check every step:
 - Can someone with NO expertise execute this step?
@@ -187,9 +187,9 @@ WORKED EXAMPLES
 ## Example Usage
 
 ```
-/decision_procedure choosing a software architecture
-/decision_procedure debugging any software bug
-/decision_procedure evaluating a job offer
-/decision_procedure choosing a college major
-/decision_procedure deciding whether to start a business
+/dcp choosing a software architecture
+/dcp debugging any software bug
+/dcp evaluating a job offer
+/dcp choosing a college major
+/dcp deciding whether to start a business
 ```

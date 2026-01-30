@@ -14,7 +14,7 @@ description: Generate comprehensive lists by systematically covering all dimensi
 Generate a **comprehensive list** by systematically covering all dimensions of a problem space. This ensures nothing is missed.
 
 **Prerequisites**:
-- Dimensions identified (use `/dimension_discovery` if unknown)
+- Dimensions identified (use `/dd` if unknown)
 - Granularity level specified
 
 ---
@@ -258,6 +258,6 @@ Before completing:
 ## Next Steps
 
 After enumeration:
-1. Use `/mece_validation` to verify MECE-ness
-2. Use `/dependency_extraction` if items have dependencies
-3. Use `/topological_ordering` if items need sequencing
+1. Use `/mv` to verify MECE-ness
+2. Use `/de` if items have dependencies
+3. Use `/to` if items need sequencing

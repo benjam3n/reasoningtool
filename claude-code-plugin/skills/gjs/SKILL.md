@@ -174,7 +174,7 @@ INTRINSIC: [terminal value - valued for itself]
 - [ ] Intrinsic goal is actually intrinsic (not instrumental)
 - [ ] Chain doesn't assume substituted goals
 
-If gaps exist → INVOKE: /value_elicitation to discover missing links
+If gaps exist → INVOKE: /ve to discover missing links
 
 ---
 
@@ -204,7 +204,7 @@ Extract claims that can be empirically validated:
 
 High-priority: Claims that, if wrong, change the entire approach.
 
-→ INVOKE: /empirical_validation [testable predictions]
+→ INVOKE: /emv [testable predictions]
 
 ---
 
@@ -228,12 +228,12 @@ Based on analysis results:
 
 | Condition | Route To |
 |-----------|----------|
-| Intrinsic goal unknown | → /value_elicitation |
-| Goal needs refinement | → /goal_refinement |
-| Multiple options identified | → /comparison |
-| Ready to plan steps | → /steps_generation |
+| Intrinsic goal unknown | → /ve |
+| Goal needs refinement | → /grf |
+| Multiple options identified | → /cmp |
+| Ready to plan steps | → /stg |
 | Failure pattern detected | → /failure_journeys |
-| Problem statement | → /problem_identification |
+| Problem statement | → /pbi |
 
 ---
 
@@ -294,7 +294,7 @@ NON-CONTRARIAN: [key options/next steps]
 - Expert users who know their goals (use GOSM-Check)
 
 ### Integration Points
-- Receives from: /goal_understanding, /procedure_engine
-- Routes to: /value_elicitation, /goal_refinement, /steps_generation, /comparison
+- Receives from: /gu, /pce
+- Routes to: /ve, /grf, /stg, /cmp
 - Gates: clarification_vs_substitution_gate, empirical_validation
-- Related: /failure_journeys, /goal_reframing
+- Related: /failure_journeys, /grfr

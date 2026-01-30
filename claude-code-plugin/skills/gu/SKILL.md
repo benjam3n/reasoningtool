@@ -372,16 +372,16 @@ Good questions are:
 Based on input type and gaps:
 
 - If intrinsic goal unknown:
-  → INVOKE: /value_elicitation $ARGUMENTS
+  → INVOKE: /ve $ARGUMENTS
 
 - If problem statement:
-  → INVOKE: /problem_identification $ARGUMENTS
+  → INVOKE: /pbi $ARGUMENTS
 
 - If decision/options:
-  → INVOKE: /comparison $ARGUMENTS
+  → INVOKE: /cmp $ARGUMENTS
 
 - If ready to trace journey:
-  → INVOKE: /goal_journey_system $ARGUMENTS
+  → INVOKE: /gjs $ARGUMENTS
 
 ---
 
@@ -394,7 +394,7 @@ Structure:
 - IMMEDIATE: Get [amount]
 - SERVES: [purpose - medical, debt, opportunity]
 - KEY QUESTIONS: Is amount fixed? Is timeline fixed? Alternatives?
-→ Route to: /problem_identification (is money the real problem?)
+→ Route to: /pbi (is money the real problem?)
 ```
 
 ### Pattern 2: Career Transition
@@ -404,7 +404,7 @@ Structure:
 - IMMEDIATE: Leave current situation
 - SERVES: Better fit? More money? Autonomy?
 - KEY QUESTIONS: What's wrong with current? What would ideal look like?
-→ Route to: /value_elicitation (find intrinsic goal)
+→ Route to: /ve (find intrinsic goal)
 ```
 
 ### Pattern 3: Relationship Issue
@@ -424,7 +424,7 @@ Structure:
 - IMMEDIATE: Acquire skill
 - SERVES: Career? Personal? Specific project?
 - KEY QUESTIONS: What level? By when? How measure progress?
-→ Route to: /skill_acquisition
+→ Route to: /ska
 ```
 
 ### Pattern 5: Vague Dissatisfaction
@@ -434,7 +434,7 @@ Structure:
 - IMMEDIATE: Unclear
 - SERVES: Unclear
 - KEY QUESTIONS: What's working? What's not? Last time you felt fulfilled?
-→ Route to: /value_elicitation (find intrinsic goals)
+→ Route to: /ve (find intrinsic goals)
 ```
 
 ---
@@ -475,6 +475,6 @@ Structure:
 
 ## Integration Points
 
-- **Often invoked from**: /procedure_engine (first step for goals), automatic on goal-type input
-- **Routes to**: /value_elicitation, /problem_identification, /comparison, /goal_journey_system, /araw
-- **Related**: /guess_generation, /question_about_guesses
+- **Often invoked from**: /pce (first step for goals), automatic on goal-type input
+- **Routes to**: /ve, /pbi, /cmp, /gjs, /araw
+- **Related**: /gg, /qag

@@ -14,7 +14,7 @@ description: Discover what space exists BEFORE generating guesses. Maps dimensio
 Don't assume the space is known. Discover it first.
 Guesses CREATE the space - they don't map to a pre-existing space.
 
-This procedure runs BEFORE `/guess_generation` to define what needs to be covered.
+This procedure runs BEFORE `/gg` to define what needs to be covered.
 
 ---
 
@@ -185,7 +185,7 @@ TOTAL SPACE SIZE ESTIMATE:
 
 ## Step 8: Recommend Coverage Strategy
 
-Based on space size, recommend coverage mode for `/guess_generation`:
+Based on space size, recommend coverage mode for `/gg`:
 
 | Space Size | Recommended Mode | Rationale |
 |------------|------------------|-----------|
@@ -246,7 +246,7 @@ Regions that might be skipped:
 
 ## Next Procedure
 
-→ INVOKE: /guess_generation [input] --coverage-mode=[MODE] --space-map=[this output]
+→ INVOKE: /gg [input] --coverage-mode=[MODE] --space-map=[this output]
 
 ---
 

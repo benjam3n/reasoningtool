@@ -188,10 +188,10 @@ These specific decisions were validated through the UAUA 16x process and trace t
 
 ## What This Skill Does NOT Cover
 
-- Brand identity (what should this look/feel like?) -- use /positioning
-- Color psychology specifics -- use /field_analysis on color theory
+- Brand identity (what should this look/feel like?) -- use /pos
+- Color psychology specifics -- use /fia on color theory
 - Interaction design (how should this behave?) -- different domain
-- Information architecture (what pages, what structure?) -- use /decomposition
-- Content strategy (what to write?) -- use /content_strategy
+- Information architecture (what pages, what structure?) -- use /dcm
+- Content strategy (what to write?) -- use /cts
 
 This skill covers **visual execution** -- given content and structure, how to present it so the reader absorbs the content without noticing the design.

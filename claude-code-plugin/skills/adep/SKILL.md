@@ -30,7 +30,7 @@ PROCEDURE TYPES QUESTION:
 PRIORITY DOMAINS QUESTION:
 "What are your CURRENT priority domains?"
 - AI/ML systems, Business/income, Research/learning
-- Health/optimization, Engineering/hardware
+- Health/o, Engineering/hardware
 
 SKIP THRESHOLD QUESTION:
 "At what point would you SKIP a video entirely?"

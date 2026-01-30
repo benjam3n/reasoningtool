@@ -22,12 +22,12 @@ Every field, practice, or belief system rests on hidden assumptions that practit
 ## The Chain
 
 ```
-Step 1: /assumption_extraction    -- Surface hidden assumptions
-Step 2: /assumption_inversion     -- Ask "what if the opposite is true?"
-Step 3: /literature_review        -- Check what's already known about these assumptions
+Step 1: /aex    -- Surface hidden assumptions
+Step 2: /ai     -- Ask "what if the opposite is true?"
+Step 3: /lr        -- Check what's already known about these assumptions
 Step 4: /araw 8x                  -- Rigorously test each assumption (Assume Right / Assume Wrong)
-Step 5: /cross_domain_analogy     -- How do other fields handle similar assumptions?
-Step 6: /insight_synthesis        -- Combine all findings into ranked report
+Step 5: /cda     -- How do other fields handle similar assumptions?
+Step 6: /ins        -- Combine all findings into ranked report
 ```
 
 ---
@@ -36,7 +36,7 @@ Step 6: /insight_synthesis        -- Combine all findings into ranked report
 
 ### Step 1: Extract Hidden Assumptions
 
--> INVOKE: /assumption_extraction $ARGUMENTS
+-> INVOKE: /aex $ARGUMENTS
 
 Extract all hidden assumptions from the field/practice/belief. For each assumption, identify:
 - What type it is (causal, existence, stability, access, capability, value, knowledge, resources, permission, timing)
@@ -51,7 +51,7 @@ Extract all hidden assumptions from the field/practice/belief. For each assumpti
 
 ### Step 2: Invert Each Assumption
 
--> INVOKE: /assumption_inversion [assumptions from Step 1]
+-> INVOKE: /ai [assumptions from Step 1]
 
 For each assumption, ask: "What if the opposite is true?" This reveals:
 - Alternative worldviews that practitioners miss
@@ -64,7 +64,7 @@ For each assumption, ask: "What if the opposite is true?" This reveals:
 
 ### Step 3: Research Existing Critiques
 
--> INVOKE: /literature_review [key assumptions and inversions]
+-> INVOKE: /lr [key assumptions and inversions]
 
 Before running ARAW, check what's already known:
 - Has this assumption been challenged before?
@@ -93,7 +93,7 @@ Recurse to depth 6+. Each sub-claim gets its own AR/AW branch.
 
 ### Step 5: Cross-Domain Perspective
 
--> INVOKE: /cross_domain_analogy [challenged and overturned assumptions]
+-> INVOKE: /cda [challenged and overturned assumptions]
 
 For assumptions that were CHALLENGED or OVERTURNED:
 - What do other fields do differently?
@@ -106,7 +106,7 @@ For assumptions that were CHALLENGED or OVERTURNED:
 
 ### Step 6: Synthesize Findings
 
--> INVOKE: /insight_synthesis [all outputs from Steps 1-5]
+-> INVOKE: /ins [all outputs from Steps 1-5]
 
 Combine everything into a final audit report:
 
@@ -166,8 +166,8 @@ Between Steps 5 and 6: If cross-domain insights are superficial (surface analogy
 ## Example Usage
 
 ```
-/assumption_audit software project estimation
-/assumption_audit higher education as career preparation
-/assumption_audit venture capital as startup funding model
-/assumption_audit agile methodology in large organizations
+/aa software project estimation
+/aa higher education as career preparation
+/aa venture capital as startup funding model
+/aa agile methodology in large organizations
 ```

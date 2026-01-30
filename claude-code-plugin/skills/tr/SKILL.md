@@ -28,7 +28,7 @@ Manage domain templates:
 REGISTRY STORE: [template name]
 
 Template:
-[Full template content from /domain_template]
+[Full template content from /dmt]
 
 VALIDATION:
 - [ ] Has required sections (description, triggers, skill_chain, dimensions)
@@ -352,6 +352,6 @@ Before completing registry operation:
 ## Integration
 
 Use with:
-- `/domain_template` - Create templates to store
-- `/template_maintenance` - Keep templates updated
+- `/dmt` - Create templates to store
+- `/tpm` - Keep templates updated
 - All skills referenced in templates

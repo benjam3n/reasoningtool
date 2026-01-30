@@ -489,7 +489,7 @@ Formulate appropriate conclusions and next steps:
 - [ ] Evidence evaluated using appropriate statistical methods
 - [ ] Belief updating follows from evidence appropriately
 - [ ] Conclusion is appropriately hedged given evidence strength
-- [ ] Predictions logged for future calibration (→ /empirical_validation)
+- [ ] Predictions logged for future calibration (→ /emv)
 
 ---
 
@@ -503,13 +503,13 @@ Formulate appropriate conclusions and next steps:
 - Situations with time to design and run tests
 
 ### Where This Skill Struggles
-- Unfalsifiable claims (use /question_analysis_framework instead)
+- Unfalsifiable claims (use /qaf instead)
 - Time-critical decisions (use HT-Lite or skip to action)
 - Low-stakes reversible decisions (just try it)
 - Pure value judgments (no empirical test possible)
 - Situations where test cost exceeds action cost
 
 ### Integration Points
-- Invokes: /empirical_validation (for prediction logging)
-- Related: /assumption_verification, /experimental_design
-- Routes to: /decision_trees (if multiple hypotheses), /verification_before_output
+- Invokes: /emv (for prediction logging)
+- Related: /assumption_verification, /exd
+- Routes to: /dct (if multiple hypotheses), /vbo

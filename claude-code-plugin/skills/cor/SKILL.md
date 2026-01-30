@@ -530,6 +530,6 @@ Next steps: [what author should do]
 
 ## Integration Points
 
-- **Often invoked from**: /procedure_engine (code review request), User request to review PR
-- **Routes to**: /debugging (if bug found), /refactoring (if structural issues), /testing_strategy (if test gaps)
-- **Related**: /debugging, /refactoring, /architecture_design
+- **Often invoked from**: /pce (code review request), User request to review PR
+- **Routes to**: /dbg (if bug found), /rf (if structural issues), /ts (if test gaps)
+- **Related**: /dbg, /rf, /architecture_design

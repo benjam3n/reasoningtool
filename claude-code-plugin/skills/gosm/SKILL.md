@@ -39,7 +39,7 @@ Assess these five factors to select the right variant:
 | EXPERT + HIGH confidence | **Check** | Validate the user's plan. Find blind spots. |
 | Post-action / reflecting | **After** | Learn from what happened. Update model. |
 | MEDIUM stakes + NORMAL time | **Standard** | Balanced analysis: key claims, brief ARAW, action. |
-| HIGH stakes + EXPENSIVE + NOVICE | **Full** | Comprehensive: invoke `/procedure_engine` |
+| HIGH stakes + EXPENSIVE + NOVICE | **Full** | Comprehensive: invoke `/pce` |
 
 User can override: "quick", "full", "just check this", "reflect on what happened".
 
@@ -107,7 +107,7 @@ Balanced analysis for medium-stakes situations.
 
 For high-stakes, expensive, novel situations. Invokes the full procedure engine.
 
-→ `/procedure_engine $ARGUMENTS`
+→ `/pce $ARGUMENTS`
 
 ---
 

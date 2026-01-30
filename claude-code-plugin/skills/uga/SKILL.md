@@ -45,7 +45,7 @@ Before pursuing any goal, systematically work through these questions. Not every
 
 **Key Question**: "If I achieve this, will I actually have what I want?"
 
-→ If NO or UNCERTAIN: INVOKE /goal_reframing
+→ If NO or UNCERTAIN: INVOKE /grfr
 
 ---
 
@@ -71,7 +71,7 @@ I will know I've succeeded when:
 - NOT included: [what won't change]
 ```
 
-→ If success unclear: INVOKE /criteria_weighting
+→ If success unclear: INVOKE /crw
 
 ---
 
@@ -167,7 +167,7 @@ Success failure (downsides of winning): [mode]
   Preparation: [how to handle]
 ```
 
-→ If failure modes severe: INVOKE /risk_assessment
+→ If failure modes severe: INVOKE /ria
 
 ---
 
@@ -200,7 +200,7 @@ Fastest timeline:
 [best case] - assuming [conditions]
 ```
 
-→ If minimum path unclear: INVOKE /decomposition
+→ If minimum path unclear: INVOKE /dcm
 
 ---
 
@@ -234,7 +234,7 @@ Scale:
 - 10x smaller version: [implication]
 ```
 
-→ If blind spots likely: INVOKE /space_discovery
+→ If blind spots likely: INVOKE /spd
 
 ---
 
@@ -325,11 +325,11 @@ Next step: [specific action]
 ```
 Start: Universal Quick Analysis (Questions 1, 2, 6)
        │
-       ├── Goal seems wrong → INVOKE /goal_reframing
+       ├── Goal seems wrong → INVOKE /grfr
        │
-       ├── Success unclear → INVOKE /criteria_weighting
+       ├── Success unclear → INVOKE /crw
        │
-       ├── Path unclear → INVOKE /decomposition
+       ├── Path unclear → INVOKE /dcm
        │
        └── Quick analysis sufficient?
            │
@@ -341,9 +341,9 @@ Start: Universal Quick Analysis (Questions 1, 2, 6)
                │
                ├── Constraints blocking → INVOKE /constraint_workarounds
                │
-               ├── High risk → INVOKE /risk_assessment
+               ├── High risk → INVOKE /ria
                │
-               └── Blind spots likely → INVOKE /space_discovery
+               └── Blind spots likely → INVOKE /spd
 ```
 
 ---
@@ -366,6 +366,6 @@ Start: Universal Quick Analysis (Questions 1, 2, 6)
 
 ## Integration Points
 
-- **Often invoked from**: /procedure_engine (new goal input), /goal_understanding (after parsing), manual invocation
-- **Routes to**: /goal_reframing, /criteria_weighting, /decomposition, /assumption_verification, /constraint_workarounds, /risk_assessment, /space_discovery
-- **Related**: /goal_understanding, /goal_journey_system, /value_elicitation
+- **Often invoked from**: /pce (new goal input), /gu (after parsing), manual invocation
+- **Routes to**: /grfr, /crw, /dcm, /assumption_verification, /constraint_workarounds, /ria, /spd
+- **Related**: /gu, /gjs, /ve

@@ -174,7 +174,7 @@ python scripts/guess_library.py related [library_id]
 
 ## Step 0.5: Select Coverage Mode
 
-Choose based on space size (from `/space_discovery` or estimated):
+Choose based on space size (from `/spd` or estimated):
 
 | Mode | When to Use | What It Does |
 |------|-------------|--------------|
@@ -535,7 +535,7 @@ Before completing, verify:
 
 ## Next Procedure
 
-→ INVOKE: /question_about_guesses [CRITICAL guesses]
+→ INVOKE: /qag [CRITICAL guesses]
 
 ---
 

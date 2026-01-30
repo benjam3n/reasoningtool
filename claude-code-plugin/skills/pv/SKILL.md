@@ -380,6 +380,6 @@ Before completing:
 ## Integration
 
 Use with:
-- `/dependency_extraction` -> Get dependencies first
-- `/topological_ordering` -> Generate valid order
-- `/procedure_validation` -> Validate final procedure (this skill)
+- `/de` -> Get dependencies first
+- `/to` -> Generate valid order
+- `/pv` -> Validate final procedure (this skill)

@@ -80,7 +80,7 @@ OVERLAP RATE: [N / Total] = [X%]
 
 #### 3A: Dimension Coverage Check
 
-If dimensions are known (from `/dimension_discovery`):
+If dimensions are known (from `/dd`):
 
 ```
 DIMENSION COVERAGE:
@@ -289,6 +289,6 @@ Before completing:
 ## Integration
 
 Use with:
-- `/dimension_discovery` -> Identify dimensions first
-- `/space_enumeration` -> Generate the list
-- `/mece_validation` -> Validate the list (this skill)
+- `/dd` -> Identify dimensions first
+- `/se` -> Generate the list
+- `/mv` -> Validate the list (this skill)

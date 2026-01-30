@@ -22,7 +22,7 @@ Take extracted assumptions and **invert** them to discover:
 - Inverting opens new regions of possibility
 - Many innovations come from questioning "obvious" assumptions
 
-**Prerequisites**: Assumptions extracted (use `/assumption_extraction` first, or provide assumptions directly)
+**Prerequisites**: Assumptions extracted (use `/aex` first, or provide assumptions directly)
 
 ---
 
@@ -345,7 +345,7 @@ Before completing:
 ## Integration
 
 Use with:
-- `/assumption_extraction` -> Extract assumptions first
-- `/cross_domain_analogy` -> Find domains where inversions are the norm
-- `/insight_synthesis` -> Combine insights from multiple inversions
+- `/aex` -> Extract assumptions first
+- `/cda` -> Find domains where inversions are the norm
+- `/ins` -> Combine insights from multiple inversions
 - `/araw` -> Test inversions with Assume Right / Assume Wrong

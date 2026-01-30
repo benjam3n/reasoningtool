@@ -23,9 +23,9 @@ For all other skills: save the complete output.
    |-----------|-----------|
    | `/u`, `/ar`, `/aw`, `/araw`, `/uaua` | `library/araw/sessions/{skill}_{date}_{topic-slug}.md` |
    | `/p` | `library/araw/sessions/p_{date}_{topic-slug}.md` |
-   | `/generate`, `/design`, `/critique` | `library/araw/sessions/{skill}_{date}_{topic-slug}.md` |
-   | `/unexpected` | `library/araw/sessions/unexpected_{date}_{topic-slug}.md` |
-   | `/gosm`, `/procedure_engine` | `library/gosm/sessions/gosm_{date}_{topic-slug}.md` |
+   | `/gen`, `/dsn`, `/cri` | `library/araw/sessions/{skill}_{date}_{topic-slug}.md` |
+   | `/unx` | `library/araw/sessions/unexpected_{date}_{topic-slug}.md` |
+   | `/gosm`, `/pce` | `library/gosm/sessions/gosm_{date}_{topic-slug}.md` |
    | Other skills | `library/sessions/{skill}_{date}_{topic-slug}.md` |
 
    - `{date}` = YYYY-MM-DD

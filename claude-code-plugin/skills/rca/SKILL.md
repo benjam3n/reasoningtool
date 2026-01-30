@@ -321,6 +321,6 @@ Define how to verify the analysis is correct:
 - When cause is already known (jump to corrective action)
 
 ### Integration Points
-- Often invoked from: /problem_identification, /failure_recovery
-- Routes to: /failure_anticipation (prevent future), /procedure_improvement
-- Related: /root_cause_5_whys, /systems_analysis, /debugging
+- Often invoked from: /pbi, /fr
+- Routes to: /fla (prevent future), /pci
+- Related: /rc5w, /sya, /dbg

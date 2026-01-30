@@ -204,7 +204,7 @@ CONTEXT-DEPENDENT:
 
 ## Next Procedure
 
-→ INVOKE: /better_option_check [user's current choice] [preference profile]
+→ INVOKE: /boc [user's current choice] [preference profile]
 
 ---
 

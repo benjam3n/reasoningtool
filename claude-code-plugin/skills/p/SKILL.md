@@ -49,7 +49,7 @@ To use /p:
 1. Run /ar, /aw, /u, /araw, or /uaua on your topic first
 2. Then run /p to convert the findings into actionable plans
 
-For generating plans without prior analysis, use /plan_space_search instead.
+For generating plans without prior analysis, use /pss instead.
 ```
 
 **Stop here. Do not proceed.**

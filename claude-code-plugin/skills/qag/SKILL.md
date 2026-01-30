@@ -5,13 +5,13 @@ description: Generate high-quality questions about identified guesses. Applies q
 
 # Question About Guesses
 
-**Input**: $ARGUMENTS (guesses from /guess_generation)
+**Input**: $ARGUMENTS (guesses from /gg)
 
 ---
 
 ## Core Principle
 
-Guesses come FIRST (from /guess_generation). Questions come SECOND (this procedure).
+Guesses come FIRST (from /gg). Questions come SECOND (this procedure).
 
 Questions are tools to probe guesses, not open-ended exploration.
 
@@ -205,7 +205,7 @@ The questioning loop:
 
 ```
 ## Guesses Received
-[List from /guess_generation]
+[List from /gg]
 
 ## Questions Generated (Gated)
 
@@ -235,7 +235,7 @@ All answers to these questions are also guesses.
 If questions remain:
 → Ask user the questions
 → Process answers as new guesses
-→ INVOKE: /guess_generation [new claims from answers]
+→ INVOKE: /gg [new claims from answers]
 
 If questioning complete:
 → INVOKE: /araw [with current working guesses]

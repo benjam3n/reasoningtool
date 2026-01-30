@@ -11,7 +11,7 @@ description: Analyze a category of guesses to determine which apply to the user.
 
 ## Purpose
 
-After `/guess_generation` produces guesses organized by category, this procedure analyzes each category to determine which guesses apply to the specific user.
+After `/gg` produces guesses organized by category, this procedure analyzes each category to determine which guesses apply to the specific user.
 
 **Principle**: The system does the work. Don't ask the user to verify - instead, generate verifiable implications and check them.
 
@@ -176,7 +176,7 @@ Trace each reason until hitting a terminal value or circularity.
 
 ## Step 7: Preference Integration
 
-If user preferences are known (from `/preference_elicitation`):
+If user preferences are known (from `/pre`):
 
 | Guess | Matches Preference? | Which Preference? | Strength |
 |-------|---------------------|-------------------|----------|
@@ -243,10 +243,10 @@ ELIMINATED:
 ## Next Procedure
 
 For each UNKNOWN guess with options:
-→ INVOKE: /preference_elicitation to match options to user values
+→ INVOKE: /pre to match options to user values
 
 For better options identified:
-→ INVOKE: /better_option_check to compare against user's current choice
+→ INVOKE: /boc to compare against user's current choice
 
 ---
 

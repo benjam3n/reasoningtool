@@ -197,25 +197,25 @@ SKILL CHAIN: [domain name]
 STANDARD WORKFLOW:
 
 Phase 1: Understanding
-|-- /dimension_discovery (if dimensions unknown)
-|-- /assumption_extraction
+|-- /dd (if dimensions unknown)
+|-- /aex
 
 Phase 2: Exploration
-|-- /space_enumeration
-|-- /assumption_inversion
-|-- /cross_domain_analogy (with pre-selected domains)
+|-- /se
+|-- /ai
+|-- /cda (with pre-selected domains)
 
 Phase 3: Validation
-|-- /mece_validation
-|-- /dependency_extraction (if procedural)
-|-- /procedure_validation (if procedural)
+|-- /mv
+|-- /de (if procedural)
+|-- /pv (if procedural)
 
 Phase 4: Synthesis
-|-- /insight_synthesis
+|-- /ins
 
 SKIP CONDITIONS:
-- Skip /dimension_discovery if: [condition]
-- Skip /dependency_extraction if: [condition]
+- Skip /dd if: [condition]
+- Skip /de if: [condition]
 
 DOMAIN-SPECIFIC ADDITIONS:
 - Add [skill] when: [condition]
@@ -344,12 +344,12 @@ TRIGGERS:
 ===================================================
 
 SKILL CHAIN:
-1. /assumption_extraction - Surface hidden research assumptions
-2. /dimension_discovery - Identify research dimensions
-3. /space_enumeration - Map the research space
-4. /cross_domain_analogy - Find methodological analogies
-5. /mece_validation - Ensure complete coverage
-6. /insight_synthesis - Generate research insights
+1. /aex - Surface hidden research assumptions
+2. /dd - Identify research dimensions
+3. /se - Map the research space
+4. /cda - Find methodological analogies
+5. /mv - Ensure complete coverage
+6. /ins - Generate research insights
 
 ===================================================
 
@@ -409,6 +409,6 @@ Before completing template:
 ## Integration
 
 Use with:
-- `/template_registry` - Register and retrieve templates
-- `/template_maintenance` - Update templates based on usage
+- `/tr` - Register and retrieve templates
+- `/tpm` - Update templates based on usage
 - All skills in the template's skill chain

@@ -22,10 +22,10 @@ Most fields are siloed. Solutions that are standard practice in one domain are u
 ## The Chain
 
 ```
-Step 1: /cross_domain_analogy      -- Find structural matches between fields
-Step 2: /assumption_extraction     -- What does Field A assume that Field B doesn't?
+Step 1: /cda      -- Find structural matches between fields
+Step 2: /aex     -- What does Field A assume that Field B doesn't?
 Step 3: /araw                      -- Test each analogy: structural or just surface similarity?
-Step 4: /insight_synthesis         -- Combine into actionable recommendations
+Step 4: /ins         -- Combine into actionable recommendations
 ```
 
 ---
@@ -34,7 +34,7 @@ Step 4: /insight_synthesis         -- Combine into actionable recommendations
 
 ### Step 1: Find Cross-Domain Analogies
 
--> INVOKE: /cross_domain_analogy $ARGUMENTS
+-> INVOKE: /cda $ARGUMENTS
 
 Identify structural similarities between the two fields:
 - What problems do both fields face?
@@ -54,7 +54,7 @@ Identify structural similarities between the two fields:
 
 ### Step 2: Extract Assumption Differences
 
--> INVOKE: /assumption_extraction [Field A's approach to problems identified in Step 1]
+-> INVOKE: /aex [Field A's approach to problems identified in Step 1]
 
 For each structural analogy, what does Field A assume that Field B doesn't?
 - What does Field A take for granted that Field B explicitly addresses?
@@ -89,7 +89,7 @@ For each analogy, test with ARAW:
 
 ### Step 4: Synthesize Actionable Insights
 
--> INVOKE: /insight_synthesis [all outputs from Steps 1-3]
+-> INVOKE: /ins [all outputs from Steps 1-3]
 
 Create the final report:
 
@@ -153,9 +153,9 @@ After Step 3: If most analogies are surface-only, the report should say so hones
 ## Example Usage
 
 ```
-/cross_domain_report what software engineering can learn from aviation safety
-/cross_domain_report what healthcare can learn from manufacturing quality control
-/cross_domain_report what education can learn from game design
-/cross_domain_report what business strategy can learn from evolutionary biology
-/cross_domain_report what urban planning can learn from network engineering
+/cdr what software engineering can learn from aviation safety
+/cdr what healthcare can learn from manufacturing quality control
+/cdr what education can learn from game design
+/cdr what business strategy can learn from evolutionary biology
+/cdr what urban planning can learn from network engineering
 ```

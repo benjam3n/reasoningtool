@@ -64,7 +64,7 @@ Route to the appropriate analysis:
 4. What's blocking progress?
 5. What's the highest-leverage next step?
 
-→ May invoke: `/goal_decomposition`, `/goal_journey_system`, `/steps_generation`
+→ May invoke: `/gd`, `/gjs`, `/stg`
 
 ### PROBLEM
 1. What exactly is wrong? (specific symptoms)
@@ -73,7 +73,7 @@ Route to the appropriate analysis:
 4. What are the fix options?
 5. Which fix addresses root cause, not symptoms?
 
-→ May invoke: `/root_cause_5_whys`, `/araw`, `/leverage_point_discovery`
+→ May invoke: `/rc5w`, `/araw`, `/lpd`
 
 ### QUESTION
 1. What kind of question? (factual, conceptual, evaluative)
@@ -82,7 +82,7 @@ Route to the appropriate analysis:
 4. What evidence supports/contradicts each?
 5. What's the best current answer + confidence level?
 
-→ May invoke: `/araw`, `/bounded_inquiry`, `/verification_before_output`
+→ May invoke: `/araw`, `/bi`, `/vbo`
 
 ### DECISION
 1. What are the options? (including non-obvious ones)
@@ -91,7 +91,7 @@ Route to the appropriate analysis:
 4. What's the recommendation?
 5. How reversible is this?
 
-→ May invoke: `/comparison`, `/evaluation_dimensions`, `/selection`
+→ May invoke: `/cmp`, `/evaluation_dimensions`, `/sel`
 
 ### SITUATION
 1. What's happening? (neutral description)
@@ -99,14 +99,14 @@ Route to the appropriate analysis:
 3. What options does this create?
 4. What's the recommended response?
 
-→ May invoke: `/araw`, `/goal_reframing`, `/steps_generation`
+→ May invoke: `/araw`, `/grfr`, `/stg`
 
 ### FEELING
 1. What's the feeling pointing at? (feelings are data about unmet needs)
 2. What goal or value is threatened/served?
 3. What action would address the underlying need?
 
-→ May invoke: `/araw`, `/value_elicitation`, `/goal_understanding`
+→ May invoke: `/araw`, `/ve`, `/gu`
 
 ---
 

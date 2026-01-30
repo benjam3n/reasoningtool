@@ -18,7 +18,7 @@ Before generating a comprehensive list, you need to know the **dimensions** that
 - Dimension 2: Medium (land, water, air, space)
 - Dimension 3: Purpose (personal, commercial, military, recreational)
 
-With dimensions identified, `/space_enumeration` can systematically cover the space.
+With dimensions identified, `/se` can systematically cover the space.
 
 ---
 
@@ -27,7 +27,7 @@ With dimensions identified, `/space_enumeration` can systematically cover the sp
 | Situation | Use This Skill |
 |-----------|----------------|
 | Novel domain with no known structure | YES |
-| Generating comprehensive list | YES (before `/space_enumeration`) |
+| Generating comprehensive list | YES (before `/se`) |
 | Domain structure already known | SKIP (use known dimensions directly) |
 | Simple enumeration | SKIP (overkill) |
 
@@ -204,5 +204,5 @@ Before completing:
 ## Next Steps
 
 After dimension discovery:
-1. Use `/space_enumeration` to generate comprehensive list
-2. Use `/mece_validation` to verify coverage
+1. Use `/se` to generate comprehensive list
+2. Use `/mv` to verify coverage

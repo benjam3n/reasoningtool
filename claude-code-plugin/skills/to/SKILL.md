@@ -17,7 +17,7 @@ Given items with dependencies, generate a **valid execution order** that:
 3. Optimizes for priority (important things early)
 4. Identifies parallelization opportunities
 
-**Prerequisites**: Dependencies extracted (use `/dependency_extraction` first)
+**Prerequisites**: Dependencies extracted (use `/de` first)
 
 ---
 
@@ -368,6 +368,6 @@ Before completing:
 ## Next Steps
 
 After ordering:
-1. Use `/procedure_validation` to verify order is complete and valid
+1. Use `/pv` to verify order is complete and valid
 2. Execute in the generated order
 3. Track progress against parallel schedule

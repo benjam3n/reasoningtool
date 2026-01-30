@@ -22,10 +22,10 @@ Normal checklists say "check X" and move on. Adversarial checklists say "check X
 ## The Chain
 
 ```
-Step 1: /assumption_extraction     -- What do people assume when doing this action?
-Step 2: /failure_anticipation      -- What goes wrong despite those assumptions?
-Step 3: /assumption_inversion      -- What if each assumption is wrong?
-Step 4: /steps_generation          -- Create the checklist with adversarial branches
+Step 1: /aex     -- What do people assume when doing this action?
+Step 2: /fla      -- What goes wrong despite those assumptions?
+Step 3: /ai      -- What if each assumption is wrong?
+Step 4: /stg          -- Create the checklist with adversarial branches
 ```
 
 ---
@@ -34,7 +34,7 @@ Step 4: /steps_generation          -- Create the checklist with adversarial bran
 
 ### Step 1: Extract Assumptions People Make
 
--> INVOKE: /assumption_extraction $ARGUMENTS
+-> INVOKE: /aex $ARGUMENTS
 
 When people are about to do [action], what do they assume?
 - What do they take for granted?
@@ -49,7 +49,7 @@ When people are about to do [action], what do they assume?
 
 ### Step 2: Anticipate Failures
 
--> INVOKE: /failure_anticipation [action + assumptions from Step 1]
+-> INVOKE: /fla [action + assumptions from Step 1]
 
 For each assumption, what goes wrong when it fails?
 - What's the failure mode?
@@ -63,7 +63,7 @@ For each assumption, what goes wrong when it fails?
 
 ### Step 3: Invert Critical Assumptions
 
--> INVOKE: /assumption_inversion [top 10-15 assumptions by danger]
+-> INVOKE: /ai [top 10-15 assumptions by danger]
 
 For each critical assumption, ask:
 - What would you see if this assumption were WRONG?
@@ -76,7 +76,7 @@ For each critical assumption, ask:
 
 ### Step 4: Generate the Adversarial Checklist
 
--> INVOKE: /steps_generation [assumptions, failures, inversions from Steps 1-3]
+-> INVOKE: /stg [assumptions, failures, inversions from Steps 1-3]
 
 Create the checklist in this format:
 
@@ -137,10 +137,10 @@ The adversarial branch catches failures that happen AFTER you check the item and
 ## Example Usage
 
 ```
-/adversarial_checklist starting a new software project
-/adversarial_checklist signing a lease or contract
-/adversarial_checklist making a major purchase over $1000
-/adversarial_checklist launching a product
-/adversarial_checklist hiring a new employee
-/adversarial_checklist before any important presentation
+/ac starting a new software project
+/ac signing a lease or contract
+/ac making a major purchase over $1000
+/ac launching a product
+/ac hiring a new employee
+/ac before any important presentation
 ```

@@ -17,7 +17,7 @@ description: Produce diverse candidate solutions. Given constraints and purpose,
 
 3. **Constraints are generative.** Don't fight constraints — use them. Each constraint eliminates bad options and makes good options easier to find. Ask: "Given THESE constraints, what becomes possible?"
 
-4. **Separate generation from evaluation.** Generate freely first. Don't self-censor during generation. Evaluation comes after (use `/critique` or `/comparison`).
+4. **Separate generation from evaluation.** Generate freely first. Don't self-censor during generation. Evaluation comes after (use `/cri` or `/cmp`).
 
 5. **Surprise yourself.** If every candidate feels obvious, you haven't explored far enough. At least one candidate should make you think "that's weird but it might work."
 
@@ -33,7 +33,7 @@ What am I producing? What constraints apply? What purpose does it serve?
 DOMAIN: [what kind of thing — code, prose, design, strategy, etc.]
 PURPOSE: [what it must accomplish]
 CONSTRAINTS: [hard limits — technical, resource, time, audience]
-QUALITY CRITERIA: [how we'll know if it's good — can reference /critique]
+QUALITY CRITERIA: [how we'll know if it's good — can reference /cri]
 ```
 
 ### 2. Generate Candidates
@@ -77,7 +77,7 @@ CANDIDATES PRODUCED: [N]
 - [3] EXTREME: [brief description]
 [- additional candidates if produced]
 
-READY FOR: /critique or /comparison
+READY FOR: /cri or /cmp
 ```
 
 ---

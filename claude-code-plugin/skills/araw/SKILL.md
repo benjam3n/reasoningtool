@@ -378,7 +378,7 @@ If producing same findings repeatedly -> check for fish in dreams (expecting a s
 If explanations don't fit -> check for red herring
 If confusion when approaching -> check for smokescreen
 
-Try: go deeper, reframe the question, or use `/space_discovery` to find what space you're missing.
+Try: go deeper, reframe the question, or use `/spd` to find what space you're missing.
 
 ---
 

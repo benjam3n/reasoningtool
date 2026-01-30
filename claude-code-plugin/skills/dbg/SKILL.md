@@ -378,9 +378,9 @@ Process improvement: [suggestion or "none"]
 
 ## Integration Points
 
-- **Often invoked from**: /procedure_engine (problem input), /code_review (bug discovered during review)
-- **Routes to**: /code_review (fix ready for review), /testing_strategy (if test gaps identified)
-- **Related**: /root_cause_5_whys, /root_cause_analysis
+- **Often invoked from**: /pce (problem input), /cor (bug discovered during review)
+- **Routes to**: /cor (fix ready for review), /ts (if test gaps identified)
+- **Related**: /rc5w, /rca
 
 ---
 

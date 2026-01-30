@@ -318,6 +318,6 @@ Before completing:
 ## Integration
 
 Use with:
-- `/assumption_inversion` -> Invert assumptions to find blind spots
+- `/ai` -> Invert assumptions to find blind spots
 - `/araw` -> Test assumptions with Assume Right / Assume Wrong
-- `/cross_domain_analogy` -> Find where assumptions differ in other domains
+- `/cda` -> Find where assumptions differ in other domains

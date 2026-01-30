@@ -170,7 +170,7 @@ Then apply techniques (select based on domain):
 
 **Don't apply all 8 mechanically.** Use the ones that produce findings. Skip the ones that don't. Follow surprise.
 
-Also available for creative/design domains:
+Also available for creative/dsn domains:
 - EXEMPLAR COMPARISON, SENSORY EVALUATION, COMPOSITIONAL ANALYSIS, EMOTIONAL RESPONSE, PATTERN MATCHING
 
 | Domain | Primary Techniques | Secondary |

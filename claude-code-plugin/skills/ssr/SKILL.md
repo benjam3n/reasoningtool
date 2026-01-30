@@ -222,7 +222,7 @@ For each conflict:
 
 ## Integration Points
 
-**At session end**: Invoke `/session_review` to capture learnings.
+**At session end**: Invoke `/ssr` to capture learnings.
 
 **At session start**: Retrieve relevant learnings with:
 ```bash

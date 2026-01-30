@@ -52,7 +52,7 @@ After generating sub-goals, verify:
 - "They'd still be missing [X]" → INCOMPLETE decomposition
 - "They achieved something different" → SUBSTITUTION
 
-If substitution detected → Use consent template from /goal_refinement
+If substitution detected → Use consent template from /grf
 
 ---
 

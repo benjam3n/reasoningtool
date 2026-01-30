@@ -217,7 +217,7 @@ And BEFORE:
 
 ```
 GOSM Integration Point:
-... → /verification_before_output → /empirical_validation → Commit
+... → /vbo → /emv → Commit
 ```
 
 ---

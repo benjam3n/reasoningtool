@@ -236,7 +236,7 @@ If any element is missing:
 - Generate questions for missing elements
 - Only include when all 4 are specified
 
-→ INVOKE: /specificity_gate [capability claim]
+→ INVOKE: /spg [capability claim]
 
 **Output**: Capability claims with all 4 elements specified
 

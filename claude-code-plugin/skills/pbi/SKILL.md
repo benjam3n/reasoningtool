@@ -152,7 +152,7 @@ Before concluding:
 ---
 
 ## Integration Points
-- Often invoked from: /procedure_engine, /goal_understanding
-- Routes to: /root_cause_analysis (if solving), /root_cause_5_whys
+- Often invoked from: /pce, /gu
+- Routes to: /rca (if solving), /rc5w
 - Gate: clarification_vs_substitution_gate (when reframing)
-- Related: /leverage_point_discovery, /systems_analysis
+- Related: /lpd, /sya

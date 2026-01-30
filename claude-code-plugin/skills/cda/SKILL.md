@@ -374,7 +374,7 @@ Before completing:
 ## Integration
 
 Use with:
-- `/assumption_extraction` -> Find assumptions that differ across domains
-- `/assumption_inversion` -> Inversions may be the norm in other domains
-- `/insight_synthesis` -> Combine analogy insights with other sources
-- `/dimension_discovery` -> Discover dimensions via analogy
+- `/aex` -> Find assumptions that differ across domains
+- `/ai` -> Inversions may be the norm in other domains
+- `/ins` -> Combine analogy insights with other sources
+- `/dd` -> Discover dimensions via analogy

@@ -112,7 +112,7 @@ Your choice?
 ### Step 2: Identify the Underlying Value
 - What would achieving this goal give you?
 - What's the deeper need being served?
-- → INVOKE: /value_elicitation if unclear
+- → INVOKE: /ve if unclear
 
 ### Step 3: Generate Reframe Options
 Generate multiple reframes at different levels:
@@ -160,6 +160,6 @@ User selects:
 - Time-critical situations (use Reframe-Lite)
 
 ### Integration
-- Often invoked from: /goal_understanding, /goal_refinement
-- Routes to: /goal_decomposition, /steps_generation
+- Often invoked from: /gu, /grf
+- Routes to: /gd, /stg
 - Gate: clarification_vs_substitution (but this skill is explicitly about substitution)

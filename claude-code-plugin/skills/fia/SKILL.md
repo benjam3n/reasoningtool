@@ -22,11 +22,11 @@ Every field has unquestioned orthodoxies, unresolved tensions, and blind spots t
 ## The Chain
 
 ```
-Step 1: /assumption_extraction     -- Surface the field's hidden beliefs
+Step 1: /aex     -- Surface the field's hidden beliefs
 Step 2: /araw 8x                   -- Deep test of each assumption
-Step 3: /cross_domain_analogy      -- What do other fields see that this one doesn't?
+Step 3: /cda      -- What do other fields see that this one doesn't?
 Step 4: /evaluation_dimensions     -- Evaluate the field across multiple dimensions
-Step 5: /insight_synthesis         -- Combine into comprehensive report
+Step 5: /ins         -- Combine into comprehensive report
 ```
 
 ---
@@ -35,7 +35,7 @@ Step 5: /insight_synthesis         -- Combine into comprehensive report
 
 ### Step 1: Extract the Field's Hidden Assumptions
 
--> INVOKE: /assumption_extraction $ARGUMENTS
+-> INVOKE: /aex $ARGUMENTS
 
 Go beyond surface beliefs. Extract:
 - **Foundational assumptions**: What the field takes as given (often unstated in textbooks)
@@ -66,7 +66,7 @@ For HIGH and MED criticality assumptions, run deep ARAW:
 
 ### Step 3: Cross-Domain Perspective
 
--> INVOKE: /cross_domain_analogy [the field + its challenged/overturned assumptions]
+-> INVOKE: /cda [the field + its challenged/overturned assumptions]
 
 Bring in outside perspectives:
 - Which other fields face similar problems but answer them differently?
@@ -99,7 +99,7 @@ Evaluate the field across universal dimensions:
 
 ### Step 5: Synthesize Complete Analysis
 
--> INVOKE: /insight_synthesis [all outputs from Steps 1-4]
+-> INVOKE: /ins [all outputs from Steps 1-4]
 
 Create the comprehensive field analysis:
 
@@ -177,11 +177,11 @@ After Step 4: If all dimensions score high, consider whether the evaluation was 
 ## Example Usage
 
 ```
-/field_analysis software engineering
-/field_analysis clinical psychology
-/field_analysis economics
-/field_analysis education
-/field_analysis nutrition science
-/field_analysis venture capital
-/field_analysis machine learning research
+/fia software engineering
+/fia clinical psychology
+/fia economics
+/fia education
+/fia nutrition science
+/fia venture capital
+/fia machine learning research
 ```

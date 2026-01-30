@@ -34,8 +34,8 @@ description: Apply universal design principles to create or improve designs. Dom
 2. GROUND → What does good look like? (exemplars)
 3. ASSESS → Where are we now? (if improving existing design)
 4. PRIORITIZE → What to work on first? (domain effort ordering)
-5. GENERATE → Produce candidate designs (/generate)
-6. CRITIQUE → Evaluate candidates (/critique)
+5. GENERATE → Produce candidate designs (/gen)
+6. CRITIQUE → Evaluate candidates (/cri)
 7. ITERATE → Improve best candidate based on critique
 8. VERIFY → Does the final design satisfy purpose?
 ```
