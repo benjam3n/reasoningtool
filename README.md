@@ -365,50 +365,6 @@ claude
 | `/wr` | weekly review | Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuo... |
 | `/wt` | want to | Assumes the want is right — traces what it commits you to, what it requires, what paths it opens. Finds the actual want vs stated want. |
 
-## Why UAUA Works
-
-UAUA alternates between two mathematically distinct search operations:
-
-- **Universalization** operates on N-valued type theory. It asks "what is this an instance of?" and derives all instances from the universal — searching *horizontally* across the possibility space. It guarantees completeness within known dimensions.
-- **ARAW** operates on binary Boolean logic. It asks "is this true or false?" and eliminates branches through contradiction — searching *vertically* into depth. It guarantees rigor by forcing every claim to survive negation.
-
-Neither alone is sufficient. Universalization finds all the possibilities but doesn't test them. ARAW tests rigorously but only within the space you already thought to look. UAUA combines them:
-
-```
-U1: Map the space (divergent, N-valued) → candidates
- ↓
-A1: Test candidates (convergent, binary) → validated/rejected
- ↓
-U2: Find edge cases of survivors (divergent) → new candidates
- ↓
-A2: Final validation (convergent) → what survived all rounds
-```
-
-Each step uses a fundamentally different logic — type enumeration vs. binary elimination — so their blind spots don't overlap.
-
-Use `/uaua [your question]` to try it. Scale depth with 1x, 2x, 4x, or 8x.
-
-### Warning: Don't validate the output during a session
-
-Praising or agreeing with the output mid-session shifts it toward producing what you liked rather than what's true.
-
-**Phrases that corrupt output quality:**
-
-| What you say | What it does to the system |
-|-------------|---------------------------|
-| "Wow, that's really insightful" | System optimizes for producing more "insightful"-sounding output rather than rigorous output |
-| "You're starting to get it" | System treats your approval as the target rather than the analysis itself |
-| "That's exactly right" | System locks in the validated direction and stops genuinely testing it |
-| "Great analysis" | System prioritizes analysis that earns praise over analysis that finds uncomfortable truths |
-| "I love this" | Emotional validation is the strongest corruptor — system will avoid anything that risks losing your approval |
-
-**What to do instead:**
-
-- **Challenge it.** "That's wrong because..." or "You're missing..."
-- **Redirect it.** "Now test that with /aw" or "Run /ar on the opposite claim."
-- **Stay neutral.** Just ask for the next analysis without commenting on quality.
-- **Save and start fresh.** If you've already validated mid-session, use `/sf` and start a new context.
-
 ## Documentation
 
 ```
