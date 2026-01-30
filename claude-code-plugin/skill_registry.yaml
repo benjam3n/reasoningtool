@@ -1309,3 +1309,43 @@ skills:
     categories: [reasoning, validation, search, meta]
     tags: [field, analysis, compound, chain, comprehensive, assumptions, tensions]
     invokes: [assumption_extraction, araw, cross_domain_analogy, evaluation_dimensions, insight_synthesis]
+
+  # === PRIMITIVE SKILLS (decomposed UAUA components) ===
+
+  - name: aw
+    description: "Assume Wrong - Deep recursive wrongness search. Assume a claim is wrong, find why, find alternatives, then assume THOSE are wrong too. Recurse until bedrock. Supports depth scaling: 1x-32x."
+    categories: [reasoning, search]
+    tags: [aw, assume-wrong, adversarial, wrongness, rejection]
+
+  - name: ar
+    description: "Assume Right - Deep recursive rightness search. Assume a claim is right, find what follows, find commitments, then assume THOSE are right too. Recurse until bedrock. Supports depth scaling: 1x-32x."
+    categories: [reasoning, search]
+    tags: [ar, assume-right, implications, commitments]
+
+  - name: u
+    description: "Universalize - Extract the complete space of assumptions, dimensions, and alternatives from any claim. Pure exploration — map before you judge. Supports depth scaling: 1x-32x."
+    categories: [reasoning, search]
+    tags: [universalize, space-mapping, assumptions, alternatives, dimensions]
+
+  # === GENERATIVE SKILLS ===
+
+  - name: generate
+    description: "Diverse candidate production. Produce actual artifacts (code, prose, layouts), not labels. Required diversity: conventional, unconventional, extreme."
+    categories: [reasoning, search]
+    tags: [generate, candidates, artifacts, creative, divergent]
+
+  - name: design
+    description: "Universal design principles. Constrained optimization of arrangement for comprehension, task completion, and signal value. Includes domain effort orderings and the arbitrary decision test."
+    categories: [reasoning, decision_making]
+    tags: [design, principles, universal, layout, arrangement]
+    invokes: [generate, critique]
+
+  - name: critique
+    description: "Impression-first evaluation. State impression, identify standard, analytical decomposition, divergence check, actionable verdict. Severity: structural/significant/minor/polish."
+    categories: [reasoning, validation]
+    tags: [critique, evaluation, impression, review, feedback]
+
+  - name: unexpected
+    description: "Find non-obvious solutions. Three layers — obvious, unexpected, reframed — using disruption techniques that force the search off its default path. 10 disruption techniques available."
+    categories: [reasoning, search, problem_solving]
+    tags: [unexpected, non-obvious, disruption, creative, reframe]

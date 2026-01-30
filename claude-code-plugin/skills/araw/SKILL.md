@@ -1,6 +1,6 @@
 ---
 name: araw
-description: Assume Right / Assume Wrong search - The core exploration method. For every claim, branch into what follows if true vs what alternatives exist if false.
+description: Assume Right / Assume Wrong search - For every claim, explore what follows if true (AR) and what breaks if false (AW). Number every finding. Recurse until bedrock. Compile a complete registry. Derive synthesis only from the registry.
 ---
 
 # ARAW - Assume Right / Assume Wrong Search
@@ -9,748 +9,386 @@ description: Assume Right / Assume Wrong search - The core exploration method. F
 
 ---
 
-## What is ARAW?
+## Core Principles
 
-ARAW = Assume Right / Assume Wrong. A method for exploring claims.
+These govern everything. When procedure conflicts with principle, follow the principle.
 
-For any claim, two branches get explored with equal rigor:
-- **ASSUME RIGHT**: What follows if this is true?
-- **ASSUME WRONG**: What alternatives exist?
+1. **Derivation, not enumeration.** Let structure emerge from exploration. Follow surprising branches deeper. If you're checking boxes instead of following curiosity, stop and explore.
 
-Then it recurses - conclusions are also claims.
+2. **No early termination.** When depth is specified (8x, 16x), meet the depth floors. These are minimums, not targets to pad toward.
 
-## What does it do?
+3. **Both sides, equal rigor.** AR and AW get the same depth of exploration. The goal is understanding, not confirmation. If you find yourself validating everything, you are confirming, not exploring.
 
-- Test hypotheses systematically
-- Expand your option space
-- Surface assumptions you didn't know you had
-- Find alternatives to "obvious" answers
+4. **AW must be genuinely adversarial.** The biggest failure mode is soft AW -- "well, with conditions it works." That's not AW, that's AR wearing a hat. Real AW finds reasons the claim is WRONG, alternatives that are BETTER, and conditions where the claim FAILS. If your AW doesn't make the claim uncomfortable, dig harder.
 
-## Why use it when you're already right?
+5. **Depth means tree depth, not breadth.** A session with 18 claims but 2-level trees has failed. Depth means following chains of implication 5-8 levels deep.
 
-**When you're right**: Know WHY. Know the edge cases. Hold tested confidence instead of untested belief.
+6. **Every finding gets tracked.** When you find an implication, a reason something is wrong, a foreclosure, or an alternative -- number it. It goes in the registry. Nothing gets lost in prose.
 
-**When alternatives exist**: See options you hadn't considered. Understand trade-offs. Choose instead of default.
+7. **Bedrock is not an opinion.** Bedrock means ONE of:
+   - **BEDROCK-TEST**: Empirically testable -- you can run an experiment or check a fact
+   - **BEDROCK-LOGIC**: Logically necessary -- follows from definitions or mathematics
+   - **BEDROCK-OBSERVE**: Directly observable -- something you can directly see/measure
+   - **BEDROCK-TENSION**: Contradicts another established claim in this analysis
+   - "This seems right" or "probably true" is NOT bedrock. Keep recursing.
 
----
+8. **Rejection is a valid and expected outcome.** If a session validates every candidate, something is wrong. Expect 20-40% of claims to be REJECTED or genuinely UNCERTAIN. If you're not rejecting anything, you're generating only safe candidates or testing them too softly.
 
-## ⚠️ CORE PRINCIPLES (Read First)
+9. **Alternatives are DERIVED, not asserted.** Don't pull alternatives from thin air. If X is wrong because of Y, the alternative is whatever Y points to. If you can't derive an alternative from the wrongness analysis, you don't have one yet.
 
-### Principle 1: EXPLORATION DEPTH OVER FORMAT COMPLIANCE
-
-**The purpose of ARAW is deep exploration, not neat formatting.**
-
-Early high-quality sessions had 5-6 level deep trees because they followed the exploration wherever it led. Later degraded sessions had 2-3 level trees because they focused on checkbox compliance.
-
-**DERIVATION MODE** (correct): Let structure emerge from exploration
-- Follow surprising branches deeper
-- Structure reflects what you discovered
-- Format serves insight, not the reverse
-
-**ENUMERATION MODE** (incorrect): Fill out a predetermined template
-- Hit quotas regardless of insight
-- Structure imposed before exploration
-- Format constrains discovery
-
-**If you find yourself checking boxes instead of following curiosity, you're in ENUMERATION mode. Stop and explore deeper.**
-
-### Principle 2: NO EARLY TERMINATION
-
-When the user specifies a depth (e.g., 8x), produce output meeting that depth's requirements:
-
-| Depth | Claims | CRUX | DO_FIRST | Saved Lines | Tree Depth |
-|-------|--------|------|----------|-------------|------------|
-| 1x | 5 | 2 | 3 | 250-350 | 3-4 levels |
-| 2x | 7 | 3 | 4 | 400-600 | 4-5 levels |
-| 4x | 12 | 5 | 6 | 800-1100 | 5-6 levels |
-| 8x | 18 | 8 | 10 | 1600-2200 | 6-8 levels |
-| 16x | 25 | 12 | 14 | 3200-4400 | 8-10 levels |
-| 32x | 35 | 16 | 20 | 6400-8800 | 10-12 levels |
-
-**Note**: These depth scaling numbers are heuristics, not empirically derived. The key metric is exploration depth (tree levels), not line count. Use these as guides, not rigid targets.
-
-**Tree depth is as important as claim count.** A session with 18 claims but only 2-3 level trees has failed. Depth means depth of exploration, not just breadth.
-
-### Principle 3: LITERAL DEPTH INTERPRETATION
-
-When user says `/araw 8x [topic]`:
-- They want 8x depth analysis
-- They do NOT want meta-analysis about whether to do ARAW
-- Take the depth specification literally. Execute it.
-
-### Principle 4: META-ARAW IS QUICK, NOT THE RESPONSE
-
-Meta-ARAW (Step 0) should be ~50 lines maximum, completed in the first 5% of output.
+10. **Three phases, strict separation.** Phase 1 explores (no conclusions). Phase 2 compiles (no new findings). Phase 3 synthesizes (only from the registry). Never mix phases.
 
 ---
 
-## ARAW-Lite (Quick Decision Mode)
+## Quick Mode: ARAW-Lite
 
 For low-stakes, reversible, time-sensitive decisions:
 
 ```
-ARAW-LITE: [topic]
-==================
-CLAIM: [Single most important claim]
-
-ASSUME RIGHT:
-├── What becomes possible? [1-2 sentences]
-├── Easy path? [1-2 sentences]
-└── What would we observe if true? [1 prediction]
-
-ASSUME WRONG:
-├── Best alternative? [1-2 sentences]
-├── What would make this false? [1-2 sentences]
-└── Risk? [1-2 sentences]
-
+CLAIM: [Most important claim]
+ASSUME RIGHT: What becomes possible? [2-3 sentences]
+ASSUME WRONG: Best alternative? Risk? [2-3 sentences]
 VERDICT: [PROCEED / RECONSIDER / NEED MORE INFO]
 ACTION: [One specific next step]
 ```
 
-ARAW-Lite is NOT saved. For quick decisions only.
+Not saved. For quick decisions only.
 
 ---
 
-## STEP 0: META-ARAW (Strategy Selection)
+## Step 0: Meta-ARAW (Strategy Selection)
 
-Quick meta-analysis to select the right search strategy (~50 lines max).
+~50 lines max. Optional for 1-2x, required for 4x+.
 
-**When to use Meta-ARAW:**
-- **For 1x-2x**: OPTIONAL. Skip directly to claims if input is clear and unambiguous.
-- **For 4x+**: REQUIRED. Frame selection has high leverage at deeper analysis - wrong frame wastes the entire analysis.
+1. **Restate the question** -- ensure you understand the input
+2. **Check evaluability** -- is this a testable claim, or a decision/request that needs claim extraction?
+3. **Identify uncertainty type** -- epistemic (learn more), aleatoric (hedge), model (reframe)
+4. **Discover dimensions** -- quick universalization to find what to ARAW:
+   - What states could this be in? (state space)
+   - What is this an instance of? (category)
+   - What parameters could vary? (variation)
+   - Whose view is this? (perspective)
+5. **Check for pitfalls** -- fish in dreams (expecting specific answer), red herring (explanation matches what you're explaining), smokescreen (confusion when approaching)
 
-### 0.1: Question Restatement
+### Claim Evaluability
 
-```
-RESTATED QUESTION: [Your understanding]
-ORIGINAL: [The original input]
-```
+ARAW operates on claims (true/false). If the input is a decision, request, or conclusion, extract the underlying claims first:
 
-If your interpretation differs from input, ARAW BOTH interpretations.
-
-### 0.2: Problem Structure Check
-
-| Question | If YES | If NO |
-|----------|--------|-------|
-| Decomposable into independent subproblems? | ARAW each separately | ARAW holistically |
-| Closed-form answer exists? | Don't ARAW - calculate | ARAW appropriate |
-
-### 0.3: Uncertainty Type
-
-| Uncertainty | Strategy |
-|-------------|----------|
-| **Epistemic** (reducible by learning) | Deep ARAW to find what to learn |
-| **Aleatoric** (irreducible randomness) | Light ARAW, then hedge |
-| **Model uncertainty** (wrong framework) | ARAW the framework first |
-
-### 0.4: Pitfall Check
-
-Before starting:
-- **Fish in Dreams**: Expecting a specific answer? (Search for opposite)
-- **Red Herring**: Explanation matches what you're explaining? (Check fit)
-- **Smokescreen**: Confusion when approaching? (Persist through)
-
-### 0.5: Multiple Frame Generation
-
-Try at least 3 frames before committing:
-- Stated frame (what the question assumes)
-- Opposite frame (what if opposite assumption true?)
-- Broader/narrower frame (zoom in/out)
-- Different domain frame (how would someone else see this?)
-
-**Pick the frame that opens the most options.**
-
-### 0.6: Dimension Discovery (Pre-ARAW Universalization)
-
-**ARAW can only test dimensions you know exist.** Before AR/AW, discover dimensions.
-[D: derived from araw_2026-01-28_araw-vs-universalization.md - Boolean blindspot fix]
-
-Apply quick universalization to find dimensions to ARAW:
-
-| Technique | Question | Dimension Discovered |
-|-----------|----------|---------------------|
-| STATE SPACE | What states could the claim be in? | State dimension |
-| INSTANCE-TO-CATEGORY | What is this claim an instance of? | Category dimension |
-| PARAMETER VARIATION | What parameters could vary? | Parameter dimensions |
-| ROLE REVERSAL | What if roles were reversed? | Role dimension |
-| TEMPORAL VARIATION | What if timing varied? | Time dimension |
-| SCALE VARIATION | At what level is this? | Scale dimension |
-| PERSPECTIVE ROTATION | Whose view is this? | Stakeholder dimension |
-
-**Output**: List of dimensions to include in ARAW exploration.
-
-```
-DIMENSIONS DISCOVERED
-=====================
-From stated claim: [list obvious dimensions]
-From universalization:
-- [Technique 1] → [New dimension found]
-- [Technique 2] → [New dimension found]
-...
-Will ARAW along these dimensions: [list]
-```
-
-**Time budget**: ~2-3 minutes. Don't over-invest; this is for dimension discovery, not full universalization.
-
-### 0.6: Strategy Selection Output
-
-```
-META-ARAW STRATEGY SELECTION
-============================
-Restated question: [your understanding]
-Problem type: [decomposable/holistic/closed-form]
-Uncertainty type: [epistemic/aleatoric/model]
-Pitfall risk: [fish-in-dreams/red-herring/smokescreen/none]
-Selected frame: [which frame]
-Novelty target: [what would be surprising to find?]
-Depth: [1x/2x/4x/8x/16x/32x]
-
-Proceeding with ARAW...
-```
+"I need to quit my job" -> Claims: a problem exists, the job causes it, quitting fixes it, alternatives don't exist, what comes after is better. ARAW those.
 
 ---
 
-## STEP 0.7: Claim Evaluability Check
+## Step 1: Identify and Unbundle Claims
 
-**ARAW operates on claims that can be true or false.** Many inputs are not evaluable claims - they're decisions, intentions, conclusions, or requests.
-
-### Evaluability Test
-
-Ask: Can this input be directly assumed right or assumed wrong?
-
-| Input Type | Evaluable? | Example |
-|------------|------------|---------|
-| **Factual claim** | YES | "The API is slow" |
-| **Belief** | YES | "Users prefer X over Y" |
-| **Assumption** | YES | "This approach will scale" |
-| **Decision/Intent** | NO | "I need to quit my job" |
-| **Request** | NO | "Help me with X" |
-| **Conclusion** | NO | "I should do Y" |
-
-### If NOT Evaluable: Extract Claims Through Questioning
-
-When input cannot be directly assumed right/wrong, question to extract the underlying claims:
-
-**Example: "I need to quit my job"**
-
-This is a conclusion, not a claim. Cannot ARAW directly.
-
-**Questions to extract claims:**
-- What's happening that makes quitting seem necessary?
-- What would quitting accomplish?
-- What's the problem the job is causing?
-
-**Claims extracted (universalized form):**
-1. A problem exists
-2. The job is causing it
-3. Quitting removes the cause
-4. The costs of quitting are acceptable
-5. What comes after is better
-
-**Now ARAW these claims.**
-
-### Universalizing Claims
-
-Convert personal/specific claims to universalized form:
-
-| Personal | Universalized | Broader Question Answered |
-|----------|---------------|---------------------------|
-| "I correctly identified the problem" | "A problem exists" | Is there a problem? |
-| "I have no alternatives" | "Alternatives exist" (AW this) | Are there alternatives? |
-| "I know what I want" | "What is wanted is known" | Is the desired state clear? |
-
-**Why universalize?** Universalized claims answer the broader, more fundamental question. "A problem exists" immediately invites ASSUME WRONG: "What if there isn't actually a problem?" - which is often the more important question.
-
-### Output Format
-
-```
-EVALUABILITY CHECK
-==================
-Input: [original input]
-Type: [claim / decision / intent / request / conclusion]
-Evaluable directly? [YES/NO]
-
-If NO:
-Questions asked:
-- [Q1]
-- [Q2]
-
-Claims extracted (universalized):
-1. [Claim 1] - answers: [broader question]
-2. [Claim 2] - answers: [broader question]
-
-Proceeding to ARAW these claims...
-```
-
----
-
-## STEP 1: Identify Claims
-
-Parse the input into distinct claims:
-
-1. **Explicit claims** - Directly stated
-2. **Implicit claims** - Assumed but not stated
-3. **Bundled claims** - Multiple claims packed into one
-4. **Presupposition claims** - What must be true for statement to make sense
-5. **Meta-claims** - Claims about the framing itself
-
-**Unbundling example:**
-
-For "I need to quit my job" (after passing evaluability check and extracting claims):
-
-| Claim (universalized) | Broader Question |
-|-----------------------|------------------|
-| A problem exists | Is there actually a problem? |
-| The job is causing it | Is the job the source? |
-| Quitting removes the cause | Will quitting fix it? |
-| Alternatives do not exist | Are there other options? |
-| What comes after is better | Is the after-state known and preferable? |
-
-ARAW then explores each claim (assume right, assume wrong).
-
-For each claim:
+Parse input into claims. For each:
 - State precisely
-- Note type: explicit/implicit/bundled/presupposed/meta
-- Rate importance: HIGH/MED/LOW
-- **VOI rating**: How much would knowing this change action?
+- Note type: explicit / implicit / bundled / presupposed / meta
+- Rate VOI: how much would knowing this change action?
+
+Number every claim: **C1, C2, C3...**
+
+```
+[C1] [claim text] -- TYPE: explicit -- VOI: high
+[C2] [claim text] -- TYPE: implicit -- VOI: medium
+[C3] [claim text] -- TYPE: bundled -- VOI: high
+[C4] [claim text] -- TYPE: presupposed -- VOI: low
+[C5] [claim text] -- TYPE: meta -- VOI: medium
+```
 
 **ARAW high-VOI claims first.** They determine the most.
 
+### Unbundling
+
+Single statements often contain multiple claims. "I need to quit my job" bundles at least 5. Find them all. Each gets its own C-number.
+
 ### Blind Spot Check
 
-After identifying claims:
-- **Perspective**: Who else cares? What would they see?
-- **Domain**: What would an adjacent-field expert notice?
-- **Temporal**: What past/future factors am I ignoring?
-- **Scale**: What at 10x smaller or larger?
+After identifying claims: what would someone from a different perspective, domain, time horizon, or scale notice that you didn't? Add those as additional C-numbered claims.
 
 ---
 
-## STEP 2: ARAW Each Claim
+## Phase 1: EXPLORATION (Step 2)
 
-For EACH claim, build a tree. **Key insight**: Explore BOTH AR and AW at EVERY node. Paths can be AR→AW→AW→AR→...
+### ARAW Each Claim
 
-```
-Claim: "[main claim]"
-│
-├── ASSUME RIGHT → Claim is true/necessary
-│   │
-│   ├── What follows logically?
-│   │   ├── Consequence 1
-│   │   │   ├── ASSUME RIGHT → [explore deeper]
-│   │   │   └── ASSUME WRONG → [explore deeper]
-│   │   └── [more consequences...]
-│   │
-│   ├── What actions are justified?
-│   ├── What does success look like?
-│   └── Sub-claims → Full ARAW each
-│
-└── ASSUME WRONG → Claim might be false/unnecessary
-    │
-    ├── What alternatives exist?
-    │   ├── Alternative 1
-    │   │   ├── ASSUME RIGHT → [explore this alternative]
-    │   │   └── ASSUME WRONG → [why alternative also wrong]
-    │   └── [more alternatives...]
-    │
-    ├── What would make this claim false?
-    ├── What's the opposite claim? → Full ARAW
-    └── Sub-claims → Full ARAW each
-```
+For each high-VOI claim, build a numbered tree. **Every AR produces sub-claims that need AW. Every AW produces alternatives that need AR.** Recurse.
 
-### Tree Depth Requirements
-
-**This is critical.** The degradation pattern is shallow trees (2-3 levels) when deep trees (5-6+ levels) are needed.
-
-| Depth | Minimum Tree Levels | What This Means |
-|-------|---------------------|-----------------|
-| 1x | 3-4 levels | AR→AW→AR minimum for major claims |
-| 2x | 4-5 levels | Explore consequences of consequences |
-| 4x | 5-6 levels | Find non-obvious implications |
-| 8x | 6-8 levels | Exhaust the possibility space |
-
-**If your trees are only 2-3 levels deep, you're not doing ARAW, you're listing.**
-
-### How to Achieve Tree Depth
-
-For 4x+ depth, apply this technique:
-
-1. **Every ASSUME RIGHT gets sub-claims** - Ask "What follows from this?"
-2. **Every sub-claim gets ASSUME WRONG** - Ask "What if this sub-claim is wrong?"
-3. **Recurse: AR→AW→AR→AW** until you hit:
-   - **Foundation** (questioning becomes circular)
-   - **Prediction** (testable claim - move to CRUX)
-   - **Decision** (not a claim - extract underlying claim first)
-4. **When stuck at 3 levels**, ask:
-   - For AR branches: "Why is this true?" or "What else follows?"
-   - For AW branches: "What else could it be?" or "What's another alternative?"
-
-**The key**: Don't stop at the first AR/AW. Every AR produces claims that need AW. Every AW produces alternatives that need AR.
-
-### Upside Exploration (Anti-Conservative Bias)
-
-For every ASSUME WRONG that says "this is too ambitious," ALSO explore ASSUME RIGHT for the ambitious version:
-
-| Conservative Thought | Counter-Exploration |
-|----------------------|---------------------|
-| "This ROI is unrealistic" | "What if this ROI IS achievable?" |
-| "This is too hard" | "What if this is actually doable?" |
-| "Nobody does this" | "What if being first is the advantage?" |
-
-**Explore success modes, not just failure modes.**
-
-### Multi-Valued AW: State Space Expansion
-
-**Standard ARAW is binary**: claim true/false. But "wrong" has multiple values.
-
-When you ASSUME WRONG, don't just negate - **expand to the full state space**:
+Number every finding as you go: **F1, F2, F3...** (findings are distinct from claims -- claims are what you're testing, findings are what you discover).
 
 ```
-Claim: "We should use approach X"
+[C1] "[claim text]"
+  ASSUME RIGHT:
+  [F1] If right: [implication] -- Necessary/Probable/Possible
+    [F2] If F1 right: [deeper implication]
+      [F3] If F2 right: [-> BEDROCK-TEST: specific test]
+    [F4] If F1 right: [different implication]
+      [F5] [-> BEDROCK-OBSERVE: observable fact]
+  [F6] FORECLOSED if C1 right: [what becomes impossible]
+    [F7] Consequence of F6: [what follows from that foreclosure]
 
-Binary AW (limited):
-└── ASSUME WRONG → "We should NOT use approach X"
+  ASSUME WRONG:
+  [F8] Wrong because: [reason] -- Fatal/Serious/Conditional
+    [F9] If F8 holds: [deeper reason]
+      [F10] [-> BEDROCK-TEST: specific test]
+    [F11] Alternative derived from F8: [what F8 points toward]
+      [F12] If F11 right: [implication of the alternative]
+  [F13] Wrong because: [second independent reason] -- Fatal/Serious/Conditional
+    ...
+  [F14] Wrong because: [the uncomfortable reason] -- Fatal/Serious/Conditional
+    ...
+```
 
+### Classification Labels
+
+**AR implications:**
+- **Necessary**: MUST follow -- no way around it
+- **Probable**: Likely follows given reasonable assumptions
+- **Possible**: Could follow under specific conditions (state them)
+- **Foreclosed**: This option/belief is NO LONGER available if the claim is right
+
+**AW reasons:**
+- **Fatal**: This alone kills the claim
+- **Serious**: Significantly undermines the claim
+- **Conditional**: Kills the claim under specific conditions (state them)
+
+**Bedrock labels (the ONLY valid stopping points):**
+- `BEDROCK-TEST: [specific experiment or measurement]`
+- `BEDROCK-LOGIC: [logical/mathematical necessity]`
+- `BEDROCK-OBSERVE: [directly observable fact]`
+- `BEDROCK-TENSION: [contradicts established finding F-number]`
+
+### Multi-Valued AW
+
+"Wrong" has multiple values. Don't just negate -- expand the state space:
+
+```
+Binary AW (limited): "NOT X"
 Multi-valued AW (complete):
-└── ASSUME WRONG → What's the state space?
-    ├── Alternative approach Y
-    ├── Alternative approach Z
-    ├── Hybrid X+Y
-    ├── Neither - reframe the problem
-    ├── Different timing for X
-    └── X but with modifications
+[F15] Alternative Y -- derived from [F-number reason]
+[F16] Alternative Z -- derived from [F-number reason]
+[F17] Hybrid X+Y -- derived from [F-number reason]
+[F18] Reframe: wrong question entirely -- derived from [F-number reason]
+[F19] X but modified -- derived from [F-number reason]
 ```
 
-**Apply universalization techniques to AW branches:**
-- INSTANCE-TO-CATEGORY: "X is a type of [category]. What other instances exist?"
-- PARAMETER VARIATION: "What if X's parameters were different?"
-- ROLE REVERSAL: "What if we did the opposite of X?"
+Every alternative MUST cite which wrongness finding it derives from.
 
-This combines ARAW's rigor with Universalization's completeness.
-[D: derived from araw_2026-01-28_araw-vs-universalization.md - Boolean vs Type logic integration]
-
-### AW Approach by Claim Type
-
-Not all claims need state space expansion. Match the AW approach to the claim type:
+### AW by Claim Type
 
 | Claim Type | AW Approach | Example |
 |------------|-------------|---------|
-| **Factual** | Binary (true/false) | "The API is slow" → Is it or isn't it? |
-| **Strategic** | State space (alternatives) | "Use microservices" → What other architectures? |
-| **Design** | State space (options) | "Add dark mode" → What other features address this need? |
-| **Causal** | Alternative causes | "X causes Y" → What else could cause Y? |
-| **Belief** | Binary + evidence | "Users prefer X" → True/false, what's the evidence? |
-| **Assumption** | State space | "This will scale" → What if it doesn't? What would need to be true? |
-
-**Rule of thumb**: If the claim is about existence/truth, use binary. If the claim is about choice/approach, expand the state space.
+| **Factual** | Binary (true/false) | "The API is slow" -> Is it? Measure. |
+| **Strategic** | State space (alternatives) | "Use microservices" -> What other architectures? |
+| **Design** | State space (options) | "Add dark mode" -> What other features address this need? |
+| **Causal** | Alternative causes | "X causes Y" -> What else could cause Y? |
+| **Belief** | Binary + evidence | "Users prefer X" -> What's the actual evidence? |
+| **Assumption** | Existence check | "This will scale" -> What if it fundamentally can't? |
 
 ### Unconventional Alternative Requirement
 
-For each major ASSUME WRONG, include genuinely unconventional alternatives (not just the obvious opposite):
+For each major AW, include at least one genuinely unconventional alternative -- not just the obvious opposite:
 
 - What if the opposite of conventional wisdom is true?
 - What would an outsider/novice suggest?
-- What hasn't been tried, and why?
-- What would be embarrassing to suggest but might work?
-- What would a 10x more ambitious version look like?
+- What hasn't been tried, and why not?
+- What would be embarrassing to suggest but might actually work?
 
-### AR Generative Techniques
+**If every alternative feels safe and reasonable, you haven't explored far enough.**
 
-Make AR active, not just confirmatory:
+### Depth Floors
 
-| Technique | Question | Produces |
-|-----------|----------|----------|
-| **Easy Path** | "What would make this EASY?" | Simplifications |
-| **Possibility Expansion** | "What becomes possible now?" | New options |
-| **Predictions** | "If true, what would we observe?" | Testable predictions |
-| **Leverage** | "Where is 10x impact available?" | High-leverage points |
+| Depth | Min Claims (C) | Min Findings (F) | Min Tree Levels | Min CRUX |
+|-------|----------------|-------------------|-----------------|----------|
+| 1x | 5 | 12 | 3-4 | 2 |
+| 2x | 7 | 20 | 4-5 | 3 |
+| 4x | 12 | 35 | 5-6 | 5 |
+| 8x | 18 | 55 | 6-8 | 8 |
+| 16x | 25 | 85 | 8-10 | 12 |
+| 32x | 35 | 130 | 10-12 | 16 |
 
----
-
-## STEP 3: Search Quality Checks
-
-During exploration, continuously check:
-
-- **Decomposition**: Are subproblems solvable? Cutting along natural joints?
-- **Inference Direction**: Forward or backward? Confirmation bias active?
-- **Search Space**: Searching right set? Right granularity? Any false constraints?
+These are floors. Go deeper where insight is dense. Compress where it's not.
 
 ---
 
-## STEP 4: Commitment Test
+## Phase 2: FINDING REGISTRY (Step 3)
 
-For each branch, assign confidence:
-
-| Level | Confidence | When |
-|-------|------------|------|
-| **FOUNDATIONAL** | 0.9+ | All AW paths contradict |
-| **LIKELY** | 0.7-0.9 | Most AW paths contradict |
-| **UNCERTAIN** | 0.3-0.7 | AR and AW both have merit |
-| **UNLIKELY** | 0.1-0.3 | Most AR paths have problems |
-| **IMPLAUSIBLE** | <0.1 | AR paths contradict each other or reality |
-
----
-
-## STEP 5: Identify CRUX Points
-
-**CRUX**: The observation that would most decisively distinguish branches.
-
-### CRUX N: [Primary crux]
-- **The question**: [precise question]
-- **Branches resolved**: [which branches this would resolve]
-- **Why decisive**: [why this maximally splits uncertainty]
-- **How to test**: [how to find out]
-- **If X**: [what follows]
-- **If Y**: [what follows]
-
-**The best CRUX resolves the most branches.** When choosing between CRUXes, prefer higher branch count.
-
----
-
-## STEP 6: Identify DO_FIRST Actions
-
-List in priority order. Specify WHO does each:
-
-### DO_FIRST N: [Action]
-- **Who**: [Claude / User]
-- **What**: [specific action]
-- **Why first**: [why before anything else]
-- **How**: [concrete steps]
-- **What it resolves**: [which branches/questions]
-
-**Preference order**:
-1. Claude does it now
-2. Claude does it with user go-ahead
-3. User does minimum viable version (only what Claude cannot do)
-
----
-
-## STEP 7: Search Termination (For Individual Branches)
-
-For each branch, ask:
-- Would resolving this change my action? (If NO: summarize and move on)
-- What's the marginal value of more depth? (If LOW: stop this branch)
-- Am I exploring because it matters or because procedure says to? (If procedure: question)
-
-**This is about branch allocation, not overall depth reduction.** If user specified 8x, still hit 18 claims, 8 CRUX, 10 DO_FIRST.
-
----
-
-## STEP 8: Synthesis and Recommendations
-
-### Key Tensions Discovered
-- [Tension 1]: ASSUME RIGHT says X, ASSUME WRONG says Y
-- [Tension 2]: [another tension]
-
-Classify each tension:
-| Category | Master Question |
-|----------|-----------------|
-| **Resource Allocation** | What resource is limited, and competing uses? |
-| **Information** | What don't we know, how much does it matter? |
-| **Optimization** | What's Pareto frontier, where to sit? |
-| **Commitment** | How reversible, how much is option value worth? |
-
-### What Would Resolve These Tensions
-- [Resolution approach 1]
-- [Resolution approach 2]
-
-### Confidence Assessment
-- **Confidence in RIGHT branches**: [level] because [reasoning]
-- **Confidence in WRONG branches**: [level] because [reasoning]
-- **Key uncertainties remaining**: [list]
-
-### FOUNDATIONAL Claims Identified
-- [Claim 1]: [confidence level]
-- [Claim 2]: [confidence level]
-
-### Surprise-Self Test
-
-| Question | Answer |
-|----------|--------|
-| Did any finding surprise you? | Yes → Good / No → Search harder |
-| Would you have predicted this before starting? | No → Good / Yes → Check for confirmation |
-| Anything that challenges initial view? | Yes → Good / No → Check for Fish in Dreams |
-
-**If NO surprises: Go back and search harder.**
-
----
-
-## STEP 9: Determine Next Procedure
-
-| Situation | Next |
-|-----------|------|
-| Alternatives need comparison | /comparison |
-| Root cause unclear | /root_cause_5_whys |
-| Ready to trace journey | /goal_journey_system |
-| Still unclear after analysis | /araw 2x (go deeper) |
-
----
-
-## Pre-Completion Check
+After ALL exploration is complete, compile EVERY finding into a categorized registry. Nothing from Phase 1 gets left out.
 
 ```
-DEPTH VERIFICATION
-==================
-Specified depth: [Nx]
-Required: [claims] claims, [CRUX] CRUX, [DO_FIRST] DO_FIRST, [lines] saved lines
+FINDING REGISTRY
+================
 
-Actual claims: [count]
-Actual CRUX: [count]
-Actual DO_FIRST: [count]
-Actual tree depth (average): [levels]
+CLAIMS TESTED:
+[C1] [text] -- TYPE: explicit -- VOI: high
+[C2] [text] -- TYPE: implicit -- VOI: medium
+...
 
-Status: [MEETS / BELOW MINIMUM]
+AR FINDINGS (Implications):
+[F1] [text] -- STRENGTH: necessary -- PARENT: C1
+[F2] [text] -- STRENGTH: probable -- PARENT: F1
+...
+
+AR FINDINGS (Foreclosures):
+[F6] [text] -- PARENT: C1
+[F7] [text] -- PARENT: F6
+...
+
+AW FINDINGS (Wrongness Reasons):
+[F8] [text] -- SEVERITY: fatal -- PARENT: C1
+[F13] [text] -- SEVERITY: serious -- PARENT: C1
+...
+
+AW FINDINGS (Derived Alternatives):
+[F11] [text] -- DERIVED FROM: F8
+[F15] [text] -- DERIVED FROM: F13
+...
+
+BEDROCK REACHED:
+[F3] BEDROCK-TEST: [text]
+[F5] BEDROCK-OBSERVE: [text]
+[F10] BEDROCK-TEST: [text]
+...
+
+TENSIONS:
+[F-number] contradicts [F-number]: [description]
+...
+
+CLAIM VERDICTS:
+[C1] [VALIDATED / REJECTED / DAMAGED / CONDITIONAL / UNCERTAIN]
+  -- AR evidence: [F-numbers]
+  -- AW evidence: [F-numbers]
+  -- Verdict derived from: [which evidence is stronger and why]
+[C2] ...
+
+CRUX POINTS:
+[CRUX-1] [precise question] -- resolves: [F-numbers] -- test: [how]
+[CRUX-2] [precise question] -- resolves: [F-numbers] -- test: [how]
+...
+
+TOTALS:
+- Claims tested: [N]
+- Total findings: [N]
+- AR findings: [N] ([N] necessary, [N] probable, [N] possible)
+- AW findings: [N] ([N] fatal, [N] serious, [N] conditional)
+- Foreclosures: [N]
+- Derived alternatives: [N]
+- Bedrock reached: [N]
+- Tensions: [N]
+- Verdicts: [N] validated, [N] rejected, [N] damaged, [N] conditional, [N] uncertain
+- CRUX points: [N]
 ```
 
-**If BELOW MINIMUM**: Do NOT submit. Go back and explore deeper.
+**Verdict values (derived from the tree, not asserted):**
+- **VALIDATED**: AR evidence reaches bedrock, AW reasons don't reach fatal bedrock
+- **REJECTED**: AW fatal reason reaches bedrock
+- **DAMAGED**: Serious AW reasons found but none individually fatal at bedrock
+- **CONDITIONAL**: Wrong under specific stated conditions, right under others
+- **UNCERTAIN**: Neither side reached bedrock -- needs more investigation
+
+**Rules for the registry:**
+- Every C-numbered claim from Step 1 appears here. No exceptions.
+- Every F-numbered finding from Phase 1 appears here. No exceptions.
+- Verdicts must be DERIVED from the tree, not asserted. Point to the specific findings.
+- If a verdict is unclear, mark UNCERTAIN, not VALIDATED.
 
 ---
 
-## Output Verification (5 Essential Checks)
+## Phase 3: SYNTHESIS (Step 4)
 
-Before finishing:
-
-1. [ ] **AR and AW explored with equal rigor?** (Both sides get deep trees)
-2. [ ] **Tree depth adequate?** (5-6+ levels for 4x+, not just 2-3)
-3. [ ] **Novel findings exist?** (At least ONE surprise, mark with [NOVEL])
-4. [ ] **Tensions identified?** (AR vs AW conflicts noted)
-5. [ ] **File will be saved?** (Step 10)
-
-**That's it. Five checks. Not twenty.**
-
----
-
-## Example: Meta-ARAW in Action
-
-Input: "/araw 2x should I start a business"
+Derived entirely from the registry. No new findings introduced here.
 
 ```
-META-ARAW STRATEGY SELECTION
-============================
-Restated question: Should the asker start a business (now, given their situation)?
-Problem type: holistic
-Uncertainty type: epistemic + model
-Pitfall risk: fish-in-dreams (may be seeking validation)
-Selected frame: Opportunity frame (vs job frame, vs lifestyle frame)
-Novelty target: Something beyond "it depends on your risk tolerance"
-Depth: 2x (7 claims, 4 levels, 400-600 saved)
+ORIGINAL INPUT: [restated]
 
-Proceeding with ARAW...
+OVERALL PATTERN: [expansive / constraining / contradictory / convergent / mixed]
+
+WHAT THE ANALYSIS ACTUALLY FOUND:
+[Numbered list of every substantive finding, referencing F-numbers and C-numbers]
+1. [finding, from C1: F1->F3]
+2. [finding, from C1: F8->F10]
+3. [finding, from C2: F20->F25]
+...
+
+KEY TENSIONS:
+[Any F-numbers that contradict each other. If none found, say so.]
+1. [F-number] vs [F-number]: [what this tension means]
+2. ...
+
+WEAKEST LINKS:
+[Which findings in the chains are Possible/Conditional rather than Necessary/Fatal?
+ These are where analysis might break. Reference F-numbers.]
+
+ALTERNATIVES DERIVED FROM ANALYSIS:
+[Only alternatives that emerged from wrongness reasons. Each cites F-numbers.
+ If no alternatives emerged, say "None derived -- further exploration needed."]
+1. [alternative] -- derived from [F-numbers]
+2. ...
+
+TESTABLE PREDICTIONS:
+- [prediction derived from specific F-numbers]
+- [prediction derived from specific F-numbers]
+
+DO_FIRST ACTIONS:
+1. [action] -- WHO: [Claude/user] -- resolves: [CRUX-number or F-numbers]
+2. [action] -- WHO: [Claude/user] -- resolves: [CRUX-number or F-numbers]
+...
+
+UNRESOLVED:
+- [claims that stayed UNCERTAIN -- what would resolve them]
+- [findings that stayed Possible -- what would confirm or deny them]
 ```
 
 ---
 
-## Efficiency Principles
+## Anti-Failure Checks
 
-1. **Meta-ARAW first** - 2 minutes of strategy selection saves 20 of wrong-direction search
-2. **VOI ordering** - ARAW high-action-divergence claims first
-3. **Commitment testing** - Use confidence levels to know where to focus
-4. **Natural joints** - Decompose along natural structure
-5. **Bidirectional when needed** - Both forward and backward reasoning
+| Failure Mode | Signal | Fix |
+|-------------|--------|-----|
+| **Soft AW** | "Wrong but with conditions it works" | That's AR. Find why it's ACTUALLY wrong. |
+| **Premature alternative** | Asserting what's "better" before finishing exploration | Delete it. Alternatives come from the registry, not intuition. |
+| **Opinion bedrock** | Labeling "probably true" as BEDROCK | Not bedrock. Keep recursing until testable/logical/observable. |
+| **Cherry-picked synthesis** | Synthesis mentions 5 findings but registry has 30 | Synthesis must reference ALL substantive findings from registry. |
+| **Validation parade** | Every claim VALIDATED | Find the foreclosures and costs. What do you LOSE? |
+| **Narrative tree** | Tree reads as prose paragraphs with indent | Use numbered findings. Every node gets an F-number. |
+| **Missing foreclosures** | Only listing what opens up | Every "yes" is also a "no." Find what closes. |
+| **Conventional contrarian** | The "wrong" take is one everyone already knows | Find the wrong take nobody is comfortable with. |
+| **Cheerleading AR** | Every AR implication is positive | Find what you're COMMITTED to. Costs are implications too. |
 
 ---
 
 ## When ARAW Fails
 
-If ARAW produces:
-- Same findings repeatedly → Check for Fish in Dreams
-- Explanations that don't fit → Check for Red Herring
-- Confusion when approaching → Check for Smokescreen
+If producing same findings repeatedly -> check for fish in dreams (expecting a specific answer)
+If explanations don't fit -> check for red herring
+If confusion when approaching -> check for smokescreen
 
-Try:
-- /araw 2x [topic] - go deeper
-- /araw [reframed topic] - change the question
-- /space_discovery [topic] - find what space you're missing
+Try: go deeper, reframe the question, or use `/space_discovery` to find what space you're missing.
 
 ---
 
-## STEP 10: Save Output (MANDATORY)
+## Saving Output
 
-Save to: `library/araw/sessions/araw_[YYYY-MM-DD]_[topic-slug].md`
-
-### File Format
-```markdown
----
-date: [YYYY-MM-DD HH:MM]
-topic: [original input]
-depth: [1x/2x/4x/8x/16x/32x]
-claims: [number]
-crux_points: [number]
-status: [FOUNDATIONAL/LIKELY/UNCERTAIN/MIXED]
----
-
-# ARAW: [Topic]
-
-[COMPLETE ARAW output - NOT a summary]
-```
-
-### What Must Be Saved
-- Meta-ARAW strategy selection
-- All ARAW trees (the AR/AW branch structures)
-- All [NOVEL] findings
-- All tensions with category
-- CRUX points
-- DO_FIRST actions
-- Synthesis and conclusions
-
-### What Can Be Trimmed
-- Dead-end branches at depth 4+ (note "explored, no insight")
-- Repetitive deep exploration (summarize pattern once)
-
-### Line Count Sanity Check
-If saved file is much shorter than target (e.g., 500 lines for 8x instead of 1600), you're missing required content.
-
-### For Large Files
-Use bash heredoc:
-```bash
-cat > library/araw/sessions/araw_[date]_[topic].md << 'ENDOFARAW'
-[content]
-ENDOFARAW
-```
+Output is NOT auto-saved. If the user wants to save, they invoke `/savefile` after the session.
 
 ---
 
-## STEP 11: Extract Tensions (MANDATORY)
+## Pre-Completion Check
 
-Append to `library/araw/tension_questions.md`:
-
-```markdown
-## [Number]. [Universal Tension Name] ([Category] Trade-off)
-
-**Specific instance**: [AR position] vs [AW position]
-**Universal form**: [Abstracted tension]
-
-**Resolving questions**:
-1. [Question that would distinguish]
-2. [Test or observation that would resolve]
-
-**When AR wins**: [Conditions]
-**When AW wins**: [Conditions]
-
-**Source**: [ARAW session file]
-```
-
----
-
-## STEP 12: Extract Other Insights (If Any)
-
-If genuinely new framework, procedure improvement, or pattern discovered:
-- New framework → `claude-code-plugin/data/guess_libraries/`
-- Procedure improvement → Update relevant SKILL.md
-- Meta-insight about GOSM → `library/learnings/`
-
-**Don't force extraction if nothing genuinely new was discovered.**
-
----
-
-## APPENDIX: When NOT to Use ARAW
-
-ARAW is optimal for: **Thorough exploration of complex, propositional, high-stakes questions where hidden assumptions need surfacing.**
-
-ARAW is NOT optimal for:
-- Quick everyday decisions → ARAW-Lite
-- Time pressure → GOSM-Lite
-- Low stakes → Quick heuristics
-- Action-oriented tasks → GOSM-After
-
-**Match the method to the task.**
+- [ ] All claims numbered (C1, C2, ...) with types and VOI
+- [ ] All findings numbered (F1, F2, ...) with classification
+- [ ] Depth floors met (claims, findings, tree levels, CRUX)
+- [ ] AR and AW explored with equal rigor
+- [ ] Every branch reaches bedrock (BEDROCK-TEST/LOGIC/OBSERVE/TENSION -- not opinion)
+- [ ] ALL claims from Step 1 appear in registry (none dropped)
+- [ ] ALL findings from Phase 1 appear in registry (none dropped)
+- [ ] Verdicts derived from tree, not asserted
+- [ ] Synthesis introduces NO new findings -- only references C-numbers and F-numbers
+- [ ] Alternatives derived from analysis, not asserted from thin air (each cites F-numbers)
+- [ ] At least one uncomfortable finding
+- [ ] Foreclosures and costs explicitly identified (not just positives)
+- [ ] Weakest links identified with F-numbers
+- [ ] Testable predictions reference specific F-numbers
+- [ ] **Validation bias check**: If >80% of claims VALIDATED, go back and test harder. At least 20% should be REJECTED or genuinely UNCERTAIN.
+- [ ] **Unconventional check**: At least 1 AW branch explored a genuinely unconventional alternative
+- [ ] **Cheerleading check**: If every AR finding is positive, you missed the costs. Go back.
+- [ ] **Softness check**: If >50% of AW claims SURVIVED, either the claim is robust or you were too soft

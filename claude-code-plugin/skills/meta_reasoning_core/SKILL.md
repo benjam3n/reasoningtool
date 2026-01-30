@@ -1,76 +1,88 @@
 ---
 name: meta_reasoning_core
-description: "A unified meta-cognitive loop for deciding what to do next. Combines the"
+description: Three core metacognitive questions. What am I trying to achieve? Is this the best way? Am I making progress?
 ---
 
 # Meta-Reasoning Core
 
-## Overview
-A unified meta-cognitive loop for deciding what to do next. Combines the
-highest-validated patterns from book extraction with GOSM's core insight:
-all reasoning should trace backward from goals to methods.
-
-The fundamental question is not "what should I do?" but "what am I trying
-to achieve, and is this the best method for that?"
-
-## Steps
-
-### Step 1: Goal-Structure Reconstruction
-Trace backward from the request to foundational goals
-
-**Output**: A "story" from foundational goals to this request:
-Ch1: Intrinsic goal (wellbeing, knowledge, etc.)
-Ch2: What that requires...
-...
-Final: This specific request
-
-
-### Step 2: Failure Pattern Check
-Check if the goal might actually be serving a failure pattern
-
-### Step 3: Best Method Check
-Evaluate whether the proposed approach is the best method for the goal
-
-### Step 4: Intention Check
-Verify alignment between stated request and underlying goal
-
-### Step 5: Information Elicitation
-Recover missing, vague, or assumed information
-
-### Step 6: Evidence Evaluation
-Assess reliability before acting on information
-
-### Step 7: Hypothesis Generation
-Generate multiple possibilities before committing
-
-### Step 8: Process Check
-Focus on HOW you're working, not just WHAT
-
-### Step 9: Story Coherence Check
-Verify the plan serves the foundational goals
-
-**Output**: The plan should tell a coherent story from goals to actions.
-If the story doesn't cohere, either the plan is wrong or
-the goal-structure was misidentified.
-
-
-### Step 10: Iteration Decision
-Decide whether to proceed, adjust, or loop back
-
-
-## When to Use
-- Starting any non-trivial task
-- Feeling stuck or uncertain about next steps
-- Before committing significant resources
-- When a plan isn't working
-- During periodic check-ins on long-running work
-- When receiving vague or ambiguous requests
-
-## Verification
-{'success_indicators': ['Goal-structure traced to intrinsic goals', '"Is this the best method?" question asked and answered', 'Intention articulated differently than original request', 'Multiple hypotheses generated and compared gradationally', 'Story coherence checked', 'Clear criteria for what would change the approach'], 'failure_indicators': ['Jumped straight to execution without goal-structure reconstruction', 'Accepted stated method without checking alternatives', 'Binary pass/fail on methods instead of comparative evaluation', 'Only one approach considered', 'No story coherence check', 'Process identical to previous similar task']}
+**Input**: $ARGUMENTS
 
 ---
 
-**Input**: $ARGUMENTS
+## The Three Questions
 
-Apply this procedure to the input provided.
+All metacognition reduces to three questions. Ask them in order. Loop when stuck.
+
+### 1. What am I actually trying to achieve?
+
+Trace backward from the immediate request to the foundational goal.
+
+- What was asked? (surface)
+- What does that serve? (one level up)
+- What does THAT serve? (keep going until you hit something fundamental)
+- Is the surface request the best way to serve the foundational goal?
+
+**Common failure**: Executing the request without checking if it serves the real goal. Someone asks "help me write a resignation letter" — but the goal might be "improve my work situation," which has other solutions.
+
+**Output**: A clear statement of the foundational goal, and whether the current request is the best path to it.
+
+### 2. Is this the best method?
+
+Before executing any approach, check:
+
+- What other methods could achieve this goal?
+- What would an expert in a different field suggest?
+- Am I using this method because it's best, or because it's familiar?
+- What's the strongest argument AGAINST this approach?
+
+**Common failure**: Accepting the first method that seems workable without generating alternatives. Method lock-in.
+
+**Output**: Either confidence that this is the right method (with reasoning), or a better alternative.
+
+### 3. Am I making progress?
+
+During execution, check:
+
+- Is the output getting closer to the goal?
+- Am I learning anything surprising? (If no surprises, I might be confirming instead of exploring)
+- Am I going through motions or generating insight? (Enumeration vs derivation)
+- Should I continue, adjust, or stop?
+
+**Common failure**: Continuing because the procedure says to, not because progress is happening. Sunk cost.
+
+**Output**: A decision — continue (making progress), adjust (on track but method needs tweaking), pivot (wrong track), or stop (goal achieved or unachievable).
+
+---
+
+## When to Ask Each Question
+
+| Moment | Question | Why |
+|--------|----------|-----|
+| Starting a new task | Q1: What am I achieving? | Don't execute before understanding |
+| Choosing an approach | Q2: Is this the best method? | Don't commit without alternatives |
+| Mid-execution, any doubt | Q3: Am I making progress? | Don't continue on faith |
+| Getting a surprising result | Q1: Does this change the goal? | Surprises can redefine the problem |
+| Feeling stuck | Q2: Is there a better method? | Stuckness usually means wrong method |
+| Feeling productive but uncertain | Q3: Is this real progress or busywork? | Activity ≠ progress |
+
+---
+
+## Integration with Other Skills
+
+Meta-reasoning is not a skill you "run" — it's a lens you apply while running other skills.
+
+- During `/araw`: Q3 — "Am I exploring or enumerating?"
+- During `/uaua`: Q1 — "Is this the right question to universalize?"
+- During `/generate`: Q2 — "Is generation the right step, or do I need to understand first?"
+- During `/critique`: Q3 — "Is this critique actionable or just commentary?"
+
+---
+
+## Failure Indicators
+
+You've failed at metacognition if:
+- Jumped to execution without asking Q1
+- Accepted the first method without asking Q2
+- Continued past the point of usefulness without asking Q3
+- Produced output that's formally correct but doesn't serve the goal
+- Never encountered a surprise (suggests confirmation bias)

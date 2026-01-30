@@ -1,570 +1,495 @@
 ---
 name: uaua
-description: UAUA Combined Exploration - Universalize → ARAW → Universalize → ARAW. Combines complete space mapping with rigorous validation.
+description: UAUA Combined Exploration - Universalize, ARAW, loop, synthesize. Map possibilities with numbered findings, test rigorously with numbered claims, compile a complete registry, derive synthesis only from the registry.
 ---
 
-# UAUA - Universalize → ARAW → Universalize → ARAW
+# UAUA - Universalize -> ARAW -> Universalize -> ARAW
 
 **Input**: $ARGUMENTS
 
 ---
 
-## What is UAUA?
+## Core Principles
 
-UAUA combines two complementary exploration methods:
-- **Universalization**: Map the complete possibility space (divergent, Type logic)
-- **ARAW**: Test specific claims rigorously (convergent, Boolean logic)
+These govern everything. When procedure conflicts with principle, follow the principle.
 
-[O:source araw_2026-01-28_araw-vs-universalization.md]
+1. **Explore until insight, not until quota.** Depth targets are floors, not ceilings. Go deeper where surprising, compress where obvious. A branch is exhausted when 3 consecutive expansions produce no new findings.
 
-**Why both?**
-- Universalization alone: Complete but unvalidated
-- ARAW alone: Validated but may miss dimensions
-- UAUA: Complete AND validated
+2. **Loop until stable, not once through.** When testing reveals new possibilities, loop back and map them. Stop when no genuinely new candidates appear (max 3 iterations).
 
----
+3. **Generate then evaluate.** For creative/generative domains (design, writing, strategy): produce candidate artifacts before testing them. Labels like "compress the hero" are less useful than actual compressed hero code.
 
-## Quick Decision: When to Use What
+4. **Every finding gets tracked.** When you find a candidate, implication, wrongness reason, edge case, or alternative -- number it. It goes in the registry. Nothing gets lost in prose.
 
-| Situation | Use |
-|-----------|-----|
-| Testing a specific claim | `/araw` |
-| Exploring options | `/universalization` |
-| Complex problem, high stakes | `/uaua` |
-| Need both breadth and depth | `/uaua` |
+5. **Three phases, strict separation.** Exploration discovers (no conclusions). Registry compiles (no new findings). Synthesis derives (only from registry). Never mix phases.
 
----
+6. **Bedrock is not an opinion.** Bedrock means ONE of:
+   - **BEDROCK-TEST**: Empirically testable
+   - **BEDROCK-LOGIC**: Logically necessary
+   - **BEDROCK-OBSERVE**: Directly observable
+   - **BEDROCK-TENSION**: Contradicts another established finding
+   - "This seems right" or "probably works" is NOT bedrock. Keep recursing.
 
-## The UAUA Pattern
+7. **Alternatives are DERIVED, not asserted.** Don't pull alternatives from thin air. If X is wrong because of Y, the alternative is whatever Y points to. Every alternative must cite the finding it derives from.
 
-```
-U0: EXEMPLAR GATHERING (Ground in known-good examples)
-    ↓
-U1: UNIVERSALIZE (Map the space)
-    ↓
-A1: ARAW (Test top candidates)
-    ↓
-U2: UNIVERSALIZE (Find edge cases of survivors)
-    ↓
-A2: ARAW (Final validation)
-    ↓
-SYNTHESIS (What survived all rounds?)
-```
+8. **AW must be genuinely adversarial.** Soft AW -- "well, with conditions it works" -- is AR wearing a hat. Real AW finds reasons the claim is WRONG and conditions where it FAILS.
+
+9. **Rejection is a valid and expected outcome.** If a session validates every candidate, something is wrong. Expect 20-40% of candidates to be REJECTED or genuinely UNCERTAIN.
+
+10. **Trust the impression.** When your overall feeling about something conflicts with your analytical decomposition, investigate the feeling first. The impression is data.
 
 ---
 
-## STEP U0: Exemplar Gathering
-
-**Purpose**: Before analysis, ground the exploration in known-good examples.
-
-**This step exists because UAUA's analytical decomposition can suppress implicit pattern knowledge. Exemplars provide a perceptual anchor that prevents analysis from drifting into "analytically sound but actually bad" territory.**
-
-### Procedure
-
-1. **Identify 3-5 exemplars** — What are the best existing examples in this domain?
-   - For design: "What are 3-5 sites/products that do this well?"
-   - For strategy: "What are 3-5 organizations that solved a similar problem?"
-   - For writing: "What are 3-5 pieces that achieve the tone/effect I want?"
-
-2. **Extract shared patterns** — What do the exemplars have in common?
-   - Don't analyze in detail yet — just note what stands out
-   - Focus on what's SHARED across exemplars (likely fundamental) vs what DIFFERS (likely stylistic)
-
-3. **Note the felt impression** — What's the overall quality or feeling the exemplars convey?
-   - This impression becomes a reference point throughout analysis
-   - If later analysis contradicts this impression, flag the tension (see Gestalt Principle below)
-
-### Output Format
+## The Flow
 
 ```
-U0: EXEMPLAR GROUNDING
-======================
-Exemplars identified:
-1. [Exemplar 1] — [why it's good]
-2. [Exemplar 2] — [why it's good]
-3. [Exemplar 3] — [why it's good]
-
-Shared patterns: [what they have in common]
-Felt impression: [the quality/feeling they share]
+U0: GROUND (Identify exemplars -- what does good look like?)
+    |
+U1: MAP (Apply techniques to find the complete possibility space -- number everything)
+    |
+[G1: GENERATE -- for creative domains, produce candidate artifacts]
+    |
+A1: TEST (ARAW top candidates -- number every finding, recurse to bedrock)
+    |
+    <- Loop back to U1 if A1 revealed genuinely new directions (max 3 loops)
+    |
+U2: EDGE-CASE (Find where validated candidates break -- number everything)
+    |
+A2: VALIDATE (Test edge cases, produce verdicts with derivation trails)
+    |
+REGISTRY (Compile ALL numbered items from all phases)
+    |
+SYNTHESIS (Derive conclusions ONLY from registry)
 ```
 
-### When to Skip U0
+### When to Skip Steps
 
-- Pure logic/math problems (no perceptual component)
-- The domain has no established exemplars (genuinely novel territory)
-- User has already supplied specific references (incorporate those instead)
+- **U0**: Skip for pure logic/math, or when user supplied references
+- **G1**: Skip for analytical domains (strategy, engineering, research). Use for design, writing, creative work.
+- **Feedback loop**: Skip when A1 produces no surprises
 
 ---
 
-## The Gestalt Principle
+## Phase 1: EXPLORATION
 
-**When your overall impression of something conflicts with your analytical decomposition, TRUST THE IMPRESSION FIRST.**
+### U0: Ground in Exemplars
 
-Analytical decomposition can lose relational information — the quality that emerges from how parts relate, not from the parts themselves. If the analysis says "each element is correct" but the whole feels wrong, the whole IS wrong and the analysis missed something.
+Before analyzing, ask: **What does good look like in this domain?**
 
-**How to apply:**
-- State the impression honestly: "This feels [wrong/cheap/cluttered/etc.]"
-- Then investigate WHY the impression and analysis diverge
-- The impression is data. Don't override it with reasoning.
+1. Identify 3-5 best existing examples
+2. Note what they share (likely fundamental) vs differ on (likely stylistic)
+3. Record the felt impression -- this is your perceptual anchor throughout
 
-**This is especially important for design, writing, music, and any domain where the whole is greater than the sum of parts.**
+---
+
+### U1: Map the Space
+
+Apply techniques to find candidates. **Number every finding: U1, U2, U3...**
+
+```
+[U1] EXPLICIT: [what the input directly states]
+[U2] IMPLICIT: [what's assumed but not said]
+[U3] PRESUPPOSED: [what must be true for the input to make sense]
+[U4] BUNDLED: [separate assertions packed together]
+[U5] META: [claims about the type of question or approach]
+```
+
+Then apply techniques (select based on domain):
+
+**Technique 1: STATE SPACE** -- What states could this be in?
+```
+[U6] [alternative 1]
+[U7] [alternative 2]
+[U8] [the negation]
+[U9] [the "do nothing" option]
+[U10] [the reframe -- what if the question is wrong?]
+```
+
+**Technique 2: INSTANCE-TO-CATEGORY** -- What is this an instance of? What siblings?
+```
+[U11] [X] is an instance of [CATEGORY]
+[U12] Sibling: [sibling 1]
+[U13] Sibling: [sibling 2]
+```
+
+**Technique 3: PARAMETER VARIATION** -- What variables, what ranges?
+```
+[U14] Parameter: [name] -- current: [value] -- range: [min to max]
+[U15] Parameter: [name] -- current: [value] -- range: [min to max]
+```
+
+**Technique 4: PERSPECTIVE ROTATION** -- Who sees this differently?
+```
+[U16] [stakeholder 1] sees: [their version]
+[U17] [stakeholder 2] sees: [their version]
+[U18] [outsider] sees: [their version]
+```
+
+**Technique 5: ASSUMPTION EXTRACTION** -- What must be true?
+```
+[U19] LOAD-BEARING: [assumption] -- if false: [consequence]
+[U20] LOAD-BEARING: [assumption] -- if false: [consequence]
+[U21] BACKGROUND: [assumption] -- probably true but worth noting
+```
+
+**Technique 6: DIMENSION DISCOVERY** -- What axes?
+```
+[U22] Dimension: [name] -- claim sits at: [position]
+[U23] HIDDEN dimension: [name] -- not discussed but relevant
+```
+
+**Technique 7: TEMPORAL VARIATION**
+```
+[U24] Short-term: [what's true]
+[U25] Medium-term: [what changes]
+[U26] Long-term: [what changes more]
+```
+
+**Technique 8: SCALE VARIATION**
+```
+[U27] Individual: [true/false/different]
+[U28] Team: [true/false/different]
+[U29] Organization: [true/false/different]
+```
+
+**Don't apply all 8 mechanically.** Use the ones that produce findings. Skip the ones that don't. Follow surprise.
+
+Also available for creative/design domains:
+- EXEMPLAR COMPARISON, SENSORY EVALUATION, COMPOSITIONAL ANALYSIS, EMOTIONAL RESPONSE, PATTERN MATCHING
+
+| Domain | Primary Techniques | Secondary |
+|--------|-------------------|-----------|
+| **Design/UX** | State space, instance-to-category, perspective, perceptual | Temporal, scale |
+| **Strategy** | State space, instance-to-category, parameter variation, perspective | Temporal, scale |
+| **Engineering** | State space, parameter variation, assumption extraction, scale | Perspective |
+| **Writing** | Instance-to-category, perspective, dimension discovery | Temporal |
+
+---
+
+### G1: Generate (Creative Domains Only)
+
+For design, writing, and other generative problems: **produce candidate artifacts, not just labels.**
+
+Number each candidate: **G1, G2, G3...**
+
+```
+[G1] Candidate: [conventional approach] -- [concrete artifact]
+[G2] Candidate: [unconventional approach] -- [concrete artifact]
+[G3] Candidate: [extreme/ambitious approach] -- [concrete artifact]
+```
+
+- Generate at least 3 distinct candidates
+- Artifacts should be concrete enough to evaluate (actual code, actual prose, actual layout)
+- Don't evaluate yet -- that's A1's job
+
+**Unconventional requirement:** At least one candidate must be genuinely unconventional -- not just the obvious alternative. If every candidate feels safe, you haven't explored far enough.
+
+---
+
+### A1: Test with ARAW
+
+For each top candidate, build a numbered AR/AW tree. **Number every finding: F1, F2, F3...**
+
+```
+Candidate [G1 or U-number]:
+  ASSUME RIGHT:
+  [F1] If right: [implication] -- Necessary/Probable/Possible
+    [F2] If F1 right: [deeper implication]
+      [F3] [-> BEDROCK-TEST: specific test]
+  [F4] FORECLOSED if right: [what becomes impossible]
+
+  ASSUME WRONG:
+  [F5] Wrong because: [reason] -- Fatal/Serious/Conditional
+    [F6] If F5 holds: [deeper reason]
+      [F7] [-> BEDROCK-OBSERVE: observable fact]
+    [F8] Alternative derived from F5: [what F5 points toward]
+  [F9] Wrong because: [second reason] -- Fatal/Serious/Conditional
+    ...
+```
+
+**Classification:**
+- AR: Necessary / Probable / Possible / Foreclosed
+- AW: Fatal / Serious / Conditional
+- Stop ONLY at bedrock: BEDROCK-TEST, BEDROCK-LOGIC, BEDROCK-OBSERVE, BEDROCK-TENSION
+
+### Feedback Loop
+
+After A1: did testing reveal genuinely new candidates not in U1? If yes, loop back to U1 to map the expanded space. Number new findings continuing from where you left off. Max 3 loops. Converge when no new candidates emerge.
+
+---
+
+### U2: Find Edge Cases
+
+For each surviving candidate, find where it breaks. **Number everything: E1, E2, E3...**
+
+```
+[E1] Boundary: [condition where candidate breaks]
+[E2] Scale failure: [what happens at 10x/100x]
+[E3] Temporal limit: [when does this stop working?]
+[E4] Stakeholder conflict: [who disagrees and why]
+[E5] Context dependency: [where this only works in specific context]
+```
+
+Also for rejected candidates: **under what conditions would they work?**
+```
+[E6] Rejected [G-number] works if: [specific condition]
+```
+
+---
+
+### A2: Validate Edge Cases
+
+Test each edge case with quick AR/AW. **Continue numbering findings.**
+
+```
+[E1] "[boundary condition]"
+  [F30] AR: [why candidate might survive this] -- Necessary/Probable/Possible
+  [F31] AW: [why this edge case kills it] -- Fatal/Serious/Conditional
+    [F32] [-> BEDROCK-TEST: specific test]
+```
+
+---
+
+## Phase 2: FINDING REGISTRY
+
+After ALL exploration is complete, compile EVERY numbered item into a categorized registry. Nothing from Phase 1 gets left out.
+
+```
+FINDING REGISTRY
+================
+
+UNBUNDLED CLAIMS:
+[U1] [text] -- TYPE: explicit
+[U2] [text] -- TYPE: implicit
+...
+
+CANDIDATES (from U1 mapping):
+[U6] [text] -- SOURCE: state space
+[U12] [text] -- SOURCE: instance-to-category
+...
+
+GENERATED ARTIFACTS (if G1 used):
+[G1] [text]
+[G2] [text]
+...
+
+ASSUMPTIONS:
+[U19] [text] -- LOAD-BEARING -- if false: [consequence]
+[U20] [text] -- LOAD-BEARING -- if false: [consequence]
+[U21] [text] -- BACKGROUND
+...
+
+DIMENSIONS:
+[U22] [text]
+[U23] [text] -- HIDDEN
+...
+
+PERSPECTIVES:
+[U16] [text]
+[U17] [text]
+...
+
+AR FINDINGS:
+[F1] [text] -- STRENGTH: necessary -- PARENT: [source]
+[F2] [text] -- STRENGTH: probable -- PARENT: F1
+...
+
+AW FINDINGS:
+[F5] [text] -- SEVERITY: fatal -- PARENT: [source]
+[F9] [text] -- SEVERITY: serious -- PARENT: [source]
+...
+
+FORECLOSURES:
+[F4] [text] -- PARENT: [source]
+...
+
+DERIVED ALTERNATIVES:
+[F8] [text] -- DERIVED FROM: F5
+...
+
+EDGE CASES:
+[E1] [text] -- TYPE: boundary
+[E2] [text] -- TYPE: scale
+...
+
+BEDROCK REACHED:
+[F3] BEDROCK-TEST: [text]
+[F7] BEDROCK-OBSERVE: [text]
+[F32] BEDROCK-TEST: [text]
+...
+
+TENSIONS:
+[F-number] contradicts [F-number]: [description]
+...
+
+CANDIDATE VERDICTS:
+[G1/U-number] [VALIDATED / REJECTED / DAMAGED / CONDITIONAL / UNCERTAIN]
+  -- AR evidence: [F-numbers]
+  -- AW evidence: [F-numbers]
+  -- Edge cases: [E-numbers]
+  -- Verdict derived from: [which evidence is stronger and why]
+...
+
+TOTALS:
+- Unbundled claims: [N]
+- Candidates mapped: [N]
+- Generated artifacts: [N]
+- Assumptions: [N] ([N] load-bearing)
+- Dimensions: [N] ([N] hidden)
+- Perspectives: [N]
+- AR findings: [N] ([N] necessary, [N] probable, [N] possible)
+- AW findings: [N] ([N] fatal, [N] serious, [N] conditional)
+- Foreclosures: [N]
+- Derived alternatives: [N]
+- Edge cases: [N]
+- Bedrock reached: [N]
+- Tensions: [N]
+- Verdicts: [N] validated, [N] rejected, [N] damaged, [N] conditional, [N] uncertain
+```
+
+**Verdict values (derived from the tree, not asserted):**
+- **VALIDATED**: AR evidence reaches bedrock, AW reasons don't reach fatal bedrock, edge cases survived
+- **REJECTED**: AW fatal reason reaches bedrock. Record WHY -- rejected candidates may work in other contexts.
+- **DAMAGED**: Serious AW reasons found but none individually fatal at bedrock
+- **CONDITIONAL**: Wrong under specific conditions, right under others (state both)
+- **UNCERTAIN**: Neither side reached bedrock -- needs more investigation
+
+**Rules for the registry:**
+- Every U-numbered, G-numbered, F-numbered, and E-numbered item from Phase 1 appears here. No exceptions.
+- Verdicts must be DERIVED from the tree, not asserted. Point to specific findings.
+- If a verdict is unclear, mark UNCERTAIN, not VALIDATED.
+
+---
+
+## Phase 3: SYNTHESIS
+
+Derived entirely from the registry. No new findings introduced here.
+
+```
+ORIGINAL INPUT: [restated]
+
+SPACE SIZE: [total unique findings from registry]
+
+WHAT THE ANALYSIS ACTUALLY FOUND:
+[Numbered list of EVERY substantive finding, referencing item numbers]
+1. [finding, from U-numbers and F-numbers]
+2. [finding, from F-numbers]
+3. [finding, from E-numbers and F-numbers]
+...
+
+KEY TENSIONS:
+[Any items that contradict each other. Reference numbers.]
+1. [item] vs [item]: [what this tension means] -- TYPE: [resource allocation / information gap / optimization frontier / commitment decision]
+2. ...
+
+VOI RANKING (Value of Information -- which findings matter most):
+1. [highest-VOI finding -- item number -- learning this changes the most]
+2. [second highest -- item number]
+3. [third -- item number]
+
+LOAD-BEARING ASSUMPTIONS:
+[Assumptions that, if wrong, change everything -- item numbers only]
+
+HIDDEN DIMENSIONS:
+[Axes the original input didn't mention but exists on -- item numbers only]
+
+WEAKEST LINKS:
+[Which findings are Possible/Conditional rather than Necessary/Fatal?
+ These are where analysis might break. Reference item numbers.]
+
+ALTERNATIVES DERIVED FROM ANALYSIS:
+[Only alternatives that emerged from wrongness reasons. Each cites F-numbers.
+ If no alternatives emerged, say "None derived -- further exploration needed."]
+1. [alternative] -- derived from [F-numbers]
+2. ...
+
+TESTABLE PREDICTIONS:
+- [prediction derived from specific item numbers]
+- [prediction derived from specific item numbers]
+
+DO_FIRST ACTIONS:
+1. [action] -- WHO: [Claude/user] -- resolves: [item numbers]
+2. [action] -- WHO: [Claude/user] -- resolves: [item numbers]
+...
+
+UNRESOLVED:
+- [candidates that stayed UNCERTAIN -- what would resolve them]
+- [findings that stayed Possible -- what would confirm or deny them]
+
+READY FOR:
+- /ar [specific high-VOI claim] -- to go deeper on rightness
+- /aw [specific high-VOI claim] -- to go deeper on wrongness
+- /u [specific dimension to explore further]
+```
+
+---
+
+## Depth Scaling
+
+| Depth | Min Candidates (U1) | Min Edge Cases (U2) | Min ARAW Levels | Min Total Findings | Min Output Lines |
+|-------|---------------------|---------------------|-----------------|-------------------|------------------|
+| 1x | 5 | 3 | 3 | 20 | 400 |
+| 2x | 8 | 5 | 4 | 35 | 800 |
+| 4x | 12 | 8 | 5 | 55 | 1600 |
+| 8x | 18 | 12 | 6 | 85 | 3200 |
+| 16x | 25 | 18 | 7 | 130 | 6400 |
+| 32x | 35 | 25 | 8 | 200 | 12800 |
+
+Default depth: 2x. Detect from user input ("uaua 8x" -> 8x). These are FLOORS.
 
 ---
 
 ## Phase Awareness
 
-Different problems have different phases, and UAUA is not equally useful in all of them.
+UAUA is not equally useful for all phases of creative work:
 
-### Design Phases
-
-| Phase | UAUA Fit | What to Use Instead |
-|-------|----------|---------------------|
-| **Strategy** ("What should we build?") | Strong | Standard UAUA — this is analytical and propositional |
-| **Ideation** ("What could it look like?") | Weak | Exemplar comparison (U0) + direct generation. Skip AR/AW. |
-| **Critique** ("Is this good enough?") | Moderate | UAUA with perceptual techniques (13-18). Focus on gestalt. |
-| **Polish** ("Make it perfect") | None | Direct iteration. Don't analyze — adjust and evaluate visually. |
-
-### General Principle
-
-If the task requires GENERATING something (a design, a piece of writing, a composition), UAUA works for planning what to generate but not for the generation itself. Use UAUA to decide WHAT, then generate directly, then use UAUA to critique the result.
+| Phase | UAUA Fit | What to Do |
+|-------|----------|------------|
+| **Strategy** ("What should we build?") | Strong | Full UAUA |
+| **Ideation** ("What could it look like?") | Use G1 | Exemplar comparison + generation, light evaluation |
+| **Critique** ("Is this good enough?") | Moderate | UAUA with perceptual techniques. Trust the gestalt. |
+| **Polish** ("Make it perfect") | Weak | Direct iteration, not analysis |
 
 ---
 
-## Domain Technique Profiles
+## Anti-Failure Checks
 
-Not all techniques apply equally to all domains. Emphasize the right ones.
-
-| Domain | Primary Techniques | Secondary | Skip |
-|--------|--------------------|-----------|------|
-| **Design/UX** | 1-4, 10-11 (logical) + 13-18 (all perceptual) | 7, 8 | 5, 6, 9, 12 |
-| **Strategy/Business** | 1-8, 10-12 (full logical set) | 13, 16 | 14, 15, 17, 18 |
-| **Engineering** | 1-12 (all logical) | 13, 18 | 14-17 |
-| **Writing/Communication** | 2, 5, 9, 10, 12 + 14, 16 | 1, 7, 11, 13 | 3, 4, 6, 8, 15, 17, 18 |
-| **Research/Analysis** | 1-12 (all logical) | 13 | 14-18 |
-
-"Skip" means unlikely to be useful, not forbidden. If a skipped technique reveals something, include it.
-
----
-
-## STEP U1: Universalize (Map the Space)
-
-**Purpose**: Find the complete possibility space before testing anything.
-
-### Apply Techniques to Input
-
-Select techniques based on the domain (see Domain Profiles below). Use all that apply.
-
-#### Logical Techniques (1-12)
-
-| # | Technique | Question |
-|---|-----------|----------|
-| 1 | STATE SPACE | What states could this be in? |
-| 2 | INSTANCE-TO-CATEGORY | What is this an instance of? |
-| 3 | PARAMETER VARIATION | What if parameters varied? |
-| 4 | ROLE REVERSAL | What if roles reversed? |
-| 5 | EXISTENCE CHECK | Does this exist/is this true? |
-| 6 | CAUSAL REVERSAL | What if cause/effect reversed? |
-| 7 | TEMPORAL VARIATION | What if timing varied? |
-| 8 | BOUNDARY DISSOLUTION | What if scope changed? |
-| 9 | MODALITY SHIFT | What certainty level? |
-| 10 | PERSPECTIVE ROTATION | Whose view? |
-| 11 | SCALE VARIATION | At what level? |
-| 12 | NEGATION REFRAME | Problem or opportunity? |
-
-#### Perceptual Techniques (13-18)
-
-For design, creative, and aesthetic domains. These address dimensions that logical techniques miss.
-
-| # | Technique | Question |
-|---|-----------|----------|
-| 13 | EXEMPLAR COMPARISON | What known-good examples exist in this domain? What do the best ones share? |
-| 14 | SENSORY EVALUATION | What does this look/feel/sound like? What should it? |
-| 15 | COMPOSITIONAL ANALYSIS | How do elements relate to each other? What's the gestalt? |
-| 16 | EMOTIONAL RESPONSE | What feeling does this evoke? What feeling should it evoke? |
-| 17 | MATERIAL/SURFACE | What metaphorical surface, weight, or texture does this convey? |
-| 18 | PATTERN MATCHING | What established convention does this follow or violate? |
-
-### Output Format
-
-```
-U1: SPACE MAPPING
-=================
-Input: [original]
-
-Universalizations:
-1. [State space] → [what states found]
-2. [Category] → [what category, what siblings]
-3. [Parameters] → [what variations]
-...
-
-CANDIDATES for A1 (top 5 most promising):
-1. [Candidate 1]
-2. [Candidate 2]
-3. [Candidate 3]
-4. [Candidate 4]
-5. [Candidate 5]
-
-[T:result] U1 produced [N] universalizations, [M] candidates
-```
+| Failure Mode | Signal | Fix |
+|-------------|--------|-----|
+| **Soft AW** | "Wrong but with conditions it works" | That's AR. Find why it's ACTUALLY wrong. |
+| **Premature alternative** | Asserting what's "better" before finishing exploration | Delete it. Alternatives come from the registry, not intuition. |
+| **Opinion bedrock** | Labeling "probably true" as BEDROCK | Not bedrock. Keep recursing until testable/logical/observable. |
+| **Cherry-picked synthesis** | Synthesis mentions 5 findings but registry has 40 | Synthesis must reference ALL substantive findings. |
+| **Validation parade** | Every candidate VALIDATED | Find the foreclosures and costs. 20-40% should be rejected. |
+| **Narrative tree** | Tree reads as prose paragraphs | Use numbered findings. Every node gets a number. |
+| **Missing foreclosures** | Only listing what opens up | Every "yes" is also a "no." Find what closes. |
+| **Dropped findings** | Registry has fewer items than exploration produced | Go back and add every numbered item. No exceptions. |
+| **Asserted verdicts** | "VALIDATED" without citing F-numbers | Verdicts must point to specific evidence. |
 
 ---
 
-## STEP A1: ARAW (Test Top Candidates)
+## Saving Output
 
-**Purpose**: Rigorously test the most promising candidates from U1.
-
-### For Each Candidate
-
-```
-CANDIDATE: [name]
-│
-├── ASSUME RIGHT (this candidate is best/valid)
-│   ├── What evidence supports this?
-│   ├── What follows if true?
-│   └── What must also be true?
-│
-└── ASSUME WRONG (this candidate is flawed/invalid)
-    ├── What evidence contradicts this?
-    ├── What's the failure mode?
-    └── What's a better alternative?
-```
-
-### Verdict for Each
-
-| Verdict | Meaning | Next Action |
-|---------|---------|-------------|
-| VALIDATED | AR stronger than AW | Proceed to U2 |
-| REJECTED | AW stronger than AR | Drop, record why |
-| UNCERTAIN | Both AR and AW have merit | Proceed to U2, mark for deeper investigation |
-
-### Output Format
-
-```
-A1: CANDIDATE TESTING
-=====================
-
-CANDIDATE 1: [name]
-├── AR: [summary of assume-right findings]
-├── AW: [summary of assume-wrong findings]
-└── VERDICT: [VALIDATED/REJECTED/UNCERTAIN]
-    Reason: [why]
-
-[repeat for each candidate]
-
-SUMMARY:
-- VALIDATED: [list]
-- REJECTED: [list with reasons]
-- UNCERTAIN: [list]
-
-[T:result] A1: [V] validated, [R] rejected, [U] uncertain
-```
+Output is NOT auto-saved. If the user wants to save, they invoke `/savefile` after the session.
 
 ---
 
-## STEP U2: Universalize (Find Edge Cases)
-
-**Purpose**: Find edge cases and boundary conditions for survivors.
-
-### For Each VALIDATED/UNCERTAIN Candidate
-
-Apply universalization to find:
-- **BOUNDARY**: Where does this break?
-- **SCALE**: At what scale does it fail?
-- **TEMPORAL**: When doesn't it apply?
-- **STAKEHOLDER**: Who would disagree?
-- **CONTEXT**: Under what conditions does it fail?
-
-### Also for REJECTED Candidates
-
-- **WHEN WOULD THEY WORK?** Under what conditions would rejected options become valid?
-- This prevents premature rejection of contextually-valid options.
-
-### Output Format
-
-```
-U2: EDGE CASE DISCOVERY
-=======================
-
-FOR VALIDATED: [Candidate name]
-Edge cases found:
-1. [Edge case 1] - When: [condition]
-2. [Edge case 2] - When: [condition]
-
-FOR REJECTED: [Candidate name]
-Would work if: [conditions]
-
-NOVEL INSIGHTS (not found in U1):
-- [Insight 1]
-- [Insight 2]
-
-[T:result] U2 found [N] edge cases, [M] novel insights
-```
-
----
-
-## STEP A2: ARAW (Final Validation)
-
-**Purpose**: Test edge cases and produce final validated output.
-
-### For Each Edge Case
-
-```
-EDGE CASE: [description]
-├── ASSUME RIGHT (edge case matters)
-│   └── How does this change our validated candidates?
-│
-└── ASSUME WRONG (edge case doesn't matter)
-    └── Why can we ignore this?
-```
-
-### Final Verdict for Each Original Candidate
-
-| Status | Meaning |
-|--------|---------|
-| FINAL VALIDATED | Survived all rounds |
-| VALID WITH CONDITIONS | Survived but only under specific conditions |
-| FINAL REJECTED | Failed edge case testing |
-
-### Output Format
-
-```
-A2: FINAL VALIDATION
-====================
-
-EDGE CASE TESTING:
-[Edge case 1]:
-├── AR: [if matters, impact is...]
-├── AW: [can ignore because...]
-└── VERDICT: [MATTERS/IGNORE]
-
-FINAL STATUS:
-
-CANDIDATE 1: [name]
-├── Original status: [from A1]
-├── Edge cases that matter: [list]
-├── Final status: [VALIDATED/WITH CONDITIONS/REJECTED]
-└── If WITH CONDITIONS: [specify conditions]
-
-[repeat]
-
-[T:result] Final: [V] validated, [C] conditional, [R] rejected
-```
-
----
-
-## STEP SYNTHESIS: What Survived?
-
-### Summary Format
-
-```
-UAUA SYNTHESIS
-==============
-
-Original input: [input]
-
-JOURNEY:
-- U1 found [N] candidates
-- A1 validated [V], rejected [R], uncertain [U]
-- U2 found [E] edge cases
-- A2 validated [F] final, [C] conditional
-
-FINAL ANSWER:
-1. [Best option] - VALIDATED
-   Why: [reasoning]
-   Conditions: [if any]
-
-2. [Second option] - [VALIDATED/WITH CONDITIONS]
-   Why: [reasoning]
-   Conditions: [if any]
-
-KEY INSIGHTS:
-- [What U1 found that ARAW alone wouldn't]
-- [What A1 found that Universalization alone wouldn't]
-- [What U2 found that first pass missed]
-- [What A2 validated/invalidated]
-
-REMAINING UNCERTAINTY:
-- [What's still unknown]
-
-VERIFICATION:
-- [T:result] UAUA complete: [F] final validated from [N] initial candidates
-- [D:derivation] Final options derived through 4-step UAUA process
-```
-
----
-
-## Depth Scaling (2x, 4x, 8x, 16x)
-
-UAUA supports depth scaling like ARAW. Higher depth = more iterations, more candidates, more edge cases.
-
-### Depth Requirements
-
-| Depth | Pattern | Min Candidates (U1) | Min Edge Cases (U2) | Min ARAW Levels | Min Output Lines |
-|-------|---------|---------------------|---------------------|-----------------|------------------|
-| **1x** | U → A | 5 | 3 | 3 | 400 |
-| **2x** | U → A → U → A | 8 | 5 | 4 | 800 |
-| **4x** | U → A → U → A (deep) | 12 | 8 | 5 | 1600 |
-| **8x** | U → A → U → A → U → A | 18 | 12 | 6 | 3200 |
-| **16x** | U → A → U → A → U → A → U → A | 25 | 18 | 7 | 6400 |
-
-### How to Achieve ARAW Depth in A1/A2
-
-For the ARAW phases (A1, A2), achieve tree depth using this technique:
-
-1. **Every ASSUME RIGHT gets sub-claims** - Ask "What follows from this?" or "What must also be true?"
-2. **Every sub-claim gets ASSUME WRONG** - Ask "What if this sub-claim is wrong?" or "What's an alternative?"
-3. **Recurse: AR→AW→AR→AW** until you hit:
-   - **Foundation** (questioning becomes circular)
-   - **Prediction** (testable claim - note as [CRUX])
-   - **Decision** (not a claim - extract underlying claim first)
-
-**Example at 4x depth (5 levels):**
-```
-Candidate: X is the best approach
-├── AR: X is best
-│   ├── Sub-claim: X has property Y
-│   │   ├── AR: Y is valuable
-│   │   │   ├── Sub-claim: Y enables Z
-│   │   │   │   └── AW: What if Z isn't needed? [LEVEL 5]
-│   │   │   └── AW: Y might not be valuable because...
-│   │   └── AW: X might not have Y because...
-│   └── AW: Something else might have Y better
-└── AW: X is not best because...
-```
-
-### Depth Detection
-
-If user message contains depth signal, use that depth:
-- "uaua 2x this problem" → 2x depth
-- "uaua 8x" → 8x depth
-- Just "uaua" → default 2x
-
-### What Changes at Higher Depth
-
-| Component | At 2x | At 8x |
-|-----------|-------|-------|
-| **U1 Techniques** | Apply 6-8 of 18 (domain-appropriate) | Apply all domain-appropriate techniques exhaustively |
-| **U1 Candidates** | 5-8 candidates | 18+ candidates |
-| **A1 Tree Depth** | 3-4 levels deep | 6-8 levels deep |
-| **U2 Edge Cases** | 3-5 per candidate | 8-12 per candidate |
-| **A2 Validation** | Key edge cases | All edge cases |
-| **Iterations** | 1 full cycle | 3+ full cycles |
-
-### Pre-Completion Check
-
-Before finishing any UAUA, verify:
-- [ ] U0 exemplars gathered (unless pure logic domain)
-- [ ] Candidates count meets minimum for depth
-- [ ] Edge cases count meets minimum for depth
-- [ ] ARAW tree depth meets minimum
-- [ ] Output length meets minimum
-- [ ] All steps (U0, U1, A1, U2, A2) completed
-- [ ] Gestalt impression consistent with analytical findings
-
-**If ANY requirement not met: Continue analysis, do NOT submit.**
-
-### Save Requirement
-
-Every UAUA at 2x+ depth must be saved to `library/araw/sessions/uaua_[date]_[topic].md`
-
----
-
-## Example: "Should I take this job offer?"
-
-### U1: Map the Space
-
-```
-Input: "Should I take this job offer?"
-
-Universalizations:
-1. Instance-to-category: "career decision" → siblings: stay, negotiate, other jobs
-2. Parameter variation: salary, role, location, timing all variable
-3. Temporal: now vs later vs never
-4. Stakeholder: family, current employer, future self
-
-CANDIDATES:
-1. Accept the offer as-is
-2. Negotiate the offer
-3. Decline and stay at current job
-4. Decline and seek other offers
-5. Request time to decide
-```
-
-### A1: Test Candidates
-
-```
-CANDIDATE 1: Accept as-is
-├── AR: Growth opportunity, higher pay
-├── AW: May be leaving money on table, unknown culture
-└── VERDICT: UNCERTAIN (should try negotiating first)
-
-CANDIDATE 2: Negotiate
-├── AR: Higher compensation likely, shows confidence
-├── AW: Could lose offer if aggressive
-└── VERDICT: VALIDATED (low downside, high upside)
-
-[etc.]
-```
-
-### U2: Edge Cases
-
-```
-FOR VALIDATED: Negotiate
-Edge cases:
-1. Offer rescinded → rare but possible
-2. They don't negotiate → accept anyway?
-3. Counter lower than expected → accept floor?
-```
-
-### A2: Final Validation
-
-```
-EDGE CASE: Offer rescinded during negotiation
-├── AR (matters): Would be devastating
-├── AW (ignore): Very rare, professional negotiation is expected
-└── VERDICT: IGNORE (standard practice)
-
-FINAL STATUS:
-- Negotiate → VALIDATED (standard professional behavior)
-- Accept as-is → VALID WITH CONDITIONS (only if negotiation fails)
-```
-
-### Synthesis
-
-```
-FINAL ANSWER:
-1. NEGOTIATE the offer - this is expected professional behavior with high upside
-2. If negotiation fails, ACCEPT as-is - the opportunity is valuable
-3. Define your walkaway number before negotiating
-
-KEY INSIGHT: Binary "accept/decline" framing missed the negotiate option that UAUA found.
-```
-
----
-
-## When UAUA is Overkill
-
-Don't use UAUA for:
-- Simple, reversible decisions → Use ARAW-Lite
-- Pure exploration with no validation needed → Use Universalization only
-- Pure validation with known options → Use ARAW only
-
-**UAUA is for**: Complex decisions where you need BOTH complete option coverage AND rigorous validation.
-
----
-
-## Verification Checklist
-
-Before completing UAUA:
-
-- [ ] U0 identified exemplars (unless pure logic domain)
-- [ ] U1 applied domain-appropriate techniques (logical + perceptual as needed)
-- [ ] U1 generated at least 5 candidates
-- [ ] A1 tested all candidates with full AR/AW
-- [ ] U2 found at least 2 edge cases
-- [ ] A2 tested edge cases
-- [ ] Gestalt check: does the overall impression match the analytical conclusion?
-- [ ] Synthesis explains what each step added
-- [ ] Final answer has clear validation rationale
-
-[T:result] Checklist complete: all verification items satisfied
+## Pre-Completion Check
+
+Before finishing:
+- [ ] All findings numbered (U, G, F, E series) throughout exploration
+- [ ] Depth floors met (candidates, edge cases, ARAW levels, total findings)
+- [ ] Every branch reaches bedrock (BEDROCK-TEST/LOGIC/OBSERVE/TENSION -- not opinion)
+- [ ] ALL numbered items from Phase 1 appear in registry (none dropped)
+- [ ] Registry includes totals
+- [ ] Verdicts derived from tree with F-number citations, not asserted
+- [ ] Synthesis introduces NO new findings -- only references item numbers
+- [ ] Alternatives derived from analysis (each cites F-numbers), not asserted from thin air
+- [ ] At least 1 genuinely novel finding per major branch
+- [ ] Testable predictions reference specific item numbers
+- [ ] Gestalt impression consistent with analytical conclusion
+- [ ] If creative domain: artifacts generated, not just labels analyzed
+- [ ] **Validation bias check**: If >80% of candidates VALIDATED, go back and test harder. At least 20% should be REJECTED or genuinely UNCERTAIN.
+- [ ] **Unconventional check**: At least 1 candidate or AW branch explored a genuinely unconventional alternative
+- [ ] **Cheerleading check**: If every finding is positive, you missed the costs. Go back.
+- [ ] **Completeness check**: Would someone from a different domain spot something you missed? If yes, keep going.

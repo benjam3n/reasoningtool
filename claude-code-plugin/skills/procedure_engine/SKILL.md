@@ -1,363 +1,140 @@
 ---
 name: procedure_engine
-description: GOSM Procedure Engine - Automatic routing and chaining based on QUICKSTART flow. Handles goals, problems, questions, decisions, situations, and feelings.
-context: fork
+description: The deep analysis engine. Routes input by type, applies appropriate analysis depth, produces structured understanding and action.
 ---
 
-# GOSM Procedure Engine
+# Procedure Engine - Comprehensive Analysis
 
 **Input**: $ARGUMENTS
 
 ---
 
-## Step 1: What Do You Have?
+## Core Principles
 
-Classify the input type:
+1. **Understand before acting.** Explore the problem from multiple angles before recommending action. But don't explore forever — stop when you understand enough to act well.
 
-| Type | Indicators | Example |
-|------|------------|---------|
-| **GOAL** | "I want", "achieve", imperative, future state | "I want to start a business" |
-| **PROBLEM** | "issue", "broken", "stuck", negative state | "My team is dysfunctional" |
-| **QUESTION** | "should I", "?", seeking answer | "Should I take this job?" |
-| **DECISION** | "or", "vs", explicit options | "Option A or Option B?" |
-| **SITUATION** | Describing current state, implicit goal | "I'm stuck in my career" |
-| **FEELING** | Emotional state, intuition | "Something feels off" |
+2. **Route by type.** Different inputs need different treatment. A goal needs decomposition. A problem needs root cause. A decision needs comparison. Classify first.
 
-**Classify now**: [TYPE]
+3. **Surface the hidden.** The most important information is usually unstated — hidden assumptions, implicit constraints, presupposed beliefs. Find these before analyzing the stated content.
+
+4. **Testable output.** Every recommendation should include how to verify it worked. Every claim should be possible to check.
+
+5. **Action-oriented.** Analysis that doesn't lead to action is academic. End with specific, prioritized next steps.
 
 ---
 
-## Step 2: Parse as Guesses (GUESS FIRST)
+## Step 1: Classify Input
 
-**Core Principle**: Everything the user says contains guesses. Parse them FIRST, ask questions about them SECOND.
+What kind of thing is this?
 
-A guess is a claim that could be wrong about something external to the claim itself.
-
-### What's NOT a Guess (Don't Parse These)
-
-| Type | Example | Why Not a Guess |
-|------|---------|-----------------|
-| Definitions | "A bachelor is unmarried" | About words, not world |
-| Techniques | "Sort by dividing array" | Method, no truth claim |
-| Categories | "Red is a color" | Classification system |
-| Questions | "What should I do?" | Requesting, not claiming |
-| Commands | "Help me with X" | Directing, not claiming |
-
-### Parse Surface Claims
-
-List each factual/causal/predictive claim:
-1. [surface claim 1]
-2. [surface claim 2]
-...
-
-### Unbundle Hidden Guesses
-
-Each surface claim contains BUNDLED GUESSES. Unbundle them:
-
-**Example**: "Evidence shows X" bundles:
-- Guess: I correctly perceived the evidence
-- Guess: I correctly remember the evidence
-- Guess: I correctly interpret the evidence
-- Guess: The evidence is reliable/not fabricated
-
-**Example**: "I need to quit my job" bundles:
-- Guess: Quitting will solve the underlying problem
-- Guess: The job is the source of the problem
-- Guess: No alternative to quitting exists
-- Guess: I know what I want after quitting
-
-For each surface claim, unbundle:
-```
-Surface: "[claim]"
-Bundled guesses:
-- [hidden guess 1]
-- [hidden guess 2]
-- [hidden guess 3]
-...
-```
-
-### Generate Multiple Guess Types
-
-For key claims, generate multiple guess types:
-
-| Type | Description | Example |
-|------|-------------|---------|
-| **WELL-SUPPORTED** | Evidence exists, likely true | "Job is stressful [O: user reported]" |
-| **UNLIKELY** | Counter-evidence or low prior | "Boss will change behavior" |
-| **CONTRARIAN** | Challenges the frame | "Quitting won't help - the real issue is internal" |
-| **OUT-OF-BOX** | Creative reframe | "The 'problem' is actually the solution to something else" |
-| **UNCOMFORTABLE** | True but unwanted | "You're staying because you're afraid" |
-
-**Generate now** for key claims.
-
-### Classify Each Guess: OPEN vs CLOSED
-
-| Guess | Type | Why |
-|-------|------|-----|
-| [guess] | OPEN/CLOSED | [alternatives exist / no alternatives] |
-
-- **CLOSED**: No alternatives exist. Accept as foundation.
-- **OPEN**: Alternatives exist. Needs exploration.
+| Type | Signal | Core Need |
+|------|--------|-----------|
+| **GOAL** | "I want to...", "How do I..." | Decompose and plan |
+| **PROBLEM** | "Something is wrong...", "Why does..." | Diagnose and fix |
+| **QUESTION** | "What is...", "Is it true that..." | Research and answer |
+| **DECISION** | "Should I...", "Which option..." | Compare and choose |
+| **SITUATION** | "Here's what's happening..." | Understand and respond |
+| **FEELING** | "I'm frustrated/excited/confused..." | Clarify and redirect |
 
 ---
 
-## Step 3: ARAW Search (Assume Right / Assume Wrong)
+## Step 2: Surface Hidden Claims
 
-For each OPEN claim, branch:
+Every input contains unstated assumptions. Find them.
 
-```
-Claim: "[claim]"
-├── ASSUME RIGHT → Claim is true
-│   └── What follows? What actions are justified?
-└── ASSUME WRONG → Claim might be false
-    └── What alternatives exist? What else could be true?
-```
+- **Explicit claims**: What's directly stated
+- **Implicit claims**: What's assumed but not said
+- **Bundled claims**: Multiple claims packed into one statement
+- **Presuppositions**: What must be true for the statement to make sense
 
-→ INVOKE: /assumeright_assumewrong_search $ARGUMENTS
+Example: "I need to scale our database" bundles: a scaling problem exists, the database is the bottleneck, scaling the database will fix it, we have resources to scale.
 
----
-
-## Step 4: Fill Goal Journey Structure
-
-Make guesses to fill the structure:
-
-```
-CURRENT STATE:    [Where they are now]
-DESIRED STATE:    [Where they want to be]
-IMMEDIATE GOAL:   [What they're trying to do]
-SERVES:           [What that goal serves - UNCERTAIN?]
-INTRINSIC GOAL:   [What they ultimately value - NEEDS ELICITATION?]
-WHY NOW:          [What triggered this - UNKNOWN?]
-SUCCESS CRITERIA: [How they'll know it worked - UNKNOWN?]
-CONSTRAINTS:      [What limits exist - UNKNOWN?]
-```
-
-Mark uncertain items. These become questions.
+**ARAW the highest-VOI hidden claim** — the one that, if wrong, changes everything.
 
 ---
 
-## Step 5: Dual Analysis (from ARAW)
+## Step 3: Analyze by Type
 
-### Contrarian Analysis (ASSUME WRONG branches)
-- Is [stated approach] actually necessary?
-- What alternatives exist?
-- Is [X] the real problem/goal, or something else?
+Route to the appropriate analysis:
 
-### Non-Contrarian Analysis (ASSUME RIGHT branches)
-- What options exist for achieving [goal]?
-- What are the next steps?
-- What resources/skills are available?
+### GOAL
+1. What's the foundational goal behind this? (trace upward)
+2. What are the subgoals? (decompose downward)
+3. What's the current state vs desired state?
+4. What's blocking progress?
+5. What's the highest-leverage next step?
 
-**Both analyses are always done.**
+→ May invoke: `/goal_decomposition`, `/goal_journey_system`, `/steps_generation`
 
----
+### PROBLEM
+1. What exactly is wrong? (specific symptoms)
+2. When did it start? What changed?
+3. What's the root cause? (ask "why" until you hit foundation)
+4. What are the fix options?
+5. Which fix addresses root cause, not symptoms?
 
-## Step 6: Filter by User Context
+→ May invoke: `/root_cause_5_whys`, `/araw`, `/leverage_point_discovery`
 
-What can this user act on?
+### QUESTION
+1. What kind of question? (factual, conceptual, evaluative)
+2. What's already known?
+3. What are the candidate answers?
+4. What evidence supports/contradicts each?
+5. What's the best current answer + confidence level?
 
-| User Role | Show Contrarian? | Show Non-Contrarian? |
-|-----------|------------------|----------------------|
-| Decision maker | Yes | Yes |
-| Implementer | Some | Yes (focus on execution) |
-| Affected party | Minimal | Yes (focus on their options) |
+→ May invoke: `/araw`, `/bounded_inquiry`, `/verification_before_output`
 
----
+### DECISION
+1. What are the options? (including non-obvious ones)
+2. What criteria matter? (derived from purpose)
+3. How do options compare?
+4. What's the recommendation?
+5. How reversible is this?
 
-## Step 7: Generate Questions (About the Guesses)
+→ May invoke: `/comparison`, `/evaluation_dimensions`, `/selection`
 
-**Remember**: Guesses FIRST (Step 2), questions SECOND (this step).
+### SITUATION
+1. What's happening? (neutral description)
+2. What does this mean for the user's goals?
+3. What options does this create?
+4. What's the recommended response?
 
-### Question Quality Criteria
+→ May invoke: `/araw`, `/goal_reframing`, `/steps_generation`
 
-Before generating each question, check:
+### FEELING
+1. What's the feeling pointing at? (feelings are data about unmet needs)
+2. What goal or value is threatened/served?
+3. What action would address the underlying need?
 
-| Criterion | Description | Pass? |
-|-----------|-------------|-------|
-| **Generativity** | Opens new lines of inquiry | HIGH/MEDIUM/LOW |
-| **Specificity** | Clear what counts as answer | HIGH/MEDIUM/LOW |
-| **Depth** | Goes UPSTREAM (toward causes), not sideways | UPSTREAM/SIDEWAYS |
-| **Answerability** | Can be grounded in evidence | YES/PARTIAL/NO |
-
-### "Why Continue?" Gate
-
-Before each question, ask:
-1. Is this UPSTREAM? (toward causes, not sideways)
-2. Is it DIFFERENT? (not a rephrasing)
-3. Is it ANSWERABLE? (can be grounded)
-4. Would the answer MATTER? (changes understanding)
-
-**STOP generating questions when they become**:
-- REPETITIVE: Same question rephrased
-- SIDEWAYS: Related topic, not causal
-- UNANSWERABLE: No way to ground it
-- LOW-VALUE: Answer wouldn't change anything
-
-### Questions to Ask (Filtered)
-
-For each question, document:
-```
-Question: [question]
-About guess: [which guess this questions]
-Gate check: [UPSTREAM/DIFFERENT/ANSWERABLE/MATTERS]
-Priority: [HIGH/MEDIUM/LOW]
-```
-
-**Remember**: After-questioning results are ALSO guesses, not conclusions. Mark as "current working guess" not "answer".
+→ May invoke: `/araw`, `/value_elicitation`, `/goal_understanding`
 
 ---
 
-## Step 8: Value Elicitation (if intrinsic goal unknown)
+## Step 4: Synthesize
 
-→ INVOKE: /value_elicitation $ARGUMENTS
-
-Keep asking until circularity:
-- "What's important to you about [X]?"
-- "When you have [X], what does that give you?"
-
----
-
-## Step 9: Check for Failure Patterns
-
-### First: Legitimate Iteration Check
-- [ ] Measurable improvement each cycle?
-- [ ] Backward reasoning identified gaps?
-- [ ] Foundational work that must precede testing?
-
-If all checked → NOT failure, continue.
-
-### If not legitimate iteration:
-
-→ INVOKE: /failure_journeys (check for sustainable failure)
-
-- Same pattern repeating?
-- Would success threaten something?
-- Is struggle part of identity?
+1. **Key findings**: What did the analysis reveal? (3-5 bullet points)
+2. **Tensions**: Any unresolved conflicts between different findings?
+3. **Confidence**: What are you sure about? What's uncertain?
+4. **Testable predictions**: "If this analysis is correct, you should see X when Y."
 
 ---
 
-## Step 10: Trace Goal Journey
+## Step 5: Recommend Action
 
-→ INVOKE: /goal_journey_system
+Specific, prioritized next steps:
 
-```
-ACTION: [verb phrase]
-    ↓ serves
-GOAL: [what that achieves]
-    ↓ serves
-GOAL: [what that enables]
-    ↓ serves
-INTRINSIC: [from value elicitation]
-```
+1. **DO_FIRST**: [action] — [who does it] — [what it resolves]
+2. **DO_NEXT**: [action] — [who] — [what it resolves]
+3. **MONITOR**: [what to watch for] — [what it would mean]
 
-Each step must serve the next. No gaps.
+Every action must be specific enough to execute without further analysis.
 
 ---
 
-## Step 11: Generate Steps
+## Pre-Completion Check
 
-→ INVOKE: /steps_generation
-
-For execution:
-1. Verb phrases ("Do X" not "X happens")
-2. Specific and verifiable
-3. Each serves the goal chain
-
----
-
-## Step 12: Verify Before Output
-
-→ INVOKE: /verification_before_output
-
-Every claim needs a marker:
-- `[O: source]` - Observed directly
-- `[T: N=X, result]` - Tested with results
-- `[D: A + B → C]` - Derived from verified premises
-
-If unverifiable → state as guess or exclude.
-
----
-
-## Step 13: Empirical Validation (NEW)
-
-→ INVOKE: /empirical_validation
-
-**Before final commitment**, check if any part can be tested:
-
-1. Extract testable predictions from the plan
-2. Design minimum viable test
-3. Decide: test first vs act then test vs set checkpoints
-4. Log predictions for future calibration
-
-**Why this matters**: Story coherence is insufficient. Coherent narratives can mask poor plans (Hollywood problem). External reality testing catches what internal consistency misses.
-
-**Skip conditions**:
-- Action is trivially reversible → Just act
-- Extreme time pressure → GOSM-Lite already used
-- No test possible → Commit with uncertainty noted
-- Test cost > action cost → Just act
-
-Even when skipping, LOG predictions for calibration.
-
----
-
-## Output Format
-
-```
-## Input Classification
-Type: [GOAL/PROBLEM/QUESTION/DECISION/SITUATION/FEELING]
-
-## Surface Claims Parsed
-[List of explicit claims from input]
-
-## Bundled Guesses Unbundled
-[For each surface claim, the hidden guesses within it]
-
-## Guess Variety (Multiple Types)
-| Claim | WELL-SUPPORTED | UNLIKELY | CONTRARIAN | OUT-OF-BOX | UNCOMFORTABLE |
-|-------|----------------|----------|------------|------------|---------------|
-| ... | ... | ... | ... | ... | ... |
-
-## OPEN vs CLOSED Classification
-| Guess | Type | Reason |
-|-------|------|--------|
-| ... | OPEN/CLOSED | ... |
-
-## ARAW Analysis
-[Key branches from Assume Right / Assume Wrong]
-
-## Goal Journey Structure
-[Filled structure with uncertainties marked]
-[All items marked as GUESS not FACT]
-
-## Dual Analysis Summary
-CONTRARIAN: [Key alternatives/reframes]
-NON-CONTRARIAN: [Key options/next steps]
-
-## Questions About Guesses
-[Questions that passed the "why continue?" gate]
-[Each linked to which guess it questions]
-
-## Current Working Guesses (Not Conclusions)
-[After-questioning results, still marked as guesses]
-
-## Recommended Procedure Chain
-(Example for GOAL: → CHAIN: [/goal_understanding, /value_elicitation, /goal_journey_system])
-```
-
----
-
-## Procedure Chains by Type
-
-| Input Type | Procedure Chain |
-|------------|-----------------|
-| GOAL | /goal_understanding → /value_elicitation → /goal_journey_system → /steps_generation |
-| PROBLEM | /problem_identification → /root_cause_5_whys → /araw → /leverage_point_discovery |
-| QUESTION | /question_analysis_framework → /bounded_inquiry → /verification_before_output |
-| DECISION | /comparison → /evaluation_dimensions → /criteria_weighting → /selection |
-| SITUATION | /goal_understanding → /araw → /goal_reframing → /steps_generation |
-| FEELING | /araw → /value_elicitation → /goal_understanding |
-
----
-
-**Execute now**: Begin with Step 1 classification.
+- [ ] Input classified correctly
+- [ ] Hidden claims surfaced and highest-VOI tested
+- [ ] Analysis appropriate to type (not generic)
+- [ ] Synthesis includes testable predictions
+- [ ] Actions are specific and prioritized

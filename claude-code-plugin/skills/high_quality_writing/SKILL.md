@@ -1,318 +1,122 @@
 ---
 name: high_quality_writing
-description: "GOSM High Quality Writing procedure with weak pattern detection"
+description: Generative writing tool. Principles for producing clear, compelling, honest prose. Includes weak pattern detection.
 ---
 
 # High Quality Writing
-
----
 
 **Input**: $ARGUMENTS
 
 ---
 
-## Core Principle: Quality is Relational
+## Core Principles
 
-Quality = f(text, reader, context, purpose)
+1. **Write for the reader's journey.** Every piece of writing is a path. The reader arrives with a question or need, and leaves with understanding or capability. Map that journey before writing. What do they know? What do they need? What order do they need it in?
 
-Before writing, specify:
-1. **Who** is the reader?
-2. **What** should change for them?
-3. **What** would prevent that?
-4. **What** must be true to prevent failure?
+2. **Every section answers a question.** If you can't state what question a section answers, it shouldn't exist. The question should be one the reader actually has at that point in the journey — not one you want to answer.
+
+3. **Specificity is clarity.** Vague writing isn't cautious, it's unclear. "The system is fast" says nothing. "The system responds in <50ms at p99" says everything. When you can't be specific, say why ("response time depends on X, ranging from Y to Z").
+
+4. **Voice matches purpose.** Technical documentation: precise, neutral. Persuasive writing: confident, direct. Narrative: vivid, concrete. Academic: measured, evidence-grounded. Match the voice to what the reader needs to feel.
+
+5. **Delete until it hurts.** First drafts are always too long. Cut everything that doesn't serve the reader's journey. If cutting a sentence doesn't degrade understanding, it was decoration.
+
+6. **Show the reasoning.** Don't just state conclusions — show how you got there. "X is true because Y, which we can see from Z." Readers trust writers who show their work.
 
 ---
 
-## Phase 1: Requirement Definition
+## The Writing Process
 
-Answer these in order:
+### 1. Define the Reader
 
 ```
-READER: [Who specifically]
-CHANGE: [What state change in reader]
-FAILURE: [What would cause failure]
-MUST: [Necessary conditions - jointly sufficient for success]
-VERIFY: [How to check success]
+WHO: [Who is reading this? What do they know already?]
+NEED: [What do they need after reading? Knowledge? Capability? Decision?]
+STATE BEFORE: [What do they believe/know/feel before reading?]
+STATE AFTER: [What should they believe/know/feel after?]
 ```
 
----
+### 2. Map the Journey
 
-## Phase 2: Question-Answer Structure
+What questions does the reader have, and in what order?
 
-**Every section must answer a question or address an objection the reader has.**
+The reader's questions follow a natural progression:
+1. **What is this?** (orientation)
+2. **Why should I care?** (relevance)
+3. **How does it work?** (mechanism)
+4. **How do I use it?** (action)
+5. **What if something goes wrong?** (edge cases)
+6. **What's next?** (continuation)
 
-Before writing each section, identify:
-1. **What question is the reader asking at this point?**
-2. **What objection might they raise?**
+Not every piece needs all six. But the ORDER matters — don't explain how to use something before the reader knows what it is or why it matters.
 
-If a section doesn't answer a question, it's a summary taking up space. Delete it or reframe it.
+### 3. Write
 
-| Bad (Summary) | Good (Answers Question) |
-|---------------|-------------------------|
-| "ARAW explores both branches" | "How does it work?" → "Two branches get explored..." |
-| "The tensions library contains 200+ tensions" | "What patterns recur?" → "200+ tensions..." |
-| "Philosophy" (section header) | "How do I know my output is trustworthy?" |
+For each section:
+- State the question it answers (even if not as a literal header)
+- Answer that EXACT question. A "What?" question needs a definition, not a history. A "How?" question needs steps, not theory.
+- Use the simplest structure that serves the answer:
+  - Comparison → table
+  - Sequence → numbered list
+  - Explanation → prose with examples
+  - Options → bulleted list with rationale
 
-**Test**: Can you state the question this section answers? If not, rewrite or delete.
+### 4. Detect Weak Patterns
 
----
+After drafting, scan for these. Each weakens the writing:
 
-## Phase 2b: Answer the Exact Question
+| Pattern | Example | Fix |
+|---------|---------|-----|
+| **Hedging qualifiers** | "It could potentially perhaps..." | State it or don't. Remove qualifiers. |
+| **Defensive negation** | "It's not that X is wrong, it's that..." | Say what IS true directly. |
+| **Passive responsibility** | "Mistakes were made" | Say who did what. |
+| **False precision** | "Approximately 37.2%" | Use the precision you actually have. |
+| **Weasel words** | "Some experts say..." | Which experts? Name them or cut it. |
+| **Throat-clearing** | "It's worth noting that..." | Delete the throat-clear. Start with the point. |
+| **Nominalization** | "The implementation of the system" | "Implementing the system" — use verbs, not noun-ified verbs. |
+| **Summary-like statements** | "As we've discussed..." | Don't summarize, advance. |
+| **Sections without questions** | A block of text that doesn't answer anything | Delete or restructure around a reader question. |
 
-**Each section must answer ONLY the question in its header - not a related question.**
+### 5. Verify Claims
 
-Common failure: Answering a different question than the one asked.
+Every factual claim should be marked:
+- `[O: source]` — Observed from a specific source
+- `[T: test]` — Testable prediction
+- `[D: premises]` — Derived from stated premises
 
-| Header | Wrong Answer (Different Question) | Right Answer (Exact Question) |
-|--------|-----------------------------------|-------------------------------|
-| "What is X?" | "X works by doing Y" (How) | "X is a method for Z" (What) |
-| "Why does it work?" | "The process is: 1, 2, 3" (How) | "Because every claim is a guess" (Why) |
-| "What can it do?" | "When you're right, know WHY" (Why use it) | "Test hypotheses, expand options" (Capabilities) |
-
-**The test**: Read ONLY the header question, then ONLY the answer. Does the answer directly address that specific question?
-
-If you find yourself answering "how" under "what", or "why use it" under "what can it do" - split into separate sections.
-
----
-
-## Phase 3: Weak Pattern Detection
-
-**Scan the writing for these weak patterns and strengthen them:**
-
-### Pattern 1: Defensive Negation ("It's not X - it's Y")
-
-**Weak forms:**
-- "That's not X - that's Y"
-- "It's not X, it's Y"
-- "This isn't X - this is Y"
-- "Not X but Y"
-
-**Why weak:** Defensive framing concedes ground to the counterargument. The negation makes X salient even while denying it.
-
-**Fix:** Assert Y directly without mentioning X.
-
-| Weak | Strong |
-|------|--------|
-| "That's not distrust - that's collaboration" | "Both are collaborative acts" |
-| "It's not criticism - it's feedback" | "Feedback improves outcomes" |
-| "This isn't failure - this is learning" | "Every attempt generates data" |
-| "Not a bug but a feature" | "This behavior serves [purpose]" |
-
-**Test:** Remove the negation. Does the assertion stand alone? If not, strengthen the Y claim.
+Unmarked claims are opinions. That's fine — but know which is which.
 
 ---
 
-### Pattern 2: Hedging Qualifiers
+## Voice Guide
 
-**Weak forms:**
-- "I think that..."
-- "It seems like..."
-- "Perhaps..."
-- "Maybe..."
-- "Sort of..."
-- "Kind of..."
-
-**Why weak:** Signals uncertainty without adding information. Either commit to the claim or explicitly state the uncertainty source.
-
-**Fix:** State claim directly OR specify what would change your confidence.
-
-| Weak | Strong |
-|------|--------|
-| "I think this is the right approach" | "This approach satisfies [criteria]" |
-| "It seems like the API is slow" | "Response times average 2.3s (target: 0.5s)" |
-| "Maybe we should refactor" | "Refactoring would enable [benefit]" |
+| Context | Voice | Characteristics |
+|---------|-------|-----------------|
+| **Technical docs** | Precise, neutral | Short sentences. Active voice. No metaphor. |
+| **Essays/arguments** | Confident, direct | State positions. Show reasoning. Acknowledge counterarguments. |
+| **Tutorials** | Warm, clear | Second person ("you"). Concrete examples. Celebrate progress. |
+| **Academic** | Measured, qualified | Precise hedging (when warranted). Citations. Signal uncertainty honestly. |
+| **Narrative** | Vivid, concrete | Sensory detail. Specific scenes. Character action over abstraction. |
 
 ---
 
-### Pattern 3: Passive Responsibility Diffusion
+## Structure Patterns
 
-**Weak forms:**
-- "Mistakes were made"
-- "It was decided that..."
-- "There has been..."
-
-**Why weak:** Hides agency. Reader cannot determine who is responsible or accountable.
-
-**Fix:** Name the agent.
-
-| Weak | Strong |
-|------|--------|
-| "It was decided to delay" | "The team decided to delay" |
-| "Mistakes were made" | "I made an error in [specific]" |
-| "There has been confusion" | "Users misunderstood [specific feature]" |
+| Reader Need | Structure |
+|-------------|-----------|
+| Understand a concept | Definition → Example → Contrast → Edge cases |
+| Make a decision | Options → Criteria → Comparison → Recommendation |
+| Learn to do something | Goal → Prerequisites → Steps → Verification → Troubleshooting |
+| Understand what happened | Context → Events → Consequences → Lessons |
+| Be persuaded | Problem → Evidence → Proposed solution → Objections addressed → Call to action |
 
 ---
 
-### Pattern 4: False Precision
+## Pre-Completion Check
 
-**Weak forms:**
-- "Exactly 47.3% of users..."
-- "In precisely 2.7 days..."
-- Numbers with spurious decimal places
-
-**Why weak:** Implies measurement precision that doesn't exist. Undermines credibility.
-
-**Fix:** Match precision to actual measurement confidence.
-
-| Weak | Strong |
-|------|--------|
-| "47.3% of users" | "About half of users" OR "47% (n=1000, CI: 44-50%)" |
-| "2.7 days" | "2-3 days" |
-
----
-
-### Pattern 5: Weasel Words
-
-**Weak forms:**
-- "Some people say..."
-- "It is believed that..."
-- "Many experts think..."
-- "Studies show..."
-
-**Why weak:** Appeals to unnamed authority. Cannot be verified.
-
-**Fix:** Name the source or remove the appeal.
-
-| Weak | Strong |
-|------|--------|
-| "Studies show..." | "[Author 2024] found..." OR state the finding directly |
-| "Many experts believe" | "[Named expert] argues..." OR state the argument |
-| "Some say..." | Delete, state your claim directly |
-
----
-
-### Pattern 6: Excessive Throat-Clearing
-
-**Weak forms:**
-- "In order to understand this, we must first..."
-- "Before we begin, it's important to note..."
-- "As we all know..."
-
-**Why weak:** Delays the point. Reader loses patience.
-
-**Fix:** Start with the point. Add context only if reader needs it to understand.
-
----
-
-### Pattern 7: Nominalization (Verb→Noun Conversion)
-
-**Weak forms:**
-- "The implementation of the feature" → "implementing the feature"
-- "Make a decision" → "decide"
-- "Conduct an investigation" → "investigate"
-
-**Why weak:** Adds words, removes action.
-
-**Fix:** Use verbs.
-
----
-
-### Pattern 8: Summary-Like Statements
-
-**Weak forms:**
-- "[Method] does X" (describing method from outside)
-- "[Method] weights toward X" (meta-commentary about properties)
-- "The name sounds X but the operation is Y" (meta-commentary)
-- "X means: Y" (explanatory framing)
-
-**Why weak:** Sounds like summarizing something fuller. Implies "there's more detail elsewhere."
-
-**Fix:** Make content the subject, not the method. State principles directly.
-
-| Weak | Strong |
-|------|--------|
-| "ARAW explores both branches" | "Both branches get explored" |
-| "ARAW weights toward completeness" | "Completeness matters" |
-| "'ASSUME WRONG' means: explore alternatives" | "ASSUME WRONG = 'what alternatives exist?'" |
-| "The method is most useful on X" | "Most useful on X" (or frame as question) |
-
-**Test:** Remove the method name from the sentence. Does it still work? If not, the method was carrying the meaning instead of the content.
-
----
-
-### Pattern 9: Sections Without Questions
-
-**Weak forms:**
-- Section headers that announce topics: "Philosophy", "Overview", "Background"
-- Sections that describe features: "The tensions library contains..."
-- Sections that summarize: "Key learnings from sessions..."
-
-**Why weak:** Announcements and summaries don't answer reader questions. They take up space.
-
-**Fix:** Reframe as the question the reader is asking:
-
-| Weak Header | Strong Header (Question) |
-|-------------|--------------------------|
-| "Philosophy" | "How do I know my output is trustworthy?" |
-| "Repository Structure" | "Where is everything?" |
-| "Tensions Library" | "What patterns recur across domains?" |
-| "Extended Examples" | "What domains can I apply this to?" |
-
-**Test:** For every section, can you state "This section answers the question: ___"? If not, rewrite or delete.
-
----
-
-## Phase 4: Writing
-
-Produce the writing while avoiding weak patterns.
-
----
-
-## Phase 5: Post-Write Scan
-
-Re-scan for weak patterns introduced during writing. For each found:
-
-```
-PATTERN: [Which pattern]
-INSTANCE: "[exact weak text]"
-FIX: "[stronger version]"
-```
-
----
-
-## Phase 6: Verification
-
-For key claims, add verification markers:
-
-| Marker | Meaning |
-|--------|---------|
-| [O: source] | Directly observed |
-| [T: test] | Tested with results |
-| [D: premises] | Derived from verified premises |
-
----
-
-## Quick Reference: Weak→Strong
-
-| Weak Pattern | Recognition | Fix |
-|--------------|-------------|-----|
-| Defensive negation | "not X - Y" | Assert Y directly |
-| Hedging | "I think", "seems" | Commit or specify uncertainty |
-| Passive diffusion | "was done" | Name the agent |
-| False precision | Spurious decimals | Match measurement confidence |
-| Weasel words | "studies show" | Name source or delete |
-| Throat-clearing | Preamble before point | Start with point |
-| Nominalization | "the X of Y" | Use verb form |
-
----
-
-## Output Format
-
-```
-WRITING OUTPUT
-==============
-
-[The writing itself]
-
----
-
-PATTERN SCAN
-============
-Patterns found: [count]
-[List any weak patterns found and fixes applied]
-
-VERIFICATION
-============
-Key claims verified: [count]
-[List claims with markers]
-```
+- [ ] Reader defined (who, need, before/after states)
+- [ ] Every section answers a reader question
+- [ ] Questions are in reader's natural order
+- [ ] Weak patterns scanned and fixed
+- [ ] Voice matches purpose
+- [ ] Specific where possible, honest about uncertainty where not
