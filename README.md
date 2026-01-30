@@ -94,7 +94,7 @@ These solve specific types of problems well. They're less general but very effec
 `literature_review` · `qualitative_research` · `data_collection` · `statistical_analysis` · `experimental_design` · `field_analysis` · `competitive_analysis` · `market_research` · `source_credibility` · `source_prioritization` · `economic_research` · `policy_research`
 
 **Writing & Communication**
-`write` · `qo` · `persuasive_writing` · `storytelling` · `public_speaking` · `presentation_design` · `content_strategy` · `outreach_communication` · `feedback_delivery` · `active_listening`
+`w` · `qo` · `persuasive_writing` · `storytelling` · `public_speaking` · `presentation_design` · `content_strategy` · `outreach_communication` · `feedback_delivery` · `active_listening`
 
 **Planning & Projects**
 `project_initiation` · `project_scoping` · `project_closure` · `dependency_extraction` · `progress_tracking` · `risk_assessment` · `deployment` · `retrospective` · `stakeholder_management`
@@ -226,10 +226,10 @@ When you know the destination but not the route. Maps methods using multiple dis
 | Skill | When to Use | What It Does |
 |-------|-------------|--------------|
 | `/qo` | Before writing — find the question and order | Finds the satisfying unresolved question that opens a document. Orders all sub-questions in a dependency chain using backward chaining. |
-| `/write` | Writing to criteria | Criteria-based writing with hierarchical upstream/downstream checks. Upstream (question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion) must pass before downstream (scope, voice, weak patterns, verification). |
-| `/propose` | After analysis — convert findings to plans | Takes output from `/ar`, `/aw`, `/u`, `/araw`, or `/uaua` and converts numbered findings into steelmanned, actionable plans with conditional recommendations and derivation chains. |
+| `/w` | Writing to criteria | Criteria-based writing with hierarchical upstream/downstream checks. Upstream (question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion) must pass before downstream (scope, voice, weak patterns, verification). |
+| `/p` | After analysis — convert findings to plans | Takes output from `/ar`, `/aw`, `/u`, `/araw`, or `/uaua` and converts numbered findings into steelmanned, actionable plans with conditional recommendations and derivation chains. |
 
-Pipeline: `/qo` → `/write` → `/sbfow` (if rejected)
+Pipeline: `/qo` → `/w` → `/sbfow` (if rejected)
 
 ### Utility
 

@@ -1,6 +1,6 @@
 ---
 name: qo
-description: Find the satisfying unresolved question that opens a document and order all questions in a dependency chain. Upstream of /write.
+description: Find the satisfying unresolved question that opens a document and order all questions in a dependency chain. Upstream of /w.
 ---
 
 # Question Ordering
@@ -167,7 +167,7 @@ VALIDATION:
 - [ ] Opening unsolved: reader genuinely doesn't know Q1's answer
 - [ ] Answers create questions: each answer drives the next
 
-READY FOR: /write [topic]
+READY FOR: /w [topic]
 ```
 
 ---
@@ -181,4 +181,4 @@ READY FOR: /write [topic]
 - [ ] No questions outside the dependency chain (digressions removed)
 - [ ] Question map includes timing (posed/answered) for each question
 - [ ] All six ordering principles validated
-- [ ] Output includes "READY FOR: /write"
+- [ ] Output includes "READY FOR: /w"

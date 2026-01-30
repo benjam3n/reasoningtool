@@ -47,7 +47,7 @@ description: Still Bad, Figure Out Why - Self-diagnosis when output was rejected
 
 ```
 OUTPUT TYPE: [what was produced — essay, draft, plan, code, etc.]
-PRODUCING SKILL: [which skill generated it — /write, /qo, /ar, etc., or freeform]
+PRODUCING SKILL: [which skill generated it — /w, /qo, /ar, etc., or freeform]
 ATTEMPT NUMBER: [1st, 2nd, 3rd, etc.]
 USER FEEDBACK: [exact quotes from user's rejection]
 PRIOR DIAGNOSES: [what was diagnosed in previous attempts, if any]
@@ -67,7 +67,7 @@ The user's rejection contains signal. Unbundle it.
 
 ### Step 3: Test Upstream Criteria
 
-For each upstream criterion from /write (or the relevant skill's criteria), test the rejected output against it. Number every finding.
+For each upstream criterion from /w (or the relevant skill's criteria), test the rejected output against it. Number every finding.
 
 **Criterion 1: Unresolved Question**
 ```

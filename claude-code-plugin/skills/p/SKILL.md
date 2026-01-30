@@ -1,5 +1,5 @@
 ---
-name: propose
+name: p
 description: Convert analysis findings into steelmanned, actionable plans with conditional recommendations. Every recommendation includes a derivation chain explaining WHY. Requires a source analysis from /ar, /aw, /u, /araw, or /uaua.
 ---
 
@@ -43,11 +43,11 @@ PROPOSE REFUSED
 ===============
 No source analysis found.
 
-/propose converts analysis findings into plans. It does not generate plans from scratch.
+/p converts analysis findings into plans. It does not generate plans from scratch.
 
-To use /propose:
+To use /p:
 1. Run /ar, /aw, /u, /araw, or /uaua on your topic first
-2. Then run /propose to convert the findings into actionable plans
+2. Then run /p to convert the findings into actionable plans
 
 For generating plans without prior analysis, use /plan_space_search instead.
 ```
@@ -275,7 +275,7 @@ SUGGESTED SEQUENCE:
 3. [Resolve UNRESOLVED plans by gathering missing info]
 
 WHAT THIS ANALYSIS DOES NOT COVER:
-[Explicitly state limitations -- what /propose can't tell you]
+[Explicitly state limitations -- what /p can't tell you]
 ```
 
 ---

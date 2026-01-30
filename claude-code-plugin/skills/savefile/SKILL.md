@@ -9,7 +9,7 @@ Save the output from the most recent skill invocation to a file.
 
 ## What to Save
 
-For analytical skills (`/ar`, `/aw`, `/araw`, `/uaua`, `/u`, `/propose`): save **only the Claim/Finding Registry and Synthesis**. Skip Phase 1 (Exploration). The registry captures every numbered item; the synthesis derives conclusions from them. Phase 1's derivation trees are redundant with the registry.
+For analytical skills (`/ar`, `/aw`, `/araw`, `/uaua`, `/u`, `/p`): save **only the Claim/Finding Registry and Synthesis**. Skip Phase 1 (Exploration). The registry captures every numbered item; the synthesis derives conclusions from them. Phase 1's derivation trees are redundant with the registry.
 
 For all other skills: save the complete output.
 
@@ -22,7 +22,7 @@ For all other skills: save the complete output.
    | Skill Type | Save Path |
    |-----------|-----------|
    | `/u`, `/ar`, `/aw`, `/araw`, `/uaua` | `library/araw/sessions/{skill}_{date}_{topic-slug}.md` |
-   | `/propose` | `library/araw/sessions/propose_{date}_{topic-slug}.md` |
+   | `/p` | `library/araw/sessions/p_{date}_{topic-slug}.md` |
    | `/generate`, `/design`, `/critique` | `library/araw/sessions/{skill}_{date}_{topic-slug}.md` |
    | `/unexpected` | `library/araw/sessions/unexpected_{date}_{topic-slug}.md` |
    | `/gosm`, `/procedure_engine` | `library/gosm/sessions/gosm_{date}_{topic-slug}.md` |
