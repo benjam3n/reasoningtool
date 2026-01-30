@@ -197,10 +197,10 @@ These skills handle common situations that need structured responses.
 
 ### Problem Diagnosis
 
-| Skill | When to Use | What It Does |
-|-------|-------------|--------------|
-| `/sbfow` | Still bad, figure out why | Tests the rejected output against upstream/downstream criteria. Finds which criteria failed, diagnoses the root pattern, checks if you're repeating the same failed diagnosis. Derives what must change. |
-| `/fowwr` | Figure out what went wrong | Traces backward from symptoms to root causes. Tests each candidate cause with counterfactuals. Derives prevention measures. |
+| Skill | Stands For | When to Use | What It Does |
+|-------|-----------|-------------|--------------|
+| `/sbfow` | Still bad, figure out why | Output was rejected and you need to know why | Tests the rejected output against upstream/downstream criteria. Finds which criteria failed, diagnoses the root pattern, checks if you're repeating the same failed diagnosis. Derives what must change. |
+| `/fowwr` | Figure out what went wrong | Something failed and you need the root cause | Traces backward from symptoms to root causes. Tests each candidate cause with counterfactuals. Derives prevention measures. |
 
 **`/sbfow` — Still Bad, Figure Out Why**
 Specifically for when Claude's output was rejected. Instead of guessing at fixes, it systematically tests the output against the criteria it should have met (upstream first: question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion). If this is attempt N+1, it checks whether the diagnosis is the same as last time — because repeating the same diagnosis means you haven't found the actual problem.
@@ -210,10 +210,10 @@ For any failure — a plan that didn't work, a process that broke, an outcome th
 
 ### Goal and Method Discovery
 
-| Skill | When to Use | What It Does |
-|-------|-------------|--------------|
-| `/wantto` | I want to | Assumes the want is right — traces what it commits you to, what it requires, what paths it opens. Finds the actual want vs stated want. |
-| `/foht` | Figure out how to | Maps the full method space, surfaces prerequisites, AR/AW tests each method, produces verdicts. |
+| Skill | Stands For | When to Use | What It Does |
+|-------|-----------|-------------|--------------|
+| `/wantto` | I want to | You have a desire or goal and need to understand what it actually requires | Assumes the want is right — traces what it commits you to, what it requires, what paths it opens. Finds the actual want vs stated want. |
+| `/foht` | Figure out how to | You know what you want but not how to get there | Maps the full method space, surfaces prerequisites, AR/AW tests each method, produces verdicts. |
 
 **`/wantto` — I Want To**
 When someone says "I want to X," that statement bundles multiple claims. This skill assumes the want is right and traces what follows — what it commits you to, what prerequisites it requires, what paths open up, what gets foreclosed. It's AR-based: take the desire seriously, explore what it implies, find what the user actually wants (which may differ from what they said), and map the paths forward.
@@ -223,19 +223,19 @@ When you know the destination but not the route. Maps methods using multiple dis
 
 ### Writing Pipeline
 
-| Skill | When to Use | What It Does |
-|-------|-------------|--------------|
-| `/qo` | Before writing — find the question and order | Finds the satisfying unresolved question that opens a document. Orders all sub-questions in a dependency chain using backward chaining. |
-| `/w` | Writing to criteria | Criteria-based writing with hierarchical upstream/downstream checks. Upstream (question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion) must pass before downstream (scope, voice, weak patterns, verification). |
-| `/p` | After analysis — convert findings to plans | Takes output from `/ar`, `/aw`, `/u`, `/araw`, or `/uaua` and converts numbered findings into steelmanned, actionable plans with conditional recommendations and derivation chains. |
+| Skill | Stands For | When to Use | What It Does |
+|-------|-----------|-------------|--------------|
+| `/qo` | Question ordering | Before writing — you need to find the right question and order | Finds the satisfying unresolved question that opens a document. Orders all sub-questions in a dependency chain using backward chaining. |
+| `/w` | Write | You're ready to write | Criteria-based writing with hierarchical upstream/downstream checks. Upstream (question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion) must pass before downstream (scope, voice, weak patterns, verification). |
+| `/p` | Propose | After analysis — you want to turn findings into actionable plans | Takes output from `/ar`, `/aw`, `/u`, `/araw`, or `/uaua` and converts numbered findings into steelmanned, actionable plans with conditional recommendations and derivation chains. |
 
 Pipeline: `/qo` → `/w` → `/sbfow` (if rejected)
 
 ### Utility
 
-| Skill | When to Use | What It Does |
-|-------|-------------|--------------|
-| `/savefile` | Save analysis output | Saves the most recent skill output to the library. For analytical skills, saves only the registry + synthesis (Phase 1 exploration is redundant with the registry). |
+| Skill | Stands For | When to Use | What It Does |
+|-------|-----------|-------------|--------------|
+| `/savefile` | Save file | You want to save the output of a skill | Saves the most recent skill output to the library. For analytical skills, saves only the registry + synthesis (Phase 1 exploration is redundant with the registry). |
 
 ---
 
