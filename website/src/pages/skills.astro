@@ -2,36 +2,36 @@
 import Base from '../layouts/Base.astro';
 
 const tier1 = [
-  { name: 'space_enumeration', desc: 'Systematically lists all options in a problem space so nothing gets missed' },
-  { name: 'assumption_extraction', desc: 'Surfaces the hidden assumptions in any claim, plan, or argument' },
-  { name: 'comparison', desc: 'Structured comparison of options with explicit criteria and trade-offs' },
-  { name: 'hypothesis_testing', desc: 'Tests claims by examining what would be true if right vs. wrong' },
-  { name: 'decision_procedure', desc: 'Builds a step-by-step flowchart anyone can follow for a recurring decision' },
-  { name: 'decomposition', desc: 'Breaks complex problems into smaller, solvable parts' },
-  { name: 'root_cause_analysis', desc: 'Finds the actual cause of a problem, not just symptoms' },
-  { name: 'dimension_discovery', desc: 'Identifies all the dimensions along which something can vary' },
-  { name: 'mece_validation', desc: 'Checks that a breakdown is mutually exclusive and collectively exhaustive' },
-  { name: 'insight_synthesis', desc: 'Combines findings from multiple analyses into coherent conclusions' },
-  { name: 'cost_benefit_analysis', desc: 'Structured evaluation of costs vs. benefits with explicit trade-offs' },
-  { name: 'goal_understanding', desc: 'Clarifies what someone actually wants vs. what they said they want' },
+  { name: 'se', desc: 'Systematically lists all options in a problem space so nothing gets missed' },
+  { name: 'aex', desc: 'Surfaces the hidden assumptions in any claim, plan, or argument' },
+  { name: 'cmp', desc: 'Structured comparison of options with explicit criteria and trade-offs' },
+  { name: 'ht', desc: 'Tests claims by examining what would be true if right vs. wrong' },
+  { name: 'dcp', desc: 'Builds a step-by-step flowchart anyone can follow for a recurring decision' },
+  { name: 'dcm', desc: 'Breaks complex problems into smaller, solvable parts' },
+  { name: 'rca', desc: 'Finds the actual cause of a problem, not just symptoms' },
+  { name: 'dd', desc: 'Identifies all the dimensions along which something can vary' },
+  { name: 'mv', desc: 'Checks that a breakdown is mutually exclusive and collectively exhaustive' },
+  { name: 'ins', desc: 'Combines findings from multiple analyses into coherent conclusions' },
+  { name: 'cba', desc: 'Structured evaluation of costs vs. benefits with explicit trade-offs' },
+  { name: 'gu', desc: 'Clarifies what someone actually wants vs. what they said they want' },
 ];
 
 const tier2 = [
-  { name: 'procedure_validation', desc: 'Checks whether a procedure works by testing each step' },
-  { name: 'assumption_inversion', desc: 'Flips assumptions to discover what happens if the opposite is true' },
-  { name: 'topological_ordering', desc: 'Finds the correct order when tasks depend on each other' },
-  { name: 'cross_domain_analogy', desc: 'Applies solutions from one field to problems in another' },
-  { name: 'morphological_analysis', desc: 'Generates combinations by varying parameters across dimensions' },
-  { name: 'systems_analysis', desc: 'Maps how parts of a system interact and where leverage points are' },
-  { name: 'backward_reasoning', desc: 'Works backward from the goal to figure out what steps are needed' },
-  { name: 'pre_mortem', desc: 'Imagines the project failed and asks why, before it starts' },
-  { name: 'failure_anticipation', desc: 'Identifies likely failure modes before they happen' },
-  { name: 'possibility_analysis', desc: 'Explores what is possible, not just what is likely' },
-  { name: 'inference_space_search', desc: 'Searches the space of valid inferences from given premises' },
-  { name: 'recursive_causal_interrogation', desc: 'Keeps asking "why" until you reach the actual root' },
-  { name: 'limitation_analysis', desc: 'Identifies real constraints and which ones can be changed' },
-  { name: 'verification_before_output', desc: 'Checks every claim for evidence before presenting it' },
-  { name: 'convergent_validation', desc: 'Uses multiple independent checks to validate a conclusion' },
+  { name: 'pv', desc: 'Checks whether a procedure works by testing each step' },
+  { name: 'ai', desc: 'Flips assumptions to discover what happens if the opposite is true' },
+  { name: 'to', desc: 'Finds the correct order when tasks depend on each other' },
+  { name: 'cda', desc: 'Applies solutions from one field to problems in another' },
+  { name: 'ma', desc: 'Generates combinations by varying parameters across dimensions' },
+  { name: 'sya', desc: 'Maps how parts of a system interact and where leverage points are' },
+  { name: 'br', desc: 'Works backward from the goal to figure out what steps are needed' },
+  { name: 'prm', desc: 'Imagines the project failed and asks why, before it starts' },
+  { name: 'fla', desc: 'Identifies likely failure modes before they happen' },
+  { name: 'poa', desc: 'Explores what is possible, not just what is likely' },
+  { name: 'ifss', desc: 'Searches the space of valid inferences from given premises' },
+  { name: 'rci', desc: 'Keeps asking "why" until you reach the actual root' },
+  { name: 'la', desc: 'Identifies real constraints and which ones can be changed' },
+  { name: 'vbo', desc: 'Checks every claim for evidence before presenting it' },
+  { name: 'val', desc: 'Uses multiple independent checks to validate a conclusion' },
 ];
 
 const experimental = [
@@ -43,39 +43,39 @@ const experimental = [
 const tier3Categories = [
   {
     category: 'Research & Analysis',
-    skills: ['literature_review', 'qualitative_research', 'data_collection', 'statistical_analysis', 'experimental_design', 'field_analysis', 'competitive_analysis', 'market_research', 'source_credibility', 'source_prioritization', 'economic_research', 'policy_research'],
+    skills: ['lr', 'qr', 'dc', 'sta', 'exd', 'fia', 'cma', 'mr', 'src', 'sop', 'er', 'plr'],
   },
   {
     category: 'Writing & Communication',
-    skills: ['high_quality_writing', 'persuasive_writing', 'storytelling', 'public_speaking', 'presentation_design', 'content_strategy', 'outreach_communication', 'feedback_delivery', 'active_listening'],
+    skills: ['w', 'pw', 'stl', 'pus', 'prd', 'cts', 'orm', 'fd', 'al'],
   },
   {
     category: 'Planning & Projects',
-    skills: ['project_initiation', 'project_scoping', 'project_closure', 'dependency_extraction', 'progress_tracking', 'risk_assessment', 'deployment', 'retrospective', 'stakeholder_management'],
+    skills: ['pji', 'de', 'pjc', 'op', 'pt', 'ria', 'dpl', 'ret', 'skm'],
   },
   {
     category: 'Business',
-    skills: ['customer_discovery', 'marketing_funnel', 'positioning', 'negotiation', 'client_retention', 'financial_modeling', 'budget_management', 'investment_strategy', 'roi_analysis'],
+    skills: ['cd', 'mf', 'pos', 'neg', 'clr', 'fm', 'bm', 'ivs', 'roa'],
   },
   {
     category: 'Software',
-    skills: ['code_review', 'debugging', 'refactoring', 'architecture_design', 'architecture_patterns', 'api_design', 'testing_strategy', 'security_practices'],
+    skills: ['cor', 'dbg', 'rf', 'dsn', 'ap', 'apid', 'ts', 'sep'],
   },
   {
     category: 'Career & Learning',
-    skills: ['career_path_planning', 'interview_preparation', 'resume_optimization', 'salary_negotiation', 'skill_acquisition', 'deliberate_practice', 'spaced_repetition', 'active_recall', 'learning_system'],
+    skills: ['cpp', 'ip', 'rmo', 'sn', 'ska', 'dlp', 'spr', 'acr', 'lrs'],
   },
   {
     category: 'Decision Making',
-    skills: ['decision_trees', 'selection', 'criteria_weighting', 'pairwise_comparison', 'expected_value', 'multi_criteria_decision', 'reversibility_analysis', 'better_option_check'],
+    skills: ['dct', 'sel', 'crw', 'pwc', 'exv', 'mcd', 'rva', 'boc'],
   },
 ];
 ---
 
-<Base title="Skills" activeNav="skills" description="207 structured reasoning skills for Claude Code, classified by universality.">
+<Base title="Skills" activeNav="skills" description="221 structured reasoning skills for Claude Code, classified by universality.">
   <div class="page-header">
     <h1>Skills</h1>
-    <p class="lead">207 structured reasoning skills for Claude Code. Each guides you through a specific type of thinking, classified by <a href="/about#universal-vs-heuristic">universality</a>.</p>
+    <p class="lead">221 structured reasoning skills for Claude Code. Each guides you through a specific type of thinking, classified by <a href="/about#universal-vs-heuristic">universality</a>.</p>
   </div>
 
   <div class="callout">

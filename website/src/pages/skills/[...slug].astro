@@ -18,8 +18,8 @@ const { skill, name } = Astro.props;
 const { Content } = await render(skill);
 
 // Determine tier from the skills data on the skills page
-const tier1Names = ['space_enumeration', 'assumption_extraction', 'comparison', 'hypothesis_testing', 'decision_procedure', 'decomposition', 'root_cause_analysis', 'dimension_discovery', 'mece_validation', 'insight_synthesis', 'cost_benefit_analysis', 'goal_understanding'];
-const tier2Names = ['procedure_validation', 'assumption_inversion', 'topological_ordering', 'cross_domain_analogy', 'morphological_analysis', 'systems_analysis', 'backward_reasoning', 'pre_mortem', 'failure_anticipation', 'possibility_analysis', 'inference_space_search', 'recursive_causal_interrogation', 'limitation_analysis', 'verification_before_output', 'convergent_validation'];
+const tier1Names = ['se', 'aex', 'cmp', 'ht', 'dcp', 'dcm', 'rca', 'dd', 'mv', 'ins', 'cba', 'gu'];
+const tier2Names = ['pv', 'ai', 'to', 'cda', 'ma', 'sya', 'br', 'prm', 'fla', 'poa', 'ifss', 'rci', 'la', 'vbo', 'val'];
 const expNames = ['araw', 'uaua', 'gosm'];
 
 let tier = 'Tier 4';
