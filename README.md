@@ -151,7 +151,7 @@ Use when you have a claim you believe is right and you want to know what follows
 - "What do I lose by accepting this?"
 
 **`/aw` — Assume Wrong**
-Use when you have a claim you want to stress-test or you suspect is wrong. AW finds why something fails, then derives alternatives from those failure reasons. This is how you give yourself (or someone else) a reality check. The alternatives aren't pulled from thin air — they come from understanding exactly how the claim breaks.
+Use when you have a claim you want to stress-test or you suspect is wrong. AW finds why something fails, then derives alternatives from the failure reasons.
 
 - "Why is this wrong?"
 - "Give me a reality check on this"
