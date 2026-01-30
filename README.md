@@ -302,8 +302,6 @@ These skills work by maintaining adversarial tension — testing claims against 
 - **Stay neutral.** Just ask for the next analysis without commenting on quality.
 - **Save and start fresh.** If you've already validated mid-session, use `/savefile` and start a new context. The new session won't carry the corrupted gradient.
 
-The strongest sessions are the ones where you fight the output the entire way through. If the system never had to defend its findings against your pushback, it probably told you what you wanted to hear.
-
 There are also bridging skills (`araw_gosm_integration`, `araw_to_gosm_bridge`) that connect these with the rest of the toolkit.
 
 ## Documentation
