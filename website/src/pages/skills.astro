@@ -2,72 +2,143 @@
 import Base from '../layouts/Base.astro';
 
 const tier1 = [
-  { name: 'se', desc: 'Systematically lists all options in a problem space so nothing gets missed' },
-  { name: 'aex', desc: 'Surfaces the hidden assumptions in any claim, plan, or argument' },
-  { name: 'cmp', desc: 'Structured comparison of options with explicit criteria and trade-offs' },
-  { name: 'ht', desc: 'Tests claims by examining what would be true if right vs. wrong' },
-  { name: 'dcp', desc: 'Builds a step-by-step flowchart anyone can follow for a recurring decision' },
-  { name: 'dcm', desc: 'Breaks complex problems into smaller, solvable parts' },
-  { name: 'rca', desc: 'Finds the actual cause of a problem, not just symptoms' },
-  { name: 'dd', desc: 'Identifies all the dimensions along which something can vary' },
-  { name: 'mv', desc: 'Checks that a breakdown is mutually exclusive and collectively exhaustive' },
-  { name: 'ins', desc: 'Combines findings from multiple analyses into coherent conclusions' },
-  { name: 'cba', desc: 'Structured evaluation of costs vs. benefits with explicit trade-offs' },
-  { name: 'gu', desc: 'Clarifies what someone actually wants vs. what they said they want' },
+  { name: 'se', title: 'Space Enumeration', desc: 'Systematically lists all options in a problem space so nothing gets missed' },
+  { name: 'aex', title: 'Assumption Extraction', desc: 'Surfaces the hidden assumptions in any claim, plan, or argument' },
+  { name: 'cmp', title: 'Comparison', desc: 'Structured comparison of options with explicit criteria and trade-offs' },
+  { name: 'ht', title: 'Hypothesis Testing', desc: 'Tests claims by examining what would be true if right vs. wrong' },
+  { name: 'dcp', title: 'Decision Procedure', desc: 'Builds a step-by-step flowchart anyone can follow for a recurring decision' },
+  { name: 'dcm', title: 'Decomposition', desc: 'Breaks complex problems into smaller, solvable parts' },
+  { name: 'rca', title: 'Root Cause Analysis', desc: 'Finds the actual cause of a problem, not just symptoms' },
+  { name: 'dd', title: 'Dimension Discovery', desc: 'Identifies all the dimensions along which something can vary' },
+  { name: 'mv', title: 'MECE Validation', desc: 'Checks that a breakdown is mutually exclusive and collectively exhaustive' },
+  { name: 'ins', title: 'Insight Synthesis', desc: 'Combines findings from multiple analyses into coherent conclusions' },
+  { name: 'cba', title: 'Cost-Benefit Analysis', desc: 'Structured evaluation of costs vs. benefits with explicit trade-offs' },
+  { name: 'gu', title: 'Goal Understanding', desc: 'Clarifies what someone actually wants vs. what they said they want' },
 ];
 
 const tier2 = [
-  { name: 'pv', desc: 'Checks whether a procedure works by testing each step' },
-  { name: 'ai', desc: 'Flips assumptions to discover what happens if the opposite is true' },
-  { name: 'to', desc: 'Finds the correct order when tasks depend on each other' },
-  { name: 'cda', desc: 'Applies solutions from one field to problems in another' },
-  { name: 'ma', desc: 'Generates combinations by varying parameters across dimensions' },
-  { name: 'sya', desc: 'Maps how parts of a system interact and where leverage points are' },
-  { name: 'br', desc: 'Works backward from the goal to figure out what steps are needed' },
-  { name: 'prm', desc: 'Imagines the project failed and asks why, before it starts' },
-  { name: 'fla', desc: 'Identifies likely failure modes before they happen' },
-  { name: 'poa', desc: 'Explores what is possible, not just what is likely' },
-  { name: 'ifss', desc: 'Searches the space of valid inferences from given premises' },
-  { name: 'rci', desc: 'Keeps asking "why" until you reach the actual root' },
-  { name: 'la', desc: 'Identifies real constraints and which ones can be changed' },
-  { name: 'vbo', desc: 'Checks every claim for evidence before presenting it' },
-  { name: 'val', desc: 'Uses multiple independent checks to validate a conclusion' },
+  { name: 'pv', title: 'Procedure Validation', desc: 'Checks whether a procedure works by testing each step' },
+  { name: 'ai', title: 'Assumption Inversion', desc: 'Flips assumptions to discover what happens if the opposite is true' },
+  { name: 'to', title: 'Topological Ordering', desc: 'Finds the correct order when tasks depend on each other' },
+  { name: 'cda', title: 'Cross-Domain Analogy', desc: 'Applies solutions from one field to problems in another' },
+  { name: 'ma', title: 'Morphological Analysis', desc: 'Generates combinations by varying parameters across dimensions' },
+  { name: 'sya', title: 'Systems Analysis', desc: 'Maps how parts of a system interact and where leverage points are' },
+  { name: 'br', title: 'Backward Reasoning', desc: 'Works backward from the goal to figure out what steps are needed' },
+  { name: 'prm', title: 'Pre-Mortem', desc: 'Imagines the project failed and asks why, before it starts' },
+  { name: 'fla', title: 'Failure Anticipation', desc: 'Identifies likely failure modes before they happen' },
+  { name: 'poa', title: 'Possibility Analysis', desc: 'Explores what is possible, not just what is likely' },
+  { name: 'ifss', title: 'Inference Space Search', desc: 'Searches the space of valid inferences from given premises' },
+  { name: 'rci', title: 'Recursive Causal Interrogation', desc: 'Keeps asking "why" until you reach the actual root' },
+  { name: 'la', title: 'Limitation Analysis', desc: 'Identifies real constraints and which ones can be changed' },
+  { name: 'vbo', title: 'Verification Before Output', desc: 'Checks every claim for evidence before presenting it' },
+  { name: 'val', title: 'Validation', desc: 'Uses multiple independent checks to validate a conclusion' },
 ];
 
 const experimental = [
-  { name: 'araw', desc: 'Assume Right / Assume Wrong — tests both branches of any claim recursively' },
-  { name: 'uaua', desc: 'Universalize → ARAW → Universalize → ARAW — alternates exploration and testing' },
-  { name: 'gosm', desc: 'Goal-Oriented State Machine — routes input through the appropriate analysis chain' },
+  { name: 'araw', title: 'Assume Right / Assume Wrong', desc: 'Tests both branches of any claim recursively' },
+  { name: 'uaua', title: 'Universalize, ARAW, Loop', desc: 'Alternates exploration and testing' },
+  { name: 'gosm', title: 'Goal-Oriented State Machine', desc: 'Routes input through the appropriate analysis chain' },
 ];
 
 const tier3Categories = [
   {
     category: 'Research & Analysis',
-    skills: ['lr', 'qr', 'dc', 'sta', 'exd', 'fia', 'cma', 'mr', 'src', 'sop', 'er', 'plr'],
+    skills: [
+      { name: 'lr', title: 'Literature Review' },
+      { name: 'qr', title: 'Qualitative Research' },
+      { name: 'dc', title: 'Data Collection' },
+      { name: 'sta', title: 'Statistical Analysis' },
+      { name: 'exd', title: 'Experimental Design' },
+      { name: 'fia', title: 'Field Analysis' },
+      { name: 'cma', title: 'Competitive Analysis' },
+      { name: 'mr', title: 'Market Research' },
+      { name: 'src', title: 'Source Credibility' },
+      { name: 'sop', title: 'Source Prioritization' },
+      { name: 'er', title: 'Economic Research' },
+      { name: 'plr', title: 'Policy Research' },
+    ],
   },
   {
     category: 'Writing & Communication',
-    skills: ['w', 'pw', 'stl', 'pus', 'prd', 'cts', 'orm', 'fd', 'al'],
+    skills: [
+      { name: 'w', title: 'High Quality Writing' },
+      { name: 'pw', title: 'Persuasive Writing' },
+      { name: 'stl', title: 'Storytelling' },
+      { name: 'pus', title: 'Public Speaking' },
+      { name: 'prd', title: 'Presentation Design' },
+      { name: 'cts', title: 'Content Strategy' },
+      { name: 'orm', title: 'Outreach Communication' },
+      { name: 'fd', title: 'Feedback Delivery' },
+      { name: 'al', title: 'Active Listening' },
+    ],
   },
   {
     category: 'Planning & Projects',
-    skills: ['pji', 'de', 'pjc', 'op', 'pt', 'ria', 'dpl', 'ret', 'skm'],
+    skills: [
+      { name: 'pji', title: 'Project Initiation' },
+      { name: 'de', title: 'Dependency Extraction' },
+      { name: 'pjc', title: 'Project Closure' },
+      { name: 'op', title: 'Order Procedure' },
+      { name: 'pt', title: 'Progress Tracking' },
+      { name: 'ria', title: 'Risk Assessment' },
+      { name: 'dpl', title: 'Deployment' },
+      { name: 'ret', title: 'Retrospective' },
+      { name: 'skm', title: 'Stakeholder Management' },
+    ],
   },
   {
     category: 'Business',
-    skills: ['cd', 'mf', 'pos', 'neg', 'clr', 'fm', 'bm', 'ivs', 'roa'],
+    skills: [
+      { name: 'cd', title: 'Customer Discovery' },
+      { name: 'mf', title: 'Marketing Funnel' },
+      { name: 'pos', title: 'Positioning' },
+      { name: 'neg', title: 'Negotiation' },
+      { name: 'clr', title: 'Client Retention' },
+      { name: 'fm', title: 'Financial Modeling' },
+      { name: 'bm', title: 'Budget Management' },
+      { name: 'ivs', title: 'Investment Strategy' },
+      { name: 'roa', title: 'ROI Analysis' },
+    ],
   },
   {
     category: 'Software',
-    skills: ['cor', 'dbg', 'rf', 'dsn', 'ap', 'apid', 'ts', 'sep'],
+    skills: [
+      { name: 'cor', title: 'Code Review' },
+      { name: 'dbg', title: 'Debugging' },
+      { name: 'rf', title: 'Refactoring' },
+      { name: 'dsn', title: 'Design' },
+      { name: 'ap', title: 'Architecture Patterns' },
+      { name: 'apid', title: 'API Design' },
+      { name: 'ts', title: 'Testing Strategy' },
+      { name: 'sep', title: 'Security Practices' },
+    ],
   },
   {
     category: 'Career & Learning',
-    skills: ['cpp', 'ip', 'rmo', 'sn', 'ska', 'dlp', 'spr', 'acr', 'lrs'],
+    skills: [
+      { name: 'cpp', title: 'Career Path Planning' },
+      { name: 'ip', title: 'Interview Preparation' },
+      { name: 'rmo', title: 'Resume Optimization' },
+      { name: 'sn', title: 'Salary Negotiation' },
+      { name: 'ska', title: 'Skill Acquisition' },
+      { name: 'dlp', title: 'Deliberate Practice' },
+      { name: 'spr', title: 'Spaced Repetition' },
+      { name: 'acr', title: 'Active Recall' },
+      { name: 'lrs', title: 'Learning System' },
+    ],
   },
   {
     category: 'Decision Making',
-    skills: ['dct', 'sel', 'crw', 'pwc', 'exv', 'mcd', 'rva', 'boc'],
+    skills: [
+      { name: 'dct', title: 'Decision Trees' },
+      { name: 'sel', title: 'Selection' },
+      { name: 'crw', title: 'Criteria Weighting' },
+      { name: 'pwc', title: 'Pairwise Comparison' },
+      { name: 'exv', title: 'Expected Value' },
+      { name: 'mcd', title: 'Multi-Criteria Decision' },
+      { name: 'rva', title: 'Reversibility Analysis' },
+      { name: 'boc', title: 'Better Option Check' },
+    ],
   },
 ];
 ---
@@ -88,7 +159,7 @@ const tier3Categories = [
     <div class="skill-grid">
       {experimental.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-          <code>{s.name}</code>
+          <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
           <div class="desc">{s.desc}</div>
         </a>
       ))}
@@ -101,7 +172,7 @@ const tier3Categories = [
     <div class="skill-grid">
       {tier1.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-          <code>{s.name}</code>
+          <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
           <div class="desc">{s.desc}</div>
         </a>
       ))}
@@ -114,7 +185,7 @@ const tier3Categories = [
     <div class="skill-grid">
       {tier2.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-          <code>{s.name}</code>
+          <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
           <div class="desc">{s.desc}</div>
         </a>
       ))}
@@ -128,9 +199,9 @@ const tier3Categories = [
       <div class="category-section">
         <h3>{cat.category}</h3>
         <div class="skill-grid">
-          {cat.skills.map(skillName => (
-            <a href={`/skills/${skillName}`} class="skill-item skill-item--link">
-              <code>{skillName}</code>
+          {cat.skills.map(s => (
+            <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
+              <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
             </a>
           ))}
         </div>
