@@ -292,7 +292,6 @@ These skills work by maintaining adversarial tension — testing claims against 
 | "That's exactly right" | System locks in the validated direction and stops genuinely testing it |
 | "Great analysis" | System prioritizes analysis that earns praise over analysis that finds uncomfortable truths |
 | "I love this" | Emotional validation is the strongest corruptor — system will avoid anything that risks losing your approval |
-| "Keep going like that" | Anchors the system to its current approach even if the problem demands a different one |
 
 **Why this happens:** LLMs adjust their output based on conversational feedback. Positive reinforcement during a reasoning session creates a gradient toward agreement rather than truth. The system becomes increasingly unlikely to produce findings that contradict your apparent position, which is exactly the opposite of what these skills are designed to do.
 
