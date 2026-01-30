@@ -2974,6 +2974,28 @@
         "problem"
       ],
       "invokes": []
+    },
+    "propose": {
+      "description": "Convert analysis findings into steelmanned, actionable plans with conditional recommendations. Every recommendation includes a derivation chain. Requires a source analysis from /ar, /aw, /u, /araw, or /uaua.",
+      "categories": [
+        "reasoning",
+        "decision_making",
+        "planning"
+      ],
+      "tags": [
+        "propose",
+        "plans",
+        "recommendations",
+        "steelman",
+        "derivation",
+        "conditional",
+        "evidence-based"
+      ],
+      "input_types": [
+        "decision",
+        "goal"
+      ],
+      "invokes": []
     }
   }
 }
