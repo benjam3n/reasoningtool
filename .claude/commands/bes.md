@@ -1,0 +1,1 @@
+Like playing 20 Questions - each yes/no question eliminates half the possibilities. For N options, at most log2(N) quest. Read and execute `claude-code-plugin/skills/bes/SKILL.md`, applying it to this input: $ARGUMENTS

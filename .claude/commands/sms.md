@@ -1,0 +1,1 @@
+Build effective social media presence through platform selection, content planning, engagement, and measurement. Read and execute `claude-code-plugin/skills/sms/SKILL.md`, applying it to this input: $ARGUMENTS

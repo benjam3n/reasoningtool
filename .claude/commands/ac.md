@@ -1,0 +1,1 @@
+Create a checklist that catches what normal checklists miss. Each item includes adversarial branches -- what if this ass. Read and execute `claude-code-plugin/skills/ac/SKILL.md`, applying it to this input: $ARGUMENTS

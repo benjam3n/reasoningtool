@@ -1,0 +1,1 @@
+The comprehensive question framework that applies to EVERY goal, regardless of domain. Universal analysis procedure.. Read and execute `claude-code-plugin/skills/uga/SKILL.md`, applying it to this input: $ARGUMENTS

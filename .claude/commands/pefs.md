@@ -1,0 +1,1 @@
+Meta-procedure for extracting implicit procedures from ANY external source, turning tacit knowledge into explicit, reusa. Read and execute `claude-code-plugin/skills/pefs/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Discover what one field can learn from another by finding structural analogies, testing their transferability, and synth. Read and execute `claude-code-plugin/skills/cdr/SKILL.md`, applying it to this input: $ARGUMENTS

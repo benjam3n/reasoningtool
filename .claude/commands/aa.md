@@ -1,0 +1,1 @@
+Surface and rigorously test a field's hidden assumptions. Compound skill that chains extraction, inversion, research, AR. Read and execute `claude-code-plugin/skills/aa/SKILL.md`, applying it to this input: $ARGUMENTS

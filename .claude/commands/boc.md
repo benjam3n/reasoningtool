@@ -1,0 +1,1 @@
+Prevent user from settling on suboptimal option by systematically checking if better options exist that match their pref. Read and execute `claude-code-plugin/skills/boc/SKILL.md`, applying it to this input: $ARGUMENTS

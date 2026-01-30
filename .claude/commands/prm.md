@@ -1,0 +1,1 @@
+Gary Klein's technique - assume it went wrong and ask why. People are better at explaining past events than predicting f. Read and execute `claude-code-plugin/skills/prm/SKILL.md`, applying it to this input: $ARGUMENTS

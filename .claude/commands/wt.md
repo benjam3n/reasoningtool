@@ -1,0 +1,1 @@
+Want To - AR-based goal exploration. Assume the want is right, trace what it commits you to, find what you actually want. Read and execute `claude-code-plugin/skills/wt/SKILL.md`, applying it to this input: $ARGUMENTS

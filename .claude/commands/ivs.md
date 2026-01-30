@@ -1,0 +1,1 @@
+Develop and execute personal investment strategies including portfolio allocation, risk tolerance assessment, and invest. Read and execute `claude-code-plugin/skills/ivs/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Run the same gate/procedure twice on the same fixed input, compare outputs, and treat divergences as evidence that the t. Read and execute `claude-code-plugin/skills/satrda/SKILL.md`, applying it to this input: $ARGUMENTS

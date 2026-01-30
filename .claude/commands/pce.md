@@ -1,0 +1,1 @@
+The deep analysis engine. Routes input by type, applies appropriate analysis depth, produces structured understanding an. Read and execute `claude-code-plugin/skills/pce/SKILL.md`, applying it to this input: $ARGUMENTS

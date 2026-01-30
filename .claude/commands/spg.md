@@ -1,0 +1,1 @@
+Transform vague capability claims into specific ones by requiring trigger, procedure, output, and validation for each cl. Read and execute `claude-code-plugin/skills/spg/SKILL.md`, applying it to this input: $ARGUMENTS

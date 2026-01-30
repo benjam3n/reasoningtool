@@ -1,0 +1,1 @@
+Collection of strategies for bypassing or working around API limitations, including rate limits, IP blocks, and access r. Read and execute `claude-code-plugin/skills/ams/SKILL.md`, applying it to this input: $ARGUMENTS

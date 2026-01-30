@@ -1,0 +1,1 @@
+Universalize - Extract the complete space of assumptions, dimensions, and alternatives from any claim. Map before you ju. Read and execute `claude-code-plugin/skills/u/SKILL.md`, applying it to this input: $ARGUMENTS

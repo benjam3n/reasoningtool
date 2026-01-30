@@ -1,0 +1,1 @@
+Systematic procedure for analyzing decision reversibility, option value, and optimal commitment timing. Read and execute `claude-code-plugin/skills/rva/SKILL.md`, applying it to this input: $ARGUMENTS

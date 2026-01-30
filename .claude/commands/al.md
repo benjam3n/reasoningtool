@@ -1,0 +1,1 @@
+Systematic procedure for listening deeply to understand others, build trust, and improve communication outcomes. Read and execute `claude-code-plugin/skills/al/SKILL.md`, applying it to this input: $ARGUMENTS

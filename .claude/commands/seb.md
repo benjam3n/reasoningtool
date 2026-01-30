@@ -1,0 +1,1 @@
+Build organic search visibility through keyword research, on-page optimization, content strategy, and link building. Read and execute `claude-code-plugin/skills/seb/SKILL.md`, applying it to this input: $ARGUMENTS

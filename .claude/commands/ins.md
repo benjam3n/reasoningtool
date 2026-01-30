@@ -1,0 +1,1 @@
+Synthesize insights from multiple sources into coherent, actionable understanding. Combines extraction, inversion, and a. Read and execute `claude-code-plugin/skills/ins/SKILL.md`, applying it to this input: $ARGUMENTS

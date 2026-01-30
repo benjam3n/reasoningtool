@@ -1,0 +1,1 @@
+Generate exhaustive guesses about user input using ALL search methods with coverage tracking. Guessing is SEARCH through. Read and execute `claude-code-plugin/skills/gg/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Given limited time to extract procedures from sources, prioritize which sources to process for maximum procedure value.. Read and execute `claude-code-plugin/skills/sop/SKILL.md`, applying it to this input: $ARGUMENTS

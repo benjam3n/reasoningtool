@@ -1,0 +1,1 @@
+Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification). Read and execute `claude-code-plugin/skills/saaesa/SKILL.md`, applying it to this input: $ARGUMENTS

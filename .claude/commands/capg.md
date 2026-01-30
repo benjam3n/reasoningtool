@@ -1,0 +1,1 @@
+Pre-step feasibility check determining if AI can execute directly, needs delegation, or if task is infeasible. Read and execute `claude-code-plugin/skills/capg/SKILL.md`, applying it to this input: $ARGUMENTS

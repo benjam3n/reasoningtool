@@ -1,0 +1,1 @@
+Transform vague or incomplete goals into SMART goals with explicit clarification vs substitution distinction. Read and execute `claude-code-plugin/skills/grf/SKILL.md`, applying it to this input: $ARGUMENTS

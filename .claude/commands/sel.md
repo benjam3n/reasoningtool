@@ -1,0 +1,1 @@
+Make the final selection from ranked options after all analysis is complete. Includes LLM-compatible feasibility assessm. Read and execute `claude-code-plugin/skills/sel/SKILL.md`, applying it to this input: $ARGUMENTS

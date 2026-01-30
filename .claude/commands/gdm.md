@@ -1,0 +1,1 @@
+Systematic procedure for making effective decisions in groups, avoiding common pitfalls, and leveraging collective intel. Read and execute `claude-code-plugin/skills/gdm/SKILL.md`, applying it to this input: $ARGUMENTS

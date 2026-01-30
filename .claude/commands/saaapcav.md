@@ -1,0 +1,1 @@
+Use the analysis-protocol clarity question bank to audit a gate/procedure/document for interpretability, checkability, a. Read and execute `claude-code-plugin/skills/saaapcav/SKILL.md`, applying it to this input: $ARGUMENTS

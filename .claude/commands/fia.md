@@ -1,0 +1,1 @@
+Comprehensive analysis of a field's key tensions, hidden assumptions, and blind spots. Chains assumption extraction, dee. Read and execute `claude-code-plugin/skills/fia/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Scan files for ambiguity, proxying, bundled questions, undefined terms, hidden conditionals, goal substitution, and conv. Read and execute `claude-code-plugin/skills/sads/SKILL.md`, applying it to this input: $ARGUMENTS

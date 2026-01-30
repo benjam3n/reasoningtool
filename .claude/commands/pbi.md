@@ -1,0 +1,1 @@
+Before solving, identify the RIGHT problem at the RIGHT level. Includes clarification vs substitution checking to preven. Read and execute `claude-code-plugin/skills/pbi/SKILL.md`, applying it to this input: $ARGUMENTS

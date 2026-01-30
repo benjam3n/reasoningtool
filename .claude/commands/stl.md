@@ -1,0 +1,1 @@
+Systematic procedure for crafting and delivering compelling stories that create emotional connection and drive action. Read and execute `claude-code-plugin/skills/stl/SKILL.md`, applying it to this input: $ARGUMENTS

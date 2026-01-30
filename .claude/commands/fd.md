@@ -1,0 +1,1 @@
+Systematic procedure for delivering feedback that is heard, received, and acted upon, and for receiving feedback gracefu. Read and execute `claude-code-plugin/skills/fd/SKILL.md`, applying it to this input: $ARGUMENTS

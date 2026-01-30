@@ -1,0 +1,1 @@
+Breadth-first, learned extraction pipeline that clarifies goals first, samples broadly, learns user preferences, and ext. Read and execute `claude-code-plugin/skills/adep/SKILL.md`, applying it to this input: $ARGUMENTS

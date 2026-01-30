@@ -1,0 +1,1 @@
+Generate valid execution sequences from dependencies. Respects hard constraints, optimizes for priorities, and identifie. Read and execute `claude-code-plugin/skills/to/SKILL.md`, applying it to this input: $ARGUMENTS

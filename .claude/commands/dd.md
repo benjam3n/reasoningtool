@@ -1,0 +1,1 @@
+Identify the key dimensions that define a problem space, enabling comprehensive enumeration. Use before space_enumeratio. Read and execute `claude-code-plugin/skills/dd/SKILL.md`, applying it to this input: $ARGUMENTS

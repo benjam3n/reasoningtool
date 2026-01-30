@@ -1,0 +1,1 @@
+Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embe. Read and execute `claude-code-plugin/skills/dsn/SKILL.md`, applying it to this input: $ARGUMENTS

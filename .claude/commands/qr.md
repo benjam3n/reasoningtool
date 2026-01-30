@@ -1,0 +1,1 @@
+Systematic procedure for qualitative data analysis including coding, thematic analysis, grounded theory, and interview t. Read and execute `claude-code-plugin/skills/qr/SKILL.md`, applying it to this input: $ARGUMENTS

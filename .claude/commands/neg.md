@@ -1,0 +1,1 @@
+Systematic procedure for preparing and conducting negotiations to reach mutually beneficial agreements. Read and execute `claude-code-plugin/skills/neg/SKILL.md`, applying it to this input: $ARGUMENTS

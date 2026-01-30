@@ -1,0 +1,1 @@
+Produce diverse candidate solutions. Given constraints and purpose, generate N candidates ranging from conventional to e. Read and execute `claude-code-plugin/skills/gen/SKILL.md`, applying it to this input: $ARGUMENTS

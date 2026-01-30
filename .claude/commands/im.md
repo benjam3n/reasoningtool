@@ -1,0 +1,1 @@
+Charlie Munger's inversion technique. Finding ways to fail, then avoiding them, makes success more likely.. Read and execute `claude-code-plugin/skills/im/SKILL.md`, applying it to this input: $ARGUMENTS

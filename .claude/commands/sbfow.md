@@ -1,0 +1,1 @@
+Still Bad, Figure Out Why - Self-diagnosis when output was rejected. Systematically test which criteria the output faile. Read and execute `claude-code-plugin/skills/sbfow/SKILL.md`, applying it to this input: $ARGUMENTS

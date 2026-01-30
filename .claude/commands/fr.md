@@ -1,0 +1,1 @@
+Structured recovery procedures when projects encounter failures, providing clear decision trees and specific actions for. Read and execute `claude-code-plugin/skills/fr/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Figure Out How To - Method discovery when you know WHAT but not HOW. Systematically map the method space, test candidate. Read and execute `claude-code-plugin/skills/foht/SKILL.md`, applying it to this input: $ARGUMENTS

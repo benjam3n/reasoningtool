@@ -1,0 +1,1 @@
+Analyze a category of guesses to determine which apply to the user. System does the work by testing each guess against a. Read and execute `claude-code-plugin/skills/cta/SKILL.md`, applying it to this input: $ARGUMENTS

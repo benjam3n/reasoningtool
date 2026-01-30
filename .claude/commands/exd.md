@@ -1,0 +1,1 @@
+Systematic procedure for designing rigorous experiments with proper controls, variables, and validity considerations. Read and execute `claude-code-plugin/skills/exd/SKILL.md`, applying it to this input: $ARGUMENTS

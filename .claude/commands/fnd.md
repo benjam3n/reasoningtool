@@ -1,0 +1,1 @@
+Find the right GOSM skill for what you want to do. Describe your need in plain language and get matched to the best skil. Read and execute `claude-code-plugin/skills/fnd/SKILL.md`, applying it to this input: $ARGUMENTS

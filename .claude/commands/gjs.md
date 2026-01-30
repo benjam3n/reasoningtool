@@ -1,0 +1,1 @@
+A goal journey is NOT a narrative arc. It's a CHAIN OF GOALS. Integration hub for GOSM goal processing.. Read and execute `claude-code-plugin/skills/gjs/SKILL.md`, applying it to this input: $ARGUMENTS

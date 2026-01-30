@@ -1,0 +1,1 @@
+Extract dependencies between steps, tasks, or items. Identifies what must happen before what, enabling proper sequencing. Read and execute `claude-code-plugin/skills/de/SKILL.md`, applying it to this input: $ARGUMENTS

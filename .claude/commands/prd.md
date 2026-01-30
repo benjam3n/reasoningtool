@@ -1,0 +1,1 @@
+Systematic procedure for designing visually effective presentations, slides, and handouts that enhance rather than compe. Read and execute `claude-code-plugin/skills/prd/SKILL.md`, applying it to this input: $ARGUMENTS

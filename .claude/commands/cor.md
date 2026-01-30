@@ -1,0 +1,1 @@
+Procedure for conducting effective code reviews using Claude Code's capabilities for exhaustive analysis. Read and execute `claude-code-plugin/skills/cor/SKILL.md`, applying it to this input: $ARGUMENTS

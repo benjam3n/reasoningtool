@@ -1,0 +1,1 @@
+Systematically trace symptoms back to their underlying root causes using structured diagnostic techniques. Supports cont. Read and execute `claude-code-plugin/skills/rca/SKILL.md`, applying it to this input: $ARGUMENTS

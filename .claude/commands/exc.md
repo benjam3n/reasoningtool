@@ -1,0 +1,1 @@
+Systematically check if a solution or similar solution already exists before investing effort in creation. Read and execute `claude-code-plugin/skills/exc/SKILL.md`, applying it to this input: $ARGUMENTS

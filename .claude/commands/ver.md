@@ -1,0 +1,1 @@
+Verify claims using the GOSM verification standard. Every claim must be OBSERVED, TESTED, or DERIVED - never guessed.. Read and execute `claude-code-plugin/skills/ver/SKILL.md`, applying it to this input: $ARGUMENTS

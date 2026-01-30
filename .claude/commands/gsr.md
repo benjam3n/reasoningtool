@@ -1,0 +1,1 @@
+Given any conclusion, statement, or claim, reconstruct the goal-structure. Includes detection of goal drift and substitu. Read and execute `claude-code-plugin/skills/gsr/SKILL.md`, applying it to this input: $ARGUMENTS

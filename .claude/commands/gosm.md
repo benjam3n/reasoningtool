@@ -1,0 +1,1 @@
+Goal-Oriented State Machine. Context-adaptive dispatcher that routes to the right analysis depth based on urgency, stake. Read and execute `claude-code-plugin/skills/gosm/SKILL.md`, applying it to this input: $ARGUMENTS

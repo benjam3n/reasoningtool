@@ -1,0 +1,1 @@
+Save the output from the most recent skill invocation to the appropriate library folder. Only saves when explicitly requ. Read and execute `claude-code-plugin/skills/sf/SKILL.md`, applying it to this input: $ARGUMENTS

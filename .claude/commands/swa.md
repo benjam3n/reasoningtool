@@ -1,0 +1,1 @@
+Systematically identify Strengths, Weaknesses, Opportunities, and Threats to inform strategic decisions. Read and execute `claude-code-plugin/skills/swa/SKILL.md`, applying it to this input: $ARGUMENTS

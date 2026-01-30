@@ -1,0 +1,1 @@
+Create a mechanical, step-by-step decision procedure for a recurring decision type. Like a flowchart anyone can follow w. Read and execute `claude-code-plugin/skills/dcp/SKILL.md`, applying it to this input: $ARGUMENTS

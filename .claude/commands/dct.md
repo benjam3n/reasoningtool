@@ -1,0 +1,1 @@
+Systematic procedure for structuring complex decisions with multiple branches, probabilities, and outcomes. Includes emp. Read and execute `claude-code-plugin/skills/dct/SKILL.md`, applying it to this input: $ARGUMENTS

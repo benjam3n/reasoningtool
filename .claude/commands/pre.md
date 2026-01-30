@@ -1,0 +1,1 @@
+Elicit user preferences by presenting concrete trade-offs rather than asking open-ended questions. System does the work . Read and execute `claude-code-plugin/skills/pre/SKILL.md`, applying it to this input: $ARGUMENTS

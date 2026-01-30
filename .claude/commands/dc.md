@@ -1,0 +1,1 @@
+Systematic procedure for gathering research data through surveys, interviews, observation, and secondary sources. Read and execute `claude-code-plugin/skills/dc/SKILL.md`, applying it to this input: $ARGUMENTS

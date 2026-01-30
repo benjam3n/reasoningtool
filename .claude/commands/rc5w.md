@@ -1,0 +1,1 @@
+Adaptive root cause analysis. Ask "why" until you hit the root. Sometimes that's 2 levels, sometimes 12. Stop when you f. Read and execute `claude-code-plugin/skills/rc5w/SKILL.md`, applying it to this input: $ARGUMENTS

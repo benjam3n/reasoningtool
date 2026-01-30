@@ -1,0 +1,1 @@
+Validate that a procedure is complete, executable, and all dependencies are satisfiable. Catches issues before execution. Read and execute `claude-code-plugin/skills/pv/SKILL.md`, applying it to this input: $ARGUMENTS

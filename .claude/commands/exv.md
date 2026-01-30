@@ -1,0 +1,1 @@
+Systematic procedure for calculating expected value, adjusting for risk, and determining optimal resource allocation und. Read and execute `claude-code-plugin/skills/exv/SKILL.md`, applying it to this input: $ARGUMENTS

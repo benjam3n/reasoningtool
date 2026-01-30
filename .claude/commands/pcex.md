@@ -1,0 +1,1 @@
+After completing a goal, extract reusable procedures and generalize them for storage in the library, enabling GOSM to le. Read and execute `claude-code-plugin/skills/pcex/SKILL.md`, applying it to this input: $ARGUMENTS

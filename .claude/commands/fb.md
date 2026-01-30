@@ -1,0 +1,1 @@
+Generate filtered feedback for self-improvement loops. Only accepts well-grounded, high-leverage items to prevent error . Read and execute `claude-code-plugin/skills/fb/SKILL.md`, applying it to this input: $ARGUMENTS

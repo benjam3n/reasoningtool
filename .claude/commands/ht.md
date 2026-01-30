@@ -1,0 +1,1 @@
+Systematic procedure for formulating testable hypotheses, designing tests, and updating beliefs based on evidence. Suppo. Read and execute `claude-code-plugin/skills/ht/SKILL.md`, applying it to this input: $ARGUMENTS

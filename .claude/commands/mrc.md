@@ -1,0 +1,1 @@
+Three core metacognitive questions. What am I trying to achieve? Is this the best way? Am I making progress?. Read and execute `claude-code-plugin/skills/mrc/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Systematically improve GOSM library procedures using schema-driven validation and tier-based progress tracking. Read and execute `claude-code-plugin/skills/pci/SKILL.md`, applying it to this input: $ARGUMENTS

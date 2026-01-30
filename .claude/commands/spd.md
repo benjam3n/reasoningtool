@@ -1,0 +1,1 @@
+Discover what space exists BEFORE generating guesses. Maps dimensions, stakeholders, time horizons, and adjacent spaces.. Read and execute `claude-code-plugin/skills/spd/SKILL.md`, applying it to this input: $ARGUMENTS

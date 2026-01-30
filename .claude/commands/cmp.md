@@ -1,0 +1,1 @@
+Compare options using gestalt impression + structured evaluation. Impression first, then criteria, then check for diverg. Read and execute `claude-code-plugin/skills/cmp/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Invert assumptions to discover blind spots and alternative possibilities. What if the opposite were true?. Read and execute `claude-code-plugin/skills/ai/SKILL.md`, applying it to this input: $ARGUMENTS
