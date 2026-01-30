@@ -130,6 +130,16 @@ These three skills use a different approach. They treat every claim as an unveri
 | `ar` | **Assume Right.** Standalone depth-first rightness search. Assumes a claim is right and recursively finds what must follow — implications, commitments, foreclosures, costs. Numbers every claim. Use when you want to push one direction deep. Scales from 1x to 32x. |
 | `aw` | **Assume Wrong.** Standalone depth-first wrongness search. Assumes a claim is wrong and recursively finds why — fatal flaws, serious problems, conditional failures. Derives alternatives from the analysis. Numbers every claim. Scales from 1x to 32x. |
 
+### When to use /ar, /aw, and /u
+
+Use `/ar` when you believe something is right but can't prove it. AR will recursively find what must follow if it's true — implications, commitments, foreclosures, costs. If the implications are absurd or the costs are hidden, you'll find out. If the implications hold all the way to bedrock, you've strengthened your case.
+
+Use `/aw` when you believe something is wrong but can't prove it. AW will recursively find why it's wrong — fatal flaws, serious problems, conditional failures. If the wrongness reasons don't reach bedrock, maybe it's not actually wrong. If they do, you've found the proof.
+
+Use `/u` when you're not sure what you're looking at. U maps the full space — every assumption, alternative, dimension, and perspective — so you can see what options exist before committing to testing any of them.
+
+Chain them: run `/u` first to map the space, then `/ar` or `/aw` on the highest-stakes finding.
+
 ### Why UAUA works
 
 UAUA alternates between two mathematically distinct search operations:
