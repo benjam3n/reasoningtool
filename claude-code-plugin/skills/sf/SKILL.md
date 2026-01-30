@@ -1,5 +1,5 @@
 ---
-name: savefile
+name: sf
 description: Save the output from the most recent skill invocation to the appropriate library folder. Only saves when explicitly requested.
 ---
 
@@ -51,7 +51,7 @@ For all other skills: save the complete output.
 
 ## Arguments
 
-If the user provides arguments after `/savefile`, use them:
+If the user provides arguments after `/sf`, use them:
 - A path → save to that specific path
 - A topic name → use as the topic slug
 - Nothing → auto-detect from the skill output
@@ -59,5 +59,5 @@ If the user provides arguments after `/savefile`, use them:
 ## Important
 
 - This skill exists so that OTHER skills don't need to auto-save. Skills should focus on their job, not file management.
-- Only save when the user explicitly invokes `/savefile`.
+- Only save when the user explicitly invokes `/sf`.
 - Never overwrite an existing file — append a number if the filename already exists.

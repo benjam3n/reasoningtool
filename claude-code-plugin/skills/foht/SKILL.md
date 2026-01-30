@@ -254,7 +254,7 @@ UNRESOLVED:
 READY FOR:
 - /ar [specific method to explore deeper]
 - /aw [specific method to stress-test]
-- /wantto [if the goal itself needs examination]
+- /wt [if the goal itself needs examination]
 ```
 
 ---

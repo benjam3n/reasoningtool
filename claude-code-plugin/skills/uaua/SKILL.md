@@ -486,7 +486,7 @@ UAUA is not equally useful for all phases of creative work:
 
 ## Saving Output
 
-Output is NOT auto-saved. If the user wants to save, they invoke `/savefile` after the session.
+Output is NOT auto-saved. If the user wants to save, they invoke `/sf` after the session.
 
 ---
 

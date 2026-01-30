@@ -3018,7 +3018,7 @@
             "invokes": [
                 "ar",
                 "aw",
-                "wantto"
+                "wt"
             ]
         },
         "fowwr": {
@@ -3042,7 +3042,7 @@
                 "foht"
             ]
         },
-        "wantto": {
+        "wt": {
             "description": "I Want To - Goal parsing and decomposition. Unbundle the want, find what they actually need, map the path space, route to the right next step.",
             "categories": [
                 "planning",

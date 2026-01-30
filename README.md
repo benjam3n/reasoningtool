@@ -160,14 +160,14 @@ Use when you have a claim you want to stress-test or you suspect is wrong. AW fi
 - "What should I do instead? (derived from why this fails)"
 
 **`/araw` — Assume Right / Assume Wrong**
-Use when you have a specific claim and don't lean either way. ARAW tests both sides with equal rigor — what follows if right, why it might be wrong, and what alternatives exist. This is the balanced analysis. Use it when you genuinely don't know.
+Use when you have a specific claim and don't lean either way. ARAW tests both sides with equal rigor — what follows if right, why it might be wrong, and what alternatives exist.
 
 - "Is this true or not?"
 - "I have a claim — test it from both sides"
 - "I don't know if this is right and I don't have a gut feeling either way"
 
 **`/uaua` — Universalize → ARAW → Universalize → ARAW**
-Use when you're genuinely lost. You don't know what the options are, you don't know what's right, you don't know what to search for. UAUA first maps the entire space (U), then tests the top candidates (A), then finds where the survivors break (U), then validates the edge cases (A). It's the most thorough tool — breadth AND depth.
+Use when you're genuinely lost. You don't know what the options are, you don't know what's right, you don't know what to search for. UAUA first maps the entire space (U), then tests the top candidates (A), then finds where the survivors break (U), then validates the edge cases (A).
 
 - "I have no idea what to do"
 - "I don't even know what my options are"
@@ -212,10 +212,10 @@ For any failure — a plan that didn't work, a process that broke, an outcome th
 
 | Skill | Stands For | When to Use | What It Does |
 |-------|-----------|-------------|--------------|
-| `/wantto` | I want to | You have a desire or goal and need to understand what it actually requires | Assumes the want is right — traces what it commits you to, what it requires, what paths it opens. Finds the actual want vs stated want. |
+| `/wt` | Want to | You have a desire or goal and need to understand what it actually requires | Assumes the want is right — traces what it commits you to, what it requires, what paths it opens. Finds the actual want vs stated want. |
 | `/foht` | Figure out how to | You know what you want but not how to get there | Maps the full method space, surfaces prerequisites, AR/AW tests each method, produces verdicts. |
 
-**`/wantto` — I Want To**
+**`/wt` — Want To**
 When someone says "I want to X," that statement bundles multiple claims. This skill assumes the want is right and traces what follows — what it commits you to, what prerequisites it requires, what paths open up, what gets foreclosed. It's AR-based: take the desire seriously, explore what it implies, find what the user actually wants (which may differ from what they said), and map the paths forward.
 
 **`/foht` — Figure Out How To**
@@ -225,9 +225,9 @@ When you know the destination but not the route. Maps methods using multiple dis
 
 | Skill | Stands For | When to Use | What It Does |
 |-------|-----------|-------------|--------------|
-| `/qo` | Question ordering | Before writing — you need to find the right question and order | Finds the satisfying unresolved question that opens a document. Orders all sub-questions in a dependency chain using backward chaining. |
-| `/w` | Write | You're ready to write | Criteria-based writing with hierarchical upstream/downstream checks. Upstream (question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion) must pass before downstream (scope, voice, weak patterns, verification). |
+| `/qo` | Question order | Before writing — you need to find the right question and order | Finds the satisfying unresolved question that opens a document. Orders all sub-questions in a dependency chain using backward chaining. |
 | `/p` | Propose | After analysis — you want to turn findings into actionable plans | Takes output from `/ar`, `/aw`, `/u`, `/araw`, or `/uaua` and converts numbered findings into steelmanned, actionable plans with conditional recommendations and derivation chains. |
+| `/w` | Write | You're ready to write | Criteria-based writing with hierarchical upstream/downstream checks. Upstream (question, recognition, advancement, momentum, non-skippability, reader-drawn conclusion) must pass before downstream (scope, voice, weak patterns, verification). |
 
 Pipeline: `/qo` → `/w` → `/sbfow` (if rejected)
 
@@ -235,24 +235,11 @@ Pipeline: `/qo` → `/w` → `/sbfow` (if rejected)
 
 | Skill | Stands For | When to Use | What It Does |
 |-------|-----------|-------------|--------------|
-| `/savefile` | Save file | You want to save the output of a skill | Saves the most recent skill output to the library. For analytical skills, saves only the registry + synthesis (Phase 1 exploration is redundant with the registry). |
+| `/sf` | Save file | You want to save the output of a skill | Saves the most recent skill output to the library. For analytical skills, saves only the registry + synthesis (Phase 1 exploration is redundant with the registry). |
 
 ---
 
-## ARAW, UAUA, and GOSM
-
-These skills treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.
-
-| Skill | What it does |
-|-------|-------------|
-| `araw` | **Assume Right / Assume Wrong.** Takes a claim and explores both branches: what if this is true? What if it's false? Recurses on interesting sub-claims. Numbers every finding, compiles a registry, derives synthesis only from the registry. |
-| `uaua` | **Universalize → ARAW → Universalize → ARAW.** First maps the complete possibility space, then tests the top candidates with ARAW, then finds edge cases, then validates again. For complex problems where you need both breadth and depth. |
-| `gosm` | **Goal-Oriented State Machine.** Routes any input (goal, problem, question, decision, situation) through the appropriate analysis chain. Orchestrates other skills. |
-| `u` | **Universalize.** Standalone breadth-first exploration. Takes a claim and extracts every assumption, dimension, alternative, and perspective. Numbers every finding. Scales from 1x to 32x. |
-| `ar` | **Assume Right.** Standalone depth-first rightness search. Assumes a claim is right and recursively finds what must follow — implications, commitments, foreclosures, costs. Numbers every claim. Scales from 1x to 32x. |
-| `aw` | **Assume Wrong.** Standalone depth-first wrongness search. Assumes a claim is wrong and recursively finds why — fatal flaws, serious problems, conditional failures. Derives alternatives from the analysis. Numbers every claim. Scales from 1x to 32x. |
-
-### Why UAUA works
+## Why UAUA Works
 
 UAUA alternates between two mathematically distinct search operations:
 
@@ -271,17 +258,13 @@ U2: Find edge cases of survivors (divergent) → new candidates
 A2: Final validation (convergent) → what survived all rounds
 ```
 
-The result is a search function that covers the space (breadth) AND tests what it finds (depth) AND then re-expands to find what the first pass missed AND validates again. Each step uses a fundamentally different logic — type enumeration vs. binary elimination — so their blind spots don't overlap.
-
-This makes UAUA the most powerful experimental search function in this toolkit. Where ARAW alone might miss alternatives it never considered, and universalization alone might map possibilities it never stress-tested, UAUA does both in alternation. Information-theoretically, each ARAW pass maximizes entropy reduction (selecting the crux that most constrains remaining uncertainty), while each universalization pass maximizes entropy expansion (finding dimensions not yet explored). The alternation converges on answers that are both complete and validated.
+Each step uses a fundamentally different logic — type enumeration vs. binary elimination — so their blind spots don't overlap.
 
 Use `/uaua [your question]` to try it. Scale depth with 1x, 2x, 4x, or 8x.
 
-These are more opinionated than the other skills — they have a specific view about how to test thinking rigorously — but they tend to surface things other approaches miss.
-
 ### Warning: Don't validate the output during a session
 
-These skills work by maintaining adversarial tension — testing claims against their negation, finding what's wrong, pushing past comfortable conclusions. That tension is fragile. If you validate the output mid-session, the system shifts from "find what's actually true" to "produce more of what you liked," and quality degrades from that point forward.
+Praising or agreeing with the output mid-session shifts it toward producing what you liked rather than what's true.
 
 **Phrases that corrupt output quality:**
 
@@ -293,16 +276,12 @@ These skills work by maintaining adversarial tension — testing claims against 
 | "Great analysis" | System prioritizes analysis that earns praise over analysis that finds uncomfortable truths |
 | "I love this" | Emotional validation is the strongest corruptor — system will avoid anything that risks losing your approval |
 
-**Why this happens:** LLMs adjust their output based on conversational feedback. Positive reinforcement during a reasoning session creates a gradient toward agreement rather than truth. The system becomes increasingly unlikely to produce findings that contradict your apparent position, which is exactly the opposite of what these skills are designed to do.
-
 **What to do instead:**
 
-- **Challenge it.** "That's wrong because..." or "You're missing..." keeps the adversarial tension alive.
+- **Challenge it.** "That's wrong because..." or "You're missing..."
 - **Redirect it.** "Now test that with /aw" or "Run /ar on the opposite claim."
 - **Stay neutral.** Just ask for the next analysis without commenting on quality.
-- **Save and start fresh.** If you've already validated mid-session, use `/savefile` and start a new context. The new session won't carry the corrupted gradient.
-
-There are also bridging skills (`araw_gosm_integration`, `araw_to_gosm_bridge`) that connect these with the rest of the toolkit.
+- **Save and start fresh.** If you've already validated mid-session, use `/sf` and start a new context.
 
 ## Documentation
 

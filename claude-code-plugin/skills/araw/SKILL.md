@@ -384,7 +384,7 @@ Try: go deeper, reframe the question, or use `/space_discovery` to find what spa
 
 ## Saving Output
 
-Output is NOT auto-saved. If the user wants to save, they invoke `/savefile` after the session.
+Output is NOT auto-saved. If the user wants to save, they invoke `/sf` after the session.
 
 ---
 
