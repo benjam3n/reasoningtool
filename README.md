@@ -142,7 +142,7 @@ Use when you want to see what you're missing. U maps the space of possibilities 
 - "Show me the space before I commit"
 
 **`/ar` — Assume Right**
-Use when you have a claim you believe is right and you want to know what follows. AR traces implications: if this is right, what must also be true? What does it commit you to? What does it foreclose? This is how you steelman a claim — by finding everything it implies, including the uncomfortable parts.
+Use when you have a claim you believe is right and you want to know what follows. AR traces implications: if this is right, what must also be true? What does it commit you to? What does it foreclose?
 
 - "I think X is true — what does that mean?"
 - "What am I committing to by believing this?"
