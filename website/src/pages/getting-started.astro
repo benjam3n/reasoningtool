@@ -59,6 +59,128 @@ claude</code></pre>
   </section>
 
   <section>
+    <h2>Choosing the right analytical skill</h2>
+    <p>The core analytical skills structure your thinking differently depending on what you already know.</p>
+
+    <table>
+      <thead>
+        <tr><th>You know&hellip;</th><th>Use</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Nothing &mdash; not even what the options are</td><td><code>/uaua</code></td><td>Full space mapping + rigorous testing</td></tr>
+        <tr><td>You want a quick map of possibilities you haven't considered</td><td><code>/u</code></td><td>Breadth-first exploration</td></tr>
+        <tr><td>You have a specific claim but don't know if it's right or wrong</td><td><code>/araw</code></td><td>Test both sides with equal rigor</td></tr>
+        <tr><td>You believe something is right and want to know what it commits you to</td><td><code>/ar</code></td><td>Find implications, foreclosures, costs</td></tr>
+        <tr><td>You suspect something is wrong and want to find exactly why</td><td><code>/aw</code></td><td>Find failure reasons, derive alternatives</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Quick decision tree</h3>
+    <pre><code>Do you know what your options are?
+├── NO → Do you need thorough analysis?
+│   ├── YES → /uaua
+│   └── NO, just show me what exists → /u
+└── YES → Do you have a specific claim to test?
+    ├── YES → Do you lean one way?
+    │   ├── I think it's RIGHT → /ar
+    │   ├── I think it's WRONG → /aw
+    │   └── I genuinely don't know → /araw
+    └── NO → /u (map first, then /ar or /aw on what you find)</code></pre>
+
+    <h3>Detailed guide</h3>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h4><code>/u</code> &mdash; Universalize</h4>
+        <p>Use when you want to see what you're missing. Maps the space of possibilities &mdash; assumptions you didn't know you were making, alternatives you didn't know existed, dimensions you weren't thinking about. Fast and wide. Does NOT evaluate &mdash; just shows you what's there.</p>
+        <ul>
+          <li>"What am I not considering?"</li>
+          <li>"What are my options?"</li>
+          <li>"What assumptions am I making?"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><code>/ar</code> &mdash; Assume Right</h4>
+        <p>Use when you have a claim you believe is right and want to know what follows. Traces implications: if this is right, what must also be true? What does it commit you to? What does it foreclose?</p>
+        <ul>
+          <li>"I think X is true &mdash; what does that mean?"</li>
+          <li>"What am I committing to by believing this?"</li>
+          <li>"Steelman this claim"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><code>/aw</code> &mdash; Assume Wrong</h4>
+        <p>Use when you want to stress-test a claim or you suspect it's wrong. Finds why something fails, then derives alternatives from the failure reasons.</p>
+        <ul>
+          <li>"Why is this wrong?"</li>
+          <li>"Give me a reality check"</li>
+          <li>"What should I do instead?"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4><code>/araw</code> &mdash; Assume Right / Assume Wrong</h4>
+        <p>Use when you have a specific claim and don't lean either way. Tests both sides with equal rigor &mdash; what follows if right, why it might be wrong, and what alternatives exist.</p>
+        <ul>
+          <li>"Is this true or not?"</li>
+          <li>"Test it from both sides"</li>
+          <li>"I don't have a gut feeling either way"</li>
+        </ul>
+      </div>
+    </div>
+    <div class="card">
+      <h4><code>/uaua</code> &mdash; Full alternating search</h4>
+      <p>Use when you're genuinely lost. You don't know what the options are, you don't know what's right, you don't know what to search for. UAUA first maps the entire space (U), then tests the top candidates (A), then finds where the survivors break (U), then validates the edge cases (A).</p>
+      <ul>
+        <li>"I have no idea what to do"</li>
+        <li>"I don't even know what my options are"</li>
+        <li>"This is complex enough that I might miss something important"</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Diagnostic and action skills</h2>
+    <p>These handle common situations that need structured responses.</p>
+
+    <h3>Problem diagnosis</h3>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h4><code>/sbfow</code> &mdash; Still Bad, Figure Out Why</h4>
+        <p>For when output was rejected and you need to know why. Systematically tests the output against the criteria it should have met. If this is attempt N+1, checks whether the diagnosis is the same as last time &mdash; because repeating the same diagnosis means you haven't found the actual problem.</p>
+      </div>
+      <div class="card">
+        <h4><code>/fowwr</code> &mdash; Figure Out What Went Wrong</h4>
+        <p>For any failure &mdash; a plan that didn't work, a process that broke, an unexpected outcome. Traces backward from symptoms through the causal chain to root causes. Tests each candidate cause: "if this hadn't happened, would the failure still have occurred?" Produces prevention measures, not just explanations.</p>
+      </div>
+    </div>
+
+    <h3>Goal and method discovery</h3>
+    <div class="card-grid card-grid--2">
+      <div class="card">
+        <h4><code>/wt</code> &mdash; Want To</h4>
+        <p>When someone says "I want to X," that statement bundles multiple claims. This skill assumes the want is right and traces what follows &mdash; what it commits you to, what prerequisites it requires, what paths open up, what gets foreclosed. Finds what the user actually wants, which may differ from what they said.</p>
+      </div>
+      <div class="card">
+        <h4><code>/foht</code> &mdash; Figure Out How To</h4>
+        <p>When you know the destination but not the route. Maps methods using multiple discovery techniques (direct approaches, category-level methods, inversion, exemplars, reframes, decomposition). Each method gets AR/AW tested. Produces verdicts: viable, conditional, blocked, or eliminated.</p>
+      </div>
+    </div>
+
+    <h3>Writing pipeline</h3>
+    <p>Three skills that chain together for structured writing:</p>
+    <table>
+      <thead>
+        <tr><th>Skill</th><th>When to use</th><th>What it does</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>/qo</code></td><td>Before writing &mdash; find the right question</td><td>Finds the satisfying unresolved question that opens a document. Orders all sub-questions in a dependency chain.</td></tr>
+        <tr><td><code>/w</code></td><td>Ready to write</td><td>Criteria-based writing with hierarchical checks. Upstream criteria (question, recognition, advancement, momentum) must pass before downstream (scope, voice, verification).</td></tr>
+        <tr><td><code>/sbfow</code></td><td>If writing is rejected</td><td>Diagnoses which criteria failed and what must change.</td></tr>
+      </tbody>
+    </table>
+    <p>Pipeline: <code>/qo</code> &rarr; <code>/w</code> &rarr; <code>/sbfow</code> (if rejected)</p>
+  </section>
+
+  <section>
     <h2>Depth scaling</h2>
     <p>ARAW and UAUA support depth scaling. Higher depth = more thorough exploration:</p>
     <table>
@@ -88,6 +210,30 @@ python auto_expand_llm.py --db career.db --seed "Should I start a business?"
 # View in browser
 python visualize.py --db career.db --serve</code></pre>
     <p>See <a href="/tools">Tools &rarr;</a> for the full documentation.</p>
+  </section>
+
+  <section>
+    <h2>Don't validate output during a session</h2>
+    <p>Praising or agreeing with the output mid-session shifts it toward producing what you liked rather than what's true.</p>
+    <table>
+      <thead>
+        <tr><th>What you say</th><th>What it does to the system</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>"Wow, that's really insightful"</td><td>System optimizes for producing more "insightful"-sounding output rather than rigorous output</td></tr>
+        <tr><td>"You're starting to get it"</td><td>System treats your approval as the target rather than the analysis itself</td></tr>
+        <tr><td>"That's exactly right"</td><td>System locks in the validated direction and stops genuinely testing it</td></tr>
+        <tr><td>"Great analysis"</td><td>System prioritizes analysis that earns praise over analysis that finds uncomfortable truths</td></tr>
+        <tr><td>"I love this"</td><td>Emotional validation is the strongest corruptor &mdash; system will avoid anything that risks losing your approval</td></tr>
+      </tbody>
+    </table>
+    <p><strong>What to do instead:</strong></p>
+    <ul>
+      <li><strong>Challenge it.</strong> "That's wrong because..." or "You're missing..."</li>
+      <li><strong>Redirect it.</strong> "Now test that with /aw" or "Run /ar on the opposite claim."</li>
+      <li><strong>Stay neutral.</strong> Just ask for the next analysis without commenting on quality.</li>
+      <li><strong>Save and start fresh.</strong> If you've already validated mid-session, use <code>/sf</code> and start a new context.</li>
+    </ul>
   </section>
 
   <section>
