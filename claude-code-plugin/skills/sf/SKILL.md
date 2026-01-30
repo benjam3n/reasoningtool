@@ -21,12 +21,7 @@ For all other skills: save the complete output.
 
    | Skill Type | Save Path |
    |-----------|-----------|
-   | `/u`, `/ar`, `/aw`, `/araw`, `/uaua` | `library/araw/sessions/{skill}_{date}_{topic-slug}.md` |
-   | `/p` | `library/araw/sessions/p_{date}_{topic-slug}.md` |
-   | `/gen`, `/dsn`, `/cri` | `library/araw/sessions/{skill}_{date}_{topic-slug}.md` |
-   | `/unx` | `library/araw/sessions/unexpected_{date}_{topic-slug}.md` |
-   | `/gosm`, `/pce` | `library/gosm/sessions/gosm_{date}_{topic-slug}.md` |
-   | Other skills | `library/sessions/{skill}_{date}_{topic-slug}.md` |
+   | All skills | `docs/sessions/{skill}_{date}_{topic-slug}.md` |
 
    - `{date}` = YYYY-MM-DD
    - `{topic-slug}` = short kebab-case summary of the topic (e.g., "universal-design-principles", "skill-improvement")
