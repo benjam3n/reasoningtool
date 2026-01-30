@@ -1,5 +1,5 @@
 ---
-name: fia
+name: "fia - Field Analysis"
 description: Comprehensive analysis of a field's key tensions, hidden assumptions, and blind spots. Chains assumption extraction, deep ARAW testing, cross-domain perspective, evaluation dimensions, and insight synthesis into a complete field report.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: wr
+name: "wr - Weekly Review"
 description: "Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuous progress."
 ---
 

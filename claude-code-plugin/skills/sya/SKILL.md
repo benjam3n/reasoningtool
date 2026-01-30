@@ -1,5 +1,5 @@
 ---
-name: sya
+name: "sya - Systems Analysis"
 description: "Analyze complex systems using causal loop diagrams, stock and flow models, feedback loop identification, and system archetypes"
 ---
 

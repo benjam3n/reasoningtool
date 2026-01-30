@@ -1,5 +1,5 @@
 ---
-name: pw
+name: "pw - Persuasive Writing"
 description: "Systematic procedure for writing persuasive content that influences readers and motivates action"
 ---
 

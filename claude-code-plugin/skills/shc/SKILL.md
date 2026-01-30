@@ -1,5 +1,5 @@
 ---
-name: shc
+name: "shc - System Health Check"
 description: "Evaluate if the GOSM system needs improvement"
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: im
+name: "im - Inversion Method (How to Fail)"
 description: Charlie Munger's inversion technique. Finding ways to fail, then avoiding them, makes success more likely.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: vdp
+name: "vdp - Visual Design Principles"
 description: Eight principles of visual design derived from first principles (cognitive load, gestalt perception, reading research). Use as a gate before any visual design work -- every design decision should trace back to one of these principles. If a design element can't be justified by a principle, remove it.
 ---
 

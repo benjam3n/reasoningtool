@@ -1,5 +1,5 @@
 ---
-name: pcex
+name: "pcex - Extract and Generalize Procedures"
 description: "After completing a goal, extract reusable procedures and generalize them for storage in the library, enabling GOSM to learn from completed work."
 ---
 

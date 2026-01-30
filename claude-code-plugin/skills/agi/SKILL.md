@@ -1,5 +1,5 @@
 ---
-name: agi
+name: "agi - ARAW to GOSM Integration"
 description: "Systematic procedure for translating ARAW exploration outputs"
 ---
 

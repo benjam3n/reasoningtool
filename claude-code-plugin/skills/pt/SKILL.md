@@ -1,5 +1,5 @@
 ---
-name: pt
+name: "pt - Progress Tracking"
 description: "Monitor and report project status effectively"
 ---
 

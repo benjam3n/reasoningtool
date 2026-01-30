@@ -1,5 +1,5 @@
 ---
-name: mcg
+name: "mcg - Mentioned Coverage Gate"
 description: Gate that verifies all items mentioned by user have been considered, analyzed, and addressed. Prevents dropping user-mentioned aspects. Run after any multi-aspect analysis to verify nothing was missed.
 ---
 

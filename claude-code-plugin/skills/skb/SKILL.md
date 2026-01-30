@@ -1,5 +1,5 @@
 ---
-name: skb
+name: "skb - Skill Benchmarking"
 description: "Identify quality standards, benchmark current skill level, and design deliberate practice to close gaps"
 ---
 

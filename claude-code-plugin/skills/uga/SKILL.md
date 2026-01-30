@@ -1,5 +1,5 @@
 ---
-name: uga
+name: "uga - Universal Goal Analysis Framework"
 description: "The comprehensive question framework that applies to EVERY goal, regardless of domain. Universal analysis procedure."
 context: fork
 ---

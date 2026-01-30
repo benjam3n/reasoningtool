@@ -1,5 +1,5 @@
 ---
-name: rmo
+name: "rmo - Resume Optimization"
 description: "Systematic approach to crafting resumes that pass ATS filters, capture attention,"
 ---
 

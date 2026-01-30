@@ -1,5 +1,5 @@
 ---
-name: hd
+name: "hd - Human Delegation"
 description: "Delegate physical, phone, or in-person tasks to humans when AI cannot perform them directly"
 ---
 

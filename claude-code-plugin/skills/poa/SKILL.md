@@ -1,5 +1,5 @@
 ---
-name: poa
+name: "poa - Possibility Analysis"
 description: "Systematically explore the possibility space of what could be done."
 ---
 

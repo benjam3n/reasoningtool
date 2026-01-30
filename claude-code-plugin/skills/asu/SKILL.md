@@ -1,5 +1,5 @@
 ---
-name: asu
+name: "asu - Assumption Surfacing"
 description: "Plans and beliefs rest on assumptions that are often invisible."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: se
+name: "se - Space Enumeration"
 description: Generate comprehensive lists by systematically covering all dimensions. Ensures nothing is missed through structured enumeration.
 ---
 

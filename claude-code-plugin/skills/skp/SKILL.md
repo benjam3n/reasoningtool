@@ -1,5 +1,5 @@
 ---
-name: skp
+name: "skp - Skill Plateaus"
 description: "Diagnose the causes of skill plateaus and implement targeted strategies to break through"
 ---
 

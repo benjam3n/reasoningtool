@@ -1,5 +1,5 @@
 ---
-name: dcm
+name: "dcm - Decomposition"
 description: "Break complex goals into simpler, manageable sub-goals"
 ---
 

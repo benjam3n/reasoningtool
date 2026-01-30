@@ -1,5 +1,5 @@
 ---
-name: pce
+name: "pce - Procedure Engine - Comprehensive Analysis"
 description: The deep analysis engine. Routes input by type, applies appropriate analysis depth, produces structured understanding and action.
 ---
 

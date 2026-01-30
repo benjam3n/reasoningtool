@@ -1,5 +1,5 @@
 ---
-name: dsn
+name: "dsn - Design - Principled Design Creation and Improvement"
 description: Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embeds generate → critique → iterate.
 ---
 

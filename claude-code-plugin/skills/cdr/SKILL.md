@@ -1,5 +1,5 @@
 ---
-name: cdr
+name: "cdr - Cross-Domain Report"
 description: Discover what one field can learn from another by finding structural analogies, testing their transferability, and synthesizing actionable insights. Chains cross-domain analogy, assumption extraction, ARAW testing, and insight synthesis.
 ---
 

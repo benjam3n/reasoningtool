@@ -1,5 +1,5 @@
 ---
-name: vcd
+name: "vcd - Value Conflict Decomposition"
 description: "Goals often serve multiple intrinsic values that conflict with each other."
 ---
 

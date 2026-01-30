@@ -1,5 +1,5 @@
 ---
-name: u
+name: "u - Universalize"
 description: Universalize - Extract the complete space of assumptions, dimensions, and alternatives from any claim. Map before you judge. Track every finding.
 ---
 

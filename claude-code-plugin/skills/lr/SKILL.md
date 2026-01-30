@@ -1,5 +1,5 @@
 ---
-name: lr
+name: "lr - Literature Review"
 description: "Systematic procedure for conducting comprehensive literature reviews on any topic"
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: sagsca
+name: "sagsca - Gate Schema Consistency Audit"
 description: "Identify inconsistent gate field schemas across the library that increase interpretation burden and cause engine integration drift."
 ---
 

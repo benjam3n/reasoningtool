@@ -1,5 +1,5 @@
 ---
-name: fd
+name: "fd - Feedback Delivery"
 description: "Systematic procedure for delivering feedback that is heard, received, and acted upon, and for receiving feedback gracefully"
 ---
 

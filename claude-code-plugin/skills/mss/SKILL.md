@@ -1,5 +1,5 @@
 ---
-name: mss
+name: "mss - Model Space Search"
 description: "Understanding = finding a model that fits."
 ---
 

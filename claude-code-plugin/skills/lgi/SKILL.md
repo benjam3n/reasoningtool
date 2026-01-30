@@ -1,5 +1,5 @@
 ---
-name: lgi
+name: "lgi - Language Goal Identification"
 description: "All language has a goal - it's trying to achieve something."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: fnd
+name: "fnd - Skill Finder"
 description: "Find the right GOSM skill for what you want to do. Describe your need in plain language and get matched to the best skill(s)."
 ---
 

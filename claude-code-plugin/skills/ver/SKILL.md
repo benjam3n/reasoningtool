@@ -1,5 +1,5 @@
 ---
-name: ver
+name: "ver - GOSM Verification Procedure"
 description: Verify claims using the GOSM verification standard. Every claim must be OBSERVED, TESTED, or DERIVED - never guessed.
 disable-model-invocation: false
 ---

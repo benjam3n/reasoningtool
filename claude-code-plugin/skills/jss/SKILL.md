@@ -1,5 +1,5 @@
 ---
-name: jss
+name: "jss - Job Search Strategy"
 description: "Systematic approach to job hunting that treats the search as a funnel to optimize,"
 ---
 

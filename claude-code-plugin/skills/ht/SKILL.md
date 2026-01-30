@@ -1,5 +1,5 @@
 ---
-name: ht
+name: "ht - Hypothesis Testing"
 description: "Systematic procedure for formulating testable hypotheses, designing tests, and updating beliefs based on evidence. Supports context-adaptive variants."
 context: fork
 ---

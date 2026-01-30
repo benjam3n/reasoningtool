@@ -1,5 +1,5 @@
 ---
-name: am
+name: "am - Academic Mastery"
 description: "Master academic subjects through structured learning, concept mapping, and competency verification"
 ---
 

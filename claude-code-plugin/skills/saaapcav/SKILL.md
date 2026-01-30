@@ -1,5 +1,5 @@
 ---
-name: saaapcav
+name: "saaapcav - Apply Analysis Protocol Clarity + Validity"
 description: "Use the analysis-protocol clarity question bank to audit a gate/procedure/document for interpretability, checkability, and stopping rules."
 ---
 

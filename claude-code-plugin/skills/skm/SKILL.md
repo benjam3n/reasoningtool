@@ -1,5 +1,5 @@
 ---
-name: skm
+name: "skm - Stakeholder Management"
 description: "Engage stakeholders effectively throughout the project"
 ---
 

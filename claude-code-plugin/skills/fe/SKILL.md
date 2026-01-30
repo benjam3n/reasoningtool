@@ -1,5 +1,5 @@
 ---
-name: fe
+name: "fe - Framework Extension"
 description: "Systematic process for extending the GOSM framework with new procedures, gates, or capabilities."
 ---
 

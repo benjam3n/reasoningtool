@@ -1,5 +1,5 @@
 ---
-name: rci
+name: "rci - Recursive Causal Interrogation"
 description: "A systematic approach to reasoning: tracing causes through questioning."
 ---
 

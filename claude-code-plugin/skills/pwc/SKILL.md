@@ -1,5 +1,5 @@
 ---
-name: pwc
+name: "pwc - Pairwise Comparison Matrix"
 description: "Instead of rating each option absolutely (hard), compare pairs"
 ---
 

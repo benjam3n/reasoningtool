@@ -1,5 +1,5 @@
 ---
-name: ais
+name: "ais - Advocacy Infrastructure Setup"
 description: "Set up foundational infrastructure for autonomous advocacy operations"
 ---
 

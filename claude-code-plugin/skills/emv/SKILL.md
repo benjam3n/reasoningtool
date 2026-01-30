@@ -1,5 +1,5 @@
 ---
-name: emv
+name: "emv - Empirical Validation"
 description: Empirical validation step for GOSM plans - adds external reality testing beyond coherence checks
 ---
 

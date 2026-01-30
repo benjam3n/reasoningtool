@@ -1,5 +1,5 @@
 ---
-name: ssr
+name: "ssr - Session Review (Learning Capture)"
 description: Capture learnings at end of session for continuous improvement. Reviews what worked, what did not, surprises, and procedure gaps.
 ---
 

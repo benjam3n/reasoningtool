@@ -1,5 +1,5 @@
 ---
-name: gw
+name: "gw - Grant Writing"
 description: "Find relevant grants, write compelling proposals, and manage grant relationships and compliance"
 ---
 

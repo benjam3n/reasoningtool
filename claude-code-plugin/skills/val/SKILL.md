@@ -1,5 +1,5 @@
 ---
-name: val
+name: "val - Validation"
 description: "Verify that an output meets its requirements"
 ---
 

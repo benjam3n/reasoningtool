@@ -1,5 +1,5 @@
 ---
-name: lpd
+name: "lpd - Leverage Point Discovery (Arbitrage & System Insertion)"
 description: "Most valuable strategies exploit leverage points - places where small"
 ---
 

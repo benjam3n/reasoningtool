@@ -1,5 +1,5 @@
 ---
-name: met
+name: "met - Metaphor Method"
 description: "A systematic method for using metaphors to:"
 ---
 

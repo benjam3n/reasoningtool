@@ -1,5 +1,5 @@
 ---
-name: rqg
+name: "rqg - Requirements Gathering"
 description: "Elicit and document system requirements from stakeholders"
 ---
 

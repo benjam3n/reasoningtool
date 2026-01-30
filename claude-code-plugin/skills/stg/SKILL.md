@@ -1,5 +1,5 @@
 ---
-name: stg
+name: "stg - Steps Generation"
 description: "Transform a COMPLETE_PLAN into foolproof executable step-by-step instructions"
 ---
 

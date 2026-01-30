@@ -1,5 +1,5 @@
 ---
-name: dmt
+name: "dmt - Domain Template"
 description: Create domain-specific skill configurations. Pre-configure skill chains, dimensions, and patterns for specific domains like research, consulting, or engineering.
 ---
 

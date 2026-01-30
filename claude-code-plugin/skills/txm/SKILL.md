@@ -1,5 +1,5 @@
 ---
-name: txm
+name: "txm - Taxonomy Maintenance"
 description: "Systematic process for creating, updating, and maintaining taxonomies and classification systems."
 ---
 

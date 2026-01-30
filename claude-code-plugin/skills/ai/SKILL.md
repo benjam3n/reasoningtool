@@ -1,5 +1,5 @@
 ---
-name: ai
+name: "ai - Assumption Inversion"
 description: Invert assumptions to discover blind spots and alternative possibilities. What if the opposite were true?
 ---
 

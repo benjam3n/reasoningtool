@@ -1,5 +1,5 @@
 ---
-name: auep
+name: "auep - Automated Extraction Pipeline"
 description: "Industrial-scale automation pipeline for extracting procedures from 70+ YouTube channels and other sources using the Ralph Wiggum / Conductor pattern for iterative LLM-driven extraction."
 ---
 

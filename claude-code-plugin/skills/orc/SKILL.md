@@ -1,5 +1,5 @@
 ---
-name: orc
+name: "orc - Outreach Campaigns"
 description: "Execute multi-channel persuasion campaigns for policy advocacy"
 ---
 

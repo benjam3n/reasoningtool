@@ -1,5 +1,5 @@
 ---
-name: std
+name: "std - Strategy Discovery"
 description: "Find or create an approach to achieve a goal"
 ---
 

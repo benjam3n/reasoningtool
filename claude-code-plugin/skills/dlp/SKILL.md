@@ -1,5 +1,5 @@
 ---
-name: dlp
+name: "dlp - Deliberate Practice"
 description: "Design and execute targeted practice sessions that maximize skill improvement"
 ---
 

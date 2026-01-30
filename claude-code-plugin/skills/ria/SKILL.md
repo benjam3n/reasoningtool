@@ -1,5 +1,5 @@
 ---
-name: ria
+name: "ria - Risk Assessment"
 description: "Systematic procedure for identifying, analyzing, and planning responses to risks"
 ---
 

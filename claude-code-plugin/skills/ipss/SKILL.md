@@ -1,5 +1,5 @@
 ---
-name: ipss
+name: "ipss - Interpretation Space Search"
 description: "Ambiguity means multiple interpretations are possible."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: ea
+name: "ea - Email Acquisition"
 description: "Acquire and configure email addresses for autonomous system operations"
 ---
 

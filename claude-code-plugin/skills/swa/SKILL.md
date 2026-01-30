@@ -1,5 +1,5 @@
 ---
-name: swa
+name: "swa - SWOT Analysis"
 description: "Systematically identify Strengths, Weaknesses, Opportunities, and Threats to inform strategic decisions"
 ---
 

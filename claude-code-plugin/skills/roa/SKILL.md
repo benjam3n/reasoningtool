@@ -1,5 +1,5 @@
 ---
-name: roa
+name: "roa - ROI Analysis"
 description: "Calculate and analyze return on investment for projects, purchases, and decisions"
 ---
 

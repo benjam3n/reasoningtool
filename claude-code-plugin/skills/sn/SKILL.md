@@ -1,5 +1,5 @@
 ---
-name: sn
+name: "sn - Salary Negotiation"
 description: "Systematic approach to negotiating job offers that maximizes total compensation"
 ---
 

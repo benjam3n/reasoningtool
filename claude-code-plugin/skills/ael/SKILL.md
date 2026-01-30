@@ -1,5 +1,5 @@
 ---
-name: ael
+name: "ael - Assumption Elimination"
 description: "Before asserting anything, verify it can be confirmed by the listener."
 ---
 

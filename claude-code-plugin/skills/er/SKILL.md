@@ -1,5 +1,5 @@
 ---
-name: er
+name: "er - Economic Research"
 description: "Systematic analysis of economic viability, cost structures, and comparative advantage"
 ---
 

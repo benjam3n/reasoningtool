@@ -1,5 +1,5 @@
 ---
-name: nss
+name: "nss - Novelty Space Search"
 description: "Creativity = novelty + value."
 ---
 

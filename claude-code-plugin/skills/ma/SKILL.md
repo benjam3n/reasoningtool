@@ -1,5 +1,5 @@
 ---
-name: ma
+name: "ma - Morphological Analysis (Morphological Box)"
 description: "Invented by Fritz Zwicky. Break a problem into independent dimensions,"
 ---
 

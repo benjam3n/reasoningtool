@@ -1,5 +1,5 @@
 ---
-name: boc
+name: "boc - Better Option Check"
 description: Prevent user from settling on suboptimal option by systematically checking if better options exist that match their preferences. System surfaces what user may not have considered.
 ---
 

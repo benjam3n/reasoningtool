@@ -1,5 +1,5 @@
 ---
-name: orm
+name: "orm - Outreach Communication"
 description: "Craft and send high-quality outreach communications that maximize response rates"
 ---
 

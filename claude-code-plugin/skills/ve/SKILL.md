@@ -1,5 +1,5 @@
 ---
-name: ve
+name: "ve - Value Elicitation"
 description: "Value elicitation discovers what someone ACTUALLY values - their intrinsic goals."
 ---
 

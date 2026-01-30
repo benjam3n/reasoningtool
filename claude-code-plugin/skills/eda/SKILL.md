@@ -1,5 +1,5 @@
 ---
-name: eda
+name: "eda - Event-Driven Automation"
 description: "Maintain project continuity through event monitoring and automated state management"
 ---
 

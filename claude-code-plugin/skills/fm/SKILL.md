@@ -1,5 +1,5 @@
 ---
-name: fm
+name: "fm - Financial Modeling"
 description: "Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making"
 ---
 

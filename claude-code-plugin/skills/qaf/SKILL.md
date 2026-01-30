@@ -1,5 +1,5 @@
 ---
-name: qaf
+name: "qaf - Question Analysis Framework"
 description: "This framework provides methods for analyzing questions to determine:"
 ---
 

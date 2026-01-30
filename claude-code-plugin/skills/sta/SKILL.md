@@ -1,5 +1,5 @@
 ---
-name: sta
+name: "sta - Statistical Analysis"
 description: "Systematic procedure for selecting appropriate statistical tests and correctly interpreting results"
 ---
 

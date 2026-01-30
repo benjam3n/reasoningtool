@@ -1,5 +1,5 @@
 ---
-name: sep
+name: "sep - Security Practices"
 description: "Procedure for implementing security throughout the software development lifecycle"
 ---
 

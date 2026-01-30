@@ -1,5 +1,5 @@
 ---
-name: rva
+name: "rva - Reversibility Analysis"
 description: "Systematic procedure for analyzing decision reversibility, option value, and optimal commitment timing"
 ---
 

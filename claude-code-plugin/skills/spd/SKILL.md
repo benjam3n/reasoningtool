@@ -1,5 +1,5 @@
 ---
-name: spd
+name: "spd - Space Discovery"
 description: Discover what space exists BEFORE generating guesses. Maps dimensions, stakeholders, time horizons, and adjacent spaces. Run this before guess_generation to ensure comprehensive coverage.
 ---
 

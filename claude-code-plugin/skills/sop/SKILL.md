@@ -1,5 +1,5 @@
 ---
-name: sop
+name: "sop - Source Prioritization"
 description: "Given limited time to extract procedures from sources, prioritize which sources to process for maximum procedure value."
 ---
 

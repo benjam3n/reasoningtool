@@ -1,5 +1,5 @@
 ---
-name: dcp
+name: "dcp - Decision Procedure"
 description: Create a mechanical, step-by-step decision procedure for a recurring decision type. Like a flowchart anyone can follow without expertise. Chains dimension discovery, enumeration, assumption extraction, steps generation, failure anticipation, and validation.
 ---
 

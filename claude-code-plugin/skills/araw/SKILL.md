@@ -1,5 +1,5 @@
 ---
-name: araw
+name: "araw - Assume Right / Assume Wrong Search"
 description: Assume Right / Assume Wrong search - For every claim, explore what follows if true (AR) and what breaks if false (AW). Number every finding. Recurse until bedrock. Compile a complete registry. Derive synthesis only from the registry.
 ---
 

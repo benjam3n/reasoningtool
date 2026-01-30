@@ -1,5 +1,5 @@
 ---
-name: svs
+name: "svs - Systematic Variation (SCAMPER)"
 description: "SCAMPER is an acronym for 7 transformation operations:"
 ---
 

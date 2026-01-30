@@ -1,5 +1,5 @@
 ---
-name: pha
+name: "pha - Phone Acquisition"
 description: "Acquire and configure phone numbers for autonomous system operations"
 ---
 

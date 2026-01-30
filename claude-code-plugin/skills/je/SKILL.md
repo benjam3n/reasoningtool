@@ -1,5 +1,5 @@
 ---
-name: je
+name: "je - Goal Journey Extraction"
 description: "Extract the underlying GOAL JOURNEY from any source:"
 ---
 

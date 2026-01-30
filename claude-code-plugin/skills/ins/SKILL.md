@@ -1,5 +1,5 @@
 ---
-name: ins
+name: "ins - Insight Synthesis"
 description: Synthesize insights from multiple sources into coherent, actionable understanding. Combines extraction, inversion, and analogy into unified insights.
 ---
 

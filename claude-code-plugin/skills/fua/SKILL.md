@@ -1,5 +1,5 @@
 ---
-name: fua
+name: "fua - Fundraising (Advocacy)"
 description: "Build self-sustaining funding for advocacy operations through multiple revenue streams"
 ---
 

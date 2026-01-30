@@ -1,5 +1,5 @@
 ---
-name: ret
+name: "ret - Retrospective"
 description: "Learn from completed work to improve future performance"
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: lt
+name: "lt - Learning Transfer"
 description: "Apply knowledge and skills from one domain to new contexts through systematic transfer strategies"
 ---
 

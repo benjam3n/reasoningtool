@@ -1,5 +1,5 @@
 ---
-name: gn
+name: "gn - Generation"
 description: "Generate all possible options for a decision or selection"
 ---
 

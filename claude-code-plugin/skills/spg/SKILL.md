@@ -1,5 +1,5 @@
 ---
-name: spg
+name: "spg - Specificity Gate"
 description: Transform vague capability claims into specific ones by requiring trigger, procedure, output, and validation for each claim.
 ---
 

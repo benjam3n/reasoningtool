@@ -1,5 +1,5 @@
 ---
-name: ts
+name: "ts - Testing Strategy"
 description: "Procedure for designing and implementing effective software testing strategies"
 ---
 

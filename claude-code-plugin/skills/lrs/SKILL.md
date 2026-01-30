@@ -1,5 +1,5 @@
 ---
-name: lrs
+name: "lrs - Learning System"
 description: "Systematically capture, analyze, and apply learnings to improve campaign effectiveness"
 ---
 

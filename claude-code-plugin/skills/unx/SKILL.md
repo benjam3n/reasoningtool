@@ -1,5 +1,5 @@
 ---
-name: unx
+name: "unx - Unexpected - Non-Obvious Solution Discovery"
 description: Find non-obvious solutions. Three layers — obvious, unexpected, reframed — using disruption techniques that force the search off its default path.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: al
+name: "al - Active Listening"
 description: "Systematic procedure for listening deeply to understand others, build trust, and improve communication outcomes"
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: ip
+name: "ip - Interview Preparation"
 description: "Comprehensive preparation system for job interviews covering research, story"
 ---
 

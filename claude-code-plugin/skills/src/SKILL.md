@@ -1,5 +1,5 @@
 ---
-name: src
+name: "src - Source Credibility Assessment"
 description: "Procedure for evaluating the credibility and reliability of any information source"
 ---
 

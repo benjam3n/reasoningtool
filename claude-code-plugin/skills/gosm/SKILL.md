@@ -1,5 +1,5 @@
 ---
-name: gosm
+name: "gosm - Goal-Oriented State Machine"
 description: Goal-Oriented State Machine. Context-adaptive dispatcher that routes to the right analysis depth based on urgency, stakes, and expertise.
 context: This is the default entry point. When a user needs help thinking through something and hasn't specified a skill, GOSM selects the appropriate depth.
 ---

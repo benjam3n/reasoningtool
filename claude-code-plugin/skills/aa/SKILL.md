@@ -1,5 +1,5 @@
 ---
-name: aa
+name: "aa - Assumption Audit"
 description: Surface and rigorously test a field's hidden assumptions. Compound skill that chains extraction, inversion, research, ARAW testing, cross-domain perspective, and synthesis into a complete audit.
 ---
 

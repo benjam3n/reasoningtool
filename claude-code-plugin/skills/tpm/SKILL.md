@@ -1,5 +1,5 @@
 ---
-name: tpm
+name: "tpm - Template Maintenance"
 description: Maintain and improve domain templates over time. Track usage, identify gaps, and evolve templates based on experience.
 ---
 

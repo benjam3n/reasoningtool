@@ -1,5 +1,5 @@
 ---
-name: ifss
+name: "ifss - Inference Space Search"
 description: "Information implies other information. But not all inferences are equal:"
 ---
 

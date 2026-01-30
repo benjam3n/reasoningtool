@@ -1,5 +1,5 @@
 ---
-name: exc
+name: "exc - Existence Check"
 description: "Systematically check if a solution or similar solution already exists before investing effort in creation"
 ---
 

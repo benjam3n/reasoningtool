@@ -1,5 +1,5 @@
 ---
-name: pefs
+name: "pefs - Procedure Extraction from Source"
 description: "Meta-procedure for extracting implicit procedures from ANY external source, turning tacit knowledge into explicit, reusable GOSM-compatible procedures."
 ---
 
@@ -223,7 +223,7 @@ Convert raw extractions to GOSM format:
 
 For each procedure, create structured YAML:
 ```yaml
-name: [procedure_name]
+name: "pefs - Procedure Extraction from Source"
 version: "1.0"
 source:
   origin: "[Source name]"

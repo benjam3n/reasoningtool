@@ -1,5 +1,5 @@
 ---
-name: isd
+name: "isd - Income Stream Development"
 description: "Systematic process for identifying, building, and scaling new income streams."
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: cta
+name: "cta - Category Analysis"
 description: Analyze a category of guesses to determine which apply to the user. System does the work by testing each guess against available evidence and generating sub-guesses for verification.
 ---
 

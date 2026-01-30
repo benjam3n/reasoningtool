@@ -1,5 +1,5 @@
 ---
-name: dd
+name: "dd - Dimension Discovery"
 description: Identify the key dimensions that define a problem space, enabling comprehensive enumeration. Use before space_enumeration for novel domains.
 ---
 

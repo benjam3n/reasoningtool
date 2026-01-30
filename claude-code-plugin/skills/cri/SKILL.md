@@ -1,5 +1,5 @@
 ---
-name: cri
+name: "cri - Critique - Impression-First Evaluation"
 description: Structured evaluation using gestalt impression + analytical decomposition. Impression first, then analysis, then check for divergence.
 ---
 

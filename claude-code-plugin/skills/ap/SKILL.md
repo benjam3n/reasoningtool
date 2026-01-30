@@ -1,5 +1,5 @@
 ---
-name: ap
+name: "ap - Architecture Patterns"
 description: "Procedure for evaluating, choosing, and implementing software architecture patterns"
 ---
 

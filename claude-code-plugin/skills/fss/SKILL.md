@@ -1,5 +1,5 @@
 ---
-name: fss
+name: "fss - Future Space Search"
 description: "The future is uncertain but not arbitrary."
 ---
 

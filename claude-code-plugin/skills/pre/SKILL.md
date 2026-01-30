@@ -1,5 +1,5 @@
 ---
-name: pre
+name: "pre - Preference Elicitation"
 description: Elicit user preferences by presenting concrete trade-offs rather than asking open-ended questions. System does the work by generating options and letting user select.
 ---
 

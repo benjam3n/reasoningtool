@@ -1,5 +1,5 @@
 ---
-name: uaua
+name: "uaua - Universalize -> ARAW -> Universalize -> ARAW"
 description: UAUA Combined Exploration - Universalize, ARAW, loop, synthesize. Map possibilities with numbered findings, test rigorously with numbered claims, compile a complete registry, derive synthesis only from the registry.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: wt
+name: "wt - WANTTO - I Want To"
 description: Want To - AR-based goal exploration. Assume the want is right, trace what it commits you to, find what you actually want, map paths forward.
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: vm
+name: "vm - Viral Mechanics"
 description: "Design and optimize viral loops, referral programs, and word-of-mouth triggers to achieve organic growth"
 ---
 

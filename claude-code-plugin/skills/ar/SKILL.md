@@ -1,5 +1,5 @@
 ---
-name: ar
+name: "ar - Assume Right Search"
 description: Assume Right - Deep recursive rightness search. For every claim, assume it's right — find what must follow, then assume THOSE implications are right too. Recurse until bedrock. Track every claim found.
 ---
 

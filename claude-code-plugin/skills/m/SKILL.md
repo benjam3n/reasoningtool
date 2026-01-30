@@ -1,5 +1,5 @@
 ---
-name: m
+name: "m - Matching"
 description: "Define criteria for filtering options"
 ---
 

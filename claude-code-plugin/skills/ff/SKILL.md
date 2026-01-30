@@ -1,5 +1,5 @@
 ---
-name: ff
+name: "ff - Fundraising (Financial)"
 description: "Raise investment capital through investor outreach, pitch preparation, term sheet negotiation, and due diligence"
 ---
 

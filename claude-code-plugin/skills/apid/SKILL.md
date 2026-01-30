@@ -1,5 +1,5 @@
 ---
-name: apid
+name: "apid - API Design"
 description: "Procedure for designing, implementing, and documenting effective APIs"
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: dc
+name: "dc - Data Collection"
 description: "Systematic procedure for gathering research data through surveys, interviews, observation, and secondary sources"
 ---
 

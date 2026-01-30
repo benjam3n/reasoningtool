@@ -1,5 +1,5 @@
 ---
-name: sbfow
+name: "sbfow - Still Bad, Figure Out Why"
 description: Still Bad, Figure Out Why - Self-diagnosis when output was rejected. Systematically test which criteria the output failed against, find the root pattern, and derive what must change.
 ---
 
