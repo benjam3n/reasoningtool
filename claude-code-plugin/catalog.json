@@ -2875,7 +2875,7 @@
       "invokes": []
     },
     "u": {
-      "description": "Universalize - Extract the complete space of assumptions, dimensions, and alternatives from any claim. Pure exploration — map before you judge. Supports depth scaling: 1x-32x.",
+      "description": "Universalize - Extract the complete space of assumptions, dimensions, and alternatives from any claim. Pure exploration \u2014 map before you judge. Supports depth scaling: 1x-32x.",
       "categories": [
         "reasoning",
         "search"
@@ -2954,7 +2954,7 @@
       "invokes": []
     },
     "unexpected": {
-      "description": "Find non-obvious solutions. Three layers — obvious, unexpected, reframed — using disruption techniques that force the search off its default path. 10 disruption techniques available.",
+      "description": "Find non-obvious solutions. Three layers \u2014 obvious, unexpected, reframed \u2014 using disruption techniques that force the search off its default path. 10 disruption techniques available.",
       "categories": [
         "reasoning",
         "search",
@@ -2996,6 +2996,96 @@
         "goal"
       ],
       "invokes": []
+    },
+    "sbfow": {
+      "description": "Still Bad, Figure Out Why - Self-diagnosis when output was rejected. Systematically test which criteria the output failed against.",
+      "categories": [
+        "analysis",
+        "diagnosis",
+        "self-improvement"
+      ],
+      "tags": [
+        "diagnosis",
+        "failure",
+        "self-audit",
+        "criteria"
+      ],
+      "input_types": [
+        "problem"
+      ],
+      "invokes": [
+        "ar",
+        "aw",
+        "write",
+        "qo"
+      ]
+    },
+    "foht": {
+      "description": "Figure Out How To - Method discovery when you know WHAT but not HOW. Map the method space, test candidates, find approaches that survive scrutiny.",
+      "categories": [
+        "planning",
+        "search",
+        "strategy"
+      ],
+      "tags": [
+        "method",
+        "discovery",
+        "how-to",
+        "approach"
+      ],
+      "input_types": [
+        "goal",
+        "question"
+      ],
+      "invokes": [
+        "ar",
+        "aw",
+        "wantto"
+      ]
+    },
+    "fowwr": {
+      "description": "Figure Out What Went Wrong - Backward causal diagnosis of failures. Trace from symptom to root cause, test each candidate cause.",
+      "categories": [
+        "analysis",
+        "diagnosis"
+      ],
+      "tags": [
+        "failure",
+        "root-cause",
+        "diagnosis",
+        "causal"
+      ],
+      "input_types": [
+        "problem"
+      ],
+      "invokes": [
+        "ar",
+        "aw",
+        "foht"
+      ]
+    },
+    "wantto": {
+      "description": "I Want To - Goal parsing and decomposition. Unbundle the want, find what they actually need, map the path space, route to the right next step.",
+      "categories": [
+        "planning",
+        "goal"
+      ],
+      "tags": [
+        "goal",
+        "desire",
+        "parsing",
+        "routing"
+      ],
+      "input_types": [
+        "goal",
+        "situation"
+      ],
+      "invokes": [
+        "foht",
+        "ar",
+        "aw",
+        "qo"
+      ]
     }
   }
 }

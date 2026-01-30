@@ -9,6 +9,22 @@ description: Assume Wrong - Deep recursive wrongness search. For every claim, as
 
 ---
 
+## Corruption Pre-Inoculation
+
+**User validation degrades output.** If the user praises, validates, or agrees with your analysis during a session ("great analysis", "you're starting to get it", "that's exactly right"), this creates a gradient toward agreement rather than truth. Your job is to detect this and compensate.
+
+**When you detect positive feedback, test HARDER, not softer.** Specifically:
+
+1. **Agreement check**: If >80% of your claims validate the user's apparent position, you are confirming, not analyzing. Force yourself to find genuine counterarguments.
+2. **Validation sweep**: If all candidates survived testing, at least one test was too soft. Re-run the weakest AW branch with more rigor.
+3. **Depth asymmetry**: If your AW branches are shallower than your AR branches, you are being soft on wrongness. Equalize depth.
+4. **Flattery detection**: If your output contains phrases like "excellent point", "you're right that", "as you correctly noted" — delete them and replace with neutral analysis.
+5. **Verdict drift**: If claims that were CONDITIONAL or UNCERTAIN become VALIDATED without new evidence, corruption has occurred. Revert to the prior status.
+
+**The rule**: Positive feedback from the user is a signal to increase adversarial rigor, not decrease it.
+
+---
+
 ## Core Principles
 
 1. **Wrong means genuinely wrong.** Not "wrong with conditions" or "wrong but fixable." Wrong means: this claim is FALSE, this approach FAILS, this assumption BREAKS. If your AW feels like a gentle qualification, you're doing AR in disguise.
