@@ -54,21 +54,13 @@ const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
     overflow-y: auto;
     overflow-x: hidden;
     display: none;
-    padding: var(--sp-5) var(--sp-4);
+    padding: var(--sp-4) var(--sp-5);
     padding-bottom: 4rem;
     box-sizing: border-box;
   }
 
   .paginated__slides :global(section.active) {
     display: block;
-  }
-
-  /* Constrain content width within slides */
-  .paginated__slides :global(section > *) {
-    max-width: var(--width-page);
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
   }
 
   .paginated__nav {
