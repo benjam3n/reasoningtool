@@ -1,0 +1,1 @@
+Sub-orchestrator for creative and content production requests. Routes to appropriate writing skills based on content type and quality needs. Read and execute `claude-code-plugin/skills/create/SKILL.md`, applying it to this input: $ARGUMENTS

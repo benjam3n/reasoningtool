@@ -1,0 +1,200 @@
+THE TAXONOMY                                                                                                                                                                          
+                                                                                                                                                                                        
+  Primary Facet: INTENT TYPE                                                                                                                                                            
+                                                                                                                                                                                        
+  Category 1: CLAIM — asserting something is true                                                                                                                                       
+  Prototype: "X is true" / "X is better than Y"                                                                                                                                         
+  Example phrases:                                                                                                                                                                      
+    - "Remote work is more productive"                                                                                                                                                  
+    - "AI will replace most jobs"                                                                                                                                                       
+    - "This approach won't scale"                                                                                                                                                       
+    - "React is better than Vue for large apps"                                                                                                                                         
+    - "The problem is that we're not marketing enough"                                                                                                                                  
+  Implicit form: stating an opinion as fact                                                                                                                                             
+  User wants: validation, challenge, or evidence assessment                                                                                                                             
+  Maps to: /araw, /ht, /ar, /aw, /aex                                                                                                                                                   
+                                                                                                                                                                                        
+  Category 2: DECISION — choosing between options                                                                                                                                       
+  Prototype: "Should I X?" / "X or Y?"                                                                                                                                                  
+  Example phrases:                                                                                                                                                                      
+    - "Should I change careers?"                                                                                                                                                        
+    - "React or Svelte for this project?"                                                                                                                                               
+    - "Should I take the job offer?"                                                                                                                                                    
+    - "Is it worth learning Rust?"                                                                                                                                                      
+    - "Should we build or buy?"                                                                                                                                                         
+  Implicit form: "I'm stuck between..." / "I can't decide..."                                                                                                                           
+  User wants: structured comparison, criteria, recommendation                                                                                                                           
+  Maps to: /dcp, /cmp, /cba, /araw, /crw, /mcd                                                                                                                                          
+                                                                                                                                                                                        
+  Category 3: DIAGNOSTIC — understanding why something is the case                                                                                                                      
+  Prototype: "Why is X happening?" / "What's causing X?"                                                                                                                                
+  Example phrases:                                                                                                                                                                      
+    - "Why are users churning?"                                                                                                                                                         
+    - "Why does the deploy keep failing?"                                                                                                                                               
+    - "What's causing the performance issue?"                                                                                                                                           
+    - "Why isn't this working?"                                                                                                                                                         
+    - "We tried X and it didn't work — why?"                                                                                                                                            
+  Implicit form: "X is broken" / "this isn't working" / "something's wrong with..."                                                                                                     
+  User wants: root cause, causal chain, fix                                                                                                                                             
+  Maps to: /rca, /fowwr, /dbg, /sbfow, /rci                                                                                                                                             
+                                                                                                                                                                                        
+  Category 4: EXPLORATORY — mapping a space of possibilities                                                                                                                            
+  Prototype: "What are all the ways to X?" / "What options exist?"                                                                                                                      
+  Example phrases:                                                                                                                                                                      
+    - "What are my options for hosting?"                                                                                                                                                
+    - "What are all the ways to grow revenue?"                                                                                                                                          
+    - "How could I approach this?"                                                                                                                                                      
+    - "What's out there for project management tools?"                                                                                                                                  
+    - "What should I consider?"                                                                                                                                                         
+  Implicit form: "I'm open to ideas" / "brainstorm with me"                                                                                                                             
+  User wants: comprehensive enumeration, dimension mapping                                                                                                                              
+  Maps to: /se, /dd, /poa, /u, /ma                                                                                                                                                      
+                                                                                                                                                                                        
+  Category 5: METHOD-SEEKING — knowing what but not how                                                                                                                                 
+  Prototype: "How do I X?" / "What's the best way to X?"                                                                                                                                
+  Example phrases:                                                                                                                                                                      
+    - "How do I learn machine learning?"                                                                                                                                                
+    - "What's the best way to prepare for an interview?"                                                                                                                                
+    - "How should I structure this project?"                                                                                                                                            
+    - "How do I get started with..."                                                                                                                                                    
+    - "What's the process for..."                                                                                                                                                       
+  Implicit form: "I need to X" (without asking how — implies it)                                                                                                                        
+  User wants: concrete steps, methods, procedures                                                                                                                                       
+  Maps to: /foht, /stg, /br, /op, /pcd                                                                                                                                                  
+                                                                                                                                                                                        
+  Category 6: GOAL-STATING — declaring a want or intention                                                                                                                              
+  Prototype: "I want to X" / "I need to X"                                                                                                                                              
+  Example phrases:                                                                                                                                                                      
+    - "I want to start a business"                                                                                                                                                      
+    - "I need to improve my writing"                                                                                                                                                    
+    - "I want to switch to tech"                                                                                                                                                        
+    - "I'm trying to lose weight"                                                                                                                                                       
+    - "My goal is to launch by Q3"                                                                                                                                                      
+  Implicit form: sometimes just the noun — "career change" / "startup"                                                                                                                  
+  User wants: goal clarification, path mapping, prerequisite surfacing                                                                                                                  
+  Maps to: /wt, /gu, /gd, /grf, /br                                                                                                                                                     
+                                                                                                                                                                                        
+  Category 7: COMMAND — directing a specific action                                                                                                                                     
+  Prototype: "Do X" / "Run X" / "Make X"                                                                                                                                                
+  Example phrases:                                                                                                                                                                      
+    - "Write a business plan"                                                                                                                                                           
+    - "Compare these two approaches"                                                                                                                                                    
+    - "List the pros and cons"                                                                                                                                                          
+    - "Summarize this"                                                                                                                                                                  
+    - "Fix this code"                                                                                                                                                                   
+    - "Do next" / "continue" / "go on"                                                                                                                                                  
+  Implicit form: verb-first sentences, imperative mood                                                                                                                                  
+  User wants: execution, not analysis                                                                                                                                                   
+  Maps to: depends on the action — /w (writing), /cmp (comparison), /dbg (fix)                                                                                                          
+  Note: Commands that specify a skill-action route to that skill's domain.                                                                                                              
+        Bare commands ("do next") require context to route.                                                                                                                             
+                                                                                                                                                                                        
+  Category 8: EVALUATION — assessing quality or correctness                                                                                                                             
+  Prototype: "Is this good?" / "Does this work?" / "Check this"                                                                                                                         
+  Example phrases:                                                                                                                                                                      
+    - "Is this plan solid?"                                                                                                                                                             
+    - "Does this argument hold up?"                                                                                                                                                     
+    - "Review my approach"                                                                                                                                                              
+    - "What's wrong with this?"                                                                                                                                                         
+    - "Is this MECE?"                                                                                                                                                                   
+    - "Validate this assumption"                                                                                                                                                        
+  Implicit form: presenting work and waiting for feedback                                                                                                                               
+  User wants: critique, validation, gap identification                                                                                                                                  
+  Maps to: /pv, /mv, /vbo, /val, /cor, /aex, /cri                                                                                                                                       
+                                                                                                                                                                                        
+  Category 9: CONTINUATION — extending prior context                                                                                                                                    
+  Prototype: "Now do X" / "Same for Y" / "What's next?"                                                                                                                                 
+  Example phrases:                                                                                                                                                                      
+    - "Now do that for the other option"                                                                                                                                                
+    - "What's the next step?"                                                                                                                                                           
+    - "Keep going"                                                                                                                                                                      
+    - "Do next"                                                                                                                                                                         
+    - "Apply that to my case"                                                                                                                                                           
+    - "Go deeper on point 3"                                                                                                                                                            
+  Implicit form: pronouns without antecedents ("do that", "the other one")                                                                                                              
+  User wants: continued work in current direction                                                                                                                                       
+  Maps to: whatever skill is currently active — this is context-dependent                                                                                                               
+  Note: Cannot be classified without conversation history.                                                                                                                              
+                                                                                                                                                                                        
+  Category 10: EMOTIONAL/VENT — expressing frustration or feeling                                                                                                                       
+  Prototype: "This is so frustrating" / "Nothing works" / "I'm stuck"                                                                                                                   
+  Example phrases:                                                                                                                                                                      
+    - "I've tried everything and nothing works"                                                                                                                                         
+    - "This is impossible"                                                                                                                                                              
+    - "I'm overwhelmed"                                                                                                                                                                 
+    - "Ugh"                                                                                                                                                                             
+    - "I don't even know where to start"                                                                                                                                                
+  Implicit form: expressing state rather than requesting action                                                                                                                         
+  User wants: acknowledgment + then usually DIAGNOSTIC or METHOD-SEEKING                                                                                                                
+  Maps to: first acknowledge, then route — often /fowwr, /foht, /dcm, /wt                                                                                                               
+  Note: The implicit intent behind the emotion determines the skill.                                                                                                                    
+        "I'm stuck" → /foht. "Nothing works" → /fowwr. "I'm overwhelmed" → /dcm.                                                                                                        
+                                                                                                                                                                                        
+  Category 11: META — about the tool or process itself                                                                                                                                  
+  Prototype: "What can you do?" / "What skills exist?"                                                                                                                                  
+  Example phrases:                                                                                                                                                                      
+    - "What skills are available?"                                                                                                                                                      
+    - "What's the difference between /ar and /aw?"                                                                                                                                      
+    - "How does this work?"                                                                                                                                                             
+    - "Help" / "help me"                                                                                                                                                                
+    - "What should I use for..."                                                                                                                                                        
+  Implicit form: uncertainty about the tool, not the problem                                                                                                                            
+  User wants: orientation, guidance, skill discovery                                                                                                                                    
+  Maps to: /fnd, skill discovery, Getting Started page                                                                                                                                  
+  Note: These don't invoke a thinking skill — they invoke skill routing.                                                                                                                
+                                                                                                                                                                                        
+  Category 12: CREATIVE — requesting generation of content                                                                                                                              
+  Prototype: "Write me a X" / "Create a X" / "Generate X"                                                                                                                               
+  Example phrases:                                                                                                                                                                      
+    - "Write a blog post about..."                                                                                                                                                      
+    - "Draft an email to..."                                                                                                                                                            
+    - "Create a project proposal"                                                                                                                                                       
+    - "Generate names for..."                                                                                                                                                           
+    - "Help me write..."                                                                                                                                                                
+  User wants: content production, not analysis                                                                                                                                          
+  Maps to: /w, /pw, /stl, /gw                                                                                                                                                           
+  Note: These are action-oriented like COMMAND but the output is                                                                                                                        
+        creative/written content rather than analysis.                                                                                                                                  
+                                                                                                                                                                                        
+  Secondary Facets                                                                                                                                                                      
+                                                                                                                                                                                        
+  Facet 2: PRECISION                                                                                                                                                                    
+  VAGUE:      "help" / "career" / "improve things"                                                                                                                                      
+  DIRECTIONAL: "I want to switch to tech" / "something about marketing"                                                                                                                 
+  SPECIFIC:    "Should I learn Python or JavaScript given 2 years of Ruby experience?"                                                                                                  
+  OVER-SPECIFIED: Multi-paragraph with constraints, context, edge cases, preferences                                                                                                    
+                                                                                                                                                                                        
+  Facet 3: STRUCTURE                                                                                                                                                                    
+  FRAGMENT:    "do next" / "help" / "career change"                                                                                                                                     
+  SENTENCE:    "Should I change careers?"                                                                                                                                               
+  PARAGRAPH:   Flowing prose with embedded questions and context                                                                                                                        
+  LIST:        Bullet points or numbered items                                                                                                                                          
+  MULTI-PART:  Several distinct questions or sections in one input                                                                                                                      
+                                                                                                                                                                                        
+  Facet 4: EMOTIONAL REGISTER                                                                                                                                                           
+  NEUTRAL:     "Compare X and Y"                                                                                                                                                        
+  CURIOUS:     "I wonder what would happen if..."                                                                                                                                       
+  URGENT:      "I need this by tomorrow"                                                                                                                                                
+  FRUSTRATED:  "I've tried everything and nothing works"                                                                                                                                
+  SKEPTICAL:   "I doubt this will work but..."                                                                                                                                          
+                                                                                                                                                                                        
+  Facet 5: CONTEXT PROVIDED                                                                                                                                                             
+  ZERO:        "help"                                                                                                                                                                   
+  IMPLIED:     "should I take the offer?" (what offer?)                                                                                                                                 
+  PARTIAL:     Some background but key details missing                                                                                                                                  
+  FULL:        Everything needed to respond well                                                                                                                                        
+  EXCESS:      Irrelevant details mixed with relevant ones                                                                                                                              
+                                                                                                                                                                                        
+  Disambiguation Rules                                                                                                                                                                  
+                                                                                                                                                                                        
+  1. Classify by PRIMARY intent — what the user most wants from the response.                                                                                                           
+  2. When ambiguous between two categories, prefer the one that requires                                                                                                                
+     LESS assumption about the user's state.                                                                                                                                            
+     ("My startup is failing" → CLAIM on surface. Don't assume DIAGNOSTIC                                                                                                               
+     unless they ask why.)                                                                                                                                                              
+  3. Compound inputs: classify by the FIRST/MAIN request. Note secondary                                                                                                                
+     intents but route to primary.                                                                                                                                                      
+  4. Continuations: classify based on current conversation context, not                                                                                                                 
+     the phrase alone.                                                                                                                                                                  
+  5. Emotional inputs: identify the implicit intent BEHIND the emotion.                                                                                                                 
+     Route to that intent's skills after acknowledging the emotion. 

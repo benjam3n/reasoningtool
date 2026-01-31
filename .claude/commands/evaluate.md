@@ -1,0 +1,1 @@
+Sub-orchestrator for evaluation. Routes to ARAW, MECE validation, procedure validation, or assumption extraction based on what's being assessed and what kind of evaluation is needed. Read and execute `claude-code-plugin/skills/evaluate/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Extends the search paradigm to non-obvious domains. Identifies which search methods should become procedures.. Read and execute `claude-code-plugin/skills/spe/SKILL.md`, applying it to this input: $ARGUMENTS

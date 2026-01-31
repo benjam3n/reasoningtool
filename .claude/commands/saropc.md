@@ -1,0 +1,1 @@
+Apply Recursive Causal Interrogation to choices about what procedure to run, what to measure, and when to stop.. Read and execute `claude-code-plugin/skills/saropc/SKILL.md`, applying it to this input: $ARGUMENTS

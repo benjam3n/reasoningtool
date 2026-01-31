@@ -1,0 +1,1 @@
+Classify utterances in a gate/procedure/document so the system doesn’t answer the wrong thing (question vs command vs judgment vs guess).. Read and execute `claude-code-plugin/skills/saaiasa/SKILL.md`, applying it to this input: $ARGUMENTS

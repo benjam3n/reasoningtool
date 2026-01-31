@@ -1,0 +1,403 @@
+FOHT 4x — The Best Way to Make the Steelman Prompt Skill                                                                                                                              
+                                                                                                                                                                                        
+  Depth: 4x (min 10 methods, 8 tested, 8 prerequisites, 50 findings)                                                                                                                    
+                                                                                                                                                                                        
+  ---                                                                                                                                                                                   
+  Phase 1: EXPLORATION                                                                                                                                                                  
+                                                                                                                                                                                        
+  Step 1: Define the Outcome                                                                                                                                                            
+                                                                                                                                                                                        
+  GOAL: Create /sp — a skill that takes a raw prompt and makes it as strong as possible                                                                                                 
+  before it gets answered. Not answering the prompt — improving the prompt itself.                                                                                                      
+                                                                                                                                                                                        
+  DONE LOOKS LIKE: A SKILL.md file at claude-code-plugin/skills/sp/SKILL.md that, when                                                                                                  
+  invoked with /sp [any prompt], outputs an improved version of that prompt with explicit                                                                                               
+  assumptions, precise scope, success criteria, and resolved ambiguities.                                                                                                               
+                                                                                                                                                                                        
+  SUCCESS CRITERIA:                                                                                                                                                                     
+    [H1] MUST: Output is an improved PROMPT, not an answer to the prompt                                                                                                                
+    [H2] MUST: Works on propositional prompts (claims, decisions, diagnostics)                                                                                                          
+    [H3] MUST: Follows existing skill patterns (YAML frontmatter, numbered findings, phases)                                                                                            
+    [H4] MUST: The improved prompt is usable — you can paste it into a new session and run it                                                                                           
+    [H5] SHOULD: Makes hidden assumptions explicit                                                                                                                                      
+    [H6] SHOULD: Identifies what TYPE of prompt it is and applies type-appropriate improvement                                                                                          
+    [H7] SHOULD: Adds success criteria the original prompt lacked                                                                                                                       
+    [H8] SHOULD: Preserves the user's original intent (doesn't drift)                                                                                                                   
+                                                                                                                                                                                        
+  CONSTRAINTS:                                                                                                                                                                          
+    [H9] Must be a single SKILL.md file — no dependencies on new infrastructure                                                                                                         
+    [H10] Should be usable in a chain: /sp [prompt] → take output → /araw [improved prompt]                                                                                             
+    [H11] From the AW analysis: only some prompt types benefit — needs to handle this gracefully                                                                                        
+                                                                                                                                                                                        
+  NOT THE GOAL: Answering the prompt. Generating content. Evaluating the prompt's topic.                                                                                                
+                                                                                                                                                                                        
+  Step 2: Map the Method Space                                                                                                                                                          
+                                                                                                                                                                                        
+  Direct methods:                                                                                                                                                                       
+                                                                                                                                                                                        
+  [H12] METHOD: Unbundle-then-reconstruct — Use /u's unbundling technique (explicit, implicit, presupposed, bundled, meta) on the prompt itself, then reconstruct with all claims made  
+  explicit.                                                                                                                                                                             
+                                                                                                                                                                                        
+  [H13] METHOD: Criteria injection — Analyze what a good answer would need to satisfy, write success criteria, append them to the prompt as constraints.                                
+                                                                                                                                                                                        
+  [H14] METHOD: AR the prompt — Run /ar on "this prompt will produce a good output" to find what must be true for the prompt to work, then add those conditions to the prompt.          
+                                                                                                                                                                                        
+  [H15] METHOD: AW the prompt — Run /aw on "this prompt will produce a good output" to find failure modes, then modify the prompt to prevent each failure mode.                         
+                                                                                                                                                                                        
+  [H16] METHOD: Type-classify-then-template — Classify prompt type (propositional, creative, diagnostic, exploratory, request), apply a type-specific steelmanning template for each.   
+                                                                                                                                                                                        
+  Instance-to-category:                                                                                                                                                                 
+                                                                                                                                                                                        
+  [H17] This goal is an instance of: PROGRAM OPTIMIZATION — taking code (a prompt) and making it run better (produce better output) without changing its semantics (intent).            
+  [H18] Category method: Compiler optimization passes — multiple independent passes, each improving one dimension. Apply multiple independent improvement passes to the prompt.         
+  [H19] Category method: Code review — a checklist of things to check, flag, and fix. Create a prompt review checklist.                                                                 
+                                                                                                                                                                                        
+  Inversion — what makes prompts BAD?                                                                                                                                                   
+                                                                                                                                                                                        
+  [H20] BLOCKER: Ambiguity — the prompt could be interpreted multiple ways                                                                                                              
+  [H21] REMOVAL METHOD: Disambiguation pass — identify each ambiguous term/phrase, resolve it                                                                                           
+  [H22] BLOCKER: Missing context — the prompt assumes knowledge the model doesn't have                                                                                                  
+  [H23] REMOVAL METHOD: Context injection — identify what context is needed, add it                                                                                                     
+  [H24] BLOCKER: Scope creep — the prompt asks for too much, so output is shallow on everything                                                                                         
+  [H25] REMOVAL METHOD: Scope bounding — identify what's in/out of scope, state it                                                                                                      
+  [H26] BLOCKER: Wrong framing — the prompt asks the wrong question                                                                                                                     
+  [H27] REMOVAL METHOD: Reframing pass — check if the prompt question is the real question                                                                                              
+                                                                                                                                                                                        
+  Adjacent success — who does prompt improvement already?                                                                                                                               
+                                                                                                                                                                                        
+  [H28] EXEMPLAR: DSPy (Stanford) — programmatically optimizes prompts through examples and metrics. METHOD: Define metric, generate candidates, test against metric, select best.      
+  [H29] EXEMPLAR: The existing skills themselves — every SKILL.md IS a steelmanned prompt for a class of inputs. METHOD: Extract the pattern used to write good skills and apply it to  
+  arbitrary prompts.                                                                                                                                                                    
+  [H30] EXEMPLAR: Socratic questioning — asking clarifying questions about the prompt before answering. METHOD: Generate questions about the prompt, answer them, fold answers into the 
+  prompt.                                                                                                                                                                               
+                                                                                                                                                                                        
+  Reframe:                                                                                                                                                                              
+                                                                                                                                                                                        
+  [H31] REFRAME: Instead of improving the prompt text, identify what SKILL should be applied and route to it. /sp becomes a router that says "your question is really a /araw question" 
+  or "this is a /wt question."                                                                                                                                                          
+                                                                                                                                                                                        
+  Decomposition:                                                                                                                                                                        
+                                                                                                                                                                                        
+  [H32] SUB-GOAL: Classify the prompt type — METHOD: Taxonomy of prompt types with decision tree                                                                                        
+  [H33] SUB-GOAL: Extract hidden claims — METHOD: Unbundling (from /u)                                                                                                                  
+  [H34] SUB-GOAL: Add success criteria — METHOD: "What would a good answer look like?" question                                                                                         
+  [H35] SUB-GOAL: Resolve ambiguities — METHOD: Identify choice points, resolve each                                                                                                    
+  [H36] SUB-GOAL: Output usable prompt — METHOD: Reconstruct with all improvements, format as ready-to-use                                                                              
+                                                                                                                                                                                        
+  Step 3: Surface Prerequisites                                                                                                                                                         
+                                                                                                                                                                                        
+  [H37] METHOD H12 (unbundle-reconstruct) requires: The prompt must contain claims to unbundle — MET: yes for propositional, no for pure requests ("get me coffee")                     
+  [H38] METHOD H13 (criteria injection) requires: Ability to determine what "good" means for this prompt's output — MET: yes (model can infer)                                          
+  [H39] METHOD H16 (type-classify-template) requires: A useful taxonomy of prompt types — MET: unknown, needs design                                                                    
+  [H40] METHOD H18 (multi-pass optimization) requires: Passes that are independently useful and composable — MET: yes if passes are well-defined                                        
+  [H41] METHOD H28 (DSPy-style) requires: A metric to optimize against — MET: no (no automated metric for prompt quality in this context)                                               
+  [H42] METHOD H29 (extract skill pattern) requires: Understanding what makes skills good — MET: yes (the skills exist as examples)                                                     
+  [H43] METHOD H30 (Socratic questioning) requires: Interactive back-and-forth — MET: no in single invocation, but could generate and self-answer                                       
+  [H44] METHOD H31 (router reframe) requires: Complete skill coverage — MET: partial (221 skills exist but not all prompt types map cleanly)                                            
+                                                                                                                                                                                        
+  Step 4: Test Methods (AR/AW)                                                                                                                                                          
+                                                                                                                                                                                        
+  METHOD H12: Unbundle-then-reconstruct                                                                                                                                                 
+                                                                                                                                                                                        
+  ASSUME RIGHT:                                                                                                                                                                         
+  [H45] If right: Every prompt has hidden claims. Unbundling finds them. Making them explicit gives the model more to work with. — Necessary                                            
+  [H46] If right: The reconstructed prompt is longer but more precise — each ambiguity resolved — Probable                                                                              
+  [H47] FORECLOSED: Brevity. The improved prompt will always be longer.                                                                                                                 
+                                                                                                                                                                                        
+  ASSUME WRONG:                                                                                                                                                                         
+  [H48] Wrong because: Some prompts are already clear — unbundling adds nothing but tokens — Conditional                                                                                
+  [H49] Wrong because: Unbundling might CHANGE the intent by making explicit something the user wanted left implicit — Serious                                                          
+    [H50] -> The user might prefer fuzzy scope because they don't know what they want yet. Steelmanning prematurely narrows. → BEDROCK-OBSERVE: "Explore X" prompts benefit from        
+  ambiguity — it's feature not bug.                                                                                                                                                     
+                                                                                                                                                                                        
+  VERDICT H12: CONDITIONAL — Works for propositional prompts. Counterproductive for exploratory/creative prompts.                                                                       
+                                                                                                                                                                                        
+  METHOD H18: Multi-pass optimization (compiler analogy)                                                                                                                                
+                                                                                                                                                                                        
+  ASSUME RIGHT:                                                                                                                                                                         
+  [H51] If right: Each pass improves one dimension independently: Pass 1 = unbundle, Pass 2 = add criteria, Pass 3 = resolve ambiguity, Pass 4 = scope bound, Pass 5 = reframe check —  
+  Probable                                                                                                                                                                              
+  [H52] If right: Passes can be skipped when not applicable — type classification determines which passes to run — Probable                                                             
+  [H53] If right: This mirrors how the existing skills work — structured steps, each handling one thing — Necessary                                                                     
+                                                                                                                                                                                        
+  ASSUME WRONG:                                                                                                                                                                         
+  [H54] Wrong because: Passes interact — unbundling might create new ambiguities that the ambiguity pass then handles, creating churn — Conditional                                     
+  [H55] Wrong because: Too many passes = too much output before the user gets the improved prompt — Serious                                                                             
+    [H56] -> If /sp produces 2000 words of analysis to improve a 20-word prompt, the cost/benefit is wrong → BEDROCK-OBSERVE: The skill should be lighter than analytical skills —      
+  minutes not hours.                                                                                                                                                                    
+                                                                                                                                                                                        
+  VERDICT H18: VIABLE — But must be COMPACT. Not 5 heavyweight passes — 5 lightweight checks.                                                                                           
+                                                                                                                                                                                        
+  METHOD H16: Type-classify-then-template                                                                                                                                               
+                                                                                                                                                                                        
+  ASSUME RIGHT:                                                                                                                                                                         
+  [H57] If right: Different prompt types need different improvements. A decision prompt needs options surfaced. A diagnostic prompt needs symptom isolation. A claim prompt needs       
+  assumption extraction. — Necessary                                                                                                                                                    
+  [H58] If right: A small taxonomy (4-6 types) covers most prompts — Probable                                                                                                           
+                                                                                                                                                                                        
+  ASSUME WRONG:                                                                                                                                                                         
+  [H59] Wrong because: Misclassification routes to wrong template, producing worse output — Serious                                                                                     
+    [H60] -> Need a fallback for ambiguous/unclassifiable prompts → BEDROCK-LOGIC: Any classifier needs a "none of the above" path                                                      
+  [H61] Wrong because: The taxonomy might not be useful — maybe all prompts benefit from the same improvements — Conditional                                                            
+    [H62] -> The AW analysis found propositional vs creative is the key split (from F36). At minimum, a 2-way split is needed. → BEDROCK-OBSERVE: /araw works on claims, /u works on    
+  exploration. The existing skill set already embodies a type distinction.                                                                                                              
+                                                                                                                                                                                        
+  VERDICT H16: VIABLE — A LIGHTWEIGHT type classification (not a heavyweight taxonomy). Maybe 3-4 types max.                                                                            
+                                                                                                                                                                                        
+  METHOD H31: Router reframe                                                                                                                                                            
+                                                                                                                                                                                        
+  ASSUME RIGHT:                                                                                                                                                                         
+  [H63] If right: /sp becomes the entry point for everything — "steelman this" means "route to the right skill" — Probable                                                              
+  [H64] If right: This is simpler than building new analysis — just point to existing skills — Necessary                                                                                
+                                                                                                                                                                                        
+  ASSUME WRONG:                                                                                                                                                                         
+  [H65] Wrong because: This isn't what the user asked for. They want the PROMPT improved, not to be told to use a different skill. — Fatal                                              
+    [H66] -> The user explicitly said "not to actually answer the prompt, just to make the prompt literally couldn't get any better." Routing to a skill ANSWERS the prompt. →          
+  BEDROCK-OBSERVE: Re-reading the input — the goal is prompt improvement, not skill routing.                                                                                            
+                                                                                                                                                                                        
+  VERDICT H31: ELIMINATED — Contradicts the stated goal.                                                                                                                                
+                                                                                                                                                                                        
+  METHOD H30: Socratic questioning (self-answered)                                                                                                                                      
+                                                                                                                                                                                        
+  ASSUME RIGHT:                                                                                                                                                                         
+  [H67] If right: Generating questions about the prompt, answering them, then folding answers into the prompt is a general-purpose improvement method — Probable                        
+  [H68] If right: The questions surface exactly what's missing from the prompt — Probable                                                                                               
+                                                                                                                                                                                        
+  ASSUME WRONG:                                                                                                                                                                         
+  [H69] Wrong because: Self-answered questions may not find what a HUMAN would ask — the model's blind spots are the prompt's blind spots — Serious                                     
+    [H70] -> This is a real limitation but still better than no questioning at all. The alternative is to generate questions and ASK the user, but that changes /sp from a              
+  single-invocation to interactive.                                                                                                                                                     
+                                                                                                                                                                                        
+  VERDICT H30: CONDITIONAL — Useful as one pass within the multi-pass approach. Not strong enough alone.                                                                                
+                                                                                                                                                                                        
+  METHOD H13: Criteria injection                                                                                                                                                        
+                                                                                                                                                                                        
+  ASSUME RIGHT:                                                                                                                                                                         
+  [H71] If right: Adding "a good answer would..." to the prompt directly constrains the model toward better output — Necessary                                                          
+  [H72] If right: Success criteria are the most impactful single improvement — they tell the model what "done" looks like — Probable                                                    
+                                                                                                                                                                                        
+  ASSUME WRONG:                                                                                                                                                                         
+  [H73] Wrong because: Injected criteria may not match what the user actually values — Conditional                                                                                      
+  [H74] Wrong because: Over-specifying criteria can prevent the model from finding unexpected good answers — Serious                                                                    
+    [H75] -> This is the same narrowing problem as H50 — criteria lock in a definition of "good" that might be wrong                                                                    
+                                                                                                                                                                                        
+  VERDICT H13: VIABLE — But criteria should be flagged as tentative, not absolute.                                                                                                      
+                                                                                                                                                                                        
+  METHOD H15: AW the prompt                                                                                                                                                             
+                                                                                                                                                                                        
+  ASSUME RIGHT:                                                                                                                                                                         
+  [H76] If right: Finding failure modes of the prompt (what would make this prompt produce bad output?) directly identifies what to fix — Necessary                                     
+  [H77] If right: Each failure mode has a corresponding fix that can be applied to the prompt — Probable                                                                                
+                                                                                                                                                                                        
+  ASSUME WRONG:                                                                                                                                                                         
+  [H78] Wrong because: This is a heavyweight operation — running full AW is overkill for prompt improvement — Serious                                                                   
+    [H79] -> A COMPRESSED version (3-5 quick failure modes, not full recursive tree) would work → BEDROCK-LOGIC: The improvement should be proportional to the prompt's complexity      
+                                                                                                                                                                                        
+  VERDICT H15: CONDITIONAL — Only viable as a compressed check, not a full AW.                                                                                                          
+                                                                                                                                                                                        
+  METHOD H29: Extract the skill pattern                                                                                                                                                 
+                                                                                                                                                                                        
+  ASSUME RIGHT:                                                                                                                                                                         
+  [H80] If right: Every SKILL.md takes a class of inputs and structures the approach. /sp should do the same — take any prompt and structure the approach to improving it. — Necessary  
+  [H81] If right: The skills share common elements: state the input, classify it, apply techniques, compile results. /sp follows this pattern. — Necessary                              
+                                                                                                                                                                                        
+  ASSUME WRONG:                                                                                                                                                                         
+  [H82] Wrong because: Skills handle CLASS-level inputs. /sp handles INDIVIDUAL prompts. The level of abstraction is different. — Conditional                                           
+    [H83] -> But the meta-pattern (classify, transform, verify) still applies                                                                                                           
+                                                                                                                                                                                        
+  VERDICT H29: VIABLE — As the structural template for how to BUILD /sp, not as the method /sp uses.                                                                                    
+                                                                                                                                                                                        
+  Step 5: Find Edge Cases                                                                                                                                                               
+                                                                                                                                                                                        
+  [H84] METHOD H18 (multi-pass) breaks when: The prompt is already well-structured (e.g., someone passes a SKILL.md through /sp) — adds overhead for no gain                            
+  [H85] METHOD H16 (type-classify) breaks when: Prompt is genuinely novel — doesn't fit any type                                                                                        
+  [H86] METHOD H13 (criteria) breaks at scale: 20 criteria on a simple prompt is absurd — need proportionality                                                                          
+  [H87] METHOD H12 (unbundle) has hidden cost: Unbundled prompts are harder to read — the user needs the improved version to be usable, not an analytical decomposition                 
+  [H88] ALL METHODS break when: The prompt is non-propositional ("write me a poem") — the AW analysis (F36) established this. Need graceful handling.                                   
+  [H89] ALL METHODS have hidden cost: /sp adds a step before every prompt. If used routinely, this doubles prompting time. Should be optional, not default.                             
+                                                                                                                                                                                        
+  ---                                                                                                                                                                                   
+  Phase 2: FINDING REGISTRY                                                                                                                                                             
+                                                                                                                                                                                        
+  FINDING REGISTRY                                                                                                                                                                      
+  ================                                                                                                                                                                      
+                                                                                                                                                                                        
+  SUCCESS CRITERIA:                                                                                                                                                                     
+  [H1] Output is improved PROMPT, not answer -- TYPE: must                                                                                                                              
+  [H2] Works on propositional prompts -- TYPE: must                                                                                                                                     
+  [H3] Follows existing skill patterns -- TYPE: must                                                                                                                                    
+  [H4] Improved prompt is usable -- TYPE: must                                                                                                                                          
+  [H5] Makes hidden assumptions explicit -- TYPE: should                                                                                                                                
+  [H6] Type-appropriate improvement -- TYPE: should                                                                                                                                     
+  [H7] Adds success criteria -- TYPE: should                                                                                                                                            
+  [H8] Preserves original intent -- TYPE: should                                                                                                                                        
+                                                                                                                                                                                        
+  CONSTRAINTS:                                                                                                                                                                          
+  [H9] Single SKILL.md file                                                                                                                                                             
+  [H10] Chainable: /sp output → /araw input                                                                                                                                             
+  [H11] Only some prompt types benefit                                                                                                                                                  
+                                                                                                                                                                                        
+  METHODS FOUND:                                                                                                                                                                        
+  [H12] Unbundle-then-reconstruct -- SOURCE: direct                                                                                                                                     
+  [H13] Criteria injection -- SOURCE: direct                                                                                                                                            
+  [H14] AR the prompt -- SOURCE: direct                                                                                                                                                 
+  [H15] AW the prompt (compressed) -- SOURCE: direct                                                                                                                                    
+  [H16] Type-classify-then-template -- SOURCE: direct                                                                                                                                   
+  [H18] Multi-pass optimization -- SOURCE: category (compiler)                                                                                                                          
+  [H19] Prompt review checklist -- SOURCE: category (code review)                                                                                                                       
+  [H28] DSPy-style metric optimization -- SOURCE: exemplar                                                                                                                              
+  [H29] Extract skill pattern -- SOURCE: exemplar                                                                                                                                       
+  [H30] Socratic self-questioning -- SOURCE: exemplar                                                                                                                                   
+  [H31] Router reframe -- SOURCE: reframe                                                                                                                                               
+  [H32-H36] Decomposition sub-goals -- SOURCE: decomposition                                                                                                                            
+                                                                                                                                                                                        
+  PREREQUISITES:                                                                                                                                                                        
+  [H37] H12 requires propositional content -- MET: partial (type-dependent)                                                                                                             
+  [H38] H13 requires inferring "good" -- MET: yes                                                                                                                                       
+  [H39] H16 requires prompt taxonomy -- MET: needs design (3-4 types)                                                                                                                   
+  [H40] H18 requires composable passes -- MET: yes                                                                                                                                      
+  [H41] H28 requires automated metric -- MET: no                                                                                                                                        
+  [H42] H29 requires understanding skill patterns -- MET: yes                                                                                                                           
+  [H43] H30 requires interactivity -- MET: partial (can self-answer)                                                                                                                    
+  [H44] H31 requires complete skill coverage -- MET: partial                                                                                                                            
+                                                                                                                                                                                        
+  AR FINDINGS:                                                                                                                                                                          
+  [H45] Every prompt has hidden claims -- FOR: H12 -- STRENGTH: necessary                                                                                                               
+  [H46] Reconstructed prompt is longer but more precise -- FOR: H12 -- STRENGTH: probable                                                                                               
+  [H51] Five lightweight passes each improve one dimension -- FOR: H18 -- STRENGTH: probable                                                                                            
+  [H52] Passes can be skipped by type -- FOR: H18 -- STRENGTH: probable                                                                                                                 
+  [H53] Mirrors existing skill structure -- FOR: H18 -- STRENGTH: necessary                                                                                                             
+  [H57] Different types need different improvements -- FOR: H16 -- STRENGTH: necessary                                                                                                  
+  [H58] Small taxonomy covers most prompts -- FOR: H16 -- STRENGTH: probable                                                                                                            
+  [H63] /sp as entry point -- FOR: H31 -- STRENGTH: probable                                                                                                                            
+  [H67] Self-questioning surfaces what's missing -- FOR: H30 -- STRENGTH: probable                                                                                                      
+  [H71] Success criteria constrain toward better output -- FOR: H13 -- STRENGTH: necessary                                                                                              
+  [H72] Criteria are highest-impact single improvement -- FOR: H13 -- STRENGTH: probable                                                                                                
+  [H76] Failure modes identify what to fix -- FOR: H15 -- STRENGTH: necessary                                                                                                           
+  [H77] Each failure mode has a corresponding fix -- FOR: H15 -- STRENGTH: probable                                                                                                     
+  [H80] /sp should follow skill meta-pattern -- FOR: H29 -- STRENGTH: necessary                                                                                                         
+  [H81] Classify, transform, verify -- FOR: H29 -- STRENGTH: necessary                                                                                                                  
+                                                                                                                                                                                        
+  AW FINDINGS:                                                                                                                                                                          
+  [H48] Some prompts are already clear -- FOR: H12 -- SEVERITY: conditional                                                                                                             
+  [H49] Unbundling might change intent -- FOR: H12 -- SEVERITY: serious                                                                                                                 
+  [H50] Exploratory prompts benefit from ambiguity -- FOR: H12 -- SEVERITY: serious (BEDROCK-OBSERVE)                                                                                   
+  [H54] Passes interact, creating churn -- FOR: H18 -- SEVERITY: conditional                                                                                                            
+  [H55] Too many passes = too much output -- FOR: H18 -- SEVERITY: serious                                                                                                              
+  [H56] Skill should be lighter than analytical skills -- FOR: H18 -- SEVERITY: serious (BEDROCK-OBSERVE)                                                                               
+  [H59] Misclassification routes to wrong template -- FOR: H16 -- SEVERITY: serious                                                                                                     
+  [H60] Need fallback for unclassifiable prompts -- FOR: H16 -- SEVERITY: serious (BEDROCK-LOGIC)                                                                                       
+  [H65] Router contradicts the stated goal -- FOR: H31 -- SEVERITY: fatal (BEDROCK-OBSERVE)                                                                                             
+  [H69] Self-answered questions share model's blind spots -- FOR: H30 -- SEVERITY: serious                                                                                              
+  [H73] Injected criteria may not match user values -- FOR: H13 -- SEVERITY: conditional                                                                                                
+  [H74] Over-specifying prevents unexpected good answers -- FOR: H13 -- SEVERITY: serious                                                                                               
+  [H78] Full AW is overkill -- FOR: H15 -- SEVERITY: serious                                                                                                                            
+  [H79] Compressed version works -- FOR: H15 -- SEVERITY: conditional (BEDROCK-LOGIC)                                                                                                   
+                                                                                                                                                                                        
+  EDGE CASES:                                                                                                                                                                           
+  [H84] Multi-pass breaks on already-structured prompts -- FOR: H18                                                                                                                     
+  [H85] Type-classify breaks on novel prompts -- FOR: H16                                                                                                                               
+  [H86] Criteria injection breaks at scale -- FOR: H13                                                                                                                                  
+  [H87] Unbundled prompts harder to read -- FOR: H12                                                                                                                                    
+  [H88] All methods break on non-propositional prompts -- FOR: all                                                                                                                      
+  [H89] /sp adds overhead if used routinely -- FOR: all                                                                                                                                 
+                                                                                                                                                                                        
+  METHOD VERDICTS:                                                                                                                                                                      
+  [H12] Unbundle-then-reconstruct -- VERDICT: CONDITIONAL (propositional only; via H50)                                                                                                 
+    -- AR: H45, H46 -- AW: H48, H49, H50 -- Prerequisites: H37 partial -- Edge: H87                                                                                                     
+  [H13] Criteria injection -- VERDICT: VIABLE (tentative criteria; via H71, H72)                                                                                                        
+    -- AR: H71, H72 -- AW: H73, H74 -- Prerequisites: H38 met -- Edge: H86                                                                                                              
+  [H15] AW the prompt (compressed) -- VERDICT: CONDITIONAL (compressed only; via H79)                                                                                                   
+    -- AR: H76, H77 -- AW: H78, H79 -- Prerequisites: met -- Edge: none                                                                                                                 
+  [H16] Type-classify-then-template -- VERDICT: VIABLE (lightweight, 3-4 types; via H57, H58)                                                                                           
+    -- AR: H57, H58 -- AW: H59, H60 -- Prerequisites: H39 needs design -- Edge: H85                                                                                                     
+  [H18] Multi-pass optimization -- VERDICT: VIABLE (compact passes; via H53, H56)                                                                                                       
+    -- AR: H51, H52, H53 -- AW: H54, H55, H56 -- Prerequisites: H40 met -- Edge: H84                                                                                                    
+  [H28] DSPy-style -- VERDICT: BLOCKED (no automated metric; via H41)                                                                                                                   
+    -- Prerequisites: H41 unmet                                                                                                                                                         
+  [H29] Extract skill pattern -- VERDICT: VIABLE (as structural template; via H80, H81)                                                                                                 
+    -- AR: H80, H81 -- AW: H82 -- Prerequisites: H42 met                                                                                                                                
+  [H30] Socratic self-questioning -- VERDICT: CONDITIONAL (as one pass; via H69)                                                                                                        
+    -- AR: H67, H68 -- AW: H69 -- Prerequisites: H43 partial                                                                                                                            
+  [H31] Router reframe -- VERDICT: ELIMINATED (contradicts goal; via H65)                                                                                                               
+    -- AW: H65 fatal                                                                                                                                                                    
+                                                                                                                                                                                        
+  TOTALS:                                                                                                                                                                               
+  - Success criteria: 8                                                                                                                                                                 
+  - Methods found: 12 (including sub-goals)                                                                                                                                             
+  - Prerequisites surfaced: 8 (4 met, 2 partial, 1 unmet, 1 needs design)                                                                                                               
+  - AR findings: 16                                                                                                                                                                     
+  - AW findings: 15 (1 fatal, 8 serious, 6 conditional)                                                                                                                                 
+  - Edge cases: 6                                                                                                                                                                       
+  - Verdicts: 3 viable, 3 conditional, 1 blocked, 1 eliminated                                                                                                                          
+                                                                                                                                                                                        
+  ---                                                                                                                                                                                   
+  Phase 3: SYNTHESIS                                                                                                                                                                    
+                                                                                                                                                                                        
+  GOAL: Create /sp — steelman prompt skill                                                                                                                                              
+  DONE LOOKS LIKE: SKILL.md that improves any prompt before it gets answered                                                                                                            
+                                                                                                                                                                                        
+  METHODS TESTED: 9                                                                                                                                                                     
+                                                                                                                                                                                        
+  VIABLE METHODS:                                                                                                                                                                       
+  1. H18 (multi-pass optimization) — VERDICT: viable                                                                                                                                    
+     - Requires: composable lightweight passes (H40 met)                                                                                                                                
+     - Costs: longer output before user gets improved prompt (H55)                                                                                                                      
+     - Forecloses: single-step simplicity (H47)                                                                                                                                         
+     - Breaks when: prompt is already well-structured (H84)                                                                                                                             
+                                                                                                                                                                                        
+  2. H16 (type-classify-then-template) — VERDICT: viable                                                                                                                                
+     - Requires: 3-4 type taxonomy (H39 needs design)                                                                                                                                   
+     - Costs: misclassification risk (H59)                                                                                                                                              
+     - Forecloses: treating all prompts equally                                                                                                                                         
+     - Breaks when: novel prompt type (H85)                                                                                                                                             
+                                                                                                                                                                                        
+  3. H13 (criteria injection) — VERDICT: viable                                                                                                                                         
+     - Requires: ability to infer "good" (H38 met)                                                                                                                                      
+     - Costs: over-specification risk (H74)                                                                                                                                             
+     - Forecloses: open-ended exploration (H50)                                                                                                                                         
+     - Breaks when: too many criteria on simple prompt (H86)                                                                                                                            
+                                                                                                                                                                                        
+  CONDITIONAL METHODS (usable as passes within H18):                                                                                                                                    
+  4. H12 (unbundle) — works for propositional prompts only                                                                                                                              
+  5. H15 (compressed AW) — finds failure modes to fix                                                                                                                                   
+  6. H30 (self-questioning) — surfaces missing context                                                                                                                                  
+                                                                                                                                                                                        
+  ELIMINATED:                                                                                                                                                                           
+  1. H31 (router) — contradicts goal: user wants improved prompt, not skill routing (H65)                                                                                               
+  2. H28 (DSPy-style) — no automated metric available (H41)                                                                                                                             
+                                                                                                                                                                                        
+  RECOMMENDED APPROACH:                                                                                                                                                                 
+  Combine H18 (multi-pass), H16 (type-classify), and viable components of H12/H13/H15/H30                                                                                               
+  into a SINGLE LIGHTWEIGHT skill. The structure:                                                                                                                                       
+                                                                                                                                                                                        
+    1. CLASSIFY prompt type (3-4 types from H16)                                                                                                                                        
+    2. Run TYPE-APPROPRIATE passes (from H18, using H12/H13/H15/H30 as passes)                                                                                                          
+    3. OUTPUT the improved prompt as a ready-to-use block                                                                                                                               
+                                                                                                                                                                                        
+  Prompt types (derived from H57, H62, H50, F36):                                                                                                                                       
+    - CLAIM: "X is true" → unbundle + criteria + failure mode check                                                                                                                     
+    - DECISION: "Should I X?" → unbundle + options surface + criteria + tradeoff check                                                                                                  
+    - DIAGNOSTIC: "Why is X happening?" → context injection + scope bound + symptom isolation                                                                                           
+    - EXPLORATORY: "What are the options for X?" → scope bound + dimension check (LIGHT touch — H50)                                                                                    
+                                                                                                                                                                                        
+  The skill should be COMPACT (H56) — not a full analytical skill. Think /u's                                                                                                           
+  weight, not /uaua's weight. Target: the improved prompt in under 500 words of                                                                                                         
+  skill output, with the prompt itself as a clean copy-paste block at the end.                                                                                                          
+                                                                                                                                                                                        
+  FIRST ACTIONS:                                                                                                                                                                        
+  1. Create claude-code-plugin/skills/sp/SKILL.md — resolves: H1, H3, H9                                                                                                                
+  2. Design the 4-type taxonomy with decision tree — resolves: H39, H57                                                                                                                 
+  3. Write 5 lightweight passes (classify, unbundle, criteria, failure-check, reconstruct) — resolves: H18, H40                                                                         
+  4. Add a "SKIP if already clear" gate to each pass — resolves: H48, H84                                                                                                               
+  5. Add the skill to skills.astro under Experimental or Tier 4 — resolves: visibility                                                                                                  
+                                                                                                                                                                                        
+  UNRESOLVED:                                                                                                                                                                           
+  - Whether the model already steelmans implicitly (from UAUA F37/F39) — needs the                                                                                                      
+    10-prompt empirical test to resolve                                                                                                                                                 
+  - Whether 4 types is the right number — may need iteration                                                                                                                            
+  - Whether /sp should be interactive (ask the user clarifying questions) or                                                                                                            
+    single-shot (do its best without asking)                                                                                                                                            
+                                                                                                                                                                                        
+  ---                                                                                                                                                                                   
+  

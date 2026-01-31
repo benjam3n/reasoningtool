@@ -45,46 +45,62 @@ claude</code></pre>
 
   <section>
     <h2>Which skill to use</h2>
+    <p>Start with a category skill &mdash; it figures out the right approach for you.</p>
 
     <table>
       <thead>
-        <tr><th>You know&hellip;</th><th>Use</th><th>What it does</th></tr>
+        <tr><th>You have&hellip;</th><th>Use</th><th>What it does</th></tr>
       </thead>
       <tbody>
-        <tr><td>Nothing</td><td><code>/uaua</code></td><td>Map possibilities, then test them</td></tr>
-        <tr><td>You want to see what you're missing</td><td><code>/u</code></td><td>Explore the space</td></tr>
-        <tr><td>You have a claim, unsure if right or wrong</td><td><code>/araw</code></td><td>Test both sides</td></tr>
-        <tr><td>You believe something is right</td><td><code>/ar</code></td><td>Trace implications, foreclosures, costs</td></tr>
-        <tr><td>You suspect something is wrong</td><td><code>/aw</code></td><td>Find failure reasons, derive alternatives</td></tr>
+        <tr><td>A claim to test</td><td><code>/claim</code></td><td>ARAW tests both sides</td></tr>
+        <tr><td>A decision to make</td><td><code>/decide</code></td><td>Compares options, tests with ARAW</td></tr>
+        <tr><td>An idea or proposal</td><td><code>/viability</code></td><td>Tests viability with ARAW</td></tr>
+        <tr><td>Work to assess</td><td><code>/evaluate</code></td><td>Checks correctness, completeness, risks</td></tr>
+        <tr><td>Something broken</td><td><code>/diagnose</code></td><td>Maps causes with UAUA, then tests each</td></tr>
+        <tr><td>A space to explore</td><td><code>/search</code></td><td>Explores with UAUA, then tests findings</td></tr>
+        <tr><td>A &ldquo;how do I&rdquo; question</td><td><code>/how</code></td><td>Finds methods (AR-forward)</td></tr>
+        <tr><td>A goal or want</td><td><code>/want</code></td><td>Traces commitments (AR-forward)</td></tr>
+        <tr><td>A feeling or frustration</td><td><code>/emotion</code></td><td>Acknowledges, then routes to what you need</td></tr>
+        <tr><td>Something to execute</td><td><code>/action</code></td><td>Plans and executes steps</td></tr>
+        <tr><td>Content to produce</td><td><code>/create</code></td><td>Routes to writing skills</td></tr>
+        <tr><td>Need maximum effort</td><td><code>/certainty</code></td><td>Iterates until thoroughly resolved</td></tr>
+        <tr><td>Something to improve</td><td><code>/iterate</code></td><td>Finds what to iterate, at what level, then does it</td></tr>
       </tbody>
     </table>
 
-    <pre><code>Do you know what your options are?
-├── NO → Do you need thorough analysis?
-│   ├── YES → /uaua
-│   └── NO, just show me what exists → /u
-└── YES → Do you have a specific claim to test?
-    ├── YES → Do you lean one way?
-    │   ├── I think it's RIGHT → /ar
-    │   ├── I think it's WRONG → /aw
-    │   └── I genuinely don't know → /araw
-    └── NO → /u (map first, then /ar or /aw on what you find)</code></pre>
+    <pre><code>What do you have?
+├── A statement → Is it testable?
+│   ├── YES → /claim
+│   └── It's more of an idea → /viability
+├── A question → What kind?
+│   ├── "Should I?" → /decide
+│   ├── "How do I?" → /how
+│   ├── "Why is this?" → /diagnose
+│   └── "What are the options?" → /search
+├── A goal → /want
+├── A feeling → /emotion
+├── Work to review → /evaluate
+├── Something to do → /action
+├── Content to write → /create
+└── Not sure → /meta</code></pre>
   </section>
 
   <section>
-    <h2>Other skills</h2>
+    <h2>Direct skills (power users)</h2>
 
     <table>
       <thead>
         <tr><th>Skill</th><th>What it does</th></tr>
       </thead>
       <tbody>
-        <tr><td><code>/sbfow</code></td><td>Output was rejected &mdash; figure out why</td></tr>
-        <tr><td><code>/fowwr</code></td><td>Something failed &mdash; trace back to root cause</td></tr>
-        <tr><td><code>/wt</code></td><td>"I want to X" &mdash; trace what that commits you to</td></tr>
+        <tr><td><code>/araw</code></td><td>Test both sides of any claim recursively</td></tr>
+        <tr><td><code>/uaua</code></td><td>Explore a space, then test what you find</td></tr>
         <tr><td><code>/foht</code></td><td>Know the goal, not the method &mdash; find methods</td></tr>
-        <tr><td><code>/qo</code></td><td>Find the question that opens a document</td></tr>
+        <tr><td><code>/wt</code></td><td>&ldquo;I want to X&rdquo; &mdash; trace what that commits you to</td></tr>
+        <tr><td><code>/sp</code></td><td>Improve a prompt before it gets answered</td></tr>
         <tr><td><code>/w</code></td><td>Criteria-based writing</td></tr>
+        <tr><td><code>/fowwr</code></td><td>Something failed &mdash; trace back to root cause</td></tr>
+        <tr><td><code>/sbfow</code></td><td>Output was rejected &mdash; figure out why</td></tr>
       </tbody>
     </table>
   </section>

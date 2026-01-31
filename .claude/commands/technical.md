@@ -1,0 +1,1 @@
+Sub-orchestrator for domain-specific questions. Routes to specialized skills based on domain and task type. Read and execute `claude-code-plugin/skills/technical/SKILL.md`, applying it to this input: $ARGUMENTS

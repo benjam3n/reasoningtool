@@ -60,6 +60,8 @@ Unbundle into component claims. Number each:
 [G6] ANTI-WANT: [what they want to STOP or AVOID — often the real driver]
 ```
 
+**Example check**: If the user provided concrete examples, list them. Then verify: does each G-item match what the examples suggest? Examples are the highest-fidelity signal of intent — if the examples contradict your unbundling, the unbundling is wrong, not the examples.
+
 ### Step 2: Trace Implications (Assume Right)
 
 Assume the want is right. What follows?
@@ -277,6 +279,7 @@ Default: 2x. These are floors.
 | **No unconventional path** | Every path is the obvious approach | At least one path should reframe the problem. |
 | **Crux-free** | No crux identified | If there's no crux, either the want is trivial or you haven't dug deep enough. |
 | **All paths viable** | Every path looks good | Find the costs and foreclosures. Every path gives something up. |
+| **Examples ignored** | G5/G11 contradict the user's concrete examples | If user gave examples like "what's next", "how do I", and you labeled the implicit want as adversarial/stress-testing — the examples override abstract framing. Re-read the examples and re-derive. |
 
 ---
 
@@ -294,3 +297,4 @@ Default: 2x. These are floors.
 - [ ] Synthesis introduces NO new findings
 - [ ] First actions are specific and assigned (Claude or user)
 - [ ] Output routes to appropriate next skill
+- [ ] **Example check**: If user provided concrete examples, every G-item is consistent with them. Examples > abstract framing.

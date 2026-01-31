@@ -34,10 +34,30 @@ const tier2 = [
   { name: 'val', title: 'Validation', desc: 'Uses multiple independent checks to validate a conclusion' },
 ];
 
+const categorySkills = [
+  { name: 'claim', title: 'Test a Claim', desc: 'Routes claims to ARAW testing with appropriate depth and balance' },
+  { name: 'decide', title: 'Make a Decision', desc: 'Routes decisions to comparison, ARAW, or goal clarification' },
+  { name: 'diagnose', title: 'Find the Cause', desc: 'Routes diagnostic questions to UAUA exploration or causal tracing' },
+  { name: 'search', title: 'Explore a Space', desc: 'Routes exploration to UAUA, space enumeration, or dimension discovery' },
+  { name: 'how', title: 'Find the Method', desc: 'Routes method-seeking to FOHT discovery or step generation' },
+  { name: 'want', title: 'Clarify a Goal', desc: 'Routes goals to WantTo analysis to trace commitments and find the actual want' },
+  { name: 'action', title: 'Execute a Command', desc: 'Routes commands to direct execution or step generation' },
+  { name: 'evaluate', title: 'Assess Something', desc: 'Routes evaluation to ARAW, MECE validation, or assumption extraction' },
+  { name: 'emotion', title: 'Process a Feeling', desc: 'Acknowledges emotions, identifies implicit needs, routes appropriately' },
+  { name: 'viability', title: 'Test an Idea', desc: 'Routes ideas to ARAW viability testing with risk assessment' },
+  { name: 'create', title: 'Produce Content', desc: 'Routes content requests to appropriate writing skills' },
+  { name: 'analysis', title: 'Analyze a Situation', desc: 'Routes analytical requests to decomposition, systems analysis, or synthesis' },
+  { name: 'technical', title: 'Domain-Specific', desc: 'Routes to specialized skills based on domain and task type' },
+  { name: 'meta', title: 'Get Oriented', desc: 'Skill discovery, usage guidance, and orientation' },
+  { name: 'certainty', title: 'Maximum Effort', desc: 'Continues analysis iteratively until thoroughly resolved' },
+  { name: 'iterate', title: 'Iterate', desc: 'Identifies what needs iteration, at what level, dimension, and scale — then executes' },
+];
+
 const experimental = [
   { name: 'araw', title: 'Assume Right / Assume Wrong', desc: 'Tests both branches of any claim recursively' },
   { name: 'uaua', title: 'Universalize, ARAW, Loop', desc: 'Alternates exploration and testing' },
   { name: 'gosm', title: 'Goal-Oriented State Machine', desc: 'Routes input through the appropriate analysis chain' },
+  { name: 'sp', title: 'Steelman Prompt', desc: 'Improves a prompt before it gets answered — adds precision, scope, and criteria' },
 ];
 
 const tier3Categories = [
@@ -354,8 +374,21 @@ const tier4Categories = [
   </div>
 
   <div class="callout">
-    <p>Type <code>/skillname your question</code> in Claude Code. Example: <code>/araw should I change careers</code></p>
+    <p>Type <code>/skillname your question</code> in Claude Code. Example: <code>/claim remote work is more productive</code></p>
   </div>
+
+  <section>
+    <h2><span class="tier-badge tier-exp">Category Skills</span> Start Here</h2>
+    <p>These are the entry points. Describe what you have and they figure out how to analyze it.</p>
+    <div class="skill-grid">
+      {categorySkills.map(s => (
+        <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
+          <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
+          <div class="desc">{s.desc}</div>
+        </a>
+      ))}
+    </div>
+  </section>
 
   <section>
     <h2><span class="tier-badge tier-exp">Experimental</span> ARAW, UAUA, GOSM</h2>

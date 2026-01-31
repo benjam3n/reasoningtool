@@ -1,0 +1,1 @@
+Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted — then executes the highest-value iteration. Read and execute `claude-code-plugin/skills/iterate/SKILL.md`, applying it to this input: $ARGUMENTS

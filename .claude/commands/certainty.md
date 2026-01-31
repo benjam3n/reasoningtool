@@ -1,0 +1,1 @@
+Continues analysis until the answer is thoroughly resolved. Chains multiple skills iteratively, escalating depth until no unresolved branches, untested assumptions, or competing conclusions remain. Read and execute `claude-code-plugin/skills/certainty/SKILL.md`, applying it to this input: $ARGUMENTS

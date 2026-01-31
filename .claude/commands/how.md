@@ -1,0 +1,1 @@
+Sub-orchestrator for method-seeking. Routes to FOHT method discovery, step generation, or goal clarification based on what's defined. Read and execute `claude-code-plugin/skills/how/SKILL.md`, applying it to this input: $ARGUMENTS

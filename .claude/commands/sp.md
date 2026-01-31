@@ -1,0 +1,1 @@
+Improves a prompt before it gets answered. Adds precision, scope, criteria, and failure-proofing without answering the question. Read and execute `claude-code-plugin/skills/sp/SKILL.md`, applying it to this input: $ARGUMENTS

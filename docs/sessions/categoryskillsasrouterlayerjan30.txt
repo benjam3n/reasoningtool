@@ -1,0 +1,198 @@
+Phase 2: FINDING REGISTRY                                                                                                                                                             
+                                                                                                                                                                                        
+  FINDING REGISTRY                                                                                                                                                                      
+  ================                                                                                                                                                                      
+                                                                                                                                                                                        
+  UNBUNDLED WANT:                                                                                                                                                                       
+  [G1] Category dispatch layer between raw input and 221 skills -- TYPE: desire                                                                                                         
+  [G2] ~12-14 new SKILL.md files with category-specific routing -- TYPE: method                                                                                                         
+  [G3] Different analytical modes for different input types -- TYPE: belief                                                                                                             
+  [G4] AR/AW ratio is the primary variable per category -- TYPE: assumption                                                                                                             
+  [G5] Simpler entry point — know 12 categories not 221 skills -- TYPE: implicit want                                                                                                   
+  [G6] Stop requiring users to know which skill to use -- TYPE: anti-want                                                                                                               
+                                                                                                                                                                                        
+  IMPLICATIONS (Assume Right):                                                                                                                                                          
+  [G7] Category skills are THIN — classify, pick approach, invoke -- TYPE: implication                                                                                                  
+  [G8] Each skill defines: inputs handled, AR/AW ratio, skills invoked -- TYPE: commitment                                                                                              
+  [G9] Forecloses user choosing own approach (convenience vs control tradeoff) -- TYPE: foreclosure                                                                                     
+  [G10] AR/AW ratio isn't the ONLY variable — some need different skills entirely -- TYPE: prerequisite                                                                                 
+  [G11] This is GOSM decomposed into individual skills -- TYPE: implication                                                                                                             
+  [G12] Category skills become PRIMARY interface -- TYPE: implication                                                                                                                   
+                                                                                                                                                                                        
+  ACTUAL WANT:                                                                                                                                                                          
+  [G13] Human-friendly dispatch: describe WHAT you have, system figures out HOW -- CONFIDENCE: high                                                                                     
+  [G14] High confidence — every example matches this pattern                                                                                                                            
+  [G15] Stated want serves: ACCESSIBILITY -- TYPE: deeper want                                                                                                                          
+                                                                                                                                                                                        
+  PREREQUISITES:                                                                                                                                                                        
+  [G16] Clear mapping from category to analytical approach -- STATUS: partially designed                                                                                                
+  [G17] → INVOKE chain mechanism -- STATUS: met                                                                                                                                         
+  [G18] Understanding ARAW vs UAUA vs AR-only appropriateness -- STATUS: partially met                                                                                                  
+  [G19] Each skill simple enough for thin router pattern -- STATUS: needs design                                                                                                        
+                                                                                                                                                                                        
+  BLOCKERS:                                                                                                                                                                             
+  [G20] User unsure about several mappings (diagnose, explore, goal, command) -- REMOVABLE: yes                                                                                         
+  [G21] Overlap between categories (/idea vs /claim, /technical vs /method) -- REMOVABLE: yes                                                                                           
+  [G22] ARAW vs UAUA distinction not clear yet -- REMOVABLE: yes                                                                                                                        
+                                                                                                                                                                                        
+  PATHS:                                                                                                                                                                                
+  [G23] Build all ~14 as thin routers -- TYPE: path                                                                                                                                     
+    [G24] Requires: resolved mappings                                                                                                                                                   
+    [G25] Gives up: user control over approach                                                                                                                                          
+    [G26] Risk: wrong routing                                                                                                                                                           
+  [G27] Build 6-8 core first, add rest later -- TYPE: path                                                                                                                              
+    [G28] Requires: identifying most-needed categories                                                                                                                                  
+    [G29] Gives up: completeness                                                                                                                                                        
+    [G30] Risk: gaps in dispatch layer                                                                                                                                                  
+  [G31] Extend /gosm to handle all categories -- TYPE: path                                                                                                                             
+    [G32] Requires: rewriting /gosm                                                                                                                                                     
+    [G33] Gives up: individual category entry points                                                                                                                                    
+    [G34] Risk: monolithic complexity                                                                                                                                                   
+  [G35] Category skills with user override -- TYPE: unconventional path                                                                                                                 
+    [G36] Requires: flag system                                                                                                                                                         
+    [G37] Gives up: pure simplicity                                                                                                                                                     
+    [G38] Risk: reintroduces complexity                                                                                                                                                 
+  [G39] Do nothing -- TYPE: do-nothing path                                                                                                                                             
+    [G40] Outcome: power users fine, new users struggle                                                                                                                                 
+    [G41] Acceptable: for power users yes, for new users no                                                                                                                             
+                                                                                                                                                                                        
+  IMPLICATION CHAINS:                                                                                                                                                                   
+  [G42] Each category maps to a ratio on a spectrum -- FOR: G10 -- STRENGTH: probable                                                                                                   
+  [G43] 4 analytical modes: AR-forward, ARAW-balanced, UAUA-exploratory, non-analytical -- PARENT: G42 -- STRENGTH: probable                                                            
+  [G44] BEDROCK: Categories cluster into 4 modes -- PARENT: G43                                                                                                                         
+  [G45] Forecloses treating all categories same -- TYPE: foreclosure                                                                                                                    
+  [G46] This is decomposed GOSM -- FOR: G11 -- STRENGTH: necessary                                                                                                                      
+  [G47] /gosm becomes meta-router that invokes category skills -- PARENT: G46 -- STRENGTH: probable                                                                                     
+  [G48] Chain: natural language → /gosm → /category → /analytical-skill -- PARENT: G47                                                                                                  
+  [G49] Individual entry points coexist with meta-router -- PARENT: G47 -- STRENGTH: probable                                                                                           
+  [G50] Decomposed GOSM + meta GOSM can coexist -- PARENT: G49                                                                                                                          
+  [G51] ARAW = test a specific thing. UAUA = discover then test. -- FOR: G22 -- STRENGTH: necessary                                                                                     
+  [G52] If input has testable proposition → ARAW. If needs mapping first → UAUA. -- PARENT: G51 -- STRENGTH: probable                                                                   
+  [G53] BEDROCK: ARAW is for TESTING. UAUA is for DISCOVERING THEN TESTING. -- PARENT: G52                                                                                              
+  [G54] Forecloses UAUA when you already know what to test -- TYPE: foreclosure                                                                                                         
+                                                                                                                                                                                        
+  CRUX:                                                                                                                                                                                 
+  [G55] Thin routers vs configured instances?                                                                                                                                           
+  [G56] If thin: ~20 lines, classify → INVOKE, simple/maintainable                                                                                                                      
+  [G57] If configured: full analytical process per category (like /wt), rich but heavy                                                                                                  
+  [G58] Resolve by: check what exists — /wt is configured instance, /gosm is router. Hybrid approach: some categories warrant full skills, others are thin routers.                     
+                                                                                                                                                                                        
+  TOTALS:                                                                                                                                                                               
+  - Unbundled components: 6                                                                                                                                                             
+  - Implications traced: 16                                                                                                                                                             
+  - Foreclosures: 3                                                                                                                                                                     
+  - Prerequisites: 4 (1 met, 2 partial, 1 needs design)                                                                                                                                 
+  - Blockers: 3 (3 removable)                                                                                                                                                           
+  - Paths mapped: 5 (including do-nothing and override)                                                                                                                                 
+  - Crux identified: yes                                                                                                                                                                
+                                                                                                                                                                                        
+  ---                                                                                                                                                                                   
+  Phase 3: SYNTHESIS                                                                                                                                                                    
+                                                                                                                                                                                        
+  USER SAID: "Turn all categories into their own skills with different AR/AW ratios                                                                                                     
+  for routing to existing skills"                                                                                                                                                       
+                                                                                                                                                                                        
+  ACTUAL WANT: Human-friendly dispatch layer — describe WHAT you have, system                                                                                                           
+  figures out HOW to analyze it [G13]                                                                                                                                                   
+  CONFIDENCE: High [G14]                                                                                                                                                                
+  STATED ≠ ACTUAL: No — stated want matches actual want. The user correctly                                                                                                             
+  identified the need for a routing layer. The uncertainty is in the                                                                                                                    
+  specifics (which ratios, which skills).                                                                                                                                               
+                                                                                                                                                                                        
+  CURRENT STATE:                                                                                                                                                                        
+  - Prerequisites met: G17 (INVOKE chain exists)                                                                                                                                        
+  - Prerequisites partial: G16 (some mappings designed), G18 (ARAW vs UAUA partially clear)                                                                                             
+  - Prerequisites unmet: G19 (thin router pattern needs design)                                                                                                                         
+  - Active blockers: G20 (unclear mappings), G21 (category overlap), G22 (ARAW/UAUA distinction)                                                                                        
+                                                                                                                                                                                        
+  ARAW vs UAUA RESOLVED [G51-G53]:                                                                                                                                                      
+  - ARAW: You HAVE a specific thing to test → test both sides                                                                                                                           
+  - UAUA: You DON'T have the thing yet → explore space, THEN test what you find                                                                                                         
+  - AR-only: The input should be assumed right and traced forward                                                                                                                       
+                                                                                                                                                                                        
+  THE COMPLETE ROUTING MAP (derived from G43, G51-G53, user's examples):                                                                                                                
+                                                                                                                                                                                        
+  | Category Skill | Mode | Rationale | Invokes |                                                                                                                                       
+  |---------------|------|-----------|---------|                                                                                                                                        
+  | /claim | ARAW | Has a testable proposition — test both sides | → /araw on the claim |                                                                                               
+  | /decide | ARAW | Has options — test both sides | → /araw on each option, or /cmp + /dcp |                                                                                           
+  | /idea | ARAW | Has a testable proposition — is this good? | → /araw on the idea |                                                                                                   
+  | /evaluate | ARAW | Has a thing to assess — could be sound or flawed | → /araw + /pv or /mv |                                                                                        
+  | /diagnose | UAUA | Don't know the cause yet — map possibilities, then test | → /uaua or /rca + /fowwr |                                                                             
+  | /explore | UAUA | Don't know what's in the space — map first | → /uaua or /se + /dd |                                                                                               
+  | /emotion | AR-forward | Feelings are valid — trace what they point to | → /ar or /wt (assume the feeling is right) |                                                                
+  | /method | AR-forward | Goal is assumed right — find how | → /foht (which IS AR-based method discovery) |                                                                            
+  | /goal | AR-forward | Want is assumed right — trace commitments | → /wt (which IS this) |                                                                                            
+  | /command | Non-analytical | Execute, don't analyze | → /stg or /op for steps, or direct execution |                                                                                 
+  | /create | Non-analytical | Produce content | → /w, /pw, /stl, /gw |                                                                                                                 
+  | /meta | Non-analytical | Provide information | → /fnd, skill discovery |                                                                                                            
+  | /technical | Router | Route to domain-specific skills | → /dbg, /cor, /mf, /fm, etc. |                                                                                              
+  | /analysis | Router | Route to problem-identification skills | → /rca, /dcm, /pbi, /sya |                                                                                            
+                                                                                                                                                                                        
+  WHICH ARE THIN ROUTERS vs CONFIGURED INSTANCES [G55-G58]:                                                                                                                             
+                                                                                                                                                                                        
+  Already exist as configured instances:                                                                                                                                                
+    - /goal → IS /wt (already built, full skill)                                                                                                                                        
+    - /method → IS /foht (already built, full skill)                                                                                                                                    
+    - /explore → /uaua exists, /se exists (already built)                                                                                                                               
+    - /claim → /araw exists (already built)                                                                                                                                             
+                                                                                                                                                                                        
+  Need thin routers (classify + invoke):                                                                                                                                                
+    - /decide — picks between /cmp, /dcp, /cba, /araw based on input                                                                                                                    
+    - /idea — determines if idea needs testing (/araw) or development (/ar + /foht)                                                                                                     
+    - /diagnose — determines if cause is known (/rca) or unknown (/uaua → /rca)                                                                                                         
+    - /evaluate — picks between /pv, /mv, /vbo, /araw based on what's being evaluated                                                                                                   
+    - /emotion — acknowledges, identifies implicit intent, routes to appropriate skill                                                                                                  
+    - /command — identifies the action type, routes to execution or planning skill                                                                                                      
+    - /create — identifies content type, routes to writing skill                                                                                                                        
+    - /meta — identifies what info is needed, provides it or routes to /fnd                                                                                                             
+    - /technical — identifies domain, routes to domain-specific skill                                                                                                                   
+    - /analysis — identifies problem type, routes to analytical skill                                                                                                                   
+                                                                                                                                                                                        
+  OVERLAP RESOLUTION [G21]:                                                                                                                                                             
+    - /idea vs /claim: /claim = "X is true" (assertion). /idea = "what about X?" (proposal). Claims are tested for truth. Ideas are tested for viability.                               
+    - /technical vs /method: /method = "how do I do X" (general). /technical = "how do I do X in [specific domain]" (domain-routed).                                                    
+    - /analysis vs /diagnose: /diagnose = "why is X happening" (causal). /analysis = "what's going on with X" (broader decomposition).                                                  
+                                                                                                                                                                                        
+  COMMITMENT CHAIN (what building this commits you to):                                                                                                                                 
+  - 10 new thin router skills [G56]                                                                                                                                                     
+  - Maintaining routing logic as skills evolve [G26]                                                                                                                                    
+  - Users learning 14 category names instead of 221 skill names [G12]                                                                                                                   
+  - /gosm updated to be the meta-router that classifies and invokes category skills [G47]                                                                                               
+                                                                                                                                                                                        
+  FORECLOSURES:                                                                                                                                                                         
+  - Users choosing their own analytical approach by default [G9, G25]                                                                                                                   
+  - Treating all input types with the same analysis [G45]                                                                                                                               
+  - Using UAUA when ARAW is sufficient [G54]                                                                                                                                            
+                                                                                                                                                                                        
+  FIRST ACTIONS:                                                                                                                                                                        
+  1. Build the 10 thin router skills — each is ~30-50 lines, contains: (a) classification                                                                                               
+     logic for its sub-types, (b) AR/AW mode selection, (c) → INVOKE to existing skills.                                                                                                
+     Start with /decide, /idea, /diagnose, /evaluate (the ARAW/UAUA cluster where                                                                                                       
+     users are most confused about which approach to use) — resolves: G20, G22                                                                                                          
+     — WHO: Claude                                                                                                                                                                      
+                                                                                                                                                                                        
+  2. Update /gosm to use the taxonomy as its classification layer — when user types                                                                                                     
+     raw natural language, /gosm classifies into one of the 14 categories and invokes                                                                                                   
+     the category skill — resolves: G47, G48                                                                                                                                            
+     — WHO: Claude                                                                                                                                                                      
+                                                                                                                                                                                        
+  3. Add the category skills to the Common Starting Points table in CLAUDE.md —                                                                                                         
+     these become the primary recommended entry points — resolves: G5, G6                                                                                                               
+     — WHO: Claude                                                                                                                                                                      
+                                                                                                                                                                                        
+  4. Skip /continue — the user's instinct is right, it doesn't need a skill, it's                                                                                                       
+     context-dependent and handled by conversation flow — resolves: G21                                                                                                                 
+     — WHO: decision made                                                                                                                                                               
+                                                                                                                                                                                        
+  READY FOR:                                                                                                                                                                            
+  - /foht "how to structure a thin router skill" (design the template)                                                                                                                  
+  - /se "all the sub-routing decisions each category skill needs to make"                                                                                                               
+  - /ar "the 4 existing skills (/wt, /foht, /uaua, /araw) already cover the configured instances — the gap is only thin routers"                                                        
+                                                                                                                                                                                        
+  ---                                                                                                                                                                                   
+  The core finding is G53: ARAW is for TESTING (you have the thing, test both sides). UAUA is for DISCOVERING THEN TESTING (you don't have the thing yet, find it first). AR-only is for
+   TRACING (assume it's right, follow implications). This three-way distinction cleanly maps every category to its analytical mode.                                                     
+                                                                                                                                                                                        
+  Four of the categories already have full configured-instance skills (/wt for goals, /foht for methods, /uaua for exploration, /araw for claims). The remaining 10 need thin routers — 
+  short skills that classify the input's sub-type and invoke the right existing skill with the right mode. Skip /continue — it's handled by conversation context, not routing logic. 

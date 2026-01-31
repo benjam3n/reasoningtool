@@ -1,0 +1,1 @@
+Nothing is a fact until it survives an assassination attempt. Builder constructs claims, Breaker tries to destroy them.. Read and execute `claude-code-plugin/skills/advr/SKILL.md`, applying it to this input: $ARGUMENTS

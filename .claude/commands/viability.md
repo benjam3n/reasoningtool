@@ -1,0 +1,1 @@
+Sub-orchestrator for ideas and proposals. Routes to ARAW viability testing with appropriate development and risk assessment. Read and execute `claude-code-plugin/skills/viability/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Most new strategies are actually old strategies from other domains. Find isomorphisms and translate winning strategies.. Read and execute `claude-code-plugin/skills/cdb/SKILL.md`, applying it to this input: $ARGUMENTS

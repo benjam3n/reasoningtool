@@ -1,0 +1,1 @@
+Sub-orchestrator for diagnostic questions. Routes to UAUA exploration or direct causal tracing based on how much is known. Read and execute `claude-code-plugin/skills/diagnose/SKILL.md`, applying it to this input: $ARGUMENTS

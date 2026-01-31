@@ -14,7 +14,31 @@ When you see `→ INVOKE: /procedure_name [args]` in a skill, read and execute t
 
 If the user asks what skills are available, point them to the `skills/` directory or suggest relevant skills based on what they're trying to do.
 
-## Common Starting Points
+## Category Skills (Start Here)
+
+These are sub-orchestrators — they classify your input and route to the right analytical skills.
+
+| User has... | Use | Mode |
+|---|---|---|
+| A claim to test | `/claim` | ARAW |
+| A decision to make | `/decide` | ARAW |
+| An idea to test | `/viability` | ARAW |
+| Work to assess | `/evaluate` | ARAW |
+| Something broken | `/diagnose` | UAUA |
+| A space to explore | `/search` | UAUA |
+| A goal or want | `/want` | AR-forward |
+| A "how do I" question | `/how` | AR-forward |
+| A feeling or frustration | `/emotion` | AR-forward |
+| Something to execute | `/action` | Direct |
+| Content to produce | `/create` | Direct |
+| A domain-specific question | `/technical` | Router |
+| A problem to analyze | `/analysis` | Router |
+| Need for maximum effort | `/certainty` | Maximum |
+| Something to iterate on | `/iterate` | Meta-iteration |
+| Need orientation | `/meta` | Informational |
+| A prompt to improve | `/sp` | — |
+
+## Direct Skills (Power Users)
 
 | User wants to... | Suggest |
 |---|---|
