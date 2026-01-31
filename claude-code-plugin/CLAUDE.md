@@ -1,6 +1,6 @@
 # Reasoning Toolkit
 
-This project contains 355 thinking skills. Each skill is a structured procedure in `skills/[name]/SKILL.md`.
+This project contains 367 thinking skills. Each skill is a structured procedure in `skills/[name]/SKILL.md`.
 
 ## How Skills Work
 
@@ -52,3 +52,8 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Research a topic | `/lr`, `/fia` |
 | Validate work | `/pv`, `/mv`, `/vbo` |
 | Generate ideas | `/ma`, `/cda` |
+| Check an answer | `/fwa`, `/frq` |
+| Check themselves | `/sdc`, `/sid`, `/ecal` |
+| Recover from error | `/rmm`, `/kta` |
+| Choose depth/scope | `/alt`, `/ign`, `/dwt` |
+| Understand a system | `/fohw`, `/insd` |

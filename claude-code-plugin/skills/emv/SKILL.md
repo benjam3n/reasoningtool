@@ -17,6 +17,22 @@ description: Empirical validation step for GOSM plans - adds external reality te
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/emv 4x [input]").
+
+| Depth | Min Validation Tests | Min Independent Checks | Min Edge Cases Tested | Min Confidence Calibrations |
+|-------|---------------------|----------------------|----------------------|---------------------------|
+| 1x    | 3                   | 1                    | 1                    | 1                         |
+| 2x    | 5                   | 2                    | 2                    | 2                         |
+| 4x    | 8                   | 3                    | 4                    | 3                         |
+| 8x    | 12                  | 5                    | 6                    | 5                         |
+| 16x   | 18                  | 7                    | 10                   | 7                         |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Step 1: Identify Testable Predictions
 
 For the plan/claims, extract testable predictions:

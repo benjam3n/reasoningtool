@@ -19,6 +19,22 @@ Normal checklists say "check X" and move on. Adversarial checklists say "check X
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/ac 4x [input]").
+
+| Depth | Min Failure Modes | Min Adversarial Scenarios | Min Mitigation Checks | Min Red Team Passes |
+|-------|------------------|--------------------------|----------------------|-------------------|
+| 1x    | 5                | 2                        | 1                    | 1                 |
+| 2x    | 8                | 3                        | 2                    | 1                 |
+| 4x    | 12               | 5                        | 3                    | 2                 |
+| 8x    | 18               | 8                        | 5                    | 3                 |
+| 16x   | 25               | 12                       | 8                    | 4                 |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Chain
 
 ```

@@ -15,6 +15,22 @@ Not all interventions are equal. In any complex system, there are places where a
 
 Key insight: The most powerful leverage points are often counterintuitive, and people frequently push them in the wrong direction.
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/lp 4x [input]").
+
+| Depth | Min Leverage Points Found | Min System Layers Checked | Min Impact Assessments | Min Second-Order Effects |
+|-------|--------------------------|--------------------------|----------------------|------------------------|
+| 1x    | 3                        | 2                        | 2                    | 1                      |
+| 2x    | 5                        | 3                        | 3                    | 2                      |
+| 4x    | 8                        | 4                        | 5                    | 3                      |
+| 8x    | 12                       | 6                        | 8                    | 5                      |
+| 16x   | 18                       | 8                        | 12                   | 8                      |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: Map the System

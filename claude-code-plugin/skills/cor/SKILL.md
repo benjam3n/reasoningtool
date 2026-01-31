@@ -16,6 +16,22 @@ Procedure for conducting effective code reviews that improve quality and share k
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/cor 4x [input]").
+
+| Depth | Min Review Passes | Min Issue Categories | Min Edge Cases Checked | Min Security Checks |
+|-------|------------------|---------------------|----------------------|-------------------|
+| 1x    | 1                | 3                   | 2                    | 1                 |
+| 2x    | 2                | 5                   | 4                    | 2                 |
+| 4x    | 3                | 7                   | 6                    | 3                 |
+| 8x    | 4                | 9                   | 10                   | 5                 |
+| 16x   | 5                | 12                  | 15                   | 7                 |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Step 0: Context Assessment
 
 | Factor | Value | Notes |

@@ -26,6 +26,22 @@ Take extracted assumptions and **invert** them to discover:
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/ai 4x [input]").
+
+| Depth | Min Inversions | Min Alternatives per Inversion | Min Stress Tests | Min Depth Levels |
+|-------|---------------|-------------------------------|-----------------|-----------------|
+| 1x    | 3             | 1                             | 1               | 2               |
+| 2x    | 5             | 2                             | 2               | 3               |
+| 4x    | 8             | 3                             | 3               | 4               |
+| 8x    | 12            | 4                             | 5               | 5               |
+| 16x   | 18            | 5                             | 8               | 6               |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Inversion Process
 
 ### Step 1: List Assumptions to Invert

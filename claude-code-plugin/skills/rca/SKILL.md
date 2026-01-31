@@ -16,6 +16,22 @@ Systematically trace symptoms back to their underlying root causes using structu
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/rca 4x [input]").
+
+| Depth | Min Causal Chains | Min Why-Levels Deep | Min Contributing Factors | Min Verification Tests |
+|-------|-------------------|---------------------|--------------------------|------------------------|
+| 1x    | 2                 | 3                   | 3                        | 1                      |
+| 2x    | 3                 | 5                   | 5                        | 2                      |
+| 4x    | 5                 | 7                   | 8                        | 3                      |
+| 8x    | 7                 | 9                   | 12                       | 5                      |
+| 16x   | 10                | 12                  | 18                       | 8                      |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Step 0: Context Detection and Variant Selection
 
 Before full analysis, assess context:

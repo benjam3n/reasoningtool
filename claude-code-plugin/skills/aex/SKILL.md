@@ -37,6 +37,22 @@ Every claim, plan, or argument rests on **hidden assumptions**—things that mus
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/aex 4x [input]").
+
+| Depth | Min Assumptions Found | Min Layers Deep | Min Categories | Min Hidden Assumptions |
+|-------|----------------------|-----------------|----------------|----------------------|
+| 1x    | 5                    | 2               | 2              | 1                    |
+| 2x    | 8                    | 3               | 3              | 2                    |
+| 4x    | 12                   | 4               | 5              | 4                    |
+| 8x    | 18                   | 5               | 7              | 6                    |
+| 16x   | 25                   | 6               | 9              | 10                   |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Extraction Process
 
 ### Step 1: Identify the Core Claims

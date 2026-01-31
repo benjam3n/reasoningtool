@@ -19,6 +19,22 @@ Every field has unquestioned orthodoxies, unresolved tensions, and blind spots t
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/fia 4x [input]").
+
+| Depth | Min Sources Reviewed | Min Frameworks Applied | Min Cross-References | Min Synthesis Passes |
+|-------|----------------------|------------------------|----------------------|----------------------|
+| 1x    | 5                    | 1                      | 2                    | 1                    |
+| 2x    | 10                   | 2                      | 4                    | 1                    |
+| 4x    | 20                   | 3                      | 8                    | 2                    |
+| 8x    | 35                   | 5                      | 12                   | 3                    |
+| 16x   | 50                   | 7                      | 18                   | 4                    |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Chain
 
 ```

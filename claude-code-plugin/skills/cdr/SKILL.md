@@ -19,6 +19,22 @@ Most fields are siloed. Solutions that are standard practice in one domain are u
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/cdr 4x [input]").
+
+| Depth | Min Domains Explored | Min Analogies Tested | Min Transfer Validations | Min Synthesis Insights |
+|-------|----------------------|----------------------|--------------------------|------------------------|
+| 1x    | 2                    | 2                    | 1                        | 2                      |
+| 2x    | 3                    | 4                    | 2                        | 3                      |
+| 4x    | 5                    | 6                    | 3                        | 5                      |
+| 8x    | 7                    | 10                   | 5                        | 8                      |
+| 16x   | 10                   | 15                   | 8                        | 12                     |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Chain
 
 ```

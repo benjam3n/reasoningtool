@@ -16,6 +16,22 @@ Systematically identify hidden assumptions in a plan, belief, or
 strategy using structured prompts. Prompts do most of the work;
 recognition requires some insight.
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/asu 4x [input]").
+
+| Depth | Min Assumptions Surfaced | Min Domains Checked | Min Verification Tests | Min Stakeholder Perspectives |
+|-------|-------------------------|--------------------|-----------------------|-----------------------------|
+| 1x    | 5                       | 2                  | 1                     | 1                           |
+| 2x    | 8                       | 3                  | 2                     | 2                           |
+| 4x    | 12                      | 5                  | 3                     | 3                           |
+| 8x    | 18                      | 7                  | 5                     | 5                           |
+| 16x   | 25                      | 9                  | 8                     | 7                           |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: State the Subject

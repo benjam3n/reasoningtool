@@ -13,6 +13,22 @@ description: "When you don't know something, the right question is worth more th
 
 When you don't know something, the right question is worth more than hours of speculation. This procedure provides a taxonomy of question types, each designed to resolve a specific kind of uncertainty.
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/qg 4x [input]").
+
+| Depth | Min Questions Generated | Min Question Types | Min Depth Levels | Min Priority Rankings |
+|-------|-------------------------|--------------------|------------------|-----------------------|
+| 1x    | 5                       | 2                  | 2                | 3                     |
+| 2x    | 10                      | 3                  | 3                | 5                     |
+| 4x    | 15                      | 5                  | 4                | 8                     |
+| 8x    | 25                      | 7                  | 5                | 12                    |
+| 16x   | 40                      | 9                  | 6                | 18                    |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: Identify the Uncertainty

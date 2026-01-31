@@ -15,6 +15,22 @@ Generate all possible solutions by identifying independent dimensions
 and systematically combining values across dimensions. Combination
 generation is purely mechanical.
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/ma 4x [input]").
+
+| Depth | Min Dimensions | Min Options per Dimension | Min Combinations Evaluated | Min Cross-Dimension Interactions |
+|-------|----------------|---------------------------|----------------------------|----------------------------------|
+| 1x    | 3              | 3                         | 5                          | 1                                |
+| 2x    | 4              | 4                         | 10                         | 2                                |
+| 4x    | 5              | 5                         | 20                         | 4                                |
+| 8x    | 6              | 6                         | 35                         | 6                                |
+| 16x   | 8              | 8                         | 55                         | 10                               |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: Define the Problem

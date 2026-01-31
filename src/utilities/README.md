@@ -23,7 +23,7 @@ python consolidate_library.py --verbose    # Detailed output
 
 ### convert_procedures_to_skills.py — YAML to Claude Code skills
 
-Converts GOSM procedures (YAML format) into Claude Code skills (Markdown SKILL.md files). This is how the 207 thinking skills in `claude-code-plugin/skills/` were generated.
+Converts GOSM procedures (YAML format) into Claude Code skills (Markdown SKILL.md files). This is how the 367 thinking skills in `claude-code-plugin/skills/` were generated.
 
 ```bash
 python convert_procedures_to_skills.py                     # Convert all

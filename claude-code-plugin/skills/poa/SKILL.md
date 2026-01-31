@@ -23,6 +23,22 @@ before filtering.
 6. Identify ADJACENT possibilities (small extensions of current)
 7. Identify TRANSFORMATIVE possibilities (fundamental changes)
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/poa 4x [input]").
+
+| Depth | Min Possibilities Explored | Min Dimensions | Min Unconventional Options | Min Feasibility Checks |
+|-------|----------------------------|----------------|----------------------------|------------------------|
+| 1x    | 5                          | 2              | 1                          | 1                      |
+| 2x    | 8                          | 3              | 2                          | 2                      |
+| 4x    | 12                         | 5              | 3                          | 3                      |
+| 8x    | 18                         | 7              | 5                          | 5                      |
+| 16x   | 25                         | 10             | 8                          | 7                      |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: Define scope

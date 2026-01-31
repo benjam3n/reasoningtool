@@ -1,6 +1,6 @@
 {
-  "generated": "2026-01-31T08:05:36.052046+00:00",
-  "total": 355,
+  "generated": "2026-01-31T18:41:14.170581+00:00",
+  "total": 367,
   "skills": {
     "aa": {
       "id": "aa",
@@ -36,13 +36,14 @@
       "invoked_by": [],
       "sections": [
         "Purpose",
+        "Depth Scaling",
         "The Chain",
         "Execution Procedure",
         "Output Standards",
         "Quality Gates",
         "Example Usage"
       ],
-      "line_count": 174
+      "line_count": 190
     },
     "aar": {
       "id": "aar",
@@ -122,13 +123,14 @@
       "invoked_by": [],
       "sections": [
         "Purpose",
+        "Depth Scaling",
         "The Chain",
         "Execution Procedure",
         "Output Standards",
         "What Makes This Different from Normal Checklists",
         "Example Usage"
       ],
-      "line_count": 147
+      "line_count": 163
     },
     "acr": {
       "id": "acr",
@@ -283,6 +285,7 @@
       "sections": [
         "Purpose",
         "Assumption Types",
+        "Depth Scaling",
         "The Extraction Process",
         "Quick Extraction (Abbreviated)",
         "Example: \"We should expand to the European market\"",
@@ -290,7 +293,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 324
+      "line_count": 340
     },
     "afa": {
       "id": "afa",
@@ -363,6 +366,7 @@
       ],
       "sections": [
         "Purpose",
+        "Depth Scaling",
         "The Inversion Process",
         "Quick Inversion (Abbreviated)",
         "Example: \"We need to hire more engineers\"",
@@ -370,7 +374,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 352
+      "line_count": 368
     },
     "ais": {
       "id": "ais",
@@ -422,6 +426,32 @@
         "Verification"
       ],
       "line_count": 255
+    },
+    "alt": {
+      "id": "alt",
+      "title": "Abstraction Level",
+      "description": "Choose the right level of abstraction for understanding, deciding, executing, communicating, or creating. Zoom in, zoom out, or reframe.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "GLOSSARY",
+        "STEP 0: What type of situation are you in?",
+        "SECTION A: Understanding Something",
+        "SECTION B: Deciding Something",
+        "SECTION C: Doing / Executing Something",
+        "SECTION D: Explaining / Communicating Something",
+        "SECTION E: Creating Something New",
+        "QUICK REFERENCE CARDS",
+        "COMMON MISTAKES",
+        "WHEN TO OVERRIDE THIS PROCEDURE",
+        "WORKED EXAMPLES"
+      ],
+      "line_count": 405
     },
     "am": {
       "id": "am",
@@ -802,11 +832,12 @@
       "sections": [
         "Overview",
         "Goal",
+        "Depth Scaling",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 95
+      "line_count": 111
     },
     "atgb": {
       "id": "atgb",
@@ -1017,9 +1048,10 @@
       "invoked_by": [],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Steps"
       ],
-      "line_count": 89
+      "line_count": 105
     },
     "bm": {
       "id": "bm",
@@ -1138,10 +1170,11 @@
       "invoked_by": [],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Steps",
         "When to Use"
       ],
-      "line_count": 105
+      "line_count": 121
     },
     "capg": {
       "id": "capg",
@@ -1250,6 +1283,7 @@
       "sections": [
         "Purpose",
         "Analogy Domains Library",
+        "Depth Scaling",
         "The Analogy Process",
         "Quick Analogy (Abbreviated)",
         "Example: \"How do we onboard new employees faster?\"",
@@ -1257,7 +1291,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 381
+      "line_count": 397
     },
     "cdb": {
       "id": "cdb",
@@ -1312,13 +1346,14 @@
       "invoked_by": [],
       "sections": [
         "Purpose",
+        "Depth Scaling",
         "The Chain",
         "Execution Procedure",
         "Output Standards",
         "Quality Gates",
         "Example Usage"
       ],
-      "line_count": 162
+      "line_count": 178
     },
     "certainty": {
       "id": "certainty",
@@ -1716,6 +1751,7 @@
       "invoked_by": [],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Step 0: Context Assessment",
         "Step 1: Understand the Context",
         "Step 2: High-Level Architecture Review",
@@ -1730,7 +1766,7 @@
         "Verification Criteria",
         "Integration Points"
       ],
-      "line_count": 536
+      "line_count": 552
     },
     "cpp": {
       "id": "cpp",
@@ -2047,6 +2083,7 @@
       "invoked_by": [],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Step 0: Context Assessment",
         "Step 1: Gather Bug Information",
         "Step 2: Reproduce the Bug",
@@ -2061,7 +2098,7 @@
         "LLM Debugging Superpowers",
         "Common Debugging Patterns (LLM Reference)"
       ],
-      "line_count": 479
+      "line_count": 495
     },
     "dc": {
       "id": "dc",
@@ -2208,12 +2245,13 @@
       "sections": [
         "Purpose",
         "When to Use",
+        "Depth Scaling",
         "The Process",
         "Example: Dimensions for \"Software Testing Types\"",
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 209
+      "line_count": 225
     },
     "de": {
       "id": "de",
@@ -2631,6 +2669,26 @@
       ],
       "line_count": 67
     },
+    "dwt": {
+      "id": "dwt",
+      "title": "Done With Thinking",
+      "description": "Decide when to stop analyzing and commit to action. External criteria for ending deliberation instead of relying on readiness feelings.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "STEP 0: What type of \"thinking\" situation is this?",
+        "QUICK REFERENCE CARDS",
+        "COMMON MISTAKES",
+        "WHEN TO OVERRIDE THIS PROCEDURE",
+        "WORKED EXAMPLES"
+      ],
+      "line_count": 443
+    },
     "ea": {
       "id": "ea",
       "title": "Email Acquisition",
@@ -2654,6 +2712,31 @@
         "Verification"
       ],
       "line_count": 213
+    },
+    "ecal": {
+      "id": "ecal",
+      "title": "Effort Calibration",
+      "description": "Determine how much thinking to invest in a decision. Maps stakes, reversibility, and diminishing returns to effort levels (minimum, standard, maximum).",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "STEP 0 — Quick Triage (Complete in under 60 seconds)",
+        "SECTION A — Minimum Effort Path",
+        "SECTION B — Standard Effort Path",
+        "SECTION C — Maximum Effort Path",
+        "SECTION D — The Recalibration Check",
+        "SECTION E — Recovery from Over-Investment (Analysis Paralysis Exit)",
+        "QUICK REFERENCE CARD",
+        "COMMON MISTAKES",
+        "WHEN TO OVERRIDE",
+        "WORKED EXAMPLES"
+      ],
+      "line_count": 294
     },
     "eda": {
       "id": "eda",
@@ -2768,6 +2851,7 @@
       ],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Step 1: Identify Testable Predictions",
         "Step 2: Design Minimum Viable Test",
         "Step 3: Pre-Test vs Post-Hoc Decision",
@@ -2779,7 +2863,7 @@
         "When to Skip Empirical Validation",
         "Calibration Review (Periodic)"
       ],
-      "line_count": 266
+      "line_count": 282
     },
     "enc": {
       "id": "enc",
@@ -3188,13 +3272,14 @@
       "invoked_by": [],
       "sections": [
         "Purpose",
+        "Depth Scaling",
         "The Chain",
         "Execution Procedure",
         "Output Standards",
         "Quality Gates",
         "Example Usage"
       ],
-      "line_count": 188
+      "line_count": 204
     },
     "fj": {
       "id": "fj",
@@ -3373,6 +3458,28 @@
       ],
       "line_count": 301
     },
+    "fohw": {
+      "id": "fohw",
+      "title": "Figure Out How it Works",
+      "description": "Systematically understand any complex system by matching investigation depth to your goal and access level, with safeguards against premature certainty.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Depth Scaling",
+        "STEP 0: What are you trying to understand?",
+        "STEP 1: How deep do you need to go?",
+        "QUICK REFERENCE CARDS",
+        "COMMON MISTAKES",
+        "WHEN TO OVERRIDE THIS PROCEDURE",
+        "WORKED EXAMPLES"
+      ],
+      "line_count": 442
+    },
     "fowwr": {
       "id": "fowwr",
       "title": "Figure Out What Went Wrong",
@@ -3436,6 +3543,33 @@
       ],
       "line_count": 252
     },
+    "frq": {
+      "id": "frq",
+      "title": "Find Right Question",
+      "description": "Find the right question to ask by diagnosing your actual situation and generating the most actionable question.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Purpose",
+        "Depth Scaling",
+        "Step 0: Why do you need a question?",
+        "SECTION A: You're Stuck",
+        "SECTION B: You're Starting Something New",
+        "SECTION C: Something Isn't Working",
+        "SECTION D: You Want to Understand Something",
+        "SECTION E: Someone Gave You a Problem",
+        "SECTION F: Validate Your Question",
+        "Quick Reference Cards",
+        "Common Mistakes",
+        "When to Override This Procedure"
+      ],
+      "line_count": 312
+    },
     "fss": {
       "id": "fss",
       "title": "Future Space Search",
@@ -3489,6 +3623,33 @@
         "Verification"
       ],
       "line_count": 309
+    },
+    "fwa": {
+      "id": "fwa",
+      "title": "Find Wrong Answer",
+      "description": "Check whether an answer is likely wrong before acting on it. Classifies answer type and runs targeted verification.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Purpose",
+        "Depth Scaling",
+        "Step 0: What type of answer are you checking?",
+        "SECTION A: Checking a Factual Claim",
+        "SECTION B: Checking a Causal Claim",
+        "SECTION C: Checking a Decision/Recommendation",
+        "SECTION D: Checking a Prediction",
+        "SECTION E: Not Sure What Type of Answer",
+        "Quick Reference Cards",
+        "Common Mistakes",
+        "When to Override This Procedure",
+        "Worked Examples"
+      ],
+      "line_count": 238
     },
     "gaa": {
       "id": "gaa",
@@ -4201,13 +4362,14 @@
       ],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Step 0: Context Detection and Variant Selection",
         "Steps",
         "When to Use",
         "Verification",
         "Niche Documentation"
       ],
-      "line_count": 515
+      "line_count": 531
     },
     "hvh": {
       "id": "hvh",
@@ -4330,6 +4492,32 @@
       ],
       "line_count": 94
     },
+    "ign": {
+      "id": "ign",
+      "title": "Decide What to Ignore",
+      "description": "Decide what information, concerns, and possibilities to deliberately ignore. Productive neglect through systematic triage.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Depth Scaling",
+        "STEP 0: WHAT TYPE OF TRIAGE IS THIS?",
+        "SECTION A: DECISION FACTOR TRIAGE",
+        "SECTION B: OBJECTION TRIAGE",
+        "SECTION C: INFORMATION TRIAGE",
+        "SECTION D: OPTION TRIAGE",
+        "SECTION E: TASK/ATTENTION TRIAGE",
+        "QUICK REFERENCE CARDS",
+        "COMMON MISTAKES",
+        "WHEN TO OVERRIDE THIS PROCEDURE",
+        "WORKED EXAMPLES"
+      ],
+      "line_count": 619
+    },
     "im": {
       "id": "im",
       "title": "Inversion Method (How to Fail)",
@@ -4353,11 +4541,12 @@
       "sections": [
         "Overview",
         "Goal",
+        "Depth Scaling",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 89
+      "line_count": 105
     },
     "ins": {
       "id": "ins",
@@ -4386,6 +4575,27 @@
         "Integration"
       ],
       "line_count": 435
+    },
+    "insd": {
+      "id": "insd",
+      "title": "Insight and Discovery",
+      "description": "Generate genuine insights by identifying stuck-points, inverting assumptions, changing representations, using incubation, and crystallizing through stability tests.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Depth Scaling",
+        "STEP 0: What phase are you in?",
+        "QUICK REFERENCE CARDS",
+        "COMMON MISTAKES",
+        "WHEN TO OVERRIDE THIS PROCEDURE",
+        "WORKED EXAMPLES"
+      ],
+      "line_count": 293
     },
     "ip": {
       "id": "ip",
@@ -4625,6 +4835,26 @@
       ],
       "line_count": 209
     },
+    "kta": {
+      "id": "kta",
+      "title": "Knowledge to Action",
+      "description": "Convert knowledge into action by diagnosing what actually blocks execution: unclear steps, activation energy, competing commitments, emotional barriers, or identity conflicts.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "STEP 0: What kind of inaction are you experiencing?",
+        "QUICK REFERENCE CARDS",
+        "COMMON MISTAKES",
+        "WHEN TO OVERRIDE THIS PROCEDURE",
+        "WORKED EXAMPLES"
+      ],
+      "line_count": 302
+    },
     "la": {
       "id": "la",
       "title": "Limitation Analysis",
@@ -4645,9 +4875,10 @@
       "sections": [
         "Overview",
         "Core Principle",
+        "Depth Scaling",
         "Steps"
       ],
-      "line_count": 83
+      "line_count": 99
     },
     "lcs": {
       "id": "lcs",
@@ -4755,11 +4986,12 @@
       ],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 155
+      "line_count": 171
     },
     "lpd": {
       "id": "lpd",
@@ -4938,11 +5170,12 @@
       "sections": [
         "Overview",
         "Goal",
+        "Depth Scaling",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 124
+      "line_count": 140
     },
     "mcd": {
       "id": "mcd",
@@ -6226,9 +6459,10 @@
       "sections": [
         "Overview",
         "Core Principle",
+        "Depth Scaling",
         "Steps"
       ],
-      "line_count": 97
+      "line_count": 113
     },
     "pos": {
       "id": "pos",
@@ -6630,9 +6864,10 @@
       "sections": [
         "Overview",
         "When to Use",
-        "Output Format"
+        "Output Format",
+        "Depth Scaling"
       ],
-      "line_count": 62
+      "line_count": 78
     },
     "qag": {
       "id": "qag",
@@ -6696,11 +6931,12 @@
       "invoked_by": [],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 143
+      "line_count": 159
     },
     "qm": {
       "id": "qm",
@@ -6819,11 +7055,12 @@
       "invoked_by": [],
       "sections": [
         "Core Principles",
+        "Depth Scaling",
         "The Process",
         "Common Patterns",
         "Pre-Completion Check"
       ],
-      "line_count": 116
+      "line_count": 132
     },
     "rca": {
       "id": "rca",
@@ -6850,13 +7087,14 @@
       ],
       "sections": [
         "Overview",
+        "Depth Scaling",
         "Step 0: Context Detection and Variant Selection",
         "Steps",
         "When to Use",
         "Verification",
         "Niche Documentation"
       ],
-      "line_count": 326
+      "line_count": 342
     },
     "rci": {
       "id": "rci",
@@ -7036,6 +7274,35 @@
         "Verification"
       ],
       "line_count": 69
+    },
+    "rmm": {
+      "id": "rmm",
+      "title": "Recover from Wrong Mental Model",
+      "description": "Recognize when a mental model is fundamentally wrong, dismantle it, and build or adopt a replacement without losing momentum.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Glossary",
+        "Prerequisites",
+        "Depth Scaling",
+        "STEP 0: What Type of Situation Is This?",
+        "SECTION A: NOT YET SUSPECTING (Someone Else Sees It, You Do Not)",
+        "SECTION B: WEAKLY SUSPECT (Something Feels Off)",
+        "SECTION C: STRONGLY SUSPECT (Pattern of Failures, Candidate Replacement)",
+        "SECTION D: CERTAIN (Ready to Switch)",
+        "SECTION E: EMERGENCY MODEL REPLACEMENT (Crisis Time Pressure)",
+        "SECTION F: THE EMOTIONAL DIMENSION (High or Extreme Investment)",
+        "QUICK REFERENCE CARDS",
+        "COMMON MISTAKES",
+        "WHEN TO OVERRIDE THIS PROCEDURE",
+        "WORKED EXAMPLES"
+      ],
+      "line_count": 697
     },
     "rmo": {
       "id": "rmo",
@@ -7563,6 +7830,33 @@
       ],
       "line_count": 280
     },
+    "sdc": {
+      "id": "sdc",
+      "title": "Self-Deception Check",
+      "description": "Detect when reasoning is actually rationalization. Mechanical checks for motivated reasoning, emotional override, and evidence asymmetry.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Purpose",
+        "Depth Scaling",
+        "Step 0: What type of self-deception situation is this?",
+        "SECTION A: Pre-Decision Check",
+        "SECTION B: Post-Decision Audit",
+        "SECTION C: Pattern Interrupt",
+        "SECTION D: Emotional Override Detection",
+        "SECTION E: Third-Party Audit",
+        "Quick Reference Cards",
+        "Common Mistakes",
+        "When to Override This Procedure",
+        "Worked Examples"
+      ],
+      "line_count": 552
+    },
     "sdp": {
       "id": "sdp",
       "title": "Embedded Software Development",
@@ -7604,6 +7898,7 @@
       "sections": [
         "Purpose",
         "Granularity Levels",
+        "Depth Scaling",
         "The Process",
         "Dimension 1: [name]",
         "Level 1: [Primary Dimension]",
@@ -7613,7 +7908,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 264
+      "line_count": 280
     },
     "search": {
       "id": "search",
@@ -7779,6 +8074,32 @@
         "Verification"
       ],
       "line_count": 224
+    },
+    "sid": {
+      "id": "sid",
+      "title": "Situation Identification",
+      "description": "Identify what situation you are actually in before attempting to solve it. Prevents the most dangerous failure: solving the wrong problem perfectly.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Purpose",
+        "Step 0: Triage",
+        "SECTION A: First-Time / Novel Situation",
+        "SECTION B: Familiar-Seeming Situation (DANGER: Pattern-Matching Errors)",
+        "SECTION C: Urgent Situation (Limited Time)",
+        "SECTION D: Contested Situation (Multiple People Disagree)",
+        "Validation Checkpoint",
+        "Quick Reference Card",
+        "Common Mistakes",
+        "When to Override This Procedure",
+        "Worked Examples"
+      ],
+      "line_count": 358
     },
     "ska": {
       "id": "ska",

@@ -33,6 +33,22 @@ With dimensions identified, `/se` can systematically cover the space.
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/dd 4x [input]").
+
+| Depth | Min Dimensions Found | Min Sources/Methods | Min Hidden Dimensions | Min Validation Tests |
+|-------|----------------------|---------------------|-----------------------|----------------------|
+| 1x    | 4                    | 2                   | 1                     | 1                    |
+| 2x    | 6                    | 3                   | 2                     | 2                    |
+| 4x    | 9                    | 5                   | 3                     | 3                    |
+| 8x    | 12                   | 7                   | 5                     | 4                    |
+| 16x   | 16                   | 10                  | 8                     | 6                    |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Process
 
 ### Step 1: Seed with Examples

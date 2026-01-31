@@ -1,6 +1,6 @@
 # reasoningtool
 
-207 thinking skills for Claude Code. Each skill is a structured prompt that guides you through a specific type of thinking, decision, or analysis.
+367 thinking skills for Claude Code. Each skill is a structured prompt that guides you through a specific type of thinking, decision, or analysis.
 
 ## Installation
 
@@ -31,6 +31,7 @@ claude
 | `/aar` | after action review | The After Action Review (AAR) is a structured debrief to learn from |
 | `/aba` | ai biomedical agent | GOSM Ai Biomedical Agent procedure |
 | `/ac` | adversarial checklist | Create a checklist that catches what normal checklists miss. |
+| `/action` | action | Sub-orchestrator for commands and action requests. Routes to direct execution, step generation, or reclassifies when the command needs analysis first. |
 | `/acr` | active recall | Use retrieval practice and self-testing to strengthen learning and identify gaps |
 | `/adep` | adaptive extraction pipeline | Breadth-first, learned extraction pipeline that clarifies goals first, samples broadly, learns user preferences, and ... |
 | `/advr` | adversarial review | Nothing is a fact until it survives an assassination attempt. Builder constructs claims, Breaker tries to destroy them. |
@@ -41,7 +42,9 @@ claude
 | `/ai` | assumption inversion | Invert assumptions to discover blind spots and alternative possibilities. What if the opposite were true? |
 | `/ais` | advocacy infrastructure setup | Set up foundational infrastructure for autonomous advocacy operations |
 | `/al` | active listening | Systematic procedure for listening deeply to understand others, build trust, and improve communication outcomes |
+| `/alt` | abstraction level | Choose the right level of abstraction for understanding, deciding, executing, communicating, or creating. |
 | `/am` | academic mastery | Master academic subjects through structured learning, concept mapping, and competency verification |
+| `/analyze` | analysis | Sub-orchestrator for analytical requests. Routes to decomposition, systems analysis, comparison, or risk assessment. |
 | `/ams` | api middleman strategies | Collection of strategies for bypassing or working around API limitations, including rate limits, IP blocks, and acces... |
 | `/ans` | analogy search | Many problems have been solved before - just in different domains. |
 | `/ao` | algorithmic optimization | Orderings based on classic algorithm design paradigms: greedy, |
@@ -69,6 +72,7 @@ claude
 | `/br` | backward reasoning | Reasoning from conclusions back to premises. |
 | `/capg` | capability gate | Pre-step feasibility check determining if AI can execute directly, needs delegation, or if task is infeasible |
 | `/cba` | cost benefit analysis | Systematically quantify costs and benefits to evaluate decisions, including NPV calculation, sensitivity analysis, an... |
+| `/certainty` | certainty | Continues analysis until the answer is thoroughly resolved. Chains multiple skills iteratively, escalating depth. |
 | `/cd` | customer discovery | Validate customer problems and solutions before building |
 | `/cda` | cross domain analogy | Find analogies from other domains to generate novel insights. Transfer solutions and patterns across fields. |
 | `/cdb` | cross domain bridge | Most new strategies are actually old strategies from other domains. Find isomorphisms and translate winning strategies. |
@@ -80,6 +84,7 @@ claude
 | `/clg` | collective goals | Handler for goals that require building collectives, communities, or movements. |
 | `/clr` | client retention | Systematic approach to retaining clients through tiered engagement strategies and value-add touchpoints. |
 | `/cls` | checklist search | The simplest possible search: enumerate items, check each against |
+| `/claim` | claim | Sub-orchestrator for claims and assertions. Routes to ARAW-based testing with appropriate depth. |
 | `/cma` | competitive analysis | Systematically analyze competitive landscape using Porter's Five Forces, competitor mapping, and differentiation stra... |
 | `/cmp` | comparison | Compare options using gestalt impression + structured evaluation. |
 | `/cms` | component selection | A structured procedure for evaluating multiple component options against |
@@ -89,6 +94,7 @@ claude
 | `/cor` | code review | Procedure for conducting effective code reviews using Claude Code's capabilities for exhaustive analysis |
 | `/cpp` | career path planning | Strategic framework for assessing career options, planning transitions, |
 | `/cppd` | cross project pattern detection | Analyze patterns across completed GOSM projects to improve the system. |
+| `/create` | create | Sub-orchestrator for creative and content production requests. Routes to appropriate writing skills. |
 | `/cpra` | comprehensive aspects | Meta-procedure for ensuring any analysis, procedure, or decision |
 | `/cri` | critique | Structured evaluation using gestalt impression + analytical decomposition. |
 | `/crw` | criteria weighting | Also known as: Weighted scoring model, Decision matrix, Pugh matrix. |
@@ -99,10 +105,12 @@ claude
 | `/dari` | deductive adversarial review integration | Bridges the deductive strategy system with adversarial adversarial review testing. |
 | `/dbg` | debugging | Systematic procedure for diagnosing and fixing software bugs using Claude Code's tool capabilities |
 | `/dc` | data collection | Systematic procedure for gathering research data through surveys, interviews, observation, and secondary sources |
+| `/decide` | decide | Sub-orchestrator for decisions. Routes to comparison, ARAW testing, or goal clarification. |
 | `/dcm` | decomposition | Break complex goals into simpler, manageable sub-goals |
 | `/dcp` | decision procedure | Create a mechanical, step-by-step decision procedure for a recurring decision type. |
 | `/dct` | decision trees | Systematic procedure for structuring complex decisions with multiple branches, probabilities, and outcomes. |
 | `/dd` | dimension discovery | Identify the key dimensions that define a problem space, enabling comprehensive enumeration. |
+| `/diagnose` | diagnose | Sub-orchestrator for diagnostic questions. Routes to UAUA exploration or direct causal tracing. |
 | `/de` | dependency extraction | Extract dependencies between steps, tasks, or items. |
 | `/dlp` | deliberate practice | Design and execute targeted practice sessions that maximize skill improvement |
 | `/dmt` | domain template | Create domain-specific skill configurations. |
@@ -117,16 +125,20 @@ claude
 | `/dtl` | design thinking lean | Two complementary methodologies for innovation: |
 | `/dv` | detection verification | Orderings optimized for detecting cheating, fraud, deception, and anomalies. |
 | `/dvs` | diversity search | Orderings that prioritize behavioral diversity, novelty, and |
+| `/dwt` | done with thinking | Decide when to stop analyzing and commit to action. External criteria for ending deliberation. |
 | `/ea` | email acquisition | Acquire and configure email addresses for autonomous system operations |
+| `/ecal` | effort calibration | Determine how much thinking to invest. Maps stakes, reversibility, and diminishing returns to effort levels. |
 | `/eda` | event driven automation | Maintain project continuity through event monitoring and automated state management |
 | `/eg` | exploratory goals | GOSM Exploratory Goals procedure |
 | `/eh` | epistemic hierarchy | A layered framework for building from certain foundations toward determinate action. |
 | `/emv` | empirical validation | Empirical validation step for GOSM plans - adds external reality testing beyond coherence checks |
+| `/emotion` | emotion | Sub-orchestrator for emotional inputs. Acknowledges emotion, identifies the implicit request, routes to analysis. |
 | `/enc` | engineering calculations | A collection of standard engineering calculation procedures used in |
 | `/er` | economic research | Systematic analysis of economic viability, cost structures, and comparative advantage |
 | `/es` | evolutionary strategies | Evolution has optimized biological systems for billions of years. |
 | `/ess` | external source search | GOSM External Source Search procedure |
 | `/evd` | evaluation dimensions | Universal dimensions for evaluating any claim, problem, or solution. |
+| `/evaluate` | evaluate | Sub-orchestrator for evaluation. Routes to ARAW, MECE validation, or assumption extraction. |
 | `/exc` | existence check | Systematically check if a solution or similar solution already exists before investing effort in creation |
 | `/exd` | experimental design | Systematic procedure for designing rigorous experiments with proper controls, variables, and validity considerations |
 | `/exv` | expected value | Systematic procedure for calculating expected value, adjusting for risk, and determining optimal resource allocation ... |
@@ -142,11 +154,14 @@ claude
 | `/fla` | failure anticipation | Systematically identify potential failures, assess their risk, and plan mitigations before execution |
 | `/fm` | financial modeling | Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making |
 | `/fnd` | finder | Find the right GOSM skill for what you want to do. |
+| `/fohw` | figure out how it works | Systematically understand any complex system by matching investigation depth to your goal and access level. |
 | `/foht` | figure out how to | Maps the full method space, surfaces prerequisites, AR/AW tests each method, produces verdicts. |
 | `/fowwr` | figure out what went wrong | Traces backward from symptoms to root causes. Tests each candidate cause with counterfactuals. Derives prevention measures. |
 | `/fr` | failure recovery | Structured recovery procedures when projects encounter failures, providing clear decision trees and specific actions ... |
+| `/frq` | find right question | Find the right question to ask by diagnosing your actual situation and generating the most actionable question. |
 | `/fss` | future space search | The future is uncertain but not arbitrary. |
 | `/fua` | fundraising advocacy | Build self-sustaining funding for advocacy operations through multiple revenue streams |
+| `/fwa` | find wrong answer | Check whether an answer is likely wrong before acting on it. Classifies answer type and runs targeted verification. |
 | `/gaa` | gosm approach audit | An honest audit of GOSM's approach, claims, and limitations. |
 | `/gaca` | gate as claim audit | Convert gates from "yes/no vibe checks" into explicit, checkable claim-interfaces. |
 | `/gd` | goal decomposition | A methodology for decomposing abstract goals into specific, actionable components. |
@@ -168,22 +183,27 @@ claude
 | `/hd` | human delegation | Delegate physical, phone, or in-person tasks to humans when AI cannot perform them directly |
 | `/hf` | habit formation | Build new habits and break unwanted ones using behavioral science principles |
 | `/ho` | health optimization | Comprehensive procedure for health-related goals including fitness, |
+| `/how` | how | Sub-orchestrator for method-seeking. Routes to FOHT method discovery, step generation, or goal clarification. |
 | `/ht` | hypothesis testing | Systematic procedure for formulating testable hypotheses, designing tests, and updating beliefs based on evidence. |
 | `/hvh` | high volatility handler | GOSM High Volatility Handler procedure |
 | `/idg` | iterative discovery goals | Handler for goals where SUCCESS IS DISCOVERING THE UNKNOWN, not executing a known plan. |
 | `/ie` | innovation engine | A systematic search for non-obvious strategies using cross-domain mapping, |
 | `/ifss` | inference space search | Information implies other information. But not all inferences are equal: |
 | `/ig` | intuition goals | GOSM Intuition Goals procedure |
+| `/ign` | decide what to ignore | Decide what to deliberately ignore. Productive neglect through systematic triage of factors, objections, and info. |
 | `/im` | inversion method | Charlie Munger's inversion technique. Finding ways to fail, then avoiding them, makes success more likely. |
 | `/ins` | insight synthesis | Synthesize insights from multiple sources into coherent, actionable understanding. |
+| `/insd` | insight and discovery | Generate genuine insights by inverting assumptions, changing representations, using incubation, and crystallizing. |
 | `/ip` | interview preparation | Comprehensive preparation system for job interviews covering research, story |
 | `/ipss` | interpretation space search | Ambiguity means multiple interpretations are possible. |
 | `/isd` | income stream development | Systematic process for identifying, building, and scaling new income streams. |
 | `/ita` | impossible to achievable | GOSM Impossible To Achievable procedure |
+| `/iterate` | iterate | Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, then executes. |
 | `/ivs` | investment strategy | Develop and execute personal investment strategies including portfolio allocation, risk tolerance assessment, and inv... |
 | `/je` | journey extraction | Extract the underlying GOAL JOURNEY from any source: |
 | `/jm` | journey matching | Given a current situation (goal, problem, state), find journeys |
 | `/jss` | job search strategy | Systematic approach to job hunting that treats the search as a funnel to optimize, |
+| `/kta` | knowledge to action | Convert knowledge into action by diagnosing what blocks execution: unclear steps, activation energy, or barriers. |
 | `/la` | limitation analysis | Systematically identify limitations across multiple dimensions, |
 | `/lcs` | local search | Orderings based on local search optimization: improving from |
 | `/ld` | learning discovery | Orderings optimized for acquiring knowledge, validating hypotheses, |
@@ -204,6 +224,7 @@ claude
 | `/md` | method derivation | Derive the appropriate method from the situation rather than |
 | `/mem` | mental models | Build and apply a latticework of mental models for better thinking across domains |
 | `/met` | metaphor method | A systematic method for using metaphors to: |
+| `/meta` | meta | Sub-orchestrator for meta-questions about the toolkit. Provides skill discovery and orientation. |
 | `/mf` | marketing funnel | Analyze and optimize the customer journey from awareness to revenue using the AARRR framework |
 | `/mil` | military strategy | Orderings derived from military doctrine and strategic principles. |
 | `/mp` | motivation psychology | Orderings that account for human psychological factors like energy, |
@@ -277,6 +298,7 @@ claude
 | `/rf` | refactoring | Procedure for systematically improving code structure without changing behavior |
 | `/ria` | risk assessment | Systematic procedure for identifying, analyzing, and planning responses to risks |
 | `/rlg` | relationship goals | GOSM Relationship Goals procedure |
+| `/rmm` | recover from wrong mental model | Recognize when a mental model is wrong, dismantle it, and build a replacement without losing momentum. |
 | `/rm` | risk management | Orderings focused on managing uncertainty, preserving options, and |
 | `/rmo` | resume optimization | Systematic approach to crafting resumes that pass ATS filters, capture attention, |
 | `/roa` | roi analysis | Calculate and analyze return on investment for projects, purchases, and decisions |
@@ -298,13 +320,16 @@ claude
 | `/sarus` | self audit repo unclarity scan | Repo-wide scan to find question patterns that commonly require interpretation before answering. |
 | `/satrda` | self audit two run divergence audit | Run the same gate/procedure twice on the same fixed input, compare outputs, and treat divergences as evidence that th... |
 | `/sbfow` | still bad figure out why | Tests the rejected output against upstream/downstream criteria. Finds which criteria failed, diagnoses the root pattern, checks if you're repeating the same failed diagnosis. Derives what must change. |
+| `/sdc` | self-deception check | Detect when reasoning is actually rationalization. Mechanical checks for motivated reasoning and evidence asymmetry. |
 | `/sdp` | software development procedures | Procedures for developing embedded software for robotics and |
+| `/search` | search | Sub-orchestrator for exploration. Routes to UAUA, space enumeration, or dimension discovery. |
 | `/se` | space enumeration | Generate comprehensive lists by systematically covering all dimensions. |
 | `/seb` | seo basics | Build organic search visibility through keyword research, on-page optimization, content strategy, and link building |
 | `/sel` | selection | Make the final selection from ranked options after all analysis is complete. |
 | `/sep` | security practices | Procedure for implementing security throughout the software development lifecycle |
 | `/sf` | save file | Saves the most recent skill output to the library. For analytical skills, saves only the registry + synthesis (Phase 1 exploration is redundant with the registry). |
 | `/shc` | system health check | Evaluate if the GOSM system needs improvement |
+| `/sid` | situation identification | Identify what situation you are actually in before attempting to solve it. Prevents solving the wrong problem. |
 | `/ska` | skill acquisition | Systematically acquire new skills using deliberate practice principles |
 | `/skb` | skill benchmarking | Identify quality standards, benchmark current skill level, and design deliberate practice to close gaps |
 | `/skm` | stakeholder management | Engage stakeholders effectively throughout the project |
@@ -316,6 +341,7 @@ claude
 | `/so` | structured output | Standardized output format for GOSM projects. |
 | `/sop` | source prioritization | Given limited time to extract procedures from sources, prioritize which sources to process for maximum procedure value. |
 | `/sor` | source research | GOSM Source Research procedure |
+| `/sp` | steelman prompt | Improves a prompt before it gets answered. Adds precision, scope, criteria, and failure-proofing. |
 | `/spd` | space discovery | Discover what space exists BEFORE generating guesses. |
 | `/spe` | search paradigm extensions | Extends the search paradigm to non-obvious domains. Identifies which search methods should become procedures. |
 | `/spg` | specificity gate | Transform vague capability claims into specific ones by requiring trigger, procedure, output, and validation for each... |
@@ -336,6 +362,7 @@ claude
 | `/sym` | system modeling | Real problems exist in complex systems with many interacting parts. |
 | `/t` | targeting | Build comprehensive database of advocacy targets with personalized dossiers |
 | `/td` | time deadline | Orderings driven by temporal constraints, deadlines, and timing |
+| `/technical` | technical | Sub-orchestrator for domain-specific questions. Routes to specialized skills based on domain and task type. |
 | `/tnt` | tension navigation tactics | While value_conflict_decomposition provides the framework for understanding conflicts, |
 | `/to` | topological ordering | Generate valid execution sequences from dependencies. |
 | `/tp` | truth propagation | Arguments don't exist in isolation. Each conclusion depends on premises, |
@@ -353,11 +380,14 @@ claude
 | `/unx` | unexpected | Find non-obvious solutions. |
 | `/uo` | unassailable output | Every output must be unassailable. Anything said can and will |
 | `/va` | variation analysis | For any obvious strategy, ask what if we did the exact opposite. |
+| `/want` | want | Sub-orchestrator for goals and wants. Routes to WantTo analysis to trace what the want commits you to. |
 | `/val` | validation | Verify that an output meets its requirements |
 | `/vbo` | verification before output | This procedure is the culmination of the no-guessing philosophy. |
 | `/vcd` | value conflict decomposition | Goals often serve multiple intrinsic values that conflict with each other. |
+| `/vdp` | visual design principles | Eight principles of visual design derived from cognitive load, gestalt perception, and reading research. |
 | `/ve` | value elicitation | Value elicitation discovers what someone ACTUALLY values - their intrinsic goals. |
 | `/ver` | verify | Verify claims using the GOSM verification standard. Every claim must be OBSERVED, TESTED, or DERIVED - never guessed. |
+| `/viability` | viability | Sub-orchestrator for ideas and proposals. Routes to ARAW viability testing with risk assessment. |
 | `/vhd` | vertical horizontal decision | Framework for deciding when to improve existing procedures/categories (vertical) |
 | `/vm` | viral mechanics | Design and optimize viral loops, referral programs, and word-of-mouth triggers to achieve organic growth |
 | `/vp` | verification procedures | Procedures for systematically testing and verifying that systems meet |

@@ -14,6 +14,22 @@ Given a conclusion, what came before? What journey led here?
 This is harder than forward reasoning but reveals PURPOSE and enables
 evaluation of the journey, not just the endpoint.
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/br 4x [input]").
+
+| Depth | Min Backward Steps | Min Premise Chains | Min Alternative Paths | Min Validation Checks |
+|-------|--------------------|--------------------|----------------------|----------------------|
+| 1x    | 3                  | 1                  | 1                    | 1                    |
+| 2x    | 5                  | 2                  | 2                    | 2                    |
+| 4x    | 7                  | 3                  | 3                    | 3                    |
+| 8x    | 10                 | 5                  | 5                    | 5                    |
+| 16x   | 14                 | 7                  | 7                    | 7                    |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: Start with the endpoint

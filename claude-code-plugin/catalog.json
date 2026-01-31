@@ -209,6 +209,13 @@
       ],
       "invokes": []
     },
+    "alt": {
+      "description": "Choose the right level of abstraction for understanding, deciding, executing, communicating, or creating. Zoom in, zoom out, or reframe.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "am": {
       "description": "Master academic subjects through structured learning, concept mapping, and competency verification",
       "categories": [],
@@ -1218,6 +1225,13 @@
       "input_types": [],
       "invokes": []
     },
+    "dwt": {
+      "description": "Decide when to stop analyzing and commit to action. External criteria for ending deliberation instead of relying on readiness feelings.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "ea": {
       "description": "Acquire and configure email addresses for autonomous system operations",
       "categories": [],
@@ -1228,6 +1242,13 @@
       "input_types": [
         "decision"
       ],
+      "invokes": []
+    },
+    "ecal": {
+      "description": "Determine how much thinking to invest in a decision. Maps stakes, reversibility, and diminishing returns to effort levels (minimum, standard, maximum).",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "eda": {
@@ -1577,6 +1598,13 @@
       ],
       "invokes": []
     },
+    "fohw": {
+      "description": "Systematically understand any complex system by matching investigation depth to your goal and access level, with safeguards against premature certainty.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "fowwr": {
       "description": "Figure Out What Went Wrong - Backward causal diagnosis of failures. Trace from symptom to root cause, test each candidate cause, and derive what would prevent recurrence.",
       "categories": [
@@ -1608,6 +1636,13 @@
       ],
       "invokes": []
     },
+    "frq": {
+      "description": "Find the right question to ask by diagnosing your actual situation and generating the most actionable question.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "fss": {
       "description": "The future is uncertain but not arbitrary.",
       "categories": [
@@ -1633,6 +1668,13 @@
       "input_types": [
         "decision"
       ],
+      "invokes": []
+    },
+    "fwa": {
+      "description": "Check whether an answer is likely wrong before acting on it. Classifies answer type and runs targeted verification.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "gaa": {
@@ -2019,6 +2061,13 @@
         "exd"
       ]
     },
+    "ign": {
+      "description": "Decide what information, concerns, and possibilities to deliberately ignore. Productive neglect through systematic triage.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "im": {
       "description": "Charlie Munger's inversion technique. Finding ways to fail, then avoiding them, makes success more likely.",
       "categories": [
@@ -2035,6 +2084,13 @@
     },
     "ins": {
       "description": "Synthesize insights from multiple sources into coherent, actionable understanding. Combines extraction, inversion, and analogy into unified insights.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "insd": {
+      "description": "Generate genuine insights by identifying stuck-points, inverting assumptions, changing representations, using incubation, and crystallizing through stability tests.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2160,6 +2216,13 @@
         "search",
         "strategy"
       ],
+      "input_types": [],
+      "invokes": []
+    },
+    "kta": {
+      "description": "Convert knowledge into action by diagnosing what actually blocks execution: unclear steps, activation energy, competing commitments, emotional barriers, or identity conflicts.",
+      "categories": [],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
@@ -3291,6 +3354,13 @@
       "input_types": [],
       "invokes": []
     },
+    "rmm": {
+      "description": "Recognize when a mental model is fundamentally wrong, dismantle it, and build or adopt a replacement without losing momentum.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "rmo": {
       "description": "Systematic approach to crafting resumes that pass ATS filters, capture attention,",
       "categories": [],
@@ -3552,6 +3622,13 @@
       ],
       "invokes": []
     },
+    "sdc": {
+      "description": "Detect when reasoning is actually rationalization. Mechanical checks for motivated reasoning, emotional override, and evidence asymmetry.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "sdp": {
       "description": "Developing embedded software for robotics and microcontroller-based systems.",
       "categories": [],
@@ -3644,6 +3721,13 @@
         "health",
         "check"
       ],
+      "input_types": [],
+      "invokes": []
+    },
+    "sid": {
+      "description": "Identify what situation you are actually in before attempting to solve it. Prevents the most dangerous failure: solving the wrong problem perfectly.",
+      "categories": [],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },

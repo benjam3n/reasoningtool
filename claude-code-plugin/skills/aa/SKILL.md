@@ -19,6 +19,22 @@ Every field, practice, or belief system rests on hidden assumptions that practit
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/aa 4x [input]").
+
+| Depth | Min Assumptions Extracted | Min Inversions Tested | Min Failure Modes | Min Audit Passes |
+|-------|--------------------------|----------------------|-------------------|-----------------|
+| 1x    | 5                        | 2                    | 2                 | 1               |
+| 2x    | 8                        | 4                    | 3                 | 1               |
+| 4x    | 12                       | 6                    | 5                 | 2               |
+| 8x    | 18                       | 10                   | 8                 | 3               |
+| 16x   | 25                       | 15                   | 12                | 4               |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Chain
 
 ```

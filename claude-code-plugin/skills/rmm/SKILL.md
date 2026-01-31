@@ -1,0 +1,696 @@
+---
+name: "rmm - Recover from Wrong Mental Model"
+description: "Recognize when a mental model is fundamentally wrong, dismantle it, and build or adopt a replacement without losing momentum."
+---
+
+# Recover from Wrong Mental Model
+
+**Input**: $ARGUMENTS
+
+---
+
+## Glossary
+
+| Term | Definition |
+|------|-----------|
+| **Mental model** | The story in your head about how something works. "Customers buy based on price" is a mental model. "My partner gets angry because of stress" is a mental model. "This codebase is slow because of the database" is a mental model. |
+| **Anomaly** | Something that happens that your mental model says should NOT happen, or something that does NOT happen that your model says SHOULD. |
+| **Paradigm shift** | Replacing one mental model with a fundamentally different one. Not tweaking -- replacing. |
+| **Bridge model** | A temporary, minimal model you use while searching for the right one. "I do not know how this works yet, but I know it is not X." |
+
+## Prerequisites
+
+Before starting, you need:
+- [ ] A situation where something is not working as expected
+- [ ] At least 20 minutes of uninterrupted thinking time (more for high-stakes situations)
+- [ ] A way to write things down (paper, notes app -- anything)
+- [ ] Willingness to discover that you have been wrong
+
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/rmm 4x [input]").
+
+| Depth | Min Anomalies | Min Alternatives | Min Stress Tests | Min Bridge Steps |
+|-------|--------------|-----------------|-----------------|-----------------|
+| 1x    | 3            | 2               | 2               | 1               |
+| 2x    | 5            | 3               | 3               | 2               |
+| 4x    | 8            | 5               | 5               | 3               |
+| 8x    | 12           | 7               | 8               | 5               |
+| 16x   | 18           | 10              | 12              | 7               |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
+## STEP 0: What Type of Situation Is This?
+
+Answer these three questions to route yourself to the right section:
+
+**Question A: How sure are you that your current understanding is wrong?**
+
+| If... | Your confidence level is... | Go to... |
+|-------|---------------------------|----------|
+| Someone told you, but you think they are wrong | NOT YET SUSPECTING | Section A |
+| Something feels off but you cannot say what | WEAKLY SUSPECT | Section B |
+| You have multiple concrete examples of your model failing | STRONGLY SUSPECT | Section C |
+| You have definitive proof your model is wrong | CERTAIN | Section D |
+
+**Question B: How urgent is this?**
+
+| If... | Your time pressure is... |
+|-------|------------------------|
+| No deadline. Ongoing mild frustration. | LOW |
+| Things are getting worse over weeks/months. | MODERATE |
+| Active damage is occurring. Decisions needed soon. | HIGH |
+| Crisis. You need to act within hours or days. | CRISIS |
+
+If your time pressure is CRISIS, skip to **Section E: Emergency Model Replacement** first, then return to the appropriate section when you have breathing room.
+
+**Question C: How much of your identity is tied to the current model?**
+
+| If... | Your emotional investment is... |
+|-------|-------------------------------|
+| It is an intellectual framework. Easy to let go of. | LOW |
+| You have made some decisions based on it. Some rework needed. | MEDIUM |
+| Your career, relationships, or reputation depend on it. | HIGH |
+| It is a core part of who you believe you are. | EXTREME |
+
+If your emotional investment is HIGH or EXTREME, read **Section F: The Emotional Dimension** before proceeding. You will need it.
+
+---
+
+## SECTION A: NOT YET SUSPECTING (Someone Else Sees It, You Do Not)
+
+You are here because: someone suggested your framework is wrong, or you are reading this "just in case," or repeated failures brought you here but you still believe your model is basically right.
+
+### Step A1: Gather Your Anomalies
+
+**Action**: Write down every instance in the last 3 months where reality did not match your expectations.
+
+Do this:
+1. Open a blank page. Title it "Surprises and Disappointments."
+2. Think about the domain where the potential model problem exists (work, relationship, project, health, etc.).
+3. For each of the last 3 months, write down anything that surprised you or disappointed you in that domain. Include small things.
+4. Do not filter. Do not explain. Just list.
+
+**What you should see**: A list of 5-30 items. If you have fewer than 5, either your model is fine or you are filtering. Try again with lower standards for what counts as "surprising."
+
+### Step A2: Look for Patterns in the Anomalies
+
+**Action**: Sort your anomalies into groups.
+
+Do this:
+1. Read through your anomaly list twice.
+2. Ask: "Do any of these surprises have something in common?"
+3. Try to group them. Possible groupings:
+   - They all involve the same person or system
+   - They all happen at the same stage of a process
+   - They all involve the same type of expectation being wrong
+   - They all point in the same direction (things are consistently worse/different than expected in one specific way)
+4. Write down the pattern you see (or write "no clear pattern").
+
+**Decision point**:
+- If you found a pattern: Go to Step A3.
+- If no pattern: Go to Step A4.
+
+### Step A3: Test the Pattern
+
+**Action**: Make a specific prediction using your CURRENT model, and a different prediction using the pattern you just found.
+
+Do this:
+1. Identify something that will happen in the next 1-2 weeks in this domain.
+2. Write down: "My current model predicts: [X]."
+3. Write down: "The pattern in my anomalies suggests: [Y]."
+4. Wait and observe what actually happens.
+
+**Decision point**:
+- If your current model was right: Your model may be fine. The anomalies may have been noise. STOP here unless new anomalies appear. (But keep your anomaly list. Add to it.)
+- If the anomaly pattern was right: Go to **Section C** (Strongly Suspect). You now have evidence.
+- If neither was right: You may have two wrong models. Go to **Section B** (Weakly Suspect) and start fresh.
+
+### Step A4: Apply the Outsider Test
+
+**Action**: Describe your situation to someone who knows nothing about it and see what model THEY apply.
+
+Do this:
+1. Find someone not involved in this domain (friend, colleague in a different area, online community, or even a journal entry written as if explaining to a stranger).
+2. Describe the FACTS of your situation without your interpretation. State what happened, not why you think it happened.
+3. Ask: "What do you think is going on here?"
+4. Write down their interpretation.
+
+**Decision point**:
+- If their interpretation matches yours: Your model may be fine. STOP or revisit later.
+- If their interpretation is different AND makes sense: Go to **Section C** -- you now have a candidate replacement model.
+- If their interpretation is different but does not make sense: Ask them to explain further. If it still does not resonate, go to **Section B**.
+
+---
+
+## SECTION B: WEAKLY SUSPECT (Something Feels Off)
+
+You are here because: something is not right and you can feel it but you cannot articulate what exactly is wrong.
+
+### Step B1: Name What Your Current Model IS
+
+**Action**: Write down your current mental model in one sentence.
+
+Do this:
+1. Complete this sentence: "The way I understand [situation] is: ___________________."
+2. Now complete this: "Based on that understanding, I have been doing: ___________________."
+3. Now complete this: "And I expected that would produce: ___________________."
+4. Now complete this: "But instead, what keeps happening is: ___________________."
+
+**What you should see**: Four sentences that show the gap between your model and reality. The gap is in sentence 4.
+
+### Step B2: Identify What Your Model Cannot Explain
+
+**Action**: List the things your current model has no explanation for.
+
+Do this:
+1. Look at your sentence 4 from Step B1.
+2. Ask: "Within my current understanding, why is this happening?"
+3. If you have an explanation: Write it down, then ask "Is that explanation testable? Can I check it?"
+4. If you do NOT have an explanation: Write "My model cannot explain this."
+5. Repeat for each anomaly you have noticed.
+
+**Decision point**:
+- If your model explains everything and explanations are testable: Test them (see Step A3). You might just have a bug in your model, not a wrong model.
+- If your model CANNOT explain multiple things: Go to Step B3.
+- If your explanations feel forced or circular ("it happened because sometimes things just happen"): Go to Step B3. Forced explanations are a sign the model is wrong.
+
+### Step B3: Try On Alternative Models
+
+**Action**: Generate three different ways to understand your situation.
+
+Do this:
+1. Write your current model at the top of a page.
+2. Write "Alternative 1: What if the OPPOSITE were true?" and complete the sentence.
+   - Example: If your model is "my team is lazy," the opposite is "my team is highly motivated but blocked by something."
+3. Write "Alternative 2: What if this is a DIFFERENT TYPE of problem entirely?" and complete the sentence.
+   - Example: If your model is "this is a motivation problem," a different type might be "this is a communication problem" or "this is a structural problem."
+4. Write "Alternative 3: What if I am the variable?" and complete the sentence.
+   - Example: "What if the issue is not [external thing] but how I am [interacting with / measuring / perceiving] it?"
+
+**What you should see**: Three sentences, each describing a fundamentally different way of understanding the same situation.
+
+### Step B4: Score the Models Against Your Evidence
+
+**Action**: Count how many of your anomalies each model explains.
+
+Do this:
+1. Make four columns: Current Model | Alternative 1 | Alternative 2 | Alternative 3
+2. For each anomaly from Steps A1 or B1, put a checkmark under each model that EXPLAINS that anomaly.
+3. Count the checkmarks per column.
+
+**Decision point**:
+- If your current model has the most checkmarks: Your model might be fine, or you are being generous in scoring it. Have someone else score independently if possible. STOP or return to Step A1 in a month.
+- If an alternative has the most checkmarks: Go to **Section C** with that alternative as your candidate.
+- If it is a tie or all models are weak: Go to Step B5.
+
+### Step B5: Gather More Data Before Deciding
+
+**Action**: Design a simple test that would distinguish between models.
+
+Do this:
+1. Pick the two strongest-scoring models.
+2. Ask: "What would Model A predict that Model B would not?"
+3. Find or create a situation where you can observe this.
+4. Observe what happens.
+
+**After gathering data**: Return to Step B4 with the new evidence.
+
+---
+
+## SECTION C: STRONGLY SUSPECT (Pattern of Failures, Candidate Replacement)
+
+You are here because: you have evidence your model is wrong AND you have at least a rough idea of what might be more accurate.
+
+### Step C1: Confirm It Is the Model, Not Just Noise
+
+**Action**: Apply the "three-strikes" test.
+
+Do this:
+1. List your three strongest pieces of evidence that the current model is wrong.
+2. For each piece of evidence, ask: "Could this have happened EVEN IF my model were correct?"
+   - If yes: It is not strong evidence. Cross it out.
+   - If no: It stands.
+3. Count remaining pieces of strong evidence.
+
+**Decision point**:
+- 0 strong pieces remain: Go back to **Section B**. You may have been pattern-matching on noise.
+- 1 strong piece: Possible but not conclusive. Look for a second strong piece (go to Step B5) before proceeding.
+- 2-3 strong pieces: Proceed to Step C2. Your model is very likely wrong.
+
+### Step C2: Identify WHAT the Model Gets Wrong
+
+**Action**: Classify the type of model error.
+
+Read these descriptions and pick the one that fits best:
+
+| Type | Your model says... | But actually... | Example |
+|------|-------------------|-----------------|---------|
+| **Wrong Cause** | "X causes Y" | X does not cause Y, or Z causes Y | "I thought price caused purchases, but status did" |
+| **Wrong Category** | "This is a type-A problem" | It is a type-B problem | "I thought this was a skill issue, but it is a motivation issue" |
+| **Wrong Structure** | "The system works like this" | The system works differently | "I thought it was linear, but it is a feedback loop" |
+| **Wrong Boundary** | "The problem is in here" | The problem is out there | "I thought the bug was in my code, but it was in the data" |
+| **Wrong Identity** | "They/I am this type" | They/I am a different type | "I thought they were uncooperative, but they were overwhelmed" |
+| **Wrong Values** | "What matters here is X" | What matters here is Y | "I thought they cared about money, but they cared about autonomy" |
+
+Write down: "My model error type is: ___________________"
+
+### Step C3: Determine What the Model Was Doing For You
+
+**Action**: Identify the function the old model served.
+
+This step is critical. Wrong models often persist because they serve a purpose.
+
+Do this:
+1. Complete: "Believing [old model] made me feel ___________________."
+2. Complete: "Believing [old model] allowed me to avoid ___________________."
+3. Complete: "Believing [old model] meant I did not have to ___________________."
+
+**What you should see**: An understanding of why you held the model. Common functions:
+- It made a complex situation feel simple and manageable
+- It let you blame external factors instead of facing uncomfortable truths
+- It aligned with your group's beliefs, keeping you socially safe
+- It protected you from anxiety about uncertainty
+- It confirmed something you wanted to be true
+
+Write down the function. You will need to address this when you adopt the new model, or the old one will creep back.
+
+### Step C4: Build or Adopt the Replacement Model
+
+**Action**: Construct the new model explicitly.
+
+Do this based on your model error type (from Step C2):
+
+**If Wrong Cause**:
+1. Write: "The actual cause of [outcome] is ___________________."
+2. Verify: "If I intervene on this new cause, I would expect to see ___________________."
+3. If possible, test this (go to Step B5 with new model, then return here).
+
+**If Wrong Category**:
+1. Write: "This is actually a [new category] problem, which means ___________________."
+2. Verify: "Solutions that work for [new category] problems include ___________________."
+3. Ask: "Do any of those solutions address my anomalies?" If yes, the recategorization is likely correct.
+
+**If Wrong Structure**:
+1. Draw or describe how the system ACTUALLY works. Include feedback loops, delays, and non-obvious connections.
+2. Verify: "This structure predicts [specific behavior]. Do I observe that?"
+
+**If Wrong Boundary**:
+1. Write: "The real problem is not inside [old boundary] but in [new location]."
+2. Verify: "If I look at [new location], I find evidence of ___________________."
+
+**If Wrong Identity**:
+1. Write: "They/I are actually [new description], which means ___________________."
+2. Verify: "Their/my behavior over the last month is consistent with [new description]."
+
+**If Wrong Values**:
+1. Write: "What actually matters here is [new value], not [old value]."
+2. Verify: "Optimizing for [new value] would mean doing ___________________ differently."
+
+### Step C5: Stress-Test the New Model
+
+**Action**: Try to break the new model before you adopt it.
+
+Do this:
+1. Write down the new model in one sentence.
+2. Ask: "What would I expect to see if this model is ALSO wrong?"
+3. Ask: "What evidence would convince me this new model is wrong?"
+4. Ask: "Is there anything my OLD model explained better than the new one?"
+
+**Decision point**:
+- If the new model survives all three questions: Go to **Section D**.
+- If the new model fails on question 4 (old model explained something better): You may need a hybrid or third model. Return to Step B3 and include this new information.
+- If you cannot answer question 2 or 3: The new model is untestable. This is a warning sign. It might be appealing for emotional reasons rather than accuracy. Proceed with caution; flag it for ongoing monitoring.
+
+---
+
+## SECTION D: CERTAIN (Ready to Switch)
+
+You are here because: you have confirmed your old model is wrong and have a stress-tested replacement.
+
+### Step D1: Map What Changes
+
+**Action**: List everything that changes under the new model.
+
+Do this:
+1. Write two columns: "Under old model, I did..." and "Under new model, I should do..."
+2. For each major activity or decision in this domain, fill in both columns.
+3. Highlight differences. These are your action items.
+
+**What you should see**: A concrete list of behavioral changes the new model requires.
+
+### Step D2: Plan the Transition
+
+**Action**: Decide how to implement the switch.
+
+Based on your switching cost (from Step 0, Question C):
+
+**If switching cost is mainly cognitive (just thinking differently)**:
+1. Write the new model on a card or note where you will see it daily.
+2. For one week, every time you make a decision in this domain, pause and ask: "What does the NEW model say to do?"
+3. After one week, check: are outcomes improving?
+
+**If switching cost is behavioral (need to act differently)**:
+1. Pick the THREE most important behavioral changes from Step D1.
+2. Implement one per week, starting with the easiest.
+3. After each change, observe: does the world respond the way the new model predicts?
+
+**If switching cost is social (need to tell others)**:
+1. Write a brief, honest statement: "I used to think [old model]. I now think [new model]. Here is why: [2-3 strongest pieces of evidence]."
+2. Tell the people who matter most FIRST.
+3. Do NOT apologize for being wrong. Say: "I updated my understanding based on evidence."
+
+**If switching cost is material (need to undo decisions)**:
+1. List every decision made under the old model that needs reversing.
+2. Prioritize by: which reversals prevent the most ongoing damage?
+3. For irreversible decisions: accept the sunk cost. Focus on what you can change going forward.
+
+### Step D3: Monitor the New Model
+
+**Action**: Set up a feedback loop to verify the new model is working.
+
+Do this:
+1. Write down 3 specific predictions the new model makes for the next 30 days.
+2. Set calendar reminders to check each prediction.
+3. Start a new "Surprises and Disappointments" list (same as Step A1) -- but now for the NEW model.
+
+**Decision point at 30 days**:
+- If 2-3 predictions came true and anomalies are fewer: The new model is working. Continue.
+- If 1 prediction came true: The new model is partially right. Look for refinements. Return to Step C4 for the parts that are not working.
+- If 0 predictions came true: The new model is also wrong. Return to **Section B, Step B3**. Do not go back to the old model; generate a THIRD alternative.
+
+---
+
+## SECTION E: EMERGENCY MODEL REPLACEMENT (Crisis Time Pressure)
+
+You are here because: you need to act NOW and your current model is producing dangerous outputs.
+
+### Step E1: Adopt a Bridge Model
+
+**Action**: You do not need the RIGHT model. You need a SAFE model.
+
+Do this:
+1. Write: "I do not know what the right model is, but I know [old model] is wrong."
+2. Write: "The safest assumption right now is: ___________________."
+   - Default to the most CONSERVATIVE possible interpretation.
+   - Conservative means: assume you know less than you think, assume the situation is more complex than it appears, assume the stakes are higher than they seem.
+3. Under the bridge model, the decision rule is: "Do the thing that leaves the most options open."
+
+### Step E2: Make the Minimum Viable Decision
+
+**Action**: Make ONLY the decision that must be made right now.
+
+Do this:
+1. Ask: "What decision absolutely cannot wait?"
+2. Make THAT decision under the bridge model (conservative, options-preserving).
+3. Defer every other decision. Write them down for later.
+
+### Step E3: Schedule Full Model Replacement
+
+**Action**: Set a specific time within 48 hours to return to Section A, B, or C for proper model replacement.
+
+Do this:
+1. Put it on your calendar. Actually schedule it.
+2. Between now and then, use the bridge model for any decisions that come up.
+
+---
+
+## SECTION F: THE EMOTIONAL DIMENSION (High or Extreme Investment)
+
+Read this section if you identified HIGH or EXTREME emotional investment in Step 0.
+
+### The Truth About Model Replacement and Emotions
+
+Changing a deeply held mental model is not just an intellectual exercise. It is a loss. The old model was USEFUL to you -- it provided certainty, identity, belonging, or protection. Replacing it means grieving what it gave you.
+
+This is normal. It does not mean you should keep the wrong model.
+
+### Step F1: Name What You Are Losing
+
+**Action**: Write down what the old model gave you.
+
+Do this:
+1. Complete: "If I give up [old model], I lose ___________________."
+2. Common losses: sense of competence, group belonging, simplicity, hope, blame-target, self-image, certainty.
+3. These losses are REAL. Do not dismiss them.
+
+### Step F2: Acknowledge the Grief Stages
+
+You may experience:
+- **Denial**: "The old model is probably still right." (Return to Section A if this happens and re-run the evidence check. Trust the evidence, not the feeling.)
+- **Anger**: "I wasted [time/money/years] on the wrong model." (This is valid. Write it down. Then proceed anyway.)
+- **Bargaining**: "Maybe I can keep PART of the old model." (Sometimes you can. Check in Section C, Step C5.)
+- **Depression**: "Nothing makes sense anymore." (This is the bridge period. It passes. Use Section E's bridge model.)
+- **Acceptance**: "The old model was wrong. I can see more clearly now." (You are ready for Section D.)
+
+### Step F3: Protect Yourself During Transition
+
+Do this:
+1. Tell one trusted person: "I am going through a major rethink on [topic]. I may seem uncertain for a while."
+2. Reduce other sources of stress if possible -- model replacement is cognitively expensive.
+3. Set a time limit: "I will give myself [2 weeks / 1 month / 3 months] to work through this, and then I will commit to a new model."
+4. Write down your evidence. On days when the old model pulls you back, re-read the evidence.
+
+---
+
+## QUICK REFERENCE CARDS
+
+### Card 1: The Five Questions That Reveal a Wrong Model
+
+1. "Am I surprised by outcomes more often than I should be?"
+2. "Do I keep solving the same problem and it keeps coming back?"
+3. "Are people with different frameworks getting better results?"
+4. "Am I explaining away anomalies instead of investigating them?"
+5. "Would a newcomer to this situation see it differently than I do?"
+
+If you answer YES to 3 or more: your model is likely wrong.
+
+### Card 2: Model Error Type Identifier
+
+| You notice... | Model error type | Fix approach |
+|--------------|-----------------|--------------|
+| Your interventions do not produce the expected effect | Wrong Cause | Find the real causal chain |
+| Solutions for your problem category keep failing | Wrong Category | Recategorize the problem |
+| The system does not behave the way you expect | Wrong Structure | Map the actual structure |
+| Fixing everything you can find does not help | Wrong Boundary | Look outside your current scope |
+| People keep violating your expectations of them | Wrong Identity | Observe behavior, drop labels |
+| Achieving your goals does not satisfy | Wrong Values | Discover what actually matters |
+
+### Card 3: Speed Guide
+
+| Time pressure | Emotional investment | Your path |
+|--------------|---------------------|-----------|
+| Low | Low | Full procedure, take your time. Sections A/B/C/D. |
+| Low | High | Full procedure + Section F. Allow for grief. |
+| High | Low | Skip to Section C or D. Act fast. |
+| High | High | Section E first (bridge model), then F, then C/D. |
+
+### Card 4: Bridge Model Template
+
+"I do not know the right way to understand [situation]. I know [old model] is wrong because [strongest evidence]. Until I find a better model, I will assume: the situation is more complex than it appears, my knowledge is limited, and I should choose actions that keep the most options open."
+
+---
+
+## COMMON MISTAKES
+
+### Mistake 1: Confusing Model Bugs with Wrong Models
+
+**What happens**: You have a basically correct model with a small error, and you throw out the entire model.
+**How to recognize**: Your model is right 80%+ of the time. The failures are in edge cases, not the core prediction.
+**What to do instead**: Fix the bug. Tweak the model. You do not need a paradigm shift; you need a patch.
+**Test**: Ask "Is the model wrong about HOW things work, or just wrong about the details?" If details only, patch it.
+
+### Mistake 2: Premature Model Switching
+
+**What happens**: You encounter two or three anomalies and immediately conclude your model is wrong.
+**How to recognize**: You switch models frequently. Each new model feels right for a week, then fails.
+**What to do instead**: Use Step C1's three-strikes test. Require STRONG evidence, not just any evidence.
+**Test**: Ask "Could these anomalies have happened even if my model is correct?" If yes, wait for more data.
+
+### Mistake 3: Switching to a More Appealing Model Instead of a More Accurate One
+
+**What happens**: The new model feels better (simpler, more hopeful, more flattering) but is not actually more accurate.
+**How to recognize**: The new model makes you feel good but does not make better predictions.
+**What to do instead**: Use Step C5's stress test. Score models on prediction accuracy, not emotional appeal.
+**Test**: Ask "Does the new model explain my anomalies, or does it just explain away my discomfort?"
+
+### Mistake 4: Keeping the Old Model Socially While Adopting the New One Privately
+
+**What happens**: You know the old model is wrong but keep acting on it publicly because switching has social costs.
+**How to recognize**: You feel like a fraud. You say one thing and believe another.
+**What to do instead**: Use Section D, Step D2's social switching cost guidance. Being honest about updating is a sign of intellectual strength, not weakness.
+**Test**: Ask "Am I optimizing for being right, or for looking consistent?"
+
+### Mistake 5: Throwing Away Everything
+
+**What happens**: You realize your model is wrong and conclude EVERYTHING you did under the old model was wasted.
+**How to recognize**: Feelings of "it was all for nothing." Discounting all past experience.
+**What to do instead**: Separate the model from the data. Your experience is still valid data; it was just interpreted through the wrong lens. Under the new model, that same experience may be even MORE valuable because you now know what patterns to look for.
+**Test**: Ask "Is my experience invalidated, or just reinterpreted?"
+
+### Mistake 6: Analysis Paralysis -- Endlessly Questioning Without Switching
+
+**What happens**: You get stuck in Sections A and B forever, always gathering more data, never committing to a new model.
+**How to recognize**: You have been "questioning your model" for months with no resolution.
+**What to do instead**: Set a deadline. "By [date], I will either confirm my current model or adopt an alternative." Then honor the deadline. Imperfect new models can be refined; endless questioning cannot.
+**Test**: Ask "Am I gathering data to decide, or gathering data to avoid deciding?"
+
+### Mistake 7: Ignoring the Emotional Dimension
+
+**What happens**: You treat model replacement as purely intellectual and are blindsided by emotional resistance.
+**How to recognize**: You intellectually agree the old model is wrong but "cannot seem to" act on the new one.
+**What to do instead**: Go to Section F. Acknowledge what the old model gave you. Allow the grieving process.
+**Test**: Ask "Can I describe the old model as wrong without feeling a knot in my stomach?" If no, Section F.
+
+---
+
+## WHEN TO OVERRIDE THIS PROCEDURE
+
+### Override 1: The Model Involves Trauma or Deep Psychological Patterns
+**When**: Your mental model is rooted in childhood experience, trauma, or deeply ingrained psychological patterns (e.g., "I am fundamentally unlovable," "the world is dangerous," "I cannot trust anyone").
+**Why override**: These models require professional therapeutic support, not a procedure. The models are maintained by neural and emotional patterns that conscious reasoning alone cannot reliably change.
+**What to do**: Work with a therapist or counselor who specializes in the relevant area. This procedure can help you IDENTIFY the model, but replacing it requires professional help.
+
+### Override 2: The Domain Requires Genuine Expertise
+**When**: The mental model is about a highly technical domain (medicine, law, engineering, finance) and getting the replacement model wrong has serious consequences.
+**Why override**: This procedure helps you recognize a wrong model and think through alternatives, but it cannot substitute for domain expertise.
+**What to do**: Use this procedure to clarify your questions, then consult a domain expert.
+
+### Override 3: The Model Is Shared by Your Entire Organization or Community
+**When**: The wrong model is not just yours -- it is the operating assumption of your team, company, or community.
+**Why override**: Individual model replacement is necessary but insufficient. You also need organizational change management.
+**What to do**: Use this procedure personally first. Then, if you decide the model is wrong, research organizational change and paradigm-shift management before trying to change the group's model. Start with allies, not mandates.
+
+### Override 4: You Are in Active Crisis
+**When**: You are in immediate physical, financial, or emotional danger.
+**Why override**: Model replacement is important but not urgent compared to safety.
+**What to do**: Ensure safety first. Use Section E's bridge model for immediate decisions. Return to full model replacement when the crisis has stabilized.
+
+### Override 5: The "Wrong" Model Is Actually Serving an Adaptive Function
+**When**: After completing Step C3, you discover the old model is "wrong" in the sense of being inaccurate, but it is "right" in the sense of being useful for your current situation.
+**Why override**: Sometimes a simplified or technically incorrect model is the best tool available. Maps are not the territory, and sometimes a rough map is better than no map.
+**What to do**: Consciously keep the model while knowing its limitations. Write down: "I am using [model] because [functional reason], while knowing it is inaccurate about [specific limitation]. I will switch when [specific trigger]."
+
+---
+
+## WORKED EXAMPLES
+
+### Example 1: The Manager and the "Lazy" Team
+
+**Situation**: Alex manages a software team. The team consistently misses deadlines. Alex's model: "My team is not working hard enough."
+
+**Step 0**: Alex's confidence is WEAKLY SUSPECT (things feel off). Time pressure is MODERATE. Emotional investment is MEDIUM (Alex has been managing based on this model for a year).
+
+**Section B, Step B1**: Alex writes:
+- "The way I understand my team is: they are talented but not putting in enough effort."
+- "Based on that understanding, I have been: adding accountability measures, tracking hours, sending motivational messages."
+- "I expected that would produce: faster delivery, fewer missed deadlines."
+- "But instead: deadlines are still missed, and now morale seems lower too."
+
+**Step B2**: Alex's model cannot explain why MORE accountability led to WORSE morale without improving speed.
+
+**Step B3**: Alex generates alternatives:
+- Alternative 1 (Opposite): "My team is actually working extremely hard but something is blocking them."
+- Alternative 2 (Different type): "This is not a motivation problem but a process/tooling problem."
+- Alternative 3 (I am the variable): "My management style is the thing slowing the team down."
+
+**Step B4**: Alex scores against anomalies:
+- "Team stays late often" -- Old model: 0. Alternative 1: YES. Alternative 2: YES. Alternative 3: YES.
+- "Most missed deadlines involve the same integration step" -- Old model: 0. Alternative 1: 0. Alternative 2: YES. Alternative 3: 0.
+- "Team started missing more deadlines after I added check-ins" -- Old model: 0. Alternative 1: 0. Alternative 2: 0. Alternative 3: YES.
+
+Result: Alternative 2 and 3 both score higher than the old model. Alex combines them: "The team is working hard, but our integration process is broken AND my added check-ins are making it worse by consuming time."
+
+**Section C, Step C1**: Three strikes test -- all three anomalies are strong evidence against the old model.
+
+**Step C2**: Model error type: WRONG CATEGORY (it was a process problem, not a motivation problem) + WRONG CAUSE (accountability measures were causing additional delays, not fixing them).
+
+**Step C3**: The old model's function: "Believing my team was lazy let me feel like a good manager dealing with a bad team, instead of questioning my own management approach."
+
+**Step C4**: New model: "The integration process is the bottleneck, and my check-ins are adding overhead." Verification: If Alex fixes the integration process and reduces check-ins, delivery should improve.
+
+**Step D1**: Changes under new model:
+- Old: Track hours --> New: Track blockers
+- Old: Motivational check-ins --> New: Process improvement meetings
+- Old: Individual accountability --> New: System-level fixes
+
+**Step D3**: Alex predicts: (1) Next sprint with fewer check-ins will be faster. (2) Investing in integration automation will reduce the specific step where deadlines slip. (3) Team morale will improve within 2 weeks.
+
+**Outcome**: Two of three predictions confirmed within 30 days. Alex refined the model further over the next quarter.
+
+---
+
+### Example 2: The Investor and the "Undervalued" Stock
+
+**Situation**: Jamie invested heavily in a technology company, believing it was undervalued based on financial fundamentals. The stock keeps declining.
+
+**Step 0**: Jamie is NOT YET SUSPECTING (believes the market is wrong, not the model). Time pressure is MODERATE (portfolio losing value). Emotional investment is HIGH (significant money committed, ego tied to the thesis).
+
+**Section A, Step A1**: Jamie lists anomalies:
+- Stock down 30% despite improving revenue
+- Three institutional investors sold their positions
+- Company keeps hiring lobbyists (not a typical tech move)
+- CEO's public comments increasingly focus on regulation, not product
+- Competitor with worse financials is outperforming
+
+**Step A2**: Pattern: everything points to something OUTSIDE the financial statements mattering more than what is ON them. The anomalies cluster around regulatory/political dimensions.
+
+**Step A3**: Jamie's competing predictions:
+- Current model: "Next earnings report (strong) will drive price up."
+- Pattern-based: "Next regulatory news will move the stock more than earnings."
+- Result: Earnings come in strong. Stock drops 5% the same week on a regulatory rumor.
+
+Jamie moves to **Section C**.
+
+**Step C2**: Model error type: WRONG BOUNDARY. Jamie was analyzing inside the boundary of "company financials" but the real variable is outside that boundary in the regulatory/political environment.
+
+**Step C3**: The old model's function: "Believing it was about fundamentals let me feel like a skilled analyst. Admitting it is about regulation means I have no edge -- I am not a regulatory expert."
+
+**Step C4**: New model: "This stock's price is primarily driven by regulatory risk, not financial fundamentals. Regulatory risk is not something I can analyze with my current skills."
+
+**Step C5**: Stress test:
+- "What would make this new model wrong?" --> If the next major price move is driven by earnings, not regulation.
+- "What did the old model explain that the new one does not?" --> Nothing. The new model explains everything the old one did, plus the anomalies.
+
+**Step D2**: Switching cost is MATERIAL (money at risk) + SOCIAL (Jamie told friends about the investment thesis).
+- Material: Jamie decides on a gradual exit, selling 25% per week.
+- Social: Jamie tells investment friends: "I updated my thesis. The regulatory risk changed the game. Here's what I missed."
+
+**Step D3**: Jamie monitors: (1) Regulatory news will be the primary driver of stock movement. (2) Financials will be secondary. (3) Jamie's portfolio will stabilize as exposure decreases.
+
+---
+
+### Example 3: The Student Who Could Not Learn
+
+**Situation**: Taylor is a college student who studies 40+ hours per week but keeps getting C grades. Taylor's model: "I am not smart enough for this program."
+
+**Step 0**: Taylor is STRONGLY SUSPECT (after three semesters of the same result despite maximum effort). Time pressure is HIGH (academic probation looming). Emotional investment is EXTREME (self-identity as "not smart enough" has generalized to all areas).
+
+**Section F first** (extreme emotional investment):
+
+**Step F1**: "If I give up the 'not smart enough' model, I lose... my explanation for why things are hard. I also lose my excuse for not trying new things."
+
+**Step F2**: Taylor recognizes denial pattern: keeps taking the same courses expecting different results.
+
+**Section C, Step C1**: Three strong evidence pieces against the "not smart enough" model:
+1. Taylor scored in the 90th percentile on the entrance exam (intelligence is not the issue).
+2. Taylor understands the material when explaining it to friends (comprehension is present).
+3. Taylor's best grades are in classes with project-based assessment, worst in exam-based (the failure is in a specific CONTEXT, not general ability).
+
+**Step C2**: Model error type: WRONG CAUSE. Taylor thought the cause of bad grades was insufficient intelligence. The actual cause is a mismatch between study method and assessment method.
+
+**Step C3**: The old model's function: "Believing 'I am not smart enough' let me avoid the scarier possibility that I am capable but doing something wrong -- which would mean I could fix it, which means I would HAVE to try, which means I could fail while TRYING."
+
+**Step C4**: New model: "I am smart enough. My study method (re-reading and memorizing) does not match what exams test (application and synthesis). I need to change HOW I study, not how HARD."
+
+**Step C5**: Stress test passes -- the new model explains all anomalies, including why project-based classes go better (they test application, which Taylor does naturally while studying).
+
+**Step D2**: Switching cost is primarily COGNITIVE + IDENTITY.
+- Cognitive: Taylor learns about active recall, practice problems, and spaced repetition.
+- Identity: Taylor starts saying "I study wrong" instead of "I am not smart enough." This is hard at first.
+
+**Step D3**: Taylor predicts: (1) Grades on next exam using new study method will be B or higher. (2) Study hours can decrease while grades increase (efficiency gain). (3) The "not smart enough" feeling will decrease as evidence of competence accumulates.
+
+**Outcome**: Taylor gets a B+ on the next exam with 30 hours of study instead of 40. After one semester with new methods, Taylor is on the Dean's list.

@@ -16,6 +16,22 @@ Systematic procedure for formulating testable hypotheses, designing tests, and u
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/ht 4x [input]").
+
+| Depth | Min Hypotheses | Min Tests per Hypothesis | Min Competing Explanations | Min Falsification Attempts |
+|-------|----------------|--------------------------|----------------------------|----------------------------|
+| 1x    | 2              | 1                        | 1                          | 1                          |
+| 2x    | 3              | 2                        | 2                          | 2                          |
+| 4x    | 5              | 3                        | 3                          | 3                          |
+| 8x    | 7              | 4                        | 5                          | 5                          |
+| 16x   | 10             | 6                        | 7                          | 8                          |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Step 0: Context Detection and Variant Selection
 
 Before full analysis, assess context:

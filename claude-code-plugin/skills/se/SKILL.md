@@ -32,6 +32,22 @@ Before enumeration, specify the desired granularity:
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/se 4x [input]").
+
+| Depth | Min Items Generated | Min Dimensions Covered | Min Edge Cases | Min Completeness Checks |
+|-------|---------------------|------------------------|----------------|-------------------------|
+| 1x    | 10                  | 3                      | 2              | 1                       |
+| 2x    | 20                  | 5                      | 4              | 2                       |
+| 4x    | 35                  | 7                      | 6              | 3                       |
+| 8x    | 55                  | 9                      | 10             | 5                       |
+| 16x   | 80                  | 12                     | 15             | 7                       |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Process
 
 ### Step 1: Confirm Dimensions

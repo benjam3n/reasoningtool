@@ -43,6 +43,22 @@ Find **analogous situations in other domains** to:
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/cda 4x [input]").
+
+| Depth | Min Domains Searched | Min Analogies Found | Min Deep Mappings | Min Transfer Tests |
+|-------|----------------------|---------------------|-------------------|--------------------|
+| 1x    | 2                    | 2                   | 1                 | 1                  |
+| 2x    | 3                    | 3                   | 2                 | 2                  |
+| 4x    | 5                    | 5                   | 3                 | 3                  |
+| 8x    | 7                    | 8                   | 5                 | 5                  |
+| 16x   | 10                   | 12                  | 8                 | 7                  |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Analogy Process
 
 ### Step 1: Abstract the Problem

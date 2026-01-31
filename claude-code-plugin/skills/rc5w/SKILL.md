@@ -21,6 +21,22 @@ description: Adaptive root cause analysis. Ask "why" until you hit the root. Som
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/rc5w 4x [input]").
+
+| Depth | Min Why-Chains | Min Levels per Chain | Min Branch Points | Min Root Causes Validated |
+|-------|----------------|----------------------|-------------------|---------------------------|
+| 1x    | 1              | 3                    | 1                 | 1                         |
+| 2x    | 2              | 5                    | 2                 | 1                         |
+| 4x    | 3              | 7                    | 3                 | 2                         |
+| 8x    | 4              | 9                    | 5                 | 3                         |
+| 16x   | 6              | 12                   | 8                 | 5                         |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## The Process
 
 ### 1. State the Problem

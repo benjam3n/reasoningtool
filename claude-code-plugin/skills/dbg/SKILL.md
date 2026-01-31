@@ -16,6 +16,22 @@ Systematic procedure for diagnosing and fixing software bugs. This procedure lev
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/dbg 4x [input]").
+
+| Depth | Min Hypotheses | Min Evidence Checks | Min Reproduction Attempts | Min Root Causes Verified |
+|-------|----------------|---------------------|---------------------------|--------------------------|
+| 1x    | 2              | 3                   | 1                         | 1                        |
+| 2x    | 3              | 5                   | 2                         | 1                        |
+| 4x    | 5              | 8                   | 3                         | 2                        |
+| 8x    | 7              | 12                  | 5                         | 3                        |
+| 16x   | 10             | 18                  | 8                         | 5                        |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Step 0: Context Assessment
 
 | Factor | Value | Notes |

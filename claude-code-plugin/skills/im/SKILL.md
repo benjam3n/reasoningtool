@@ -16,6 +16,22 @@ Also known as: "Kill the company" exercise, Pre-mortem, Via negativa
 Find how to succeed by first asking "How would I guarantee failure?"
 Then do the opposite. Inversion often reveals non-obvious insights.
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/im 4x [input]").
+
+| Depth | Min Failure Scenarios | Min Inversion Layers | Min Mitigation Plans | Min Stress Tests |
+|-------|-----------------------|----------------------|----------------------|------------------|
+| 1x    | 3                     | 1                    | 1                    | 1                |
+| 2x    | 5                     | 2                    | 2                    | 2                |
+| 4x    | 8                     | 3                    | 3                    | 3                |
+| 8x    | 12                    | 4                    | 5                    | 5                |
+| 16x   | 18                    | 5                    | 8                    | 7                |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: State the Goal

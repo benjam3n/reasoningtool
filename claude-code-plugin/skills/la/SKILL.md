@@ -21,6 +21,22 @@ from prioritization to avoid premature filtering.
 5. Apply effort/impact gate to prioritize
 6. Identify which limitations are INHERENT vs FIXABLE
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/la 4x [input]").
+
+| Depth | Min Limitations Found | Min Categories Checked | Min Severity Assessments | Min Mitigation Plans |
+|-------|----------------------|----------------------|------------------------|---------------------|
+| 1x    | 5                    | 2                    | 3                      | 1                   |
+| 2x    | 8                    | 3                    | 5                      | 2                   |
+| 4x    | 12                   | 5                    | 8                      | 3                   |
+| 8x    | 18                   | 7                    | 12                     | 5                   |
+| 16x   | 25                   | 10                   | 18                     | 7                   |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: Define scope

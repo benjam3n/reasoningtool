@@ -12,6 +12,22 @@ Bounded inquiry can terminate - closure is possible within scope.
 This procedure establishes explicit boundaries for any inquiry,
 enabling satisfying closure rather than infinite regress.
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/bi 4x [input]").
+
+| Depth | Min Inquiry Branches | Min Depth per Branch | Min Boundary Tests | Min Convergence Checks |
+|-------|---------------------|---------------------|-------------------|----------------------|
+| 1x    | 2                   | 2                   | 1                 | 1                    |
+| 2x    | 3                   | 3                   | 2                 | 2                    |
+| 4x    | 5                   | 4                   | 3                 | 3                    |
+| 8x    | 7                   | 5                   | 5                 | 4                    |
+| 16x   | 10                  | 7                   | 7                 | 6                    |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 ## Steps
 
 ### Step 1: Establish goal boundary

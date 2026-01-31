@@ -57,6 +57,22 @@ question_classification: '## Question: [The question]
 
 ---
 
+## Depth Scaling
+
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/qaf 4x [input]").
+
+| Depth | Min Questions Analyzed | Min Dependencies Mapped | Min Foundation Questions | Min Resolution Paths |
+|-------|------------------------|-------------------------|--------------------------|----------------------|
+| 1x    | 5                      | 3                       | 1                        | 1                    |
+| 2x    | 8                      | 5                       | 2                        | 2                    |
+| 4x    | 12                     | 8                       | 3                        | 3                    |
+| 8x    | 18                     | 12                      | 5                        | 5                    |
+| 16x   | 25                     | 18                      | 8                        | 7                    |
+
+These are floors. Go deeper where insight is dense. Compress where it's not.
+
+---
+
 **Input**: $ARGUMENTS
 
 Apply this procedure to the input provided.

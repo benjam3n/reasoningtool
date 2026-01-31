@@ -128,18 +128,22 @@ claude</code></pre>
 
   <section>
     <h2>Depth scaling</h2>
+    <p>Many skills support depth multipliers (1x, 2x, 4x, 8x, 16x). Default is 2x. Add the multiplier after the skill name.</p>
     <table>
       <thead>
-        <tr><th>Depth</th><th>What you get</th></tr>
+        <tr><th>Example</th><th>What you get</th></tr>
       </thead>
       <tbody>
-        <tr><td><code>/araw</code></td><td>3&ndash;4 levels</td></tr>
-        <tr><td><code>/araw 2x</code></td><td>4&ndash;5 levels</td></tr>
-        <tr><td><code>/araw 4x</code></td><td>5&ndash;6 levels, edge cases</td></tr>
-        <tr><td><code>/araw 8x</code></td><td>6&ndash;8 levels</td></tr>
-        <tr><td><code>/uaua 4x</code></td><td>Alternating search at 4x depth</td></tr>
+        <tr><td><code>/araw claim</code></td><td>Default (2x) &mdash; 4&ndash;5 tree levels, 20+ findings</td></tr>
+        <tr><td><code>/araw 4x claim</code></td><td>5&ndash;6 levels, 35+ findings, edge cases</td></tr>
+        <tr><td><code>/araw 8x claim</code></td><td>6&ndash;8 levels, 55+ findings</td></tr>
+        <tr><td><code>/uaua 4x topic</code></td><td>Alternating search at 4x depth</td></tr>
+        <tr><td><code>/rca 4x symptom</code></td><td>5+ causal chains, 7 why-levels deep</td></tr>
+        <tr><td><code>/se 4x space</code></td><td>35+ items, 7 dimensions, 6 edge cases</td></tr>
+        <tr><td><code>/fwa 4x answer</code></td><td>8 checks, 4 alternatives, 3 sources</td></tr>
       </tbody>
     </table>
+    <p>Depth scaling is supported by 40+ analytical skills including <code>/araw</code>, <code>/ar</code>, <code>/aw</code>, <code>/uaua</code>, <code>/foht</code>, <code>/se</code>, <code>/dd</code>, <code>/rca</code>, <code>/ht</code>, <code>/fwa</code>, <code>/sdc</code>, <code>/fohw</code>, <code>/insd</code>, and more.</p>
   </section>
 
   <section>
