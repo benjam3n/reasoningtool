@@ -542,7 +542,10 @@ const totalCount = allSkillNames.size;
     display: flex;
     flex-wrap: wrap;
     gap: var(--sp-2);
-    max-width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding: 0 var(--sp-4);
+    box-sizing: border-box;
   }
 
   .skill-chip {
