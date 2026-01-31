@@ -525,21 +525,16 @@ const totalCount = allSkillNames.size;
 <Base title="Skills" activeNav="skills" description={`${totalCount} structured reasoning skills for Claude Code.`}>
   <div class="page-header">
     <h1>Skills</h1>
-    <p>{totalCount} structured reasoning skills</p>
+    <p>{totalCount} skills</p>
   </div>
 
-  <div class="callout">
-    <p>Type <code>/skillname your question</code> in Claude Code. Example: <code>/claim remote work is more productive</code></p>
-  </div>
 
   <section>
-    <h2><span class="tier-badge tier-exp">Category Skills</span> Start Here</h2>
-    <p>These are the entry points. Describe what you have and they figure out how to analyze it.</p>
+    <h2><span class="tier-badge tier-exp">Category Skills</span></h2>
     <div class="skill-grid">
       {categorySkills.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
           <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-          <div class="desc">{s.desc}</div>
         </a>
       ))}
     </div>
@@ -551,7 +546,6 @@ const totalCount = allSkillNames.size;
       {experimental.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
           <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-          <div class="desc">{s.desc}</div>
         </a>
       ))}
     </div>
@@ -563,7 +557,6 @@ const totalCount = allSkillNames.size;
       {tier1.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
           <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-          <div class="desc">{s.desc}</div>
         </a>
       ))}
     </div>
@@ -575,7 +568,6 @@ const totalCount = allSkillNames.size;
       {tier2.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
           <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-          <div class="desc">{s.desc}</div>
         </a>
       ))}
     </div>
