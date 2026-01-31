@@ -86,6 +86,11 @@
       <button class="av__tbtn" id="av-btn-reset">Reset view</button>
       <button class="av__tbtn" id="av-btn-layout">Re-layout</button>
     </div>
+    <div class="av__popup" id="av-popup" style="display:none">
+      <button class="av__popup-close" id="av-popup-close">&times;</button>
+      <div class="av__popup-claim" id="av-popup-claim"></div>
+      <div class="av__popup-meta" id="av-popup-meta"></div>
+    </div>
   </div>
 </div>
 
@@ -160,8 +165,14 @@
       maxCameraRatio: 100,
     } as any);
 
-    renderer.on('clickNode', ({ node }: { node: string }) => {
+    renderer.on('clickNode', ({ node, event }: { node: string; event: { original: MouseEvent } }) => {
       showNodeDetail(node);
+      showPopup(node, event.original);
+    });
+
+    // Click on canvas background dismisses popup
+    renderer.on('clickStage', () => {
+      document.getElementById('av-popup')!.style.display = 'none';
     });
 
     // Show controls, hide empty
@@ -200,6 +211,43 @@
       <strong>Crux:</strong> ${attrs.is_crux ? 'Yes' : 'No'}<br>
       <strong>Domain:</strong> ${attrs.domain || 'unknown'}
     `;
+  }
+
+  function showPopup(nodeId: string, mouseEvent: MouseEvent) {
+    const attrs = graph.getNodeAttributes(nodeId);
+    const popup = document.getElementById('av-popup')!;
+    const canvas = document.getElementById('av-canvas')!;
+    const canvasRect = canvas.getBoundingClientRect();
+
+    document.getElementById('av-popup-claim')!.textContent = attrs.claim || attrs.label;
+
+    const typeColor = attrs.branch_type === 'assume_right' ? '#3b82f6'
+      : attrs.branch_type === 'assume_wrong' ? '#ef4444' : '#f97316';
+    const typeLabel = attrs.branch_type === 'assume_right' ? 'Assume Right'
+      : attrs.branch_type === 'assume_wrong' ? 'Assume Wrong' : 'Root';
+
+    document.getElementById('av-popup-meta')!.innerHTML = `
+      <span class="av__popup-tag" style="background:${typeColor}">${typeLabel}</span>
+      <span class="av__popup-tag">Depth ${attrs.depth}</span>
+      ${attrs.is_crux ? '<span class="av__popup-tag" style="background:#eab308">Crux</span>' : ''}
+      ${attrs.is_grounded ? '<span class="av__popup-tag" style="background:#22c55e">Grounded</span>' : ''}
+      <span class="av__popup-tag">${attrs.domain || 'unknown'}</span>
+    `;
+
+    popup.style.display = '';
+
+    // Position relative to canvas area
+    const x = mouseEvent.clientX - canvasRect.left;
+    const y = mouseEvent.clientY - canvasRect.top;
+    const pw = popup.offsetWidth;
+    const ph = popup.offsetHeight;
+
+    // Flip if near edges
+    const left = (x + pw + 16 > canvasRect.width) ? x - pw - 12 : x + 12;
+    const top = (y + ph + 16 > canvasRect.height) ? Math.max(8, y - ph - 12) : y + 12;
+
+    popup.style.left = left + 'px';
+    popup.style.top = top + 'px';
   }
 
   function applyFilters() {
@@ -325,6 +373,11 @@
         simpleForceLayout(graph, 50);
         renderer?.refresh();
       }
+    });
+
+    // Popup close
+    document.getElementById('av-popup-close')?.addEventListener('click', () => {
+      document.getElementById('av-popup')!.style.display = 'none';
     });
 
     // Theme observer
@@ -622,5 +675,66 @@
 
   .av__source {
     margin-bottom: var(--sp-3);
+  }
+
+  .av__popup {
+    position: absolute;
+    max-width: 360px;
+    padding: var(--sp-2) var(--sp-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+    z-index: 20;
+    backdrop-filter: blur(12px);
+  }
+
+  .av__popup-close {
+    position: absolute;
+    top: 6px;
+    right: 8px;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 18px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 4px;
+  }
+  .av__popup-close:hover {
+    color: var(--color-text);
+  }
+
+  .av__popup-claim {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.5;
+    margin-bottom: var(--sp-1);
+    padding-right: var(--sp-3);
+  }
+
+  .av__popup-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+
+  .av__popup-tag {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .av__popup-tag[style*="background:#3b82f6"],
+  .av__popup-tag[style*="background:#ef4444"],
+  .av__popup-tag[style*="background:#f97316"],
+  .av__popup-tag[style*="background:#eab308"],
+  .av__popup-tag[style*="background:#22c55e"] {
+    color: #fff;
   }
 </style>
