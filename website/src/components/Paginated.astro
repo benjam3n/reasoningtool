@@ -2,7 +2,16 @@
 // Paginated.astro — click-to-advance pagination for viewport-height slides
 // Wraps child <section> elements as full-viewport slides.
 // Click right half → next, left half → prev. Arrow keys work too.
+import Header from './Header.astro';
+
+interface Props {
+  activeNav?: string;
+}
+
+const { activeNav = '' } = Astro.props;
 ---
+
+<Header activeNav={activeNav} />
 
 <div class="paginated" id="paginated">
   <div class="paginated__slides">
@@ -18,14 +27,17 @@
 <style>
   .paginated {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     overflow: hidden;
     background: var(--color-bg);
   }
 
   .paginated__slides {
     width: 100%;
-    height: 100vh;
+    height: 100%;
     position: relative;
   }
 
@@ -33,10 +45,11 @@
     position: absolute;
     inset: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
     display: none;
     padding: var(--sp-5) var(--sp-4);
+    padding-bottom: 4rem;
     box-sizing: border-box;
   }
 
@@ -113,6 +126,13 @@
     const container = document.getElementById('paginated');
     if (!container) return;
 
+    // Position paginated area below the nav bar
+    const nav = document.querySelector('.nav') as HTMLElement;
+    if (nav) {
+      const navHeight = nav.offsetHeight;
+      container.style.top = navHeight + 'px';
+    }
+
     const slidesWrap = container.querySelector('.paginated__slides');
     if (!slidesWrap) return;
 
@@ -125,6 +145,12 @@
     const indicator = document.getElementById('pg-indicator');
     const prevBtn = document.getElementById('pg-prev') as HTMLButtonElement;
     const nextBtn = document.getElementById('pg-next') as HTMLButtonElement;
+
+    // Hide pagination controls if only one slide
+    const pgNav = container.querySelector('.paginated__nav') as HTMLElement;
+    if (total <= 1 && pgNav) {
+      pgNav.style.display = 'none';
+    }
 
     function show(index: number) {
       if (index < 0 || index >= total) return;

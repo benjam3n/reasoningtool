@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
 import '../styles/global.css';
 
 const tier1 = [
@@ -534,6 +535,7 @@ const totalCount = allSkillNames.size;
   <ViewTransitions />
 </head>
 <body class="skills-page">
+  <Header activeNav="skills" />
   <section class="skill-cloud">
     {[...categorySkills, ...experimental, ...tier1, ...tier2,
       ...tier3Categories.flatMap(c => c.skills),
