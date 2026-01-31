@@ -19,7 +19,7 @@ src/
 │   ├── araw_engine.py     # Core SQLite engine (library + CLI)
 │   ├── auto_expand_llm.py # LLM-powered tree expansion
 │   ├── auto_expand.py     # Rule-based tree expansion (no API needed)
-│   ├── visualize.py       # Interactive HTML viewer + JSON/GEXF export
+│   ├── visualize.py       # Interactive HTML viewer + JSON/GEXF export (supports --session)
 │   ├── synthesize.py      # Cross-database synthesis and action extraction
 │   ├── synthesis.py       # LLM-powered query engine over ARAW trees
 │   ├── grounding.py       # Evidence grounding with epistemic quality tiers
@@ -33,6 +33,12 @@ src/
 │   ├── goal_journey_mapper.py # Extract goal journey fields from ARAW trees
 │   ├── example_surgery.py    # Worked example: "$50k for surgery"
 │   └── __init__.py
+├── storage/               # Session storage and cross-session index
+│   ├── session_store.py   # Create/load/search session directories
+│   ├── index_db.py        # Cross-session SQLite index with full-text search
+│   ├── analysis_writer.py # Save structured analysis output as analysis.json
+│   ├── export.py          # Export sessions to JSON, GEXF, or Markdown
+│   └── __main__.py        # CLI: list, search, show, link, export sessions
 ├── runners/               # High-level GOSM execution
 │   ├── gosm_runner.py     # Goal processing with AI context + ARAW
 │   └── gosm_agent.py      # Tool-assisted verification agent
@@ -104,6 +110,41 @@ python synthesize.py *.db --extract-actions actions.json
 
 # Find contradictions between runs
 python synthesize.py *.db --find-tensions
+```
+
+### 6. Session storage
+
+Sessions group a tree database, metadata, and exports into a single directory. The cross-session index enables search and linking across runs.
+
+```bash
+# List all sessions
+python -m storage list
+
+# Search findings across sessions
+python -m storage search "career"
+
+# Show session details
+python -m storage show <session-id>
+
+# Export a session to JSON/GEXF/Markdown
+python -m storage export <session-id>
+
+# Rebuild the index from session directories
+python -m storage rebuild
+
+# Visualize a session by ID
+python araw/visualize.py --session <session-id>
+```
+
+Programmatic usage:
+
+```python
+from storage import SessionStore
+
+store = SessionStore()
+session = store.create_session(skill="araw", input_text="Should I change careers?", depth=4)
+# session.dir_path  -> sessions/<id>/
+# session.tree_db_path -> sessions/<id>/tree.db
 ```
 
 ## Database schema

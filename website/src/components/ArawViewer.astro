@@ -342,20 +342,24 @@
   }
 
   async function checkDemos() {
-    // Try to detect available demo files
     const select = document.getElementById('av-source') as HTMLSelectElement;
-    const demoFiles = ['career', 'education', 'example'];
-    for (const name of demoFiles) {
-      try {
-        const resp = await fetch(`/demos/${name}.json`, { method: 'HEAD' });
-        if (resp.ok) {
-          const opt = document.createElement('option');
-          opt.value = `/demos/${name}.json`;
-          opt.textContent = `Demo: ${name}`;
-          select.appendChild(opt);
-        }
-      } catch (_) { /* not found */ }
-    }
+    try {
+      const resp = await fetch('/demos/manifest.json');
+      if (!resp.ok) return;
+      const manifest = await resp.json();
+      const demos = manifest.demos || [];
+      if (demos.length === 0) return;
+
+      const group = document.createElement('optgroup');
+      group.label = 'Demo datasets';
+      for (const demo of demos) {
+        const opt = document.createElement('option');
+        opt.value = `/demos/${demo.file}`;
+        opt.textContent = `${demo.name} (${demo.nodes} nodes)`;
+        group.appendChild(opt);
+      }
+      select.appendChild(group);
+    } catch (_) { /* manifest not found */ }
   }
 
   if (document.readyState === 'loading') {

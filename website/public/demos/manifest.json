@@ -1,0 +1,21 @@
+{
+  "generated": "2026-01-31T02:33:02.590595",
+  "demos": [
+    {
+      "id": "ai_alignment",
+      "name": "Ai Alignment",
+      "file": "ai_alignment.json",
+      "nodes": 949,
+      "max_depth": 7,
+      "root_claim": "AI alignment is possible and solvable"
+    },
+    {
+      "id": "ai_alignment_v2",
+      "name": "Ai Alignment V2",
+      "file": "ai_alignment_v2.json",
+      "nodes": 826,
+      "max_depth": 7,
+      "root_claim": "AI alignment is possible and solvable"
+    }
+  ]
+}
