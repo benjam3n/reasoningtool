@@ -1,5 +1,5 @@
 {
-  "generated": "2026-01-31T02:33:02.590595",
+  "generated": "2026-01-31T03:27:52.884963",
   "demos": [
     {
       "id": "ai_alignment",
@@ -16,6 +16,14 @@
       "nodes": 826,
       "max_depth": 7,
       "root_claim": "AI alignment is possible and solvable"
+    },
+    {
+      "id": "alignment_technical",
+      "name": "Alignment Technical",
+      "file": "alignment_technical.json",
+      "nodes": 949,
+      "max_depth": 5,
+      "root_claim": "The technical problem of ensuring superintelligent AI systems remain aligned with human values is solvable with current research approaches"
     }
   ]
 }
