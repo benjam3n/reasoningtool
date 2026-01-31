@@ -1,5 +1,5 @@
 ---
-name: "analysis - Analyze a Situation"
+name: "analyze - Analyze a Situation"
 description: Sub-orchestrator for analytical requests. Routes to decomposition, systems analysis, comparison, risk assessment, or synthesis based on what kind of analysis is needed.
 ---
 
@@ -35,7 +35,7 @@ description: Sub-orchestrator for analytical requests. Routes to decomposition, 
 
 - **A thing** (document, plan, code, argument): /evaluate is usually the better fit.
   → INVOKE: /evaluate $ARGUMENTS
-- **A situation** (market, team dynamics, failure pattern, system behavior): /analysis handles this.
+- **A situation** (market, team dynamics, failure pattern, system behavior): /analyze handles this.
 
 ### 4. Decomposition, Synthesis, or Both?
 

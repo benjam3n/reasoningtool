@@ -40,7 +40,7 @@ What does the user want done? State it as a verb + object. "Write a business pla
 | Debug / Fix (code) | → /diagnose |
 | Plan | → /how |
 | Review / Check | → /evaluate |
-| Analyze | → /analysis |
+| Analyze | → /analyze |
 | Research | → /search |
 
 If no clear match, proceed with general execution.

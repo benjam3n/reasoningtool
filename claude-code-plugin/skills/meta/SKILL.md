@@ -45,7 +45,7 @@ If the user describes a problem and asks for help, classify it:
 | An idea or proposal | → /viability |
 | Content to produce | → /create |
 | A domain-specific question | → /technical |
-| A problem to analyze | → /analysis |
+| A problem to analyze | → /analyze |
 
 ---
 

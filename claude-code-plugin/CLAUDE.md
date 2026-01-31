@@ -32,7 +32,7 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Something to execute | `/action` | Direct |
 | Content to produce | `/create` | Direct |
 | A domain-specific question | `/technical` | Router |
-| A problem to analyze | `/analysis` | Router |
+| A problem to analyze | `/analyze` | Router |
 | Need for maximum effort | `/certainty` | Maximum |
 | Something to iterate on | `/iterate` | Meta-iteration |
 | Need orientation | `/meta` | Informational |

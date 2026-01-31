@@ -24,7 +24,7 @@ description: Sub-orchestrator for creative and content production requests. Rout
 
 ### 2. Is This Actually Content Creation?
 
-- **"Analyze X and write it up"** → needs analysis first. → INVOKE: /analysis $ARGUMENTS first, then /create with findings.
+- **"Analyze X and write it up"** → needs analysis first. → INVOKE: /analyze $ARGUMENTS first, then /create with findings.
 - **"Compare X and Y"** → this is evaluation/comparison. → INVOKE: /evaluate $ARGUMENTS or /cmp.
 - **"Plan for X"** → this is method-seeking. → INVOKE: /how $ARGUMENTS
 - **If it IS content creation** → continue.
@@ -33,7 +33,7 @@ description: Sub-orchestrator for creative and content production requests. Rout
 
 Some creation tasks require research or analysis before writing:
 
-- **"Write a market analysis"** → INVOKE: /analysis first (market research), then write with findings.
+- **"Write a market analysis"** → INVOKE: /analyze first (market research), then write with findings.
 - **"Write a business plan"** → INVOKE: /how first (strategy), then write with the plan.
 - **"Draft an email to my boss about the problem"** → INVOKE: /diagnose first (understand the problem), then write.
 - **"Write a blog post about X"** → can write directly if X is understood.

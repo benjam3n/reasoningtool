@@ -1,1 +1,0 @@
-Sub-orchestrator for analytical requests. Routes to decomposition, systems analysis, comparison, risk assessment, or synthesis based on what kind of analysis is needed. Read and execute `claude-code-plugin/skills/analysis/SKILL.md`, applying it to this input: $ARGUMENTS
