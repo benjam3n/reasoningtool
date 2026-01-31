@@ -196,13 +196,7 @@ import Base from '../layouts/Base.astro';
   <section class="prose">
     <h2 id="principle">The underlying principle</h2>
 
-    <p>This isn&rsquo;t an LLM-specific hack. It&rsquo;s a result from search theory: <strong>constrained systematic search outperforms unconstrained heuristic search</strong>, regardless of the searcher&rsquo;s intelligence.</p>
-
-    <p>Aviation checklists work because pilot expertise is less reliable than mechanical verification. Scientific method works because individual insight is less reliable than systematic testing. Algorithms work because human calculation is less reliable than mechanical steps.</p>
-
-    <p>LLMs are the latest domain where this applies. The model is an unreliable heuristic reasoner &mdash; extraordinarily capable, but optimizing for the wrong objective. Structured procedures redirect that capability through systematic verification.</p>
-
-    <p>This works regardless of which model you use (Claude, GPT, Gemini, Llama), which domain you&rsquo;re in (science, business, personal decisions), and which task you&rsquo;re doing (analysis, writing, planning, research). The failure modes are universal, and the fix is universal:</p>
+    <p>Constrained search outperforms unconstrained search, regardless of the searcher&rsquo;s intelligence. Checklists beat expertise. Method beats insight. The constraints do the work:</p>
 
     <ul>
       <li>Breadth requirements defeat premature convergence</li>
@@ -214,37 +208,29 @@ import Base from '../layouts/Base.astro';
   </section>
 
   <section class="prose">
-    <h2 id="limits">Honest limitations</h2>
+    <h2 id="limits">Limitations</h2>
 
-    <p>Structured procedures are search algorithms, not magic. They improve reasoning quality on average, not in every case.</p>
+    <p><strong>Works well for:</strong> option exploration, multiple valid approaches, articulable evaluation criteria, iterative refinement.</p>
 
-    <p><strong>Where they work best:</strong> Tasks requiring option exploration, multiple valid approaches, articulable evaluation criteria, and iterative refinement.</p>
-
-    <p><strong>Where they help less:</strong></p>
+    <p><strong>Works less well for:</strong></p>
     <ul>
       <li>Tasks requiring real-world grounding the model can&rsquo;t access (physical observation, real-time data)</li>
       <li>Domains where &ldquo;I&rsquo;ll know it when I see it&rdquo; is genuinely the best criterion</li>
       <li>Purely creative tasks where exploration matters more than verification</li>
       <li>Adversarial environments where published procedures become exploitable</li>
     </ul>
-
-    <p>The claim is not that these procedures are perfect. The claim is that <strong>structured reasoning is better than unstructured reasoning</strong>, regardless of who or what is doing the reasoning. That claim is falsifiable, applies to any model, and is grounded in search theory rather than product marketing.</p>
   </section>
 
   <section class="prose">
     <h2 id="questions">Only asking questions can lead to self-improvement</h2>
 
-    <p>Because questions have goals and answers do not. A question gives you a direction &mdash; it identifies where you are in the search space and where you want to be. An answer is just a point. It only makes sense in the context of a question with a goal.</p>
-
-    <p>In physics terms: a question is like a vector (magnitude and direction), while an answer is like a scalar (just a value). A question is multidimensional. An answer is not.</p>
+    <p>A question has a goal &mdash; it identifies where you are and where you want to be. An answer is just a point. It only means something in the context of a question that has a goal. Self-improvement is movement from where you are to where you want to be, which is a question, not an answer.</p>
   </section>
 
   <section class="prose">
     <h2 id="goal-oriented">All action is goal-oriented</h2>
 
-    <p>Every action is an attempt to reach a goal. That goal is itself in service of a deeper goal, which serves a deeper one still. Any behavior can be traced back through a chain of goals to an original intention that made sense.</p>
-
-    <p>Even counterproductive actions started as reasonable searches toward a valid goal. The action persists because the goal still exists, but the search path is wrong. The system helps you do two things: find the actual goal behind the action, and search the space for better paths to it. The gap between the goal and the current search path is where improvements live.</p>
+    <p>Every action is a search toward a goal. That goal serves a deeper goal, which serves a deeper one. Trace any behavior back far enough and you find an original intention that made sense. Even counterproductive actions are searches toward valid goals &mdash; the goal is right, the search path is wrong. The gap between the two is where improvements live.</p>
   </section>
 
   <section>
