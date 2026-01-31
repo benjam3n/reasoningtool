@@ -1,6 +1,6 @@
 # Reasoning Toolkit
 
-This project contains 221 thinking skills. Each skill is a structured procedure in `claude-code-plugin/skills/[name]/SKILL.md`.
+This project contains 355 thinking skills. Each skill is a structured procedure in `claude-code-plugin/skills/[name]/SKILL.md`.
 
 ## How Skills Work
 

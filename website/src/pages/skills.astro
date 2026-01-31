@@ -51,13 +51,14 @@ const categorySkills = [
   { name: 'meta', title: 'Get Oriented', desc: 'Skill discovery, usage guidance, and orientation' },
   { name: 'certainty', title: 'Maximum Effort', desc: 'Continues analysis iteratively until thoroughly resolved' },
   { name: 'iterate', title: 'Iterate', desc: 'Identifies what needs iteration, at what level, dimension, and scale — then executes' },
+  { name: 'sp', title: 'Steelman Prompt', desc: 'Improves a prompt before it gets answered — adds precision, scope, and criteria' },
 ];
 
 const experimental = [
   { name: 'araw', title: 'Assume Right / Assume Wrong', desc: 'Tests both branches of any claim recursively' },
   { name: 'uaua', title: 'Universalize, ARAW, Loop', desc: 'Alternates exploration and testing' },
   { name: 'gosm', title: 'Goal-Oriented State Machine', desc: 'Routes input through the appropriate analysis chain' },
-  { name: 'sp', title: 'Steelman Prompt', desc: 'Improves a prompt before it gets answered — adds precision, scope, and criteria' },
+  { name: 'gts', title: 'Generate-Then-Search', desc: 'The fundamental pattern: generate possibilities, then search using criteria' },
 ];
 
 const tier3Categories = [
@@ -76,6 +77,8 @@ const tier3Categories = [
       { name: 'sop', title: 'Source Prioritization' },
       { name: 'er', title: 'Economic Research' },
       { name: 'plr', title: 'Policy Research' },
+      { name: 'ess', title: 'External Source Search' },
+      { name: 'sor', title: 'Source Research' },
     ],
   },
   {
@@ -90,12 +93,14 @@ const tier3Categories = [
       { name: 'orm', title: 'Outreach Communication' },
       { name: 'fd', title: 'Feedback Delivery' },
       { name: 'al', title: 'Active Listening' },
+      { name: 'argd', title: 'Argumentative Document' },
     ],
   },
   {
     category: 'Planning & Projects',
     skills: [
       { name: 'pji', title: 'Project Initiation' },
+      { name: 'pjs', title: 'Project Scoping' },
       { name: 'de', title: 'Dependency Extraction' },
       { name: 'pjc', title: 'Project Closure' },
       { name: 'op', title: 'Order Procedure' },
@@ -104,6 +109,8 @@ const tier3Categories = [
       { name: 'dpl', title: 'Deployment' },
       { name: 'ret', title: 'Retrospective' },
       { name: 'skm', title: 'Stakeholder Management' },
+      { name: 'dop', title: 'Documentation' },
+      { name: 'pp', title: 'Procurement' },
     ],
   },
   {
@@ -118,10 +125,11 @@ const tier3Categories = [
       { name: 'bm', title: 'Budget Management' },
       { name: 'ivs', title: 'Investment Strategy' },
       { name: 'roa', title: 'ROI Analysis' },
+      { name: 'bo', title: 'Business Operations' },
     ],
   },
   {
-    category: 'Software',
+    category: 'Software & Engineering',
     skills: [
       { name: 'cor', title: 'Code Review' },
       { name: 'dbg', title: 'Debugging' },
@@ -131,6 +139,9 @@ const tier3Categories = [
       { name: 'apid', title: 'API Design' },
       { name: 'ts', title: 'Testing Strategy' },
       { name: 'sep', title: 'Security Practices' },
+      { name: 'sdp', title: 'Embedded Software' },
+      { name: 'enc', title: 'Engineering Calculations' },
+      { name: 'dsp', title: 'Mechanical Design' },
     ],
   },
   {
@@ -158,6 +169,37 @@ const tier3Categories = [
       { name: 'mcd', title: 'Multi-Criteria Decision' },
       { name: 'rva', title: 'Reversibility Analysis' },
       { name: 'boc', title: 'Better Option Check' },
+      { name: 'gdm', title: 'Group Decision Making' },
+    ],
+  },
+  {
+    category: 'Health & Wellness',
+    skills: [
+      { name: 'ho', title: 'Health Optimization' },
+    ],
+  },
+  {
+    category: 'Crisis & Volatility',
+    skills: [
+      { name: 'ch', title: 'Crisis Handler' },
+      { name: 'hvh', title: 'High Volatility Handler' },
+      { name: 'ita', title: 'Impossible to Achievable' },
+    ],
+  },
+  {
+    category: 'Competitive Programming',
+    skills: [
+      { name: 'ape', title: 'Alphacode Pass 1 (Explicit)' },
+      { name: 'api', title: 'Alphacode Pass 2 (Implicit)' },
+      { name: 'apm', title: 'Alphacode Pass 3 (Meta)' },
+    ],
+  },
+  {
+    category: 'Scientific Research',
+    skills: [
+      { name: 'aba', title: 'AI Biomedical Agent' },
+      { name: 'spp', title: 'Spatial Proteomics' },
+      { name: 'ops', title: 'Optical Pooled Screening' },
     ],
   },
 ];
@@ -180,6 +222,11 @@ const tier4Categories = [
       { name: 'foht', title: 'Figure Out How To' },
       { name: 'md', title: 'Method Derivation' },
       { name: 'fe', title: 'Framework Extension' },
+      { name: 'ie', title: 'Innovation Engine' },
+      { name: 'cdb', title: 'Cross-Domain Bridge' },
+      { name: 'cga', title: 'Cognitive Amplification' },
+      { name: 'cnw', title: 'Constraint Workaround' },
+      { name: 'va', title: 'Variation Analysis' },
     ],
   },
   {
@@ -197,6 +244,8 @@ const tier4Categories = [
       { name: 'fnd', title: 'Skill Finder' },
       { name: 'm', title: 'Matching' },
       { name: 'jm', title: 'Journey Matching' },
+      { name: 'smc', title: 'Search Methods Catalog' },
+      { name: 'spe', title: 'Search Paradigm Extensions' },
     ],
   },
   {
@@ -213,6 +262,25 @@ const tier4Categories = [
       { name: 'je', title: 'Journey Extraction' },
       { name: 'agi', title: 'ARAW to GOSM Integration' },
       { name: 'atgb', title: 'ARAW to GOSM Bridge' },
+      { name: 'ugav2', title: 'Goal Analysis v2' },
+      { name: 'ugav3', title: 'Goal Analysis v3' },
+      { name: 'ugav4', title: 'Goal Analysis v4' },
+      { name: 'ugav5', title: 'Goal Analysis v5' },
+    ],
+  },
+  {
+    category: 'Goal Type Handlers',
+    skills: [
+      { name: 'eg', title: 'Exploratory Goals' },
+      { name: 'ig', title: 'Intuition Goals' },
+      { name: 'ldg', title: 'Luck-Dependent Goals' },
+      { name: 'rlg', title: 'Relationship Goals' },
+      { name: 'clg', title: 'Collective/Movement Goals' },
+      { name: 'mpg', title: 'Multi-Party Goals' },
+      { name: 'idg', title: 'Iterative Discovery Goals' },
+      { name: 'pvg', title: 'Preventive/Defensive Goals' },
+      { name: 'rsg', title: 'Restoration/Recovery Goals' },
+      { name: 'pag', title: 'Paradox/Trade-off Goals' },
     ],
   },
   {
@@ -225,6 +293,11 @@ const tier4Categories = [
       { name: 'cri', title: 'Critique' },
       { name: 'mem', title: 'Mental Models' },
       { name: 'bi', title: 'Bounded Inquiry' },
+      { name: 'advr', title: 'Adversarial Review' },
+      { name: 'cv', title: 'Convergent Validation' },
+      { name: 'stc', title: 'Steelmanned Counterarguments' },
+      { name: 'tp', title: 'Truth Propagation' },
+      { name: 'eh', title: 'Epistemic Hierarchy' },
     ],
   },
   {
@@ -240,6 +313,9 @@ const tier4Categories = [
       { name: 'pre', title: 'Preference Elicitation' },
       { name: 've', title: 'Value Elicitation' },
       { name: 'vcd', title: 'Value Conflict Decomposition' },
+      { name: 'qg', title: 'Question Generation' },
+      { name: 'qm', title: 'Qualitative Measurement' },
+      { name: 'evd', title: 'Evaluation Dimensions' },
     ],
   },
   {
@@ -253,6 +329,10 @@ const tier4Categories = [
       { name: 'lpd', title: 'Leverage Point Discovery' },
       { name: 'cfr', title: 'Conflict Resolution' },
       { name: 'shc', title: 'System Health Check' },
+      { name: 'afa', title: 'Anticipated Failures (Premortem)' },
+      { name: 'fat', title: 'Failure Attribution' },
+      { name: 'fj', title: 'Failure Journey System' },
+      { name: 'gaa', title: 'GOSM Approach Audit' },
     ],
   },
   {
@@ -270,6 +350,18 @@ const tier4Categories = [
       { name: 'txm', title: 'Taxonomy Maintenance' },
       { name: 'adep', title: 'Adaptive Extraction Pipeline' },
       { name: 'auep', title: 'Automated Extraction Pipeline' },
+      { name: 'pcef', title: 'Procedure Effectiveness' },
+      { name: 'dot', title: 'Delayed Outcome Tracking' },
+      { name: 'ph', title: 'Procedure Hierarchy' },
+      { name: 'so', title: 'Structured Output' },
+      { name: 'uo', title: 'Unassailable Output' },
+      { name: 'gee', title: 'Gate Execution Engine' },
+      { name: 'pqr', title: 'Proactive Question Rotation' },
+      { name: 'gaca', title: 'Gate As Claim Audit' },
+      { name: 'cpra', title: 'Comprehensive Aspects' },
+      { name: 'vhd', title: 'Vertical vs Horizontal Decision' },
+      { name: 'tnt', title: 'Tension Navigation' },
+      { name: 'cppd', title: 'Cross-Project Pattern Detection' },
     ],
   },
   {
@@ -280,6 +372,14 @@ const tier4Categories = [
       { name: 'sads', title: 'Detector Sweep' },
       { name: 'sagsca', title: 'Gate Schema Consistency Audit' },
       { name: 'satrda', title: 'Two-Run Divergence Audit' },
+      { name: 'saadag', title: 'Detectors + Generators' },
+      { name: 'saaiasa', title: 'Intent + Speech Acts' },
+      { name: 'sacri', title: 'Cross-Reference Integrity' },
+      { name: 'sadrt', title: 'Divergence Risk Test' },
+      { name: 'sapea', title: 'Procedure Executability Audit' },
+      { name: 'saqrc', title: 'Question Rewrite Chains' },
+      { name: 'saropc', title: 'RCI on Protocol Choices' },
+      { name: 'sarus', title: 'Repo Unclarity Scan' },
     ],
   },
   {
@@ -293,6 +393,8 @@ const tier4Categories = [
       { name: 'spg', title: 'Specificity Gate' },
       { name: 'skb', title: 'Skill Benchmarking' },
       { name: 'fb', title: 'Filtered Feedback' },
+      { name: 'vp', title: 'Verification Procedures' },
+      { name: 'av', title: 'Assumption Verification' },
     ],
   },
   {
@@ -303,11 +405,23 @@ const tier4Categories = [
       { name: 'stg', title: 'Steps Generation' },
       { name: 'o', title: 'Optimization' },
       { name: 'rqg', title: 'Requirements Gathering' },
-      { name: 'gdm', title: 'Group Decision Making' },
       { name: 'cms', title: 'Component Selection' },
       { name: 'swa', title: 'SWOT Analysis' },
       { name: 'ssr', title: 'Session Review' },
       { name: 'wr', title: 'Weekly Review' },
+      { name: 'dsd', title: 'Deductive Strategy Discovery' },
+      { name: 'dse', title: 'Deductive Strategy Evaluation' },
+      { name: 'dss', title: 'Design System' },
+      { name: 'dtl', title: 'Design Thinking + Lean' },
+      { name: 'ol', title: 'OODA Loop' },
+      { name: 'st', title: 'Strategy Templates' },
+      { name: 'snp', title: 'Scenario Planning' },
+      { name: 'es', title: 'Evolutionary Strategies' },
+      { name: 'sym', title: 'System Modeling' },
+      { name: 'lp', title: 'Leverage Points' },
+      { name: 'lps', title: 'Logical Proof System' },
+      { name: 'dari', title: 'Deductive Adversarial Review' },
+      { name: 'aar', title: 'After Action Review' },
     ],
   },
   {
@@ -365,12 +479,53 @@ const tier4Categories = [
       { name: 'eda', title: 'Event-Driven Automation' },
     ],
   },
+  {
+    category: 'Orderings',
+    skills: [
+      { name: 'ao', title: 'Algorithmic Optimization' },
+      { name: 'arcd', title: 'Architecture Design' },
+      { name: 'be', title: 'Bandit Exploration' },
+      { name: 'cn', title: 'Communication Narrative' },
+      { name: 'cns', title: 'Constraint Solving' },
+      { name: 'ct', title: 'Crisis Triage' },
+      { name: 'dv', title: 'Detection Verification' },
+      { name: 'dvs', title: 'Diversity Search' },
+      { name: 'faa', title: 'Fairness Allocation' },
+      { name: 'gt', title: 'Graph Traversal' },
+      { name: 'lcs', title: 'Local Search' },
+      { name: 'ld', title: 'Learning Discovery' },
+      { name: 'mil', title: 'Military Strategy' },
+      { name: 'mcp', title: 'Musical Composition' },
+      { name: 'mp', title: 'Motivation Psychology' },
+      { name: 'ns', title: 'Negotiation Strategy' },
+      { name: 'ov', title: 'Ordering Variations' },
+      { name: 'ovi', title: 'Ordering Integration Guide' },
+      { name: 'pb', title: 'Progressive Building' },
+      { name: 'pbs', title: 'Population-Based Search' },
+      { name: 'pf', title: 'Priority Frameworks' },
+      { name: 'pge', title: 'Pedagogy/Educational' },
+      { name: 'pjm', title: 'Project Management' },
+      { name: 'qs', title: 'Queue Scheduling' },
+      { name: 'rm', title: 'Risk Management' },
+      { name: 'rso', title: 'Resource Optimization' },
+      { name: 'srd', title: 'Strategic Competitive' },
+      { name: 'td', title: 'Temporal/Deadline' },
+    ],
+  },
 ];
+
+// Count all skills
+const allSkillNames = new Set();
+[...tier1, ...tier2, ...categorySkills, ...experimental].forEach(s => allSkillNames.add(s.name));
+tier3Categories.forEach(c => c.skills.forEach(s => allSkillNames.add(s.name)));
+tier4Categories.forEach(c => c.skills.forEach(s => allSkillNames.add(s.name)));
+const totalCount = allSkillNames.size;
 ---
 
-<Base title="Skills" activeNav="skills" description="221 structured reasoning skills for Claude Code.">
+<Base title="Skills" activeNav="skills" description={`${totalCount} structured reasoning skills for Claude Code.`}>
   <div class="page-header">
     <h1>Skills</h1>
+    <p>{totalCount} structured reasoning skills</p>
   </div>
 
   <div class="callout">
@@ -391,7 +546,7 @@ const tier4Categories = [
   </section>
 
   <section>
-    <h2><span class="tier-badge tier-exp">Experimental</span> ARAW, UAUA, GOSM</h2>
+    <h2><span class="tier-badge tier-exp">Experimental</span> Core Frameworks</h2>
     <div class="skill-grid">
       {experimental.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
