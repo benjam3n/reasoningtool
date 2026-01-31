@@ -1,0 +1,193 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import SkillsGraph from '../components/SkillsGraph.astro';
+import ArawViewer from '../components/ArawViewer.astro';
+import { loadGraphData, TIER_COLORS } from '../data/build-skills-graph';
+import '../styles/global.css';
+
+const graphData = loadGraphData();
+
+const PAGE_GROUPS_VISUAL = ['/skills', '/visuals'];
+const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Interactive graph and ARAW viewer for reasoning skills." />
+  <title>Visuals — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Header activeNav="visuals" />
+
+  <div class="paginated" id="paginated" data-page-group="visual" data-page-index={pageIndex}>
+    <div class="paginated__slides">
+      <section class="visual-section">
+        <SkillsGraph graphData={graphData} tierColors={TIER_COLORS} />
+      </section>
+      <section class="visual-section">
+        <ArawViewer />
+      </section>
+    </div>
+    <div class="paginated__nav">
+      <button class="paginated__arrow paginated__arrow--prev" id="pg-prev" aria-label="Previous slide">&larr;</button>
+      <span class="paginated__indicator" id="pg-indicator">1 / 2</span>
+      <button class="paginated__arrow paginated__arrow--next" id="pg-next" aria-label="Next slide">&rarr;</button>
+    </div>
+  </div>
+</body>
+</html>
+
+<script>
+  // Load D3 as ES module for the graph component
+  import * as d3Module from 'd3';
+  (window as any).d3 = d3Module;
+</script>
+
+<script>
+  // Reuse the same pagination logic as Paginated.astro
+  const PAGE_GROUPS: Record<string, string[]> = {
+    info: ['/', '/getting-started', '/why', '/tools', '/faq', '/about'],
+    visual: ['/skills', '/visuals'],
+  };
+
+  document.addEventListener('astro:page-load', () => {
+    const container = document.getElementById('paginated');
+    if (!container) return;
+
+    const group = container.dataset.pageGroup || '';
+    const pages = PAGE_GROUPS[group] || [];
+    const pageIndex = parseInt(container.dataset.pageIndex || '0', 10);
+
+    const slidesWrap = container.querySelector('.paginated__slides');
+    if (!slidesWrap) return;
+
+    const sections = Array.from(slidesWrap.querySelectorAll(':scope > section'));
+    if (sections.length === 0) return;
+
+    let current = 0;
+    const total = sections.length;
+
+    const indicator = document.getElementById('pg-indicator');
+    const prevBtn = document.getElementById('pg-prev') as HTMLButtonElement;
+    const nextBtn = document.getElementById('pg-next') as HTMLButtonElement;
+
+    function show(index: number) {
+      if (index < 0 || index >= total) return;
+      sections.forEach((s, i) => {
+        s.classList.toggle('active', i === index);
+      });
+      current = index;
+      if (indicator) indicator.textContent = `${current + 1} / ${total}`;
+    }
+
+    function goNextPage() {
+      if (pages.length === 0) return;
+      const nextIndex = (pageIndex + 1) % pages.length;
+      window.location.href = pages[nextIndex];
+    }
+
+    function goPrevPage() {
+      if (pages.length === 0) return;
+      const prevIndex = (pageIndex - 1 + pages.length) % pages.length;
+      window.location.href = pages[prevIndex];
+    }
+
+    function next() {
+      if (current < total - 1) show(current + 1);
+      else goNextPage();
+    }
+
+    function prev() {
+      if (current > 0) show(current - 1);
+      else goPrevPage();
+    }
+
+    show(0);
+
+    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
+    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
+
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
+      if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+    });
+  });
+</script>
+
+<style>
+  .paginated {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    background: var(--color-bg);
+  }
+
+  .paginated__slides {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .visual-section {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    display: none;
+    box-sizing: border-box;
+  }
+
+  .visual-section:global(.active) {
+    display: block;
+  }
+
+  .paginated__nav {
+    position: fixed;
+    bottom: var(--sp-3);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: var(--sp-1) var(--sp-3);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    user-select: none;
+  }
+
+  .paginated__arrow {
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    padding: var(--sp-1) var(--sp-2);
+    border-radius: 4px;
+    transition: color var(--transition), background var(--transition);
+    font-family: var(--font-sans);
+    line-height: 1;
+  }
+
+  .paginated__arrow:hover {
+    color: var(--color-text);
+    background: var(--color-bg-secondary);
+  }
+
+  .paginated__indicator {
+    min-width: 3em;
+    text-align: center;
+  }
+</style>

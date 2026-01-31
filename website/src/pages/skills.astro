@@ -544,6 +544,25 @@ const totalCount = allSkillNames.size;
       <a href={`/skills/${s.name}`} class="skill-chip">{s.name}</a>
     ))}
   </section>
+
+  <script>
+    // Cross-page navigation for visual group
+    const VISUAL_PAGES = ['/skills', '/visuals'];
+    const PAGE_INDEX = 0;
+
+    document.addEventListener('astro:page-load', () => {
+      document.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          window.location.href = VISUAL_PAGES[(PAGE_INDEX + 1) % VISUAL_PAGES.length];
+        }
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          window.location.href = VISUAL_PAGES[(PAGE_INDEX - 1 + VISUAL_PAGES.length) % VISUAL_PAGES.length];
+        }
+      });
+    });
+  </script>
 </body>
 </html>
 

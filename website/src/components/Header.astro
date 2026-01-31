@@ -5,39 +5,129 @@ interface Props {
 const { activeNav = '' } = Astro.props;
 
 const links = [
-  { href: '/skills', label: 'Skills', id: 'skills' },
-  { href: '/graph', label: 'Graph', id: 'graph' },
-  { href: '/viewer', label: 'Viewer', id: 'viewer' },
-  { href: '/tools', label: 'Tools', id: 'tools' },
-  { href: '/getting-started', label: 'Get Started', id: 'getting-started' },
+  { href: '/', label: 'Home', id: 'home' },
+  { href: '/getting-started', label: 'Start', id: 'getting-started' },
   { href: '/why', label: 'Why', id: 'why' },
+  { href: '/tools', label: 'Tools', id: 'tools' },
   { href: '/faq', label: 'FAQ', id: 'faq' },
   { href: '/about', label: 'About', id: 'about' },
+  { href: '/skills', label: 'Skills', id: 'skills' },
+  { href: '/visuals', label: 'Visuals', id: 'visuals' },
   { href: 'https://github.com/benjam3n/reasoningtool', label: 'GitHub', id: 'github' },
 ];
 ---
 
-<nav class="nav">
+<button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+  <span class="nav-toggle__icon" id="nav-toggle-icon">&#9776;</span>
+</button>
+
+<nav class="nav nav--hidden" id="main-nav">
   <div class="nav__inner">
-    <a href="/" class="nav__brand">reasoningtool</a>
-    <ul class="nav__links">
-      {links.map(link => (
-        <li>
-          <a
-            href={link.href}
-            class:list={[{ active: activeNav === link.id }]}
-            {...(link.id === 'github' ? { target: '_blank', rel: 'noopener' } : {})}
-          >{link.label}</a>
-        </li>
-      ))}
-      <li>
-        <button class="nav__theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-          <span id="theme-icon">&#9790;</span>
-        </button>
-      </li>
-    </ul>
+    {links.map(link => (
+      <a
+        href={link.href}
+        class:list={[{ active: activeNav === link.id }]}
+        {...(link.id === 'github' ? { target: '_blank', rel: 'noopener' } : {})}
+      >{link.label}</a>
+    ))}
+    <button class="nav__theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+      <span id="theme-icon">&#9790;</span>
+    </button>
   </div>
 </nav>
+
+<style>
+  .nav-toggle {
+    position: fixed;
+    top: var(--sp-2);
+    right: var(--sp-2);
+    z-index: 1001;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    transition: opacity var(--transition), color var(--transition);
+  }
+  .nav-toggle:hover {
+    color: var(--color-text);
+  }
+
+  .nav {
+    position: fixed;
+    top: var(--sp-2);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.3rem 0.6rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: opacity 150ms ease, transform 150ms ease;
+  }
+  .nav--hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(-8px);
+  }
+
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: nowrap;
+  }
+
+  .nav__inner a {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color var(--transition);
+    padding: 0.15rem 0.25rem;
+    border-radius: 4px;
+  }
+
+  .nav__inner a:hover,
+  .nav__inner a.active {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .nav__theme-toggle {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.1rem 0.35rem;
+    cursor: pointer;
+    color: var(--color-text-muted);
+    font-size: var(--text-xs);
+    font-family: var(--font-sans);
+    transition: all var(--transition);
+    line-height: 1;
+  }
+
+  .nav__theme-toggle:hover {
+    border-color: var(--color-text-muted);
+    color: var(--color-text);
+  }
+
+  @media (max-width: 640px) {
+    .nav__inner {
+      gap: 0.4rem;
+    }
+    .nav__inner a {
+      font-size: 0.7rem;
+    }
+  }
+</style>
 
 <script is:inline>
   (function() {
@@ -58,6 +148,8 @@ const links = [
     function setupToggle() {
       applyTheme();
       updateIcon();
+
+      // Theme toggle
       document.getElementById('theme-toggle')?.addEventListener('click', function() {
         const current = document.documentElement.getAttribute('data-theme');
         const isDark = current === 'dark' || (!current && prefersDark);
@@ -66,6 +158,25 @@ const links = [
         localStorage.setItem('theme', next);
         updateIcon();
       });
+
+      // Nav toggle
+      var navToggle = document.getElementById('nav-toggle');
+      var nav = document.getElementById('main-nav');
+      var toggleIcon = document.getElementById('nav-toggle-icon');
+      if (navToggle && nav) {
+        navToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var hidden = nav.classList.toggle('nav--hidden');
+          if (toggleIcon) toggleIcon.innerHTML = hidden ? '&#9776;' : '&#10005;';
+        });
+        // Close nav when clicking outside
+        document.addEventListener('click', function(e) {
+          if (!nav.classList.contains('nav--hidden') && !nav.contains(e.target) && e.target !== navToggle) {
+            nav.classList.add('nav--hidden');
+            if (toggleIcon) toggleIcon.innerHTML = '&#9776;';
+          }
+        });
+      }
     }
 
     document.addEventListener('DOMContentLoaded', setupToggle);

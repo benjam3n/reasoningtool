@@ -2,18 +2,21 @@
 // Paginated.astro — click-to-advance pagination for viewport-height slides
 // Wraps child <section> elements as full-viewport slides.
 // Click right half → next, left half → prev. Arrow keys work too.
+// When at the last/first slide, arrow keys navigate to next/prev page in the group.
 import Header from './Header.astro';
 
 interface Props {
   activeNav?: string;
+  pageGroup?: string;
+  pageIndex?: number;
 }
 
-const { activeNav = '' } = Astro.props;
+const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
 ---
 
 <Header activeNav={activeNav} />
 
-<div class="paginated" id="paginated">
+<div class="paginated" id="paginated" data-page-group={pageGroup} data-page-index={pageIndex}>
   <div class="paginated__slides">
     <slot />
   </div>
@@ -27,10 +30,7 @@ const { activeNav = '' } = Astro.props;
 <style>
   .paginated {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0;
     overflow: hidden;
     background: var(--color-bg);
   }
@@ -69,7 +69,7 @@ const { activeNav = '' } = Astro.props;
 
   .paginated__nav {
     position: fixed;
-    bottom: var(--sp-4);
+    bottom: var(--sp-3);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -105,16 +105,6 @@ const { activeNav = '' } = Astro.props;
     background: var(--color-bg-secondary);
   }
 
-  .paginated__arrow:disabled {
-    opacity: 0.25;
-    cursor: default;
-  }
-
-  .paginated__arrow:disabled:hover {
-    background: none;
-    color: var(--color-text-muted);
-  }
-
   .paginated__indicator {
     min-width: 3em;
     text-align: center;
@@ -122,16 +112,19 @@ const { activeNav = '' } = Astro.props;
 </style>
 
 <script>
+  // Page group definitions for cross-page arrow key navigation (wraps around)
+  const PAGE_GROUPS: Record<string, string[]> = {
+    info: ['/', '/getting-started', '/why', '/tools', '/faq', '/about'],
+    visual: ['/skills', '/visuals'],
+  };
+
   document.addEventListener('astro:page-load', () => {
     const container = document.getElementById('paginated');
     if (!container) return;
 
-    // Position paginated area below the nav bar
-    const nav = document.querySelector('.nav') as HTMLElement;
-    if (nav) {
-      const navHeight = nav.offsetHeight;
-      container.style.top = navHeight + 'px';
-    }
+    const group = container.dataset.pageGroup || '';
+    const pages = PAGE_GROUPS[group] || [];
+    const pageIndex = parseInt(container.dataset.pageIndex || '0', 10);
 
     const slidesWrap = container.querySelector('.paginated__slides');
     if (!slidesWrap) return;
@@ -159,12 +152,35 @@ const { activeNav = '' } = Astro.props;
       });
       current = index;
       if (indicator) indicator.textContent = `${current + 1} / ${total}`;
-      if (prevBtn) prevBtn.disabled = current === 0;
-      if (nextBtn) nextBtn.disabled = current === total - 1;
     }
 
-    function next() { if (current < total - 1) show(current + 1); }
-    function prev() { if (current > 0) show(current - 1); }
+    function goNextPage() {
+      if (pages.length === 0) return;
+      const nextIndex = (pageIndex + 1) % pages.length;
+      window.location.href = pages[nextIndex];
+    }
+
+    function goPrevPage() {
+      if (pages.length === 0) return;
+      const prevIndex = (pageIndex - 1 + pages.length) % pages.length;
+      window.location.href = pages[prevIndex];
+    }
+
+    function next() {
+      if (current < total - 1) {
+        show(current + 1);
+      } else {
+        goNextPage();
+      }
+    }
+
+    function prev() {
+      if (current > 0) {
+        show(current - 1);
+      } else {
+        goPrevPage();
+      }
+    }
 
     // Initialize
     show(0);
@@ -173,7 +189,6 @@ const { activeNav = '' } = Astro.props;
     slidesWrap.addEventListener('click', (e: Event) => {
       const me = e as MouseEvent;
       const target = me.target as HTMLElement;
-      // Don't intercept clicks on links, buttons, code, details, summary
       if (target.closest('a, button, details, summary, pre, code, input, textarea, select')) return;
       const rect = slidesWrap.getBoundingClientRect();
       const x = me.clientX - rect.left;
