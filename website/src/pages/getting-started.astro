@@ -54,87 +54,80 @@ claude</code></pre>
     <section>
       <h2>Examples</h2>
       <pre><code>/araw should I change careers
-
 /se what are all the ways I could approach this product launch
-
 /aex we need to hire 3 more engineers by Q2
-
 /cmp React vs Svelte for this project
-
 /rca our deploy pipeline keeps failing
-
 /uaua 4x what's the best approach to learning math</code></pre>
 
       <h2>Which skill to use</h2>
-
-      <table>
+      <table style="font-size: var(--text-xs);">
         <thead>
           <tr><th>You have&hellip;</th><th>Use</th><th>What it does</th></tr>
         </thead>
         <tbody>
-          <tr><td>A claim to test</td><td><code>/claim</code></td><td>ARAW tests both sides</td></tr>
-          <tr><td>A decision to make</td><td><code>/decide</code></td><td>Compares options, tests with ARAW</td></tr>
-          <tr><td>An idea or proposal</td><td><code>/viability</code></td><td>Tests viability with ARAW</td></tr>
-          <tr><td>Work to assess</td><td><code>/evaluate</code></td><td>Checks correctness, completeness, risks</td></tr>
-          <tr><td>Something broken</td><td><code>/diagnose</code></td><td>Maps causes with UAUA, then tests each</td></tr>
-          <tr><td>A space to explore</td><td><code>/search</code></td><td>Explores with UAUA, then tests findings</td></tr>
-          <tr><td>A &ldquo;how do I&rdquo; question</td><td><code>/how</code></td><td>Finds methods (AR-forward)</td></tr>
-          <tr><td>A goal or want</td><td><code>/want</code></td><td>Traces commitments (AR-forward)</td></tr>
-          <tr><td>A feeling or frustration</td><td><code>/emotion</code></td><td>Acknowledges, then routes to what you need</td></tr>
-          <tr><td>Something to execute</td><td><code>/action</code></td><td>Plans and executes steps</td></tr>
+          <tr><td>A claim</td><td><code>/claim</code></td><td>ARAW tests both sides</td></tr>
+          <tr><td>A decision</td><td><code>/decide</code></td><td>Compares options via ARAW</td></tr>
+          <tr><td>An idea</td><td><code>/viability</code></td><td>ARAW viability test</td></tr>
+          <tr><td>Work to assess</td><td><code>/evaluate</code></td><td>Correctness + risk check</td></tr>
+          <tr><td>Something broken</td><td><code>/diagnose</code></td><td>UAUA cause mapping</td></tr>
+          <tr><td>A space to explore</td><td><code>/search</code></td><td>UAUA exploration</td></tr>
+          <tr><td>&ldquo;How do I?&rdquo;</td><td><code>/how</code></td><td>Method discovery</td></tr>
+          <tr><td>A goal</td><td><code>/want</code></td><td>Commitment tracing</td></tr>
+          <tr><td>A feeling</td><td><code>/emotion</code></td><td>Acknowledge + route</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>More skills</h2>
+      <table style="font-size: var(--text-xs);">
+        <thead>
+          <tr><th>You have&hellip;</th><th>Use</th><th>What it does</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Something to execute</td><td><code>/action</code></td><td>Plans and executes</td></tr>
           <tr><td>Content to produce</td><td><code>/create</code></td><td>Routes to writing skills</td></tr>
-          <tr><td>Need maximum effort</td><td><code>/certainty</code></td><td>Iterates until thoroughly resolved</td></tr>
-          <tr><td>Something to improve</td><td><code>/iterate</code></td><td>Finds what to iterate, at what level, then does it</td></tr>
-          <tr><td>A domain-specific question</td><td><code>/technical</code></td><td>Routes to specialized skills by domain</td></tr>
-          <tr><td>A problem to analyze</td><td><code>/analyze</code></td><td>Routes to decomposition, systems analysis, or synthesis</td></tr>
-          <tr><td>Need orientation</td><td><code>/meta</code></td><td>Skill discovery and usage guidance</td></tr>
-          <tr><td>A prompt to improve</td><td><code>/sp</code></td><td>Adds precision, scope, and criteria before answering</td></tr>
+          <tr><td>Need max effort</td><td><code>/certainty</code></td><td>Iterates until resolved</td></tr>
+          <tr><td>Something to improve</td><td><code>/iterate</code></td><td>Meta-iteration</td></tr>
+          <tr><td>Domain question</td><td><code>/technical</code></td><td>Specialized routing</td></tr>
+          <tr><td>Analysis needed</td><td><code>/analyze</code></td><td>Decomposition + synthesis</td></tr>
+          <tr><td>Need orientation</td><td><code>/meta</code></td><td>Skill discovery</td></tr>
+          <tr><td>Improve a prompt</td><td><code>/sp</code></td><td>Adds precision + criteria</td></tr>
         </tbody>
       </table>
     </section>
 
     <section>
       <pre><code>What do you have?
-├── A statement → Is it testable?
-│   ├── YES → /claim
-│   └── It's more of an idea → /viability
-├── A question → What kind?
-│   ├── "Should I?" → /decide
-│   ├── "How do I?" → /how
-│   ├── "Why is this?" → /diagnose
-│   └── "What are the options?" → /search
+├── A statement → testable? → /claim or /viability
+├── A question → /decide, /how, /diagnose, or /search
 ├── A goal → /want
 ├── A feeling → /emotion
 ├── Work to review → /evaluate
 ├── Something to do → /action
 ├── Content to write → /create
-├── A technical question → /technical
+├── Technical question → /technical
 ├── Need analysis → /analyze
-├── A prompt to improve → /sp
-└── Not sure → /meta</code></pre>
+├── Not sure → /meta</code></pre>
 
       <h2>Depth scaling</h2>
-      <table>
+      <table style="font-size: var(--text-xs);">
         <thead>
           <tr><th>Example</th><th>What you get</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>/araw claim</code></td><td>Default (2x) &mdash; 4&ndash;5 tree levels, 20+ findings</td></tr>
-          <tr><td><code>/araw 4x claim</code></td><td>5&ndash;6 levels, 35+ findings, edge cases</td></tr>
+          <tr><td><code>/araw claim</code></td><td>Default (2x) &mdash; 4&ndash;5 levels, 20+ findings</td></tr>
+          <tr><td><code>/araw 4x claim</code></td><td>5&ndash;6 levels, 35+ findings</td></tr>
           <tr><td><code>/araw 8x claim</code></td><td>6&ndash;8 levels, 55+ findings</td></tr>
-          <tr><td><code>/uaua 4x topic</code></td><td>Alternating search at 4x depth</td></tr>
-          <tr><td><code>/rca 4x symptom</code></td><td>5+ causal chains, 7 why-levels deep</td></tr>
-          <tr><td><code>/se 4x space</code></td><td>35+ items, 7 dimensions, 6 edge cases</td></tr>
-          <tr><td><code>/fwa 4x answer</code></td><td>8 checks, 4 alternatives, 3 sources</td></tr>
+          <tr><td><code>/uaua 4x topic</code></td><td>Alternating search at 4x</td></tr>
         </tbody>
       </table>
-      <p>Depth scaling is supported by 40+ analytical skills including <code>/araw</code>, <code>/ar</code>, <code>/aw</code>, <code>/uaua</code>, <code>/foht</code>, <code>/se</code>, <code>/dd</code>, <code>/rca</code>, <code>/ht</code>, <code>/fwa</code>, <code>/sdc</code>, <code>/fohw</code>, <code>/insd</code>, and more.</p>
+      <p>Supported by 40+ skills: <code>/araw</code>, <code>/uaua</code>, <code>/se</code>, <code>/rca</code>, <code>/ht</code>, and more.</p>
 
       <h2>Python tools</h2>
       <pre><code>pip install openai pyyaml
-export OPENAI_API_KEY="sk-your-key"
 cd src/araw
-
 python auto_expand_llm.py --db career.db --seed "Should I start a business?"
 python visualize.py --db career.db --serve</code></pre>
       <p><a href="/tools">Full tool documentation &rarr;</a></p>

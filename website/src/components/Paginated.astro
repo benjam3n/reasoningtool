@@ -3,6 +3,8 @@
 // Wraps child <section> elements as full-viewport slides.
 // Click right half → next, left half → prev. Arrow keys work too.
 // When at the last/first slide, arrow keys navigate to next/prev page in the group.
+// If a section's content overflows, it becomes a multi-page virtual section
+// that pages through the content one viewport at a time.
 import Header from './Header.astro';
 
 interface Props {
@@ -51,8 +53,7 @@ const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
     inset: 0;
     width: 100%;
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     display: none;
     padding: var(--sp-4) var(--sp-5);
     padding-bottom: 4rem;
@@ -61,6 +62,11 @@ const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
 
   .paginated__slides :global(section.active) {
     display: block;
+  }
+
+  /* Inner wrapper for virtual scroll on overflow sections */
+  .paginated__slides :global(.pg-scroll-inner) {
+    transition: transform 200ms ease;
   }
 
   .paginated__nav {
@@ -108,7 +114,6 @@ const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
 </style>
 
 <script>
-  // Page group definitions for cross-page arrow key navigation (wraps around)
   const PAGE_GROUPS: Record<string, string[]> = {
     info: ['/', '/getting-started', '/why', '/tools', '/faq', '/about'],
     visual: ['/skills', '/visuals'],
@@ -128,14 +133,59 @@ const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
     const sections = Array.from(slidesWrap.querySelectorAll(':scope > section'));
     if (sections.length === 0) return;
 
+    // Build a flat list of "virtual slides"
+    // Each section that overflows gets multiple virtual pages
+    interface VSlide {
+      section: HTMLElement;
+      scrollOffset: number;  // translateY offset for this virtual page
+    }
+
+    const vSlides: VSlide[] = [];
+
+    // Temporarily show each section to measure content height
+    sections.forEach((sec) => {
+      const s = sec as HTMLElement;
+      const prevDisplay = s.style.display;
+      s.style.display = 'block';
+      s.classList.add('active');
+
+      // Wrap content in a scroll-inner div if not already
+      let inner = s.querySelector('.pg-scroll-inner') as HTMLElement;
+      if (!inner) {
+        inner = document.createElement('div');
+        inner.className = 'pg-scroll-inner';
+        while (s.firstChild) {
+          inner.appendChild(s.firstChild);
+        }
+        s.appendChild(inner);
+      }
+
+      const viewportHeight = s.clientHeight;
+      const contentHeight = inner.scrollHeight;
+
+      if (contentHeight <= viewportHeight) {
+        // Fits in one page
+        vSlides.push({ section: s, scrollOffset: 0 });
+      } else {
+        // Needs multiple virtual pages
+        let offset = 0;
+        while (offset < contentHeight) {
+          vSlides.push({ section: s, scrollOffset: offset });
+          offset += viewportHeight;
+        }
+      }
+
+      s.style.display = prevDisplay;
+      s.classList.remove('active');
+    });
+
     let current = 0;
-    const total = sections.length;
+    const total = vSlides.length;
 
     const indicator = document.getElementById('pg-indicator');
     const prevBtn = document.getElementById('pg-prev') as HTMLButtonElement;
     const nextBtn = document.getElementById('pg-next') as HTMLButtonElement;
 
-    // Hide pagination controls if only one slide
     const pgNav = container.querySelector('.paginated__nav') as HTMLElement;
     if (total <= 1 && pgNav) {
       pgNav.style.display = 'none';
@@ -143,9 +193,18 @@ const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
 
     function show(index: number) {
       if (index < 0 || index >= total) return;
-      sections.forEach((s, i) => {
-        s.classList.toggle('active', i === index);
-      });
+      const slide = vSlides[index];
+
+      // Hide all sections, show the one for this virtual slide
+      sections.forEach((s) => s.classList.remove('active'));
+      slide.section.classList.add('active');
+
+      // Apply scroll offset
+      const inner = slide.section.querySelector('.pg-scroll-inner') as HTMLElement;
+      if (inner) {
+        inner.style.transform = `translateY(-${slide.scrollOffset}px)`;
+      }
+
       current = index;
       if (indicator) indicator.textContent = `${current + 1} / ${total}`;
     }
@@ -204,5 +263,9 @@ const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
       if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
     });
+
+    // Prevent all scroll events globally
+    window.addEventListener('wheel', (e) => { e.preventDefault(); }, { passive: false });
+    window.addEventListener('touchmove', (e) => { e.preventDefault(); }, { passive: false });
   });
 </script>

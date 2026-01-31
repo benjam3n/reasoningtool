@@ -68,60 +68,42 @@ python visualize.py --db my.db --export graph.gexf --format gexf</code></pre>
         <div class="card">
           <h3>synthesize.py</h3>
           <pre><code>python synthesize.py *.db
-python synthesize.py *.db --extract-actions actions.json
 python synthesize.py *.db --find-tensions</code></pre>
         </div>
-
         <div class="card">
           <h3>grounding.py</h3>
           <pre><code>python grounding.py --db my.db --prioritize
-python grounding.py --db my.db --ground-top 10
-python grounding.py --db my.db --integrate</code></pre>
+python grounding.py --db my.db --ground-top 10</code></pre>
         </div>
-
         <div class="card">
           <h3>evidence_engine.py</h3>
-          <pre><code>python evidence_engine.py --claim "Global poverty has decreased"
-python evidence_engine.py --test-sources</code></pre>
+          <pre><code>python evidence_engine.py --claim "Global poverty has decreased"</code></pre>
         </div>
-
         <div class="card">
           <h3>commitment_analyzer.py</h3>
-          <pre><code>python commitment_analyzer.py --db my.db analyze
-python commitment_analyzer.py --db my.db foundations</code></pre>
+          <pre><code>python commitment_analyzer.py --db my.db analyze</code></pre>
         </div>
       </div>
+    </section>
 
+    <section>
       <h2>Conversion and bridging</h2>
       <div class="card-grid card-grid--2">
         <div class="card">
           <h3>synthesis.py</h3>
-          <pre><code>python synthesis.py --db my.db "What are the key cruxes?"
-python synthesis.py --db my.db "Where do branches converge?"</code></pre>
+          <pre><code>python synthesis.py --db my.db "What are the key cruxes?"</code></pre>
         </div>
-
         <div class="card">
           <h3>md_to_sqlite.py</h3>
-          <pre><code>python md_to_sqlite.py session.md
-python md_to_sqlite.py sessions/*.md -o all.db</code></pre>
+          <pre><code>python md_to_sqlite.py session.md</code></pre>
         </div>
-
         <div class="card">
           <h3>bridge_to_gosm.py</h3>
           <pre><code>python bridge_to_gosm.py database.db --output assumptions.yaml</code></pre>
         </div>
       </div>
-
-      <pre><code>sqlite3 my.db "SELECT claim, leverage_score FROM nodes
-  WHERE status='unexplored' ORDER BY leverage_score DESC LIMIT 10"
-
-sqlite3 my.db "SELECT claim FROM nodes
-  WHERE json_extract(content, '$.is_crux') = 1"
-
-sqlite3 my.db "SELECT COUNT(*) as total,
-  SUM(CASE WHEN status='explored' THEN 1 ELSE 0 END) as explored,
-  MAX(depth) as max_depth FROM nodes"</code></pre>
-      <p>Full documentation: <a href="https://github.com/benjam3n/reasoningtool/tree/main/src">src/README.md on GitHub &rarr;</a></p>
+      <pre><code>sqlite3 my.db "SELECT claim, leverage_score FROM nodes WHERE status='unexplored' ORDER BY leverage_score DESC LIMIT 10"</code></pre>
+      <p><a href="https://github.com/benjam3n/reasoningtool/tree/main/src">Full documentation on GitHub &rarr;</a></p>
     </section>
   </Paginated>
 </body>

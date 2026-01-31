@@ -561,6 +561,10 @@ const totalCount = allSkillNames.size;
           window.location.href = VISUAL_PAGES[(PAGE_INDEX - 1 + VISUAL_PAGES.length) % VISUAL_PAGES.length];
         }
       });
+
+      // Prevent all scroll events
+      window.addEventListener('wheel', (e: WheelEvent) => { e.preventDefault(); }, { passive: false });
+      window.addEventListener('touchmove', (e: TouchEvent) => { e.preventDefault(); }, { passive: false });
     });
   </script>
 </body>

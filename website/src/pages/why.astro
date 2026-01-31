@@ -67,82 +67,38 @@ import '../styles/global.css';
 
     <section class="prose">
       <h2 id="taxonomy">The full taxonomy</h2>
-
       <p>Beyond these four, the field has produced dozens of approaches. Every one preserves the core problem.</p>
-
-      <table class="comparison-table">
+      <table class="comparison-table" style="font-size: var(--text-xs);">
         <thead>
-          <tr>
-            <th>Approach</th>
-            <th>What it improves</th>
-            <th>What it doesn&rsquo;t fix</th>
-          </tr>
+          <tr><th>Approach</th><th>Improves</th><th>Doesn&rsquo;t fix</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td><strong>Chain of thought</strong></td>
-            <td>Step visibility, intermediate reasoning</td>
-            <td>Single linear path. No requirement to explore alternatives or test &ldquo;what if I&rsquo;m wrong.&rdquo;</td>
-          </tr>
-          <tr>
-            <td><strong>Tree of thoughts</strong></td>
-            <td>Multiple reasoning paths, backtracking</td>
-            <td>Heuristic pruning. Implausible-but-critical paths get pruned.</td>
-          </tr>
-          <tr>
-            <td><strong>ReAct</strong></td>
-            <td>Grounding via tool use and observation</td>
-            <td>Still follows a single forward path. Doesn&rsquo;t test &ldquo;what if my interpretation is wrong?&rdquo;</td>
-          </tr>
-          <tr>
-            <td><strong>Self-consistency / voting</strong></td>
-            <td>Reduces random errors</td>
-            <td>Reinforces systematic errors. Biases are correlated, not independent.</td>
-          </tr>
-          <tr>
-            <td><strong>Reflexion / self-critique</strong></td>
-            <td>Iterative refinement</td>
-            <td>The critiquing model has the same blind spots as the generating model.</td>
-          </tr>
-          <tr>
-            <td><strong>RAG</strong></td>
-            <td>Access to external information</td>
-            <td>Retrieves evidence but doesn&rsquo;t prevent cherry-picking.</td>
-          </tr>
-          <tr>
-            <td><strong>RLHF / DPO / Constitutional AI</strong></td>
-            <td>Alignment with human values</td>
-            <td>Optimizes for human preference, not truth.</td>
-          </tr>
-          <tr>
-            <td><strong>Fine-tuning</strong></td>
-            <td>Domain specialization</td>
-            <td>Shifts what counts as plausible, doesn&rsquo;t change the optimization target.</td>
-          </tr>
-          <tr>
-            <td><strong>Process reward models</strong></td>
-            <td>Step-level evaluation</td>
-            <td>Learned evaluators, not structural enforcement.</td>
-          </tr>
-          <tr>
-            <td><strong>AutoGPT / BabyAGI</strong></td>
-            <td>Task decomposition, autonomous execution</td>
-            <td>Efficient error execution. Plans don&rsquo;t include &ldquo;verify this goal is correct.&rdquo;</td>
-          </tr>
-          <tr>
-            <td><strong>Test-time compute scaling</strong></td>
-            <td>More reasoning paths</td>
-            <td>More paths through the same unstructured search.</td>
-          </tr>
-          <tr>
-            <td><strong>Formal verification</strong></td>
-            <td>Absolute guarantees in formalizable domains</td>
-            <td>Most real reasoning can&rsquo;t be formalized.</td>
-          </tr>
+          <tr><td><strong>Chain of thought</strong></td><td>Step visibility</td><td>Single linear path, no adversarial testing</td></tr>
+          <tr><td><strong>Tree of thoughts</strong></td><td>Multiple paths</td><td>Heuristic pruning drops critical branches</td></tr>
+          <tr><td><strong>ReAct</strong></td><td>Tool grounding</td><td>Single forward path, no interpretation testing</td></tr>
+          <tr><td><strong>Self-consistency</strong></td><td>Random errors</td><td>Reinforces systematic bias</td></tr>
+          <tr><td><strong>Reflexion</strong></td><td>Iterative refinement</td><td>Same blind spots in critic and generator</td></tr>
+          <tr><td><strong>RAG</strong></td><td>External info</td><td>Doesn&rsquo;t prevent cherry-picking</td></tr>
         </tbody>
       </table>
+    </section>
 
-      <p>The pattern: every approach either adds information, iteration, perspectives, or compute. None adds <strong>structural verification</strong> &mdash; a mandatory requirement that every claim be tested from both directions.</p>
+    <section class="prose">
+      <h2>Taxonomy (continued)</h2>
+      <table class="comparison-table" style="font-size: var(--text-xs);">
+        <thead>
+          <tr><th>Approach</th><th>Improves</th><th>Doesn&rsquo;t fix</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>RLHF / DPO / CAI</strong></td><td>Value alignment</td><td>Optimizes for preference, not truth</td></tr>
+          <tr><td><strong>Fine-tuning</strong></td><td>Domain specialization</td><td>Same optimization target</td></tr>
+          <tr><td><strong>Process rewards</strong></td><td>Step evaluation</td><td>Learned evaluators, not structural</td></tr>
+          <tr><td><strong>AutoGPT / BabyAGI</strong></td><td>Task decomposition</td><td>Efficient error execution</td></tr>
+          <tr><td><strong>Compute scaling</strong></td><td>More paths</td><td>Unstructured search</td></tr>
+          <tr><td><strong>Formal verification</strong></td><td>Guarantees (if formalizable)</td><td>Most reasoning can&rsquo;t be formalized</td></tr>
+        </tbody>
+      </table>
+      <p>The pattern: every approach adds information, iteration, perspectives, or compute. None adds <strong>structural verification</strong> &mdash; a mandatory requirement that every claim be tested from both directions.</p>
     </section>
 
     <section class="prose">
@@ -172,30 +128,26 @@ import '../styles/global.css';
 
     <section class="prose">
       <h2 id="example">What the difference looks like</h2>
-
       <p>Ask any LLM: <em>&ldquo;Should I quit my job to start a startup?&rdquo;</em></p>
-
       <div class="example-compare">
         <div class="example-box example-box--standard">
           <h4>Standard LLM</h4>
-          <p>Produces a well-structured response covering financial runway, market validation, risk tolerance. Sounds thorough. The answer <em>sounds</em> good because it matches startup advice articles. But it hasn&rsquo;t tested any claim.</p>
+          <p>Covers financial runway, market validation, risk tolerance. Sounds thorough because it matches startup advice articles. Hasn&rsquo;t tested any claim.</p>
         </div>
-
         <div class="example-box example-box--enhanced">
-          <h4>Enhanced approach (chain-of-thought / debate)</h4>
-          <p>Adds reasoning steps. More nuanced with explicit pros and cons. Better, but the AR/AW ratio is random. Neither agent tested whether the startup idea has been validated with customers.</p>
+          <h4>Enhanced (CoT / debate)</h4>
+          <p>More nuanced with explicit pros and cons. But the AR/AW ratio is random. Neither agent tested whether the idea has been validated.</p>
         </div>
-
         <div class="example-box example-box--structured">
-          <h4>Structured procedure (ARAW)</h4>
-          <p><strong>Unbundles the question</strong> into 6 distinct claims. <strong>Tests each bidirectionally.</strong> Assume Wrong on &ldquo;quitting is required&rdquo; discovers: most successful startups were started part-time. <strong>Output:</strong> 47 numbered findings. 6 claims tested. 2 eliminated. 3 conditional.</p>
+          <h4>Structured (ARAW)</h4>
+          <p><strong>Unbundles</strong> into 6 claims. <strong>Tests each bidirectionally.</strong> Assume Wrong on &ldquo;quitting is required&rdquo; discovers: most successful startups started part-time. 47 findings. 6 tested. 2 eliminated.</p>
         </div>
       </div>
+    </section>
 
+    <section class="prose">
       <h2 id="principle">Search structure</h2>
-
-      <p>Constrained search outperforms unconstrained search, regardless of the searcher&rsquo;s intelligence. Checklists beat expertise. Method beats insight.</p>
-
+      <p>Constrained search outperforms unconstrained search, regardless of intelligence. Checklists beat expertise. Method beats insight.</p>
       <ul>
         <li>Breadth requirements defeat premature convergence</li>
         <li>Assume Wrong forces counter-evidence exploration</li>
@@ -204,19 +156,15 @@ import '../styles/global.css';
         <li>Numbered tracking makes BS detectable</li>
       </ul>
 
-      <h2 id="questions">Only asking questions can lead to self-improvement</h2>
-
-      <p>A question has a goal &mdash; it identifies where you are and where you want to be. An answer is just a point. Self-improvement is movement from where you are to where you want to be, which is a question, not an answer.</p>
+      <h2 id="questions">Questions drive self-improvement</h2>
+      <p>A question identifies where you are and where you want to be. An answer is just a point. Self-improvement is movement &mdash; a question, not an answer.</p>
 
       <h2 id="goal-oriented">All action is goal-oriented</h2>
+      <p>Every action is a search toward a goal. Even counterproductive actions are searches toward valid goals &mdash; the goal is right, the search path is wrong.</p>
 
-      <p>Every action is a search toward a goal. That goal serves a deeper goal, which serves a deeper one. Even counterproductive actions are searches toward valid goals &mdash; the goal is right, the search path is wrong.</p>
-
-      <h2>Try it</h2>
       <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool/claude-code-plugin
 claude</code></pre>
-      <p>Then type <code>/araw should I quit my job to start a startup</code> and see the difference.</p>
       <p><a href="/getting-started">Full guide &rarr;</a></p>
     </section>
   </Paginated>
@@ -301,10 +249,10 @@ claude</code></pre>
   .comparison-table {
     font-size: var(--text-xs);
     width: 100%;
+    table-layout: fixed;
   }
   .comparison-table th {
     text-align: left;
-    white-space: nowrap;
   }
 
   [data-theme="dark"] .example-box--standard {
