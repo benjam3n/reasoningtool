@@ -2,13 +2,13 @@
 import Base from '../layouts/Base.astro';
 
 const tier1 = [
-  { name: 'se', title: 'Space Enumeration', desc: 'Systematically lists all options in a problem space so nothing gets missed' },
+  { name: 'se', title: 'Space Enumeration', desc: 'Systematically lists options in a problem space to reduce blind spots' },
   { name: 'aex', title: 'Assumption Extraction', desc: 'Surfaces the hidden assumptions in any claim, plan, or argument' },
   { name: 'cmp', title: 'Comparison', desc: 'Structured comparison of options with explicit criteria and trade-offs' },
   { name: 'ht', title: 'Hypothesis Testing', desc: 'Tests claims by examining what would be true if right vs. wrong' },
   { name: 'dcp', title: 'Decision Procedure', desc: 'Builds a step-by-step flowchart anyone can follow for a recurring decision' },
   { name: 'dcm', title: 'Decomposition', desc: 'Breaks complex problems into smaller, solvable parts' },
-  { name: 'rca', title: 'Root Cause Analysis', desc: 'Finds the actual cause of a problem, not just symptoms' },
+  { name: 'rca', title: 'Root Cause Analysis', desc: 'Traces problems back toward root causes rather than treating symptoms' },
   { name: 'dd', title: 'Dimension Discovery', desc: 'Identifies all the dimensions along which something can vary' },
   { name: 'mv', title: 'MECE Validation', desc: 'Checks that a breakdown is mutually exclusive and collectively exhaustive' },
   { name: 'ins', title: 'Insight Synthesis', desc: 'Combines findings from multiple analyses into coherent conclusions' },
@@ -348,19 +348,17 @@ const tier4Categories = [
 ];
 ---
 
-<Base title="Skills" activeNav="skills" description="221 structured reasoning skills for Claude Code, classified by universality.">
+<Base title="Skills" activeNav="skills" description="221 structured reasoning skills for Claude Code.">
   <div class="page-header">
     <h1>Skills</h1>
-    <p class="lead">221 structured reasoning skills for Claude Code. Each guides you through a specific type of thinking, classified by <a href="/about#universal-vs-heuristic">universality</a>.</p>
   </div>
 
   <div class="callout">
-    <p><strong>Usage:</strong> type <code>/skillname your question</code> in a Claude Code session. For example: <code>/araw should I change careers</code></p>
+    <p>Type <code>/skillname your question</code> in Claude Code. Example: <code>/araw should I change careers</code></p>
   </div>
 
   <section>
     <h2><span class="tier-badge tier-exp">Experimental</span> ARAW, UAUA, GOSM</h2>
-    <p>These use a different approach. They treat every claim as an unverified guess and test it by exploring what follows if it's right and what follows if it's wrong.</p>
     <div class="skill-grid">
       {experimental.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
@@ -372,8 +370,7 @@ const tier4Categories = [
   </section>
 
   <section>
-    <h2><span class="tier-badge tier-1">Tier 1</span> Start here</h2>
-    <p>The most generally useful skills. They work on almost any problem and consistently produce non-obvious results.</p>
+    <h2><span class="tier-badge tier-1">Tier 1</span></h2>
     <div class="skill-grid">
       {tier1.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
@@ -385,8 +382,7 @@ const tier4Categories = [
   </section>
 
   <section>
-    <h2><span class="tier-badge tier-2">Tier 2</span> Deep reasoning</h2>
-    <p>Go deeper on specific types of thinking. Use when you need thoroughness on a particular kind of problem.</p>
+    <h2><span class="tier-badge tier-2">Tier 2</span></h2>
     <div class="skill-grid">
       {tier2.map(s => (
         <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
@@ -398,8 +394,7 @@ const tier4Categories = [
   </section>
 
   <section>
-    <h2><span class="tier-badge tier-3">Tier 3</span> Specialized tools</h2>
-    <p>These solve specific types of problems well. Less general but very effective in their domain.</p>
+    <h2><span class="tier-badge tier-3">Tier 3</span></h2>
     {tier3Categories.map(cat => (
       <div class="category-section">
         <h3>{cat.category}</h3>
@@ -415,8 +410,7 @@ const tier4Categories = [
   </section>
 
   <section>
-    <h2><span class="tier-badge tier-4">Tier 4</span> Everything else</h2>
-    <p>The remaining skills cover specific use cases: goal processing, search methods, procedure management, self-auditing, and more.</p>
+    <h2><span class="tier-badge tier-4">Tier 4</span></h2>
     {tier4Categories.map(cat => (
       <div class="category-section">
         <h3>{cat.category}</h3>

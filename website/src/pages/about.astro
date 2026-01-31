@@ -2,98 +2,35 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="About" activeNav="about" description="The philosophy behind reasoningtool: why alternation works, how it compares to other approaches, and what's proven vs. claimed.">
+<Base title="About" activeNav="about" description="What the toolkit does and how the core methods work.">
   <div class="page-header">
     <h1>About</h1>
-    <p class="lead">The philosophy behind the toolkit. Why alternation works, how it compares to other approaches, and what's proven vs. claimed.</p>
   </div>
 
   <section>
-    <h2 id="the-problem">The problem</h2>
-    <p>There are two fundamentally different operations in reasoning:</p>
-    <ol>
-      <li><strong>Exploration</strong>: What options exist? What haven't I considered? What's the full space of possibilities? This is divergent &mdash; it expands your view.</li>
-      <li><strong>Testing</strong>: Is this actually true? What happens if it's wrong? What survives scrutiny? This is convergent &mdash; it narrows your view.</li>
-    </ol>
-    <p>Most tools do one or the other. Brainstorming tools explore but don't test. Debate tools test but don't explore. Chain-of-thought does a bit of both but neither systematically. And none of them <em>alternate</em> &mdash; exploring, then testing what you found, then exploring the edge cases of what survived, then testing again.</p>
-    <p>The alternation matters because the two operations have structural blind spots that don't overlap. Exploration alone finds options but can't tell you which ones work. Testing alone validates what you're looking at but can't tell you what you're not looking at. Alternating covers both.</p>
-  </section>
-
-  <section>
-    <h2 id="methods">The core methods</h2>
+    <h2 id="methods">Core methods</h2>
 
     <div class="card-grid card-grid--2">
       <div class="card">
         <h3>ARAW (Assume Right / Assume Wrong)</h3>
-        <p>Takes any claim and branches it: what follows if true? What follows if false? Then recurses &mdash; every conclusion is another claim. The result is a tree of tested claims stored in SQLite, with leverage scores, crux detection, and domain classification.</p>
-        <p>ARAW is operationalized Popperian falsification for everyday thinking. It forces symmetric treatment &mdash; whatever you do for "assume right," you must equally do for "assume wrong." This addresses confirmation bias not by knowing about it, but by having a process that forces the corrective operation.</p>
+        <p>Takes any claim and branches it: what follows if true? What follows if false? Then recurses &mdash; every conclusion becomes another claim to test. Results are stored in SQLite with leverage scores, crux detection, and domain classification.</p>
       </div>
 
       <div class="card">
         <h3>UAUA (Universalize &rarr; ARAW &rarr; Universalize &rarr; ARAW)</h3>
-        <p>Alternates between two mathematically distinct search operations:</p>
-        <p><strong>Universalization</strong> operates on N-valued type theory. It asks "what is this an instance of?" and derives all instances &mdash; searching horizontally across the possibility space.</p>
-        <p><strong>ARAW</strong> operates on binary Boolean logic. It asks "is this true or false?" and eliminates branches through contradiction &mdash; searching vertically into depth.</p>
+        <p>Four passes alternating between two operations:</p>
+        <p><strong>Universalization</strong> asks "what is this an instance of?" and explores across the possibility space.</p>
+        <p><strong>ARAW</strong> asks "is this true or false?" and tests claims through contradiction.</p>
       </div>
     </div>
 
-    <pre><code>U1: Map the space (divergent, N-valued) &rarr; candidates
+    <pre><code>U1: Map the space &rarr; candidates
  &darr;
-A1: Test candidates (convergent, binary) &rarr; validated/rejected
+A1: Test candidates &rarr; validated/rejected
  &darr;
-U2: Find edge cases of survivors (divergent) &rarr; new candidates
+U2: Find edge cases of survivors &rarr; new candidates
  &darr;
-A2: Final validation (convergent) &rarr; what survived all rounds</code></pre>
-
-    <p>Each pass uses a fundamentally different logic &mdash; type enumeration vs. binary elimination &mdash; so their blind spots don't overlap. Information-theoretically, each ARAW pass maximizes entropy reduction (selecting the crux that most constrains remaining uncertainty), while each universalization pass maximizes entropy expansion (finding dimensions not yet explored).</p>
-  </section>
-
-  <section>
-    <h2 id="skills-overview">221 structured skills</h2>
-    <p>Each skill is a structured prompt that guides you through a specific type of thinking. Skills are classified by <strong>universality</strong>:</p>
-    <div class="callout">
-      <p><strong>Universal</strong> skills apply whenever their trigger condition exists &mdash; their applicability is entailed by the problem structure. <strong>Heuristic</strong> skills work well in specific contexts, but whether they apply to your context requires judgment.</p>
-      <p>The <a href="/skills">skill tiers</a> loosely reflect this. Tier 1 skills tend to be universal. Tier 4 skills tend to be context-dependent.</p>
-    </div>
-    <p>For the full philosophical treatment, see <a href="/foundations/universal-principles">Universal Principles of Mathematical Problem Solving &rarr;</a></p>
-  </section>
-
-  <section>
-    <h2 id="comparison">How it compares</h2>
-    <div class="comparison-table">
-      <table>
-        <thead>
-          <tr><th></th><th>reasoningtool</th><th>AI agents</th><th>Prompt libraries</th><th>Chain-of-thought</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Structured exploration</td><td>Yes (universalization)</td><td>No</td><td>No</td><td>Implicit</td></tr>
-          <tr><td>Systematic testing</td><td>Yes (ARAW)</td><td>No</td><td>No</td><td>Implicit</td></tr>
-          <tr><td>Alternation between both</td><td>Yes (UAUA)</td><td>No</td><td>No</td><td>No</td></tr>
-          <tr><td>Persistence across sessions</td><td>Yes (SQLite)</td><td>Varies</td><td>No</td><td>No</td></tr>
-          <tr><td>Interactive visualization</td><td>Yes (Sigma.js)</td><td>No</td><td>No</td><td>No</td></tr>
-          <tr><td>Cross-run synthesis</td><td>Yes</td><td>No</td><td>No</td><td>No</td></tr>
-          <tr><td>Classifies skills by universality</td><td>Yes (tiered)</td><td>No</td><td>Some</td><td>No</td></tr>
-          <tr><td>Philosophy of <em>why</em> it works</td><td>Yes (essays)</td><td>No</td><td>No</td><td>No</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>The difference isn't features &mdash; someone could add any of these to an existing framework. The difference is design intent. Agents execute tasks. Prompt libraries produce better outputs. This toolkit checks whether you're solving the right problem before you solve it.</p>
-  </section>
-
-  <section>
-    <h2 id="honesty">What's proven and what's claimed</h2>
-    <p><strong>Proven (by the structure itself):</strong></p>
-    <ul>
-      <li>If you test both "assume right" and "assume wrong," you will consider alternatives you wouldn't have otherwise. This is logically necessary &mdash; the operation forces it.</li>
-      <li>If you alternate between exploration and testing, you cover failure modes that either operation alone misses. This follows from the fact that their blind spots are complementary.</li>
-    </ul>
-    <p><strong>Claimed (based on principles, not yet empirically validated):</strong></p>
-    <ul>
-      <li>The alternation produces better decisions than non-alternating methods.</li>
-      <li>The universal/heuristic skill classification helps users pick the right tools faster.</li>
-      <li>The full UAUA cycle (4 passes) is meaningfully better than a 2-pass version.</li>
-    </ul>
-    <p>This is experimental. The philosophy is grounded in epistemology and information theory. The implementation is v1. If you find where it breaks, that's valuable &mdash; <a href="https://github.com/benjam3n/reasoningtool/issues">open an issue</a>.</p>
+A2: Final validation &rarr; what survived all rounds</code></pre>
   </section>
 
   <section>

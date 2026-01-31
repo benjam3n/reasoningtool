@@ -4,59 +4,33 @@ import Base from '../layouts/Base.astro';
 
 <Base title="Home">
   <section class="hero">
-    <h1>Check whether you're thinking in the right direction</h1>
+    <h1>reasoningtool</h1>
     <p class="hero__subtitle">
-      Every AI tool helps you think faster. This one helps you notice when what you're doing might be wrong &mdash; before the consequences show up.
+      221 structured reasoning skills for Claude Code.
     </p>
     <div class="hero__actions">
       <a href="/getting-started" class="btn btn--primary">Get started</a>
-      <a href="/skills" class="btn btn--secondary">Browse 221 skills</a>
+      <a href="/skills" class="btn btn--secondary">Browse skills</a>
     </div>
-  </section>
-
-  <section>
-    <h2>The problem</h2>
-    <p>
-      If you ask an AI to evaluate your plan, it evaluates your plan. It doesn't ask whether your plan is solving the right problem. If you ask it to brainstorm alternatives, it generates alternatives. It doesn't test whether those alternatives survive scrutiny.
-    </p>
-    <p>
-      These aren't failures of intelligence. They're failures of <em>direction</em>. The tool does what you asked &mdash; but what you asked might be wrong, and the tool has no mechanism to notice.
-    </p>
-  </section>
-
-  <section>
-    <h2>Two operations, in alternation</h2>
-    <p>
-      There are two fundamentally different operations in reasoning: <strong>exploration</strong> (what options exist?) and <strong>testing</strong> (which ones survive scrutiny?). Most tools do one or the other. This toolkit does both &mdash; in alternation &mdash; because they have structural blind spots that don't overlap.
-    </p>
-    <p>
-      Exploration alone finds options but can't tell you which ones work. Testing alone validates what you're looking at but can't tell you what you're not looking at. Alternating covers both.
-    </p>
-    <p><a href="/foundations/two-kinds-of-search">Read the full argument &rarr;</a></p>
   </section>
 
   <section>
     <h2>What's included</h2>
     <div class="card-grid card-grid--2">
       <div class="card">
-        <h3>221 reasoning skills</h3>
-        <p>Structured prompts for Claude Code covering analysis, writing, planning, research, and decision-making. Classified by universality &mdash; Tier 1 skills apply whenever their trigger condition exists.</p>
+        <h3>221 skills</h3>
+        <p>Structured prompts for analysis, writing, planning, research, and decision-making.</p>
         <p><a href="/skills">Browse skills &rarr;</a></p>
       </div>
       <div class="card">
         <h3>ARAW and UAUA</h3>
-        <p><strong>ARAW</strong> takes any claim and tests both branches recursively. <strong>UAUA</strong> alternates between mapping the full possibility space and testing what it finds. Four passes, two different logics.</p>
+        <p><strong>ARAW</strong> takes any claim and tests both branches recursively. <strong>UAUA</strong> alternates between mapping the possibility space and testing what it finds.</p>
         <p><a href="/about#methods">How they work &rarr;</a></p>
       </div>
       <div class="card">
         <h3>Python tools</h3>
-        <p>Auto-expand claims into branching trees. Visualize results in an interactive browser viewer. Synthesize findings across runs. Ground claims in evidence.</p>
+        <p>Auto-expand claims into branching trees. Visualize results. Synthesize findings across runs.</p>
         <p><a href="/tools">See the tools &rarr;</a></p>
-      </div>
-      <div class="card">
-        <h3>Foundations</h3>
-        <p>The philosophical grounding: why alternation works, what makes a reasoning principle universal vs. heuristic, and the structure of careful thought.</p>
-        <p><a href="/foundations">Read them &rarr;</a></p>
       </div>
     </div>
   </section>
@@ -67,8 +41,8 @@ import Base from '../layouts/Base.astro';
 cd reasoningtool/claude-code-plugin
 claude</code></pre>
     <p>
-      Then type <code>/araw should I change careers</code> or <code>/uaua 4x what's the best approach to learning math</code> or any question worth thinking carefully about.
+      Then type <code>/araw should I change careers</code> or <code>/uaua 4x what's the best approach to learning math</code>.
     </p>
-    <p><a href="/getting-started">Full installation guide &rarr;</a></p>
+    <p><a href="/getting-started">Full guide &rarr;</a></p>
   </section>
 </Base>

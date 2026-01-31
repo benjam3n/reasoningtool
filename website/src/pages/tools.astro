@@ -2,10 +2,9 @@
 import Base from '../layouts/Base.astro';
 ---
 
-<Base title="Tools" activeNav="tools" description="Python tools for running ARAW explorations programmatically — auto-expand, visualize, synthesize, and ground claims.">
+<Base title="Tools" activeNav="tools" description="Python tools for ARAW — auto-expand, visualize, synthesize, and ground claims.">
   <div class="page-header">
     <h1>Python Tools</h1>
-    <p class="lead">Run ARAW explorations programmatically &mdash; seed a claim, expand it with LLM-powered branching, visualize the results in an interactive browser viewer, and synthesize findings across runs.</p>
   </div>
 
   <section>
@@ -23,19 +22,6 @@ python auto_expand_llm.py --db my_analysis.db --continue --parallel 5
 # View in browser
 python visualize.py --db my_analysis.db --serve
 # Open http://localhost:8080</code></pre>
-  </section>
-
-  <section>
-    <h2>Interactive visualization</h2>
-    <p>
-      <code>visualize.py --serve</code> launches a full interactive graph viewer in your browser. You can:
-    </p>
-    <ul>
-      <li><strong>See the full tree</strong> &mdash; nodes color-coded by type: orange (root), blue (assume right), red (assume wrong), gold (crux), green (grounded), purple (epistemic limit)</li>
-      <li><strong>Filter</strong> &mdash; by branch type, depth (slider), grounded-only, crux-only, domain, or text search</li>
-      <li><strong>Click any node</strong> &mdash; see full claim text, depth, leverage score, children count, domain</li>
-      <li><strong>Export</strong> &mdash; PNG screenshot, JSON for D3.js/Sigma.js, GEXF for Gephi</li>
-    </ul>
   </section>
 
   <section>
