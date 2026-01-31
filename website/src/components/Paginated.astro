@@ -5,18 +5,14 @@
 // When at the last/first slide, arrow keys navigate to next/prev page in the group.
 // If a section's content overflows, it becomes a multi-page virtual section
 // that pages through the content one viewport at a time.
-import Header from './Header.astro';
 
 interface Props {
-  activeNav?: string;
   pageGroup?: string;
   pageIndex?: number;
 }
 
-const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
+const { pageGroup = '', pageIndex = 0 } = Astro.props;
 ---
-
-<Header activeNav={activeNav} />
 
 <div class="paginated" id="paginated" data-page-group={pageGroup} data-page-index={pageIndex}>
   <div class="paginated__slides">
@@ -115,8 +111,8 @@ const { activeNav = '', pageGroup = '', pageIndex = 0 } = Astro.props;
 
 <script>
   const PAGE_GROUPS: Record<string, string[]> = {
-    info: ['/', '/getting-started', '/why', '/tools', '/faq', '/about'],
-    visual: ['/skills', '/visuals'],
+    info: ['/getting-started', '/why', '/tools', '/faq', '/about'],
+    visual: ['/', '/visuals'],
   };
 
   document.addEventListener('astro:page-load', () => {

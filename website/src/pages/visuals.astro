@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import Header from '../components/Header.astro';
 import SkillsGraph from '../components/SkillsGraph.astro';
 import ArawViewer from '../components/ArawViewer.astro';
 import { loadGraphData, TIER_COLORS } from '../data/build-skills-graph';
@@ -8,7 +7,7 @@ import '../styles/global.css';
 
 const graphData = loadGraphData();
 
-const PAGE_GROUPS_VISUAL = ['/skills', '/visuals'];
+const PAGE_GROUPS_VISUAL = ['/', '/visuals'];
 const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
 ---
 
@@ -23,8 +22,6 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
   <ViewTransitions />
 </head>
 <body>
-  <Header activeNav="visuals" />
-
   <div class="paginated" id="paginated" data-page-group="visual" data-page-index={pageIndex}>
     <div class="paginated__slides">
       <section class="visual-section">
@@ -52,8 +49,8 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
 <script>
   // Reuse the same pagination logic as Paginated.astro
   const PAGE_GROUPS: Record<string, string[]> = {
-    info: ['/', '/getting-started', '/why', '/tools', '/faq', '/about'],
-    visual: ['/skills', '/visuals'],
+    info: ['/getting-started', '/why', '/tools', '/faq', '/about'],
+    visual: ['/', '/visuals'],
   };
 
   document.addEventListener('astro:page-load', () => {
