@@ -525,83 +525,43 @@ const totalCount = allSkillNames.size;
 <Base title="Skills" activeNav="skills" description={`${totalCount} structured reasoning skills for Claude Code.`}>
   <div class="page-header">
     <h1>Skills</h1>
-    <p>{totalCount} skills</p>
   </div>
 
-
-  <section>
-    <h2><span class="tier-badge tier-exp">Category Skills</span></h2>
-    <div class="skill-grid">
-      {categorySkills.map(s => (
-        <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-          <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="tier-badge tier-exp">Experimental</span> Core Frameworks</h2>
-    <div class="skill-grid">
-      {experimental.map(s => (
-        <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-          <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="tier-badge tier-1">Tier 1</span></h2>
-    <div class="skill-grid">
-      {tier1.map(s => (
-        <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-          <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="tier-badge tier-2">Tier 2</span></h2>
-    <div class="skill-grid">
-      {tier2.map(s => (
-        <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-          <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-        </a>
-      ))}
-    </div>
-  </section>
-
-  <section>
-    <h2><span class="tier-badge tier-3">Tier 3</span></h2>
-    {tier3Categories.map(cat => (
-      <div class="category-section">
-        <h3>{cat.category}</h3>
-        <div class="skill-grid">
-          {cat.skills.map(s => (
-            <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-              <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-            </a>
-          ))}
-        </div>
-      </div>
-    ))}
-  </section>
-
-  <section>
-    <h2><span class="tier-badge tier-4">Tier 4</span></h2>
-    {tier4Categories.map(cat => (
-      <div class="category-section">
-        <h3>{cat.category}</h3>
-        <div class="skill-grid">
-          {cat.skills.map(s => (
-            <a href={`/skills/${s.name}`} class="skill-item skill-item--link">
-              <code>{s.name}</code> <span class="skill-title">- {s.title}</span>
-            </a>
-          ))}
-        </div>
-      </div>
+  <section class="skill-cloud">
+    {[...categorySkills, ...experimental, ...tier1, ...tier2,
+      ...tier3Categories.flatMap(c => c.skills),
+      ...tier4Categories.flatMap(c => c.skills)
+    ].map(s => (
+      <a href={`/skills/${s.name}`} class="skill-chip">{s.name}</a>
     ))}
   </section>
 </Base>
+
+<style>
+  .skill-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-2);
+    max-width: 100%;
+  }
+
+  .skill-chip {
+    display: inline-block;
+    padding: 0.4em 0.8em;
+    border: 1px solid var(--color-border-light);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    text-decoration: none;
+    color: var(--color-text);
+    background: var(--color-surface);
+    transition: background var(--transition), border-color var(--transition);
+  }
+
+  .skill-chip:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
