@@ -11,27 +11,17 @@ import Base from '../layouts/Base.astro';
 
     <details class="faq-item" open>
       <summary>Does it load all 367 skills into context at once?</summary>
-      <p>No. Only the skill you invoke gets loaded. When you type <code>/ar</code> (Assume Right), only that one skill file enters the context window. The other 366 never appear. This keeps context usage minimal and responses focused.</p>
+      <p>No.</p>
     </details>
 
     <details class="faq-item">
-      <summary>How does it know which skill to use?</summary>
-      <p>Two ways. You can invoke a skill directly by name (<code>/ar</code>, <code>/dcp</code>, <code>/rca</code>, etc.), or you can use a category skill like <code>/decide</code> or <code>/diagnose</code> which will classify your input and route to the most relevant skill automatically. Either way, only one skill enters context at a time.</p>
+      <summary>How do I use a skill?</summary>
+      <p>Skills can be used with <code>/[skill name]</code>. See the <a href="/getting-started">getting started guide</a> for usage details and routing tables.</p>
     </details>
 
     <details class="faq-item">
       <summary>Why are there so many skills?</summary>
-      <p>Different problems need different thinking structures. A root cause analysis is not the same operation as a cost-benefit analysis, which is not the same as generating creative options. Each skill encodes a specific reasoning pattern with its own steps, checks, and failure modes. The breadth is deliberate &mdash; it means you're more likely to find a procedure that fits your actual situation rather than forcing every problem through the same generic framework.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Which skills are the best ones?</summary>
-      <p>That depends entirely on what you're trying to do. The skill list is intentionally unprioritized. Different people working on different problems will find different skills useful, and part of the value is exploring and discovering which ones work best for your use cases. The <a href="/skills">skills page</a> has descriptions for all of them, and the <a href="/getting-started">getting started guide</a> has a routing table if you want a starting point.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Do I have to follow the procedures exactly?</summary>
-      <p>No. The LLM follows the protocols as written &mdash; that's what makes the output structured and rigorous. The system can be used in opposite directions, novel directions, unanticipated directions, contradictory directions, really any direction you can think of, and any direction you can't. Skills can be modified if you think they can be improved. The goal is for the system to be helpful for whatever purpose it serves, as long as that purpose follows the guidelines found in <a href="https://github.com/benjam3n/reasoningtool/tree/main/docs/methodology">docs/methodology</a>, specifically the <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/01_core_principles.md">core principles</a>, <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/02_process.md">processes</a>, and <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/03_capability_guidance.md">capability guidance</a>.</p>
+      <p>Different problems need different thinking structures. A root cause analysis is not the same operation as a cost-benefit analysis, which is not the same as generating creative options. Having many skills means finding a procedure that fits your situation instead of forcing every problem through the same framework.</p>
     </details>
 
     <details class="faq-item">
@@ -40,8 +30,8 @@ import Base from '../layouts/Base.astro';
     </details>
 
     <details class="faq-item">
-      <summary>Can I use it for anything?</summary>
-      <p>The system is general-purpose. It works for personal decisions, technical problems, research questions, business strategy, writing, learning, and more. The only things it can't do or shouldn't be used to do are defined in <a href="https://github.com/benjam3n/reasoningtool/tree/main/docs/methodology">docs/methodology</a>, specifically the <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/01_core_principles.md">core principles</a>, <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/02_process.md">processes</a>, and <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/03_capability_guidance.md">capability guidance</a>.</p>
+      <summary>Is there anything this system <em>shouldn't</em> be used for?</summary>
+      <p>Yes. See <a href="https://github.com/benjam3n/reasoningtool/tree/main/docs/methodology">docs/methodology</a>, specifically the <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/01_core_principles.md">core principles</a>, <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/02_process.md">processes</a>, and <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/03_capability_guidance.md">capability guidance</a>.</p>
     </details>
 
     <details class="faq-item">
