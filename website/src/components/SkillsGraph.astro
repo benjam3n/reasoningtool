@@ -440,6 +440,8 @@ const { graphData, tierColors } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: var(--sp-2);
+    height: 100%;
+    box-sizing: border-box;
   }
 
   .sg__toolbar {
@@ -537,13 +539,14 @@ const { graphData, tierColors } = Astro.props;
     border-radius: 10px;
     overflow: hidden;
     background: var(--color-bg-secondary);
+    flex: 1;
+    min-height: 0;
   }
 
   .sg__canvas-wrap {
     flex: 1;
     position: relative;
-    min-height: 500px;
-    height: 65vh;
+    min-height: 0;
   }
   .sg__canvas-wrap svg {
     display: block;
@@ -578,7 +581,7 @@ const { graphData, tierColors } = Astro.props;
       border-top: 1px solid var(--color-border-light);
       max-height: 250px;
     }
-    .sg__canvas-wrap { min-height: 350px; height: 50vh; }
+    .sg__canvas-wrap { min-height: 0; }
   }
 
   .sg__stats {
