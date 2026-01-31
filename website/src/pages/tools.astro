@@ -1,15 +1,25 @@
 ---
-import Base from '../layouts/Base.astro';
+import { ViewTransitions } from 'astro:transitions';
+import Paginated from '../components/Paginated.astro';
+import '../styles/global.css';
 ---
 
-<Base title="Tools" activeNav="tools" description="Python tools for ARAW — auto-expand, visualize, synthesize, and ground claims.">
-  <div class="page-header">
-    <h1>Python Tools</h1>
-  </div>
-
-  <section>
-    <h2>Quick start</h2>
-    <pre><code>pip install openai pyyaml
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Python tools for ARAW — auto-expand, visualize, synthesize, and ground claims." />
+  <title>Tools — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Paginated>
+    <section>
+      <h1>Python Tools</h1>
+      <h2>Quick start</h2>
+      <pre><code>pip install openai pyyaml
 export OPENAI_API_KEY="sk-your-key"
 cd src/araw
 
@@ -22,93 +32,91 @@ python auto_expand_llm.py --db my_analysis.db --continue --parallel 5
 # View in browser
 python visualize.py --db my_analysis.db --serve
 # Open http://localhost:8080</code></pre>
-  </section>
+    </section>
 
-  <section>
-    <h2>Core tools</h2>
-    <div class="card-grid card-grid--2">
-      <div class="card">
-        <h3>araw_engine.py</h3>
-        <pre><code>python araw_engine.py create "I need to change careers" my_search.db
+    <section>
+      <h2>Core tools</h2>
+      <div class="card-grid card-grid--2">
+        <div class="card">
+          <h3>araw_engine.py</h3>
+          <pre><code>python araw_engine.py create "I need to change careers" my_search.db
 python araw_engine.py stats my_search.db
 python araw_engine.py export my_search.db</code></pre>
-      </div>
+        </div>
 
-      <div class="card">
-        <h3>auto_expand_llm.py</h3>
-        <pre><code>python auto_expand_llm.py --db career.db --seed "I should quit my job"
+        <div class="card">
+          <h3>auto_expand_llm.py</h3>
+          <pre><code>python auto_expand_llm.py --db career.db --seed "I should quit my job"
 python auto_expand_llm.py --db career.db --continue --parallel 5 --max-depth 6</code></pre>
-      </div>
+        </div>
 
-      <div class="card">
-        <h3>auto_expand.py</h3>
-        <pre><code>python auto_expand.py --db quick.db --seed "I must learn to code" --duration 60</code></pre>
-      </div>
+        <div class="card">
+          <h3>auto_expand.py</h3>
+          <pre><code>python auto_expand.py --db quick.db --seed "I must learn to code" --duration 60</code></pre>
+        </div>
 
-      <div class="card">
-        <h3>visualize.py</h3>
-        <pre><code>python visualize.py --db my.db --serve
+        <div class="card">
+          <h3>visualize.py</h3>
+          <pre><code>python visualize.py --db my.db --serve
 python visualize.py --db my.db --export graph.json
 python visualize.py --db my.db --export graph.gexf --format gexf</code></pre>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Analysis tools</h2>
-    <div class="card-grid card-grid--2">
-      <div class="card">
-        <h3>synthesize.py</h3>
-        <pre><code>python synthesize.py *.db
+    <section>
+      <h2>Analysis tools</h2>
+      <div class="card-grid card-grid--2">
+        <div class="card">
+          <h3>synthesize.py</h3>
+          <pre><code>python synthesize.py *.db
 python synthesize.py *.db --extract-actions actions.json
 python synthesize.py *.db --find-tensions</code></pre>
-      </div>
+        </div>
 
-      <div class="card">
-        <h3>grounding.py</h3>
-        <pre><code>python grounding.py --db my.db --prioritize
+        <div class="card">
+          <h3>grounding.py</h3>
+          <pre><code>python grounding.py --db my.db --prioritize
 python grounding.py --db my.db --ground-top 10
 python grounding.py --db my.db --integrate</code></pre>
-      </div>
+        </div>
 
-      <div class="card">
-        <h3>evidence_engine.py</h3>
-        <pre><code>python evidence_engine.py --claim "Global poverty has decreased"
+        <div class="card">
+          <h3>evidence_engine.py</h3>
+          <pre><code>python evidence_engine.py --claim "Global poverty has decreased"
 python evidence_engine.py --test-sources</code></pre>
-      </div>
+        </div>
 
-      <div class="card">
-        <h3>commitment_analyzer.py</h3>
-        <pre><code>python commitment_analyzer.py --db my.db analyze
+        <div class="card">
+          <h3>commitment_analyzer.py</h3>
+          <pre><code>python commitment_analyzer.py --db my.db analyze
 python commitment_analyzer.py --db my.db foundations</code></pre>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Conversion and bridging</h2>
-    <div class="card-grid card-grid--2">
-      <div class="card">
-        <h3>synthesis.py</h3>
-        <pre><code>python synthesis.py --db my.db "What are the key cruxes?"
+    <section>
+      <h2>Conversion and bridging</h2>
+      <div class="card-grid card-grid--2">
+        <div class="card">
+          <h3>synthesis.py</h3>
+          <pre><code>python synthesis.py --db my.db "What are the key cruxes?"
 python synthesis.py --db my.db "Where do branches converge?"</code></pre>
-      </div>
+        </div>
 
-      <div class="card">
-        <h3>md_to_sqlite.py</h3>
-        <pre><code>python md_to_sqlite.py session.md
+        <div class="card">
+          <h3>md_to_sqlite.py</h3>
+          <pre><code>python md_to_sqlite.py session.md
 python md_to_sqlite.py sessions/*.md -o all.db</code></pre>
+        </div>
+
+        <div class="card">
+          <h3>bridge_to_gosm.py</h3>
+          <pre><code>python bridge_to_gosm.py database.db --output assumptions.yaml</code></pre>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>bridge_to_gosm.py</h3>
-        <pre><code>python bridge_to_gosm.py database.db --output assumptions.yaml</code></pre>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <pre><code>sqlite3 my.db "SELECT claim, leverage_score FROM nodes
+      <pre><code>sqlite3 my.db "SELECT claim, leverage_score FROM nodes
   WHERE status='unexplored' ORDER BY leverage_score DESC LIMIT 10"
 
 sqlite3 my.db "SELECT claim FROM nodes
@@ -117,6 +125,8 @@ sqlite3 my.db "SELECT claim FROM nodes
 sqlite3 my.db "SELECT COUNT(*) as total,
   SUM(CASE WHEN status='explored' THEN 1 ELSE 0 END) as explored,
   MAX(depth) as max_depth FROM nodes"</code></pre>
-    <p>Full documentation: <a href="https://github.com/benjam3n/reasoningtool/tree/main/src">src/README.md on GitHub &rarr;</a></p>
-  </section>
-</Base>
+      <p>Full documentation: <a href="https://github.com/benjam3n/reasoningtool/tree/main/src">src/README.md on GitHub &rarr;</a></p>
+    </section>
+  </Paginated>
+</body>
+</html>

@@ -1,48 +1,63 @@
 ---
-import Base from '../layouts/Base.astro';
+import { ViewTransitions } from 'astro:transitions';
+import Paginated from '../components/Paginated.astro';
+import '../styles/global.css';
 ---
 
-<Base title="Home">
-  <section class="hero">
-    <h1>reasoningtool</h1>
-    <p class="hero__subtitle">
-      367 structured reasoning skills for Claude Code.
-    </p>
-    <div class="hero__actions">
-      <a href="/getting-started" class="btn btn--primary">Get started</a>
-      <a href="/skills" class="btn btn--secondary">Browse skills</a>
-    </div>
-  </section>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="367 structured reasoning skills for Claude Code." />
+  <title>reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Paginated>
+    <section class="hero">
+      <h1>reasoningtool</h1>
+      <p class="hero__subtitle">
+        367 structured reasoning skills for Claude Code.
+      </p>
+      <div class="hero__actions">
+        <a href="/getting-started" class="btn btn--primary">Get started</a>
+        <a href="/skills" class="btn btn--secondary">Browse skills</a>
+      </div>
+    </section>
 
-  <section>
-    <h2>What's included</h2>
-    <div class="card-grid card-grid--2">
-      <div class="card">
-        <h3>367 skills</h3>
-        <p>Structured prompts for analysis, writing, planning, research, and decision-making.</p>
-        <p><a href="/skills">Browse skills &rarr;</a></p>
+    <section>
+      <h2>What's included</h2>
+      <div class="card-grid card-grid--2">
+        <div class="card">
+          <h3>367 skills</h3>
+          <p>Structured prompts for analysis, writing, planning, research, and decision-making.</p>
+          <p><a href="/skills">Browse skills &rarr;</a></p>
+        </div>
+        <div class="card">
+          <h3>ARAW and UAUA</h3>
+          <p><strong>ARAW</strong> takes any claim and tests both branches recursively. <strong>UAUA</strong> alternates between mapping the possibility space and testing what it finds.</p>
+          <p><a href="/about#methods">How they work &rarr;</a></p>
+        </div>
+        <div class="card">
+          <h3>Python tools</h3>
+          <p>Auto-expand claims into branching trees. Visualize results. Synthesize findings across runs.</p>
+          <p><a href="/tools">See the tools &rarr;</a></p>
+        </div>
       </div>
-      <div class="card">
-        <h3>ARAW and UAUA</h3>
-        <p><strong>ARAW</strong> takes any claim and tests both branches recursively. <strong>UAUA</strong> alternates between mapping the possibility space and testing what it finds.</p>
-        <p><a href="/about#methods">How they work &rarr;</a></p>
-      </div>
-      <div class="card">
-        <h3>Python tools</h3>
-        <p>Auto-expand claims into branching trees. Visualize results. Synthesize findings across runs.</p>
-        <p><a href="/tools">See the tools &rarr;</a></p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Quick start</h2>
-    <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
+    <section>
+      <h2>Quick start</h2>
+      <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool/claude-code-plugin
 claude</code></pre>
-    <p>
-      Then type <code>/araw should I change careers</code> or <code>/uaua 4x what's the best approach to learning math</code>.
-    </p>
-    <p><a href="/getting-started">Full guide &rarr;</a></p>
-  </section>
-</Base>
+      <p>
+        Then type <code>/araw should I change careers</code> or <code>/uaua 4x what's the best approach to learning math</code>.
+      </p>
+      <p><a href="/getting-started">Full guide &rarr;</a></p>
+    </section>
+  </Paginated>
+</body>
+</html>

@@ -1,50 +1,61 @@
 ---
-import Base from '../layouts/Base.astro';
+import { ViewTransitions } from 'astro:transitions';
+import Paginated from '../components/Paginated.astro';
+import '../styles/global.css';
 ---
 
-<Base title="Getting Started" activeNav="getting-started" description="Install reasoningtool and start using it.">
-  <div class="page-header">
-    <h1>Getting started</h1>
-  </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Install reasoningtool and start using it." />
+  <title>Getting Started — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Paginated>
+    <section>
+      <h1>Getting started</h1>
 
-  <div class="callout" style="border-left-color: var(--color-warning, #e0a800);">
-    <p><strong>Use a skill before planning.</strong> Claude Code's built-in plan mode generates a single approach and commits to it immediately.
-    If the problem space hasn't been mapped first, the resulting plan often misses better alternatives &mdash;
-    and the gap is hard to detect until the implementation is already built.</p>
-    <p>Before asking Claude to plan or build, run a skill that surfaces the options:</p>
-    <ul>
-      <li><code>/decide</code> or <code>/dcp</code> &mdash; compare approaches before committing</li>
-      <li><code>/search</code> or <code>/se</code> &mdash; map the full solution space</li>
-      <li><code>/araw</code> &mdash; stress-test an approach from both sides</li>
-      <li><code>/foht</code> &mdash; find methods when you know the goal but not how</li>
-    </ul>
-    <p>The plan you get after exploration will be qualitatively different from the plan you get without it.</p>
-  </div>
+      <div class="callout" style="border-left-color: var(--color-warning, #e0a800);">
+        <p><strong>Use a skill before planning.</strong> Claude Code's built-in plan mode generates a single approach and commits to it immediately.
+        If the problem space hasn't been mapped first, the resulting plan often misses better alternatives.</p>
+        <p>Before asking Claude to plan or build, run a skill that surfaces the options:</p>
+        <ul>
+          <li><code>/decide</code> or <code>/dcp</code> &mdash; compare approaches before committing</li>
+          <li><code>/search</code> or <code>/se</code> &mdash; map the full solution space</li>
+          <li><code>/araw</code> &mdash; stress-test an approach from both sides</li>
+          <li><code>/foht</code> &mdash; find methods when you know the goal but not how</li>
+        </ul>
+      </div>
+    </section>
 
-  <section>
-    <h2>Installation</h2>
+    <section>
+      <h2>Installation</h2>
 
-    <div class="card-grid card-grid--2">
-      <div class="card">
-        <h3>Option 1: Run from the repo</h3>
-        <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
+      <div class="card-grid card-grid--2">
+        <div class="card">
+          <h3>Option 1: Run from the repo</h3>
+          <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool/claude-code-plugin
 claude</code></pre>
-      </div>
+        </div>
 
-      <div class="card">
-        <h3>Option 2: Copy into your project</h3>
-        <pre><code>cp -r path/to/reasoningtool/claude-code-plugin/skills your-project/
+        <div class="card">
+          <h3>Option 2: Copy into your project</h3>
+          <pre><code>cp -r path/to/reasoningtool/claude-code-plugin/skills your-project/
 cp path/to/reasoningtool/claude-code-plugin/CLAUDE.md your-project/
 cd your-project
 claude</code></pre>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2>Examples</h2>
-    <pre><code>/araw should I change careers
+    <section>
+      <h2>Examples</h2>
+      <pre><code>/araw should I change careers
 
 /se what are all the ways I could approach this product launch
 
@@ -55,37 +66,37 @@ claude</code></pre>
 /rca our deploy pipeline keeps failing
 
 /uaua 4x what's the best approach to learning math</code></pre>
-  </section>
+    </section>
 
-  <section>
-    <h2>Which skill to use</h2>
+    <section>
+      <h2>Which skill to use</h2>
 
-    <table>
-      <thead>
-        <tr><th>You have&hellip;</th><th>Use</th><th>What it does</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>A claim to test</td><td><code>/claim</code></td><td>ARAW tests both sides</td></tr>
-        <tr><td>A decision to make</td><td><code>/decide</code></td><td>Compares options, tests with ARAW</td></tr>
-        <tr><td>An idea or proposal</td><td><code>/viability</code></td><td>Tests viability with ARAW</td></tr>
-        <tr><td>Work to assess</td><td><code>/evaluate</code></td><td>Checks correctness, completeness, risks</td></tr>
-        <tr><td>Something broken</td><td><code>/diagnose</code></td><td>Maps causes with UAUA, then tests each</td></tr>
-        <tr><td>A space to explore</td><td><code>/search</code></td><td>Explores with UAUA, then tests findings</td></tr>
-        <tr><td>A &ldquo;how do I&rdquo; question</td><td><code>/how</code></td><td>Finds methods (AR-forward)</td></tr>
-        <tr><td>A goal or want</td><td><code>/want</code></td><td>Traces commitments (AR-forward)</td></tr>
-        <tr><td>A feeling or frustration</td><td><code>/emotion</code></td><td>Acknowledges, then routes to what you need</td></tr>
-        <tr><td>Something to execute</td><td><code>/action</code></td><td>Plans and executes steps</td></tr>
-        <tr><td>Content to produce</td><td><code>/create</code></td><td>Routes to writing skills</td></tr>
-        <tr><td>Need maximum effort</td><td><code>/certainty</code></td><td>Iterates until thoroughly resolved</td></tr>
-        <tr><td>Something to improve</td><td><code>/iterate</code></td><td>Finds what to iterate, at what level, then does it</td></tr>
-        <tr><td>A domain-specific question</td><td><code>/technical</code></td><td>Routes to specialized skills by domain</td></tr>
-        <tr><td>A problem to analyze</td><td><code>/analyze</code></td><td>Routes to decomposition, systems analysis, or synthesis</td></tr>
-        <tr><td>Need orientation</td><td><code>/meta</code></td><td>Skill discovery and usage guidance</td></tr>
-        <tr><td>A prompt to improve</td><td><code>/sp</code></td><td>Adds precision, scope, and criteria before answering</td></tr>
-      </tbody>
-    </table>
+      <table>
+        <thead>
+          <tr><th>You have&hellip;</th><th>Use</th><th>What it does</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>A claim to test</td><td><code>/claim</code></td><td>ARAW tests both sides</td></tr>
+          <tr><td>A decision to make</td><td><code>/decide</code></td><td>Compares options, tests with ARAW</td></tr>
+          <tr><td>An idea or proposal</td><td><code>/viability</code></td><td>Tests viability with ARAW</td></tr>
+          <tr><td>Work to assess</td><td><code>/evaluate</code></td><td>Checks correctness, completeness, risks</td></tr>
+          <tr><td>Something broken</td><td><code>/diagnose</code></td><td>Maps causes with UAUA, then tests each</td></tr>
+          <tr><td>A space to explore</td><td><code>/search</code></td><td>Explores with UAUA, then tests findings</td></tr>
+          <tr><td>A &ldquo;how do I&rdquo; question</td><td><code>/how</code></td><td>Finds methods (AR-forward)</td></tr>
+          <tr><td>A goal or want</td><td><code>/want</code></td><td>Traces commitments (AR-forward)</td></tr>
+          <tr><td>A feeling or frustration</td><td><code>/emotion</code></td><td>Acknowledges, then routes to what you need</td></tr>
+          <tr><td>Something to execute</td><td><code>/action</code></td><td>Plans and executes steps</td></tr>
+          <tr><td>Content to produce</td><td><code>/create</code></td><td>Routes to writing skills</td></tr>
+          <tr><td>Need maximum effort</td><td><code>/certainty</code></td><td>Iterates until thoroughly resolved</td></tr>
+          <tr><td>Something to improve</td><td><code>/iterate</code></td><td>Finds what to iterate, at what level, then does it</td></tr>
+          <tr><td>A domain-specific question</td><td><code>/technical</code></td><td>Routes to specialized skills by domain</td></tr>
+          <tr><td>A problem to analyze</td><td><code>/analyze</code></td><td>Routes to decomposition, systems analysis, or synthesis</td></tr>
+          <tr><td>Need orientation</td><td><code>/meta</code></td><td>Skill discovery and usage guidance</td></tr>
+          <tr><td>A prompt to improve</td><td><code>/sp</code></td><td>Adds precision, scope, and criteria before answering</td></tr>
+        </tbody>
+      </table>
 
-    <pre><code>What do you have?
+      <pre><code>What do you have?
 ├── A statement → Is it testable?
 │   ├── YES → /claim
 │   └── It's more of an idea → /viability
@@ -103,36 +114,37 @@ claude</code></pre>
 ├── Need analysis → /analyze
 ├── A prompt to improve → /sp
 └── Not sure → /meta</code></pre>
-  </section>
+    </section>
 
-  <section>
-    <h2>Depth scaling</h2>
-    <table>
-      <thead>
-        <tr><th>Example</th><th>What you get</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><code>/araw claim</code></td><td>Default (2x) &mdash; 4&ndash;5 tree levels, 20+ findings</td></tr>
-        <tr><td><code>/araw 4x claim</code></td><td>5&ndash;6 levels, 35+ findings, edge cases</td></tr>
-        <tr><td><code>/araw 8x claim</code></td><td>6&ndash;8 levels, 55+ findings</td></tr>
-        <tr><td><code>/uaua 4x topic</code></td><td>Alternating search at 4x depth</td></tr>
-        <tr><td><code>/rca 4x symptom</code></td><td>5+ causal chains, 7 why-levels deep</td></tr>
-        <tr><td><code>/se 4x space</code></td><td>35+ items, 7 dimensions, 6 edge cases</td></tr>
-        <tr><td><code>/fwa 4x answer</code></td><td>8 checks, 4 alternatives, 3 sources</td></tr>
-      </tbody>
-    </table>
-    <p>Depth scaling is supported by 40+ analytical skills including <code>/araw</code>, <code>/ar</code>, <code>/aw</code>, <code>/uaua</code>, <code>/foht</code>, <code>/se</code>, <code>/dd</code>, <code>/rca</code>, <code>/ht</code>, <code>/fwa</code>, <code>/sdc</code>, <code>/fohw</code>, <code>/insd</code>, and more.</p>
-  </section>
+    <section>
+      <h2>Depth scaling</h2>
+      <table>
+        <thead>
+          <tr><th>Example</th><th>What you get</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>/araw claim</code></td><td>Default (2x) &mdash; 4&ndash;5 tree levels, 20+ findings</td></tr>
+          <tr><td><code>/araw 4x claim</code></td><td>5&ndash;6 levels, 35+ findings, edge cases</td></tr>
+          <tr><td><code>/araw 8x claim</code></td><td>6&ndash;8 levels, 55+ findings</td></tr>
+          <tr><td><code>/uaua 4x topic</code></td><td>Alternating search at 4x depth</td></tr>
+          <tr><td><code>/rca 4x symptom</code></td><td>5+ causal chains, 7 why-levels deep</td></tr>
+          <tr><td><code>/se 4x space</code></td><td>35+ items, 7 dimensions, 6 edge cases</td></tr>
+          <tr><td><code>/fwa 4x answer</code></td><td>8 checks, 4 alternatives, 3 sources</td></tr>
+        </tbody>
+      </table>
+      <p>Depth scaling is supported by 40+ analytical skills including <code>/araw</code>, <code>/ar</code>, <code>/aw</code>, <code>/uaua</code>, <code>/foht</code>, <code>/se</code>, <code>/dd</code>, <code>/rca</code>, <code>/ht</code>, <code>/fwa</code>, <code>/sdc</code>, <code>/fohw</code>, <code>/insd</code>, and more.</p>
+    </section>
 
-  <section>
-    <h2>Python tools</h2>
-    <pre><code>pip install openai pyyaml
+    <section>
+      <h2>Python tools</h2>
+      <pre><code>pip install openai pyyaml
 export OPENAI_API_KEY="sk-your-key"
 cd src/araw
 
 python auto_expand_llm.py --db career.db --seed "Should I start a business?"
 python visualize.py --db career.db --serve</code></pre>
-    <p><a href="/tools">Full tool documentation &rarr;</a></p>
-  </section>
-
-</Base>
+      <p><a href="/tools">Full tool documentation &rarr;</a></p>
+    </section>
+  </Paginated>
+</body>
+</html>

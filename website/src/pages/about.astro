@@ -1,41 +1,52 @@
 ---
-import Base from '../layouts/Base.astro';
+import { ViewTransitions } from 'astro:transitions';
+import Paginated from '../components/Paginated.astro';
+import '../styles/global.css';
 ---
 
-<Base title="About" activeNav="about" description="What the toolkit does and how the core methods work.">
-  <div class="page-header">
-    <h1>About</h1>
-  </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="What the toolkit does and how the core methods work." />
+  <title>About — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Paginated>
+    <section>
+      <h1>About</h1>
 
-  <section>
-    <h2 id="methods">Core methods</h2>
+      <h2 id="methods">Core methods</h2>
 
-    <div class="card-grid card-grid--2">
-      <div class="card">
-        <h3>ARAW (Assume Right / Assume Wrong)</h3>
-        <p>Takes any claim and branches it: what follows if true? What follows if false? Then recurses &mdash; every conclusion becomes another claim to test. Results are stored in SQLite with leverage scores, crux detection, and domain classification.</p>
+      <div class="card-grid card-grid--2">
+        <div class="card">
+          <h3>ARAW (Assume Right / Assume Wrong)</h3>
+          <p>Takes any claim and branches it: what follows if true? What follows if false? Then recurses &mdash; every conclusion becomes another claim to test. Results are stored in SQLite with leverage scores, crux detection, and domain classification.</p>
+        </div>
+
+        <div class="card">
+          <h3>UAUA (Universalize &rarr; ARAW &rarr; Universalize &rarr; ARAW)</h3>
+          <p>Four passes alternating between two operations:</p>
+          <p><strong>Universalization</strong> asks "what is this an instance of?" and explores across the possibility space.</p>
+          <p><strong>ARAW</strong> asks "is this true or false?" and tests claims through contradiction.</p>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>UAUA (Universalize &rarr; ARAW &rarr; Universalize &rarr; ARAW)</h3>
-        <p>Four passes alternating between two operations:</p>
-        <p><strong>Universalization</strong> asks "what is this an instance of?" and explores across the possibility space.</p>
-        <p><strong>ARAW</strong> asks "is this true or false?" and tests claims through contradiction.</p>
-      </div>
-    </div>
-
-    <pre><code>U1: Map the space &rarr; candidates
+      <pre><code>U1: Map the space &rarr; candidates
  &darr;
 A1: Test candidates &rarr; validated/rejected
  &darr;
 U2: Find edge cases of survivors &rarr; new candidates
  &darr;
 A2: Final validation &rarr; what survived all rounds</code></pre>
-  </section>
 
-  <section>
-    <h2>License</h2>
-    <p>Apache 2.0. Use it, modify it, build on it.</p>
-    <p><a href="https://github.com/benjam3n/reasoningtool">Source on GitHub &rarr;</a></p>
-  </section>
-</Base>
+      <h2>License</h2>
+      <p>Apache 2.0. Use it, modify it, build on it.</p>
+      <p><a href="https://github.com/benjam3n/reasoningtool">Source on GitHub &rarr;</a></p>
+    </section>
+  </Paginated>
+</body>
+</html>

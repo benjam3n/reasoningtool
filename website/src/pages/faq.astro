@@ -1,45 +1,51 @@
 ---
-import Base from '../layouts/Base.astro';
+import { ViewTransitions } from 'astro:transitions';
+import Paginated from '../components/Paginated.astro';
+import '../styles/global.css';
 ---
 
-<Base title="FAQ" activeNav="faq" description="Frequently asked questions about the reasoning toolkit.">
-  <div class="page-header">
-    <h1>FAQ</h1>
-  </div>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Frequently asked questions about the reasoning toolkit." />
+  <title>FAQ — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Paginated>
+    <section class="faq">
+      <h1>FAQ</h1>
 
-  <section class="faq">
+      <details class="faq-item" open>
+        <summary>What is this project?</summary>
+        <p>Exploratory testing understanding, discovery, want, truth, decision making.</p>
+      </details>
 
-    <details class="faq-item" open>
-      <summary>What is this project?</summary>
-      <p>Exploratory testing understanding, discovery, want, truth, decision making.</p>
-    </details>
+      <details class="faq-item">
+        <summary>How do I use a skill?</summary>
+        <p>Skills can be used with <code>/[skill name]</code>.</p>
+      </details>
 
-    <details class="faq-item">
-      <summary>How do I use a skill?</summary>
-      <p>Skills can be used with <code>/[skill name]</code>.</p>
-    </details>
+      <details class="faq-item">
+        <summary>Does it load all 367 skills into context at once?</summary>
+        <p>No.</p>
+      </details>
 
-    <details class="faq-item">
-      <summary>Does it load all 367 skills into context at once?</summary>
-      <p>No.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Is there anything this system <em>shouldn't</em> be used for?</summary>
-      <p>Yes. See <a href="https://github.com/benjam3n/reasoningtool/tree/main/docs/methodology">docs/methodology</a>, specifically the <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/01_core_principles.md">core principles</a>, <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/02_process.md">processes</a>, and <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/03_capability_guidance.md">capability guidance</a>.</p>
-    </details>
-
-  </section>
-</Base>
+      <details class="faq-item">
+        <summary>Is there anything this system <em>shouldn't</em> be used for?</summary>
+        <p>Yes. See <a href="https://github.com/benjam3n/reasoningtool/tree/main/docs/methodology">docs/methodology</a>, specifically the <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/01_core_principles.md">core principles</a>, <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/02_process.md">processes</a>, and <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/03_capability_guidance.md">capability guidance</a>.</p>
+      </details>
+    </section>
+  </Paginated>
+</body>
+</html>
 
 <style>
-  .faq {
-    max-width: var(--w-prose);
-    margin: 0 auto;
-  }
-
   .faq-item {
-    border-bottom: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--color-border);
     padding: var(--sp-4) 0;
   }
 
@@ -48,22 +54,22 @@ import Base from '../layouts/Base.astro';
   }
 
   .faq-item summary {
-    font-family: var(--ff-sans);
+    font-family: var(--font-sans);
     font-weight: 600;
-    font-size: var(--fs-3);
+    font-size: var(--text-lg);
     cursor: pointer;
     list-style: none;
     display: flex;
     align-items: center;
     gap: var(--sp-2);
-    color: var(--c-text);
+    color: var(--color-text);
   }
 
   .faq-item summary::before {
     content: '+';
-    font-size: var(--fs-4);
+    font-size: var(--text-xl);
     font-weight: 400;
-    color: var(--c-accent);
+    color: var(--color-accent);
     flex-shrink: 0;
     width: 1.2em;
     text-align: center;
@@ -81,12 +87,12 @@ import Base from '../layouts/Base.astro';
   .faq-item p {
     margin-top: var(--sp-2);
     padding-left: calc(1.2em + var(--sp-2));
-    color: var(--c-text-2);
+    color: var(--color-text-secondary);
     line-height: 1.65;
   }
 
   .faq-item p a {
-    color: var(--c-accent);
+    color: var(--color-accent);
     text-decoration: none;
   }
 
@@ -95,9 +101,9 @@ import Base from '../layouts/Base.astro';
   }
 
   .faq-item code {
-    font-family: var(--ff-mono);
+    font-family: var(--font-mono);
     font-size: 0.9em;
-    background: var(--c-surface);
+    background: var(--color-code-bg);
     padding: 0.15em 0.4em;
     border-radius: 3px;
   }
