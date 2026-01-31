@@ -16,12 +16,7 @@ import Base from '../layouts/Base.astro';
 
     <details class="faq-item">
       <summary>How do I use a skill?</summary>
-      <p>Skills can be used with <code>/[skill name]</code>. See the <a href="/getting-started">getting started guide</a> for usage details and routing tables.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Why are there so many skills?</summary>
-      <p>Different problems need different thinking structures. A root cause analysis is not the same operation as a cost-benefit analysis, which is not the same as generating creative options. Having many skills means finding a procedure that fits your situation instead of forcing every problem through the same framework.</p>
+      <p>Skills can be used with <code>/[skill name]</code>.</p>
     </details>
 
     <details class="faq-item">
@@ -32,34 +27,6 @@ import Base from '../layouts/Base.astro';
     <details class="faq-item">
       <summary>Is there anything this system <em>shouldn't</em> be used for?</summary>
       <p>Yes. See <a href="https://github.com/benjam3n/reasoningtool/tree/main/docs/methodology">docs/methodology</a>, specifically the <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/01_core_principles.md">core principles</a>, <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/02_process.md">processes</a>, and <a href="https://github.com/benjam3n/reasoningtool/blob/main/docs/methodology/03_capability_guidance.md">capability guidance</a>.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>How is this different from just prompting an LLM?</summary>
-      <p>A regular prompt gets you whatever the model's default reasoning path is. These skills force specific reasoning structures: branching (test both sides of a claim), enumeration (exhaust the option space before choosing), validation (check your own output against criteria), and failure anticipation (figure out how the answer could be wrong). The difference is the same as the difference between "think about this" and a detailed diagnostic flowchart. See <a href="/why">Why structured procedures work</a> for a deeper explanation.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Does it work with models other than Claude?</summary>
-      <p>The skills are designed for Claude Code's <code>/skill</code> system, but the underlying SKILL.md files are plain markdown. Any LLM that can follow structured instructions could use them &mdash; you'd just need to paste or load the skill content into your context manually.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>What are ARAW and UAUA?</summary>
-      <p><strong>ARAW</strong> (Assume Right / Assume Wrong) takes any claim and tests it by assuming it's true, then assuming it's false, then recursing on the conclusions. <strong>UAUA</strong> alternates between mapping the possibility space (Universalize) and testing what it finds (ARAW) across four passes. These are the core analytical engines that many other skills build on. See <a href="/about#methods">core methods</a> for details.</p>
-    </details>
-
-    <details class="faq-item">
-      <summary>Why is self-improvement about finding the right question, not the right answer?</summary>
-      <p>Because questions have goals and answers do not. A question gives you a direction &mdash; it identifies where you are in the search space and where you want to be. An answer is just a point. It only makes sense in the context of a question with a goal.</p>
-      <p>In physics terms: a question is like a vector (magnitude and direction), while an answer is like a scalar (just a value). A question is multidimensional. An answer is not.</p>
-
-    </details>
-
-    <details class="faq-item">
-      <summary>What does "all action is goal-oriented" mean for this system?</summary>
-      <p>Every action someone takes is a reaction to something &mdash; a need, a want, a situation. That need is itself a reaction to something else, which is itself a reaction to something deeper. This is reverse causality: you can trace any behavior back through a chain of intentions.</p>
-      <p>There was originally a good intention behind all action, even when the action itself seems counterproductive. The system helps you do two things: first, figure out what that original intention was, and second, figure out whether the current action is actually the best way to satisfy it. Often it is not, and the gap between intention and action is where the most valuable improvements live.</p>
     </details>
 
   </section>
