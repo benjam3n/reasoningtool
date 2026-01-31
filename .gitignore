@@ -8,5 +8,5 @@ subreddit/
 previous-approaches/skills/
 
 # Session storage (runtime data)
-sessions/
+/sessions/
 *.db
