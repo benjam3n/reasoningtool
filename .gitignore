@@ -6,3 +6,7 @@ library/
 subreddit/
 /Antilogic.md
 previous-approaches/skills/
+
+# Session storage (runtime data)
+sessions/
+*.db

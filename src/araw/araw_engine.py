@@ -65,13 +65,40 @@ class ARAWEngine:
         # Explore a node
         engine.add_assume_right(node_id, "Proceed with surgery funding")
         engine.add_assume_wrong(node_id, alternatives=["Other treatments", "Different hospital"])
+
+    Session-managed usage:
+        engine = ARAWEngine.from_session(skill="araw", input_text="Should I change careers?", depth=4)
+        # ... use normally ...
+        engine.finalize()  # registers findings in the session index
     """
 
     def __init__(self, db_path: str = "araw_search.db"):
         self.db_path = Path(db_path)
         self.conn = sqlite3.connect(str(self.db_path), check_same_thread=False)
         self.conn.row_factory = sqlite3.Row
+        self._session = None  # Set by from_session()
         self._init_schema()
+
+    @classmethod
+    def from_session(cls, skill: str, input_text: str, depth: Optional[int] = None,
+                     sessions_dir: Optional[str] = None, tags: Optional[List[str]] = None) -> "ARAWEngine":
+        """Create an engine backed by a session directory.
+
+        Creates a session dir, places tree.db inside it, and registers
+        in the session index.
+        """
+        try:
+            from ..storage.session_store import SessionStore
+        except ImportError:
+            from src.storage.session_store import SessionStore
+
+        store = SessionStore(sessions_dir=sessions_dir)
+        session = store.create_session(
+            skill=skill, input_text=input_text, depth=depth, tags=tags
+        )
+        engine = cls(str(session.tree_db_path))
+        engine._session = session
+        return engine
 
     def _init_schema(self):
         """Initialize database schema"""
@@ -161,6 +188,17 @@ class ARAWEngine:
             json.dumps(initial_claim),
             json.dumps(self._now())
         ))
+
+        # Store session ID if session-managed
+        if self._session:
+            cursor.execute(
+                "INSERT OR REPLACE INTO metadata (key, value) VALUES ('session_id', ?)",
+                (json.dumps(self._session.id),),
+            )
+            cursor.execute(
+                "INSERT OR REPLACE INTO metadata (key, value) VALUES ('skill', ?)",
+                (json.dumps(self._session.skill),),
+            )
 
         self.conn.commit()
         return root_id
@@ -644,6 +682,68 @@ class ARAWEngine:
             WHERE branch_type != 'root'
         """)
         self.conn.commit()
+
+    def finalize(self):
+        """Finalize the session: update node count and extract key findings to the index.
+
+        Only does anything if this engine was created via from_session().
+        """
+        if not self._session:
+            return
+
+        stats = self.get_stats()
+        findings = self._extract_key_findings()
+        self._session.finalize(
+            node_count=stats["total_nodes"],
+            findings=findings,
+        )
+
+    def _extract_key_findings(self) -> List[Dict[str, Any]]:
+        """Extract key findings from the tree for indexing.
+
+        Extracts: crux nodes, high-leverage nodes, and grounded nodes.
+        """
+        findings = []
+        cursor = self.conn.cursor()
+
+        # Crux nodes
+        cursor.execute(
+            "SELECT id, claim, content FROM nodes WHERE json_extract(content, '$.is_crux') = 1"
+        )
+        for row in cursor.fetchall():
+            findings.append({
+                "text": row["claim"],
+                "type": "crux",
+                "code": row["id"],
+            })
+
+        # High-leverage nodes (top 10)
+        cursor.execute(
+            "SELECT id, claim, leverage_score FROM nodes WHERE leverage_score >= 0.8 ORDER BY leverage_score DESC LIMIT 10"
+        )
+        for row in cursor.fetchall():
+            findings.append({
+                "text": row["claim"],
+                "type": "high_leverage",
+                "code": row["id"],
+                "severity": f"leverage={row['leverage_score']:.2f}",
+            })
+
+        # Grounded nodes (via groundings table if it exists)
+        try:
+            cursor.execute(
+                "SELECT n.id, n.claim FROM nodes n JOIN groundings g ON n.id = g.node_id"
+            )
+            for row in cursor.fetchall():
+                findings.append({
+                    "text": row["claim"],
+                    "type": "grounded",
+                    "code": row["id"],
+                })
+        except sqlite3.OperationalError:
+            pass  # groundings table may not exist
+
+        return findings
 
     def close(self):
         """Close the database connection"""

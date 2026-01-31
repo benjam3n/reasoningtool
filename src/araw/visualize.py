@@ -1177,10 +1177,13 @@ def serve(db_path: str, port: int = 8080):
 
 def main():
     parser = argparse.ArgumentParser(description="ARAW Tree Visualization")
-    parser.add_argument("--db", type=str, required=True, help="Database file")
+    group = parser.add_mutually_exclusive_group(required=True)
+    group.add_argument("--db", type=str, help="Database file (direct path)")
+    group.add_argument("--session", type=str, help="Session ID (looks up in index)")
+    group.add_argument("--session-dir", type=str, help="Session directory path")
 
     # Export options
-    parser.add_argument("--export", type=str, help="Export to file")
+    parser.add_argument("--export", type=str, help="Export to file (or session exports/ if omitted)")
     parser.add_argument("--format", choices=['json', 'gexf'], default='json',
                        help="Export format")
 
@@ -1193,10 +1196,43 @@ def main():
     parser.add_argument("--serve", action="store_true", help="Start visualization server")
     parser.add_argument("--port", type=int, default=8080, help="Server port")
 
+    # Session directory
+    parser.add_argument("--sessions-dir", type=str, help="Sessions root directory")
+
     args = parser.parse_args()
 
+    # Resolve the database path
+    db_path = args.db
+    session_dir = None
+
+    if args.session:
+        # Look up session in index
+        try:
+            from storage.session_store import SessionStore
+        except ImportError:
+            import sys
+            sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+            from storage.session_store import SessionStore
+
+        store = SessionStore(sessions_dir=args.sessions_dir)
+        session = store.load_session(args.session)
+        if not session:
+            print(f"Session {args.session} not found in index.")
+            return
+        db_path = str(session.tree_db_path)
+        session_dir = session.dir_path
+        print(f"Loaded session: {session}")
+
+    elif args.session_dir:
+        session_dir = Path(args.session_dir)
+        db_path = str(session_dir / "tree.db")
+
+    if not Path(db_path).exists():
+        print(f"Database not found: {db_path}")
+        return
+
     if args.export:
-        viz = ARAWVisualizer(args.db)
+        viz = ARAWVisualizer(db_path)
         kwargs = {}
         if args.max_depth:
             kwargs['max_depth'] = args.max_depth
@@ -1207,8 +1243,26 @@ def main():
             viz.export_gexf(args.export, **kwargs)
         else:
             viz.export_json(args.export, **kwargs)
+
     elif args.serve:
-        serve(args.db, args.port)
+        serve(db_path, args.port)
+
+    elif session_dir:
+        # Default: export to session exports/ directory
+        viz = ARAWVisualizer(db_path)
+        kwargs = {}
+        if args.max_depth:
+            kwargs['max_depth'] = args.max_depth
+        if args.min_leverage:
+            kwargs['min_leverage'] = args.min_leverage
+
+        exports_dir = Path(session_dir) / "exports"
+        exports_dir.mkdir(exist_ok=True)
+
+        viz.export_json(str(exports_dir / "tree.json"), **kwargs)
+        viz.export_gexf(str(exports_dir / "tree.gexf"), **kwargs)
+        print(f"Exported to {exports_dir}/")
+
     else:
         print("Use --export FILE or --serve")
         print("Run with --help for all options")

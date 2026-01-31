@@ -7,6 +7,20 @@ import Base from '../layouts/Base.astro';
     <h1>Getting started</h1>
   </div>
 
+  <div class="callout" style="border-left-color: var(--color-warning, #e0a800);">
+    <p><strong>Use a skill before planning.</strong> Claude Code's built-in plan mode generates a single approach and commits to it immediately.
+    If the problem space hasn't been mapped first, the resulting plan often misses better alternatives &mdash;
+    and the gap is hard to detect until the implementation is already built.</p>
+    <p>Before asking Claude to plan or build, run a skill that surfaces the options:</p>
+    <ul>
+      <li><code>/decide</code> or <code>/dcp</code> &mdash; compare approaches before committing</li>
+      <li><code>/search</code> or <code>/se</code> &mdash; map the full solution space</li>
+      <li><code>/araw</code> &mdash; stress-test an approach from both sides</li>
+      <li><code>/foht</code> &mdash; find methods when you know the goal but not how</li>
+    </ul>
+    <p>The plan you get after exploration will be qualitatively different from the plan you get without it.</p>
+  </div>
+
   <section>
     <h2>Installation</h2>
 
