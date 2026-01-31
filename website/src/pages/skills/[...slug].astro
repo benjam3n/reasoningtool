@@ -42,20 +42,9 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
 <body>
   <Paginated>
     <section class="skill-page">
-      <nav class="skill-breadcrumb">
-        <a href="/skills">Skills</a>
-        <span class="skill-breadcrumb__sep">/</span>
-        <span>{skill.data.name}</span>
-      </nav>
-
       <div class="skill-page__header">
         <span class:list={['tier-badge', tierClass]}>{tier}</span>
         <h1><code>{skill.data.name}</code></h1>
-        <p class="skill-page__desc">{skill.data.description}</p>
-      </div>
-
-      <div class="skill-page__usage callout">
-        <p><strong>Usage in Claude Code:</strong> <code>/{name} your question here</code></p>
       </div>
 
       <article class="skill-page__content">
@@ -63,7 +52,7 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
       </article>
 
       <nav class="skill-page__back">
-        <a href="/skills">&larr; All skills</a>
+        <a href="/">&larr; All skills</a>
       </nav>
     </section>
   </Paginated>
@@ -71,46 +60,21 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
 </html>
 
 <style>
-  .skill-breadcrumb {
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    margin-bottom: var(--sp-4);
-  }
-  .skill-breadcrumb a {
-    color: var(--color-text-muted);
-  }
-  .skill-breadcrumb a:hover {
-    color: var(--color-accent);
-  }
-  .skill-breadcrumb__sep {
-    margin: 0 0.4em;
-    opacity: 0.4;
-  }
-
   .skill-page__header {
-    margin-bottom: var(--sp-5);
+    margin-bottom: var(--sp-3);
   }
   .skill-page__header .tier-badge {
-    margin-bottom: var(--sp-2);
+    margin-bottom: var(--sp-1);
   }
   .skill-page__header h1 {
     font-size: var(--text-2xl);
-    margin-bottom: var(--sp-2);
+    margin: 0;
   }
   .skill-page__header h1 code {
     background: none;
     padding: 0;
     font-size: inherit;
     color: inherit;
-  }
-  .skill-page__desc {
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-  }
-
-  .skill-page__usage {
-    margin-bottom: var(--sp-6);
   }
 
   .skill-page__content {
@@ -121,21 +85,30 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
   }
   .skill-page__content :global(h2) {
     font-size: var(--text-xl);
-    margin-top: var(--sp-7);
-    margin-bottom: var(--sp-3);
+    margin-top: var(--sp-4);
+    margin-bottom: var(--sp-2);
   }
   .skill-page__content :global(h3) {
     font-size: var(--text-lg);
-    margin-top: var(--sp-5);
-    margin-bottom: var(--sp-2);
+    margin-top: var(--sp-3);
+    margin-bottom: var(--sp-1);
   }
   .skill-page__content :global(table) {
     font-size: var(--text-sm);
   }
+  .skill-page__content :global(p) {
+    margin-top: var(--sp-1);
+    margin-bottom: var(--sp-1);
+  }
+  .skill-page__content :global(ul),
+  .skill-page__content :global(ol) {
+    margin-top: var(--sp-1);
+    margin-bottom: var(--sp-1);
+  }
 
   .skill-page__back {
-    margin-top: var(--sp-7);
-    padding-top: var(--sp-5);
+    margin-top: var(--sp-3);
+    padding-top: var(--sp-2);
     border-top: 1px solid var(--color-border);
   }
 </style>

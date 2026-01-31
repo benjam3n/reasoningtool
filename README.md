@@ -1,29 +1,4 @@
-# reasoningtool
-
-367 thinking skills for Claude Code. Each skill is a structured prompt that guides you through a specific type of thinking, decision, or analysis.
-
-## Installation
-
-### Option 1: Run from this directory
-
-```bash
-git clone https://github.com/benjam3n/reasoningtool.git
-cd reasoningtool/claude-code-plugin
-claude
-```
-
-Claude reads the `CLAUDE.md` file and all skills become available.
-
-### Option 2: Copy into your project
-
-```bash
-cp -r path/to/reasoningtool/claude-code-plugin/skills your-project/
-cp path/to/reasoningtool/claude-code-plugin/CLAUDE.md your-project/
-cd your-project
-claude
-```
-
-## All Skills
+# All Skills
 
 | Skill | Stands for | What it does |
 |-------|-----------|-------------|
@@ -413,6 +388,27 @@ docs/
     ├── deductive-strategy/
     ├── pure-regress/
     └── swot-pure-regress/
+```
+
+## Options
+
+### Run from this directory
+
+```bash
+git clone https://github.com/benjam3n/reasoningtool.git
+cd reasoningtool/claude-code-plugin
+claude
+```
+
+Claude reads the `CLAUDE.md` file and all skills become available.
+
+### Copy into your project
+
+```bash
+cp -r path/to/reasoningtool/claude-code-plugin/skills your-project/
+cp path/to/reasoningtool/claude-code-plugin/CLAUDE.md your-project/
+cd your-project
+claude
 ```
 
 ## License
