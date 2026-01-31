@@ -6,8 +6,8 @@ import os
 import re
 from datetime import datetime, timezone
 
-SKILLS_DIR = os.path.join(os.path.dirname(__file__), '..', 'claude-code-plugin', 'skills')
-OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', 'claude-code-plugin')
+SKILLS_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'claude-code-plugin', 'skills')
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'claude-code-plugin')
 
 # ---------------------------------------------------------------------------
 # Tier / category map — extracted from website/src/pages/skills.astro

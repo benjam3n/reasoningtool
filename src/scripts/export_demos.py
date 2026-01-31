@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 
 # Add src to path so we can import the visualizer
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT / "src"))
 
 from araw.visualize import ARAWVisualizer
