@@ -16,7 +16,7 @@ import '../styles/global.css';
 </head>
 <body>
   <Paginated>
-    <section class="hero">
+    <section>
       <h1>reasoningtool</h1>
       <p class="hero__subtitle">
         367 structured reasoning skills for Claude Code.
@@ -25,11 +25,8 @@ import '../styles/global.css';
         <a href="/getting-started" class="btn btn--primary">Get started</a>
         <a href="/skills" class="btn btn--secondary">Browse skills</a>
       </div>
-    </section>
 
-    <section>
-      <h2>What's included</h2>
-      <div class="card-grid card-grid--2">
+      <div class="card-grid card-grid--2" style="margin-top: var(--sp-5);">
         <div class="card">
           <h3>367 skills</h3>
           <p>Structured prompts for analysis, writing, planning, research, and decision-making.</p>
@@ -46,9 +43,7 @@ import '../styles/global.css';
           <p><a href="/tools">See the tools &rarr;</a></p>
         </div>
       </div>
-    </section>
 
-    <section>
       <h2>Quick start</h2>
       <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool/claude-code-plugin

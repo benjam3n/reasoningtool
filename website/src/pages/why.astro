@@ -16,19 +16,17 @@ import '../styles/global.css';
 </head>
 <body>
   <Paginated>
-    <section>
+    <section class="prose">
       <h1>Why This Is Different</h1>
       <p class="page-subtitle">Every other approach tries to make the model better at guessing.<br>Structured procedures eliminate guessing.</p>
-    </section>
 
-    <section class="prose">
       <h2 id="problem">The core problem</h2>
 
       <p>LLMs are trained to produce text that gets positive feedback. When feedback correlates with correctness &mdash; code that runs, math that checks, facts that verify &mdash; this works. The model learns patterns that happen to be true because true answers get approved.</p>
 
-      <p>But in domains with uncertainty, incomplete information, or conflicting perspectives, the correlation breaks. The model still optimizes for approval. It fills gaps with plausible-sounding patterns. It hedges where hedging sounds careful. It produces confident answers where confidence sounds authoritative. The training objective doesn&rsquo;t distinguish between &ldquo;right because true&rdquo; and &ldquo;right because convincing.&rdquo;</p>
+      <p>But in domains with uncertainty, incomplete information, or conflicting perspectives, the correlation breaks. The model still optimizes for approval. The training objective doesn&rsquo;t distinguish between &ldquo;right because true&rdquo; and &ldquo;right because convincing.&rdquo;</p>
 
-      <p>The technical term for this is <strong>bullshit</strong> &mdash; in Frankfurt&rsquo;s philosophical sense: output optimized for reception, disconnected from truth-tracking. Not lying (which requires knowing the truth), but something worse: <em>indifference to whether the output is true</em>, because the training objective rewards approval, not accuracy.</p>
+      <p>The technical term for this is <strong>bullshit</strong> &mdash; in Frankfurt&rsquo;s philosophical sense: output optimized for reception, disconnected from truth-tracking. Not lying (which requires knowing the truth), but something worse: <em>indifference to whether the output is true</em>.</p>
 
       <p>This isn&rsquo;t a bug. It&rsquo;s working as designed.</p>
     </section>
@@ -193,9 +191,7 @@ import '../styles/global.css';
           <p><strong>Unbundles the question</strong> into 6 distinct claims. <strong>Tests each bidirectionally.</strong> Assume Wrong on &ldquo;quitting is required&rdquo; discovers: most successful startups were started part-time. <strong>Output:</strong> 47 numbered findings. 6 claims tested. 2 eliminated. 3 conditional.</p>
         </div>
       </div>
-    </section>
 
-    <section class="prose">
       <h2 id="principle">Search structure</h2>
 
       <p>Constrained search outperforms unconstrained search, regardless of the searcher&rsquo;s intelligence. Checklists beat expertise. Method beats insight.</p>
@@ -215,9 +211,7 @@ import '../styles/global.css';
       <h2 id="goal-oriented">All action is goal-oriented</h2>
 
       <p>Every action is a search toward a goal. That goal serves a deeper goal, which serves a deeper one. Even counterproductive actions are searches toward valid goals &mdash; the goal is right, the search path is wrong.</p>
-    </section>
 
-    <section>
       <h2>Try it</h2>
       <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool/claude-code-plugin
