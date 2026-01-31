@@ -1,5 +1,6 @@
 ---
-import Base from '../layouts/Base.astro';
+import { ViewTransitions } from 'astro:transitions';
+import '../styles/global.css';
 
 const tier1 = [
   { name: 'se', title: 'Space Enumeration', desc: 'Systematically lists options in a problem space to reduce blind spots' },
@@ -522,11 +523,17 @@ tier4Categories.forEach(c => c.skills.forEach(s => allSkillNames.add(s.name)));
 const totalCount = allSkillNames.size;
 ---
 
-<Base title="Skills" activeNav="skills" description={`${totalCount} structured reasoning skills for Claude Code.`}>
-  <div class="page-header">
-    <h1>Skills</h1>
-  </div>
-
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content={`${totalCount} structured reasoning skills for Claude Code.`} />
+  <title>Skills — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body class="skills-page">
   <section class="skill-cloud">
     {[...categorySkills, ...experimental, ...tier1, ...tier2,
       ...tier3Categories.flatMap(c => c.skills),
@@ -535,17 +542,26 @@ const totalCount = allSkillNames.size;
       <a href={`/skills/${s.name}`} class="skill-chip">{s.name}</a>
     ))}
   </section>
-</Base>
+</body>
+</html>
 
 <style>
+  .skills-page {
+    margin: 0;
+    padding: var(--sp-3);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+  }
+
   .skill-cloud {
     display: flex;
     flex-wrap: wrap;
     gap: var(--sp-2);
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    padding: 0 var(--sp-4);
-    box-sizing: border-box;
+    width: 100%;
+    align-content: flex-start;
   }
 
   .skill-chip {
