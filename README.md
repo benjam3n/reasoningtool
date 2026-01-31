@@ -1,5 +1,3 @@
-# All Skills
-
 | Skill | Stands for | What it does |
 |-------|-----------|-------------|
 | `/aa` | assumption audit | Surface and rigorously test a field's hidden assumptions. |
