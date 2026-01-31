@@ -1,0 +1,622 @@
+---
+/**
+ * Interactive ARAW tree viewer using Sigma.js / Graphology.
+ * Loads data client-side from uploaded JSON or demo files.
+ */
+---
+
+<div class="av" id="araw-viewer">
+  <div class="av__sidebar" id="av-sidebar">
+    <h2 class="av__title">ARAW Explorer</h2>
+
+    <div class="av__source">
+      <label class="av__label">Data source</label>
+      <select id="av-source" class="av__select">
+        <option value="">Upload a JSON file...</option>
+      </select>
+      <input type="file" id="av-upload" accept=".json" class="av__file-input" />
+      <label for="av-upload" class="av__file-label">Choose file</label>
+      <p class="av__hint">Export from: <code>python visualize.py --db my.db --export graph.json</code></p>
+    </div>
+
+    <div id="av-controls" style="display:none">
+      <div class="av__section">
+        <input type="text" class="av__search" id="av-search" placeholder="Search claims..." />
+      </div>
+
+      <div class="av__section">
+        <label class="av__label">Filters</label>
+        <div class="av__filter-row">
+          <label class="av__label-sm">Branch type</label>
+          <select id="av-branch" class="av__select">
+            <option value="all">All</option>
+            <option value="assume_right">Assume Right</option>
+            <option value="assume_wrong">Assume Wrong</option>
+          </select>
+        </div>
+        <div class="av__filter-row">
+          <label class="av__label-sm">Max depth: <span id="av-depth-val">20</span></label>
+          <input type="range" id="av-depth" min="1" max="50" value="20" class="av__range" />
+        </div>
+        <label class="av__check"><input type="checkbox" id="av-grounded" /> Grounded only</label>
+        <label class="av__check"><input type="checkbox" id="av-crux" /> Crux only</label>
+      </div>
+
+      <div class="av__section">
+        <label class="av__label">Statistics</label>
+        <div class="av__stats">
+          <div class="av__stat"><span>Total nodes</span><span id="av-stat-total">-</span></div>
+          <div class="av__stat"><span>Visible</span><span id="av-stat-visible">-</span></div>
+          <div class="av__stat"><span>Max depth</span><span id="av-stat-depth">-</span></div>
+          <div class="av__stat"><span>Grounded</span><span id="av-stat-grounded">-</span></div>
+          <div class="av__stat"><span>Crux nodes</span><span id="av-stat-crux">-</span></div>
+        </div>
+      </div>
+
+      <div class="av__section">
+        <label class="av__label">Legend</label>
+        <div class="av__legend">
+          <span class="av__legend-item"><span class="av__dot" style="background:#f97316"></span> Root</span>
+          <span class="av__legend-item"><span class="av__dot" style="background:#3b82f6"></span> Assume Right</span>
+          <span class="av__legend-item"><span class="av__dot" style="background:#ef4444"></span> Assume Wrong</span>
+          <span class="av__legend-item"><span class="av__dot" style="background:#22c55e"></span> Grounded</span>
+          <span class="av__legend-item"><span class="av__dot" style="background:#eab308"></span> Crux</span>
+          <span class="av__legend-item"><span class="av__dot" style="background:#a855f7"></span> Epistemic Limit</span>
+          <span class="av__legend-item"><span class="av__dot" style="background:#06b6d4"></span> Grounding Assumption</span>
+        </div>
+      </div>
+
+      <div class="av__section" id="av-node-detail" style="display:none">
+        <label class="av__label">Selected Node</label>
+        <div class="av__claim" id="av-detail-claim"></div>
+        <div class="av__meta" id="av-detail-meta"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="av__canvas-area">
+    <div class="av__canvas" id="av-canvas"></div>
+    <div class="av__empty" id="av-empty">
+      <div class="av__empty-inner">
+        <h3>No data loaded</h3>
+        <p>Upload a JSON file exported from <code>visualize.py</code>, or select a demo dataset.</p>
+      </div>
+    </div>
+    <div class="av__toolbar" id="av-toolbar" style="display:none">
+      <button class="av__tbtn" id="av-btn-reset">Reset view</button>
+      <button class="av__tbtn" id="av-btn-layout">Re-layout</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  import Graph from 'graphology';
+  import Sigma from 'sigma';
+
+  let graph: any = null;
+  let renderer: any = null;
+  let allData: any = null;
+
+  function getTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+      (!document.documentElement.getAttribute('data-theme') &&
+       window.matchMedia('(prefers-color-scheme: dark)').matches);
+    return {
+      isDark,
+      labelColor: isDark ? '#e8e6e3' : '#1a1a1a',
+      bg: isDark ? '#222226' : '#f5f3f0',
+    };
+  }
+
+  function loadJSON(data: any) {
+    allData = data;
+
+    // Destroy old renderer
+    if (renderer) {
+      renderer.kill();
+      renderer = null;
+    }
+
+    const theme = getTheme();
+    graph = new Graph();
+
+    data.nodes.forEach((n: any) => {
+      graph.addNode(n.id, {
+        label: n.label,
+        x: n.x || Math.random() * 1000,
+        y: n.y || Math.random() * 1000,
+        size: n.size || 5,
+        color: n.color || '#888',
+        claim: n.claim,
+        depth: n.depth,
+        leverage: n.leverage,
+        branch_type: n.branch_type,
+        is_grounded: n.is_grounded,
+        is_crux: n.is_crux,
+        children_count: n.children_count,
+        domain: n.domain,
+      });
+    });
+
+    data.edges.forEach((e: any) => {
+      if (graph.hasNode(e.source) && graph.hasNode(e.target)) {
+        try {
+          graph.addEdge(e.source, e.target, {
+            color: e.color || '#666',
+            size: 0.5,
+          });
+        } catch (_) { /* duplicate edge */ }
+      }
+    });
+
+    const container = document.getElementById('av-canvas')!;
+    renderer = new Sigma(graph, container, {
+      renderEdgeLabels: false,
+      labelRenderedSizeThreshold: 10,
+      labelFont: 'Inter, sans-serif',
+      labelSize: 11,
+      labelColor: { color: theme.labelColor },
+      minCameraRatio: 0.001,
+      maxCameraRatio: 100,
+    } as any);
+
+    renderer.on('clickNode', ({ node }: { node: string }) => {
+      showNodeDetail(node);
+    });
+
+    // Show controls, hide empty
+    document.getElementById('av-controls')!.style.display = '';
+    document.getElementById('av-empty')!.style.display = 'none';
+    document.getElementById('av-toolbar')!.style.display = '';
+
+    // Update stats
+    const stats = data.stats || {};
+    document.getElementById('av-stat-total')!.textContent = String(data.nodes.length);
+    document.getElementById('av-stat-visible')!.textContent = String(data.nodes.length);
+    document.getElementById('av-stat-depth')!.textContent = String(stats.max_depth || '-');
+    document.getElementById('av-stat-grounded')!.textContent = String(stats.grounded_nodes || 0);
+    document.getElementById('av-stat-crux')!.textContent = String(stats.crux_nodes || 0);
+
+    // Set depth slider max
+    const depthSlider = document.getElementById('av-depth') as HTMLInputElement;
+    if (stats.max_depth) {
+      depthSlider.max = String(stats.max_depth);
+      depthSlider.value = String(stats.max_depth);
+      document.getElementById('av-depth-val')!.textContent = String(stats.max_depth);
+    }
+  }
+
+  function showNodeDetail(nodeId: string) {
+    const attrs = graph.getNodeAttributes(nodeId);
+    const detail = document.getElementById('av-node-detail')!;
+    detail.style.display = '';
+    document.getElementById('av-detail-claim')!.textContent = attrs.claim || attrs.label;
+    document.getElementById('av-detail-meta')!.innerHTML = `
+      <strong>Depth:</strong> ${attrs.depth} &middot;
+      <strong>Leverage:</strong> ${(attrs.leverage || 0.5).toFixed(2)} &middot;
+      <strong>Children:</strong> ${attrs.children_count || 0}<br>
+      <strong>Type:</strong> ${attrs.branch_type || 'root'} &middot;
+      <strong>Grounded:</strong> ${attrs.is_grounded ? 'Yes' : 'No'} &middot;
+      <strong>Crux:</strong> ${attrs.is_crux ? 'Yes' : 'No'}<br>
+      <strong>Domain:</strong> ${attrs.domain || 'unknown'}
+    `;
+  }
+
+  function applyFilters() {
+    if (!graph || !renderer) return;
+    const branchFilter = (document.getElementById('av-branch') as HTMLSelectElement).value;
+    const maxDepth = parseInt((document.getElementById('av-depth') as HTMLInputElement).value);
+    const onlyGrounded = (document.getElementById('av-grounded') as HTMLInputElement).checked;
+    const onlyCrux = (document.getElementById('av-crux') as HTMLInputElement).checked;
+    const search = (document.getElementById('av-search') as HTMLInputElement).value.toLowerCase();
+
+    let visible = 0;
+    graph.forEachNode((node: string, attrs: any) => {
+      let show = true;
+      if (branchFilter !== 'all' && attrs.branch_type !== branchFilter) show = false;
+      if (attrs.depth > maxDepth) show = false;
+      if (onlyGrounded && !attrs.is_grounded) show = false;
+      if (onlyCrux && !attrs.is_crux) show = false;
+      if (search && !(attrs.claim || '').toLowerCase().includes(search) &&
+          !(attrs.label || '').toLowerCase().includes(search)) show = false;
+
+      graph.setNodeAttribute(node, 'hidden', !show);
+      if (show) visible++;
+    });
+
+    graph.forEachEdge((edge: string, _: any, source: string, target: string) => {
+      const sh = graph.getNodeAttribute(source, 'hidden');
+      const th = graph.getNodeAttribute(target, 'hidden');
+      graph.setEdgeAttribute(edge, 'hidden', sh || th);
+    });
+
+    document.getElementById('av-stat-visible')!.textContent = String(visible);
+    renderer.refresh();
+  }
+
+  function simpleForceLayout(g: any, iterations = 50) {
+    const nodes: any[] = [];
+    const nodeIndex: Record<string, number> = {};
+
+    g.forEachNode((id: string, attrs: any) => {
+      nodeIndex[id] = nodes.length;
+      nodes.push({ id, x: attrs.x || 0, y: attrs.y || 0, depth: attrs.depth || 0 });
+    });
+
+    const edges: any[] = [];
+    g.forEachEdge((_: string, __: any, source: string, target: string) => {
+      if (nodeIndex[source] !== undefined && nodeIndex[target] !== undefined) {
+        edges.push({ source: nodeIndex[source], target: nodeIndex[target] });
+      }
+    });
+
+    for (let iter = 0; iter < iterations; iter++) {
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < Math.min(i + 80, nodes.length); j++) {
+          const dx = nodes[j].x - nodes[i].x;
+          const dy = nodes[j].y - nodes[i].y;
+          const dist = Math.sqrt(dx * dx + dy * dy) + 0.1;
+          const force = 500 / (dist * dist);
+          nodes[i].x -= dx / dist * force;
+          nodes[i].y -= dy / dist * force;
+          nodes[j].x += dx / dist * force;
+          nodes[j].y += dy / dist * force;
+        }
+      }
+      edges.forEach(e => {
+        const s = nodes[e.source], t = nodes[e.target];
+        const dx = t.x - s.x, dy = t.y - s.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) + 0.1;
+        const force = dist * 0.01;
+        s.x += dx * force; s.y += dy * force;
+        t.x -= dx * force; t.y -= dy * force;
+      });
+      nodes.forEach(n => { n.y = n.y * 0.9 + n.depth * 50 * 0.1; });
+    }
+
+    nodes.forEach(n => {
+      g.setNodeAttribute(n.id, 'x', n.x);
+      g.setNodeAttribute(n.id, 'y', n.y);
+    });
+  }
+
+  // --- Event wiring ---
+  function init() {
+    // File upload
+    document.getElementById('av-upload')?.addEventListener('change', (e) => {
+      const file = (e.target as HTMLInputElement).files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const data = JSON.parse(reader.result as string);
+          loadJSON(data);
+        } catch (err) {
+          alert('Invalid JSON file');
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // Demo source
+    document.getElementById('av-source')?.addEventListener('change', async (e) => {
+      const url = (e.target as HTMLSelectElement).value;
+      if (!url) return;
+      const resp = await fetch(url);
+      const data = await resp.json();
+      loadJSON(data);
+    });
+
+    // Filters
+    ['av-branch', 'av-grounded', 'av-crux', 'av-search'].forEach(id => {
+      document.getElementById(id)?.addEventListener(id === 'av-search' ? 'input' : 'change', applyFilters);
+    });
+    document.getElementById('av-depth')?.addEventListener('input', (e) => {
+      document.getElementById('av-depth-val')!.textContent = (e.target as HTMLInputElement).value;
+      applyFilters();
+    });
+
+    // Toolbar buttons
+    document.getElementById('av-btn-reset')?.addEventListener('click', () => {
+      if (renderer) renderer.getCamera().setState({ x: 0.5, y: 0.5, ratio: 1, angle: 0 });
+    });
+    document.getElementById('av-btn-layout')?.addEventListener('click', () => {
+      if (graph && graph.order < 10000) {
+        simpleForceLayout(graph, 50);
+        renderer?.refresh();
+      }
+    });
+
+    // Theme observer
+    const observer = new MutationObserver(() => {
+      if (renderer) {
+        const theme = getTheme();
+        renderer.setSetting('labelColor', { color: theme.labelColor });
+        renderer.refresh();
+      }
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    // Check for demo files in /demos/
+    checkDemos();
+  }
+
+  async function checkDemos() {
+    // Try to detect available demo files
+    const select = document.getElementById('av-source') as HTMLSelectElement;
+    const demoFiles = ['career', 'education', 'example'];
+    for (const name of demoFiles) {
+      try {
+        const resp = await fetch(`/demos/${name}.json`, { method: 'HEAD' });
+        if (resp.ok) {
+          const opt = document.createElement('option');
+          opt.value = `/demos/${name}.json`;
+          opt.textContent = `Demo: ${name}`;
+          select.appendChild(opt);
+        }
+      } catch (_) { /* not found */ }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  document.addEventListener('astro:after-swap', init);
+</script>
+
+<style>
+  .av {
+    display: flex;
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--color-surface);
+    height: calc(100vh - 160px);
+    min-height: 500px;
+  }
+
+  @media (max-width: 768px) {
+    .av {
+      flex-direction: column;
+      height: auto;
+    }
+  }
+
+  .av__sidebar {
+    width: 320px;
+    border-right: 1px solid var(--color-border-light);
+    padding: var(--sp-3);
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 768px) {
+    .av__sidebar {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid var(--color-border-light);
+      max-height: 300px;
+    }
+  }
+
+  .av__title {
+    font-size: var(--text-lg);
+    margin-bottom: var(--sp-3);
+  }
+
+  .av__section {
+    margin-bottom: var(--sp-3);
+  }
+
+  .av__label {
+    display: block;
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--sp-1);
+  }
+
+  .av__label-sm {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .av__select, .av__search {
+    width: 100%;
+    padding: var(--sp-1) var(--sp-2);
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+  .av__select:focus, .av__search:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .av__range {
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .av__filter-row {
+    margin-bottom: var(--sp-1);
+  }
+
+  .av__check {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    margin-bottom: 4px;
+  }
+
+  .av__file-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+  }
+
+  .av__file-label {
+    display: inline-block;
+    margin-top: var(--sp-1);
+    padding: var(--sp-1) var(--sp-2);
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+  .av__file-label:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .av__hint {
+    margin-top: var(--sp-1);
+    font-size: 11px;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+  .av__hint code {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    background: var(--color-bg-secondary);
+  }
+
+  .av__stats {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .av__stat {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--color-border-light);
+    font-size: var(--text-xs);
+  }
+  .av__stat span:last-child { font-weight: 600; }
+
+  .av__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px var(--sp-2);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+  }
+
+  .av__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .av__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .av__claim {
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    line-height: 1.5;
+    margin-bottom: var(--sp-1);
+  }
+
+  .av__meta {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .av__canvas-area {
+    flex: 1;
+    position: relative;
+    background: var(--color-bg-secondary);
+  }
+
+  .av__canvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .av__canvas-area { min-height: 400px; }
+  }
+
+  .av__empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--sp-4);
+  }
+
+  .av__empty h3 {
+    margin-bottom: var(--sp-1);
+    color: var(--color-text-muted);
+  }
+
+  .av__empty p {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    max-width: 400px;
+  }
+
+  .av__empty code {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--color-surface);
+  }
+
+  .av__toolbar {
+    position: absolute;
+    top: var(--sp-2);
+    right: var(--sp-2);
+    display: flex;
+    gap: var(--sp-1);
+  }
+
+  .av__tbtn {
+    padding: var(--sp-1) var(--sp-2);
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: all 150ms ease;
+    backdrop-filter: blur(8px);
+  }
+  .av__tbtn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .av__source {
+    margin-bottom: var(--sp-3);
+  }
+</style>

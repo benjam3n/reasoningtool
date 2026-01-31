@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import ArawViewer from '../components/ArawViewer.astro';
+---
+
+<Base title="ARAW Viewer" activeNav="viewer" description="Interactive browser-based viewer for ARAW decision tree databases.">
+  <div class="page-header">
+    <h1>ARAW Viewer</h1>
+    <p>Explore ARAW decision trees in the browser. Upload a JSON export from <code>visualize.py</code> or select a demo dataset.</p>
+  </div>
+
+  <ArawViewer />
+</Base>
+
+<style>
+  .page-header {
+    margin-bottom: var(--sp-3);
+  }
+  .page-header p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    max-width: 600px;
+  }
+  .page-header code {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--color-bg-secondary);
+  }
+
+  :global(main.container) {
+    max-width: var(--width-wide);
+  }
+</style>

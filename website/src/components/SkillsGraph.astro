@@ -1,0 +1,703 @@
+---
+/**
+ * Interactive D3 force-directed graph of skill dependencies.
+ * Data is injected at build time via define:vars.
+ */
+interface Props {
+  graphData: {
+    nodes: any[];
+    edges: any[];
+    total: number;
+    tierCounts: Record<string, number>;
+  };
+  tierColors: Record<string, { light: string; dark: string; label: string }>;
+}
+const { graphData, tierColors } = Astro.props;
+---
+
+<div class="sg" id="skills-graph">
+  <div class="sg__toolbar">
+    <div class="sg__search-wrap">
+      <input type="text" class="sg__search" id="sg-search" placeholder="Search skills..." />
+    </div>
+    <div class="sg__filters">
+      <label class="sg__filter-label">Tier:</label>
+      {Object.entries(tierColors).map(([tier, info]) => (
+        <label class="sg__checkbox">
+          <input type="checkbox" checked data-tier={tier} class="sg-tier-filter" />
+          <span class="sg__dot" style={`background:${info.light}`}></span>
+          <span class="sg__checkbox-label">{info.label}</span>
+        </label>
+      ))}
+    </div>
+    <div class="sg__actions">
+      <button class="sg__btn" id="sg-reset">Reset view</button>
+      <button class="sg__btn" id="sg-recenter">Recenter</button>
+    </div>
+  </div>
+
+  <div class="sg__body">
+    <div class="sg__canvas-wrap">
+      <svg id="sg-svg"></svg>
+      <div class="sg__loading" id="sg-loading">Simulating layout...</div>
+    </div>
+
+    <div class="sg__sidebar" id="sg-sidebar">
+      <div class="sg__sidebar-empty" id="sg-sidebar-empty">
+        <p>Click a node to see details.</p>
+        <div class="sg__stats">
+          <div class="sg__stat"><span class="sg__stat-label">Skills</span><span class="sg__stat-value">{graphData.total}</span></div>
+          <div class="sg__stat"><span class="sg__stat-label">Connections</span><span class="sg__stat-value">{graphData.edges.length}</span></div>
+          {Object.entries(graphData.tierCounts).map(([tier, count]) => (
+            <div class="sg__stat">
+              <span class="sg__stat-label">{tier}</span>
+              <span class="sg__stat-value">{count}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div class="sg__detail" id="sg-detail" style="display:none">
+        <button class="sg__detail-close" id="sg-detail-close">&times;</button>
+        <h3 id="sg-detail-title"></h3>
+        <p class="sg__detail-desc" id="sg-detail-desc"></p>
+        <div class="sg__detail-meta" id="sg-detail-meta"></div>
+        <div class="sg__detail-links" id="sg-detail-links"></div>
+        <a class="sg__detail-page" id="sg-detail-page" href="#">View skill page &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sg__legend">
+    {Object.entries(tierColors).map(([_, info]) => (
+      <span class="sg__legend-item">
+        <span class="sg__dot" style={`background:${info.light}`}></span>
+        {info.label}
+      </span>
+    ))}
+    <span class="sg__legend-item">
+      <span class="sg__line"></span>
+      invokes
+    </span>
+  </div>
+</div>
+
+<script define:vars={{ graphData, tierColors }}>
+(function() {
+  // Wait for D3 to be available (loaded via page import)
+  function boot() {
+    if (typeof d3 === 'undefined') {
+      // D3 loaded as ES module, access via window.__d3
+      setTimeout(boot, 50);
+      return;
+    }
+    initGraph();
+  }
+
+  function getThemeColors() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+      (!document.documentElement.getAttribute('data-theme') &&
+       window.matchMedia('(prefers-color-scheme: dark)').matches);
+    return {
+      isDark,
+      text: isDark ? '#e8e6e3' : '#1a1a1a',
+      textMuted: isDark ? '#8a8784' : '#6b6b6b',
+      bg: isDark ? '#1a1a1e' : '#faf9f6',
+      surface: isDark ? '#2a2a2e' : '#ffffff',
+      border: isDark ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.08)',
+      accent: isDark ? '#60a5fa' : '#2563eb',
+      edgeDefault: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)',
+      edgeHighlight: isDark ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.3)',
+    };
+  }
+
+  function tierColor(tier, isDark) {
+    const c = tierColors[tier];
+    return c ? (isDark ? c.dark : c.light) : '#888';
+  }
+
+  function initGraph() {
+    const wrapper = document.getElementById('skills-graph');
+    const svgEl = document.getElementById('sg-svg');
+    const loading = document.getElementById('sg-loading');
+    if (!wrapper || !svgEl) return;
+
+    const canvasWrap = svgEl.parentElement;
+    const width = canvasWrap.clientWidth;
+    const height = canvasWrap.clientHeight || 600;
+
+    let theme = getThemeColors();
+
+    // Clone data so D3 can mutate it
+    const nodes = graphData.nodes.map(n => ({ ...n }));
+    const nodeMap = Object.fromEntries(nodes.map(n => [n.id, n]));
+    const edges = graphData.edges
+      .filter(e => nodeMap[e.source] && nodeMap[e.target])
+      .map(e => ({ ...e }));
+
+    // Setup SVG
+    const svg = d3.select(svgEl)
+      .attr('width', width)
+      .attr('height', height);
+
+    // Background
+    svg.append('rect')
+      .attr('class', 'sg-bg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('fill', theme.bg);
+
+    // Arrow marker
+    svg.append('defs').append('marker')
+      .attr('id', 'arrow')
+      .attr('viewBox', '0 -4 8 8')
+      .attr('refX', 16)
+      .attr('refY', 0)
+      .attr('markerWidth', 6)
+      .attr('markerHeight', 6)
+      .attr('orient', 'auto')
+      .append('path')
+      .attr('d', 'M0,-3L7,0L0,3')
+      .attr('fill', theme.edgeDefault);
+
+    const g = svg.append('g');
+
+    // Zoom
+    const zoom = d3.zoom()
+      .scaleExtent([0.1, 8])
+      .on('zoom', (event) => g.attr('transform', event.transform));
+    svg.call(zoom);
+
+    // Draw edges
+    const link = g.append('g')
+      .selectAll('line')
+      .data(edges)
+      .join('line')
+      .attr('stroke', theme.edgeDefault)
+      .attr('stroke-width', 0.5)
+      .attr('marker-end', 'url(#arrow)');
+
+    // Draw nodes
+    const node = g.append('g')
+      .selectAll('circle')
+      .data(nodes)
+      .join('circle')
+      .attr('r', d => {
+        const conns = d.invokes.length + d.invoked_by.length;
+        return Math.max(3, Math.min(14, 3 + conns * 0.8));
+      })
+      .attr('fill', d => tierColor(d.tier, theme.isDark))
+      .attr('stroke', theme.bg)
+      .attr('stroke-width', 0.5)
+      .attr('cursor', 'pointer')
+      .call(d3.drag()
+        .on('start', dragStart)
+        .on('drag', dragging)
+        .on('end', dragEnd));
+
+    // Labels (only for high-connectivity nodes initially)
+    const label = g.append('g')
+      .selectAll('text')
+      .data(nodes)
+      .join('text')
+      .text(d => d.id)
+      .attr('font-size', 9)
+      .attr('font-family', 'Inter, sans-serif')
+      .attr('fill', theme.textMuted)
+      .attr('text-anchor', 'middle')
+      .attr('dy', d => {
+        const conns = d.invokes.length + d.invoked_by.length;
+        return -(Math.max(3, Math.min(14, 3 + conns * 0.8)) + 4);
+      })
+      .attr('opacity', d => (d.invokes.length + d.invoked_by.length) >= 3 ? 1 : 0)
+      .attr('pointer-events', 'none');
+
+    // Simulation
+    const simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(edges).id(d => d.id).distance(60).strength(0.3))
+      .force('charge', d3.forceManyBody().strength(-120))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collision', d3.forceCollide().radius(d => {
+        const conns = d.invokes.length + d.invoked_by.length;
+        return Math.max(3, Math.min(14, 3 + conns * 0.8)) + 2;
+      }))
+      .force('x', d3.forceX(width / 2).strength(0.03))
+      .force('y', d3.forceY(height / 2).strength(0.03));
+
+    simulation.on('tick', () => {
+      link
+        .attr('x1', d => d.source.x)
+        .attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x)
+        .attr('y2', d => d.target.y);
+      node
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y);
+      label
+        .attr('x', d => d.x)
+        .attr('y', d => d.y);
+    });
+
+    simulation.on('end', () => {
+      if (loading) loading.style.display = 'none';
+    });
+
+    // After a brief warm-up, hide loading
+    setTimeout(() => { if (loading) loading.style.display = 'none'; }, 3000);
+
+    // --- Interactions ---
+
+    let selectedNode = null;
+
+    node.on('click', (event, d) => {
+      event.stopPropagation();
+      selectNode(d);
+    });
+
+    node.on('mouseenter', (event, d) => {
+      highlightConnections(d);
+    });
+
+    node.on('mouseleave', () => {
+      if (!selectedNode) clearHighlight();
+    });
+
+    svg.on('click', () => {
+      selectedNode = null;
+      clearHighlight();
+      hideDetail();
+    });
+
+    function highlightConnections(d) {
+      const connectedIds = new Set([d.id, ...d.invokes, ...d.invoked_by]);
+      node.attr('opacity', n => connectedIds.has(n.id) ? 1 : 0.1);
+      label.attr('opacity', n => connectedIds.has(n.id) ? 1 : 0);
+      link
+        .attr('stroke', e => {
+          const sid = typeof e.source === 'object' ? e.source.id : e.source;
+          const tid = typeof e.target === 'object' ? e.target.id : e.target;
+          return (sid === d.id || tid === d.id) ? theme.edgeHighlight : theme.edgeDefault;
+        })
+        .attr('stroke-width', e => {
+          const sid = typeof e.source === 'object' ? e.source.id : e.source;
+          const tid = typeof e.target === 'object' ? e.target.id : e.target;
+          return (sid === d.id || tid === d.id) ? 1.5 : 0.3;
+        });
+    }
+
+    function clearHighlight() {
+      node.attr('opacity', 1);
+      label.attr('opacity', d => (d.invokes.length + d.invoked_by.length) >= 3 ? 1 : 0);
+      link.attr('stroke', theme.edgeDefault).attr('stroke-width', 0.5);
+    }
+
+    function selectNode(d) {
+      selectedNode = d;
+      highlightConnections(d);
+      showDetail(d);
+    }
+
+    function showDetail(d) {
+      document.getElementById('sg-sidebar-empty').style.display = 'none';
+      const detail = document.getElementById('sg-detail');
+      detail.style.display = 'block';
+      document.getElementById('sg-detail-title').textContent = `/${d.id} — ${d.title}`;
+      document.getElementById('sg-detail-desc').textContent = d.description;
+
+      const meta = document.getElementById('sg-detail-meta');
+      meta.innerHTML = `
+        <span class="sg__badge" style="background:${tierColor(d.tier, theme.isDark)};color:#fff">${d.tier}</span>
+        ${d.category ? `<span class="sg__badge-outline">${d.category}</span>` : ''}
+      `;
+
+      const links = document.getElementById('sg-detail-links');
+      let html = '';
+      if (d.invokes.length > 0) {
+        html += `<div class="sg__link-group"><strong>Invokes:</strong> ${d.invokes.map(id =>
+          `<a href="/skills/${id}" class="sg__skill-link">/${id}</a>`
+        ).join(' ')}</div>`;
+      }
+      if (d.invoked_by.length > 0) {
+        html += `<div class="sg__link-group"><strong>Invoked by:</strong> ${d.invoked_by.map(id =>
+          `<a href="/skills/${id}" class="sg__skill-link">/${id}</a>`
+        ).join(' ')}</div>`;
+      }
+      if (d.invokes.length === 0 && d.invoked_by.length === 0) {
+        html = '<div class="sg__link-group" style="color:var(--color-text-muted)">No connections</div>';
+      }
+      links.innerHTML = html;
+
+      document.getElementById('sg-detail-page').href = `/skills/${d.id}`;
+    }
+
+    function hideDetail() {
+      document.getElementById('sg-sidebar-empty').style.display = '';
+      document.getElementById('sg-detail').style.display = 'none';
+    }
+
+    document.getElementById('sg-detail-close')?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      selectedNode = null;
+      clearHighlight();
+      hideDetail();
+    });
+
+    // --- Search ---
+    const searchInput = document.getElementById('sg-search');
+    searchInput?.addEventListener('input', () => {
+      const q = searchInput.value.toLowerCase().trim();
+      if (!q) {
+        node.attr('opacity', 1);
+        label.attr('opacity', d => (d.invokes.length + d.invoked_by.length) >= 3 ? 1 : 0);
+        return;
+      }
+      node.attr('opacity', d =>
+        d.id.includes(q) || d.title.toLowerCase().includes(q) ? 1 : 0.08
+      );
+      label.attr('opacity', d =>
+        d.id.includes(q) || d.title.toLowerCase().includes(q) ? 1 : 0
+      );
+    });
+
+    // --- Tier filters ---
+    document.querySelectorAll('.sg-tier-filter').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const visible = new Set();
+        document.querySelectorAll('.sg-tier-filter:checked').forEach(c =>
+          visible.add(c.dataset.tier)
+        );
+        node.attr('display', d => visible.has(d.tier) ? null : 'none');
+        label.attr('display', d => visible.has(d.tier) ? null : 'none');
+        link.attr('display', e => {
+          const s = typeof e.source === 'object' ? e.source : nodeMap[e.source];
+          const t = typeof e.target === 'object' ? e.target : nodeMap[e.target];
+          return (s && visible.has(s.tier) && t && visible.has(t.tier)) ? null : 'none';
+        });
+      });
+    });
+
+    // --- Buttons ---
+    document.getElementById('sg-reset')?.addEventListener('click', () => {
+      simulation.alpha(0.3).restart();
+    });
+
+    document.getElementById('sg-recenter')?.addEventListener('click', () => {
+      svg.transition().duration(500).call(
+        zoom.transform, d3.zoomIdentity
+      );
+    });
+
+    // --- Theme change observer ---
+    const observer = new MutationObserver(() => {
+      theme = getThemeColors();
+      svg.select('.sg-bg').attr('fill', theme.bg);
+      node.attr('fill', d => tierColor(d.tier, theme.isDark))
+          .attr('stroke', theme.bg);
+      label.attr('fill', theme.textMuted);
+      link.attr('stroke', theme.edgeDefault);
+      svg.select('#arrow path').attr('fill', theme.edgeDefault);
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+
+    // --- Drag ---
+    function dragStart(event, d) {
+      if (!event.active) simulation.alphaTarget(0.1).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    }
+    function dragging(event, d) {
+      d.fx = event.x;
+      d.fy = event.y;
+    }
+    function dragEnd(event, d) {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    }
+
+    // --- Resize ---
+    window.addEventListener('resize', () => {
+      const w = canvasWrap.clientWidth;
+      const h = canvasWrap.clientHeight || 600;
+      svg.attr('width', w).attr('height', h);
+      svg.select('.sg-bg').attr('width', w).attr('height', h);
+      simulation.force('center', d3.forceCenter(w / 2, h / 2));
+      simulation.alpha(0.1).restart();
+    });
+  }
+
+  // Boot when DOM ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+  document.addEventListener('astro:after-swap', boot);
+})();
+</script>
+
+<style>
+  .sg {
+    display: flex;
+    flex-direction: column;
+    gap: var(--sp-2);
+  }
+
+  .sg__toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-2);
+    padding: var(--sp-2) 0;
+  }
+
+  .sg__search-wrap {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .sg__search {
+    width: 100%;
+    padding: var(--sp-1) var(--sp-2);
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+  }
+  .sg__search:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .sg__filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--sp-1) var(--sp-2);
+  }
+
+  .sg__filter-label {
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .sg__checkbox {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .sg__checkbox input { width: 14px; height: 14px; cursor: pointer; }
+
+  .sg__checkbox-label {
+    display: none;
+  }
+  @media (min-width: 900px) {
+    .sg__checkbox-label { display: inline; }
+  }
+
+  .sg__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .sg__actions {
+    display: flex;
+    gap: var(--sp-1);
+  }
+
+  .sg__btn {
+    padding: var(--sp-1) var(--sp-2);
+    border: 1px solid var(--color-border-light);
+    border-radius: 6px;
+    background: var(--color-surface);
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    cursor: pointer;
+    transition: all 150ms ease;
+  }
+  .sg__btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .sg__body {
+    display: flex;
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--color-bg-secondary);
+  }
+
+  .sg__canvas-wrap {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+    height: 65vh;
+  }
+  .sg__canvas-wrap svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sg__loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    pointer-events: none;
+  }
+
+  .sg__sidebar {
+    width: 280px;
+    border-left: 1px solid var(--color-border-light);
+    background: var(--color-surface);
+    padding: var(--sp-3);
+    overflow-y: auto;
+    font-size: var(--text-sm);
+  }
+
+  @media (max-width: 768px) {
+    .sg__body { flex-direction: column; }
+    .sg__sidebar {
+      width: 100%;
+      border-left: none;
+      border-top: 1px solid var(--color-border-light);
+      max-height: 250px;
+    }
+    .sg__canvas-wrap { min-height: 350px; height: 50vh; }
+  }
+
+  .sg__stats {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--sp-2);
+  }
+
+  .sg__stat {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--sp-1) 0;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .sg__stat-label { color: var(--color-text-muted); }
+  .sg__stat-value { font-weight: 600; }
+
+  .sg__detail {
+    position: relative;
+  }
+
+  .sg__detail-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: none;
+    border: none;
+    color: var(--color-text-muted);
+    font-size: 1.4rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .sg__detail h3 {
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    margin-bottom: var(--sp-1);
+    padding-right: var(--sp-4);
+  }
+
+  .sg__detail-desc {
+    color: var(--color-text-secondary);
+    font-size: var(--text-xs);
+    line-height: 1.5;
+    margin-bottom: var(--sp-2);
+  }
+
+  .sg__detail-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-1);
+    margin-bottom: var(--sp-2);
+  }
+
+  .sg__badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .sg__badge-outline {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    border: 1px solid var(--color-border-light);
+    color: var(--color-text-secondary);
+  }
+
+  .sg__link-group {
+    font-size: var(--text-xs);
+    margin-bottom: var(--sp-1);
+    line-height: 1.8;
+  }
+
+  .sg__skill-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 1px 5px;
+    border-radius: 3px;
+    background: var(--color-bg-secondary);
+    color: var(--color-accent);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .sg__skill-link:hover {
+    text-decoration: underline;
+  }
+
+  .sg__detail-page {
+    display: inline-block;
+    margin-top: var(--sp-2);
+    font-size: var(--text-xs);
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  .sg__detail-page:hover { text-decoration: underline; }
+
+  .sg__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-1) var(--sp-3);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    padding: var(--sp-1) 0;
+  }
+
+  .sg__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .sg__line {
+    width: 16px;
+    height: 2px;
+    background: var(--color-text-muted);
+    opacity: 0.4;
+  }
+</style>

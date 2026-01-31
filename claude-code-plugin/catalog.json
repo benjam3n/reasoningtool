@@ -1,100 +1,276 @@
 {
   "procedures": {
-    "md": {
-      "description": "Derive the appropriate method from the situation rather than",
-      "categories": [],
-      "tags": [
-        "method",
-        "derivation"
-      ],
-      "input_types": [
-        "situation"
-      ],
-      "invokes": []
-    },
-    "fb": {
-      "description": "Generate filtered feedback for self-improvement loops. Only accepts well-grounded, high-leverage items to prevent error accumulation.",
-      "categories": [],
-      "tags": [
-        "feedback"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ht": {
-      "description": "Systematic procedure for formulating testable hypotheses, designing tests, and updating beliefs based on evidence",
+    "aa": {
+      "description": "Surface and rigorously test a field's hidden assumptions. Compound skill that chains extraction, inversion, research, ARAW testing, cross-domain perspective, and synthesis into a complete audit.",
       "categories": [
-        "validation"
+        "reasoning",
+        "validation",
+        "search"
       ],
       "tags": [
-        "hypothesis",
-        "testing"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "sads": {
-      "description": "Scan a target set of files for ambiguity, proxying, bundled questions, undefined terms, and hidden conditionals.",
-      "categories": [
-        "guessing"
-      ],
-      "tags": [
-        "self",
+        "assumption",
         "audit",
-        "detector",
-        "sweep"
+        "compound",
+        "chain",
+        "field",
+        "analysis"
       ],
       "input_types": [
         "question",
-        "decision"
+        "goal"
       ],
+      "invokes": [
+        "aex",
+        "ai",
+        "lr",
+        "araw",
+        "cda",
+        "ins"
+      ]
+    },
+    "aar": {
+      "description": "The After Action Review (AAR) is a structured debrief to learn from experience.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "fat",
+        "ret",
+        "ssr"
+      ]
+    },
+    "aba": {
+      "description": "Procedure for using AI to analyze biomedical research, evaluate studies, assess drug interactions, and interpret clinical data.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
-    "exc": {
-      "description": "Systematically check if a solution or similar solution already exists before investing effort in creation",
+    "ac": {
+      "description": "Create a checklist that catches what normal checklists miss. Each item includes adversarial branches -- what if this assumption is wrong? Chains assumption extraction, failure anticipation, assumption inversion, and steps generation.",
       "categories": [
+        "validation",
+        "planning",
+        "problem_solving"
+      ],
+      "tags": [
+        "checklist",
+        "adversarial",
+        "compound",
+        "chain",
+        "failure",
+        "prevention"
+      ],
+      "input_types": [
+        "decision",
+        "goal"
+      ],
+      "invokes": [
+        "aex",
+        "fla",
+        "ai",
+        "stg"
+      ]
+    },
+    "acr": {
+      "description": "Use retrieval practice and self-testing to strengthen learning and identify gaps",
+      "categories": [
+        "problem_solving",
         "validation"
       ],
       "tags": [
-        "existence",
-        "check"
+        "active",
+        "recall"
       ],
-      "input_types": [
-        "decision"
-      ],
+      "input_types": [],
       "invokes": []
     },
-    "gd": {
-      "description": "A methodology for decomposing abstract goals into specific, actionable components",
+    "action": {
+      "description": "Sub-orchestrator for commands and action requests. Routes to direct execution, step generation, or reclassifies when the command needs analysis first.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "search",
+        "how",
+        "evaluate",
+        "want",
+        "diagnose",
+        "stg",
+        "to"
+      ]
+    },
+    "adep": {
+      "description": "Breadth-first, learned extraction pipeline that clarifies goals first, samples broadly, learns user preferences, and extracts selectively from highest-value items.",
       "categories": [
         "goal_analysis"
       ],
       "tags": [
-        "goal",
-        "decomposition"
+        "adaptive",
+        "extraction",
+        "pipeline"
       ],
       "input_types": [
-        "goal",
+        "goal"
+      ],
+      "invokes": []
+    },
+    "advr": {
+      "description": "Nothing is a fact until it survives an assassination attempt. Builder constructs claims, Breaker tries to destroy them.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "stc",
+        "aw",
+        "cv"
+      ]
+    },
+    "ael": {
+      "description": "Before asserting anything, verify it can be confirmed by the listener.",
+      "categories": [
+        "validation"
+      ],
+      "tags": [
+        "assumption",
+        "elimination"
+      ],
+      "input_types": [
         "decision"
       ],
       "invokes": []
     },
-    "cms": {
-      "description": "A structured procedure for evaluating multiple component options against",
+    "aex": {
+      "description": "Extract hidden assumptions from any content. Surfaces what must be true for claims to hold, enabling deeper analysis.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "afa": {
+      "description": "A premortem imagines failure has already occurred, then works backward to identify what went wrong.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "prm",
+        "fla",
+        "fat"
+      ]
+    },
+    "agi": {
+      "description": "Systematic procedure for translating ARAW exploration outputs",
       "categories": [
-        "decision_making"
+        "reasoning",
+        "communication",
+        "meta"
       ],
       "tags": [
-        "component",
-        "selection"
+        "araw",
+        "gosm",
+        "integration"
       ],
       "input_types": [
         "decision"
       ],
+      "invokes": []
+    },
+    "ai": {
+      "description": "Invert assumptions to discover blind spots and alternative possibilities. What if the opposite were true?",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ais": {
+      "description": "Set up foundational infrastructure for autonomous advocacy operations",
+      "categories": [],
+      "tags": [
+        "advocacy",
+        "infrastructure",
+        "setup"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "al": {
+      "description": "Systematic procedure for listening deeply to understand others, build trust, and improve communication outcomes",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "active",
+        "listening"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "am": {
+      "description": "Master academic subjects through structured learning, concept mapping, and competency verification",
+      "categories": [],
+      "tags": [
+        "academic",
+        "mastery"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "ams": {
+      "description": "Collection of strategies for bypassing or working around API limitations, including rate limits, IP blocks, and access restrictions.",
+      "categories": [],
+      "tags": [
+        "api",
+        "middleman",
+        "strategies"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "analyze": {
+      "description": "Sub-orchestrator for analytical requests. Routes to decomposition, systems analysis, comparison, risk assessment, or synthesis based on what kind of analysis is needed.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "claim",
+        "decide",
+        "how",
+        "evaluate",
+        "dcm",
+        "ins",
+        "diagnose",
+        "cmp",
+        "fla",
+        "swa"
+      ]
+    },
+    "ans": {
+      "description": "Many problems have been solved before - just in different domains.",
+      "categories": [
+        "problem_solving",
+        "search"
+      ],
+      "tags": [
+        "analogy",
+        "search"
+      ],
+      "input_types": [
+        "problem",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ao": {
+      "description": "Orderings based on classic algorithm design paradigms: greedy, dynamic programming, divide-and-conquer, and branch-and-bound.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "ap": {
@@ -109,30 +285,18 @@
       ],
       "invokes": []
     },
-    "clr": {
-      "description": "Systematic approach to retaining clients through tiered engagement strategies and value-add touchpoints.",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "client",
-        "retention"
-      ],
+    "ape": {
+      "description": "First pass at competitive programming — explicit problem decomposition, constraint identification, and straightforward implementation.",
+      "categories": [],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
-    "bi": {
-      "description": "Unbounded inquiry cannot terminate - every answer opens new questions.",
-      "categories": [
-        "guessing"
-      ],
-      "tags": [
-        "bounded",
-        "inquiry"
-      ],
-      "input_types": [
-        "question"
-      ],
+    "api": {
+      "description": "Second pass at competitive programming — find implicit patterns, hidden structure, and optimizations the explicit pass missed.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "apid": {
@@ -147,62 +311,71 @@
       ],
       "invokes": []
     },
-    "ipss": {
-      "description": "Ambiguity means multiple interpretations are possible.",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "interpretation",
-        "space",
-        "search"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "am": {
-      "description": "Master academic subjects through structured learning, concept mapping, and competency verification",
+    "apm": {
+      "description": "Third pass — meta-reasoning about solution correctness, confidence, and robustness. Catches what testing alone misses.",
       "categories": [],
-      "tags": [
-        "academic",
-        "mastery"
-      ],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
-    "gosm": {
-      "description": "Main GOSM entry point - Routes to procedure_engine for full workflow.",
-      "categories": [
-        "meta"
-      ],
-      "tags": [
-        "gosm"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": [
-        "pce",
-        "pce"
-      ]
-    },
-    "mpa": {
-      "description": "Generate, evaluate, and manage multiple alternative plans for the same goal",
+    "ar": {
+      "description": "Assume Right - Deep recursive rightness search. For every claim, assume it's right — find what must follow, then assume THOSE implications are right too. Recurse until bedrock. Track every claim found.",
       "categories": [
         "reasoning",
-        "decision_making",
-        "planning",
-        "goal_analysis"
+        "search"
       ],
       "tags": [
-        "multi",
-        "plan",
-        "aggregation"
+        "ar",
+        "assume-right",
+        "implications",
+        "commitments"
       ],
       "input_types": [
-        "goal",
+        "question",
         "decision"
       ],
+      "invokes": []
+    },
+    "araw": {
+      "description": "Assume Right / Assume Wrong search - For every claim, explore what follows if true (AR) and what breaks if false (AW). Number every finding. Recurse until bedrock. Compile a complete registry. Derive synthesis only from the registry.",
+      "categories": [
+        "reasoning",
+        "search",
+        "guessing"
+      ],
+      "tags": [
+        "araw"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "arcd": {
+      "description": "Orderings for software development — outside-in vs inside-out, API-first vs domain-first, top-down vs bottom-up.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "argd": {
+      "description": "Construct a rigorous argumentative document with thesis, evidence, counterarguments, and structured reasoning.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "asu": {
+      "description": "Plans and beliefs rest on assumptions that are often invisible.",
+      "categories": [
+        "planning"
+      ],
+      "tags": [
+        "assumption",
+        "surfacing"
+      ],
+      "input_types": [],
       "invokes": []
     },
     "atgb": {
@@ -224,227 +397,161 @@
       ],
       "invokes": []
     },
-    "ivs": {
-      "description": "Develop and execute personal investment strategies including portfolio allocation, risk tolerance assessment, and investment selection",
-      "categories": [
-        "decision_making",
-        "planning"
-      ],
-      "tags": [
-        "investment",
-        "strategy"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "pt": {
-      "description": "Monitor and report project status effectively",
+    "auep": {
+      "description": "Industrial-scale automation pipeline for extracting procedures from 70+ YouTube channels and other sources using the Ralph Wiggum / Conductor pattern for iterative LLM-driven extraction.",
       "categories": [],
       "tags": [
-        "progress",
-        "tracking"
+        "automated",
+        "extraction",
+        "pipeline"
       ],
       "input_types": [
         "decision"
       ],
       "invokes": []
     },
-    "plr": {
-      "description": "Identify evidence-based, neglected, tractable policies for advocacy campaigns",
-      "categories": [
-        "problem_solving",
-        "search"
-      ],
-      "tags": [
-        "policy",
-        "research"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "pus": {
-      "description": "Systematic procedure for preparing and delivering impactful presentations, speeches, and talks",
-      "categories": [
-        "communication"
-      ],
-      "tags": [
-        "public",
-        "speaking"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "std": {
-      "description": "Find or create an approach to achieve a goal",
-      "categories": [
-        "planning",
-        "goal_analysis",
-        "search"
-      ],
-      "tags": [
-        "strategy",
-        "discovery"
-      ],
-      "input_types": [
-        "goal",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "hd": {
-      "description": "Delegate physical, phone, or in-person tasks to humans when AI cannot perform them directly",
+    "av": {
+      "description": "Systematically verify assumptions by classifying type, determining verification method, executing, and updating confidence.",
       "categories": [],
-      "tags": [
-        "human",
-        "delegation"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "gw": {
-      "description": "Find relevant grants, write compelling proposals, and manage grant relationships and compliance",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "grant",
-        "writing"
-      ],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
-    "ams": {
-      "description": "Collection of strategies for bypassing or working around API limitations, including rate limits, IP blocks, and access restrictions.",
+    "aw": {
+      "description": "Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong — find why, then assume THOSE reasons are wrong too. Recurse until bedrock. Track every claim found.",
+      "categories": [
+        "reasoning",
+        "search"
+      ],
+      "tags": [
+        "aw",
+        "assume-wrong",
+        "adversarial",
+        "wrongness",
+        "rejection"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "b": {
+      "description": "Create, manage, and optimize budgets for projects, organizations, or personal finances",
       "categories": [],
       "tags": [
-        "api",
-        "middleman",
-        "strategies"
+        "budgeting"
       ],
       "input_types": [
         "decision"
       ],
       "invokes": []
     },
-    "neg": {
-      "description": "Systematic procedure for preparing and conducting negotiations to reach mutually beneficial agreements",
+    "be": {
+      "description": "Orderings from multi-armed bandit algorithms for balancing exploration of unknown options with exploitation of known good ones.",
       "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "bes": {
+      "description": "Like playing 20 Questions - each yes/no question eliminates half the possibilities. For N options, at most log2(N) questions needed.",
+      "categories": [
+        "search",
+        "guessing"
+      ],
       "tags": [
-        "negotiation"
+        "binary",
+        "elimination",
+        "search"
       ],
       "input_types": [
+        "question",
         "decision"
       ],
       "invokes": []
     },
-    "sop": {
-      "description": "Given limited time to extract procedures from sources, prioritize which sources to process for maximum procedure value.",
+    "bi": {
+      "description": "Unbounded inquiry cannot terminate - every answer opens new questions.",
+      "categories": [
+        "guessing"
+      ],
+      "tags": [
+        "bounded",
+        "inquiry"
+      ],
+      "input_types": [
+        "question"
+      ],
+      "invokes": []
+    },
+    "bm": {
+      "description": "Manage limited financial resources across autonomous operations with maximum value extraction",
       "categories": [
         "goal_analysis"
       ],
       "tags": [
-        "source",
-        "prioritization"
+        "budget",
+        "management"
       ],
-      "input_types": [
-        "decision"
-      ],
+      "input_types": [],
       "invokes": []
     },
-    "sya": {
-      "description": "Analyze complex systems using causal loop diagrams, stock and flow models, feedback loop identification, and system archetypes",
+    "bo": {
+      "description": "Comprehensive procedure for business goals including starting, growing, and operating businesses.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "cd",
+        "bm",
+        "cfm",
+        "pos",
+        "fm"
+      ]
+    },
+    "boc": {
+      "description": "Prevent user from settling on suboptimal option by systematically checking if better options exist that match their preferences. System surfaces what user may not have considered.",
       "categories": [
+        "validation"
+      ],
+      "tags": [
+        "better",
+        "option",
+        "check"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": [
+        "cta",
+        "ve"
+      ]
+    },
+    "br": {
+      "description": "Reasoning from conclusions back to premises. Given a conclusion, what journey led here? Reveals purpose and enables evaluation.",
+      "categories": [
+        "reasoning",
+        "planning"
+      ],
+      "tags": [
+        "backward",
         "reasoning"
       ],
-      "tags": [
-        "systems",
-        "analysis"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "ma": {
-      "description": "Invented by Fritz Zwicky. Break a problem into independent dimensions,",
-      "categories": [
-        "reasoning",
-        "problem_solving",
-        "search"
-      ],
-      "tags": [
-        "morphological",
-        "analysis"
-      ],
       "input_types": [
-        "problem",
-        "decision"
+        "question"
       ],
       "invokes": []
     },
-    "pw": {
-      "description": "Systematic procedure for writing persuasive content that influences readers and motivates action",
-      "categories": [],
-      "tags": [
-        "persuasive",
-        "writing"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "sel": {
-      "description": "Make the final selection from ranked options after all analysis is complete",
+    "capg": {
+      "description": "Pre-step feasibility check determining if AI can execute directly, needs delegation, or if task is infeasible",
       "categories": [
-        "reasoning",
-        "decision_making"
+        "validation"
       ],
       "tags": [
-        "selection"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "t": {
-      "description": "Build comprehensive database of advocacy targets with personalized dossiers",
-      "categories": [],
-      "tags": [
-        "targeting"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "mf": {
-      "description": "Analyze and optimize the customer journey from awareness to revenue using the AARRR framework",
-      "categories": [
-        "planning"
-      ],
-      "tags": [
-        "marketing",
-        "funnel"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "al": {
-      "description": "Systematic procedure for listening deeply to understand others, build trust, and improve communication outcomes",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "active",
-        "listening"
+        "capability",
+        "gate"
       ],
       "input_types": [
         "decision"
@@ -467,12 +574,2788 @@
       ],
       "invokes": []
     },
+    "cd": {
+      "description": "Validate customer problems and solutions before building",
+      "categories": [
+        "problem_solving",
+        "search"
+      ],
+      "tags": [
+        "customer",
+        "discovery"
+      ],
+      "input_types": [
+        "problem",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "cda": {
+      "description": "Find analogies from other domains to generate novel insights. Transfer solutions and patterns across fields.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "cdb": {
+      "description": "Most new strategies are actually old strategies from other domains. Find isomorphisms and translate winning strategies.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "cda",
+        "ans"
+      ]
+    },
+    "cdr": {
+      "description": "Discover what one field can learn from another by finding structural analogies, testing their transferability, and synthesizing actionable insights. Chains cross-domain analogy, assumption extraction, ARAW testing, and insight synthesis.",
+      "categories": [
+        "reasoning",
+        "search"
+      ],
+      "tags": [
+        "cross-domain",
+        "analogy",
+        "compound",
+        "chain",
+        "transfer",
+        "report"
+      ],
+      "input_types": [
+        "question",
+        "goal"
+      ],
+      "invokes": [
+        "cda",
+        "aex",
+        "araw",
+        "ins"
+      ]
+    },
+    "certainty": {
+      "description": "Continues analysis until the answer is thoroughly resolved. Chains multiple skills iteratively, escalating depth until no unresolved branches, untested assumptions, or competing conclusions remain.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "cfm": {
+      "description": "Track and optimize cash flow including income, expenses, runway calculation, and burn rate analysis",
+      "categories": [
+        "reasoning"
+      ],
+      "tags": [
+        "cash",
+        "flow",
+        "management"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "cfr": {
+      "description": "Systematic procedure for de-escalating tensions, finding common ground, and navigating difficult conversations productively",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "conflict",
+        "resolution"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "cga": {
+      "description": "Learn your cognitive process, then run it at superhuman scale: more information, more depth, more alternatives.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "se",
+        "ma"
+      ]
+    },
+    "ch": {
+      "description": "Systematic procedure for handling crises — stabilize, diagnose, communicate, resolve, and learn.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "rca",
+        "aar"
+      ]
+    },
+    "claim": {
+      "description": "Sub-orchestrator for claims and assertions. Routes to ARAW-based testing with appropriate depth and balance.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "decide",
+        "want",
+        "emotion",
+        "search",
+        "araw"
+      ]
+    },
+    "clg": {
+      "description": "Handler for goals that require building collectives, communities, or movements.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "net",
+        "vm",
+        "sms"
+      ]
+    },
+    "clr": {
+      "description": "Systematic approach to retaining clients through tiered engagement strategies and value-add touchpoints.",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "client",
+        "retention"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "cls": {
+      "description": "The simplest possible search: enumerate items, check each against",
+      "categories": [
+        "validation",
+        "search"
+      ],
+      "tags": [
+        "checklist",
+        "search"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "cma": {
+      "description": "Systematically analyze competitive landscape using Porter's Five Forces, competitor mapping, and differentiation strategies",
+      "categories": [
+        "reasoning"
+      ],
+      "tags": [
+        "competitive",
+        "analysis"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "cmp": {
+      "description": "Compare options using gestalt impression + structured evaluation. Impression first, then criteria, then check for divergence.",
+      "categories": [
+        "reasoning",
+        "problem_solving",
+        "decision_making"
+      ],
+      "tags": [
+        "comparison"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "cms": {
+      "description": "A structured procedure for evaluating multiple component options against",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "component",
+        "selection"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "cn": {
+      "description": "Orderings for presentations, writing, and communication where sequence affects audience engagement and comprehension.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "cns": {
+      "description": "Orderings for constraint satisfaction and guided search — process most constrained variables first, propagate constraints, backtrack efficiently.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "cnw": {
+      "description": "When you face a constraint that seems to block progress, find a workaround. There is ALWAYS a workaround.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "grfr",
+        "foht"
+      ]
+    },
+    "cor": {
+      "description": "Procedure for conducting effective code reviews using Claude Code's capabilities for exhaustive analysis",
+      "categories": [],
+      "tags": [
+        "code",
+        "review"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "cpp": {
+      "description": "Strategic framework for assessing career options, planning transitions,",
+      "categories": [
+        "planning"
+      ],
+      "tags": [
+        "career",
+        "path",
+        "planning"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "cppd": {
+      "description": "Analyze patterns across completed GOSM projects to improve the system.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "iterate",
+        "ret"
+      ]
+    },
+    "cpra": {
+      "description": "Meta-procedure for ensuring any analysis, procedure, or decision covers all relevant aspects.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "pv",
+        "mv"
+      ]
+    },
+    "create": {
+      "description": "Sub-orchestrator for creative and content production requests. Routes to appropriate writing skills based on content type and quality needs.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "analyze",
+        "evaluate",
+        "how",
+        "diagnose",
+        "w"
+      ]
+    },
+    "cri": {
+      "description": "Structured evaluation using gestalt impression + analytical decomposition. Impression first, then analysis, then check for divergence.",
+      "categories": [
+        "reasoning",
+        "validation"
+      ],
+      "tags": [
+        "critique",
+        "evaluation",
+        "impression",
+        "review",
+        "feedback"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "crw": {
+      "description": "Also known as: Weighted scoring model, Decision matrix, Pugh matrix.",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "criteria",
+        "weighting"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ct": {
+      "description": "Orderings for resource-constrained emergencies where not everything can be addressed and you must maximize outcomes with limited resources.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "cta": {
+      "description": "Analyze a category of guesses to determine which apply to the user. System does the work by testing each guess against available evidence and generating sub-guesses for verification.",
+      "categories": [
+        "reasoning",
+        "validation",
+        "guessing"
+      ],
+      "tags": [
+        "category",
+        "analysis"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": [
+        "pre",
+        "boc"
+      ]
+    },
+    "cts": {
+      "description": "Develop and execute content strategy that attracts, engages, and converts",
+      "categories": [
+        "planning"
+      ],
+      "tags": [
+        "content",
+        "strategy"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "cv": {
+      "description": "Solve the infinite critic problem by using multiple independent validation criteria — accept when they converge, investigate when they diverge.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "dari": {
+      "description": "Bridges the deductive strategy system with adversarial review testing for maximum strategy confidence.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "lps",
+        "advr",
+        "cv"
+      ]
+    },
+    "dbg": {
+      "description": "Systematic procedure for diagnosing and fixing software bugs using Claude Code's tool capabilities",
+      "categories": [],
+      "tags": [
+        "debugging"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "dc": {
+      "description": "Systematic procedure for gathering research data through surveys, interviews, observation, and secondary sources",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "data",
+        "collection"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "dcm": {
+      "description": "Break complex goals into simpler, manageable sub-goals",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "decomposition"
+      ],
+      "input_types": [
+        "goal"
+      ],
+      "invokes": []
+    },
+    "dcp": {
+      "description": "Create a mechanical, step-by-step decision procedure for a recurring decision type. Like a flowchart anyone can follow without expertise. Chains dimension discovery, enumeration, assumption extraction, steps generation, failure anticipation, and validation.",
+      "categories": [
+        "decision_making",
+        "planning",
+        "problem_solving"
+      ],
+      "tags": [
+        "decision",
+        "procedure",
+        "compound",
+        "chain",
+        "flowchart",
+        "mechanical"
+      ],
+      "input_types": [
+        "decision",
+        "goal"
+      ],
+      "invokes": [
+        "dd",
+        "se",
+        "aex",
+        "stg",
+        "fla",
+        "pv"
+      ]
+    },
+    "dct": {
+      "description": "Systematic procedure for structuring complex decisions with multiple branches, probabilities, and outcomes. Includes empirical validation for probability estimates.",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "decision",
+        "trees"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": [
+        "emv"
+      ]
+    },
+    "dd": {
+      "description": "Identify the key dimensions that define a problem space, enabling comprehensive enumeration. Use before space_enumeration for novel domains.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "de": {
+      "description": "Extract dependencies between steps, tasks, or items. Identifies what must happen before what, enabling proper sequencing and parallel execution.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "decide": {
+      "description": "Sub-orchestrator for decisions. Routes to comparison, ARAW testing, or goal clarification based on what the user knows.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "claim",
+        "want",
+        "emotion",
+        "viability",
+        "search",
+        "araw",
+        "cmp",
+        "prm",
+        "fla"
+      ]
+    },
+    "diagnose": {
+      "description": "Sub-orchestrator for diagnostic questions. Routes to UAUA exploration or direct causal tracing based on how much is known.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "claim",
+        "decide",
+        "emotion",
+        "how",
+        "araw",
+        "fowwr",
+        "uaua",
+        "sbfow",
+        "rca",
+        "sya"
+      ]
+    },
+    "dlp": {
+      "description": "Design and execute targeted practice sessions that maximize skill improvement",
+      "categories": [],
+      "tags": [
+        "deliberate",
+        "practice"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "dmt": {
+      "description": "Create domain-specific skill configurations. Pre-configure skill chains, dimensions, and patterns for specific domains like research, consulting, or engineering.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "dop": {
+      "description": "Create comprehensive project documentation that allows others to understand, reproduce, and maintain the project.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "dot": {
+      "description": "Procedure for tracking outcomes that take months or years to manifest.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "qm",
+        "pcef"
+      ]
+    },
+    "dpl": {
+      "description": "Procedure for planning and executing reliable software deployments",
+      "categories": [
+        "planning"
+      ],
+      "tags": [
+        "deployment"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "dsd": {
+      "description": "Derive strategies by working backward from success criteria to required actions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "dse",
+        "lps",
+        "dari"
+      ]
+    },
+    "dse": {
+      "description": "Evaluate strategies based on the logical soundness of their derivation.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "dsd",
+        "dari"
+      ]
+    },
+    "dsn": {
+      "description": "Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embeds generate → critique → iterate.",
+      "categories": [
+        "reasoning",
+        "decision_making"
+      ],
+      "tags": [
+        "design",
+        "principles",
+        "universal",
+        "layout",
+        "arrangement"
+      ],
+      "input_types": [
+        "decision",
+        "goal"
+      ],
+      "invokes": []
+    },
+    "dsp": {
+      "description": "Systematic design of mechanical systems, chassis, and electromechanical assemblies.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "ma",
+        "cmp",
+        "enc",
+        "dop"
+      ]
+    },
+    "dss": {
+      "description": "Complete system design workflow — from requirements through verified design.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "rqg",
+        "ans",
+        "ma",
+        "crw",
+        "vp"
+      ]
+    },
+    "dtl": {
+      "description": "Two complementary methodologies for innovation: Design Thinking discovers the right problem, Lean Startup validates solutions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "action",
+        "cd",
+        "prd"
+      ]
+    },
+    "dv": {
+      "description": "Orderings optimized for detecting deception, fraud, anomalies, and inconsistencies.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "dvs": {
+      "description": "Orderings that prioritize behavioral diversity, novelty, and coverage of solution space over convergence to a single optimum.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ea": {
+      "description": "Acquire and configure email addresses for autonomous system operations",
+      "categories": [],
+      "tags": [
+        "email",
+        "acquisition"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "eda": {
+      "description": "Maintain project continuity through event monitoring and automated state management",
+      "categories": [],
+      "tags": [
+        "event",
+        "driven",
+        "automation"
+      ],
+      "input_types": [
+        "decision",
+        "situation"
+      ],
+      "invokes": []
+    },
+    "eg": {
+      "description": "Handle goals where the objective is exploration and discovery rather than reaching a known destination.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "eh": {
+      "description": "A layered framework for building from certain foundations toward determinate action.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "rci",
+        "tp"
+      ]
+    },
+    "emotion": {
+      "description": "Sub-orchestrator for emotional inputs. Acknowledges the emotion, identifies the implicit request, and routes to the appropriate analytical skill.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "diagnose",
+        "claim",
+        "want",
+        "evaluate",
+        "how",
+        "viability"
+      ]
+    },
+    "emv": {
+      "description": "Empirical validation step for GOSM plans - adds external reality testing beyond coherence checks",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "enc": {
+      "description": "Standard engineering calculation procedures for robotics and mechanical system design — forces, torques, materials, actuator sizing.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "er": {
+      "description": "Systematic analysis of economic viability, cost structures, and comparative advantage",
+      "categories": [
+        "reasoning",
+        "search"
+      ],
+      "tags": [
+        "economic",
+        "research"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "es": {
+      "description": "Evolution has optimized biological systems for billions of years. Apply evolutionary strategies to find solutions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "gen",
+        "sel",
+        "pbs"
+      ]
+    },
+    "ess": {
+      "description": "Systematic procedure for searching external sources to find evidence, data, and information relevant to a question.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "src"
+      ]
+    },
+    "evaluate": {
+      "description": "Sub-orchestrator for evaluation. Routes to ARAW, MECE validation, procedure validation, or assumption extraction based on what's being assessed and what kind of evaluation is needed.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "claim",
+        "decide",
+        "diagnose",
+        "viability",
+        "araw",
+        "mv",
+        "se",
+        "pv",
+        "val",
+        "aex",
+        "fla",
+        "prm"
+      ]
+    },
+    "evd": {
+      "description": "Universal dimensions for evaluating any claim, problem, or solution.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "cv",
+        "evaluate"
+      ]
+    },
+    "exc": {
+      "description": "Systematically check if a solution or similar solution already exists before investing effort in creation",
+      "categories": [
+        "validation"
+      ],
+      "tags": [
+        "existence",
+        "check"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "exd": {
+      "description": "Systematic procedure for designing rigorous experiments with proper controls, variables, and validity considerations",
+      "categories": [],
+      "tags": [
+        "experimental",
+        "design"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "exv": {
+      "description": "Systematic procedure for calculating expected value, adjusting for risk, and determining optimal resource allocation under uncertainty",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "expected",
+        "value"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "faa": {
+      "description": "Orderings that balance competing priorities, prevent starvation, and allocate resources proportionally across stakeholders.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "fat": {
+      "description": "When a project fails, systematically analyze the root cause and attribute failure correctly.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "rca",
+        "aar",
+        "afa"
+      ]
+    },
+    "fb": {
+      "description": "Generate filtered feedback for self-improvement loops. Only accepts well-grounded, high-leverage items to prevent error accumulation.",
+      "categories": [],
+      "tags": [
+        "feedback"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "fd": {
+      "description": "Systematic procedure for delivering feedback that is heard, received, and acted upon, and for receiving feedback gracefully",
+      "categories": [],
+      "tags": [
+        "feedback",
+        "delivery"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "fe": {
+      "description": "Systematic process for extending the GOSM framework with new procedures, gates, or capabilities.",
+      "categories": [
+        "meta"
+      ],
+      "tags": [
+        "framework",
+        "extension"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ff": {
+      "description": "Raise investment capital through investor outreach, pitch preparation, term sheet negotiation, and due diligence",
+      "categories": [],
+      "tags": [
+        "fundraising",
+        "financial"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "fia": {
+      "description": "Comprehensive analysis of a field's key tensions, hidden assumptions, and blind spots. Chains assumption extraction, deep ARAW testing, cross-domain perspective, evaluation dimensions, and insight synthesis into a complete field report.",
+      "categories": [
+        "reasoning",
+        "validation",
+        "search",
+        "meta"
+      ],
+      "tags": [
+        "field",
+        "analysis",
+        "compound",
+        "chain",
+        "comprehensive",
+        "assumptions",
+        "tensions"
+      ],
+      "input_types": [
+        "question",
+        "goal"
+      ],
+      "invokes": [
+        "aex",
+        "araw",
+        "cda",
+        "evaluation_dimensions",
+        "ins"
+      ]
+    },
+    "fj": {
+      "description": "Most goal journey work focuses on SUCCESS paths. This maps the patterns of sustainable failure.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "rca",
+        "hf"
+      ]
+    },
+    "fl": {
+      "description": "Comprehensive guide to building a sustainable freelance practice, from finding",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "freelancing"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "fla": {
+      "description": "Systematically identify potential failures, assess their risk, and plan mitigations before execution",
+      "categories": [
+        "problem_solving",
+        "planning"
+      ],
+      "tags": [
+        "failure",
+        "anticipation"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "fm": {
+      "description": "Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making",
+      "categories": [
+        "reasoning",
+        "decision_making",
+        "validation"
+      ],
+      "tags": [
+        "financial",
+        "modeling"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "fnd": {
+      "description": "Find the right GOSM skill for what you want to do. Describe your need in plain language and get matched to the best skill(s).",
+      "categories": [
+        "search",
+        "meta"
+      ],
+      "tags": [
+        "finder",
+        "search",
+        "skill",
+        "lookup",
+        "help"
+      ],
+      "input_types": [
+        "situation"
+      ],
+      "invokes": []
+    },
+    "foht": {
+      "description": "Figure Out How To - Method discovery when you know WHAT but not HOW. Systematically map the method space, test candidates, and find approaches that survive scrutiny.",
+      "categories": [
+        "planning",
+        "search",
+        "strategy"
+      ],
+      "tags": [
+        "method",
+        "discovery",
+        "how-to",
+        "approach"
+      ],
+      "input_types": [
+        "goal",
+        "question"
+      ],
+      "invokes": []
+    },
+    "fowwr": {
+      "description": "Figure Out What Went Wrong - Backward causal diagnosis of failures. Trace from symptom to root cause, test each candidate cause, and derive what would prevent recurrence.",
+      "categories": [
+        "analysis",
+        "diagnosis"
+      ],
+      "tags": [
+        "failure",
+        "root-cause",
+        "diagnosis",
+        "causal"
+      ],
+      "input_types": [
+        "problem"
+      ],
+      "invokes": []
+    },
+    "fr": {
+      "description": "Structured recovery procedures when projects encounter failures, providing clear decision trees and specific actions for common failure modes.",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "failure",
+        "recovery"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "fss": {
+      "description": "The future is uncertain but not arbitrary.",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "future",
+        "space",
+        "search"
+      ],
+      "input_types": [
+        "goal"
+      ],
+      "invokes": []
+    },
+    "fua": {
+      "description": "Build self-sustaining funding for advocacy operations through multiple revenue streams",
+      "categories": [],
+      "tags": [
+        "fundraising",
+        "advocacy"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "gaa": {
+      "description": "An honest audit of the GOSM system's approach, claims, and limitations — applying the system's own standards to itself.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "araw"
+      ]
+    },
+    "gaca": {
+      "description": "Convert gates from yes/no vibe checks into explicit, checkable claim-interfaces.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "gee",
+        "sapea"
+      ]
+    },
+    "gd": {
+      "description": "A methodology for decomposing abstract goals into specific, actionable components. Includes clarification vs substitution verification.",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "goal",
+        "decomposition"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "gdm": {
+      "description": "Systematic procedure for making effective decisions in groups, avoiding common pitfalls, and leveraging collective intelligence",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "group",
+        "decision",
+        "making"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ge": {
+      "description": "Run systematic experiments to discover and validate growth levers using hypothesis-driven testing",
+      "categories": [
+        "validation",
+        "search"
+      ],
+      "tags": [
+        "growth",
+        "experiments"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "gee": {
+      "description": "Systematic execution of GOSM gates with enforcement.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "gaca",
+        "mcg"
+      ]
+    },
+    "gen": {
+      "description": "Produce diverse candidate solutions. Given constraints and purpose, generate N candidates ranging from conventional to extreme. The creative primitive that other skills call.",
+      "categories": [
+        "reasoning",
+        "search"
+      ],
+      "tags": [
+        "generate",
+        "candidates",
+        "artifacts",
+        "creative",
+        "divergent"
+      ],
+      "input_types": [
+        "decision",
+        "goal"
+      ],
+      "invokes": []
+    },
+    "gg": {
+      "description": "Generate exhaustive guesses about user input using ALL search methods with coverage tracking. Guessing is SEARCH through possibility space. Tracks space created vs space covered to ensure comprehensive exploration.",
+      "categories": [
+        "search",
+        "guessing"
+      ],
+      "tags": [
+        "guess",
+        "generation"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": [
+        "qag"
+      ]
+    },
+    "gjs": {
+      "description": "A goal journey is NOT a narrative arc. It's a CHAIN OF GOALS. Integration hub for GOSM goal processing.",
+      "categories": [
+        "planning",
+        "goal_analysis",
+        "meta"
+      ],
+      "tags": [
+        "goal",
+        "journey",
+        "system"
+      ],
+      "input_types": [
+        "goal"
+      ],
+      "invokes": [
+        "assumeright_assumewrong_search",
+        "ve",
+        "emv"
+      ]
+    },
+    "gn": {
+      "description": "Generate all possible options for a decision or selection",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "generation"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "gosm": {
+      "description": "Goal-Oriented State Machine. Context-adaptive dispatcher that routes to the right analysis depth based on urgency, stakes, and expertise.",
+      "categories": [
+        "meta"
+      ],
+      "tags": [
+        "gosm"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "grf": {
+      "description": "Transform vague or incomplete goals into SMART goals with explicit clarification vs substitution distinction",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "goal",
+        "refinement"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "grfr": {
+      "description": "Transform impossible or problematic goals into achievable versions. No such thing as an impossible goal - only insufficient decomposition. Includes explicit substitution handling.",
+      "categories": [
+        "problem_solving",
+        "goal_analysis"
+      ],
+      "tags": [
+        "goal",
+        "reframing"
+      ],
+      "input_types": [
+        "goal",
+        "problem",
+        "decision"
+      ],
+      "invokes": [
+        "ve"
+      ]
+    },
+    "gsr": {
+      "description": "Given any conclusion, statement, or claim, reconstruct the goal-structure. Includes detection of goal drift and substitution in chains.",
+      "categories": [
+        "goal_analysis",
+        "guessing"
+      ],
+      "tags": [
+        "goal",
+        "structure",
+        "reconstruction"
+      ],
+      "input_types": [
+        "goal",
+        "decision",
+        "situation"
+      ],
+      "invokes": []
+    },
+    "gt": {
+      "description": "Orderings derived from graph traversal algorithms — BFS for breadth, DFS for depth, topological for dependencies.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "gts": {
+      "description": "The fundamental pattern for making cognitive tasks tractable: Generate possibilities, then Search using criteria.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "sel",
+        "se",
+        "gen",
+        "m"
+      ]
+    },
+    "gu": {
+      "description": "MANDATORY first step before attempting any goal. Parses input as guesses, classifies OPEN vs CLOSED, fills goal journey structure. Includes clarification vs substitution check.",
+      "categories": [
+        "planning",
+        "goal_analysis",
+        "guessing"
+      ],
+      "tags": [
+        "goal",
+        "understanding"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": [
+        "assumeright_assumewrong_search",
+        "ve",
+        "pbi",
+        "cmp",
+        "gjs"
+      ]
+    },
+    "gw": {
+      "description": "Find relevant grants, write compelling proposals, and manage grant relationships and compliance",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "grant",
+        "writing"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "hd": {
+      "description": "Delegate physical, phone, or in-person tasks to humans when AI cannot perform them directly",
+      "categories": [],
+      "tags": [
+        "human",
+        "delegation"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "hf": {
+      "description": "Build new habits and break unwanted ones using behavioral science principles",
+      "categories": [
+        "communication"
+      ],
+      "tags": [
+        "habit",
+        "formation"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ho": {
+      "description": "Comprehensive procedure for health-related goals including fitness, nutrition, sleep, energy, and wellness.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "gu",
+        "po",
+        "hf"
+      ]
+    },
+    "how": {
+      "description": "Sub-orchestrator for method-seeking. Routes to FOHT method discovery, step generation, or goal clarification based on what's defined.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "decide",
+        "diagnose",
+        "search",
+        "want",
+        "action",
+        "foht",
+        "stg"
+      ]
+    },
+    "ht": {
+      "description": "Systematic procedure for formulating testable hypotheses, designing tests, and updating beliefs based on evidence. Supports context-adaptive variants.",
+      "categories": [
+        "validation"
+      ],
+      "tags": [
+        "hypothesis",
+        "testing"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "hvh": {
+      "description": "Handle goals and plans in rapidly changing environments where conditions shift faster than normal planning cycles.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "idg": {
+      "description": "Handler for goals where SUCCESS IS DISCOVERING THE UNKNOWN, not executing a known plan.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "ie",
+        "ge",
+        "po",
+        "dtl"
+      ]
+    },
+    "ie": {
+      "description": "A systematic search for non-obvious strategies using cross-domain mapping, gap search, and strategy inversion.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "cda",
+        "va",
+        "ma"
+      ]
+    },
+    "ifss": {
+      "description": "Information implies other information. But not all inferences are equal:",
+      "categories": [
+        "search",
+        "communication"
+      ],
+      "tags": [
+        "inference",
+        "space",
+        "search"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ig": {
+      "description": "Handle goals driven by intuition rather than explicit reasoning — validate the intuition, find the underlying pattern, convert to actionable goal.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "ar",
+        "exd"
+      ]
+    },
+    "im": {
+      "description": "Charlie Munger's inversion technique. Finding ways to fail, then avoiding them, makes success more likely.",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "inversion",
+        "method"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ins": {
+      "description": "Synthesize insights from multiple sources into coherent, actionable understanding. Combines extraction, inversion, and analogy into unified insights.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ip": {
+      "description": "Comprehensive preparation system for job interviews covering research, story",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "interview",
+        "preparation"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ipss": {
+      "description": "Ambiguity means multiple interpretations are possible.",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "interpretation",
+        "space",
+        "search"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "isd": {
+      "description": "Systematic process for identifying, building, and scaling new income streams.",
+      "categories": [
+        "problem_solving"
+      ],
+      "tags": [
+        "income",
+        "stream",
+        "development"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ita": {
+      "description": "Transform seemingly impossible goals into achievable ones by systematically challenging what makes them impossible.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "aw",
+        "cda",
+        "dcm"
+      ]
+    },
+    "iterate": {
+      "description": "Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted — then executes the highest-value iteration.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ivs": {
+      "description": "Develop and execute personal investment strategies including portfolio allocation, risk tolerance assessment, and investment selection",
+      "categories": [
+        "decision_making",
+        "planning"
+      ],
+      "tags": [
+        "investment",
+        "strategy"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "je": {
+      "description": "Extract the underlying GOAL JOURNEY from any source:",
+      "categories": [
+        "planning",
+        "goal_analysis"
+      ],
+      "tags": [
+        "journey",
+        "extraction"
+      ],
+      "input_types": [
+        "goal"
+      ],
+      "invokes": []
+    },
+    "jm": {
+      "description": "Given a current situation (goal, problem, state), find journeys",
+      "categories": [
+        "problem_solving",
+        "planning",
+        "goal_analysis",
+        "search"
+      ],
+      "tags": [
+        "journey",
+        "matching"
+      ],
+      "input_types": [
+        "goal",
+        "problem",
+        "situation"
+      ],
+      "invokes": []
+    },
+    "jss": {
+      "description": "Systematic approach to job hunting that treats the search as a funnel to optimize,",
+      "categories": [
+        "planning",
+        "search"
+      ],
+      "tags": [
+        "job",
+        "search",
+        "strategy"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "la": {
+      "description": "Systematically identify limitations across multiple dimensions,",
+      "categories": [
+        "reasoning",
+        "problem_solving"
+      ],
+      "tags": [
+        "limitation",
+        "analysis"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "lcs": {
+      "description": "Orderings based on local search optimization — improve from current position, escape local optima, systematic exploration with memory.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ld": {
+      "description": "Orderings optimized for acquiring knowledge, validating hypotheses, and iterative learning when understanding matters more than speed.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ldg": {
+      "description": "Handle goals that depend partly on luck or chance — maximize controllable factors, create multiple shots, build resilience.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "lgi": {
+      "description": "All language has a goal - it's trying to achieve something.",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "language",
+        "goal",
+        "identification"
+      ],
+      "input_types": [
+        "goal",
+        "feeling"
+      ],
+      "invokes": []
+    },
+    "lp": {
+      "description": "Not all interventions are equal. Identify leverage points where small shifts produce big systemic changes.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "sya",
+        "sym"
+      ]
+    },
+    "lpd": {
+      "description": "Most valuable strategies exploit leverage points - places where small",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "leverage",
+        "point",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "lps": {
+      "description": "The foundational infrastructure for treating strategy selection as theorem proving.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "dsd",
+        "tp"
+      ]
+    },
+    "lr": {
+      "description": "Systematic procedure for conducting comprehensive literature reviews on any topic",
+      "categories": [],
+      "tags": [
+        "literature",
+        "review"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "lrs": {
+      "description": "Systematically capture, analyze, and apply learnings to improve campaign effectiveness",
+      "categories": [],
+      "tags": [
+        "learning",
+        "system"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "lt": {
+      "description": "Apply knowledge and skills from one domain to new contexts through systematic transfer strategies",
+      "categories": [],
+      "tags": [
+        "learning",
+        "transfer"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "m": {
+      "description": "Define criteria for filtering options",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "matching"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ma": {
+      "description": "Invented by Fritz Zwicky. Break a problem into independent dimensions,",
+      "categories": [
+        "reasoning",
+        "problem_solving",
+        "search"
+      ],
+      "tags": [
+        "morphological",
+        "analysis"
+      ],
+      "input_types": [
+        "problem",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "mcd": {
+      "description": "Systematic procedure for making decisions involving multiple criteria, tradeoffs, and stakeholders",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "multi",
+        "criteria",
+        "decision"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "mcg": {
+      "description": "Gate that verifies all items mentioned by user have been considered, analyzed, and addressed. Prevents dropping user-mentioned aspects. Run after any multi-aspect analysis to verify nothing was missed.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "mcp": {
+      "description": "Orderings inspired by musical forms — theme and variation, call and response, tension and release — for structuring extended experiences.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "mcs": {
+      "description": "Configure MCP servers to enable autonomous GOSM execution capabilities",
+      "categories": [
+        "meta"
+      ],
+      "tags": [
+        "mcp",
+        "setup"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "md": {
+      "description": "Derive the appropriate method from the situation rather than",
+      "categories": [],
+      "tags": [
+        "method",
+        "derivation"
+      ],
+      "input_types": [
+        "situation"
+      ],
+      "invokes": []
+    },
+    "mem": {
+      "description": "Build and apply a latticework of mental models for better thinking across domains",
+      "categories": [
+        "reasoning"
+      ],
+      "tags": [
+        "mental",
+        "models"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "met": {
+      "description": "A systematic method for using metaphors to:",
+      "categories": [
+        "meta"
+      ],
+      "tags": [
+        "metaphor",
+        "method"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "meta": {
+      "description": "Sub-orchestrator for meta-questions about the toolkit. Provides skill discovery, usage guidance, and orientation.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "mf": {
+      "description": "Analyze and optimize the customer journey from awareness to revenue using the AARRR framework",
+      "categories": [
+        "planning"
+      ],
+      "tags": [
+        "marketing",
+        "funnel"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "mil": {
+      "description": "Orderings derived from military doctrine — concentrate force at decisive points, maintain tempo, secure supply lines before advancing.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "mp": {
+      "description": "Orderings that account for human psychological factors — energy, motivation, habits, and engagement for sustainable performance.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "mpa": {
+      "description": "Generate, evaluate, and manage multiple alternative plans for the same goal",
+      "categories": [
+        "reasoning",
+        "decision_making",
+        "planning",
+        "goal_analysis"
+      ],
+      "tags": [
+        "multi",
+        "plan",
+        "aggregation"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "mpg": {
+      "description": "Handler for goals that require navigating institutions, groups, politics, and multiple stakeholders.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "skm",
+        "neg",
+        "orc"
+      ]
+    },
+    "mr": {
+      "description": "Systematic process for identifying, validating, and sizing market opportunities.",
+      "categories": [
+        "problem_solving",
+        "search"
+      ],
+      "tags": [
+        "market",
+        "research"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "mrc": {
+      "description": "Three core metacognitive questions. What am I trying to achieve? Is this the best way? Am I making progress?",
+      "categories": [
+        "reasoning",
+        "meta"
+      ],
+      "tags": [
+        "meta",
+        "reasoning",
+        "core"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "mss": {
+      "description": "Understanding = finding a model that fits.",
+      "categories": [
+        "goal_analysis",
+        "search"
+      ],
+      "tags": [
+        "model",
+        "space",
+        "search"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "mv": {
+      "description": "Validate that a list is MECE (Mutually Exclusive, Collectively Exhaustive). Identifies overlaps and gaps.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "neg": {
+      "description": "Systematic procedure for preparing and conducting negotiations to reach mutually beneficial agreements",
+      "categories": [],
+      "tags": [
+        "negotiation"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "net": {
+      "description": "Systematic approach to building genuine professional relationships that create",
+      "categories": [],
+      "tags": [
+        "networking"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ns": {
+      "description": "Orderings for strategic interactions where sequence of moves affects counterparty responses.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "nss": {
+      "description": "Creativity = novelty + value.",
+      "categories": [
+        "goal_analysis",
+        "search"
+      ],
+      "tags": [
+        "novelty",
+        "space",
+        "search"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "o": {
+      "description": "Rank viable options from best to worst using multi-criteria optimization",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "optimization"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ol": {
+      "description": "In competitive environments, the entity that cycles through observe-orient-decide-act faster gains decisive advantage.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "mil",
+        "ct"
+      ]
+    },
+    "op": {
+      "description": "Determine the correct execution order for a set of steps based on dependencies and constraints",
+      "categories": [
+        "planning"
+      ],
+      "tags": [
+        "order",
+        "procedure"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ops": {
+      "description": "Procedure for designing and executing optical pooled screening experiments in functional genomics.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "orc": {
+      "description": "Execute multi-channel persuasion campaigns for policy advocacy",
+      "categories": [],
+      "tags": [
+        "outreach",
+        "campaigns"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "orm": {
+      "description": "Craft and send high-quality outreach communications that maximize response rates",
+      "categories": [],
+      "tags": [
+        "outreach",
+        "communication"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "ov": {
+      "description": "Alternative ordering strategies for procedure steps when the default doesn't fit.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "ovi",
+        "to"
+      ]
+    },
+    "ovi": {
+      "description": "Guide for selecting and applying the right ordering strategy to any procedure's steps.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "p": {
+      "description": "Convert analysis findings into steelmanned, actionable plans with conditional recommendations. Every recommendation includes a derivation chain explaining WHY. Requires a source analysis from /ar, /aw, /u, /araw, or /uaua.",
+      "categories": [
+        "reasoning",
+        "decision_making",
+        "planning"
+      ],
+      "tags": [
+        "p",
+        "plans",
+        "recommendations",
+        "steelman",
+        "derivation",
+        "conditional",
+        "evidence-based"
+      ],
+      "input_types": [
+        "decision",
+        "goal"
+      ],
+      "invokes": []
+    },
+    "pag": {
+      "description": "Handler for goals with inherent tensions where optimizing one dimension seems to harm another.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "tnt",
+        "vcd"
+      ]
+    },
+    "pb": {
+      "description": "Build complexity incrementally — each step works before adding the next. Foundations before features.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "pbi": {
+      "description": "Before solving, identify the RIGHT problem at the RIGHT level. Includes clarification vs substitution checking to prevent problem drift.",
+      "categories": [
+        "problem_solving"
+      ],
+      "tags": [
+        "problem",
+        "identification"
+      ],
+      "input_types": [
+        "problem",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pbr": {
+      "description": "Systematic procedure for estimating probabilities, updating beliefs with evidence, and making well-calibrated predictions",
+      "categories": [
+        "reasoning"
+      ],
+      "tags": [
+        "probabilistic",
+        "reasoning"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pbs": {
+      "description": "Maintain multiple candidate solutions simultaneously — evolutionary approaches, beam search, iterative deepening.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "pcd": {
+      "description": "Find or create the procedures needed to execute a plan",
+      "categories": [
+        "planning",
+        "search"
+      ],
+      "tags": [
+        "procedure",
+        "discovery"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pce": {
+      "description": "The deep analysis engine. Routes input by type, applies appropriate analysis depth, produces structured understanding and action.",
+      "categories": [
+        "problem_solving",
+        "decision_making",
+        "goal_analysis",
+        "meta",
+        "guessing"
+      ],
+      "tags": [
+        "procedure",
+        "engine"
+      ],
+      "input_types": [
+        "goal",
+        "problem",
+        "question",
+        "situation",
+        "feeling"
+      ],
+      "invokes": []
+    },
+    "pcef": {
+      "description": "Unified framework for procedure effectiveness tracking — operational and empirical.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "cppd",
+        "prr"
+      ]
+    },
+    "pcex": {
+      "description": "After completing a goal, extract reusable procedures and generalize them for storage in the library, enabling GOSM to learn from completed work.",
+      "categories": [
+        "goal_analysis",
+        "meta"
+      ],
+      "tags": [
+        "procedure",
+        "extraction"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pci": {
+      "description": "Systematically improve GOSM library procedures using schema-driven validation and tier-based progress tracking",
+      "categories": [
+        "validation",
+        "meta"
+      ],
+      "tags": [
+        "procedure",
+        "improvement"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "pefs": {
+      "description": "Meta-procedure for extracting implicit procedures from ANY external source, turning tacit knowledge into explicit, reusable GOSM-compatible procedures.",
+      "categories": [
+        "meta"
+      ],
+      "tags": [
+        "procedure",
+        "extraction",
+        "from",
+        "source"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pf": {
+      "description": "Classic priority frameworks — Eisenhower matrix, MoSCoW, RICE, weighted scoring — for systematic ranking.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "pge": {
+      "description": "Orderings from learning science — interleaving, spacing, testing effect, desirable difficulties — for durable understanding.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ph": {
+      "description": "Not all procedures are equal. There is a hierarchy of meta-procedures and content procedures.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "pha": {
       "description": "Acquire and configure phone numbers for autonomous system operations",
       "categories": [],
       "tags": [
         "phone",
         "acquisition"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pjc": {
+      "description": "Complete projects properly with handoff and learning capture",
+      "categories": [],
+      "tags": [
+        "project",
+        "closure"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "pji": {
+      "description": "Launch projects with clear charter, stakeholders, and success criteria",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "project",
+        "initiation"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "pjm": {
+      "description": "Orderings from formal project management — PERT, CPM, Critical Chain, Agile — for scheduling and resource management.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "de"
+      ]
+    },
+    "pjs": {
+      "description": "Define project scope — what's included, excluded, success criteria, constraints, and boundaries. Prevents scope creep.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "plr": {
+      "description": "Identify evidence-based, neglected, tractable policies for advocacy campaigns",
+      "categories": [
+        "problem_solving",
+        "search"
+      ],
+      "tags": [
+        "policy",
+        "research"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "po": {
+      "description": "N-of-1 experimentation framework for systematically improving personal health,",
+      "categories": [],
+      "tags": [
+        "personal",
+        "optimization"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "poa": {
+      "description": "Systematically explore the possibility space of what could be done.",
+      "categories": [
+        "reasoning",
+        "search"
+      ],
+      "tags": [
+        "possibility",
+        "analysis"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pos": {
+      "description": "Develop clear market positioning through category design, differentiation, and compelling messaging",
+      "categories": [],
+      "tags": [
+        "positioning"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pp": {
+      "description": "Managing procurement of components and materials — sourcing, ordering, tracking, receiving, and verification.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "pqr": {
+      "description": "A 24-week rotating list of questions for weekly review.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "wr"
+      ]
+    },
+    "prd": {
+      "description": "Systematic procedure for designing visually effective presentations, slides, and handouts that enhance rather than compete with your message",
+      "categories": [
+        "communication"
+      ],
+      "tags": [
+        "presentation",
+        "design"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pre": {
+      "description": "Elicit user preferences by presenting concrete trade-offs rather than asking open-ended questions. System does the work by generating options and letting user select.",
+      "categories": [
+        "goal_analysis",
+        "communication",
+        "guessing"
+      ],
+      "tags": [
+        "preference",
+        "elicitation"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": [
+        "boc"
+      ]
+    },
+    "prm": {
+      "description": "Gary Klein's technique - assume it went wrong and ask why. People are better at explaining past events than predicting future ones.",
+      "categories": [
+        "reasoning",
+        "communication"
+      ],
+      "tags": [
+        "pre",
+        "mortem"
+      ],
+      "input_types": [
+        "goal",
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "prr": {
+      "description": "Review and improve the procedure registry schema using explicit definitions, evidence alignment, and non-regression.",
+      "categories": [],
+      "tags": [
+        "procedure",
+        "registry",
+        "review"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "pss": {
+      "description": "There are always multiple ways to achieve a goal.",
+      "categories": [
+        "planning",
+        "goal_analysis",
+        "search"
+      ],
+      "tags": [
+        "plan",
+        "space",
+        "search"
+      ],
+      "input_types": [
+        "goal"
+      ],
+      "invokes": []
+    },
+    "pt": {
+      "description": "Monitor and report project status effectively",
+      "categories": [],
+      "tags": [
+        "progress",
+        "tracking"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pus": {
+      "description": "Systematic procedure for preparing and delivering impactful presentations, speeches, and talks",
+      "categories": [
+        "communication"
+      ],
+      "tags": [
+        "public",
+        "speaking"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pv": {
+      "description": "Validate that a procedure is complete, executable, and all dependencies are satisfiable. Catches issues before execution.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "pvg": {
+      "description": "Handler for goals focused on PREVENTING bad outcomes rather than achieving good ones.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "afa",
+        "snp",
+        "rm"
+      ]
+    },
+    "pw": {
+      "description": "Systematic procedure for writing persuasive content that influences readers and motivates action",
+      "categories": [],
+      "tags": [
+        "persuasive",
+        "writing"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "pwc": {
+      "description": "Instead of rating each option absolutely (hard), compare pairs",
+      "categories": [
+        "decision_making"
+      ],
+      "tags": [
+        "pairwise",
+        "comparison"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "qaf": {
+      "description": "This framework provides methods for analyzing questions to determine:",
+      "categories": [
+        "reasoning",
+        "guessing"
+      ],
+      "tags": [
+        "question",
+        "analysis",
+        "framework"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "qag": {
+      "description": "Generate high-quality questions about identified guesses. Applies quality criteria and \"why continue?\" gate to prevent low-value questioning.",
+      "categories": [
+        "decision_making",
+        "goal_analysis",
+        "guessing"
+      ],
+      "tags": [
+        "question",
+        "about",
+        "guesses"
+      ],
+      "input_types": [
+        "question"
+      ],
+      "invokes": [
+        "gg",
+        "araw"
+      ]
+    },
+    "qg": {
+      "description": "When you don't know something, the right question is worth more than hours of speculation.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "qag",
+        "bes"
+      ]
+    },
+    "qm": {
+      "description": "Procedure for measuring outcomes that resist quantification.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "qr",
+        "dot"
+      ]
+    },
+    "qo": {
+      "description": "Find the satisfying unresolved question that opens a document and order all questions in a dependency chain. Upstream of /w.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "qr": {
+      "description": "Systematic procedure for qualitative data analysis including coding, thematic analysis, grounded theory, and interview techniques",
+      "categories": [
+        "reasoning",
+        "search"
+      ],
+      "tags": [
+        "qualitative",
+        "research"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "qs": {
+      "description": "Orderings for managing queues — FIFO, priority queues, shortest job first, fair queuing.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "rc5w": {
+      "description": "Adaptive root cause analysis. Ask \"why\" until you hit the root. Sometimes that's 2 levels, sometimes 12. Stop when you find the cause, not at a fixed number.",
+      "categories": [
+        "problem_solving"
+      ],
+      "tags": [
+        "root",
+        "cause",
+        "5",
+        "whys"
+      ],
+      "input_types": [
+        "problem",
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "rca": {
+      "description": "Systematically trace symptoms back to their underlying root causes using structured diagnostic techniques. Supports context-adaptive variants.",
+      "categories": [
+        "reasoning",
+        "problem_solving"
+      ],
+      "tags": [
+        "root",
+        "cause",
+        "analysis"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "rci": {
+      "description": "A systematic approach to reasoning: tracing causes through questioning.",
+      "categories": [
+        "reasoning",
+        "guessing"
+      ],
+      "tags": [
+        "recursive",
+        "causal",
+        "interrogation"
+      ],
+      "input_types": [
+        "question"
+      ],
+      "invokes": []
+    },
+    "re": {
+      "description": "Read strategically for comprehension, retention, and application using research-backed techniques",
+      "categories": [
+        "search"
+      ],
+      "tags": [
+        "reading",
+        "effectively"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ret": {
+      "description": "Learn from completed work to improve future performance",
+      "categories": [],
+      "tags": [
+        "retrospective"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "rf": {
+      "description": "Procedure for systematically improving code structure without changing behavior",
+      "categories": [],
+      "tags": [
+        "refactoring"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ria": {
+      "description": "Systematic procedure for identifying, analyzing, and planning responses to risks",
+      "categories": [
+        "problem_solving",
+        "planning"
+      ],
+      "tags": [
+        "risk",
+        "assessment"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "rlg": {
+      "description": "Handle relationship-related goals — clarify desired state, assess current reality, identify gaps, plan actions within your control.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "ve"
+      ]
+    },
+    "rm": {
+      "description": "Orderings for managing uncertainty — preserve options, handle irreversible decisions carefully, minimize downside.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "rmo": {
+      "description": "Systematic approach to crafting resumes that pass ATS filters, capture attention,",
+      "categories": [],
+      "tags": [
+        "resume",
+        "optimization"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "roa": {
+      "description": "Calculate and analyze return on investment for projects, purchases, and decisions",
+      "categories": [
+        "reasoning",
+        "decision_making"
+      ],
+      "tags": [
+        "roi",
+        "analysis"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "rqg": {
+      "description": "Elicit and document system requirements from stakeholders",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "requirements",
+        "gathering"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "rsg": {
+      "description": "Handler for goals focused on REBUILDING from damage, not improving from baseline.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "fat",
+        "fr",
+        "cfr"
+      ]
+    },
+    "rso": {
+      "description": "Orderings for maximizing throughput, minimizing waste, and efficient resource utilization.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "rva": {
+      "description": "Systematic procedure for analyzing decision reversibility, option value, and optimal commitment timing",
+      "categories": [
+        "reasoning",
+        "decision_making",
+        "goal_analysis"
+      ],
+      "tags": [
+        "reversibility",
+        "analysis"
       ],
       "input_types": [
         "decision"
@@ -502,111 +3385,138 @@
       ],
       "invokes": []
     },
-    "ria": {
-      "description": "Systematic procedure for identifying, analyzing, and planning responses to risks",
-      "categories": [
-        "problem_solving",
-        "planning"
-      ],
-      "tags": [
-        "risk",
-        "assessment"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
+    "saadag": {
+      "description": "Run the detector suite against a target artifact to find ambiguity, proxy substitution, bundled checks, and more.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "saqrc",
+        "sapea"
+      ]
     },
-    "roa": {
-      "description": "Calculate and analyze return on investment for projects, purchases, and decisions",
-      "categories": [
-        "reasoning",
-        "decision_making"
-      ],
-      "tags": [
-        "roi",
-        "analysis"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "val": {
-      "description": "Verify that an output meets its requirements",
+    "saaesa": {
+      "description": "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any “verified” claims.",
       "categories": [
         "validation",
-        "communication"
+        "guessing"
       ],
       "tags": [
-        "validation"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "orm": {
-      "description": "Craft and send high-quality outreach communications that maximize response rates",
-      "categories": [],
-      "tags": [
-        "outreach",
-        "communication"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "pci": {
-      "description": "Systematically improve GOSM library procedures using schema-driven validation and tier-based progress tracking",
-      "categories": [
-        "validation",
-        "meta"
-      ],
-      "tags": [
-        "procedure",
-        "improvement"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "sms": {
-      "description": "Build effective social media presence through platform selection, content planning, engagement, and measurement",
-      "categories": [
-        "decision_making",
-        "planning"
-      ],
-      "tags": [
-        "social",
-        "media",
-        "strategy"
+        "self",
+        "audit",
+        "apply",
+        "evidence",
+        "standard",
+        "application"
       ],
       "input_types": [
         "decision"
       ],
       "invokes": []
     },
-    "skm": {
-      "description": "Engage stakeholders effectively throughout the project",
+    "saaiasa": {
+      "description": "Classify utterances in a gate/procedure/document so the system doesn't answer the wrong thing.",
       "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "saqrc",
+        "saadag"
+      ]
+    },
+    "sacri": {
+      "description": "Ensure gates and procedures link to other procedures that provide the needed answer-interface and next steps.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "procedure_name",
+        "sapea",
+        "pv"
+      ]
+    },
+    "sadrt": {
+      "description": "Estimate where two independent executors would diverge when applying the same gate/procedure to the same input.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "sapea",
+        "saqrc"
+      ]
+    },
+    "sads": {
+      "description": "Scan files for ambiguity, proxying, bundled questions, undefined terms, hidden conditionals, goal substitution, and conventional bias.",
+      "categories": [
+        "guessing"
+      ],
       "tags": [
-        "stakeholder",
-        "management"
+        "self",
+        "audit",
+        "detector",
+        "sweep"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "sagsca": {
+      "description": "Identify inconsistent gate field schemas across the library that increase interpretation burden and cause engine integration drift.",
+      "categories": [
+        "problem_solving"
+      ],
+      "tags": [
+        "self",
+        "audit",
+        "gate",
+        "schema",
+        "consistency",
+        "audit"
       ],
       "input_types": [],
       "invokes": []
     },
-    "cpp": {
-      "description": "Strategic framework for assessing career options, planning transitions,",
-      "categories": [
-        "planning"
-      ],
-      "tags": [
-        "career",
-        "path",
-        "planning"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
+    "sapea": {
+      "description": "Check whether a procedure's questions/steps can be executed without interpretation and whether outputs are checkable.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "sadrt",
+        "pv"
+      ]
+    },
+    "saqrc": {
+      "description": "Rewrite unclear questions by separating intent from target question.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "saaiasa",
+        "sadrt"
+      ]
+    },
+    "saropc": {
+      "description": "Apply Recursive Causal Interrogation to choices about what procedure to run, what to measure, and when to stop.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "rci",
+        "pv"
+      ]
+    },
+    "sarus": {
+      "description": "Repo-wide scan to find question patterns that commonly require interpretation before answering.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "saqrc",
+        "saadag"
+      ]
     },
     "satrda": {
       "description": "Run the same gate/procedure twice on the same fixed input, compare outputs, and treat divergences as evidence that the text needs clearer interfaces and stopping rules.",
@@ -624,6 +3534,297 @@
       "input_types": [],
       "invokes": []
     },
+    "sbfow": {
+      "description": "Still Bad, Figure Out Why - Self-diagnosis when output was rejected. Systematically test which criteria the output failed against, find the root pattern, and derive what must change.",
+      "categories": [
+        "analysis",
+        "diagnosis",
+        "self-improvement"
+      ],
+      "tags": [
+        "diagnosis",
+        "failure",
+        "self-audit",
+        "criteria"
+      ],
+      "input_types": [
+        "problem"
+      ],
+      "invokes": []
+    },
+    "sdp": {
+      "description": "Developing embedded software for robotics and microcontroller-based systems.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "pb"
+      ]
+    },
+    "se": {
+      "description": "Generate comprehensive lists by systematically covering all dimensions. Ensures nothing is missed through structured enumeration.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "search": {
+      "description": "Sub-orchestrator for exploration. Routes to UAUA, space enumeration, or dimension discovery based on what's known and what's needed.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "claim",
+        "decide",
+        "how",
+        "want",
+        "uaua",
+        "se",
+        "dd"
+      ]
+    },
+    "seb": {
+      "description": "Build organic search visibility through keyword research, on-page optimization, content strategy, and link building",
+      "categories": [
+        "planning",
+        "search"
+      ],
+      "tags": [
+        "seo",
+        "basics"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "sel": {
+      "description": "Make the final selection from ranked options after all analysis is complete. Includes LLM-compatible feasibility assessment.",
+      "categories": [
+        "reasoning",
+        "decision_making"
+      ],
+      "tags": [
+        "selection"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "sep": {
+      "description": "Procedure for implementing security throughout the software development lifecycle",
+      "categories": [],
+      "tags": [
+        "security",
+        "practices"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "sf": {
+      "description": "Save the output from the most recent skill invocation to the appropriate library folder. Only saves when explicitly requested.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "shc": {
+      "description": "Evaluate if the GOSM system needs improvement",
+      "categories": [
+        "reasoning",
+        "decision_making",
+        "validation",
+        "meta"
+      ],
+      "tags": [
+        "system",
+        "health",
+        "check"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "ska": {
+      "description": "Systematically acquire new skills using deliberate practice principles",
+      "categories": [],
+      "tags": [
+        "skill",
+        "acquisition"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "skb": {
+      "description": "Identify quality standards, benchmark current skill level, and design deliberate practice to close gaps",
+      "categories": [
+        "problem_solving"
+      ],
+      "tags": [
+        "skill",
+        "benchmarking"
+      ],
+      "input_types": [
+        "situation"
+      ],
+      "invokes": []
+    },
+    "skm": {
+      "description": "Engage stakeholders effectively throughout the project",
+      "categories": [],
+      "tags": [
+        "stakeholder",
+        "management"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "skp": {
+      "description": "Diagnose the causes of skill plateaus and implement targeted strategies to break through",
+      "categories": [
+        "problem_solving"
+      ],
+      "tags": [
+        "skill",
+        "plateaus"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "smc": {
+      "description": "An exhaustive inventory of search methods found in nature, science, technology, and human systems.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "cda"
+      ]
+    },
+    "sms": {
+      "description": "Build effective social media presence through platform selection, content planning, engagement, and measurement",
+      "categories": [
+        "decision_making",
+        "planning"
+      ],
+      "tags": [
+        "social",
+        "media",
+        "strategy"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "sn": {
+      "description": "Systematic approach to negotiating job offers that maximizes total compensation",
+      "categories": [],
+      "tags": [
+        "salary",
+        "negotiation"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "snp": {
+      "description": "The future is uncertain. Develop multiple plausible futures and prepare strategies that work across them.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "fss",
+        "rm"
+      ]
+    },
+    "so": {
+      "description": "Standardized output format for GOSM projects.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "sop": {
+      "description": "Given limited time to extract procedures from sources, prioritize which sources to process for maximum procedure value.",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "source",
+        "prioritization"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "sor": {
+      "description": "Systematic procedure for finding, evaluating, and synthesizing information from primary and secondary sources.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "src"
+      ]
+    },
+    "sp": {
+      "description": "Improves a prompt before it gets answered. Adds precision, scope, criteria, and failure-proofing without answering the question.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "spd": {
+      "description": "Discover what space exists BEFORE generating guesses. Maps dimensions, stakeholders, time horizons, and adjacent spaces. Run this before guess_generation to ensure comprehensive coverage.",
+      "categories": [
+        "search",
+        "guessing"
+      ],
+      "tags": [
+        "space",
+        "discovery"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": [
+        "gg"
+      ]
+    },
+    "spe": {
+      "description": "Extends the search paradigm to non-obvious domains. Identifies which search methods should become procedures.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "smc"
+      ]
+    },
+    "spg": {
+      "description": "Transform vague capability claims into specific ones by requiring trigger, procedure, output, and validation for each claim.",
+      "categories": [
+        "validation",
+        "communication",
+        "guessing"
+      ],
+      "tags": [
+        "specificity",
+        "gate"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "spp": {
+      "description": "Procedure for designing and analyzing spatial proteomics experiments to map protein localization and interactions in tissue context.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "spr": {
       "description": "Design and implement spaced repetition systems for durable long-term retention of knowledge",
       "categories": [],
@@ -636,15 +3837,109 @@
       ],
       "invokes": []
     },
-    "isd": {
-      "description": "Systematic process for identifying, building, and scaling new income streams.",
+    "src": {
+      "description": "Procedure for evaluating the credibility and reliability of any information source",
       "categories": [
-        "problem_solving"
+        "communication"
       ],
       "tags": [
-        "income",
-        "stream",
-        "development"
+        "source",
+        "credibility"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "srd": {
+      "description": "Orderings for competitive contexts — influence perception, manage attention, create strategic advantage through sequencing.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ssr": {
+      "description": "Capture learnings at end of session for continuous improvement. Reviews what worked, what did not, surprises, and procedure gaps.",
+      "categories": [],
+      "tags": [
+        "session",
+        "review"
+      ],
+      "input_types": [
+        "question",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "st": {
+      "description": "Every strategy exists within a game. Characterize the game, design strategies with clear mechanisms, evaluate along key dimensions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "dse",
+        "dsd",
+        "ol"
+      ]
+    },
+    "sta": {
+      "description": "Systematic procedure for selecting appropriate statistical tests and correctly interpreting results",
+      "categories": [
+        "reasoning",
+        "validation"
+      ],
+      "tags": [
+        "statistical",
+        "analysis"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "stc": {
+      "description": "Generate the strongest possible counterarguments to a position, then assess which ones genuinely threaten it.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "std": {
+      "description": "Find or create an approach to achieve a goal",
+      "categories": [
+        "planning",
+        "goal_analysis",
+        "search"
+      ],
+      "tags": [
+        "strategy",
+        "discovery"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "stg": {
+      "description": "Transform a COMPLETE_PLAN into foolproof executable step-by-step instructions",
+      "categories": [
+        "planning"
+      ],
+      "tags": [
+        "steps",
+        "generation"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "stl": {
+      "description": "Systematic procedure for crafting and delivering compelling stories that create emotional connection and drive action",
+      "categories": [],
+      "tags": [
+        "storytelling"
       ],
       "input_types": [
         "decision"
@@ -666,176 +3961,107 @@
       ],
       "invokes": []
     },
-    "vbo": {
-      "description": "This procedure is the culmination of the no-guessing philosophy.",
+    "swa": {
+      "description": "Systematically identify Strengths, Weaknesses, Opportunities, and Threats to inform strategic decisions",
       "categories": [
-        "communication",
-        "guessing"
-      ],
-      "tags": [
-        "verification",
-        "before",
-        "output"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": [
-        "spg"
-      ]
-    },
-    "ver": {
-      "description": "Verify claims using the GOSM verification standard. Every claim must be OBSERVED, TESTED, or DERIVED - never guessed.",
-      "categories": [
-        "validation",
-        "meta",
-        "guessing"
-      ],
-      "tags": [
-        "verify"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "gn": {
-      "description": "Generate all possible options for a decision or selection",
-      "categories": [
+        "reasoning",
+        "problem_solving",
         "decision_making"
       ],
       "tags": [
-        "generation"
+        "swot",
+        "analysis"
       ],
       "input_types": [
         "decision"
       ],
       "invokes": []
     },
-    "lt": {
-      "description": "Apply knowledge and skills from one domain to new contexts through systematic transfer strategies",
-      "categories": [],
-      "tags": [
-        "learning",
-        "transfer"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "gjs": {
-      "description": "A goal journey is NOT a narrative arc. It's a CHAIN OF GOALS.",
-      "categories": [
-        "planning",
-        "goal_analysis",
-        "meta"
-      ],
-      "tags": [
-        "goal",
-        "journey",
-        "system"
-      ],
-      "input_types": [
-        "goal"
-      ],
-      "invokes": []
-    },
-    "dlp": {
-      "description": "Design and execute targeted practice sessions that maximize skill improvement",
-      "categories": [],
-      "tags": [
-        "deliberate",
-        "practice"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "fla": {
-      "description": "Systematically identify potential failures, assess their risk, and plan mitigations before execution",
-      "categories": [
-        "problem_solving",
-        "planning"
-      ],
-      "tags": [
-        "failure",
-        "anticipation"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "cfm": {
-      "description": "Track and optimize cash flow including income, expenses, runway calculation, and burn rate analysis",
+    "sya": {
+      "description": "Analyze complex systems using causal loop diagrams, stock and flow models, feedback loop identification, and system archetypes",
       "categories": [
         "reasoning"
       ],
       "tags": [
-        "cash",
-        "flow",
-        "management"
+        "systems",
+        "analysis"
       ],
       "input_types": [],
       "invokes": []
     },
-    "hf": {
-      "description": "Build new habits and break unwanted ones using behavioral science principles",
-      "categories": [
-        "communication"
-      ],
-      "tags": [
-        "habit",
-        "formation"
-      ],
-      "input_types": [
-        "goal",
-        "decision"
-      ],
-      "invokes": []
+    "sym": {
+      "description": "Real problems exist in complex systems with many interacting parts. Comprehensive system modeling ontology.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "sya",
+        "lp",
+        "de"
+      ]
     },
-    "sagsca": {
-      "description": "Identify inconsistent gate field schemas across the library that increase interpretation burden and cause engine integration drift.",
-      "categories": [
-        "problem_solving"
-      ],
+    "t": {
+      "description": "Build comprehensive database of advocacy targets with personalized dossiers",
+      "categories": [],
       "tags": [
-        "self",
-        "audit",
-        "gate",
-        "schema",
-        "consistency",
-        "audit"
+        "targeting"
       ],
       "input_types": [],
       "invokes": []
     },
-    "cls": {
-      "description": "The simplest possible search: enumerate items, check each against",
-      "categories": [
-        "validation",
-        "search"
-      ],
-      "tags": [
-        "checklist",
-        "search"
-      ],
+    "td": {
+      "description": "Orderings driven by temporal constraints, deadlines, and timing requirements.",
+      "categories": [],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
-    "mrc": {
-      "description": "A unified meta-cognitive loop for deciding what to do next. Combines the",
-      "categories": [
-        "reasoning",
-        "meta"
-      ],
-      "tags": [
-        "meta",
-        "reasoning",
-        "core"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
+    "technical": {
+      "description": "Sub-orchestrator for domain-specific questions. Routes to specialized skills based on domain and task type.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "tnt": {
+      "description": "Specific, tested tactics for navigating the most common value tensions and conflicts.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "vcd",
+        "dcp"
+      ]
+    },
+    "to": {
+      "description": "Generate valid execution sequences from dependencies. Respects hard constraints, optimizes for priorities, and identifies parallel execution opportunities.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "tp": {
+      "description": "Arguments form dependency graphs. When any assumption's truth value changes, propagate through all dependent conclusions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "aex",
+        "ht"
+      ]
+    },
+    "tpm": {
+      "description": "Maintain and improve domain templates over time. Track usage, identify gaps, and evolve templates based on experience.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "tr": {
+      "description": "Registry for domain templates. Store, retrieve, search, and manage domain-specific configurations.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "ts": {
@@ -853,581 +4079,6 @@
       ],
       "invokes": []
     },
-    "mcs": {
-      "description": "Configure MCP servers to enable autonomous GOSM execution capabilities",
-      "categories": [
-        "meta"
-      ],
-      "tags": [
-        "mcp",
-        "setup"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "gsr": {
-      "description": "Given any conclusion, statement, or claim, reconstruct the goal-structure",
-      "categories": [
-        "goal_analysis",
-        "guessing"
-      ],
-      "tags": [
-        "goal",
-        "structure",
-        "reconstruction"
-      ],
-      "input_types": [
-        "goal",
-        "decision",
-        "situation"
-      ],
-      "invokes": []
-    },
-    "saaesa": {
-      "description": "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any \u201cverified\u201d claims.",
-      "categories": [
-        "validation",
-        "guessing"
-      ],
-      "tags": [
-        "self",
-        "audit",
-        "apply",
-        "evidence",
-        "standard",
-        "application"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "rca": {
-      "description": "Systematically trace symptoms back to their underlying root causes using structured diagnostic techniques",
-      "categories": [
-        "reasoning",
-        "problem_solving"
-      ],
-      "tags": [
-        "root",
-        "cause",
-        "analysis"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "fe": {
-      "description": "Systematic process for extending the GOSM framework with new procedures, gates, or capabilities.",
-      "categories": [
-        "meta"
-      ],
-      "tags": [
-        "framework",
-        "extension"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "cfr": {
-      "description": "Systematic procedure for de-escalating tensions, finding common ground, and navigating difficult conversations productively",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "conflict",
-        "resolution"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "vcd": {
-      "description": "Goals often serve multiple intrinsic values that conflict with each other.",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "value",
-        "conflict",
-        "decomposition"
-      ],
-      "input_types": [
-        "goal"
-      ],
-      "invokes": []
-    },
-    "acr": {
-      "description": "Use retrieval practice and self-testing to strengthen learning and identify gaps",
-      "categories": [
-        "problem_solving",
-        "validation"
-      ],
-      "tags": [
-        "active",
-        "recall"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "bes": {
-      "description": "Like playing 20 Questions - each yes/no question eliminates half the possibilities. For N options, at most log2(N) questions needed.",
-      "categories": [
-        "search",
-        "guessing"
-      ],
-      "tags": [
-        "binary",
-        "elimination",
-        "search"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "qaf": {
-      "description": "This framework provides methods for analyzing questions to determine:",
-      "categories": [
-        "reasoning",
-        "guessing"
-      ],
-      "tags": [
-        "question",
-        "analysis",
-        "framework"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ska": {
-      "description": "Systematically acquire new skills using deliberate practice principles",
-      "categories": [],
-      "tags": [
-        "skill",
-        "acquisition"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "swa": {
-      "description": "Systematically identify Strengths, Weaknesses, Opportunities, and Threats to inform strategic decisions",
-      "categories": [
-        "reasoning",
-        "problem_solving",
-        "decision_making"
-      ],
-      "tags": [
-        "swot",
-        "analysis"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "rf": {
-      "description": "Procedure for systematically improving code structure without changing behavior",
-      "categories": [],
-      "tags": [
-        "refactoring"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "fua": {
-      "description": "Build self-sustaining funding for advocacy operations through multiple revenue streams",
-      "categories": [],
-      "tags": [
-        "fundraising",
-        "advocacy"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "pcd": {
-      "description": "Find or create the procedures needed to execute a plan",
-      "categories": [
-        "planning",
-        "search"
-      ],
-      "tags": [
-        "procedure",
-        "discovery"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "re": {
-      "description": "Read strategically for comprehension, retention, and application using research-backed techniques",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "reading",
-        "effectively"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "fm": {
-      "description": "Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making",
-      "categories": [
-        "reasoning",
-        "decision_making",
-        "validation"
-      ],
-      "tags": [
-        "financial",
-        "modeling"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "crw": {
-      "description": "Also known as: Weighted scoring model, Decision matrix, Pugh matrix.",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "criteria",
-        "weighting"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "mcd": {
-      "description": "Systematic procedure for making decisions involving multiple criteria, tradeoffs, and stakeholders",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "multi",
-        "criteria",
-        "decision"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "fl": {
-      "description": "Comprehensive guide to building a sustainable freelance practice, from finding",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "freelancing"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "fr": {
-      "description": "Structured recovery procedures when projects encounter failures, providing clear decision trees and specific actions for common failure modes.",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "failure",
-        "recovery"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "cmp": {
-      "description": "Evaluate each option against each criterion to identify viable candidates",
-      "categories": [
-        "reasoning",
-        "problem_solving",
-        "decision_making"
-      ],
-      "tags": [
-        "comparison"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "auep": {
-      "description": "Industrial-scale automation pipeline for extracting procedures from 70+ YouTube channels and other sources using the Ralph Wiggum / Conductor pattern for iterative LLM-driven extraction.",
-      "categories": [],
-      "tags": [
-        "automated",
-        "extraction",
-        "pipeline"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ans": {
-      "description": "Many problems have been solved before - just in different domains.",
-      "categories": [
-        "problem_solving",
-        "search"
-      ],
-      "tags": [
-        "analogy",
-        "search"
-      ],
-      "input_types": [
-        "problem",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "cts": {
-      "description": "Develop and execute content strategy that attracts, engages, and converts",
-      "categories": [
-        "planning"
-      ],
-      "tags": [
-        "content",
-        "strategy"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "ais": {
-      "description": "Set up foundational infrastructure for autonomous advocacy operations",
-      "categories": [],
-      "tags": [
-        "advocacy",
-        "infrastructure",
-        "setup"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ip": {
-      "description": "Comprehensive preparation system for job interviews covering research, story",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "interview",
-        "preparation"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "vm": {
-      "description": "Design and optimize viral loops, referral programs, and word-of-mouth triggers to achieve organic growth",
-      "categories": [],
-      "tags": [
-        "viral",
-        "mechanics"
-      ],
-      "input_types": [
-        "goal",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "stl": {
-      "description": "Systematic procedure for crafting and delivering compelling stories that create emotional connection and drive action",
-      "categories": [],
-      "tags": [
-        "storytelling"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "op": {
-      "description": "Determine the correct execution order for a set of steps based on dependencies and constraints",
-      "categories": [
-        "planning"
-      ],
-      "tags": [
-        "order",
-        "procedure"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "mem": {
-      "description": "Build and apply a latticework of mental models for better thinking across domains",
-      "categories": [
-        "reasoning"
-      ],
-      "tags": [
-        "mental",
-        "models"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "o": {
-      "description": "Rank viable options from best to worst using multi-criteria optimization",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "optimization"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ret": {
-      "description": "Learn from completed work to improve future performance",
-      "categories": [],
-      "tags": [
-        "retrospective"
-      ],
-      "input_types": [
-        "goal",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "rc5w": {
-      "description": "Developed by Sakichi Toyoda for Toyota. When a problem occurs,",
-      "categories": [
-        "problem_solving"
-      ],
-      "tags": [
-        "root",
-        "cause",
-        "5",
-        "whys"
-      ],
-      "input_types": [
-        "problem",
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "jm": {
-      "description": "Given a current situation (goal, problem, state), find journeys",
-      "categories": [
-        "problem_solving",
-        "planning",
-        "goal_analysis",
-        "search"
-      ],
-      "tags": [
-        "journey",
-        "matching"
-      ],
-      "input_types": [
-        "goal",
-        "problem",
-        "situation"
-      ],
-      "invokes": []
-    },
-    "shc": {
-      "description": "Evaluate if the GOSM system needs improvement",
-      "categories": [
-        "reasoning",
-        "decision_making",
-        "validation",
-        "meta"
-      ],
-      "tags": [
-        "system",
-        "health",
-        "check"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "poa": {
-      "description": "Systematically explore the possibility space of what could be done.",
-      "categories": [
-        "reasoning",
-        "search"
-      ],
-      "tags": [
-        "possibility",
-        "analysis"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "la": {
-      "description": "Systematically identify limitations across multiple dimensions,",
-      "categories": [
-        "reasoning",
-        "problem_solving"
-      ],
-      "tags": [
-        "limitation",
-        "analysis"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "ge": {
-      "description": "Run systematic experiments to discover and validate growth levers using hypothesis-driven testing",
-      "categories": [
-        "validation",
-        "search"
-      ],
-      "tags": [
-        "growth",
-        "experiments"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "pre": {
-      "description": "Elicit user preferences by presenting concrete trade-offs rather than asking open-ended questions. System does the work by generating options and letting user select.",
-      "categories": [
-        "goal_analysis",
-        "communication",
-        "guessing"
-      ],
-      "tags": [
-        "preference",
-        "elicitation"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": [
-        "boc"
-      ]
-    },
     "txm": {
       "description": "Systematic process for creating, updating, and maintaining taxonomies and classification systems.",
       "categories": [],
@@ -1440,1410 +4091,8 @@
       ],
       "invokes": []
     },
-    "qag": {
-      "description": "Generate high-quality questions about identified guesses. Applies quality criteria and \"why continue?\" gate to prevent low-value questioning.",
-      "categories": [
-        "decision_making",
-        "goal_analysis",
-        "guessing"
-      ],
-      "tags": [
-        "question",
-        "about",
-        "guesses"
-      ],
-      "input_types": [
-        "question"
-      ],
-      "invokes": [
-        "gg",
-        "araw"
-      ]
-    },
-    "agi": {
-      "description": "Systematic procedure for translating ARAW exploration outputs",
-      "categories": [
-        "reasoning",
-        "communication",
-        "meta"
-      ],
-      "tags": [
-        "araw",
-        "gosm",
-        "integration"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "im": {
-      "description": "Charlie Munger's inversion technique. Finding ways to fail, then avoiding them, makes success more likely.",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "inversion",
-        "method"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "boc": {
-      "description": "Prevent user from settling on suboptimal option by systematically checking if better options exist that match their preferences. System surfaces what user may not have considered.",
-      "categories": [
-        "validation"
-      ],
-      "tags": [
-        "better",
-        "option",
-        "check"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": [
-        "cta",
-        "ve"
-      ]
-    },
-    "ael": {
-      "description": "Before asserting anything, verify it can be confirmed by the listener.",
-      "categories": [
-        "validation"
-      ],
-      "tags": [
-        "assumption",
-        "elimination"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "cd": {
-      "description": "Validate customer problems and solutions before building",
-      "categories": [
-        "problem_solving",
-        "search"
-      ],
-      "tags": [
-        "customer",
-        "discovery"
-      ],
-      "input_types": [
-        "problem",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "er": {
-      "description": "Systematic analysis of economic viability, cost structures, and comparative advantage",
-      "categories": [
-        "reasoning",
-        "search"
-      ],
-      "tags": [
-        "economic",
-        "research"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "pss": {
-      "description": "There are always multiple ways to achieve a goal.",
-      "categories": [
-        "planning",
-        "goal_analysis",
-        "search"
-      ],
-      "tags": [
-        "plan",
-        "space",
-        "search"
-      ],
-      "input_types": [
-        "goal"
-      ],
-      "invokes": []
-    },
-    "pwc": {
-      "description": "Instead of rating each option absolutely (hard), compare pairs",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "pairwise",
-        "comparison"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "pbi": {
-      "description": "Before solving, identify:",
-      "categories": [
-        "problem_solving"
-      ],
-      "tags": [
-        "problem",
-        "identification"
-      ],
-      "input_types": [
-        "problem",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "pjc": {
-      "description": "Complete projects properly with handoff and learning capture",
-      "categories": [],
-      "tags": [
-        "project",
-        "closure"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "dct": {
-      "description": "Systematic procedure for structuring complex decisions with multiple branches, probabilities, and outcomes",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "decision",
-        "trees"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "sta": {
-      "description": "Systematic procedure for selecting appropriate statistical tests and correctly interpreting results",
-      "categories": [
-        "reasoning",
-        "validation"
-      ],
-      "tags": [
-        "statistical",
-        "analysis"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "lr": {
-      "description": "Systematic procedure for conducting comprehensive literature reviews on any topic",
-      "categories": [],
-      "tags": [
-        "literature",
-        "review"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "prr": {
-      "description": "Review and improve the procedure registry schema using explicit definitions, evidence alignment, and non-regression.",
-      "categories": [],
-      "tags": [
-        "procedure",
-        "registry",
-        "review"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "je": {
-      "description": "Extract the underlying GOAL JOURNEY from any source:",
-      "categories": [
-        "planning",
-        "goal_analysis"
-      ],
-      "tags": [
-        "journey",
-        "extraction"
-      ],
-      "input_types": [
-        "goal"
-      ],
-      "invokes": []
-    },
-    "eda": {
-      "description": "Maintain project continuity through event monitoring and automated state management",
-      "categories": [],
-      "tags": [
-        "event",
-        "driven",
-        "automation"
-      ],
-      "input_types": [
-        "decision",
-        "situation"
-      ],
-      "invokes": []
-    },
-    "gg": {
-      "description": "Generate exhaustive guesses about user input using ALL search methods with coverage tracking. Guessing is SEARCH through possibility space. Tracks space created vs space covered to ensure comprehensive exploration.",
-      "categories": [
-        "search",
-        "guessing"
-      ],
-      "tags": [
-        "guess",
-        "generation"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": [
-        "qag"
-      ]
-    },
-    "dcm": {
-      "description": "Break complex goals into simpler, manageable sub-goals",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "decomposition"
-      ],
-      "input_types": [
-        "goal"
-      ],
-      "invokes": []
-    },
-    "met": {
-      "description": "A systematic method for using metaphors to:",
-      "categories": [
-        "meta"
-      ],
-      "tags": [
-        "metaphor",
-        "method"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "fd": {
-      "description": "Systematic procedure for delivering feedback that is heard, received, and acted upon, and for receiving feedback gracefully",
-      "categories": [],
-      "tags": [
-        "feedback",
-        "delivery"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "dc": {
-      "description": "Systematic procedure for gathering research data through surveys, interviews, observation, and secondary sources",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "data",
-        "collection"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "rmo": {
-      "description": "Systematic approach to crafting resumes that pass ATS filters, capture attention,",
-      "categories": [],
-      "tags": [
-        "resume",
-        "optimization"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "prm": {
-      "description": "Gary Klein's technique - assume it went wrong and ask why. People are better at explaining past events than predicting future ones.",
-      "categories": [
-        "reasoning",
-        "communication"
-      ],
-      "tags": [
-        "pre",
-        "mortem"
-      ],
-      "input_types": [
-        "goal",
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "fss": {
-      "description": "The future is uncertain but not arbitrary.",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "future",
-        "space",
-        "search"
-      ],
-      "input_types": [
-        "goal"
-      ],
-      "invokes": []
-    },
-    "stg": {
-      "description": "Transform a COMPLETE_PLAN into foolproof executable step-by-step instructions",
-      "categories": [
-        "planning"
-      ],
-      "tags": [
-        "steps",
-        "generation"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "mr": {
-      "description": "Systematic process for identifying, validating, and sizing market opportunities.",
-      "categories": [
-        "problem_solving",
-        "search"
-      ],
-      "tags": [
-        "market",
-        "research"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "seb": {
-      "description": "Build organic search visibility through keyword research, on-page optimization, content strategy, and link building",
-      "categories": [
-        "planning",
-        "search"
-      ],
-      "tags": [
-        "seo",
-        "basics"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "orc": {
-      "description": "Execute multi-channel persuasion campaigns for policy advocacy",
-      "categories": [],
-      "tags": [
-        "outreach",
-        "campaigns"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "bm": {
-      "description": "Manage limited financial resources across autonomous operations with maximum value extraction",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "budget",
-        "management"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "exv": {
-      "description": "Systematic procedure for calculating expected value, adjusting for risk, and determining optimal resource allocation under uncertainty",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "expected",
-        "value"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "cta": {
-      "description": "Analyze a category of guesses to determine which apply to the user. System does the work by testing each guess against available evidence and generating sub-guesses for verification.",
-      "categories": [
-        "reasoning",
-        "validation",
-        "guessing"
-      ],
-      "tags": [
-        "category",
-        "analysis"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": [
-        "pre",
-        "boc"
-      ]
-    },
-    "uga": {
-      "description": "The comprehensive question framework that applies to EVERY goal, regardless of domain.",
-      "categories": [
-        "reasoning",
-        "goal_analysis",
-        "guessing"
-      ],
-      "tags": [
-        "universal",
-        "goal",
-        "analysis"
-      ],
-      "input_types": [
-        "goal",
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "spg": {
-      "description": "Transform vague capability claims into specific ones by requiring trigger, procedure, output, and validation for each claim.",
-      "categories": [
-        "validation",
-        "communication",
-        "guessing"
-      ],
-      "tags": [
-        "specificity",
-        "gate"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "lpd": {
-      "description": "Most valuable strategies exploit leverage points - places where small",
-      "categories": [
-        "search"
-      ],
-      "tags": [
-        "leverage",
-        "point",
-        "discovery"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "exd": {
-      "description": "Systematic procedure for designing rigorous experiments with proper controls, variables, and validity considerations",
-      "categories": [],
-      "tags": [
-        "experimental",
-        "design"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "grf": {
-      "description": "Transform vague or incomplete goals into SMART goals",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "goal",
-        "refinement"
-      ],
-      "input_types": [
-        "goal",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ff": {
-      "description": "Raise investment capital through investor outreach, pitch preparation, term sheet negotiation, and due diligence",
-      "categories": [],
-      "tags": [
-        "fundraising",
-        "financial"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ifss": {
-      "description": "Information implies other information. But not all inferences are equal:",
-      "categories": [
-        "search",
-        "communication"
-      ],
-      "tags": [
-        "inference",
-        "space",
-        "search"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "gdm": {
-      "description": "Systematic procedure for making effective decisions in groups, avoiding common pitfalls, and leveraging collective intelligence",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "group",
-        "decision",
-        "making"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "adep": {
-      "description": "Breadth-first, learned extraction pipeline that clarifies goals first, samples broadly, learns user preferences, and extracts selectively from highest-value items.",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "adaptive",
-        "extraction",
-        "pipeline"
-      ],
-      "input_types": [
-        "goal"
-      ],
-      "invokes": []
-    },
-    "net": {
-      "description": "Systematic approach to building genuine professional relationships that create",
-      "categories": [],
-      "tags": [
-        "networking"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "rva": {
-      "description": "Systematic procedure for analyzing decision reversibility, option value, and optimal commitment timing",
-      "categories": [
-        "reasoning",
-        "decision_making",
-        "goal_analysis"
-      ],
-      "tags": [
-        "reversibility",
-        "analysis"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "pefs": {
-      "description": "Meta-procedure for extracting implicit procedures from ANY external source, turning tacit knowledge into explicit, reusable GOSM-compatible procedures.",
-      "categories": [
-        "meta"
-      ],
-      "tags": [
-        "procedure",
-        "extraction",
-        "from",
-        "source"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "rci": {
-      "description": "A systematic approach to reasoning: tracing causes through questioning.",
-      "categories": [
-        "reasoning",
-        "guessing"
-      ],
-      "tags": [
-        "recursive",
-        "causal",
-        "interrogation"
-      ],
-      "input_types": [
-        "question"
-      ],
-      "invokes": []
-    },
-    "asu": {
-      "description": "Plans and beliefs rest on assumptions that are often invisible.",
-      "categories": [
-        "planning"
-      ],
-      "tags": [
-        "assumption",
-        "surfacing"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "gu": {
-      "description": "MANDATORY first step before attempting any goal. Parses input as guesses, classifies OPEN vs CLOSED, fills goal journey structure.",
-      "categories": [
-        "planning",
-        "goal_analysis",
-        "guessing"
-      ],
-      "tags": [
-        "goal",
-        "understanding"
-      ],
-      "input_types": [
-        "goal",
-        "decision"
-      ],
-      "invokes": [
-        "ve",
-        "pbi",
-        "cmp",
-        "gjs"
-      ]
-    },
-    "wr": {
-      "description": "Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuous progress.",
-      "categories": [
-        "problem_solving"
-      ],
-      "tags": [
-        "weekly",
-        "review"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "spd": {
-      "description": "Discover what space exists BEFORE generating guesses. Maps dimensions, stakeholders, time horizons, and adjacent spaces. Run this before guess_generation to ensure comprehensive coverage.",
-      "categories": [
-        "search",
-        "guessing"
-      ],
-      "tags": [
-        "space",
-        "discovery"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": [
-        "gg"
-      ]
-    },
-    "mss": {
-      "description": "Understanding = finding a model that fits.",
-      "categories": [
-        "goal_analysis",
-        "search"
-      ],
-      "tags": [
-        "model",
-        "space",
-        "search"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "pos": {
-      "description": "Develop clear market positioning through category design, differentiation, and compelling messaging",
-      "categories": [],
-      "tags": [
-        "positioning"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "lgi": {
-      "description": "All language has a goal - it's trying to achieve something.",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "language",
-        "goal",
-        "identification"
-      ],
-      "input_types": [
-        "goal",
-        "feeling"
-      ],
-      "invokes": []
-    },
-    "rqg": {
-      "description": "Elicit and document system requirements from stakeholders",
-      "categories": [
-        "goal_analysis"
-      ],
-      "tags": [
-        "requirements",
-        "gathering"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "grfr": {
-      "description": "Transform impossible or problematic goals into achievable versions. No such thing as an impossible goal - only insufficient decomposition.",
-      "categories": [
-        "problem_solving",
-        "goal_analysis"
-      ],
-      "tags": [
-        "goal",
-        "reframing"
-      ],
-      "input_types": [
-        "goal",
-        "problem",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "cma": {
-      "description": "Systematically analyze competitive landscape using Porter's Five Forces, competitor mapping, and differentiation strategies",
-      "categories": [
-        "reasoning"
-      ],
-      "tags": [
-        "competitive",
-        "analysis"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "capg": {
-      "description": "Pre-step feasibility check determining if AI can execute directly, needs delegation, or if task is infeasible",
-      "categories": [
-        "validation"
-      ],
-      "tags": [
-        "capability",
-        "gate"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "dpl": {
-      "description": "Procedure for planning and executing reliable software deployments",
-      "categories": [
-        "planning"
-      ],
-      "tags": [
-        "deployment"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "b": {
-      "description": "Create, manage, and optimize budgets for projects, organizations, or personal finances",
-      "categories": [],
-      "tags": [
-        "budgeting"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "skp": {
-      "description": "Diagnose the causes of skill plateaus and implement targeted strategies to break through",
-      "categories": [
-        "problem_solving"
-      ],
-      "tags": [
-        "skill",
-        "plateaus"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "ve": {
-      "description": "Value elicitation discovers what someone ACTUALLY values - their intrinsic goals.",
-      "categories": [
-        "goal_analysis",
-        "search"
-      ],
-      "tags": [
-        "value",
-        "elicitation"
-      ],
-      "input_types": [
-        "goal",
-        "question"
-      ],
-      "invokes": []
-    },
-    "prd": {
-      "description": "Systematic procedure for designing visually effective presentations, slides, and handouts that enhance rather than compete with your message",
-      "categories": [
-        "communication"
-      ],
-      "tags": [
-        "presentation",
-        "design"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "po": {
-      "description": "N-of-1 experimentation framework for systematically improving personal health,",
-      "categories": [],
-      "tags": [
-        "personal",
-        "optimization"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "pji": {
-      "description": "Launch projects with clear charter, stakeholders, and success criteria",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "project",
-        "initiation"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "sep": {
-      "description": "Procedure for implementing security throughout the software development lifecycle",
-      "categories": [],
-      "tags": [
-        "security",
-        "practices"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "dbg": {
-      "description": "Systematic procedure for diagnosing and fixing software bugs",
-      "categories": [],
-      "tags": [
-        "debugging"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "qr": {
-      "description": "Systematic procedure for qualitative data analysis including coding, thematic analysis, grounded theory, and interview techniques",
-      "categories": [
-        "reasoning",
-        "search"
-      ],
-      "tags": [
-        "qualitative",
-        "research"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "src": {
-      "description": "Procedure for evaluating the credibility and reliability of any information source",
-      "categories": [
-        "communication"
-      ],
-      "tags": [
-        "source",
-        "credibility"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "skb": {
-      "description": "Identify quality standards, benchmark current skill level, and design deliberate practice to close gaps",
-      "categories": [
-        "problem_solving"
-      ],
-      "tags": [
-        "skill",
-        "benchmarking"
-      ],
-      "input_types": [
-        "situation"
-      ],
-      "invokes": []
-    },
-    "pcex": {
-      "description": "After completing a goal, extract reusable procedures and generalize them for storage in the library, enabling GOSM to learn from completed work.",
-      "categories": [
-        "goal_analysis",
-        "meta"
-      ],
-      "tags": [
-        "procedure",
-        "extraction"
-      ],
-      "input_types": [
-        "goal",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "pce": {
-      "description": "GOSM Procedure Engine - Automatic routing and chaining based on QUICKSTART flow. Handles goals, problems, questions, decisions, situations, and feelings.",
-      "categories": [
-        "problem_solving",
-        "decision_making",
-        "goal_analysis",
-        "meta",
-        "guessing"
-      ],
-      "tags": [
-        "procedure",
-        "engine"
-      ],
-      "input_types": [
-        "goal",
-        "problem",
-        "question",
-        "situation",
-        "feeling"
-      ],
-      "invokes": [
-        "ve",
-        "fj",
-        "gjs",
-        "stg",
-        "vbo"
-      ]
-    },
-    "pbr": {
-      "description": "Systematic procedure for estimating probabilities, updating beliefs with evidence, and making well-calibrated predictions",
-      "categories": [
-        "reasoning"
-      ],
-      "tags": [
-        "probabilistic",
-        "reasoning"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "m": {
-      "description": "Define criteria for filtering options",
-      "categories": [
-        "decision_making"
-      ],
-      "tags": [
-        "matching"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "cor": {
-      "description": "Procedure for conducting effective code reviews that improve quality and share knowledge",
-      "categories": [],
-      "tags": [
-        "code",
-        "review"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "lrs": {
-      "description": "Systematically capture, analyze, and apply learnings to improve campaign effectiveness",
-      "categories": [],
-      "tags": [
-        "learning",
-        "system"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "sn": {
-      "description": "Systematic approach to negotiating job offers that maximizes total compensation",
-      "categories": [],
-      "tags": [
-        "salary",
-        "negotiation"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "br": {
-      "description": "Reasoning from conclusions back to premises. Given a conclusion, what journey led here? Reveals purpose and enables evaluation.",
-      "categories": [
-        "reasoning",
-        "planning"
-      ],
-      "tags": [
-        "backward",
-        "reasoning"
-      ],
-      "input_types": [
-        "question"
-      ],
-      "invokes": []
-    },
-    "araw": {
-      "description": "Assume Right / Assume Wrong search - The core exploration method. For every claim, branch into what follows if true vs what alternatives exist if false.",
-      "categories": [
-        "reasoning",
-        "search",
-        "guessing"
-      ],
-      "tags": [
-        "araw"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": [
-        "cmp",
-        "ve",
-        "rc5w",
-        "lpd",
-        "gjs"
-      ]
-    },
-    "uaua": {
-      "description": "Universalize \u2192 ARAW \u2192 Universalize \u2192 ARAW. Combined exploration method that maps complete possibility space (divergent) then validates (convergent). Supports depth scaling: 2x, 4x, 8x, 16x.",
-      "categories": [
-        "reasoning",
-        "search",
-        "guessing"
-      ],
-      "tags": [
-        "uaua",
-        "universalization",
-        "araw",
-        "combined"
-      ],
-      "input_types": [
-        "question",
-        "decision",
-        "goal",
-        "problem"
-      ],
-      "invokes": [
-        "araw",
-        "universalization"
-      ]
-    },
-    "jss": {
-      "description": "Systematic approach to job hunting that treats the search as a funnel to optimize,",
-      "categories": [
-        "planning",
-        "search"
-      ],
-      "tags": [
-        "job",
-        "search",
-        "strategy"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "nss": {
-      "description": "Creativity = novelty + value.",
-      "categories": [
-        "goal_analysis",
-        "search"
-      ],
-      "tags": [
-        "novelty",
-        "space",
-        "search"
-      ],
-      "input_types": [],
-      "invokes": []
-    },
-    "ea": {
-      "description": "Acquire and configure email addresses for autonomous system operations",
-      "categories": [],
-      "tags": [
-        "email",
-        "acquisition"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ssr": {
-      "description": "Capture learnings at end of session for continuous improvement. Reviews what worked, what did not, surprises, and procedure gaps.",
-      "categories": [],
-      "tags": [
-        "session",
-        "review"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "fnd": {
-      "description": "Find the right GOSM skill for what you want to do. Describe your need in plain language and get matched to the best skill(s).",
-      "categories": [
-        "search",
-        "meta"
-      ],
-      "tags": [
-        "finder",
-        "search",
-        "skill",
-        "lookup",
-        "help"
-      ],
-      "input_types": [
-        "situation"
-      ],
-      "invokes": []
-    },
-    "aa": {
-      "description": "Surface and rigorously test a field's hidden assumptions. Compound skill chaining extraction, inversion, research, ARAW, cross-domain analogy, and synthesis.",
-      "categories": [
-        "reasoning",
-        "validation",
-        "search"
-      ],
-      "tags": [
-        "assumption",
-        "audit",
-        "compound",
-        "chain",
-        "field",
-        "analysis"
-      ],
-      "input_types": [
-        "question",
-        "goal"
-      ],
-      "invokes": [
-        "aex",
-        "ai",
-        "lr",
-        "araw",
-        "cda",
-        "ins"
-      ]
-    },
-    "dcp": {
-      "description": "Create a mechanical step-by-step decision procedure anyone can follow without expertise. Compound skill chaining dimension discovery, enumeration, assumption extraction, steps generation, failure anticipation, and validation.",
-      "categories": [
-        "decision_making",
-        "planning",
-        "problem_solving"
-      ],
-      "tags": [
-        "decision",
-        "procedure",
-        "compound",
-        "chain",
-        "flowchart",
-        "mechanical"
-      ],
-      "input_types": [
-        "decision",
-        "goal"
-      ],
-      "invokes": [
-        "dd",
-        "se",
-        "aex",
-        "stg",
-        "fla",
-        "pv"
-      ]
-    },
-    "ac": {
-      "description": "Create a checklist that catches what normal checklists miss. Each item includes adversarial branches testing what if assumptions are wrong.",
-      "categories": [
-        "validation",
-        "planning",
-        "problem_solving"
-      ],
-      "tags": [
-        "checklist",
-        "adversarial",
-        "compound",
-        "chain",
-        "failure",
-        "prevention"
-      ],
-      "input_types": [
-        "decision",
-        "goal"
-      ],
-      "invokes": [
-        "aex",
-        "fla",
-        "ai",
-        "stg"
-      ]
-    },
-    "cdr": {
-      "description": "Discover what one field can learn from another through structural analogies, transferability testing, and actionable synthesis.",
-      "categories": [
-        "reasoning",
-        "search"
-      ],
-      "tags": [
-        "cross-domain",
-        "analogy",
-        "compound",
-        "chain",
-        "transfer",
-        "report"
-      ],
-      "input_types": [
-        "question",
-        "goal"
-      ],
-      "invokes": [
-        "cda",
-        "aex",
-        "araw",
-        "ins"
-      ]
-    },
-    "fia": {
-      "description": "Comprehensive analysis of a field's key tensions, hidden assumptions, blind spots, and health. The most thorough single-field analysis available.",
-      "categories": [
-        "reasoning",
-        "validation",
-        "search",
-        "meta"
-      ],
-      "tags": [
-        "field",
-        "analysis",
-        "compound",
-        "chain",
-        "comprehensive",
-        "assumptions",
-        "tensions"
-      ],
-      "input_types": [
-        "question",
-        "goal"
-      ],
-      "invokes": [
-        "aex",
-        "araw",
-        "cda",
-        "evd",
-        "ins"
-      ]
-    },
-    "visual_design_principles": {
-      "description": "Eight principles of visual design derived from first principles (cognitive load, gestalt perception, reading research). Use as a gate before any visual design work.",
-      "categories": [
-        "validation",
-        "communication"
-      ],
-      "tags": [
-        "design",
-        "visual",
-        "principles",
-        "gate",
-        "typography",
-        "layout"
-      ],
-      "input_types": [
-        "decision"
-      ],
-      "invokes": []
-    },
-    "aw": {
-      "description": "Assume Wrong - Deep recursive wrongness search. Assume a claim is wrong, find why, find alternatives, then assume THOSE are wrong too. Recurse until bedrock. Supports depth scaling: 1x-32x.",
-      "categories": [
-        "reasoning",
-        "search"
-      ],
-      "tags": [
-        "aw",
-        "assume-wrong",
-        "adversarial",
-        "wrongness",
-        "rejection"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
-    "ar": {
-      "description": "Assume Right - Deep recursive rightness search. Assume a claim is right, find what follows, find commitments, then assume THOSE are right too. Recurse until bedrock. Supports depth scaling: 1x-32x.",
-      "categories": [
-        "reasoning",
-        "search"
-      ],
-      "tags": [
-        "ar",
-        "assume-right",
-        "implications",
-        "commitments"
-      ],
-      "input_types": [
-        "question",
-        "decision"
-      ],
-      "invokes": []
-    },
     "u": {
-      "description": "Universalize - Extract the complete space of assumptions, dimensions, and alternatives from any claim. Pure exploration \u2014 map before you judge. Supports depth scaling: 1x-32x.",
+      "description": "Universalize - Extract the complete space of assumptions, dimensions, and alternatives from any claim. Map before you judge. Track every finding.",
       "categories": [
         "reasoning",
         "search"
@@ -2862,67 +4111,85 @@
       ],
       "invokes": []
     },
-    "gen": {
-      "description": "Diverse candidate production. Produce actual artifacts (code, prose, layouts), not labels. Required diversity: conventional, unconventional, extreme.",
+    "uaua": {
+      "description": "UAUA Combined Exploration - Universalize, ARAW, loop, synthesize. Map possibilities with numbered findings, test rigorously with numbered claims, compile a complete registry, derive synthesis only from the registry.",
       "categories": [
         "reasoning",
-        "search"
+        "search",
+        "guessing"
       ],
       "tags": [
-        "generate",
-        "candidates",
-        "artifacts",
-        "creative",
-        "divergent"
+        "uaua",
+        "universalization",
+        "araw",
+        "combined"
       ],
       "input_types": [
+        "question",
         "decision",
-        "goal"
+        "goal",
+        "problem"
       ],
       "invokes": []
     },
-    "dsn": {
-      "description": "Universal design principles. Constrained optimization of arrangement for comprehension, task completion, and signal value. Includes domain effort orderings and the arbitrary decision test.",
+    "uga": {
+      "description": "The comprehensive question framework that applies to EVERY goal, regardless of domain. Universal analysis procedure.",
       "categories": [
         "reasoning",
-        "decision_making"
+        "goal_analysis",
+        "guessing"
       ],
       "tags": [
-        "design",
-        "principles",
         "universal",
-        "layout",
-        "arrangement"
+        "goal",
+        "analysis"
       ],
       "input_types": [
-        "decision",
-        "goal"
-      ],
-      "invokes": [
-        "gen",
-        "cri"
-      ]
-    },
-    "cri": {
-      "description": "Impression-first evaluation. State impression, identify standard, analytical decomposition, divergence check, actionable verdict. Severity: structural/significant/minor/polish.",
-      "categories": [
-        "reasoning",
-        "validation"
-      ],
-      "tags": [
-        "critique",
-        "evaluation",
-        "impression",
-        "review",
-        "feedback"
-      ],
-      "input_types": [
+        "goal",
+        "question",
         "decision"
       ],
       "invokes": []
     },
+    "ugav2": {
+      "description": "The comprehensive question framework v2 — actionable questions with fact-yielding answers.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "gu"
+      ]
+    },
+    "ugav3": {
+      "description": "The comprehensive question framework v3 — fully decomposed, no interpretation variance.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ugav4": {
+      "description": "The comprehensive question framework that applies to EVERY goal, regardless of domain. Version 4.0.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "gu",
+        "ie",
+        "cpra",
+        "gd"
+      ]
+    },
+    "ugav5": {
+      "description": "The comprehensive question framework v5 — adds operational, meta-cognitive, and quality categories.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "ugav4"
+      ]
+    },
     "unx": {
-      "description": "Find non-obvious solutions. Three layers \u2014 obvious, unexpected, reframed \u2014 using disruption techniques that force the search off its default path. 10 disruption techniques available.",
+      "description": "Find non-obvious solutions. Three layers — obvious, unexpected, reframed — using disruption techniques that force the search off its default path.",
       "categories": [
         "reasoning",
         "search",
@@ -2943,75 +4210,204 @@
       ],
       "invokes": []
     },
-    "sbfow": {
-      "description": "Still Bad, Figure Out Why - Self-diagnosis when output was rejected. Systematically test which criteria the output failed against.",
-      "categories": [
-        "analysis",
-        "diagnosis",
-        "self-improvement"
-      ],
-      "tags": [
-        "diagnosis",
-        "failure",
-        "self-audit",
-        "criteria"
-      ],
-      "input_types": [
-        "problem"
-      ],
+    "uo": {
+      "description": "Every output must be unassailable. Nothing wrong with form, content, length, logic, precision, completeness, or necessity.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": [
-        "ar",
-        "aw",
-        "write",
-        "qo"
+        "cv",
+        "stc"
       ]
     },
-    "foht": {
-      "description": "Figure Out How To - Method discovery when you know WHAT but not HOW. Map the method space, test candidates, find approaches that survive scrutiny.",
+    "va": {
+      "description": "For any obvious strategy, ask what if we did the exact opposite. Counters the tendency to accept first-good-enough answers.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "im",
+        "ai"
+      ]
+    },
+    "val": {
+      "description": "Verify that an output meets its requirements",
       "categories": [
-        "planning",
-        "search",
-        "strategy"
+        "validation",
+        "communication"
       ],
       "tags": [
-        "method",
-        "discovery",
-        "how-to",
-        "approach"
+        "validation"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "vbo": {
+      "description": "This procedure is the culmination of the no-guessing philosophy.",
+      "categories": [
+        "communication",
+        "guessing"
+      ],
+      "tags": [
+        "verification",
+        "before",
+        "output"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": [
+        "spg"
+      ]
+    },
+    "vcd": {
+      "description": "Goals often serve multiple intrinsic values that conflict with each other.",
+      "categories": [
+        "goal_analysis"
+      ],
+      "tags": [
+        "value",
+        "conflict",
+        "decomposition"
+      ],
+      "input_types": [
+        "goal"
+      ],
+      "invokes": []
+    },
+    "vdp": {
+      "description": "Eight principles of visual design derived from first principles (cognitive load, gestalt perception, reading research). Use as a gate before any visual design work -- every design decision should trace back to one of these principles. If a design element can't be justified by a principle, remove it.",
+      "categories": [
+        "validation",
+        "communication"
+      ],
+      "tags": [
+        "design",
+        "visual",
+        "principles",
+        "gate",
+        "typography",
+        "layout"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "ve": {
+      "description": "Value elicitation discovers what someone ACTUALLY values - their intrinsic goals.",
+      "categories": [
+        "goal_analysis",
+        "search"
+      ],
+      "tags": [
+        "value",
+        "elicitation"
       ],
       "input_types": [
         "goal",
         "question"
       ],
+      "invokes": []
+    },
+    "ver": {
+      "description": "Verify claims using the GOSM verification standard. Every claim must be OBSERVED, TESTED, or DERIVED - never guessed.",
+      "categories": [
+        "validation",
+        "meta",
+        "guessing"
+      ],
+      "tags": [
+        "verify"
+      ],
+      "input_types": [
+        "decision"
+      ],
+      "invokes": []
+    },
+    "vhd": {
+      "description": "Framework for deciding when to improve existing procedures (vertical) versus add new ones (horizontal).",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": [
+        "iterate"
+      ]
+    },
+    "viability": {
+      "description": "Sub-orchestrator for ideas and proposals. Routes to ARAW viability testing with appropriate development and risk assessment.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "claim",
+        "decide",
+        "want",
+        "how",
         "ar",
-        "aw",
+        "araw",
+        "evaluate",
+        "prm",
+        "fla"
+      ]
+    },
+    "vm": {
+      "description": "Design and optimize viral loops, referral programs, and word-of-mouth triggers to achieve organic growth",
+      "categories": [],
+      "tags": [
+        "viral",
+        "mechanics"
+      ],
+      "input_types": [
+        "goal",
+        "decision"
+      ],
+      "invokes": []
+    },
+    "vp": {
+      "description": "Systematic testing and verification that systems meet requirements.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "w": {
+      "description": "Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically — upstream criteria determine whether writing works; downstream criteria determine how well.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "want": {
+      "description": "Sub-orchestrator for goals and wants. Routes to WantTo analysis to trace what the want commits you to and find the actual want.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "decide",
+        "claim",
+        "how",
+        "emotion",
+        "viability",
         "wt"
       ]
     },
-    "fowwr": {
-      "description": "Figure Out What Went Wrong - Backward causal diagnosis of failures. Trace from symptom to root cause, test each candidate cause.",
+    "wr": {
+      "description": "Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuous progress.",
       "categories": [
-        "analysis",
-        "diagnosis"
+        "problem_solving"
       ],
       "tags": [
-        "failure",
-        "root-cause",
-        "diagnosis",
-        "causal"
+        "weekly",
+        "review"
       ],
       "input_types": [
-        "problem"
+        "decision"
       ],
-      "invokes": [
-        "ar",
-        "aw",
-        "foht"
-      ]
+      "invokes": []
     },
     "wt": {
-      "description": "I Want To - Goal parsing and decomposition. Unbundle the want, find what they actually need, map the path space, route to the right next step.",
+      "description": "Want To - AR-based goal exploration. Assume the want is right, trace what it commits you to, find what you actually want, map paths forward.",
       "categories": [
         "planning",
         "goal"
@@ -3025,33 +4421,6 @@
       "input_types": [
         "goal",
         "situation"
-      ],
-      "invokes": [
-        "foht",
-        "ar",
-        "aw",
-        "qo"
-      ]
-    },
-    "p": {
-      "description": "Convert analysis findings into steelmanned, actionable plans with conditional recommendations. Every recommendation includes a derivation chain. Requires a source analysis from /ar, /aw, /u, /araw, or /uaua.",
-      "categories": [
-        "reasoning",
-        "decision_making",
-        "planning"
-      ],
-      "tags": [
-        "p",
-        "plans",
-        "recommendations",
-        "steelman",
-        "derivation",
-        "conditional",
-        "evidence-based"
-      ],
-      "input_types": [
-        "decision",
-        "goal"
       ],
       "invokes": []
     }

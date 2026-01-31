@@ -1,0 +1,38 @@
+---
+import Base from '../layouts/Base.astro';
+import SkillsGraph from '../components/SkillsGraph.astro';
+import { loadGraphData, TIER_COLORS } from '../data/build-skills-graph';
+
+const graphData = loadGraphData();
+---
+
+<Base title="Skills Graph" activeNav="graph" description="Interactive dependency graph of all 355 reasoning skills.">
+  <div class="page-header">
+    <h1>Skills Graph</h1>
+    <p>Interactive map of how {graphData.total} skills connect. Each edge means one skill invokes another. Drag nodes, zoom, and click for details.</p>
+  </div>
+
+  <SkillsGraph graphData={graphData} tierColors={TIER_COLORS} />
+</Base>
+
+<script>
+  // Load D3 as ES module — makes `d3` available globally for the component script
+  import * as d3Module from 'd3';
+  (window as any).d3 = d3Module;
+</script>
+
+<style>
+  .page-header {
+    margin-bottom: var(--sp-3);
+  }
+  .page-header p {
+    color: var(--color-text-secondary);
+    font-size: var(--text-sm);
+    max-width: 600px;
+  }
+
+  /* Break out of the 960px container for full-width graph */
+  :global(main.container) {
+    max-width: var(--width-wide);
+  }
+</style>
