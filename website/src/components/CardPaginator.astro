@@ -1,7 +1,7 @@
 ---
-// CardPaginator.astro — Measure-then-pack card pagination
-// Wraps skill page content: groups elements into cards, measures heights,
-// bin-packs into pages using pure math, builds DOM once.
+// CardPaginator.astro — Card wrapping + in-place overflow pagination
+// Groups content by headings into cards, then distributes cards across
+// page sections by measuring overflow directly in the live DOM.
 // Outputs <section> elements that Paginated.astro navigates.
 ---
 
@@ -14,17 +14,16 @@
     const wrapper = document.querySelector('[data-card-paginator]') as HTMLElement;
     if (!wrapper) return;
 
-    const slidesWrap = wrapper.closest('.paginated__slides');
+    const slidesWrap = wrapper.closest('.paginated__slides') as HTMLElement;
     if (!slidesWrap) return;
 
-    // Find the original section (the skill-page section that contains us)
     const originalSection = wrapper.closest('section') as HTMLElement;
     if (!originalSection) return;
 
     const content = wrapper.querySelector('.skill-page__content') as HTMLElement;
     if (!content) return;
 
-    // Collect Astro scope attributes from original section for cloning
+    // --- Collect Astro scope attributes for cloning ---
     const astroAttrs: [string, string][] = [];
     Array.from(originalSection.attributes).forEach(attr => {
       if (attr.name.startsWith('data-astro-cid-')) {
@@ -32,7 +31,7 @@
       }
     });
 
-    // --- A. Card wrapping ---
+    // --- Card wrapping: group by h2/h3 headings ---
     const children = Array.from(content.children) as HTMLElement[];
     if (children.length === 0) return;
 
@@ -41,10 +40,7 @@
 
     children.forEach((el) => {
       const tag = el.tagName.toLowerCase();
-      if (tag === 'h1' || tag === 'hr') {
-        el.remove();
-        return;
-      }
+      if (tag === 'h1' || tag === 'hr') { el.remove(); return; }
       if (tag === 'h2' || tag === 'h3' || !currentCard) {
         currentCard = document.createElement('div');
         currentCard.className = 'content-card';
@@ -55,132 +51,15 @@
 
     if (cards.length === 0) return;
 
-    // Collect header and footer from the skill-page (outside content)
-    const skillPage = originalSection.querySelector('.skill-page') as HTMLElement;
+    // Detach header and footer
     const header = originalSection.querySelector('.skill-page__header') as HTMLElement;
     const footer = originalSection.querySelector('.skill-page__back') as HTMLElement;
 
-    // --- B. Measurement ---
-    // Create a measurement container: visible but off-screen
-    const measurer = document.createElement('div');
-    measurer.style.cssText = `
-      position: absolute;
-      visibility: hidden;
-      left: -9999px;
-      top: 0;
-      width: ${slidesWrap.clientWidth}px;
-      padding: var(--sp-2) var(--sp-5);
-      padding-bottom: var(--sp-3);
-      box-sizing: border-box;
-    `;
-    document.body.appendChild(measurer);
-
-    // Measure available page height
-    // The section is position:absolute inset:0 inside slidesWrap
-    const pageHeight = (slidesWrap as HTMLElement).clientHeight;
-
-    // Measure header height
-    let headerHeight = 0;
-    if (header) {
-      const headerClone = header.cloneNode(true) as HTMLElement;
-      measurer.appendChild(headerClone);
-      headerHeight = headerClone.getBoundingClientRect().height;
-      measurer.removeChild(headerClone);
-    }
-
-    // Measure footer height
-    let footerHeight = 0;
-    if (footer) {
-      const footerClone = footer.cloneNode(true) as HTMLElement;
-      measurer.appendChild(footerClone);
-      footerHeight = footerClone.getBoundingClientRect().height;
-      measurer.removeChild(footerClone);
-    }
-
-    // Build a measurement grid with all cards to get true rendered heights
-    const measureGrid = document.createElement('div');
-    measureGrid.className = 'content-card-grid';
-    measureGrid.style.cssText = 'display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:min-content;gap:var(--sp-2);width:100%;align-items:start;align-content:start;';
-    cards.forEach(c => measureGrid.appendChild(c));
-    measurer.appendChild(measureGrid);
-
-    // Read heights in a single pass
-    const cardHeights = cards.map(c => c.getBoundingClientRect().height);
-    const gridGap = parseFloat(getComputedStyle(measureGrid).rowGap) || 8;
-
-    // Clean up measurer
-    cards.forEach(c => c.remove()); // detach cards from measurer
-    document.body.removeChild(measurer);
-
-    // --- C. Bin-packing (pure math) ---
-    const COLS = 3;
-    // Account for section padding (top + bottom)
-    const sectionPadding = 16 + 12; // var(--sp-2) + var(--sp-3) approx
-    const availableHeight = pageHeight - sectionPadding;
-
-    // Build rows: each row is up to COLS cards, height = max card height in row
-    interface Row { cardIndices: number[]; height: number; }
-    const rows: Row[] = [];
-    for (let i = 0; i < cards.length; i += COLS) {
-      const indices = [];
-      let maxH = 0;
-      for (let j = i; j < Math.min(i + COLS, cards.length); j++) {
-        indices.push(j);
-        if (cardHeights[j] > maxH) maxH = cardHeights[j];
-      }
-      rows.push({ cardIndices: indices, height: maxH });
-    }
-
-    // Assign rows to pages greedily
-    // First page has header, last page has footer — account for that
-    const pages: Row[][] = [];
-    let currentPageRows: Row[] = [];
-    let currentUsed = headerHeight; // first page starts after header
-    const headerMargin = headerHeight > 0 ? 8 : 0;
-    currentUsed += headerMargin;
-
-    for (let r = 0; r < rows.length; r++) {
-      const row = rows[r];
-      const rowSpace = row.height + (currentPageRows.length > 0 ? gridGap : 0);
-
-      // Check if adding this row would overflow
-      // For the last row, also account for footer
-      let extraSpace = 0;
-      if (r === rows.length - 1 && footerHeight > 0) {
-        extraSpace = footerHeight + 16; // margin-top on footer
-      }
-
-      if (currentPageRows.length > 0 && currentUsed + rowSpace + extraSpace > availableHeight) {
-        // This row doesn't fit — start a new page
-        pages.push(currentPageRows);
-        currentPageRows = [row];
-        currentUsed = row.height;
-      } else {
-        currentPageRows.push(row);
-        currentUsed += rowSpace;
-      }
-    }
-    if (currentPageRows.length > 0) {
-      pages.push(currentPageRows);
-    }
-
-    // If footer doesn't fit on last page, give it its own page
-    if (pages.length > 0 && footerHeight > 0) {
-      let lastPageHeight = 0;
-      const lastPageRows = pages[pages.length - 1];
-      lastPageRows.forEach((row, i) => {
-        lastPageHeight += row.height + (i > 0 ? gridGap : 0);
-      });
-      if (lastPageHeight + footerHeight + 16 > availableHeight) {
-        // Footer gets its own page — handled in DOM build
-      }
-    }
-
-    // --- D. DOM build (single write) ---
+    // --- Helpers ---
     function makeSection(): HTMLElement {
       const sec = document.createElement('section');
       sec.className = originalSection.className;
-      astroAttrs.forEach(([name, value]) => sec.setAttribute(name, value));
+      astroAttrs.forEach(([n, v]) => sec.setAttribute(n, v));
       return sec;
     }
 
@@ -191,61 +70,90 @@
       return g;
     }
 
-    const newSections: HTMLElement[] = [];
-
-    pages.forEach((pageRows, pageIdx) => {
-      const sec = makeSection();
-      const isFirst = pageIdx === 0;
-      const isLast = pageIdx === pages.length - 1;
-
-      // Add header to first page
-      if (isFirst && header) {
-        const hdrWrap = document.createElement('div');
-        hdrWrap.className = 'skill-page__header';
-        hdrWrap.innerHTML = header.innerHTML;
-        // Copy astro attrs to header wrapper
-        astroAttrs.forEach(([name, value]) => hdrWrap.setAttribute(name, value));
-        sec.appendChild(hdrWrap);
-      }
-
-      // Build grid with this page's cards
-      const grid = makeGrid();
-      pageRows.forEach(row => {
-        row.cardIndices.forEach(idx => {
-          const card = cards[idx];
-          // Handle oversized cards: if a card alone exceeds page height, allow scroll
-          if (cardHeights[idx] > availableHeight - headerHeight - 20) {
-            card.style.maxHeight = `${availableHeight - (isFirst ? headerHeight + headerMargin : 0) - (isLast ? footerHeight + 16 : 0) - 20}px`;
-            card.style.overflowY = 'auto';
-          }
-          grid.appendChild(card);
-        });
-      });
-      sec.appendChild(grid);
-
-      // Add footer to last page
-      if (isLast && footer) {
-        sec.appendChild(footer);
-      }
-
-      newSections.push(sec);
-    });
-
-    // Handle edge case: no cards produced pages (shouldn't happen, but safety)
-    if (newSections.length === 0) {
-      const sec = makeSection();
-      if (header) sec.appendChild(header);
-      if (footer) sec.appendChild(footer);
-      newSections.push(sec);
+    function overflows(sec: HTMLElement): boolean {
+      return sec.scrollHeight > sec.clientHeight;
     }
 
-    // Replace the original section with our new sections
-    newSections.forEach(sec => {
-      slidesWrap.insertBefore(sec, originalSection);
-    });
-    originalSection.remove();
+    function activate(sec: HTMLElement) {
+      sec.classList.add('active');
+      sec.style.display = 'block';
+    }
 
-    // Signal that card pagination is complete so Paginated can collect sections
+    function deactivate(sec: HTMLElement) {
+      sec.classList.remove('active');
+      sec.style.display = '';
+    }
+
+    // --- Build first section in-place ---
+    // Clear the original section and reuse it as page 1
+    originalSection.innerHTML = '';
+    activate(originalSection);
+
+    if (header) originalSection.appendChild(header);
+    let currentGrid = makeGrid();
+    originalSection.appendChild(currentGrid);
+
+    let currentPage = originalSection;
+    const allSections: HTMLElement[] = [originalSection];
+
+    // --- Add cards one at a time, check overflow ---
+    for (const card of cards) {
+      currentGrid.appendChild(card);
+
+      if (overflows(currentPage)) {
+        // This card caused overflow — move it to a new page
+        // But if it's the only card in the grid, it's just oversized — leave it
+        if (currentGrid.children.length > 1) {
+          card.remove();
+
+          // Start a new page
+          deactivate(currentPage);
+          const newPage = makeSection();
+          slidesWrap.appendChild(newPage);
+          activate(newPage);
+
+          currentGrid = makeGrid();
+          newPage.appendChild(currentGrid);
+          currentGrid.appendChild(card);
+          currentPage = newPage;
+          allSections.push(newPage);
+        }
+        // else: single oversized card, leave it (will be clipped, no scroll)
+      }
+    }
+
+    // --- Add footer to last page ---
+    if (footer) {
+      currentPage.appendChild(footer);
+
+      // If footer caused overflow, move it (and optionally last card) to new page
+      if (overflows(currentPage) && currentGrid.children.length > 0) {
+        footer.remove();
+        deactivate(currentPage);
+
+        const newPage = makeSection();
+        slidesWrap.appendChild(newPage);
+        activate(newPage);
+
+        // Move last card to footer page so it's not isolated
+        const footerGrid = makeGrid();
+        if (currentGrid.children.length > 0) {
+          const lastCard = currentGrid.lastElementChild!;
+          lastCard.remove();
+          footerGrid.appendChild(lastCard);
+          if (currentGrid.children.length === 0) currentGrid.remove();
+        }
+        newPage.appendChild(footerGrid);
+        newPage.appendChild(footer);
+        currentPage = newPage;
+        allSections.push(newPage);
+      }
+    }
+
+    // Deactivate all — Paginated.initNav will activate page 0
+    allSections.forEach(s => deactivate(s));
+
+    // Signal completion so Paginated can set up navigation
     document.dispatchEvent(new CustomEvent('card-paginator:done'));
   });
 </script>
