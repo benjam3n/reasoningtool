@@ -90,26 +90,26 @@ claude</code></pre>
 ├── Need analysis → /analyze
 ├── Not sure → /meta</code></pre>
 
-      <h2>Depth scaling</h2>
       <table style="font-size: var(--text-xs);">
         <thead>
-          <tr><th>Example</th><th>What you get</th></tr>
+          <tr><th>Skill</th><th>Example</th><th>What you get</th></tr>
         </thead>
         <tbody>
-          <tr><td><code>/araw claim</code></td><td>Default (2x) &mdash; 4&ndash;5 levels, 20+ findings</td></tr>
-          <tr><td><code>/araw 4x claim</code></td><td>5&ndash;6 levels, 35+ findings</td></tr>
-          <tr><td><code>/araw 8x claim</code></td><td>6&ndash;8 levels, 55+ findings</td></tr>
-          <tr><td><code>/uaua 4x topic</code></td><td>Alternating search at 4x</td></tr>
+          <tr><td><code>/araw</code></td><td><code>/araw claim</code></td><td>Default (2x) &mdash; 4&ndash;5 levels, 20+ findings</td></tr>
+          <tr><td></td><td><code>/araw 4x claim</code></td><td>5&ndash;6 levels, 35+ findings</td></tr>
+          <tr><td></td><td><code>/araw 8x claim</code></td><td>6&ndash;8 levels, 55+ findings</td></tr>
+          <tr><td><code>/uaua</code></td><td><code>/uaua 4x topic</code></td><td>Alternating search at 4x</td></tr>
+          <tr><td><code>/se</code></td><td><code>/se topic</code></td><td>Systematic exploration</td></tr>
+          <tr><td><code>/rca</code></td><td><code>/rca problem</code></td><td>Root cause analysis</td></tr>
+          <tr><td><code>/ht</code></td><td><code>/ht assumption</code></td><td>Hypothesis testing</td></tr>
         </tbody>
       </table>
-      <p>Supported by 40+ skills: <code>/araw</code>, <code>/uaua</code>, <code>/se</code>, <code>/rca</code>, <code>/ht</code>, and more.</p>
 
-      <h2>Python tools</h2>
       <pre><code>pip install openai pyyaml
 cd src/araw
 python auto_expand_llm.py --db career.db --seed "Should I start a business?"
 python visualize.py --db career.db --serve</code></pre>
-      <p><a href="/tools">Full tool documentation &rarr;</a></p>
+      <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool/tree/main/src">Full tool documentation</button>
     </section>
   </Paginated>
 </body>

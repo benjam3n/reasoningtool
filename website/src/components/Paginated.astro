@@ -154,26 +154,66 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     border-color: var(--color-accent);
   }
 
-  /* Content cards */
+  /* Content card grid — flows top-to-bottom, then left-to-right */
+  .paginated__slides :global(.content-card-grid) {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    gap: var(--sp-2);
+    height: 100%;
+    width: 100%;
+  }
+
   .paginated__slides :global(.content-card) {
     background: var(--color-surface);
     border: 1px solid var(--color-border-light);
     border-radius: 10px;
-    padding: var(--sp-3) var(--sp-4);
-    margin-bottom: var(--sp-2);
+    padding: var(--sp-3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03);
+    width: calc(33.333% - var(--sp-2));
+    aspect-ratio: 1;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: var(--text-xs);
+    line-height: 1.45;
   }
 
   .paginated__slides :global(.content-card h2) {
     margin-top: 0;
+    font-size: var(--text-base);
+    margin-bottom: var(--sp-1);
   }
 
   .paginated__slides :global(.content-card h3) {
     margin-top: 0;
+    font-size: var(--text-sm);
+    margin-bottom: var(--sp-1);
   }
 
   .paginated__slides :global(.content-card > :last-child) {
     margin-bottom: 0;
+  }
+
+  .paginated__slides :global(.content-card p) {
+    margin-top: var(--sp-1);
+    margin-bottom: var(--sp-1);
+  }
+
+  .paginated__slides :global(.content-card ul),
+  .paginated__slides :global(.content-card ol) {
+    margin-top: var(--sp-1);
+    margin-bottom: var(--sp-1);
+    padding-left: 1.2em;
+  }
+
+  .paginated__slides :global(.content-card table) {
+    font-size: var(--text-xs);
+  }
+
+  .paginated__slides :global(.content-card pre) {
+    font-size: 0.75rem;
+    overflow: hidden;
   }
 </style>
 
@@ -227,8 +267,11 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         currentCard.appendChild(el);
       });
 
-      // Replace content with cards
-      cards.forEach((card) => content.appendChild(card));
+      // Wrap cards in a grid container and replace content
+      const grid = document.createElement('div');
+      grid.className = 'content-card-grid';
+      cards.forEach((card) => grid.appendChild(card));
+      content.appendChild(grid);
     });
 
     // Also card-wrap content on other pages (tables, code blocks, card-grids)
@@ -253,7 +296,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         const el = child as HTMLElement;
         const tag = el.tagName.toLowerCase();
         // Unwrap container elements that just wrap other blocks
-        if (tag === 'article' || tag === 'div' && el.children.length > 1 && !el.classList.contains('card') && !el.classList.contains('callout') && !el.classList.contains('content-card')) {
+        if (tag === 'article' || (tag === 'div' && el.children.length > 1 && !el.classList.contains('card') && !el.classList.contains('callout') && !el.classList.contains('content-card'))) {
           blocks.push(...getLeafBlocks(el));
         } else {
           blocks.push(el);
@@ -311,6 +354,17 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     // Re-collect all sections after splitting
     const finalSections = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
+
+    // Wrap content-cards in grid containers on each page
+    finalSections.forEach((sec) => {
+      const cards = Array.from(sec.querySelectorAll(':scope > .content-card'));
+      if (cards.length === 0) return;
+      const grid = document.createElement('div');
+      grid.className = 'content-card-grid';
+      // Insert grid before first card
+      sec.insertBefore(grid, cards[0]);
+      cards.forEach((card) => grid.appendChild(card));
+    });
 
     let current = 0;
     const total = finalSections.length;
