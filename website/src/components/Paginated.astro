@@ -1,10 +1,7 @@
 ---
-// Paginated.astro — click-to-advance pagination for viewport-height slides
+// Paginated.astro — viewport-height slides with nav chips
 // Wraps child <section> elements as full-viewport slides.
-// Click right half → next, left half → prev. Arrow keys work too.
-// When at the last/first slide, arrow keys navigate to next/prev page in the group.
-// If a section's content overflows, it becomes a multi-page virtual section
-// that pages through the content one viewport at a time.
+// Arrow keys navigate between slides. Nav chips always visible at top.
 
 interface Props {
   pageGroup?: string;
@@ -15,13 +12,18 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 ---
 
 <div class="paginated" id="paginated" data-page-group={pageGroup} data-page-index={pageIndex}>
+  <nav class="paginated__chips">
+    <a href="/" class="pg-chip pg-chip--home">Home</a>
+    <a href="/getting-started" class="pg-chip">Start</a>
+    <a href="/why" class="pg-chip">Why</a>
+    <a href="/tools" class="pg-chip">Tools</a>
+    <a href="/faq" class="pg-chip">FAQ</a>
+    <a href="/about" class="pg-chip">About</a>
+    <a href="/visuals" class="pg-chip">Visuals</a>
+    <a href="https://github.com/benjam3n/reasoningtool" class="pg-chip" target="_blank" rel="noopener">GitHub</a>
+  </nav>
   <div class="paginated__slides">
     <slot />
-  </div>
-  <div class="paginated__nav">
-    <button class="paginated__arrow paginated__arrow--prev" id="pg-prev" aria-label="Previous slide">&larr;</button>
-    <span class="paginated__indicator" id="pg-indicator">1 / 1</span>
-    <button class="paginated__arrow paginated__arrow--next" id="pg-next" aria-label="Next slide">&rarr;</button>
   </div>
 </div>
 
@@ -36,11 +38,54 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     inset: 0;
     overflow: hidden;
     background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .paginated__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    padding: var(--sp-2) var(--sp-3);
+    flex-shrink: 0;
+  }
+
+  .pg-chip {
+    display: inline-block;
+    padding: 0.3em 0.7em;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+    transition: background var(--transition), color var(--transition);
+    cursor: pointer;
+  }
+
+  .pg-chip:hover {
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .pg-chip--home {
+    border-color: var(--color-text-muted);
+    color: var(--color-text-muted);
+    background: transparent;
+  }
+
+  .pg-chip--home:hover {
+    background: var(--color-text-muted);
+    color: var(--color-bg);
   }
 
   .paginated__slides {
     width: 100%;
-    height: 100%;
+    flex: 1;
+    min-height: 0;
     position: relative;
   }
 
@@ -51,8 +96,8 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     height: 100%;
     overflow: hidden;
     display: none;
-    padding: var(--sp-4) var(--sp-5);
-    padding-bottom: 4rem;
+    padding: var(--sp-2) var(--sp-5);
+    padding-bottom: var(--sp-3);
     box-sizing: border-box;
   }
 
@@ -61,49 +106,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   }
 
   /* Inner wrapper for virtual scroll on overflow sections */
-
-  .paginated__nav {
-    position: fixed;
-    bottom: var(--sp-3);
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    align-items: center;
-    gap: var(--sp-3);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    padding: var(--sp-1) var(--sp-3);
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    color: var(--color-text-muted);
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    user-select: none;
-  }
-
-  .paginated__arrow {
-    background: none;
-    border: none;
-    color: var(--color-text-muted);
-    cursor: pointer;
-    font-size: var(--text-sm);
-    padding: var(--sp-1) var(--sp-2);
-    border-radius: 4px;
-    transition: color var(--transition), background var(--transition);
-    font-family: var(--font-sans);
-    line-height: 1;
-  }
-
-  .paginated__arrow:hover {
-    color: var(--color-text);
-    background: var(--color-bg-secondary);
-  }
-
-  .paginated__indicator {
-    min-width: 3em;
-    text-align: center;
-  }
 </style>
 
 <script>
@@ -175,15 +177,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     let current = 0;
     const total = vSlides.length;
 
-    const indicator = document.getElementById('pg-indicator');
-    const prevBtn = document.getElementById('pg-prev') as HTMLButtonElement;
-    const nextBtn = document.getElementById('pg-next') as HTMLButtonElement;
-
-    const pgNav = container.querySelector('.paginated__nav') as HTMLElement;
-    if (total <= 1 && pgNav) {
-      pgNav.style.display = 'none';
-    }
-
     function show(index: number) {
       if (index < 0 || index >= total) return;
       const slide = vSlides[index];
@@ -199,7 +192,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       }
 
       current = index;
-      if (indicator) indicator.textContent = `${current + 1} / ${total}`;
     }
 
     function goNextPage() {
@@ -232,10 +224,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     // Initialize
     show(0);
-
-    // Button navigation
-    if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
-    if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
 
     // Keyboard navigation
     document.addEventListener('keydown', (e: KeyboardEvent) => {
