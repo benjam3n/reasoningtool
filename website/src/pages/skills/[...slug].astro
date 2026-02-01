@@ -53,7 +53,7 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
 
       <nav class="skill-page__back">
         <a href="/">&larr; All skills</a>
-        <a href={`/github?url=https://github.com/benjam3n/reasoningtool/tree/main/claude-code-plugin/skills/${name}`} class="skill-github-btn">GitHub</a>
+        <button class="skill-github-btn pg-github" data-url={`https://github.com/benjam3n/reasoningtool/tree/main/claude-code-plugin/skills/${name}`}>GitHub</button>
       </nav>
     </section>
   </Paginated>

@@ -449,7 +449,7 @@ const totalCount = allSkillNames.size;
     <a href="/faq" class="nav-chip">FAQ</a>
     <a href="/about" class="nav-chip">About</a>
     <a href="/visuals" class="nav-chip">Visuals</a>
-    <a href="/github" class="nav-chip">GitHub</a>
+    <button class="nav-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     <button class="nav-chip" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9790;</span></button>
     {[...categorySkills, ...experimental, ...tier1, ...tier2,
       ...tier3Categories.flatMap(c => c.skills),
@@ -490,6 +490,34 @@ const totalCount = allSkillNames.size;
             updateIcon();
           });
         }
+
+        // GitHub toggle buttons
+        document.querySelectorAll('.pg-github').forEach(function(btn) {
+          var el = btn;
+          var url = el.dataset.url || 'https://github.com/benjam3n/reasoningtool';
+          var originalText = el.textContent || 'GitHub';
+          var armed = false;
+
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (armed) {
+              window.open(url, '_blank', 'noopener');
+              el.textContent = originalText;
+              armed = false;
+            } else {
+              el.textContent = 'Go to GitHub';
+              armed = true;
+            }
+          });
+
+          document.addEventListener('click', function() {
+            if (armed) {
+              el.textContent = originalText;
+              armed = false;
+            }
+          });
+        });
 
         // Prevent all scroll events
         window.addEventListener('wheel', function(e) { e.preventDefault(); }, { passive: false });

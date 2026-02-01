@@ -30,7 +30,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
       <a href="/faq" class="pg-chip">FAQ</a>
       <a href="/about" class="pg-chip">About</a>
       <a href="/visuals" class="pg-chip">Visuals</a>
-      <a href="/github" class="pg-chip">GitHub</a>
+      <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     </nav>
     <div class="paginated__slides">
       <section class="visual-section">
@@ -117,6 +117,34 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
     document.addEventListener('keydown', (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+    });
+
+    // GitHub toggle buttons
+    document.querySelectorAll('.pg-github').forEach((btn) => {
+      const el = btn as HTMLElement;
+      const url = el.dataset.url || 'https://github.com/benjam3n/reasoningtool';
+      const originalText = el.textContent || 'GitHub';
+      let armed = false;
+
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (armed) {
+          window.open(url, '_blank', 'noopener');
+          el.textContent = originalText;
+          armed = false;
+        } else {
+          el.textContent = 'Go to GitHub';
+          armed = true;
+        }
+      });
+
+      document.addEventListener('click', () => {
+        if (armed) {
+          el.textContent = originalText;
+          armed = false;
+        }
+      });
     });
 
     // Prevent all scroll events

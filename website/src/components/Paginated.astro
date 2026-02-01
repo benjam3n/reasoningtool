@@ -20,7 +20,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     <a href="/faq" class="pg-chip">FAQ</a>
     <a href="/about" class="pg-chip">About</a>
     <a href="/visuals" class="pg-chip">Visuals</a>
-    <a href="/github" class="pg-chip">GitHub</a>
+    <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
   </nav>
   <div class="paginated__body">
     <div class="paginated__slides">
@@ -153,6 +153,28 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     color: #fff;
     border-color: var(--color-accent);
   }
+
+  /* Content cards */
+  .paginated__slides :global(.content-card) {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    padding: var(--sp-3) var(--sp-4);
+    margin-bottom: var(--sp-2);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03);
+  }
+
+  .paginated__slides :global(.content-card h2) {
+    margin-top: 0;
+  }
+
+  .paginated__slides :global(.content-card h3) {
+    margin-top: 0;
+  }
+
+  .paginated__slides :global(.content-card > :last-child) {
+    margin-bottom: 0;
+  }
 </style>
 
 <script>
@@ -175,9 +197,72 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     const sections = Array.from(slidesWrap.querySelectorAll(':scope > section'));
     if (sections.length === 0) return;
 
-    // Split long sections into multiple real pages by moving child elements
-    const allPages: HTMLElement[] = [];
+    // Card-wrap: group content elements under headings into .card divs
+    // This runs before DOM splitting so each card becomes a distributable block
+    container.querySelectorAll('.skill-page__content').forEach((content) => {
+      const children = Array.from(content.children) as HTMLElement[];
+      if (children.length === 0) return;
 
+      const cards: HTMLElement[] = [];
+      let currentCard: HTMLElement | null = null;
+
+      children.forEach((el) => {
+        const tag = el.tagName.toLowerCase();
+        const isHeading = tag === 'h2' || tag === 'h3';
+        const isHr = tag === 'hr';
+
+        // Skip hidden h1s and horizontal rules
+        if (tag === 'h1' || isHr) {
+          el.remove();
+          return;
+        }
+
+        // Start a new card on each heading
+        if (isHeading || !currentCard) {
+          currentCard = document.createElement('div');
+          currentCard.className = 'content-card';
+          cards.push(currentCard);
+        }
+
+        currentCard.appendChild(el);
+      });
+
+      // Replace content with cards
+      cards.forEach((card) => content.appendChild(card));
+    });
+
+    // Also card-wrap content on other pages (tables, code blocks, card-grids)
+    container.querySelectorAll('.paginated__slides > section').forEach((sec) => {
+      const s = sec as HTMLElement;
+      if (s.querySelector('.skill-page__content')) return; // already handled
+      // Wrap standalone tables and pre blocks in cards
+      s.querySelectorAll(':scope > table, :scope > pre').forEach((el) => {
+        if (el.parentElement?.classList.contains('content-card')) return;
+        const card = document.createElement('div');
+        card.className = 'content-card';
+        el.parentNode!.insertBefore(card, el);
+        card.appendChild(el);
+      });
+    });
+
+    // Flatten sections: collect all leaf-level block elements for pagination
+    // This unwraps wrapper elements like <article> so their children can be split across pages
+    function getLeafBlocks(parent: HTMLElement): HTMLElement[] {
+      const blocks: HTMLElement[] = [];
+      Array.from(parent.children).forEach((child) => {
+        const el = child as HTMLElement;
+        const tag = el.tagName.toLowerCase();
+        // Unwrap container elements that just wrap other blocks
+        if (tag === 'article' || tag === 'div' && el.children.length > 1 && !el.classList.contains('card') && !el.classList.contains('callout') && !el.classList.contains('content-card')) {
+          blocks.push(...getLeafBlocks(el));
+        } else {
+          blocks.push(el);
+        }
+      });
+      return blocks;
+    }
+
+    // Split sections into pages by moving elements
     sections.forEach((sec) => {
       const s = sec as HTMLElement;
 
@@ -186,62 +271,41 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       s.classList.add('active');
       const viewportHeight = s.clientHeight;
 
-      // Get all direct children
-      const children = Array.from(s.children) as HTMLElement[];
-
-      // Check if content fits
       if (s.scrollHeight <= viewportHeight) {
         s.style.display = '';
         s.classList.remove('active');
-        allPages.push(s);
         return;
       }
 
-      // Need to split — create pages by moving children
+      // Flatten all block elements
+      const blocks = getLeafBlocks(s);
+      blocks.forEach(b => b.remove());
+
       s.style.display = '';
       s.classList.remove('active');
 
       let currentPage = s;
-      // Remove all children from the original section first
-      children.forEach(child => child.remove());
 
-      // Re-add children, creating new sections when overflow occurs
-      children.forEach((child) => {
-        currentPage.appendChild(child);
+      blocks.forEach((block) => {
+        currentPage.appendChild(block);
 
-        // Temporarily show to measure
-        const wasActive = currentPage.classList.contains('active');
         currentPage.style.display = 'block';
         currentPage.classList.add('active');
 
         if (currentPage.scrollHeight > viewportHeight && currentPage.children.length > 1) {
-          // This child caused overflow — move it to a new page
-          child.remove();
+          block.remove();
           currentPage.style.display = '';
-          if (!wasActive) currentPage.classList.remove('active');
+          currentPage.classList.remove('active');
 
-          // Create new section
           const newPage = document.createElement('section');
-          // Copy classes from original
           newPage.className = s.className;
-          newPage.style.display = '';
-          newPage.appendChild(child);
+          newPage.appendChild(block);
           slidesWrap.appendChild(newPage);
           currentPage = newPage;
         } else {
           currentPage.style.display = '';
-          if (!wasActive) currentPage.classList.remove('active');
+          currentPage.classList.remove('active');
         }
-      });
-
-      // Collect all pages from this section
-      if (!allPages.includes(s)) allPages.push(s);
-      if (!allPages.includes(currentPage) && currentPage !== s) allPages.push(currentPage);
-
-      // Check for any additional sections we created between s and currentPage
-      const allSecs = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
-      allSecs.forEach(sec => {
-        if (!allPages.includes(sec)) allPages.push(sec);
       });
     });
 
@@ -319,6 +383,35 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     document.addEventListener('keydown', (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+    });
+
+    // GitHub toggle buttons — first click arms, second click opens
+    document.querySelectorAll('.pg-github').forEach((btn) => {
+      const el = btn as HTMLElement;
+      const url = el.dataset.url || 'https://github.com/benjam3n/reasoningtool';
+      const originalText = el.textContent || 'GitHub';
+      let armed = false;
+
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (armed) {
+          window.open(url, '_blank', 'noopener');
+          el.textContent = originalText;
+          armed = false;
+        } else {
+          el.textContent = 'Go to GitHub';
+          armed = true;
+        }
+      });
+
+      // Reset if clicking elsewhere
+      document.addEventListener('click', () => {
+        if (armed) {
+          el.textContent = originalText;
+          armed = false;
+        }
+      });
     });
 
     // Prevent all scroll events globally
