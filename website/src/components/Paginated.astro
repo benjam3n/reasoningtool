@@ -295,6 +295,73 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       });
     });
 
+    // Split oversized cards: if a single card is taller than ~75% of viewport,
+    // break it into multiple continuation cards so it can span pages.
+    // Also splits long lists/tables within cards.
+    const maxCardHeight = window.innerHeight * 0.75;
+
+    function splitOversizedCards(grid: Element) {
+      const section = grid.closest('section') as HTMLElement;
+      const wasHidden = section && !section.classList.contains('active');
+      if (wasHidden && section) { section.style.display = 'block'; section.classList.add('active'); }
+
+      // Flatten long lists/tables inside cards first — turn their children into
+      // direct card children so the card-level splitter can distribute them
+      (grid.querySelectorAll(':scope > .content-card') as NodeListOf<HTMLElement>).forEach((card) => {
+        const splittables = Array.from(card.querySelectorAll(':scope > ol, :scope > ul')) as HTMLElement[];
+        splittables.forEach((list) => {
+          if (list.getBoundingClientRect().height <= maxCardHeight) return;
+          // Replace the list with its individual <li> children as separate elements
+          const items = Array.from(list.children) as HTMLElement[];
+          items.forEach((li) => {
+            const wrapper = document.createElement('p');
+            wrapper.innerHTML = li.innerHTML;
+            list.parentNode!.insertBefore(wrapper, list);
+          });
+          list.remove();
+        });
+      });
+
+      // Now split cards that are too tall
+      let changed = true;
+      while (changed) {
+        changed = false;
+        const cards = Array.from(grid.querySelectorAll(':scope > .content-card')) as HTMLElement[];
+        for (const card of cards) {
+          if (card.getBoundingClientRect().height <= maxCardHeight) continue;
+          if (card.children.length <= 1) continue; // Can't split a single-element card further
+
+          const heading = card.querySelector('h2, h3');
+          const headingText = heading?.textContent || '';
+          const children = Array.from(card.children) as HTMLElement[];
+
+          // Clear and redistribute
+          card.innerHTML = '';
+          let currentCard = card;
+
+          children.forEach((child) => {
+            currentCard.appendChild(child);
+            if (currentCard.getBoundingClientRect().height > maxCardHeight && currentCard.children.length > 1) {
+              child.remove();
+              const contCard = document.createElement('div');
+              contCard.className = 'content-card';
+              const contLabel = document.createElement('h3');
+              contLabel.textContent = headingText ? `${headingText} (cont.)` : '(continued)';
+              contCard.appendChild(contLabel);
+              contCard.appendChild(child);
+              grid.insertBefore(contCard, currentCard.nextSibling);
+              currentCard = contCard;
+              changed = true;
+            }
+          });
+        }
+      }
+
+      if (wasHidden && section) { section.style.display = ''; section.classList.remove('active'); }
+    }
+
+    container.querySelectorAll('.content-card-grid').forEach(splitOversizedCards);
+
     // Flatten sections: collect all leaf-level block elements for pagination
     // This unwraps wrapper elements like <article> so their children can be split across pages
     function getLeafBlocks(parent: HTMLElement): HTMLElement[] {
