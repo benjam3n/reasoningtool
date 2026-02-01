@@ -612,6 +612,12 @@ const totalCount = allSkills.length;
     background: #fff3e0;
   }
 
+  .skill-chip--4 {
+    border-color: #78909c;
+    color: #546e7a;
+    background: #eceff1;
+  }
+
   .skill-chip:hover {
     background: var(--color-accent);
     border-color: var(--color-accent);
@@ -667,15 +673,19 @@ const totalCount = allSkills.length;
   }
 
   /* Dark mode tier colors */
+  :global([data-theme="dark"]) .skill-chip--exp { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
   :global([data-theme="dark"]) .skill-chip--1 { border-color: #6ee7b7; color: #6ee7b7; background: #132e1a; }
   :global([data-theme="dark"]) .skill-chip--2 { border-color: #93c5fd; color: #93c5fd; background: #0f1f3d; }
   :global([data-theme="dark"]) .skill-chip--cat { border-color: #ce93d8; color: #ce93d8; background: #2a1230; }
   :global([data-theme="dark"]) .skill-chip--3 { border-color: #ffb74d; color: #ffb74d; background: #2e1a00; }
+  :global([data-theme="dark"]) .skill-chip--4 { border-color: #78909c; color: #90a4ae; background: #1c2025; }
 
   @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme="light"])) .skill-chip--exp { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
     :global(:root:not([data-theme="light"])) .skill-chip--1 { border-color: #6ee7b7; color: #6ee7b7; background: #132e1a; }
     :global(:root:not([data-theme="light"])) .skill-chip--2 { border-color: #93c5fd; color: #93c5fd; background: #0f1f3d; }
     :global(:root:not([data-theme="light"])) .skill-chip--cat { border-color: #ce93d8; color: #ce93d8; background: #2a1230; }
     :global(:root:not([data-theme="light"])) .skill-chip--3 { border-color: #ffb74d; color: #ffb74d; background: #2e1a00; }
+    :global(:root:not([data-theme="light"])) .skill-chip--4 { border-color: #78909c; color: #90a4ae; background: #1c2025; }
   }
 </style>
