@@ -426,13 +426,13 @@ const tier4Categories = [
 ];
 
 // Build flat list with tier info, deduplicated and alphabetized
-const tierMap = new Map<string, { name: string; tier: string }>();
-experimental.forEach(s => tierMap.set(s.name, { name: s.name, tier: 'exp' }));
-tier1.forEach(s => tierMap.set(s.name, { name: s.name, tier: '1' }));
-tier2.forEach(s => tierMap.set(s.name, { name: s.name, tier: '2' }));
-categorySkills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, tier: 'cat' }); });
-tier3Categories.forEach(c => c.skills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, tier: '3' }); }));
-tier4Categories.forEach(c => c.skills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, tier: '4' }); }));
+const tierMap = new Map<string, { name: string; title: string; tier: string }>();
+experimental.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: 'exp' }));
+tier1.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: '1' }));
+tier2.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: '2' }));
+categorySkills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: 'cat' }); });
+tier3Categories.forEach(c => c.skills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: '3' }); }));
+tier4Categories.forEach(c => c.skills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: '4' }); }));
 
 const allSkills = Array.from(tierMap.values()).sort((a, b) => a.name.localeCompare(b.name));
 const totalCount = allSkills.length;
@@ -457,8 +457,9 @@ const totalCount = allSkills.length;
     <a href="/visuals" class="nav-chip">Visuals</a>
     <button class="nav-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     <button class="nav-chip" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9790;</span></button>
+    <input type="text" id="skill-search" class="skill-search" placeholder="Search skills..." autocomplete="off" />
     {allSkills.map(s => (
-      <a href={`/skills/${s.name}`} class={`skill-chip skill-chip--${s.tier}`}>{s.name}</a>
+      <a href={`/skills/${s.name}`} class={`skill-chip skill-chip--${s.tier}`} data-title={s.title.toLowerCase()}>{s.name}</a>
     ))}
   </section>
 
@@ -521,6 +522,21 @@ const totalCount = allSkills.length;
             }
           });
         });
+
+        // Skill search filtering
+        var searchInput = document.getElementById('skill-search');
+        if (searchInput) {
+          var chips = document.querySelectorAll('.skill-chip');
+          searchInput.addEventListener('input', function() {
+            var q = searchInput.value.toLowerCase().trim();
+            chips.forEach(function(chip) {
+              var name = chip.textContent.toLowerCase();
+              var title = chip.getAttribute('data-title') || '';
+              var match = !q || name.indexOf(q) !== -1 || title.indexOf(q) !== -1;
+              chip.style.display = match ? '' : 'none';
+            });
+          });
+        }
 
         // Prevent all scroll events
         window.addEventListener('wheel', function(e) { e.preventDefault(); }, { passive: false });
@@ -626,6 +642,28 @@ const totalCount = allSkills.length;
 
   button.nav-chip {
     line-height: 1;
+  }
+
+  .skill-search {
+    padding: 0.4em 0.8em;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    background: var(--color-surface);
+    outline: none;
+    width: 10em;
+    transition: border-color var(--transition), width var(--transition);
+  }
+
+  .skill-search:focus {
+    border-color: var(--color-accent);
+    width: 14em;
+  }
+
+  .skill-search::placeholder {
+    color: var(--color-text-muted);
   }
 
   /* Dark mode tier colors */
