@@ -172,7 +172,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     padding: var(--sp-2) var(--sp-3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03);
     width: calc(33.333% - var(--sp-2));
-    max-height: 40vh;
+    max-height: 45vh;
     overflow: hidden;
     box-sizing: border-box;
     font-size: var(--text-xs);
@@ -358,20 +358,39 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         s.style.display = '';
         s.classList.remove('active');
 
-        // Measure each card's height
+        // Measure each card's height at the actual rendered width
+        // Section has padding, so inner width is smaller
+        s.style.display = 'block';
+        s.classList.add('active');
+        const sectionPadding = s.offsetWidth - s.clientWidth;
+        const innerWidth = s.clientWidth;
+        const sectionPaddingTop = parseFloat(getComputedStyle(s).paddingTop) || 0;
+        const sectionPaddingBottom = parseFloat(getComputedStyle(s).paddingBottom) || 0;
+        s.style.display = '';
+        s.classList.remove('active');
+
+        const cardWidth = Math.floor((innerWidth - GAP * (COLS - 1)) / COLS);
+        const maxCardHeight = Math.floor(viewportHeight * 0.45);
+
         const measureDiv = document.createElement('div');
-        measureDiv.style.cssText = 'position:absolute;visibility:hidden;width:' + Math.floor(s.clientWidth / COLS) + 'px';
+        measureDiv.className = 'content-card';
+        measureDiv.style.cssText = `position:absolute;visibility:hidden;width:${cardWidth}px;max-height:none;`;
         document.body.appendChild(measureDiv);
         const cardHeights = cards.map(card => {
-          measureDiv.appendChild(card);
-          const h = Math.min(card.offsetHeight, viewportHeight * 0.4); // respect max-height
-          card.remove();
+          // Move card's children into measure div temporarily
+          const frag = document.createDocumentFragment();
+          while (card.firstChild) frag.appendChild(card.firstChild);
+          measureDiv.appendChild(frag);
+          const h = Math.min(measureDiv.scrollHeight, maxCardHeight);
+          // Move back
+          while (measureDiv.firstChild) card.appendChild(measureDiv.firstChild);
           return h;
         });
         measureDiv.remove();
 
         // Pack cards into pages of 3 columns
-        const availableHeight = viewportHeight - headerHeight - GAP;
+        const usableHeight = viewportHeight - sectionPaddingTop - sectionPaddingBottom;
+        const availableHeight = usableHeight - headerHeight - GAP;
         let currentPage = s;
         let colHeights = [0, 0, 0];
         let currentGrid = document.createElement('div');
@@ -385,7 +404,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
           // Find shortest column
           const minCol = colHeights.indexOf(Math.min(...colHeights));
 
-          if (colHeights[minCol] + h > (isFirstPage ? availableHeight : viewportHeight - GAP)) {
+          if (colHeights[minCol] + h > (isFirstPage ? availableHeight : usableHeight - GAP)) {
             // All columns full — new page
             const newPage = document.createElement('section');
             newPage.className = s.className;
@@ -395,7 +414,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
             currentGrid = document.createElement('div');
             currentGrid.className = 'content-card-grid';
-            currentGrid.style.height = (viewportHeight - GAP) + 'px';
+            currentGrid.style.height = (usableHeight - GAP) + 'px';
             currentPage.appendChild(currentGrid);
             colHeights = [0, 0, 0];
           }
