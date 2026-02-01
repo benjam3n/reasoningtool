@@ -388,6 +388,8 @@ docs/
     └── swot-pure-regress/
 ```
 
+## Installation
+
 ```bash
 git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool/claude-code-plugin
