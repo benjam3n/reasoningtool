@@ -236,6 +236,15 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     const sections = Array.from(slidesWrap.querySelectorAll(':scope > section'));
     if (sections.length === 0) return;
 
+    const GRID_INLINE = 'display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:min-content;gap:var(--sp-2);width:100%;align-items:start;align-content:start;';
+
+    function makeGrid(): HTMLDivElement {
+      const g = document.createElement('div');
+      g.className = 'content-card-grid';
+      g.style.cssText = GRID_INLINE;
+      return g;
+    }
+
     // Card-wrap: group content elements under headings into .card divs
     // This runs before DOM splitting so each card becomes a distributable block
     container.querySelectorAll('.skill-page__content').forEach((content) => {
@@ -267,8 +276,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       });
 
       // Wrap cards in a grid container and replace content
-      const grid = document.createElement('div');
-      grid.className = 'content-card-grid';
+      const grid = makeGrid();
       cards.forEach((card) => grid.appendChild(card));
       content.appendChild(grid);
     });
@@ -354,8 +362,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
         // Build first page: header + grid
         headerBlocks.forEach(b => s.appendChild(b));
-        let currentGrid = document.createElement('div');
-        currentGrid.className = 'content-card-grid';
+        let currentGrid = makeGrid();
         s.appendChild(currentGrid);
 
         let currentPage = s;
@@ -380,8 +387,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
             newPage.className = s.className;
             slidesWrap.appendChild(newPage);
             currentPage = newPage;
-            currentGrid = document.createElement('div');
-            currentGrid.className = 'content-card-grid';
+            currentGrid = makeGrid();
             currentPage.appendChild(currentGrid);
             currentGrid.appendChild(card);
           }
@@ -403,8 +409,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
           // Also move last card to footer page so it's not alone
           if (currentGrid.children.length > 0) {
             const lastCard = currentGrid.lastElementChild!;
-            const footerGrid = document.createElement('div');
-            footerGrid.className = 'content-card-grid';
+            const footerGrid = makeGrid();
             newPage.insertBefore(footerGrid, newPage.firstChild);
             footerGrid.appendChild(lastCard);
             // Clean up empty grid
