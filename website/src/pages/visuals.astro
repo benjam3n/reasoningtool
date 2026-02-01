@@ -25,7 +25,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
   <div class="paginated" id="paginated" data-page-group="visual" data-page-index={pageIndex}>
     <nav class="paginated__chips">
       <a href="/" class="pg-chip pg-chip--home">Home</a>
-      <a href="/getting-started" class="pg-chip">Start</a>
+      <a href="/installation" class="pg-chip">Install</a>
       <a href="/why" class="pg-chip">Why</a>
       <a href="/tools" class="pg-chip">Tools</a>
       <a href="/faq" class="pg-chip">FAQ</a>
@@ -54,7 +54,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
 <script>
   // Reuse the same pagination logic as Paginated.astro
   const PAGE_GROUPS: Record<string, string[]> = {
-    info: ['/getting-started', '/why', '/tools', '/faq', '/about'],
+    info: ['/installation', '/why', '/tools', '/faq', '/about'],
     visual: ['/', '/visuals'],
   };
 
