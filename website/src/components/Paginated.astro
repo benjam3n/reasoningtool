@@ -158,7 +158,9 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   .paginated__slides :global(.content-card-grid) {
     columns: 3;
     column-gap: var(--sp-2);
+    column-fill: auto;
     width: 100%;
+    overflow: hidden;
   }
 
   .paginated__slides :global(.content-card) {
@@ -388,6 +390,22 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       if (sec.children.length === 0) sec.remove();
     });
     const finalSections = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
+
+    // Set grid heights to fill available space so column-fill: auto wraps properly
+    finalSections.forEach((sec) => {
+      const grid = sec.querySelector('.content-card-grid') as HTMLElement;
+      if (!grid) return;
+      // Calculate available height: section height minus other siblings
+      sec.style.display = 'block';
+      sec.classList.add('active');
+      let usedHeight = 0;
+      Array.from(sec.children).forEach((child) => {
+        if (child !== grid) usedHeight += (child as HTMLElement).offsetHeight;
+      });
+      grid.style.height = `calc(100% - ${usedHeight}px)`;
+      sec.style.display = '';
+      sec.classList.remove('active');
+    });
 
     let current = 0;
     const total = finalSections.length;
