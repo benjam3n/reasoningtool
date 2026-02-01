@@ -158,7 +158,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   .paginated__slides :global(.content-card-grid) {
     columns: 3;
     column-gap: var(--sp-2);
-    height: 100%;
     width: 100%;
   }
 
@@ -293,7 +292,9 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         const el = child as HTMLElement;
         const tag = el.tagName.toLowerCase();
         // Unwrap container elements that just wrap other blocks
-        if (tag === 'article' || (tag === 'div' && el.children.length > 1 && !el.classList.contains('card') && !el.classList.contains('callout') && !el.classList.contains('content-card'))) {
+        // Preserve: .card, .callout, .content-card, and BEM component divs (class contains __)
+        const hasNamedClass = Array.from(el.classList).some(c => c.includes('__') || c.includes('card') || c.includes('callout'));
+        if (tag === 'article' || (tag === 'div' && el.children.length > 1 && !hasNamedClass)) {
           blocks.push(...getLeafBlocks(el));
         } else {
           blocks.push(el);
