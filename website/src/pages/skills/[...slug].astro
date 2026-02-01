@@ -52,7 +52,7 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
       </article>
 
       <nav class="skill-page__back">
-        <a href="/">&larr; All skills</a>
+        <a href="/" class="skill-back-btn">&larr; All skills</a>
         <button class="skill-github-btn pg-github" data-url={`https://github.com/benjam3n/reasoningtool/tree/main/claude-code-plugin/skills/${name}`}>GitHub</button>
       </nav>
     </section>
@@ -116,6 +116,7 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
     gap: var(--sp-3);
   }
 
+  .skill-back-btn,
   .skill-github-btn {
     display: inline-block;
     padding: 0.3em 0.7em;
@@ -128,8 +129,10 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
     color: var(--color-accent);
     background: var(--color-accent-subtle);
     transition: background var(--transition), color var(--transition);
+    cursor: pointer;
   }
 
+  .skill-back-btn:hover,
   .skill-github-btn:hover {
     background: var(--color-accent);
     color: #fff;

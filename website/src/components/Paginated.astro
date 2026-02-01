@@ -376,9 +376,16 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
           currentPage.classList.remove('active');
         }
       });
+
+      // Clean up: ensure last page is hidden before show() initializes
+      currentPage.style.display = '';
+      currentPage.classList.remove('active');
     });
 
-    // Re-collect all sections after splitting
+    // Re-collect all sections after splitting, remove empty ones
+    Array.from(slidesWrap.querySelectorAll(':scope > section')).forEach((sec) => {
+      if (sec.children.length === 0) sec.remove();
+    });
     const finalSections = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
 
     let current = 0;
