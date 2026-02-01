@@ -294,9 +294,12 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         const el = child as HTMLElement;
         const tag = el.tagName.toLowerCase();
         // Unwrap container elements that just wrap other blocks
-        // Preserve: .card, .callout, .content-card, and BEM component divs (class contains __)
-        const hasNamedClass = Array.from(el.classList).some(c => c.includes('__') || c.includes('card') || c.includes('callout'));
-        if (tag === 'article' || (tag === 'div' && el.children.length > 1 && !hasNamedClass)) {
+        // Preserve: BEM divs (class has __), .content-card, .card, .callout
+        // Unwrap: article, content-card-grid, and generic wrapper divs
+        const shouldPreserve = Array.from(el.classList).some(c =>
+          c.includes('__') || c === 'card' || c === 'content-card' || c === 'callout' || c === 'card-grid'
+        );
+        if (tag === 'article' || (tag === 'div' && el.children.length > 1 && !shouldPreserve)) {
           blocks.push(...getLeafBlocks(el));
         } else {
           blocks.push(el);
