@@ -154,13 +154,10 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     border-color: var(--color-accent);
   }
 
-  /* Content card grid — flows top-to-bottom, then left-to-right */
+  /* Content card grid — CSS columns flow top-to-bottom, then left-to-right */
   .paginated__slides :global(.content-card-grid) {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: flex-start;
-    gap: var(--sp-2);
+    columns: 3;
+    column-gap: var(--sp-2);
     height: 100%;
     width: 100%;
   }
@@ -169,10 +166,10 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     background: var(--color-surface);
     border: 1px solid var(--color-border-light);
     border-radius: 10px;
-    padding: var(--sp-3);
+    padding: var(--sp-2) var(--sp-3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03);
-    width: calc(33.333% - var(--sp-2));
-    aspect-ratio: 1;
+    break-inside: avoid;
+    margin-bottom: var(--sp-2);
     overflow: hidden;
     box-sizing: border-box;
     font-size: var(--text-xs);
@@ -322,29 +319,58 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
       // Flatten all block elements
       const blocks = getLeafBlocks(s);
+      const hasCards = blocks.some(b => b.classList.contains('content-card'));
       blocks.forEach(b => b.remove());
 
       s.style.display = '';
       s.classList.remove('active');
 
       let currentPage = s;
+      let currentGrid: HTMLElement | null = null;
+
+      // Helper: get or create grid wrapper on current page
+      function getGrid(page: HTMLElement): HTMLElement {
+        if (currentGrid && currentGrid.parentElement === page) return currentGrid;
+        currentGrid = document.createElement('div');
+        currentGrid.className = 'content-card-grid';
+        page.appendChild(currentGrid);
+        return currentGrid;
+      }
 
       blocks.forEach((block) => {
-        currentPage.appendChild(block);
+        // Cards go into a grid wrapper; other blocks go directly on the page
+        if (hasCards && block.classList.contains('content-card')) {
+          const grid = getGrid(currentPage);
+          grid.appendChild(block);
+        } else {
+          currentPage.appendChild(block);
+        }
 
         currentPage.style.display = 'block';
         currentPage.classList.add('active');
 
-        if (currentPage.scrollHeight > viewportHeight && currentPage.children.length > 1) {
+        const container = hasCards && block.classList.contains('content-card')
+          ? getGrid(currentPage) : currentPage;
+        const count = hasCards && block.classList.contains('content-card')
+          ? container.children.length : currentPage.children.length;
+
+        if (currentPage.scrollHeight > viewportHeight && count > 1) {
           block.remove();
           currentPage.style.display = '';
           currentPage.classList.remove('active');
 
           const newPage = document.createElement('section');
           newPage.className = s.className;
-          newPage.appendChild(block);
+          currentGrid = null; // force new grid on new page
           slidesWrap.appendChild(newPage);
           currentPage = newPage;
+
+          if (hasCards && block.classList.contains('content-card')) {
+            const grid = getGrid(currentPage);
+            grid.appendChild(block);
+          } else {
+            currentPage.appendChild(block);
+          }
         } else {
           currentPage.style.display = '';
           currentPage.classList.remove('active');
@@ -354,17 +380,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     // Re-collect all sections after splitting
     const finalSections = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
-
-    // Wrap content-cards in grid containers on each page
-    finalSections.forEach((sec) => {
-      const cards = Array.from(sec.querySelectorAll(':scope > .content-card'));
-      if (cards.length === 0) return;
-      const grid = document.createElement('div');
-      grid.className = 'content-card-grid';
-      // Insert grid before first card
-      sec.insertBefore(grid, cards[0]);
-      cards.forEach((card) => grid.appendChild(card));
-    });
 
     let current = 0;
     const total = finalSections.length;
