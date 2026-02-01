@@ -171,6 +171,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03);
     break-inside: avoid;
     margin-bottom: var(--sp-2);
+    max-height: 40vh;
     overflow: hidden;
     box-sizing: border-box;
     font-size: var(--text-xs);
@@ -413,8 +414,9 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     let current = 0;
     const total = finalSections.length;
 
-    // Build number buttons
+    // Build number buttons (clear any previous ones first)
     const numsContainer = document.getElementById('pg-nums');
+    if (numsContainer) numsContainer.innerHTML = '';
     const numBtns: HTMLButtonElement[] = [];
 
     if (numsContainer && total > 1) {
