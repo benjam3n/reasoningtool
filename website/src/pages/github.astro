@@ -17,11 +17,23 @@ import '../styles/global.css';
 <body>
   <Paginated>
     <section class="github-page">
-      <a href="https://github.com/benjam3n/reasoningtool" class="github-link" target="_blank" rel="noopener">Go to GitHub</a>
+      <a id="github-go" href="https://github.com/benjam3n/reasoningtool" class="github-link" target="_blank" rel="noopener">Go to GitHub</a>
     </section>
   </Paginated>
 </body>
 </html>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const link = document.getElementById('github-go') as HTMLAnchorElement;
+    if (!link) return;
+    const params = new URLSearchParams(window.location.search);
+    const url = params.get('url');
+    if (url && url.startsWith('https://github.com/benjam3n/reasoningtool')) {
+      link.href = url;
+    }
+  });
+</script>
 
 <style>
   .github-page {
