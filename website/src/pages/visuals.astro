@@ -31,7 +31,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
       <a href="/faq" class="pg-chip">FAQ</a>
       <a href="/about" class="pg-chip">About</a>
       <a href="/visuals" class="pg-chip">Visuals</a>
-      <a href="https://github.com/benjam3n/reasoningtool" class="pg-chip" target="_blank" rel="noopener">GitHub</a>
+      <a href="/github" class="pg-chip">GitHub</a>
     </nav>
     <div class="paginated__slides">
       <section class="visual-section">
@@ -147,6 +147,8 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
     gap: 0.35em;
     padding: var(--sp-2) var(--sp-3);
     flex-shrink: 0;
+    position: relative;
+    z-index: 10;
   }
 
   .pg-chip {
@@ -200,7 +202,13 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
   }
 
   .visual-section:global(.active) {
-    display: block;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .visual-section :global(> *) {
+    flex: 1;
+    min-height: 0;
   }
 
 </style>

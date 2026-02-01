@@ -17,8 +17,6 @@ import '../styles/global.css';
 <body>
   <Paginated pageGroup="info" pageIndex={0}>
     <section>
-      <h1>Getting started</h1>
-
       <div class="callout" style="border-left-color: var(--color-warning, #e0a800);">
         <p><strong>Use a skill before planning.</strong> Claude Code's built-in plan mode generates a single approach and commits to it immediately.
         If the problem space hasn't been mapped first, the resulting plan often misses better alternatives.</p>
@@ -31,18 +29,14 @@ import '../styles/global.css';
         </ul>
       </div>
 
-      <h2>Installation</h2>
-
       <div class="card-grid card-grid--2">
         <div class="card">
-          <h3>Option 1: Run from the repo</h3>
           <pre><code>git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool/claude-code-plugin
 claude</code></pre>
         </div>
 
         <div class="card">
-          <h3>Option 2: Copy into your project</h3>
           <pre><code>cp -r path/to/reasoningtool/claude-code-plugin/skills your-project/
 cp path/to/reasoningtool/claude-code-plugin/CLAUDE.md your-project/
 cd your-project
