@@ -388,10 +388,6 @@ docs/
     └── swot-pure-regress/
 ```
 
-## Options
-
-### Run from this directory
-
 ```bash
 git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool/claude-code-plugin
@@ -399,8 +395,6 @@ claude
 ```
 
 Claude reads the `CLAUDE.md` file and all skills become available.
-
-### Copy into your project
 
 ```bash
 cp -r path/to/reasoningtool/claude-code-plugin/skills your-project/
