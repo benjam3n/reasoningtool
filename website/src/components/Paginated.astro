@@ -172,37 +172,37 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     border-radius: 10px;
     padding: var(--sp-2) var(--sp-3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03);
-    overflow: hidden;
+    overflow: visible;
     box-sizing: border-box;
     font-size: var(--text-xs);
     line-height: 1.45;
   }
 
   .paginated__slides :global(.content-card h2) {
-    margin-top: 0;
-    font-size: var(--text-base);
-    margin-bottom: var(--sp-1);
+    margin-top: 0 !important;
+    font-size: var(--text-base) !important;
+    margin-bottom: var(--sp-1) !important;
   }
 
   .paginated__slides :global(.content-card h3) {
-    margin-top: 0;
-    font-size: var(--text-sm);
-    margin-bottom: var(--sp-1);
+    margin-top: 0 !important;
+    font-size: var(--text-sm) !important;
+    margin-bottom: var(--sp-1) !important;
   }
 
   .paginated__slides :global(.content-card > :last-child) {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 
   .paginated__slides :global(.content-card p) {
-    margin-top: var(--sp-1);
-    margin-bottom: var(--sp-1);
+    margin-top: var(--sp-1) !important;
+    margin-bottom: var(--sp-1) !important;
   }
 
   .paginated__slides :global(.content-card ul),
   .paginated__slides :global(.content-card ol) {
-    margin-top: var(--sp-1);
-    margin-bottom: var(--sp-1);
+    margin-top: var(--sp-1) !important;
+    margin-bottom: var(--sp-1) !important;
     padding-left: 1.2em;
   }
 
@@ -317,6 +317,19 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       return blocks;
     }
 
+    // Helper: create a section that clones className AND data-astro-cid-* attributes
+    function cloneSection(original: HTMLElement): HTMLElement {
+      const newSec = document.createElement('section');
+      newSec.className = original.className;
+      // Copy all Astro scope attributes so scoped CSS applies
+      Array.from(original.attributes).forEach(attr => {
+        if (attr.name.startsWith('data-astro-cid-')) {
+          newSec.setAttribute(attr.name, attr.value);
+        }
+      });
+      return newSec;
+    }
+
     // Split sections into pages by moving elements
     sections.forEach((sec) => {
       const s = sec as HTMLElement;
@@ -383,8 +396,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
             card.remove();
 
             // Start new page with a fresh grid
-            const newPage = document.createElement('section');
-            newPage.className = s.className;
+            const newPage = cloneSection(s);
             slidesWrap.appendChild(newPage);
             currentPage = newPage;
             currentGrid = makeGrid();
@@ -402,8 +414,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         if (currentPage.scrollHeight > viewportHeight && currentGrid.children.length > 0) {
           currentPage.style.display = '';
           currentPage.classList.remove('active');
-          const newPage = document.createElement('section');
-          newPage.className = s.className;
+          const newPage = cloneSection(s);
           slidesWrap.appendChild(newPage);
           footerBlocks.forEach(b => newPage.appendChild(b));
           // Also move last card to footer page so it's not alone
@@ -433,8 +444,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
             currentPage.style.display = '';
             currentPage.classList.remove('active');
 
-            const newPage = document.createElement('section');
-            newPage.className = s.className;
+            const newPage = cloneSection(s);
             newPage.appendChild(block);
             slidesWrap.appendChild(newPage);
             currentPage = newPage;
