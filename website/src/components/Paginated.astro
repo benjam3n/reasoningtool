@@ -331,23 +331,27 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       // Flatten all block elements
       const blocks = getLeafBlocks(s);
       const hasCards = blocks.some(b => b.classList.contains('content-card'));
-      blocks.forEach(b => b.remove());
+
+      // Fully clear the section
+      s.innerHTML = '';
 
       s.style.display = '';
       s.classList.remove('active');
 
       if (hasCards) {
         // JS-based column packing for card content
-        // Separate non-card blocks (header, nav) from cards
         const nonCards = blocks.filter(b => !b.classList.contains('content-card'));
         const cards = blocks.filter(b => b.classList.contains('content-card'));
 
-        // Measure non-card heights
-        const headerBlocks = nonCards.filter(b => {
-          const cls = Array.from(b.classList);
-          return cls.some(c => c.includes('header')) || b.tagName === 'H1' || b.tagName === 'H2';
+        // Classify non-card blocks as header (before cards) or footer (after)
+        const headerBlocks: HTMLElement[] = [];
+        const footerBlocks: HTMLElement[] = [];
+        let seenCard = false;
+        blocks.forEach(b => {
+          if (b.classList.contains('content-card')) { seenCard = true; return; }
+          if (!seenCard) headerBlocks.push(b);
+          else footerBlocks.push(b);
         });
-        const footerBlocks = nonCards.filter(b => !headerBlocks.includes(b));
 
         // Measure header and footer heights
         headerBlocks.forEach(b => s.appendChild(b));
@@ -358,21 +362,13 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         headerBlocks.forEach(b => headerHeight += b.offsetHeight);
         let footerHeight = 0;
         footerBlocks.forEach(b => footerHeight += b.offsetHeight);
-        s.style.display = '';
-        s.classList.remove('active');
-        // Remove footer — will be re-added to last page later
-        footerBlocks.forEach(b => b.remove());
-
-        // Measure each card's height at the actual rendered width
-        // Section has padding, so inner width is smaller
-        s.style.display = 'block';
-        s.classList.add('active');
-        const sectionPadding = s.offsetWidth - s.clientWidth;
         const innerWidth = s.clientWidth;
         const sectionPaddingTop = parseFloat(getComputedStyle(s).paddingTop) || 0;
         const sectionPaddingBottom = parseFloat(getComputedStyle(s).paddingBottom) || 0;
         s.style.display = '';
         s.classList.remove('active');
+        // Remove footer — will be re-added to last page later
+        footerBlocks.forEach(b => b.remove());
 
         const cardWidth = Math.floor((innerWidth - GAP * (COLS - 1)) / COLS);
         const maxCardHeight = Math.floor(viewportHeight * 0.45);
