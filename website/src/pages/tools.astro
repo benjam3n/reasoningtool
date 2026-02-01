@@ -17,8 +17,6 @@ import '../styles/global.css';
 <body>
   <Paginated pageGroup="info" pageIndex={2}>
     <section>
-      <h1>Python Tools</h1>
-      <h2>Quick start</h2>
       <pre><code>pip install openai pyyaml
 export OPENAI_API_KEY="sk-your-key"
 cd src/araw
@@ -33,7 +31,6 @@ python auto_expand_llm.py --db my_analysis.db --continue --parallel 5
 python visualize.py --db my_analysis.db --serve
 # Open http://localhost:8080</code></pre>
 
-      <h2>Core tools</h2>
       <div class="card-grid card-grid--2">
         <div class="card">
           <h3>araw_engine.py</h3>

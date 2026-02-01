@@ -17,18 +17,9 @@ import '../styles/global.css';
 <body>
   <Paginated pageGroup="info" pageIndex={1}>
     <section class="prose">
-      <h1>Why This Is Different</h1>
-      <p class="page-subtitle">Every other approach tries to make the model better at guessing.<br>Structured procedures eliminate guessing.</p>
-
-      <h2 id="problem">The core problem</h2>
-
       <p>LLMs are trained to produce text that gets positive feedback. When feedback correlates with correctness &mdash; code that runs, math that checks, facts that verify &mdash; this works. The model learns patterns that happen to be true because true answers get approved.</p>
 
       <p>But in domains with uncertainty, incomplete information, or conflicting perspectives, the correlation breaks. The model still optimizes for approval. The training objective doesn&rsquo;t distinguish between &ldquo;right because true&rdquo; and &ldquo;right because convincing.&rdquo;</p>
-
-      <p>The technical term for this is <strong>bullshit</strong> &mdash; in Frankfurt&rsquo;s philosophical sense: output optimized for reception, disconnected from truth-tracking. Not lying (which requires knowing the truth), but something worse: <em>indifference to whether the output is true</em>.</p>
-
-      <p>This isn&rsquo;t a bug. It&rsquo;s working as designed.</p>
     </section>
 
     <section class="prose">
@@ -168,13 +159,6 @@ import '../styles/global.css';
 </html>
 
 <style>
-  .page-subtitle {
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-    margin-top: var(--sp-2);
-    line-height: 1.5;
-  }
-
   .approach-grid {
     display: grid;
     gap: var(--sp-4);
