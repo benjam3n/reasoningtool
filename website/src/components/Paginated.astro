@@ -2,6 +2,7 @@
 // Paginated.astro — viewport-height slides with nav chips
 // Wraps child <section> elements as full-viewport slides.
 // Arrow keys navigate between slides. Nav chips always visible at top.
+// Number buttons on the right side for multi-page content.
 
 interface Props {
   pageGroup?: string;
@@ -24,6 +25,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   <div class="paginated__slides">
     <slot />
   </div>
+  <div class="paginated__page-nums" id="pg-nums"></div>
 </div>
 
 <style>
@@ -99,11 +101,50 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     display: none;
     padding: var(--sp-2) var(--sp-5);
     padding-bottom: var(--sp-3);
+    padding-right: 3.5rem;
     box-sizing: border-box;
   }
 
   .paginated__slides :global(section.active) {
     display: block;
+  }
+
+  .paginated__page-nums {
+    position: fixed;
+    top: 3rem;
+    right: var(--sp-3);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    z-index: 20;
+  }
+
+  .paginated__page-nums :global(.pg-num) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+    user-select: none;
+  }
+
+  .paginated__page-nums :global(.pg-num:hover) {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .paginated__page-nums :global(.pg-num--active) {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
   }
 
   /* Inner wrapper for virtual scroll on overflow sections */
@@ -130,22 +171,19 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     if (sections.length === 0) return;
 
     // Build a flat list of "virtual slides"
-    // Each section that overflows gets multiple virtual pages
     interface VSlide {
       section: HTMLElement;
-      scrollOffset: number;  // translateY offset for this virtual page
+      scrollOffset: number;
     }
 
     const vSlides: VSlide[] = [];
 
-    // Temporarily show each section to measure content height
     sections.forEach((sec) => {
       const s = sec as HTMLElement;
       const prevDisplay = s.style.display;
       s.style.display = 'block';
       s.classList.add('active');
 
-      // Wrap content in a scroll-inner div if not already
       let inner = s.querySelector('.pg-scroll-inner') as HTMLElement;
       if (!inner) {
         inner = document.createElement('div');
@@ -160,10 +198,8 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       const contentHeight = inner.scrollHeight;
 
       if (contentHeight <= viewportHeight) {
-        // Fits in one page
         vSlides.push({ section: s, scrollOffset: 0 });
       } else {
-        // Needs multiple virtual pages
         let offset = 0;
         while (offset < contentHeight) {
           vSlides.push({ section: s, scrollOffset: offset });
@@ -178,21 +214,43 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     let current = 0;
     const total = vSlides.length;
 
+    // Build number buttons
+    const numsContainer = document.getElementById('pg-nums');
+    const numBtns: HTMLButtonElement[] = [];
+
+    if (numsContainer && total > 1) {
+      for (let i = 0; i < total; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'pg-num';
+        btn.textContent = String(i + 1);
+        btn.addEventListener('click', () => show(i));
+        numsContainer.appendChild(btn);
+        numBtns.push(btn);
+      }
+    } else if (numsContainer) {
+      numsContainer.style.display = 'none';
+    }
+
+    function updateNums() {
+      numBtns.forEach((btn, i) => {
+        btn.classList.toggle('pg-num--active', i === current);
+      });
+    }
+
     function show(index: number) {
       if (index < 0 || index >= total) return;
       const slide = vSlides[index];
 
-      // Hide all sections, show the one for this virtual slide
       sections.forEach((s) => s.classList.remove('active'));
       slide.section.classList.add('active');
 
-      // Apply scroll offset
       const inner = slide.section.querySelector('.pg-scroll-inner') as HTMLElement;
       if (inner) {
         inner.style.transform = `translateY(-${slide.scrollOffset}px)`;
       }
 
       current = index;
+      updateNums();
     }
 
     function goNextPage() {

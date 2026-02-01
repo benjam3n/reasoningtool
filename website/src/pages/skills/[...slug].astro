@@ -78,19 +78,6 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
     color: inherit;
   }
 
-  .skill-page {
-    columns: 2;
-    column-gap: var(--sp-5);
-  }
-
-  .skill-page__header {
-    column-span: all;
-  }
-
-  .skill-page__back {
-    column-span: all;
-  }
-
   .skill-page__content {
     line-height: 1.65;
   }
@@ -101,13 +88,11 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
     font-size: var(--text-xl);
     margin-top: var(--sp-4);
     margin-bottom: var(--sp-2);
-    break-after: avoid;
   }
   .skill-page__content :global(h3) {
     font-size: var(--text-lg);
     margin-top: var(--sp-3);
     margin-bottom: var(--sp-1);
-    break-after: avoid;
   }
   .skill-page__content :global(table) {
     font-size: var(--text-sm);
@@ -120,18 +105,6 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
   .skill-page__content :global(ol) {
     margin-top: var(--sp-1);
     margin-bottom: var(--sp-1);
-  }
-  .skill-page__content :global(pre) {
-    break-inside: avoid;
-  }
-  .skill-page__content :global(table) {
-    break-inside: avoid;
-  }
-
-  @media (max-width: 640px) {
-    .skill-page {
-      columns: 1;
-    }
   }
 
   .skill-page__back {
