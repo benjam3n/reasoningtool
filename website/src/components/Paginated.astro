@@ -1,7 +1,7 @@
 ---
-// Paginated.astro — viewport-height slides with nav chips
+// Paginated.astro — viewport-height pages with nav chips
 // Wraps child <section> elements as full-viewport slides.
-// Arrow keys navigate between slides. Nav chips always visible at top.
+// Long sections get split into actual separate pages.
 // Number buttons on the right side for multi-page content.
 
 interface Props {
@@ -22,10 +22,12 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     <a href="/visuals" class="pg-chip">Visuals</a>
     <a href="/github" class="pg-chip">GitHub</a>
   </nav>
-  <div class="paginated__slides">
-    <slot />
+  <div class="paginated__body">
+    <div class="paginated__slides">
+      <slot />
+    </div>
+    <div class="paginated__page-nums" id="pg-nums"></div>
   </div>
-  <div class="paginated__page-nums" id="pg-nums"></div>
 </div>
 
 <style>
@@ -85,10 +87,16 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     color: var(--color-bg);
   }
 
-  .paginated__slides {
-    width: 100%;
+  .paginated__body {
     flex: 1;
     min-height: 0;
+    display: flex;
+    position: relative;
+  }
+
+  .paginated__slides {
+    flex: 1;
+    min-width: 0;
     position: relative;
   }
 
@@ -101,7 +109,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     display: none;
     padding: var(--sp-2) var(--sp-5);
     padding-bottom: var(--sp-3);
-    padding-right: 3.5rem;
     box-sizing: border-box;
   }
 
@@ -110,12 +117,11 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   }
 
   .paginated__page-nums {
-    position: fixed;
-    top: 3rem;
-    right: var(--sp-3);
     display: flex;
     flex-direction: column;
-    gap: 0.3em;
+    gap: 0.4em;
+    padding: var(--sp-2) var(--sp-2);
+    flex-shrink: 0;
     z-index: 20;
   }
 
@@ -123,12 +129,13 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 2em;
-    height: 2em;
+    width: 3rem;
+    height: 3rem;
     border: 1px solid var(--color-border);
-    border-radius: 4px;
+    border-radius: 6px;
     font-family: var(--font-mono);
-    font-size: var(--text-xs);
+    font-size: var(--text-lg);
+    font-weight: 600;
     color: var(--color-text-muted);
     background: var(--color-surface);
     cursor: pointer;
@@ -146,8 +153,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     color: #fff;
     border-color: var(--color-accent);
   }
-
-  /* Inner wrapper for virtual scroll on overflow sections */
 </style>
 
 <script>
@@ -170,49 +175,81 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     const sections = Array.from(slidesWrap.querySelectorAll(':scope > section'));
     if (sections.length === 0) return;
 
-    // Build a flat list of "virtual slides"
-    interface VSlide {
-      section: HTMLElement;
-      scrollOffset: number;
-    }
-
-    const vSlides: VSlide[] = [];
+    // Split long sections into multiple real pages by moving child elements
+    const allPages: HTMLElement[] = [];
 
     sections.forEach((sec) => {
       const s = sec as HTMLElement;
-      const prevDisplay = s.style.display;
+
+      // Temporarily show to measure
       s.style.display = 'block';
       s.classList.add('active');
-
-      let inner = s.querySelector('.pg-scroll-inner') as HTMLElement;
-      if (!inner) {
-        inner = document.createElement('div');
-        inner.className = 'pg-scroll-inner';
-        while (s.firstChild) {
-          inner.appendChild(s.firstChild);
-        }
-        s.appendChild(inner);
-      }
-
       const viewportHeight = s.clientHeight;
-      const contentHeight = inner.scrollHeight;
 
-      if (contentHeight <= viewportHeight) {
-        vSlides.push({ section: s, scrollOffset: 0 });
-      } else {
-        let offset = 0;
-        while (offset < contentHeight) {
-          vSlides.push({ section: s, scrollOffset: offset });
-          offset += viewportHeight;
-        }
+      // Get all direct children
+      const children = Array.from(s.children) as HTMLElement[];
+
+      // Check if content fits
+      if (s.scrollHeight <= viewportHeight) {
+        s.style.display = '';
+        s.classList.remove('active');
+        allPages.push(s);
+        return;
       }
 
-      s.style.display = prevDisplay;
+      // Need to split — create pages by moving children
+      s.style.display = '';
       s.classList.remove('active');
+
+      let currentPage = s;
+      // Remove all children from the original section first
+      children.forEach(child => child.remove());
+
+      // Re-add children, creating new sections when overflow occurs
+      children.forEach((child) => {
+        currentPage.appendChild(child);
+
+        // Temporarily show to measure
+        const wasActive = currentPage.classList.contains('active');
+        currentPage.style.display = 'block';
+        currentPage.classList.add('active');
+
+        if (currentPage.scrollHeight > viewportHeight && currentPage.children.length > 1) {
+          // This child caused overflow — move it to a new page
+          child.remove();
+          currentPage.style.display = '';
+          if (!wasActive) currentPage.classList.remove('active');
+
+          // Create new section
+          const newPage = document.createElement('section');
+          // Copy classes from original
+          newPage.className = s.className;
+          newPage.style.display = '';
+          newPage.appendChild(child);
+          slidesWrap.appendChild(newPage);
+          currentPage = newPage;
+        } else {
+          currentPage.style.display = '';
+          if (!wasActive) currentPage.classList.remove('active');
+        }
+      });
+
+      // Collect all pages from this section
+      if (!allPages.includes(s)) allPages.push(s);
+      if (!allPages.includes(currentPage) && currentPage !== s) allPages.push(currentPage);
+
+      // Check for any additional sections we created between s and currentPage
+      const allSecs = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
+      allSecs.forEach(sec => {
+        if (!allPages.includes(sec)) allPages.push(sec);
+      });
     });
 
+    // Re-collect all sections after splitting
+    const finalSections = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
+
     let current = 0;
-    const total = vSlides.length;
+    const total = finalSections.length;
 
     // Build number buttons
     const numsContainer = document.getElementById('pg-nums');
@@ -239,15 +276,9 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     function show(index: number) {
       if (index < 0 || index >= total) return;
-      const slide = vSlides[index];
 
-      sections.forEach((s) => s.classList.remove('active'));
-      slide.section.classList.add('active');
-
-      const inner = slide.section.querySelector('.pg-scroll-inner') as HTMLElement;
-      if (inner) {
-        inner.style.transform = `translateY(-${slide.scrollOffset}px)`;
-      }
+      finalSections.forEach((s) => s.classList.remove('active'));
+      finalSections[index].classList.add('active');
 
       current = index;
       updateNums();
