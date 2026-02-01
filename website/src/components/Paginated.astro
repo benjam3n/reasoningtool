@@ -349,14 +349,19 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         });
         const footerBlocks = nonCards.filter(b => !headerBlocks.includes(b));
 
-        // Put headers on first page to measure
+        // Measure header and footer heights
         headerBlocks.forEach(b => s.appendChild(b));
+        footerBlocks.forEach(b => s.appendChild(b));
         s.style.display = 'block';
         s.classList.add('active');
         let headerHeight = 0;
         headerBlocks.forEach(b => headerHeight += b.offsetHeight);
+        let footerHeight = 0;
+        footerBlocks.forEach(b => footerHeight += b.offsetHeight);
         s.style.display = '';
         s.classList.remove('active');
+        // Remove footer — will be re-added to last page later
+        footerBlocks.forEach(b => b.remove());
 
         // Measure each card's height at the actual rendered width
         // Section has padding, so inner width is smaller
@@ -424,7 +429,11 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
           colHeights[col] += h;
         });
 
-        // Add footer blocks to last page
+        // Shrink last page's grid to make room for footer, then add footer
+        if (footerBlocks.length > 0) {
+          const gridH = parseInt(currentGrid.style.height, 10);
+          currentGrid.style.height = (gridH - footerHeight - GAP) + 'px';
+        }
         footerBlocks.forEach(b => currentPage.appendChild(b));
       } else {
         // Non-card content: use simple scrollHeight splitting
