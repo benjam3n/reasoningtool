@@ -23,8 +23,6 @@ import '../styles/global.css';
     </section>
 
     <section class="prose">
-      <h2 id="approaches">What doesn&rsquo;t work</h2>
-
       <div class="approach-grid">
         <div class="approach">
           <h3>Human emulation</h3>
@@ -50,15 +48,13 @@ import '../styles/global.css';
         <div class="approach">
           <h3>Consciousness / authenticity prompting</h3>
           <p class="approach__what">&ldquo;Be genuine&rdquo; / &ldquo;Reflect on your reasoning&rdquo; / &ldquo;Think authentically&rdquo;</p>
-          <p>The most insidious failure mode. The model detects that you want &ldquo;authenticity&rdquo; and produces text that pattern-matches to authenticity markers.</p>
+          <p>The model detects that you want &ldquo;authenticity&rdquo; and produces text that pattern-matches to authenticity markers.</p>
           <p class="approach__mechanism"><strong>Failure mechanism:</strong> Models don&rsquo;t have mental states to introspect on. &ldquo;Reflection&rdquo; produces text that looks like reflection, not actual self-monitoring.</p>
         </div>
       </div>
     </section>
 
     <section class="prose">
-      <h2 id="taxonomy">The full taxonomy</h2>
-      <p>Beyond these four, the field has produced dozens of approaches. Every one preserves the core problem.</p>
       <table class="comparison-table" style="font-size: var(--text-xs);">
         <thead>
           <tr><th>Approach</th><th>Improves</th><th>Doesn&rsquo;t fix</th></tr>
@@ -75,7 +71,6 @@ import '../styles/global.css';
     </section>
 
     <section class="prose">
-      <h2>Taxonomy (continued)</h2>
       <table class="comparison-table" style="font-size: var(--text-xs);">
         <thead>
           <tr><th>Approach</th><th>Improves</th><th>Doesn&rsquo;t fix</th></tr>
@@ -89,14 +84,9 @@ import '../styles/global.css';
           <tr><td><strong>Formal verification</strong></td><td>Guarantees (if formalizable)</td><td>Most reasoning can&rsquo;t be formalized</td></tr>
         </tbody>
       </table>
-      <p>The pattern: every approach adds information, iteration, perspectives, or compute. None adds <strong>structural verification</strong> &mdash; a mandatory requirement that every claim be tested from both directions.</p>
     </section>
 
     <section class="prose">
-      <h2 id="different">What structured procedures do</h2>
-
-      <p>Structured procedures change the model&rsquo;s task from &ldquo;generate a good answer&rdquo; to &ldquo;execute these steps.&rdquo; The intelligence is in the procedure design, not the model execution.</p>
-
       <div class="card-grid card-grid--2">
         <div class="card">
           <h3>Forced adversarial testing</h3>
@@ -118,7 +108,6 @@ import '../styles/global.css';
     </section>
 
     <section class="prose">
-      <h2 id="example">What the difference looks like</h2>
       <p>Ask any LLM: <em>&ldquo;Should I quit my job to start a startup?&rdquo;</em></p>
       <div class="example-compare">
         <div class="example-box example-box--standard">
@@ -137,7 +126,6 @@ import '../styles/global.css';
     </section>
 
     <section class="prose">
-      <h2 id="principle">Search structure</h2>
       <p>Constrained search outperforms unconstrained search, regardless of intelligence. Checklists beat expertise. Method beats insight.</p>
       <ul>
         <li>Breadth requirements defeat premature convergence</li>

@@ -233,20 +233,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     // Initialize
     show(0);
 
-    // Click navigation — right half next, left half prev
-    slidesWrap.addEventListener('click', (e: Event) => {
-      const me = e as MouseEvent;
-      const target = me.target as HTMLElement;
-      if (target.closest('a, button, details, summary, pre, code, input, textarea, select')) return;
-      const rect = slidesWrap.getBoundingClientRect();
-      const x = me.clientX - rect.left;
-      if (x > rect.width / 2) {
-        next();
-      } else {
-        prev();
-      }
-    });
-
     // Button navigation
     if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
     if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
