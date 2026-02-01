@@ -154,11 +154,13 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     border-color: var(--color-accent);
   }
 
-  /* Content card grid — CSS columns flow top-to-bottom, then left-to-right */
+  /* Content card grid — flexbox column wrap: top-to-bottom, then left-to-right */
   .paginated__slides :global(.content-card-grid) {
-    columns: 3;
-    column-gap: var(--sp-2);
-    column-fill: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    gap: var(--sp-2);
     width: 100%;
     overflow: hidden;
   }
@@ -169,8 +171,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     border-radius: 10px;
     padding: var(--sp-2) var(--sp-3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.03);
-    break-inside: avoid;
-    margin-bottom: var(--sp-2);
+    width: calc(33.333% - var(--sp-2));
     max-height: 40vh;
     overflow: hidden;
     box-sizing: border-box;
@@ -310,6 +311,9 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     }
 
     // Split sections into pages by moving elements
+    const COLS = 3;
+    const GAP = 8; // matches --sp-2
+
     sections.forEach((sec) => {
       const s = sec as HTMLElement;
 
@@ -332,61 +336,105 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       s.style.display = '';
       s.classList.remove('active');
 
-      let currentPage = s;
-      let currentGrid: HTMLElement | null = null;
+      if (hasCards) {
+        // JS-based column packing for card content
+        // Separate non-card blocks (header, nav) from cards
+        const nonCards = blocks.filter(b => !b.classList.contains('content-card'));
+        const cards = blocks.filter(b => b.classList.contains('content-card'));
 
-      // Helper: get or create grid wrapper on current page
-      function getGrid(page: HTMLElement): HTMLElement {
-        if (currentGrid && currentGrid.parentElement === page) return currentGrid;
-        currentGrid = document.createElement('div');
+        // Measure non-card heights
+        const headerBlocks = nonCards.filter(b => {
+          const cls = Array.from(b.classList);
+          return cls.some(c => c.includes('header')) || b.tagName === 'H1' || b.tagName === 'H2';
+        });
+        const footerBlocks = nonCards.filter(b => !headerBlocks.includes(b));
+
+        // Put headers on first page to measure
+        headerBlocks.forEach(b => s.appendChild(b));
+        s.style.display = 'block';
+        s.classList.add('active');
+        let headerHeight = 0;
+        headerBlocks.forEach(b => headerHeight += b.offsetHeight);
+        s.style.display = '';
+        s.classList.remove('active');
+
+        // Measure each card's height
+        const measureDiv = document.createElement('div');
+        measureDiv.style.cssText = 'position:absolute;visibility:hidden;width:' + Math.floor(s.clientWidth / COLS) + 'px';
+        document.body.appendChild(measureDiv);
+        const cardHeights = cards.map(card => {
+          measureDiv.appendChild(card);
+          const h = Math.min(card.offsetHeight, viewportHeight * 0.4); // respect max-height
+          card.remove();
+          return h;
+        });
+        measureDiv.remove();
+
+        // Pack cards into pages of 3 columns
+        const availableHeight = viewportHeight - headerHeight - GAP;
+        let currentPage = s;
+        let colHeights = [0, 0, 0];
+        let currentGrid = document.createElement('div');
         currentGrid.className = 'content-card-grid';
-        page.appendChild(currentGrid);
-        return currentGrid;
-      }
+        currentGrid.style.height = availableHeight + 'px';
+        currentPage.appendChild(currentGrid);
+        let isFirstPage = true;
 
-      blocks.forEach((block) => {
-        // Cards go into a grid wrapper; other blocks go directly on the page
-        if (hasCards && block.classList.contains('content-card')) {
-          const grid = getGrid(currentPage);
-          grid.appendChild(block);
-        } else {
-          currentPage.appendChild(block);
-        }
+        cards.forEach((card, i) => {
+          const h = cardHeights[i] + GAP;
+          // Find shortest column
+          const minCol = colHeights.indexOf(Math.min(...colHeights));
 
-        currentPage.style.display = 'block';
-        currentPage.classList.add('active');
+          if (colHeights[minCol] + h > (isFirstPage ? availableHeight : viewportHeight - GAP)) {
+            // All columns full — new page
+            const newPage = document.createElement('section');
+            newPage.className = s.className;
+            slidesWrap.appendChild(newPage);
+            currentPage = newPage;
+            isFirstPage = false;
 
-        const container = hasCards && block.classList.contains('content-card')
-          ? getGrid(currentPage) : currentPage;
-        const count = hasCards && block.classList.contains('content-card')
-          ? container.children.length : currentPage.children.length;
-
-        if (currentPage.scrollHeight > viewportHeight && count > 1) {
-          block.remove();
-          currentPage.style.display = '';
-          currentPage.classList.remove('active');
-
-          const newPage = document.createElement('section');
-          newPage.className = s.className;
-          currentGrid = null; // force new grid on new page
-          slidesWrap.appendChild(newPage);
-          currentPage = newPage;
-
-          if (hasCards && block.classList.contains('content-card')) {
-            const grid = getGrid(currentPage);
-            grid.appendChild(block);
-          } else {
-            currentPage.appendChild(block);
+            currentGrid = document.createElement('div');
+            currentGrid.className = 'content-card-grid';
+            currentGrid.style.height = (viewportHeight - GAP) + 'px';
+            currentPage.appendChild(currentGrid);
+            colHeights = [0, 0, 0];
           }
-        } else {
-          currentPage.style.display = '';
-          currentPage.classList.remove('active');
-        }
-      });
 
-      // Clean up: ensure last page is hidden before show() initializes
-      currentPage.style.display = '';
-      currentPage.classList.remove('active');
+          currentGrid.appendChild(card);
+          const col = colHeights.indexOf(Math.min(...colHeights));
+          colHeights[col] += h;
+        });
+
+        // Add footer blocks to last page
+        footerBlocks.forEach(b => currentPage.appendChild(b));
+      } else {
+        // Non-card content: use simple scrollHeight splitting
+        let currentPage = s;
+
+        blocks.forEach((block) => {
+          currentPage.appendChild(block);
+          currentPage.style.display = 'block';
+          currentPage.classList.add('active');
+
+          if (currentPage.scrollHeight > viewportHeight && currentPage.children.length > 1) {
+            block.remove();
+            currentPage.style.display = '';
+            currentPage.classList.remove('active');
+
+            const newPage = document.createElement('section');
+            newPage.className = s.className;
+            newPage.appendChild(block);
+            slidesWrap.appendChild(newPage);
+            currentPage = newPage;
+          } else {
+            currentPage.style.display = '';
+            currentPage.classList.remove('active');
+          }
+        });
+
+        currentPage.style.display = '';
+        currentPage.classList.remove('active');
+      }
     });
 
     // Re-collect all sections after splitting, remove empty ones
@@ -394,22 +442,6 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       if (sec.children.length === 0) sec.remove();
     });
     const finalSections = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
-
-    // Set grid heights to fill available space so column-fill: auto wraps properly
-    finalSections.forEach((sec) => {
-      const grid = sec.querySelector('.content-card-grid') as HTMLElement;
-      if (!grid) return;
-      // Calculate available height: section height minus other siblings
-      sec.style.display = 'block';
-      sec.classList.add('active');
-      let usedHeight = 0;
-      Array.from(sec.children).forEach((child) => {
-        if (child !== grid) usedHeight += (child as HTMLElement).offsetHeight;
-      });
-      grid.style.height = `calc(100% - ${usedHeight}px)`;
-      sec.style.display = '';
-      sec.classList.remove('active');
-    });
 
     let current = 0;
     const total = finalSections.length;
