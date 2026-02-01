@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import { ViewTransitions } from 'astro:transitions';
 import Paginated from '../../components/Paginated.astro';
+import CardPaginator from '../../components/CardPaginator.astro';
 import '../../styles/global.css';
 
 export async function getStaticPaths() {
@@ -42,19 +43,21 @@ else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
 <body>
   <Paginated>
     <section class="skill-page">
-      <div class="skill-page__header">
-        <span class:list={['tier-badge', tierClass]}>{tier}</span>
-        <h1><code>{skill.data.name}</code></h1>
-      </div>
+      <CardPaginator>
+        <div class="skill-page__header">
+          <span class:list={['tier-badge', tierClass]}>{tier}</span>
+          <h1><code>{skill.data.name}</code></h1>
+        </div>
 
-      <article class="skill-page__content">
-        <Content />
-      </article>
+        <article class="skill-page__content">
+          <Content />
+        </article>
 
-      <nav class="skill-page__back">
-        <a href="/" class="skill-back-btn">&larr; All skills</a>
-        <button class="skill-github-btn pg-github" data-url={`https://github.com/benjam3n/reasoningtool/blob/main/claude-code-plugin/skills/${name}/SKILL.md`}>GitHub</button>
-      </nav>
+        <nav class="skill-page__back">
+          <a href="/" class="skill-back-btn">&larr; All skills</a>
+          <button class="skill-github-btn pg-github" data-url={`https://github.com/benjam3n/reasoningtool/blob/main/claude-code-plugin/skills/${name}/SKILL.md`}>GitHub</button>
+        </nav>
+      </CardPaginator>
     </section>
   </Paginated>
 </body>
