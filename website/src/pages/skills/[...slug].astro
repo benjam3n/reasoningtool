@@ -4,6 +4,24 @@ import { ViewTransitions } from 'astro:transitions';
 import Paginated from '../../components/Paginated.astro';
 import CardPaginator from '../../components/CardPaginator.astro';
 import '../../styles/global.css';
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load tier data from skills.json at build time
+const skillsJsonPath = path.resolve(
+  new URL('.', import.meta.url).pathname,
+  '../../../claude-code-plugin/skills.json'
+);
+const skillsRegistry = JSON.parse(fs.readFileSync(skillsJsonPath, 'utf-8')).skills as Record<string, { tier?: string }>;
+
+const TIER_MAP: Record<string, { label: string; className: string }> = {
+  tier1:        { label: 'Tier 1',        className: 'tier-1' },
+  tier2:        { label: 'Tier 2',        className: 'tier-2' },
+  tier3:        { label: 'Tier 3',        className: 'tier-3' },
+  tier4:        { label: 'Tier 4',        className: 'tier-4' },
+  category:     { label: 'Category',      className: 'tier-cat' },
+  experimental: { label: 'Experimental',  className: 'tier-exp' },
+};
 
 export async function getStaticPaths() {
   const skills = await getCollection('skills');
@@ -19,15 +37,8 @@ export async function getStaticPaths() {
 const { skill, name } = Astro.props;
 const { Content } = await render(skill);
 
-const tier1Names = ['se', 'aex', 'cmp', 'ht', 'dcp', 'dcm', 'rca', 'dd', 'mv', 'ins', 'cba', 'gu'];
-const tier2Names = ['pv', 'ai', 'to', 'cda', 'ma', 'sya', 'br', 'prm', 'fla', 'poa', 'ifss', 'rci', 'la', 'vbo', 'val'];
-const expNames = ['araw', 'uaua', 'gosm'];
-
-let tier = 'Tier 4';
-let tierClass = 'tier-4';
-if (expNames.includes(name)) { tier = 'Experimental'; tierClass = 'tier-exp'; }
-else if (tier1Names.includes(name)) { tier = 'Tier 1'; tierClass = 'tier-1'; }
-else if (tier2Names.includes(name)) { tier = 'Tier 2'; tierClass = 'tier-2'; }
+const rawTier = skillsRegistry[name]?.tier || 'tier4';
+const { label: tier, className: tierClass } = TIER_MAP[rawTier] || TIER_MAP.tier4;
 ---
 
 <!doctype html>

@@ -593,6 +593,7 @@ a.skill-item--link:hover {
 .tier-2 { background: #e3f2fd; color: #1565c0; }
 .tier-3 { background: #fff8e1; color: #f57f17; }
 .tier-4 { background: var(--color-bg-secondary); color: var(--color-text-muted); }
+.tier-cat { background: #f3e5f5; color: #6a1b9a; }
 
 [data-theme="dark"] .tier-1,
 :root:not([data-theme="light"]) .tier-1 { background: #132e1a; color: #6ee7b7; }
@@ -604,12 +605,15 @@ a.skill-item--link:hover {
 :root:not([data-theme="light"]) .tier-4 { background: var(--color-surface); color: var(--color-text-muted); }
 [data-theme="dark"] .tier-exp,
 :root:not([data-theme="light"]) .tier-exp { background: var(--color-accent-subtle); color: var(--color-accent); }
+[data-theme="dark"] .tier-cat,
+:root:not([data-theme="light"]) .tier-cat { background: #2a1033; color: #ce93d8; }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .tier-1 { background: #132e1a; color: #6ee7b7; }
   :root:not([data-theme="light"]) .tier-2 { background: #0f1f3d; color: #93c5fd; }
   :root:not([data-theme="light"]) .tier-3 { background: #2d1f08; color: #fbbf24; }
   :root:not([data-theme="light"]) .tier-4 { background: var(--color-surface); color: var(--color-text-muted); }
+  :root:not([data-theme="light"]) .tier-cat { background: #2a1033; color: #ce93d8; }
 }
 
 /* --- Hero --- */
