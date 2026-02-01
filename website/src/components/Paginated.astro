@@ -158,10 +158,12 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   .paginated__slides :global(.content-card-grid) {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
     gap: var(--sp-2);
     width: 100%;
     align-items: start;
     align-content: start;
+    height: auto !important;
   }
 
   .paginated__slides :global(.content-card) {
