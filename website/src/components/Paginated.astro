@@ -327,7 +327,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
           el.textContent = originalText;
           armed = false;
         } else {
-          el.textContent = 'Go to GitHub';
+          el.textContent = el.dataset.armedText || 'Go to GitHub';
           armed = true;
         }
       });
