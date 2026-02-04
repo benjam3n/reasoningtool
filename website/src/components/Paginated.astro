@@ -18,6 +18,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     <a href="/installation" class="pg-chip">Install</a>
     <a href="/tools" class="pg-chip">Tools</a>
     <a href="/faq" class="pg-chip">FAQ</a>
+    <a href="/about" class="pg-chip">About</a>
     <a href="/visuals" class="pg-chip">Visuals</a>
     <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
   </nav>
@@ -217,7 +218,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
 <script>
   const PAGE_GROUPS: Record<string, string[]> = {
-    info: ['/installation', '/tools', '/faq'],
+    info: ['/installation', '/tools', '/faq', '/about'],
     visual: ['/', '/visuals'],
   };
 
