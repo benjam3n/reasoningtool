@@ -95,7 +95,7 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
     let activeMode = 'day';
     let activeValue = '';
     let currentPage = 1;
-    const pageSize = 5;
+    let pageSize = 5;
     let filteredCards = cards.slice();
 
     const getValues = (mode) => {
@@ -148,8 +148,28 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
         }
         return match;
       });
+      updatePageSize();
       currentPage = 1;
       renderPagedList();
+    };
+
+    const updatePageSize = () => {
+      const list = document.getElementById('new-list');
+      if (!list || filteredCards.length === 0) {
+        pageSize = 1;
+        return;
+      }
+
+      const listHeight = list.clientHeight;
+      const listStyle = window.getComputedStyle(list);
+      const gap = parseFloat(listStyle.rowGap || listStyle.gap || '0') || 0;
+
+      const sample = filteredCards.slice(0, Math.min(6, filteredCards.length));
+      const heights = sample.map((card) => card.getBoundingClientRect().height).filter((h) => h > 0);
+      const baseline = heights.length > 0 ? Math.max(...heights) : 140;
+
+      const fit = Math.floor((listHeight + gap) / (baseline + gap));
+      pageSize = Math.max(1, fit);
     };
 
     const renderPager = () => {
@@ -180,6 +200,7 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
     };
 
     const renderPagedList = () => {
+      updatePageSize();
       cards.forEach((card) => { card.style.display = 'none'; });
       const start = (currentPage - 1) * pageSize;
       const end = start + pageSize;
@@ -200,6 +221,12 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
 
     renderValues();
     applyFilter();
+
+    window.addEventListener('resize', () => {
+      const totalPages = Math.max(1, Math.ceil(filteredCards.length / pageSize));
+      currentPage = Math.min(currentPage, totalPages);
+      renderPagedList();
+    });
   })();
 </script>
 
