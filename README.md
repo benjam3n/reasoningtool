@@ -396,13 +396,22 @@ cd reasoningtool/claude-code-plugin
 claude
 ```
 
-Claude reads the `CLAUDE.md` file and all skills become available.
-
 ```bash
 cp -r path/to/reasoningtool/claude-code-plugin/skills your-project/
 cp path/to/reasoningtool/claude-code-plugin/CLAUDE.md your-project/
 cd your-project
 claude
+```
+
+```bash
+git clone https://github.com/benjam3n/reasoningtool.git
+cd reasoningtool
+./scripts/install_codex_skills.sh
+```
+
+```bash
+./scripts/install_codex_skills.sh --copy
+./scripts/install_codex_skills.sh --force
 ```
 
 ## License
