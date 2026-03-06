@@ -265,7 +265,7 @@ Claim: "[claim]"
 └── ASSUME WRONG → What alternatives exist?
 ```
 
-→ INVOKE: /assumeright_assumewrong_search [OPEN claims]
+→ INVOKE: /araw [OPEN claims]
 
 ### ARAW Example
 
@@ -452,7 +452,7 @@ Structure:
 [Prioritized questions]
 
 ## Next Procedure
-→ INVOKE: /[next_procedure] [args]
+→ NEXT PROCEDURE: [skill-id] [args]
 ```
 
 ---

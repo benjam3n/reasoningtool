@@ -97,7 +97,7 @@ Bring in outside perspectives:
 
 ### Step 4: Multi-Dimensional Evaluation
 
--> INVOKE: /evaluation_dimensions [the field as a whole]
+-> INVOKE: /evd [the field as a whole]
 
 Evaluate the field across universal dimensions:
 - **Epistemic health**: How well does the field update on evidence?

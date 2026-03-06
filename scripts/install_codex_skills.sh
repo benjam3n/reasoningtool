@@ -127,6 +127,7 @@ for skill_path in "$SOURCE_DIR"/*; do
 
     # Adapt Claude command syntax to Codex explicit skill syntax.
     if [[ -f "$dest/SKILL.md" ]]; then
+      perl -0pi -e 's/INVOKE:\s*\/\[([A-Za-z0-9._-]+)\]/INVOKE: \$$1/g' "$dest/SKILL.md"
       perl -0pi -e 's/INVOKE:\s*\/([A-Za-z0-9._-]+)/INVOKE: \$$1/g' "$dest/SKILL.md"
       perl -0pi -e 's/\$ARGUMENTS/USER_INPUT/g' "$dest/SKILL.md"
     fi
@@ -134,6 +135,26 @@ for skill_path in "$SOURCE_DIR"/*; do
     # Apply Codex-specific strict override for ARAW.
     if [[ "$skill_id" == "araw" && -f "$CODEX_OVERRIDES_DIR/araw_strict_codex.md" ]]; then
       prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/araw_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    # Apply Codex-specific strict override for AR.
+    if [[ "$skill_id" == "ar" && -f "$CODEX_OVERRIDES_DIR/ar_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/ar_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    # Apply Codex-specific strict override for AW.
+    if [[ "$skill_id" == "aw" && -f "$CODEX_OVERRIDES_DIR/aw_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/aw_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    # Apply Codex-specific strict override for U.
+    if [[ "$skill_id" == "u" && -f "$CODEX_OVERRIDES_DIR/u_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/u_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    # Apply Codex-specific strict override for SE.
+    if [[ "$skill_id" == "se" && -f "$CODEX_OVERRIDES_DIR/se_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/se_strict_codex.md" "$dest/SKILL.md"
     fi
 
     # Apply Codex-specific strict override for UAUA.

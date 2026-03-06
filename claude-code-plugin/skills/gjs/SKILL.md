@@ -126,7 +126,7 @@ Claim: "[claim]"
     └── [other possibilities, reframes]
 ```
 
-→ INVOKE: /assumeright_assumewrong_search [OPEN claims]
+→ INVOKE: /araw [OPEN claims]
 
 ---
 
@@ -274,7 +274,7 @@ NON-CONTRARIAN: [key options/next steps]
 [questions about uncertainties]
 
 ## Next Procedure
-→ INVOKE: /[next_procedure] [args]
+→ NEXT PROCEDURE: [skill-id] [args]
 ```
 
 ---

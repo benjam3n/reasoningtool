@@ -12,7 +12,7 @@ viability, action, create, technical, certainty, iterate, meta
 1. No pretending full analysis happened in router step.
 2. Router output must end in explicit invoke handoff.
 3. Handoff format:
-   - `INVOKE: $skill USER_INPUT`
+   - `INVOKE: $meta USER_INPUT` (replace `$meta` with chosen target skill id)
 4. No speculative conclusion before handoff.
 5. No synthetic DO_FIRST list in router.
 6. For depth requests (`4x`, `8x`, etc.), preserve depth token in handoff text.
@@ -29,4 +29,3 @@ viability, action, create, technical, certainty, iterate, meta
 When routing is unclear:
 
 `INCOMPLETE ROUTE: unclear target skill. Defaulting to $meta USER_INPUT`
-

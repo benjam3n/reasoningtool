@@ -368,8 +368,6 @@
 | `/wr` | weekly review | Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuo... |
 | `/wt` | want to | Assumes the want is right — traces what it commits you to, what it requires, what paths it opens. Finds the actual want vs stated want. |
 
-## Documentation
-
 ```
 docs/
 ├── methodology/
@@ -387,8 +385,6 @@ docs/
     ├── pure-regress/
     └── swot-pure-regress/
 ```
-
-## Installation
 
 ```bash
 git clone https://github.com/benjam3n/reasoningtool.git

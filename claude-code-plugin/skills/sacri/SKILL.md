@@ -17,7 +17,7 @@ Ensure gates and procedures link to other procedures that provide the needed ans
 
 ### Step 1: Extract References
 From the target artifact, extract:
-1. All "→ INVOKE: /procedure_name" references
+1. All "→ INVOKE:" references that mention a procedure name
 2. All "see also" or "related" procedure mentions
 3. All file path references to other procedures
 4. All implicit references ("use the evaluation from..." without naming it)
