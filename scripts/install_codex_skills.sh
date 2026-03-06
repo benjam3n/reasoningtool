@@ -157,6 +157,55 @@ for skill_path in "$SOURCE_DIR"/*; do
       prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/se_strict_codex.md" "$dest/SKILL.md"
     fi
 
+    # Apply Codex-specific strict override for GU.
+    if [[ "$skill_id" == "gu" && -f "$CODEX_OVERRIDES_DIR/gu_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/gu_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    # Apply Codex-specific strict override for GJS.
+    if [[ "$skill_id" == "gjs" && -f "$CODEX_OVERRIDES_DIR/gjs_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/gjs_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    # Apply Codex-specific strict override for GOSM.
+    if [[ "$skill_id" == "gosm" && -f "$CODEX_OVERRIDES_DIR/gosm_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/gosm_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    # Apply Codex-specific strict override for PCE.
+    if [[ "$skill_id" == "pce" && -f "$CODEX_OVERRIDES_DIR/pce_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/pce_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    # Apply Codex-specific strict overrides for key phase-2 routers.
+    if [[ "$skill_id" == "claim" && -f "$CODEX_OVERRIDES_DIR/claim_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/claim_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "decide" && -f "$CODEX_OVERRIDES_DIR/decide_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/decide_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "search" && -f "$CODEX_OVERRIDES_DIR/search_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/search_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "diagnose" && -f "$CODEX_OVERRIDES_DIR/diagnose_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/diagnose_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "evaluate" && -f "$CODEX_OVERRIDES_DIR/evaluate_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/evaluate_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "how" && -f "$CODEX_OVERRIDES_DIR/how_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/how_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "want" && -f "$CODEX_OVERRIDES_DIR/want_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/want_strict_codex.md" "$dest/SKILL.md"
+    fi
+
     # Apply Codex-specific strict override for UAUA.
     if [[ "$skill_id" == "uaua" && -f "$CODEX_OVERRIDES_DIR/uaua_strict_codex.md" ]]; then
       prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/uaua_strict_codex.md" "$dest/SKILL.md"
