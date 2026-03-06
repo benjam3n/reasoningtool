@@ -26,9 +26,10 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
     <nav class="paginated__chips">
       <a href="/" class="pg-chip pg-chip--home">Skills</a>
       <a href="/installation" class="pg-chip">Install</a>
-        <a href="/tools" class="pg-chip">Tools</a>
+      <a href="/tools" class="pg-chip">Tools</a>
       <a href="/faq" class="pg-chip">FAQ</a>
       <a href="/about" class="pg-chip">About</a>
+      <a href="/where-am-i" class="pg-chip">Where Am I</a>
       <a href="/visuals" class="pg-chip">Visuals</a>
       <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     </nav>
@@ -53,7 +54,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
 <script>
   // Reuse the same pagination logic as Paginated.astro
   const PAGE_GROUPS: Record<string, string[]> = {
-    info: ['/installation', '/tools', '/faq', '/about'],
+    info: ['/installation', '/tools', '/faq', '/about', '/where-am-i'],
     visual: ['/', '/visuals'],
   };
 

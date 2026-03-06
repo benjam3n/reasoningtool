@@ -94,7 +94,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SOURCE_DIR="$REPO_ROOT/claude-code-plugin/skills"
 TARGET_DIR="$CODE_HOME/skills"
 CODEX_OVERRIDES_DIR="$REPO_ROOT/codex-overrides"
-ROUTER_SKILLS="claim decide diagnose evaluate search how want emotion analyze viability action create technical certainty iterate meta next"
+ROUTER_SKILLS="claim decide diagnose evaluate search how want emotion analyze viability action create technical certainty iterate meta next fonss cs uf it but extract handle ata sycs aso iagca"
 
 if [[ ! -d "$SOURCE_DIR" ]]; then
   echo "Skills source directory not found: $SOURCE_DIR" >&2
@@ -204,6 +204,22 @@ for skill_path in "$SOURCE_DIR"/*; do
 
     if [[ "$skill_id" == "want" && -f "$CODEX_OVERRIDES_DIR/want_strict_codex.md" ]]; then
       prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/want_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "fonss" && -f "$CODEX_OVERRIDES_DIR/fonss_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/fonss_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "given" && -f "$CODEX_OVERRIDES_DIR/given_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/given_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "extract" && -f "$CODEX_OVERRIDES_DIR/extract_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/extract_strict_codex.md" "$dest/SKILL.md"
+    fi
+
+    if [[ "$skill_id" == "cs" && -f "$CODEX_OVERRIDES_DIR/cs_strict_codex.md" ]]; then
+      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/cs_strict_codex.md" "$dest/SKILL.md"
     fi
 
     # Apply Codex-specific strict override for UAUA.

@@ -1,6 +1,6 @@
 {
   "generated": "2026-01-31T19:13:50.842393+00:00",
-  "total": 368,
+  "total": 397,
   "skills": {
     "aa": {
       "id": "aa",
@@ -9828,6 +9828,557 @@
         "After Completion"
       ],
       "line_count": 75
+    },
+    "list": {
+      "id": "list",
+      "title": "Build High-Quality Lists",
+      "description": "Create rigorous, useful lists with clear scope, ordering logic, coverage checks, and concise rationale per item.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 67
+    },
+    "ro": {
+      "id": "ro",
+      "title": "Reorder a List Expertly",
+      "description": "Reorder an existing list using an explicit objective, constraints, and scoring method. Produces a defensible best-to-worst order.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 65
+    },
+    "fonss": {
+      "id": "fonss",
+      "title": "Figure Out Next Skills",
+      "description": "Determine which skills to run next (more than one), in order, with rationale, handoff prompts, and stop conditions.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 71
+    },
+    "given": {
+      "id": "given",
+      "title": "Rank Skills by ROI for a Given Goal",
+      "description": "Given a goal, rank relevant skills from highest to lowest expected ROI, including negative-ROI skills with reasons.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 76
+    },
+    "cs": {
+      "id": "cs",
+      "title": "Create Skill",
+      "description": "Create or update a skill from a prompt, including naming, scope, workflow, and output contract. Can also identify missing skills implied by the prompt.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 29
+    },
+    "uf": {
+      "id": "uf",
+      "title": "Useful For",
+      "description": "Given a skill or method, list what it is useful for, where it fails, and when to choose alternatives.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 30
+    },
+    "it": {
+      "id": "it",
+      "title": "I Think",
+      "description": "Process \"I think\" statements into explicit claims, confidence levels, and next verification actions.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 24
+    },
+    "but": {
+      "id": "but",
+      "title": "Contrast and Objection Handler",
+      "description": "Handle \"but\" statements by separating main claim from objection and resolving the tension explicitly.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 24
+    },
+    "extract": {
+      "id": "extract",
+      "title": "Skill Extractor",
+      "description": "Given any prompt, extract every potentially useful existing skill, grouped and prioritized with invocation-ready suggestions.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 29
+    },
+    "handle": {
+      "id": "handle",
+      "title": "Handle This",
+      "description": "Convert broad \"handle this\" requests into a concrete first action and an ordered next-skill sequence.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "ata": {
+      "id": "ata",
+      "title": "And Then Also",
+      "description": "Expand a request with all implied adjacent actions that should also be done, then order them.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "sycs": {
+      "id": "sycs",
+      "title": "So You Can See",
+      "description": "Expand implications of a statement so the hidden conclusions are explicit and testable.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "aso": {
+      "id": "aso",
+      "title": "And So On",
+      "description": "Continue a discovered pattern with bounded expansion rules so extension stays coherent and useful.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "iagca": {
+      "id": "iagca",
+      "title": "I Am Getting Carried Away",
+      "description": "Detect idea sprawl, compress scope, and return to the highest-leverage next actions.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "platitude": {
+      "id": "platitude",
+      "title": "Operationalize a Platitude",
+      "description": "Convert a single platitude into concrete, testable actions and boundaries.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "platitudes": {
+      "id": "platitudes",
+      "title": "Platitude Set Analyzer",
+      "description": "Analyze multiple platitudes, remove contradictions, and convert the set into a coherent action system.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "etc": {
+      "id": "etc",
+      "title": "Expand the Etcetera",
+      "description": "Expand \"etc\" tails into explicit items using pattern continuation, then stop at a defined completeness rule.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "sc": {
+      "id": "sc",
+      "title": "Skill Creation",
+      "description": "Design skill systems and creation pipelines at scale, including quality gates, templates, naming conventions, and rollout strategy.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 26
+    },
+    "flhwijd": {
+      "id": "flhwijd",
+      "title": "For Like Here What I Just Did",
+      "description": "Analyze the user's just-finished action sequence, identify what pattern they used, and convert it into a reusable procedure.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "iaw": {
+      "id": "iaw",
+      "title": "In Another Way",
+      "description": "Re-express a goal, claim, or plan in alternative forms that preserve intent while changing approach.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "tbd": {
+      "id": "tbd",
+      "title": "To Be Determined",
+      "description": "Identify unresolved decisions and convert them into explicit determination questions with owner and deadline.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "tobd": {
+      "id": "tobd",
+      "title": "To Be Determined (Operational)",
+      "description": "Operational variant of TBD that adds sequencing and dependency-aware resolution order for unresolved items.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "nsa": {
+      "id": "nsa",
+      "title": "Not Sure About",
+      "description": "Convert uncertainty statements into explicit confidence ranges and next evidence actions.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "wn": {
+      "id": "wn",
+      "title": "What's New",
+      "description": "Summarize what is new in a project timeline, grouped by day, prompt, skill, and iteration.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "alebc": {
+      "id": "alebc",
+      "title": "And Lists Each Big Change",
+      "description": "Convert a change stream into high-level big-new-item bullets, excluding low-level modification details.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "siycftr": {
+      "id": "siycftr",
+      "title": "See If You Can Find The Rest",
+      "description": "Scan text for omitted but implied items and produce the missing set.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "itp": {
+      "id": "itp",
+      "title": "In This Prompt",
+      "description": "Decompose a prompt into explicit requests, constraints, implied tasks, and candidate skill mappings.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "ycshikfmif": {
+      "id": "ycshikfmif",
+      "title": "You Can See How I Keep Finding More It's Fun",
+      "description": "Capture ideation expansion loops and structure them into bounded exploration batches.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
+    },
+    "awtlytrn": {
+      "id": "awtlytrn",
+      "title": "Also What's The Limit You Think Right Now",
+      "description": "Estimate current practical limits for scope, throughput, and quality, then recommend a safe operating boundary.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 10
     }
   }
 }

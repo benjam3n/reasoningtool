@@ -19,6 +19,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     <a href="/tools" class="pg-chip">Tools</a>
     <a href="/faq" class="pg-chip">FAQ</a>
     <a href="/about" class="pg-chip">About</a>
+    <a href="/where-am-i" class="pg-chip">Where Am I</a>
     <a href="/visuals" class="pg-chip">Visuals</a>
     <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
   </nav>
@@ -128,19 +129,44 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   .paginated__page-nums :global(.pg-num) {
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 3rem;
+    justify-content: flex-start;
+    gap: 0.35rem;
+    width: auto;
+    min-width: 9.5rem;
     height: 3rem;
+    padding: 0 0.55rem;
     border: 1px solid var(--color-border);
     border-radius: 6px;
     font-family: var(--font-mono);
-    font-size: var(--text-lg);
-    font-weight: 600;
+    font-size: var(--text-sm);
+    font-weight: 500;
     color: var(--color-text-muted);
     background: var(--color-surface);
     cursor: pointer;
     transition: background var(--transition), color var(--transition), border-color var(--transition);
     user-select: none;
+  }
+
+  .paginated__page-nums :global(.pg-num__idx) {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    min-width: 1.5rem;
+    text-align: right;
+  }
+
+  .paginated__page-nums :global(.pg-num__word) {
+    font-size: var(--text-xs);
+    letter-spacing: 0.01em;
+    opacity: 0.95;
+    min-width: 5.6rem;
+    text-align: left;
+  }
+
+  .paginated__page-nums :global(.pg-num__emo) {
+    font-size: var(--text-xs);
+    opacity: 0.9;
+    min-width: 1.8rem;
+    text-align: right;
   }
 
   .paginated__page-nums :global(.pg-num:hover) {
@@ -218,7 +244,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
 <script>
   const PAGE_GROUPS: Record<string, string[]> = {
-    info: ['/installation', '/tools', '/faq', '/about'],
+    info: ['/installation', '/tools', '/faq', '/about', '/where-am-i'],
     visual: ['/', '/visuals'],
   };
 
@@ -253,12 +279,46 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     const numsContainer = document.getElementById('pg-nums');
     if (numsContainer) numsContainer.innerHTML = '';
     const numBtns: HTMLButtonElement[] = [];
+    const WORDS_A = [
+      'aardvark', 'abacus', 'abalone', 'abandon', 'abbey', 'abdomen', 'ability', 'abject', 'ablation', 'abroad',
+      'absolve', 'absorb', 'abstain', 'abstract', 'absurd', 'abundance', 'academy', 'acacia', 'acclaim', 'accord',
+      'account', 'accrue', 'accuracy', 'acetic', 'achieve', 'acorn', 'acoustic', 'acquire', 'acrid', 'acumen',
+      'adapter', 'addendum', 'adept', 'adhere', 'adjacent', 'admiral', 'adobe', 'adopt', 'adore', 'adverb',
+      'aegis', 'aerial', 'affable', 'affix', 'affluent', 'afloat', 'agenda', 'agile', 'aglow', 'agnostic',
+      'agonist', 'airlock', 'airship', 'alabaster', 'alchemy', 'alcove', 'alder', 'algebra', 'alias', 'alibi',
+      'align', 'alloy', 'allude', 'almond', 'almost', 'aloft', 'alpha', 'alpine', 'altar', 'alter',
+      'altruism', 'amable', 'amber', 'ambit', 'amble', 'ambrosia', 'amend', 'amethyst', 'amity', 'amplify',
+      'amuse', 'analog', 'anchor', 'anecdote', 'angelic', 'angle', 'anise', 'anklet', 'annex', 'anthem',
+      'antique', 'anvil', 'aorta', 'apex', 'apiary', 'apogee', 'apricot', 'aquifer', 'arcade', 'ardent'
+    ];
+    const ASCII_SETS = [
+      [':)', ':D', ';)', ':P', ':|', ':/', ':(', ':O', '^_^', '-_-'],
+      ['o_o', 'x_x', ':3', ':]', ':[', 'B)', '8)', '<3', 'T_T', ':*'],
+      ['=)', '=D', ';D', ':-)', ':-D', ':-P', ':-|', ':-/', ':-(', ':-O'],
+      ['^.^', '._.', '>.>', '<.<', 'o_O', 'O_o', ':v', ':$', ':#', ':&']
+    ];
+    const activeEmojiSet = ASCII_SETS[((pageIndex % ASCII_SETS.length) + ASCII_SETS.length) % ASCII_SETS.length];
+    const wordOffset = (pageIndex * 17) % WORDS_A.length;
 
     if (numsContainer && total > 1) {
       for (let i = 0; i < total; i++) {
         const btn = document.createElement('button');
         btn.className = 'pg-num';
-        btn.textContent = String(i + 1);
+        const idx = document.createElement('span');
+        idx.className = 'pg-num__idx';
+        idx.textContent = String(i + 1);
+
+        const word = document.createElement('span');
+        word.className = 'pg-num__word';
+        word.textContent = WORDS_A[(wordOffset + i) % WORDS_A.length];
+
+        const emo = document.createElement('span');
+        emo.className = 'pg-num__emo';
+        emo.textContent = activeEmojiSet[i % activeEmojiSet.length];
+
+        btn.appendChild(idx);
+        btn.appendChild(word);
+        btn.appendChild(emo);
         btn.addEventListener('click', () => show(i));
         numsContainer.appendChild(btn);
         numBtns.push(btn);

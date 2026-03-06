@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
+import skillsManifest from '../../../claude-code-plugin/skills.json';
 
 const tier1 = [
   { name: 'se', title: 'Space Enumeration', desc: 'Systematically lists options in a problem space to reduce blind spots' },
@@ -425,14 +426,36 @@ const tier4Categories = [
   },
 ];
 
-// Build flat list with tier info, deduplicated and alphabetized
-const tierMap = new Map<string, { name: string; title: string; tier: string }>();
+// Build flat list with tier info, then merge full registry so cloud includes all current skills.
+const tierMap = new Map<string, { name: string; title: string; tier: string; desc?: string; category?: string; useful?: number }>();
 experimental.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: 'exp' }));
-tier1.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: '1' }));
-tier2.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: '2' }));
-categorySkills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: 'cat' }); });
-tier3Categories.forEach(c => c.skills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: '3' }); }));
-tier4Categories.forEach(c => c.skills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: '4' }); }));
+tier1.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: '1', desc: s.desc }));
+tier2.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: '2', desc: s.desc }));
+categorySkills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: 'cat', desc: s.desc }); });
+tier3Categories.forEach(c => c.skills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: '3', category: c.category }); }));
+tier4Categories.forEach(c => c.skills.forEach(s => { if (!tierMap.has(s.name)) tierMap.set(s.name, { name: s.name, title: s.title, tier: '4', category: c.category }); }));
+
+const manifestSkills = (skillsManifest as any).skills || {};
+for (const [id, meta] of Object.entries<any>(manifestSkills)) {
+  if (tierMap.has(id)) {
+    const existing = tierMap.get(id)!;
+    existing.desc = existing.desc || meta.description || '';
+    existing.category = existing.category || meta.category || '';
+    existing.useful = (meta.invoked_by?.length || 0) + (meta.invokes?.length || 0) * 0.25;
+    continue;
+  }
+  let tier = '3';
+  if (meta.tier === 'category') tier = 'cat';
+  else if (typeof meta.tier === 'string' && meta.tier.startsWith('tier')) tier = meta.tier.replace('tier', '');
+  tierMap.set(id, {
+    name: id,
+    title: meta.title || id,
+    tier,
+    desc: meta.description || '',
+    category: meta.category || '',
+    useful: (meta.invoked_by?.length || 0) + (meta.invokes?.length || 0) * 0.25,
+  });
+}
 
 const allSkills = Array.from(tierMap.values()).sort((a, b) => a.name.localeCompare(b.name));
 const totalCount = allSkills.length;
@@ -454,12 +477,32 @@ const totalCount = allSkills.length;
     <a href="/tools" class="nav-chip">Tools</a>
     <a href="/faq" class="nav-chip">FAQ</a>
     <a href="/about" class="nav-chip">About</a>
+    <a href="/where-am-i" class="nav-chip">Where Am I</a>
     <a href="/visuals" class="nav-chip">Visuals</a>
     <button class="nav-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     <button class="nav-chip" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9790;</span></button>
     <input type="text" id="skill-search" class="skill-search" placeholder="Search skills..." autocomplete="off" />
+    <div class="sort-controls" id="sort-controls">
+      <button class="sort-chip active" data-sort="alphabetical">Alphabetical</button>
+      <button class="sort-chip" data-sort="cool">Cool</button>
+      <button class="sort-chip" data-sort="technical">Technical</button>
+      <button class="sort-chip" data-sort="generality">Generality</button>
+      <button class="sort-chip" data-sort="specificity">Specificity</button>
+      <button class="sort-chip" data-sort="uniqueness">Uniqueness</button>
+      <button class="sort-chip" data-sort="random">Random</button>
+      <button class="sort-chip" data-sort="categorized">Categorized</button>
+      <button class="sort-chip" data-sort="usefulness">Usefulness</button>
+      <button class="sort-chip" data-sort="uselessness">Uselessness</button>
+    </div>
     {allSkills.map(s => (
-      <a href={`/skills/${s.name}`} class={`skill-chip skill-chip--${s.tier}`} data-title={s.title.toLowerCase()}>{s.name}</a>
+      <a
+        href={`/skills/${s.name}`}
+        class={`skill-chip skill-chip--${s.tier}`}
+        data-title={s.title.toLowerCase()}
+        data-desc={(s.desc || '').toLowerCase()}
+        data-category={(s.category || '').toLowerCase()}
+        data-useful={String(s.useful || 0)}
+      >{s.name}</a>
     ))}
   </section>
 
@@ -525,6 +568,7 @@ const totalCount = allSkills.length;
 
         // Skill search filtering
         var searchInput = document.getElementById('skill-search');
+        var cloud = document.querySelector('.skill-cloud');
         if (searchInput) {
           var chips = document.querySelectorAll('.skill-chip');
           searchInput.addEventListener('input', function() {
@@ -537,6 +581,60 @@ const totalCount = allSkills.length;
             });
           });
         }
+
+        function score(chip, mode) {
+          var name = (chip.textContent || '').toLowerCase();
+          var title = (chip.getAttribute('data-title') || '').toLowerCase();
+          var desc = (chip.getAttribute('data-desc') || '').toLowerCase();
+          var cat = (chip.getAttribute('data-category') || '').toLowerCase();
+          var useful = parseFloat(chip.getAttribute('data-useful') || '0');
+          var text = [name, title, desc, cat].join(' ');
+          var tech = /(api|code|deploy|security|architecture|test|debug|software|engineering|database|embedded)/.test(text) ? 1 : 0;
+          var broad = /(universal|any|general|router|meta|goal|analyze|evaluate|search)/.test(text) ? 1 : 0;
+          var specific = /(proteomics|biomedical|grant|salary|interview|mechanical|embedded|policy|market)/.test(text) ? 1 : 0;
+          var cool = /(unexpected|viral|innovation|creative|novelty|strategy|meta)/.test(text) ? 1 : 0;
+          var uniq = (name.length > 7 ? 1 : 0) + (/[^a-z]/.test(name) ? 1 : 0) + (specific ? 1 : 0);
+
+          if (mode === 'technical') return tech * 10 + useful;
+          if (mode === 'generality') return broad * 10 - specific + useful * 0.1;
+          if (mode === 'specificity') return specific * 10 + uniq;
+          if (mode === 'uniqueness') return uniq * 10 + (specific ? 2 : 0);
+          if (mode === 'cool') return cool * 10 + uniq + useful * 0.1;
+          if (mode === 'usefulness') return useful;
+          if (mode === 'uselessness') return -useful;
+          return 0;
+        }
+
+        function sortChips(mode) {
+          if (!cloud) return;
+          var chips = Array.from(cloud.querySelectorAll('.skill-chip'));
+          if (mode === 'random') {
+            chips.sort(function() { return Math.random() - 0.5; });
+          } else if (mode === 'alphabetical') {
+            chips.sort(function(a, b) { return (a.textContent || '').localeCompare(b.textContent || ''); });
+          } else if (mode === 'categorized') {
+            chips.sort(function(a, b) {
+              var ca = a.getAttribute('data-category') || '';
+              var cb = b.getAttribute('data-category') || '';
+              if (ca !== cb) return ca.localeCompare(cb);
+              return (a.textContent || '').localeCompare(b.textContent || '');
+            });
+          } else {
+            chips.sort(function(a, b) {
+              return score(b, mode) - score(a, mode) || (a.textContent || '').localeCompare(b.textContent || '');
+            });
+          }
+          chips.forEach(function(chip) { cloud.appendChild(chip); });
+        }
+
+        document.querySelectorAll('.sort-chip').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            document.querySelectorAll('.sort-chip').forEach(function(b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+            var mode = btn.getAttribute('data-sort') || 'alphabetical';
+            sortChips(mode);
+          });
+        });
 
         // Prevent all scroll events
         window.addEventListener('wheel', function(e) { e.preventDefault(); }, { passive: false });
@@ -670,6 +768,31 @@ const totalCount = allSkills.length;
 
   .skill-search::placeholder {
     color: var(--color-text-muted);
+  }
+
+  .sort-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    width: 100%;
+  }
+
+  .sort-chip {
+    display: inline-block;
+    padding: 0.3em 0.65em;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text);
+    background: var(--color-surface);
+    cursor: pointer;
+  }
+
+  .sort-chip.active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
   }
 
   /* Dark mode tier colors */

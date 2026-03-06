@@ -4522,6 +4522,209 @@
         "action",
         "evaluate"
       ]
+    },
+    "list": {
+      "description": "Create rigorous, useful lists with clear scope, ordering logic, coverage checks, and concise rationale per item.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ro": {
+      "description": "Reorder an existing list using an explicit objective, constraints, and scoring method. Produces a defensible best-to-worst order.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "fonss": {
+      "description": "Determine which skills to run next (more than one), in order, with rationale, handoff prompts, and stop conditions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "given": {
+      "description": "Given a goal, rank relevant skills from highest to lowest expected ROI, including negative-ROI skills with reasons.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "cs": {
+      "description": "Create or update a skill from a prompt, including naming, scope, workflow, and output contract. Can also identify missing skills implied by the prompt.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "uf": {
+      "description": "Given a skill or method, list what it is useful for, where it fails, and when to choose alternatives.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "it": {
+      "description": "Process \"I think\" statements into explicit claims, confidence levels, and next verification actions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "but": {
+      "description": "Handle \"but\" statements by separating main claim from objection and resolving the tension explicitly.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "extract": {
+      "description": "Given any prompt, extract every potentially useful existing skill, grouped and prioritized with invocation-ready suggestions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "handle": {
+      "description": "Convert broad \"handle this\" requests into a concrete first action and an ordered next-skill sequence.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ata": {
+      "description": "Expand a request with all implied adjacent actions that should also be done, then order them.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "sycs": {
+      "description": "Expand implications of a statement so the hidden conclusions are explicit and testable.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "aso": {
+      "description": "Continue a discovered pattern with bounded expansion rules so extension stays coherent and useful.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "iagca": {
+      "description": "Detect idea sprawl, compress scope, and return to the highest-leverage next actions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "platitude": {
+      "description": "Convert a single platitude into concrete, testable actions and boundaries.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "platitudes": {
+      "description": "Analyze multiple platitudes, remove contradictions, and convert the set into a coherent action system.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "etc": {
+      "description": "Expand \"etc\" tails into explicit items using pattern continuation, then stop at a defined completeness rule.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "sc": {
+      "description": "Design skill systems and creation pipelines at scale, including quality gates, templates, naming conventions, and rollout strategy.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "flhwijd": {
+      "description": "Analyze the user's just-finished action sequence, identify what pattern they used, and convert it into a reusable procedure.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "iaw": {
+      "description": "Re-express a goal, claim, or plan in alternative forms that preserve intent while changing approach.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "tbd": {
+      "description": "Identify unresolved decisions and convert them into explicit determination questions with owner and deadline.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "tobd": {
+      "description": "Operational variant of TBD that adds sequencing and dependency-aware resolution order for unresolved items.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "nsa": {
+      "description": "Convert uncertainty statements into explicit confidence ranges and next evidence actions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "wn": {
+      "description": "Summarize what is new in a project timeline, grouped by day, prompt, skill, and iteration.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "alebc": {
+      "description": "Convert a change stream into high-level big-new-item bullets, excluding low-level modification details.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "siycftr": {
+      "description": "Scan text for omitted but implied items and produce the missing set.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "itp": {
+      "description": "Decompose a prompt into explicit requests, constraints, implied tasks, and candidate skill mappings.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "ycshikfmif": {
+      "description": "Capture ideation expansion loops and structure them into bounded exploration batches.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "awtlytrn": {
+      "description": "Estimate current practical limits for scope, throughput, and quality, then recommend a safe operating boundary.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
     }
   }
 }

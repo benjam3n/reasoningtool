@@ -1,0 +1,217 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Paginated from '../components/Paginated.astro';
+import whatsNew from '../data/whats-new.json';
+import '../styles/global.css';
+
+const entries = Array.isArray(whatsNew) ? whatsNew : [];
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Where am I in the project timeline across reasoningtool, GOSM, and ARAW repositories." />
+  <title>Where Am I — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Paginated pageGroup="info" pageIndex={4}>
+    <section class="new-wrap">
+      <h2>Where Am I</h2>
+      <p class="new-sub">Timeline orientation view. Click to view by day, prompt, skill, repo, or type.</p>
+
+      <div class="new-controls">
+        <div class="new-modes" id="new-modes">
+          <button class="new-btn active" data-mode="day">By Day</button>
+          <button class="new-btn" data-mode="prompt">By Prompt</button>
+          <button class="new-btn" data-mode="skill">By Skill</button>
+          <button class="new-btn" data-mode="repo">By Repo</button>
+          <button class="new-btn" data-mode="type">By Type</button>
+        </div>
+        <div class="new-values" id="new-values"></div>
+      </div>
+
+      <div class="new-list" id="new-list">
+        {entries.map((e: any) => (
+          <article
+            class="new-item"
+            data-day={e.date}
+            data-prompt={e.prompt}
+            data-repo={e.repo}
+            data-type={e.type}
+            data-skill={(e.skills || []).join(',')}
+          >
+            <div class="new-item__meta">
+              <span>{e.date}</span>
+              <span>{e.repo}</span>
+              <span>{e.type}</span>
+              <span>#{e.iteration}</span>
+            </div>
+            <h3>{e.summary}</h3>
+            {(e.skills || []).length > 0 && (
+              <p class="new-item__skills">Skills: {(e.skills || []).join(', ')}</p>
+            )}
+          </article>
+        ))}
+      </div>
+    </section>
+  </Paginated>
+</body>
+</html>
+
+<script define:vars={{ entries }}>
+  (() => {
+    const modes = document.getElementById('new-modes');
+    const valuesWrap = document.getElementById('new-values');
+    const cards = Array.from(document.querySelectorAll('.new-item'));
+    if (!modes || !valuesWrap || cards.length === 0) return;
+
+    let activeMode = 'day';
+    let activeValue = '';
+
+    const getValues = (mode) => {
+      if (mode === 'skill') {
+        const set = new Set();
+        entries.forEach((e) => (e.skills || []).forEach((s) => set.add(s)));
+        return Array.from(set).sort();
+      }
+      const key = mode === 'day' ? 'date' : mode;
+      return Array.from(new Set(entries.map((e) => e[key]).filter(Boolean))).sort().reverse();
+    };
+
+    const renderValues = () => {
+      valuesWrap.innerHTML = '';
+      const allBtn = document.createElement('button');
+      allBtn.className = 'new-btn ' + (activeValue === '' ? 'active' : '');
+      allBtn.textContent = 'All';
+      allBtn.addEventListener('click', () => {
+        activeValue = '';
+        renderValues();
+        applyFilter();
+      });
+      valuesWrap.appendChild(allBtn);
+
+      getValues(activeMode).forEach((value) => {
+        const btn = document.createElement('button');
+        btn.className = 'new-btn ' + (value === activeValue ? 'active' : '');
+        btn.textContent = value;
+        btn.addEventListener('click', () => {
+          activeValue = value;
+          renderValues();
+          applyFilter();
+        });
+        valuesWrap.appendChild(btn);
+      });
+    };
+
+    const applyFilter = () => {
+      cards.forEach((card) => {
+        let match = true;
+        if (activeValue) {
+          if (activeMode === 'skill') {
+            const skills = (card.getAttribute('data-skill') || '').split(',').filter(Boolean);
+            match = skills.includes(activeValue);
+          } else if (activeMode === 'day') {
+            match = card.getAttribute('data-day') === activeValue;
+          } else {
+            match = card.getAttribute(`data-${activeMode}`) === activeValue;
+          }
+        }
+        card.style.display = match ? '' : 'none';
+      });
+    };
+
+    modes.querySelectorAll('.new-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        modes.querySelectorAll('.new-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeMode = btn.getAttribute('data-mode') || 'day';
+        activeValue = '';
+        renderValues();
+        applyFilter();
+      });
+    });
+
+    renderValues();
+    applyFilter();
+  })();
+</script>
+
+<style>
+  .new-wrap {
+    height: 100%;
+    overflow: auto;
+    padding-right: var(--sp-1);
+  }
+
+  .new-sub {
+    color: var(--color-text-muted);
+    margin-top: 0;
+  }
+
+  .new-controls {
+    display: grid;
+    gap: var(--sp-1);
+    margin-bottom: var(--sp-2);
+  }
+
+  .new-modes,
+  .new-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+  }
+
+  .new-btn {
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: 0.25em 0.55em;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    cursor: pointer;
+  }
+
+  .new-btn.active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+  }
+
+  .new-list {
+    display: grid;
+    gap: var(--sp-1);
+  }
+
+  .new-item {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--sp-1) var(--sp-2);
+    background: var(--color-surface);
+  }
+
+  .new-item__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .new-item h3 {
+    margin: 0.35rem 0;
+    font-size: var(--text-base);
+  }
+
+  .new-item__skills {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+</style>
