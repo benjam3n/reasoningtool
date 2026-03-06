@@ -44,7 +44,7 @@ if [[ -s "$tmp_placeholders" ]]; then
 fi
 
 echo "High-impact orchestrator risk signals:"
-for s in gosm pce gu gjs claim decide diagnose search evaluate how want analyze action viability certainty iterate meta; do
+for s in gosm pce gu gjs claim decide diagnose search evaluate how want next analyze action viability certainty iterate meta; do
   f="$SKILLS_DIR/$s/SKILL.md"
   [[ -f "$f" ]] || continue
   invoke_count="$( (rg --no-messages -n "INVOKE:" "$f" || true) | wc -l )"

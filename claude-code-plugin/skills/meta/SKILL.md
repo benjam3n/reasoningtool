@@ -39,6 +39,7 @@ If the user describes a problem and asks for help, classify it:
 | Wanting to explore options | → /search |
 | Knowing what but not how | → /how |
 | A want or goal | → /want |
+| Asking what to do next | → /next |
 | Something to do/execute | → /action |
 | Something to assess/review | → /evaluate |
 | A feeling or frustration | → /emotion |
@@ -61,6 +62,7 @@ If the user describes a problem and asks for help, classify it:
 | `/search` | Want to explore a space | UAUA |
 | `/how` | Know what but not how | AR-forward |
 | `/want` | Have a goal or desire | AR-forward |
+| `/next` | Need the single highest-value next step | Router |
 | `/emotion` | Feel stuck/frustrated/overwhelmed | AR-forward |
 | `/action` | Need something executed | Direct |
 | `/create` | Need content produced | Direct |

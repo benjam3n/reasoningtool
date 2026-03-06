@@ -5,7 +5,7 @@ Applies to router skills that decide which deeper skill to run.
 ## Covered skills
 
 claim, decide, diagnose, evaluate, search, how, want, emotion, analyze,
-viability, action, create, technical, certainty, iterate, meta
+viability, action, create, technical, certainty, iterate, meta, next
 
 ## Router behavior
 

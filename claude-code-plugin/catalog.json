@@ -4507,6 +4507,21 @@
         "situation"
       ],
       "invokes": []
+    },
+    "next": {
+      "description": "Sub-orchestrator for next-step requests. Selects the highest-value immediate action from current context, then routes to execution or the right analysis skill.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "decide",
+        "how",
+        "diagnose",
+        "search",
+        "want",
+        "action",
+        "evaluate"
+      ]
     }
   }
 }

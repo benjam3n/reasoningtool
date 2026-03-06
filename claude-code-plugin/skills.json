@@ -1,6 +1,6 @@
 {
   "generated": "2026-01-31T19:13:50.842393+00:00",
-  "total": 367,
+  "total": 368,
   "skills": {
     "aa": {
       "id": "aa",
@@ -9800,6 +9800,34 @@
         "Pre-Completion Check"
       ],
       "line_count": 301
+    },
+    "next": {
+      "id": "next",
+      "title": "Determine What to Do Next",
+      "description": "Sub-orchestrator for next-step requests. Selects the highest-value immediate action from current context, then routes to execution or the right analysis skill.",
+      "tier": "category",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "decide",
+        "how",
+        "diagnose",
+        "search",
+        "want",
+        "action",
+        "evaluate"
+      ],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Routing Decisions",
+        "Execute",
+        "After Completion"
+      ],
+      "line_count": 75
     }
   }
 }
