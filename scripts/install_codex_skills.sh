@@ -94,7 +94,7 @@ REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 SOURCE_DIR="$REPO_ROOT/claude-code-plugin/skills"
 TARGET_DIR="$CODE_HOME/skills"
 CODEX_OVERRIDES_DIR="$REPO_ROOT/codex-overrides"
-ROUTER_SKILLS="claim decide diagnose evaluate search how want emotion analyze viability action create technical certainty iterate meta next fonss cs uf it but extract handle ata sycs aso iagca"
+ROUTER_SKILLS="claim decide diagnose evaluate search how want emotion analyze viability action create technical certainty iterate meta next fonss wsib cs sc dtse mts fmtsb uf it but extract handle ata sycs aso iagca"
 
 if [[ ! -d "$SOURCE_DIR" ]]; then
   echo "Skills source directory not found: $SOURCE_DIR" >&2

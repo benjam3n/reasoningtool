@@ -1,6 +1,6 @@
 {
   "generated": "2026-01-31T19:13:50.842393+00:00",
-  "total": 397,
+  "total": 401,
   "skills": {
     "aa": {
       "id": "aa",
@@ -10379,6 +10379,82 @@
         "Output"
       ],
       "line_count": 10
+    },
+    "wsib": {
+      "id": "wsib",
+      "title": "What Skill Is Best",
+      "description": "Choose the best skill to run now for a prompt, with confidence, runner-up comparison, and fallback if first choice fails.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output Format"
+      ],
+      "line_count": 30
+    },
+    "dtse": {
+      "id": "dtse",
+      "title": "Does This Skill Exist",
+      "description": "Check whether a requested skill exists, show exact matches and nearest alternatives, and provide next action.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output Format"
+      ],
+      "line_count": 28
+    },
+    "mts": {
+      "id": "mts",
+      "title": "Make This Skill",
+      "description": "Create a new skill from a request by generating id, purpose, workflow, output format, and quality checks.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
+    },
+    "fmtsb": {
+      "id": "fmtsb",
+      "title": "Formalize Make This Skill Because",
+      "description": "Formalized variant of MTS that enforces schema, non-overlap checks, dependency mapping, and rollout readiness.",
+      "tier": "tier3",
+      "category": "Procedures & Meta",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "meta"
+      ],
+      "sections": [
+        "Steps",
+        "Output"
+      ],
+      "line_count": 21
     }
   }
 }

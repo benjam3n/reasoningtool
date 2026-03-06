@@ -42,10 +42,14 @@ If the user describes a problem and asks for help, classify it:
 | Asking what to do next | → /next |
 | Asking which skills to run next (multiple) | → /fonss |
 | Asking to rank skills by ROI for a goal | → /given |
+| Asking what skill is best right now | → /wsib |
 | Asking to reorder an existing list | → /ro |
 | Asking to build a high-quality list | → /list |
 | Asking to create or update a skill | → /cs |
 | Asking to design a skill-creation system | → /sc |
+| Asking whether a skill exists | → /dtse |
+| Asking to make a new skill directly | → /mts |
+| Asking to formalize a new skill spec | → /fmtsb |
 | Asking what a skill is useful for | → /uf |
 | Starting with "I think..." | → /it |
 | Framing with "..., but ..." | → /but |
@@ -85,10 +89,14 @@ If the user describes a problem and asks for help, classify it:
 | `/next` | Need the single highest-value next step | Router |
 | `/fonss` | Need an ordered sequence of next skills | Router |
 | `/given` | Need ROI-ranked skills for a specific goal | Ranking |
+| `/wsib` | Need best single skill selection now | Skill Selection |
 | `/ro` | Need an expert reorder of an existing list | Ordering |
 | `/list` | Need a high-quality list with rationale | Listing |
 | `/cs` | Need to create/update a skill or find missing ones | Skill Design |
 | `/sc` | Need to design a skill-creation system | Skill Operations |
+| `/dtse` | Need to check if a skill exists and what to do next | Skill Lookup |
+| `/mts` | Need to make a new skill draft quickly | Skill Drafting |
+| `/fmtsb` | Need a formalized skill spec and rollout plan | Skill Formalization |
 | `/uf` | Need use-cases and limits for a skill | Skill Analysis |
 | `/it` | Need to formalize an \"I think\" claim | Claim Framing |
 | `/but` | Need to resolve claim-objection tension | Tension Handling |

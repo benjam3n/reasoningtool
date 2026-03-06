@@ -32,6 +32,7 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
           <button class="new-btn" data-mode="type">By Type</button>
         </div>
         <div class="new-values" id="new-values"></div>
+        <div class="new-values" id="new-pager"></div>
       </div>
 
       <div class="new-list" id="new-list">
@@ -66,11 +67,15 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
   (() => {
     const modes = document.getElementById('new-modes');
     const valuesWrap = document.getElementById('new-values');
+    const pagerWrap = document.getElementById('new-pager');
     const cards = Array.from(document.querySelectorAll('.new-item'));
-    if (!modes || !valuesWrap || cards.length === 0) return;
+    if (!modes || !valuesWrap || !pagerWrap || cards.length === 0) return;
 
     let activeMode = 'day';
     let activeValue = '';
+    let currentPage = 1;
+    const pageSize = 8;
+    let filteredCards = cards.slice();
 
     const getValues = (mode) => {
       if (mode === 'skill') {
@@ -108,7 +113,7 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
     };
 
     const applyFilter = () => {
-      cards.forEach((card) => {
+      filteredCards = cards.filter((card) => {
         let match = true;
         if (activeValue) {
           if (activeMode === 'skill') {
@@ -120,8 +125,36 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
             match = card.getAttribute(`data-${activeMode}`) === activeValue;
           }
         }
-        card.style.display = match ? '' : 'none';
+        return match;
       });
+      currentPage = 1;
+      renderPagedList();
+    };
+
+    const pagerWords = ['alpha', 'amber', 'apex', 'arc', 'atlas', 'aurora', 'axiom', 'aether', 'anchor', 'astra'];
+    const pagerEmoji = [':)', ':D', ';)', ':P', '^_^', ':|', 'o_o', '<3', '-_-', ':O'];
+
+    const renderPager = () => {
+      pagerWrap.innerHTML = '';
+      const totalPages = Math.max(1, Math.ceil(filteredCards.length / pageSize));
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'new-btn ' + (i === currentPage ? 'active' : '');
+        btn.textContent = `${i} ${pagerWords[(i - 1) % pagerWords.length]} ${pagerEmoji[(i - 1) % pagerEmoji.length]}`;
+        btn.addEventListener('click', () => {
+          currentPage = i;
+          renderPagedList();
+        });
+        pagerWrap.appendChild(btn);
+      }
+    };
+
+    const renderPagedList = () => {
+      cards.forEach((card) => { card.style.display = 'none'; });
+      const start = (currentPage - 1) * pageSize;
+      const end = start + pageSize;
+      filteredCards.slice(start, end).forEach((card) => { card.style.display = ''; });
+      renderPager();
     };
 
     modes.querySelectorAll('.new-btn').forEach((btn) => {
@@ -143,8 +176,10 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
 <style>
   .new-wrap {
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     padding-right: var(--sp-1);
+    display: flex;
+    flex-direction: column;
   }
 
   .new-sub {
@@ -185,6 +220,7 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
   .new-list {
     display: grid;
     gap: var(--sp-1);
+    overflow: hidden;
   }
 
   .new-item {

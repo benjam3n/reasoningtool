@@ -4725,6 +4725,34 @@
       "tags": [],
       "input_types": [],
       "invokes": []
+    },
+    "wsib": {
+      "description": "Choose the best skill to run now for a prompt, with confidence, runner-up comparison, and fallback if first choice fails.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "dtse": {
+      "description": "Check whether a requested skill exists, show exact matches and nearest alternatives, and provide next action.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "mts": {
+      "description": "Create a new skill from a request by generating id, purpose, workflow, output format, and quality checks.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "fmtsb": {
+      "description": "Formalized variant of MTS that enforces schema, non-overlap checks, dependency mapping, and rollout readiness.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
     }
   }
 }
