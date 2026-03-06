@@ -2,6 +2,13 @@
 import { ViewTransitions } from 'astro:transitions';
 import Paginated from '../components/Paginated.astro';
 import whatsNew from '../data/whats-new.json';
+import {
+  DICTIONARY_SOURCE,
+  EMOJI_SOURCE,
+  NAV_EMOJI_CATEGORIES,
+  NAV_LETTERS,
+  NAV_WORDS_BY_LETTER,
+} from '../data/navigation-vocabulary';
 import '../styles/global.css';
 
 const entries = Array.isArray(whatsNew) ? whatsNew : [];
@@ -22,6 +29,12 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
     <section class="new-wrap">
       <h2>Where Am I</h2>
       <p class="new-sub">Timeline orientation view. Click to view by day, prompt, skill, repo, or type.</p>
+      <p class="new-sub new-sub--sources">
+        Sources:
+        <a href={DICTIONARY_SOURCE} target="_blank" rel="noreferrer">Dictionary</a>
+        <span> · </span>
+        <a href={EMOJI_SOURCE} target="_blank" rel="noreferrer">Emoji</a>
+      </p>
 
       <div class="new-controls">
         <div class="new-modes" id="new-modes">
@@ -63,7 +76,7 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
 </body>
 </html>
 
-<script define:vars={{ entries }}>
+<script define:vars={{ entries, NAV_LETTERS, NAV_WORDS_BY_LETTER, NAV_EMOJI_CATEGORIES }}>
   (() => {
     const modes = document.getElementById('new-modes');
     const valuesWrap = document.getElementById('new-values');
@@ -131,16 +144,25 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
       renderPagedList();
     };
 
-    const pagerWords = ['alpha', 'amber', 'apex', 'arc', 'atlas', 'aurora', 'axiom', 'aether', 'anchor', 'astra'];
-    const pagerEmoji = [':)', ':D', ';)', ':P', '^_^', ':|', 'o_o', '<3', '-_-', ':O'];
-
     const renderPager = () => {
       pagerWrap.innerHTML = '';
       const totalPages = Math.max(1, Math.ceil(filteredCards.length / pageSize));
       for (let i = 1; i <= totalPages; i++) {
+        const letterIndex = (i - 1) % NAV_LETTERS.length;
+        const letterLap = Math.floor((i - 1) / NAV_LETTERS.length);
+        const letter = NAV_LETTERS[letterIndex];
+        const words = NAV_WORDS_BY_LETTER[letter] || [letter.toLowerCase()];
+        const word = words[letterLap % words.length];
+
+        const categoryIndex = (i - 1) % NAV_EMOJI_CATEGORIES.length;
+        const categoryLap = Math.floor((i - 1) / NAV_EMOJI_CATEGORIES.length);
+        const category = NAV_EMOJI_CATEGORIES[categoryIndex];
+        const emoji = category.emojis[categoryLap % category.emojis.length];
+
         const btn = document.createElement('button');
         btn.className = 'new-btn ' + (i === currentPage ? 'active' : '');
-        btn.textContent = `${i} ${pagerWords[(i - 1) % pagerWords.length]} ${pagerEmoji[(i - 1) % pagerEmoji.length]}`;
+        btn.textContent = `${i} ${word} ${emoji}`;
+        btn.title = `${letter} • ${category.label}`;
         btn.addEventListener('click', () => {
           currentPage = i;
           renderPagedList();
@@ -185,6 +207,15 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
   .new-sub {
     color: var(--color-text-muted);
     margin-top: 0;
+  }
+
+  .new-sub--sources {
+    margin-top: calc(var(--sp-1) * -1);
+    margin-bottom: var(--sp-1);
+  }
+
+  .new-sub--sources a {
+    color: var(--color-accent);
   }
 
   .new-controls {
