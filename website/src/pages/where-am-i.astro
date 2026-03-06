@@ -36,40 +36,48 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
         <a href={EMOJI_SOURCE} target="_blank" rel="noreferrer">Emoji</a>
       </p>
 
-      <div class="new-controls">
-        <div class="new-modes" id="new-modes">
-          <button class="new-btn active" data-mode="day">By Day</button>
-          <button class="new-btn" data-mode="prompt">By Prompt</button>
-          <button class="new-btn" data-mode="skill">By Skill</button>
-          <button class="new-btn" data-mode="repo">By Repo</button>
-          <button class="new-btn" data-mode="type">By Type</button>
-        </div>
-        <div class="new-values" id="new-values"></div>
-        <div class="new-values" id="new-pager"></div>
-      </div>
-
-      <div class="new-list" id="new-list">
-        {entries.map((e: any) => (
-          <article
-            class="new-item"
-            data-day={e.date}
-            data-prompt={e.prompt}
-            data-repo={e.repo}
-            data-type={e.type}
-            data-skill={(e.skills || []).join(',')}
-          >
-            <div class="new-item__meta">
-              <span>{e.date}</span>
-              <span>{e.repo}</span>
-              <span>{e.type}</span>
-              <span>#{e.iteration}</span>
+      <div class="new-main">
+        <div class="new-main__left">
+          <div class="new-controls">
+            <div class="new-modes" id="new-modes">
+              <button class="new-btn active" data-mode="day">By Day</button>
+              <button class="new-btn" data-mode="prompt">By Prompt</button>
+              <button class="new-btn" data-mode="skill">By Skill</button>
+              <button class="new-btn" data-mode="repo">By Repo</button>
+              <button class="new-btn" data-mode="type">By Type</button>
             </div>
-            <h3>{e.summary}</h3>
-            {(e.skills || []).length > 0 && (
-              <p class="new-item__skills">Skills: {(e.skills || []).join(', ')}</p>
-            )}
-          </article>
-        ))}
+            <div class="new-values" id="new-values"></div>
+          </div>
+
+          <div class="new-list" id="new-list">
+            {entries.map((e: any) => (
+              <article
+                class="new-item"
+                data-day={e.date}
+                data-prompt={e.prompt}
+                data-repo={e.repo}
+                data-type={e.type}
+                data-skill={(e.skills || []).join(',')}
+              >
+                <div class="new-item__meta">
+                  <span>{e.date}</span>
+                  <span>{e.repo}</span>
+                  <span>{e.type}</span>
+                  <span>#{e.iteration}</span>
+                </div>
+                <h3>{e.summary}</h3>
+                {(e.skills || []).length > 0 && (
+                  <p class="new-item__skills">Skills: {(e.skills || []).join(', ')}</p>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="new-nav-rail">
+          <p class="new-nav-title">Navigation</p>
+          <div class="new-pager" id="new-pager"></div>
+        </div>
       </div>
     </section>
   </Paginated>
@@ -87,7 +95,7 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
     let activeMode = 'day';
     let activeValue = '';
     let currentPage = 1;
-    const pageSize = 8;
+    const pageSize = 5;
     let filteredCards = cards.slice();
 
     const getValues = (mode) => {
@@ -204,6 +212,21 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
     flex-direction: column;
   }
 
+  .new-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    gap: var(--sp-2);
+    min-height: 0;
+    flex: 1;
+  }
+
+  .new-main__left {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
   .new-sub {
     color: var(--color-text-muted);
     margin-top: 0;
@@ -252,6 +275,32 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
     display: grid;
     gap: var(--sp-1);
     overflow: hidden;
+    min-height: 0;
+  }
+
+  .new-nav-rail {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--sp-1);
+    background: var(--color-surface);
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .new-nav-title {
+    margin: 0 0 var(--sp-1) 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .new-pager {
+    display: grid;
+    gap: 0.35em;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+    overflow: hidden;
   }
 
   .new-item {
@@ -280,5 +329,15 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     color: var(--color-text-muted);
+  }
+
+  @media (max-width: 980px) {
+    .new-main {
+      grid-template-columns: 1fr;
+    }
+
+    .new-pager {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 </style>
