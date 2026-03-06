@@ -48,12 +48,12 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
 <script>
   // Load D3 as ES module for the graph component
   import * as d3Module from 'd3';
-  (window as any).d3 = d3Module;
+  window.d3 = d3Module;
 </script>
 
 <script>
   // Reuse the same pagination logic as Paginated.astro
-  const PAGE_GROUPS: Record<string, string[]> = {
+  const PAGE_GROUPS = {
     info: ['/installation', '/tools', '/faq', '/about', '/where-am-i'],
     visual: ['/', '/visuals'],
   };
@@ -76,10 +76,10 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
     const total = sections.length;
 
     const indicator = document.getElementById('pg-indicator');
-    const prevBtn = document.getElementById('pg-prev') as HTMLButtonElement;
-    const nextBtn = document.getElementById('pg-next') as HTMLButtonElement;
+    const prevBtn = document.getElementById('pg-prev');
+    const nextBtn = document.getElementById('pg-next');
 
-    function show(index: number) {
+    function show(index) {
       if (index < 0 || index >= total) return;
       sections.forEach((s, i) => {
         s.classList.toggle('active', i === index);
@@ -115,14 +115,14 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
     if (prevBtn) prevBtn.addEventListener('click', (e) => { e.stopPropagation(); prev(); });
     if (nextBtn) nextBtn.addEventListener('click', (e) => { e.stopPropagation(); next(); });
 
-    document.addEventListener('keydown', (e: KeyboardEvent) => {
+    document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight') { e.preventDefault(); next(); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
     });
 
     // GitHub toggle buttons
     document.querySelectorAll('.pg-github').forEach((btn) => {
-      const el = btn as HTMLElement;
+      const el = btn;
       const url = el.dataset.url || 'https://github.com/benjam3n/reasoningtool';
       const originalText = el.textContent || 'GitHub';
       let armed = false;
