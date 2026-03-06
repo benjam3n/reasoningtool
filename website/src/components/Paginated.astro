@@ -355,7 +355,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 </style>
 
 <script define:vars={{ NAV_LETTERS, NAV_WORDS_BY_LETTER, NAV_EMOJI_CATEGORIES }}>
-  const PAGE_GROUPS: Record<string, string[]> = {
+  const PAGE_GROUPS = {
     info: ['/installation', '/tools', '/faq', '/about', '/where-am-i'],
     visual: ['/', '/visuals'],
   };
@@ -370,27 +370,27 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     // If CardPaginator is present, wait for it to finish building sections
     const hasCardPaginator = !!slidesWrap.querySelector('[data-card-paginator]');
     if (hasCardPaginator) {
-      document.addEventListener('card-paginator:done', () => initNav(container, slidesWrap as HTMLElement), { once: true });
+      document.addEventListener('card-paginator:done', () => initNav(container, slidesWrap), { once: true });
     } else {
-      initNav(container, slidesWrap as HTMLElement);
+      initNav(container, slidesWrap);
     }
   });
 
-  function initNav(container: HTMLElement, slidesWrap: HTMLElement) {
+  function initNav(container, slidesWrap) {
     const group = container.dataset.pageGroup || '';
     const pages = PAGE_GROUPS[group] || [];
     const pageIndex = parseInt(container.dataset.pageIndex || '0', 10);
 
-    const finalSections = Array.from(slidesWrap.querySelectorAll(':scope > section')) as HTMLElement[];
+    const finalSections = Array.from(slidesWrap.querySelectorAll(':scope > section'));
     if (finalSections.length === 0) return;
 
     let current = 0;
     const total = finalSections.length;
 
     // Build number buttons
-    const numsContainer = container.querySelector('#pg-nums') as HTMLElement | null;
+    const numsContainer = container.querySelector('#pg-nums');
     if (numsContainer) numsContainer.innerHTML = '';
-    const numBtns: HTMLButtonElement[] = [];
+    const numBtns = [];
 
     function getNavLabel(pageNumber: number) {
       const letterIndex = (pageNumber - 1) % NAV_LETTERS.length;
@@ -488,7 +488,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     show(0);
 
     // Keyboard navigation
-    document.addEventListener('keydown', (e: KeyboardEvent) => {
+    document.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
       if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
     });
@@ -499,7 +499,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     // GitHub toggle buttons — first click arms, second click opens
     document.querySelectorAll('.pg-github').forEach((btn) => {
-      const el = btn as HTMLElement;
+      const el = btn;
       const url = el.dataset.url || 'https://github.com/benjam3n/reasoningtool';
       const originalText = el.textContent || 'GitHub';
       let armed = false;
