@@ -232,17 +232,21 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
 
 <style>
   .new-wrap {
+    position: relative;
     height: 100%;
     overflow: hidden;
-    padding-right: var(--sp-1);
+    padding-right: 14rem;
     display: flex;
     flex-direction: column;
   }
 
+  .new-wrap h2 {
+    margin: 0 0 0.35rem 0;
+  }
+
   .new-main {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 13rem;
-    gap: var(--sp-2);
+    display: flex;
+    flex-direction: column;
     min-height: 0;
     flex: 1;
   }
@@ -306,13 +310,18 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
   }
 
   .new-nav-rail {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 13rem;
+    height: 100%;
     border: 1px solid var(--color-border);
     border-radius: 8px;
     padding: var(--sp-1);
     background: var(--color-surface);
-    min-height: 0;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
   }
 
   .new-nav-title {
@@ -359,8 +368,15 @@ const entries = Array.isArray(whatsNew) ? whatsNew : [];
   }
 
   @media (max-width: 980px) {
-    .new-main {
-      grid-template-columns: 1fr;
+    .new-wrap {
+      padding-right: 0;
+    }
+
+    .new-nav-rail {
+      position: static;
+      width: auto;
+      height: auto;
+      margin-top: var(--sp-2);
     }
 
     .new-pager {

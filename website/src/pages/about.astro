@@ -314,6 +314,12 @@ import '../styles/global.css';
         <div class="card">
           <h3>What type of music do I like to listen to?</h3>
           <button class="spotify-btn pg-github" data-url="https://open.spotify.com/playlist/6gqErUnW6TCzBXhdXcItOS" data-armed-text="Go to Playlist">My Spotify Playlist</button>
+
+          <h3>Where can you find me?</h3>
+          <ul class="social-list">
+            <li><a href="https://www.tiktok.com/@benjamiwar" class="essay-link" target="_blank" rel="noreferrer">TikTok: benjamiwar</a></li>
+            <li><a href="https://x.com/benjamiwar" class="essay-link" target="_blank" rel="noreferrer">Twitter/X: benjamiwar</a></li>
+          </ul>
         </div>
       </div>
     </section>
@@ -341,7 +347,7 @@ import '../styles/global.css';
   }
 
   .card-grid--2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .card {
@@ -399,6 +405,19 @@ import '../styles/global.css';
     margin-bottom: 0;
   }
 
+  .social-list {
+    margin: var(--sp-1) 0 0 0;
+    padding-left: 1.2em;
+  }
+
+  .social-list li {
+    margin-bottom: 0.35em;
+  }
+
+  .social-list li:last-child {
+    margin-bottom: 0;
+  }
+
   .spotify-btn {
     display: inline-block;
     margin-top: var(--sp-1);
@@ -425,5 +444,11 @@ import '../styles/global.css';
     background: var(--color-accent);
     border-radius: 2px;
     text-decoration: none;
+  }
+
+  @media (max-width: 900px) {
+    .card-grid--2 {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
