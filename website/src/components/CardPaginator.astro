@@ -11,20 +11,20 @@
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    const wrapper = document.querySelector('[data-card-paginator]') as HTMLElement;
+    const wrapper = document.querySelector('[data-card-paginator]');
     if (!wrapper) return;
 
-    const slidesWrap = wrapper.closest('.paginated__slides') as HTMLElement;
+    const slidesWrap = wrapper.closest('.paginated__slides');
     if (!slidesWrap) return;
 
-    const originalSection = wrapper.closest('section') as HTMLElement;
+    const originalSection = wrapper.closest('section');
     if (!originalSection) return;
 
-    const content = wrapper.querySelector('.skill-page__content') as HTMLElement;
+    const content = wrapper.querySelector('.skill-page__content');
     if (!content) return;
 
     // --- Collect Astro scope attributes for cloning ---
-    const astroAttrs: [string, string][] = [];
+    const astroAttrs = [];
     Array.from(originalSection.attributes).forEach(attr => {
       if (attr.name.startsWith('data-astro-cid-')) {
         astroAttrs.push([attr.name, attr.value]);
@@ -32,11 +32,11 @@
     });
 
     // --- Card wrapping: group by h2/h3 headings ---
-    const children = Array.from(content.children) as HTMLElement[];
+    const children = Array.from(content.children);
     if (children.length === 0) return;
 
-    const cards: HTMLElement[] = [];
-    let currentCard: HTMLElement | null = null;
+    const cards = [];
+    let currentCard = null;
 
     children.forEach((el) => {
       const tag = el.tagName.toLowerCase();
@@ -52,33 +52,33 @@
     if (cards.length === 0) return;
 
     // Detach header and footer
-    const header = originalSection.querySelector('.skill-page__header') as HTMLElement;
-    const footer = originalSection.querySelector('.skill-page__back') as HTMLElement;
+    const header = originalSection.querySelector('.skill-page__header');
+    const footer = originalSection.querySelector('.skill-page__back');
 
     // --- Helpers ---
-    function makeSection(): HTMLElement {
+    function makeSection() {
       const sec = document.createElement('section');
       sec.className = originalSection.className;
       astroAttrs.forEach(([n, v]) => sec.setAttribute(n, v));
       return sec;
     }
 
-    function makeGrid(): HTMLDivElement {
+    function makeGrid() {
       const g = document.createElement('div');
       g.className = 'content-card-grid';
       return g;
     }
 
-    function overflows(sec: HTMLElement): boolean {
+    function overflows(sec) {
       return sec.scrollHeight > sec.clientHeight;
     }
 
-    function activate(sec: HTMLElement) {
+    function activate(sec) {
       sec.classList.add('active');
       sec.style.display = 'block';
     }
 
-    function deactivate(sec: HTMLElement) {
+    function deactivate(sec) {
       sec.classList.remove('active');
       sec.style.display = '';
     }
@@ -93,7 +93,7 @@
     originalSection.appendChild(currentGrid);
 
     let currentPage = originalSection;
-    const allSections: HTMLElement[] = [originalSection];
+    const allSections = [originalSection];
 
     // --- Add cards one at a time, check overflow ---
     for (const card of cards) {
@@ -137,9 +137,11 @@
         // Move last card to footer page so it's not isolated
         const footerGrid = makeGrid();
         if (currentGrid.children.length > 0) {
-          const lastCard = currentGrid.lastElementChild!;
-          lastCard.remove();
-          footerGrid.appendChild(lastCard);
+          const lastCard = currentGrid.lastElementChild;
+          if (lastCard) {
+            lastCard.remove();
+            footerGrid.appendChild(lastCard);
+          }
           if (currentGrid.children.length === 0) currentGrid.remove();
         }
         newPage.appendChild(footerGrid);
