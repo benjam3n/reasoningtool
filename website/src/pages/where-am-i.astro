@@ -296,7 +296,7 @@ const entries = rawEntries.map((entry: any) => {
     let activeBucket = '';
     let activeValue = '';
     let currentPage = 1;
-    let pageSize = 5;
+    let pageSize = 4;
     let valuePage = 1;
     let filteredCards = cards.slice();
     const collator = new Intl.Collator(undefined, { sensitivity: 'base', numeric: true });
@@ -459,30 +459,21 @@ const entries = rawEntries.map((entry: any) => {
     };
 
     const updatePageSize = () => {
-      if (filteredCards.length === 0) {
-        pageSize = 1;
-        return;
-      }
+      const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
 
-      const listHeight = list.clientHeight;
-      const listStyle = window.getComputedStyle(list);
-      const gap = parseFloat(listStyle.rowGap || listStyle.gap || '0') || 0;
+      let nextPageSize = 5;
+      if (viewportHeight < 940) nextPageSize = 4;
+      if (viewportHeight < 820) nextPageSize = 3;
+      if (viewportHeight < 680) nextPageSize = 2;
+      if (viewportHeight < 560) nextPageSize = 1;
 
-      const sample = filteredCards.slice(0, Math.min(6, filteredCards.length));
-      const heights = sample.map((card) => {
-        const prevDisplay = card.style.display;
-        const prevVisibility = card.style.visibility;
-        card.style.display = '';
-        card.style.visibility = 'hidden';
-        const height = card.getBoundingClientRect().height;
-        card.style.display = prevDisplay;
-        card.style.visibility = prevVisibility;
-        return height;
-      }).filter((h) => h > 0);
-      const baseline = heights.length > 0 ? Math.max(...heights) : 140;
+      if (viewportWidth < 1100) nextPageSize = Math.min(nextPageSize, 4);
+      if (viewportWidth < 900) nextPageSize = Math.min(nextPageSize, 3);
+      if (viewportWidth < 700) nextPageSize = Math.min(nextPageSize, 2);
+      if (viewportWidth < 520) nextPageSize = 1;
 
-      const fit = Math.floor((listHeight + gap) / (baseline + gap));
-      pageSize = Math.max(1, fit);
+      pageSize = Math.max(1, nextPageSize);
     };
 
     const renderPager = () => {
@@ -748,6 +739,11 @@ const entries = rawEntries.map((entry: any) => {
     border-radius: 8px;
     padding: var(--sp-1) var(--sp-2);
     background: var(--color-surface);
+    min-height: 7.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
   }
 
   .new-item__meta {
@@ -762,6 +758,10 @@ const entries = rawEntries.map((entry: any) => {
   .new-item h3 {
     margin: 0.35rem 0;
     font-size: var(--text-base);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 
   .new-item__skills {
@@ -769,6 +769,10 @@ const entries = rawEntries.map((entry: any) => {
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     color: var(--color-text-muted);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
   }
 
   @media (max-width: 980px) {
