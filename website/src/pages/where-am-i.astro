@@ -265,6 +265,8 @@ const entries = rawEntries.map((entry: any) => {
 
         <div class="new-nav-rail">
           <p class="new-nav-title">Navigation</p>
+          <div class="new-pager-meta" id="new-pager-meta"></div>
+          <div class="new-pager-nav" id="new-pager-nav"></div>
           <div class="new-pager" id="new-pager"></div>
         </div>
       </div>
@@ -283,10 +285,12 @@ const entries = rawEntries.map((entry: any) => {
     const bucketsWrap = root.querySelector('#new-buckets');
     const valuesWrap = root.querySelector('#new-values');
     const valuesNavWrap = root.querySelector('#new-values-nav');
+    const pagerMetaWrap = root.querySelector('#new-pager-meta');
+    const pagerNavWrap = root.querySelector('#new-pager-nav');
     const pagerWrap = root.querySelector('#new-pager');
     const list = root.querySelector('#new-list');
     const cards = Array.from(root.querySelectorAll('.new-item'));
-    if (!modes || !bucketsWrap || !valuesWrap || !valuesNavWrap || !pagerWrap || !list || cards.length === 0) return;
+    if (!modes || !bucketsWrap || !valuesWrap || !valuesNavWrap || !pagerMetaWrap || !pagerNavWrap || !pagerWrap || !list || cards.length === 0) return;
 
     let activeMode = 'day';
     let activeBucket = '';
@@ -483,8 +487,45 @@ const entries = rawEntries.map((entry: any) => {
 
     const renderPager = () => {
       pagerWrap.innerHTML = '';
+      pagerMetaWrap.innerHTML = '';
+      pagerNavWrap.innerHTML = '';
       const totalPages = Math.max(1, Math.ceil(filteredCards.length / pageSize));
-      for (let i = 1; i <= totalPages; i++) {
+      const columns = window.innerWidth <= 980 ? 3 : 2;
+      const buttonHeight = 34;
+      const rows = Math.max(2, Math.floor(pagerWrap.clientHeight / buttonHeight));
+      const visibleSlots = Math.max(columns * rows, columns * 2);
+      const windowStart = Math.floor((currentPage - 1) / visibleSlots) * visibleSlots + 1;
+      const windowEnd = Math.min(totalPages, windowStart + visibleSlots - 1);
+
+      const meta = document.createElement('span');
+      meta.className = 'new-pager-meta__label';
+      meta.textContent = `${windowStart}-${windowEnd} / ${totalPages}`;
+      pagerMetaWrap.appendChild(meta);
+
+      const prevSet = document.createElement('button');
+      prevSet.className = 'new-btn';
+      prevSet.textContent = 'Prev';
+      prevSet.disabled = windowStart === 1;
+      prevSet.addEventListener('click', () => {
+        if (windowStart === 1) return;
+        currentPage = Math.max(1, windowStart - visibleSlots);
+        renderPagedList();
+      });
+
+      const nextSet = document.createElement('button');
+      nextSet.className = 'new-btn';
+      nextSet.textContent = 'Next';
+      nextSet.disabled = windowEnd === totalPages;
+      nextSet.addEventListener('click', () => {
+        if (windowEnd === totalPages) return;
+        currentPage = Math.min(totalPages, windowEnd + 1);
+        renderPagedList();
+      });
+
+      pagerNavWrap.appendChild(prevSet);
+      pagerNavWrap.appendChild(nextSet);
+
+      for (let i = windowStart; i <= windowEnd; i++) {
         const letterIndex = (i - 1) % NAV_LETTERS.length;
         const letterLap = Math.floor((i - 1) / NAV_LETTERS.length);
         const letter = NAV_LETTERS[letterIndex];
@@ -682,6 +723,24 @@ const entries = rawEntries.map((entry: any) => {
     flex: 1;
     align-content: start;
     overflow: hidden;
+  }
+
+  .new-pager-meta {
+    min-height: 1.2rem;
+    margin-bottom: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .new-pager-nav {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .new-pager-nav .new-btn {
+    flex: 1;
   }
 
   .new-item {
