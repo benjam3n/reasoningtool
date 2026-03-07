@@ -160,7 +160,7 @@
 | `/gn` | generation | Generate all possible options for a decision or selection |
 | `/gosm` | goal oriented state machine | Goal-Oriented State Machine. |
 | `/grf` | goal refinement | Transform vague or incomplete goals into SMART goals with explicit clarification vs substitution distinction |
-| `/grfr` | goal reframing | Transform impossible or problematic goals into achievable versions. |
+| `/grfr` | goal reframing | Transform impossible or problematic goals into achievable versions, with explicit substitution handling and consent. |
 | `/gsr` | goal structure reconstruction | Given any conclusion, statement, or claim, reconstruct the goal-structure. |
 | `/gt` | graph traversal | Orderings derived from fundamental graph traversal algorithms. |
 | `/gts` | generate then search | The fundamental pattern for making cognitive tasks tractable: |

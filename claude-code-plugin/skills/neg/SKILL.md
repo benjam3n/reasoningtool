@@ -20,12 +20,13 @@ Before any negotiation, gather critical information:
 
 ### Step 2: Define your position completely
 Work through your complete negotiation position:
-1. List your interests (underlying needs, not positions)
-2. Prioritize interests (must-have vs nice-to-have)
-3. Define your BATNA (best alternative if no deal)
-4. Set your reservation point (worst acceptable outcome)
-5. Set your aspiration point (best realistic outcome)
-6. Plan your opening position (ambitious but justifiable)
+1. Record your stated position verbatim
+2. List your interests behind that position
+3. Prioritize interests (must-have vs nice-to-have)
+4. Define your BATNA (best alternative if no deal)
+5. Set your reservation point (worst acceptable outcome)
+6. Set your aspiration point (best realistic outcome)
+7. Plan your opening position (ambitious but justifiable)
 
 ### Step 3: Analyze the counterpart
 Develop hypotheses about the other party:
@@ -44,6 +45,7 @@ Plan your approach to the negotiation:
 4. Prepare responses to likely tactics they might use
 5. Plan information gathering questions
 6. Decide on framing (gain vs loss, fairness appeal)
+7. Generate one non-standard strategy and one "do not negotiate on their terms" fallback, then state when each would be better than the standard play
 
 ### Step 5: Conduct the negotiation
 Execute the negotiation conversation:

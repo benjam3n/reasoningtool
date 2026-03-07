@@ -30,7 +30,9 @@ If updating existing taxonomy:
 If creating new:
 1. Research existing taxonomies in domain
 2. Identify best practices
-3. Decide: adopt, adapt, or create from scratch
+3. Ask what those taxonomies assume and what they fail to classify
+4. Generate at least one unconventional structure (for example: faceted instead of hierarchical, temporary category, or no taxonomy for a boundary case)
+5. Decide: adopt, adapt, or create from scratch
 
 ### Step 3: Category Development
 Develop/refine categories:

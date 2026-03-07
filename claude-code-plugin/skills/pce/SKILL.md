@@ -102,9 +102,11 @@ Route to the appropriate analysis:
 → May invoke: `/araw`, `/grfr`, `/stg`
 
 ### FEELING
-1. What's the feeling pointing at? (feelings are data about unmet needs)
-2. What goal or value is threatened/served?
-3. What action would address the underlying need?
+1. What feeling is being reported, in the user's own terms?
+2. Do we need to stay with the stated request, or is the user explicitly asking to explore what the feeling points at?
+3. If exploring is desired: what goal, value, or unmet need might the feeling be pointing at?
+4. If a different underlying need is proposed, would addressing it but not the stated request count as clarification or substitution?
+5. What action follows from the chosen frame?
 
 → May invoke: `/araw`, `/ve`, `/gu`
 
@@ -127,7 +129,12 @@ Specific, prioritized next steps:
 2. **DO_NEXT**: [action] — [who] — [what it resolves]
 3. **MONITOR**: [what to watch for] — [what it would mean]
 
-Every action must be specific enough to execute without further analysis.
+Every action must pass this execution check:
+- Trigger: when exactly should this action be taken?
+- Actor: who does it?
+- Procedure: what concrete step is performed?
+- Output: what artifact or state change should result?
+- Verification: how do we know the action worked?
 
 ---
 

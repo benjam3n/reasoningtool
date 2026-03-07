@@ -19,9 +19,17 @@ description: |
   - ASSUME RIGHT: This IS the problem → what follows?
   - ASSUME WRONG: This ISN'T the real problem → what is?
 
+  Preserve the original problem statement verbatim before proposing alternative
+  problem frames. Alternative framings may be clarifications or substitutions.
+  If solving an alternative framing would not solve the original problem as
+  stated, request consent before proceeding with the alternative.
+
 core_principle: |
-  The obvious problem is often not the real problem.
-  The real problem is often:
+  The obvious problem may be the real problem, or it may be a symptom,
+  preference, or substitute for a different problem.
+  Test alternative framings explicitly instead of silently replacing the
+  original.
+  Common alternative levels include:
   - One level upstream (what caused this symptom?)
   - One level downstream (why does this symptom matter?)
   - In a different domain (system issue, not local issue)
@@ -66,6 +74,28 @@ problem_levels:
 # ============================================
 right_problem_questions:
 
+  - id: preserve_original_problem
+    question: "What is the original problem statement, verbatim?"
+    method: |
+      1. Copy the user's stated problem exactly.
+      2. Record any proposed reframes separately.
+      3. Use the original statement as the comparison target for all later reframes.
+    output: original_problem_statement
+
+  - id: clarification_vs_substitution
+    question: "Is the alternative problem frame a clarification or a substitution?"
+    method: |
+      1. Compare the ORIGINAL problem to the ALTERNATIVE problem frame.
+      2. Apply the simulation test:
+         - If solving the alternative but NOT the original would still satisfy the user,
+           classify as CLARIFICATION.
+         - If solving the alternative but NOT the original would leave the user saying
+           "that's not what I asked for," classify as SUBSTITUTION.
+         - If the answer depends on missing intent, classify as UNCLEAR.
+      3. For SUBSTITUTION or UNCLEAR, ask whether to proceed with the alternative,
+         return to the original, or explore both.
+    output: reframing_classification
+
   - id: obvious_vs_real
     question: "Is the obvious problem the real problem?"
     method: |
@@ -73,6 +103,8 @@ right_problem_questions:
       2. Ask: "Why is this a problem?" (go upstream)
       3. Ask: "What would happen if we didn't solve this?" (test if it matters)
       4. Ask: "What else could explain the symptom?" (alternative causes)
+      5. Include at least one unconventional or embarrassing alternative explanation
+      6. Compare each alternative to the original problem statement before replacing it
     output: real_problem_candidate
 
   - id: level_check

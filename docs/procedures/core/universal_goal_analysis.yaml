@@ -48,13 +48,17 @@ categories:
       - "What is explicitly excluded from this goal?"
 
     goal_validity:
-      - "What is the actual need this goal serves? (Not the goal itself, the underlying need)"
+      - "What is the original goal statement, verbatim?"
+      - "Should the stated goal be preserved as fixed, or should underlying-need analysis be explored explicitly?"
+      - "If exploring underlying-need analysis: what need might this goal serve?"
       - "If this goal were achieved, what decisions would be made differently going forward?"
       - "If this goal were achieved, what goals would become achievable that are not achievable now?"
       - "If this goal were achieved, what goals would become unachievable that are achievable now?"
       - "If this goal failed, what decisions would be made differently going forward?"
       - "What is the specific cost of never achieving this goal? (Quantify in resources, opportunities, outcomes)"
-      - "Is there a different goal that serves the same need with fewer requirements? If so, what?"
+      - "If exploring alternative goals explicitly: is there a different goal that serves the same need with fewer requirements? If so, what?"
+      - "If an alternative goal is proposed: would achieving the alternative but not the original still satisfy the user?"
+      - "If the alternative would not satisfy the original goal, has explicit consent been obtained to treat it as a substitution?"
       - "What conditions would immediately disqualify this goal from being the right goal?"
 
     goal_origin:
