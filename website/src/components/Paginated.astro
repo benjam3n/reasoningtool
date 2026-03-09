@@ -367,7 +367,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     }
 
     .paginated__slides :global(section.active.section--scrollable) {
-      touch-action: pan-y pinch-zoom;
+      touch-action: pinch-zoom;
     }
 
     .paginated__slides :global(.card-grid--2) {
@@ -450,6 +450,10 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     let current = 0;
     const total = finalSections.length;
+    const touchState = {
+      active: false,
+      lastY: 0,
+    };
 
     // Build number buttons
     const numsContainer = container.querySelector('#pg-nums');
@@ -576,7 +580,22 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
         return;
       }
       const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
-      if (!allowScroll) e.preventDefault();
+      if (!allowScroll) {
+        e.preventDefault();
+        return;
+      }
+
+      e.preventDefault();
+      const currentY = e.touches[0].clientY;
+      if (!touchState.active) {
+        touchState.active = true;
+        touchState.lastY = currentY;
+        return;
+      }
+
+      const deltaY = touchState.lastY - currentY;
+      touchState.lastY = currentY;
+      activeSection.scrollTop += deltaY * 0.14;
     }, { passive: false });
 
     container.addEventListener('wheel', (e) => {
@@ -586,7 +605,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
       if (!allowScroll) return;
       e.preventDefault();
-      activeSection.scrollTop += e.deltaY * 0.38;
+      activeSection.scrollTop += e.deltaY * 0.16;
     }, { passive: false });
 
     container.addEventListener('touchstart', (e) => {
@@ -597,11 +616,21 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       if (!(target instanceof Element) || !activeSection) return;
       const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
       if (!allowScroll) return;
+      touchState.active = true;
+      touchState.lastY = e.touches[0].clientY;
 
       const maxScrollTop = activeSection.scrollHeight - activeSection.clientHeight;
       if (maxScrollTop <= 0) return;
       if (activeSection.scrollTop <= 0) activeSection.scrollTop = 1;
       if (activeSection.scrollTop >= maxScrollTop) activeSection.scrollTop = Math.max(1, maxScrollTop - 1);
+    }, { passive: true });
+
+    container.addEventListener('touchend', () => {
+      touchState.active = false;
+    }, { passive: true });
+
+    container.addEventListener('touchcancel', () => {
+      touchState.active = false;
     }, { passive: true });
 
     window.addEventListener('resize', () => {
