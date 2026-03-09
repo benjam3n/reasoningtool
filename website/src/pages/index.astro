@@ -512,6 +512,10 @@ for (const [meta, candidateTags] of Object.entries(tagMetaCategories)) {
 const categorizedTags = new Set(Object.values(tagMetaCategories).flat());
 const uncategorized = allTagsSorted.filter(t => !categorizedTags.has(t) && t !== 'shortcut' && t !== 'pick');
 if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategorized });
+
+// Build meta→tags map for JS
+const TAG_META_MAP: Record<string, string[]> = {};
+tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
 ---
 
 <!doctype html>
@@ -605,7 +609,7 @@ if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategor
     <div class="mobile-skill-pager" id="mobile-skill-pager" aria-label="Skill pages"></div>
   </div>
 
-  <script define:vars={{ NAV_LETTERS, NAV_WORDS_BY_LETTER, NAV_EMOJI_CATEGORIES }}>
+  <script define:vars={{ NAV_LETTERS, NAV_WORDS_BY_LETTER, NAV_EMOJI_CATEGORIES, TAG_META_MAP }}>
     (function() {
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -730,6 +734,13 @@ if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategor
             if (currentTagFilter) {
               var chipTags = (chip.getAttribute('data-tags') || '').split(',');
               tagMatch = chipTags.indexOf(currentTagFilter) !== -1;
+            } else if (currentTagMeta && TAG_META_MAP[currentTagMeta]) {
+              var chipTags2 = (chip.getAttribute('data-tags') || '').split(',');
+              var metaTags = TAG_META_MAP[currentTagMeta];
+              tagMatch = false;
+              for (var ti = 0; ti < metaTags.length; ti++) {
+                if (chipTags2.indexOf(metaTags[ti]) !== -1) { tagMatch = true; break; }
+              }
             }
 
             chip.dataset.searchHidden = (searchMatch && tierMatch && catMatch && tagMatch) ? '0' : '1';
