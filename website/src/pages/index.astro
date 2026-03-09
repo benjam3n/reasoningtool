@@ -505,6 +505,16 @@ const totalCount = allSkills.length;
       >{s.name}</a>
     ))}
   </section>
+  <nav class="mobile-bottom-bar" aria-label="Mobile navigation">
+    <a href="/" class="mobile-bottom-bar__btn">Skills</a>
+    <a href="/installation" class="mobile-bottom-bar__btn">Install</a>
+    <a href="/tools" class="mobile-bottom-bar__btn">Tools</a>
+    <a href="/faq" class="mobile-bottom-bar__btn">FAQ</a>
+    <a href="/about" class="mobile-bottom-bar__btn">About</a>
+    <a href="/where-am-i" class="mobile-bottom-bar__btn">Where</a>
+    <a href="/visuals" class="mobile-bottom-bar__btn">Visuals</a>
+    <button class="mobile-bottom-bar__btn pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
+  </nav>
 
   <script is:inline>
     (function() {
@@ -636,9 +646,13 @@ const totalCount = allSkills.length;
           });
         });
 
-        // Prevent all scroll events
-        window.addEventListener('wheel', function(e) { e.preventDefault(); }, { passive: false });
-        window.addEventListener('touchmove', function(e) { e.preventDefault(); }, { passive: false });
+        // Keep desktop cloud fixed. Allow normal scrolling on mobile.
+        window.addEventListener('wheel', function(e) {
+          if (window.innerWidth > 900) e.preventDefault();
+        }, { passive: false });
+        window.addEventListener('touchmove', function(e) {
+          if (window.innerWidth > 900) e.preventDefault();
+        }, { passive: false });
       }
 
       document.addEventListener('DOMContentLoaded', setup);
@@ -795,6 +809,10 @@ const totalCount = allSkills.length;
     background: var(--color-accent-subtle);
   }
 
+  .mobile-bottom-bar {
+    display: none;
+  }
+
   /* Dark mode tier colors */
   :global([data-theme="dark"]) .skill-chip--exp { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
   :global([data-theme="dark"]) .skill-chip--1 { border-color: #6ee7b7; color: #6ee7b7; background: #132e1a; }
@@ -810,5 +828,94 @@ const totalCount = allSkills.length;
     :global(:root:not([data-theme="light"])) .skill-chip--cat { border-color: #ce93d8; color: #ce93d8; background: #2a1230; }
     :global(:root:not([data-theme="light"])) .skill-chip--3 { border-color: #ffb74d; color: #ffb74d; background: #2e1a00; }
     :global(:root:not([data-theme="light"])) .skill-chip--4 { border-color: #78909c; color: #90a4ae; background: #1c2025; }
+  }
+
+  @media (max-width: 900px) {
+    .skills-page {
+      padding: var(--sp-2);
+      padding-bottom: 5.5rem;
+      height: auto;
+      min-height: 100dvh;
+      overflow: auto;
+      display: block;
+    }
+
+    .skill-cloud {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+      align-content: start;
+    }
+
+    .skill-chip {
+      padding: 0.35rem 0.5rem;
+      font-size: var(--text-xs);
+      text-align: center;
+    }
+
+    .nav-chip {
+      display: none;
+    }
+
+    .skill-search {
+      grid-column: 1 / -1;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: var(--text-xs);
+    }
+
+    .skill-search:focus {
+      width: 100%;
+    }
+
+    .sort-controls {
+      grid-column: 1 / -1;
+      gap: 0.3rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .sort-chip {
+      padding: 0.28rem 0.5rem;
+      font-size: 0.68rem;
+    }
+
+    .mobile-bottom-bar {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.35rem;
+      padding: 0.5rem;
+      background: color-mix(in srgb, var(--color-bg) 88%, transparent);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--color-border);
+      z-index: 40;
+    }
+
+    .mobile-bottom-bar__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2rem;
+      padding: 0.3rem;
+      border: 1px solid var(--color-accent);
+      border-radius: 6px;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .skill-cloud {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

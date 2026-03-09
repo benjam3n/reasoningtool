@@ -37,6 +37,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 </div>
 
 <style>
+  :global(html),
   :global(body) {
     overflow: hidden;
     height: 100dvh;
@@ -313,17 +314,30 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   }
 
   @media (max-width: 900px) {
+    :global(html),
     :global(body) {
-      overflow: auto;
-      height: auto;
+      overflow: hidden;
+      height: 100svh;
+      overscroll-behavior: none;
+    }
+
+    .paginated {
+      height: 100svh;
+      overscroll-behavior: none;
     }
 
     .paginated__slides :global(section) {
       padding: var(--sp-2);
       padding-bottom: var(--sp-2);
+      overflow: hidden;
+      touch-action: manipulation;
+    }
+
+    .paginated__slides :global(section.active.section--scrollable) {
       overflow-y: auto;
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;
     }
 
     .paginated__slides :global(.card-grid--2) {
@@ -474,12 +488,21 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       });
     }
 
+    function updateMobileScrollState() {
+      finalSections.forEach((section, index) => {
+        const isActive = index === current;
+        const canScroll = isActive && (section.scrollHeight > section.clientHeight + 2);
+        section.classList.toggle('section--scrollable', canScroll);
+      });
+    }
+
     function show(index) {
       if (index < 0 || index >= total) return;
       finalSections.forEach((s) => s.classList.remove('active'));
       finalSections[index].classList.add('active');
       current = index;
       updateNums();
+      requestAnimationFrame(updateMobileScrollState);
     }
 
     function goNextPage() {
@@ -515,6 +538,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     window.addEventListener('resize', () => {
       requestAnimationFrame(applyNavLayout);
+      requestAnimationFrame(updateMobileScrollState);
     });
 
     // GitHub toggle buttons — first click arms, second click opens
