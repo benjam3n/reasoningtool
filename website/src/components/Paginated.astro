@@ -575,6 +575,13 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
           return;
         }
 
+        touchState.velocity *= 0.988;
+        if (Math.abs(touchState.velocity) < 0.08) {
+          touchState.velocity = 0;
+          touchState.rafId = 0;
+          return;
+        }
+
         touchState.rafId = requestAnimationFrame(step);
       };
 
