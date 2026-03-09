@@ -30,7 +30,7 @@ emit_commit() {
     type="website"
   elif rg -q 'claude-code-plugin/skills/' <<< "$files_blob"; then
     type="skills"
-  elif rg -q 'scripts/' <<< "$files_blob"; then
+  elif rg -q 'src/scripts/' <<< "$files_blob"; then
     type="scripts"
   elif rg -q 'docs/|sessions/' <<< "$files_blob"; then
     type="docs"

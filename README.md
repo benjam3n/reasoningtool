@@ -437,12 +437,12 @@ claude
 ```bash
 git clone https://github.com/benjam3n/reasoningtool.git
 cd reasoningtool
-./scripts/install_codex_skills.sh
+./src/scripts/install_codex_skills.sh
 ```
 
 ```bash
-./scripts/install_codex_skills.sh --copy
-./scripts/install_codex_skills.sh --force
+./src/scripts/install_codex_skills.sh --copy
+./src/scripts/install_codex_skills.sh --force
 ```
 
 ## License

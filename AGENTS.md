@@ -33,4 +33,4 @@ This repository contains 367 reusable skills in `claude-code-plugin/skills/*/SKI
 ## Notes
 
 - The skill files already include Codex-compatible frontmatter.
-- For global Codex installation outside this repository, use `scripts/install_codex_skills.sh`.
+- For global Codex installation outside this repository, use `src/scripts/install_codex_skills.sh`.

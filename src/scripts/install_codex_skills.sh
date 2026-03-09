@@ -6,7 +6,7 @@ usage() {
 Install reasoningtool skills into Codex.
 
 Usage:
-  scripts/install_codex_skills.sh [--copy|--symlink] [--force] [--code-home PATH]
+  src/scripts/install_codex_skills.sh [--copy|--symlink] [--force] [--code-home PATH]
 
 Options:
   --copy            Copy skill folders (default).
