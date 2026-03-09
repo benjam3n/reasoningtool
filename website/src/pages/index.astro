@@ -615,7 +615,7 @@ const totalCount = allSkills.length;
             return;
           }
 
-          mobilePager.style.display = 'grid';
+          mobilePager.style.display = 'flex';
           mobilePager.innerHTML = '';
 
           for (var i = 0; i < mobilePageCount; i++) {
@@ -634,31 +634,37 @@ const totalCount = allSkills.length;
           updateFooterOffset();
         }
 
-        function buildPagesForHeight(visible, availableHeight) {
+        function buildRows(visible) {
           var rows = [];
           visible.forEach(function(chip) {
             var rowTop = chip.offsetTop;
             var lastRow = rows[rows.length - 1];
             if (!lastRow || Math.abs(lastRow.top - rowTop) > 2) {
-              rows.push({ top: rowTop, chips: [chip], height: chip.offsetHeight });
+              rows.push({ top: rowTop, chips: [chip], height: chip.offsetHeight, bottom: rowTop + chip.offsetHeight });
             } else {
               lastRow.chips.push(chip);
               lastRow.height = Math.max(lastRow.height, chip.offsetHeight);
+              lastRow.bottom = Math.max(lastRow.bottom, rowTop + chip.offsetHeight);
             }
           });
 
+          return rows;
+        }
+
+        function buildPagesForFooter(visible, footerTop) {
+          var rows = buildRows(visible);
+
           var pages = [];
           var currentPageRows = [];
-          var usedHeight = 0;
+
           rows.forEach(function(row) {
-            var nextHeight = usedHeight === 0 ? row.height : usedHeight + 8 + row.height;
-            if (currentPageRows.length > 0 && nextHeight > availableHeight) {
+            var rowBottom = row.bottom;
+            var wouldOverflow = currentPageRows.length > 0 && rowBottom > footerTop - 8;
+            if (wouldOverflow) {
               pages.push(currentPageRows);
               currentPageRows = [row];
-              usedHeight = row.height;
             } else {
               currentPageRows.push(row);
-              usedHeight = nextHeight;
             }
           });
 
@@ -693,13 +699,13 @@ const totalCount = allSkills.length;
             return;
           }
 
-          var top = cloud.getBoundingClientRect().top;
           var pages = [];
 
           for (var pass = 0; pass < 3; pass++) {
-            var footerHeight = updateFooterOffset();
-            var availableHeight = Math.max(120, window.innerHeight - top - footerHeight - 12);
-            var nextPages = buildPagesForHeight(visible, availableHeight);
+            updateFooterOffset();
+            var footer = document.querySelector('.mobile-footer-stack');
+            var footerTop = footer ? footer.getBoundingClientRect().top : window.innerHeight;
+            var nextPages = buildPagesForFooter(visible, footerTop);
             var nextPageCount = Math.max(1, nextPages.length);
             var pageCountChanged = nextPageCount !== mobilePageCount;
 
@@ -1112,10 +1118,8 @@ const totalCount = allSkills.length;
 
     .mobile-skill-pager {
       display: none;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(2rem, max-content);
+      flex-wrap: nowrap;
       gap: 0.3rem;
-      justify-content: start;
       overflow-x: auto;
       overflow-y: hidden;
       scrollbar-width: none;
