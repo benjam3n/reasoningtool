@@ -1,0 +1,1 @@
+Diagnose why you're blocked and get concrete unblocking actions based on the type of block: information gap, decision paralysis, emotional block, skill gap, or wrong approach. Read and execute `claude-code-plugin/skills/unstk/SKILL.md`, applying it to this input: $ARGUMENTS

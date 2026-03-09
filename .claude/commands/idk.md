@@ -1,0 +1,1 @@
+Entry point for total uncertainty. When you don't know what you want, what to do, or what's happening — start here. Read and execute `claude-code-plugin/skills/idk/SKILL.md`, applying it to this input: $ARGUMENTS

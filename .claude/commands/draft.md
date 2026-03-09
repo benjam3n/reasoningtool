@@ -1,0 +1,1 @@
+Structured drafting with revision cycles. First draft captures structure, second draft fixes logic, third draft polishes prose. Each revision has specific criteria. Prevents the common failure of trying to write perfectly on the first pass. Read and execute `claude-code-plugin/skills/draft/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Adversarial analysis — attack your own plan, argument, or system. Find the failure modes, exploit the weaknesses, identify what an intelligent adversary would do. Then fix what you found. Read and execute `claude-code-plugin/skills/redteam/SKILL.md`, applying it to this input: $ARGUMENTS

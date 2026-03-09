@@ -1,0 +1,1 @@
+Construct the strongest possible version of an opposing argument before critiquing it. Ensures you're fighting the real argument, not a straw man. Includes finding the kernel of truth in positions you disagree with. Read and execute `claude-code-plugin/skills/steelman/SKILL.md`, applying it to this input: $ARGUMENTS

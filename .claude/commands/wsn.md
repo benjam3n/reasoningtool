@@ -1,0 +1,1 @@
+Determine the highest-value next skill to add to the reasoning toolkit by analyzing gaps, ROI, and user needs. Read and execute `claude-code-plugin/skills/wsn/SKILL.md`, applying it to this input: $ARGUMENTS

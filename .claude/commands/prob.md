@@ -1,0 +1,1 @@
+Reason under uncertainty using Bayesian thinking, base rates, confidence calibration, and expected value. Avoid base rate neglect, conjunction fallacy, overconfidence, and other probability traps. Read and execute `claude-code-plugin/skills/prob/SKILL.md`, applying it to this input: $ARGUMENTS

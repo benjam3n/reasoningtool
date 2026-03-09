@@ -49,8 +49,12 @@ If clear from context, proceed with the matching interpretation.
 | **Career** | /cpp, /ip, /rmo, /sn, /ska, /dlp |
 | **Research** | /lr, /qr, /dc, /sta, /exd, /fia, /src |
 | **Planning** | /pji, /de, /pjc, /op, /pt, /ria, /dpl |
-| **Writing** | /w, /pw, /stl, /pus, /prd, /cts |
+| **Writing** | /w, /pw, /stl, /pus, /prd, /cts, /wre, /story |
 | **Learning** | /ska, /dlp, /spr, /acr, /lrs, /am |
+| **Ethics** | /eth |
+| **Safety** | /saf |
+| **AI/Agents** | /aiag (AI agent analysis) |
+| **Experimentation** | /abts (A/B test design) |
 
 If domain is unclear, ask: "What field is this in?"
 
@@ -66,6 +70,11 @@ If domain is unclear, ask: "What field is this in?"
 | **Decide** | "Should I", "Which is better", "X or Y" | → /decide with domain context |
 | **Analyze** | "Break down", "What's going on" | Domain analysis skills or → /analyze |
 | **Optimize** | "Improve", "Make better", "Optimize" | → /evaluate first (find gaps), then domain skills |
+| **Compare** | "Compare X and Y", "Which is better" | → /cmp or /dom (if dominance applies) |
+| **List/enumerate** | "What are all the X" | → /list or /se |
+| **Future projection** | "Where is X going" | → /fut with domain context |
+| **Ethical assessment** | "Is this ethical" | → /eth with domain context |
+| **Safety check** | "Is this safe" | → /saf with domain context |
 
 ### 3. Is This Too General for a Domain Skill?
 
@@ -81,6 +90,38 @@ Some questions require chaining:
 - "Plan the technical architecture and project timeline" → /dsn (design) + /pji (project planning)
 
 If multiple skills needed, invoke them in logical order — analysis before creation, planning before execution.
+
+### 5. Domain-Specific Enhancement
+
+For any domain task, consider whether these supplementary skills add value:
+
+| Situation | Also invoke |
+|-----------|------------|
+| Domain task involves claims | → /agsk (argument analysis) |
+| Domain task involves predictions | → /fut (future analysis) |
+| Domain task involves risks | → /fla, /obo, /saf |
+| Domain task involves ethics | → /eth |
+| Domain task has obvious checks | → /obv |
+| Domain task involves differentiation | → /difr |
+| Domain task needs general principles | → /genl |
+| Domain task needs specific application | → /spcf |
+| Domain task has unresolved decisions | → /tbd |
+| Domain task needs narrative | → /story |
+| Domain task involves vague best practices | → /platitude (operationalize) |
+| Domain task needs implications traced | → /sycs |
+
+### 6. Input Shape Detection
+
+| Input pattern | Route to |
+|--------------|----------|
+| "I think X" (in domain context) | → /it (formalize the claim) |
+| "X, but Y" (domain tension) | → /but (resolve the tension) |
+| "I'm not sure about X" (domain uncertainty) | → /nsa (classify the uncertainty) |
+| "Handle this" (vague domain task) | → /handle |
+| User says "etc" or "and so on" | → /etc or /aso (expand) |
+| User has partial list | → /siycftr (find the rest) |
+| User wants easy mode | → /ezy |
+| User wants hard mode | → /hrd or /certainty |
 
 ---
 
@@ -147,6 +188,15 @@ Report:
 - Skill(s) invoked
 - Results
 - Recommended follow-up (if any)
+
+### Follow-Up Routing
+
+After domain-specific work, the user may need:
+- **"What should I do next?"** → INVOKE: /next or /fonss
+- **"What skill is best for this?"** → INVOKE: /wsib
+- **"Does a skill exist for X?"** → INVOKE: /dtse
+- **"What are the implications?"** → INVOKE: /sycs
+- **"What's still unresolved?"** → INVOKE: /tbd
 
 ---
 

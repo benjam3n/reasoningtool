@@ -1,0 +1,1 @@
+For after something just happened — good or bad — and you need to figure out what comes next. Assess what changed, what it means, and what to do about it. Read and execute `claude-code-plugin/skills/nowwt/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -94,6 +94,7 @@ _tier4 = {
         'wsib', 'dtse', 'extract', 'fonss', 'given', 'next', 'handle', 'itp',
         'uf', 'wn',
         'pick', 'tri', 'ornt', 'wsn',
+        'idk', 'unsure', 'cnfsd', 'ambi', 'blank', 'nowwt', 'nstep', 'strt', 'wtdn',
     ],
     'Skill Creation': [
         'mts', 'fmtsb', 'sc', 'cs', 'flhwijd',
@@ -115,6 +116,7 @@ _tier4 = {
         'aa', 'ael', 'asu', 'ac', 'cri', 'mem', 'bi', 'advr', 'cv', 'stc',
         'tp', 'eh',
         'agsk', 'deb', 'jdgm', 'ratn',
+        'steelman', 'redteam', 'reframe', 'doubt',
     ],
     'Questions & Analysis': [
         'qaf', 'qag', 'qo', 'cta', 'cdr', 'pbr', 'mrc', 'pre', 've', 'vcd',
@@ -125,6 +127,7 @@ _tier4 = {
         'pbi', 'rc5w', 'fowwr', 'sbfow', 'fr', 'lpd', 'cfr', 'shc', 'afa',
         'fat', 'fj', 'gaa',
         'conr', 'dmgc', 'conflict',
+        'panic', 'frzn', 'unstk', 'lost', 'ovwlm',
     ],
     'Procedures & Meta': [
         'pcd', 'pce', 'pcex', 'pci', 'pefs', 'prr', 'dmt', 'tpm', 'tr', 'txm',
@@ -192,6 +195,7 @@ _tier4 = {
     ],
     'Communication & Collaboration': [
         'comc', 'col', 'csb', 'tfac', 'tmsk', 'socg', 'eqi', 'empth',
+        'collab', 'persua', 'trust',
     ],
     'Decision Outputs': [
         'cand', 'odec', 'oart', 'onar', 'orec', 'prsk',

@@ -1,0 +1,1 @@
+The absolute simplest next-step skill. What are you trying to do? What's one thing you can do in the next 5 minutes? Do that. Read and execute `claude-code-plugin/skills/nstep/SKILL.md`, applying it to this input: $ARGUMENTS

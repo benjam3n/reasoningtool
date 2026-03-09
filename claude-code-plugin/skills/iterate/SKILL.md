@@ -257,6 +257,24 @@ CHANGE: [what specifically changes]
 AFTER: [what it looks like after]
 
 → INVOKE: [skill if applicable — /claim to test, /evaluate to assess, /how for method, etc.]
+
+AVAILABLE ITERATION SKILLS:
+- /claim — test whether a claim in the subject holds up
+- /evaluate — assess quality of the subject
+- /aex — surface hidden assumptions
+- /obv — check for obvious things missed
+- /obo — check for obvious bad outcomes ignored
+- /ogo — check for obvious good outcomes missed
+- /sdc — check for self-deception in the analysis
+- /difr — differentiate between similar items
+- /siycftr — find implied but missing items
+- /etc or /aso — expand implicit lists
+- /iagca — compress scope if expanding too much
+- /tbd — identify unresolved decisions
+- /iaw — try reframing the approach
+- /genl — extract general principles
+- /spcf — apply general principles to specifics
+- /sycs — trace implications
 ```
 
 If the iteration involves invoking another skill, do so. If it involves direct changes (editing files, rewriting sections), do that.
@@ -363,3 +381,24 @@ Default: 2x. These are floors.
 - [ ] Diminishing returns checked
 - [ ] ALL findings from Phase 1-2 in registry
 - [ ] Synthesis introduces NO new findings
+
+---
+
+## Follow-Up Routing
+
+After iteration, the user may need:
+- **"Is this good now?"** → INVOKE: /evaluate
+- **"What's still unresolved?"** → INVOKE: /tbd
+- **"What should I do next?"** → INVOKE: /next or /fonss
+- **"What skill is best now?"** → INVOKE: /wsib
+- **"Maximum effort resolution"** → INVOKE: /certainty
+- **"What are the implications of these changes?"** → INVOKE: /sycs
+
+---
+
+## Integration
+
+- **Use from**: /evaluate (after evaluation identifies issues, iterate to fix them), /certainty (during iterative resolution), any skill (when output needs improvement)
+- **Routes to**: /claim (test claims in subject), /evaluate (assess iterated version), /aex (surface assumptions), /obv (obvious check), /sdc (self-deception), /iaw (reframe), /tbd (unresolved decisions)
+- **Differs from**: /evaluate (iterate changes things, evaluate assesses them), /certainty (iterate improves existing work, certainty resolves questions to completion)
+- **Complementary**: /evaluate (assess before and after iteration), /obv (check obvious before iterating), /siycftr (find missing items), /iagca (compress scope when iteration expands)

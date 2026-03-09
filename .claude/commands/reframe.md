@@ -1,0 +1,1 @@
+Systematically reframe a problem by changing the level of abstraction, stakeholder perspective, time horizon, success criteria, or constraint set. Generate genuinely different framings, not word substitutions. Read and execute `claude-code-plugin/skills/reframe/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+For when you had a direction but lost it. Helps you find whether the goal changed, you changed, or the situation changed — and what to do next. Read and execute `claude-code-plugin/skills/lost/SKILL.md`, applying it to this input: $ARGUMENTS

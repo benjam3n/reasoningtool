@@ -1,0 +1,1 @@
+Systematically see from another person's perspective — not just "what would they feel" but "what do they see, believe, value, fear, and want given THEIR context and history?" Empathy as an analytical skill, not just a feeling. Read and execute `claude-code-plugin/skills/empth/SKILL.md`, applying it to this input: $ARGUMENTS

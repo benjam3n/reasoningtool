@@ -20,6 +20,14 @@ description: Sub-orchestrator for meta-questions about the toolkit. Provides ski
 | "What's the difference between X and Y?" | Comparison | Explain the difference |
 | "How do I use X?" | Usage guidance | Explain the skill |
 | "What skills are available?" | Full listing | Point to skills directory |
+| "What's new?" | Recent changes | → /wn |
+| "Make me a skill for X" | Skill creation | → /cs or /mts |
+| "Does a skill exist for X?" | Skill lookup | → /dtse |
+| "What skill is best for X?" | Skill selection | → /wsib |
+| "What skills should I run?" | Skill sequencing | → /fonss |
+| "Rank skills for my goal" | Skill ranking | → /given |
+| "I'm not sure what I need" | Uncertainty classification | → /nsa |
+| "In this prompt, what's happening?" | Prompt decomposition | → /itp |
 
 ### 2. Can We Infer What They Actually Need?
 
@@ -64,6 +72,38 @@ If the user describes a problem and asks for help, classify it:
 | Asking to expand an "etc" list | → /etc |
 | Asking timeline orientation / what is new | → /wn |
 | Asking to extract a repeatable pattern from recent behavior | → /flhwijd |
+| Asking "I'm not sure about X" | → /nsa |
+| Asking to decompose a prompt | → /itp |
+| Asking about scope limits | → /awtlytrn |
+| Asking about ideation overflow | → /ycshikfmif |
+| Asking to find unresolved decisions | → /tbd |
+| Asking to sequence unresolved decisions | → /tobd |
+| Asking to reframe something | → /iaw |
+| Asking for easy mode | → /ezy |
+| Asking for hard mode | → /hrd |
+| Asking for general principles | → /genl |
+| Asking for specific application | → /spcf |
+| Asking for sophisticated analysis | → /soph |
+| Asking for ethical analysis | → /eth |
+| Asking for safety analysis | → /saf |
+| Asking for future analysis | → /fut |
+| Asking about best-case scenario | → /utp |
+| Asking about worst-case scenario | → /dys |
+| Asking about good outcomes | → /gop |
+| Asking about bad outcomes | → /obo |
+| Asking about obvious things | → /obv |
+| Asking about good outcomes being missed | → /ogo |
+| Asking for self-deception check | → /sdc |
+| Asking for effort calibration | → /ecal |
+| Asking to recover from wrong model | → /rmm |
+| Asking to identify the situation | → /sid |
+| Asking to convert knowledge to action | → /kta |
+| Asking about differences between things | → /difr |
+| Asking for a story or narrative | → /story |
+| Asking for dominance analysis | → /dom |
+| Asking for argument analysis | → /agsk |
+| Asking for A/B test design | → /abts |
+| Asking for debate format | → /deb |
 | Something to do/execute | → /action |
 | Something to assess/review | → /evaluate |
 | A feeling or frustration | → /emotion |
@@ -115,6 +155,58 @@ If the user describes a problem and asks for help, classify it:
 | `/action` | Need something executed | Direct |
 | `/create` | Need content produced | Direct |
 | `/certainty` | Want maximum effort until fully resolved | Maximum |
+| `/iterate` | Have something to improve | Meta-iteration |
+
+### Depth and Mode Skills
+
+| Skill | For when you... | Effect |
+|-------|----------------|--------|
+| `/ezy` | Need the simplest possible path | Breaks problem into easiest steps |
+| `/hrd` | Need maximum rigor, no shortcuts | Every assumption surfaced, every edge case |
+| `/genl` | Need general principles | Extracts transferable patterns |
+| `/spcf` | Need specific application | Applies a principle to exact situation |
+| `/soph` | Need multi-layered sophistication | Cross-domain synthesis, second-order effects |
+| `/ecal` | Need to calibrate effort | Maps stakes to effort level |
+
+### Analysis and Projection Skills
+
+| Skill | For when you... | Effect |
+|-------|----------------|--------|
+| `/eth` | Need ethical/moral analysis | Multi-framework ethical evaluation |
+| `/saf` | Need safety analysis | Risk identification, protective measures |
+| `/fut` | Need future projections | Multi-timeframe trend analysis |
+| `/utp` | Need best-case scenario | Utopia construction and path |
+| `/dys` | Need worst-case scenario | Dystopia construction and prevention |
+| `/gop` | Need good outcome identification | Good outcome maximization |
+| `/obo` | Need obvious bad outcomes checked | Catches ignored downsides |
+| `/ogo` | Need obvious good outcomes checked | Catches missed upsides |
+| `/obv` | Need obvious things checked first | Catches what everyone assumes someone checked |
+| `/dom` | Need to eliminate dominated options | Strict dominance filtering |
+| `/difr` | Need to differentiate similar things | Classifies differences by significance |
+| `/agsk` | Need argument analysis | Checks logical validity and evidence |
+| `/abts` | Need experiment design | A/B test with proper controls |
+| `/deb` | Need debate format | Steelmans both sides |
+| `/story` | Need a narrative | Creates illustrative stories |
+
+### Self-Check Skills
+
+| Skill | For when you... | Effect |
+|-------|----------------|--------|
+| `/sdc` | Need self-deception check | Detects motivated reasoning |
+| `/sid` | Need to identify the actual situation | Prevents solving wrong problem |
+| `/rmm` | Need to recover from wrong mental model | Dismantles and replaces broken models |
+| `/kta` | Know what to do but can't start | Diagnoses execution barriers |
+
+### Scope and Task Skills
+
+| Skill | For when you... | Effect |
+|-------|----------------|--------|
+| `/iagca` | Are getting carried away | Compresses scope to essentials |
+| `/ycshikfmif` | Keep finding more ideas | Structures ideation into batches |
+| `/awtlytrn` | Need to know current limits | Estimates practical boundaries |
+| `/ata` | Need adjacent tasks identified | Surfaces implied prerequisites/follow-ups |
+| `/tbd` | Have unresolved decisions | Converts TBDs to explicit questions |
+| `/tobd` | Need to sequence TBD resolutions | Dependency-ordered resolution path |
 
 ---
 
@@ -123,3 +215,20 @@ If the user describes a problem and asks for help, classify it:
 Answer the meta-question directly, or route to the appropriate category skill.
 
 For orientation ("help" / "what can you do?"), present the category skills table above.
+
+For skill discovery, use:
+- → /wsib — to find the single best skill for a situation
+- → /fonss — to find an ordered sequence of skills
+- → /given — to rank skills by ROI for a goal
+- → /dtse — to check if a specific skill exists
+- → /uf — to understand what a skill is useful for
+- → /extract — to find all skills relevant to a prompt
+
+---
+
+## Integration
+
+- **Use from**: Any situation where the user is lost, confused, or asking about the toolkit itself
+- **Routes to**: All category skills, all skill discovery skills (/wsib, /fonss, /given, /dtse, /uf, /extract), all depth/mode skills (/ezy, /hrd, /genl, /spcf, /soph)
+- **Differs from**: /handle (meta is informational, handle is action-oriented), /next (meta orients, next selects the best immediate action)
+- **Complementary**: /wsib (meta shows options, wsib picks the best one), /fonss (meta orients, fonss sequences next skills)

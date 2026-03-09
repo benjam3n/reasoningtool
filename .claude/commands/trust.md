@@ -1,0 +1,1 @@
+Assess trust dynamics — who trusts whom, on what dimensions (competence, integrity, benevolence), what would build or erode trust, and how trust asymmetries create organizational dysfunction. Read and execute `claude-code-plugin/skills/trust/SKILL.md`, applying it to this input: $ARGUMENTS

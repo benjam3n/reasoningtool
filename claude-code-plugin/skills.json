@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-09T18:00:02.788914+00:00",
-  "total": 570,
+  "generated": "2026-03-09T18:22:12.105851+00:00",
+  "total": 591,
   "skills": {
     "aa": {
       "id": "aa",
@@ -182,7 +182,7 @@
     "action": {
       "id": "action",
       "title": "Execute a Command",
-      "description": "Sub-orchestrator for commands and action requests. Routes to direct execution, step generation, or reclassifies when the command needs analysis first.",
+      "description": "Sub-orchestrator for commands and action requests. Routes to direct execution, step generation, task sequencing, or reclassifies when the command needs analysis first.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -193,20 +193,41 @@
         "how",
         "evaluate",
         "want",
+        "it",
+        "but",
+        "nsa",
+        "handle",
         "diagnose",
+        "sid",
+        "kta",
         "stg",
-        "to"
+        "to",
+        "tbd",
+        "tobd",
+        "ata",
+        "iagca",
+        "next",
+        "obv",
+        "fla",
+        "fonss"
       ],
       "invoked_by": [
+        "certainty",
+        "decide",
         "dtl",
+        "emotion",
         "how"
       ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 83
+      "line_count": 190
     },
     "adep": {
       "id": "adep",
@@ -573,6 +594,27 @@
       ],
       "line_count": 167
     },
+    "ambi": {
+      "id": "ambi",
+      "title": "Ambiguity Handler",
+      "description": "Navigate genuinely ambiguous situations that could go multiple ways",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "frzn"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Overview",
+        "Steps",
+        "When to Use",
+        "Verification"
+      ],
+      "line_count": 113
+    },
     "ams": {
       "id": "ams",
       "title": "API Middleman Strategies",
@@ -634,23 +676,45 @@
         "decide",
         "how",
         "evaluate",
+        "create",
+        "want",
+        "it",
+        "but",
+        "nsa",
+        "handle",
         "dcm",
         "ins",
         "diagnose",
         "cmp",
         "fla",
-        "swa"
+        "swa",
+        "pbi",
+        "sya",
+        "eth",
+        "fut",
+        "gop",
+        "dom",
+        "difr",
+        "sycs",
+        "next",
+        "tbd"
       ],
       "invoked_by": [
         "create",
         "want"
       ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 80
+      "line_count": 239
     },
     "ans": {
       "id": "ans",
@@ -971,7 +1035,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "search"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Pattern Identification",
@@ -1022,7 +1088,14 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "action",
+        "create",
+        "decide",
+        "how",
+        "viability",
+        "want"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Primary Request Parse",
@@ -1103,12 +1176,15 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
-        "Overview",
-        "Steps",
-        "When to Use",
-        "Verification"
+        "Interpretations",
+        "Core Principles",
+        "Procedure",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 72
+      "line_count": 187
     },
     "aw": {
       "id": "aw",
@@ -1159,7 +1235,11 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "emotion",
+        "how",
+        "want"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Context Assessment",
@@ -1297,6 +1377,25 @@
         "Steps"
       ],
       "line_count": 105
+    },
+    "blank": {
+      "id": "blank",
+      "title": "Drawing a Blank",
+      "description": "Break through creative or productive blocks when nothing comes to mind",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Overview",
+        "Steps",
+        "When to Use",
+        "Verification"
+      ],
+      "line_count": 102
     },
     "bldk": {
       "id": "bldk",
@@ -1460,7 +1559,15 @@
         "skill"
       ],
       "invoked_by": [
-        "claim"
+        "action",
+        "analyze",
+        "claim",
+        "decide",
+        "diagnose",
+        "evaluate",
+        "how",
+        "viability",
+        "want"
       ],
       "sections": [
         "Core Principles",
@@ -1710,18 +1817,28 @@
       "categories": [],
       "tags": [],
       "input_types": [],
-      "invokes": [],
+      "invokes": [
+        "action",
+        "sycs",
+        "next",
+        "tbd",
+        "iterate"
+      ],
       "invoked_by": [
-        "claim"
+        "claim",
+        "iterate"
       ],
       "sections": [
         "Core Principle",
         "Phase 1: Classify and Set Resolution Criteria",
         "Phase 2: Iterative Resolution",
         "Phase 3: Final Synthesis",
-        "Depth"
+        "Phase 4: Extended Analysis Tools",
+        "Depth",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 146
+      "line_count": 215
     },
     "cfm": {
       "id": "cfm",
@@ -1871,11 +1988,9 @@
         "platitudes",
         "eth",
         "certainty",
-        "ezy",
         "araw",
         "sycs",
         "dys",
-        "utp",
         "next"
       ],
       "invoked_by": [
@@ -1889,11 +2004,17 @@
         "want"
       ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 117
+      "line_count": 196
     },
     "clg": {
       "id": "clg",
@@ -2017,7 +2138,8 @@
         "analyze",
         "decide",
         "dsp",
-        "gu"
+        "gu",
+        "search"
       ],
       "sections": [
         "Interpretations",
@@ -2122,6 +2244,31 @@
       ],
       "line_count": 95
     },
+    "cnfsd": {
+      "id": "cnfsd",
+      "title": "Confused",
+      "description": "For mental fog where things don't make sense. Separates what you understand from what you don't, identifies the gap type, and provides the right tool to close it.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Name the Confusion",
+        "Phase 2: Map What You Know vs. Don't Know",
+        "Phase 3: Identify the Gap Type",
+        "Phase 4: Close the Gap",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 202
+    },
     "cns": {
       "id": "cns",
       "title": "Constraint Solving Orderings",
@@ -2187,6 +2334,30 @@
         "Integration"
       ],
       "line_count": 121
+    },
+    "collab": {
+      "id": "collab",
+      "title": "Collaborative Thinking",
+      "description": "Multi-stakeholder reasoning, perspective integration, finding solutions that work for multiple parties, identifying hidden agreements, and surfacing conflicting assumptions between people.",
+      "tier": "tier4",
+      "category": "Communication & Collaboration",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principles",
+        "Phase 1: MAP — Identify Stakeholders and Their Views",
+        "Phase 2: ANALYZE — Find the Real Structure of Agreement and Disagreement",
+        "Phase 3: INTEGRATE — Build Multi-Party Solutions",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 251
     },
     "comc": {
       "id": "comc",
@@ -2383,16 +2554,39 @@
         "analyze",
         "evaluate",
         "how",
+        "search",
+        "viability",
+        "it",
+        "handle",
         "diagnose",
-        "w"
+        "fut",
+        "eth",
+        "wre",
+        "w",
+        "pw",
+        "stl",
+        "cs",
+        "list",
+        "iterate",
+        "iaw",
+        "next",
+        "ata"
       ],
-      "invoked_by": [],
+      "invoked_by": [
+        "analyze"
+      ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 73
+      "line_count": 211
     },
     "cri": {
       "id": "cri",
@@ -2486,7 +2680,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "create"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Mode Detection",
@@ -2876,6 +3072,7 @@
       "invokes": [],
       "invoked_by": [
         "analyze",
+        "evaluate",
         "ita"
       ],
       "sections": [
@@ -3061,7 +3258,7 @@
     "decide": {
       "id": "decide",
       "title": "Make a Decision",
-      "description": "Sub-orchestrator for decisions. Routes to comparison, ARAW testing, or goal clarification based on what the user knows.",
+      "description": "Sub-orchestrator for decisions. Routes to comparison, ARAW testing, dominance analysis, or goal clarification based on what the user knows and the stakes involved.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -3072,11 +3269,24 @@
         "want",
         "emotion",
         "viability",
-        "search",
-        "araw",
+        "it",
+        "but",
+        "nsa",
+        "handle",
         "cmp",
+        "search",
+        "dom",
+        "obv",
+        "araw",
+        "ecal",
+        "iagca",
+        "ata",
+        "tbd",
         "prm",
-        "fla"
+        "fla",
+        "how",
+        "action",
+        "sycs"
       ],
       "invoked_by": [
         "analyze",
@@ -3091,16 +3301,22 @@
         "want"
       ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 70
+      "line_count": 199
     },
     "diagnose": {
       "id": "diagnose",
       "title": "Find the Cause",
-      "description": "Sub-orchestrator for diagnostic questions. Routes to UAUA exploration or direct causal tracing based on how much is known.",
+      "description": "Sub-orchestrator for diagnostic questions. Routes to UAUA exploration, causal tracing, safety analysis, or direct debugging based on how much is known and the nature of the problem.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -3111,12 +3327,20 @@
         "decide",
         "emotion",
         "how",
+        "it",
+        "but",
+        "nsa",
+        "handle",
         "araw",
         "fowwr",
         "uaua",
         "sbfow",
+        "sya",
         "rca",
-        "sya"
+        "fla",
+        "sycs",
+        "next",
+        "tbd"
       ],
       "invoked_by": [
         "action",
@@ -3131,7 +3355,7 @@
         "Execute",
         "After Completion"
       ],
-      "line_count": 88
+      "line_count": 138
     },
     "difr": {
       "id": "difr",
@@ -3143,7 +3367,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "analyze"
+      ],
       "sections": [
         "Step 1: Identify the Things Being Compared",
         "Step 2: List All Similarities",
@@ -3232,7 +3458,11 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "analyze",
+        "decide",
+        "search"
+      ],
       "sections": [
         "Step 1: IDENTIFY THE OPTIONS",
         "Step 2: IDENTIFY THE DIMENSIONS",
@@ -3289,6 +3519,30 @@
         "Verification"
       ],
       "line_count": 156
+    },
+    "doubt": {
+      "id": "doubt",
+      "title": "Second-Guessing",
+      "description": "Handle post-decision doubt and break the cycle of second-guessing",
+      "tier": "tier4",
+      "category": "Assumptions & Critique",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "frzn",
+        "unsure"
+      ],
+      "invoked_by": [
+        "frzn"
+      ],
+      "sections": [
+        "Overview",
+        "Steps",
+        "When to Use",
+        "Verification"
+      ],
+      "line_count": 105
     },
     "dpl": {
       "id": "dpl",
@@ -3558,7 +3812,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "technical"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Parse the Request",
@@ -3741,7 +3997,11 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "decide",
+        "emotion",
+        "viability"
+      ],
       "sections": [
         "Interpretations",
         "STEP 0 — Quick Triage (Complete in under 60 seconds)",
@@ -3852,7 +4112,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 259
+      "line_count": 245
     },
     "efa": {
       "id": "efa",
@@ -3942,7 +4202,7 @@
     "emotion": {
       "id": "emotion",
       "title": "Process a Feeling",
-      "description": "Sub-orchestrator for emotional inputs. Acknowledges the emotion, identifies the implicit request, and routes to the appropriate analytical skill.",
+      "description": "Sub-orchestrator for emotional inputs. Acknowledges the emotion, identifies the implicit request, and routes to the appropriate analytical skill — with expanded routing for reframing, scope control, and self-check skills.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -3953,8 +4213,18 @@
         "claim",
         "want",
         "evaluate",
+        "iaw",
+        "iagca",
+        "fla",
+        "gop",
         "how",
-        "viability"
+        "viability",
+        "obo",
+        "ecal",
+        "awtlytrn",
+        "action",
+        "next",
+        "fonss"
       ],
       "invoked_by": [
         "claim",
@@ -3963,11 +4233,15 @@
         "want"
       ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 91
+      "line_count": 189
     },
     "empth": {
       "id": "empth",
@@ -4149,7 +4423,9 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
-        "claim"
+        "claim",
+        "how",
+        "want"
       ],
       "sections": [
         "Core Principles",
@@ -4176,7 +4452,9 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
-        "claim"
+        "analyze",
+        "claim",
+        "create"
       ],
       "sections": [
         "Step 1: IDENTIFY THE ETHICAL SURFACE",
@@ -4192,7 +4470,7 @@
     "evaluate": {
       "id": "evaluate",
       "title": "Assess Something",
-      "description": "Sub-orchestrator for evaluation. Routes to ARAW, MECE validation, procedure validation, or assumption extraction based on what's being assessed and what kind of evaluation is needed.",
+      "description": "Sub-orchestrator for evaluation. Routes to ARAW, MECE validation, procedure validation, assumption extraction, risk analysis, or quality checks based on what's being assessed and what kind of evaluation is needed.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -4203,14 +4481,28 @@
         "decide",
         "diagnose",
         "viability",
+        "it",
+        "but",
+        "nsa",
+        "handle",
         "araw",
         "mv",
         "se",
+        "siycftr",
         "pv",
         "val",
         "aex",
         "fla",
-        "prm"
+        "prm",
+        "saf",
+        "obo",
+        "platitude",
+        "dcm",
+        "how",
+        "iterate",
+        "sycs",
+        "next",
+        "tbd"
       ],
       "invoked_by": [
         "action",
@@ -4218,15 +4510,22 @@
         "create",
         "emotion",
         "evd",
+        "iterate",
         "viability",
         "want"
       ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 83
+      "line_count": 208
     },
     "evd": {
       "id": "evd",
@@ -4405,7 +4704,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "sp"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Prompt Decomposition",
@@ -4456,9 +4757,7 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "claim"
-      ],
+      "invoked_by": [],
       "sections": [
         "Core Principles",
         "Phase 1: Assess Overwhelm Source",
@@ -4537,11 +4836,16 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Filtering Criteria",
-        "Output Format",
-        "Instructions"
+        "Procedure",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 64
+      "line_count": 212
     },
     "fctl": {
       "id": "fctl",
@@ -4751,12 +5055,17 @@
       "invokes": [],
       "invoked_by": [
         "ac",
+        "action",
         "afa",
         "analyze",
         "dcp",
         "decide",
+        "diagnose",
+        "emotion",
         "evaluate",
-        "viability"
+        "how",
+        "viability",
+        "want"
       ],
       "sections": [
         "Overview",
@@ -4949,7 +5258,10 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "action",
+        "emotion"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: State Extraction",
@@ -5056,6 +5368,31 @@
       ],
       "line_count": 323
     },
+    "frzn": {
+      "id": "frzn",
+      "title": "Frozen (Decision Paralysis)",
+      "description": "Break through decision paralysis when you can't choose and are stuck",
+      "tier": "tier4",
+      "category": "Diagnosis & Recovery",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "se",
+        "doubt"
+      ],
+      "invoked_by": [
+        "ambi",
+        "doubt"
+      ],
+      "sections": [
+        "Overview",
+        "Steps",
+        "When to Use",
+        "Verification"
+      ],
+      "line_count": 93
+    },
     "fss": {
       "id": "fss",
       "title": "Future Space Search",
@@ -5142,7 +5479,10 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "analyze",
+        "create"
+      ],
       "sections": [
         "Step 1: DEFINE THE SCOPE",
         "Step 2: TIMEFRAME ANALYSIS",
@@ -5640,7 +5980,10 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "analyze",
+        "emotion"
+      ],
       "sections": [
         "Step 1: DEFINE GOOD",
         "Step 2: ENUMERATE GOOD OUTCOMES",
@@ -5940,7 +6283,17 @@
         "skill"
       ],
       "invoked_by": [
-        "claim"
+        "action",
+        "analyze",
+        "claim",
+        "create",
+        "decide",
+        "diagnose",
+        "evaluate",
+        "how",
+        "search",
+        "viability",
+        "want"
       ],
       "sections": [
         "Core Principles",
@@ -6037,7 +6390,7 @@
     "how": {
       "id": "how",
       "title": "Find the Method",
-      "description": "Sub-orchestrator for method-seeking. Routes to FOHT method discovery, step generation, or goal clarification based on what's defined.",
+      "description": "Sub-orchestrator for method-seeking. Routes to FOHT method discovery, step generation, goal clarification, or alternative framing based on what's defined and how complex the task is.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -6049,25 +6402,46 @@
         "search",
         "want",
         "action",
+        "it",
+        "but",
+        "nsa",
+        "handle",
+        "sid",
+        "awtlytrn",
         "foht",
-        "stg"
+        "tbd",
+        "stg",
+        "kta",
+        "iaw",
+        "ata",
+        "etc",
+        "to",
+        "fla"
       ],
       "invoked_by": [
         "action",
         "analyze",
         "create",
+        "decide",
         "diagnose",
         "emotion",
+        "evaluate",
         "search",
         "viability",
         "want"
       ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 74
+      "line_count": 215
     },
     "hpat": {
       "id": "hpat",
@@ -6178,7 +6552,12 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "action",
+        "decide",
+        "emotion",
+        "want"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Sprawl Assessment",
@@ -6203,7 +6582,11 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "create",
+        "emotion",
+        "how"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Intent Extraction",
@@ -6262,6 +6645,36 @@
         "Verification"
       ],
       "line_count": 145
+    },
+    "idk": {
+      "id": "idk",
+      "title": "I Don't Know",
+      "description": "Entry point for total uncertainty. When you don't know what you want, what to do, or what's happening — start here.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "skill"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Acknowledgment",
+        "Phase 2: Narrowing the Space",
+        "Phase 3A: Don't Know What to DO",
+        "Phase 3B: Don't Know What You WANT",
+        "Phase 3C: Don't Know What's HAPPENING",
+        "Phase 3D: Don't Know How You FEEL",
+        "Phase 3E: Truly Know Nothing",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 194
     },
     "idsk": {
       "id": "idsk",
@@ -6715,7 +7128,17 @@
         "skill"
       ],
       "invoked_by": [
-        "claim"
+        "action",
+        "analyze",
+        "claim",
+        "create",
+        "decide",
+        "diagnose",
+        "evaluate",
+        "how",
+        "search",
+        "viability",
+        "want"
       ],
       "sections": [
         "Interpretations",
@@ -6764,9 +7187,19 @@
       "categories": [],
       "tags": [],
       "input_types": [],
-      "invokes": [],
+      "invokes": [
+        "evaluate",
+        "tbd",
+        "next",
+        "wsib",
+        "certainty",
+        "sycs"
+      ],
       "invoked_by": [
+        "certainty",
         "cppd",
+        "create",
+        "evaluate",
         "vhd"
       ],
       "sections": [
@@ -6779,9 +7212,11 @@
         "Phase 5: SYNTHESIS",
         "Depth Scaling",
         "Anti-Failure Checks",
-        "Pre-Completion Check"
+        "Pre-Completion Check",
+        "Follow-Up Routing",
+        "Integration"
       ],
-      "line_count": 366
+      "line_count": 405
     },
     "itp": {
       "id": "itp",
@@ -6793,7 +7228,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "sp"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Surface Parse",
@@ -6951,7 +7388,11 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "action",
+        "how",
+        "want"
+      ],
       "sections": [
         "Interpretations",
         "STEP 0: What kind of inaction are you experiencing?",
@@ -7108,7 +7549,10 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "create",
+        "search"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: List Contract",
@@ -7145,6 +7589,31 @@
         "Integration"
       ],
       "line_count": 155
+    },
+    "lost": {
+      "id": "lost",
+      "title": "Lost My Direction",
+      "description": "For when you had a direction but lost it. Helps you find whether the goal changed, you changed, or the situation changed — and what to do next.",
+      "tier": "tier4",
+      "category": "Diagnosis & Recovery",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: What Was the Direction?",
+        "Phase 2: When Did It Stop Feeling Right?",
+        "Phase 3: What Changed?",
+        "Phase 4: Is the Original Goal Still Valid?",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 192
     },
     "lp": {
       "id": "lp",
@@ -7658,9 +8127,10 @@
       "sections": [
         "Routing Decisions",
         "Category Skills Quick Reference",
-        "Execute"
+        "Execute",
+        "Integration"
       ],
-      "line_count": 126
+      "line_count": 235
     },
     "mets": {
       "id": "mets",
@@ -8162,7 +8632,19 @@
         "skill"
       ],
       "invoked_by": [
-        "claim"
+        "action",
+        "analyze",
+        "certainty",
+        "claim",
+        "create",
+        "diagnose",
+        "emotion",
+        "evaluate",
+        "iterate",
+        "search",
+        "technical",
+        "viability",
+        "want"
       ],
       "sections": [
         "Core Principles",
@@ -8176,6 +8658,30 @@
         "Integration"
       ],
       "line_count": 182
+    },
+    "nowwt": {
+      "id": "nowwt",
+      "title": "Now What",
+      "description": "For after something just happened — good or bad — and you need to figure out what comes next. Assess what changed, what it means, and what to do about it.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Step 1: What Just Happened?",
+        "Step 2: What Changed?",
+        "Step 3: What Does This Mean for Your Goals?",
+        "Step 4: What's the Most Important Response?",
+        "Step 5: What Can Wait?",
+        "Output Format",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 157
     },
     "nrwd": {
       "id": "nrwd",
@@ -8229,7 +8735,16 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
-        "claim"
+        "action",
+        "analyze",
+        "claim",
+        "decide",
+        "diagnose",
+        "evaluate",
+        "how",
+        "search",
+        "viability",
+        "want"
       ],
       "sections": [
         "Core Principles",
@@ -8272,6 +8787,27 @@
         "Verification"
       ],
       "line_count": 116
+    },
+    "nstep": {
+      "id": "nstep",
+      "title": "Minimal Next Step",
+      "description": "The absolute simplest next-step skill. What are you trying to do? What's one thing you can do in the next 5 minutes? Do that.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "The Whole Skill",
+        "If You Can't Think of Anything",
+        "Output Format",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 87
     },
     "nusr": {
       "id": "nusr",
@@ -8402,7 +8938,10 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
-        "oba"
+        "emotion",
+        "evaluate",
+        "oba",
+        "viability"
       ],
       "sections": [
         "Purpose",
@@ -8424,7 +8963,10 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "action",
+        "decide"
+      ],
       "sections": [
         "Purpose",
         "Step 1: STATE THE SITUATION",
@@ -8824,6 +9366,32 @@
       ],
       "line_count": 63
     },
+    "ovwlm": {
+      "id": "ovwlm",
+      "title": "Overwhelmed",
+      "description": "For when there's too much and you can't process. A systematic way to reduce what you're holding until you can hold it.",
+      "tier": "tier4",
+      "category": "Diagnosis & Recovery",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Stop",
+        "Phase 2: Brain Dump",
+        "Phase 3: Subtract",
+        "Phase 4: What's Left",
+        "Phase 5: Pick the Smallest Thing",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 221
+    },
     "p": {
       "id": "p",
       "title": "PROPOSE - Evidence-Derived Plan Synthesis",
@@ -8865,7 +9433,7 @@
     "p10complement": {
       "id": "p10complement",
       "title": "Pick 10 Complement",
-      "description": "Shortcut for /pick 10 complement [your input]. Passes additional arguments through to the pick algorithm.",
+      "description": "Find 10 skills that pair well with a specified skill, covering its gaps and extending its reach. Standalone implementation of the COMPLEMENT algorithm from /pick.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -8877,17 +9445,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Target Skill Analysis",
+        "Phase 2: Complement Search",
+        "Phase 3: Selection and Ranking",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 191
     },
     "p10diverse": {
       "id": "p10diverse",
       "title": "Pick 10 Diverse",
-      "description": "Shortcut for /pick 10 diverse. Quick access to the Pick 10 Diverse algorithm.",
+      "description": "Pick 10 skills maximizing coverage across different categories, tiers, and functions. Produces the broadest possible sample of the skill library. Standalone implementation of the DIVERSE algorithm from /pick.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -8899,17 +9475,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Dimension Mapping",
+        "Phase 2: Round-Robin Selection",
+        "Phase 3: Diversity Verification",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 196
     },
     "p10for": {
       "id": "p10for",
       "title": "Pick 10 For Situation",
-      "description": "Shortcut for /pick 10 for [your input]. Passes additional arguments through to the pick algorithm.",
+      "description": "Pick 10 skills matched to a described situation. Analyzes the user's situation, infers their actual need, and selects skills appropriate to their phase and domain. Standalone implementation of the SITUATION algorithm from /pick.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -8921,17 +9505,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Situation Parsing",
+        "Phase 2: Phase-Matched Skill Search",
+        "Phase 3: Scoring and Selection",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 207
     },
     "p10goal": {
       "id": "p10goal",
       "title": "Pick 10 Goal",
-      "description": "Shortcut for /pick 10 goal [your input]. Passes additional arguments through to the pick algorithm.",
+      "description": "Pick 10 skills most likely to help achieve a specific goal. Decomposes the goal into sub-capabilities and selects skills covering each. Standalone implementation of the GOAL algorithm from /pick.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -8943,17 +9535,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Goal Decomposition",
+        "Phase 2: Skill Search and Scoring",
+        "Phase 3: Workflow Design",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 201
     },
     "p10random": {
       "id": "p10random",
       "title": "Pick 10 Random",
-      "description": "Shortcut for /pick 10 random. Quick access to the Pick 10 Random algorithm.",
+      "description": "Pick 10 skills uniformly at random from the full library. No bias, no optimization — pure serendipitous discovery. Standalone implementation of the RANDOM algorithm from /pick.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -8965,17 +9565,26 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Pool Definition",
+        "Phase 2: Random Selection",
+        "Phase 3: Context Generation",
+        "Phase 4: Post-Selection Analysis",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 179
     },
     "p10useful": {
       "id": "p10useful",
       "title": "Pick 10 Useful",
-      "description": "Shortcut for /pick 10 useful. Quick access to the Pick 10 Useful algorithm.",
+      "description": "Pick the 10 most generally useful skills based on tier, connectivity, breadth, and depth. The 'greatest hits' of the skill library. Standalone implementation of the USEFUL algorithm from /pick.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -8987,17 +9596,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Universal Scoring",
+        "Phase 2: Ranking and Diversity Enforcement",
+        "Phase 3: Justification",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 196
     },
     "p3chain": {
       "id": "p3chain",
       "title": "Pick 3 Chain",
-      "description": "Shortcut for /pick 3 chain [your input]. Passes additional arguments through to the pick algorithm.",
+      "description": "Pick 3 skills that form a tight workflow chain starting from a given skill. Traces invocation links to build a connected sequence. Standalone implementation of the CHAIN algorithm from /pick with N=3.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -9009,17 +9626,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Seed Analysis",
+        "Phase 2: Chain Construction",
+        "Phase 3: Chain Validation",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 191
     },
     "p5deep": {
       "id": "p5deep",
       "title": "Pick 5 Deep",
-      "description": "Shortcut for /pick 5 deep. Quick access to the Pick 5 Deep algorithm.",
+      "description": "Pick 5 skills that together provide the most thorough analysis possible. Optimized for maximum analytical depth on a topic. Standalone implementation of the DEEP algorithm from /pick with N=5.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -9031,17 +9656,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Topic Assessment",
+        "Phase 2: Stack Construction",
+        "Phase 3: Stack Validation",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 232
     },
     "p5qm": {
       "id": "p5qm",
       "title": "Pick 5 Question Me",
-      "description": "Shortcut for /pick 5 question me. Quick access to the Pick 5 Question Me algorithm.",
+      "description": "Interactive skill selection through elimination questions. Asks 3-5 discriminating questions to narrow the full library down to 5 targeted skills. Standalone implementation of the QUESTION algorithm from /pick with N=5.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -9053,17 +9686,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Context Extraction",
+        "Phase 2: Discriminating Questions",
+        "Phase 3: Pool Reduction and Selection",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 237
     },
     "p5similar": {
       "id": "p5similar",
       "title": "Pick 5 Similar",
-      "description": "Shortcut for /pick 5 similar [your input]. Passes additional arguments through to the pick algorithm.",
+      "description": "Find 5 skills most similar to a specified skill based on shared categories, tags, invocation partners, and functional overlap. Standalone implementation of the SIMILAR algorithm from /pick with N=5.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -9075,17 +9716,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Target Skill Analysis",
+        "Phase 2: Similarity Scoring",
+        "Phase 3: Selection and Analysis",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 194
     },
     "p5want": {
       "id": "p5want",
       "title": "Pick 5 Want",
-      "description": "Shortcut for /pick 5 want [your input]. Passes additional arguments through to the pick algorithm.",
+      "description": "Pick 5 skills to help someone clarify, explore, or achieve what they want. Classifies the want by clarity level and selects skills matching the user's journey phase. Standalone implementation of the WANT algorithm from /pick with N=5.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -9097,17 +9746,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Want Classification",
+        "Phase 2: Phase-Matched Selection",
+        "Phase 3: Journey Design",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 211
     },
     "p7cat": {
       "id": "p7cat",
       "title": "Pick 7 Category",
-      "description": "Shortcut for /pick 7 category [your input]. Passes additional arguments through to the pick algorithm.",
+      "description": "Pick 7 skills from a specific category or matching a category pattern. Fuzzy-matches the user's input to known categories and returns the best skills from the match. Standalone implementation of the CATEGORY algorithm from /pick with N=7.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -9119,17 +9776,25 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Category Matching",
+        "Phase 2: Skill Pool and Ranking",
+        "Phase 3: Category Landscape",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 209
     },
     "p8tier": {
       "id": "p8tier",
       "title": "Pick 8 Tier",
-      "description": "Shortcut for /pick 8 tier [your input]. Passes additional arguments through to the pick algorithm.",
+      "description": "Pick 8 skills from a specific tier. Maps user input to a tier level, filters the library, and returns a representative set. Standalone implementation of the TIER algorithm from /pick with N=8.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -9141,12 +9806,21 @@
         "discovery"
       ],
       "input_types": [],
-      "invokes": [
-        "pick"
-      ],
+      "invokes": [],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 14
+      "sections": [
+        "Core Principles",
+        "Phase 1: Tier Mapping",
+        "Phase 2: Tier Profile",
+        "Phase 3: Selection",
+        "Phase 4: Tier Landscape",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 236
     },
     "pag": {
       "id": "pag",
@@ -9169,6 +9843,27 @@
         "Verification"
       ],
       "line_count": 158
+    },
+    "panic": {
+      "id": "panic",
+      "title": "Panic Protocol",
+      "description": "Regain control in urgent situations where everything feels like it's going wrong",
+      "tier": "tier4",
+      "category": "Diagnosis & Recovery",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "to"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Overview",
+        "Steps",
+        "When to Use",
+        "Verification"
+      ],
+      "line_count": 102
     },
     "pb": {
       "id": "pb",
@@ -9211,6 +9906,7 @@
       ],
       "invokes": [],
       "invoked_by": [
+        "analyze",
         "gu"
       ],
       "sections": [
@@ -9484,6 +10180,31 @@
       ],
       "line_count": 143
     },
+    "persua": {
+      "id": "persua",
+      "title": "Persuasion Analysis",
+      "description": "Analyze what would actually persuade a specific person or audience — not generic rhetoric but understanding their existing beliefs, values, resistance points, and the specific evidence or framing that would move them. Ethical persuasion through understanding, not manipulation.",
+      "tier": "tier4",
+      "category": "Communication & Collaboration",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Corruption Pre-Inoculation",
+        "Core Principles",
+        "Phase 1: AUDIENCE MODEL",
+        "Phase 2: STRATEGY CONSTRUCTION",
+        "Phase 3: SYNTHESIS",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 268
+    },
     "pf": {
       "id": "pf",
       "title": "Priority Framework Orderings",
@@ -9586,21 +10307,7 @@
       "invokes": [
         "gu"
       ],
-      "invoked_by": [
-        "p10complement",
-        "p10diverse",
-        "p10for",
-        "p10goal",
-        "p10random",
-        "p10useful",
-        "p3chain",
-        "p5deep",
-        "p5qm",
-        "p5similar",
-        "p5want",
-        "p7cat",
-        "p8tier"
-      ],
+      "invoked_by": [],
       "sections": [
         "Purpose",
         "Syntax",
@@ -9736,7 +10443,9 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
-        "claim"
+        "claim",
+        "evaluate",
+        "want"
       ],
       "sections": [
         "Core Principles",
@@ -10124,7 +10833,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 252
+      "line_count": 251
     },
     "prr": {
       "id": "prr",
@@ -10144,11 +10853,15 @@
         "pcef"
       ],
       "sections": [
-        "Overview",
-        "Steps",
-        "When to Use"
+        "Interpretations",
+        "Core Principles",
+        "Procedure",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 68
+      "line_count": 210
     },
     "prsk": {
       "id": "prsk",
@@ -10365,7 +11078,9 @@
         "decision"
       ],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "create"
+      ],
       "sections": [
         "Overview",
         "Steps",
@@ -10761,6 +11476,56 @@
       ],
       "line_count": 184
     },
+    "redteam": {
+      "id": "redteam",
+      "title": "Red Team Analysis",
+      "description": "Adversarial analysis — attack your own plan, argument, or system. Find the failure modes, exploit the weaknesses, identify what an intelligent adversary would do. Then fix what you found.",
+      "tier": "tier4",
+      "category": "Assumptions & Critique",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Corruption Pre-Inoculation",
+        "Core Principles",
+        "Phase 1: RECONNAISSANCE",
+        "Phase 2: ATTACK",
+        "Phase 3: REPAIR",
+        "Output Format",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 249
+    },
+    "reframe": {
+      "id": "reframe",
+      "title": "Reframe the Problem",
+      "description": "Systematically reframe a problem by changing the level of abstraction, stakeholder perspective, time horizon, success criteria, or constraint set. Generate genuinely different framings, not word substitutions.",
+      "tier": "tier4",
+      "category": "Assumptions & Critique",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principles",
+        "Phase 1: CAPTURE — Understand the Current Frame",
+        "Phase 2: GENERATE — Create Genuinely Different Frames",
+        "Phase 3: SELECT — Choose the Most Useful Frame",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 251
+    },
     "ret": {
       "id": "ret",
       "title": "Retrospective",
@@ -11036,7 +11801,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "search"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Input Parsing",
@@ -11465,7 +12232,10 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "evaluate",
+        "viability"
+      ],
       "sections": [
         "Step 1: IDENTIFY WHAT NEEDS TO BE SAFE",
         "Step 2: THREAT IDENTIFICATION",
@@ -11776,6 +12546,7 @@
         "cga",
         "dcp",
         "evaluate",
+        "frzn",
         "gts",
         "search"
       ],
@@ -11798,7 +12569,7 @@
     "search": {
       "id": "search",
       "title": "Explore a Space",
-      "description": "Sub-orchestrator for exploration. Routes to UAUA, space enumeration, or dimension discovery based on what's known and what's needed.",
+      "description": "Sub-orchestrator for exploration. Routes to UAUA, space enumeration, dimension discovery, list building, or pattern expansion based on what's known and what's needed.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -11809,13 +12580,26 @@
         "decide",
         "how",
         "want",
+        "it",
+        "nsa",
+        "handle",
         "uaua",
         "se",
-        "dd"
+        "siycftr",
+        "aso",
+        "dd",
+        "list",
+        "ro",
+        "cmp",
+        "dom",
+        "next",
+        "sycs",
+        "wsib"
       ],
       "invoked_by": [
         "action",
         "claim",
+        "create",
         "decide",
         "how"
       ],
@@ -11824,7 +12608,7 @@
         "Execute",
         "After Completion"
       ],
-      "line_count": 83
+      "line_count": 142
     },
     "seb": {
       "id": "seb",
@@ -11971,7 +12755,10 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "action",
+        "how"
+      ],
       "sections": [
         "Interpretations",
         "Purpose",
@@ -12020,7 +12807,10 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "evaluate",
+        "search"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Input Analysis",
@@ -12467,23 +13257,32 @@
     "sp": {
       "id": "sp",
       "title": "Steelman Prompt",
-      "description": "Improves a prompt before it gets answered. Adds precision, scope, criteria, and failure-proofing without answering the question.",
+      "description": "Improves a prompt before it gets answered. Adds precision, scope, criteria, skill routing, and failure-proofing without answering the question.",
       "tier": "category",
       "category": null,
       "categories": [],
       "tags": [],
       "input_types": [],
-      "invokes": [],
+      "invokes": [
+        "wsib",
+        "itp",
+        "extract"
+      ],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Pass 1: Classify",
         "Pass 2: Unbundle",
         "Pass 3: Criteria",
         "Pass 4: Failure-check",
-        "Pass 5: Reconstruct",
+        "Pass 5: Skill Routing",
+        "Pass 6: Reconstruct",
+        "Failure Modes",
+        "After Completion",
         "Integration"
       ],
-      "line_count": 107
+      "line_count": 218
     },
     "spcf": {
       "id": "spcf",
@@ -12882,6 +13681,32 @@
       ],
       "line_count": 189
     },
+    "steelman": {
+      "id": "steelman",
+      "title": "Steelman the Opposition",
+      "description": "Construct the strongest possible version of an opposing argument before critiquing it. Ensures you're fighting the real argument, not a straw man. Includes finding the kernel of truth in positions you disagree with.",
+      "tier": "tier4",
+      "category": "Assumptions & Critique",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Corruption Pre-Inoculation",
+        "Core Principles",
+        "Phase 1: UNDERSTAND THE OPPOSITION",
+        "Phase 2: BUILD THE STEELMAN",
+        "Phase 3: ENGAGE THE STEELMAN",
+        "Output Format",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 246
+    },
     "stg": {
       "id": "stg",
       "title": "Steps Generation",
@@ -12934,7 +13759,9 @@
         "decision"
       ],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "create"
+      ],
       "sections": [
         "Overview",
         "Steps",
@@ -12987,6 +13814,31 @@
         "Integration"
       ],
       "line_count": 118
+    },
+    "strt": {
+      "id": "strt",
+      "title": "Where to Start",
+      "description": "For when you have a goal but genuinely don't know where to begin. Find the zero-dependency starting point and take it.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Step 1: What's the End State?",
+        "Step 2: List Everything That Seems Required",
+        "Step 3: Find the Dependencies",
+        "Step 4: Find the Zero-Dependency Item",
+        "Step 5: Confirm It's Actually Doable Right Now",
+        "Overwhelmed Start",
+        "Output Format",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 150
     },
     "sum": {
       "id": "sum",
@@ -13083,6 +13935,7 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
+        "analyze",
         "diagnose",
         "lp",
         "sym"
@@ -13107,7 +13960,17 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
-        "claim"
+        "analyze",
+        "certainty",
+        "claim",
+        "decide",
+        "diagnose",
+        "evaluate",
+        "iterate",
+        "search",
+        "technical",
+        "viability",
+        "want"
       ],
       "sections": [
         "Core Principles",
@@ -13195,7 +14058,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 271
+      "line_count": 251
     },
     "t": {
       "id": "t",
@@ -13231,7 +14094,18 @@
       "invokes": [
         "decide"
       ],
-      "invoked_by": [],
+      "invoked_by": [
+        "action",
+        "analyze",
+        "certainty",
+        "decide",
+        "diagnose",
+        "evaluate",
+        "how",
+        "iterate",
+        "technical",
+        "want"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: TBD Identification",
@@ -13298,7 +14172,12 @@
       "input_types": [],
       "invokes": [
         "want",
-        "decide"
+        "decide",
+        "next",
+        "wsib",
+        "dtse",
+        "sycs",
+        "tbd"
       ],
       "invoked_by": [],
       "sections": [
@@ -13312,7 +14191,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 159
+      "line_count": 209
     },
     "tfac": {
       "id": "tfac",
@@ -13438,7 +14317,9 @@
       "invokes": [],
       "invoked_by": [
         "action",
-        "ov"
+        "how",
+        "ov",
+        "panic"
       ],
       "sections": [
         "Interpretations",
@@ -13462,7 +14343,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "action"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: TBD Inventory",
@@ -13567,6 +14450,31 @@
         "Integration"
       ],
       "line_count": 114
+    },
+    "trust": {
+      "id": "trust",
+      "title": "Trust Analysis",
+      "description": "Assess trust dynamics — who trusts whom, on what dimensions (competence, integrity, benevolence), what would build or erode trust, and how trust asymmetries create organizational dysfunction.",
+      "tier": "tier4",
+      "category": "Communication & Collaboration",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Corruption Pre-Inoculation",
+        "Core Principles",
+        "Phase 1: TRUST MAPPING",
+        "Phase 2: TRUST DYNAMICS",
+        "Phase 3: TRUST ACTION PLAN",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 265
     },
     "ts": {
       "id": "ts",
@@ -13803,51 +14711,108 @@
     },
     "ugav3": {
       "id": "ugav3",
-      "title": "ugav3",
-      "description": "Consolidated into /uga.",
+      "title": "Universal Goal Analysis v3 (Decomposed Sub-Procedures)",
+      "description": "Goal analysis with fully decomposed sub-procedures. Every analysis step is broken into atomic operations that can be followed mechanically. Consolidated into /uga but usable standalone for procedural goal decomposition.",
       "tier": "tier4",
       "category": "Goal Processing",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Goal Processing"
+      ],
+      "tags": [
+        "goal",
+        "decomposition",
+        "procedures",
+        "systematic"
+      ],
       "input_types": [],
       "invokes": [
         "uga"
       ],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 9
+      "sections": [
+        "Core Principles",
+        "Phase 1: Goal Registration",
+        "Phase 2: Requirement Decomposition",
+        "Phase 3: Gap Identification",
+        "Phase 4: Strategy Assembly",
+        "Phase 5: Validation",
+        "Phase 6: Report",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 226
     },
     "ugav4": {
       "id": "ugav4",
-      "title": "ugav4",
-      "description": "Consolidated into /uga.",
+      "title": "Universal Goal Analysis v4 (Leverage & Communication)",
+      "description": "Goal analysis emphasizing leverage identification and stakeholder communication. Finds where small effort produces big results and maps who needs to know what. Consolidated into /uga but usable standalone.",
       "tier": "tier4",
       "category": "Goal Processing",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Goal Processing"
+      ],
+      "tags": [
+        "goal",
+        "leverage",
+        "communication",
+        "stakeholders"
+      ],
       "input_types": [],
       "invokes": [
         "uga"
       ],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 9
+      "sections": [
+        "Core Principles",
+        "Phase 1: Goal and Stakeholder Registration",
+        "Phase 2: Leverage Analysis",
+        "Phase 3: Communication Planning",
+        "Phase 4: Opposition Analysis",
+        "Phase 5: Integrated Strategy",
+        "Phase 6: Report",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 230
     },
     "ugav5": {
       "id": "ugav5",
-      "title": "ugav5",
-      "description": "Consolidated into /uga.",
+      "title": "Universal Goal Analysis v5 (Operational & Meta-Cognitive)",
+      "description": "Goal analysis adding operational load assessment, meta-cognitive sustainability, and quality validation categories. Catches goals that are analytically sound but operationally unsustainable. Consolidated into /uga but usable standalone.",
       "tier": "tier4",
       "category": "Goal Processing",
-      "categories": [],
-      "tags": [],
+      "categories": [
+        "Goal Processing"
+      ],
+      "tags": [
+        "goal",
+        "operational",
+        "metacognitive",
+        "sustainability",
+        "quality"
+      ],
       "input_types": [],
       "invokes": [
         "uga"
       ],
       "invoked_by": [],
-      "sections": [],
-      "line_count": 9
+      "sections": [
+        "Core Principles",
+        "Phase 1: Goal State Assessment",
+        "Phase 2: Operational Load Assessment",
+        "Phase 3: Meta-Cognitive Sustainability",
+        "Phase 4: Quality Validation",
+        "Phase 5: Report",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 263
     },
     "undr": {
       "id": "undr",
@@ -13869,6 +14834,56 @@
         "Integration"
       ],
       "line_count": 111
+    },
+    "unstk": {
+      "id": "unstk",
+      "title": "Get Unstuck",
+      "description": "Diagnose why you're blocked and get concrete unblocking actions based on the type of block: information gap, decision paralysis, emotional block, skill gap, or wrong approach.",
+      "tier": "tier4",
+      "category": "Diagnosis & Recovery",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Step 1: State the Block",
+        "Step 2: Diagnose the Block Type",
+        "Step 3: Check One Level Deeper",
+        "Step 4: Deliver the Unblock",
+        "Nuclear Option",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 162
+    },
+    "unsure": {
+      "id": "unsure",
+      "title": "Not Sure About This",
+      "description": "For mild uncertainty — you have a direction but aren't confident. A decision tree to move from hesitation to action or justified pause.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "doubt"
+      ],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Name the Uncertainty",
+        "Phase 2: What Would Make You Sure?",
+        "Phase 3: Decision Tree",
+        "Phase 4: Gut Check Override",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 166
     },
     "unvs": {
       "id": "unvs",
@@ -14027,9 +15042,7 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "claim"
-      ],
+      "invoked_by": [],
       "sections": [
         "Step 1: DEFINE THE DOMAIN",
         "Step 2: CONSTRUCT THE IDEAL",
@@ -14067,7 +15080,7 @@
     "val": {
       "id": "val",
       "title": "Validation",
-      "description": "Verify that an output meets its requirements",
+      "description": "Verify that an output meets its requirements through systematic criteria checking, coverage scoring, and gap analysis.",
       "tier": "tier2",
       "category": null,
       "categories": [
@@ -14083,13 +15096,15 @@
         "evaluate"
       ],
       "sections": [
-        "Overview",
-        "Steps",
-        "When to Use",
-        "Verification",
-        "Interpretations"
+        "Interpretations",
+        "Core Principles",
+        "Procedure",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 74
+      "line_count": 190
     },
     "vbo": {
       "id": "vbo",
@@ -14266,12 +15281,17 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Verification Standard",
-        "Verification Steps",
-        "Output Format",
-        "NOT Acceptable"
+        "Verification Procedure",
+        "NOT Acceptable",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 67
+      "line_count": 217
     },
     "vhd": {
       "id": "vhd",
@@ -14297,7 +15317,7 @@
     "viability": {
       "id": "viability",
       "title": "Test an Idea",
-      "description": "Sub-orchestrator for ideas and proposals. Routes to ARAW viability testing with appropriate development and risk assessment.",
+      "description": "Sub-orchestrator for ideas and proposals. Routes to ARAW viability testing with appropriate development, risk assessment, and supplementary analysis for outcome projection and reframing.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -14308,24 +15328,41 @@
         "decide",
         "want",
         "how",
+        "it",
+        "but",
+        "nsa",
+        "handle",
         "ar",
         "araw",
         "evaluate",
         "prm",
-        "fla"
+        "fla",
+        "obo",
+        "saf",
+        "ecal",
+        "sycs",
+        "ata",
+        "next"
       ],
       "invoked_by": [
+        "create",
         "decide",
         "emotion",
         "evaluate",
         "want"
       ],
       "sections": [
+        "Interpretations",
+        "Core Principles",
         "Routing Decisions",
         "Execute",
-        "After Completion"
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "After Completion",
+        "Integration"
       ],
-      "line_count": 83
+      "line_count": 220
     },
     "vldt": {
       "id": "vldt",
@@ -14380,7 +15417,7 @@
     "vp": {
       "id": "vp",
       "title": "Verification and Testing Procedures",
-      "description": "Systematic testing and verification that systems meet requirements.",
+      "description": "Systematic testing and verification that systems, plans, or deliverables meet their requirements.",
       "tier": "tier4",
       "category": "Evaluation & Validation",
       "categories": [],
@@ -14391,12 +15428,15 @@
         "dss"
       ],
       "sections": [
-        "Overview",
-        "Steps",
-        "When to Use",
-        "Verification"
+        "Interpretations",
+        "Core Principles",
+        "Procedure",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 69
+      "line_count": 203
     },
     "w": {
       "id": "w",
@@ -14440,10 +15480,26 @@
         "viability",
         "analyze",
         "evaluate",
-        "wt"
+        "it",
+        "but",
+        "nsa",
+        "handle",
+        "platitude",
+        "iagca",
+        "awtlytrn",
+        "ycshikfmif",
+        "etc",
+        "wt",
+        "fla",
+        "sycs",
+        "ata",
+        "tbd",
+        "next",
+        "kta"
       ],
       "invoked_by": [
         "action",
+        "analyze",
         "claim",
         "decide",
         "emotion",
@@ -14463,7 +15519,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 145
+      "line_count": 210
     },
     "wn": {
       "id": "wn",
@@ -14532,7 +15588,9 @@
       ],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "create"
+      ],
       "sections": [
         "Interpretations",
         "Core Principles",
@@ -14588,7 +15646,12 @@
       "invokes": [
         "skill"
       ],
-      "invoked_by": [],
+      "invoked_by": [
+        "iterate",
+        "search",
+        "sp",
+        "technical"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Intent Extraction",
@@ -14660,6 +15723,27 @@
       ],
       "line_count": 293
     },
+    "wtdn": {
+      "id": "wtdn",
+      "title": "What To Do Next",
+      "description": "Simple next-step finder. No routing, no classification. State where you are, get the single most valuable next move, understand why, do it.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Steps",
+        "Quick Mode",
+        "Output Format",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 124
+    },
     "ycshikfmif": {
       "id": "ycshikfmif",
       "title": "You Can See How I Keep Finding More It's Fun",
@@ -14670,7 +15754,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "want"
+      ],
       "sections": [
         "Core Principles",
         "Phase 1: Expansion Capture",
