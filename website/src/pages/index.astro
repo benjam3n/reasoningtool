@@ -641,7 +641,7 @@ const totalCount = allSkills.length;
           for (var i = 0; i < mobilePageCount; i++) {
             var label = getNavLabel(i + 1);
             var btn = document.createElement('button');
-            btn.className = 'mobile-skill-pager__btn' + (i === currentMobilePage ? ' mobile-skill-pager__btn--active' : '');
+            btn.className = 'mobile-bottom-bar__btn mobile-skill-pager__btn' + (i === currentMobilePage ? ' mobile-skill-pager__btn--active' : '');
             btn.title = label.title;
 
             var idx = document.createElement('span');
@@ -1117,23 +1117,9 @@ const totalCount = allSkills.length;
       justify-content: center;
       gap: 0.35rem;
       width: 100%;
-      height: 2rem;
-      padding: 0.3rem;
-      border: 1px solid var(--color-accent);
-      border-radius: 6px;
-      font-family: var(--font-sans);
-      font-size: 0.72rem;
-      font-weight: 600;
       line-height: 1;
-      color: var(--color-accent);
-      background: var(--color-accent-subtle);
-      box-sizing: border-box;
-      cursor: pointer;
-      transition: none;
-      -webkit-tap-highlight-color: transparent;
-      transform: none;
-      box-shadow: none;
-      outline: none;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     .mobile-skill-pager__idx {
