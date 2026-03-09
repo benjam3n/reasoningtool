@@ -628,7 +628,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
       function setup() {
         var cloudEl = document.querySelector('.skill-cloud');
         if (!cloudEl) return; // Not on the skills page
-        if (cloudEl.getAttribute('data-setup') === '1') return; // Already set up
+        if (cloudEl.getAttribute('data-setup') === '1') return;
         cloudEl.setAttribute('data-setup', '1');
 
         applyTheme();
@@ -1129,6 +1129,11 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
         applyMobilePagination();
       }
 
+      // Clear setup guard before Astro caches the page (so back navigation can re-init)
+      document.addEventListener('astro:before-swap', function() {
+        var c = document.querySelector('.skill-cloud');
+        if (c) c.removeAttribute('data-setup');
+      });
       // astro:page-load fires on initial load + every View Transition (including back)
       document.addEventListener('astro:page-load', setup);
       // Fallback for non-Astro contexts
@@ -1136,7 +1141,6 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
       // bfcache restore (back button without View Transitions)
       window.addEventListener('pageshow', function(e) {
         if (e.persisted) {
-          // DOM is preserved with listeners, just need to re-mark for astro:page-load
           var c = document.querySelector('.skill-cloud');
           if (c) c.removeAttribute('data-setup');
           setup();
