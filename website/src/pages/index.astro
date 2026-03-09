@@ -2,6 +2,11 @@
 import { ViewTransitions } from 'astro:transitions';
 import '../styles/global.css';
 import skillsManifest from '../../../claude-code-plugin/skills.json';
+import {
+  NAV_EMOJI_CATEGORIES,
+  NAV_LETTERS,
+  NAV_WORDS_BY_LETTER,
+} from '../data/navigation-vocabulary';
 
 const tier1 = [
   { name: 'se', title: 'Space Enumeration', desc: 'Systematically lists options in a problem space to reduce blind spots' },
@@ -519,7 +524,7 @@ const totalCount = allSkills.length;
     <div class="mobile-skill-pager" id="mobile-skill-pager" aria-label="Skill pages"></div>
   </div>
 
-  <script is:inline>
+  <script define:vars={{ NAV_LETTERS, NAV_WORDS_BY_LETTER, NAV_EMOJI_CATEGORIES }}>
     (function() {
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -618,10 +623,42 @@ const totalCount = allSkills.length;
           mobilePager.style.display = 'flex';
           mobilePager.innerHTML = '';
 
+          function getNavLabel(pageNumber) {
+            var letterIndex = (pageNumber - 1) % NAV_LETTERS.length;
+            var letterLap = Math.floor((pageNumber - 1) / NAV_LETTERS.length);
+            var letter = NAV_LETTERS[letterIndex];
+            var words = NAV_WORDS_BY_LETTER[letter] || [letter.toLowerCase()];
+            var word = words[letterLap % words.length];
+
+            var categoryIndex = (pageNumber - 1) % NAV_EMOJI_CATEGORIES.length;
+            var categoryLap = Math.floor((pageNumber - 1) / NAV_EMOJI_CATEGORIES.length);
+            var category = NAV_EMOJI_CATEGORIES[categoryIndex];
+            var emoji = category.emojis[categoryLap % category.emojis.length];
+
+            return { word: word, emoji: emoji, title: letter + ' | ' + category.label };
+          }
+
           for (var i = 0; i < mobilePageCount; i++) {
+            var label = getNavLabel(i + 1);
             var btn = document.createElement('button');
             btn.className = 'mobile-skill-pager__btn' + (i === currentMobilePage ? ' mobile-skill-pager__btn--active' : '');
-            btn.textContent = String(i + 1);
+            btn.title = label.title;
+
+            var idx = document.createElement('span');
+            idx.className = 'mobile-skill-pager__idx';
+            idx.textContent = String(i + 1);
+
+            var word = document.createElement('span');
+            word.className = 'mobile-skill-pager__word';
+            word.textContent = label.word;
+
+            var emo = document.createElement('span');
+            emo.className = 'mobile-skill-pager__emo';
+            emo.textContent = label.emoji;
+
+            btn.appendChild(idx);
+            btn.appendChild(word);
+            btn.appendChild(emo);
             (function(pageIndex) {
               btn.addEventListener('click', function() {
                 currentMobilePage = pageIndex;
@@ -634,48 +671,8 @@ const totalCount = allSkills.length;
           updateFooterOffset();
         }
 
-        function buildRows(visible) {
-          var rows = [];
-          visible.forEach(function(chip) {
-            var rowTop = chip.offsetTop;
-            var lastRow = rows[rows.length - 1];
-            if (!lastRow || Math.abs(lastRow.top - rowTop) > 2) {
-              rows.push({ top: rowTop, chips: [chip], height: chip.offsetHeight, bottom: rowTop + chip.offsetHeight });
-            } else {
-              lastRow.chips.push(chip);
-              lastRow.height = Math.max(lastRow.height, chip.offsetHeight);
-              lastRow.bottom = Math.max(lastRow.bottom, rowTop + chip.offsetHeight);
-            }
-          });
-
-          return rows;
-        }
-
-        function buildPagesForFooter(visible, footerBoundary) {
-          var rows = buildRows(visible);
-
-          var pages = [];
-          var currentPageRows = [];
-          var currentPageTop = 0;
-          var fixedHeaderOffset = rows.length > 0 ? rows[0].top : 0;
-
-          rows.forEach(function(row) {
-            if (currentPageRows.length === 0) currentPageTop = row.top;
-            var rowBottomInPage = row.bottom - currentPageTop + fixedHeaderOffset;
-            var wouldOverflow = currentPageRows.length > 0 && rowBottomInPage > footerBoundary - 8;
-            if (wouldOverflow) {
-              pages.push(currentPageRows);
-              currentPageRows = [row];
-              currentPageTop = row.top;
-            } else {
-              currentPageRows.push(row);
-            }
-          });
-
-          if (currentPageRows.length > 0) pages.push(currentPageRows);
-          if (pages.length === 0 && rows.length > 0) pages.push(rows.slice(0, 1));
-
-          return pages;
+        function getTargetMobilePageCount() {
+          return 4;
         }
 
         function applyMobilePagination() {
@@ -703,37 +700,21 @@ const totalCount = allSkills.length;
             return;
           }
 
-          var pages = [];
-
-          for (var pass = 0; pass < 3; pass++) {
-            updateFooterOffset();
-            var footer = document.querySelector('.mobile-footer-stack');
-            var cloudTop = cloud.getBoundingClientRect().top;
-            var footerTop = footer ? footer.getBoundingClientRect().top : window.innerHeight;
-            var footerBoundary = Math.max(120, footerTop - cloudTop);
-            var nextPages = buildPagesForFooter(visible, footerBoundary);
-            var nextPageCount = Math.max(1, nextPages.length);
-            var pageCountChanged = nextPageCount !== mobilePageCount;
-
-            pages = nextPages;
-            mobilePageCount = nextPageCount;
-            currentMobilePage = Math.min(currentMobilePage, mobilePageCount - 1);
-            renderMobilePager();
-
-            if (!pageCountChanged) break;
-          }
-
+          mobilePageCount = Math.max(1, Math.min(getTargetMobilePageCount(), visible.length));
           currentMobilePage = Math.min(currentMobilePage, mobilePageCount - 1);
+          var skillsPerPage = Math.ceil(visible.length / mobilePageCount);
+          var start = currentMobilePage * skillsPerPage;
+          var end = start + skillsPerPage;
 
           visible.forEach(function(chip) {
             chip.style.display = 'none';
           });
 
-          (pages[currentMobilePage] || []).forEach(function(row) {
-            row.chips.forEach(function(chip) {
-              chip.style.display = '';
-            });
+          visible.slice(start, end).forEach(function(chip) {
+            chip.style.display = '';
           });
+
+          renderMobilePager();
         }
 
         if (searchInput) {
@@ -1136,7 +1117,8 @@ const totalCount = allSkills.length;
       align-items: center;
       justify-content: center;
       flex: 0 0 auto;
-      min-width: 2rem;
+      gap: 0.35rem;
+      min-width: 0;
       height: 2rem;
       padding: 0 0.65rem;
       border: 1px solid var(--color-accent);
@@ -1153,6 +1135,24 @@ const totalCount = allSkills.length;
       transform: none;
       box-shadow: none;
       outline: none;
+    }
+
+    .mobile-skill-pager__idx {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .mobile-skill-pager__word {
+      font-size: 0.72rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .mobile-skill-pager__emo {
+      font-size: 0.78rem;
+      line-height: 1;
     }
 
     .mobile-skill-pager__btn--active {
