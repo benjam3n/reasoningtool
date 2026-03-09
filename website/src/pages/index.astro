@@ -510,8 +510,8 @@ const totalCount = allSkills.length;
       <a href="/visuals" class="nav-chip">Visuals</a>
       <a href="/faq" class="nav-chip">FAQ</a>
       <a href="/installation" class="nav-chip">Install</a>
-      <a href="/about" class="nav-chip">About</a>
       <a href="/where" class="nav-chip">Where</a>
+      <a href="/about" class="nav-chip">About</a>
     </nav>
     <nav class="mobile-bottom-bar" aria-label="Mobile navigation">
       <a href="/" class="mobile-bottom-bar__btn">Skills</a>
@@ -1006,7 +1006,7 @@ const totalCount = allSkills.length;
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
-    justify-content: center;
+    justify-content: flex-start;
   }
 
   /* Dark mode tier colors */
@@ -1142,6 +1142,12 @@ const totalCount = allSkills.length;
       gap: 0.35rem;
       flex: 0 0 calc((100% - 1.4rem) / 5);
       min-width: calc((100% - 1.4rem) / 5);
+      min-height: 2rem;
+      padding: 0.3rem;
+      border: 1px solid var(--color-accent);
+      border-radius: 6px;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
       line-height: 1;
       white-space: nowrap;
       overflow: hidden;
