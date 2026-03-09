@@ -30,7 +30,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     <a href="/visuals" class="pg-chip">Visuals</a>
     <a href="/faq" class="pg-chip">FAQ</a>
     <a href="/installation" class="pg-chip">Install</a>
-    <a href="/where" class="pg-chip">Where</a>
+    <a href="/where" class="pg-chip pg-chip--where">Where</a>
     <a href="/about" class="pg-chip">About</a>
   </nav>
 </div>
@@ -426,20 +426,11 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     }
 
     .paginated__page-nums :global(.pg-num__word) {
-      font-size: 0.72rem;
-      font-weight: 600;
-      line-height: 1;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-width: 0;
-      flex: 1;
+      display: none;
     }
 
     .paginated__page-nums :global(.pg-num__emo) {
-      font-size: 0.72rem;
-      line-height: 1;
-      min-width: auto;
+      display: none;
     }
 
     .paginated__page-nums :global(.pg-num--active) {
@@ -447,13 +438,28 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     }
 
     .paginated__chips {
-      padding: var(--sp-2) var(--sp-3);
-      gap: 0.35em;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.45rem 0.5rem;
+      gap: 0.35rem;
     }
 
     .pg-chip {
-      padding: 0.3em 0.7em;
-      font-size: var(--text-xs);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 2rem;
+      padding: 0.3rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      box-sizing: border-box;
+    }
+
+    .pg-chip--where {
+      display: none;
     }
   }
 
