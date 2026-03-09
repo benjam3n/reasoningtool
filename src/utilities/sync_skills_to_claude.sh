@@ -1,45 +1,42 @@
 #!/bin/bash
-# Sync GOSM skills to Claude Code's skill directory
+# Sync skills to Claude Code's commands directory
 # Run this when you add new skills to claude-code-plugin/skills/
 
-GOSM_SKILLS="/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills"
-CLAUDE_SKILLS="/home/ben/Documents/projects/reasoningtool/.claude/skills"
+SKILLS_DIR="/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills"
+COMMANDS_DIR="/home/ben/Documents/projects/reasoningtool/.claude/commands"
 
-# Create Claude skills directory if it doesn't exist
-mkdir -p "$CLAUDE_SKILLS"
+mkdir -p "$COMMANDS_DIR"
 
-# Count for reporting
-linked=0
+added=0
 skipped=0
 
-# Loop through all skill directories
-for skill_dir in "$GOSM_SKILLS"/*/; do
+for skill_dir in "$SKILLS_DIR"/*/; do
     skill_name=$(basename "$skill_dir")
+    skill_md="$skill_dir/SKILL.md"
+    cmd_file="$COMMANDS_DIR/${skill_name}.md"
 
     # Skip if SKILL.md doesn't exist
-    if [[ ! -f "$skill_dir/SKILL.md" ]]; then
+    if [[ ! -f "$skill_md" ]]; then
         continue
     fi
 
-    target="$CLAUDE_SKILLS/$skill_name"
-
-    # Skip if already linked
-    if [[ -L "$target" ]]; then
+    # Skip if command already exists
+    if [[ -f "$cmd_file" ]]; then
         ((skipped++))
         continue
     fi
 
-    # Remove if exists but not a symlink
-    if [[ -e "$target" ]]; then
-        rm -rf "$target"
+    # Extract description from frontmatter
+    desc=$(sed -n '/^---$/,/^---$/p' "$skill_md" | grep '^description:' | sed 's/^description:\s*//' | sed 's/^"//' | sed 's/"$//')
+    if [[ -z "$desc" ]]; then
+        desc="Run the $skill_name skill"
     fi
 
-    # Create symlink
-    ln -s "$skill_dir" "$target"
-    echo "Linked: $skill_name"
-    ((linked++))
+    echo "${desc} Read and execute \`claude-code-plugin/skills/${skill_name}/SKILL.md\`, applying it to this input: \$ARGUMENTS" > "$cmd_file"
+    echo "Added: $skill_name"
+    ((added++))
 done
 
 echo ""
-echo "Done. Linked: $linked, Already linked: $skipped"
-echo "Skills available at: $CLAUDE_SKILLS"
+echo "Done. Added: $added, Already existed: $skipped"
+echo "Total commands: $(ls "$COMMANDS_DIR"/*.md 2>/dev/null | wc -l)"

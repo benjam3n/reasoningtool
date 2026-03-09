@@ -472,15 +472,46 @@ const allCategories = [
   ...tier4Categories.map(c => c.category),
 ].filter((v, i, a) => a.indexOf(v) === i).sort();
 
-// Compute top tags by frequency (exclude "shortcut" and "pick" as they're meta)
+// Compute all tags by frequency
 const tagCounts = new Map<string, number>();
 allSkills.forEach(s => (s.tags || []).forEach(t => {
   if (t !== 'shortcut' && t !== 'pick') tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
 }));
-const allTags = Array.from(tagCounts.entries())
+const allTagsSorted = Array.from(tagCounts.entries())
   .sort((a, b) => b[1] - a[1])
-  .slice(0, 25)
   .map(([tag]) => tag);
+
+// Two-level tag hierarchy: meta-categories → individual tags
+const tagMetaCategories: Record<string, string[]> = {
+  'Analysis': ['analysis', 'decomposition', 'comparison', 'extraction', 'causal', 'diagnosis', 'root', 'root-cause', 'cause', 'inference', 'derivation', 'interpretation', 'evaluation', 'assessment', 'statistical', 'qualitative', 'dimensions', 'specificity', 'identification', 'parsing', 'field'],
+  'Search & Discovery': ['discovery', 'search', 'space', 'space-mapping', 'method', 'sweep', 'elimination', 'matching', 'finder', 'lookup', 'navigation', 'exploration', 'guess', 'guesses', 'novelty', 'non-obvious', 'unexpected'],
+  'Decision & Strategy': ['decision', 'making', 'strategy', 'strategies', 'plan', 'planning', 'plans', 'prioritization', 'option', 'alternatives', 'selection', 'preference', 'criteria', 'weighting', 'pairwise', 'tradeoff', 'roi', 'cost', 'benefit', 'risk', 'reversibility'],
+  'Goals & Wants': ['goal', 'desire', 'journey', 'commitments', 'path', 'progress', 'closure', 'clarity', 'understanding'],
+  'Validation & Audit': ['audit', 'check', 'verification', 'verify', 'validation', 'validity', 'testing', 'evidence', 'evidence-based', 'credibility', 'consistency', 'self-audit'],
+  'Failure & Recovery': ['failure', 'recovery', 'diagnosis', 'debugging', 'prevention', 'anticipation', 'mortem', 'pre', 'retrospective', 'rejection', 'plateaus'],
+  'Creative & Generation': ['creative', 'generation', 'divergent', 'divergence', 'morphological', 'scamper', 'analogy', 'cross-domain', 'metaphor', 'storytelling', 'reframe', 'reframing', 'variation'],
+  'Writing & Communication': ['writing', 'communication', 'persuasive', 'speaking', 'presentation', 'content', 'language', 'listening', 'outreach', 'advocacy', 'media', 'email', 'typography', 'layout'],
+  'Research & Data': ['research', 'source', 'data', 'collection', 'gathering', 'literature', 'academic', 'reading', 'experiments', 'experimental', 'evidence', 'report', 'survey'],
+  'Self & Meta': ['self', 'meta', 'reasoning', 'mental', 'model', 'models', 'assumptions', 'assumption', 'inversion', 'steelman', 'adversarial', 'critique', 'feedback', 'calibration', 'habit', 'learning', 'mastery', 'practice', 'deliberate'],
+  'Procedures & Systems': ['procedure', 'system', 'systems', 'systematic', 'protocol', 'flowchart', 'pipeline', 'automation', 'automated', 'integration', 'infrastructure', 'architecture', 'schema', 'structure'],
+  'Business & Finance': ['financial', 'fundraising', 'budget', 'budgeting', 'investment', 'income', 'cash', 'grant', 'salary', 'market', 'marketing', 'competitive', 'growth', 'viral', 'seo', 'freelancing', 'client', 'positioning', 'customer', 'funnel', 'targeting'],
+  'Frameworks & Patterns': ['framework', 'araw', 'gosm', 'uaua', 'gate', 'compound', 'chain', 'recursive', 'universal', 'bounded', 'probabilistic', 'binary', 'conditional', 'mechanical', 'trees', 'taxonomy'],
+  'Skills & Tools': ['skill', 'routing', 'registry', 'refactoring', 'improvement', 'capability', 'benchmarking', 'api', 'mcp', 'code', 'deployment', 'security'],
+  'People & Collaboration': ['negotiation', 'conflict', 'stakeholder', 'delegation', 'group', 'social', 'interview', 'networking', 'human', 'personal', 'career', 'job', 'resume', 'team'],
+  'Design & Output': ['design', 'review', 'artifacts', 'output', 'requirements', 'delivery', 'project', 'management', 'tracking', 'setup', 'preparation', 'recommendations', 'actionable', 'steps'],
+};
+
+// For each meta-category, only keep tags that actually exist in the data
+const tagHierarchy: { meta: string; tags: string[] }[] = [];
+for (const [meta, candidateTags] of Object.entries(tagMetaCategories)) {
+  const existing = candidateTags.filter(t => tagCounts.has(t)).sort((a, b) => (tagCounts.get(b) || 0) - (tagCounts.get(a) || 0));
+  if (existing.length > 0) tagHierarchy.push({ meta, tags: existing });
+}
+
+// Collect uncategorized tags (exist in data but not in any meta-category)
+const categorizedTags = new Set(Object.values(tagMetaCategories).flat());
+const uncategorized = allTagsSorted.filter(t => !categorizedTags.has(t) && t !== 'shortcut' && t !== 'pick');
+if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategorized });
 ---
 
 <!doctype html>
@@ -525,10 +556,19 @@ const allTags = Array.from(tagCounts.entries())
       {allCategories.map(cat => (
         <button class="sort-chip filter-chip filter-chip--cat-btn" data-filter-category={cat.toLowerCase()}>{cat}</button>
       ))}
-      <span class="filter-label filter-label--tag">Tag</span>
-      {allTags.map(tag => (
-        <button class="sort-chip filter-chip filter-chip--tag-btn" data-filter-tag={tag}>{tag}</button>
-      ))}
+      <div class="tag-meta-row" id="tag-meta-row">
+        <span class="filter-label filter-label--tag">Tags</span>
+        {tagHierarchy.map(g => (
+          <button class="sort-chip filter-chip filter-chip--tag-meta" data-tag-meta={g.meta}>{g.meta}</button>
+        ))}
+      </div>
+      <div class="tag-children-row" id="tag-children-row">
+        {tagHierarchy.map(g => (
+          g.tags.map(tag => (
+            <button class="sort-chip filter-chip filter-chip--tag-btn" data-filter-tag={tag} data-tag-parent={g.meta} style="display:none;">{tag} <span class="tag-count">{tagCounts.get(tag)}</span></button>
+          ))
+        ))}
+      </div>
     </div>
     {allSkills.map(s => (
       <a
@@ -720,7 +760,41 @@ const allTags = Array.from(tagCounts.entries())
           });
         });
 
-        // Tag filter buttons
+        // Tag meta-category buttons (two-level: click meta → show children)
+        var currentTagMeta = '';
+        document.querySelectorAll('[data-tag-meta]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var meta = btn.getAttribute('data-tag-meta');
+            // Toggle: click same meta again to collapse
+            var childrenRow = document.getElementById('tag-children-row');
+            if (meta === currentTagMeta) {
+              currentTagMeta = '';
+              btn.classList.remove('active');
+              // Hide all child tags
+              document.querySelectorAll('[data-filter-tag]').forEach(function(t) { t.style.display = 'none'; });
+              if (childrenRow) childrenRow.classList.remove('visible');
+              // Clear any active tag filter
+              currentTagFilter = '';
+              applyFilters();
+              return;
+            }
+            // Activate this meta
+            document.querySelectorAll('[data-tag-meta]').forEach(function(b) { b.classList.remove('active'); });
+            currentTagMeta = meta;
+            btn.classList.add('active');
+            // Show only children of this meta, hide others
+            document.querySelectorAll('[data-filter-tag]').forEach(function(t) {
+              t.style.display = t.getAttribute('data-tag-parent') === meta ? '' : 'none';
+              t.classList.remove('active');
+            });
+            if (childrenRow) childrenRow.classList.add('visible');
+            // Clear active tag
+            currentTagFilter = '';
+            applyFilters();
+          });
+        });
+
+        // Tag child buttons (actual filter)
         document.querySelectorAll('[data-filter-tag]').forEach(function(btn) {
           btn.addEventListener('click', function() {
             var tag = btn.getAttribute('data-filter-tag');
@@ -1169,6 +1243,59 @@ const allTags = Array.from(tagCounts.entries())
     display: none;
   }
 
+  .tag-meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    width: 100%;
+    align-items: center;
+  }
+
+  .tag-children-row {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    width: 100%;
+    align-items: center;
+    padding-left: 0.5em;
+    border-left: 2px solid #0d9488;
+  }
+
+  .tag-children-row.visible {
+    display: flex;
+  }
+
+  .tag-count {
+    font-size: 0.7em;
+    opacity: 0.6;
+  }
+
+  .filter-chip--tag-meta {
+    border-color: #0d9488;
+    color: #0d9488;
+  }
+
+  .filter-chip--tag-meta.active {
+    border-color: #0d9488;
+    color: #fff;
+    background: #0d9488;
+  }
+
+  :global([data-theme="dark"]) .filter-chip--tag-meta {
+    border-color: #5eead4;
+    color: #5eead4;
+  }
+
+  :global([data-theme="dark"]) .filter-chip--tag-meta.active {
+    border-color: #5eead4;
+    color: #0f2d2a;
+    background: #5eead4;
+  }
+
+  :global([data-theme="dark"]) .tag-children-row {
+    border-left-color: #5eead4;
+  }
+
   .filter-chip--1.active { border-color: #2e7d32; color: #2e7d32; background: #e8f5e9; }
   .filter-chip--2.active { border-color: #1565c0; color: #1565c0; background: #e3f2fd; }
   .filter-chip--cat.active { border-color: #7b1fa2; color: #7b1fa2; background: #f3e5f5; }
@@ -1194,6 +1321,9 @@ const allTags = Array.from(tagCounts.entries())
     :global(:root:not([data-theme="light"])) .filter-chip--4.active { border-color: #78909c; color: #90a4ae; background: #1c2025; }
     :global(:root:not([data-theme="light"])) .filter-chip--exp.active { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
     :global(:root:not([data-theme="light"])) .filter-chip--tag-btn.active { border-color: #5eead4; color: #5eead4; background: #0f2d2a; }
+    :global(:root:not([data-theme="light"])) .filter-chip--tag-meta { border-color: #5eead4; color: #5eead4; }
+    :global(:root:not([data-theme="light"])) .filter-chip--tag-meta.active { border-color: #5eead4; color: #0f2d2a; background: #5eead4; }
+    :global(:root:not([data-theme="light"])) .tag-children-row { border-left-color: #5eead4; }
   }
 
   .mobile-footer-stack {
@@ -1321,6 +1451,51 @@ const allTags = Array.from(tagCounts.entries())
       display: inline-block;
       border-color: var(--color-accent);
       color: var(--color-accent);
+    }
+
+    .tag-meta-row {
+      display: none;
+      gap: 0.25rem;
+    }
+
+    .filter-controls.tags-visible .tag-meta-row {
+      display: flex;
+    }
+
+    .tag-children-row {
+      gap: 0.25rem;
+      padding-left: 0.35em;
+      border-left-width: 2px;
+    }
+
+    .mobile-tag-toggle {
+      display: inline-block;
+      border-color: #0d9488;
+      color: #0d9488;
+    }
+
+    .filter-chip--tier {
+      padding: 0.2rem 0.35rem;
+      font-size: 0.6rem;
+    }
+
+    .filter-chip--cat-btn {
+      padding: 0.18rem 0.32rem;
+      font-size: 0.58rem;
+    }
+
+    .filter-chip--tag-meta {
+      padding: 0.18rem 0.32rem;
+      font-size: 0.58rem;
+    }
+
+    .filter-chip--tag-btn {
+      padding: 0.16rem 0.28rem;
+      font-size: 0.55rem;
+    }
+
+    .tag-count {
+      font-size: 0.6em;
     }
 
     .filter-sep {

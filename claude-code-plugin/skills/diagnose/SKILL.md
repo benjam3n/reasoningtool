@@ -1,6 +1,6 @@
 ---
 name: "diagnose - Find the Cause"
-description: Sub-orchestrator for diagnostic questions. Routes to UAUA exploration or direct causal tracing based on how much is known.
+description: Sub-orchestrator for diagnostic questions. Routes to UAUA exploration, causal tracing, safety analysis, or direct debugging based on how much is known and the nature of the problem.
 ---
 
 # Diagnose
@@ -23,6 +23,10 @@ If the input is too vague, ask: "What specifically is happening that shouldn't b
 - **"Should I fix X?"** → This is a decision. → INVOKE: /decide $ARGUMENTS
 - **"Nothing works"** → This is emotional. → INVOKE: /emotion $ARGUMENTS
 - **"How do I fix X?"** → This is method-seeking (cause already known). → INVOKE: /how $ARGUMENTS
+- **"I think the problem is X"** → Formalize the hypothesis first. → INVOKE: /it $ARGUMENTS
+- **"X, but Y doesn't explain it"** → Tension between symptom and explanation. → INVOKE: /but $ARGUMENTS
+- **"I'm not sure what's wrong"** → Classify the uncertainty. → INVOKE: /nsa $ARGUMENTS
+- **"Handle this"** (vague) → INVOKE: /handle $ARGUMENTS
 - **If it IS diagnostic** → continue.
 
 ### 3. Is the Cause Known, Suspected, or Unknown?
@@ -38,6 +42,7 @@ If the input is too vague, ask: "What specifically is happening that shouldn't b
 
 - **Technical** (code, systems, infrastructure): frame with technical vocabulary, consider /dbg.
 - **Non-technical** (people, process, strategy, market): frame with systems vocabulary.
+- **Organizational** (team dysfunction, communication breakdown): consider /sya (systems analysis).
 
 ### 5. Timeline
 
@@ -51,6 +56,8 @@ If the input is too vague, ask: "What specifically is happening that shouldn't b
 - **First time**: full diagnosis.
 - **Recurring** (tried fixing before, still broken):
   → INVOKE: /sbfow [symptom + what was tried]
+- **Getting worse over time**: consider systemic/structural cause.
+  → INVOKE: /sya [symptom pattern] + /fut [trend analysis]
 
 ### 7. Isolated or Systemic?
 
@@ -58,6 +65,26 @@ If the input is too vague, ask: "What specifically is happening that shouldn't b
   → INVOKE: /rca [symptom]
 - **Pattern across areas**: structural/systemic issue.
   → INVOKE: /sya [symptom pattern]
+
+### 8. Safety and Severity Check
+
+Before deep diagnosis, check:
+
+- **Safety-critical** (medical, infrastructure, security): → also INVOKE: /saf $ARGUMENTS
+- **Obvious check first** (has anyone checked the obvious?): → also INVOKE: /obv $ARGUMENTS
+- **Obvious bad outcomes if misdiagnosed**: → also INVOKE: /obo $ARGUMENTS
+
+### 9. Depth and Mode Selection
+
+| Situation | Mode |
+|-----------|------|
+| User wants quick answer | → /ezy (easy mode) |
+| User wants maximum rigor | → /hrd (hard mode) or /certainty |
+| User wants general principle | → /genl (what general pattern explains this?) |
+| User wants specific application | → /spcf (apply known diagnosis framework to this case) |
+| Problem seems too complex | → /dcm (decompose first) |
+| User might be wrong about the problem | → /sid (situation identification) |
+| User might have wrong mental model | → /rmm (recover from wrong mental model) |
 
 ---
 
@@ -75,6 +102,19 @@ If the input is too vague, ask: "What specifically is happening that shouldn't b
 **Recurring problem:**
 → INVOKE: /sbfow [symptom]
 
+### Supplementary Analysis (invoke when relevant)
+
+| Situation | Also invoke |
+|-----------|------------|
+| Diagnosis involves ethical dimensions | → /eth |
+| Worst case matters | → /dys (dystopia analysis) |
+| Need to trace implications of the cause | → /sycs (so you can see) |
+| Need to check what else might break | → /ata (and then also) |
+| Unresolved sub-questions in diagnosis | → /tbd (to be determined) |
+| Self-deception about the cause | → /sdc (self-deception check) |
+| Need the story of what happened | → /story (narrative construction) |
+| Need to differentiate between similar causes | → /difr (differentiation reasoning) |
+
 ---
 
 ## After Completion
@@ -85,3 +125,13 @@ Report:
 - Causal chain (what caused what)
 - Prevention (what would stop recurrence)
 - What's still unresolved
+
+### Follow-Up Routing
+
+After diagnosis is complete, the user may need:
+- **"How do I fix it?"** → INVOKE: /how $ARGUMENTS
+- **"What should I do?"** → INVOKE: /decide or /action
+- **"What could go wrong if I fix it wrong?"** → INVOKE: /fla or /obo
+- **"What are the implications?"** → INVOKE: /sycs
+- **"What skill should I run next?"** → INVOKE: /next or /fonss
+- **"What's still unresolved?"** → INVOKE: /tbd

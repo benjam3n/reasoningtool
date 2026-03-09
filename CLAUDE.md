@@ -1,6 +1,6 @@
 # Reasoning Toolkit
 
-This project contains 415 thinking skills. Each skill is a structured procedure in `claude-code-plugin/skills/[name]/SKILL.md`.
+This project contains 563 thinking skills. Each skill is a structured procedure in `claude-code-plugin/skills/[name]/SKILL.md`.
 
 ## How Skills Work
 
@@ -46,8 +46,12 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Solve a problem | `/rca`, `/dbg`, `/dcm` |
 | Explore options | `/se`, `/poa`, `/dd` |
 | Check assumptions | `/aex`, `/ht` |
-| Write something | `/pw`, `/stl` |
+| Challenge thinking | `/stc`, `/advr`, `/aex`, `/but` |
+| Handle uncertainty | `/pbr`, `/nsa`, `/it` |
+| Write something | `/pw`, `/stl`, `/w` |
+| Draft/edit writing | `/wre`, `/w`, `/stl`, `/pw` |
 | Plan a project | `/de`, `/to` |
+| Manage tasks | `/ata`, `/tbd`, `/tobd` |
 | Understand a goal | `/gu`, `/gd`, `/grf` |
 | Research a topic | `/lr`, `/fia` |
 | Validate work | `/pv`, `/mv`, `/vbo` |
@@ -55,5 +59,15 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Check an answer | `/fwa`, `/frq` |
 | Check themselves | `/sdc`, `/sid`, `/ecal` |
 | Recover from error | `/rmm`, `/kta` |
-| Choose depth/scope | `/alt`, `/ign`, `/dwt` |
+| Reframe/rethink | `/iaw`, `/but` |
 | Understand a system | `/fohw`, `/insd` |
+| Analyze outcomes | `/gop`, `/obo`, `/ogo`, `/obv`, `/oba`, `/fut` |
+| Work with others | `/col`, `/conr`, `/per` |
+| Manage scope | `/awtlytrn`, `/iagca`, `/ycshikfmif` |
+| Choose depth/scope | `/alt`, `/ign`, `/dwt` |
+| Set difficulty level | `/soph`, `/smpl`, `/ezy`, `/hrd`, `/genl`, `/spcf` |
+| Handle lists | `/list`, `/ro`, `/etc`, `/aso` |
+| Find the right skill | `/wsib`, `/dtse`, `/extract`, `/fonss`, `/handle` |
+| Improve skills | `/imps`, `/impss`, `/imprt`, `/skgap` |
+| Operationalize wisdom | `/platitude`, `/platitudes` |
+| Anticipate the future | `/dys`, `/utp`, `/fut` |

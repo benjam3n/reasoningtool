@@ -50,7 +50,7 @@ _tier3 = {
     ],
     'Writing & Communication': [
         'w', 'pw', 'stl', 'pus', 'prd', 'cts', 'orm', 'fd',
-        'al', 'argd', 'wre', 'story',
+        'al', 'argd', 'wre', 'story', 'draft', 'edit',
     ],
     'Planning & Projects': [
         'pji', 'pjs', 'de', 'pjc', 'op', 'pt', 'ria', 'dpl',
@@ -87,13 +87,17 @@ _tier4 = {
         'ar', 'aw', 'u', 'im', 'ans', 'met', 'svs', 'unx', 'gen', 'gn', 'gg',
         'foht', 'md', 'fe', 'ie', 'cdb', 'cga', 'cnw', 'va',
         'it', 'but', 'nsa', 'sycs', 'siycftr', 'alebc', 'iaw',
+        'anag', 'crtv', 'difr', 'funr', 'genl', 'hrd', 'sim', 'smpl',
+        'soph', 'spcf', 'spec', 'thnk', 'upth', 'cmplx', 'exps',
     ],
     'Skill Routing': [
         'wsib', 'dtse', 'extract', 'fonss', 'given', 'next', 'handle', 'itp',
         'uf', 'wn',
+        'pick', 'tri', 'ornt', 'wsn',
     ],
     'Skill Creation': [
         'mts', 'fmtsb', 'sc', 'cs', 'flhwijd',
+        'chns', 'injc', 'orcs', 'stnl', 'wrps', 'mtskd', 'skcl',
     ],
     'Search Methods': [
         'bes', 'cls', 'fss', 'ipss', 'mss', 'nss', 'pss', 'spd', 'std', 'fnd',
@@ -102,6 +106,7 @@ _tier4 = {
     'Goal Processing': [
         'gd', 'grf', 'grfr', 'gsr', 'gjs', 'lgi', 'uga', 'wt', 'je', 'agi',
         'atgb', 'ugav2', 'ugav3', 'ugav4', 'ugav5',
+        'plsk',
     ],
     'Goal Type Handlers': [
         'eg', 'ig', 'ldg', 'rlg', 'clg', 'mpg', 'idg', 'pvg', 'rsg', 'pag',
@@ -109,20 +114,24 @@ _tier4 = {
     'Assumptions & Critique': [
         'aa', 'ael', 'asu', 'ac', 'cri', 'mem', 'bi', 'advr', 'cv', 'stc',
         'tp', 'eh',
+        'agsk', 'deb', 'jdgm', 'ratn',
     ],
     'Questions & Analysis': [
         'qaf', 'qag', 'qo', 'cta', 'cdr', 'pbr', 'mrc', 'pre', 've', 'vcd',
         'qg', 'qm', 'evd',
+        'indv', 'orgn', 'sysk', 'prob', 'systhink',
     ],
     'Diagnosis & Recovery': [
         'pbi', 'rc5w', 'fowwr', 'sbfow', 'fr', 'lpd', 'cfr', 'shc', 'afa',
         'fat', 'fj', 'gaa',
+        'conr', 'dmgc', 'conflict',
     ],
     'Procedures & Meta': [
         'pcd', 'pce', 'pcex', 'pci', 'pefs', 'prr', 'dmt', 'tpm', 'tr', 'txm',
         'adep', 'auep', 'pcef', 'dot', 'ph', 'so', 'uo', 'gee', 'pqr', 'gaca',
         'cpra', 'vhd', 'tnt', 'cppd',
         'awtlytrn', 'ycshikfmif', 'iagca',
+        'oprc', 'anst', 'dcst', 'exst', 'rfst',
     ],
     'Self-Audit': [
         'saaapcav', 'saaesa', 'sads', 'sagsca', 'satrda', 'saadag', 'saaiasa',
@@ -131,24 +140,79 @@ _tier4 = {
     'Evaluation & Validation': [
         'emv', 'ver', 'exc', 'capg', 'mcg', 'spg', 'skb', 'fb', 'vp', 'av',
         'obv', 'obo', 'ogo', 'gop', 'oba',
+        'vldt', 'cmpr', 'prvn', 'benf', 'efrt', 'mets',
     ],
     'Strategy & Planning': [
         'p', 'mpa', 'stg', 'o', 'rqg', 'cms', 'swa', 'ssr', 'wr', 'dsd', 'dse',
         'dss', 'dtl', 'ol', 'st', 'snp', 'es', 'sym', 'lp', 'lps', 'dari', 'aar',
         'ata', 'tbd', 'tobd', 'fut', 'dys', 'utp',
+        'pri', 'roip',
     ],
     'Finance & Fundraising': ['b', 'cfm', 'ff', 'fua', 'gw', 'isd'],
-    'Personal Development': ['hf', 'po', 'lt', 're', 'am', 'skp', 'ge'],
-    'Marketing & Growth': ['sms', 'seb', 'vm', 'vdp', 'net', 'fl', 'jss'],
+    'Personal Development': [
+        'hf', 'po', 'lt', 're', 'am', 'skp', 'ge',
+        'hab', 'lrnk', 'memy', 'prcp', 'teach', 'memk',
+    ],
+    'Marketing & Growth': [
+        'sms', 'seb', 'vm', 'vdp', 'net', 'fl', 'jss',
+        'cdiff', 'per', 'pinf',
+    ],
     'Advocacy & Outreach': ['ais', 'orc', 't', 'ea', 'pha', 'hd'],
     'List & Pattern': [
         'list', 'ro', 'etc', 'aso', 'platitude', 'platitudes',
+        'olst', 'omtx', 'sum',
     ],
-    'Utility & Integration': ['sf', 'mcs', 'ams', 'eda'],
+    'Utility & Integration': [
+        'sf', 'mcs', 'ams', 'eda',
+        'exint', 'pwif', 'rwif', 'dshb', 'bldk',
+    ],
     'Orderings': [
         'ao', 'arcd', 'be', 'cn', 'cns', 'ct', 'dv', 'dvs', 'faa', 'gt', 'lcs',
         'ld', 'mil', 'mcp', 'mp', 'ns', 'ov', 'ovi', 'pb', 'pbs', 'pf', 'pge',
         'pjm', 'qs', 'rm', 'rso', 'srd', 'td',
+    ],
+    'Claim Analysis': [
+        'cscl', 'fctl', 'icl', 'mocl', 'mtcl', 'ncl', 'pcl', 'rlcl',
+    ],
+    'Skill Picker': [
+        'p10complement', 'p10diverse', 'p10for', 'p10goal', 'p10random',
+        'p10useful', 'p3chain', 'p5deep', 'p5qm', 'p5similar', 'p5want',
+        'p7cat', 'p8tier',
+    ],
+    'Skill Improvement': [
+        'imps', 'impss', 'imprt', 'skev', 'skgap', 'rskl', 'tkint',
+        'ctcov', 'ctgp', 'ecomp', 'stcc', 'mtnw', 'nrwd',
+        'nusr', 'pusr', 'satr',
+    ],
+    'AI & Automation': [
+        'aiag', 'fwai', 'llmf', 'ltai',
+    ],
+    'Domain-Specific Analysis': [
+        'ctan', 'dqnt', 'dtsk', 'dxpt', 'hpat', 'leg', 'rgc', 'rtas',
+    ],
+    'Communication & Collaboration': [
+        'comc', 'col', 'csb', 'tfac', 'tmsk', 'socg', 'eqi', 'empth',
+    ],
+    'Decision Outputs': [
+        'cand', 'odec', 'oart', 'onar', 'orec', 'prsk',
+    ],
+    'Ethics & Values': [
+        'ecoc', 'mdr', 'vcl', 'unvs',
+    ],
+    'Gap & Coverage': [
+        'gapf', 'gflr', 'immg', 'undr',
+    ],
+    'Health & Lifestyle': [
+        'slp', 'nutr', 'exrp',
+    ],
+    'User & Need': [
+        'usnd', 'usrn', 'curd', 'cvis', 'idsk', 'abts',
+    ],
+    'Metacognition': [
+        'mtcg', 'mtgd', 'rlsk', 'efa',
+    ],
+    'Complexity & Depth': [
+        'ezy',
     ],
 }
 for cat, skills in _tier4.items():
