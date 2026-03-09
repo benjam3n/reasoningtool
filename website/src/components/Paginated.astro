@@ -453,6 +453,10 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     const touchState = {
       active: false,
       lastY: 0,
+      lastTime: 0,
+      velocity: 0,
+      rafId: 0,
+      section: null,
     };
 
     // Build number buttons
@@ -522,6 +526,63 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       });
     }
 
+    function clampScroll(section) {
+      const maxScrollTop = Math.max(0, section.scrollHeight - section.clientHeight);
+      if (section.scrollTop < 0) section.scrollTop = 0;
+      if (section.scrollTop > maxScrollTop) section.scrollTop = maxScrollTop;
+      return maxScrollTop;
+    }
+
+    function stopMomentum() {
+      if (touchState.rafId) {
+        cancelAnimationFrame(touchState.rafId);
+        touchState.rafId = 0;
+      }
+    }
+
+    function startMomentum(section) {
+      stopMomentum();
+      touchState.section = section;
+
+      const step = () => {
+        if (!touchState.section || touchState.active) {
+          touchState.rafId = 0;
+          return;
+        }
+
+        const activeScrollSection = finalSections[current];
+        if (touchState.section !== activeScrollSection || !activeScrollSection.classList.contains('section--scrollable')) {
+          touchState.velocity = 0;
+          touchState.rafId = 0;
+          return;
+        }
+
+        const maxScrollTop = clampScroll(activeScrollSection);
+        if (maxScrollTop <= 0) {
+          touchState.velocity = 0;
+          touchState.rafId = 0;
+          return;
+        }
+
+        const nextScrollTop = activeScrollSection.scrollTop + touchState.velocity;
+        const boundedScrollTop = Math.min(maxScrollTop, Math.max(0, nextScrollTop));
+        const hitBoundary = boundedScrollTop === 0 || boundedScrollTop === maxScrollTop;
+
+        activeScrollSection.scrollTop = boundedScrollTop;
+        if (hitBoundary) {
+          touchState.velocity = 0;
+          touchState.rafId = 0;
+          return;
+        }
+
+        touchState.rafId = requestAnimationFrame(step);
+      };
+
+      if (Math.abs(touchState.velocity) >= 0.12) {
+        touchState.rafId = requestAnimationFrame(step);
+      }
+    }
+
     function updateScrollState() {
       finalSections.forEach((section, index) => {
         const isActive = index === current;
@@ -532,6 +593,9 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     function show(index) {
       if (index < 0 || index >= total) return;
+      stopMomentum();
+      touchState.velocity = 0;
+      touchState.section = null;
       finalSections.forEach((s) => s.classList.remove('active'));
       finalSections[index].classList.add('active');
       current = index;
@@ -590,12 +654,23 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       if (!touchState.active) {
         touchState.active = true;
         touchState.lastY = currentY;
+        touchState.lastTime = performance.now();
+        touchState.section = activeSection;
         return;
       }
 
       const deltaY = touchState.lastY - currentY;
+      const now = performance.now();
+      const deltaTime = Math.max(8, now - touchState.lastTime);
+      const appliedDelta = deltaY * 0.11;
+      const instantaneousVelocity = appliedDelta / (deltaTime / 16.67);
+
       touchState.lastY = currentY;
-      activeSection.scrollTop += deltaY * 0.14;
+      touchState.lastTime = now;
+      touchState.section = activeSection;
+      activeSection.scrollTop += appliedDelta;
+      clampScroll(activeSection);
+      touchState.velocity = (touchState.velocity * 0.72) + (instantaneousVelocity * 0.28);
     }, { passive: false });
 
     container.addEventListener('wheel', (e) => {
@@ -617,9 +692,13 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
       if (!allowScroll) return;
       touchState.active = true;
+      stopMomentum();
+      touchState.velocity = 0;
+      touchState.section = activeSection;
       touchState.lastY = e.touches[0].clientY;
+      touchState.lastTime = performance.now();
 
-      const maxScrollTop = activeSection.scrollHeight - activeSection.clientHeight;
+      const maxScrollTop = clampScroll(activeSection);
       if (maxScrollTop <= 0) return;
       if (activeSection.scrollTop <= 0) activeSection.scrollTop = 1;
       if (activeSection.scrollTop >= maxScrollTop) activeSection.scrollTop = Math.max(1, maxScrollTop - 1);
@@ -627,10 +706,13 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
     container.addEventListener('touchend', () => {
       touchState.active = false;
+      if (touchState.section) startMomentum(touchState.section);
     }, { passive: true });
 
     container.addEventListener('touchcancel', () => {
       touchState.active = false;
+      stopMomentum();
+      touchState.velocity = 0;
     }, { passive: true });
 
     window.addEventListener('resize', () => {
