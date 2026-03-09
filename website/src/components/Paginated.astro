@@ -352,6 +352,10 @@ const { pageGroup = '', pageIndex = 0, mobileNums = 'grid' } = Astro.props;
   }
 
   @media (max-width: 900px) {
+    .paginated__slides :global(.content-card-grid) {
+      grid-template-columns: 1fr;
+    }
+
     :global(html),
     :global(body) {
       overflow: hidden;
@@ -452,7 +456,7 @@ const { pageGroup = '', pageIndex = 0, mobileNums = 'grid' } = Astro.props;
 
     .paginated__chips {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       width: 100%;
       box-sizing: border-box;
       padding: 0.45rem 0.5rem;

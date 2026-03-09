@@ -507,7 +507,8 @@ const allCategories = [
       <button class="sort-chip filter-chip filter-chip--tier filter-chip--4" data-filter-tier="4">Specialized</button>
       <button class="sort-chip filter-chip filter-chip--tier filter-chip--exp" data-filter-tier="exp">Experimental</button>
       <span class="filter-sep"></span>
-      <span class="filter-label">Category</span>
+      <button class="sort-chip filter-chip mobile-cat-toggle" id="mobile-cat-toggle">Show categories</button>
+      <span class="filter-label filter-label--cat">Category</span>
       {allCategories.map(cat => (
         <button class="sort-chip filter-chip filter-chip--cat-btn" data-filter-category={cat.toLowerCase()}>{cat}</button>
       ))}
@@ -529,6 +530,7 @@ const allCategories = [
       <button class="nav-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
       <a href="/visuals" class="nav-chip">Visuals</a>
       <a href="/faq" class="nav-chip">FAQ</a>
+      <a href="/questions" class="nav-chip">Questions</a>
       <a href="/installation" class="nav-chip">Install</a>
       <a href="/where" class="nav-chip">Where</a>
       <a href="/about" class="nav-chip">About</a>
@@ -538,6 +540,7 @@ const allCategories = [
       <button class="mobile-bottom-bar__btn pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
       <a href="/visuals" class="mobile-bottom-bar__btn">Visuals</a>
       <a href="/faq" class="mobile-bottom-bar__btn">FAQ</a>
+      <a href="/questions" class="mobile-bottom-bar__btn">Questions</a>
       <a href="/installation" class="mobile-bottom-bar__btn">Install</a>
       <a href="/about" class="mobile-bottom-bar__btn">About</a>
     </nav>
@@ -692,6 +695,16 @@ const allCategories = [
           });
         });
 
+        // Mobile category toggle
+        var catToggle = document.getElementById('mobile-cat-toggle');
+        var filterControls = document.querySelector('.filter-controls');
+        if (catToggle && filterControls) {
+          catToggle.addEventListener('click', function() {
+            var isVisible = filterControls.classList.toggle('categories-visible');
+            catToggle.textContent = isVisible ? 'Hide categories' : 'Show categories';
+          });
+        }
+
         function isMobile() {
           return window.innerWidth <= 900;
         }
@@ -762,7 +775,7 @@ const allCategories = [
         }
 
         function getTargetMobilePageCount() {
-          return 4;
+          return 5;
         }
 
         function applyMobilePagination() {
@@ -1090,6 +1103,10 @@ const allCategories = [
     margin: 0 0.25em;
   }
 
+  .mobile-cat-toggle {
+    display: none;
+  }
+
   .filter-chip--1.active { border-color: #2e7d32; color: #2e7d32; background: #e8f5e9; }
   .filter-chip--2.active { border-color: #1565c0; color: #1565c0; background: #e3f2fd; }
   .filter-chip--cat.active { border-color: #7b1fa2; color: #7b1fa2; background: #f3e5f5; }
@@ -1219,6 +1236,28 @@ const allCategories = [
       font-size: 0.6rem;
     }
 
+    .filter-label--cat {
+      display: none;
+    }
+
+    .filter-controls.categories-visible .filter-label--cat {
+      display: inline;
+    }
+
+    .filter-chip--cat-btn {
+      display: none;
+    }
+
+    .filter-controls.categories-visible .filter-chip--cat-btn {
+      display: inline-block;
+    }
+
+    .mobile-cat-toggle {
+      display: inline-block;
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+    }
+
     .filter-sep {
       height: 1em;
     }
@@ -1229,7 +1268,7 @@ const allCategories = [
 
     .mobile-bottom-bar {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0.35rem;
       padding: 0;
     }
@@ -1261,7 +1300,7 @@ const allCategories = [
 
     .mobile-skill-pager {
       display: none;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 0.35rem;
       width: 100%;
       padding: 0 0 0.05rem;
