@@ -18,22 +18,21 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 ---
 
 <div class="paginated" id="paginated" data-page-group={pageGroup} data-page-index={pageIndex}>
-  <nav class="paginated__chips">
-    <a href="/" class="pg-chip pg-chip--home">Skills</a>
-    <a href="/installation" class="pg-chip">Install</a>
-    <a href="/tools" class="pg-chip">Tools</a>
-    <a href="/faq" class="pg-chip">FAQ</a>
-    <a href="/about" class="pg-chip">About</a>
-    <a href="/where" class="pg-chip">Where</a>
-    <a href="/visuals" class="pg-chip">Visuals</a>
-    <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
-  </nav>
   <div class="paginated__body">
     <div class="paginated__slides">
       <slot />
     </div>
     <div class="paginated__page-nums" id="pg-nums"></div>
   </div>
+  <nav class="paginated__chips">
+    <a href="/" class="pg-chip pg-chip--home">Skills</a>
+    <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
+    <a href="/visuals" class="pg-chip">Visuals</a>
+    <a href="/faq" class="pg-chip">FAQ</a>
+    <a href="/installation" class="pg-chip">Install</a>
+    <a href="/about" class="pg-chip">About</a>
+    <a href="/where" class="pg-chip">Where</a>
+  </nav>
 </div>
 
 <style>
@@ -62,6 +61,8 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     position: relative;
     z-index: 10;
     overscroll-behavior: none;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
   }
 
   .pg-chip {
@@ -420,7 +421,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
 <script define:vars={{ NAV_LETTERS, NAV_WORDS_BY_LETTER, NAV_EMOJI_CATEGORIES }}>
   const PAGE_GROUPS = {
-    info: ['/installation', '/tools', '/faq', '/about', '/where'],
+    info: ['/faq', '/installation', '/about'],
     visual: ['/', '/visuals'],
   };
 

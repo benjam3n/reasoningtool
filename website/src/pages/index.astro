@@ -478,13 +478,6 @@ const totalCount = allSkills.length;
 </head>
 <body class="skills-page">
   <section class="skill-cloud">
-    <a href="/installation" class="nav-chip">Install</a>
-    <a href="/tools" class="nav-chip">Tools</a>
-    <a href="/faq" class="nav-chip">FAQ</a>
-    <a href="/about" class="nav-chip">About</a>
-    <a href="/where" class="nav-chip">Where</a>
-    <a href="/visuals" class="nav-chip">Visuals</a>
-    <button class="nav-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     <button class="nav-chip" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9790;</span></button>
     <input type="text" id="skill-search" class="skill-search" placeholder="Search skills..." autocomplete="off" />
     <div class="sort-controls" id="sort-controls">
@@ -511,15 +504,22 @@ const totalCount = allSkills.length;
     ))}
   </section>
   <div class="mobile-footer-stack">
+    <nav class="desktop-bottom-bar" aria-label="Site navigation">
+      <a href="/" class="nav-chip">Skills</a>
+      <button class="nav-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
+      <a href="/visuals" class="nav-chip">Visuals</a>
+      <a href="/faq" class="nav-chip">FAQ</a>
+      <a href="/installation" class="nav-chip">Install</a>
+      <a href="/about" class="nav-chip">About</a>
+      <a href="/where" class="nav-chip">Where</a>
+    </nav>
     <nav class="mobile-bottom-bar" aria-label="Mobile navigation">
       <a href="/" class="mobile-bottom-bar__btn">Skills</a>
-      <a href="/installation" class="mobile-bottom-bar__btn">Install</a>
-      <a href="/tools" class="mobile-bottom-bar__btn">Tools</a>
-      <a href="/faq" class="mobile-bottom-bar__btn">FAQ</a>
-      <a href="/about" class="mobile-bottom-bar__btn">About</a>
-      <a href="/where" class="mobile-bottom-bar__btn">Where</a>
-      <a href="/visuals" class="mobile-bottom-bar__btn">Visuals</a>
       <button class="mobile-bottom-bar__btn pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
+      <a href="/visuals" class="mobile-bottom-bar__btn">Visuals</a>
+      <a href="/faq" class="mobile-bottom-bar__btn">FAQ</a>
+      <a href="/installation" class="mobile-bottom-bar__btn">Install</a>
+      <a href="/about" class="mobile-bottom-bar__btn">About</a>
     </nav>
     <div class="mobile-skill-pager" id="mobile-skill-pager" aria-label="Skill pages"></div>
   </div>
@@ -620,7 +620,7 @@ const totalCount = allSkills.length;
             return;
           }
 
-          mobilePager.style.display = 'grid';
+          mobilePager.style.display = 'flex';
           mobilePager.innerHTML = '';
 
           function getNavLabel(pageNumber) {
@@ -668,11 +668,16 @@ const totalCount = allSkills.length;
             mobilePager.appendChild(btn);
           }
 
+          var activeBtn = mobilePager.querySelector('.mobile-skill-pager__btn--active');
+          if (activeBtn) {
+            activeBtn.scrollIntoView({ inline: 'nearest', block: 'nearest' });
+          }
+
           updateFooterOffset();
         }
 
         function getTargetMobilePageCount() {
-          return 4;
+          return 8;
         }
 
         function applyMobilePagination() {
@@ -813,6 +818,7 @@ const totalCount = allSkills.length;
   .skills-page {
     margin: 0;
     padding: var(--sp-3);
+    padding-bottom: calc(4rem + var(--sp-3));
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -982,7 +988,25 @@ const totalCount = allSkills.length;
   }
 
   .mobile-footer-stack {
-    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 0.45rem 0.5rem;
+    background: var(--color-bg);
+    border-top: 1px solid var(--color-border);
+    box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.08);
+    z-index: 40;
+  }
+
+  .desktop-bottom-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: center;
   }
 
   /* Dark mode tier colors */
@@ -1058,24 +1082,13 @@ const totalCount = allSkills.length;
       font-size: 0.68rem;
     }
 
-    .mobile-footer-stack {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-      padding: 0.45rem 0.5rem;
-      background: var(--color-bg);
-      border-top: 1px solid var(--color-border);
-      box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.08);
-      z-index: 40;
+    .desktop-bottom-bar {
+      display: none;
     }
 
     .mobile-bottom-bar {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.35rem;
       padding: 0;
     }
@@ -1095,6 +1108,8 @@ const totalCount = allSkills.length;
       color: var(--color-accent);
       background: var(--color-accent-subtle);
       box-sizing: border-box;
+      appearance: none;
+      -webkit-appearance: none;
       cursor: pointer;
       transition: none;
       -webkit-tap-highlight-color: transparent;
@@ -1105,10 +1120,19 @@ const totalCount = allSkills.length;
 
     .mobile-skill-pager {
       display: none;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.3rem;
-      padding: 0;
+      gap: 0.35rem;
+      width: 100%;
+      padding: 0 0 0.05rem;
       padding-bottom: 0.05rem;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      scroll-snap-type: x proximity;
+    }
+
+    .mobile-skill-pager::-webkit-scrollbar {
+      display: none;
     }
 
     .mobile-skill-pager__btn {
@@ -1116,21 +1140,24 @@ const totalCount = allSkills.length;
       align-items: center;
       justify-content: center;
       gap: 0.35rem;
-      width: 100%;
+      flex: 0 0 calc((100% - 1.4rem) / 5);
+      min-width: calc((100% - 1.4rem) / 5);
       line-height: 1;
       white-space: nowrap;
       overflow: hidden;
+      scroll-snap-align: start;
     }
 
     .mobile-skill-pager__idx {
-      font-family: var(--font-mono);
+      font-family: inherit;
       font-size: 0.72rem;
       font-weight: 700;
       line-height: 1;
     }
 
     .mobile-skill-pager__word {
-      font-size: 0.66rem;
+      font-size: 0.72rem;
+      font-weight: 600;
       line-height: 1;
       white-space: nowrap;
       overflow: hidden;
@@ -1147,6 +1174,13 @@ const totalCount = allSkills.length;
       color: var(--color-accent);
       background: var(--color-accent-subtle);
       box-shadow: inset 0 0 0 1px var(--color-accent);
+    }
+  }
+
+  @media (min-width: 901px) {
+    .mobile-bottom-bar,
+    .mobile-skill-pager {
+      display: none !important;
     }
   }
 

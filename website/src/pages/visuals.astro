@@ -23,16 +23,6 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
 </head>
 <body>
   <div class="paginated" id="paginated" data-page-group="visual" data-page-index={pageIndex}>
-    <nav class="paginated__chips">
-      <a href="/" class="pg-chip pg-chip--home">Skills</a>
-      <a href="/installation" class="pg-chip">Install</a>
-      <a href="/tools" class="pg-chip">Tools</a>
-      <a href="/faq" class="pg-chip">FAQ</a>
-      <a href="/about" class="pg-chip">About</a>
-      <a href="/where" class="pg-chip">Where</a>
-      <a href="/visuals" class="pg-chip">Visuals</a>
-      <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
-    </nav>
     <div class="paginated__slides">
       <section class="visual-section">
         <SkillsGraph graphData={graphData} tierColors={TIER_COLORS} />
@@ -41,6 +31,15 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
         <ArawViewer />
       </section>
     </div>
+    <nav class="paginated__chips">
+      <a href="/" class="pg-chip pg-chip--home">Skills</a>
+      <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
+      <a href="/visuals" class="pg-chip">Visuals</a>
+      <a href="/faq" class="pg-chip">FAQ</a>
+      <a href="/installation" class="pg-chip">Install</a>
+      <a href="/about" class="pg-chip">About</a>
+      <a href="/where" class="pg-chip">Where</a>
+    </nav>
   </div>
 </body>
 </html>
@@ -54,7 +53,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
 <script>
   // Reuse the same pagination logic as Paginated.astro
   const PAGE_GROUPS = {
-    info: ['/installation', '/tools', '/faq', '/about', '/where'],
+    info: ['/faq', '/installation', '/about'],
     visual: ['/', '/visuals'],
   };
 
@@ -177,6 +176,8 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
     flex-shrink: 0;
     position: relative;
     z-index: 10;
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg);
   }
 
   .pg-chip {
