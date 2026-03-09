@@ -656,13 +656,16 @@ const totalCount = allSkills.length;
 
           var pages = [];
           var currentPageRows = [];
+          var currentPageTop = 0;
 
           rows.forEach(function(row) {
-            var rowBottom = row.bottom;
-            var wouldOverflow = currentPageRows.length > 0 && rowBottom > footerBoundary - 8;
+            if (currentPageRows.length === 0) currentPageTop = row.top;
+            var rowBottomInPage = row.bottom - currentPageTop;
+            var wouldOverflow = currentPageRows.length > 0 && rowBottomInPage > footerBoundary - 8;
             if (wouldOverflow) {
               pages.push(currentPageRows);
               currentPageRows = [row];
+              currentPageTop = row.top;
             } else {
               currentPageRows.push(row);
             }
@@ -1135,14 +1138,18 @@ const totalCount = allSkills.length;
     }
 
     .mobile-skill-pager__btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       flex: 0 0 auto;
-      min-width: 2rem;
-      min-height: 1.8rem;
-      padding: 0.2rem 0.45rem;
+      width: 2rem;
+      height: 1.8rem;
+      padding: 0;
       border: 1px solid var(--color-border);
       border-radius: 6px;
       font-family: var(--font-mono);
       font-size: 0.72rem;
+      line-height: 1;
       color: var(--color-text);
       background: var(--color-surface);
       cursor: pointer;
