@@ -29,7 +29,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
       <a href="/tools" class="pg-chip">Tools</a>
       <a href="/faq" class="pg-chip">FAQ</a>
       <a href="/about" class="pg-chip">About</a>
-      <a href="/where-am-i" class="pg-chip">Where Am I</a>
+      <a href="/where-am-i" class="pg-chip">Where</a>
       <a href="/visuals" class="pg-chip">Visuals</a>
       <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     </nav>
@@ -190,14 +190,26 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
     text-decoration: none;
     color: var(--color-accent);
     background: var(--color-accent-subtle);
-    transition: background var(--transition), color var(--transition);
+    transition: none;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
-  .pg-chip:hover {
+  .pg-chip:hover,
+  .pg-chip:active,
+  .pg-chip:focus,
+  .pg-chip:focus-visible {
     background: var(--color-accent);
     color: #fff;
     text-decoration: none;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .pg-chip--home {

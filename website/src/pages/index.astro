@@ -477,7 +477,7 @@ const totalCount = allSkills.length;
     <a href="/tools" class="nav-chip">Tools</a>
     <a href="/faq" class="nav-chip">FAQ</a>
     <a href="/about" class="nav-chip">About</a>
-    <a href="/where-am-i" class="nav-chip">Where Am I</a>
+    <a href="/where-am-i" class="nav-chip">Where</a>
     <a href="/visuals" class="nav-chip">Visuals</a>
     <button class="nav-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     <button class="nav-chip" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9790;</span></button>
@@ -816,6 +816,9 @@ const totalCount = allSkills.length;
     background: var(--color-surface);
     transition: none;
     -webkit-tap-highlight-color: transparent;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .skill-chip--exp {
@@ -854,11 +857,17 @@ const totalCount = allSkills.length;
     background: #eceff1;
   }
 
-  .skill-chip:hover {
+  .skill-chip:hover,
+  .skill-chip:active,
+  .skill-chip:focus,
+  .skill-chip:focus-visible {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: #fff;
     text-decoration: none;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .nav-chip {
@@ -875,12 +884,21 @@ const totalCount = allSkills.length;
     transition: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
-  .nav-chip:hover {
+  .nav-chip:hover,
+  .nav-chip:active,
+  .nav-chip:focus,
+  .nav-chip:focus-visible {
     background: var(--color-accent);
     color: #fff;
     text-decoration: none;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
   button.nav-chip {
@@ -928,6 +946,9 @@ const totalCount = allSkills.length;
     cursor: pointer;
     transition: none;
     -webkit-tap-highlight-color: transparent;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .sort-chip.active {
@@ -1053,6 +1074,9 @@ const totalCount = allSkills.length;
       cursor: pointer;
       transition: none;
       -webkit-tap-highlight-color: transparent;
+      transform: none;
+      box-shadow: none;
+      outline: none;
     }
 
     .mobile-skill-pager {
@@ -1074,6 +1098,9 @@ const totalCount = allSkills.length;
       cursor: pointer;
       transition: none;
       -webkit-tap-highlight-color: transparent;
+      transform: none;
+      box-shadow: none;
+      outline: none;
     }
 
     .mobile-skill-pager__btn--active {

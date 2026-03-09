@@ -24,7 +24,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     <a href="/tools" class="pg-chip">Tools</a>
     <a href="/faq" class="pg-chip">FAQ</a>
     <a href="/about" class="pg-chip">About</a>
-    <a href="/where-am-i" class="pg-chip">Where Am I</a>
+    <a href="/where-am-i" class="pg-chip">Where</a>
     <a href="/visuals" class="pg-chip">Visuals</a>
     <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
   </nav>
@@ -80,12 +80,21 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     appearance: none;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
-  .pg-chip:hover {
+  .pg-chip:hover,
+  .pg-chip:active,
+  .pg-chip:focus,
+  .pg-chip:focus-visible {
     background: var(--color-accent);
     color: #fff;
     text-decoration: none;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .pg-chip--home {
@@ -97,6 +106,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   .pg-chip--home:hover {
     background: var(--color-accent);
     color: #fff;
+    transform: none;
   }
 
   .paginated__body {
@@ -131,7 +141,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
   .paginated__slides :global(section.active.section--scrollable) {
     overflow-y: auto;
     overscroll-behavior: none;
-    -webkit-overflow-scrolling: touch;
+    scrollbar-gutter: stable both-edges;
   }
 
   .paginated__page-nums {
@@ -170,6 +180,9 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     appearance: none;
     -webkit-appearance: none;
     -webkit-tap-highlight-color: transparent;
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .paginated__page-nums :global(.pg-num__idx) {
@@ -198,9 +211,15 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     text-align: right;
   }
 
-  .paginated__page-nums :global(.pg-num:hover) {
+  .paginated__page-nums :global(.pg-num:hover),
+  .paginated__page-nums :global(.pg-num:active),
+  .paginated__page-nums :global(.pg-num:focus),
+  .paginated__page-nums :global(.pg-num:focus-visible) {
     color: var(--color-accent);
     border-color: var(--color-accent);
+    transform: none;
+    box-shadow: none;
+    outline: none;
   }
 
   .paginated__page-nums :global(.pg-num--active) {
@@ -558,6 +577,16 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       }
       const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
       if (!allowScroll) e.preventDefault();
+    }, { passive: false });
+
+    container.addEventListener('wheel', (e) => {
+      const activeSection = finalSections[current];
+      const target = e.target;
+      if (!(target instanceof Element) || !activeSection) return;
+      const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
+      if (!allowScroll) return;
+      e.preventDefault();
+      activeSection.scrollTop += e.deltaY * 0.38;
     }, { passive: false });
 
     container.addEventListener('touchstart', (e) => {
