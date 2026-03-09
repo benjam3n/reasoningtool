@@ -292,7 +292,7 @@ import '../styles/global.css';
           <h3>How This Applies to Current Models</h3>
           <p>How does all of this fit into current models?</p>
           <p>We often expect them to become intelligent without sufficiently constraining the space they need to search. In other words, we give them little to no direction, and expect them to figure out the right direction all by themselves.</p>
-          <p>We also have not defined exactly what kind of outcome we want in a very rigorous way, aside from obvious criteria like performance on tests and benchmarks. So these systems become extraordinarily good at guessing what we seem to want and then giving it to us.</p>
+          <p>We also have not defined exactly what kind of outcome we want in a very explicit way, aside from visible criteria like performance on tests and benchmarks. So these systems become very good at guessing what we seem to want and then giving it to us.</p>
           <p>But nowhere in that process does the system necessarily ask whether what it expects we want is actually what we want, whether what we say we want is what we really want, or whether giving us what we expect is actually better than giving us what is best according to its best judgment.</p>
           <p>We expect it to handle problems, questions, decisions, and input through intuition alone, and to get everything right as quickly as possible on the first try, without much help from structures that constrain the search space.</p>
         </div>
@@ -304,7 +304,7 @@ import '../styles/global.css';
           <p>It also usually does not question whether we have thought through what we want.</p>
           <p>It very often assumes the user's claims are right, which is part of why it becomes so sycophantic and so prone to confirmation bias. It does not naturally assume that the user's input could be wrong, or that its own interpretation could be wrong, or that its own approach could be wrong.</p>
           <p>And when it does question those things, it is usually only at a surface level, so it does not usually reach the root of the problem, the solution, the question, and so on.</p>
-          <p>Its judgment can actually be excellent once it is searching in the right place. The problem is that it often picks the wrong place to search and never really questions whether it made the right choice to stop exploring and start testing.</p>
+          <p>Its judgment can improve a lot once it is searching in the right place. The problem is that it often picks the wrong place to search and never really questions whether it made the right choice to stop exploring and start testing.</p>
         </div>
       </div>
     </section>
@@ -320,14 +320,14 @@ import '../styles/global.css';
           <p>These systems do not usually do that now because they have been trained to commit too quickly to a single approach without first checking whether other options are still on the table.</p>
           <p>The only things a system should really commit to are things that cannot meaningfully be disagreed with. If I can disagree with it or find problems with it, that suggests it committed too quickly to what it should be doing and never sufficiently considered that its commitment itself might be wrong.</p>
           <p>Often what it does instead is a surface-level assume-wrong analysis, something like maybe the user meant X instead of Y, and then it tests whether it is X or Y. But it does not go further and assume that its initial guess, that the user meant either X or Y, was itself wrong, because maybe it was neither.</p>
-          <p>The system is actually capable of much more thorough analysis and much better performance than this, but those abilities often never surface because we do not let it question itself or question us enough, and because it does not follow the assume-wrong process deeply enough.</p>
+          <p>The system is capable of more thorough analysis than it usually shows, but those abilities often never surface because we do not let it question itself or question us enough, and because it does not follow the assume-wrong process deeply enough.</p>
         </div>
       </div>
 
       <div class="card-grid card-grid--1">
         <div class="card">
           <h3>The Solution</h3>
-          <p>The solution that I have come up with combines all of these ideas. The idea is that by creating a rigorous system setup based on rigorous foundations, it can then be structured enough to create more structures that always work universally that anybody, even less intelligent LLM's and people with unoptimized search space optimization or less intuitively smart, can be certain about the right course of action and the right belief to hold or really be more certain about how certain you can be about any input you give it. If you are interested in checking out the project, <a href="https://github.com/benjam3n/reasoningtool" class="essay-link">click the GitHub link</a>. I can assure you the outputs you can get with it are a lot more useful than typical as they consider a lot more things/dimensions not typically considered, and test a lot of things not typically tested and both in novel ways and in conventional ones.</p>
+          <p>The solution that I have come up with combines all of these ideas. The idea is to build a more explicit system around reasoning so assumptions, alternatives, and tests are harder to skip. The goal is not guaranteed certainty. The goal is to make it easier to see what is being assumed, what has been checked, what remains uncertain, and what to do next. If you are interested in checking out the project, <a href="https://github.com/benjam3n/reasoningtool" class="essay-link">click the GitHub link</a>. The outputs are designed to consider more assumptions, more alternatives, and more tests than a typical single-pass response, using both conventional and less conventional lines of reasoning.</p>
         </div>
       </div>
     </section>

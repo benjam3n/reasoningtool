@@ -398,6 +398,7 @@
 | `/want` | want | Sub-orchestrator for goals and wants. Routes to WantTo analysis to trace what the want commits you to. |
 | `/wn` | what s new | Summarize what is new in a project timeline, grouped by day, prompt, skill, and iteration. |
 | `/wr` | weekly review | Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuo... |
+| `/wre` | writing requirements engineering | Derive writing requirements before drafting. Builds a multi-stage requirements object: artifact definition, thesis and claim set, technical requirements, philosophical requirements, expansion requirements, outline requirements, exclusions, and traceability. |
 | `/wsib` | what skill is best | Choose the best skill to run now for a prompt, with confidence, runner-up comparison, and fallback if first choice fails. |
 | `/wt` | want to | Assumes the want is right — traces what it commits you to, what it requires, what paths it opens. Finds the actual want vs stated want. |
 | `/ycshikfmif` | you can see how i keep finding more it s fun | Capture ideation expansion loops and structure them into bounded exploration batches. |

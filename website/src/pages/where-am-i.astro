@@ -223,6 +223,12 @@ const entries = rawEntries.map((entry: any) => {
         <a href={EMOJI_SOURCE} target="_blank" rel="noreferrer">Emoji</a>
       </p>
 
+      <div class="new-mobile-note">
+        <h3>Mobile Not Supported Yet</h3>
+        <p>The full Where Am I view is currently desktop-only.</p>
+        <p>Use a larger screen for the timeline controls and navigation.</p>
+      </div>
+
       <div class="new-main">
         <div class="new-main__left">
           <div class="new-controls">
@@ -656,6 +662,23 @@ const entries = rawEntries.map((entry: any) => {
     cursor: pointer;
   }
 
+  .new-mobile-note {
+    display: none;
+    margin: var(--sp-2) 0 0;
+    padding: var(--sp-2) var(--sp-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .new-mobile-note h3 {
+    margin: 0 0 var(--sp-1);
+  }
+
+  .new-mobile-note p:last-child {
+    margin-bottom: 0;
+  }
+
   .new-btn[disabled] {
     opacity: 0.45;
     cursor: default;
@@ -786,6 +809,16 @@ const entries = rawEntries.map((entry: any) => {
 
     .new-pager {
       grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .new-mobile-note {
+      display: block;
+    }
+
+    .new-main {
+      display: none;
     }
   }
 </style>

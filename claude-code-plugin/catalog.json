@@ -209,6 +209,13 @@
       ],
       "invokes": []
     },
+    "alebc": {
+      "description": "Convert a change stream into high-level big-new-item bullets, excluding low-level modification details.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "alt": {
       "description": "Choose the right level of abstraction for understanding, deciding, executing, communicating, or creating. Zoom in, zoom out, or reframe.",
       "categories": [],
@@ -293,14 +300,14 @@
       "invokes": []
     },
     "ape": {
-      "description": "First pass at competitive programming — explicit problem decomposition, constraint identification, and straightforward implementation.",
+      "description": "First pass at competitive programming \u2014 explicit problem decomposition, constraint identification, and straightforward implementation.",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": []
     },
     "api": {
-      "description": "Second pass at competitive programming — find implicit patterns, hidden structure, and optimizations the explicit pass missed.",
+      "description": "Second pass at competitive programming \u2014 find implicit patterns, hidden structure, and optimizations the explicit pass missed.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -319,14 +326,14 @@
       "invokes": []
     },
     "apm": {
-      "description": "Third pass — meta-reasoning about solution correctness, confidence, and robustness. Catches what testing alone misses.",
+      "description": "Third pass \u2014 meta-reasoning about solution correctness, confidence, and robustness. Catches what testing alone misses.",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": []
     },
     "ar": {
-      "description": "Assume Right - Deep recursive rightness search. For every claim, assume it's right — find what must follow, then assume THOSE implications are right too. Recurse until bedrock. Track every claim found.",
+      "description": "Assume Right - Deep recursive rightness search. For every claim, assume it's right \u2014 find what must follow, then assume THOSE implications are right too. Recurse until bedrock. Track every claim found.",
       "categories": [
         "reasoning",
         "search"
@@ -360,7 +367,7 @@
       "invokes": []
     },
     "arcd": {
-      "description": "Orderings for software development — outside-in vs inside-out, API-first vs domain-first, top-down vs bottom-up.",
+      "description": "Orderings for software development \u2014 outside-in vs inside-out, API-first vs domain-first, top-down vs bottom-up.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -368,6 +375,13 @@
     },
     "argd": {
       "description": "Construct a rigorous argumentative document with thesis, evidence, counterarguments, and structured reasoning.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "aso": {
+      "description": "Continue a discovered pattern with bounded expansion rules so extension stays coherent and useful.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -382,6 +396,13 @@
         "assumption",
         "surfacing"
       ],
+      "input_types": [],
+      "invokes": []
+    },
+    "ata": {
+      "description": "Expand a request with all implied adjacent actions that should also be done, then order them.",
+      "categories": [],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
@@ -425,7 +446,7 @@
       "invokes": []
     },
     "aw": {
-      "description": "Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong — find why, then assume THOSE reasons are wrong too. Recurse until bedrock. Track every claim found.",
+      "description": "Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong \u2014 find why, then assume THOSE reasons are wrong too. Recurse until bedrock. Track every claim found.",
       "categories": [
         "reasoning",
         "search"
@@ -441,6 +462,13 @@
         "question",
         "decision"
       ],
+      "invokes": []
+    },
+    "awtlytrn": {
+      "description": "Estimate current practical limits for scope, throughput, and quality, then recommend a safe operating boundary.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "b": {
@@ -549,6 +577,13 @@
       "input_types": [
         "question"
       ],
+      "invokes": []
+    },
+    "but": {
+      "description": "Handle \"but\" statements by separating main claim from objection and resolving the tension explicitly.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "capg": {
@@ -684,7 +719,7 @@
       ]
     },
     "ch": {
-      "description": "Systematic procedure for handling crises — stabilize, diagnose, communicate, resolve, and learn.",
+      "description": "Systematic procedure for handling crises \u2014 stabilize, diagnose, communicate, resolve, and learn.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -793,7 +828,7 @@
       "invokes": []
     },
     "cns": {
-      "description": "Orderings for constraint satisfaction and guided search — process most constrained variables first, propagate constraints, backtrack efficiently.",
+      "description": "Orderings for constraint satisfaction and guided search \u2014 process most constrained variables first, propagate constraints, backtrack efficiently.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -901,6 +936,13 @@
       ],
       "invokes": []
     },
+    "cs": {
+      "description": "Create or update a skill from a prompt, including naming, scope, workflow, and output contract. Can also identify missing skills implied by the prompt.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "ct": {
       "description": "Orderings for resource-constrained emergencies where not everything can be addressed and you must maximize outcomes with limited resources.",
       "categories": [],
@@ -940,7 +982,7 @@
       "invokes": []
     },
     "cv": {
-      "description": "Solve the infinite critic problem by using multiple independent validation criteria — accept when they converge, investigate when they diverge.",
+      "description": "Solve the infinite critic problem by using multiple independent validation criteria \u2014 accept when they converge, investigate when they diverge.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -1157,7 +1199,7 @@
       ]
     },
     "dsn": {
-      "description": "Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embeds generate → critique → iterate.",
+      "description": "Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embeds generate \u2192 critique \u2192 iterate.",
       "categories": [
         "reasoning",
         "decision_making"
@@ -1188,7 +1230,7 @@
       ]
     },
     "dss": {
-      "description": "Complete system design workflow — from requirements through verified design.",
+      "description": "Complete system design workflow \u2014 from requirements through verified design.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -1210,6 +1252,13 @@
         "cd",
         "prd"
       ]
+    },
+    "dtse": {
+      "description": "Check whether a requested skill exists, show exact matches and nearest alternatives, and provide next action.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
     },
     "dv": {
       "description": "Orderings optimized for detecting deception, fraud, anomalies, and inconsistencies.",
@@ -1304,7 +1353,7 @@
       "invokes": []
     },
     "enc": {
-      "description": "Standard engineering calculation procedures for robotics and mechanical system design — forces, torques, materials, actuator sizing.",
+      "description": "Standard engineering calculation procedures for robotics and mechanical system design \u2014 forces, torques, materials, actuator sizing.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -1342,6 +1391,13 @@
       "invokes": [
         "src"
       ]
+    },
+    "etc": {
+      "description": "Expand \"etc\" tails into explicit items using pattern continuation, then stop at a defined completeness rule.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
     },
     "evaluate": {
       "description": "Sub-orchestrator for evaluation. Routes to ARAW, MECE validation, procedure validation, or assumption extraction based on what's being assessed and what kind of evaluation is needed.",
@@ -1397,6 +1453,13 @@
       "input_types": [
         "decision"
       ],
+      "invokes": []
+    },
+    "extract": {
+      "description": "Given any prompt, extract every potentially useful existing skill, grouped and prioritized with invocation-ready suggestions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "exv": {
@@ -1545,6 +1608,13 @@
       ],
       "invokes": []
     },
+    "flhwijd": {
+      "description": "Analyze the user's just-finished action sequence, identify what pattern they used, and convert it into a reusable procedure.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "fm": {
       "description": "Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making",
       "categories": [
@@ -1559,6 +1629,13 @@
       "input_types": [
         "decision"
       ],
+      "invokes": []
+    },
+    "fmtsb": {
+      "description": "Formalized variant of MTS that enforces schema, non-overlap checks, dependency mapping, and rollout readiness.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "fnd": {
@@ -1600,6 +1677,13 @@
     },
     "fohw": {
       "description": "Systematically understand any complex system by matching investigation depth to your goal and access level, with safeguards against premature certainty.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "fonss": {
+      "description": "Determine which skills to run next (more than one), in order, with rationale, handoff prompts, and stop conditions.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -1678,7 +1762,7 @@
       "invokes": []
     },
     "gaa": {
-      "description": "An honest audit of the GOSM system's approach, claims, and limitations — applying the system's own standards to itself.",
+      "description": "An honest audit of the GOSM system's approach, claims, and limitations \u2014 applying the system's own standards to itself.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -1785,6 +1869,13 @@
         "qag"
       ]
     },
+    "given": {
+      "description": "Given a goal, rank relevant skills from highest to lowest expected ROI, including negative-ROI skills with reasons.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "gjs": {
       "description": "A goal journey is NOT a narrative arc. It's a CHAIN OF GOALS. Integration hub for GOSM goal processing.",
       "categories": [
@@ -1885,7 +1976,7 @@
       "invokes": []
     },
     "gt": {
-      "description": "Orderings derived from graph traversal algorithms — BFS for breadth, DFS for depth, topological for dependencies.",
+      "description": "Orderings derived from graph traversal algorithms \u2014 BFS for breadth, DFS for depth, topological for dependencies.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -1935,6 +2026,13 @@
         "grant",
         "writing"
       ],
+      "input_types": [],
+      "invokes": []
+    },
+    "handle": {
+      "description": "Convert broad \"handle this\" requests into a concrete first action and an ordered next-skill sequence.",
+      "categories": [],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
@@ -2012,6 +2110,20 @@
       "input_types": [],
       "invokes": []
     },
+    "iagca": {
+      "description": "Detect idea sprawl, compress scope, and return to the highest-leverage next actions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "iaw": {
+      "description": "Re-express a goal, claim, or plan in alternative forms that preserve intent while changing approach.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "idg": {
       "description": "Handler for goals where SUCCESS IS DISCOVERING THE UNKNOWN, not executing a known plan.",
       "categories": [],
@@ -2052,7 +2164,7 @@
       "invokes": []
     },
     "ig": {
-      "description": "Handle goals driven by intuition rather than explicit reasoning — validate the intuition, find the underlying pattern, convert to actionable goal.",
+      "description": "Handle goals driven by intuition rather than explicit reasoning \u2014 validate the intuition, find the underlying pattern, convert to actionable goal.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2138,6 +2250,13 @@
       ],
       "invokes": []
     },
+    "it": {
+      "description": "Process \"I think\" statements into explicit claims, confidence levels, and next verification actions.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "ita": {
       "description": "Transform seemingly impossible goals into achievable ones by systematically challenging what makes them impossible.",
       "categories": [],
@@ -2150,7 +2269,14 @@
       ]
     },
     "iterate": {
-      "description": "Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted — then executes the highest-value iteration.",
+      "description": "Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted \u2014 then executes the highest-value iteration.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "itp": {
+      "description": "Decompose a prompt into explicit requests, constraints, implied tasks, and candidate skill mappings.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2240,7 +2366,7 @@
       "invokes": []
     },
     "lcs": {
-      "description": "Orderings based on local search optimization — improve from current position, escape local optima, systematic exploration with memory.",
+      "description": "Orderings based on local search optimization \u2014 improve from current position, escape local optima, systematic exploration with memory.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2254,7 +2380,7 @@
       "invokes": []
     },
     "ldg": {
-      "description": "Handle goals that depend partly on luck or chance — maximize controllable factors, create multiple shots, build resilience.",
+      "description": "Handle goals that depend partly on luck or chance \u2014 maximize controllable factors, create multiple shots, build resilience.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2274,6 +2400,13 @@
         "goal",
         "feeling"
       ],
+      "invokes": []
+    },
+    "list": {
+      "description": "Create rigorous, useful lists with clear scope, ordering logic, coverage checks, and concise rationale per item.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "lp": {
@@ -2394,7 +2527,7 @@
       "invokes": []
     },
     "mcp": {
-      "description": "Orderings inspired by musical forms — theme and variation, call and response, tension and release — for structuring extended experiences.",
+      "description": "Orderings inspired by musical forms \u2014 theme and variation, call and response, tension and release \u2014 for structuring extended experiences.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2474,14 +2607,14 @@
       "invokes": []
     },
     "mil": {
-      "description": "Orderings derived from military doctrine — concentrate force at decisive points, maintain tempo, secure supply lines before advancing.",
+      "description": "Orderings derived from military doctrine \u2014 concentrate force at decisive points, maintain tempo, secure supply lines before advancing.",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": []
     },
     "mp": {
-      "description": "Orderings that account for human psychological factors — energy, motivation, habits, and engagement for sustainable performance.",
+      "description": "Orderings that account for human psychological factors \u2014 energy, motivation, habits, and engagement for sustainable performance.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2563,6 +2696,13 @@
       "input_types": [],
       "invokes": []
     },
+    "mts": {
+      "description": "Create a new skill from a request by generating id, purpose, workflow, output format, and quality checks.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "mv": {
       "description": "Validate that a list is MECE (Mutually Exclusive, Collectively Exhaustive). Identifies overlaps and gaps.",
       "categories": [],
@@ -2592,8 +2732,30 @@
       ],
       "invokes": []
     },
+    "next": {
+      "description": "Sub-orchestrator for next-step requests. Selects the highest-value immediate action from current context, then routes to execution or the right analysis skill.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "decide",
+        "how",
+        "diagnose",
+        "search",
+        "want",
+        "action",
+        "evaluate"
+      ]
+    },
     "ns": {
       "description": "Orderings for strategic interactions where sequence of moves affects counterparty responses.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "nsa": {
+      "description": "Convert uncertainty statements into explicit confidence ranges and next evidence actions.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2729,7 +2891,7 @@
       ]
     },
     "pb": {
-      "description": "Build complexity incrementally — each step works before adding the next. Foundations before features.",
+      "description": "Build complexity incrementally \u2014 each step works before adding the next. Foundations before features.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2765,7 +2927,7 @@
       "invokes": []
     },
     "pbs": {
-      "description": "Maintain multiple candidate solutions simultaneously — evolutionary approaches, beam search, iterative deepening.",
+      "description": "Maintain multiple candidate solutions simultaneously \u2014 evolutionary approaches, beam search, iterative deepening.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2809,7 +2971,7 @@
       "invokes": []
     },
     "pcef": {
-      "description": "Unified framework for procedure effectiveness tracking — operational and empirical.",
+      "description": "Unified framework for procedure effectiveness tracking \u2014 operational and empirical.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2864,14 +3026,14 @@
       "invokes": []
     },
     "pf": {
-      "description": "Classic priority frameworks — Eisenhower matrix, MoSCoW, RICE, weighted scoring — for systematic ranking.",
+      "description": "Classic priority frameworks \u2014 Eisenhower matrix, MoSCoW, RICE, weighted scoring \u2014 for systematic ranking.",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": []
     },
     "pge": {
-      "description": "Orderings from learning science — interleaving, spacing, testing effect, desirable difficulties — for durable understanding.",
+      "description": "Orderings from learning science \u2014 interleaving, spacing, testing effect, desirable difficulties \u2014 for durable understanding.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2919,7 +3081,7 @@
       "invokes": []
     },
     "pjm": {
-      "description": "Orderings from formal project management — PERT, CPM, Critical Chain, Agile — for scheduling and resource management.",
+      "description": "Orderings from formal project management \u2014 PERT, CPM, Critical Chain, Agile \u2014 for scheduling and resource management.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2928,7 +3090,21 @@
       ]
     },
     "pjs": {
-      "description": "Define project scope — what's included, excluded, success criteria, constraints, and boundaries. Prevents scope creep.",
+      "description": "Define project scope \u2014 what's included, excluded, success criteria, constraints, and boundaries. Prevents scope creep.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "platitude": {
+      "description": "Convert a single platitude into concrete, testable actions and boundaries.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "platitudes": {
+      "description": "Analyze multiple platitudes, remove contradictions, and convert the set into a coherent action system.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -2989,7 +3165,7 @@
       "invokes": []
     },
     "pp": {
-      "description": "Managing procurement of components and materials — sourcing, ordering, tracking, receiving, and verification.",
+      "description": "Managing procurement of components and materials \u2014 sourcing, ordering, tracking, receiving, and verification.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -3232,7 +3408,7 @@
       "invokes": []
     },
     "qs": {
-      "description": "Orderings for managing queues — FIFO, priority queues, shortest job first, fair queuing.",
+      "description": "Orderings for managing queues \u2014 FIFO, priority queues, shortest job first, fair queuing.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -3339,7 +3515,7 @@
       "invokes": []
     },
     "rlg": {
-      "description": "Handle relationship-related goals — clarify desired state, assess current reality, identify gaps, plan actions within your control.",
+      "description": "Handle relationship-related goals \u2014 clarify desired state, assess current reality, identify gaps, plan actions within your control.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -3348,7 +3524,7 @@
       ]
     },
     "rm": {
-      "description": "Orderings for managing uncertainty — preserve options, handle irreversible decisions carefully, minimize downside.",
+      "description": "Orderings for managing uncertainty \u2014 preserve options, handle irreversible decisions carefully, minimize downside.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -3368,6 +3544,13 @@
         "resume",
         "optimization"
       ],
+      "input_types": [],
+      "invokes": []
+    },
+    "ro": {
+      "description": "Reorder an existing list using an explicit objective, constraints, and scoring method. Produces a defensible best-to-worst order.",
+      "categories": [],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
@@ -3466,7 +3649,7 @@
       ]
     },
     "saaesa": {
-      "description": "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any “verified” claims.",
+      "description": "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any \u201cverified\u201d claims.",
       "categories": [
         "validation",
         "guessing"
@@ -3622,6 +3805,13 @@
       ],
       "invokes": []
     },
+    "sc": {
+      "description": "Design skill systems and creation pipelines at scale, including quality gates, templates, naming conventions, and rollout strategy.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "sdc": {
       "description": "Detect when reasoning is actually rationalization. Mechanical checks for motivated reasoning, emotional override, and evidence asymmetry.",
       "categories": [],
@@ -3726,6 +3916,13 @@
     },
     "sid": {
       "description": "Identify what situation you are actually in before attempting to solve it. Prevents the most dangerous failure: solving the wrong problem perfectly.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "siycftr": {
+      "description": "Scan text for omitted but implied items and produce the missing set.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -3936,7 +4133,7 @@
       "invokes": []
     },
     "srd": {
-      "description": "Orderings for competitive contexts — influence perception, manage attention, create strategic advantage through sequencing.",
+      "description": "Orderings for competitive contexts \u2014 influence perception, manage attention, create strategic advantage through sequencing.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -4073,6 +4270,13 @@
       "input_types": [],
       "invokes": []
     },
+    "sycs": {
+      "description": "Expand implications of a statement so the hidden conclusions are explicit and testable.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "sym": {
       "description": "Real problems exist in complex systems with many interacting parts. Comprehensive system modeling ontology.",
       "categories": [],
@@ -4090,6 +4294,13 @@
       "tags": [
         "targeting"
       ],
+      "input_types": [],
+      "invokes": []
+    },
+    "tbd": {
+      "description": "Identify unresolved decisions and convert them into explicit determination questions with owner and deadline.",
+      "categories": [],
+      "tags": [],
       "input_types": [],
       "invokes": []
     },
@@ -4119,6 +4330,13 @@
     },
     "to": {
       "description": "Generate valid execution sequences from dependencies. Respects hard constraints, optimizes for priorities, and identifies parallel execution opportunities.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
+    "tobd": {
+      "description": "Operational variant of TBD that adds sequencing and dependency-aware resolution order for unresolved items.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -4216,6 +4434,13 @@
       ],
       "invokes": []
     },
+    "uf": {
+      "description": "Given a skill or method, list what it is useful for, where it fails, and when to choose alternatives.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "uga": {
       "description": "The comprehensive question framework that applies to EVERY goal, regardless of domain. Universal analysis procedure.",
       "categories": [
@@ -4236,7 +4461,7 @@
       "invokes": []
     },
     "ugav2": {
-      "description": "The comprehensive question framework v2 — actionable questions with fact-yielding answers.",
+      "description": "The comprehensive question framework v2 \u2014 actionable questions with fact-yielding answers.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -4245,7 +4470,7 @@
       ]
     },
     "ugav3": {
-      "description": "The comprehensive question framework v3 — fully decomposed, no interpretation variance.",
+      "description": "The comprehensive question framework v3 \u2014 fully decomposed, no interpretation variance.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -4264,7 +4489,7 @@
       ]
     },
     "ugav5": {
-      "description": "The comprehensive question framework v5 — adds operational, meta-cognitive, and quality categories.",
+      "description": "The comprehensive question framework v5 \u2014 adds operational, meta-cognitive, and quality categories.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -4273,7 +4498,7 @@
       ]
     },
     "unx": {
-      "description": "Find non-obvious solutions. Three layers — obvious, unexpected, reframed — using disruption techniques that force the search off its default path.",
+      "description": "Find non-obvious solutions. Three layers \u2014 obvious, unexpected, reframed \u2014 using disruption techniques that force the search off its default path.",
       "categories": [
         "reasoning",
         "search",
@@ -4456,7 +4681,7 @@
       "invokes": []
     },
     "w": {
-      "description": "Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically — upstream criteria determine whether writing works; downstream criteria determine how well.",
+      "description": "Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically \u2014 upstream criteria determine whether writing works; downstream criteria determine how well.",
       "categories": [],
       "tags": [],
       "input_types": [],
@@ -4476,6 +4701,13 @@
         "wt"
       ]
     },
+    "wn": {
+      "description": "Summarize what is new in a project timeline, grouped by day, prompt, skill, and iteration.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": []
+    },
     "wr": {
       "description": "Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuous progress.",
       "categories": [
@@ -4488,6 +4720,24 @@
       "input_types": [
         "decision"
       ],
+      "invokes": []
+    },
+    "wre": {
+      "description": "Derive writing requirements before drafting. Builds a multi-stage requirements object: artifact definition, thesis and claim set, technical requirements, philosophical requirements, expansion requirements, outline requirements, exclusions, traceability, and draft readiness.",
+      "categories": [],
+      "tags": [
+        "writing",
+        "requirements",
+        "philosophy"
+      ],
+      "input_types": [],
+      "invokes": []
+    },
+    "wsib": {
+      "description": "Choose the best skill to run now for a prompt, with confidence, runner-up comparison, and fallback if first choice fails.",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
       "invokes": []
     },
     "wt": {
@@ -4508,247 +4758,8 @@
       ],
       "invokes": []
     },
-    "next": {
-      "description": "Sub-orchestrator for next-step requests. Selects the highest-value immediate action from current context, then routes to execution or the right analysis skill.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": [
-        "decide",
-        "how",
-        "diagnose",
-        "search",
-        "want",
-        "action",
-        "evaluate"
-      ]
-    },
-    "list": {
-      "description": "Create rigorous, useful lists with clear scope, ordering logic, coverage checks, and concise rationale per item.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "ro": {
-      "description": "Reorder an existing list using an explicit objective, constraints, and scoring method. Produces a defensible best-to-worst order.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "fonss": {
-      "description": "Determine which skills to run next (more than one), in order, with rationale, handoff prompts, and stop conditions.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "given": {
-      "description": "Given a goal, rank relevant skills from highest to lowest expected ROI, including negative-ROI skills with reasons.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "cs": {
-      "description": "Create or update a skill from a prompt, including naming, scope, workflow, and output contract. Can also identify missing skills implied by the prompt.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "uf": {
-      "description": "Given a skill or method, list what it is useful for, where it fails, and when to choose alternatives.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "it": {
-      "description": "Process \"I think\" statements into explicit claims, confidence levels, and next verification actions.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "but": {
-      "description": "Handle \"but\" statements by separating main claim from objection and resolving the tension explicitly.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "extract": {
-      "description": "Given any prompt, extract every potentially useful existing skill, grouped and prioritized with invocation-ready suggestions.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "handle": {
-      "description": "Convert broad \"handle this\" requests into a concrete first action and an ordered next-skill sequence.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "ata": {
-      "description": "Expand a request with all implied adjacent actions that should also be done, then order them.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "sycs": {
-      "description": "Expand implications of a statement so the hidden conclusions are explicit and testable.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "aso": {
-      "description": "Continue a discovered pattern with bounded expansion rules so extension stays coherent and useful.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "iagca": {
-      "description": "Detect idea sprawl, compress scope, and return to the highest-leverage next actions.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "platitude": {
-      "description": "Convert a single platitude into concrete, testable actions and boundaries.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "platitudes": {
-      "description": "Analyze multiple platitudes, remove contradictions, and convert the set into a coherent action system.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "etc": {
-      "description": "Expand \"etc\" tails into explicit items using pattern continuation, then stop at a defined completeness rule.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "sc": {
-      "description": "Design skill systems and creation pipelines at scale, including quality gates, templates, naming conventions, and rollout strategy.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "flhwijd": {
-      "description": "Analyze the user's just-finished action sequence, identify what pattern they used, and convert it into a reusable procedure.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "iaw": {
-      "description": "Re-express a goal, claim, or plan in alternative forms that preserve intent while changing approach.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "tbd": {
-      "description": "Identify unresolved decisions and convert them into explicit determination questions with owner and deadline.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "tobd": {
-      "description": "Operational variant of TBD that adds sequencing and dependency-aware resolution order for unresolved items.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "nsa": {
-      "description": "Convert uncertainty statements into explicit confidence ranges and next evidence actions.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "wn": {
-      "description": "Summarize what is new in a project timeline, grouped by day, prompt, skill, and iteration.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "alebc": {
-      "description": "Convert a change stream into high-level big-new-item bullets, excluding low-level modification details.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "siycftr": {
-      "description": "Scan text for omitted but implied items and produce the missing set.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "itp": {
-      "description": "Decompose a prompt into explicit requests, constraints, implied tasks, and candidate skill mappings.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
     "ycshikfmif": {
       "description": "Capture ideation expansion loops and structure them into bounded exploration batches.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "awtlytrn": {
-      "description": "Estimate current practical limits for scope, throughput, and quality, then recommend a safe operating boundary.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "wsib": {
-      "description": "Choose the best skill to run now for a prompt, with confidence, runner-up comparison, and fallback if first choice fails.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "dtse": {
-      "description": "Check whether a requested skill exists, show exact matches and nearest alternatives, and provide next action.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "mts": {
-      "description": "Create a new skill from a request by generating id, purpose, workflow, output format, and quality checks.",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": []
-    },
-    "fmtsb": {
-      "description": "Formalized variant of MTS that enforces schema, non-overlap checks, dependency mapping, and rollout readiness.",
       "categories": [],
       "tags": [],
       "input_types": [],
