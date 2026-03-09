@@ -634,35 +634,7 @@ const totalCount = allSkills.length;
           updateFooterOffset();
         }
 
-        function applyMobilePagination() {
-          if (!cloud) return;
-
-          var visible = chips.filter(function(chip) {
-            return chip.dataset.searchHidden !== '1';
-          });
-
-          chips.forEach(function(chip) {
-            chip.style.display = chip.dataset.searchHidden === '1' ? 'none' : '';
-          });
-
-          if (!isMobile()) {
-            mobilePageCount = 1;
-            currentMobilePage = 0;
-            renderMobilePager();
-            return;
-          }
-
-          if (visible.length === 0) {
-            mobilePageCount = 1;
-            currentMobilePage = 0;
-            renderMobilePager();
-            return;
-          }
-
-          var footerHeight = updateFooterOffset();
-          var top = cloud.getBoundingClientRect().top;
-          var availableHeight = Math.max(120, window.innerHeight - top - footerHeight - 12);
-
+        function buildPagesForHeight(visible, availableHeight) {
           var rows = [];
           visible.forEach(function(chip) {
             var rowTop = chip.offsetTop;
@@ -689,10 +661,56 @@ const totalCount = allSkills.length;
               usedHeight = nextHeight;
             }
           });
-          if (currentPageRows.length > 0) pages.push(currentPageRows);
-          if (pages.length === 0) pages.push(rows.slice(0, 1));
 
-          mobilePageCount = Math.max(1, pages.length);
+          if (currentPageRows.length > 0) pages.push(currentPageRows);
+          if (pages.length === 0 && rows.length > 0) pages.push(rows.slice(0, 1));
+
+          return pages;
+        }
+
+        function applyMobilePagination() {
+          if (!cloud) return;
+
+          var visible = chips.filter(function(chip) {
+            return chip.dataset.searchHidden !== '1';
+          });
+
+          chips.forEach(function(chip) {
+            chip.style.display = chip.dataset.searchHidden === '1' ? 'none' : '';
+          });
+
+          if (!isMobile()) {
+            mobilePageCount = 1;
+            currentMobilePage = 0;
+            renderMobilePager();
+            return;
+          }
+
+          if (visible.length === 0) {
+            mobilePageCount = 1;
+            currentMobilePage = 0;
+            renderMobilePager();
+            return;
+          }
+
+          var top = cloud.getBoundingClientRect().top;
+          var pages = [];
+
+          for (var pass = 0; pass < 3; pass++) {
+            var footerHeight = updateFooterOffset();
+            var availableHeight = Math.max(120, window.innerHeight - top - footerHeight - 12);
+            var nextPages = buildPagesForHeight(visible, availableHeight);
+            var nextPageCount = Math.max(1, nextPages.length);
+            var pageCountChanged = nextPageCount !== mobilePageCount;
+
+            pages = nextPages;
+            mobilePageCount = nextPageCount;
+            currentMobilePage = Math.min(currentMobilePage, mobilePageCount - 1);
+            renderMobilePager();
+
+            if (!pageCountChanged) break;
+          }
+
           currentMobilePage = Math.min(currentMobilePage, mobilePageCount - 1);
 
           visible.forEach(function(chip) {
@@ -704,8 +722,6 @@ const totalCount = allSkills.length;
               chip.style.display = '';
             });
           });
-
-          renderMobilePager();
         }
 
         if (searchInput) {
