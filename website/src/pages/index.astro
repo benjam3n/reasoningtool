@@ -620,7 +620,7 @@ const totalCount = allSkills.length;
             return;
           }
 
-          mobilePager.style.display = 'flex';
+          mobilePager.style.display = 'grid';
           mobilePager.innerHTML = '';
 
           function getNavLabel(pageNumber) {
@@ -1105,30 +1105,29 @@ const totalCount = allSkills.length;
 
     .mobile-skill-pager {
       display: none;
-      flex-wrap: wrap;
-      align-items: center;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0.3rem;
-      justify-content: flex-start;
+      padding: 0;
       padding-bottom: 0.05rem;
     }
 
     .mobile-skill-pager__btn {
-      display: inline-flex;
+      display: flex;
       align-items: center;
       justify-content: center;
-      flex: 0 0 auto;
       gap: 0.35rem;
-      min-width: 0;
+      width: 100%;
       height: 2rem;
-      padding: 0 0.65rem;
+      padding: 0.3rem;
       border: 1px solid var(--color-accent);
-      border-radius: 8px;
+      border-radius: 6px;
       font-family: var(--font-sans);
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 600;
       line-height: 1;
       color: var(--color-accent);
       background: var(--color-accent-subtle);
+      box-sizing: border-box;
       cursor: pointer;
       transition: none;
       -webkit-tap-highlight-color: transparent;
@@ -1139,26 +1138,29 @@ const totalCount = allSkills.length;
 
     .mobile-skill-pager__idx {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 700;
       line-height: 1;
     }
 
     .mobile-skill-pager__word {
-      font-size: 0.72rem;
+      font-size: 0.66rem;
       line-height: 1;
       white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .mobile-skill-pager__emo {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       line-height: 1;
     }
 
     .mobile-skill-pager__btn--active {
       border-color: var(--color-accent);
-      color: #fff;
-      background: var(--color-accent);
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      box-shadow: inset 0 0 0 1px var(--color-accent);
     }
   }
 
