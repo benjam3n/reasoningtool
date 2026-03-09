@@ -1,0 +1,824 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Paginated from '../components/Paginated.astro';
+import whatsNew from '../data/whats-new.json';
+import skillsCatalog from '../../../claude-code-plugin/skills.json';
+import {
+  DICTIONARY_SOURCE,
+  EMOJI_SOURCE,
+  NAV_EMOJI_CATEGORIES,
+  NAV_LETTERS,
+  NAV_WORDS_BY_LETTER,
+} from '../data/navigation-vocabulary';
+import '../styles/global.css';
+
+const rawEntries = Array.isArray(whatsNew) ? whatsNew : [];
+const skillMeta = skillsCatalog.skills || {};
+
+const slugify = (value: string) =>
+  String(value || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '_')
+    .replace(/^_+|_+$/g, '');
+
+const LEGACY_SKILL_ALIASES: Record<string, string> = {
+  adversarial_review: 'advr',
+  after_action_review: 'aar',
+  algorithmic_optimization: 'ao',
+  alphacode_pass1_explicit: 'ape',
+  alphacode_pass2_implicit: 'api',
+  alphacode_pass3_meta: 'apm',
+  analogy_search: 'ans',
+  analysis: 'analyze',
+  anticipated_failures_analysis: 'afa',
+  araw_gosm_integration: 'agi',
+  architecture_design: 'arcd',
+  assumeright_assumewrong_search: 'araw',
+  bandit_exploration: 'be',
+  business_operations: 'bo',
+  client_retention: 'clr',
+  cognitive_amplification: 'cga',
+  collective_goals: 'clg',
+  communication_narrative: 'cn',
+  comparison: 'cmp',
+  comprehensive_aspects: 'cpra',
+  constraint_solving: 'cns',
+  constraint_workarounds: 'cnw',
+  crisis_triage: 'ct',
+  criteria_weighting: 'crw',
+  critique: 'cri',
+  cross_domain_bridge: 'cdb',
+  cross_project_pattern_detection: 'cppd',
+  decision_trees: 'dct',
+  deductive_adversarial_review_integration: 'dari',
+  deductive_strategy_discovery: 'dsd',
+  deductive_strategy_evaluation: 'dse',
+  delayed_outcome_tracking: 'dot',
+  design: 'dsn',
+  design_procedures: 'dsn',
+  design_system: 'dss',
+  design_thinking_lean: 'dtl',
+  detection_verification: 'dv',
+  diversity_search: 'dvs',
+  epistemic_hierarchy: 'eh',
+  evaluation_dimensions: 'evd',
+  evolutionary_strategies: 'es',
+  expected_value: 'exv',
+  failure_attribution: 'fat',
+  failure_journeys: 'fj',
+  fairness_allocation: 'faa',
+  feedback: 'fb',
+  finder: 'fnd',
+  gate_as_claim_audit: 'gaca',
+  gate_execution_engine: 'gee',
+  generate: 'gen',
+  generate_then_search: 'gts',
+  goal_decomposition: 'gd',
+  goal_reframing: 'grfr',
+  goal_understanding: 'gu',
+  graph_traversal: 'gt',
+  guess_generation: 'gg',
+  health_optimization: 'ho',
+  innovation_engine: 'ie',
+  inversion_method: 'im',
+  iterative_discovery_goals: 'idg',
+  journey_extraction: 'je',
+  learning_discovery: 'ld',
+  leverage_point_discovery: 'lpd',
+  leverage_points: 'lp',
+  local_search: 'lcs',
+  logical_proof_system: 'lps',
+  marketing_funnel: 'mf',
+  military_strategy: 'mil',
+  morphological_analysis: 'ma',
+  motivation_psychology: 'mp',
+  multi_criteria_decision: 'mcd',
+  multi_party_goals: 'mpg',
+  music_composition_performance: 'mcp',
+  negotiation_strategy: 'ns',
+  networking: 'net',
+  ooda_loop: 'ol',
+  ordering_variations: 'ov',
+  pairwise_comparison: 'pwc',
+  paradox_goals: 'pag',
+  pedagogy_educational: 'pge',
+  population_based_search: 'pbs',
+  positioning: 'pos',
+  pre_mortem: 'prm',
+  preventive_goals: 'pvg',
+  priority_frameworks: 'pf',
+  proactive_question_rotation: 'pqr',
+  procedure_effectiveness: 'pcef',
+  procedure_engine: 'pce',
+  procedure_extraction: 'pefs',
+  procedure_hierarchy: 'ph',
+  progressive_building: 'pb',
+  project_management: 'pjm',
+  propose: 'p',
+  qualitative_measurement: 'qm',
+  question_generation: 'qg',
+  queue_scheduling: 'qs',
+  resource_optimization: 'rso',
+  restoration_goals: 'rsg',
+  risk_management: 'rm',
+  root_cause_5_whys: 'rc5w',
+  savefile: 'sf',
+  scenario_planning: 'snp',
+  search_methods_comprehensive: 'smc',
+  search_paradigm_extensions: 'spe',
+  self_audit_apply_analysis_protocol_clarity_and_validity: 'saaapcav',
+  self_audit_apply_detectors_and_generators: 'saadag',
+  self_audit_apply_evidence_standard_application: 'saaesa',
+  self_audit_apply_intent_and_speech_acts: 'saaiasa',
+  self_audit_cross_reference_integrity: 'sacri',
+  self_audit_detector_sweep: 'sads',
+  self_audit_divergence_risk_test: 'sadrt',
+  self_audit_gate_schema_consistency_audit: 'sagsca',
+  self_audit_procedure_executability_audit: 'sapea',
+  self_audit_question_rewrite_chains: 'saqrc',
+  self_audit_rci_on_protocol_choices: 'saropc',
+  self_audit_repo_unclarity_scan: 'sarus',
+  self_audit_two_run_divergence_audit: 'satrda',
+  seo_basics: 'seb',
+  session_review: 'ssr',
+  source_credibility: 'src',
+  strategic_deception: 'srd',
+  strategy_templates: 'dmt',
+  structured_output: 'so',
+  system_modeling: 'sym',
+  tension_navigation_tactics: 'tnt',
+  time_deadline: 'td',
+  truth_propagation: 'tp',
+  unassailable_output: 'uo',
+  unexpected: 'unx',
+  universal_goal_analysis: 'uga',
+  universal_goal_analysis_v2: 'ugav2',
+  universal_goal_analysis_v3: 'ugav3',
+  universal_goal_analysis_v4: 'ugav4',
+  universal_goal_analysis_v5: 'ugav5',
+  variation_analysis: 'va',
+  verification_procedures: 'vp',
+  verify: 'ver',
+  vertical_horizontal_decision: 'vhd',
+  wantto: 'wt',
+  write: 'w',
+  topic: 't',
+};
+
+const skillAliasToId = new Map<string, string>();
+for (const [id, meta] of Object.entries(skillMeta)) {
+  const forms = new Set([
+    id,
+    meta.id,
+    meta.title,
+    slugify(meta.title),
+    slugify(id),
+    String(meta.title || '').toLowerCase(),
+  ]);
+  forms.forEach((form) => {
+    if (form) skillAliasToId.set(String(form).toLowerCase(), id);
+  });
+}
+Object.entries(LEGACY_SKILL_ALIASES).forEach(([alias, id]) => {
+  if (skillMeta[id]) skillAliasToId.set(alias.toLowerCase(), id);
+});
+
+const normalizeSkill = (skillName: string) => {
+  const raw = String(skillName || '').trim();
+  if (!raw) return null;
+  const normalized = skillAliasToId.get(raw.toLowerCase()) || skillAliasToId.get(slugify(raw));
+  return normalized && skillMeta[normalized] ? normalized : null;
+};
+
+const entries = rawEntries.map((entry: any) => {
+  const canonicalSkills = Array.from(
+    new Set((entry.skills || []).map(normalizeSkill).filter(Boolean))
+  );
+  return {
+    ...entry,
+    canonicalSkills,
+  };
+});
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Where in the project timeline across reasoningtool, GOSM, and ARAW repositories." />
+  <title>Where — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Paginated pageGroup="info" pageIndex={4}>
+    <section class="new-wrap">
+      <h2>Where</h2>
+      <p class="new-sub">Timeline orientation view. Click to view by day, prompt, skill, repo, or type.</p>
+      <p class="new-sub new-sub--sources">
+        Sources:
+        <a href={DICTIONARY_SOURCE} target="_blank" rel="noreferrer">Dictionary</a>
+        <span> · </span>
+        <a href={EMOJI_SOURCE} target="_blank" rel="noreferrer">Emoji</a>
+      </p>
+
+      <div class="new-mobile-note">
+        <h3>Mobile Not Supported Yet</h3>
+        <p>The full Where view is currently desktop-only.</p>
+        <p>Use a larger screen for the timeline controls and navigation.</p>
+      </div>
+
+      <div class="new-main">
+        <div class="new-main__left">
+          <div class="new-controls">
+            <div class="new-modes" id="new-modes">
+              <button class="new-btn active" data-mode="day">By Day</button>
+              <button class="new-btn" data-mode="prompt">By Prompt</button>
+              <button class="new-btn" data-mode="skill">By Skill</button>
+              <button class="new-btn" data-mode="repo">By Repo</button>
+              <button class="new-btn" data-mode="type">By Type</button>
+            </div>
+            <div class="new-buckets" id="new-buckets"></div>
+            <div class="new-values" id="new-values"></div>
+            <div class="new-values-nav" id="new-values-nav"></div>
+          </div>
+
+          <div class="new-list" id="new-list">
+            {entries.map((e: any) => (
+              <article
+                class="new-item"
+                data-day={e.date}
+                data-prompt={e.prompt}
+                data-repo={e.repo}
+                data-type={e.type}
+                data-skill={(e.canonicalSkills || []).join(',')}
+              >
+                <div class="new-item__meta">
+                  <span>{e.date}</span>
+                  <span>{e.repo}</span>
+                  <span>{e.type}</span>
+                  <span>#{e.iteration}</span>
+                </div>
+                <h3>{e.summary}</h3>
+                {(e.canonicalSkills || []).length > 0 && (
+                  <p class="new-item__skills">Skills: {(e.canonicalSkills || []).join(', ')}</p>
+                )}
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div class="new-nav-rail">
+          <p class="new-nav-title">Navigation</p>
+          <div class="new-pager-meta" id="new-pager-meta"></div>
+          <div class="new-pager-nav" id="new-pager-nav"></div>
+          <div class="new-pager" id="new-pager"></div>
+        </div>
+      </div>
+    </section>
+  </Paginated>
+</body>
+</html>
+
+<script define:vars={{ entries, NAV_LETTERS, NAV_WORDS_BY_LETTER, NAV_EMOJI_CATEGORIES }}>
+  function initWhereAmI() {
+    const root = document.querySelector('.new-wrap');
+    if (!root || root.dataset.initialized === 'true') return;
+    root.dataset.initialized = 'true';
+
+    const modes = root.querySelector('#new-modes');
+    const bucketsWrap = root.querySelector('#new-buckets');
+    const valuesWrap = root.querySelector('#new-values');
+    const valuesNavWrap = root.querySelector('#new-values-nav');
+    const pagerMetaWrap = root.querySelector('#new-pager-meta');
+    const pagerNavWrap = root.querySelector('#new-pager-nav');
+    const pagerWrap = root.querySelector('#new-pager');
+    const list = root.querySelector('#new-list');
+    const cards = Array.from(root.querySelectorAll('.new-item'));
+    if (!modes || !bucketsWrap || !valuesWrap || !valuesNavWrap || !pagerMetaWrap || !pagerNavWrap || !pagerWrap || !list || cards.length === 0) return;
+
+    let activeMode = 'day';
+    let activeBucket = '';
+    let activeValue = '';
+    let currentPage = 1;
+    let pageSize = 4;
+    let valuePage = 1;
+    let filteredCards = cards.slice();
+    const collator = new Intl.Collator(undefined, { sensitivity: 'base', numeric: true });
+
+    const getBucketKey = (value) => {
+      const first = String(value || '').trim().charAt(0).toUpperCase();
+      return /[A-Z]/.test(first) ? first : '#';
+    };
+
+    const getValues = (mode) => {
+      if (mode === 'skill') {
+        const set = new Set();
+        entries.forEach((e) => (e.canonicalSkills || []).forEach((s) => set.add(s)));
+        return Array.from(set).sort((a, b) => collator.compare(a, b));
+      }
+      const key = mode === 'day' ? 'date' : mode;
+      const values = Array.from(new Set(entries.map((e) => e[key]).filter(Boolean)));
+      if (mode === 'day') return values.sort().reverse();
+      return values.sort((a, b) => collator.compare(a, b));
+    };
+
+    const getBucketEntries = (mode) => {
+      const values = getValues(mode);
+      if (mode !== 'prompt' && mode !== 'skill') {
+        return [{ key: 'all', label: 'All', values }];
+      }
+
+      const grouped = new Map();
+      values.forEach((value) => {
+        const bucket = getBucketKey(value);
+        if (!grouped.has(bucket)) grouped.set(bucket, []);
+        grouped.get(bucket).push(value);
+      });
+
+      return Array.from(grouped.entries())
+        .sort((a, b) => collator.compare(a[0], b[0]))
+        .map(([key, bucketValues]) => ({ key, label: key, values: bucketValues }));
+    };
+
+    const getVisibleValues = () => {
+      const buckets = getBucketEntries(activeMode);
+      const active = buckets.find((bucket) => bucket.key === activeBucket) || buckets[0] || { values: [] };
+      if (activeBucket !== active.key) activeBucket = active.key;
+      return active.values;
+    };
+
+    const renderBuckets = () => {
+      const buckets = getBucketEntries(activeMode);
+      bucketsWrap.innerHTML = '';
+      bucketsWrap.style.display = buckets.length <= 1 ? 'none' : 'flex';
+
+      if (buckets.length === 0) {
+        activeBucket = '';
+        return;
+      }
+
+      if (!buckets.some((bucket) => bucket.key === activeBucket)) {
+        activeBucket = buckets[0].key;
+      }
+
+      buckets.forEach((bucket) => {
+        const btn = document.createElement('button');
+        btn.className = 'new-btn new-btn--bucket ' + (bucket.key === activeBucket ? 'active' : '');
+        btn.textContent = `${bucket.label} (${bucket.values.length})`;
+        btn.addEventListener('click', () => {
+          activeBucket = bucket.key;
+          valuePage = 1;
+          activeValue = '';
+          renderBuckets();
+          renderValues();
+          applyFilter();
+        });
+        bucketsWrap.appendChild(btn);
+      });
+    };
+
+    const renderValues = () => {
+      const values = getVisibleValues();
+      const valuePageSize = activeMode === 'prompt' ? 6 : activeMode === 'skill' ? 10 : 12;
+      const totalValuePages = Math.max(1, Math.ceil(values.length / valuePageSize));
+      valuePage = Math.min(valuePage, totalValuePages);
+
+      valuesWrap.innerHTML = '';
+      valuesNavWrap.innerHTML = '';
+
+      const allBtn = document.createElement('button');
+      allBtn.className = 'new-btn ' + (activeValue === '' ? 'active' : '');
+      allBtn.textContent = 'All';
+      allBtn.addEventListener('click', () => {
+        activeValue = '';
+        renderValues();
+        applyFilter();
+      });
+      valuesWrap.appendChild(allBtn);
+
+      const start = (valuePage - 1) * valuePageSize;
+      const end = start + valuePageSize;
+      values.slice(start, end).forEach((value) => {
+        const btn = document.createElement('button');
+        btn.className = 'new-btn new-btn--value ' + (value === activeValue ? 'active' : '');
+        btn.textContent = value;
+        btn.title = value;
+        btn.addEventListener('click', () => {
+          activeValue = value;
+          renderValues();
+          applyFilter();
+        });
+        valuesWrap.appendChild(btn);
+      });
+
+      if (totalValuePages <= 1) return;
+
+      const prev = document.createElement('button');
+      prev.className = 'new-btn';
+      prev.textContent = 'Prev';
+      prev.disabled = valuePage === 1;
+      prev.addEventListener('click', () => {
+        if (valuePage === 1) return;
+        valuePage -= 1;
+        renderValues();
+      });
+
+      const indicator = document.createElement('span');
+      indicator.className = 'new-values-nav__label';
+      indicator.textContent = `${valuePage} / ${totalValuePages}`;
+
+      const next = document.createElement('button');
+      next.className = 'new-btn';
+      next.textContent = 'Next';
+      next.disabled = valuePage === totalValuePages;
+      next.addEventListener('click', () => {
+        if (valuePage === totalValuePages) return;
+        valuePage += 1;
+        renderValues();
+      });
+
+      valuesNavWrap.appendChild(prev);
+      valuesNavWrap.appendChild(indicator);
+      valuesNavWrap.appendChild(next);
+    };
+
+    const applyFilter = () => {
+      filteredCards = cards.filter((card) => {
+        let match = true;
+        if (activeValue) {
+          if (activeMode === 'skill') {
+            const skills = (card.getAttribute('data-skill') || '').split(',').filter(Boolean);
+            match = skills.includes(activeValue);
+          } else if (activeMode === 'day') {
+            match = card.getAttribute('data-day') === activeValue;
+          } else {
+            match = card.getAttribute(`data-${activeMode}`) === activeValue;
+          }
+        }
+        return match;
+      });
+      updatePageSize();
+      currentPage = 1;
+      renderPagedList();
+    };
+
+    const updatePageSize = () => {
+      const viewportHeight = window.innerHeight;
+      const viewportWidth = window.innerWidth;
+
+      let nextPageSize = 5;
+      if (viewportHeight < 940) nextPageSize = 4;
+      if (viewportHeight < 820) nextPageSize = 3;
+      if (viewportHeight < 680) nextPageSize = 2;
+      if (viewportHeight < 560) nextPageSize = 1;
+
+      if (viewportWidth < 1100) nextPageSize = Math.min(nextPageSize, 4);
+      if (viewportWidth < 900) nextPageSize = Math.min(nextPageSize, 3);
+      if (viewportWidth < 700) nextPageSize = Math.min(nextPageSize, 2);
+      if (viewportWidth < 520) nextPageSize = 1;
+
+      pageSize = Math.max(1, nextPageSize);
+    };
+
+    const renderPager = () => {
+      pagerWrap.innerHTML = '';
+      pagerMetaWrap.innerHTML = '';
+      pagerNavWrap.innerHTML = '';
+      const totalPages = Math.max(1, Math.ceil(filteredCards.length / pageSize));
+      const columns = window.innerWidth <= 980 ? 3 : 2;
+      const buttonHeight = 34;
+      const rows = Math.max(2, Math.floor(pagerWrap.clientHeight / buttonHeight));
+      const visibleSlots = Math.max(columns * rows, columns * 2);
+      const windowStart = Math.floor((currentPage - 1) / visibleSlots) * visibleSlots + 1;
+      const windowEnd = Math.min(totalPages, windowStart + visibleSlots - 1);
+
+      const meta = document.createElement('span');
+      meta.className = 'new-pager-meta__label';
+      meta.textContent = `${windowStart}-${windowEnd} / ${totalPages}`;
+      pagerMetaWrap.appendChild(meta);
+
+      const prevSet = document.createElement('button');
+      prevSet.className = 'new-btn';
+      prevSet.textContent = 'Prev';
+      prevSet.disabled = windowStart === 1;
+      prevSet.addEventListener('click', () => {
+        if (windowStart === 1) return;
+        currentPage = Math.max(1, windowStart - visibleSlots);
+        renderPagedList();
+      });
+
+      const nextSet = document.createElement('button');
+      nextSet.className = 'new-btn';
+      nextSet.textContent = 'Next';
+      nextSet.disabled = windowEnd === totalPages;
+      nextSet.addEventListener('click', () => {
+        if (windowEnd === totalPages) return;
+        currentPage = Math.min(totalPages, windowEnd + 1);
+        renderPagedList();
+      });
+
+      pagerNavWrap.appendChild(prevSet);
+      pagerNavWrap.appendChild(nextSet);
+
+      for (let i = windowStart; i <= windowEnd; i++) {
+        const letterIndex = (i - 1) % NAV_LETTERS.length;
+        const letterLap = Math.floor((i - 1) / NAV_LETTERS.length);
+        const letter = NAV_LETTERS[letterIndex];
+        const words = NAV_WORDS_BY_LETTER[letter] || [letter.toLowerCase()];
+        const word = words[letterLap % words.length];
+
+        const categoryIndex = (i - 1) % NAV_EMOJI_CATEGORIES.length;
+        const categoryLap = Math.floor((i - 1) / NAV_EMOJI_CATEGORIES.length);
+        const category = NAV_EMOJI_CATEGORIES[categoryIndex];
+        const emoji = category.emojis[categoryLap % category.emojis.length];
+
+        const btn = document.createElement('button');
+        btn.className = 'new-btn ' + (i === currentPage ? 'active' : '');
+        btn.textContent = `${i} ${word} ${emoji}`;
+        btn.title = `${letter} • ${category.label}`;
+        btn.addEventListener('click', () => {
+          currentPage = i;
+          renderPagedList();
+        });
+        pagerWrap.appendChild(btn);
+      }
+    };
+
+    const renderPagedList = () => {
+      updatePageSize();
+      cards.forEach((card) => { card.style.display = 'none'; });
+      const start = (currentPage - 1) * pageSize;
+      const end = start + pageSize;
+      filteredCards.slice(start, end).forEach((card) => { card.style.display = ''; });
+      renderPager();
+    };
+
+    modes.querySelectorAll('.new-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        modes.querySelectorAll('.new-btn').forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeMode = btn.getAttribute('data-mode') || 'day';
+        activeBucket = '';
+        activeValue = '';
+        valuePage = 1;
+        renderBuckets();
+        renderValues();
+        applyFilter();
+      });
+    });
+
+    renderBuckets();
+    renderValues();
+    applyFilter();
+
+    window.addEventListener('resize', () => {
+      const totalPages = Math.max(1, Math.ceil(filteredCards.length / pageSize));
+      currentPage = Math.min(currentPage, totalPages);
+      renderPagedList();
+    });
+  }
+
+  document.addEventListener('astro:page-load', initWhereAmI);
+</script>
+
+<style>
+  .new-wrap {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .new-wrap h2 {
+    margin: 0 0 0.35rem 0;
+  }
+
+  .new-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 13rem;
+    gap: var(--sp-2);
+    min-height: 0;
+    flex: 1;
+  }
+
+  .new-main__left {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .new-sub {
+    color: var(--color-text-muted);
+    margin-top: 0;
+  }
+
+  .new-sub--sources {
+    margin-top: calc(var(--sp-1) * -1);
+    margin-bottom: var(--sp-1);
+  }
+
+  .new-sub--sources a {
+    color: var(--color-accent);
+  }
+
+  .new-controls {
+    display: grid;
+    gap: var(--sp-1);
+    margin-bottom: var(--sp-2);
+  }
+
+  .new-modes,
+  .new-buckets,
+  .new-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+  }
+
+  .new-values-nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 1.8rem;
+  }
+
+  .new-values-nav__label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .new-btn {
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: 0.25em 0.55em;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    cursor: pointer;
+  }
+
+  .new-mobile-note {
+    display: none;
+    margin: var(--sp-2) 0 0;
+    padding: var(--sp-2) var(--sp-3);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+  }
+
+  .new-mobile-note h3 {
+    margin: 0 0 var(--sp-1);
+  }
+
+  .new-mobile-note p:last-child {
+    margin-bottom: 0;
+  }
+
+  .new-btn[disabled] {
+    opacity: 0.45;
+    cursor: default;
+  }
+
+  .new-btn--bucket {
+    font-weight: 600;
+  }
+
+  .new-btn--value {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .new-btn.active {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+    background: var(--color-accent-subtle);
+  }
+
+  .new-list {
+    display: grid;
+    gap: var(--sp-1);
+    overflow: hidden;
+    min-height: 0;
+    flex: 1;
+    align-content: start;
+  }
+
+  .new-nav-rail {
+    width: 13rem;
+    min-height: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--sp-1);
+    background: var(--color-surface);
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .new-nav-title {
+    margin: 0 0 var(--sp-1) 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .new-pager {
+    display: grid;
+    gap: 0.35em;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 0;
+    flex: 1;
+    align-content: start;
+    overflow: hidden;
+  }
+
+  .new-pager-meta {
+    min-height: 1.2rem;
+    margin-bottom: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .new-pager-nav {
+    display: flex;
+    gap: 0.35rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .new-pager-nav .new-btn {
+    flex: 1;
+  }
+
+  .new-item {
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--sp-1) var(--sp-2);
+    background: var(--color-surface);
+    min-height: 7.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+  }
+
+  .new-item__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+  }
+
+  .new-item h3 {
+    margin: 0.35rem 0;
+    font-size: var(--text-base);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  .new-item__skills {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  @media (max-width: 980px) {
+    .new-main {
+      grid-template-columns: 1fr;
+    }
+
+    .new-nav-rail {
+      width: auto;
+    }
+
+    .new-pager {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .new-mobile-note {
+      display: block;
+    }
+
+    .new-main {
+      display: none;
+    }
+  }
+</style>
