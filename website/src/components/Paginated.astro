@@ -61,6 +61,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     flex-shrink: 0;
     position: relative;
     z-index: 10;
+    overscroll-behavior: none;
   }
 
   .pg-chip {
@@ -124,6 +125,12 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     display: block;
   }
 
+  .paginated__slides :global(section.active.section--scrollable) {
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
   .paginated__page-nums {
     display: grid;
     grid-template-columns: 1fr;
@@ -135,6 +142,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     overflow: hidden;
     width: 11rem;
     align-content: start;
+    overscroll-behavior: none;
   }
 
   .paginated__page-nums :global(.pg-num) {
@@ -330,14 +338,11 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       padding: var(--sp-2);
       padding-bottom: var(--sp-2);
       overflow: hidden;
-      touch-action: manipulation;
+      touch-action: auto;
     }
 
     .paginated__slides :global(section.active.section--scrollable) {
-      overflow-y: auto;
-      overscroll-behavior: contain;
-      -webkit-overflow-scrolling: touch;
-      touch-action: pan-y;
+      touch-action: pan-y pinch-zoom;
     }
 
     .paginated__slides :global(.card-grid--2) {
@@ -488,7 +493,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       });
     }
 
-    function updateMobileScrollState() {
+    function updateScrollState() {
       finalSections.forEach((section, index) => {
         const isActive = index === current;
         const canScroll = isActive && (section.scrollHeight > section.clientHeight + 2);
@@ -502,7 +507,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       finalSections[index].classList.add('active');
       current = index;
       updateNums();
-      requestAnimationFrame(updateMobileScrollState);
+      requestAnimationFrame(updateScrollState);
     }
 
     function goNextPage() {
@@ -536,9 +541,22 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
     });
 
+    container.addEventListener('touchmove', (e) => {
+      if (window.innerWidth > 900) return;
+      if (e.touches && e.touches.length > 1) return;
+      const activeSection = finalSections[current];
+      const target = e.target;
+      if (!(target instanceof Element) || !activeSection) {
+        e.preventDefault();
+        return;
+      }
+      const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
+      if (!allowScroll) e.preventDefault();
+    }, { passive: false });
+
     window.addEventListener('resize', () => {
       requestAnimationFrame(applyNavLayout);
-      requestAnimationFrame(updateMobileScrollState);
+      requestAnimationFrame(updateScrollState);
     });
 
     // GitHub toggle buttons — first click arms, second click opens
