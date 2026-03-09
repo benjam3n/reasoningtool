@@ -626,6 +626,11 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
       }
 
       function setup() {
+        var cloudEl = document.querySelector('.skill-cloud');
+        if (!cloudEl) return; // Not on the skills page
+        if (cloudEl.getAttribute('data-setup') === '1') return; // Already set up
+        cloudEl.setAttribute('data-setup', '1');
+
         applyTheme();
         updateIcon();
 
@@ -1124,8 +1129,19 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
         applyMobilePagination();
       }
 
+      // astro:page-load fires on initial load + every View Transition (including back)
+      document.addEventListener('astro:page-load', setup);
+      // Fallback for non-Astro contexts
       document.addEventListener('DOMContentLoaded', setup);
-      document.addEventListener('astro:after-swap', setup);
+      // bfcache restore (back button without View Transitions)
+      window.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
+          // DOM is preserved with listeners, just need to re-mark for astro:page-load
+          var c = document.querySelector('.skill-cloud');
+          if (c) c.removeAttribute('data-setup');
+          setup();
+        }
+      });
     })();
   </script>
 </body>
