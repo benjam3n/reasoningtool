@@ -657,10 +657,11 @@ const totalCount = allSkills.length;
           var pages = [];
           var currentPageRows = [];
           var currentPageTop = 0;
+          var fixedHeaderOffset = rows.length > 0 ? rows[0].top : 0;
 
           rows.forEach(function(row) {
             if (currentPageRows.length === 0) currentPageTop = row.top;
-            var rowBottomInPage = row.bottom - currentPageTop;
+            var rowBottomInPage = row.bottom - currentPageTop + fixedHeaderOffset;
             var wouldOverflow = currentPageRows.length > 0 && rowBottomInPage > footerBoundary - 8;
             if (wouldOverflow) {
               pages.push(currentPageRows);
@@ -1123,18 +1124,11 @@ const totalCount = allSkills.length;
 
     .mobile-skill-pager {
       display: none;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       align-items: center;
       gap: 0.3rem;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
+      justify-content: flex-start;
       padding-bottom: 0.05rem;
-    }
-
-    .mobile-skill-pager::-webkit-scrollbar {
-      display: none;
     }
 
     .mobile-skill-pager__btn {
@@ -1142,16 +1136,17 @@ const totalCount = allSkills.length;
       align-items: center;
       justify-content: center;
       flex: 0 0 auto;
-      width: 2.35rem;
-      height: 2.1rem;
-      padding: 0;
-      border: 1px solid var(--color-border);
+      min-width: 2rem;
+      height: 2rem;
+      padding: 0 0.65rem;
+      border: 1px solid var(--color-accent);
       border-radius: 8px;
-      font-family: var(--font-mono);
+      font-family: var(--font-sans);
       font-size: 0.78rem;
+      font-weight: 600;
       line-height: 1;
-      color: var(--color-text);
-      background: var(--color-surface);
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
       cursor: pointer;
       transition: none;
       -webkit-tap-highlight-color: transparent;
@@ -1162,8 +1157,8 @@ const totalCount = allSkills.length;
 
     .mobile-skill-pager__btn--active {
       border-color: var(--color-accent);
-      color: var(--color-accent);
-      background: var(--color-accent-subtle);
+      color: #fff;
+      background: var(--color-accent);
     }
   }
 
