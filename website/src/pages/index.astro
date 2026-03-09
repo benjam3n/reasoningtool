@@ -692,6 +692,21 @@ if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategor
         var currentTierFilter = 'all';
         var currentCategoryFilter = '';
         var currentTagFilter = '';
+        var currentTagMeta = '';
+        var currentSort = 'alphabetical';
+
+        function saveState() {
+          try {
+            sessionStorage.setItem('rt_state', JSON.stringify({
+              tier: currentTierFilter,
+              cat: currentCategoryFilter,
+              tagMeta: currentTagMeta || '',
+              tag: currentTagFilter,
+              sort: currentSort,
+              q: searchInput ? searchInput.value : ''
+            }));
+          } catch(e) {}
+        }
 
         function applyFilters() {
           var q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -721,6 +736,7 @@ if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategor
           });
           currentMobilePage = 0;
           applyMobilePagination();
+          saveState();
         }
 
         // Tier filter buttons
@@ -761,7 +777,6 @@ if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategor
         });
 
         // Tag meta-category buttons (two-level: click meta → show children)
-        var currentTagMeta = '';
         document.querySelectorAll('[data-tag-meta]').forEach(function(btn) {
           btn.addEventListener('click', function() {
             var meta = btn.getAttribute('data-tag-meta');
@@ -1009,7 +1024,9 @@ if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategor
             document.querySelectorAll('.sort-chip').forEach(function(b) { b.classList.remove('active'); });
             btn.classList.add('active');
             var mode = btn.getAttribute('data-sort') || 'alphabetical';
+            currentSort = mode;
             sortChips(mode);
+            saveState();
           });
         });
 
@@ -1024,6 +1041,65 @@ if (uncategorized.length > 0) tagHierarchy.push({ meta: 'Other', tags: uncategor
           updateFooterOffset();
           applyMobilePagination();
         });
+
+        // Restore state from sessionStorage (survives back/forward navigation)
+        try {
+          var saved = JSON.parse(sessionStorage.getItem('rt_state') || '{}');
+          if (saved.sort && saved.sort !== 'alphabetical') {
+            currentSort = saved.sort;
+            var sortBtn = document.querySelector('[data-sort="' + saved.sort + '"]');
+            if (sortBtn) {
+              document.querySelectorAll('[data-sort]').forEach(function(b) { b.classList.remove('active'); });
+              sortBtn.classList.add('active');
+              sortChips(saved.sort);
+            }
+          }
+          if (saved.tier && saved.tier !== 'all') {
+            currentTierFilter = saved.tier;
+            document.querySelectorAll('[data-filter-tier]').forEach(function(b) { b.classList.remove('active'); });
+            var tierBtn = document.querySelector('[data-filter-tier="' + saved.tier + '"]');
+            if (tierBtn) tierBtn.classList.add('active');
+          }
+          if (saved.cat) {
+            currentCategoryFilter = saved.cat;
+            var catBtn = document.querySelector('[data-filter-category="' + saved.cat + '"]');
+            if (catBtn) catBtn.classList.add('active');
+            // Show categories on mobile
+            var fc = document.querySelector('.filter-controls');
+            if (fc) fc.classList.add('categories-visible');
+            var ct = document.getElementById('mobile-cat-toggle');
+            if (ct) ct.textContent = 'Categories \u25BE';
+          }
+          if (saved.tagMeta) {
+            currentTagMeta = saved.tagMeta;
+            var metaBtn = document.querySelector('[data-tag-meta="' + saved.tagMeta + '"]');
+            if (metaBtn) {
+              metaBtn.classList.add('active');
+              // Show children of this meta
+              document.querySelectorAll('[data-filter-tag]').forEach(function(t) {
+                t.style.display = t.getAttribute('data-tag-parent') === saved.tagMeta ? '' : 'none';
+              });
+              var cr = document.getElementById('tag-children-row');
+              if (cr) cr.classList.add('visible');
+            }
+            // Show tags on mobile
+            var fc2 = document.querySelector('.filter-controls');
+            if (fc2) fc2.classList.add('tags-visible');
+            var tt = document.getElementById('mobile-tag-toggle');
+            if (tt) tt.textContent = 'Tags \u25BE';
+          }
+          if (saved.tag) {
+            currentTagFilter = saved.tag;
+            var tagBtn = document.querySelector('[data-filter-tag="' + saved.tag + '"]');
+            if (tagBtn) tagBtn.classList.add('active');
+          }
+          if (saved.q && searchInput) {
+            searchInput.value = saved.q;
+          }
+          if (saved.tier || saved.cat || saved.tag || saved.q) {
+            applyFilters();
+          }
+        } catch(e) {}
 
         updateFooterOffset();
         applyMobilePagination();
