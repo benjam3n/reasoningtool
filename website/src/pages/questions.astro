@@ -1,0 +1,613 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Paginated from '../components/Paginated.astro';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="All questions from the reasoning toolkit frameworks — UGA, ARAW, and Tension analysis." />
+  <title>Questions — reasoningtool</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <ViewTransitions />
+</head>
+<body>
+  <Paginated pageGroup="info" pageIndex={3}>
+
+    <!-- Page 1: Overview + UGA Base -->
+    <section>
+      <div class="content-card-grid">
+        <div class="content-card" style="grid-column: 1 / -1;">
+          <h2>Questions</h2>
+          <p>180+ questions from the reasoning toolkit's analytical frameworks. These are the questions that drive every analysis — goal specification, obstacle identification, assumption testing, causal modeling, and more.</p>
+        </div>
+
+        <div class="content-card">
+          <h3>1. Is This the Right Goal?</h3>
+          <ul>
+            <li>Where did this goal come from?</li>
+            <li>Is this a proxy for something else?</li>
+            <li>What am I assuming about cause-effect?</li>
+            <li>What would achieving this NOT give me?</li>
+            <li>If I achieve this, will I actually have what I want?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>2. What Does Success Look Like?</h3>
+          <ul>
+            <li>What is different when achieved?</li>
+            <li>How will I feel?</li>
+            <li>What would prove success to a skeptic?</li>
+            <li>What won't change?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>3. What's Actually Required?</h3>
+          <ul>
+            <li>What MUST happen for success?</li>
+            <li>What am I assuming is required?</li>
+            <li>What could I skip and still succeed?</li>
+            <li>What requirements am I unaware of?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>4. What Are the Real Constraints?</h3>
+          <ul>
+            <li>Hard: Cannot be changed (physics, law)</li>
+            <li>Soft: Difficult but possible to change</li>
+            <li>Assumed: Believed but not verified</li>
+            <li>Self-imposed: Chosen but not required</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>5. What Could Go Wrong?</h3>
+          <ul>
+            <li>What if I can't do the steps?</li>
+            <li>What if environment doesn't cooperate?</li>
+            <li>What if I sabotage myself?</li>
+            <li>What if success has downsides?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>6. Minimum Viable Path?</h3>
+          <ul>
+            <li>What's the smallest version that counts?</li>
+            <li>What's the fewest steps possible?</li>
+            <li>What's the least I could use?</li>
+            <li>What's the fastest this could happen?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>7. What Am I Not Seeing?</h3>
+          <ul>
+            <li>Who else is affected? What do they see?</li>
+            <li>What would an expert in [X] notice?</li>
+            <li>What would future me regret?</li>
+            <li>What happens at 10x bigger? 10x smaller?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 2: UGA v2 — Goal Specification & Action -->
+    <section>
+      <div class="content-card-grid">
+        <div class="content-card" style="grid-column: 1 / -1;">
+          <h2>Goal Specification & Action (UGA v2)</h2>
+        </div>
+
+        <div class="content-card">
+          <h3>Goal Specification</h3>
+          <ul>
+            <li>What is the measurable end state?</li>
+            <li>What changes when this goal is achieved?</li>
+            <li>Has someone in a comparable situation achieved this? Who?</li>
+            <li>What is the cost of NOT achieving this in 12 months?</li>
+            <li>What must be true for you to know you've succeeded?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Current State Facts</h3>
+          <ul>
+            <li>What is the current measurable state?</li>
+            <li>What is the gap? (Number, not feeling)</li>
+            <li>What resources are currently allocated?</li>
+            <li>What has been tried in the last 90 days?</li>
+            <li>What is the rate of change?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Obstacle Identification</h3>
+          <ul>
+            <li>Is this obstacle within your control to remove?</li>
+            <li>What would removing it cost?</li>
+            <li>Has anyone removed this obstacle before? How?</li>
+            <li>Which single obstacle creates the most progress if removed?</li>
+            <li>Are any obstacles preferences disguised as constraints?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Action Specification</h3>
+          <ul>
+            <li>What is the single next action?</li>
+            <li>When specifically will it be done?</li>
+            <li>What is the specific output?</li>
+            <li>What prevents doing this right now?</li>
+            <li>If you had to achieve 80% in half the time, what changes?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Resource Analysis</h3>
+          <ul>
+            <li>What skills do you have? What skills do you need?</li>
+            <li>What money is required? Is it available?</li>
+            <li>What time is required per week? What will you stop doing?</li>
+            <li>What people are required? Are they committed?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Risk & Contingency</h3>
+          <ul>
+            <li>What is the most likely way this fails?</li>
+            <li>If that failure happens, what is the recovery plan?</li>
+            <li>What is the point of no return?</li>
+            <li>What information would cause you to abandon this goal?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Progress Tracking</h3>
+          <ul>
+            <li>What will you measure weekly?</li>
+            <li>What is the target value at 30/60/90 days?</li>
+            <li>What will you do if you're behind at 30 days?</li>
+            <li>Who besides you will see this metric?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 3: UGA v4 — Comprehensive Analysis -->
+    <section>
+      <div class="content-card-grid">
+        <div class="content-card" style="grid-column: 1 / -1;">
+          <h2>Comprehensive Analysis (UGA v4)</h2>
+        </div>
+
+        <div class="content-card">
+          <h3>Goal Understanding</h3>
+          <ul>
+            <li>Is there a specific, measurable outcome desired?</li>
+            <li>Is there a deadline or timeline?</li>
+            <li>Why does this goal matter now? What changed?</li>
+            <li>Is this the REAL goal, or instrumental to something deeper?</li>
+            <li>Has this been attempted before? What happened?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Situation Analysis</h3>
+          <ul>
+            <li>How large is the gap between current state and goal?</li>
+            <li>What resources are currently available?</li>
+            <li>What constraints can't change?</li>
+            <li>Who are the stakeholders? What do they want?</li>
+            <li>Is there existing momentum? In which direction?</li>
+            <li>Are there windows of opportunity? When do they close?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Leverage Analysis</h3>
+          <ul>
+            <li>What does the goal require? (Recurse until you reach things you have)</li>
+            <li>Which requirement, if met, makes others easier?</li>
+            <li>Which has the best cost-to-impact ratio?</li>
+            <li>Which requirement is the bottleneck?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Strategy Analysis</h3>
+          <ul>
+            <li>Is there a known, proven path? Why not follow it?</li>
+            <li>What are the multiple approaches?</li>
+            <li>For each: What's the mechanism? What assumptions? What must go right? What could go wrong? What's the cost?</li>
+            <li>Is there an unconventional approach worth considering?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Risk Analysis</h3>
+          <ul>
+            <li>What are the failure modes? How likely? How severe? How detectable?</li>
+            <li>Is there a risk of success? What changes if you achieve the goal?</li>
+            <li>Is there a risk of inaction? What happens if you do nothing?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Meta Analysis</h3>
+          <ul>
+            <li>Are there questions I should be asking that I'm not?</li>
+            <li>Am I assuming something I should be testing?</li>
+            <li>Is my confidence calibrated?</li>
+            <li>What would change my mind about this goal?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 4: UGA v5 — Advanced Categories -->
+    <section>
+      <div class="content-card-grid">
+        <div class="content-card" style="grid-column: 1 / -1;">
+          <h2>Advanced Analysis (UGA v5)</h2>
+        </div>
+
+        <div class="content-card">
+          <h3>Causation & Prediction</h3>
+          <ul>
+            <li>Is there a known causal model for this domain?</li>
+            <li>Which causal links are proven vs assumed?</li>
+            <li>What predictions does your strategy make?</li>
+            <li>How will you test those predictions?</li>
+            <li>What would DISPROVE your causal model?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Assumptions & Beliefs</h3>
+          <ul>
+            <li>List every assumption your strategy depends on</li>
+            <li>For each: tested or untested?</li>
+            <li>Cost of testing now vs learning it's wrong later?</li>
+            <li>What beliefs have you never questioned?</li>
+            <li>What's the strongest argument against your approach?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Biases & Mental Models</h3>
+          <ul>
+            <li>Is sunk cost influencing continued pursuit?</li>
+            <li>Is there anchoring on an initial estimate?</li>
+            <li>Is there confirmation bias in evidence gathering?</li>
+            <li>What mental model are you using?</li>
+            <li>What does your mental model HIDE?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>System Dynamics</h3>
+          <ul>
+            <li>Are there feedback loops?</li>
+            <li>Are there delays between action and effect?</li>
+            <li>Are there thresholds where behavior changes dramatically?</li>
+            <li>Is the system stable or chaotic?</li>
+            <li>Are there emergent behaviors?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Strategic Interaction</h3>
+          <ul>
+            <li>Is there a competitor? What are they optimizing for?</li>
+            <li>Will they react to your actions? How?</li>
+            <li>Is this zero-sum or positive-sum?</li>
+            <li>Is this repeated or one-shot?</li>
+            <li>What information do they have about your strategy?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Operational</h3>
+          <ul>
+            <li>What tasks can ONLY you do?</li>
+            <li>What's your current capacity utilization?</li>
+            <li>What would you cut to create 20% slack?</li>
+            <li>Where does work wait? How long?</li>
+            <li>What interrupts the most important work?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Meta-Cognitive</h3>
+          <ul>
+            <li>Is this goal consuming bandwidth beyond work time?</li>
+            <li>Is your attention allocation right?</li>
+            <li>Can you maintain required effort? Burnout risk?</li>
+            <li>How many decisions per day? Can any be automated?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Quality</h3>
+          <ul>
+            <li>How do you know your output is correct?</li>
+            <li>Are you applying consistent standards?</li>
+            <li>Is there a simpler approach for 80% of the result?</li>
+            <li>Are you optimizing the metric instead of the outcome?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 5: AR Question Categories — Solution & Systems -->
+    <section>
+      <div class="content-card-grid">
+        <div class="content-card" style="grid-column: 1 / -1;">
+          <h2>Assume Right — Solution & Systems Questions</h2>
+          <p>Generative questions for the ASSUME RIGHT branch. These transform confirmation into active construction.</p>
+        </div>
+
+        <div class="content-card">
+          <h3>Resource Inventory</h3>
+          <p>"What resources does accepting this give us?"</p>
+          <ul>
+            <li>What time does this free up?</li>
+            <li>What money/budget does this unlock?</li>
+            <li>What skills become applicable?</li>
+            <li>What connections become relevant?</li>
+            <li>What position/access does this provide?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Possibility Expansion</h3>
+          <p>"What becomes possible that wasn't before?"</p>
+          <ul>
+            <li>What actions are now viable?</li>
+            <li>What goals become achievable?</li>
+            <li>What constraints are removed?</li>
+            <li>What combinations are now available?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Leverage Search</h3>
+          <p>"What existing work connects here?"</p>
+          <ul>
+            <li>What solved problems does this relate to?</li>
+            <li>What existing tools apply?</li>
+            <li>What prior art exists?</li>
+            <li>Who has done similar work?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Problem Dissolution</h3>
+          <p>"Does accepting this dissolve the problem?"</p>
+          <ul>
+            <li>Does the original problem still exist?</li>
+            <li>Does the problem become irrelevant?</li>
+            <li>Was the problem based on a false assumption?</li>
+            <li>Does it transform into something simpler?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Shortest Path</h3>
+          <p>"What's the shortest path from here to the goal?"</p>
+          <ul>
+            <li>How many steps from this truth to the goal?</li>
+            <li>What can be skipped?</li>
+            <li>What's the minimum viable version?</li>
+            <li>What would 10x simpler look like?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Systems Engineering</h3>
+          <ul>
+            <li>What are the independent parts?</li>
+            <li>What does each component need and provide?</li>
+            <li>In what order must these be built?</li>
+            <li>How do components combine into a system?</li>
+            <li>Where will integration problems emerge?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 6: AR Question Categories — Evidence, Easy Solutions, Robustness -->
+    <section>
+      <div class="content-card-grid">
+        <div class="content-card" style="grid-column: 1 / -1;">
+          <h2>Assume Right — Evidence, Ease & Robustness</h2>
+        </div>
+
+        <div class="content-card">
+          <h3>Evidence Connection</h3>
+          <ul>
+            <li>If this is true, what would we observe?</li>
+            <li>What existing evidence bears on this?</li>
+            <li>What test would verify this?</li>
+            <li>What established knowledge constrains this?</li>
+            <li>What's the most distinctive prediction?</li>
+            <li>What would falsify this claim?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Make It Easy</h3>
+          <p>"What would make this problem EASY?"</p>
+          <ul>
+            <li>What's the one thing that simplifies everything?</li>
+            <li>What assumption, if true, makes this trivial?</li>
+            <li>What resource, if available, makes this easy?</li>
+            <li>What reframe makes this already solved?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Leverage Points</h3>
+          <p>"Where does small input create large output?"</p>
+          <ul>
+            <li>What's the 20% that gives 80% of results?</li>
+            <li>Where's the bottleneck that unlocks everything?</li>
+            <li>What's the single point of highest leverage?</li>
+            <li>Where does a small change cascade?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Reframe Search</h3>
+          <p>"In what frame is this already solved?"</p>
+          <ul>
+            <li>What domain has solved similar problems?</li>
+            <li>What's the analogous problem with known solutions?</li>
+            <li>How would a different field approach this?</li>
+            <li>What category of solved problems does this belong to?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Constraint Removal</h3>
+          <p>"Which constraint, if removed, makes this trivial?"</p>
+          <ul>
+            <li>What are all the constraints?</li>
+            <li>Which are real vs assumed?</li>
+            <li>Which single constraint causes most difficulty?</li>
+            <li>What would the unconstrained solution look like?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Robustness & Reliability</h3>
+          <ul>
+            <li>If this is true, what could still fail?</li>
+            <li>How much room for error do we have?</li>
+            <li>What backup exists if key elements fail?</li>
+            <li>If something fails, how do we recover?</li>
+            <li>What's the weakest link?</li>
+            <li>What's the cascade risk?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Page 7: AR — Scale, Value, Mechanism + Tensions -->
+    <section>
+      <div class="content-card-grid">
+        <div class="content-card" style="grid-column: 1 / -1;">
+          <h2>Assume Right — Scale, Value & Mechanism + Tensions</h2>
+        </div>
+
+        <div class="content-card">
+          <h3>Scale & Growth</h3>
+          <ul>
+            <li>Does this work at 10x/100x scale?</li>
+            <li>What breaks first as we scale?</li>
+            <li>What's the path from here to full scale?</li>
+            <li>What capacity do we need to build?</li>
+            <li>What's the S-curve?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Value & Market</h3>
+          <ul>
+            <li>Why would someone want this?</li>
+            <li>How does this reach the people who need it?</li>
+            <li>Why is now the right time?</li>
+            <li>What's our unique advantage?</li>
+            <li>What's defensible?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Mechanism & Understanding</h3>
+          <ul>
+            <li>HOW does this actually work?</li>
+            <li>Under what conditions does this apply?</li>
+            <li>What else does this explain or connect to?</li>
+            <li>How can this be generalized or extended?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Strength & Opportunity</h3>
+          <ul>
+            <li>What's uniquely strong about this?</li>
+            <li>What opportunities does this create?</li>
+            <li>What's already complete and usable?</li>
+            <li>What if this goes especially well?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Tension Master Questions</h3>
+          <ul>
+            <li><strong>Resources:</strong> What resource is limited, and what are the competing uses?</li>
+            <li><strong>Information:</strong> What don't we know, and how much does it matter?</li>
+            <li><strong>Optimization:</strong> What's the Pareto frontier, and where on it to sit?</li>
+            <li><strong>Structure:</strong> At what level of aggregation to optimize?</li>
+            <li><strong>Commitment:</strong> How reversible is this, and how much is option value worth?</li>
+            <li><strong>Epistemic:</strong> What's the gap between what we know and need to know?</li>
+            <li><strong>Logic:</strong> What formal constraints create the incompatibility?</li>
+            <li><strong>Search:</strong> How should exploration be organized?</li>
+            <li><strong>Time:</strong> When should this happen?</li>
+          </ul>
+        </div>
+
+        <div class="content-card">
+          <h3>Universal Discriminators</h3>
+          <p>Apply to ANY tension or decision:</p>
+          <ul>
+            <li>Would resolving this change what I do?</li>
+            <li>Can I recover if I choose wrong?</li>
+            <li>What's the consequence of error?</li>
+            <li>How urgent is this decision?</li>
+            <li>What do I know vs need to know?</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </Paginated>
+</body>
+</html>
+
+<style>
+  .content-card h3 {
+    color: var(--color-accent);
+  }
+
+  .content-card p {
+    font-style: italic;
+    color: var(--color-text-muted);
+  }
+
+  .content-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .content-card li {
+    padding: 0.15em 0;
+    padding-left: 1em;
+    text-indent: -0.7em;
+  }
+
+  .content-card li::before {
+    content: '?';
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-right: 0.35em;
+  }
+</style>

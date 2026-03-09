@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate skills.json, update catalog.json and marketplace.json from SKILL.md files."""
+"""Generate skills.json and marketplace.json from SKILL.md files."""
 
 import json
 import os
@@ -50,7 +50,7 @@ _tier3 = {
     ],
     'Writing & Communication': [
         'w', 'pw', 'stl', 'pus', 'prd', 'cts', 'orm', 'fd',
-        'al', 'argd',
+        'al', 'argd', 'wre', 'story',
     ],
     'Planning & Projects': [
         'pji', 'pjs', 'de', 'pjc', 'op', 'pt', 'ria', 'dpl',
@@ -70,10 +70,11 @@ _tier3 = {
     ],
     'Decision Making': [
         'dct', 'sel', 'crw', 'pwc', 'exv', 'mcd', 'rva', 'boc',
-        'gdm',
+        'gdm', 'dom',
     ],
     'Health & Wellness': ['ho'],
-    'Crisis & Volatility': ['ch', 'hvh', 'ita'],
+    'Crisis & Volatility': ['ch', 'hvh', 'ita', 'saf'],
+    'Ethics': ['eth'],
     'Competitive Programming': ['ape', 'api', 'apm'],
     'Scientific Research': ['aba', 'spp', 'ops'],
 }
@@ -85,6 +86,14 @@ _tier4 = {
     'Core Exploration': [
         'ar', 'aw', 'u', 'im', 'ans', 'met', 'svs', 'unx', 'gen', 'gn', 'gg',
         'foht', 'md', 'fe', 'ie', 'cdb', 'cga', 'cnw', 'va',
+        'it', 'but', 'nsa', 'sycs', 'siycftr', 'alebc', 'iaw',
+    ],
+    'Skill Routing': [
+        'wsib', 'dtse', 'extract', 'fonss', 'given', 'next', 'handle', 'itp',
+        'uf', 'wn',
+    ],
+    'Skill Creation': [
+        'mts', 'fmtsb', 'sc', 'cs', 'flhwijd',
     ],
     'Search Methods': [
         'bes', 'cls', 'fss', 'ipss', 'mss', 'nss', 'pss', 'spd', 'std', 'fnd',
@@ -113,6 +122,7 @@ _tier4 = {
         'pcd', 'pce', 'pcex', 'pci', 'pefs', 'prr', 'dmt', 'tpm', 'tr', 'txm',
         'adep', 'auep', 'pcef', 'dot', 'ph', 'so', 'uo', 'gee', 'pqr', 'gaca',
         'cpra', 'vhd', 'tnt', 'cppd',
+        'awtlytrn', 'ycshikfmif', 'iagca',
     ],
     'Self-Audit': [
         'saaapcav', 'saaesa', 'sads', 'sagsca', 'satrda', 'saadag', 'saaiasa',
@@ -120,15 +130,20 @@ _tier4 = {
     ],
     'Evaluation & Validation': [
         'emv', 'ver', 'exc', 'capg', 'mcg', 'spg', 'skb', 'fb', 'vp', 'av',
+        'obv', 'obo', 'ogo', 'gop', 'oba',
     ],
     'Strategy & Planning': [
         'p', 'mpa', 'stg', 'o', 'rqg', 'cms', 'swa', 'ssr', 'wr', 'dsd', 'dse',
         'dss', 'dtl', 'ol', 'st', 'snp', 'es', 'sym', 'lp', 'lps', 'dari', 'aar',
+        'ata', 'tbd', 'tobd', 'fut', 'dys', 'utp',
     ],
     'Finance & Fundraising': ['b', 'cfm', 'ff', 'fua', 'gw', 'isd'],
     'Personal Development': ['hf', 'po', 'lt', 're', 'am', 'skp', 'ge'],
     'Marketing & Growth': ['sms', 'seb', 'vm', 'vdp', 'net', 'fl', 'jss'],
     'Advocacy & Outreach': ['ais', 'orc', 't', 'ea', 'pha', 'hd'],
+    'List & Pattern': [
+        'list', 'ro', 'etc', 'aso', 'platitude', 'platitudes',
+    ],
     'Utility & Integration': ['sf', 'mcs', 'ams', 'eda'],
     'Orderings': [
         'ao', 'arcd', 'be', 'cn', 'cns', 'ct', 'dv', 'dvs', 'faa', 'gt', 'lcs',
@@ -234,29 +249,22 @@ def parse_skill(skill_id, path):
     }
 
 
-def load_old_catalog(path):
-    """Load old catalog.json and return dict keyed by skill id."""
+def load_old_skills(path):
+    """Load previous skills.json and return dict keyed by skill id."""
     if not os.path.exists(path):
         return {}
     with open(path, 'r', encoding='utf-8') as f:
         data = json.load(f)
-    procs = data.get('procedures', {})
-    # Normalize: old catalog had 'visual_design_principles' for 'vdp'
-    old = {}
-    alias_map = {'visual_design_principles': 'vdp'}
-    for key, val in procs.items():
-        real_key = alias_map.get(key, key)
-        old[real_key] = val
-    return old
+    return data.get('skills', {})
 
 
 def main():
     skills_dir = os.path.normpath(SKILLS_DIR)
     output_dir = os.path.normpath(OUTPUT_DIR)
-    catalog_path = os.path.join(output_dir, 'catalog.json')
+    skills_json_path = os.path.join(output_dir, 'skills.json')
 
-    # Load old catalog for metadata preservation
-    old_catalog = load_old_catalog(catalog_path)
+    # Load previous skills.json for metadata preservation
+    old_skills = load_old_skills(skills_json_path)
 
     # Parse all skills
     skills = {}
@@ -267,9 +275,9 @@ def main():
             continue
         skill = parse_skill(skill_id, skill_path)
 
-        # Merge metadata from old catalog
-        if skill_id in old_catalog:
-            old = old_catalog[skill_id]
+        # Merge metadata from previous skills.json
+        if skill_id in old_skills:
+            old = old_skills[skill_id]
             if old.get('categories'):
                 skill['categories'] = old['categories']
             if old.get('tags'):
@@ -289,6 +297,19 @@ def main():
                 if skill_id not in skills[target]['invoked_by']:
                     skills[target]['invoked_by'].append(skill_id)
 
+    # Validate invocation chains — flag references to non-existent skills
+    broken_refs = []
+    for skill_id, skill in skills.items():
+        for target in skill['invokes']:
+            if target not in skills:
+                broken_refs.append((skill_id, target))
+                print(f"WARNING: skill '{skill_id}' invokes '{target}' which does not exist")
+    if broken_refs:
+        affected_skills = len(set(ref[0] for ref in broken_refs))
+        print(f"Validation: {len(broken_refs)} broken references found across {affected_skills} skills")
+    else:
+        print("Validation: no broken invocation references found")
+
     # Check for missing tier assignments
     missing_tier = [sid for sid, s in skills.items() if s['tier'] is None]
     if missing_tier:
@@ -300,25 +321,9 @@ def main():
         'total': len(skills),
         'skills': skills,
     }
-    skills_json_path = os.path.join(output_dir, 'skills.json')
     with open(skills_json_path, 'w', encoding='utf-8') as f:
         json.dump(skills_json, f, indent=2, ensure_ascii=False)
     print(f"Wrote {skills_json_path} ({len(skills)} skills)")
-
-    # Write catalog.json (updated to 355 entries)
-    catalog = {'procedures': {}}
-    for skill_id in sorted(skills.keys()):
-        s = skills[skill_id]
-        catalog['procedures'][skill_id] = {
-            'description': s['description'],
-            'categories': s['categories'],
-            'tags': s['tags'],
-            'input_types': s['input_types'],
-            'invokes': s['invokes'],
-        }
-    with open(catalog_path, 'w', encoding='utf-8') as f:
-        json.dump(catalog, f, indent=2, ensure_ascii=False)
-    print(f"Wrote {catalog_path} ({len(catalog['procedures'])} entries)")
 
     # Write marketplace.json
     marketplace = {

@@ -2,8 +2,8 @@
 # Sync GOSM skills to Claude Code's skill directory
 # Run this when you add new skills to claude-code-plugin/skills/
 
-GOSM_SKILLS="/home/ben/Documents/projects/GOSM/claude-code-plugin/skills"
-CLAUDE_SKILLS="/home/ben/Documents/projects/GOSM/.claude/skills"
+GOSM_SKILLS="/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills"
+CLAUDE_SKILLS="/home/ben/Documents/projects/reasoningtool/.claude/skills"
 
 # Create Claude skills directory if it doesn't exist
 mkdir -p "$CLAUDE_SKILLS"

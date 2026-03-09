@@ -1,6 +1,6 @@
 # Reasoning Toolkit
 
-This repository contains 367 reusable skills in `claude-code-plugin/skills/*/SKILL.md`.
+This repository contains 415 reusable skills in `claude-code-plugin/skills/*/SKILL.md`.
 
 ## Skill Discovery
 

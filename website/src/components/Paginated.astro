@@ -30,6 +30,7 @@ const { pageGroup = '', pageIndex = 0, mobileNums = 'grid' } = Astro.props;
     <button class="pg-chip pg-github" data-url="https://github.com/benjam3n/reasoningtool">GitHub</button>
     <a href="/visuals" class="pg-chip">Visuals</a>
     <a href="/faq" class="pg-chip">FAQ</a>
+    <a href="/questions" class="pg-chip">Questions</a>
     <a href="/installation" class="pg-chip">Install</a>
     <a href="/where" class="pg-chip pg-chip--where">Where</a>
     <a href="/about" class="pg-chip">About</a>
@@ -484,7 +485,7 @@ const { pageGroup = '', pageIndex = 0, mobileNums = 'grid' } = Astro.props;
 
 <script define:vars={{ NAV_LETTERS, NAV_WORDS_BY_LETTER, NAV_EMOJI_CATEGORIES }}>
   const PAGE_GROUPS = {
-    info: ['/faq', '/installation', '/about'],
+    info: ['/faq', '/installation', '/about', '/questions'],
     visual: ['/', '/visuals'],
   };
 

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-01-31T19:13:50.842393+00:00",
-  "total": 402,
+  "generated": "2026-03-09T17:07:03.174669+00:00",
+  "total": 491,
   "skills": {
     "aa": {
       "id": "aa",
@@ -349,6 +349,31 @@
       ],
       "line_count": 104
     },
+    "agsk": {
+      "id": "agsk",
+      "title": "Argument Analysis",
+      "description": "Analyze and construct arguments by checking logical validity, premise truth, hidden assumptions, and evidence strength.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Claim",
+        "Step 2: Identify the Premises",
+        "Step 3: Check Logical Validity",
+        "Step 4: Check Premise Truth",
+        "Step 5: Identify Hidden Assumptions",
+        "Step 6: Assess Strength of Evidence",
+        "Step 7: Find the Strongest Objection",
+        "Step 8: Overall Assessment",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 156
+    },
     "ai": {
       "id": "ai",
       "title": "Assumption Inversion",
@@ -375,6 +400,28 @@
         "Integration"
       ],
       "line_count": 368
+    },
+    "aiag": {
+      "id": "aiag",
+      "title": "AI Agent Analysis",
+      "description": "Analyzes suitability for AI agents. Assesses which tasks are automatable, evaluates reliability requirements, designs human oversight, and plans for failure modes.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Work",
+        "Step 2: Assess Automatability",
+        "Step 3: Evaluate Reliability Requirements",
+        "Step 4: Design Human Oversight",
+        "Step 5: Plan for Failure Modes",
+        "Step 6: Capability Projection",
+        "Integration"
+      ],
+      "line_count": 120
     },
     "ais": {
       "id": "ais",
@@ -430,21 +477,27 @@
     "alebc": {
       "id": "alebc",
       "title": "And Lists Each Big Change",
-      "description": "Convert a change stream into high-level big-new-item bullets, excluding low-level modification details.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Convert a change stream into high-level big-change bullets, filtering out low-level modifications and grouping related changes into coherent shifts.",
+      "tier": "tier4",
+      "category": "Core Exploration",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Change Stream Intake",
+        "Phase 2: Raw Change Enumeration",
+        "Phase 3: Filtering and Grouping",
+        "Phase 4: Narrative Ordering",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 189
     },
     "alt": {
       "id": "alt",
@@ -518,6 +571,28 @@
         "Verification"
       ],
       "line_count": 208
+    },
+    "anag": {
+      "id": "anag",
+      "title": "Analogy Generation",
+      "description": "Explains concept X in terms of familiar concept Y by mapping structural correspondence, then testing where the analogy breaks.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Source Concept",
+        "Step 2: Find a Target Domain",
+        "Step 3: Map the Correspondence",
+        "Step 4: Build the Analogy",
+        "Step 5: Test the Limits",
+        "Step 6: Final Output",
+        "Integration"
+      ],
+      "line_count": 114
     },
     "analyze": {
       "id": "analyze",
@@ -631,7 +706,7 @@
     "ape": {
       "id": "ape",
       "title": "Alphacode Pass 1 Explicit",
-      "description": "First pass at competitive programming \u2014 explicit problem decomposition, constraint identification, and straightforward implementation.",
+      "description": "First pass at competitive programming — explicit problem decomposition, constraint identification, and straightforward implementation.",
       "tier": "tier3",
       "category": "Competitive Programming",
       "categories": [],
@@ -650,7 +725,7 @@
     "api": {
       "id": "api",
       "title": "Alphacode Pass 2 Implicit",
-      "description": "Second pass at competitive programming \u2014 find implicit patterns, hidden structure, and optimizations the explicit pass missed.",
+      "description": "Second pass at competitive programming — find implicit patterns, hidden structure, and optimizations the explicit pass missed.",
       "tier": "tier3",
       "category": "Competitive Programming",
       "categories": [],
@@ -693,7 +768,7 @@
     "apm": {
       "id": "apm",
       "title": "Alphacode Pass 3 Meta",
-      "description": "Third pass \u2014 meta-reasoning about solution correctness, confidence, and robustness. Catches what testing alone misses.",
+      "description": "Third pass — meta-reasoning about solution correctness, confidence, and robustness. Catches what testing alone misses.",
       "tier": "tier3",
       "category": "Competitive Programming",
       "categories": [],
@@ -712,7 +787,7 @@
     "ar": {
       "id": "ar",
       "title": "Assume Right Search",
-      "description": "Assume Right - Deep recursive rightness search. For every claim, assume it's right \u2014 find what must follow, then assume THOSE implications are right too. Recurse until bedrock. Track every claim found.",
+      "description": "Assume Right - Deep recursive rightness search. For every claim, assume it's right — find what must follow, then assume THOSE implications are right too. Recurse until bedrock. Track every claim found.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [
@@ -744,7 +819,7 @@
         "Anti-Cheerleading Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 219
+      "line_count": 211
     },
     "araw": {
       "id": "araw",
@@ -774,6 +849,8 @@
         "evaluate",
         "fia",
         "gaa",
+        "gjs",
+        "gu",
         "qag",
         "viability"
       ],
@@ -796,7 +873,7 @@
     "arcd": {
       "id": "arcd",
       "title": "Architecture Design Orderings",
-      "description": "Orderings for software development \u2014 outside-in vs inside-out, API-first vs domain-first, top-down vs bottom-up.",
+      "description": "Orderings for software development — outside-in vs inside-out, API-first vs domain-first, top-down vs bottom-up.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -835,21 +912,27 @@
     "aso": {
       "id": "aso",
       "title": "And So On",
-      "description": "Continue a discovered pattern with bounded expansion rules so extension stays coherent and useful.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Continue a discovered pattern with bounded expansion rules — extract the generative rule, extend coherently, detect pattern decay, and stop at an explicit limit.",
+      "tier": "tier4",
+      "category": "List & Pattern",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Pattern Identification",
+        "Phase 2: Rule Extraction",
+        "Phase 3: Bounded Extension",
+        "Phase 4: Stop Condition",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 218
     },
     "asu": {
       "id": "asu",
@@ -880,21 +963,26 @@
     "ata": {
       "id": "ata",
       "title": "And Then Also",
-      "description": "Expand a request with all implied adjacent actions that should also be done, then order them.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Expand a request with all implied adjacent actions that should also be done, ordered by dependency and necessity, without overwhelming the user.",
+      "tier": "tier4",
+      "category": "Strategy & Planning",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Primary Request Parse",
+        "Phase 2: Adjacent Task Discovery",
+        "Phase 3: Classification and Ordering",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 167
     },
     "atgb": {
       "id": "atgb",
@@ -973,7 +1061,7 @@
     "aw": {
       "id": "aw",
       "title": "Assume Wrong Search",
-      "description": "Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong \u2014 find why, then assume THOSE reasons are wrong too. Recurse until bedrock. Track every claim found.",
+      "description": "Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong — find why, then assume THOSE reasons are wrong too. Recurse until bedrock. Track every claim found.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [
@@ -1006,26 +1094,32 @@
         "Anti-Softness Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 212
+      "line_count": 204
     },
     "awtlytrn": {
       "id": "awtlytrn",
       "title": "Also What's The Limit You Think Right Now",
-      "description": "Estimate current practical limits for scope, throughput, and quality, then recommend a safe operating boundary.",
-      "tier": "tier3",
+      "description": "Estimate current practical limits for scope, throughput, and quality across multiple dimensions, then recommend a safe operating boundary that accounts for planning fallacy.",
+      "tier": "tier4",
       "category": "Procedures & Meta",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Context Assessment",
+        "Phase 2: Limit Estimation",
+        "Phase 3: Tradeoff Analysis",
+        "Phase 4: Safe Operating Boundary",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 194
     },
     "b": {
       "id": "b",
@@ -1255,21 +1349,29 @@
     "but": {
       "id": "but",
       "title": "Contrast and Objection Handler",
-      "description": "Handle \"but\" statements by separating main claim from objection and resolving the tension explicitly.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Handle 'but' statements by separating the main claim from the objection, classifying the tension type, and routing to the right resolution skill.",
+      "tier": "tier4",
+      "category": "Core Exploration",
       "categories": [],
       "tags": [],
       "input_types": [],
-      "invokes": [],
-      "invoked_by": [
-        "meta"
+      "invokes": [
+        "skill"
       ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Extraction",
+        "Phase 2: Tension Classification",
+        "Phase 3: Hidden Objection Check",
+        "Phase 4: Resolution Routing",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 24
+      "line_count": 174
     },
     "capg": {
       "id": "capg",
@@ -1409,6 +1511,28 @@
         "Verification"
       ],
       "line_count": 117
+    },
+    "cdiff": {
+      "id": "cdiff",
+      "title": "Competitive Differentiation",
+      "description": "Find what makes something uniquely valuable versus alternatives. Maps competitors, compares features, identifies unique capabilities and weaknesses, assesses defensibility, and outputs positioning.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Competitors and Alternatives",
+        "Step 2: Map Feature Comparison",
+        "Step 3: Identify Unique Capabilities",
+        "Step 4: Identify Unique Weaknesses",
+        "Step 5: Determine Defensibility",
+        "Step 6: Output Positioning",
+        "Integration"
+      ],
+      "line_count": 138
     },
     "cdr": {
       "id": "cdr",
@@ -1550,7 +1674,7 @@
     "ch": {
       "id": "ch",
       "title": "Crisis Handler",
-      "description": "Systematic procedure for handling crises \u2014 stabilize, diagnose, communicate, resolve, and learn.",
+      "description": "Systematic procedure for handling crises — stabilize, diagnose, communicate, resolve, and learn.",
       "tier": "tier3",
       "category": "Crisis & Volatility",
       "categories": [],
@@ -1570,6 +1694,29 @@
         "Verification"
       ],
       "line_count": 88
+    },
+    "chns": {
+      "id": "chns",
+      "title": "Chainable Skill Design",
+      "description": "Guides the design of skills that compose well with other skills, with clean input/output contracts and narrow scope for reliable handoffs.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define Scope Narrowly",
+        "Step 2: Define Input Contract",
+        "Step 3: Define Output Contract",
+        "Step 4: Design the Transform",
+        "Step 5: Design Handoff Points",
+        "Step 6: Test in Chains",
+        "Step 7: Document Chaining Patterns",
+        "Integration"
+      ],
+      "line_count": 139
     },
     "claim": {
       "id": "claim",
@@ -1787,7 +1934,7 @@
     "cns": {
       "id": "cns",
       "title": "Constraint Solving Orderings",
-      "description": "Orderings for constraint satisfaction and guided search \u2014 process most constrained variables first, propagate constraints, backtrack efficiently.",
+      "description": "Orderings for constraint satisfaction and guided search — process most constrained variables first, propagate constraints, backtrack efficiently.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -1827,6 +1974,73 @@
         "Verification"
       ],
       "line_count": 131
+    },
+    "col": {
+      "id": "col",
+      "title": "Collaboration Design",
+      "description": "Designs how a group of people should work together — roles, communication, decisions, handoffs, and accountability.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Goal",
+        "Step 2: Map Roles",
+        "Step 3: Communication Design",
+        "Step 4: Decision Rights",
+        "Step 5: Handoff Procedures",
+        "Step 6: Accountability",
+        "Integration"
+      ],
+      "line_count": 121
+    },
+    "comc": {
+      "id": "comc",
+      "title": "Communicate",
+      "description": "Designs a communication for any context. Identifies audience, determines goal, chooses medium, structures the message, and anticipates objections.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Communication",
+        "Step 2: Know the Audience",
+        "Step 3: Set the Goal",
+        "Step 4: Choose Medium and Structure",
+        "Step 5: Anticipate Reactions",
+        "Step 6: Draft the Communication",
+        "Integration"
+      ],
+      "line_count": 119
+    },
+    "conr": {
+      "id": "conr",
+      "title": "Conflict Resolution",
+      "description": "Resolves disagreements by surfacing positions, uncovering underlying interests, finding shared ground, and proposing solutions that serve both parties.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Parties and Positions",
+        "Step 2: Uncover Underlying Interests",
+        "Step 3: Find Shared Interests",
+        "Step 4: Generate Options",
+        "Step 5: Evaluate Options",
+        "Step 6: Propose Resolution",
+        "Step 7: Failure Planning",
+        "Integration"
+      ],
+      "line_count": 146
     },
     "cor": {
       "id": "cor",
@@ -1928,7 +2142,7 @@
         "mv"
       ],
       "invoked_by": [
-        "ugav4"
+        "uga"
       ],
       "sections": [
         "Overview",
@@ -1992,6 +2206,29 @@
       ],
       "line_count": 130
     },
+    "crtv": {
+      "id": "crtv",
+      "title": "Creativity Procedure",
+      "description": "Systematic procedure for generating novel ideas. Moves through divergent generation, combinatorial play, and convergent evaluation against the original need.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Creative Constraint",
+        "Step 2: Divergent Generation — Quantity Over Quality",
+        "Step 3: Combinatorial Play",
+        "Step 4: Convergent Evaluation",
+        "Step 5: Develop Top Candidates",
+        "Step 6: Test Against the Original Need",
+        "Step 7: Creative Output",
+        "Integration"
+      ],
+      "line_count": 152
+    },
     "crw": {
       "id": "crw",
       "title": "Criteria Weighting Decision Matrix",
@@ -2024,21 +2261,72 @@
     "cs": {
       "id": "cs",
       "title": "Create Skill",
-      "description": "Create or update a skill from a prompt, including naming, scope, workflow, and output contract. Can also identify missing skills implied by the prompt.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Create, update, or gap-scan skills. Three modes: CREATE produces a new SKILL.md, UPDATE improves an existing one, GAP_SCAN identifies missing skills.",
+      "tier": "tier4",
+      "category": "Skill Creation",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Mode Detection",
+        "Mode: CREATE",
+        "Mode: UPDATE",
+        "Mode: GAP_SCAN",
+        "Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 29
+      "line_count": 219
+    },
+    "csb": {
+      "id": "csb",
+      "title": "Consensus Building",
+      "description": "Move a group toward agreement by surfacing real disagreements, generating options, and using gradients of agreement rather than binary votes.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Surface All Positions",
+        "Step 2: Identify Areas of Existing Agreement",
+        "Step 3: Identify the Real Disagreements",
+        "Step 4: Generate Options",
+        "Step 5: Use Gradients of Agreement",
+        "Step 6: Lock In Agreement and Document",
+        "Integration"
+      ],
+      "line_count": 144
+    },
+    "cscl": {
+      "id": "cscl",
+      "title": "Causal Claim Analysis",
+      "description": "Test whether X actually causes Y. Check confounders, mechanisms, temporal ordering, and counterfactuals.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Causal Claim",
+        "Step 2: Check for Confounders",
+        "Step 3: Check Temporal Ordering",
+        "Step 4: Look for Mechanism",
+        "Step 5: Check Dose-Response",
+        "Step 6: Test Counterfactual",
+        "Step 7: Assess Overall Causal Evidence",
+        "Integration"
+      ],
+      "line_count": 159
     },
     "ct": {
       "id": "ct",
@@ -2106,6 +2394,28 @@
       ],
       "line_count": 254
     },
+    "ctan": {
+      "id": "ctan",
+      "title": "Contract Analysis",
+      "description": "Review and understand a contract or agreement by mapping obligations, consideration, risk allocation, and concerning terms.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Parties and Obligations",
+        "Step 2: Map Consideration",
+        "Step 3: Identify Key Terms and Conditions",
+        "Step 4: Find Risk Allocation Clauses",
+        "Step 5: Identify Termination Conditions",
+        "Step 6: Flag Unusual or Concerning Terms",
+        "Integration"
+      ],
+      "line_count": 153
+    },
     "cts": {
       "id": "cts",
       "title": "Content Strategy",
@@ -2133,7 +2443,7 @@
     "cv": {
       "id": "cv",
       "title": "Convergent Validation",
-      "description": "Solve the infinite critic problem by using multiple independent validation criteria \u2014 accept when they converge, investigate when they diverge.",
+      "description": "Solve the infinite critic problem by using multiple independent validation criteria — accept when they converge, investigate when they diverge.",
       "tier": "tier4",
       "category": "Assumptions & Critique",
       "categories": [],
@@ -2153,6 +2463,27 @@
         "Verification"
       ],
       "line_count": 74
+    },
+    "cvis": {
+      "id": "cvis",
+      "title": "Creator Vision Analysis",
+      "description": "Analyze a project from the creator's perspective. Articulates the vision, checks whether current work serves it, identifies vision drift, and recommends corrections.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Articulate the Vision",
+        "Step 2: Check Alignment",
+        "Step 3: Identify Vision Drift",
+        "Step 4: Vision Coherence",
+        "Step 5: Recommend Corrections",
+        "Integration"
+      ],
+      "line_count": 144
     },
     "dari": {
       "id": "dari",
@@ -2392,6 +2723,28 @@
       ],
       "line_count": 298
     },
+    "deb": {
+      "id": "deb",
+      "title": "Debate Structure",
+      "description": "Argues both sides of any position by steelmanning FOR and AGAINST, then identifies where the sides actually disagree and which has better evidence.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Proposition",
+        "Step 2: Steelman FOR",
+        "Step 3: Steelman AGAINST",
+        "Step 4: Find the Real Disagreement",
+        "Step 5: Assess the Evidence",
+        "Step 6: Synthesis",
+        "Integration"
+      ],
+      "line_count": 128
+    },
     "decide": {
       "id": "decide",
       "title": "Make a Decision",
@@ -2419,6 +2772,7 @@
         "evaluate",
         "how",
         "search",
+        "tbd",
         "viability",
         "want"
       ],
@@ -2487,6 +2841,29 @@
       ],
       "line_count": 194
     },
+    "dmgc": {
+      "id": "dmgc",
+      "title": "Damage Control",
+      "description": "When something has already gone wrong — stop the bleeding, triage what's salvageable, communicate clearly, and recover systematically.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Assess the Damage",
+        "Step 2: Stop the Bleeding",
+        "Step 3: Triage What Can Be Saved",
+        "Step 4: Communicate to Affected Parties",
+        "Step 5: Begin Recovery",
+        "Step 6: Capture Lessons",
+        "Timing Guide",
+        "Integration"
+      ],
+      "line_count": 184
+    },
     "dmt": {
       "id": "dmt",
       "title": "Domain Template",
@@ -2507,6 +2884,29 @@
         "Integration"
       ],
       "line_count": 415
+    },
+    "dom": {
+      "id": "dom",
+      "title": "Dominance Analysis",
+      "description": "Identify options that dominate others — strictly better on all dimensions, or better on some and equal on the rest.",
+      "tier": "tier3",
+      "category": "Decision Making",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: IDENTIFY THE OPTIONS",
+        "Step 2: IDENTIFY THE DIMENSIONS",
+        "Step 3: SCORE THE MATRIX",
+        "Step 4: STRICT DOMINANCE CHECK",
+        "Step 5: NEAR-DOMINANCE",
+        "Step 6: HIDDEN DIMENSIONS",
+        "Step 7: OUTPUT",
+        "Integration"
+      ],
+      "line_count": 131
     },
     "dop": {
       "id": "dop",
@@ -2630,10 +3030,32 @@
       ],
       "line_count": 126
     },
+    "dshb": {
+      "id": "dshb",
+      "title": "Dashboard Design",
+      "description": "Design an information dashboard by identifying the audience, the decisions it supports, the right metrics, and the layout for quick scanning.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Audience",
+        "Step 2: Identify Decisions the Dashboard Supports",
+        "Step 3: Select Metrics",
+        "Step 4: Design Layout for Quick Scanning",
+        "Step 5: Define Thresholds and Alerts",
+        "Step 6: Plan Data Sources and Refresh Cadence",
+        "Integration"
+      ],
+      "line_count": 166
+    },
     "dsn": {
       "id": "dsn",
       "title": "Design - Principled Design Creation and Improvement",
-      "description": "Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embeds generate \u2192 critique \u2192 iterate.",
+      "description": "Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embeds generate → critique → iterate.",
       "tier": "tier3",
       "category": "Software & Engineering",
       "categories": [
@@ -2693,7 +3115,7 @@
     "dss": {
       "id": "dss",
       "title": "dss",
-      "description": "Complete system design workflow \u2014 from requirements through verified design.",
+      "description": "Complete system design workflow — from requirements through verified design.",
       "tier": "tier4",
       "category": "Strategy & Planning",
       "categories": [],
@@ -2743,21 +3165,27 @@
     "dtse": {
       "id": "dtse",
       "title": "Does This Skill Exist",
-      "description": "Check whether a requested skill exists, show exact matches and nearest alternatives, and provide next action.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Check whether a requested skill exists by name or function, show exact matches and nearest alternatives, and provide next action.",
+      "tier": "tier4",
+      "category": "Skill Routing",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output Format"
+        "Core Principles",
+        "Phase 1: Parse the Request",
+        "Phase 2: Exact Match Check",
+        "Phase 3: Semantic Search",
+        "Phase 4: Gap Analysis",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 28
+      "line_count": 188
     },
     "dv": {
       "id": "dv",
@@ -2822,6 +3250,28 @@
       ],
       "line_count": 443
     },
+    "dys": {
+      "id": "dys",
+      "title": "Dystopia Analysis",
+      "description": "Systematically construct and examine the worst possible outcome — what does failure look like at scale, and what path leads there?",
+      "tier": "tier4",
+      "category": "Strategy & Planning",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: DEFINE THE DOMAIN",
+        "Step 2: CONSTRUCT THE WORST CASE",
+        "Step 3: EARLY WARNING SIGNALS",
+        "Step 4: WHO SUFFERS",
+        "Step 5: PREVENTION",
+        "Step 6: OUTPUT",
+        "Integration"
+      ],
+      "line_count": 132
+    },
     "ea": {
       "id": "ea",
       "title": "Email Acquisition",
@@ -2858,18 +3308,63 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
-        "STEP 0 \u2014 Quick Triage (Complete in under 60 seconds)",
-        "SECTION A \u2014 Minimum Effort Path",
-        "SECTION B \u2014 Standard Effort Path",
-        "SECTION C \u2014 Maximum Effort Path",
-        "SECTION D \u2014 The Recalibration Check",
-        "SECTION E \u2014 Recovery from Over-Investment (Analysis Paralysis Exit)",
+        "STEP 0 — Quick Triage (Complete in under 60 seconds)",
+        "SECTION A — Minimum Effort Path",
+        "SECTION B — Standard Effort Path",
+        "SECTION C — Maximum Effort Path",
+        "SECTION D — The Recalibration Check",
+        "SECTION E — Recovery from Over-Investment (Analysis Paralysis Exit)",
         "QUICK REFERENCE CARD",
         "COMMON MISTAKES",
         "WHEN TO OVERRIDE",
         "WORKED EXAMPLES"
       ],
       "line_count": 294
+    },
+    "ecoc": {
+      "id": "ecoc",
+      "title": "Ethical Code of Conduct",
+      "description": "Create a practical code of ethics for a person, team, or organization — one that handles real edge cases, not just platitudes.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Domain",
+        "Step 2: Surface Key Ethical Tensions",
+        "Step 3: Draft Principles",
+        "Step 4: Edge Case Testing",
+        "Step 5: Conflict Resolution Protocol",
+        "Step 6: Refine and Format",
+        "Step 7: Stress Test",
+        "Integration"
+      ],
+      "line_count": 149
+    },
+    "ecomp": {
+      "id": "ecomp",
+      "title": "Ecosystem Completion",
+      "description": "Analyze whether a system or collection is complete and coherent. Maps components, identifies connections, finds orphans and missing links, and assesses domain coverage.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Map All Components",
+        "Step 2: Identify Connections",
+        "Step 3: Find Orphaned Components",
+        "Step 4: Find Missing Connections",
+        "Step 5: Assess Domain Coverage",
+        "Step 6: Completeness Assessment",
+        "Integration"
+      ],
+      "line_count": 145
     },
     "eda": {
       "id": "eda",
@@ -2896,6 +3391,29 @@
         "Verification"
       ],
       "line_count": 304
+    },
+    "efa": {
+      "id": "efa",
+      "title": "Emotional First Aid",
+      "description": "Immediate structured response when someone is in emotional distress — stabilize first, then support.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Acknowledge the Emotion",
+        "Step 2: Assess Severity",
+        "Step 3: Stabilize (Grounding)",
+        "Step 4: Identify Immediate Needs",
+        "Step 5: Create a Safety Plan (if needed)",
+        "Step 6: Connect to Ongoing Support",
+        "Important Limitations",
+        "Integration"
+      ],
+      "line_count": 165
     },
     "eg": {
       "id": "eg",
@@ -3001,7 +3519,7 @@
     "enc": {
       "id": "enc",
       "title": "Engineering Calculations",
-      "description": "Standard engineering calculation procedures for robotics and mechanical system design \u2014 forces, torques, materials, actuator sizing.",
+      "description": "Standard engineering calculation procedures for robotics and mechanical system design — forces, torques, materials, actuator sizing.",
       "tier": "tier3",
       "category": "Software & Engineering",
       "categories": [],
@@ -3091,21 +3609,49 @@
     "etc": {
       "id": "etc",
       "title": "Expand the Etcetera",
-      "description": "Expand \"etc\" tails into explicit items using pattern continuation, then stop at a defined completeness rule.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Expand 'etc', 'and so on', and other list tails into explicit items by inferring the continuation rule, enumerating omitted items, and stopping at a defined completeness criterion.",
+      "tier": "tier4",
+      "category": "List & Pattern",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Head Extraction",
+        "Phase 2: Rule Inference",
+        "Phase 3: Expansion",
+        "Phase 4: Completeness",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 196
+    },
+    "eth": {
+      "id": "eth",
+      "title": "Ethics & Morality Analysis",
+      "description": "Systematically evaluate the ethical and moral dimensions of any decision, plan, action, or system.",
+      "tier": "tier3",
+      "category": "Ethics",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: IDENTIFY THE ETHICAL SURFACE",
+        "Step 2: STAKEHOLDER MAP",
+        "Step 3: MULTI-FRAMEWORK ANALYSIS",
+        "Step 4: CONVERGENCE AND DIVERGENCE",
+        "Step 5: HIDDEN ETHICAL DIMENSIONS",
+        "Step 6: SYNTHESIS",
+        "Integration"
+      ],
+      "line_count": 140
     },
     "evaluate": {
       "id": "evaluate",
@@ -3158,7 +3704,9 @@
         "cv",
         "evaluate"
       ],
-      "invoked_by": [],
+      "invoked_by": [
+        "fia"
+      ],
       "sections": [
         "Overview",
         "Steps",
@@ -3219,24 +3767,98 @@
       ],
       "line_count": 369
     },
-    "extract": {
-      "id": "extract",
-      "title": "Skill Extractor",
-      "description": "Given any prompt, extract every potentially useful existing skill, grouped and prioritized with invocation-ready suggestions.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+    "exint": {
+      "id": "exint",
+      "title": "External Integration",
+      "description": "Design how something connects to external systems, tools, or services. Identifies touchpoints, maps data flows, defines interfaces, assesses dependencies, plans for failures, and produces an integration checklist.",
+      "tier": null,
+      "category": null,
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Step 1: Identify External Touchpoints",
+        "Step 2: Map Data Flows",
+        "Step 3: Define Interfaces",
+        "Step 4: Assess Dependencies",
+        "Step 5: Plan for External Failures",
+        "Step 6: Integration Checklist",
+        "Integration"
       ],
-      "line_count": 29
+      "line_count": 166
+    },
+    "exps": {
+      "id": "exps",
+      "title": "Exploration",
+      "description": "Systematically explores an unfamiliar space by mapping boundaries, identifying dimensions, sampling broadly, and flagging surprises and promising regions.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Map the Boundaries",
+        "Step 2: Identify Dimensions",
+        "Step 3: Sample Broadly",
+        "Step 4: Track Coverage",
+        "Step 5: Identify Promising Regions",
+        "Step 6: Flag Surprises and Anomalies",
+        "Step 7: Exploration Summary",
+        "Integration"
+      ],
+      "line_count": 135
+    },
+    "exrp": {
+      "id": "exrp",
+      "title": "Exercise Programming",
+      "description": "Design a structured exercise program tailored to current fitness level, goals, and real-world constraints.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Assess Current Fitness Level",
+        "Step 2: Identify Goals",
+        "Step 3: Select Training Modalities",
+        "Step 4: Design Progressive Overload",
+        "Step 5: Plan Recovery",
+        "Step 6: Create Weekly Schedule",
+        "Step 7: Define Metrics",
+        "Integration"
+      ],
+      "line_count": 171
+    },
+    "extract": {
+      "id": "extract",
+      "title": "Skill Extractor",
+      "description": "Given any prompt, decompose it into implicit sub-tasks and extract every potentially useful skill, grouped by role and prioritized with invocation-ready suggestions.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Prompt Decomposition",
+        "Phase 2: Skill Mapping",
+        "Phase 3: Prune and Prioritize",
+        "Phase 4: Interaction Analysis",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 175
     },
     "exv": {
       "id": "exv",
@@ -3333,6 +3955,27 @@
         "Instructions"
       ],
       "line_count": 64
+    },
+    "fctl": {
+      "id": "fctl",
+      "title": "Factual Claim Testing",
+      "description": "Test whether a factual claim is true. Assess evidence quality, check for common errors, and deliver a verdict with confidence level.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Claim Precisely",
+        "Step 2: Identify Truth Conditions",
+        "Step 3: Find Evidence",
+        "Step 4: Check for Common Errors",
+        "Step 5: Verdict",
+        "Integration"
+      ],
+      "line_count": 139
     },
     "fd": {
       "id": "fd",
@@ -3437,7 +4080,7 @@
         "aex",
         "araw",
         "cda",
-        "evaluation_dimensions",
+        "evd",
         "ins"
       ],
       "invoked_by": [],
@@ -3535,21 +4178,27 @@
     "flhwijd": {
       "id": "flhwijd",
       "title": "For Like Here What I Just Did",
-      "description": "Analyze the user's just-finished action sequence, identify what pattern they used, and convert it into a reusable procedure.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Analyze the user's just-finished action sequence, extract the repeatable pattern, clean it, name it, and convert it into a reusable procedure with trigger conditions.",
+      "tier": "tier4",
+      "category": "Skill Creation",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Action Capture",
+        "Phase 2: Pattern Extraction",
+        "Phase 3: Pattern Cleaning",
+        "Phase 4: Naming and Trigger Definition",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 206
     },
     "fm": {
       "id": "fm",
@@ -3584,21 +4233,28 @@
     "fmtsb": {
       "id": "fmtsb",
       "title": "Formalize Make This Skill Because",
-      "description": "Formalized variant of MTS that enforces schema, non-overlap checks, dependency mapping, and rollout readiness.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Formalize a skill draft into production quality by enforcing schema completeness, overlap detection, dependency mapping, and rollout readiness.",
+      "tier": "tier4",
+      "category": "Skill Creation",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Draft Assessment",
+        "Phase 2: Schema Enforcement",
+        "Phase 3: Overlap Detection",
+        "Phase 4: Dependency Mapping",
+        "Phase 5: Rollout Readiness",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 219
     },
     "fnd": {
       "id": "fnd",
@@ -3665,7 +4321,7 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 301
+      "line_count": 293
     },
     "fohw": {
       "id": "fohw",
@@ -3693,20 +4349,26 @@
       "id": "fonss",
       "title": "Figure Out Next Skills",
       "description": "Determine which skills to run next (more than one), in order, with rationale, handoff prompts, and stop conditions.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "tier": "tier4",
+      "category": "Skill Routing",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: State Extraction",
+        "Phase 2: Candidate Generation",
+        "Phase 3: Dependency Analysis",
+        "Phase 4: Sequencing",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 71
+      "line_count": 205
     },
     "fowwr": {
       "id": "fowwr",
@@ -3741,7 +4403,7 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 258
+      "line_count": 250
     },
     "fr": {
       "id": "fr",
@@ -3852,6 +4514,27 @@
       ],
       "line_count": 309
     },
+    "fut": {
+      "id": "fut",
+      "title": "Future Analysis",
+      "description": "Systematically explore what the future looks like for any trend, technology, decision, or domain across multiple timeframes.",
+      "tier": "tier4",
+      "category": "Strategy & Planning",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: DEFINE THE SCOPE",
+        "Step 2: TIMEFRAME ANALYSIS",
+        "Step 3: SCENARIO GENERATION",
+        "Step 4: ROBUSTNESS CHECK",
+        "Step 5: IMPLICATIONS",
+        "Integration"
+      ],
+      "line_count": 122
+    },
     "fwa": {
       "id": "fwa",
       "title": "Find Wrong Answer",
@@ -3882,7 +4565,7 @@
     "gaa": {
       "id": "gaa",
       "title": "GOSM Approach Audit",
-      "description": "An honest audit of the GOSM system's approach, claims, and limitations \u2014 applying the system's own standards to itself.",
+      "description": "An honest audit of the GOSM system's approach, claims, and limitations — applying the system's own standards to itself.",
       "tier": "tier4",
       "category": "Diagnosis & Recovery",
       "categories": [],
@@ -3924,6 +4607,29 @@
       ],
       "line_count": 121
     },
+    "gapf": {
+      "id": "gapf",
+      "title": "Gap-Filling Analysis",
+      "description": "Systematically find what's missing in any system, plan, or collection. Defines intended coverage, enumerates what exists, identifies categories, checks each for coverage, flags gaps, and prioritizes by impact.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define Intended Coverage",
+        "Step 2: Enumerate What Exists",
+        "Step 3: Identify Categories",
+        "Step 4: Check Coverage Per Category",
+        "Step 5: Flag Gaps",
+        "Step 6: Prioritize by Impact",
+        "Step 7: Synthesize",
+        "Integration"
+      ],
+      "line_count": 129
+    },
     "gd": {
       "id": "gd",
       "title": "Goal Decomposition Methodology",
@@ -3943,7 +4649,7 @@
       ],
       "invokes": [],
       "invoked_by": [
-        "ugav4"
+        "uga"
       ],
       "sections": [
         "Overview",
@@ -4113,7 +4819,7 @@
         "Step 12: Pre-Mortem (15 Error Types)",
         "Step 13: Space Created vs Space Covered",
         "Step 14: Fill Gaps or Justify Skipping",
-        "Step 15: Confidence \u00d7 Impact Matrix",
+        "Step 15: Confidence × Impact Matrix",
         "Output Format",
         "INPUT PARSED",
         "COVERAGE MODE",
@@ -4133,20 +4839,26 @@
       "id": "given",
       "title": "Rank Skills by ROI for a Given Goal",
       "description": "Given a goal, rank relevant skills from highest to lowest expected ROI, including negative-ROI skills with reasons.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "tier": "tier4",
+      "category": "Skill Routing",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Goal Parse",
+        "Phase 2: Candidate Selection",
+        "Phase 3: ROI Scoring",
+        "Phase 4: Ranking and Execution Slice",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 76
+      "line_count": 194
     },
     "gjs": {
       "id": "gjs",
@@ -4168,7 +4880,7 @@
         "goal"
       ],
       "invokes": [
-        "assumeright_assumewrong_search",
+        "araw",
         "ve",
         "emv"
       ],
@@ -4199,7 +4911,7 @@
         "Next Procedure",
         "Niche Documentation"
       ],
-      "line_count": 300
+      "line_count": 301
     },
     "gn": {
       "id": "gn",
@@ -4225,6 +4937,28 @@
         "Verification"
       ],
       "line_count": 70
+    },
+    "gop": {
+      "id": "gop",
+      "title": "Good Outcome Analysis",
+      "description": "Systematically identify, define, and maximize the probability of good outcomes for any situation, plan, or decision.",
+      "tier": "tier4",
+      "category": "Evaluation & Validation",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: DEFINE GOOD",
+        "Step 2: ENUMERATE GOOD OUTCOMES",
+        "Step 3: OUTCOME DEPENDENCIES",
+        "Step 4: WHAT MAKES GOOD OUTCOMES HAPPEN?",
+        "Step 5: OBSTACLES TO GOOD OUTCOMES",
+        "Step 6: MAXIMIZE",
+        "Integration"
+      ],
+      "line_count": 123
     },
     "gosm": {
       "id": "gosm",
@@ -4356,7 +5090,7 @@
     "gt": {
       "id": "gt",
       "title": "Graph Traversal Orderings",
-      "description": "Orderings derived from graph traversal algorithms \u2014 BFS for breadth, DFS for depth, topological for dependencies.",
+      "description": "Orderings derived from graph traversal algorithms — BFS for breadth, DFS for depth, topological for dependencies.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -4418,7 +5152,7 @@
         "decision"
       ],
       "invokes": [
-        "assumeright_assumewrong_search",
+        "araw",
         "ve",
         "pbi",
         "cmp",
@@ -4426,8 +5160,7 @@
       ],
       "invoked_by": [
         "ho",
-        "ugav2",
-        "ugav4"
+        "uga"
       ],
       "sections": [
         "Step 0: Context Detection and Variant Selection",
@@ -4475,24 +5208,55 @@
       ],
       "line_count": 246
     },
-    "handle": {
-      "id": "handle",
-      "title": "Handle This",
-      "description": "Convert broad \"handle this\" requests into a concrete first action and an ordered next-skill sequence.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+    "hab": {
+      "id": "hab",
+      "title": "Habit Design",
+      "description": "Designs a plan to build a new habit or break an old one using cue-routine-reward structure, environment design, and obstacle planning.",
+      "tier": null,
+      "category": null,
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Step 1: Define the Behavior",
+        "Step 2: Find the Cue",
+        "Step 3: Design the Routine",
+        "Step 4: Choose the Reward",
+        "Step 5: Plan for Obstacles",
+        "Step 6: Design the Environment",
+        "Step 7: Set Measurement",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 130
+    },
+    "handle": {
+      "id": "handle",
+      "title": "Handle This",
+      "description": "Convert maximally ambiguous 'handle this' requests into a classified task type, a concrete first action, and an ordered next-skill sequence.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "skill"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Referent Identification",
+        "Phase 2: Task Type Classification",
+        "Phase 3: First Action Selection",
+        "Phase 4: Skill Chain",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 180
     },
     "hd": {
       "id": "hd",
@@ -4606,6 +5370,27 @@
       ],
       "line_count": 74
     },
+    "hpat": {
+      "id": "hpat",
+      "title": "Historical Pattern Analysis",
+      "description": "Learn from what happened before to predict what happens next. Identify recurring patterns, test causality, and project forward.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Collect Historical Data",
+        "Step 2: Identify Recurring Patterns",
+        "Step 3: Test Causality vs. Coincidence",
+        "Step 4: Project Patterns Forward",
+        "Step 5: Identify Where Patterns Might Break",
+        "Integration"
+      ],
+      "line_count": 140
+    },
     "ht": {
       "id": "ht",
       "title": "Hypothesis Testing",
@@ -4660,40 +5445,52 @@
     "iagca": {
       "id": "iagca",
       "title": "I Am Getting Carried Away",
-      "description": "Detect idea sprawl, compress scope, and return to the highest-leverage next actions.",
-      "tier": "tier3",
+      "description": "Detect idea sprawl, compress scope aggressively, and return to the highest-leverage next actions — preserving valuable ideas without letting them derail execution.",
+      "tier": "tier4",
       "category": "Procedures & Meta",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Sprawl Assessment",
+        "Phase 2: Branch Scoring",
+        "Phase 3: Scope Compression",
+        "Phase 4: Sprawl Source Check",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 193
     },
     "iaw": {
       "id": "iaw",
       "title": "In Another Way",
-      "description": "Re-express a goal, claim, or plan in alternative forms that preserve intent while changing approach.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Re-express a goal, claim, or plan in genuinely alternative forms that preserve intent while changing approach, then rank alternatives by fit.",
+      "tier": "tier4",
+      "category": "Core Exploration",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Intent Extraction",
+        "Phase 2: Alternative Generation",
+        "Phase 3: Alternative Assessment",
+        "Phase 4: Ranking",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 184
     },
     "idg": {
       "id": "idg",
@@ -4735,7 +5532,7 @@
       ],
       "invoked_by": [
         "idg",
-        "ugav4"
+        "uga"
       ],
       "sections": [
         "Overview",
@@ -4777,7 +5574,7 @@
     "ig": {
       "id": "ig",
       "title": "Intuition Goals",
-      "description": "Handle goals driven by intuition rather than explicit reasoning \u2014 validate the intuition, find the underlying pattern, convert to actionable goal.",
+      "description": "Handle goals driven by intuition rather than explicit reasoning — validate the intuition, find the underlying pattern, convert to actionable goal.",
       "tier": "tier4",
       "category": "Goal Type Handlers",
       "categories": [],
@@ -4851,6 +5648,73 @@
         "Verification"
       ],
       "line_count": 105
+    },
+    "immg": {
+      "id": "immg",
+      "title": "Immediate Gap Analysis",
+      "description": "Find what's obviously missing RIGHT NOW. Fast, ruthless prioritization of urgent gaps in the current state.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Survey Current State",
+        "Step 2: Identify Urgent Gaps",
+        "Step 3: Classify by Severity",
+        "Step 4: Recommend Immediate Fixes",
+        "Step 5: Ignore List",
+        "Output Summary",
+        "Integration"
+      ],
+      "line_count": 127
+    },
+    "indv": {
+      "id": "indv",
+      "title": "Individual Analysis",
+      "description": "Analyzes something from the perspective of a single person. Identifies goals, resources, constraints, skills, and context to optimize for individual agency and autonomy.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Individual",
+        "Step 2: Map Personal Resources",
+        "Step 3: Identify Constraints",
+        "Step 4: Assess Solo Capability",
+        "Step 5: Identify Leverage Points",
+        "Step 6: Optimize for Agency",
+        "Integration"
+      ],
+      "line_count": 127
+    },
+    "injc": {
+      "id": "injc",
+      "title": "Injectable Skill Design",
+      "description": "Guides the design of skills that can be inserted into other skills as steps — working as both standalone tools and embedded gates/checks within host skills.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Injection Purpose",
+        "Step 2: Design Minimal Output",
+        "Step 3: Design the Gate/Check Logic",
+        "Step 4: Design Dual-Mode Behavior",
+        "Step 5: Test Inside Host Skills",
+        "Step 6: Write the Skill File",
+        "Integration",
+        "Integration"
+      ],
+      "line_count": 158
     },
     "ins": {
       "id": "ins",
@@ -4983,21 +5847,29 @@
     "it": {
       "id": "it",
       "title": "I Think",
-      "description": "Process \"I think\" statements into explicit claims, confidence levels, and next verification actions.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Process 'I think' statements into explicit claims with confidence levels, evidence/assumption separation, and next verification actions.",
+      "tier": "tier4",
+      "category": "Core Exploration",
       "categories": [],
       "tags": [],
       "input_types": [],
-      "invokes": [],
-      "invoked_by": [
-        "meta"
+      "invokes": [
+        "skill"
       ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Claim Extraction",
+        "Phase 2: Evidence/Assumption Separation",
+        "Phase 3: Confidence Calibration",
+        "Phase 4: Next Action Routing",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 24
+      "line_count": 206
     },
     "ita": {
       "id": "ita",
@@ -5025,7 +5897,7 @@
     "iterate": {
       "id": "iterate",
       "title": "Figure Out What to Iterate On",
-      "description": "Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted \u2014 then executes the highest-value iteration.",
+      "description": "Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted — then executes the highest-value iteration.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -5048,26 +5920,32 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 374
+      "line_count": 366
     },
     "itp": {
       "id": "itp",
       "title": "In This Prompt",
-      "description": "Decompose a prompt into explicit requests, constraints, implied tasks, and candidate skill mappings.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Decompose a prompt into its explicit requests, implicit requests, constraints, assumptions, emotional signals, and candidate skill mappings — making every part visible.",
+      "tier": "tier4",
+      "category": "Skill Routing",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Surface Parse",
+        "Phase 2: Component Extraction",
+        "Phase 3: Priority Analysis",
+        "Phase 4: Skill Mapping",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 207
     },
     "ivs": {
       "id": "ivs",
@@ -5093,6 +5971,29 @@
         "Steps",
         "When to Use",
         "Verification"
+      ],
+      "line_count": 148
+    },
+    "jdgm": {
+      "id": "jdgm",
+      "title": "Judgment",
+      "description": "Systematic procedure for making good judgments under uncertainty. Separates facts from interpretation, checks calibration against base rates, and produces an explicit confidence level.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify What's Being Judged",
+        "Step 2: Separate Facts from Interpretation",
+        "Step 3: Check Calibration",
+        "Step 4: Consider Reference Class",
+        "Step 5: Identify What Would Change Your Judgment",
+        "Step 6: Make the Call",
+        "Step 7: Decision Record",
+        "Integration"
       ],
       "line_count": 148
     },
@@ -5225,7 +6126,7 @@
     "lcs": {
       "id": "lcs",
       "title": "Local Search Orderings",
-      "description": "Orderings based on local search optimization \u2014 improve from current position, escape local optima, systematic exploration with memory.",
+      "description": "Orderings based on local search optimization — improve from current position, escape local optima, systematic exploration with memory.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -5267,7 +6168,7 @@
     "ldg": {
       "id": "ldg",
       "title": "Luck Dependent Goals",
-      "description": "Handle goals that depend partly on luck or chance \u2014 maximize controllable factors, create multiple shots, build resilience.",
+      "description": "Handle goals that depend partly on luck or chance — maximize controllable factors, create multiple shots, build resilience.",
       "tier": "tier4",
       "category": "Goal Type Handlers",
       "categories": [],
@@ -5282,6 +6183,28 @@
         "Verification"
       ],
       "line_count": 103
+    },
+    "leg": {
+      "id": "leg",
+      "title": "Legal Reasoning",
+      "description": "Apply structured legal thinking to a situation. Identifies relevant legal domains, analyzes facts against rules, and surfaces risks and obligations.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Legal Domain",
+        "Step 2: Find Relevant Rules",
+        "Step 3: Analyze Facts Against Rules",
+        "Step 4: Identify Risks and Obligations",
+        "Step 5: Assess Enforceability",
+        "Step 6: Recommend Actions",
+        "Integration"
+      ],
+      "line_count": 138
     },
     "lgi": {
       "id": "lgi",
@@ -5313,21 +6236,28 @@
     "list": {
       "id": "list",
       "title": "Build High-Quality Lists",
-      "description": "Create rigorous, useful lists with clear scope, ordering logic, coverage checks, and concise rationale per item.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Create rigorous, useful lists with clear scope, inclusion rules, ordering logic, coverage checks, and concise rationale per item — avoiding the common failures of vagueness, gaps, and inconsistent granularity.",
+      "tier": "tier4",
+      "category": "List & Pattern",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: List Contract",
+        "Phase 2: Inclusion Rules",
+        "Phase 3: Generation",
+        "Phase 4: Order and Label",
+        "Phase 5: Coverage Check",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 67
+      "line_count": 209
     },
     "lp": {
       "id": "lp",
@@ -5475,6 +6405,27 @@
       ],
       "line_count": 173
     },
+    "ltai": {
+      "id": "ltai",
+      "title": "Long-Term AI Orchestration",
+      "description": "Plan for AI-agent coordination and autonomous operation. Design handoff protocols, error recovery, and human oversight.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Tasks Suitable for Agents",
+        "Step 2: Design Agent Handoff Protocols",
+        "Step 3: Plan for Error Recovery",
+        "Step 4: Design Human Oversight",
+        "Step 5: Project Capability Evolution",
+        "Integration"
+      ],
+      "line_count": 148
+    },
     "m": {
       "id": "m",
       "title": "Matching",
@@ -5596,7 +6547,7 @@
     "mcp": {
       "id": "mcp",
       "title": "Musical Composition Orderings",
-      "description": "Orderings inspired by musical forms \u2014 theme and variation, call and response, tension and release \u2014 for structuring extended experiences.",
+      "description": "Orderings inspired by musical forms — theme and variation, call and response, tension and release — for structuring extended experiences.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -5661,6 +6612,29 @@
       ],
       "line_count": 60
     },
+    "mdr": {
+      "id": "mdr",
+      "title": "Moral Dilemma Resolution",
+      "description": "When values genuinely conflict and there's no clean answer — systematically work through the tension to find the most defensible path forward.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Dilemma Clearly",
+        "Step 2: Identify the Conflicting Values",
+        "Step 3: Apply Ethical Frameworks",
+        "Step 4: Find Convergence",
+        "Step 5: Identify the Least-Harm Option",
+        "Step 6: Make the Call",
+        "Step 7: Post-Decision",
+        "Integration"
+      ],
+      "line_count": 120
+    },
     "mem": {
       "id": "mem",
       "title": "Mental Models",
@@ -5686,6 +6660,29 @@
         "Verification"
       ],
       "line_count": 178
+    },
+    "memy": {
+      "id": "memy",
+      "title": "Memory & Retention",
+      "description": "Systematic approach to remembering what matters. Decides what's worth encoding, selects strategies, creates retrieval cues, and builds connective knowledge structures.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Triage — What's Worth Remembering?",
+        "Step 2: Choose Encoding Strategy",
+        "Step 3: Create Retrieval Cues",
+        "Step 4: Connect to Existing Knowledge",
+        "Step 5: Schedule Review",
+        "Step 6: Prune Outdated Knowledge",
+        "Step 7: Retention Summary",
+        "Integration"
+      ],
+      "line_count": 157
     },
     "met": {
       "id": "met",
@@ -5728,7 +6725,29 @@
         "Category Skills Quick Reference",
         "Execute"
       ],
-      "line_count": 76
+      "line_count": 126
+    },
+    "mets": {
+      "id": "mets",
+      "title": "Metric Selection",
+      "description": "Choose the right things to measure by evaluating candidate metrics for actionability, gaming resistance, and alignment with goals. Plans for Goodhart's Law.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify What You're Trying to Achieve",
+        "Step 2: List Candidate Metrics",
+        "Step 3: Evaluate Each Candidate",
+        "Step 4: Select Primary and Secondary Metrics",
+        "Step 5: Define Targets",
+        "Step 6: Plan for Goodhart's Law",
+        "Integration"
+      ],
+      "line_count": 163
     },
     "mf": {
       "id": "mf",
@@ -5759,7 +6778,7 @@
     "mil": {
       "id": "mil",
       "title": "Military Strategy Orderings",
-      "description": "Orderings derived from military doctrine \u2014 concentrate force at decisive points, maintain tempo, secure supply lines before advancing.",
+      "description": "Orderings derived from military doctrine — concentrate force at decisive points, maintain tempo, secure supply lines before advancing.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -5782,7 +6801,7 @@
     "mp": {
       "id": "mp",
       "title": "Motivation Psychology Orderings",
-      "description": "Orderings that account for human psychological factors \u2014 energy, motivation, habits, and engagement for sustainable performance.",
+      "description": "Orderings that account for human psychological factors — energy, motivation, habits, and engagement for sustainable performance.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -5937,24 +6956,74 @@
       ],
       "line_count": 125
     },
-    "mts": {
-      "id": "mts",
-      "title": "Make This Skill",
-      "description": "Create a new skill from a request by generating id, purpose, workflow, output format, and quality checks.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+    "mtgd": {
+      "id": "mtgd",
+      "title": "Meeting Design",
+      "description": "Design meetings that actually produce outcomes. Eliminates unnecessary meetings and structures necessary ones for maximum effectiveness.",
+      "tier": null,
+      "category": null,
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Step 1: Determine If a Meeting Is Needed",
+        "Step 2: Define the Decision or Output",
+        "Step 3: Select Participants (Minimum Viable)",
+        "Step 4: Design the Agenda",
+        "Step 5: Set Time Constraints",
+        "Step 6: Define Follow-Up Actions Format",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 126
+    },
+    "mtnw": {
+      "id": "mtnw",
+      "title": "Medium-Term New Domains",
+      "description": "Identify entirely new areas worth expanding into over months. Survey adjacent possibilities and assess strategic fit.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Survey Adjacent Possibilities",
+        "Step 2: Assess Demand Signals",
+        "Step 3: Estimate Investment Required",
+        "Step 4: Evaluate Strategic Fit",
+        "Step 5: Recommend Domains to Enter",
+        "Integration"
+      ],
+      "line_count": 137
+    },
+    "mts": {
+      "id": "mts",
+      "title": "Make This Skill",
+      "description": "Create a new skill from a request by deriving purpose, naming, workflow, output format, quality checks, and integration points.",
+      "tier": "tier4",
+      "category": "Skill Creation",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Intent Extraction",
+        "Phase 2: Naming",
+        "Phase 3: Skill Architecture",
+        "Phase 4: Quality Elements",
+        "Phase 5: Draft Assembly",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 245
     },
     "mv": {
       "id": "mv",
@@ -6004,7 +7073,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 101
+      "line_count": 104
     },
     "net": {
       "id": "net",
@@ -6034,30 +7103,49 @@
     "next": {
       "id": "next",
       "title": "Determine What to Do Next",
-      "description": "Sub-orchestrator for next-step requests. Selects the highest-value immediate action from current context, then routes to execution or the right analysis skill.",
-      "tier": "category",
-      "category": null,
+      "description": "Sub-orchestrator for next-step requests. Classifies intent, checks context, selects the single highest-value immediate action, and routes to execution or the right analysis skill.",
+      "tier": "tier4",
+      "category": "Skill Routing",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [
-        "decide",
-        "how",
-        "diagnose",
-        "search",
-        "want",
-        "action",
-        "evaluate"
+        "skill"
       ],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Routing Decisions",
-        "Execute",
-        "After Completion"
+        "Core Principles",
+        "Phase 1: Intent Classification",
+        "Phase 2: Context Assessment",
+        "Phase 3: Next-Step Selection",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 75
+      "line_count": 182
+    },
+    "nrwd": {
+      "id": "nrwd",
+      "title": "Narrow Domain Analysis",
+      "description": "Deep analysis within a specific domain. Goes deep not wide, using domain-specific vocabulary, frameworks, and constraints.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Domain",
+        "Step 2: Establish Domain Boundaries",
+        "Step 3: Go Deep",
+        "Step 4: Domain-Specific Constraints",
+        "Step 5: Domain-Appropriate Output",
+        "Integration"
+      ],
+      "line_count": 104
     },
     "ns": {
       "id": "ns",
@@ -6082,21 +7170,28 @@
     "nsa": {
       "id": "nsa",
       "title": "Not Sure About",
-      "description": "Convert uncertainty statements into explicit confidence ranges and next evidence actions.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Convert uncertainty statements into typed uncertainty with confidence ranges, cost-of-uncertainty analysis, and concrete evidence-gathering actions.",
+      "tier": "tier4",
+      "category": "Core Exploration",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Uncertainty Extraction",
+        "Phase 2: Uncertainty Classification",
+        "Phase 3: Confidence Range",
+        "Phase 4: Cost-of-Uncertainty Analysis",
+        "Phase 5: Evidence-Gathering Plan",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 209
     },
     "nss": {
       "id": "nss",
@@ -6125,6 +7220,50 @@
       ],
       "line_count": 116
     },
+    "nusr": {
+      "id": "nusr",
+      "title": "New User Accessibility",
+      "description": "Analyze from the newcomer's perspective. Simulates first-use experience, identifies confusion points, assesses onboarding path, finds jargon and assumed knowledge, and recommends simplifications.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Simulate First-Use Experience",
+        "Step 2: Identify Confusion Points",
+        "Step 3: Assess Onboarding Path",
+        "Step 4: Find Jargon and Assumed Knowledge",
+        "Step 5: Recommend Simplifications",
+        "Integration"
+      ],
+      "line_count": 148
+    },
+    "nutr": {
+      "id": "nutr",
+      "title": "Nutrition Planning",
+      "description": "Design a practical nutrition plan based on actual eating patterns, real constraints, and sustainable changes — not idealized diets.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Assess Current Eating Patterns",
+        "Step 2: Identify Goals",
+        "Step 3: Calculate Requirements",
+        "Step 4: Design Meal Framework",
+        "Step 5: Plan for Obstacles",
+        "Step 6: Create Shopping Strategy",
+        "Step 7: Implementation Plan",
+        "Integration"
+      ],
+      "line_count": 178
+    },
     "o": {
       "id": "o",
       "title": "Optimization",
@@ -6150,6 +7289,119 @@
       ],
       "line_count": 101
     },
+    "oba": {
+      "id": "oba",
+      "title": "Obvious Anything",
+      "description": "Comprehensive obvious-things scan. Checks for everything obvious that might be missed — facts, actions, risks, outcomes, stakeholders, and assumptions.",
+      "tier": "tier4",
+      "category": "Evaluation & Validation",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "ogo",
+        "obo"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Purpose",
+        "Step 1: STATE THE SITUATION",
+        "Step 2: FULL OBVIOUS SCAN",
+        "Step 3: OUTPUT",
+        "Step 4: INJECTION INTO OTHER SKILLS",
+        "Integration"
+      ],
+      "line_count": 119
+    },
+    "obo": {
+      "id": "obo",
+      "title": "Obvious Bad Outcomes",
+      "description": "Check for obvious bad outcomes that are being ignored, minimized, or rationalized away.",
+      "tier": "tier4",
+      "category": "Evaluation & Validation",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "oba"
+      ],
+      "sections": [
+        "Purpose",
+        "Step 1: STATE THE SITUATION",
+        "Step 2: OBVIOUS BAD OUTCOME SCAN",
+        "Step 3: THE UNCOMFORTABLE QUESTION",
+        "Step 4: OUTPUT",
+        "Integration"
+      ],
+      "line_count": 101
+    },
+    "obv": {
+      "id": "obv",
+      "title": "Obvious Check",
+      "description": "Add an obvious-things-first step to any analysis. Catches what everyone assumes someone else checked.",
+      "tier": "tier4",
+      "category": "Evaluation & Validation",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Purpose",
+        "Step 1: STATE THE SITUATION",
+        "Step 2: THE OBVIOUS QUESTIONS",
+        "Step 3: OBVIOUS VERDICT",
+        "Step 4: INJECTION MODE",
+        "Integration"
+      ],
+      "line_count": 107
+    },
+    "odec": {
+      "id": "odec",
+      "title": "Decision Output",
+      "description": "Generates structured decision recommendations. Takes a decision context and produces a clear recommendation with rationale, confidence level, and conditions for revision.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Decision",
+        "Step 2: Present Options",
+        "Step 3: Present the Recommendation",
+        "Step 4: State the Rationale",
+        "Step 5: State Confidence Level",
+        "Step 6: State Reversal Conditions",
+        "Step 7: State Next Steps",
+        "Integration"
+      ],
+      "line_count": 153
+    },
+    "ogo": {
+      "id": "ogo",
+      "title": "Obvious Good Outcomes",
+      "description": "Check for obvious good outcomes that are being overlooked or underweighted in an analysis.",
+      "tier": "tier4",
+      "category": "Evaluation & Validation",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "oba"
+      ],
+      "sections": [
+        "Purpose",
+        "Step 1: STATE THE SITUATION",
+        "Step 2: OBVIOUS GOOD OUTCOME SCAN",
+        "Step 3: OUTPUT",
+        "Integration"
+      ],
+      "line_count": 90
+    },
     "ol": {
       "id": "ol",
       "title": "ol",
@@ -6173,6 +7425,73 @@
         "Verification"
       ],
       "line_count": 144
+    },
+    "olst": {
+      "id": "olst",
+      "title": "List Generation",
+      "description": "Generates comprehensive, well-organized lists. Takes a topic or scope and produces a structured list that is complete, deduplicated, and formatted for readability.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define Scope",
+        "Step 2: Choose Approach",
+        "Step 3: Generate Items (Breadth-First)",
+        "Step 4: Organize",
+        "Step 5: Deduplicate and Validate",
+        "Step 6: Format for Readability",
+        "Step 7: Deliver",
+        "Integration"
+      ],
+      "line_count": 129
+    },
+    "omtx": {
+      "id": "omtx",
+      "title": "Matrix Generation",
+      "description": "Generates comparison and analysis matrices. Takes items and dimensions, fills cells with evidence-based assessments, and highlights patterns across the matrix.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Rows",
+        "Step 2: Identify Columns",
+        "Step 3: Fill Cells",
+        "Step 4: Highlight Patterns",
+        "Step 5: Summarize Findings",
+        "Integration"
+      ],
+      "line_count": 124
+    },
+    "onar": {
+      "id": "onar",
+      "title": "Narrative Generation",
+      "description": "Generates structured narratives that tell a clear story. Takes a topic or set of facts and arranges them into a coherent narrative with a through-line, transitions, and purpose-driven structure.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Story",
+        "Step 2: Establish the Through-Line",
+        "Step 3: Select Key Points",
+        "Step 4: Arrange for Clarity",
+        "Step 5: Write Transitions",
+        "Step 6: Validate Against Purpose",
+        "Step 7: Deliver",
+        "Integration"
+      ],
+      "line_count": 132
     },
     "op": {
       "id": "op",
@@ -6199,6 +7518,29 @@
         "Verification"
       ],
       "line_count": 106
+    },
+    "oprc": {
+      "id": "oprc",
+      "title": "Procedure Generation",
+      "description": "Generates step-by-step procedures with dependency ordering, decision points, and failure handling. Takes a goal and produces a complete, testable procedure.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Goal",
+        "Step 2: List All Steps in Dependency Order",
+        "Step 3: Specify Inputs and Outputs",
+        "Step 4: Add Decision Points",
+        "Step 5: Mental Walkthrough",
+        "Step 6: Add Failure Handling",
+        "Step 7: Deliver",
+        "Integration"
+      ],
+      "line_count": 146
     },
     "ops": {
       "id": "ops",
@@ -6245,6 +7587,77 @@
       ],
       "line_count": 226
     },
+    "orcs": {
+      "id": "orcs",
+      "title": "Orchestrator Skill Design",
+      "description": "Guides the design of routing and orchestrating skills that classify input, map it to the right target skill, and handle edge cases and ambiguous inputs.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Orchestrator's Domain",
+        "Step 2: Design the Classification Scheme",
+        "Step 3: Design the Routing Logic",
+        "Step 4: Handle Ambiguous Inputs",
+        "Step 5: Handle No-Match Inputs",
+        "Step 6: Test With Diverse Inputs",
+        "Step 7: Write the Orchestrator",
+        "Classify",
+        "Route",
+        "Integration",
+        "Integration"
+      ],
+      "line_count": 161
+    },
+    "orec": {
+      "id": "orec",
+      "title": "Recommendation Generation",
+      "description": "Generates actionable recommendations derived from findings. Takes a situation, analyzes it, and produces prioritized recommendations with implementation details and success metrics.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Situation",
+        "Step 2: Present Findings",
+        "Step 3: Derive Recommendations",
+        "Step 4: Prioritize",
+        "Step 5: Specify Implementation",
+        "Step 6: State Expected Outcomes",
+        "Step 7: Define Success Metrics",
+        "Integration"
+      ],
+      "line_count": 146
+    },
+    "orgn": {
+      "id": "orgn",
+      "title": "Organization Analysis",
+      "description": "Analyzes at the organizational level. Identifies structure, incentives, culture, resources, and processes to find where the org helps or hinders a goal.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Organization and Goal",
+        "Step 2: Map Structure",
+        "Step 3: Assess Incentives and Culture",
+        "Step 4: Evaluate Resources and Processes",
+        "Step 5: Organizational Capability Assessment",
+        "Step 6: Recommendations",
+        "Integration"
+      ],
+      "line_count": 117
+    },
     "orm": {
       "id": "orm",
       "title": "Outreach Communication",
@@ -6266,6 +7679,28 @@
         "Verification"
       ],
       "line_count": 274
+    },
+    "ornt": {
+      "id": "ornt",
+      "title": "Orientation",
+      "description": "Helps someone figure out where they are and what they're dealing with. Surveys the situation, identifies the problem type, assesses urgency, and recommends an entry point.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Survey the Situation",
+        "Step 2: Identify the Type",
+        "Step 3: Assess Urgency",
+        "Step 4: Check for Prior Work",
+        "Step 5: Recommend Entry Point",
+        "Step 6: Provide a One-Paragraph Briefing",
+        "Integration"
+      ],
+      "line_count": 129
     },
     "ov": {
       "id": "ov",
@@ -6372,7 +7807,7 @@
     "pb": {
       "id": "pb",
       "title": "Progressive Building Orderings",
-      "description": "Build complexity incrementally \u2014 each step works before adding the next. Foundations before features.",
+      "description": "Build complexity incrementally — each step works before adding the next. Foundations before features.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -6451,7 +7886,7 @@
     "pbs": {
       "id": "pbs",
       "title": "Population Based Search Orderings",
-      "description": "Maintain multiple candidate solutions simultaneously \u2014 evolutionary approaches, beam search, iterative deepening.",
+      "description": "Maintain multiple candidate solutions simultaneously — evolutionary approaches, beam search, iterative deepening.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -6532,12 +7967,12 @@
         "Step 5: Recommend Action",
         "Pre-Completion Check"
       ],
-      "line_count": 141
+      "line_count": 148
     },
     "pcef": {
       "id": "pcef",
       "title": "pcef",
-      "description": "Unified framework for procedure effectiveness tracking \u2014 operational and empirical.",
+      "description": "Unified framework for procedure effectiveness tracking — operational and empirical.",
       "tier": "tier4",
       "category": "Procedures & Meta",
       "categories": [],
@@ -6642,7 +8077,7 @@
     "pf": {
       "id": "pf",
       "title": "Priority Framework Orderings",
-      "description": "Classic priority frameworks \u2014 Eisenhower matrix, MoSCoW, RICE, weighted scoring \u2014 for systematic ranking.",
+      "description": "Classic priority frameworks — Eisenhower matrix, MoSCoW, RICE, weighted scoring — for systematic ranking.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -6662,7 +8097,7 @@
     "pge": {
       "id": "pge",
       "title": "Pedagogy/Educational Orderings",
-      "description": "Orderings from learning science \u2014 interleaving, spacing, testing effect, desirable difficulties \u2014 for durable understanding.",
+      "description": "Orderings from learning science — interleaving, spacing, testing effect, desirable difficulties — for durable understanding.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -6771,7 +8206,7 @@
     "pjm": {
       "id": "pjm",
       "title": "Project Management Orderings",
-      "description": "Orderings from formal project management \u2014 PERT, CPM, Critical Chain, Agile \u2014 for scheduling and resource management.",
+      "description": "Orderings from formal project management — PERT, CPM, Critical Chain, Agile — for scheduling and resource management.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -6793,7 +8228,7 @@
     "pjs": {
       "id": "pjs",
       "title": "Project Scoping",
-      "description": "Define project scope \u2014 what's included, excluded, success criteria, constraints, and boundaries. Prevents scope creep.",
+      "description": "Define project scope — what's included, excluded, success criteria, constraints, and boundaries. Prevents scope creep.",
       "tier": "tier3",
       "category": "Planning & Projects",
       "categories": [],
@@ -6812,40 +8247,53 @@
     "platitude": {
       "id": "platitude",
       "title": "Operationalize a Platitude",
-      "description": "Convert a single platitude into concrete, testable actions and boundaries.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Convert a single platitude into concrete, testable actions, boundary conditions, and failure modes — transforming vague wisdom into executable guidance.",
+      "tier": "tier4",
+      "category": "List & Pattern",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Platitude Extraction",
+        "Phase 2: Historical Reconstruction",
+        "Phase 3: Operationalization",
+        "Phase 4: Boundary Analysis",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 187
     },
     "platitudes": {
       "id": "platitudes",
       "title": "Platitude Set Analyzer",
-      "description": "Analyze multiple platitudes, remove contradictions, and convert the set into a coherent action system.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Analyze multiple platitudes as a system, detect contradictions, reconcile conflicts by identifying context conditions, and convert the set into a coherent, actionable policy.",
+      "tier": "tier4",
+      "category": "List & Pattern",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Set Inventory",
+        "Phase 2: Contradiction Detection",
+        "Phase 3: Reconciliation",
+        "Phase 4: Gap Analysis",
+        "Phase 5: Policy Synthesis",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 229
     },
     "plr": {
       "id": "plr",
@@ -6957,7 +8405,7 @@
     "pp": {
       "id": "pp",
       "title": "Procurement Procedures",
-      "description": "Managing procurement of components and materials \u2014 sourcing, ordering, tracking, receiving, and verification.",
+      "description": "Managing procurement of components and materials — sourcing, ordering, tracking, receiving, and verification.",
       "tier": "tier3",
       "category": "Planning & Projects",
       "categories": [],
@@ -6993,6 +8441,29 @@
         "Verification"
       ],
       "line_count": 117
+    },
+    "prcp": {
+      "id": "prcp",
+      "title": "Perception Skills",
+      "description": "Systematic procedure for improving what you notice. Slows down observation, separates what's present from what's interpreted, and surfaces what you normally filter out.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Slow Down",
+        "Step 2: Enumerate What's Literally Present",
+        "Step 3: Identify Patterns",
+        "Step 4: Check for Conspicuous Absences",
+        "Step 5: Separate Observation from Inference",
+        "Step 6: Notice What You Normally Filter Out",
+        "Step 7: Perception Report",
+        "Integration"
+      ],
+      "line_count": 150
     },
     "prd": {
       "id": "prd",
@@ -7062,6 +8533,28 @@
         "Next Procedure"
       ],
       "line_count": 212
+    },
+    "pri": {
+      "id": "pri",
+      "title": "Prioritization",
+      "description": "Systematically prioritizes a list of anything using weighted criteria and appropriate frameworks (Eisenhower, MoSCoW, impact-effort).",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: List the Items",
+        "Step 2: Define Criteria",
+        "Step 3: Score Each Item",
+        "Step 4: Select Framework",
+        "Step 5: Ranked Output",
+        "Step 6: Edge Cases",
+        "Integration"
+      ],
+      "line_count": 121
     },
     "prm": {
       "id": "prm",
@@ -7201,6 +8694,27 @@
         "Verification"
       ],
       "line_count": 215
+    },
+    "pusr": {
+      "id": "pusr",
+      "title": "Power User Analysis",
+      "description": "Analyze from the perspective of expert users. Identifies power user needs around efficiency, customization, and depth, finds friction points, spots missing advanced features, and assesses the learning curve.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Power User Needs",
+        "Step 2: Find Friction Points",
+        "Step 3: Identify Missing Advanced Features",
+        "Step 4: Assess Advanced Learning Curve",
+        "Step 5: Power User Satisfaction Score",
+        "Integration"
+      ],
+      "line_count": 148
     },
     "pv": {
       "id": "pv",
@@ -7479,7 +8993,7 @@
     "qs": {
       "id": "qs",
       "title": "Queue Scheduling Orderings",
-      "description": "Orderings for managing queues \u2014 FIFO, priority queues, shortest job first, fair queuing.",
+      "description": "Orderings for managing queues — FIFO, priority queues, shortest job first, fair queuing.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -7669,6 +9183,28 @@
       ],
       "line_count": 109
     },
+    "rgc": {
+      "id": "rgc",
+      "title": "Regulatory Compliance",
+      "description": "Assess compliance with applicable regulations by mapping requirements to current practices, identifying gaps, and prioritizing remediation.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Applicable Regulations",
+        "Step 2: Map Current Practices to Requirements",
+        "Step 3: Identify Gaps",
+        "Step 4: Assess Risk of Non-Compliance",
+        "Step 5: Prioritize Remediation",
+        "Step 6: Create Compliance Checklist",
+        "Integration"
+      ],
+      "line_count": 166
+    },
     "ria": {
       "id": "ria",
       "title": "Risk Assessment",
@@ -7699,7 +9235,7 @@
     "rlg": {
       "id": "rlg",
       "title": "Relationship Goals",
-      "description": "Handle relationship-related goals \u2014 clarify desired state, assess current reality, identify gaps, plan actions within your control.",
+      "description": "Handle relationship-related goals — clarify desired state, assess current reality, identify gaps, plan actions within your control.",
       "tier": "tier4",
       "category": "Goal Type Handlers",
       "categories": [],
@@ -7717,10 +9253,33 @@
       ],
       "line_count": 100
     },
+    "rlsk": {
+      "id": "rlsk",
+      "title": "Relationship Analysis",
+      "description": "Analyze and improve relationships by identifying parties, assessing state, surfacing unmet needs, and finding actionable patterns.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Parties",
+        "Step 2: Assess Current State",
+        "Step 3: Identify Each Party's Needs",
+        "Step 4: Find Unmet Needs",
+        "Step 5: Identify Patterns",
+        "Step 6: Recommend Actions",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 138
+    },
     "rm": {
       "id": "rm",
       "title": "Risk Management Orderings",
-      "description": "Orderings for managing uncertainty \u2014 preserve options, handle irreversible decisions carefully, minimize downside.",
+      "description": "Orderings for managing uncertainty — preserve options, handle irreversible decisions carefully, minimize downside.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -7794,21 +9353,28 @@
     "ro": {
       "id": "ro",
       "title": "Reorder a List Expertly",
-      "description": "Reorder an existing list using an explicit objective, constraints, and scoring method. Produces a defensible best-to-worst order.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Reorder an existing list using an explicit objective, multi-dimensional scoring, dependency awareness, and sanity checks — producing a defensible best-to-worst order with confidence flags.",
+      "tier": "tier4",
+      "category": "List & Pattern",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Input Parsing",
+        "Phase 2: Scoring Dimensions",
+        "Phase 3: Scoring",
+        "Phase 4: Reordered Output",
+        "Phase 5: Sanity Check",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 65
+      "line_count": 241
     },
     "roa": {
       "id": "roa",
@@ -7836,6 +9402,28 @@
         "Verification"
       ],
       "line_count": 98
+    },
+    "roip": {
+      "id": "roip",
+      "title": "ROI Optimization",
+      "description": "Find the highest-return action in any set of options. Lists options, estimates costs and benefits, calculates ROI, sensitivity-tests top candidates, and recommends the best path.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: List All Options",
+        "Step 2: Estimate Cost of Each",
+        "Step 3: Estimate Benefit of Each",
+        "Step 4: Calculate ROI",
+        "Step 5: Sensitivity-Test Top Candidates",
+        "Step 6: Recommend",
+        "Integration"
+      ],
+      "line_count": 135
     },
     "rqg": {
       "id": "rqg",
@@ -7886,6 +9474,29 @@
       ],
       "line_count": 143
     },
+    "rskl": {
+      "id": "rskl",
+      "title": "Reasoning Skills",
+      "description": "Meta-procedure for improving reasoning quality. Identifies the reasoning type in use, checks for common errors, and verifies logical structure.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Extract the Reasoning",
+        "Step 2: Classify the Reasoning Type",
+        "Step 3: Check for Type-Specific Errors",
+        "Step 4: Verify Premises",
+        "Step 5: Check Logical Structure",
+        "Step 6: Find the Weakest Link",
+        "Step 7: Reasoning Verdict",
+        "Integration"
+      ],
+      "line_count": 155
+    },
     "rso": {
       "id": "rso",
       "title": "Resource Optimization Orderings",
@@ -7905,6 +9516,27 @@
         "Verification"
       ],
       "line_count": 54
+    },
+    "rtas": {
+      "id": "rtas",
+      "title": "Rights Assessment",
+      "description": "Identify and evaluate rights in a situation by mapping all parties, determining applicable rights, assessing respect, and identifying remedies.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify All Parties",
+        "Step 2: Determine Applicable Rights",
+        "Step 3: Assess Whether Rights Are Being Respected",
+        "Step 4: Identify Conflicts Between Rights",
+        "Step 5: Determine Remedies Available",
+        "Integration"
+      ],
+      "line_count": 146
     },
     "rva": {
       "id": "rva",
@@ -7996,7 +9628,7 @@
     "saaesa": {
       "id": "saaesa",
       "title": "Apply Evidence Standard Application",
-      "description": "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any \u201cverified\u201d claims.",
+      "description": "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any “verified” claims.",
       "tier": "tier4",
       "category": "Self-Audit",
       "categories": [
@@ -8057,7 +9689,6 @@
       "tags": [],
       "input_types": [],
       "invokes": [
-        "procedure_name",
         "sapea",
         "pv"
       ],
@@ -8125,6 +9756,29 @@
         "Integration Points"
       ],
       "line_count": 145
+    },
+    "saf": {
+      "id": "saf",
+      "title": "Safety Analysis",
+      "description": "Systematically identify safety risks, failure modes, and protective measures for any plan, system, or action.",
+      "tier": "tier3",
+      "category": "Crisis & Volatility",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: IDENTIFY WHAT NEEDS TO BE SAFE",
+        "Step 2: THREAT IDENTIFICATION",
+        "Step 3: EXISTING SAFEGUARDS",
+        "Step 4: GAP ANALYSIS",
+        "Step 5: THE CATASTROPHE CHECK",
+        "Step 6: RECOMMENDED SAFEGUARDS",
+        "Step 7: SAFETY SUMMARY",
+        "Integration"
+      ],
+      "line_count": 143
     },
     "sagsca": {
       "id": "sagsca",
@@ -8251,6 +9905,27 @@
       ],
       "line_count": 114
     },
+    "satr": {
+      "id": "satr",
+      "title": "Saturation Analysis",
+      "description": "Analyzes whether an area has too much coverage. Identifies redundancy, finds rarely-used items, and recommends consolidation or pruning.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Area",
+        "Step 2: Count Existing Items",
+        "Step 3: Assess Redundancy",
+        "Step 4: Identify Low-Usage Items",
+        "Step 5: Recommend Consolidation or Pruning",
+        "Integration"
+      ],
+      "line_count": 115
+    },
     "satrda": {
       "id": "satrda",
       "title": "Two-Run Divergence Audit",
@@ -8316,22 +9991,29 @@
     },
     "sc": {
       "id": "sc",
-      "title": "Skill Creation",
-      "description": "Design skill systems and creation pipelines at scale, including quality gates, templates, naming conventions, and rollout strategy.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "title": "Skill Creation System",
+      "description": "Design skill creation pipelines at scale, including quality gates, templates, naming conventions, batch generation, review processes, and rollout strategy.",
+      "tier": "tier4",
+      "category": "Skill Creation",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: System Definition",
+        "Phase 2: Schema and Template",
+        "Phase 3: Naming Convention",
+        "Phase 4: Generation Pipeline",
+        "Phase 5: Review Process",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 26
+      "line_count": 248
     },
     "sdc": {
       "id": "sdc",
@@ -8604,24 +10286,52 @@
       ],
       "line_count": 358
     },
-    "siycftr": {
-      "id": "siycftr",
-      "title": "See If You Can Find The Rest",
-      "description": "Scan text for omitted but implied items and produce the missing set.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+    "sim": {
+      "id": "sim",
+      "title": "Simplification",
+      "description": "Takes any complex thing (plan, explanation, process, argument) and strips it to its essential core without losing meaning.",
+      "tier": null,
+      "category": null,
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Step 1: Identify the Core",
+        "Step 2: Map the Components",
+        "Step 3: Cut",
+        "Step 4: Reconstruct",
+        "Step 5: Preservation Check",
+        "Final Output",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 104
+    },
+    "siycftr": {
+      "id": "siycftr",
+      "title": "See If You Can Find The Rest",
+      "description": "Scan text for omitted but implied items and produce the complete set, distinguishing genuinely implied items from invented ones.",
+      "tier": "tier4",
+      "category": "Core Exploration",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Input Analysis",
+        "Phase 2: Pattern Identification",
+        "Phase 3: Gap Identification",
+        "Phase 4: Completeness Check",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 180
     },
     "ska": {
       "id": "ska",
@@ -8718,6 +10428,29 @@
         "Verification"
       ],
       "line_count": 206
+    },
+    "slp": {
+      "id": "slp",
+      "title": "Sleep Optimization",
+      "description": "Design a personalized sleep improvement plan by assessing current patterns, identifying disruptors, and building sustainable habits.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Assess Current Sleep Patterns",
+        "Step 2: Identify Sleep Disruptors",
+        "Step 3: Design Sleep Environment",
+        "Step 4: Create Wind-Down Routine",
+        "Step 5: Set the Schedule",
+        "Step 6: Plan for Obstacles",
+        "Step 7: Implementation Plan",
+        "Integration"
+      ],
+      "line_count": 185
     },
     "smc": {
       "id": "smc",
@@ -8964,6 +10697,28 @@
       ],
       "line_count": 132
     },
+    "spec": {
+      "id": "spec",
+      "title": "Speculative Analysis",
+      "description": "Rigorous procedure for exploring speculative and 'what if' ideas. Assesses plausibility, prerequisites, implications, and falsifiability.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Speculation Clearly",
+        "Step 2: Identify Prerequisites",
+        "Step 3: Assess Plausibility of Each Prerequisite",
+        "Step 4: Explore Implications If True",
+        "Step 5: Identify How to Test or Falsify",
+        "Step 6: Rate Overall Plausibility",
+        "Integration"
+      ],
+      "line_count": 129
+    },
     "spg": {
       "id": "spg",
       "title": "Specificity Gate",
@@ -9077,7 +10832,7 @@
     "srd": {
       "id": "srd",
       "title": "Strategic Competitive Orderings",
-      "description": "Orderings for competitive contexts \u2014 influence perception, manage attention, create strategic advantage through sequencing.",
+      "description": "Orderings for competitive contexts — influence perception, manage attention, create strategic advantage through sequencing.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -9204,6 +10959,27 @@
       ],
       "line_count": 99
     },
+    "stcc": {
+      "id": "stcc",
+      "title": "Short-Term Cluster Completion",
+      "description": "Identify partially-built clusters of work and determine what's needed to finish them. Prioritize by effort-to-complete.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Map Related Items",
+        "Step 2: Assess Completion Percentage",
+        "Step 3: Identify Completion Requirements",
+        "Step 4: Prioritize by Effort-to-Complete",
+        "Step 5: Recommend Finishing Order",
+        "Integration"
+      ],
+      "line_count": 126
+    },
     "std": {
       "id": "std",
       "title": "Strategy Discovery",
@@ -9294,6 +11070,72 @@
       ],
       "line_count": 175
     },
+    "stnl": {
+      "id": "stnl",
+      "title": "Standalone Skill Design",
+      "description": "Guides the design of a skill that works independently with no dependencies on other skills. Ensures the skill is self-contained, well-scoped, and useful in isolation.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Skill's Purpose",
+        "Step 2: Define Input/Output Contract",
+        "Step 3: Ensure Self-Containment",
+        "Step 4: Build the Steps",
+        "Step 5: Test in Isolation",
+        "Step 6: Write the Skill File",
+        "Integration",
+        "Integration"
+      ],
+      "line_count": 142
+    },
+    "story": {
+      "id": "story",
+      "title": "Story",
+      "description": "Generate a narrative — fiction, parable, scenario, or illustrative story — that embodies a concept, explores a question, or makes an idea vivid.",
+      "tier": "tier3",
+      "category": "Writing & Communication",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: DETERMINE THE STORY TYPE",
+        "Step 2: EXTRACT THE CORE",
+        "Step 3: BUILD THE ELEMENTS",
+        "Step 4: WRITE THE STORY",
+        "Step 5: THE STORY",
+        "Step 6: REFLECTION (optional, only if requested)",
+        "Integration"
+      ],
+      "line_count": 118
+    },
+    "sum": {
+      "id": "sum",
+      "title": "Summarization",
+      "description": "Structured summarization at multiple compression levels. Produces 1-sentence, 1-paragraph, and 1-page summaries ranked by claim importance.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Extract Claims",
+        "Step 2: Rank by Importance",
+        "Step 3: Compress — Three Levels",
+        "Step 4: Verify",
+        "Final Output",
+        "Integration"
+      ],
+      "line_count": 101
+    },
     "svs": {
       "id": "svs",
       "title": "Systematic Variation (SCAMPER)",
@@ -9383,21 +11225,27 @@
     "sycs": {
       "id": "sycs",
       "title": "So You Can See",
-      "description": "Expand implications of a statement so the hidden conclusions are explicit and testable.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Expand implications of a statement so the hidden conclusions are explicit, ordered by depth, and flagged by impact and testability.",
+      "tier": "tier4",
+      "category": "Core Exploration",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Source Statement",
+        "Phase 2: First-Order Implications",
+        "Phase 3: Second-Order Implications",
+        "Phase 4: Impact Flagging",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 21
+      "line_count": 198
     },
     "sym": {
       "id": "sym",
@@ -9424,6 +11272,31 @@
       ],
       "line_count": 156
     },
+    "sysk": {
+      "id": "sysk",
+      "title": "Systems Analysis",
+      "description": "Analyze any system by mapping components, connections, feedback loops, leverage points, and emergent behaviors.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Components",
+        "Step 2: Map Connections",
+        "Step 3: Find Feedback Loops",
+        "Step 4: Identify Leverage Points",
+        "Step 5: Assess Stability",
+        "Step 6: Find Bottlenecks",
+        "Step 7: Identify Emergent Behaviors",
+        "Output Summary",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 160
+    },
     "t": {
       "id": "t",
       "title": "Targeting",
@@ -9448,21 +11321,28 @@
     "tbd": {
       "id": "tbd",
       "title": "To Be Determined",
-      "description": "Identify unresolved decisions and convert them into explicit determination questions with owner and deadline.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Identify unresolved decisions in any plan, document, or conversation, and convert each into an explicit determination question with type, owner, deadline, and cost of remaining unresolved.",
+      "tier": "tier4",
+      "category": "Strategy & Planning",
       "categories": [],
       "tags": [],
       "input_types": [],
-      "invokes": [],
-      "invoked_by": [
-        "meta"
+      "invokes": [
+        "decide"
       ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: TBD Identification",
+        "Phase 2: TBD Classification",
+        "Phase 3: Resolution Specification",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 170
     },
     "td": {
       "id": "td",
@@ -9484,6 +11364,28 @@
       ],
       "line_count": 62
     },
+    "teach": {
+      "id": "teach",
+      "title": "Feynman Explanation",
+      "description": "Explains any concept so that someone can actually understand it. Uses the Feynman technique — simple words, clear structure, no hiding behind jargon.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Concept",
+        "Step 2: Assess the Audience",
+        "Step 3: Explain Simply",
+        "Step 4: Find the Gaps",
+        "Step 5: Refine",
+        "Step 6: Test Question",
+        "Integration"
+      ],
+      "line_count": 101
+    },
     "technical": {
       "id": "technical",
       "title": "Domain-Specific Routing",
@@ -9501,6 +11403,71 @@
         "After Completion"
       ],
       "line_count": 64
+    },
+    "tfac": {
+      "id": "tfac",
+      "title": "Team Facilitation",
+      "description": "Design and run effective group sessions that produce clear outcomes, manage group dynamics, and keep participants engaged.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Session Goal",
+        "Step 2: Choose Facilitation Method",
+        "Step 3: Design the Agenda with Time Boxes",
+        "Step 4: Assign Roles",
+        "Step 5: Plan for Dominant and Quiet Participants",
+        "Step 6: Create the Output Template",
+        "Integration"
+      ],
+      "line_count": 137
+    },
+    "thnk": {
+      "id": "thnk",
+      "title": "Think",
+      "description": "Meta-skill for choosing the right thinking approach. Identifies what type of thinking is needed, selects the appropriate framework, applies it, and evaluates output quality.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: What Kind of Thinking Is Needed?",
+        "Step 2: Select the Right Tool",
+        "Step 3: Apply the Thinking",
+        "Step 4: Evaluate Output Quality",
+        "Step 5: Iterate If Needed",
+        "Integration"
+      ],
+      "line_count": 109
+    },
+    "tmsk": {
+      "id": "tmsk",
+      "title": "Team Analysis",
+      "description": "Analyzes something from the team perspective. Identifies composition, roles, communication patterns, coordination costs, and collaboration synergies.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Team",
+        "Step 2: Map Composition and Roles",
+        "Step 3: Assess Communication Patterns",
+        "Step 4: Identify Team Capabilities",
+        "Step 5: Diagnose Collaboration Health",
+        "Step 6: Recommendations",
+        "Integration"
+      ],
+      "line_count": 123
     },
     "tnt": {
       "id": "tnt",
@@ -9554,21 +11521,27 @@
     "tobd": {
       "id": "tobd",
       "title": "To Be Determined (Operational)",
-      "description": "Operational variant of TBD that adds sequencing and dependency-aware resolution order for unresolved items.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Sequence unresolved TBDs by dependency and impact for operational resolution, identifying parallel tracks, blockers, and the critical resolution path.",
+      "tier": "tier4",
+      "category": "Strategy & Planning",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: TBD Inventory",
+        "Phase 2: Dependency Analysis",
+        "Phase 3: Critical Path",
+        "Phase 4: Resolution Plan",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 200
     },
     "tp": {
       "id": "tp",
@@ -9638,6 +11611,28 @@
       ],
       "line_count": 358
     },
+    "tri": {
+      "id": "tri",
+      "title": "Triage",
+      "description": "Rapidly sorts multiple problems, tasks, or issues by urgency and importance into a priority matrix with a ranked action list.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: List All Items",
+        "Step 2: Classify Urgency",
+        "Step 3: Classify Importance",
+        "Step 4: Priority Matrix",
+        "Step 5: Ranked Action List",
+        "Step 6: Sanity Check",
+        "Integration"
+      ],
+      "line_count": 114
+    },
     "ts": {
       "id": "ts",
       "title": "Testing Strategy",
@@ -9687,7 +11682,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 146
+      "line_count": 149
     },
     "u": {
       "id": "u",
@@ -9722,7 +11717,7 @@
         "Depth Scaling",
         "Pre-Completion Check"
       ],
-      "line_count": 246
+      "line_count": 238
     },
     "uaua": {
       "id": "uaua",
@@ -9765,31 +11760,37 @@
         "Saving Output",
         "Pre-Completion Check"
       ],
-      "line_count": 512
+      "line_count": 504
     },
     "uf": {
       "id": "uf",
       "title": "Useful For",
-      "description": "Given a skill or method, list what it is useful for, where it fails, and when to choose alternatives.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Given a skill or method, map its best-fit use cases, failure conditions, limits, and alternative skills with explicit switch conditions.",
+      "tier": "tier4",
+      "category": "Skill Routing",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Target Identification",
+        "Phase 2: Best-Fit Use Cases",
+        "Phase 3: Failure Cases and Limits",
+        "Phase 4: Alternative Mapping",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 30
+      "line_count": 203
     },
     "uga": {
       "id": "uga",
-      "title": "Universal Goal Analysis Framework",
-      "description": "The comprehensive question framework that applies to EVERY goal, regardless of domain. Universal analysis procedure.",
+      "title": "Universal Goal Analysis (Consolidated)",
+      "description": "The comprehensive question framework v5 — adds operational, meta-cognitive, and quality categories. Consolidated from ugav2-v5.",
       "tier": "tier4",
       "category": "Goal Processing",
       "categories": [
@@ -9807,69 +11808,6 @@
         "question",
         "decision"
       ],
-      "invokes": [],
-      "invoked_by": [],
-      "sections": [
-        "Overview",
-        "When to Use",
-        "The Seven Universal Questions",
-        "Quick Universal Analysis",
-        "Full Universal Analysis Template",
-        "Decision Tree: When to Go Deeper",
-        "Verification Criteria",
-        "Integration Points"
-      ],
-      "line_count": 372
-    },
-    "ugav2": {
-      "id": "ugav2",
-      "title": "ugav2",
-      "description": "The comprehensive question framework v2 \u2014 actionable questions with fact-yielding answers.",
-      "tier": "tier4",
-      "category": "Goal Processing",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": [
-        "gu"
-      ],
-      "invoked_by": [],
-      "sections": [
-        "Overview",
-        "Steps",
-        "When to Use",
-        "Verification"
-      ],
-      "line_count": 94
-    },
-    "ugav3": {
-      "id": "ugav3",
-      "title": "ugav3",
-      "description": "The comprehensive question framework v3 \u2014 fully decomposed, no interpretation variance.",
-      "tier": "tier4",
-      "category": "Goal Processing",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
-      "invokes": [],
-      "invoked_by": [],
-      "sections": [
-        "Overview",
-        "Steps",
-        "When to Use",
-        "Verification"
-      ],
-      "line_count": 119
-    },
-    "ugav4": {
-      "id": "ugav4",
-      "title": "ugav4",
-      "description": "The comprehensive question framework that applies to EVERY goal, regardless of domain. Version 4.0.",
-      "tier": "tier4",
-      "category": "Goal Processing",
-      "categories": [],
-      "tags": [],
-      "input_types": [],
       "invokes": [
         "gu",
         "ie",
@@ -9877,41 +11815,130 @@
         "gd"
       ],
       "invoked_by": [
+        "ugav2",
+        "ugav3",
+        "ugav4",
         "ugav5"
       ],
       "sections": [
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Integration Points"
       ],
-      "line_count": 177
+      "line_count": 275
     },
-    "ugav5": {
-      "id": "ugav5",
-      "title": "ugav5",
-      "description": "The comprehensive question framework v5 \u2014 adds operational, meta-cognitive, and quality categories.",
+    "ugav2": {
+      "id": "ugav2",
+      "title": "ugav2",
+      "description": "Consolidated into /uga.",
       "tier": "tier4",
       "category": "Goal Processing",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [
-        "ugav4"
+        "uga"
       ],
       "invoked_by": [],
-      "sections": [
-        "Overview",
-        "Steps",
-        "When to Use",
-        "Verification"
+      "sections": [],
+      "line_count": 9
+    },
+    "ugav3": {
+      "id": "ugav3",
+      "title": "ugav3",
+      "description": "Consolidated into /uga.",
+      "tier": "tier4",
+      "category": "Goal Processing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "uga"
       ],
-      "line_count": 136
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 9
+    },
+    "ugav4": {
+      "id": "ugav4",
+      "title": "ugav4",
+      "description": "Consolidated into /uga.",
+      "tier": "tier4",
+      "category": "Goal Processing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "uga"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 9
+    },
+    "ugav5": {
+      "id": "ugav5",
+      "title": "ugav5",
+      "description": "Consolidated into /uga.",
+      "tier": "tier4",
+      "category": "Goal Processing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "uga"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 9
+    },
+    "undr": {
+      "id": "undr",
+      "title": "Under-Represented Analysis",
+      "description": "Analyzes an under-served area to determine what it needs. Assesses current coverage, identifies gaps relative to demand, and recommends build order.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Area",
+        "Step 2: Assess Current Coverage",
+        "Step 3: Identify What's Missing",
+        "Step 4: Estimate Effort to Fill Gaps",
+        "Step 5: Prioritize and Recommend Build Order",
+        "Integration"
+      ],
+      "line_count": 111
+    },
+    "unvs": {
+      "id": "unvs",
+      "title": "Universal Applicability Analysis",
+      "description": "Tests whether a claim, principle, or method works across all contexts. Finds the true scope of applicability and states boundary conditions.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Claim",
+        "Step 2: Select Diverse Test Domains",
+        "Step 3: Test in Each Domain",
+        "Step 4: Map the Boundaries",
+        "Step 5: State the Universalized Version",
+        "Integration"
+      ],
+      "line_count": 104
     },
     "unx": {
       "id": "unx",
       "title": "Unexpected - Non-Obvious Solution Discovery",
-      "description": "Find non-obvious solutions. Three layers \u2014 obvious, unexpected, reframed \u2014 using disruption techniques that force the search off its default path.",
+      "description": "Find non-obvious solutions. Three layers — obvious, unexpected, reframed — using disruption techniques that force the search off its default path.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [
@@ -9967,6 +11994,71 @@
         "Verification"
       ],
       "line_count": 106
+    },
+    "upth": {
+      "id": "upth",
+      "title": "Unproceduralized Thinking",
+      "description": "Identify cognitive operations that don't have explicit procedures yet. Observes thinking processes, surfaces implicit steps and tacit knowledge, formalizes them into explicit procedures, tests, and refines.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Observe the Thinking Process",
+        "Step 2: Identify Implicit Steps",
+        "Step 3: Surface Tacit Knowledge",
+        "Step 4: Formalize Into Explicit Steps",
+        "Step 5: Test the Procedure",
+        "Step 6: Refine",
+        "Integration"
+      ],
+      "line_count": 155
+    },
+    "usnd": {
+      "id": "usnd",
+      "title": "User-Need Discovery",
+      "description": "Discover what users actually need versus what they say they need. Observes behavior, identifies pain points, maps workarounds, traces root desires, validates with evidence, and outputs a need hierarchy.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Observe Behavior",
+        "Step 2: Identify Pain Points",
+        "Step 3: Map Current Workarounds",
+        "Step 4: Trace to Root Desires",
+        "Step 5: Validate with Evidence",
+        "Step 6: Output Need Hierarchy",
+        "Integration"
+      ],
+      "line_count": 134
+    },
+    "utp": {
+      "id": "utp",
+      "title": "Utopia Analysis",
+      "description": "Systematically construct and examine the best possible outcome — what would ideal actually look like, and what would it take to get there?",
+      "tier": "tier4",
+      "category": "Strategy & Planning",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: DEFINE THE DOMAIN",
+        "Step 2: CONSTRUCT THE IDEAL",
+        "Step 3: STRESS TEST THE UTOPIA",
+        "Step 4: EXTRACT THE ACTIONABLE",
+        "Step 5: OUTPUT",
+        "Integration"
+      ],
+      "line_count": 111
     },
     "va": {
       "id": "va",
@@ -10082,6 +12174,29 @@
         "Verification"
       ],
       "line_count": 85
+    },
+    "vcl": {
+      "id": "vcl",
+      "title": "Value Clarification",
+      "description": "Discover what you actually value — not what you think you value — by examining behavior, trade-offs, and revealed preferences.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Surface Stated Values",
+        "Step 2: Behavioral Evidence",
+        "Step 3: Trade-Off Scenarios",
+        "Step 4: Identify Revealed Preferences",
+        "Step 5: Sacrifice Test",
+        "Step 6: Prioritized Value Hierarchy",
+        "Step 7: Alignment Check",
+        "Integration"
+      ],
+      "line_count": 141
     },
     "vdp": {
       "id": "vdp",
@@ -10230,6 +12345,28 @@
       ],
       "line_count": 83
     },
+    "vldt": {
+      "id": "vldt",
+      "title": "Validate",
+      "description": "Systematic validation procedure. Defines criteria, runs checks, flags failures, and makes a pass/fail determination with reasoning.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State What's Being Validated",
+        "Step 2: Define Validation Criteria",
+        "Step 3: Run Each Check",
+        "Step 4: Flag and Classify Failures",
+        "Step 5: Determination",
+        "Step 6: Validation Summary",
+        "Integration"
+      ],
+      "line_count": 121
+    },
     "vm": {
       "id": "vm",
       "title": "Viral Mechanics",
@@ -10281,7 +12418,7 @@
     "w": {
       "id": "w",
       "title": "High Quality Writing",
-      "description": "Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically \u2014 upstream criteria determine whether writing works; downstream criteria determine how well.",
+      "description": "Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically — upstream criteria determine whether writing works; downstream criteria determine how well.",
       "tier": "tier3",
       "category": "Writing & Communication",
       "categories": [],
@@ -10338,21 +12475,27 @@
     "wn": {
       "id": "wn",
       "title": "What's New",
-      "description": "Summarize what is new in a project timeline, grouped by day, prompt, skill, and iteration.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+      "description": "Summarize what is new in a project or codebase, grouped by configurable views (day, category, skill, iteration), filtering out unchanged items.",
+      "tier": "tier4",
+      "category": "Skill Routing",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Scope Definition",
+        "Phase 2: New Item Discovery",
+        "Phase 3: Grouping",
+        "Phase 4: Summary",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 185
     },
     "wr": {
       "id": "wr",
@@ -10413,26 +12556,57 @@
         "Integration",
         "Verification"
       ],
-      "line_count": 382
+      "line_count": 383
     },
-    "wsib": {
-      "id": "wsib",
-      "title": "What Skill Is Best",
-      "description": "Choose the best skill to run now for a prompt, with confidence, runner-up comparison, and fallback if first choice fails.",
-      "tier": "tier3",
-      "category": "Procedures & Meta",
+    "wrps": {
+      "id": "wrps",
+      "title": "Wrapper Skill Design",
+      "description": "Guides the design of skills that enhance other skills by accepting their output, adding a layer of analysis or validation, and returning enriched results.",
+      "tier": null,
+      "category": null,
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output Format"
+        "Step 1: Define What Gets Wrapped",
+        "Step 2: Define the Wrapping Contract",
+        "Step 3: Design the Enhancement Layer",
+        "Step 4: Handle Multiple Wrapped Skills",
+        "Step 5: Preserve and Append",
+        "Original Output",
+        "[Wrapper Name] Enhancement",
+        "Step 6: Test With Multiple Skills",
+        "Integration"
       ],
-      "line_count": 30
+      "line_count": 151
+    },
+    "wsib": {
+      "id": "wsib",
+      "title": "What Skill Is Best",
+      "description": "Choose the single best skill to run RIGHT NOW for a prompt, with confidence calibration, runner-up comparison, and fallback if first choice fails.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "skill"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Intent Extraction",
+        "Phase 2: Candidate Generation",
+        "Phase 3: Selection",
+        "Phase 4: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 178
     },
     "wt": {
       "id": "wt",
@@ -10468,26 +12642,32 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 301
+      "line_count": 293
     },
     "ycshikfmif": {
       "id": "ycshikfmif",
       "title": "You Can See How I Keep Finding More It's Fun",
-      "description": "Capture ideation expansion loops and structure them into bounded exploration batches.",
-      "tier": "tier3",
+      "description": "Capture ideation expansion loops — when finding more ideas is exciting but unbounded — and structure them into manageable exploration batches with stop conditions.",
+      "tier": "tier4",
       "category": "Procedures & Meta",
       "categories": [],
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [
-        "meta"
-      ],
+      "invoked_by": [],
       "sections": [
-        "Steps",
-        "Output"
+        "Core Principles",
+        "Phase 1: Expansion Capture",
+        "Phase 2: Idea Assessment",
+        "Phase 3: Batching",
+        "Phase 4: Stop Conditions",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 10
+      "line_count": 208
     }
   }
 }

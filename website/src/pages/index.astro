@@ -464,6 +464,11 @@ for (const [id, meta] of Object.entries<any>(manifestSkills)) {
 
 const allSkills = Array.from(tierMap.values()).sort((a, b) => a.name.localeCompare(b.name));
 const totalCount = allSkills.length;
+
+const allCategories = [
+  ...tier3Categories.map(c => c.category),
+  ...tier4Categories.map(c => c.category),
+].filter((v, i, a) => a.indexOf(v) === i).sort();
 ---
 
 <!doctype html>
@@ -491,6 +496,21 @@ const totalCount = allSkills.length;
       <button class="sort-chip" data-sort="categorized">Categorized</button>
       <button class="sort-chip" data-sort="usefulness">Usefulness</button>
       <button class="sort-chip" data-sort="uselessness">Uselessness</button>
+    </div>
+    <div class="filter-controls" id="filter-controls">
+      <span class="filter-label">Tier</span>
+      <button class="sort-chip filter-chip filter-chip--tier active" data-filter-tier="all">All</button>
+      <button class="sort-chip filter-chip filter-chip--tier filter-chip--1" data-filter-tier="1">Core</button>
+      <button class="sort-chip filter-chip filter-chip--tier filter-chip--2" data-filter-tier="2">Important</button>
+      <button class="sort-chip filter-chip filter-chip--tier filter-chip--cat" data-filter-tier="cat">Category</button>
+      <button class="sort-chip filter-chip filter-chip--tier filter-chip--3" data-filter-tier="3">Domain</button>
+      <button class="sort-chip filter-chip filter-chip--tier filter-chip--4" data-filter-tier="4">Specialized</button>
+      <button class="sort-chip filter-chip filter-chip--tier filter-chip--exp" data-filter-tier="exp">Experimental</button>
+      <span class="filter-sep"></span>
+      <span class="filter-label">Category</span>
+      {allCategories.map(cat => (
+        <button class="sort-chip filter-chip filter-chip--cat-btn" data-filter-category={cat.toLowerCase()}>{cat}</button>
+      ))}
     </div>
     {allSkills.map(s => (
       <a
@@ -605,6 +625,71 @@ const totalCount = allSkills.length;
 
         chips.forEach(function(chip) {
           chip.dataset.searchHidden = '0';
+          chip.dataset.filterHidden = '0';
+        });
+
+        var currentTierFilter = 'all';
+        var currentCategoryFilter = '';
+
+        function applyFilters() {
+          var q = searchInput ? searchInput.value.toLowerCase().trim() : '';
+          chips.forEach(function(chip) {
+            var name = chip.textContent.toLowerCase();
+            var title = chip.getAttribute('data-title') || '';
+            var searchMatch = !q || name.indexOf(q) !== -1 || title.indexOf(q) !== -1;
+
+            var tierMatch = true;
+            if (currentTierFilter !== 'all') {
+              tierMatch = chip.classList.contains('skill-chip--' + currentTierFilter);
+            }
+
+            var catMatch = true;
+            if (currentCategoryFilter) {
+              var chipCat = (chip.getAttribute('data-category') || '').toLowerCase();
+              catMatch = chipCat === currentCategoryFilter;
+            }
+
+            chip.dataset.searchHidden = (searchMatch && tierMatch && catMatch) ? '0' : '1';
+          });
+          currentMobilePage = 0;
+          applyMobilePagination();
+        }
+
+        // Tier filter buttons
+        document.querySelectorAll('[data-filter-tier]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var tier = btn.getAttribute('data-filter-tier');
+            if (tier === currentTierFilter && tier !== 'all') {
+              // Deactivate: reset to all
+              currentTierFilter = 'all';
+            } else {
+              currentTierFilter = tier;
+            }
+            document.querySelectorAll('[data-filter-tier]').forEach(function(b) { b.classList.remove('active'); });
+            if (currentTierFilter === 'all') {
+              document.querySelector('[data-filter-tier="all"]').classList.add('active');
+            } else {
+              btn.classList.add('active');
+            }
+            applyFilters();
+          });
+        });
+
+        // Category filter buttons
+        document.querySelectorAll('[data-filter-category]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var cat = btn.getAttribute('data-filter-category');
+            if (cat === currentCategoryFilter) {
+              // Deactivate
+              currentCategoryFilter = '';
+              btn.classList.remove('active');
+            } else {
+              document.querySelectorAll('[data-filter-category]').forEach(function(b) { b.classList.remove('active'); });
+              currentCategoryFilter = cat;
+              btn.classList.add('active');
+            }
+            applyFilters();
+          });
         });
 
         function isMobile() {
@@ -724,15 +809,7 @@ const totalCount = allSkills.length;
 
         if (searchInput) {
           searchInput.addEventListener('input', function() {
-            var q = searchInput.value.toLowerCase().trim();
-            chips.forEach(function(chip) {
-              var name = chip.textContent.toLowerCase();
-              var title = chip.getAttribute('data-title') || '';
-              var match = !q || name.indexOf(q) !== -1 || title.indexOf(q) !== -1;
-              chip.dataset.searchHidden = match ? '0' : '1';
-            });
-            currentMobilePage = 0;
-            applyMobilePagination();
+            applyFilters();
           });
         }
 
@@ -987,6 +1064,56 @@ const totalCount = allSkills.length;
     background: var(--color-accent-subtle);
   }
 
+  .filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35em;
+    width: 100%;
+    align-items: center;
+  }
+
+  .filter-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-right: 0.1em;
+  }
+
+  .filter-sep {
+    display: block;
+    width: 1px;
+    height: 1.2em;
+    background: var(--color-border);
+    margin: 0 0.25em;
+  }
+
+  .filter-chip--1.active { border-color: #2e7d32; color: #2e7d32; background: #e8f5e9; }
+  .filter-chip--2.active { border-color: #1565c0; color: #1565c0; background: #e3f2fd; }
+  .filter-chip--cat.active { border-color: #7b1fa2; color: #7b1fa2; background: #f3e5f5; }
+  .filter-chip--3.active { border-color: #e65100; color: #e65100; background: #fff3e0; }
+  .filter-chip--4.active { border-color: #78909c; color: #546e7a; background: #eceff1; }
+  .filter-chip--exp.active { border-color: var(--color-accent); color: var(--color-accent); background: var(--color-accent-subtle); }
+  .filter-chip--cat-btn.active { border-color: var(--color-accent); color: var(--color-accent); background: var(--color-accent-subtle); }
+
+  :global([data-theme="dark"]) .filter-chip--1.active { border-color: #6ee7b7; color: #6ee7b7; background: #132e1a; }
+  :global([data-theme="dark"]) .filter-chip--2.active { border-color: #93c5fd; color: #93c5fd; background: #0f1f3d; }
+  :global([data-theme="dark"]) .filter-chip--cat.active { border-color: #ce93d8; color: #ce93d8; background: #2a1230; }
+  :global([data-theme="dark"]) .filter-chip--3.active { border-color: #ffb74d; color: #ffb74d; background: #2e1a00; }
+  :global([data-theme="dark"]) .filter-chip--4.active { border-color: #78909c; color: #90a4ae; background: #1c2025; }
+  :global([data-theme="dark"]) .filter-chip--exp.active { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
+
+  @media (prefers-color-scheme: dark) {
+    :global(:root:not([data-theme="light"])) .filter-chip--1.active { border-color: #6ee7b7; color: #6ee7b7; background: #132e1a; }
+    :global(:root:not([data-theme="light"])) .filter-chip--2.active { border-color: #93c5fd; color: #93c5fd; background: #0f1f3d; }
+    :global(:root:not([data-theme="light"])) .filter-chip--cat.active { border-color: #ce93d8; color: #ce93d8; background: #2a1230; }
+    :global(:root:not([data-theme="light"])) .filter-chip--3.active { border-color: #ffb74d; color: #ffb74d; background: #2e1a00; }
+    :global(:root:not([data-theme="light"])) .filter-chip--4.active { border-color: #78909c; color: #90a4ae; background: #1c2025; }
+    :global(:root:not([data-theme="light"])) .filter-chip--exp.active { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
+  }
+
   .mobile-footer-stack {
     position: fixed;
     left: 0;
@@ -1080,6 +1207,20 @@ const totalCount = allSkills.length;
     .sort-chip {
       padding: 0.28rem 0.5rem;
       font-size: 0.68rem;
+    }
+
+    .filter-controls {
+      flex: 0 0 100%;
+      gap: 0.3rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .filter-label {
+      font-size: 0.6rem;
+    }
+
+    .filter-sep {
+      height: 1em;
     }
 
     .desktop-bottom-bar {
