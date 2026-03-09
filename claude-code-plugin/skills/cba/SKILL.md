@@ -8,6 +8,17 @@ description: "Systematically quantify costs and benefits to evaluate decisions, 
 ## Overview
 Systematically quantify costs and benefits to evaluate decisions, including NPV calculation, sensitivity analysis, and intangible factors
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Formal financial analysis**: The user needs a rigorous, quantified evaluation with NPV, discount rates, and sensitivity analysis — typically for a business case or investment decision.
+**Interpretation 2 — Quick pro/con weighing**: The user wants a structured but informal comparison of upsides and downsides — not a spreadsheet, but more disciplined than gut feel.
+**Interpretation 3 — "Is this worth doing?"**: The user has a specific action in mind and wants a bottom-line judgment on whether the effort, cost, or risk is justified by the expected return.
+
+If ambiguous, ask: "I can help with a formal financial analysis with NPV, a structured pro/con comparison, or a quick 'is this worth it?' assessment — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Steps
 
 ### Step 1: Frame the analysis

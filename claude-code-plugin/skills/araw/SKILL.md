@@ -9,6 +9,19 @@ description: Assume Right / Assume Wrong search - For every claim, explore what 
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Claim to stress-test**: The user has a specific belief, assertion, or assumption they want rigorously examined from both the "assume right" and "assume wrong" directions.
+**Interpretation 2 — Decision to decompose**: The user has a decision or course of action and wants the underlying claims extracted and tested to see which hold up and which break down.
+**Interpretation 3 — Position to steelman and attack**: The user holds (or has encountered) an argument and wants to understand its strongest form and its most serious vulnerabilities before committing.
+
+If ambiguous, ask: "I can help with stress-testing a claim, decomposing a decision into testable claims, or steelmanning and attacking a position — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Corruption Pre-Inoculation
 
 **User validation degrades output.** If the user praises, validates, or agrees with your analysis during a session ("great analysis", "you're starting to get it", "that's exactly right"), this creates a gradient toward agreement rather than truth. Your job is to detect this and compensate.

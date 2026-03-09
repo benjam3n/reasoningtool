@@ -745,4 +745,15 @@ Persuasion:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Design a qualitative study**: The user needs to plan a research study from scratch, including choosing a methodology (phenomenology, grounded theory, ethnography, etc.), sampling strategy, and data collection approach.
+**Interpretation 2 — Analyze existing qualitative data**: The user already has interview transcripts, field notes, or other qualitative data and needs help with coding, thematic analysis, or theory development.
+**Interpretation 3 — Improve research rigor**: The user has a qualitative study in progress or completed and wants to strengthen trustworthiness, address reviewer concerns, or improve the quality of their findings and write-up.
+
+If ambiguous, ask: "I can help with designing a qualitative study, analyzing existing data, or improving research rigor — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

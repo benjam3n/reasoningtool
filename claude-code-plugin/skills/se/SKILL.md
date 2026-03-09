@@ -7,6 +7,17 @@ description: Generate comprehensive lists by systematically covering all dimensi
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Generate a comprehensive list**: The user wants to systematically enumerate all options, types, or instances within a defined space — nothing should be missed.
+**Interpretation 2 — Map a problem space**: The user wants to understand the full landscape of a topic — not necessarily listing every item, but seeing the structure and boundaries of what exists.
+**Interpretation 3 — Find what's missing**: The user already has a partial list or understanding and suspects there are blind spots — they want to discover what they have not yet considered.
+
+If ambiguous, ask: "I can help with generating a comprehensive list, mapping the full structure of a space, or finding what you're missing from a partial view — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

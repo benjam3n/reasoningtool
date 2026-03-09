@@ -1,0 +1,1 @@
+Assess whether a task is well-suited for LLM execution. Checks factual accuracy needs, context window requirements, hallucination risks, output verifiability, and recommends guardrails. Read and execute `claude-code-plugin/skills/llmf/SKILL.md`, applying it to this input: $ARGUMENTS

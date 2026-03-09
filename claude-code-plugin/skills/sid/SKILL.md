@@ -9,6 +9,19 @@ description: "Identify what situation you are actually in before attempting to s
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Confused about what is happening**: The user faces a novel or ambiguous situation and needs to build an accurate description from raw observations before choosing how to respond.
+**Interpretation 2 — Competing narratives**: Multiple people (or the user's own conflicting instincts) offer different accounts of what is going on, and the user needs to determine which framing is most accurate.
+**Interpretation 3 — Pattern-match validation**: The user thinks they recognize the situation from past experience but wants to verify they are not misclassifying it based on superficial similarity.
+
+If ambiguous, ask: "I can help with making sense of a confusing situation, sorting out conflicting accounts of what is happening, or checking whether your pattern recognition is accurate — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Purpose
 
 Every decision procedure has a Step 0: classify the situation so you know which procedure to follow. If you misclassify at Step 0, you execute the wrong procedure perfectly and arrive at the wrong answer with high confidence. This is the most dangerous failure mode in decision-making -- not making bad decisions, but making good decisions about the wrong problem.

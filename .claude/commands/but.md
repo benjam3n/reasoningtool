@@ -1,0 +1,1 @@
+Handle 'but' statements by separating the main claim from the objection, classifying the tension type, and routing to the right resolution skill. Read and execute `claude-code-plugin/skills/but/SKILL.md`, applying it to this input: $ARGUMENTS

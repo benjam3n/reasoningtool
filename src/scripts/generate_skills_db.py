@@ -164,13 +164,16 @@ FRONTMATTER_RE = re.compile(r'^---\s*\n(.*?)\n---', re.DOTALL)
 
 
 def parse_frontmatter(text):
-    """Extract title and description from YAML-like frontmatter."""
+    """Extract title, description, tier, categories, and tags from YAML-like frontmatter."""
     m = FRONTMATTER_RE.match(text)
     if not m:
-        return None, None
+        return None, None, None, [], []
     block = m.group(1)
     title = None
     desc = None
+    tier = None
+    categories = []
+    tags = []
     for line in block.split('\n'):
         line = line.strip()
         if line.startswith('name:'):
@@ -182,7 +185,17 @@ def parse_frontmatter(text):
                 title = val
         elif line.startswith('description:'):
             desc = line[len('description:'):].strip().strip('"').strip("'")
-    return title, desc
+        elif line.startswith('tier:'):
+            tier = line[len('tier:'):].strip().strip('"').strip("'")
+        elif line.startswith('categories:'):
+            val = line[len('categories:'):].strip()
+            if val.startswith('['):
+                categories = [c.strip().strip('"').strip("'") for c in val.strip('[]').split(',') if c.strip()]
+        elif line.startswith('tags:'):
+            val = line[len('tags:'):].strip()
+            if val.startswith('['):
+                tags = [t.strip().strip('"').strip("'") for t in val.strip('[]').split(',') if t.strip()]
+    return title, desc, tier, categories, tags
 
 
 def parse_sections(text):
@@ -199,7 +212,7 @@ def parse_skill(skill_id, path):
     with open(path, 'r', encoding='utf-8') as f:
         text = f.read()
 
-    title, description = parse_frontmatter(text)
+    title, description, fm_tier, fm_categories, fm_tags = parse_frontmatter(text)
 
     # Fallback: use first # heading as title
     if not title:
@@ -230,8 +243,8 @@ def parse_skill(skill_id, path):
     line_count = text.count('\n') + 1
 
     tier_info = TIER_MAP.get(skill_id)
-    tier = tier_info[0] if tier_info else None
-    category = tier_info[1] if tier_info else None
+    tier = tier_info[0] if tier_info else fm_tier
+    category = tier_info[1] if tier_info else (fm_categories[0] if fm_categories else None)
 
     return {
         'id': skill_id,
@@ -239,8 +252,8 @@ def parse_skill(skill_id, path):
         'description': description,
         'tier': tier,
         'category': category,
-        'categories': [],
-        'tags': [],
+        'categories': fm_categories,
+        'tags': fm_tags,
         'input_types': [],
         'invokes': invokes,
         'invoked_by': [],  # computed later

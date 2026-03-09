@@ -1,0 +1,1 @@
+Estimates the benefits of an action or investment. Lists direct, indirect, and downstream benefits, quantifies where possible, and calculates expected value. Read and execute `claude-code-plugin/skills/benf/SKILL.md`, applying it to this input: $ARGUMENTS

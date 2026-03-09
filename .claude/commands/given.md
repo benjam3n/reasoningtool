@@ -1,0 +1,1 @@
+Given a goal, rank relevant skills from highest to lowest expected ROI, including negative-ROI skills with reasons. Read and execute `claude-code-plugin/skills/given/SKILL.md`, applying it to this input: $ARGUMENTS

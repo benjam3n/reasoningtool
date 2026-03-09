@@ -1,0 +1,1 @@
+Detect idea sprawl, compress scope aggressively, and return to the highest-leverage next actions — preserving valuable ideas without letting them derail execution. Read and execute `claude-code-plugin/skills/iagca/SKILL.md`, applying it to this input: $ARGUMENTS

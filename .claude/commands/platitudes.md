@@ -1,0 +1,1 @@
+Analyze multiple platitudes as a system, detect contradictions, reconcile conflicts by identifying context conditions, and convert the set into a coherent, actionable policy. Read and execute `claude-code-plugin/skills/platitudes/SKILL.md`, applying it to this input: $ARGUMENTS

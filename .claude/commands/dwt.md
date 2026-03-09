@@ -1,0 +1,1 @@
+Decide when to stop analyzing and commit to action. External criteria for ending deliberation instead of relying on readiness feelings. Read and execute `claude-code-plugin/skills/dwt/SKILL.md`, applying it to this input: $ARGUMENTS

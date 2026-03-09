@@ -1,0 +1,1 @@
+Convert knowledge into action by diagnosing what actually blocks execution: unclear steps, activation energy, competing commitments, emotional barriers, or identity conflicts. Read and execute `claude-code-plugin/skills/kta/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -58,4 +58,17 @@ For each gap (partial or not met):
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Requirements validation**: The user has a deliverable and a set of requirements, and wants to verify the deliverable meets those requirements systematically.
+**Interpretation 2 — Self-assessment**: The user has completed work and wants to check its quality against implicit or explicit standards before sharing it.
+**Interpretation 3 — Acceptance testing**: The user is receiving work from someone else and wants a structured way to decide whether to accept or reject it.
+
+If ambiguous, ask: "I can help with requirements validation, self-assessment of your own work, or acceptance testing of someone else's work — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 Apply this procedure to the input provided.

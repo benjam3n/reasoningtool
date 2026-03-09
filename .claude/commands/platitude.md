@@ -1,0 +1,1 @@
+Convert a single platitude into concrete, testable actions, boundary conditions, and failure modes — transforming vague wisdom into executable guidance. Read and execute `claude-code-plugin/skills/platitude/SKILL.md`, applying it to this input: $ARGUMENTS

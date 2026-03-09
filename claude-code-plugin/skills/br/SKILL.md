@@ -5,6 +5,21 @@ description: Reasoning from conclusions back to premises. Given a conclusion, wh
 
 # Backward Reasoning
 
+**Input**: $ARGUMENTS
+
+---
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Reverse-engineer an outcome**: Something happened and you want to reconstruct the chain of decisions, causes, or conditions that led to it (e.g., "how did we end up here?" or "what had to be true for this to happen?").
+**Interpretation 2 — Goal-backward planning**: You have a desired end state and want to work backward from the goal to figure out what steps are needed (e.g., "work backward from launch day" or "what do I need to have in place?").
+**Interpretation 3 — Understand the purpose behind a claim**: Someone has stated a position, belief, or conclusion, and you want to trace the reasoning journey that would lead a person to arrive there (e.g., "why would someone believe this?" or "what's the logic behind this position?").
+
+If ambiguous, ask: "I can help with reconstructing how an outcome happened, planning backward from a goal, or tracing the reasoning behind a claim — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Overview
 Typical reasoning goes "forward" - from premises to conclusions.
 This procedure goes "backward" - from conclusions to premises.
@@ -115,7 +130,5 @@ If not coherent: Either the conclusion is confused OR your reconstruction is wro
 - Finding the PURPOSE behind any statement
 
 ---
-
-**Input**: $ARGUMENTS
 
 Apply this procedure to the input provided.

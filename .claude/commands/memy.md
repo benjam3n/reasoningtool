@@ -1,0 +1,1 @@
+Systematic approach to remembering what matters. Decides what's worth encoding, selects strategies, creates retrieval cues, and builds connective knowledge structures. Read and execute `claude-code-plugin/skills/memy/SKILL.md`, applying it to this input: $ARGUMENTS

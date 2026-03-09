@@ -1,0 +1,1 @@
+Test whether X actually causes Y. Check confounders, mechanisms, temporal ordering, and counterfactuals. Read and execute `claude-code-plugin/skills/cscl/SKILL.md`, applying it to this input: $ARGUMENTS

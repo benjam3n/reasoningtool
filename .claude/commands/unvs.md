@@ -1,0 +1,1 @@
+Tests whether a claim, principle, or method works across all contexts. Finds the true scope of applicability and states boundary conditions. Read and execute `claude-code-plugin/skills/unvs/SKILL.md`, applying it to this input: $ARGUMENTS

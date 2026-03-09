@@ -7,6 +7,17 @@ description: "Process 'I think' statements into explicit claims with confidence 
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Decompose a belief into testable parts**: The user has an "I think" statement and wants it unbundled into its core claim, evidence, assumptions, confidence level, and recommended next action.
+**Interpretation 2 — Calibrate confidence on an uncertain claim**: The user is primarily unsure how confident they should be about something and wants help distinguishing what they know from what they assume.
+**Interpretation 3 — Route a vague intuition to the right analysis**: The user has a gut feeling or loose opinion and doesn't know what kind of thinking it needs — factual verification, strategic stress-testing, value examination, or something else.
+
+If ambiguous, ask: "I can help with decomposing a belief into testable parts, calibrating your confidence level, or figuring out what kind of analysis your intuition needs — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Core Principles

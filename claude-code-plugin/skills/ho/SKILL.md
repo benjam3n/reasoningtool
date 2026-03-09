@@ -9,6 +9,19 @@ description: "Comprehensive procedure for health-related goals including fitness
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Achieve a specific health goal**: The user has a concrete target (lose weight, run a 5K, sleep better) and wants a structured plan to reach it.
+**Interpretation 2 — Diagnose low energy or feeling off**: The user feels generally unwell, tired, or suboptimal and wants to systematically identify what is wrong and what to fix first.
+**Interpretation 3 — Build sustainable health habits**: The user wants to improve their overall wellness long-term, not chase a single metric, and needs help designing a lifestyle system.
+
+If ambiguous, ask: "I can help with achieving a specific health goal, diagnosing why you feel off, or building sustainable health habits — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Overview
 
 Comprehensive procedure for health-related goals including fitness, nutrition, sleep, energy, stress, and overall wellness.

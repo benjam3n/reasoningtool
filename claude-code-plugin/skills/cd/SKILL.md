@@ -182,4 +182,15 @@ Update product roadmap or pivot plan based on findings.
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Validate a problem hypothesis**: The user believes a customer segment has a specific problem and wants to design interviews and research to confirm or disconfirm that belief before building anything.
+**Interpretation 2 — Test solution resonance**: The user has already validated a problem and now has a proposed solution (mockup, prototype, concept) they want to test with potential customers.
+**Interpretation 3 — Decide go/no-go on an initiative**: The user has some customer evidence already and wants help synthesizing it into a clear validation assessment and recommendation.
+
+If ambiguous, ask: "I can help with validating whether a problem is real, testing whether a solution resonates, or synthesizing existing evidence into a go/no-go decision — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

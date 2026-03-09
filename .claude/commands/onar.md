@@ -1,0 +1,1 @@
+Generates structured narratives that tell a clear story. Takes a topic or set of facts and arranges them into a coherent narrative with a through-line, transitions, and purpose-driven structure. Read and execute `claude-code-plugin/skills/onar/SKILL.md`, applying it to this input: $ARGUMENTS

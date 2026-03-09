@@ -15,6 +15,23 @@ Generate all possible solutions by identifying independent dimensions
 and systematically combining values across dimensions. Combination
 generation is purely mechanical.
 
+**Input**: $ARGUMENTS
+
+---
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Exhaustive solution generation**: The user has a design or innovation problem and wants to systematically explore every possible combination of solution dimensions to ensure nothing is missed.
+**Interpretation 2 — Creative unblocking**: The user is stuck on a problem and wants the morphological box structure to force novel combinations they would not generate through freeform brainstorming.
+**Interpretation 3 — Structured comparison of existing options**: The user already has several options and wants to decompose them into dimensions to understand how they differ and whether unexplored combinations exist.
+
+If ambiguous, ask: "I can help with exhaustively generating all possible solutions, breaking through a creative block with forced combinations, or decomposing existing options to find gaps — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Depth Scaling
 
 Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/ma 4x [input]").

@@ -1,0 +1,1 @@
+Formalize a skill draft into production quality by enforcing schema completeness, overlap detection, dependency mapping, and rollout readiness. Read and execute `claude-code-plugin/skills/fmtsb/SKILL.md`, applying it to this input: $ARGUMENTS

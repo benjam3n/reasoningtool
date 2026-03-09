@@ -243,4 +243,15 @@ Fulfill grant obligations:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Write a grant proposal**: The user has identified a funder and needs help crafting a compelling proposal, including the statement of need, project description, budget, and evaluation plan.
+**Interpretation 2 — Find and evaluate potential funders**: The user has a project that needs funding but hasn't identified which grants to pursue, and needs help with prospect research and funder alignment.
+**Interpretation 3 — Manage an awarded grant**: The user has already received grant funding and needs help with compliance, reporting, relationship management, or renewal strategy.
+
+If ambiguous, ask: "I can help with writing a grant proposal, finding the right funders for your project, or managing an existing grant — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

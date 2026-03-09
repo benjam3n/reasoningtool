@@ -9,6 +9,17 @@ description: "Choose the right level of abstraction for understanding, deciding,
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Altitude adjustment**: You're thinking at the wrong level of abstraction — too zoomed in on details or too zoomed out in generalities — and need to find the level where things click (e.g., "I'm drowning in details" or "this is too vague to act on").
+**Interpretation 2 — Framing problem**: You're at a reasonable level of abstraction but looking at the situation through the wrong lens entirely — you need a different angle, not a different altitude (e.g., "I've tried zooming in and out and neither helps").
+**Interpretation 3 — Audience mismatch**: You understand something fine but need to pitch it at a different abstraction level for someone else — matching altitude to your audience (e.g., "how do I explain this to my boss / a beginner / an expert?").
+
+If ambiguous, ask: "I can help with adjusting your thinking altitude, reframing from a different angle, or matching abstraction level to an audience — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## GLOSSARY
 
 | Term | Definition |

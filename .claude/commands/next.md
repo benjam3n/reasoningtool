@@ -1,0 +1,1 @@
+Sub-orchestrator for next-step requests. Classifies intent, checks context, selects the single highest-value immediate action, and routes to execution or the right analysis skill. Read and execute `claude-code-plugin/skills/next/SKILL.md`, applying it to this input: $ARGUMENTS

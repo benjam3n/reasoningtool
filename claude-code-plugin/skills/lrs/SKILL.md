@@ -260,4 +260,15 @@ Format as document suitable for team review and archive.
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Analyze a completed campaign**: The user has finished an outreach campaign and wants to run the full learning system — data validation, metrics calculation, segment analysis, A/B test evaluation, learning extraction, and report generation.
+**Interpretation 2 — Extract specific learnings from partial data**: The user has some campaign results (not necessarily a full dataset) and wants to identify patterns, extract actionable learnings, and update their knowledge base.
+**Interpretation 3 — Plan measurement for an upcoming campaign**: The user hasn't run the campaign yet and wants to set up the right data collection, A/B tests, and success metrics so that meaningful learnings can be extracted afterward.
+
+If ambiguous, ask: "I can help with analyzing a completed campaign, extracting learnings from partial data, or planning measurement for an upcoming campaign — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

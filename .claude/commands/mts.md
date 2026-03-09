@@ -1,0 +1,1 @@
+Create a new skill from a request by deriving purpose, naming, workflow, output format, quality checks, and integration points. Read and execute `claude-code-plugin/skills/mts/SKILL.md`, applying it to this input: $ARGUMENTS

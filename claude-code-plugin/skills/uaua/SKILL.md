@@ -7,6 +7,17 @@ description: UAUA Combined Exploration - Universalize, ARAW, loop, synthesize. M
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Deep exploration of a problem or question**: The user has a complex topic they want exhaustively mapped, tested, and synthesized using the full UAUA cycle of universalization and adversarial analysis.
+**Interpretation 2 — Stress-testing a proposed solution or strategy**: The user already has a candidate answer and wants UAUA to rigorously test it, find edge cases, and produce a verdict with derivation trails.
+**Interpretation 3 — Creative generation with rigorous evaluation**: The user has a generative challenge (design, writing, strategy) and wants UAUA to produce candidate artifacts, then test them adversarially before recommending a direction.
+
+If ambiguous, ask: "I can help with deeply exploring a question, stress-testing a proposed solution, or generating and evaluating creative candidates — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Corruption Pre-Inoculation

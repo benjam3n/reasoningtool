@@ -9,6 +9,19 @@ description: "Comprehensive procedure for business goals including starting, gro
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Business problem to solve**: The user has a specific operational challenge (revenue, hiring, pricing, cash flow) and needs a framework applied to it.
+**Interpretation 2 — Business idea to evaluate**: The user has a new venture or product concept and wants to assess its viability, market fit, and economics before committing.
+**Interpretation 3 — Business growth strategy**: The user has an existing business and wants to identify the highest-leverage moves to scale revenue, efficiency, or market position.
+
+If ambiguous, ask: "I can help with solving a specific business problem, evaluating a new business idea, or developing a growth strategy — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Overview
 
 Comprehensive procedure for business goals including starting, growing, and operating businesses. Covers the gaps in the thin business domain.

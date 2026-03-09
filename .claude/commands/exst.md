@@ -1,0 +1,1 @@
+Turns decisions into action. Breaks down tasks, sequences them, sets milestones, identifies the first action, and biases toward starting over perfecting the plan. Read and execute `claude-code-plugin/skills/exst/SKILL.md`, applying it to this input: $ARGUMENTS

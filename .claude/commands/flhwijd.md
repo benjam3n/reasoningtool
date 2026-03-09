@@ -1,0 +1,1 @@
+Analyze the user's just-finished action sequence, extract the repeatable pattern, clean it, name it, and convert it into a reusable procedure with trigger conditions. Read and execute `claude-code-plugin/skills/flhwijd/SKILL.md`, applying it to this input: $ARGUMENTS

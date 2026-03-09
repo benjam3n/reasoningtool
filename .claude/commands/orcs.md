@@ -1,0 +1,1 @@
+Guides the design of routing and orchestrating skills that classify input, map it to the right target skill, and handle edge cases and ambiguous inputs. Read and execute `claude-code-plugin/skills/orcs/SKILL.md`, applying it to this input: $ARGUMENTS

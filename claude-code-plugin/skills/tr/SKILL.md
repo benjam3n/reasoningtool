@@ -7,6 +7,17 @@ description: Registry for domain templates. Store, retrieve, search, and manage 
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Performing a registry operation**: The user wants to store, retrieve, search, list, compare, update, or delete a specific template in the registry.
+**Interpretation 2 — Finding the right template for a task**: The user has a problem or domain and wants the registry to match it to the best available template, so they can apply a pre-built analytical workflow.
+**Interpretation 3 — Managing the registry itself**: The user wants to audit, reorganize, or maintain the template collection (checking for overlaps, cleaning stale entries, validating integrity).
+
+If ambiguous, ask: "I can help with a specific registry operation, finding a template for your task, or managing the registry — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

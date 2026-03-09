@@ -9,6 +9,19 @@ description: "Determine how much thinking to invest in a decision. Maps stakes, 
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Calibrate effort for a pending decision**: The user has a specific decision ahead and wants to know how much thinking, research, and process it actually warrants before they begin.
+**Interpretation 2 — Escape analysis paralysis**: The user is already deep in deliberation on something and suspects they are over-investing — they need a way to cut through and commit.
+**Interpretation 3 — Build an effort-calibration habit**: The user wants to internalize the framework itself so they can routinely right-size their decision-making process across many future choices.
+
+If ambiguous, ask: "I can help with calibrating effort for a specific decision, escaping analysis paralysis on something you're stuck on, or building the habit of right-sizing effort — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## STEP 0 — Quick Triage (Complete in under 60 seconds)
 
 Answer these three questions. Do not deliberate. Use your first instinct.

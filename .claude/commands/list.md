@@ -1,0 +1,1 @@
+Create rigorous, useful lists with clear scope, inclusion rules, ordering logic, coverage checks, and concise rationale per item — avoiding the common failures of vagueness, gaps, and inconsistent granularity. Read and execute `claude-code-plugin/skills/list/SKILL.md`, applying it to this input: $ARGUMENTS

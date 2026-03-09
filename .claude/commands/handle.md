@@ -1,0 +1,1 @@
+Convert maximally ambiguous 'handle this' requests into a classified task type, a concrete first action, and an ordered next-skill sequence. Read and execute `claude-code-plugin/skills/handle/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Thinking about your own thinking. Observes your current cognitive strategy, assesses whether it's working, checks for active biases, and decides whether to continue or switch approaches. Read and execute `claude-code-plugin/skills/mtcg/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -5,6 +5,23 @@ description: "Analyze complex systems using causal loop diagrams, stock and flow
 
 # Systems Analysis
 
+**Input**: $ARGUMENTS
+
+---
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Diagnose a system producing bad outcomes**: The user has a system (organization, market, process) that is behaving badly and wants to understand the underlying feedback structures causing the problem.
+**Interpretation 2 — Predict intervention effects**: The user is considering changing something in a complex system and wants to trace how that change will propagate through feedback loops before committing.
+**Interpretation 3 — Map an unfamiliar system**: The user needs to understand how a complex system works — its key variables, feedback loops, and archetypes — before making any decisions about it.
+
+If ambiguous, ask: "I can help with diagnosing why a system is producing bad results, predicting how a proposed change will ripple through a system, or mapping out how an unfamiliar system works — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Overview
 Analyze complex systems using causal loop diagrams, stock and flow models, feedback loop identification, and system archetypes
 

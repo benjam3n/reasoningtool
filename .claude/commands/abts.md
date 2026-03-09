@@ -1,0 +1,1 @@
+Design a valid experiment with a clear hypothesis, proper controls, sufficient sample size, and pre-defined decision criteria. Read and execute `claude-code-plugin/skills/abts/SKILL.md`, applying it to this input: $ARGUMENTS

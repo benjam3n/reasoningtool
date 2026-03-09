@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-09T17:07:03.174669+00:00",
-  "total": 491,
+  "generated": "2026-03-09T17:57:08.689770+00:00",
+  "total": 563,
   "skills": {
     "aa": {
       "id": "aa",
@@ -90,6 +90,28 @@
         "Verification"
       ],
       "line_count": 105
+    },
+    "abts": {
+      "id": "abts",
+      "title": "A/B Test Design",
+      "description": "Design a valid experiment with a clear hypothesis, proper controls, sufficient sample size, and pre-defined decision criteria.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Hypothesis",
+        "Step 2: Define Control and Treatment",
+        "Step 3: Calculate Required Sample Size",
+        "Step 4: Choose the Success Metric",
+        "Step 5: Set Runtime and Plan for Confounders",
+        "Step 6: Define Decision Criteria Before Running",
+        "Integration"
+      ],
+      "line_count": 164
     },
     "ac": {
       "id": "ac",
@@ -283,6 +305,7 @@
         "tp"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Assumption Types",
         "Depth Scaling",
@@ -293,7 +316,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 340
+      "line_count": 351
     },
     "afa": {
       "id": "afa",
@@ -390,6 +413,7 @@
         "va"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Depth Scaling",
         "The Inversion Process",
@@ -399,7 +423,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 368
+      "line_count": 379
     },
     "aiag": {
       "id": "aiag",
@@ -470,9 +494,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 255
+      "line_count": 266
     },
     "alebc": {
       "id": "alebc",
@@ -511,6 +536,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "GLOSSARY",
         "STEP 0: What type of situation are you in?",
         "SECTION A: Understanding Something",
@@ -523,7 +549,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 405
+      "line_count": 416
     },
     "am": {
       "id": "am",
@@ -657,6 +683,28 @@
       ],
       "line_count": 90
     },
+    "anst": {
+      "id": "anst",
+      "title": "Analysis Stage",
+      "description": "Structured deep analysis after exploration. Selects what to analyze, applies frameworks, finds patterns, tests hypotheses, and synthesizes findings.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Select What to Analyze",
+        "Step 2: Choose Analytical Frameworks",
+        "Step 3: Apply the Analysis",
+        "Step 4: Look for Patterns",
+        "Step 5: Test Hypotheses",
+        "Step 6: Synthesize Findings",
+        "Integration"
+      ],
+      "line_count": 146
+    },
     "ao": {
       "id": "ao",
       "title": "Algorithmic Optimization Orderings",
@@ -699,9 +747,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 99
+      "line_count": 112
     },
     "ape": {
       "id": "ape",
@@ -810,6 +859,7 @@
         "viability"
       ],
       "sections": [
+        "Interpretations",
         "Corruption Pre-Inoculation",
         "Core Principles",
         "Phase 1: EXPLORATION",
@@ -819,7 +869,7 @@
         "Anti-Cheerleading Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 211
+      "line_count": 222
     },
     "araw": {
       "id": "araw",
@@ -855,6 +905,7 @@
         "viability"
       ],
       "sections": [
+        "Interpretations",
         "Corruption Pre-Inoculation",
         "Core Principles",
         "Quick Mode: ARAW-Lite",
@@ -868,7 +919,7 @@
         "Saving Output",
         "Pre-Completion Check"
       ],
-      "line_count": 411
+      "line_count": 424
     },
     "arcd": {
       "id": "arcd",
@@ -1085,6 +1136,7 @@
         "ita"
       ],
       "sections": [
+        "Interpretations",
         "Corruption Pre-Inoculation",
         "Core Principles",
         "Phase 1: EXPLORATION",
@@ -1094,7 +1146,7 @@
         "Anti-Softness Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 204
+      "line_count": 215
     },
     "awtlytrn": {
       "id": "awtlytrn",
@@ -1140,9 +1192,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 93
+      "line_count": 106
     },
     "be": {
       "id": "be",
@@ -1165,6 +1218,27 @@
         "Verification"
       ],
       "line_count": 82
+    },
+    "benf": {
+      "id": "benf",
+      "title": "Benefit Estimation",
+      "description": "Estimates the benefits of an action or investment. Lists direct, indirect, and downstream benefits, quantifies where possible, and calculates expected value.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify All Potential Benefits",
+        "Step 2: Quantify Where Possible",
+        "Step 3: Estimate Probability",
+        "Step 4: Calculate Expected Value",
+        "Step 5: State Total Benefit",
+        "Integration"
+      ],
+      "line_count": 119
     },
     "bes": {
       "id": "bes",
@@ -1223,6 +1297,28 @@
       ],
       "line_count": 105
     },
+    "bldk": {
+      "id": "bldk",
+      "title": "Build",
+      "description": "Procedure for building or creating anything. Defines requirements, designs before building, builds incrementally, tests continuously, and iterates based on feedback.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define What's Being Built",
+        "Step 2: Specify Requirements",
+        "Step 3: Design Before Building",
+        "Step 4: Build the Smallest Working Version",
+        "Step 5: Test and Iterate",
+        "Step 6: Ship Decision",
+        "Integration"
+      ],
+      "line_count": 127
+    },
     "bm": {
       "id": "bm",
       "title": "Budget Management",
@@ -1246,9 +1342,10 @@
         "Principles",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 230
+      "line_count": 241
     },
     "bo": {
       "id": "bo",
@@ -1268,12 +1365,13 @@
       ],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 132
+      "line_count": 145
     },
     "boc": {
       "id": "boc",
@@ -1302,6 +1400,7 @@
         "pre"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Step 1: Identify Current Choice",
         "Step 2: Extract Preferences from Choice",
@@ -1317,7 +1416,7 @@
         "Execution Checklist",
         "Next Procedure"
       ],
-      "line_count": 249
+      "line_count": 260
     },
     "br": {
       "id": "br",
@@ -1339,12 +1438,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Depth Scaling",
         "Steps",
         "When to Use"
       ],
-      "line_count": 121
+      "line_count": 134
     },
     "but": {
       "id": "but",
@@ -1372,6 +1472,27 @@
         "Integration"
       ],
       "line_count": 174
+    },
+    "cand": {
+      "id": "cand",
+      "title": "Candidate Evaluation",
+      "description": "Systematically evaluates candidates for any role, position, or slot. Scores on requirements, checks for disqualifiers, and ranks by fit.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define Role Requirements",
+        "Step 2: List Candidates",
+        "Step 3: Score Each Candidate",
+        "Step 4: Rank by Fit",
+        "Step 5: Recommend",
+        "Integration"
+      ],
+      "line_count": 118
     },
     "capg": {
       "id": "capg",
@@ -1421,11 +1542,12 @@
       "invoked_by": [],
       "sections": [
         "Overview",
+        "Interpretations",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 374
+      "line_count": 385
     },
     "cd": {
       "id": "cd",
@@ -1454,9 +1576,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 185
+      "line_count": 196
     },
     "cda": {
       "id": "cda",
@@ -1478,6 +1601,7 @@
         "smc"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Analogy Domains Library",
         "Depth Scaling",
@@ -1488,7 +1612,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 397
+      "line_count": 408
     },
     "cdb": {
       "id": "cdb",
@@ -1686,6 +1810,7 @@
       ],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Step 0: Severity Assessment",
         "Steps",
@@ -1693,7 +1818,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 88
+      "line_count": 99
     },
     "chns": {
       "id": "chns",
@@ -1846,9 +1971,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 344
+      "line_count": 355
     },
     "cmp": {
       "id": "cmp",
@@ -1875,11 +2001,57 @@
         "gu"
       ],
       "sections": [
+        "Interpretations",
         "Core Principles",
         "The Process",
         "Handling Difficult Cases",
         "When Called by Other Skills",
         "Pre-Completion Check"
+      ],
+      "line_count": 159
+    },
+    "cmplx": {
+      "id": "cmplx",
+      "title": "Complex Analysis",
+      "description": "Framework for genuinely complex problems that resist simple answers. Identify sources of complexity, choose appropriate tools, decompose without oversimplifying, and synthesize.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Why This Is Complex",
+        "Step 2: Choose Complexity-Handling Tools",
+        "Step 3: Decompose Without Oversimplifying",
+        "Step 4: Maintain Awareness of Interactions",
+        "Step 5: Synthesize",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 154
+    },
+    "cmpr": {
+      "id": "cmpr",
+      "title": "Completeness Reasoning",
+      "description": "Reason about whether something is complete by checking necessary and sufficient conditions, identifying gaps and redundancies.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define What \"Complete\" Means",
+        "Step 2: Check Necessary Conditions",
+        "Step 3: Check Sufficient Conditions",
+        "Step 4: Identify What's Missing for Necessity",
+        "Step 5: Identify What's Redundant Beyond Sufficiency",
+        "Step 6: Assess Overall Completeness",
+        "Failure Modes",
+        "Integration"
       ],
       "line_count": 148
     },
@@ -2059,6 +2231,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Depth Scaling",
         "Step 0: Context Assessment",
@@ -2075,7 +2248,7 @@
         "Verification Criteria",
         "Integration Points"
       ],
-      "line_count": 552
+      "line_count": 565
     },
     "cpp": {
       "id": "cpp",
@@ -2100,9 +2273,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 282
+      "line_count": 295
     },
     "cppd": {
       "id": "cppd",
@@ -2416,6 +2590,49 @@
       ],
       "line_count": 153
     },
+    "ctcov": {
+      "id": "ctcov",
+      "title": "Cognitive Coverage Analysis",
+      "description": "Assess whether a system covers all types of thinking. Identifies gaps across cognitive dimensions and recommends additions.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the System Under Analysis",
+        "Step 2: Enumerate Cognitive Dimensions",
+        "Step 3: Assess Coverage",
+        "Step 4: Identify and Prioritize Gaps",
+        "Step 5: Recommend Additions",
+        "Step 6: Summary",
+        "Integration"
+      ],
+      "line_count": 200
+    },
+    "ctgp": {
+      "id": "ctgp",
+      "title": "Category Gap Analysis",
+      "description": "Analyzes gaps within a category by comparing what should exist to what currently exists, then prioritizes missing items by importance.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Category",
+        "Step 2: List What Should Exist",
+        "Step 3: List What Currently Exists",
+        "Step 4: Diff the Two Lists",
+        "Step 5: Prioritize Missing Items",
+        "Integration"
+      ],
+      "line_count": 110
+    },
     "cts": {
       "id": "cts",
       "title": "Content Strategy",
@@ -2436,9 +2653,33 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 314
+      "line_count": 325
+    },
+    "curd": {
+      "id": "curd",
+      "title": "Curriculum Design",
+      "description": "Design a structured learning path for any subject. Sequences topics by dependency, selects methods, sets milestones, and estimates time.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define the Learning Goal",
+        "Step 2: Assess Starting Knowledge",
+        "Step 3: Identify Prerequisite Knowledge",
+        "Step 4: Sequence Topics by Dependency",
+        "Step 5: Choose Learning Methods",
+        "Step 6: Set Milestones and Assessments",
+        "Step 7: Estimate Total Time and Create Schedule",
+        "Integration"
+      ],
+      "line_count": 157
     },
     "cv": {
       "id": "cv",
@@ -2527,6 +2768,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Depth Scaling",
         "Step 0: Context Assessment",
@@ -2543,7 +2785,7 @@
         "LLM Debugging Superpowers",
         "Common Debugging Patterns (LLM Reference)"
       ],
-      "line_count": 495
+      "line_count": 508
     },
     "dc": {
       "id": "dc",
@@ -2564,12 +2806,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 595
+      "line_count": 612
     },
     "dcm": {
       "id": "dcm",
@@ -2592,12 +2835,13 @@
         "ita"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 102
+      "line_count": 115
     },
     "dcp": {
       "id": "dcp",
@@ -2634,6 +2878,7 @@
         "tnt"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "The Chain",
         "Execution Procedure",
@@ -2641,7 +2886,29 @@
         "Output Format",
         "Example Usage"
       ],
-      "line_count": 196
+      "line_count": 207
+    },
+    "dcst": {
+      "id": "dcst",
+      "title": "Decision Stage",
+      "description": "Moves from analysis to commitment. Frames the decision, enumerates options, applies criteria, checks for decision traps, and documents the rationale.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Frame the Decision",
+        "Step 2: Enumerate Options",
+        "Step 3: Apply Decision Criteria",
+        "Step 4: Check for Decision Traps",
+        "Step 5: Make the Call",
+        "Step 6: Document for Future Reference",
+        "Integration"
+      ],
+      "line_count": 141
     },
     "dct": {
       "id": "dct",
@@ -2688,6 +2955,7 @@
         "search"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "When to Use",
         "Depth Scaling",
@@ -2696,7 +2964,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 225
+      "line_count": 236
     },
     "de": {
       "id": "de",
@@ -2713,6 +2981,7 @@
         "sym"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Dependency Types",
         "The Process",
@@ -2721,7 +2990,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 298
+      "line_count": 309
     },
     "deb": {
       "id": "deb",
@@ -2818,6 +3087,29 @@
         "After Completion"
       ],
       "line_count": 88
+    },
+    "difr": {
+      "id": "difr",
+      "title": "Differentiation Reasoning",
+      "description": "Reason about what makes things different by identifying similarities first, then classifying differences by significance and contextual relevance.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Things Being Compared",
+        "Step 2: List All Similarities",
+        "Step 3: Identify Differences",
+        "Step 4: Classify Differences",
+        "Step 5: Determine Which Differences Matter",
+        "Output Summary",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 136
     },
     "dlp": {
       "id": "dlp",
@@ -2977,6 +3269,29 @@
         "Verification"
       ],
       "line_count": 106
+    },
+    "dqnt": {
+      "id": "dqnt",
+      "title": "Data & Quantitative Analysis",
+      "description": "Procedure for working with numbers and data. Clarifies questions, assesses data quality, performs analysis, checks for statistical traps, and communicates findings.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Clarify the Question",
+        "Step 2: Assess Data Availability and Quality",
+        "Step 3: Choose Analysis Method",
+        "Step 4: Perform the Analysis",
+        "Step 5: Check for Statistical Traps",
+        "Step 6: Interpret Conservatively",
+        "Step 7: Communicate Findings",
+        "Integration"
+      ],
+      "line_count": 184
     },
     "dsd": {
       "id": "dsd",
@@ -3187,6 +3502,29 @@
       ],
       "line_count": 188
     },
+    "dtsk": {
+      "id": "dtsk",
+      "title": "Data Analysis",
+      "description": "Work with data systematically: assess what exists, evaluate quality, identify gaps, choose methods, interpret results, and communicate findings.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify What Data Exists",
+        "Step 2: Assess Data Quality",
+        "Step 3: Identify Missing Data",
+        "Step 4: Choose Analysis Methods",
+        "Step 5: Interpret Results",
+        "Step 6: Communicate Findings",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 148
+    },
     "dv": {
       "id": "dv",
       "title": "Detection Verification Orderings",
@@ -3242,13 +3580,36 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "STEP 0: What type of \"thinking\" situation is this?",
         "QUICK REFERENCE CARDS",
         "COMMON MISTAKES",
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 443
+      "line_count": 454
+    },
+    "dxpt": {
+      "id": "dxpt",
+      "title": "Domain Expert Assessment",
+      "description": "Evaluate quality from a domain expert's perspective. Identifies the domain, checks for oversimplification, verifies terminology, assesses depth, identifies missing nuance, and flags misleading content.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Domain",
+        "Step 2: Check for Oversimplification",
+        "Step 3: Verify Terminology",
+        "Step 4: Assess Depth of Treatment",
+        "Step 5: Identify Missing Nuance",
+        "Step 6: Flag Misleading Content",
+        "Integration"
+      ],
+      "line_count": 168
     },
     "dys": {
       "id": "dys",
@@ -3292,9 +3653,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 213
+      "line_count": 224
     },
     "ecal": {
       "id": "ecal",
@@ -3308,6 +3670,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "STEP 0 — Quick Triage (Complete in under 60 seconds)",
         "SECTION A — Minimum Effort Path",
         "SECTION B — Standard Effort Path",
@@ -3319,7 +3682,7 @@
         "WHEN TO OVERRIDE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 294
+      "line_count": 307
     },
     "ecoc": {
       "id": "ecoc",
@@ -3414,6 +3777,27 @@
         "Integration"
       ],
       "line_count": 165
+    },
+    "efrt": {
+      "id": "efrt",
+      "title": "Effort Estimation",
+      "description": "Estimates how much effort something will take. Decomposes into subtasks, applies three-point estimation, adds buffers, and compares to reference classes.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Decompose into Subtasks",
+        "Step 2: Three-Point Estimate Each Subtask",
+        "Step 3: Add Buffer for Unknowns",
+        "Step 4: Reference Class Comparison",
+        "Step 5: Final Estimate",
+        "Integration"
+      ],
+      "line_count": 117
     },
     "eg": {
       "id": "eg",
@@ -3537,6 +3921,29 @@
       ],
       "line_count": 75
     },
+    "eqi": {
+      "id": "eqi",
+      "title": "Emotional Intelligence",
+      "description": "Systematically develop emotional awareness, regulation, and social skill — treating EQ as a learnable competency, not a personality trait.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Emotions Accurately",
+        "Step 2: Understand Triggers",
+        "Step 3: Practice Regulation Strategies",
+        "Step 4: Develop Empathy Skills",
+        "Step 5: Improve Social Awareness",
+        "Step 6: Build Relationship Management",
+        "Step 7: Create a Development Plan",
+        "Integration"
+      ],
+      "line_count": 209
+    },
     "er": {
       "id": "er",
       "title": "Economic Research",
@@ -3558,9 +3965,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 252
+      "line_count": 263
     },
     "es": {
       "id": "es",
@@ -3763,9 +4171,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 369
+      "line_count": 380
     },
     "exint": {
       "id": "exint",
@@ -3835,6 +4244,28 @@
       ],
       "line_count": 171
     },
+    "exst": {
+      "id": "exst",
+      "title": "Execution Stage",
+      "description": "Turns decisions into action. Breaks down tasks, sequences them, sets milestones, identifies the first action, and biases toward starting over perfecting the plan.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Break the Decision Into Tasks",
+        "Step 2: Sequence the Tasks",
+        "Step 3: Assign Resources",
+        "Step 4: Set Milestones",
+        "Step 5: Identify the First Action",
+        "Step 6: Begin",
+        "Integration"
+      ],
+      "line_count": 144
+    },
     "extract": {
       "id": "extract",
       "title": "Skill Extractor",
@@ -3885,6 +4316,31 @@
         "Verification"
       ],
       "line_count": 98
+    },
+    "ezy": {
+      "id": "ezy",
+      "title": "Easy Mode Analysis",
+      "description": "Break any problem into the easiest possible steps — no jargon, no prerequisites, no assumed knowledge. Designed for when the user is overwhelmed, new to the domain, or needs the simplest possible path forward.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Assess Overwhelm Source",
+        "Phase 2: Simplify the Problem",
+        "Phase 3: Step-by-Step Path",
+        "Phase 4: If-Stuck Guide",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 186
     },
     "faa": {
       "id": "faa",
@@ -3997,9 +4453,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 200
+      "line_count": 211
     },
     "fe": {
       "id": "fe",
@@ -4047,9 +4504,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 254
+      "line_count": 265
     },
     "fia": {
       "id": "fia",
@@ -4085,6 +4543,7 @@
       ],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Depth Scaling",
         "The Chain",
@@ -4093,7 +4552,7 @@
         "Quality Gates",
         "Example Usage"
       ],
-      "line_count": 204
+      "line_count": 215
     },
     "fj": {
       "id": "fj",
@@ -4136,9 +4595,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 376
+      "line_count": 387
     },
     "fla": {
       "id": "fla",
@@ -4171,9 +4631,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 179
+      "line_count": 190
     },
     "flhwijd": {
       "id": "flhwijd",
@@ -4226,9 +4687,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 213
+      "line_count": 224
     },
     "fmtsb": {
       "id": "fmtsb",
@@ -4335,6 +4797,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Depth Scaling",
         "STEP 0: What are you trying to understand?",
         "STEP 1: How deep do you need to go?",
@@ -4343,7 +4806,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 442
+      "line_count": 453
     },
     "fonss": {
       "id": "fonss",
@@ -4429,9 +4892,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 252
+      "line_count": 263
     },
     "frq": {
       "id": "frq",
@@ -4445,6 +4909,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Depth Scaling",
         "Step 0: Why do you need a question?",
@@ -4458,7 +4923,7 @@
         "Common Mistakes",
         "When to Override This Procedure"
       ],
-      "line_count": 312
+      "line_count": 323
     },
     "fss": {
       "id": "fss",
@@ -4514,6 +4979,28 @@
       ],
       "line_count": 309
     },
+    "funr": {
+      "id": "funr",
+      "title": "Fun/Exploration Reasoning",
+      "description": "Reason about what's interesting, playful, or worth exploring for its own sake. Follow curiosity threads, note unexpected connections, and assess what exploration reveals.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify What's Curious or Surprising",
+        "Step 2: Follow the Thread of Interest",
+        "Step 3: Explore Without Utility Pressure",
+        "Step 4: Note Unexpected Connections",
+        "Step 5: Assess Whether Exploration Revealed Anything",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 139
+    },
     "fut": {
       "id": "fut",
       "title": "Future Analysis",
@@ -4547,6 +5034,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Depth Scaling",
         "Step 0: What type of answer are you checking?",
@@ -4560,7 +5048,29 @@
         "When to Override This Procedure",
         "Worked Examples"
       ],
-      "line_count": 238
+      "line_count": 251
+    },
+    "fwai": {
+      "id": "fwai",
+      "title": "Future AI Agent Value",
+      "description": "Assess value for autonomous AI agents. Identifies tasks suitable for autonomous execution, assesses reliability requirements, evaluates error recovery needs, checks human-in-loop requirements, and projects automation potential.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Tasks for Autonomous Execution",
+        "Step 2: Assess Reliability Requirements",
+        "Step 3: Evaluate Error Recovery Needs",
+        "Step 4: Check Human-in-Loop Requirements",
+        "Step 5: Project Automation Potential",
+        "Step 6: Value Assessment",
+        "Integration"
+      ],
+      "line_count": 183
     },
     "gaa": {
       "id": "gaa",
@@ -4710,9 +5220,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 397
+      "line_count": 408
     },
     "gee": {
       "id": "gee",
@@ -4773,6 +5284,55 @@
       ],
       "line_count": 115
     },
+    "genl": {
+      "id": "genl",
+      "title": "General Analysis",
+      "description": "Analyze at the general level — extract principles, patterns, and transferable insights rather than situation-specific answers. Find the general rule that explains the specific case.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Specific Case Extraction",
+        "Phase 2: Pattern Identification",
+        "Phase 3: Generalization",
+        "Phase 4: Transfer Test",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 189
+    },
+    "gflr": {
+      "id": "gflr",
+      "title": "Gap-Filling Reasoning",
+      "description": "Reason about what's missing and why it matters by identifying intended completeness, enumerating present elements, and prioritizing gaps by impact.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Intended Complete Set",
+        "Step 2: Enumerate What's Present",
+        "Step 3: Identify What's Absent",
+        "Step 4: Assess Whether Absences Are Intentional",
+        "Step 5: Prioritize Gaps by Impact",
+        "Step 6: Recommend Fills",
+        "Output Summary",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 147
+    },
     "gg": {
       "id": "gg",
       "title": "Guess Generation (Exhaustive Search with Coverage Tracking)",
@@ -4798,6 +5358,7 @@
         "spd"
       ],
       "sections": [
+        "Interpretations",
         "Core Principles",
         "Unbundling Rules",
         "CRUX Identification (ARAW Integration)",
@@ -4833,7 +5394,7 @@
         "Execution Checklist",
         "Next Procedure"
       ],
-      "line_count": 543
+      "line_count": 556
     },
     "given": {
       "id": "given",
@@ -5125,12 +5686,13 @@
       ],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 171
+      "line_count": 184
     },
     "gu": {
       "id": "gu",
@@ -5160,9 +5722,11 @@
       ],
       "invoked_by": [
         "ho",
+        "pick",
         "uga"
       ],
       "sections": [
+        "Interpretations",
         "Step 0: Context Detection and Variant Selection",
         "Step 0.3: Complexity Assessment",
         "Step 0.5: Clarification vs Substitution Check",
@@ -5182,7 +5746,7 @@
         "Verification Criteria",
         "Integration Points"
       ],
-      "line_count": 481
+      "line_count": 492
     },
     "gw": {
       "id": "gw",
@@ -5204,9 +5768,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 246
+      "line_count": 257
     },
     "hab": {
       "id": "hab",
@@ -5328,12 +5893,13 @@
       ],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 133
+      "line_count": 146
     },
     "how": {
       "id": "how",
@@ -5391,6 +5957,32 @@
       ],
       "line_count": 140
     },
+    "hrd": {
+      "id": "hrd",
+      "title": "Hard Mode Analysis",
+      "description": "Apply maximum rigor to a problem — no shortcuts, no defaults, no simplifications. Every assumption surfaced, every edge case considered, every tradeoff explicit. For when getting it wrong is expensive.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Scope and Stakes",
+        "Phase 2: Assumption Audit",
+        "Phase 3: Full Option Enumeration",
+        "Phase 4: Risk Enumeration",
+        "Phase 5: Tradeoff Matrix",
+        "Phase 6: Decision and Audit Trail",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 239
+    },
     "ht": {
       "id": "ht",
       "title": "Hypothesis Testing",
@@ -5412,6 +6004,7 @@
         "tp"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Depth Scaling",
         "Step 0: Context Detection and Variant Selection",
@@ -5420,7 +6013,7 @@
         "Verification",
         "Niche Documentation"
       ],
-      "line_count": 531
+      "line_count": 542
     },
     "hvh": {
       "id": "hvh",
@@ -5492,6 +6085,27 @@
       ],
       "line_count": 184
     },
+    "icl": {
+      "id": "icl",
+      "title": "Intentional Claim Analysis",
+      "description": "Evaluate claims about what someone wants or intends. Check behavioral evidence, stated vs revealed preferences, and alternative intentions.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Intentional Claim",
+        "Step 2: Check Behavioral Evidence",
+        "Step 3: Check Stated vs. Revealed Preferences",
+        "Step 4: Identify Alternative Intentions",
+        "Step 5: Assess Credibility",
+        "Integration"
+      ],
+      "line_count": 153
+    },
     "idg": {
       "id": "idg",
       "title": "idg",
@@ -5515,6 +6129,28 @@
         "Verification"
       ],
       "line_count": 145
+    },
+    "idsk": {
+      "id": "idsk",
+      "title": "Ideas",
+      "description": "Procedure for working with ideas. Captures the idea precisely, assesses novelty and feasibility, identifies the core insight, finds connections, and determines next steps.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Capture the Idea Precisely",
+        "Step 2: Assess Novelty",
+        "Step 3: Assess Feasibility",
+        "Step 4: Identify the Core Insight",
+        "Step 5: Find Connections",
+        "Step 6: Determine Next Step",
+        "Integration"
+      ],
+      "line_count": 112
     },
     "ie": {
       "id": "ie",
@@ -5567,9 +6203,10 @@
         "Goal",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 131
+      "line_count": 142
     },
     "ig": {
       "id": "ig",
@@ -5605,6 +6242,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Depth Scaling",
         "STEP 0: WHAT TYPE OF TRIAGE IS THIS?",
         "SECTION A: DECISION FACTOR TRIAGE",
@@ -5617,7 +6255,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 619
+      "line_count": 632
     },
     "im": {
       "id": "im",
@@ -5670,6 +6308,90 @@
         "Integration"
       ],
       "line_count": 127
+    },
+    "imprt": {
+      "id": "imprt",
+      "title": "Improve Reasoning Tool",
+      "description": "Auto-diagnose the reasoning toolkit as a whole — identify quality gaps, missing skills, structural inconsistencies, integration failures, and improvement priorities across the entire skill library.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "impss",
+        "skgap"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: System-Level Diagnostic",
+        "Phase 2: Individual Skill Scan",
+        "Phase 3: Systemic Issue Detection",
+        "Phase 4: Improvement Roadmap",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 202
+    },
+    "imps": {
+      "id": "imps",
+      "title": "Improve Skill",
+      "description": "Systematically improve a single skill by diagnosing its weaknesses against the quality standard, generating specific fixes, applying them, and verifying the result meets all structural and content requirements.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "impss"
+      ],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Read and Baseline",
+        "Phase 2: Content Diagnosis",
+        "Phase 3: Improvement Plan",
+        "Phase 4: Apply Fixes",
+        "Phase 5: Verify",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 185
+    },
+    "impss": {
+      "id": "impss",
+      "title": "Improve Skills (Batch)",
+      "description": "Systematically improve multiple skills by triaging them against the quality standard, prioritizing by severity and impact, and applying /imps to each in the optimal order.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "imps"
+      ],
+      "invoked_by": [
+        "imprt"
+      ],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Identify Targets",
+        "Phase 2: Triage",
+        "Phase 3: Pattern Detection",
+        "Phase 4: Priority Queue",
+        "Phase 5: Execute",
+        "Phase 6: Batch Summary",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 203
     },
     "indv": {
       "id": "indv",
@@ -5733,6 +6455,7 @@
         "fia"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Input Sources",
         "The Synthesis Process",
@@ -5742,7 +6465,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 435
+      "line_count": 446
     },
     "insd": {
       "id": "insd",
@@ -5756,6 +6479,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Depth Scaling",
         "STEP 0: What phase are you in?",
         "QUICK REFERENCE CARDS",
@@ -5763,7 +6487,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 293
+      "line_count": 306
     },
     "ip": {
       "id": "ip",
@@ -5787,9 +6511,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 277
+      "line_count": 288
     },
     "ipss": {
       "id": "ipss",
@@ -5858,6 +6583,7 @@
       ],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Core Principles",
         "Phase 1: Claim Extraction",
         "Phase 2: Evidence/Assumption Separation",
@@ -5869,7 +6595,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 206
+      "line_count": 217
     },
     "ita": {
       "id": "ita",
@@ -6018,9 +6744,10 @@
       "invoked_by": [],
       "sections": [
         "Overview",
-        "Steps"
+        "Steps",
+        "Interpretations"
       ],
-      "line_count": 286
+      "line_count": 297
     },
     "jm": {
       "id": "jm",
@@ -6048,9 +6775,10 @@
       "sections": [
         "Overview",
         "Steps",
-        "Output Format"
+        "Output Format",
+        "Interpretations"
       ],
-      "line_count": 252
+      "line_count": 263
     },
     "jss": {
       "id": "jss",
@@ -6090,13 +6818,14 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "STEP 0: What kind of inaction are you experiencing?",
         "QUICK REFERENCE CARDS",
         "COMMON MISTAKES",
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 302
+      "line_count": 315
     },
     "la": {
       "id": "la",
@@ -6119,9 +6848,10 @@
         "Overview",
         "Core Principle",
         "Depth Scaling",
-        "Steps"
+        "Steps",
+        "Interpretations"
       ],
-      "line_count": 99
+      "line_count": 110
     },
     "lcs": {
       "id": "lcs",
@@ -6259,6 +6989,28 @@
       ],
       "line_count": 209
     },
+    "llmf": {
+      "id": "llmf",
+      "title": "LLM Feasibility",
+      "description": "Assess whether a task is well-suited for LLM execution. Checks factual accuracy needs, context window requirements, hallucination risks, output verifiability, and recommends guardrails.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Task Classification",
+        "Step 2: Check Factual Accuracy Needs",
+        "Step 3: Assess Context Window Needs",
+        "Step 4: Identify Hallucination Risks",
+        "Step 5: Evaluate Output Verifiability",
+        "Step 6: Recommend Guardrails",
+        "Integration"
+      ],
+      "line_count": 155
+    },
     "lp": {
       "id": "lp",
       "title": "lp",
@@ -6357,9 +7109,32 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 131
+      "line_count": 142
+    },
+    "lrnk": {
+      "id": "lrnk",
+      "title": "Learn",
+      "description": "Systematic procedure for learning anything. Assesses current knowledge, identifies gaps, chooses learning strategies, sets milestones, and plans ongoing review.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Define What You're Learning",
+        "Step 2: Assess Current Knowledge",
+        "Step 3: Identify Knowledge Gaps",
+        "Step 4: Choose Learning Strategy",
+        "Step 5: Set Milestones",
+        "Step 6: Plan Retention",
+        "Integration"
+      ],
+      "line_count": 123
     },
     "lrs": {
       "id": "lrs",
@@ -6379,9 +7154,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 263
+      "line_count": 274
     },
     "lt": {
       "id": "lt",
@@ -6449,9 +7225,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 105
+      "line_count": 116
     },
     "ma": {
       "id": "ma",
@@ -6482,12 +7259,13 @@
       "sections": [
         "Overview",
         "Goal",
+        "Interpretations",
         "Depth Scaling",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 140
+      "line_count": 157
     },
     "mcd": {
       "id": "mcd",
@@ -6661,6 +7439,28 @@
       ],
       "line_count": 178
     },
+    "memk": {
+      "id": "memk",
+      "title": "Knowledge Capture",
+      "description": "Systematic approach to capturing, organizing, and maintaining personal knowledge for future retrieval and use.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify What's Worth Capturing",
+        "Step 2: Choose Storage Format",
+        "Step 3: Create Retrieval Structure",
+        "Step 4: Write in Future-Self-Friendly Format",
+        "Step 5: Schedule Review",
+        "Step 6: Prune Outdated Entries",
+        "Integration"
+      ],
+      "line_count": 150
+    },
     "memy": {
       "id": "memy",
       "title": "Memory & Retention",
@@ -6771,9 +7571,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 341
+      "line_count": 352
     },
     "mil": {
       "id": "mil",
@@ -6797,6 +7598,27 @@
         "Verification"
       ],
       "line_count": 79
+    },
+    "mocl": {
+      "id": "mocl",
+      "title": "Modal Claim Analysis",
+      "description": "Evaluate \"could/would/might\" claims. Identify the type of possibility, check constraints, and assess distance from actuality.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Modal Claim",
+        "Step 2: Identify the Type of Possibility",
+        "Step 3: Check Constraints",
+        "Step 4: Identify Enabling Conditions",
+        "Step 5: Assess Distance from Actuality",
+        "Integration"
+      ],
+      "line_count": 143
     },
     "mp": {
       "id": "mp",
@@ -6896,9 +7718,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 120
+      "line_count": 131
     },
     "mrc": {
       "id": "mrc",
@@ -6955,6 +7778,51 @@
         "Verification"
       ],
       "line_count": 125
+    },
+    "mtcg": {
+      "id": "mtcg",
+      "title": "Metacognition",
+      "description": "Thinking about your own thinking. Observes your current cognitive strategy, assesses whether it's working, checks for active biases, and decides whether to continue or switch approaches.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Observe Your Current Strategy",
+        "Step 2: Assess Whether It's Working",
+        "Step 3: Identify Alternative Strategies",
+        "Step 4: Bias Check",
+        "Step 5: Decide — Continue or Switch",
+        "Step 6: Monitor Comprehension",
+        "Step 7: Metacognitive Summary",
+        "Integration"
+      ],
+      "line_count": 159
+    },
+    "mtcl": {
+      "id": "mtcl",
+      "title": "Meta Claim Analysis",
+      "description": "Evaluate claims about claims. Analyze what level a claim operates at, check self-referential consistency, and assess impact on object-level analysis.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Meta-Claim",
+        "Step 2: Identify What Level It Operates At",
+        "Step 3: Check Self-Referential Consistency",
+        "Step 4: Test for Consistency",
+        "Step 5: Assess Impact on Object-Level Analysis",
+        "Step 6: Verdict",
+        "Integration"
+      ],
+      "line_count": 165
     },
     "mtgd": {
       "id": "mtgd",
@@ -7025,6 +7893,29 @@
       ],
       "line_count": 245
     },
+    "mtskd": {
+      "id": "mtskd",
+      "title": "Meta-Skill Design",
+      "description": "Design skills that operate on other skills — improving, validating, combining, or routing them — with cross-skill compatibility.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Meta-Operation",
+        "Step 2: Design the Input",
+        "Step 3: Design What the Meta-Operation Adds",
+        "Step 4: Ensure Cross-Skill Compatibility",
+        "Step 5: Test on 3+ Different Skills",
+        "Output Summary",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 174
+    },
     "mv": {
       "id": "mv",
       "title": "MECE Validation",
@@ -7040,6 +7931,7 @@
         "evaluate"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "MECE Spectrum",
         "The Validation Process",
@@ -7048,7 +7940,29 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 295
+      "line_count": 306
+    },
+    "ncl": {
+      "id": "ncl",
+      "title": "Normative Claim Analysis",
+      "description": "Evaluate a \"should\" claim. Identify underlying values, check if prescriptions serve those values, and assess competing considerations.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Normative Claim",
+        "Step 2: Identify the Underlying Value",
+        "Step 3: Check If the Value Is Shared",
+        "Step 4: Check If the Prescription Serves the Value",
+        "Step 5: Identify Competing Values",
+        "Step 6: Assess the Strength of the \"Should\"",
+        "Integration"
+      ],
+      "line_count": 146
     },
     "neg": {
       "id": "neg",
@@ -7285,9 +8199,34 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 101
+      "line_count": 112
+    },
+    "oart": {
+      "id": "oart",
+      "title": "Artifact Generation",
+      "description": "Generates reusable artifacts such as templates, checklists, frameworks, and tools. Takes a use case and produces a well-structured artifact with usage instructions and a tested example.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Artifact Type",
+        "Step 2: Define the Use Case",
+        "Step 3: Design the Structure",
+        "Step 4: Populate with Content",
+        "Step 5: Test with a Real Example",
+        "Step 6: Refine for Reusability",
+        "Step 7: Add Usage Instructions",
+        "Deliver",
+        "Integration"
+      ],
+      "line_count": 156
     },
     "oba": {
       "id": "oba",
@@ -7515,9 +8454,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 106
+      "line_count": 117
     },
     "oprc": {
       "id": "oprc",
@@ -7772,6 +8712,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Core Principles",
         "Prerequisite: Source Analysis",
         "Phase 1: PLAN EXTRACTION",
@@ -7780,7 +8721,293 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 318
+      "line_count": 329
+    },
+    "p10complement": {
+      "id": "p10complement",
+      "title": "Pick 10 Complement",
+      "description": "Shortcut for /pick 10 complement [your input]. Passes additional arguments through to the pick algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p10diverse": {
+      "id": "p10diverse",
+      "title": "Pick 10 Diverse",
+      "description": "Shortcut for /pick 10 diverse. Quick access to the Pick 10 Diverse algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p10for": {
+      "id": "p10for",
+      "title": "Pick 10 For Situation",
+      "description": "Shortcut for /pick 10 for [your input]. Passes additional arguments through to the pick algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p10goal": {
+      "id": "p10goal",
+      "title": "Pick 10 Goal",
+      "description": "Shortcut for /pick 10 goal [your input]. Passes additional arguments through to the pick algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p10random": {
+      "id": "p10random",
+      "title": "Pick 10 Random",
+      "description": "Shortcut for /pick 10 random. Quick access to the Pick 10 Random algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p10useful": {
+      "id": "p10useful",
+      "title": "Pick 10 Useful",
+      "description": "Shortcut for /pick 10 useful. Quick access to the Pick 10 Useful algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p3chain": {
+      "id": "p3chain",
+      "title": "Pick 3 Chain",
+      "description": "Shortcut for /pick 3 chain [your input]. Passes additional arguments through to the pick algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p5deep": {
+      "id": "p5deep",
+      "title": "Pick 5 Deep",
+      "description": "Shortcut for /pick 5 deep. Quick access to the Pick 5 Deep algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p5qm": {
+      "id": "p5qm",
+      "title": "Pick 5 Question Me",
+      "description": "Shortcut for /pick 5 question me. Quick access to the Pick 5 Question Me algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p5similar": {
+      "id": "p5similar",
+      "title": "Pick 5 Similar",
+      "description": "Shortcut for /pick 5 similar [your input]. Passes additional arguments through to the pick algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p5want": {
+      "id": "p5want",
+      "title": "Pick 5 Want",
+      "description": "Shortcut for /pick 5 want [your input]. Passes additional arguments through to the pick algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p7cat": {
+      "id": "p7cat",
+      "title": "Pick 7 Category",
+      "description": "Shortcut for /pick 7 category [your input]. Passes additional arguments through to the pick algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
+    },
+    "p8tier": {
+      "id": "p8tier",
+      "title": "Pick 8 Tier",
+      "description": "Shortcut for /pick 8 tier [your input]. Passes additional arguments through to the pick algorithm.",
+      "tier": "tier4",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "shortcut",
+        "pick",
+        "discovery"
+      ],
+      "input_types": [],
+      "invokes": [
+        "pick"
+      ],
+      "invoked_by": [],
+      "sections": [],
+      "line_count": 14
     },
     "pag": {
       "id": "pag",
@@ -8046,6 +9273,28 @@
       ],
       "line_count": 81
     },
+    "pcl": {
+      "id": "pcl",
+      "title": "Predictive Claim Analysis",
+      "description": "Evaluate a prediction. Assess the model behind it, check track records, identify falsifiers, and estimate probability with calibration.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Prediction Precisely",
+        "Step 2: Identify the Model",
+        "Step 3: Check Track Record",
+        "Step 4: Identify Falsifiers",
+        "Step 5: Assess Base Rate",
+        "Step 6: Estimate Probability",
+        "Integration"
+      ],
+      "line_count": 149
+    },
     "pefs": {
       "id": "pefs",
       "title": "Procedure Extraction from Source",
@@ -8073,6 +9322,28 @@
         "Verification"
       ],
       "line_count": 377
+    },
+    "per": {
+      "id": "per",
+      "title": "Persuasion Design",
+      "description": "Design a persuasive argument or communication. Structures the argument, anticipates objections, and checks for ethical soundness.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Audience and Their Current Position",
+        "Step 2: Define the Desired Shift",
+        "Step 3: Choose Persuasion Approach",
+        "Step 4: Structure the Argument",
+        "Step 5: Anticipate and Address Objections",
+        "Step 6: Ethical Soundness Check",
+        "Integration"
+      ],
+      "line_count": 143
     },
     "pf": {
       "id": "pf",
@@ -8157,6 +9428,76 @@
       ],
       "line_count": 218
     },
+    "pick": {
+      "id": "pick",
+      "title": "Skill Picker",
+      "description": "Pick N skills using a specified algorithm. Supports random, goal-directed, intent-matching, category filtering, useful ranking, question-driven elimination, and freeform semantic search.",
+      "tier": "category",
+      "category": "Meta & Navigation",
+      "categories": [
+        "Meta & Navigation"
+      ],
+      "tags": [
+        "discovery",
+        "selection",
+        "navigation",
+        "meta"
+      ],
+      "input_types": [],
+      "invokes": [
+        "gu"
+      ],
+      "invoked_by": [
+        "p10complement",
+        "p10diverse",
+        "p10for",
+        "p10goal",
+        "p10random",
+        "p10useful",
+        "p3chain",
+        "p5deep",
+        "p5qm",
+        "p5similar",
+        "p5want",
+        "p7cat",
+        "p8tier"
+      ],
+      "sections": [
+        "Purpose",
+        "Syntax",
+        "Step 0: Parse Input",
+        "Algorithms",
+        "Output Format (All Algorithms)",
+        "Depth Scaling",
+        "Anti-Failure Checks",
+        "Pre-Completion Check",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 397
+    },
+    "pinf": {
+      "id": "pinf",
+      "title": "Persuasion & Influence Analysis",
+      "description": "Analyze how influence works in a situation. Maps influence channels, assesses ethical boundaries, and recommends strategy or defense.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Influence Dynamics",
+        "Step 2: Map the Influence Channels",
+        "Step 3: Assess Channel Effectiveness",
+        "Step 4: Identify Ethical Boundaries",
+        "Step 5: Recommend Strategy",
+        "Step 6: Predict Outcomes",
+        "Integration"
+      ],
+      "line_count": 179
+    },
     "pjc": {
       "id": "pjc",
       "title": "Project Closure",
@@ -8175,9 +9516,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 334
+      "line_count": 345
     },
     "pji": {
       "id": "pji",
@@ -8322,6 +9664,28 @@
       ],
       "line_count": 144
     },
+    "plsk": {
+      "id": "plsk",
+      "title": "Plans",
+      "description": "Procedure for evaluating and improving plans. Checks if steps lead to goal, identifies missing or unnecessary steps, assesses sequencing and resources, and suggests improvements.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Plan's Goal",
+        "Step 2: List the Steps",
+        "Step 3: Check Goal Alignment",
+        "Step 4: Find Missing Steps",
+        "Step 5: Check Sequencing and Resources",
+        "Step 6: Improved Plan",
+        "Integration"
+      ],
+      "line_count": 117
+    },
     "po": {
       "id": "po",
       "title": "Personal Optimization",
@@ -8373,9 +9737,10 @@
         "Overview",
         "Core Principle",
         "Depth Scaling",
-        "Steps"
+        "Steps",
+        "Interpretations"
       ],
-      "line_count": 113
+      "line_count": 124
     },
     "pos": {
       "id": "pos",
@@ -8398,9 +9763,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 483
+      "line_count": 494
     },
     "pp": {
       "id": "pp",
@@ -8587,9 +9953,10 @@
         "Goal",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 100
+      "line_count": 111
     },
     "prr": {
       "id": "prr",
@@ -8614,6 +9981,51 @@
         "When to Use"
       ],
       "line_count": 68
+    },
+    "prsk": {
+      "id": "prsk",
+      "title": "Products",
+      "description": "Procedure for analyzing products or offerings. Identifies the user and their need, evaluates fit, compares against alternatives, and finds improvement opportunities.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Product",
+        "Step 2: Identify the User and Need",
+        "Step 3: Assess Product-Need Fit",
+        "Step 4: Evaluate Against Alternatives",
+        "Step 5: Identify Strengths and Weaknesses",
+        "Step 6: Improvement Opportunities and Market Fit",
+        "Integration"
+      ],
+      "line_count": 120
+    },
+    "prvn": {
+      "id": "prvn",
+      "title": "Proven-Need Validation",
+      "description": "Validate that a need is real before investing by finding behavioral evidence, quantifying demand, checking existing solutions, and assessing trajectory.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Claimed Need",
+        "Step 2: Find Behavioral Evidence",
+        "Step 3: Quantify the Need",
+        "Step 4: Check If Solutions Already Exist",
+        "Step 5: Assess Whether the Need Is Growing or Shrinking",
+        "Output Summary",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 157
     },
     "pss": {
       "id": "pss",
@@ -8665,9 +10077,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 311
+      "line_count": 322
     },
     "pus": {
       "id": "pus",
@@ -8735,6 +10148,7 @@
         "saropc"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Validation Dimensions",
         "The Validation Process",
@@ -8743,7 +10157,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 386
+      "line_count": 397
     },
     "pvg": {
       "id": "pvg",
@@ -8788,9 +10202,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 132
+      "line_count": 143
     },
     "pwc": {
       "id": "pwc",
@@ -8818,6 +10233,28 @@
         "Verification"
       ],
       "line_count": 94
+    },
+    "pwif": {
+      "id": "pwif",
+      "title": "Physical World Interface",
+      "description": "Bridge thinking to real-world action — account for physical logistics, materials, locations, time, and failure modes that pure reasoning ignores.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify Physical Actions Needed",
+        "Step 2: Map Resources and Constraints",
+        "Step 3: Sequence Actions for Physical Reality",
+        "Step 4: Create Checklists",
+        "Step 5: Plan for Physical-World Failure Modes",
+        "Step 6: Final Reality Check",
+        "Integration"
+      ],
+      "line_count": 181
     },
     "qaf": {
       "id": "qaf",
@@ -8986,9 +10423,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 748
+      "line_count": 759
     },
     "qs": {
       "id": "qs",
@@ -9009,6 +10447,27 @@
         "Verification"
       ],
       "line_count": 71
+    },
+    "ratn": {
+      "id": "ratn",
+      "title": "Rationale Construction",
+      "description": "Builds a clear, compelling rationale for any decision or recommendation. Organizes evidence by strength, addresses counterarguments, and outputs a persuasive but honest case.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Conclusion",
+        "Step 2: List the Supporting Evidence",
+        "Step 3: Organize by Strength",
+        "Step 4: Address the Strongest Counterargument",
+        "Step 5: Construct the Rationale",
+        "Integration"
+      ],
+      "line_count": 130
     },
     "rc5w": {
       "id": "rc5w",
@@ -9065,6 +10524,7 @@
         "fj"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Depth Scaling",
         "Step 0: Context Detection and Variant Selection",
@@ -9073,7 +10533,7 @@
         "Verification",
         "Niche Documentation"
       ],
-      "line_count": 342
+      "line_count": 353
     },
     "rci": {
       "id": "rci",
@@ -9102,9 +10562,10 @@
         "Overview",
         "Core Principle",
         "Principles",
-        "When to Use"
+        "When to Use",
+        "Interpretations"
       ],
-      "line_count": 152
+      "line_count": 163
     },
     "re": {
       "id": "re",
@@ -9179,9 +10640,33 @@
         "Principles",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 109
+      "line_count": 120
+    },
+    "rfst": {
+      "id": "rfst",
+      "title": "Reflection Stage",
+      "description": "Learns from completed work by comparing outcomes to expectations, identifying what worked and what didn't, extracting transferable lessons, and updating beliefs.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Compare Outcome to Expectation",
+        "Step 2: Identify What Worked",
+        "Step 3: Identify What Didn't Work",
+        "Step 4: Extract Transferable Lessons",
+        "Step 5: Update Beliefs",
+        "Step 6: Decide What to Do Differently",
+        "Step 7: Reflection Summary",
+        "Integration"
+      ],
+      "line_count": 170
     },
     "rgc": {
       "id": "rgc",
@@ -9231,6 +10716,28 @@
         "Verification"
       ],
       "line_count": 94
+    },
+    "rlcl": {
+      "id": "rlcl",
+      "title": "Relational Claim Analysis",
+      "description": "Evaluate claims about how things relate. Verify the relationship type, test its strength, and identify its boundaries.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Relationship",
+        "Step 2: Check If Both Things Exist as Described",
+        "Step 3: Verify the Relationship Type",
+        "Step 4: Test the Relationship's Strength",
+        "Step 5: Identify Boundaries",
+        "Step 6: Verdict",
+        "Integration"
+      ],
+      "line_count": 161
     },
     "rlg": {
       "id": "rlg",
@@ -9311,6 +10818,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Glossary",
         "Prerequisites",
         "Depth Scaling",
@@ -9326,7 +10834,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 697
+      "line_count": 710
     },
     "rmo": {
       "id": "rmo",
@@ -9565,6 +11073,28 @@
         "Verification"
       ],
       "line_count": 93
+    },
+    "rwif": {
+      "id": "rwif",
+      "title": "Real-World Interface",
+      "description": "Bridge the gap between thinking/planning and physical execution. Converts plans into actionable checklists with logistics, failure modes, and contingencies.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Take the Plan or Decision",
+        "Step 2: Identify Every Physical Action Required",
+        "Step 3: Sequence by Logistics",
+        "Step 4: Create Actionable Checklists",
+        "Step 5: Identify Physical-World Failure Modes",
+        "Step 6: Add Contingencies",
+        "Integration"
+      ],
+      "line_count": 160
     },
     "saaapcav": {
       "id": "saaapcav",
@@ -10027,6 +11557,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Depth Scaling",
         "Step 0: What type of self-deception situation is this?",
@@ -10040,7 +11571,7 @@
         "When to Override This Procedure",
         "Worked Examples"
       ],
-      "line_count": 552
+      "line_count": 565
     },
     "sdp": {
       "id": "sdp",
@@ -10081,6 +11612,7 @@
         "search"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Granularity Levels",
         "Depth Scaling",
@@ -10093,7 +11625,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 280
+      "line_count": 291
     },
     "search": {
       "id": "search",
@@ -10175,6 +11707,7 @@
         "gts"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Step 0: Context Assessment",
         "Step 1: Review Rankings and Context",
@@ -10187,7 +11720,7 @@
         "Verification Criteria",
         "Integration Points"
       ],
-      "line_count": 380
+      "line_count": 391
     },
     "sep": {
       "id": "sep",
@@ -10272,6 +11805,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Step 0: Triage",
         "SECTION A: First-Time / Novel Situation",
@@ -10284,7 +11818,7 @@
         "When to Override This Procedure",
         "Worked Examples"
       ],
-      "line_count": 358
+      "line_count": 371
     },
     "sim": {
       "id": "sim",
@@ -10381,6 +11915,79 @@
       ],
       "line_count": 120
     },
+    "skcl": {
+      "id": "skcl",
+      "title": "Skill Cluster Design",
+      "description": "Design groups of related skills that work together by identifying domain capabilities, grouping by affinity, designing interfaces, and mapping common paths.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Domain",
+        "Step 2: Enumerate Needed Capabilities",
+        "Step 3: Group by Natural Affinity",
+        "Step 4: Design Skill Interfaces",
+        "Step 5: Identify the Entry-Point Skill",
+        "Step 6: Map Common Paths",
+        "Output Summary",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 157
+    },
+    "skev": {
+      "id": "skev",
+      "title": "Skill Evaluation",
+      "description": "Evaluates the quality and effectiveness of a procedure, skill, or method. Tests on multiple inputs, measures efficiency, identifies failure modes, and rates overall effectiveness.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: State the Skill's Purpose",
+        "Step 2: Test on 3+ Inputs",
+        "Step 3: Assess Efficiency",
+        "Step 4: Identify Failure Modes",
+        "Step 5: Compare to Alternatives",
+        "Step 6: Rate Overall Effectiveness",
+        "Integration"
+      ],
+      "line_count": 122
+    },
+    "skgap": {
+      "id": "skgap",
+      "title": "Skill Gap Analysis",
+      "description": "Identify thinking dimensions not adequately represented by the current skill library, recommend new skills across a sophistication/simplicity spectrum, and prioritize by user value and coverage gap severity.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "imprt"
+      ],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Dimension Mapping",
+        "Phase 2: Cross-Dimensional Analysis",
+        "Phase 3: Thinking Mode Coverage",
+        "Phase 4: Recommendations",
+        "Phase 5: Priority Matrix",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 261
+    },
     "skm": {
       "id": "skm",
       "title": "Stakeholder Management",
@@ -10475,6 +12082,29 @@
       ],
       "line_count": 143
     },
+    "smpl": {
+      "id": "smpl",
+      "title": "Simple Analysis",
+      "description": "Deliberately simple analysis for obvious questions. State the question, give the answer, add one caveat, done. Anti-overthinking skill.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "When to Use This",
+        "Step 1: State the Question",
+        "Step 2: Give the Answer",
+        "Step 3: Add One Caveat",
+        "Step 4: Done",
+        "The Anti-Overthinking Test",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 104
+    },
     "sms": {
       "id": "sms",
       "title": "Social Media Strategy",
@@ -10523,9 +12153,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 212
+      "line_count": 223
     },
     "snp": {
       "id": "snp",
@@ -10570,6 +12201,29 @@
       ],
       "line_count": 153
     },
+    "socg": {
+      "id": "socg",
+      "title": "Social Cognition",
+      "description": "Understanding and navigating social dynamics. Identifies social context, models perspectives, predicts reactions, and plans moves with awareness of stated and unstated norms.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Identify the Social Context",
+        "Step 2: Read the Room — Stated vs. Unstated",
+        "Step 3: Model Other Perspectives",
+        "Step 4: Predict Reactions",
+        "Step 5: Identify Social Leverage Points",
+        "Step 6: Plan Social Moves",
+        "Step 7: Social Cognition Summary",
+        "Integration"
+      ],
+      "line_count": 164
+    },
     "sop": {
       "id": "sop",
       "title": "Source Prioritization",
@@ -10595,6 +12249,31 @@
         "Verification"
       ],
       "line_count": 260
+    },
+    "soph": {
+      "id": "soph",
+      "title": "Sophisticated Analysis",
+      "description": "Apply maximum analytical sophistication to a problem — multi-layered reasoning, cross-domain synthesis, second-order effects, hidden assumptions, and structural insights that simple analysis misses.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Surface Analysis",
+        "Phase 2: Structural Decomposition",
+        "Phase 3: Multi-Order Effects",
+        "Phase 4: Cross-Domain Pattern Match",
+        "Phase 5: Synthesis",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 192
     },
     "sor": {
       "id": "sor",
@@ -10637,6 +12316,31 @@
         "Integration"
       ],
       "line_count": 107
+    },
+    "spcf": {
+      "id": "spcf",
+      "title": "Specific Analysis",
+      "description": "Apply a principle, framework, or general insight to a specific case — translating abstract knowledge into concrete, actionable guidance tailored to the exact situation, constraints, and context at hand.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Situation Specification",
+        "Phase 2: Applicable Principles",
+        "Phase 3: Concrete Recommendations",
+        "Phase 4: Scenario Walkthrough",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 208
     },
     "spd": {
       "id": "spd",
@@ -10933,9 +12637,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 438
+      "line_count": 449
     },
     "stc": {
       "id": "stc",
@@ -11215,12 +12920,13 @@
         "sym"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
         "Verification"
       ],
-      "line_count": 429
+      "line_count": 446
     },
     "sycs": {
       "id": "sycs",
@@ -11314,9 +13020,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 181
+      "line_count": 192
     },
     "tbd": {
       "id": "tbd",
@@ -11447,6 +13154,29 @@
       ],
       "line_count": 109
     },
+    "tkint": {
+      "id": "tkint",
+      "title": "Toolkit Integrity Analysis",
+      "description": "Assess structural integrity of a collection, system, or toolkit. Finds broken references, orphans, circular dependencies, and naming inconsistencies.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Map All Components",
+        "Step 2: Check for Broken References",
+        "Step 3: Check for Orphans",
+        "Step 4: Check for Circular Dependencies",
+        "Step 5: Assess Naming Consistency",
+        "Step 6: Coverage and Gap Analysis",
+        "Step 7: Structural Improvements Summary",
+        "Integration"
+      ],
+      "line_count": 166
+    },
     "tmsk": {
       "id": "tmsk",
       "title": "Team Analysis",
@@ -11508,6 +13238,7 @@
         "ov"
       ],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Core Algorithm",
         "The Process",
@@ -11516,7 +13247,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 374
+      "line_count": 385
     },
     "tobd": {
       "id": "tobd",
@@ -11601,6 +13332,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Purpose",
         "Registry Operations",
         "Registry Storage Format",
@@ -11609,7 +13341,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 358
+      "line_count": 369
     },
     "tri": {
       "id": "tri",
@@ -11656,9 +13388,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 103
+      "line_count": 114
     },
     "txm": {
       "id": "txm",
@@ -11709,6 +13442,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Corruption Pre-Inoculation",
         "Core Principles",
         "Phase 1: EXPLORATION",
@@ -11717,7 +13451,7 @@
         "Depth Scaling",
         "Pre-Completion Check"
       ],
-      "line_count": 238
+      "line_count": 249
     },
     "uaua": {
       "id": "uaua",
@@ -11748,6 +13482,7 @@
         "search"
       ],
       "sections": [
+        "Interpretations",
         "Corruption Pre-Inoculation",
         "Core Principles",
         "The Flow",
@@ -11760,7 +13495,7 @@
         "Saving Output",
         "Pre-Completion Check"
       ],
-      "line_count": 504
+      "line_count": 515
     },
     "uf": {
       "id": "uf",
@@ -12039,6 +13774,28 @@
       ],
       "line_count": 134
     },
+    "usrn": {
+      "id": "usrn",
+      "title": "User-Need Reasoning",
+      "description": "Reason about what someone actually needs based on what they said. Surfaces underlying needs, unstated constraints, and what would truly satisfy the request.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Capture the Stated Request",
+        "Step 2: Identify the Likely Underlying Need",
+        "Step 3: Check Alignment Between Stated and Underlying",
+        "Step 4: Identify Unstated Constraints",
+        "Step 5: Propose What Would Actually Satisfy the Need",
+        "Step 6: Verify With the User",
+        "Integration"
+      ],
+      "line_count": 146
+    },
     "utp": {
       "id": "utp",
       "title": "Utopia Analysis",
@@ -12106,9 +13863,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 61
+      "line_count": 74
     },
     "vbo": {
       "id": "vbo",
@@ -12141,9 +13899,10 @@
         "Verification",
         "Output Format",
         "Step 7: Specificity Check for Capability Claims",
-        "Gates Invoked"
+        "Gates Invoked",
+        "Interpretations"
       ],
-      "line_count": 253
+      "line_count": 264
     },
     "vcd": {
       "id": "vcd",
@@ -12390,9 +14149,10 @@
         "Overview",
         "Steps",
         "When to Use",
-        "Verification"
+        "Verification",
+        "Interpretations"
       ],
-      "line_count": 482
+      "line_count": 495
     },
     "vp": {
       "id": "vp",
@@ -12429,6 +14189,7 @@
         "create"
       ],
       "sections": [
+        "Interpretations",
         "How This Skill Works",
         "Step 0: Define the Reader",
         "Upstream Criteria",
@@ -12437,7 +14198,7 @@
         "Structure Patterns",
         "Pre-Completion Check"
       ],
-      "line_count": 234
+      "line_count": 247
     },
     "want": {
       "id": "want",
@@ -12528,7 +14289,7 @@
     "wre": {
       "id": "wre",
       "title": "Writing Requirements Engineering",
-      "description": "Derive writing requirements before drafting. Builds a multi-stage requirements object: artifact definition, thesis and claim set, technical requirements, philosophical requirements, expansion requirements, outline requirements, exclusions, traceability, and draft readiness.",
+      "description": "Derive writing requirements before drafting. Builds a multi-stage requirements object: artifact definition, thesis object, technical requirements, philosophical requirements, expansion requirements, outline requirements, exclusions, traceability, and draft gate.",
       "tier": "tier3",
       "category": "Writing & Communication",
       "categories": [],
@@ -12541,10 +14302,10 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
-        "Purpose",
+        "Interpretations",
         "Core Principles",
         "Stage 0: Artifact Definition",
-        "Stage 1: Thesis and Claim Set",
+        "Stage 1: Thesis Object",
         "Stage 2: Technical Requirements",
         "Stage 3: Philosophical Requirements",
         "Stage 4: Expansion Requirements",
@@ -12552,11 +14313,12 @@
         "Stage 6: Exclusions",
         "Stage 7: Traceability Matrix",
         "Stage 8: Draft Gate",
-        "Output Format",
-        "Integration",
-        "Verification"
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 383
+      "line_count": 355
     },
     "wrps": {
       "id": "wrps",

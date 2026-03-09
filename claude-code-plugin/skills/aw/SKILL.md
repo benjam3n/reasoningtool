@@ -7,6 +7,17 @@ description: Assume Wrong - Deep recursive wrongness search. For every claim, as
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Claim destruction test**: The user has a claim or belief and wants to find out how and why it could be wrong — genuinely wrong, not just "wrong with caveats" — by recursing until hitting bedrock evidence.
+**Interpretation 2 — Plan vulnerability analysis**: The user has a plan or strategy and wants to find where it breaks — the fatal flaws, serious weaknesses, and conditional failure modes that would make it the wrong approach.
+**Interpretation 3 — Belief audit**: The user holds a conviction they suspect might be wrong and wants an honest, uncomfortable analysis of why it fails, what alternatives emerge from the wrongness, and what they should believe instead.
+
+If ambiguous, ask: "I can help with stress-testing a claim to destruction, finding where a plan breaks, or auditing a belief you suspect is wrong — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Corruption Pre-Inoculation

@@ -7,6 +7,17 @@ description: Validate that a procedure is complete, executable, and all dependen
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Validate a procedure before execution**: The user has a step-by-step plan or process and wants to verify it is complete, correctly ordered, and feasible before committing to it.
+**Interpretation 2 — Review a process for weaknesses**: The user has an existing workflow or standard operating procedure and wants to find gaps, bottlenecks, or failure points in it.
+**Interpretation 3 — Sanity-check a plan**: The user has a rough plan and is asking "will this actually work?" — they want a quick reality check, not a full formal validation.
+
+If ambiguous, ask: "I can help with formally validating a procedure for completeness and correctness, reviewing an existing process for weaknesses, or doing a quick sanity check on whether a plan will work — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

@@ -149,4 +149,15 @@ it. Sit with not knowing. The confusion points at something important.
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Trace the root cause of a reaction**: The user has a thought, feeling, want, or decision and wants to trace backward through its causal chain — not to solve it, but to understand what's actually driving it beneath the surface.
+**Interpretation 2 — Unpack a compressed claim or belief**: The user has a statement, belief, or framing that feels too tidy — they want to use recursive questioning to decompress it, find hidden assumptions, and reopen spaces that were prematurely closed.
+**Interpretation 3 — Break through stuck reasoning**: The user has been thinking in circles or feels blocked — other approaches haven't worked and they want pure causal interrogation to find the angle they're missing.
+
+If ambiguous, ask: "I can help with tracing the root cause of a reaction, unpacking a compressed belief, or breaking through stuck reasoning — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

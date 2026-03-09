@@ -209,4 +209,15 @@ Finalize the agreement properly:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Negotiate a new job offer**: The user has received (or expects) a job offer and wants to maximize total compensation through structured negotiation — research, targeting, scripting, and execution.
+**Interpretation 2 — Negotiate a raise or promotion**: The user is already employed and wants to negotiate better compensation in their current role — different dynamics than a new offer (existing relationship, internal equity, performance leverage).
+**Interpretation 3 — Evaluate whether to negotiate at all**: The user isn't sure if they should negotiate — they want to assess their leverage, understand the risks, and decide whether pushing back is worth it in their specific situation.
+
+If ambiguous, ask: "I can help with negotiating a new job offer, negotiating a raise in your current role, or evaluating whether to negotiate at all — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

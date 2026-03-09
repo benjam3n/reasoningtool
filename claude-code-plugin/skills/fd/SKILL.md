@@ -197,4 +197,15 @@ Document:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Delivering feedback**: The user needs help structuring and delivering feedback to someone (a report, peer, or stakeholder) about their performance or behavior.
+**Interpretation 2 — Receiving feedback**: The user has received feedback (or expects to) and wants help processing it, responding gracefully, and extracting actionable value from it.
+**Interpretation 3 — Building a feedback culture**: The user wants to establish or improve systematic feedback practices across a team or organization, not just handle a single instance.
+
+If ambiguous, ask: "I can help with delivering feedback, receiving feedback, or building a feedback culture — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

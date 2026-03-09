@@ -9,6 +9,19 @@ description: Generative writing tool. Criteria-based specification for satisfyin
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Write something from scratch**: The user has a topic or purpose and needs to produce high-quality prose using the criteria-based framework from beginning to end.
+**Interpretation 2 — Diagnose and fix existing writing**: The user has a draft that is not working and wants to identify which criteria are failing and repair them in priority order (upstream before downstream).
+**Interpretation 3 — Evaluate writing quality**: The user wants to assess a piece of writing (their own or someone else's) against the criteria hierarchy to understand specifically where it succeeds and fails.
+
+If ambiguous, ask: "I can help with writing something new using the quality criteria, diagnosing and fixing a draft that isn't working, or evaluating a piece of writing against the criteria — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## How This Skill Works
 
 This skill defines writing quality as **objective criteria** — properties the text either has or doesn't. Criteria are not methods. Methods are ways to achieve criteria. Methods are Goodhartable (you can follow "show don't tell" and still write badly). Criteria are the check (does the reader recognize this from experience? Binary.).

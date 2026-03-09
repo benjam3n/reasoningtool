@@ -1,0 +1,1 @@
+Expand implications of a statement so the hidden conclusions are explicit, ordered by depth, and flagged by impact and testability. Read and execute `claude-code-plugin/skills/sycs/SKILL.md`, applying it to this input: $ARGUMENTS

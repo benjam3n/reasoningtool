@@ -7,6 +7,17 @@ description: Convert analysis findings into steelmanned, actionable plans with c
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Convert prior analysis to plans**: The user has already run /ar, /aw, /u, /araw, or /uaua and wants to synthesize those findings into actionable, evidence-derived plans with conditional recommendations.
+**Interpretation 2 — Generate plans without prior analysis**: The user wants actionable plans but has not run a source analysis first — redirect them to /pss or suggest running a source analysis first.
+**Interpretation 3 — Evaluate existing plans against evidence**: The user already has candidate plans and wants to steelman, evaluate, and rank them using evidence from a prior analysis.
+
+If ambiguous, ask: "I can help with converting analysis findings into plans, generating plans from scratch (via /pss), or evaluating existing plans against evidence — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Core Principles

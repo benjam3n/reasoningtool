@@ -9,6 +9,17 @@ description: "Decide when to stop analyzing and commit to action. External crite
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Analysis paralysis**: You've been deliberating too long and need external criteria to tell you it's time to stop thinking and commit (e.g., "I've been going back and forth for weeks" or "am I overthinking this?").
+**Interpretation 2 — Completeness check**: You're not paralyzed but genuinely unsure if you've thought enough — you want to verify your analysis is sufficient before acting (e.g., "have I considered enough?" or "is there something I'm missing before I decide?").
+**Interpretation 3 — Permission to act**: You already know what to do but feel uncomfortable committing — you need someone to confirm that your level of certainty is adequate and it's okay to move forward (e.g., "I think I know the answer but I'm not sure I'm ready" or "should I just go for it?").
+
+If ambiguous, ask: "I can help with breaking analysis paralysis, checking if your thinking is complete, or confirming you're ready to act — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## STEP 0: What type of "thinking" situation is this?
 
 Answer this question: **Why are you wondering whether to stop thinking?**

@@ -1,0 +1,1 @@
+Pick N skills using a specified algorithm (random, goal, want, useful, category, tier, question, chain, situation, diverse, deep, complement, similar, or freeform search). Read and execute `claude-code-plugin/skills/pick/SKILL.md`, applying it to this input: $ARGUMENTS

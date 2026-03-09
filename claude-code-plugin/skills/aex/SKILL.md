@@ -7,6 +7,17 @@ description: Extract hidden assumptions from any content. Surfaces what must be 
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Find hidden assumptions in a plan or argument**: The user has a strategy, proposal, or claim and wants to surface the unstated beliefs it depends on.
+**Interpretation 2 — Uncover personal biases**: The user suspects their own thinking is constrained by assumptions they cannot see and wants help identifying their blind spots.
+**Interpretation 3 — Audit what's being taken for granted**: The user is looking at a situation, system, or status quo and asking "what is everyone just accepting without questioning?"
+
+If ambiguous, ask: "I can help with extracting assumptions from a specific plan, uncovering your own hidden biases, or auditing what's being taken for granted in a situation — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

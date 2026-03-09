@@ -1,0 +1,1 @@
+Meta-skill for choosing the right thinking approach. Identifies what type of thinking is needed, selects the appropriate framework, applies it, and evaluates output quality. Read and execute `claude-code-plugin/skills/thnk/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Find what's obviously missing RIGHT NOW. Fast, ruthless prioritization of urgent gaps in the current state. Read and execute `claude-code-plugin/skills/immg/SKILL.md`, applying it to this input: $ARGUMENTS

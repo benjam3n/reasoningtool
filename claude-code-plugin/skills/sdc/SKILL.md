@@ -9,6 +9,19 @@ description: "Detect when reasoning is actually rationalization. Mechanical chec
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Pre-decision honesty check**: The user is about to commit to a decision and wants to verify their reasoning is genuine analysis rather than post-hoc rationalization of an emotional preference.
+**Interpretation 2 — Defending a challenged decision**: Someone has questioned the user's past decision and the user wants to honestly assess whether their defense is legitimate or self-deceptive.
+**Interpretation 3 — Recurring pattern audit**: The user notices they keep ending up in the same bad situation and wants to check whether self-deception is driving the repetition.
+
+If ambiguous, ask: "I can help with checking yourself before a decision, honestly auditing a decision someone challenged, or investigating a pattern you keep repeating — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Purpose
 
 A mechanical procedure for recognizing when you are rationalizing rather than reasoning -- when your "analysis" is actually a post-hoc justification for a decision you have already emotionally made. Written so that someone with zero background in psychology or critical thinking can follow every step and arrive at an honest assessment.

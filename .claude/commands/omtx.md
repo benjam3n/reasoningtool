@@ -1,0 +1,1 @@
+Generates comparison and analysis matrices. Takes items and dimensions, fills cells with evidence-based assessments, and highlights patterns across the matrix. Read and execute `claude-code-plugin/skills/omtx/SKILL.md`, applying it to this input: $ARGUMENTS

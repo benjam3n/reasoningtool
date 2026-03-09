@@ -1,0 +1,1 @@
+Design groups of related skills that work together by identifying domain capabilities, grouping by affinity, designing interfaces, and mapping common paths. Read and execute `claude-code-plugin/skills/skcl/SKILL.md`, applying it to this input: $ARGUMENTS

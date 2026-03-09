@@ -7,6 +7,17 @@ description: Extract dependencies between steps, tasks, or items. Identifies wha
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Extract task dependencies for sequencing**: The user has a list of tasks or steps and wants to determine which must happen before which, find the critical path, and identify parallel opportunities.
+**Interpretation 2 — Untangle a blocked project**: The user has a project that is stuck or slow and suspects hidden dependencies are the cause — they need dependencies surfaced and blockers identified.
+**Interpretation 3 — Validate an existing plan's ordering**: The user already has a sequenced plan and wants to verify that all dependencies are respected, no steps are out of order, and nothing is missing.
+
+If ambiguous, ask: "I can help with extracting dependencies from a task list, untangling a blocked project, or validating an existing plan's ordering — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

@@ -102,4 +102,15 @@ Produce final criteria list:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Define selection criteria**: The user has options to evaluate and needs help building the set of criteria (must-haves, preferences, deal-breakers) to filter and rank them.
+**Interpretation 2 — Evaluate fit against criteria**: The user already has criteria and a specific option, and wants to assess how well that option matches.
+**Interpretation 3 — Align stakeholders on requirements**: The user has multiple stakeholders with different needs and wants to reconcile them into a shared, prioritized criteria set.
+
+If ambiguous, ask: "I can help with defining selection criteria, evaluating an option against criteria, or aligning stakeholders on requirements — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

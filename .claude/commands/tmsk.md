@@ -1,0 +1,1 @@
+Analyzes something from the team perspective. Identifies composition, roles, communication patterns, coordination costs, and collaboration synergies. Read and execute `claude-code-plugin/skills/tmsk/SKILL.md`, applying it to this input: $ARGUMENTS

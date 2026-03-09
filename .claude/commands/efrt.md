@@ -1,0 +1,1 @@
+Estimates how much effort something will take. Decomposes into subtasks, applies three-point estimation, adds buffers, and compares to reference classes. Read and execute `claude-code-plugin/skills/efrt/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -90,4 +90,17 @@ Prepare and submit budget for approval:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — New budget creation**: The user needs to build a budget from scratch for a project, organization, or personal finances, including estimating costs, setting categories, and getting approval.
+**Interpretation 2 — Budget optimization**: The user has an existing budget that's over target or inefficient and needs to find cuts, reallocate resources, or prioritize spending within constraints.
+**Interpretation 3 — Budget justification**: The user needs to present and defend a budget to stakeholders, investors, or approvers — structuring the case for why these expenditures are necessary and appropriate.
+
+If ambiguous, ask: "I can help with creating a new budget, optimizing an existing one, or building a justification for stakeholders — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 Apply this procedure to the input provided.

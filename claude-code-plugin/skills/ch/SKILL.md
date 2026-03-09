@@ -7,6 +7,17 @@ description: "Systematic procedure for handling crises — stabilize, diagnose, 
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Active crisis response**: The user is in the middle of a crisis right now and needs immediate structured triage — stabilize, diagnose, communicate, resolve.
+**Interpretation 2 — Crisis post-mortem**: The crisis has already been resolved, and the user wants to systematically analyze what happened, why, and how to prevent recurrence.
+**Interpretation 3 — Crisis preparedness**: No crisis is happening yet, but the user wants to build a crisis response plan for a specific type of disruption they anticipate or fear.
+
+If ambiguous, ask: "I can help with handling an active crisis right now, analyzing a past crisis, or preparing for a future one — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Overview

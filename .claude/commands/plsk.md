@@ -1,0 +1,1 @@
+Procedure for evaluating and improving plans. Checks if steps lead to goal, identifies missing or unnecessary steps, assesses sequencing and resources, and suggests improvements. Read and execute `claude-code-plugin/skills/plsk/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Apply structured legal thinking to a situation. Identifies relevant legal domains, analyzes facts against rules, and surfaces risks and obligations. Read and execute `claude-code-plugin/skills/leg/SKILL.md`, applying it to this input: $ARGUMENTS

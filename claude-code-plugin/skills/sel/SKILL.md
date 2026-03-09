@@ -8,6 +8,17 @@ context: fork
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Selecting from pre-ranked options**: The user has already compared and ranked options (e.g., from `/cmp`) and needs help making the final commitment, including feasibility checks and reversal triggers.
+**Interpretation 2 — Making a high-stakes choice under uncertainty**: The user has options but the decision feels risky or irreversible, and they need a structured process to select with appropriate caution and fallback planning.
+**Interpretation 3 — Aligning stakeholders on a decision**: Multiple parties need to agree on a selection, and the user needs documented rationale, clear criteria, and a defensible decision record to get buy-in.
+
+If ambiguous, ask: "I can help with selecting from ranked options, making a high-stakes choice, or building stakeholder alignment on a decision — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Overview

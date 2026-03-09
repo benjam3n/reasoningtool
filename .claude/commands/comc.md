@@ -1,0 +1,1 @@
+Designs a communication for any context. Identifies audience, determines goal, chooses medium, structures the message, and anticipates objections. Read and execute `claude-code-plugin/skills/comc/SKILL.md`, applying it to this input: $ARGUMENTS

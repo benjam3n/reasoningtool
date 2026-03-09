@@ -249,4 +249,15 @@ Document all assumptions explicitly.
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Assess economic viability of a venture**: The user has a business idea, investment, or project and wants to analyze whether the economics work — costs, revenue potential, break-even, and scenarios.
+**Interpretation 2 — Analyze an industry or market**: The user wants to understand the competitive landscape, market dynamics, and comparative advantage within a specific industry or sector.
+**Interpretation 3 — Evaluate an economic policy or decision**: The user is assessing a policy proposal, reshoring decision, or large-scale economic choice and needs impact analysis, distributional effects, and scenario modeling.
+
+If ambiguous, ask: "I can help with assessing venture viability, analyzing an industry or market, or evaluating an economic policy — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

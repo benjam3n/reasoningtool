@@ -1,0 +1,1 @@
+When something has already gone wrong — stop the bleeding, triage what's salvageable, communicate clearly, and recover systematically. Read and execute `claude-code-plugin/skills/dmgc/SKILL.md`, applying it to this input: $ARGUMENTS

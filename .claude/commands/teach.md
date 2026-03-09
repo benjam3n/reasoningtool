@@ -1,0 +1,1 @@
+Explains any concept so that someone can actually understand it. Uses the Feynman technique — simple words, clear structure, no hiding behind jargon. Read and execute `claude-code-plugin/skills/teach/SKILL.md`, applying it to this input: $ARGUMENTS

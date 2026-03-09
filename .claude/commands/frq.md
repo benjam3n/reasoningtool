@@ -1,0 +1,1 @@
+Find the right question to ask by diagnosing your actual situation and generating the most actionable question. Read and execute `claude-code-plugin/skills/frq/SKILL.md`, applying it to this input: $ARGUMENTS

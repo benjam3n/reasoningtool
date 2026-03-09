@@ -1,0 +1,1 @@
+Deliberately simple analysis for obvious questions. State the question, give the answer, add one caveat, done. Anti-overthinking skill. Read and execute `claude-code-plugin/skills/smpl/SKILL.md`, applying it to this input: $ARGUMENTS

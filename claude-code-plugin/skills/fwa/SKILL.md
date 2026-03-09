@@ -9,6 +9,19 @@ description: "Check whether an answer is likely wrong before acting on it. Class
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Verify a specific answer before acting**: The user has arrived at a conclusion (factual, causal, or recommendation) and wants to stress-test it for errors before committing to action.
+**Interpretation 2 — Something feels off about an answer**: The user has a nagging sense that an answer is wrong but cannot articulate why, and needs a systematic procedure to surface the flaw.
+**Interpretation 3 — Check someone else's answer**: The user received an answer or recommendation from another person or source and wants to independently verify whether it holds up under scrutiny.
+
+If ambiguous, ask: "I can help with stress-testing your own answer before you act on it, surfacing why an answer feels wrong, or independently verifying an answer someone else gave you — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Purpose
 
 Given any answer you've arrived at, this procedure tells you whether it's likely wrong BEFORE you act on it.

@@ -1,0 +1,1 @@
+Design how something connects to external systems, tools, or services. Identifies touchpoints, maps data flows, defines interfaces, assesses dependencies, plans for failures, and produces an integration checklist. Read and execute `claude-code-plugin/skills/exint/SKILL.md`, applying it to this input: $ARGUMENTS

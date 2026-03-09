@@ -1,0 +1,1 @@
+Analyze and construct arguments by checking logical validity, premise truth, hidden assumptions, and evidence strength. Read and execute `claude-code-plugin/skills/agsk/SKILL.md`, applying it to this input: $ARGUMENTS

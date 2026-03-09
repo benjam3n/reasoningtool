@@ -1,0 +1,1 @@
+Analyze from the perspective of expert users. Identifies power user needs around efficiency, customization, and depth, finds friction points, spots missing advanced features, and assesses the learning curve. Read and execute `claude-code-plugin/skills/pusr/SKILL.md`, applying it to this input: $ARGUMENTS

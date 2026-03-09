@@ -1,0 +1,1 @@
+Design and run effective group sessions that produce clear outcomes, manage group dynamics, and keep participants engaged. Read and execute `claude-code-plugin/skills/tfac/SKILL.md`, applying it to this input: $ARGUMENTS

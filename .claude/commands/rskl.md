@@ -1,0 +1,1 @@
+Meta-procedure for improving reasoning quality. Identifies the reasoning type in use, checks for common errors, and verifies logical structure. Read and execute `claude-code-plugin/skills/rskl/SKILL.md`, applying it to this input: $ARGUMENTS

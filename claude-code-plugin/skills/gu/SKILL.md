@@ -8,6 +8,17 @@ context: fork
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Understand my own goal**: The user has a goal or want and needs help clarifying, decomposing, or pressure-testing it before acting.
+**Interpretation 2 — Understand someone else's goal**: The user needs to figure out what another person, team, or stakeholder actually wants (e.g., "What does my boss really want?").
+**Interpretation 3 — Understand a system's goal**: The user wants to reverse-engineer the objective function of a system, organization, or process (e.g., "What is this algorithm optimizing for?").
+
+If ambiguous, ask: "I can help with understanding your own goal, figuring out what someone else wants, or reverse-engineering a system's objective — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Step 0: Context Detection and Variant Selection

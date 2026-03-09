@@ -1,0 +1,1 @@
+Design a persuasive argument or communication. Structures the argument, anticipates objections, and checks for ethical soundness. Read and execute `claude-code-plugin/skills/per/SKILL.md`, applying it to this input: $ARGUMENTS

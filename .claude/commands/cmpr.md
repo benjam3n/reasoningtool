@@ -1,0 +1,1 @@
+Reason about whether something is complete by checking necessary and sufficient conditions, identifying gaps and redundancies. Read and execute `claude-code-plugin/skills/cmpr/SKILL.md`, applying it to this input: $ARGUMENTS

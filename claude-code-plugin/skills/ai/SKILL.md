@@ -7,6 +7,17 @@ description: Invert assumptions to discover blind spots and alternative possibil
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Flip assumptions to find blind spots**: The user has identified (or wants to identify) assumptions and wants to systematically invert them to reveal hidden risks, overlooked alternatives, and failure modes.
+**Interpretation 2 — Challenge conventional wisdom**: The user wants to question widely-held beliefs in a field or organization — "everyone assumes X, but what if X is wrong?"
+**Interpretation 3 — Explore "what if the opposite is true?"**: The user has a specific belief or premise and wants to think through the consequences of it being exactly wrong, as a creative or strategic exercise.
+
+If ambiguous, ask: "I can help with inverting specific assumptions to find blind spots, challenging conventional wisdom in a domain, or exploring the consequences of a belief being exactly wrong — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

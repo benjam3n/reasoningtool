@@ -1,0 +1,1 @@
+Analyze at the general level — extract principles, patterns, and transferable insights rather than situation-specific answers. Find the general rule that explains the specific case. Read and execute `claude-code-plugin/skills/genl/SKILL.md`, applying it to this input: $ARGUMENTS

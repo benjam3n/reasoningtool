@@ -1,0 +1,1 @@
+Assess whether a system covers all types of thinking. Identifies gaps across cognitive dimensions and recommends additions. Read and execute `claude-code-plugin/skills/ctcov/SKILL.md`, applying it to this input: $ARGUMENTS

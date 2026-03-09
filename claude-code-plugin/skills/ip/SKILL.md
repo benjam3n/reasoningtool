@@ -274,4 +274,15 @@ After the interview:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Prepare for a specific upcoming interview**: The user has an interview scheduled and needs to prepare — research the company, build stories, practice questions, and plan execution for that specific opportunity.
+**Interpretation 2 — Improve general interview skills**: The user is job searching broadly or wants to get better at interviewing overall — they need to build a reusable story bank, practice common formats, and develop transferable interview techniques.
+**Interpretation 3 — Debrief and recover from a past interview**: The user already had an interview that went poorly (or has mixed signals) and wants to analyze what happened, extract lessons, and prepare differently for the next round or next opportunity.
+
+If ambiguous, ask: "I can help with preparing for a specific interview, improving your general interview skills, or debriefing a past interview — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

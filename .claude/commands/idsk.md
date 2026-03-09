@@ -1,0 +1,1 @@
+Procedure for working with ideas. Captures the idea precisely, assesses novelty and feasibility, identifies the core insight, finds connections, and determines next steps. Read and execute `claude-code-plugin/skills/idsk/SKILL.md`, applying it to this input: $ARGUMENTS

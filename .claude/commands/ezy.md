@@ -1,0 +1,1 @@
+Break any problem into the easiest possible steps — no jargon, no prerequisites, no assumed knowledge. Designed for when the user is overwhelmed, new to the domain, or needs the simplest possible path forward. Read and execute `claude-code-plugin/skills/ezy/SKILL.md`, applying it to this input: $ARGUMENTS

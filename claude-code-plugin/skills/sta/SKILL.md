@@ -435,4 +435,15 @@ FINAL CHECKLIST:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Choosing and running a statistical test**: The user has data and a question and needs help selecting the right test, checking assumptions, and interpreting results correctly.
+**Interpretation 2 — Reviewing or critiquing an existing analysis**: The user has results from a statistical analysis (their own or someone else's) and wants to verify the methodology, check for errors, or assess whether conclusions are warranted.
+**Interpretation 3 — Designing a study or analysis plan**: The user has not yet collected data and needs help planning what to measure, what tests to use, and what sample sizes are needed to answer their research question.
+
+If ambiguous, ask: "I can help with running a statistical test, reviewing an existing analysis, or designing an analysis plan — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

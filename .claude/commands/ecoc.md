@@ -1,0 +1,1 @@
+Create a practical code of ethics for a person, team, or organization — one that handles real edge cases, not just platitudes. Read and execute `claude-code-plugin/skills/ecoc/SKILL.md`, applying it to this input: $ARGUMENTS

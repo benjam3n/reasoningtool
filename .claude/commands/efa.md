@@ -1,0 +1,1 @@
+Immediate structured response when someone is in emotional distress — stabilize first, then support. Read and execute `claude-code-plugin/skills/efa/SKILL.md`, applying it to this input: $ARGUMENTS

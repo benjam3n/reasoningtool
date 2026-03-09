@@ -10,6 +10,17 @@ context: fork
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Incident post-mortem**: Something already broke or failed, and you need to trace the chain of causes to prevent recurrence (e.g., "why did the deploy fail last night?").
+**Interpretation 2 — Recurring pattern diagnosis**: A problem keeps happening despite previous fixes, and you need to find the deeper systemic cause (e.g., "why do we keep missing deadlines?").
+**Interpretation 3 — Preemptive cause mapping**: Nothing has broken yet, but you want to trace a worrying symptom to its source before it becomes a real failure (e.g., "customer complaints are rising — what's driving this?").
+
+If ambiguous, ask: "I can help with a post-mortem on a specific failure, diagnosing a recurring pattern, or tracing a worrying symptom to its source — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Overview
 
 Systematically trace symptoms back to their underlying root causes using structured diagnostic techniques.

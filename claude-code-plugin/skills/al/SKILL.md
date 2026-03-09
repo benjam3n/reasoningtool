@@ -252,4 +252,15 @@ Signs to improve:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Prepare for an upcoming conversation**: The user has a specific conversation coming up and wants to practice active listening techniques — preparing mentally, planning open questions, and anticipating challenges.
+**Interpretation 2 — Diagnose a listening failure**: The user had a conversation that went poorly (someone felt unheard, miscommunication occurred) and wants to analyze what went wrong and how to improve.
+**Interpretation 3 — Build listening into a professional practice**: The user wants to systematically improve their listening skills for an ongoing role (manager, coach, interviewer, therapist) and needs a framework they can apply repeatedly.
+
+If ambiguous, ask: "I can help with preparing for an upcoming conversation, diagnosing a past listening failure, or building listening into your professional practice — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

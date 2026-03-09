@@ -1,0 +1,1 @@
+Reason about what makes things different by identifying similarities first, then classifying differences by significance and contextual relevance. Read and execute `claude-code-plugin/skills/difr/SKILL.md`, applying it to this input: $ARGUMENTS

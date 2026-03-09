@@ -1,0 +1,1 @@
+Estimate current practical limits for scope, throughput, and quality across multiple dimensions, then recommend a safe operating boundary that accounts for planning fallacy. Read and execute `claude-code-plugin/skills/awtlytrn/SKILL.md`, applying it to this input: $ARGUMENTS

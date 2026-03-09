@@ -341,4 +341,15 @@ Synthesize analysis into competitive strategy recommendations:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Map the competitive landscape**: The user wants to understand who competes in a market, how they are positioned, and where the gaps and clusters are.
+**Interpretation 2 — Find differentiation opportunities**: The user already knows who the competitors are and wants to identify how to stand apart — through product, pricing, service, or positioning.
+**Interpretation 3 — Assess industry attractiveness**: The user is evaluating whether to enter, expand in, or exit a market and needs a structural analysis of competitive forces and profit potential.
+
+If ambiguous, ask: "I can help with mapping competitors, finding differentiation opportunities, or assessing overall industry attractiveness — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

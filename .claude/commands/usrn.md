@@ -1,0 +1,1 @@
+Reason about what someone actually needs based on what they said. Surfaces underlying needs, unstated constraints, and what would truly satisfy the request. Read and execute `claude-code-plugin/skills/usrn/SKILL.md`, applying it to this input: $ARGUMENTS

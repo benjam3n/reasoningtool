@@ -1,0 +1,1 @@
+Systematically identify safety risks, failure modes, and protective measures for any plan, system, or action. Read and execute `claude-code-plugin/skills/saf/SKILL.md`, applying it to this input: $ARGUMENTS

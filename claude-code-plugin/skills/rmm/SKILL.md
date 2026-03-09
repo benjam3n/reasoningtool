@@ -9,6 +9,19 @@ description: "Recognize when a mental model is fundamentally wrong, dismantle it
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Confirmed wrong model**: The user already knows their mental model is wrong and needs a structured process to dismantle it and build a replacement without losing momentum.
+**Interpretation 2 — Suspecting a wrong model**: The user is getting unexpected results and suspects their understanding of how something works is fundamentally flawed, but is not yet certain.
+**Interpretation 3 — Crisis-driven model failure**: The user's mental model just failed catastrophically under pressure and they need an emergency bridge model to act safely while figuring out what went wrong.
+
+If ambiguous, ask: "I can help with replacing a model you know is wrong, investigating whether your current model is flawed, or managing a crisis where your assumptions just broke — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Glossary
 
 | Term | Definition |

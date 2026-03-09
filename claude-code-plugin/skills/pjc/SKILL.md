@@ -331,4 +331,15 @@ Formally close the project:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Closing a completed project**: The user has finished a project and needs a structured process for handoff, documentation, lessons learned, and formal closure.
+**Interpretation 2 — Shutting down a failed or cancelled project**: The user needs to wind down a project that was terminated early, focusing on salvaging value, releasing resources, and documenting what went wrong.
+**Interpretation 3 — Transitioning between project phases**: The user is completing one phase of an ongoing initiative and needs to close it out properly before the next phase begins.
+
+If ambiguous, ask: "I can help with closing a completed project, winding down a cancelled project, or transitioning between phases — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

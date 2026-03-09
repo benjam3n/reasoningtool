@@ -97,4 +97,15 @@ Document contingencies.
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Stress-test a plan before launch**: The user has a specific plan or project about to begin and wants to assume it failed, then work backward to find the likely causes — classic pre-mortem to surface hidden risks.
+**Interpretation 2 — Surface unspoken concerns in a group**: The user is leading a team that seems overly optimistic or where people are hesitant to voice doubts — they want to use the pre-mortem format to give people permission to name risks.
+**Interpretation 3 — Compare plans by failure profile**: The user is choosing between multiple approaches and wants to run a pre-mortem on each to see which has the most dangerous or most likely failure modes — using failure analysis as a decision input.
+
+If ambiguous, ask: "I can help with stress-testing a specific plan, surfacing unspoken team concerns, or comparing plans by their failure profiles — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

@@ -1,0 +1,1 @@
+Design meetings that actually produce outcomes. Eliminates unnecessary meetings and structures necessary ones for maximum effectiveness. Read and execute `claude-code-plugin/skills/mtgd/SKILL.md`, applying it to this input: $ARGUMENTS

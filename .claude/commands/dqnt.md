@@ -1,0 +1,1 @@
+Procedure for working with numbers and data. Clarifies questions, assesses data quality, performs analysis, checks for statistical traps, and communicates findings. Read and execute `claude-code-plugin/skills/dqnt/SKILL.md`, applying it to this input: $ARGUMENTS

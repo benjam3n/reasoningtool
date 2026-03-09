@@ -1,0 +1,1 @@
+Identify thinking dimensions not adequately represented by the current skill library, recommend new skills across a sophistication/simplicity spectrum, and prioritize by user value and coverage gap severity. Read and execute `claude-code-plugin/skills/skgap/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Analyzes something from the perspective of a single person. Identifies goals, resources, constraints, skills, and context to optimize for individual agency and autonomy. Read and execute `claude-code-plugin/skills/indv/SKILL.md`, applying it to this input: $ARGUMENTS

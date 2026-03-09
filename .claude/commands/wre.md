@@ -1,0 +1,1 @@
+Derive writing requirements before drafting. Builds a multi-stage requirements object: artifact definition, thesis and claim set, technical requirements, philosophical requirements, expansion requirements, outline requirements, exclusions, traceability, and draft readiness. Read and execute `claude-code-plugin/skills/wre/SKILL.md`, applying it to this input: $ARGUMENTS

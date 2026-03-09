@@ -1,0 +1,1 @@
+Structured deep analysis after exploration. Selects what to analyze, applies frameworks, finds patterns, tests hypotheses, and synthesizes findings. Read and execute `claude-code-plugin/skills/anst/SKILL.md`, applying it to this input: $ARGUMENTS

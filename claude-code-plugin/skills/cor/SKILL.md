@@ -10,6 +10,19 @@ context: fork
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Review a pull request or changeset**: The user has a specific PR, diff, or set of changed files they want systematically reviewed for correctness, security, and quality.
+**Interpretation 2 — Audit existing code for issues**: The user wants a file or module examined for bugs, anti-patterns, or security vulnerabilities — not tied to a specific change but to the code as it stands.
+**Interpretation 3 — Establish review standards**: The user wants help defining what a good code review process looks like for their team — criteria, severity levels, checklists, and workflow.
+
+If ambiguous, ask: "I can help with reviewing a specific PR or changeset, auditing existing code for issues, or establishing code review standards for your team — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Overview
 
 Procedure for conducting effective code reviews that improve quality and share knowledge. This procedure leverages Claude Code's unique capabilities: exhaustive pattern search, codebase-wide consistency checking, and automated verification.

@@ -1,0 +1,1 @@
+Check whether an answer is likely wrong before acting on it. Classifies answer type and runs targeted verification. Read and execute `claude-code-plugin/skills/fwa/SKILL.md`, applying it to this input: $ARGUMENTS

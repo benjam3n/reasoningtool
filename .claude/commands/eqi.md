@@ -1,0 +1,1 @@
+Systematically develop emotional awareness, regulation, and social skill — treating EQ as a learnable competency, not a personality trait. Read and execute `claude-code-plugin/skills/eqi/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Builds a clear, compelling rationale for any decision or recommendation. Organizes evidence by strength, addresses counterarguments, and outputs a persuasive but honest case. Read and execute `claude-code-plugin/skills/ratn/SKILL.md`, applying it to this input: $ARGUMENTS

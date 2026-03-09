@@ -9,6 +9,17 @@ description: "Systematically understand any complex system by matching investiga
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Understand a specific system**: The user has a concrete thing (tool, technology, process, mechanism) they want to figure out — they need a structured investigation path from confusion to comprehension.
+**Interpretation 2 — Debug understanding gaps**: The user thinks they understand something but keeps getting surprised or making wrong predictions — they need to find and fix the flaws in their existing mental model.
+**Interpretation 3 — Teach or explain something**: The user already understands a system and wants to use this framework to structure an explanation or teaching plan for someone else, working out the right depth and access-level approach.
+
+If ambiguous, ask: "I can help with understanding a system from scratch, debugging gaps in your current understanding, or structuring an explanation for others — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Depth Scaling
 
 Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/fohw 4x [input]").

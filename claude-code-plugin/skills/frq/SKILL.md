@@ -9,6 +9,17 @@ description: "Find the right question to ask by diagnosing your actual situation
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Unstick yourself**: You're stuck on something and suspect you're asking the wrong question — you need to find the question that actually unblocks progress (e.g., "I keep spinning on this" or "I'm stuck and don't know why").
+**Interpretation 2 — Reframe a problem**: Someone gave you a problem or you've been working on one, but it feels off — you want to find a better framing by discovering the right question underneath the surface-level one (e.g., "something about this problem statement feels wrong" or "am I even solving the right thing?").
+**Interpretation 3 — Start from confusion**: You're at the very beginning of something and don't even know what to ask yet — you need to go from vague confusion to a specific, actionable question (e.g., "I don't know where to start" or "I'm confused about this whole area").
+
+If ambiguous, ask: "I can help with finding the question that unblocks you, reframing a problem you suspect is misframed, or going from confusion to a clear starting question — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Purpose
 
 When you are stuck, starting something, failing, or just confused, the bottleneck is usually not the answer -- it is the question. This procedure diagnoses your actual situation and generates the most actionable question to pursue.

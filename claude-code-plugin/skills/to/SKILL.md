@@ -9,6 +9,17 @@ description: Generate valid execution sequences from dependencies. Respects hard
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Task sequencing**: You have a list of tasks with dependencies and need to find a valid execution order (e.g., "what order should I do these project steps?").
+**Interpretation 2 — Dependency mapping**: You don't yet have clear dependencies and need to figure out what depends on what before you can sequence anything (e.g., "what depends on what in this system?").
+**Interpretation 3 — Critical path and parallelization**: You already know the order but need to optimize for speed — finding the critical path and what can run in parallel (e.g., "what's the fastest way through this if I have multiple people?").
+
+If ambiguous, ask: "I can help with sequencing tasks, mapping dependencies, or finding the critical path for parallel execution — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Purpose
 
 Given items with dependencies, generate a **valid execution order** that:

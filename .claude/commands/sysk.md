@@ -1,0 +1,1 @@
+Analyze any system by mapping components, connections, feedback loops, leverage points, and emergent behaviors. Read and execute `claude-code-plugin/skills/sysk/SKILL.md`, applying it to this input: $ARGUMENTS

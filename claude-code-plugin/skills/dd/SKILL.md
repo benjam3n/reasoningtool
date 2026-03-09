@@ -7,6 +7,17 @@ description: Identify the key dimensions that define a problem space, enabling c
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Map a problem space**: The user has a domain or topic and wants to discover the independent axes of variation that define it, enabling systematic exploration.
+**Interpretation 2 — Analyze a dataset's structure**: The user has data (a spreadsheet, survey, product catalog) and wants to identify the key dimensions or variables that characterize it.
+**Interpretation 3 — Find all ways something varies**: The user is asking "what are all the ways this could differ?" about a concept, product, or situation — they want to see the full shape of the variation.
+
+If ambiguous, ask: "I can help with mapping a conceptual problem space, analyzing dimensions in a dataset, or discovering all the ways something varies — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

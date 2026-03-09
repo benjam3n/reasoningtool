@@ -110,4 +110,15 @@ For EXPLORE items (hard but potentially transformative):
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Explore what's possible**: The user has a system, resource, or situation and wants to discover the full range of what could be done with it — they're in divergent thinking mode and need breadth before filtering.
+**Interpretation 2 — Prioritize among known options**: The user already has several possibilities in mind and needs help evaluating feasibility, value, and sequencing — they want a prioritized action plan, not more brainstorming.
+**Interpretation 3 — Find hidden opportunities**: The user suspects they're missing something — they're anchored on current usage or obvious paths and want to surface non-obvious, adjacent, or transformative possibilities they haven't considered.
+
+If ambiguous, ask: "I can help with broadly exploring what's possible, prioritizing options you already have, or uncovering hidden opportunities — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

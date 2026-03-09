@@ -7,6 +7,17 @@ description: Assume Right - Deep recursive rightness search. For every claim, as
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Implication mapping**: The user has a claim or belief they think is correct and wants to discover everything they're committed to by accepting it — including costs, foreclosures, and surprising consequences.
+**Interpretation 2 — Strategy stress-test**: The user has chosen an approach or strategy and wants to trace what follows if it's the right call — surfacing hidden commitments, dependencies, and what they can no longer do.
+**Interpretation 3 — Assumption chain exploration**: The user holds a position and wants to push it to bedrock — finding where the chain of "if this is right, then..." leads, especially to testable predictions or internal tensions.
+
+If ambiguous, ask: "I can help with mapping all implications of a claim, stress-testing a strategy's commitments, or pushing an assumption to bedrock — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Corruption Pre-Inoculation

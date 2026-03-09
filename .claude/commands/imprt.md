@@ -1,0 +1,1 @@
+Auto-diagnose the reasoning toolkit as a whole — identify quality gaps, missing skills, structural inconsistencies, integration failures, and improvement priorities across the entire skill library. Read and execute `claude-code-plugin/skills/imprt/SKILL.md`, applying it to this input: $ARGUMENTS

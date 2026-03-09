@@ -1,0 +1,1 @@
+Generate genuine insights by identifying stuck-points, inverting assumptions, changing representations, using incubation, and crystallizing through stability tests. Read and execute `claude-code-plugin/skills/insd/SKILL.md`, applying it to this input: $ARGUMENTS

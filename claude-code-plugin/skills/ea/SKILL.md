@@ -210,4 +210,15 @@ Document all credentials and settings:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Set up project email**: The user needs to acquire and configure email addresses for a specific project or autonomous system, including provider selection, domain setup, and deliverability configuration.
+**Interpretation 2 — Audit existing email setup**: The user already has email infrastructure but wants to evaluate and improve its deliverability, DNS configuration, or professional appearance.
+**Interpretation 3 — Plan email strategy**: The user is early-stage and needs help deciding what email approach to take (free vs. paid, custom domain vs. generic, privacy level) before any setup begins.
+
+If ambiguous, ask: "I can help with setting up new project email, auditing your existing email configuration, or planning an email strategy — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

@@ -1,0 +1,1 @@
+Understanding and navigating social dynamics. Identifies social context, models perspectives, predicts reactions, and plans moves with awareness of stated and unstated norms. Read and execute `claude-code-plugin/skills/socg/SKILL.md`, applying it to this input: $ARGUMENTS

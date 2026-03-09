@@ -7,6 +7,17 @@ description: Synthesize insights from multiple sources into coherent, actionable
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Combine multiple analyses into a unified picture**: The user has run several analyses (assumption extraction, inversion, analogies, etc.) and needs to integrate the findings into coherent, prioritized understanding.
+**Interpretation 2 — Find the key takeaway**: The user has a body of information, research, or discussion and wants help distilling it to the essential insight — "what's the one thing that matters here?"
+**Interpretation 3 — Make sense of conflicting information**: The user has multiple data points, opinions, or findings that seem contradictory and needs help resolving them into a coherent narrative.
+
+If ambiguous, ask: "I can help with combining multiple analyses into a unified picture, distilling a key takeaway from a body of information, or making sense of conflicting data — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

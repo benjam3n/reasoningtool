@@ -311,4 +311,15 @@ Optimization process:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Build a content strategy from scratch**: The user is starting content marketing efforts and needs the full pipeline: goals, audience research, pillars, calendar, and distribution plan.
+**Interpretation 2 — Fix or revamp an existing strategy**: The user already produces content but it is not performing — they need an audit of what exists, identification of gaps, and a revised approach.
+**Interpretation 3 — Plan content for a specific campaign or launch**: The user has a time-bound goal (product launch, event, seasonal push) and needs a focused content plan to support it.
+
+If ambiguous, ask: "I can help with building a content strategy from scratch, revamping an underperforming one, or planning content for a specific campaign — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

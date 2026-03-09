@@ -9,6 +9,19 @@ description: Generate exhaustive guesses about user input using ALL search metho
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Enumerate hidden assumptions**: The user has a statement, plan, or claim and wants to exhaustively surface all the implicit guesses and assumptions buried within it.
+**Interpretation 2 — Generate possibilities for an unknown**: The user faces an open question or ambiguity and wants to systematically generate all plausible answers or scenarios.
+**Interpretation 3 — Stress-test a decision**: The user has already made a choice and wants to discover what they might be wrong about by generating alternative readings of their situation.
+
+If ambiguous, ask: "I can help with surfacing hidden assumptions, generating possibilities for an unknown, or stress-testing a decision — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Core Principles
 
 1. **GUESSING IS SEARCH** - Apply ALL search methods systematically

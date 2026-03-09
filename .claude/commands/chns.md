@@ -1,0 +1,1 @@
+Guides the design of skills that compose well with other skills, with clean input/output contracts and narrow scope for reliable handoffs. Read and execute `claude-code-plugin/skills/chns/SKILL.md`, applying it to this input: $ARGUMENTS

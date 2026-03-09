@@ -5,6 +5,21 @@ description: "Break complex goals into simpler, manageable sub-goals"
 
 # Decomposition
 
+**Input**: $ARGUMENTS
+
+---
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Project breakdown**: You have a large goal or project and need to break it into manageable, assignable pieces with clear dependencies (e.g., "break this project into tasks" or "this is too big — where do I start?").
+**Interpretation 2 — Complexity reduction**: You have something conceptually complex — a system, argument, or problem — and need to decompose it into simpler parts you can understand individually (e.g., "I can't wrap my head around this" or "simplify this into parts I can reason about").
+**Interpretation 3 — Scope definition**: You're not sure what's actually included in a vague or sprawling goal, and need decomposition to reveal what's really involved and set boundaries (e.g., "what does 'improve the product' actually entail?" or "what am I really committing to here?").
+
+If ambiguous, ask: "I can help with breaking a project into tasks, simplifying something complex into understandable parts, or clarifying what a vague goal actually involves — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Overview
 Break complex goals into simpler, manageable sub-goals
 
@@ -96,7 +111,5 @@ If yes and within max_depth:
 - Critical path is realistic
 
 ---
-
-**Input**: $ARGUMENTS
 
 Apply this procedure to the input provided.

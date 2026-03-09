@@ -1,0 +1,1 @@
+Rapidly sorts multiple problems, tasks, or issues by urgency and importance into a priority matrix with a ranked action list. Read and execute `claude-code-plugin/skills/tri/SKILL.md`, applying it to this input: $ARGUMENTS

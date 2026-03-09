@@ -1,0 +1,1 @@
+Analyzes suitability for AI agents. Assesses which tasks are automatable, evaluates reliability requirements, designs human oversight, and plans for failure modes. Read and execute `claude-code-plugin/skills/aiag/SKILL.md`, applying it to this input: $ARGUMENTS

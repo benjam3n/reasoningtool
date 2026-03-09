@@ -1,0 +1,1 @@
+Expand 'etc', 'and so on', and other list tails into explicit items by inferring the continuation rule, enumerating omitted items, and stopping at a defined completeness criterion. Read and execute `claude-code-plugin/skills/etc/SKILL.md`, applying it to this input: $ARGUMENTS

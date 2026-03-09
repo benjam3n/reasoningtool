@@ -1,0 +1,1 @@
+Evaluate claims about what someone wants or intends. Check behavioral evidence, stated vs revealed preferences, and alternative intentions. Read and execute `claude-code-plugin/skills/icl/SKILL.md`, applying it to this input: $ARGUMENTS

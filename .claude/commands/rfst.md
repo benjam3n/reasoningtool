@@ -1,0 +1,1 @@
+Learns from completed work by comparing outcomes to expectations, identifying what worked and what didn't, extracting transferable lessons, and updating beliefs. Read and execute `claude-code-plugin/skills/rfst/SKILL.md`, applying it to this input: $ARGUMENTS

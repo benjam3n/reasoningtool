@@ -1,0 +1,1 @@
+Sequence unresolved TBDs by dependency and impact for operational resolution, identifying parallel tracks, blockers, and the critical resolution path. Read and execute `claude-code-plugin/skills/tobd/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Design skill creation pipelines at scale, including quality gates, templates, naming conventions, batch generation, review processes, and rollout strategy. Read and execute `claude-code-plugin/skills/sc/SKILL.md`, applying it to this input: $ARGUMENTS

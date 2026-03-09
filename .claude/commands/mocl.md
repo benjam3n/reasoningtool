@@ -1,0 +1,1 @@
+Evaluate "could/would/might" claims. Identify the type of possibility, check constraints, and assess distance from actuality. Read and execute `claude-code-plugin/skills/mocl/SKILL.md`, applying it to this input: $ARGUMENTS

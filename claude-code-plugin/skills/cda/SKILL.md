@@ -9,6 +9,17 @@ description: Find analogies from other domains to generate novel insights. Trans
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Solution transfer**: You have a specific problem and want to find how other fields have solved structurally similar problems, then import those solutions (e.g., "what field has already solved this?").
+**Interpretation 2 — Perspective shift**: You're stuck in domain-expert thinking and want fresh metaphors or framings from unrelated fields to see your situation differently (e.g., "give me a new way to think about this").
+**Interpretation 3 — Pattern discovery**: You want to identify deep structural patterns that recur across multiple domains, revealing something fundamental about the type of problem you're facing (e.g., "is there a universal pattern here?").
+
+If ambiguous, ask: "I can help with importing a solution from another field, finding a fresh metaphor to reframe your thinking, or discovering cross-domain patterns — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Purpose
 
 Find **analogous situations in other domains** to:

@@ -7,6 +7,17 @@ description: Prevent user from settling on suboptimal option by systematically c
 
 **Input**: $ARGUMENTS (user's current choice and preference profile)
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Option expansion**: The user has settled on a choice and wants to discover options they haven't considered — the goal is to surface what they don't know exists before committing.
+**Interpretation 2 — Choice validation**: The user has a preferred option but feels uncertain, and wants confirmation that no clearly better alternative exists — they're looking for permission to proceed or a reason to reconsider.
+**Interpretation 3 — Preference clarification**: The user is choosing between options but their real problem is unclear preferences — the better-option check will reveal what they actually value by examining what their current choice implies.
+
+If ambiguous, ask: "I can help with expanding your option space, validating your current choice, or clarifying what you actually value — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

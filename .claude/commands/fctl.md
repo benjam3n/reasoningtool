@@ -1,0 +1,1 @@
+Test whether a factual claim is true. Assess evidence quality, check for common errors, and deliver a verdict with confidence level. Read and execute `claude-code-plugin/skills/fctl/SKILL.md`, applying it to this input: $ARGUMENTS

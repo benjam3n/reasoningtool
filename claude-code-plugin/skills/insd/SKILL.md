@@ -9,6 +9,19 @@ description: "Generate genuine insights by identifying stuck-points, inverting a
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Break through a block**: The user is stuck on a specific problem and needs techniques to escape their current framing and find a new angle.
+**Interpretation 2 — Explore for discovery**: The user wants to investigate a domain or topic to find something genuinely new or interesting, without a specific problem in mind.
+**Interpretation 3 — Develop a partial insight**: The user already has the seed of an idea or realization and wants to test, refine, and crystallize it into something solid and actionable.
+
+If ambiguous, ask: "I can help with breaking through a block, exploring a domain for discovery, or developing a partial insight — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Depth Scaling
 
 Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/insd 4x [input]").

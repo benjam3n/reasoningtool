@@ -7,6 +7,17 @@ description: Validate that a list is MECE (Mutually Exclusive, Collectively Exha
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Validate an existing breakdown**: The user has a list or categorization and wants to check whether it is truly MECE — no overlaps, no gaps.
+**Interpretation 2 — Make something MECE**: The user has a rough or messy list and wants help restructuring it into a clean, non-overlapping, exhaustive framework.
+**Interpretation 3 — Check completeness**: The user is really asking "is this list complete?" or "am I missing anything?" — they care more about gaps than overlaps.
+
+If ambiguous, ask: "I can help with validating an existing breakdown for MECE quality, restructuring a messy list into MECE form, or checking whether your list is complete — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

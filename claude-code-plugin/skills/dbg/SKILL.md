@@ -10,6 +10,19 @@ context: fork
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Diagnose a specific bug**: The user has a concrete error, failure, or unexpected behavior and wants to find the root cause and fix it.
+**Interpretation 2 — Investigate intermittent or mysterious behavior**: The user sees something wrong but cannot reliably reproduce it — they need a strategy for isolating the conditions that trigger the problem.
+**Interpretation 3 — Verify a suspected cause**: The user already has a hypothesis about what is broken and wants help confirming or ruling it out, then implementing and testing a fix.
+
+If ambiguous, ask: "I can help with diagnosing a specific bug, investigating intermittent behavior, or verifying a suspected cause — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Overview
 
 Systematic procedure for diagnosing and fixing software bugs. This procedure leverages Claude Code's unique capabilities: exhaustive code search, pattern matching across codebase, and direct code execution.

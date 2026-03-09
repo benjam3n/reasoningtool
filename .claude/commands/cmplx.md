@@ -1,0 +1,1 @@
+Framework for genuinely complex problems that resist simple answers. Identify sources of complexity, choose appropriate tools, decompose without oversimplifying, and synthesize. Read and execute `claude-code-plugin/skills/cmplx/SKILL.md`, applying it to this input: $ARGUMENTS

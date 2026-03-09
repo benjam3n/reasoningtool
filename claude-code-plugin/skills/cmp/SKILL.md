@@ -9,6 +9,17 @@ description: Compare options using gestalt impression + structured evaluation. I
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Decision comparison**: You have concrete options and need to pick the best one for your situation (e.g., "should I go with React or Vue?" or "which job offer should I take?").
+**Interpretation 2 — Tradeoff mapping**: You don't need a winner — you need to understand the tradeoffs, strengths, and weaknesses across options so you (or someone else) can decide later (e.g., "what are the tradeoffs between these approaches?").
+**Interpretation 3 — Conceptual contrast**: You want to understand how two or more things differ in nature, not to choose between them but to sharpen your understanding of each (e.g., "what's the difference between strategy and tactics?" or "compare these frameworks").
+
+If ambiguous, ask: "I can help with picking the best option, mapping tradeoffs without choosing, or clarifying how concepts differ — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Core Principles
 
 1. **Impression before scoring.** State your overall sense of which option is best BEFORE structured evaluation. This captures qualitative judgment that scoring can miss.

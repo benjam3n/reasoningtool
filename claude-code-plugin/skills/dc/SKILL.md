@@ -5,6 +5,23 @@ description: "Systematic procedure for gathering research data through surveys, 
 
 # Data Collection
 
+**Input**: $ARGUMENTS
+
+---
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Design a data collection plan from scratch**: The user has a research question and needs to design the full data collection strategy — what to measure, how to sample, which instruments to use, and how to ensure quality.
+**Interpretation 2 — Choose between collection methods**: The user knows what data they need but is unsure whether to use surveys, interviews, observation, or secondary sources, and needs guidance on which method fits their situation.
+**Interpretation 3 — Fix or improve an existing collection process**: The user is already collecting data but has quality issues, low response rates, or gaps, and needs to diagnose and strengthen their current approach.
+
+If ambiguous, ask: "I can help with designing a data collection plan from scratch, choosing the right collection method for your needs, or diagnosing problems in an existing collection process — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Overview
 Systematic procedure for gathering research data through surveys, interviews, observation, and secondary sources
 

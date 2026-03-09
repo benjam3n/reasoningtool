@@ -1,0 +1,1 @@
+Evaluate claims about claims. Analyze what level a claim operates at, check self-referential consistency, and assess impact on object-level analysis. Read and execute `claude-code-plugin/skills/mtcl/SKILL.md`, applying it to this input: $ARGUMENTS

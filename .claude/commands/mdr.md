@@ -1,0 +1,1 @@
+When values genuinely conflict and there's no clean answer — systematically work through the tension to find the most defensible path forward. Read and execute `claude-code-plugin/skills/mdr/SKILL.md`, applying it to this input: $ARGUMENTS

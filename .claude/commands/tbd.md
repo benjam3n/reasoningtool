@@ -1,0 +1,1 @@
+Identify unresolved decisions in any plan, document, or conversation, and convert each into an explicit determination question with type, owner, deadline, and cost of remaining unresolved. Read and execute `claude-code-plugin/skills/tbd/SKILL.md`, applying it to this input: $ARGUMENTS

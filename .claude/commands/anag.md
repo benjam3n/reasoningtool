@@ -1,0 +1,1 @@
+Explains concept X in terms of familiar concept Y by mapping structural correspondence, then testing where the analogy breaks. Read and execute `claude-code-plugin/skills/anag/SKILL.md`, applying it to this input: $ARGUMENTS

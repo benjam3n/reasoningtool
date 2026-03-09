@@ -9,6 +9,17 @@ description: Create a mechanical, step-by-step decision procedure for a recurrin
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Build a reusable decision process**: You face a type of decision that recurs (for you or others) and want to create a mechanical, followable procedure so it doesn't require expertise each time (e.g., "make this decision repeatable" or "build me a decision tree for hiring").
+**Interpretation 2 — Navigate a one-time decision**: You have a specific decision to make right now and want structured help thinking through it — not building a reusable template, just getting to an answer (e.g., "how should I decide whether to take this job?").
+**Interpretation 3 — Audit an existing decision process**: You already have a way decisions get made (formally or informally) and want to examine whether it's sound, find its blind spots, or improve it (e.g., "our promotion process feels broken" or "why do we keep making bad hiring decisions?").
+
+If ambiguous, ask: "I can help with building a reusable decision procedure, working through a specific decision right now, or auditing an existing decision process — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Purpose
 
 Some decisions are made repeatedly by many people, and most people navigate them poorly because they lack expertise. This skill creates a **mechanical procedure** -- a flowchart or decision tree that takes someone from "I have this decision to make" to "here is my answer" without requiring them to understand the underlying domain.

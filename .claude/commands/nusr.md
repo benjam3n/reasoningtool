@@ -1,0 +1,1 @@
+Analyze from the newcomer's perspective. Simulates first-use experience, identifies confusion points, assesses onboarding path, finds jargon and assumed knowledge, and recommends simplifications. Read and execute `claude-code-plugin/skills/nusr/SKILL.md`, applying it to this input: $ARGUMENTS

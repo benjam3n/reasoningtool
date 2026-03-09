@@ -9,6 +9,19 @@ description: "Convert knowledge into action by diagnosing what actually blocks e
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Stuck despite knowing what to do**: The user has clear knowledge of the right action but cannot make themselves execute it — the gap is between knowing and doing.
+**Interpretation 2 — Stuck because the path is unclear**: The user has a goal but cannot figure out the concrete next step — the gap is between intention and a specific action plan.
+**Interpretation 3 — Pattern of abandoned starts**: The user has tried repeatedly but keeps losing momentum — the gap is between initial action and sustained follow-through.
+
+If ambiguous, ask: "I can help with getting yourself to do something you already know how to do, figuring out the concrete next step toward a goal, or diagnosing why you keep starting and stopping — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## STEP 0: What kind of inaction are you experiencing?
 
 Write down the action you're not taking. Then classify:

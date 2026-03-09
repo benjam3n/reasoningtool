@@ -1,0 +1,1 @@
+Find what makes something uniquely valuable versus alternatives. Maps competitors, compares features, identifies unique capabilities and weaknesses, assesses defensibility, and outputs positioning. Read and execute `claude-code-plugin/skills/cdiff/SKILL.md`, applying it to this input: $ARGUMENTS

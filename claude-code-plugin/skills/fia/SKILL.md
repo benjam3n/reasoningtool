@@ -7,6 +7,17 @@ description: Comprehensive analysis of a field's key tensions, hidden assumption
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Analyze a field's hidden assumptions and blind spots**: The user wants a comprehensive analysis of an academic, professional, or intellectual field — surfacing orthodoxies, testing assumptions, and producing a full field health report.
+**Interpretation 2 — Compare fields or paradigms**: The user is interested in how two or more fields differ in their assumptions, methods, or blind spots, and wants cross-field insight rather than a single-field deep dive.
+**Interpretation 3 — Evaluate a specific claim or practice within a field**: The user has a particular belief or methodology from a field they want to stress-test, rather than analyzing the entire field.
+
+If ambiguous, ask: "I can help with a full field analysis, a cross-field comparison, or testing a specific claim within a field — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Purpose

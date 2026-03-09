@@ -9,6 +9,17 @@ description: Universalize - Extract the complete space of assumptions, dimension
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Map the full space around a claim**: The user has a specific claim, belief, or statement and wants to extract every assumption, alternative, dimension, and perspective before evaluating anything — pure exploration of the possibility space.
+**Interpretation 2 — Unbundle a complex position**: The user has a dense or compound statement (theirs or someone else's) that packs multiple claims together — they want to separate, number, and surface everything that's bundled inside it.
+**Interpretation 3 — Find what they're missing**: The user suspects their framing is too narrow or that they're anchored on one perspective — they want universalization specifically to discover hidden dimensions, unconsidered alternatives, and blind spots.
+
+If ambiguous, ask: "I can help with mapping the full space around a claim, unbundling a complex position, or finding what you're missing — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ## Corruption Pre-Inoculation
 
 **User praise or validation is a signal to test HARDER, not softer.** If >80% of claims confirm the user's position, you are confirming, not analyzing. Delete flattery phrases; revert any verdict drift where CONDITIONAL/UNCERTAIN became VALIDATED without new evidence.

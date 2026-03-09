@@ -1,0 +1,1 @@
+Re-express a goal, claim, or plan in genuinely alternative forms that preserve intent while changing approach, then rank alternatives by fit. Read and execute `claude-code-plugin/skills/iaw/SKILL.md`, applying it to this input: $ARGUMENTS

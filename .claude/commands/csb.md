@@ -1,0 +1,1 @@
+Move a group toward agreement by surfacing real disagreements, generating options, and using gradients of agreement rather than binary votes. Read and execute `claude-code-plugin/skills/csb/SKILL.md`, applying it to this input: $ARGUMENTS

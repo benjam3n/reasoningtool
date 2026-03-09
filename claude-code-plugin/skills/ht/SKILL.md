@@ -8,6 +8,17 @@ context: fork
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Test a specific claim**: The user has a concrete hypothesis or assertion and wants a rigorous framework to evaluate whether it holds up against evidence.
+**Interpretation 2 — Validate a business assumption**: The user has a belief about their market, customers, or strategy (e.g., "I think users want X") and needs to design a way to confirm or refute it.
+**Interpretation 3 — Investigate a hunch**: The user has a theory about why something is happening (e.g., "I think the bug is caused by X" or "I suspect my fatigue is from Y") and wants structured help working through it.
+
+If ambiguous, ask: "I can help with rigorously testing a formal claim, validating a business assumption, or investigating a personal hunch — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 ---
 
 ## Overview

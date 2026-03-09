@@ -1,0 +1,1 @@
+Resolves disagreements by surfacing positions, uncovering underlying interests, finding shared ground, and proposing solutions that serve both parties. Read and execute `claude-code-plugin/skills/conr/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Assess structural integrity of a collection, system, or toolkit. Finds broken references, orphans, circular dependencies, and naming inconsistencies. Read and execute `claude-code-plugin/skills/tkint/SKILL.md`, applying it to this input: $ARGUMENTS

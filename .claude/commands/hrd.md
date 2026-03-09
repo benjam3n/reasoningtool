@@ -1,0 +1,1 @@
+Apply maximum rigor to a problem — no shortcuts, no defaults, no simplifications. Every assumption surfaced, every edge case considered, every tradeoff explicit. For when getting it wrong is expensive. Read and execute `claude-code-plugin/skills/hrd/SKILL.md`, applying it to this input: $ARGUMENTS

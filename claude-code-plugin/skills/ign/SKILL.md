@@ -9,6 +9,19 @@ description: "Decide what information, concerns, and possibilities to deliberate
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Triage an overwhelming list**: The user has too many factors, options, tasks, or data points and needs a structured method to decide what to deliberately set aside.
+**Interpretation 2 — Permission to drop something**: The user already suspects certain things should be ignored but wants validation and a framework to feel confident cutting them.
+**Interpretation 3 — Focus discovery**: The user does not know what matters most and needs the filtering process to reveal what their actual priorities are by seeing what survives triage.
+
+If ambiguous, ask: "I can help with triaging an overwhelming list, giving you a framework to confidently drop things, or discovering your real priorities through filtering — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Depth Scaling
 
 Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/ign 4x [input]").

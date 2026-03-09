@@ -1,0 +1,1 @@
+Reason about what's missing and why it matters by identifying intended completeness, enumerating present elements, and prioritizing gaps by impact. Read and execute `claude-code-plugin/skills/gflr/SKILL.md`, applying it to this input: $ARGUMENTS

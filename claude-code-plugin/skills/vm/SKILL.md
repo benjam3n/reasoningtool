@@ -479,4 +479,17 @@ Continuous improvement:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Viral growth strategy**: The user has a product or service and wants to design viral loops, referral programs, or word-of-mouth triggers to drive organic growth.
+**Interpretation 2 — Viral audit**: The user has an existing product with some organic sharing and wants to measure, understand, and optimize their current viral performance.
+**Interpretation 3 — Network effects design**: The user wants to build network effects into their product so that it becomes more valuable as more people use it, creating a defensible moat.
+
+If ambiguous, ask: "I can help with designing a viral growth strategy, auditing existing viral performance, or building network effects — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 Apply this procedure to the input provided.

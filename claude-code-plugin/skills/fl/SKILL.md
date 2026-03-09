@@ -373,4 +373,15 @@ Build sustainable freelance practice:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Start freelancing**: The user is considering or beginning the transition to freelance work and needs guidance on defining an offering, setting prices, and finding initial clients.
+**Interpretation 2 — Solve a specific freelance challenge**: The user is already freelancing but struggling with a particular aspect — pricing, proposals, scope creep, client management, or cash flow.
+**Interpretation 3 — Scale or evolve a freelance practice**: The user has an established freelance business and wants to grow — raising rates, building systems, adding subcontractors, or moving toward an agency or productized model.
+
+If ambiguous, ask: "I can help with getting started as a freelancer, solving a specific freelance challenge, or scaling an existing practice — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

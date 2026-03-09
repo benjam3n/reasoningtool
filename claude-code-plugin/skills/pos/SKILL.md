@@ -480,4 +480,15 @@ But core positioning should be stable:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Defining positioning for a new product or company**: The user is launching something new and needs to establish market positioning from scratch, including category selection, differentiation, and messaging.
+**Interpretation 2 — Repositioning an existing offering**: The user has a product already in market that is misunderstood, losing to competitors, or needs to shift how customers perceive it.
+**Interpretation 3 — Crafting competitive messaging**: The user already knows their positioning conceptually but needs help translating it into concrete messaging frameworks, elevator pitches, and audience-specific language.
+
+If ambiguous, ask: "I can help with defining new positioning, repositioning an existing product, or crafting messaging from existing positioning — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

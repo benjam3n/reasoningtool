@@ -1,0 +1,1 @@
+Systematically explore what the future looks like for any trend, technology, decision, or domain across multiple timeframes. Read and execute `claude-code-plugin/skills/fut/SKILL.md`, applying it to this input: $ARGUMENTS

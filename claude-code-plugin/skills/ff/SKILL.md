@@ -251,4 +251,15 @@ Execute final documentation and funding:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Run a fundraising process**: The user is ready to raise capital and needs end-to-end guidance through investor outreach, pitch preparation, term negotiation, and closing.
+**Interpretation 2 — Assess fundraising readiness**: The user is considering raising but is unsure whether now is the right time, what stage they are at, or how much to raise.
+**Interpretation 3 — Fix a stalled fundraise**: The user is mid-process but struggling — not getting meetings, failing to close, or receiving unfavorable terms — and needs to diagnose and adjust their approach.
+
+If ambiguous, ask: "I can help with running a full fundraising process, assessing whether you're ready to raise, or diagnosing a stalled fundraise — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

@@ -1,0 +1,1 @@
+Identify entirely new areas worth expanding into over months. Survey adjacent possibilities and assess strategic fit. Read and execute `claude-code-plugin/skills/mtnw/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,0 +1,1 @@
+Helps someone figure out where they are and what they're dealing with. Surveys the situation, identifies the problem type, assesses urgency, and recommends an entry point. Read and execute `claude-code-plugin/skills/ornt/SKILL.md`, applying it to this input: $ARGUMENTS

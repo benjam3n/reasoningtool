@@ -1,0 +1,1 @@
+Analyzes an under-served area to determine what it needs. Assesses current coverage, identifies gaps relative to demand, and recommends build order. Read and execute `claude-code-plugin/skills/undr/SKILL.md`, applying it to this input: $ARGUMENTS

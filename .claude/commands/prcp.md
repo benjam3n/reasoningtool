@@ -1,0 +1,1 @@
+Systematic procedure for improving what you notice. Slows down observation, separates what's present from what's interpreted, and surfaces what you normally filter out. Read and execute `claude-code-plugin/skills/prcp/SKILL.md`, applying it to this input: $ARGUMENTS

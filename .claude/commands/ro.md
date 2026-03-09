@@ -1,0 +1,1 @@
+Reorder an existing list using an explicit objective, multi-dimensional scoring, dependency awareness, and sanity checks — producing a defensible best-to-worst order with confidence flags. Read and execute `claude-code-plugin/skills/ro/SKILL.md`, applying it to this input: $ARGUMENTS

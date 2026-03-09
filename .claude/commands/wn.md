@@ -1,0 +1,1 @@
+Summarize what is new in a project or codebase, grouped by configurable views (day, category, skill, iteration), filtering out unchanged items. Read and execute `claude-code-plugin/skills/wn/SKILL.md`, applying it to this input: $ARGUMENTS

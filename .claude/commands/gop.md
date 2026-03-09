@@ -1,0 +1,1 @@
+Systematically identify, define, and maximize the probability of good outcomes for any situation, plan, or decision. Read and execute `claude-code-plugin/skills/gop/SKILL.md`, applying it to this input: $ARGUMENTS

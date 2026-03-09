@@ -1,0 +1,1 @@
+Identify cognitive operations that don't have explicit procedures yet. Observes thinking processes, surfaces implicit steps and tacit knowledge, formalizes them into explicit procedures, tests, and refines. Read and execute `claude-code-plugin/skills/upth/SKILL.md`, applying it to this input: $ARGUMENTS

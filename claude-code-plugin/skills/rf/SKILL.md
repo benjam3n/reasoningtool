@@ -106,4 +106,15 @@ Extract lessons from the refactoring:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Refactoring specific code**: The user has identified a particular piece of code (function, module, class) that needs structural improvement and wants a systematic plan to refactor it safely.
+**Interpretation 2 — Assessing whether to refactor**: The user suspects code needs refactoring but is unsure if it is worth the effort, and needs help evaluating the costs, risks, and benefits before committing.
+**Interpretation 3 — Establishing refactoring practices**: The user wants to build a team culture or workflow around safe refactoring, including when to refactor, how to scope it, and how to avoid regressions.
+
+If ambiguous, ask: "I can help with refactoring specific code, deciding whether refactoring is worthwhile, or establishing refactoring practices — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

@@ -1,0 +1,1 @@
+Analyze how influence works in a situation. Maps influence channels, assesses ethical boundaries, and recommends strategy or defense. Read and execute `claude-code-plugin/skills/pinf/SKILL.md`, applying it to this input: $ARGUMENTS

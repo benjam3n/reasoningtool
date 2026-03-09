@@ -1,0 +1,1 @@
+Convert a change stream into high-level big-change bullets, filtering out low-level modifications and grouping related changes into coherent shifts. Read and execute `claude-code-plugin/skills/alebc/SKILL.md`, applying it to this input: $ARGUMENTS

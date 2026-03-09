@@ -128,4 +128,15 @@ Integrate findings across sources:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Comprehensive literature review**: The user needs a full systematic review of existing research on a topic, including search strategy, screening, and synthesis.
+**Interpretation 2 — Quick evidence scan**: The user wants to rapidly understand what the research says about a specific question without conducting a full formal review.
+**Interpretation 3 — Gap analysis**: The user wants to identify what has NOT been studied or where the evidence is weak or contradictory on a topic, to find opportunities for new work.
+
+If ambiguous, ask: "I can help with a comprehensive literature review, a quick evidence scan, or a gap analysis — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

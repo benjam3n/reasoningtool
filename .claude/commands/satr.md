@@ -1,0 +1,1 @@
+Analyzes whether an area has too much coverage. Identifies redundancy, finds rarely-used items, and recommends consolidation or pruning. Read and execute `claude-code-plugin/skills/satr/SKILL.md`, applying it to this input: $ARGUMENTS

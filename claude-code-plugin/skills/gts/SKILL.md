@@ -9,6 +9,19 @@ description: "The fundamental pattern for making cognitive tasks tractable: Gene
 
 ---
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Solve a specific problem**: The user has a concrete problem and wants to generate candidate solutions then systematically select the best one using criteria.
+**Interpretation 2 — Choose among known options**: The user already has options in mind and needs help defining selection criteria and ranking them.
+**Interpretation 3 — Explore a possibility space**: The user wants to map out what is possible in a domain before committing to any direction, emphasizing the generation phase over selection.
+
+If ambiguous, ask: "I can help with solving a specific problem, choosing among known options, or exploring a possibility space — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
 ## Overview
 
 The fundamental pattern for making cognitive tasks tractable:

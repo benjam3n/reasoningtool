@@ -117,4 +117,15 @@ PIVOT signals:
 
 **Input**: $ARGUMENTS
 
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Validate a market opportunity**: The user has a product or business idea and wants to research whether real demand exists, how big the market is, and whether the economics work.
+**Interpretation 2 — Understand a competitive landscape**: The user wants to map existing players, their positioning, and where gaps or weaknesses exist in a particular market.
+**Interpretation 3 — Find a market to enter**: The user has capabilities or resources but no specific market in mind, and wants to identify the most promising opportunity to pursue.
+
+If ambiguous, ask: "I can help with validating a market opportunity, understanding a competitive landscape, or finding a market to enter — which fits?"
+If clear from context, proceed with the matching interpretation.
+
 Apply this procedure to the input provided.

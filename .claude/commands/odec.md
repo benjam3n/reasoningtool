@@ -1,0 +1,1 @@
+Generates structured decision recommendations. Takes a decision context and produces a clear recommendation with rationale, confidence level, and conditions for revision. Read and execute `claude-code-plugin/skills/odec/SKILL.md`, applying it to this input: $ARGUMENTS
