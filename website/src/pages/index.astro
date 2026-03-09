@@ -432,7 +432,7 @@ const tier4Categories = [
 ];
 
 // Build flat list with tier info, then merge full registry so cloud includes all current skills.
-const tierMap = new Map<string, { name: string; title: string; tier: string; desc?: string; category?: string; useful?: number }>();
+const tierMap = new Map<string, { name: string; title: string; tier: string; desc?: string; category?: string; useful?: number; tags?: string[] }>();
 experimental.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: 'exp' }));
 tier1.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: '1', desc: s.desc }));
 tier2.forEach(s => tierMap.set(s.name, { name: s.name, title: s.title, tier: '2', desc: s.desc }));
@@ -447,6 +447,7 @@ for (const [id, meta] of Object.entries<any>(manifestSkills)) {
     existing.desc = existing.desc || meta.description || '';
     existing.category = existing.category || meta.category || '';
     existing.useful = (meta.invoked_by?.length || 0) + (meta.invokes?.length || 0) * 0.25;
+    existing.tags = existing.tags || meta.tags || [];
     continue;
   }
   let tier = '3';
@@ -459,6 +460,7 @@ for (const [id, meta] of Object.entries<any>(manifestSkills)) {
     desc: meta.description || '',
     category: meta.category || '',
     useful: (meta.invoked_by?.length || 0) + (meta.invokes?.length || 0) * 0.25,
+    tags: meta.tags || [],
   });
 }
 
@@ -469,6 +471,16 @@ const allCategories = [
   ...tier3Categories.map(c => c.category),
   ...tier4Categories.map(c => c.category),
 ].filter((v, i, a) => a.indexOf(v) === i).sort();
+
+// Compute top tags by frequency (exclude "shortcut" and "pick" as they're meta)
+const tagCounts = new Map<string, number>();
+allSkills.forEach(s => (s.tags || []).forEach(t => {
+  if (t !== 'shortcut' && t !== 'pick') tagCounts.set(t, (tagCounts.get(t) || 0) + 1);
+}));
+const allTags = Array.from(tagCounts.entries())
+  .sort((a, b) => b[1] - a[1])
+  .slice(0, 25)
+  .map(([tag]) => tag);
 ---
 
 <!doctype html>
@@ -507,10 +519,15 @@ const allCategories = [
       <button class="sort-chip filter-chip filter-chip--tier filter-chip--4" data-filter-tier="4">Specialized</button>
       <button class="sort-chip filter-chip filter-chip--tier filter-chip--exp" data-filter-tier="exp">Experimental</button>
       <span class="filter-sep"></span>
-      <button class="sort-chip filter-chip mobile-cat-toggle" id="mobile-cat-toggle">Show categories</button>
+      <button class="sort-chip filter-chip mobile-cat-toggle" id="mobile-cat-toggle">Categories ▸</button>
+      <button class="sort-chip filter-chip mobile-tag-toggle" id="mobile-tag-toggle">Tags ▸</button>
       <span class="filter-label filter-label--cat">Category</span>
       {allCategories.map(cat => (
         <button class="sort-chip filter-chip filter-chip--cat-btn" data-filter-category={cat.toLowerCase()}>{cat}</button>
+      ))}
+      <span class="filter-label filter-label--tag">Tag</span>
+      {allTags.map(tag => (
+        <button class="sort-chip filter-chip filter-chip--tag-btn" data-filter-tag={tag}>{tag}</button>
       ))}
     </div>
     {allSkills.map(s => (
@@ -520,6 +537,7 @@ const allCategories = [
         data-title={s.title.toLowerCase()}
         data-desc={(s.desc || '').toLowerCase()}
         data-category={(s.category || '').toLowerCase()}
+        data-tags={(s.tags || []).join(',')}
         data-useful={String(s.useful || 0)}
       >{s.name}</a>
     ))}
@@ -633,6 +651,7 @@ const allCategories = [
 
         var currentTierFilter = 'all';
         var currentCategoryFilter = '';
+        var currentTagFilter = '';
 
         function applyFilters() {
           var q = searchInput ? searchInput.value.toLowerCase().trim() : '';
@@ -652,7 +671,13 @@ const allCategories = [
               catMatch = chipCat === currentCategoryFilter;
             }
 
-            chip.dataset.searchHidden = (searchMatch && tierMatch && catMatch) ? '0' : '1';
+            var tagMatch = true;
+            if (currentTagFilter) {
+              var chipTags = (chip.getAttribute('data-tags') || '').split(',');
+              tagMatch = chipTags.indexOf(currentTagFilter) !== -1;
+            }
+
+            chip.dataset.searchHidden = (searchMatch && tierMatch && catMatch && tagMatch) ? '0' : '1';
           });
           currentMobilePage = 0;
           applyMobilePagination();
@@ -695,13 +720,46 @@ const allCategories = [
           });
         });
 
+        // Tag filter buttons
+        document.querySelectorAll('[data-filter-tag]').forEach(function(btn) {
+          btn.addEventListener('click', function() {
+            var tag = btn.getAttribute('data-filter-tag');
+            if (tag === currentTagFilter) {
+              currentTagFilter = '';
+              btn.classList.remove('active');
+            } else {
+              document.querySelectorAll('[data-filter-tag]').forEach(function(b) { b.classList.remove('active'); });
+              currentTagFilter = tag;
+              btn.classList.add('active');
+            }
+            applyFilters();
+          });
+        });
+
         // Mobile category toggle
         var catToggle = document.getElementById('mobile-cat-toggle');
         var filterControls = document.querySelector('.filter-controls');
+        var tagToggle = document.getElementById('mobile-tag-toggle');
         if (catToggle && filterControls) {
           catToggle.addEventListener('click', function() {
             var isVisible = filterControls.classList.toggle('categories-visible');
-            catToggle.textContent = isVisible ? 'Hide categories' : 'Show categories';
+            catToggle.textContent = isVisible ? 'Categories \u25BE' : 'Categories \u25B8';
+            if (isVisible) {
+              filterControls.classList.remove('tags-visible');
+              if (tagToggle) tagToggle.textContent = 'Tags \u25B8';
+            }
+          });
+        }
+
+        // Mobile tag toggle
+        if (tagToggle && filterControls) {
+          tagToggle.addEventListener('click', function() {
+            var isVisible = filterControls.classList.toggle('tags-visible');
+            tagToggle.textContent = isVisible ? 'Tags \u25BE' : 'Tags \u25B8';
+            if (isVisible) {
+              filterControls.classList.remove('categories-visible');
+              if (catToggle) catToggle.textContent = 'Categories \u25B8';
+            }
           });
         }
 
@@ -1107,6 +1165,10 @@ const allCategories = [
     display: none;
   }
 
+  .mobile-tag-toggle {
+    display: none;
+  }
+
   .filter-chip--1.active { border-color: #2e7d32; color: #2e7d32; background: #e8f5e9; }
   .filter-chip--2.active { border-color: #1565c0; color: #1565c0; background: #e3f2fd; }
   .filter-chip--cat.active { border-color: #7b1fa2; color: #7b1fa2; background: #f3e5f5; }
@@ -1114,6 +1176,8 @@ const allCategories = [
   .filter-chip--4.active { border-color: #78909c; color: #546e7a; background: #eceff1; }
   .filter-chip--exp.active { border-color: var(--color-accent); color: var(--color-accent); background: var(--color-accent-subtle); }
   .filter-chip--cat-btn.active { border-color: var(--color-accent); color: var(--color-accent); background: var(--color-accent-subtle); }
+  .filter-chip--tag-btn.active { border-color: #0d9488; color: #0d9488; background: #f0fdfa; }
+  :global([data-theme="dark"]) .filter-chip--tag-btn.active { border-color: #5eead4; color: #5eead4; background: #0f2d2a; }
 
   :global([data-theme="dark"]) .filter-chip--1.active { border-color: #6ee7b7; color: #6ee7b7; background: #132e1a; }
   :global([data-theme="dark"]) .filter-chip--2.active { border-color: #93c5fd; color: #93c5fd; background: #0f1f3d; }
@@ -1129,6 +1193,7 @@ const allCategories = [
     :global(:root:not([data-theme="light"])) .filter-chip--3.active { border-color: #ffb74d; color: #ffb74d; background: #2e1a00; }
     :global(:root:not([data-theme="light"])) .filter-chip--4.active { border-color: #78909c; color: #90a4ae; background: #1c2025; }
     :global(:root:not([data-theme="light"])) .filter-chip--exp.active { border-color: #818cf8; color: #818cf8; background: #1e1b4b; }
+    :global(:root:not([data-theme="light"])) .filter-chip--tag-btn.active { border-color: #5eead4; color: #5eead4; background: #0f2d2a; }
   }
 
   .mobile-footer-stack {
@@ -1222,8 +1287,8 @@ const allCategories = [
     }
 
     .sort-chip {
-      padding: 0.28rem 0.5rem;
-      font-size: 0.68rem;
+      padding: 0.2rem 0.4rem;
+      font-size: 0.62rem;
     }
 
     .filter-controls {
@@ -1299,7 +1364,7 @@ const allCategories = [
     }
 
     .mobile-skill-pager {
-      display: none;
+      display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
       gap: 0.35rem;
       width: 100%;
