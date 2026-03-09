@@ -620,7 +620,7 @@ const totalCount = allSkills.length;
             return;
           }
 
-          mobilePager.style.display = 'flex';
+          mobilePager.style.display = 'grid';
           mobilePager.innerHTML = '';
 
           function getNavLabel(pageNumber) {
@@ -1120,38 +1120,19 @@ const totalCount = allSkills.length;
 
     .mobile-skill-pager {
       display: none;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 0.35rem;
       width: 100%;
       padding: 0 0 0.05rem;
       padding-bottom: 0.05rem;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-      scroll-snap-type: x proximity;
-    }
-
-    .mobile-skill-pager::-webkit-scrollbar {
-      display: none;
     }
 
     .mobile-skill-pager__btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.35rem;
-      flex: 0 0 calc((100% - 1.4rem) / 5);
-      min-width: calc((100% - 1.4rem) / 5);
-      min-height: 2rem;
-      padding: 0.3rem;
-      border: 1px solid var(--color-accent);
-      border-radius: 6px;
-      color: var(--color-accent);
-      background: var(--color-accent-subtle);
+      gap: 0.3rem;
+      min-width: 0;
       line-height: 1;
       white-space: nowrap;
       overflow: hidden;
-      scroll-snap-align: start;
     }
 
     .mobile-skill-pager__idx {
