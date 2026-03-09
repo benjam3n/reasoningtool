@@ -75,8 +75,11 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     text-decoration: none;
     color: var(--color-accent);
     background: var(--color-accent-subtle);
-    transition: background var(--transition), color var(--transition);
+    transition: none;
     cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .pg-chip:hover {
@@ -127,7 +130,7 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
 
   .paginated__slides :global(section.active.section--scrollable) {
     overflow-y: auto;
-    overscroll-behavior: contain;
+    overscroll-behavior: none;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -162,8 +165,11 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
     color: var(--color-text-muted);
     background: var(--color-surface);
     cursor: pointer;
-    transition: background var(--transition), color var(--transition), border-color var(--transition);
+    transition: none;
     user-select: none;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .paginated__page-nums :global(.pg-num__idx) {
@@ -553,6 +559,21 @@ const { pageGroup = '', pageIndex = 0 } = Astro.props;
       const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
       if (!allowScroll) e.preventDefault();
     }, { passive: false });
+
+    container.addEventListener('touchstart', (e) => {
+      if (window.innerWidth > 900) return;
+      if (e.touches && e.touches.length > 1) return;
+      const activeSection = finalSections[current];
+      const target = e.target;
+      if (!(target instanceof Element) || !activeSection) return;
+      const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
+      if (!allowScroll) return;
+
+      const maxScrollTop = activeSection.scrollHeight - activeSection.clientHeight;
+      if (maxScrollTop <= 0) return;
+      if (activeSection.scrollTop <= 0) activeSection.scrollTop = 1;
+      if (activeSection.scrollTop >= maxScrollTop) activeSection.scrollTop = Math.max(1, maxScrollTop - 1);
+    }, { passive: true });
 
     window.addEventListener('resize', () => {
       requestAnimationFrame(applyNavLayout);
