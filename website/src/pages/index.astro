@@ -587,6 +587,17 @@ const totalCount = allSkills.length;
         var currentMobilePage = 0;
         var mobilePageCount = 1;
 
+        function updateFooterOffset() {
+          var footer = document.querySelector('.mobile-footer-stack');
+          if (!footer || !isMobile()) {
+            document.documentElement.style.removeProperty('--mobile-footer-offset');
+            return 0;
+          }
+          var footerHeight = Math.ceil(footer.getBoundingClientRect().height);
+          document.documentElement.style.setProperty('--mobile-footer-offset', footerHeight + 'px');
+          return footerHeight;
+        }
+
         chips.forEach(function(chip) {
           chip.dataset.searchHidden = '0';
         });
@@ -600,6 +611,7 @@ const totalCount = allSkills.length;
           if (!isMobile() || mobilePageCount <= 1) {
             mobilePager.innerHTML = '';
             mobilePager.style.display = 'none';
+            updateFooterOffset();
             return;
           }
 
@@ -618,6 +630,8 @@ const totalCount = allSkills.length;
             })(i);
             mobilePager.appendChild(btn);
           }
+
+          updateFooterOffset();
         }
 
         function applyMobilePagination() {
@@ -645,8 +659,7 @@ const totalCount = allSkills.length;
             return;
           }
 
-          var footer = document.querySelector('.mobile-footer-stack');
-          var footerHeight = footer ? footer.getBoundingClientRect().height : 0;
+          var footerHeight = updateFooterOffset();
           var top = cloud.getBoundingClientRect().top;
           var availableHeight = Math.max(120, window.innerHeight - top - footerHeight - 12);
 
@@ -772,9 +785,11 @@ const totalCount = allSkills.length;
           if (window.innerWidth > 900) e.preventDefault();
         }, { passive: false });
         window.addEventListener('resize', function() {
+          updateFooterOffset();
           applyMobilePagination();
         });
 
+        updateFooterOffset();
         applyMobilePagination();
       }
 
@@ -981,7 +996,7 @@ const totalCount = allSkills.length;
   @media (max-width: 900px) {
     .skills-page {
       padding: var(--sp-2);
-      padding-bottom: 8.5rem;
+      padding-bottom: calc(var(--mobile-footer-offset, 8.5rem) + var(--sp-2));
       height: auto;
       min-height: 100dvh;
       overflow: auto;
@@ -1081,9 +1096,19 @@ const totalCount = allSkills.length;
 
     .mobile-skill-pager {
       display: none;
-      grid-template-columns: repeat(auto-fit, minmax(2rem, max-content));
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(2rem, max-content);
       gap: 0.3rem;
       justify-content: start;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 0.05rem;
+    }
+
+    .mobile-skill-pager::-webkit-scrollbar {
+      display: none;
     }
 
     .mobile-skill-pager__btn {
