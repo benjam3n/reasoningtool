@@ -901,27 +901,37 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
             return { word: word, emoji: emoji, title: letter + ' | ' + category.label };
           }
 
+          var onDesktop = !isMobile();
           for (var i = 0; i < mobilePageCount; i++) {
             var label = getNavLabel(i + 1);
             var btn = document.createElement('button');
-            btn.className = 'mobile-bottom-bar__btn mobile-skill-pager__btn' + (i === currentMobilePage ? ' mobile-skill-pager__btn--active' : '');
+
+            if (onDesktop) {
+              // Desktop: use nav-chip class for identical styling to nav bar
+              btn.className = 'nav-chip pager-btn' + (i === currentMobilePage ? ' pager-btn--active' : '');
+              btn.textContent = 'Page ' + (i + 1);
+            } else {
+              // Mobile: rich button with idx + word + emoji
+              btn.className = 'mobile-bottom-bar__btn mobile-skill-pager__btn' + (i === currentMobilePage ? ' mobile-skill-pager__btn--active' : '');
+
+              var idx = document.createElement('span');
+              idx.className = 'mobile-skill-pager__idx';
+              idx.textContent = String(i + 1);
+
+              var word = document.createElement('span');
+              word.className = 'mobile-skill-pager__word';
+              word.textContent = label.word;
+
+              var emo = document.createElement('span');
+              emo.className = 'mobile-skill-pager__emo';
+              emo.textContent = label.emoji;
+
+              btn.appendChild(idx);
+              btn.appendChild(word);
+              btn.appendChild(emo);
+            }
+
             btn.title = label.title;
-
-            var idx = document.createElement('span');
-            idx.className = 'mobile-skill-pager__idx';
-            idx.textContent = String(i + 1);
-
-            var word = document.createElement('span');
-            word.className = 'mobile-skill-pager__word';
-            word.textContent = label.word;
-
-            var emo = document.createElement('span');
-            emo.className = 'mobile-skill-pager__emo';
-            emo.textContent = label.emoji;
-
-            btn.appendChild(idx);
-            btn.appendChild(word);
-            btn.appendChild(emo);
             (function(pageIndex) {
               btn.addEventListener('click', function() {
                 currentMobilePage = pageIndex;
@@ -1728,43 +1738,21 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
     }
 
     .mobile-skill-pager {
-      display: grid;
-      grid-template-columns: repeat(var(--pager-cols, 6), minmax(0, 1fr));
+      display: flex;
+      flex-wrap: wrap;
       gap: 0.35rem;
       width: 100%;
       padding: 0;
     }
 
-    .mobile-skill-pager__btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.3rem;
-      min-width: 0;
-      min-height: 0;
-      padding: 0.4em 0.8em;
-      border: 1px solid var(--color-accent);
-      border-radius: 4px;
-      font-family: var(--font-sans);
-      font-size: var(--text-sm);
-      font-weight: 500;
-      color: var(--color-accent);
-      background: var(--color-accent-subtle);
-      cursor: pointer;
-      box-sizing: border-box;
-      line-height: 1;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-
-    .mobile-skill-pager__btn:hover,
-    .mobile-skill-pager__btn:active {
+    .pager-btn--active {
       background: var(--color-accent);
       color: #fff;
     }
 
-    .mobile-skill-pager__btn--active {
-      border-color: var(--color-accent);
+    .pager-btn--active:hover,
+    .pager-btn--active:active,
+    .pager-btn--active:focus {
       background: var(--color-accent);
       color: #fff;
     }
