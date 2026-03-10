@@ -875,7 +875,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
 
         function renderMobilePager() {
           if (!mobilePager) return;
-          if (!isMobile() || mobilePageCount <= 1) {
+          if (mobilePageCount <= 1) {
             mobilePager.innerHTML = '';
             mobilePager.style.display = 'none';
             updateFooterOffset();
@@ -961,12 +961,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
             chip.style.display = chip.dataset.searchHidden === '1' ? 'none' : '';
           });
 
-          if (!isMobile()) {
-            mobilePageCount = 1;
-            currentMobilePage = 0;
-            renderMobilePager();
-            return;
-          }
+          // Pagination applies on both mobile and desktop
 
           if (visible.length === 0) {
             mobilePageCount = 1;
@@ -1150,7 +1145,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
   .skills-page {
     margin: 0;
     padding: var(--sp-3);
-    padding-bottom: calc(4rem + var(--sp-3));
+    padding-bottom: calc(6.5rem + var(--sp-3));
     height: 100vh;
     overflow: hidden;
     display: flex;
@@ -1728,9 +1723,50 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
   }
 
   @media (min-width: 901px) {
-    .mobile-bottom-bar,
-    .mobile-skill-pager {
+    .mobile-bottom-bar {
       display: none !important;
+    }
+
+    .mobile-skill-pager {
+      display: grid;
+      grid-template-columns: repeat(var(--pager-cols, 6), minmax(0, 1fr));
+      gap: 0.35rem;
+      width: 100%;
+      padding: 0;
+    }
+
+    .mobile-skill-pager__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      min-width: 0;
+      min-height: 0;
+      padding: 0.4em 0.8em;
+      border: 1px solid var(--color-accent);
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      cursor: pointer;
+      box-sizing: border-box;
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    .mobile-skill-pager__btn:hover,
+    .mobile-skill-pager__btn:active {
+      background: var(--color-accent);
+      color: #fff;
+    }
+
+    .mobile-skill-pager__btn--active {
+      border-color: var(--color-accent);
+      background: var(--color-accent);
+      color: #fff;
     }
   }
 
