@@ -882,7 +882,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
             return;
           }
 
-          mobilePager.style.display = 'grid';
+          mobilePager.style.display = isMobile() ? 'grid' : 'flex';
           mobilePager.style.setProperty('--pager-cols', String(mobilePageCount));
           mobilePager.innerHTML = '';
 
@@ -902,6 +902,19 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
           }
 
           var onDesktop = !isMobile();
+          // Get the Astro scoped CSS attribute from an existing element
+          var scopeAttr = '';
+          var existingChip = document.querySelector('.nav-chip');
+          if (existingChip) {
+            var attrs = existingChip.attributes;
+            for (var ai = 0; ai < attrs.length; ai++) {
+              if (attrs[ai].name.indexOf('data-astro-cid') === 0) {
+                scopeAttr = attrs[ai].name;
+                break;
+              }
+            }
+          }
+
           for (var i = 0; i < mobilePageCount; i++) {
             var label = getNavLabel(i + 1);
             var btn = document.createElement('button');
@@ -909,6 +922,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
             if (onDesktop) {
               // Desktop: use nav-chip class for identical styling to nav bar
               btn.className = 'nav-chip pager-btn' + (i === currentMobilePage ? ' pager-btn--active' : '');
+              if (scopeAttr) btn.setAttribute(scopeAttr, '');
               btn.textContent = 'Page ' + (i + 1);
             } else {
               // Mobile: rich button with idx + word + emoji
@@ -941,7 +955,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
             mobilePager.appendChild(btn);
           }
 
-          var activeBtn = mobilePager.querySelector('.mobile-skill-pager__btn--active');
+          var activeBtn = mobilePager.querySelector('.mobile-skill-pager__btn--active, .pager-btn--active');
           if (activeBtn) {
             activeBtn.scrollIntoView({ inline: 'nearest', block: 'nearest' });
           }
