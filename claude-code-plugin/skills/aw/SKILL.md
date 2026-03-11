@@ -57,6 +57,24 @@ CLAIM: [precise statement]
 STEELMAN: [strongest version — the best case for this being RIGHT]
 ```
 
+### Step 1.5: Ground the Premises
+
+Before testing wrongness, classify the claim and any sub-claims:
+
+- **Factual claims** assert something about the current state of the world (e.g., "the project has no users," "there's a freemium model"). These are CHECKABLE — verify them. If a factual claim is already wrong, say so — you don't need AW to find wrongness in something that's factually false.
+- **Analytical claims** assert a relationship, judgment, or implication (e.g., "distribution is the bottleneck"). These are AW's domain — test them for wrongness.
+
+```
+PREMISE CHECK:
+  FACTUAL CLAIMS IN THIS INPUT:
+  - [claim] — VERIFIED: [yes/no/unknown] — SOURCE: [how you checked]
+
+  FACTUALLY FALSE CLAIMS: [list any that are simply wrong — state what's actually true]
+  UNVERIFIED FACTUAL PREMISES: [list any you couldn't check]
+```
+
+**If a factual claim is wrong, state the correction and move on.** AW's value is finding wrongness in claims that SEEM right — not in claims that are already demonstrably false. Proceed with AW on the analytical claims.
+
 ### Step 2: Find Wrongness (Recurse)
 
 For the claim and every sub-claim found, ask: **Why is this wrong?**

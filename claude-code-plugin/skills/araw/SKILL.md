@@ -112,19 +112,20 @@ ARAW operates on claims (true/false). If the input is a decision, request, or co
 Parse input into claims. For each:
 - State precisely
 - Note type: explicit / implicit / bundled / presupposed / meta
+- Classify as: **factual** (about the state of the world — checkable) or **analytical** (judgment, relationship, implication — ARAW's domain)
 - Rate VOI: how much would knowing this change action?
 
 Number every claim: **C1, C2, C3...**
 
 ```
-[C1] [claim text] -- TYPE: explicit -- VOI: high
-[C2] [claim text] -- TYPE: implicit -- VOI: medium
-[C3] [claim text] -- TYPE: bundled -- VOI: high
-[C4] [claim text] -- TYPE: presupposed -- VOI: low
-[C5] [claim text] -- TYPE: meta -- VOI: medium
+[C1] [claim text] -- TYPE: explicit -- CATEGORY: analytical -- VOI: high
+[C2] [claim text] -- TYPE: implicit -- CATEGORY: factual -- VOI: medium
+[C3] [claim text] -- TYPE: bundled -- CATEGORY: analytical -- VOI: high
 ```
 
-**ARAW high-VOI claims first.** They determine the most.
+**Factual claims: verify, don't ARAW.** If a claim is factual (e.g., "the project has no users," "there's a freemium model"), check whether it's true before proceeding. If it's false, state the correction and drop it from the ARAW queue — don't waste depth on claims that are simply wrong about reality. ARAW is for claims that COULD be right or wrong and where tracing implications reveals something. Factual errors just need correction.
+
+**ARAW high-VOI analytical claims first.** They determine the most.
 
 ### Unbundling
 

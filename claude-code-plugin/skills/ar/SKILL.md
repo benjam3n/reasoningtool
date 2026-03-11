@@ -58,6 +58,25 @@ CLAIM: [precise statement]
 ASSUMING THIS IS: [True / Correct / The right approach / Necessary]
 ```
 
+### Step 1.5: Ground the Premises
+
+Before assuming right, classify the claim and any sub-claims it contains:
+
+- **Factual claims** assert something about the current state of the world (e.g., "the project has no users," "there's a freemium model," "nothing has been distributed"). These are CHECKABLE — verify them before building on them. If you can't verify, mark them `UNVERIFIED FACTUAL PREMISE` and flag this prominently.
+- **Analytical claims** assert a relationship, judgment, or implication (e.g., "distribution is the bottleneck," "quality matters more than quantity"). These are AR's domain — assume them right and trace implications.
+
+```
+PREMISE CHECK:
+  FACTUAL CLAIMS IN THIS INPUT:
+  - [claim] — VERIFIED: [yes/no/unknown] — SOURCE: [how you checked]
+  - [claim] — VERIFIED: [yes/no/unknown] — SOURCE: [how you checked]
+
+  UNVERIFIED FACTUAL PREMISES: [list any you couldn't check]
+  WARNING: Implications built on unverified factual premises inherit that uncertainty.
+```
+
+**If a factual premise is WRONG, do not assume it right.** State that it's wrong and what's actually true. Then proceed with AR on the analytical claims only. AR assumes analytical claims are right to trace implications — it does not assume false facts are true.
+
 ### Step 2: Find Implications (Recurse)
 
 For the claim and every sub-claim found, ask: **If this is right, what must follow?**

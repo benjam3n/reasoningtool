@@ -540,5 +540,3 @@
 | [`/wsib`](https://github.com/benjam3n/reasoningtool/blob/main/claude-code-plugin/skills/wsib/SKILL.md) | [what skill is best](https://reasoningtool.com/skills/wsib) | Choose the single best skill to run RIGHT NOW for a prompt, with confidence calibration, runner-up comparison, and fa... |
 | [`/wt`](https://github.com/benjam3n/reasoningtool/blob/main/claude-code-plugin/skills/wt/SKILL.md) | [wantto - i want to](https://reasoningtool.com/skills/wt) | Want To - AR-based goal exploration. Assume the want is right, trace what it commits you to, find what you actually w... |
 | [`/ycshikfmif`](https://github.com/benjam3n/reasoningtool/blob/main/claude-code-plugin/skills/ycshikfmif/SKILL.md) | [you can see how i keep finding more it's fun](https://reasoningtool.com/skills/ycshikfmif) | Capture ideation expansion loops — when finding more ideas is exciting but unbounded — and structure them into manage... |
-
-_Total: 540 skills_

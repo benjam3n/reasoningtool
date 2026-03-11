@@ -161,7 +161,38 @@ WHAT NOT TO SAY: [arguments that are technically valid but will trigger identity
 ASK: [specific, concrete request — not "change your mind" but a specific action or agreement]
 ```
 
-### Step 6: Check the Ethics
+### Step 6: Set Voice and Register
+
+The strategy is useless if the execution sounds wrong. Define HOW to write, not just what to write.
+
+```
+VOICE REQUIREMENTS
+==================
+
+REGISTER: [formal / conversational / technical-peer / casual — derived from CONTEXT and TARGET]
+SENTENCE LENGTH: [short and declarative / mixed / long-form — derived from medium]
+VOCABULARY SOURCE: [use the TARGET's words, not the builder's words]
+  Builder says → Target says:
+  - [internal term] → [what the audience actually calls this]
+  - [internal term] → [what the audience actually calls this]
+  - [internal term] → [what the audience actually calls this]
+
+ANTI-ANNOUNCEMENT RULE: Never write a sentence that tells the reader the next
+sentence is important. No "the core insight is," "what's key here is," "the
+important thing to understand is," "what makes this different is." State the
+thing. If it's good, the reader knows it's important. If you have to announce
+it, it isn't.
+
+ANTI-EXPLAINER RULE: Write as if the reader is already smart and busy. Do not
+teach, lecture, or walk them through your reasoning. No "to understand why,"
+no "let me explain," no "here's the thing." They get it. Just say it.
+
+AUTHENTICITY CHECK: Read every sentence and ask — would a real person say this
+to another real person? Or does it sound like a blog post / pitch deck / press
+release? If the latter, rewrite until it sounds human.
+```
+
+### Step 7: Check the Ethics
 
 ```
 ETHICS CHECK
@@ -186,7 +217,7 @@ FLAGS: [any elements of the strategy that cross toward manipulation — name the
 
 ## Phase 3: SYNTHESIS
 
-### Step 7: Compile the Persuasion Plan
+### Step 8: Compile the Persuasion Plan
 
 ```
 PERSUASION ANALYSIS: [goal]
@@ -254,6 +285,8 @@ Default: 2x. These are floors.
 - [ ] Ethics check completed — transparency, autonomy, and reciprocity tests pass
 - [ ] Message framed in target's values, not user's values
 - [ ] "What not to say" section included
+- [ ] Voice requirements set — register, vocabulary source, anti-announcement, anti-explainer
+- [ ] Every internal/builder term replaced with audience term
 - [ ] At least one finding that challenges the user's approach
 - [ ] Depth floors met
 
