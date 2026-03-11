@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import GoogleTag from '../components/GoogleTag.astro';
 import Paginated from '../components/Paginated.astro';
 import whatsNew from '../data/whats-new.json';
 import skillsCatalog from '../../../claude-code-plugin/skills.json';
@@ -204,6 +205,7 @@ const entries = rawEntries.map((entry: any) => {
 <!doctype html>
 <html lang="en">
 <head>
+  <GoogleTag />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Where in the project timeline across reasoningtool, GOSM, and ARAW repositories." />

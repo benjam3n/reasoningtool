@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import GoogleTag from '../components/GoogleTag.astro';
 import '../styles/global.css';
 import skillsManifest from '../../../claude-code-plugin/skills.json';
 import {
@@ -521,6 +522,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
 <!doctype html>
 <html lang="en">
 <head>
+  <GoogleTag />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content={`${totalCount} structured reasoning skills for Claude Code.`} />

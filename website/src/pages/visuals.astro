@@ -1,5 +1,6 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
+import GoogleTag from '../components/GoogleTag.astro';
 import SkillsGraph from '../components/SkillsGraph.astro';
 import ArawViewer from '../components/ArawViewer.astro';
 import { loadGraphData, TIER_COLORS } from '../data/build-skills-graph';
@@ -14,6 +15,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
 <!doctype html>
 <html lang="en">
 <head>
+  <GoogleTag />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Interactive graph and ARAW viewer for reasoning skills." />
