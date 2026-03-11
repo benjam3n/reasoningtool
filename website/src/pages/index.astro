@@ -530,8 +530,19 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
 </head>
 <body class="skills-page">
   <section class="skill-cloud">
-    <button class="nav-chip" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9790;</span></button>
-    <input type="text" id="skill-search" class="skill-search" placeholder="Search skills..." autocomplete="off" />
+    <div class="site-header">
+      <a href="/" class="site-logo-link">
+        <img src="/logo.png" alt="Reasoning Tool" class="site-logo" />
+        <div class="site-logo-text">
+          <span class="site-title">REASONING TOOL</span>
+          <span class="site-subtitle">reasoningtool.com</span>
+        </div>
+      </a>
+      <div class="site-header-right">
+        <input type="text" id="skill-search" class="skill-search" placeholder="Search skills..." autocomplete="off" />
+        <button class="nav-chip" id="theme-toggle" aria-label="Toggle dark mode"><span id="theme-icon">&#9790;</span></button>
+      </div>
+    </div>
     <div class="sort-controls" id="sort-controls">
       <button class="sort-chip active" data-sort="alphabetical">Alphabetical</button>
       <button class="sort-chip" data-sort="cool">Cool</button>
@@ -1185,6 +1196,63 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
     align-content: flex-start;
   }
 
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex: 0 0 100%;
+    gap: var(--sp-2);
+  }
+
+  .site-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: var(--color-text);
+    flex-shrink: 0;
+  }
+
+  .site-logo-link:hover {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+
+  .site-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .site-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    line-height: 1.1;
+  }
+
+  .site-title {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-text);
+  }
+
+  .site-subtitle {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+  }
+
+  .site-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   .skill-chip {
     display: inline-block;
     padding: 0.4em 0.8em;
@@ -1528,15 +1596,44 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
       display: none;
     }
 
+    .site-header {
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .site-logo {
+      width: 32px;
+      height: 32px;
+    }
+
+    .site-title {
+      font-size: 0.75rem;
+    }
+
+    .site-subtitle {
+      font-size: 0.55rem;
+    }
+
+    .site-header-right {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+
     .skill-search {
-      flex: 0 0 100%;
-      width: 100%;
+      flex: 1 1 0;
+      min-width: 0;
+      width: auto;
       box-sizing: border-box;
       font-size: var(--text-xs);
     }
 
     .skill-search:focus {
-      width: 100%;
+      width: auto;
+    }
+
+    /* Show theme toggle on mobile inside header */
+    .site-header .nav-chip {
+      display: inline-block;
     }
 
     .sort-controls {
