@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import GoogleTag from '../components/GoogleTag.astro';
+import GoogleTagBody from '../components/GoogleTagBody.astro';
 import '../styles/global.css';
 import skillsManifest from '../../../claude-code-plugin/skills.json';
 import {
@@ -531,6 +532,7 @@ tagHierarchy.forEach(g => { TAG_META_MAP[g.meta] = g.tags; });
   <ViewTransitions />
 </head>
 <body class="skills-page">
+<GoogleTagBody />
   <section class="skill-cloud">
     <div class="site-header">
       <a href="/" class="site-logo-link">

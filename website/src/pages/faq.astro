@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import GoogleTag from '../components/GoogleTag.astro';
+import GoogleTagBody from '../components/GoogleTagBody.astro';
 import Paginated from '../components/Paginated.astro';
 import '../styles/global.css';
 ---
@@ -17,6 +18,7 @@ import '../styles/global.css';
   <ViewTransitions />
 </head>
 <body>
+<GoogleTagBody />
   <Paginated pageGroup="info" pageIndex={0}>
     <section class="faq">
       <details class="faq-item">

@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import GoogleTag from '../components/GoogleTag.astro';
+import GoogleTagBody from '../components/GoogleTagBody.astro';
 import SkillsGraph from '../components/SkillsGraph.astro';
 import ArawViewer from '../components/ArawViewer.astro';
 import { loadGraphData, TIER_COLORS } from '../data/build-skills-graph';
@@ -24,6 +25,7 @@ const pageIndex = PAGE_GROUPS_VISUAL.indexOf('/visuals');
   <ViewTransitions />
 </head>
 <body>
+<GoogleTagBody />
   <div class="paginated" id="paginated" data-page-group="visual" data-page-index={pageIndex}>
     <div class="paginated__slides">
       <section class="visual-section">

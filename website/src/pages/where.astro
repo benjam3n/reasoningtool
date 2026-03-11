@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
 import GoogleTag from '../components/GoogleTag.astro';
+import GoogleTagBody from '../components/GoogleTagBody.astro';
 import Paginated from '../components/Paginated.astro';
 import whatsNew from '../data/whats-new.json';
 import skillsCatalog from '../../../claude-code-plugin/skills.json';
@@ -214,6 +215,7 @@ const entries = rawEntries.map((entry: any) => {
   <ViewTransitions />
 </head>
 <body>
+<GoogleTagBody />
   <Paginated>
     <section class="new-wrap">
       <h2>Where</h2>

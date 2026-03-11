@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import { ViewTransitions } from 'astro:transitions';
 import GoogleTag from '../../components/GoogleTag.astro';
+import GoogleTagBody from '../../components/GoogleTagBody.astro';
 import Paginated from '../../components/Paginated.astro';
 import CardPaginator from '../../components/CardPaginator.astro';
 import '../../styles/global.css';
@@ -54,6 +55,7 @@ const { label: tier, className: tierClass } = TIER_MAP[rawTier] || TIER_MAP.tier
   <ViewTransitions />
 </head>
 <body>
+<GoogleTagBody />
   <Paginated>
     <section class="skill-page">
       <CardPaginator>
