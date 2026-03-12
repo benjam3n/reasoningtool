@@ -1,6 +1,6 @@
 # Reasoning Toolkit
 
-This project contains 563 thinking skills. Each skill is a structured procedure in `claude-code-plugin/skills/[name]/SKILL.md`.
+This project contains 597 thinking skills. Each skill is a structured procedure in `claude-code-plugin/skills/[name]/SKILL.md`.
 
 ## How Skills Work
 
@@ -55,7 +55,7 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Understand a goal | `/gu`, `/gd`, `/grf` |
 | Research a topic | `/lr`, `/fia` |
 | Validate work | `/pv`, `/mv`, `/vbo` |
-| Generate ideas | `/ma`, `/cda` |
+| Generate ideas | `/ma`, `/cda`, `/cuw` |
 | Check an answer | `/fwa`, `/frq` |
 | Check themselves | `/sdc`, `/sid`, `/ecal` |
 | Recover from error | `/rmm`, `/kta` |
