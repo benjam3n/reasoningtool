@@ -1,1 +1,1 @@
-Systematic procedure for translating ARAW exploration outputs. Read and execute `claude-code-plugin/skills/agi/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic procedure for translating ARAW exploration outputs. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/agi/SKILL.md`, applying it to this input: $ARGUMENTS

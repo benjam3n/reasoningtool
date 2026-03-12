@@ -1,6 +1,8 @@
 ---
 name: "cn - Communication Narrative Orderings"
 description: "Orderings for presentations, writing, and communication where sequence affects audience engagement and comprehension."
+output:
+  format: "prose"
 ---
 
 # Communication Narrative Orderings

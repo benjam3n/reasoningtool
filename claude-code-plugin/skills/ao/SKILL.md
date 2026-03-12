@@ -1,6 +1,8 @@
 ---
 name: "ao - Algorithmic Optimization Orderings"
 description: "Orderings based on classic algorithm design paradigms: greedy, dynamic programming, divide-and-conquer, and branch-and-bound."
+output:
+  format: "prose"
 ---
 
 # Algorithmic Optimization Orderings

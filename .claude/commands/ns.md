@@ -1,1 +1,1 @@
-Orderings for strategic interactions, negotiations, and situations. Read and execute `claude-code-plugin/skills/ns/SKILL.md`, applying it to this input: $ARGUMENTS
+Orderings for strategic interactions, negotiations, and situations. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ns/SKILL.md`, applying it to this input: $ARGUMENTS

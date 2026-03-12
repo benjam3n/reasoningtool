@@ -1,6 +1,8 @@
 ---
 name: "insd - Insight and Discovery"
 description: "Generate genuine insights by identifying stuck-points, inverting assumptions, changing representations, using incubation, and crystallizing through stability tests."
+output:
+  format: "prose"
 ---
 
 # Insight and Discovery

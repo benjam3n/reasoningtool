@@ -1,6 +1,8 @@
 ---
 name: "unvs - Universal Applicability Analysis"
 description: Tests whether a claim, principle, or method works across all contexts. Finds the true scope of applicability and states boundary conditions.
+output:
+  format: "prose"
 ---
 
 # Universal Applicability Analysis

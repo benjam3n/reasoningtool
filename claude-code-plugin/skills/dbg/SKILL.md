@@ -2,6 +2,8 @@
 name: "dbg - Debugging"
 description: "Systematic procedure for diagnosing and fixing software bugs using Claude Code's tool capabilities"
 context: fork
+output:
+  format: "prose"
 ---
 
 # Debugging

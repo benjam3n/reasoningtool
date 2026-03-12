@@ -1,6 +1,8 @@
 ---
 name: "jm - Journey Matching"
 description: "Given a current situation (goal, problem, state), find journeys"
+output:
+  format: "prose"
 ---
 
 # Journey Matching

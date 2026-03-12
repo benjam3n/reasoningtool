@@ -1,6 +1,8 @@
 ---
 name: "mtskd - Meta-Skill Design"
 description: "Design skills that operate on other skills — improving, validating, combining, or routing them — with cross-skill compatibility."
+output:
+  format: "prose"
 ---
 
 # MTSKD - Meta-Skill Design

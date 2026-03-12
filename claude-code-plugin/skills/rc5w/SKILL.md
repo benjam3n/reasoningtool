@@ -1,6 +1,8 @@
 ---
 name: "rc5w - Root Cause Analysis - Adaptive Why Chain"
 description: Adaptive root cause analysis. Ask "why" until you hit the root. Sometimes that's 2 levels, sometimes 12. Stop when you find the cause, not at a fixed number.
+output:
+  format: "prose"
 ---
 
 # Root Cause Analysis - Adaptive Why Chain

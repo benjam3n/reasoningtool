@@ -1,6 +1,8 @@
 ---
 name: "ycshikfmif - You Can See How I Keep Finding More It's Fun"
 description: "Capture ideation expansion loops — when finding more ideas is exciting but unbounded — and structure them into manageable exploration batches with stop conditions."
+output:
+  format: "prose"
 ---
 
 # YCSHIKFMIF - You Can See How I Keep Finding More It's Fun

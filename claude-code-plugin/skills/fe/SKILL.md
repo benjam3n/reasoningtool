@@ -1,6 +1,8 @@
 ---
 name: "fe - Framework Extension"
 description: "Systematic process for extending the GOSM framework with new procedures, gates, or capabilities."
+output:
+  format: "prose"
 ---
 
 # Framework Extension

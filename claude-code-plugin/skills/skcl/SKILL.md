@@ -1,6 +1,8 @@
 ---
 name: "skcl - Skill Cluster Design"
 description: "Design groups of related skills that work together by identifying domain capabilities, grouping by affinity, designing interfaces, and mapping common paths."
+output:
+  format: "prose"
 ---
 
 # SKCL - Skill Cluster Design

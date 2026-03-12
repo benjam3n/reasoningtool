@@ -1,6 +1,8 @@
 ---
 name: "pefs - Procedure Extraction from Source"
 description: "Meta-procedure for extracting implicit procedures from ANY external source, turning tacit knowledge into explicit, reusable GOSM-compatible procedures."
+output:
+  format: "prose"
 ---
 
 # Procedure Extraction from Source

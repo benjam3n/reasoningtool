@@ -1,6 +1,8 @@
 ---
 name: "cmp - Comparison - Impression-Informed Option Evaluation"
 description: Compare options using gestalt impression + structured evaluation. Impression first, then criteria, then check for divergence.
+output:
+  format: "table"
 ---
 
 # Comparison - Impression-Informed Option Evaluation

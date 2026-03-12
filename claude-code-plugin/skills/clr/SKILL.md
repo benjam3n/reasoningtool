@@ -1,6 +1,8 @@
 ---
 name: "clr - Client Retention System"
 description: "Systematic approach to retaining clients through tiered engagement strategies and value-add touchpoints."
+output:
+  format: "prose"
 ---
 
 # Client Retention System

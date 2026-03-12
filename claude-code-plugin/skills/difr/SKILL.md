@@ -1,6 +1,8 @@
 ---
 name: "difr - Differentiation Reasoning"
 description: "Reason about what makes things different by identifying similarities first, then classifying differences by significance and contextual relevance."
+output:
+  format: "prose"
 ---
 
 # DIFR - Differentiation Reasoning

@@ -1,6 +1,8 @@
 ---
 name: "tmsk - Team Analysis"
 description: Analyzes something from the team perspective. Identifies composition, roles, communication patterns, coordination costs, and collaboration synergies.
+output:
+  format: "prose"
 ---
 
 # Team Analysis

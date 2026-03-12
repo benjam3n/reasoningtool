@@ -1,6 +1,8 @@
 ---
 name: "mv - MECE Validation"
 description: Validate that a list is MECE (Mutually Exclusive, Collectively Exhaustive). Identifies overlaps and gaps.
+output:
+  format: "table"
 ---
 
 # MECE Validation

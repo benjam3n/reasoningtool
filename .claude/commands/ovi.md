@@ -1,1 +1,1 @@
-Comprehensive guide for integrating ordering_variations into the GOSM workflow.. Read and execute `claude-code-plugin/skills/ovi/SKILL.md`, applying it to this input: $ARGUMENTS
+Comprehensive guide for integrating ordering_variations into the GOSM workflow.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ovi/SKILL.md`, applying it to this input: $ARGUMENTS

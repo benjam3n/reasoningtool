@@ -4,6 +4,8 @@ description: "Pick 5 skills to help someone clarify, explore, or achieve what th
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "want", "desire", "exploration"]
+output:
+  format: "prose"
 ---
 
 # Pick 5 Want

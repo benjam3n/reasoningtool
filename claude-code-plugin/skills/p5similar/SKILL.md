@@ -4,6 +4,8 @@ description: "Find 5 skills most similar to a specified skill based on shared ca
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "similar", "related"]
+output:
+  format: "prose"
 ---
 
 # Pick 5 Similar

@@ -1,6 +1,8 @@
 ---
 name: "injc - Injectable Skill Design"
 description: Guides the design of skills that can be inserted into other skills as steps — working as both standalone tools and embedded gates/checks within host skills.
+output:
+  format: "prose"
 ---
 
 # Injectable Skill Design

@@ -1,1 +1,1 @@
-Scan text for omitted but implied items and produce the complete set, distinguishing genuinely implied items from invented ones. Read and execute `claude-code-plugin/skills/siycftr/SKILL.md`, applying it to this input: $ARGUMENTS
+Scan text for omitted but implied items and produce the complete set, distinguishing genuinely implied items from invented ones. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/siycftr/SKILL.md`, applying it to this input: $ARGUMENTS

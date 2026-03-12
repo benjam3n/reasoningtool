@@ -1,6 +1,8 @@
 ---
 name: "orgn - Organization Analysis"
 description: Analyzes at the organizational level. Identifies structure, incentives, culture, resources, and processes to find where the org helps or hinders a goal.
+output:
+  format: "prose"
 ---
 
 # Organization Analysis

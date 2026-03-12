@@ -1,6 +1,8 @@
 ---
 name: "jdgm - Judgment"
 description: Systematic procedure for making good judgments under uncertainty. Separates facts from interpretation, checks calibration against base rates, and produces an explicit confidence level.
+output:
+  format: "prose"
 ---
 
 # Judgment

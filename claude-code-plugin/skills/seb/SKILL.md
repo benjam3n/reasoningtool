@@ -1,6 +1,8 @@
 ---
 name: "seb - SEO Fundamentals"
 description: "Build organic search visibility through keyword research, on-page optimization, content strategy, and link building"
+output:
+  format: "prose"
 ---
 
 # SEO Fundamentals

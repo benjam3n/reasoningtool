@@ -1,6 +1,8 @@
 ---
 name: uo
 description: "Every output must be unassailable. Nothing wrong with form, content, length, logic, precision, completeness, or necessity."
+output:
+  format: "prose"
 ---
 
 # Unassailable Output

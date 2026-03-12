@@ -1,1 +1,1 @@
-Generates step-by-step procedures with dependency ordering, decision points, and failure handling. Takes a goal and produces a complete, testable procedure. Read and execute `claude-code-plugin/skills/oprc/SKILL.md`, applying it to this input: $ARGUMENTS
+Generates step-by-step procedures with dependency ordering, decision points, and failure handling. Takes a goal and produces a complete, testable procedure. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/oprc/SKILL.md`, applying it to this input: $ARGUMENTS

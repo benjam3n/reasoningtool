@@ -1,6 +1,8 @@
 ---
 name: "gflr - Gap-Filling Reasoning"
 description: "Reason about what's missing and why it matters by identifying intended completeness, enumerating present elements, and prioritizing gaps by impact."
+output:
+  format: "prose"
 ---
 
 # GFLR - Gap-Filling Reasoning

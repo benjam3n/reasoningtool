@@ -1,6 +1,8 @@
 ---
 name: "cmpr - Completeness Reasoning"
 description: "Reason about whether something is complete by checking necessary and sufficient conditions, identifying gaps and redundancies."
+output:
+  format: "prose"
 ---
 
 # CMPR - Completeness Reasoning

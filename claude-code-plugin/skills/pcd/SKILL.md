@@ -1,6 +1,8 @@
 ---
 name: "pcd - Procedure Discovery"
 description: "Find or create the procedures needed to execute a plan"
+output:
+  format: "prose"
 ---
 
 # Procedure Discovery

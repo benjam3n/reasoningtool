@@ -1,1 +1,1 @@
-Simple next-step finder. No routing, no classification. State where you are, get the single most valuable next move, understand why, do it. Read and execute `claude-code-plugin/skills/wtdn/SKILL.md`, applying it to this input: $ARGUMENTS
+Simple next-step finder. No routing, no classification. State where you are, get the single most valuable next move, understand why, do it. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/wtdn/SKILL.md`, applying it to this input: $ARGUMENTS

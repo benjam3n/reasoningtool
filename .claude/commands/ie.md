@@ -1,1 +1,1 @@
-A systematic search for non-obvious strategies using cross-domain mapping,. Read and execute `claude-code-plugin/skills/ie/SKILL.md`, applying it to this input: $ARGUMENTS
+A systematic search for non-obvious strategies using cross-domain mapping,. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ie/SKILL.md`, applying it to this input: $ARGUMENTS

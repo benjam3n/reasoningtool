@@ -1,6 +1,8 @@
 ---
 name: "hf - Habit Formation"
 description: "Build new habits and break unwanted ones using behavioral science principles"
+output:
+  format: "prose"
 ---
 
 # Habit Formation

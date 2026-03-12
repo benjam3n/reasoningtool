@@ -1,6 +1,8 @@
 ---
 name: "aw - Assume Wrong Search"
 description: Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong — find why, then assume THOSE reasons are wrong too. Recurse until bedrock. Track every claim found.
+output:
+  format: "registry"
 ---
 
 # AW - Assume Wrong Search

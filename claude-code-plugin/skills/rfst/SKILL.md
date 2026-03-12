@@ -1,6 +1,8 @@
 ---
 name: "rfst - Reflection Stage"
 description: Learns from completed work by comparing outcomes to expectations, identifying what worked and what didn't, extracting transferable lessons, and updating beliefs.
+output:
+  format: "prose"
 ---
 
 # Reflection Stage

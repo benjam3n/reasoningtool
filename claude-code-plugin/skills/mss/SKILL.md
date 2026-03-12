@@ -1,6 +1,8 @@
 ---
 name: "mss - Model Space Search"
 description: "Understanding = finding a model that fits."
+output:
+  format: "prose"
 ---
 
 # Model Space Search

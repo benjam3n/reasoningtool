@@ -1,6 +1,8 @@
 ---
 name: "mtcg - Metacognition"
 description: Thinking about your own thinking. Observes your current cognitive strategy, assesses whether it's working, checks for active biases, and decides whether to continue or switch approaches.
+output:
+  format: "prose"
 ---
 
 # Metacognition

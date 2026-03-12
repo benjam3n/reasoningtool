@@ -1,6 +1,8 @@
 ---
 name: "eth - Ethics & Morality Analysis"
 description: Systematically evaluate the ethical and moral dimensions of any decision, plan, action, or system.
+output:
+  format: "prose"
 ---
 
 # Ethics & Morality Analysis

@@ -1,6 +1,8 @@
 ---
 name: "spcf - Specific Analysis"
 description: "Apply a principle, framework, or general insight to a specific case — translating abstract knowledge into concrete, actionable guidance tailored to the exact situation, constraints, and context at hand."
+output:
+  format: "prose"
 ---
 
 # Specific Analysis

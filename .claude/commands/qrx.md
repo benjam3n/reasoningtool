@@ -1,0 +1,1 @@
+Extract structured QuestionRoute data (questions, routes, chains, regresses) from unstructured prose, skills, or markdown. Produces JSON files, not prose. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/qrx/SKILL.md`, applying it to this input: $ARGUMENTS

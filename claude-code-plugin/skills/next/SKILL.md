@@ -1,6 +1,8 @@
 ---
 name: "next - Determine What to Do Next"
 description: "Sub-orchestrator for next-step requests. Classifies intent, checks context, selects the single highest-value immediate action, and routes to execution or the right analysis skill."
+output:
+  format: "prose"
 ---
 
 # Next - Determine What to Do Next

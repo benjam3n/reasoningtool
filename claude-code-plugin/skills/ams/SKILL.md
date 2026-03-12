@@ -1,6 +1,8 @@
 ---
 name: "ams - API Middleman Strategies"
 description: "Collection of strategies for bypassing or working around API limitations, including rate limits, IP blocks, and access restrictions."
+output:
+  format: "prose"
 ---
 
 # API Middleman Strategies

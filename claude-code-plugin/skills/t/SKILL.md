@@ -1,6 +1,8 @@
 ---
 name: "t - Targeting"
 description: "Build comprehensive database of advocacy targets with personalized dossiers"
+output:
+  format: "prose"
 ---
 
 # Targeting

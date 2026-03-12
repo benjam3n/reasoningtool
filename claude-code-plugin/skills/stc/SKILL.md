@@ -1,6 +1,8 @@
 ---
 name: "stc - Steelmanned Counterarguments"
 description: "Generate the strongest possible counterarguments to a position, then assess which ones genuinely threaten it."
+output:
+  format: "prose"
 ---
 
 # Steelmanned Counterarguments

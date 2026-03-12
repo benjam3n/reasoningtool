@@ -1,6 +1,8 @@
 ---
 name: "itp - In This Prompt"
 description: "Decompose a prompt into its explicit requests, implicit requests, constraints, assumptions, emotional signals, and candidate skill mappings — making every part visible."
+output:
+  format: "prose"
 ---
 
 # ITP - In This Prompt

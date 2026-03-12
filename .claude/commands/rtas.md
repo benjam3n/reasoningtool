@@ -1,1 +1,1 @@
-Identify and evaluate rights in a situation by mapping all parties, determining applicable rights, assessing respect, and identifying remedies. Read and execute `claude-code-plugin/skills/rtas/SKILL.md`, applying it to this input: $ARGUMENTS
+Identify and evaluate rights in a situation by mapping all parties, determining applicable rights, assessing respect, and identifying remedies. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/rtas/SKILL.md`, applying it to this input: $ARGUMENTS

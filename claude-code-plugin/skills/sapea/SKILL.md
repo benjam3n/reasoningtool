@@ -1,6 +1,8 @@
 ---
 name: sapea
 description: "Check whether a procedure's questions/steps can be executed without interpretation and whether outputs are checkable."
+output:
+  format: "prose"
 ---
 
 # Procedure Executability Audit

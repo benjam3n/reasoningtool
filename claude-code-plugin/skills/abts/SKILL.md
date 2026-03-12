@@ -1,6 +1,8 @@
 ---
 name: "abts - A/B Test Design"
 description: Design a valid experiment with a clear hypothesis, proper controls, sufficient sample size, and pre-defined decision criteria.
+output:
+  format: "prose"
 ---
 
 # A/B Test Design

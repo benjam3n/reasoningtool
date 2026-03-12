@@ -1,6 +1,8 @@
 ---
 name: "pinf - Persuasion & Influence Analysis"
 description: "Analyze how influence works in a situation. Maps influence channels, assesses ethical boundaries, and recommends strategy or defense."
+output:
+  format: "prose"
 ---
 
 # Persuasion & Influence Analysis

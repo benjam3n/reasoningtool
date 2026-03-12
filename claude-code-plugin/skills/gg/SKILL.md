@@ -1,6 +1,8 @@
 ---
 name: "gg - Guess Generation (Exhaustive Search with Coverage Tracking)"
 description: Generate exhaustive guesses about user input using ALL search methods with coverage tracking. Guessing is SEARCH through possibility space. Tracks space created vs space covered to ensure comprehensive exploration.
+output:
+  format: "prose"
 ---
 
 # Guess Generation (Exhaustive Search with Coverage Tracking)

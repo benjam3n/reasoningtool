@@ -1,6 +1,8 @@
 ---
 name: "dshb - Dashboard Design"
 description: Design an information dashboard by identifying the audience, the decisions it supports, the right metrics, and the layout for quick scanning.
+output:
+  format: "prose"
 ---
 
 # Dashboard Design

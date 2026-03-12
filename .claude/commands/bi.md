@@ -1,1 +1,1 @@
-Unbounded inquiry cannot terminate - every answer opens new questions.. Read and execute `claude-code-plugin/skills/bi/SKILL.md`, applying it to this input: $ARGUMENTS
+Unbounded inquiry cannot terminate - every answer opens new questions.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/bi/SKILL.md`, applying it to this input: $ARGUMENTS

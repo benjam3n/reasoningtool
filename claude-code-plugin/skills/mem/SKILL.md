@@ -1,6 +1,8 @@
 ---
 name: "mem - Mental Models"
 description: "Build and apply a latticework of mental models for better thinking across domains"
+output:
+  format: "prose"
 ---
 
 # Mental Models

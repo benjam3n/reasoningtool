@@ -1,6 +1,8 @@
 ---
 name: "vbo - Verification Before Output"
 description: "This procedure is the culmination of the no-guessing philosophy."
+output:
+  format: "prose"
 ---
 
 # Verification Before Output

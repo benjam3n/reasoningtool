@@ -1,1 +1,1 @@
-Procedure for building or creating anything. Defines requirements, designs before building, builds incrementally, tests continuously, and iterates based on feedback. Read and execute `claude-code-plugin/skills/bldk/SKILL.md`, applying it to this input: $ARGUMENTS
+Procedure for building or creating anything. Defines requirements, designs before building, builds incrementally, tests continuously, and iterates based on feedback. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/bldk/SKILL.md`, applying it to this input: $ARGUMENTS

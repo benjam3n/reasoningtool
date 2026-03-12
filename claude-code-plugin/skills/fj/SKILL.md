@@ -1,6 +1,8 @@
 ---
 name: fj
 description: "Most goal journey work focuses on SUCCESS paths. This maps the patterns of sustainable failure."
+output:
+  format: "prose"
 ---
 
 # Failure Journey System

@@ -1,1 +1,1 @@
-Design an information dashboard by identifying the audience, the decisions it supports, the right metrics, and the layout for quick scanning. Read and execute `claude-code-plugin/skills/dshb/SKILL.md`, applying it to this input: $ARGUMENTS
+Design an information dashboard by identifying the audience, the decisions it supports, the right metrics, and the layout for quick scanning. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dshb/SKILL.md`, applying it to this input: $ARGUMENTS

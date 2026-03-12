@@ -1,1 +1,1 @@
-Given a skill or method, map its best-fit use cases, failure conditions, limits, and alternative skills with explicit switch conditions. Read and execute `claude-code-plugin/skills/uf/SKILL.md`, applying it to this input: $ARGUMENTS
+Given a skill or method, map its best-fit use cases, failure conditions, limits, and alternative skills with explicit switch conditions. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/uf/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,1 +1,1 @@
-Assess compliance with applicable regulations by mapping requirements to current practices, identifying gaps, and prioritizing remediation. Read and execute `claude-code-plugin/skills/rgc/SKILL.md`, applying it to this input: $ARGUMENTS
+Assess compliance with applicable regulations by mapping requirements to current practices, identifying gaps, and prioritizing remediation. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/rgc/SKILL.md`, applying it to this input: $ARGUMENTS

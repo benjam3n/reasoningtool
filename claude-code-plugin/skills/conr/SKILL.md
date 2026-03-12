@@ -1,6 +1,8 @@
 ---
 name: "conr - Conflict Resolution"
 description: Resolves disagreements by surfacing positions, uncovering underlying interests, finding shared ground, and proposing solutions that serve both parties.
+output:
+  format: "prose"
 ---
 
 # Conflict Resolution

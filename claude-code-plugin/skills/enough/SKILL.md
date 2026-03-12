@@ -1,6 +1,8 @@
 ---
 name: "enough - Sufficiency Check"
 description: "Determine whether something has been examined, built, planned, or analyzed enough — or whether more work is needed, and specifically what's missing."
+output:
+  format: "prose"
 ---
 
 # Sufficiency Check

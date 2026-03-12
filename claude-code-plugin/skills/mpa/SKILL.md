@@ -1,6 +1,8 @@
 ---
 name: "mpa - Multi-Plan Aggregation"
 description: "Generate, evaluate, and manage multiple alternative plans for the same goal"
+output:
+  format: "prose"
 ---
 
 # Multi-Plan Aggregation

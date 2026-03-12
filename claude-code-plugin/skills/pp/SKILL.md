@@ -1,6 +1,8 @@
 ---
 name: "pp - Procurement Procedures"
 description: "Managing procurement of components and materials — sourcing, ordering, tracking, receiving, and verification."
+output:
+  format: "prose"
 ---
 
 # Procurement Procedures

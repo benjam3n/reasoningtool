@@ -1,1 +1,1 @@
-Choose the right things to measure by evaluating candidate metrics for actionability, gaming resistance, and alignment with goals. Plans for Goodhart's Law. Read and execute `claude-code-plugin/skills/mets/SKILL.md`, applying it to this input: $ARGUMENTS
+Choose the right things to measure by evaluating candidate metrics for actionability, gaming resistance, and alignment with goals. Plans for Goodhart's Law. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/mets/SKILL.md`, applying it to this input: $ARGUMENTS

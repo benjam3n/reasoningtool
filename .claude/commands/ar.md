@@ -1,1 +1,1 @@
-Assume Right - Deep recursive rightness search. For every claim, assume it's right — find what must follow, then assum. Read and execute `claude-code-plugin/skills/ar/SKILL.md`, applying it to this input: $ARGUMENTS
+Assume Right - Deep recursive rightness search. For every claim, assume it's right — find what must follow, then assum. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ar/SKILL.md`, applying it to this input: $ARGUMENTS

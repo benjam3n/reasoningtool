@@ -1,1 +1,1 @@
-Discover what you actually value — not what you think you value — by examining behavior, trade-offs, and revealed preferences. Read and execute `claude-code-plugin/skills/vcl/SKILL.md`, applying it to this input: $ARGUMENTS
+Discover what you actually value — not what you think you value — by examining behavior, trade-offs, and revealed preferences. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/vcl/SKILL.md`, applying it to this input: $ARGUMENTS

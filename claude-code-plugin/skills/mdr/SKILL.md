@@ -1,6 +1,8 @@
 ---
 name: "mdr - Moral Dilemma Resolution"
 description: When values genuinely conflict and there's no clean answer — systematically work through the tension to find the most defensible path forward.
+output:
+  format: "prose"
 ---
 
 # Moral Dilemma Resolution

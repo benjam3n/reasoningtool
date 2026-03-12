@@ -2,6 +2,8 @@
 name: "gd - Goal Decomposition Methodology"
 description: "A methodology for decomposing abstract goals into specific, actionable components. Includes clarification vs substitution verification."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Goal Decomposition Methodology

@@ -1,6 +1,8 @@
 ---
 name: "platitudes - Platitude Set Analyzer"
 description: "Analyze multiple platitudes as a system, detect contradictions, reconcile conflicts by identifying context conditions, and convert the set into a coherent, actionable policy."
+output:
+  format: "prose"
 ---
 
 # Platitudes - Platitude Set Analyzer

@@ -1,1 +1,1 @@
-Rigorous procedure for exploring speculative and 'what if' ideas. Assesses plausibility, prerequisites, implications, and falsifiability. Read and execute `claude-code-plugin/skills/spec/SKILL.md`, applying it to this input: $ARGUMENTS
+Rigorous procedure for exploring speculative and 'what if' ideas. Assesses plausibility, prerequisites, implications, and falsifiability. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/spec/SKILL.md`, applying it to this input: $ARGUMENTS

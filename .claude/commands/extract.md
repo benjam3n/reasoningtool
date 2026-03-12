@@ -1,1 +1,1 @@
-Given any prompt, decompose it into implicit sub-tasks and extract every potentially useful skill, grouped by role and prioritized with invocation-ready suggestions. Read and execute `claude-code-plugin/skills/extract/SKILL.md`, applying it to this input: $ARGUMENTS
+Given any prompt, decompose it into implicit sub-tasks and extract every potentially useful skill, grouped by role and prioritized with invocation-ready suggestions. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/extract/SKILL.md`, applying it to this input: $ARGUMENTS

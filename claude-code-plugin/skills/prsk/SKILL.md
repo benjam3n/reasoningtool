@@ -1,6 +1,8 @@
 ---
 name: "prsk - Products"
 description: Procedure for analyzing products or offerings. Identifies the user and their need, evaluates fit, compares against alternatives, and finds improvement opportunities.
+output:
+  format: "prose"
 ---
 
 # Products

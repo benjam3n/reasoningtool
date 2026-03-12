@@ -1,6 +1,8 @@
 ---
 name: "onar - Narrative Generation"
 description: Generates structured narratives that tell a clear story. Takes a topic or set of facts and arranges them into a coherent narrative with a through-line, transitions, and purpose-driven structure.
+output:
+  format: "prose"
 ---
 
 # Narrative Generation

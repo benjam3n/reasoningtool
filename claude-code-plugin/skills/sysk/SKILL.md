@@ -1,6 +1,8 @@
 ---
 name: "sysk - Systems Analysis"
 description: "Analyze any system by mapping components, connections, feedback loops, leverage points, and emergent behaviors."
+output:
+  format: "prose"
 ---
 
 # SYSK - Systems Analysis

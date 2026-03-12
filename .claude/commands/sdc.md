@@ -1,1 +1,1 @@
-Detect when reasoning is actually rationalization. Mechanical checks for motivated reasoning, emotional override, and evidence asymmetry. Read and execute `claude-code-plugin/skills/sdc/SKILL.md`, applying it to this input: $ARGUMENTS
+Detect when reasoning is actually rationalization. Mechanical checks for motivated reasoning, emotional override, and evidence asymmetry. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sdc/SKILL.md`, applying it to this input: $ARGUMENTS

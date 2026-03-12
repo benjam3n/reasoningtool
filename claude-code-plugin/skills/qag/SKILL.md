@@ -1,6 +1,8 @@
 ---
 name: "qag - Question About Guesses"
 description: Generate high-quality questions about identified guesses. Applies quality criteria and "why continue?" gate to prevent low-value questioning.
+output:
+  format: "prose"
 ---
 
 # Question About Guesses

@@ -1,6 +1,8 @@
 ---
 name: "cpp - Career Path Planning"
 description: "Strategic framework for assessing career options, planning transitions,"
+output:
+  format: "prose"
 ---
 
 # Career Path Planning

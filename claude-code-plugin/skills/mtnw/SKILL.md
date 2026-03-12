@@ -1,6 +1,8 @@
 ---
 name: "mtnw - Medium-Term New Domains"
 description: Identify entirely new areas worth expanding into over months. Survey adjacent possibilities and assess strategic fit.
+output:
+  format: "prose"
 ---
 
 # Medium-Term New Domains

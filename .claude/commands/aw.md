@@ -1,1 +1,1 @@
-Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong — find why, then assume THOSE reaso. Read and execute `claude-code-plugin/skills/aw/SKILL.md`, applying it to this input: $ARGUMENTS
+Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong — find why, then assume THOSE reaso. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/aw/SKILL.md`, applying it to this input: $ARGUMENTS

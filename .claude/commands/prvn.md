@@ -1,1 +1,1 @@
-Validate that a need is real before investing by finding behavioral evidence, quantifying demand, checking existing solutions, and assessing trajectory. Read and execute `claude-code-plugin/skills/prvn/SKILL.md`, applying it to this input: $ARGUMENTS
+Validate that a need is real before investing by finding behavioral evidence, quantifying demand, checking existing solutions, and assessing trajectory. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/prvn/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,1 +1,1 @@
-Analyze feedback loops, emergent behavior, system dynamics, stocks and flows, and leverage points. See the system, not just the parts. Read and execute `claude-code-plugin/skills/systhink/SKILL.md`, applying it to this input: $ARGUMENTS
+Analyze feedback loops, emergent behavior, system dynamics, stocks and flows, and leverage points. See the system, not just the parts. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/systhink/SKILL.md`, applying it to this input: $ARGUMENTS

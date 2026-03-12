@@ -1,6 +1,8 @@
 ---
 name: "rlg - Relationship Goals"
 description: "Handle relationship-related goals — clarify desired state, assess current reality, identify gaps, plan actions within your control."
+output:
+  format: "prose"
 ---
 
 # Relationship Goals

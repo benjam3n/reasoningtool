@@ -4,6 +4,8 @@ description: "Pick the 10 most generally useful skills based on tier, connectivi
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "useful", "quality"]
+output:
+  format: "prose"
 ---
 
 # Pick 10 Useful

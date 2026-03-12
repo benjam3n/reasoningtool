@@ -1,6 +1,8 @@
 ---
 name: "cv - Convergent Validation"
 description: "Solve the infinite critic problem by using multiple independent validation criteria — accept when they converge, investigate when they diverge."
+output:
+  format: "prose"
 ---
 
 # Convergent Validation

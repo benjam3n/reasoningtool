@@ -4,6 +4,8 @@ description: "Goal analysis adding operational load assessment, meta-cognitive s
 tier: "tier4"
 categories: ["Goal Processing"]
 tags: ["goal", "operational", "metacognitive", "sustainability", "quality"]
+output:
+  format: "prose"
 ---
 
 # Universal Goal Analysis v5: Operational, Meta-Cognitive & Quality

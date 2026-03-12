@@ -1,6 +1,8 @@
 ---
 name: "create - Produce Content"
 description: Sub-orchestrator for creative and content production requests. Routes to appropriate writing skills based on content type and quality needs.
+output:
+  format: "prose"
 ---
 
 # Create

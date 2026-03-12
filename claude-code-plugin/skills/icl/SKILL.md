@@ -1,6 +1,8 @@
 ---
 name: "icl - Intentional Claim Analysis"
 description: Evaluate claims about what someone wants or intends. Check behavioral evidence, stated vs revealed preferences, and alternative intentions.
+output:
+  format: "prose"
 ---
 
 # Intentional Claim Analysis

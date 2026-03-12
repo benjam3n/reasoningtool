@@ -1,6 +1,8 @@
 ---
 name: "benf - Benefit Estimation"
 description: Estimates the benefits of an action or investment. Lists direct, indirect, and downstream benefits, quantifies where possible, and calculates expected value.
+output:
+  format: "prose"
 ---
 
 # Benefit Estimation

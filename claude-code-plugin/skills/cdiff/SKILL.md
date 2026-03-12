@@ -1,6 +1,8 @@
 ---
 name: "cdiff - Competitive Differentiation"
 description: Find what makes something uniquely valuable versus alternatives. Maps competitors, compares features, identifies unique capabilities and weaknesses, assesses defensibility, and outputs positioning.
+output:
+  format: "prose"
 ---
 
 # Competitive Differentiation

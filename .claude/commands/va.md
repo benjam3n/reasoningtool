@@ -1,1 +1,1 @@
-For any obvious strategy, ask what if we did the exact opposite. Counters the tendency to accept first-good-enough answers.. Read and execute `claude-code-plugin/skills/va/SKILL.md`, applying it to this input: $ARGUMENTS
+For any obvious strategy, ask what if we did the exact opposite. Counters the tendency to accept first-good-enough answers.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/va/SKILL.md`, applying it to this input: $ARGUMENTS

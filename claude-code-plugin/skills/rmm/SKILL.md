@@ -1,6 +1,8 @@
 ---
 name: "rmm - Recover from Wrong Mental Model"
 description: "Recognize when a mental model is fundamentally wrong, dismantle it, and build or adopt a replacement without losing momentum."
+output:
+  format: "prose"
 ---
 
 # Recover from Wrong Mental Model

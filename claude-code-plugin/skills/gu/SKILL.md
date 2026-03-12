@@ -2,6 +2,8 @@
 name: "gu - Goal Understanding Pre-Processor"
 description: "MANDATORY first step before attempting any goal. Parses input as guesses, classifies OPEN vs CLOSED, fills goal journey structure. Includes clarification vs substitution check."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Goal Understanding Pre-Processor

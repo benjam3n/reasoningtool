@@ -1,6 +1,8 @@
 ---
 name: "pus - Public Speaking"
 description: "Systematic procedure for preparing and delivering impactful presentations, speeches, and talks"
+output:
+  format: "prose"
 ---
 
 # Public Speaking

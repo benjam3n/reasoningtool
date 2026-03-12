@@ -2,6 +2,8 @@
 name: "sel - Selection"
 description: "Make the final selection from ranked options after all analysis is complete. Includes LLM-compatible feasibility assessment."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Selection

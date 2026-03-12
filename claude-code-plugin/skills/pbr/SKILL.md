@@ -1,6 +1,8 @@
 ---
 name: "pbr - Probabilistic Reasoning"
 description: "Systematic procedure for estimating probabilities, updating beliefs with evidence, and making well-calibrated predictions"
+output:
+  format: "prose"
 ---
 
 # Probabilistic Reasoning

@@ -1,6 +1,8 @@
 ---
 name: "stcc - Short-Term Cluster Completion"
 description: Identify partially-built clusters of work and determine what's needed to finish them. Prioritize by effort-to-complete.
+output:
+  format: "prose"
 ---
 
 # Short-Term Cluster Completion

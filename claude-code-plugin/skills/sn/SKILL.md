@@ -1,6 +1,8 @@
 ---
 name: "sn - Salary Negotiation"
 description: "Systematic approach to negotiating job offers that maximizes total compensation"
+output:
+  format: "prose"
 ---
 
 # Salary Negotiation

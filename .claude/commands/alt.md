@@ -1,1 +1,1 @@
-Choose the right level of abstraction for understanding, deciding, executing, communicating, or creating. Zoom in, zoom out, or reframe. Read and execute `claude-code-plugin/skills/alt/SKILL.md`, applying it to this input: $ARGUMENTS
+Choose the right level of abstraction for understanding, deciding, executing, communicating, or creating. Zoom in, zoom out, or reframe. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/alt/SKILL.md`, applying it to this input: $ARGUMENTS

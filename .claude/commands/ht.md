@@ -1,1 +1,1 @@
-Systematic procedure for formulating testable hypotheses, designing tests, and updating beliefs based on evidence. Suppo. Read and execute `claude-code-plugin/skills/ht/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic procedure for formulating testable hypotheses, designing tests, and updating beliefs based on evidence. Suppo. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ht/SKILL.md`, applying it to this input: $ARGUMENTS

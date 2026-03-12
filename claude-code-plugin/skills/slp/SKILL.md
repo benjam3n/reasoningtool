@@ -1,6 +1,8 @@
 ---
 name: "slp - Sleep Optimization"
 description: Design a personalized sleep improvement plan by assessing current patterns, identifying disruptors, and building sustainable habits.
+output:
+  format: "prose"
 ---
 
 # Sleep Optimization

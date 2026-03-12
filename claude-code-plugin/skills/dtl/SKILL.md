@@ -1,6 +1,8 @@
 ---
 name: dtl
 description: "Two complementary methodologies for innovation: Design Thinking discovers the right problem, Lean Startup validates solutions."
+output:
+  format: "prose"
 ---
 
 # Design Thinking + Lean Startup

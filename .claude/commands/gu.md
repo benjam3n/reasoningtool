@@ -1,1 +1,1 @@
-MANDATORY first step before attempting any goal. Parses input as guesses, classifies OPEN vs CLOSED, fills goal journey . Read and execute `claude-code-plugin/skills/gu/SKILL.md`, applying it to this input: $ARGUMENTS
+MANDATORY first step before attempting any goal. Parses input as guesses, classifies OPEN vs CLOSED, fills goal journey . Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/gu/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "tri - Triage"
 description: Rapidly sorts multiple problems, tasks, or issues by urgency and importance into a priority matrix with a ranked action list.
+output:
+  format: "prose"
 ---
 
 # Triage

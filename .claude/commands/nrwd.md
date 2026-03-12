@@ -1,1 +1,1 @@
-Deep analysis within a specific domain. Goes deep not wide, using domain-specific vocabulary, frameworks, and constraints. Read and execute `claude-code-plugin/skills/nrwd/SKILL.md`, applying it to this input: $ARGUMENTS
+Deep analysis within a specific domain. Goes deep not wide, using domain-specific vocabulary, frameworks, and constraints. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/nrwd/SKILL.md`, applying it to this input: $ARGUMENTS

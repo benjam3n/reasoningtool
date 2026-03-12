@@ -1,6 +1,8 @@
 ---
 name: rsg
 description: "Handler for goals focused on REBUILDING from damage, not improving from baseline."
+output:
+  format: "prose"
 ---
 
 # Restoration and Recovery Goals Handler

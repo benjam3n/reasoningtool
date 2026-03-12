@@ -1,6 +1,8 @@
 ---
 name: "eg - Exploratory Goals"
 description: "Handle goals where the objective is exploration and discovery rather than reaching a known destination."
+output:
+  format: "prose"
 ---
 
 # Exploratory Goals

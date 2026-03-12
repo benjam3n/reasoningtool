@@ -1,6 +1,8 @@
 ---
 name: "std - Strategy Discovery"
 description: "Find or create an approach to achieve a goal"
+output:
+  format: "prose"
 ---
 
 # Strategy Discovery

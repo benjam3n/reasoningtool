@@ -1,1 +1,1 @@
-Create domain-specific skill configurations. Pre-configure skill chains, dimensions, and patterns for specific domains l. Read and execute `claude-code-plugin/skills/dmt/SKILL.md`, applying it to this input: $ARGUMENTS
+Create domain-specific skill configurations. Pre-configure skill chains, dimensions, and patterns for specific domains l. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dmt/SKILL.md`, applying it to this input: $ARGUMENTS

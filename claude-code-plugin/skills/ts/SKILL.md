@@ -1,6 +1,8 @@
 ---
 name: "ts - Testing Strategy"
 description: "Procedure for designing and implementing effective software testing strategies"
+output:
+  format: "prose"
 ---
 
 # Testing Strategy

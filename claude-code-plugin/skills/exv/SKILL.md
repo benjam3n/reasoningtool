@@ -1,6 +1,8 @@
 ---
 name: "exv - Expected Value Analysis"
 description: "Systematic procedure for calculating expected value, adjusting for risk, and determining optimal resource allocation under uncertainty"
+output:
+  format: "prose"
 ---
 
 # Expected Value Analysis

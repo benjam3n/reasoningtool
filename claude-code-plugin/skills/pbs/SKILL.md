@@ -1,6 +1,8 @@
 ---
 name: "pbs - Population Based Search Orderings"
 description: "Maintain multiple candidate solutions simultaneously — evolutionary approaches, beam search, iterative deepening."
+output:
+  format: "prose"
 ---
 
 # Population Based Search Orderings

@@ -1,6 +1,8 @@
 ---
 name: "idsk - Ideas"
 description: Procedure for working with ideas. Captures the idea precisely, assesses novelty and feasibility, identifies the core insight, finds connections, and determines next steps.
+output:
+  format: "prose"
 ---
 
 # Ideas

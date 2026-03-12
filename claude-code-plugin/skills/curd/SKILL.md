@@ -1,6 +1,8 @@
 ---
 name: "curd - Curriculum Design"
 description: "Design a structured learning path for any subject. Sequences topics by dependency, selects methods, sets milestones, and estimates time."
+output:
+  format: "prose"
 ---
 
 # Curriculum Design

@@ -1,6 +1,8 @@
 ---
 name: "orec - Recommendation Generation"
 description: Generates actionable recommendations derived from findings. Takes a situation, analyzes it, and produces prioritized recommendations with implementation details and success metrics.
+output:
+  format: "prose"
 ---
 
 # Recommendation Generation

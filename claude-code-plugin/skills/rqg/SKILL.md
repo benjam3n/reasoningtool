@@ -1,6 +1,8 @@
 ---
 name: "rqg - Requirements Gathering"
 description: "Elicit and document system requirements from stakeholders"
+output:
+  format: "prose"
 ---
 
 # Requirements Gathering

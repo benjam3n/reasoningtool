@@ -1,6 +1,8 @@
 ---
 name: "smpl - Simple Analysis"
 description: "Deliberately simple analysis for obvious questions. State the question, give the answer, add one caveat, done. Anti-overthinking skill."
+output:
+  format: "prose"
 ---
 
 # SMPL - Simple Analysis

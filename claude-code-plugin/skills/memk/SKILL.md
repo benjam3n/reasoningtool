@@ -1,6 +1,8 @@
 ---
 name: "memk - Knowledge Capture"
 description: "Systematic approach to capturing, organizing, and maintaining personal knowledge for future retrieval and use."
+output:
+  format: "prose"
 ---
 
 # Knowledge Capture

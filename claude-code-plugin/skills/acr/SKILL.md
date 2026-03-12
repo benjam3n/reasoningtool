@@ -1,6 +1,8 @@
 ---
 name: "acr - Active Recall"
 description: "Use retrieval practice and self-testing to strengthen learning and identify gaps"
+output:
+  format: "prose"
 ---
 
 # Active Recall

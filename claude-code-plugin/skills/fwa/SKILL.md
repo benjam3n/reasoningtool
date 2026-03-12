@@ -1,6 +1,8 @@
 ---
 name: "fwa - Find Wrong Answer"
 description: "Check whether an answer is likely wrong before acting on it. Classifies answer type and runs targeted verification."
+output:
+  format: "prose"
 ---
 
 # Find Wrong Answer

@@ -1,6 +1,8 @@
 ---
 name: "md - Method Derivation"
 description: "Derive the appropriate method from the situation rather than"
+output:
+  format: "prose"
 ---
 
 # Method Derivation

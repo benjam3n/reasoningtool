@@ -1,6 +1,8 @@
 ---
 name: "etc - Expand the Etcetera"
 description: "Expand 'etc', 'and so on', and other list tails into explicit items by inferring the continuation rule, enumerating omitted items, and stopping at a defined completeness criterion."
+output:
+  format: "prose"
 ---
 
 # ETC - Expand the Etcetera

@@ -1,6 +1,8 @@
 ---
 name: cdb
 description: "Most new strategies are actually old strategies from other domains. Find isomorphisms and translate winning strategies."
+output:
+  format: "prose"
 ---
 
 # Cross-Domain Bridge

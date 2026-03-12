@@ -2,6 +2,8 @@
 name: "fb - Filtered Feedback Generation"
 description: Generate filtered feedback for self-improvement loops. Only accepts well-grounded, high-leverage items to prevent error accumulation.
 context: fork
+output:
+  format: "prose"
 ---
 
 # Filtered Feedback Generation

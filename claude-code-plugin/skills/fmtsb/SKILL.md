@@ -1,6 +1,8 @@
 ---
 name: "fmtsb - Formalize Make This Skill Because"
 description: "Formalize a skill draft into production quality by enforcing schema completeness, overlap detection, dependency mapping, and rollout readiness."
+output:
+  format: "prose"
 ---
 
 # FMTSB - Formalize Make This Skill Because

@@ -1,1 +1,1 @@
-Review and understand a contract or agreement by mapping obligations, consideration, risk allocation, and concerning terms. Read and execute `claude-code-plugin/skills/ctan/SKILL.md`, applying it to this input: $ARGUMENTS
+Review and understand a contract or agreement by mapping obligations, consideration, risk allocation, and concerning terms. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ctan/SKILL.md`, applying it to this input: $ARGUMENTS

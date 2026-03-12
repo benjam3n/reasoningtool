@@ -1,6 +1,8 @@
 ---
 name: "hrd - Hard Mode Analysis"
 description: "Apply maximum rigor to a problem — no shortcuts, no defaults, no simplifications. Every assumption surfaced, every edge case considered, every tradeoff explicit. For when getting it wrong is expensive."
+output:
+  format: "prose"
 ---
 
 # Hard Mode Analysis

@@ -1,1 +1,1 @@
-Create, manage, and optimize budgets for projects, organizations, or personal finances. Read and execute `claude-code-plugin/skills/b/SKILL.md`, applying it to this input: $ARGUMENTS
+Create, manage, and optimize budgets for projects, organizations, or personal finances. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/b/SKILL.md`, applying it to this input: $ARGUMENTS

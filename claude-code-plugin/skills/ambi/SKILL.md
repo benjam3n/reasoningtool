@@ -1,6 +1,8 @@
 ---
 name: "ambi - Ambiguity Handler"
 description: "Navigate genuinely ambiguous situations that could go multiple ways"
+output:
+  format: "prose"
 ---
 
 # Ambiguity Handler

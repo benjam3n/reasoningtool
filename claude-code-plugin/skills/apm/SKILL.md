@@ -1,6 +1,8 @@
 ---
 name: "apm - Alphacode Pass 3 Meta"
 description: "Third pass — meta-reasoning about solution correctness, confidence, and robustness. Catches what testing alone misses."
+output:
+  format: "prose"
 ---
 
 # Alphacode Pass 3 Meta

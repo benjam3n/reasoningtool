@@ -1,6 +1,8 @@
 ---
 name: "ig - Intuition Goals"
 description: "Handle goals driven by intuition rather than explicit reasoning — validate the intuition, find the underlying pattern, convert to actionable goal."
+output:
+  format: "prose"
 ---
 
 # Intuition Goals

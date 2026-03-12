@@ -1,6 +1,8 @@
 ---
 name: "cns - Constraint Solving Orderings"
 description: "Orderings for constraint satisfaction and guided search — process most constrained variables first, propagate constraints, backtrack efficiently."
+output:
+  format: "prose"
 ---
 
 # Constraint Solving Orderings

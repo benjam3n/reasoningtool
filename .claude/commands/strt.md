@@ -1,1 +1,1 @@
-For when you have a goal but genuinely don't know where to begin. Find the zero-dependency starting point and take it. Read and execute `claude-code-plugin/skills/strt/SKILL.md`, applying it to this input: $ARGUMENTS
+For when you have a goal but genuinely don't know where to begin. Find the zero-dependency starting point and take it. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/strt/SKILL.md`, applying it to this input: $ARGUMENTS

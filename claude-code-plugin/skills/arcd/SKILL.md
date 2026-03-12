@@ -1,6 +1,8 @@
 ---
 name: "arcd - Architecture Design Orderings"
 description: "Orderings for software development — outside-in vs inside-out, API-first vs domain-first, top-down vs bottom-up."
+output:
+  format: "prose"
 ---
 
 # Architecture Design Orderings

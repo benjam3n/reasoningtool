@@ -1,1 +1,1 @@
-Convert uncertainty statements into typed uncertainty with confidence ranges, cost-of-uncertainty analysis, and concrete evidence-gathering actions. Read and execute `claude-code-plugin/skills/nsa/SKILL.md`, applying it to this input: $ARGUMENTS
+Convert uncertainty statements into typed uncertainty with confidence ranges, cost-of-uncertainty analysis, and concrete evidence-gathering actions. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/nsa/SKILL.md`, applying it to this input: $ARGUMENTS

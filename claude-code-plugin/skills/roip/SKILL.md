@@ -1,6 +1,8 @@
 ---
 name: "roip - ROI Optimization"
 description: Find the highest-return action in any set of options. Lists options, estimates costs and benefits, calculates ROI, sensitivity-tests top candidates, and recommends the best path.
+output:
+  format: "prose"
 ---
 
 # ROI Optimization

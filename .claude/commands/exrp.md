@@ -1,1 +1,1 @@
-Design a structured exercise program tailored to current fitness level, goals, and real-world constraints. Read and execute `claude-code-plugin/skills/exrp/SKILL.md`, applying it to this input: $ARGUMENTS
+Design a structured exercise program tailored to current fitness level, goals, and real-world constraints. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/exrp/SKILL.md`, applying it to this input: $ARGUMENTS

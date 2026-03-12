@@ -1,6 +1,8 @@
 ---
 name: "hpat - Historical Pattern Analysis"
 description: Learn from what happened before to predict what happens next. Identify recurring patterns, test causality, and project forward.
+output:
+  format: "prose"
 ---
 
 # Historical Pattern Analysis

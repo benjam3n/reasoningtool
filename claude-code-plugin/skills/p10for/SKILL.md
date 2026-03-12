@@ -4,6 +4,8 @@ description: "Pick 10 skills matched to a described situation. Analyzes the user
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "situation", "contextual"]
+output:
+  format: "prose"
 ---
 
 # Pick 10 For Situation

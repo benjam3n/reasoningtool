@@ -1,6 +1,8 @@
 ---
 name: idg
 description: "Handler for goals where SUCCESS IS DISCOVERING THE UNKNOWN, not executing a known plan."
+output:
+  format: "prose"
 ---
 
 # Iterative Discovery Goals Handler

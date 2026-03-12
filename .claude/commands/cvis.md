@@ -1,1 +1,1 @@
-Analyze a project from the creator's perspective. Articulates the vision, checks whether current work serves it, identifies vision drift, and recommends corrections. Read and execute `claude-code-plugin/skills/cvis/SKILL.md`, applying it to this input: $ARGUMENTS
+Analyze a project from the creator's perspective. Articulates the vision, checks whether current work serves it, identifies vision drift, and recommends corrections. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cvis/SKILL.md`, applying it to this input: $ARGUMENTS

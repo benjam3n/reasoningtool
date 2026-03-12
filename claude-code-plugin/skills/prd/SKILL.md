@@ -1,6 +1,8 @@
 ---
 name: "prd - Presentation Design"
 description: "Systematic procedure for designing visually effective presentations, slides, and handouts that enhance rather than compete with your message"
+output:
+  format: "prose"
 ---
 
 # Presentation Design

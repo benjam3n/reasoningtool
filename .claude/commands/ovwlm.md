@@ -1,1 +1,1 @@
-For when there's too much and you can't process. A systematic way to reduce what you're holding until you can hold it. Read and execute `claude-code-plugin/skills/ovwlm/SKILL.md`, applying it to this input: $ARGUMENTS
+For when there's too much and you can't process. A systematic way to reduce what you're holding until you can hold it. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ovwlm/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "collab - Collaborative Thinking"
 description: Multi-stakeholder reasoning, perspective integration, finding solutions that work for multiple parties, identifying hidden agreements, and surfacing conflicting assumptions between people.
+output:
+  format: "prose"
 ---
 
 # Collaborative Thinking

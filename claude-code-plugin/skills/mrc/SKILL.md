@@ -1,6 +1,8 @@
 ---
 name: "mrc - Meta-Reasoning Core"
 description: Three core metacognitive questions. What am I trying to achieve? Is this the best way? Am I making progress?
+output:
+  format: "prose"
 ---
 
 # Meta-Reasoning Core

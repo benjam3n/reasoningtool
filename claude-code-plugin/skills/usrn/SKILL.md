@@ -1,6 +1,8 @@
 ---
 name: "usrn - User-Need Reasoning"
 description: "Reason about what someone actually needs based on what they said. Surfaces underlying needs, unstated constraints, and what would truly satisfy the request."
+output:
+  format: "prose"
 ---
 
 # User-Need Reasoning

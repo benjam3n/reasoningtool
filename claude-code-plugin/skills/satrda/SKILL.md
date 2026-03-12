@@ -1,6 +1,8 @@
 ---
 name: "satrda - Two-Run Divergence Audit"
 description: "Run the same gate/procedure twice on the same fixed input, compare outputs, and treat divergences as evidence that the text needs clearer interfaces and stopping rules."
+output:
+  format: "prose"
 ---
 
 # Two-Run Divergence Audit

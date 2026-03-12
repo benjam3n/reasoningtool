@@ -2,6 +2,8 @@
 name: "gsr - Goal-Structure Reconstruction"
 description: "Given any conclusion, statement, or claim, reconstruct the goal-structure. Includes detection of goal drift and substitution in chains."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Goal-Structure Reconstruction

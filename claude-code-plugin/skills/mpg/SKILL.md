@@ -1,6 +1,8 @@
 ---
 name: mpg
 description: "Handler for goals that require navigating institutions, groups, politics, and multiple stakeholders."
+output:
+  format: "prose"
 ---
 
 # Multi-Party and Institutional Goals Handler

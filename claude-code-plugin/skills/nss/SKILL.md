@@ -1,6 +1,8 @@
 ---
 name: "nss - Novelty Space Search"
 description: "Creativity = novelty + value."
+output:
+  format: "prose"
 ---
 
 # Novelty Space Search

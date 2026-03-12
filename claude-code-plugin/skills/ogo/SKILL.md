@@ -1,6 +1,8 @@
 ---
 name: "ogo - Obvious Good Outcomes"
 description: Check for obvious good outcomes that are being overlooked or underweighted in an analysis.
+output:
+  format: "prose"
 ---
 
 # Obvious Good Outcomes

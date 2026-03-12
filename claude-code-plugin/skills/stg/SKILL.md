@@ -1,6 +1,8 @@
 ---
 name: "stg - Steps Generation"
 description: "Transform a COMPLETE_PLAN into foolproof executable step-by-step instructions"
+output:
+  format: "checklist"
 ---
 
 # Steps Generation

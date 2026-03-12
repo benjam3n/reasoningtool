@@ -1,6 +1,8 @@
 ---
 name: "pt - Progress Tracking"
 description: "Monitor and report project status effectively"
+output:
+  format: "prose"
 ---
 
 # Progress Tracking

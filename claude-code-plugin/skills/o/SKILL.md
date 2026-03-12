@@ -1,6 +1,8 @@
 ---
 name: "o - Optimization"
 description: "Rank viable options from best to worst using multi-criteria optimization"
+output:
+  format: "prose"
 ---
 
 # Optimization

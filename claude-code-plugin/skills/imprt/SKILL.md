@@ -1,6 +1,8 @@
 ---
 name: "imprt - Improve Reasoning Tool"
 description: "Auto-diagnose the reasoning toolkit as a whole — identify quality gaps, missing skills, structural inconsistencies, integration failures, and improvement priorities across the entire skill library."
+output:
+  format: "prose"
 ---
 
 # Improve Reasoning Tool

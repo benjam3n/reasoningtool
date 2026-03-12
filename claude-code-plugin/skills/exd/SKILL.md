@@ -1,6 +1,8 @@
 ---
 name: "exd - Experimental Design"
 description: "Systematic procedure for designing rigorous experiments with proper controls, variables, and validity considerations"
+output:
+  format: "prose"
 ---
 
 # Experimental Design

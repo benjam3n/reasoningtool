@@ -1,6 +1,8 @@
 ---
 name: "dc - Data Collection"
 description: "Systematic procedure for gathering research data through surveys, interviews, observation, and secondary sources"
+output:
+  format: "prose"
 ---
 
 # Data Collection

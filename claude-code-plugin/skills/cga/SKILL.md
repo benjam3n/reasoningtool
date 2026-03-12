@@ -1,6 +1,8 @@
 ---
 name: cga
 description: "Learn your cognitive process, then run it at superhuman scale: more information, more depth, more alternatives."
+output:
+  format: "prose"
 ---
 
 # Cognitive Amplification

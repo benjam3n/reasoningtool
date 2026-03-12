@@ -1,6 +1,8 @@
 ---
 name: "obv - Obvious Check"
 description: Add an obvious-things-first step to any analysis. Catches what everyone assumes someone else checked.
+output:
+  format: "prose"
 ---
 
 # Obvious Check

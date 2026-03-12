@@ -1,6 +1,8 @@
 ---
 name: "pss - Plan Space Search"
 description: "There are always multiple ways to achieve a goal."
+output:
+  format: "prose"
 ---
 
 # Plan Space Search

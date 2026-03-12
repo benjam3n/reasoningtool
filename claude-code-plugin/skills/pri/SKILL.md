@@ -1,6 +1,8 @@
 ---
 name: "pri - Prioritization"
 description: Systematically prioritizes a list of anything using weighted criteria and appropriate frameworks (Eisenhower, MoSCoW, impact-effort).
+output:
+  format: "prose"
 ---
 
 # Prioritization

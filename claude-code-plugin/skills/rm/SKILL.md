@@ -1,6 +1,8 @@
 ---
 name: "rm - Risk Management Orderings"
 description: "Orderings for managing uncertainty — preserve options, handle irreversible decisions carefully, minimize downside."
+output:
+  format: "prose"
 ---
 
 # Risk Management Orderings

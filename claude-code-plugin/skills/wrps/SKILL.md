@@ -1,6 +1,8 @@
 ---
 name: "wrps - Wrapper Skill Design"
 description: Guides the design of skills that enhance other skills by accepting their output, adding a layer of analysis or validation, and returning enriched results.
+output:
+  format: "prose"
 ---
 
 # Wrapper Skill Design

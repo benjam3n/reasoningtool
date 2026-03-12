@@ -1,6 +1,8 @@
 ---
 name: "vp - Verification and Testing Procedures"
 description: "Systematic testing and verification that systems, plans, or deliverables meet their requirements."
+output:
+  format: "prose"
 ---
 
 # Verification and Testing Procedures

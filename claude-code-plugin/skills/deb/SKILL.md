@@ -1,6 +1,8 @@
 ---
 name: "deb - Debate Structure"
 description: Argues both sides of any position by steelmanning FOR and AGAINST, then identifies where the sides actually disagree and which has better evidence.
+output:
+  format: "prose"
 ---
 
 # Debate Structure

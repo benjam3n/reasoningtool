@@ -1,1 +1,1 @@
-UAUA Combined Exploration - Universalize, ARAW, loop, synthesize. Map possibilities with numbered findings, test rigorou. Read and execute `claude-code-plugin/skills/uaua/SKILL.md`, applying it to this input: $ARGUMENTS
+UAUA Combined Exploration - Universalize, ARAW, loop, synthesize. Map possibilities with numbered findings, test rigorou. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/uaua/SKILL.md`, applying it to this input: $ARGUMENTS

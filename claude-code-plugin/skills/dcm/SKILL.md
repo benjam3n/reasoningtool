@@ -1,6 +1,8 @@
 ---
 name: "dcm - Decomposition"
 description: "Break complex goals into simpler, manageable sub-goals"
+output:
+  format: "prose"
 ---
 
 # Decomposition

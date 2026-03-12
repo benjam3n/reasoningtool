@@ -1,6 +1,8 @@
 ---
 name: "mtcl - Meta Claim Analysis"
 description: Evaluate claims about claims. Analyze what level a claim operates at, check self-referential consistency, and assess impact on object-level analysis.
+output:
+  format: "prose"
 ---
 
 # Meta Claim Analysis

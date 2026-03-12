@@ -1,6 +1,8 @@
 ---
 name: "mil - Military Strategy Orderings"
 description: "Orderings derived from military doctrine — concentrate force at decisive points, maintain tempo, secure supply lines before advancing."
+output:
+  format: "prose"
 ---
 
 # Military Strategy Orderings

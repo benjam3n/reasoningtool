@@ -1,1 +1,1 @@
-Comprehensive procedure for health-related goals including fitness,. Read and execute `claude-code-plugin/skills/ho/SKILL.md`, applying it to this input: $ARGUMENTS
+Comprehensive procedure for health-related goals including fitness,. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ho/SKILL.md`, applying it to this input: $ARGUMENTS

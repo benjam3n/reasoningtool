@@ -1,6 +1,8 @@
 ---
 name: "neg - Negotiation"
 description: "Systematic procedure for preparing and conducting negotiations to reach mutually beneficial agreements"
+output:
+  format: "prose"
 ---
 
 # Negotiation

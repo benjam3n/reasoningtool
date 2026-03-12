@@ -1,6 +1,8 @@
 ---
 name: bo
 description: "Comprehensive procedure for business goals including starting, growing, and operating businesses."
+output:
+  format: "prose"
 ---
 
 # Business Operations and Growth

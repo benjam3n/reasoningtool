@@ -1,6 +1,8 @@
 ---
 name: "ve - Value Elicitation"
 description: "Value elicitation discovers what someone ACTUALLY values - their intrinsic goals."
+output:
+  format: "prose"
 ---
 
 # Value Elicitation

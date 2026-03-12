@@ -1,6 +1,8 @@
 ---
 name: "conflict - Conflict Analysis"
 description: Map the structure of interpersonal or organizational conflict — identify the real disagreement (often hidden behind the stated one), each party's actual interests vs positions, and paths to resolution that address interests rather than positions.
+output:
+  format: "prose"
 ---
 
 # CONFLICT - Conflict Analysis

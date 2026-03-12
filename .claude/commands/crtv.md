@@ -1,1 +1,1 @@
-Systematic procedure for generating novel ideas. Moves through divergent generation, combinatorial play, and convergent evaluation against the original need. Read and execute `claude-code-plugin/skills/crtv/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic procedure for generating novel ideas. Moves through divergent generation, combinatorial play, and convergent evaluation against the original need. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/crtv/SKILL.md`, applying it to this input: $ARGUMENTS

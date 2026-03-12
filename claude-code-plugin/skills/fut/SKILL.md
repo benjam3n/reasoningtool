@@ -1,6 +1,8 @@
 ---
 name: "fut - Future Analysis"
 description: Systematically explore what the future looks like for any trend, technology, decision, or domain across multiple timeframes.
+output:
+  format: "prose"
 ---
 
 # Future Analysis

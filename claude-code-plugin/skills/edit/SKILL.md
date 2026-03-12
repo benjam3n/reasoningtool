@@ -1,6 +1,8 @@
 ---
 name: "edit - Editorial Analysis"
 description: Analyze writing for specific editorial problems — redundancy, weak verbs, hedge stacking, buried leads, paragraph structure failures, unsupported claims, tonal inconsistency. Not grammar checking but structural editing.
+output:
+  format: "prose"
 ---
 
 # Editorial Analysis

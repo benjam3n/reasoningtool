@@ -1,1 +1,1 @@
-Capture ideation expansion loops — when finding more ideas is exciting but unbounded — and structure them into manageable exploration batches with stop conditions. Read and execute `claude-code-plugin/skills/ycshikfmif/SKILL.md`, applying it to this input: $ARGUMENTS
+Capture ideation expansion loops — when finding more ideas is exciting but unbounded — and structure them into manageable exploration batches with stop conditions. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ycshikfmif/SKILL.md`, applying it to this input: $ARGUMENTS

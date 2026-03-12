@@ -1,6 +1,8 @@
 ---
 name: "pcl - Predictive Claim Analysis"
 description: Evaluate a prediction. Assess the model behind it, check track records, identify falsifiers, and estimate probability with calibration.
+output:
+  format: "prose"
 ---
 
 # Predictive Claim Analysis

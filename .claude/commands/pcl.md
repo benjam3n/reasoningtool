@@ -1,1 +1,1 @@
-Evaluate a prediction. Assess the model behind it, check track records, identify falsifiers, and estimate probability with calibration. Read and execute `claude-code-plugin/skills/pcl/SKILL.md`, applying it to this input: $ARGUMENTS
+Evaluate a prediction. Assess the model behind it, check track records, identify falsifiers, and estimate probability with calibration. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/pcl/SKILL.md`, applying it to this input: $ARGUMENTS

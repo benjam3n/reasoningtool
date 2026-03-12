@@ -1,6 +1,8 @@
 ---
 name: "argd - Argumentative Document"
 description: "Construct a rigorous argumentative document with thesis, evidence, counterarguments, and structured reasoning."
+output:
+  format: "prose"
 ---
 
 # Argumentative Document

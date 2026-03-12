@@ -1,6 +1,8 @@
 ---
 name: "hab - Habit Design"
 description: Designs a plan to build a new habit or break an old one using cue-routine-reward structure, environment design, and obstacle planning.
+output:
+  format: "prose"
 ---
 
 # Habit Design

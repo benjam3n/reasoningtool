@@ -1,6 +1,8 @@
 ---
 name: smc
 description: "An exhaustive inventory of search methods found in nature, science, technology, and human systems."
+output:
+  format: "prose"
 ---
 
 # Comprehensive Search Methods Catalog

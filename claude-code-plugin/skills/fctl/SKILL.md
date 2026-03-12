@@ -1,6 +1,8 @@
 ---
 name: "fctl - Factual Claim Testing"
 description: Test whether a factual claim is true. Assess evidence quality, check for common errors, and deliver a verdict with confidence level.
+output:
+  format: "prose"
 ---
 
 # Factual Claim Testing

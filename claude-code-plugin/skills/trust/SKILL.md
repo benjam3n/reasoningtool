@@ -1,6 +1,8 @@
 ---
 name: "trust - Trust Analysis"
 description: Assess trust dynamics — who trusts whom, on what dimensions (competence, integrity, benevolence), what would build or erode trust, and how trust asymmetries create organizational dysfunction.
+output:
+  format: "prose"
 ---
 
 # TRUST - Trust Analysis

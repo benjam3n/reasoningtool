@@ -1,6 +1,8 @@
 ---
 name: "rgc - Regulatory Compliance"
 description: Assess compliance with applicable regulations by mapping requirements to current practices, identifying gaps, and prioritizing remediation.
+output:
+  format: "prose"
 ---
 
 # Regulatory Compliance

@@ -1,6 +1,8 @@
 ---
 name: "ecal - Effort Calibration"
 description: "Determine how much thinking to invest in a decision. Maps stakes, reversibility, and diminishing returns to effort levels (minimum, standard, maximum)."
+output:
+  format: "prose"
 ---
 
 # Effort Calibration

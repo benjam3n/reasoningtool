@@ -1,6 +1,8 @@
 ---
 name: "mf - Marketing Funnel Analysis"
 description: "Analyze and optimize the customer journey from awareness to revenue using the AARRR framework"
+output:
+  format: "prose"
 ---
 
 # Marketing Funnel Analysis

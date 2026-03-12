@@ -1,1 +1,1 @@
-Work with data systematically: assess what exists, evaluate quality, identify gaps, choose methods, interpret results, and communicate findings. Read and execute `claude-code-plugin/skills/dtsk/SKILL.md`, applying it to this input: $ARGUMENTS
+Work with data systematically: assess what exists, evaluate quality, identify gaps, choose methods, interpret results, and communicate findings. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dtsk/SKILL.md`, applying it to this input: $ARGUMENTS

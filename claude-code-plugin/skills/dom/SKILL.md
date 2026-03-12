@@ -1,6 +1,8 @@
 ---
 name: "dom - Dominance Analysis"
 description: Identify options that dominate others — strictly better on all dimensions, or better on some and equal on the rest.
+output:
+  format: "prose"
 ---
 
 # Dominance Analysis

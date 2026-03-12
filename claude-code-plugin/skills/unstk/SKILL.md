@@ -1,6 +1,8 @@
 ---
 name: "unstk - Get Unstuck"
 description: "Diagnose why you're blocked and get concrete unblocking actions based on the type of block: information gap, decision paralysis, emotional block, skill gap, or wrong approach."
+output:
+  format: "prose"
 ---
 
 # UNSTK - Get Unstuck

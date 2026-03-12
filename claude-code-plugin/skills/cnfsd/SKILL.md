@@ -1,6 +1,8 @@
 ---
 name: "cnfsd - Confused"
 description: "For mental fog where things don't make sense. Separates what you understand from what you don't, identifies the gap type, and provides the right tool to close it."
+output:
+  format: "prose"
 ---
 
 # CNFSD - Confused

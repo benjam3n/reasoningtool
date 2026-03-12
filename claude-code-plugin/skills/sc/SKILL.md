@@ -1,6 +1,8 @@
 ---
 name: "sc - Skill Creation System"
 description: "Design skill creation pipelines at scale, including quality gates, templates, naming conventions, batch generation, review processes, and rollout strategy."
+output:
+  format: "prose"
 ---
 
 # SC - Skill Creation System

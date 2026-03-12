@@ -1,6 +1,8 @@
 ---
 name: "aso - And So On"
 description: "Continue a discovered pattern with bounded expansion rules — extract the generative rule, extend coherently, detect pattern decay, and stop at an explicit limit."
+output:
+  format: "prose"
 ---
 
 # ASO - And So On

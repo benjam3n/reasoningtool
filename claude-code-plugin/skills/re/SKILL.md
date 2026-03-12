@@ -1,6 +1,8 @@
 ---
 name: "re - Reading Effectively"
 description: "Read strategically for comprehension, retention, and application using research-backed techniques"
+output:
+  format: "prose"
 ---
 
 # Reading Effectively

@@ -1,6 +1,8 @@
 ---
 name: "ops - Optical Pooled Screening"
 description: "Procedure for designing and executing optical pooled screening experiments in functional genomics."
+output:
+  format: "prose"
 ---
 
 # Optical Pooled Screening

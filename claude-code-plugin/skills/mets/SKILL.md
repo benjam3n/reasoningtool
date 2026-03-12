@@ -1,6 +1,8 @@
 ---
 name: "mets - Metric Selection"
 description: Choose the right things to measure by evaluating candidate metrics for actionability, gaming resistance, and alignment with goals. Plans for Goodhart's Law.
+output:
+  format: "prose"
 ---
 
 # Metric Selection

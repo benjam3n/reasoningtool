@@ -1,6 +1,8 @@
 ---
 name: "cma - Competitive Analysis"
 description: "Systematically analyze competitive landscape using Porter's Five Forces, competitor mapping, and differentiation strategies"
+output:
+  format: "prose"
 ---
 
 # Competitive Analysis

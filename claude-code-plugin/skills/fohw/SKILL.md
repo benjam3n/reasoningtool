@@ -1,6 +1,8 @@
 ---
 name: "fohw - Figure Out How it Works"
 description: "Systematically understand any complex system by matching investigation depth to your goal and access level, with safeguards against premature certainty."
+output:
+  format: "prose"
 ---
 
 # Figure Out How it Works

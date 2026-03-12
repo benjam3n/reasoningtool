@@ -1,6 +1,8 @@
 ---
 name: "gdm - Group Decision Making"
 description: "Systematic procedure for making effective decisions in groups, avoiding common pitfalls, and leveraging collective intelligence"
+output:
+  format: "prose"
 ---
 
 # Group Decision Making

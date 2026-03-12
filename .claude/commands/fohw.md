@@ -1,1 +1,1 @@
-Systematically understand any complex system by matching investigation depth to your goal and access level, with safeguards against premature certainty. Read and execute `claude-code-plugin/skills/fohw/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically understand any complex system by matching investigation depth to your goal and access level, with safeguards against premature certainty. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/fohw/SKILL.md`, applying it to this input: $ARGUMENTS

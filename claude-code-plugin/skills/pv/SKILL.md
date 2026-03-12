@@ -1,6 +1,8 @@
 ---
 name: "pv - Procedure Validation"
 description: Validate that a procedure is complete, executable, and all dependencies are satisfiable. Catches issues before execution.
+output:
+  format: "prose"
 ---
 
 # Procedure Validation

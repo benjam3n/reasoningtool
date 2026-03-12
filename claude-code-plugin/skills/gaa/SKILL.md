@@ -1,6 +1,8 @@
 ---
 name: "gaa - GOSM Approach Audit"
 description: "An honest audit of the GOSM system's approach, claims, and limitations — applying the system's own standards to itself."
+output:
+  format: "prose"
 ---
 
 # GOSM Approach Audit

@@ -1,6 +1,8 @@
 ---
 name: "cba - Cost-Benefit Analysis"
 description: "Systematically quantify costs and benefits to evaluate decisions, including NPV calculation, sensitivity analysis, and intangible factors"
+output:
+  format: "table"
 ---
 
 # Cost-Benefit Analysis

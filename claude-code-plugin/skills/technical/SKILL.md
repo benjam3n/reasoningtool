@@ -1,6 +1,8 @@
 ---
 name: "technical - Domain-Specific Routing"
 description: Sub-orchestrator for domain-specific questions. Routes to specialized skills based on domain and task type.
+output:
+  format: "prose"
 ---
 
 # Technical

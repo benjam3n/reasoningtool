@@ -1,6 +1,8 @@
 ---
 name: "perceive - Perception Engine"
 description: "Process a large body of work — strip noise, preserve all signal including nuance, reorganize into the optimal representation, and reason about what it means and what to do."
+output:
+  format: "prose"
 ---
 
 # Perception Engine

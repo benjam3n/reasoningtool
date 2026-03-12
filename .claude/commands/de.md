@@ -1,1 +1,1 @@
-Extract dependencies between steps, tasks, or items. Identifies what must happen before what, enabling proper sequencing. Read and execute `claude-code-plugin/skills/de/SKILL.md`, applying it to this input: $ARGUMENTS
+Extract dependencies between steps, tasks, or items. Identifies what must happen before what, enabling proper sequencing. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/de/SKILL.md`, applying it to this input: $ARGUMENTS

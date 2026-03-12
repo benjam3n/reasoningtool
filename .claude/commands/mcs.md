@@ -1,1 +1,1 @@
-Configure MCP servers to enable autonomous GOSM execution capabilities. Read and execute `claude-code-plugin/skills/mcs/SKILL.md`, applying it to this input: $ARGUMENTS
+Configure MCP servers to enable autonomous GOSM execution capabilities. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/mcs/SKILL.md`, applying it to this input: $ARGUMENTS

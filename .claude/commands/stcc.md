@@ -1,1 +1,1 @@
-Identify partially-built clusters of work and determine what's needed to finish them. Prioritize by effort-to-complete. Read and execute `claude-code-plugin/skills/stcc/SKILL.md`, applying it to this input: $ARGUMENTS
+Identify partially-built clusters of work and determine what's needed to finish them. Prioritize by effort-to-complete. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/stcc/SKILL.md`, applying it to this input: $ARGUMENTS

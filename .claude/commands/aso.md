@@ -1,1 +1,1 @@
-Continue a discovered pattern with bounded expansion rules — extract the generative rule, extend coherently, detect pattern decay, and stop at an explicit limit. Read and execute `claude-code-plugin/skills/aso/SKILL.md`, applying it to this input: $ARGUMENTS
+Continue a discovered pattern with bounded expansion rules — extract the generative rule, extend coherently, detect pattern decay, and stop at an explicit limit. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/aso/SKILL.md`, applying it to this input: $ARGUMENTS

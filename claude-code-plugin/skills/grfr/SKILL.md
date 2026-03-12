@@ -2,6 +2,8 @@
 name: "grfr - Goal Reframing Procedure"
 description: Transform impossible or problematic goals into achievable versions. No such thing as an impossible goal - only insufficient decomposition. Includes explicit substitution handling.
 context: fork
+output:
+  format: "prose"
 ---
 
 # Goal Reframing Procedure

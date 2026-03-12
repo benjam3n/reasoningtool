@@ -1,6 +1,8 @@
 ---
 name: "frzn - Frozen (Decision Paralysis)"
 description: "Break through decision paralysis when you can't choose and are stuck"
+output:
+  format: "prose"
 ---
 
 # Frozen (Decision Paralysis)

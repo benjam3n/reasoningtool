@@ -1,6 +1,8 @@
 ---
 name: pag
 description: "Handler for goals with inherent tensions where optimizing one dimension seems to harm another."
+output:
+  format: "prose"
 ---
 
 # Paradox and Trade-off Goals Handler

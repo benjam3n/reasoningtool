@@ -1,6 +1,8 @@
 ---
 name: "pb - Progressive Building Orderings"
 description: "Build complexity incrementally — each step works before adding the next. Foundations before features."
+output:
+  format: "prose"
 ---
 
 # Progressive Building Orderings

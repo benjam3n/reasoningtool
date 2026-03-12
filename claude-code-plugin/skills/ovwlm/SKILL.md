@@ -1,6 +1,8 @@
 ---
 name: "ovwlm - Overwhelmed"
 description: "For when there's too much and you can't process. A systematic way to reduce what you're holding until you can hold it."
+output:
+  format: "prose"
 ---
 
 # OVWLM - Overwhelmed

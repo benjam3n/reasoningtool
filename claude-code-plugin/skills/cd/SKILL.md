@@ -1,6 +1,8 @@
 ---
 name: "cd - Customer Discovery"
 description: "Validate customer problems and solutions before building"
+output:
+  format: "prose"
 ---
 
 # Customer Discovery

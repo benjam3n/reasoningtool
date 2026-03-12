@@ -1,6 +1,8 @@
 ---
 name: "teach - Feynman Explanation"
 description: Explains any concept so that someone can actually understand it. Uses the Feynman technique — simple words, clear structure, no hiding behind jargon.
+output:
+  format: "prose"
 ---
 
 # Feynman Explanation

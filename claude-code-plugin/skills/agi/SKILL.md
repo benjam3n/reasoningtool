@@ -1,6 +1,8 @@
 ---
 name: "agi - ARAW to GOSM Integration"
 description: "Systematic procedure for translating ARAW exploration outputs"
+output:
+  format: "prose"
 ---
 
 # ARAW to GOSM Integration

@@ -1,6 +1,8 @@
 ---
 name: lp
 description: "Not all interventions are equal. Identify leverage points where small shifts produce big systemic changes."
+output:
+  format: "prose"
 ---
 
 # Leverage Points

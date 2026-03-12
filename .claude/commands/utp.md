@@ -1,1 +1,1 @@
-Systematically construct and examine the best possible outcome — what would ideal actually look like, and what would it take to get there? Read and execute `claude-code-plugin/skills/utp/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically construct and examine the best possible outcome — what would ideal actually look like, and what would it take to get there? Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/utp/SKILL.md`, applying it to this input: $ARGUMENTS

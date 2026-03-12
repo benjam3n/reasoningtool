@@ -1,6 +1,8 @@
 ---
 name: gts
 description: "The fundamental pattern for making cognitive tasks tractable: Generate possibilities, then Search using criteria."
+output:
+  format: "prose"
 ---
 
 # Generate-Then-Search Meta-Pattern

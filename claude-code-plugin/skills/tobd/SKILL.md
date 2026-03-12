@@ -1,6 +1,8 @@
 ---
 name: "tobd - To Be Determined (Operational)"
 description: "Sequence unresolved TBDs by dependency and impact for operational resolution, identifying parallel tracks, blockers, and the critical resolution path."
+output:
+  format: "prose"
 ---
 
 # TOBD - To Be Determined (Operational)

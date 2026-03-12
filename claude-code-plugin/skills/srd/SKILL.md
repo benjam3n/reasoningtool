@@ -1,6 +1,8 @@
 ---
 name: "srd - Strategic Competitive Orderings"
 description: "Orderings for competitive contexts — influence perception, manage attention, create strategic advantage through sequencing."
+output:
+  format: "prose"
 ---
 
 # Strategic Competitive Orderings

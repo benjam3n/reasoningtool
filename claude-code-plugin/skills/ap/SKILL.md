@@ -1,6 +1,8 @@
 ---
 name: "ap - Architecture Patterns"
 description: "Procedure for evaluating, choosing, and implementing software architecture patterns"
+output:
+  format: "prose"
 ---
 
 # Architecture Patterns

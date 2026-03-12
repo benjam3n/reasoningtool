@@ -1,6 +1,8 @@
 ---
 name: "av - Assumption Verification"
 description: "Systematically verify assumptions by classifying type, determining verification method, executing, and updating confidence."
+output:
+  format: "prose"
 ---
 
 # Assumption Verification

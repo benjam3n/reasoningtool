@@ -4,6 +4,8 @@ description: "Pick 10 skills most likely to help achieve a specific goal. Decomp
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "goal", "capability"]
+output:
+  format: "prose"
 ---
 
 # Pick 10 Goal

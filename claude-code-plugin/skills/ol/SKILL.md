@@ -1,6 +1,8 @@
 ---
 name: ol
 description: "In competitive environments, the entity that cycles through observe-orient-decide-act faster gains decisive advantage."
+output:
+  format: "prose"
 ---
 
 # OODA Loop

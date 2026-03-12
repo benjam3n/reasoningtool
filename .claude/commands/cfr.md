@@ -1,1 +1,1 @@
-Systematic procedure for de-escalating tensions, finding common ground, and navigating difficult conversations productiv. Read and execute `claude-code-plugin/skills/cfr/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic procedure for de-escalating tensions, finding common ground, and navigating difficult conversations productiv. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cfr/SKILL.md`, applying it to this input: $ARGUMENTS

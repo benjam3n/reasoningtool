@@ -1,1 +1,1 @@
-Analyze whether a system or collection is complete and coherent. Maps components, identifies connections, finds orphans and missing links, and assesses domain coverage. Read and execute `claude-code-plugin/skills/ecomp/SKILL.md`, applying it to this input: $ARGUMENTS
+Analyze whether a system or collection is complete and coherent. Maps components, identifies connections, finds orphans and missing links, and assesses domain coverage. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ecomp/SKILL.md`, applying it to this input: $ARGUMENTS

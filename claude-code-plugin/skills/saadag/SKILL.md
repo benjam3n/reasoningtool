@@ -1,6 +1,8 @@
 ---
 name: saadag
 description: "Run the detector suite against a target artifact to find ambiguity, proxy substitution, bundled checks, and more."
+output:
+  format: "prose"
 ---
 
 # Apply Detectors + Generators

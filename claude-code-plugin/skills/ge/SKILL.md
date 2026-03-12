@@ -1,6 +1,8 @@
 ---
 name: "ge - Growth Experiments"
 description: "Run systematic experiments to discover and validate growth levers using hypothesis-driven testing"
+output:
+  format: "prose"
 ---
 
 # Growth Experiments

@@ -1,1 +1,1 @@
-Guides the design of a skill that works independently with no dependencies on other skills. Ensures the skill is self-contained, well-scoped, and useful in isolation. Read and execute `claude-code-plugin/skills/stnl/SKILL.md`, applying it to this input: $ARGUMENTS
+Guides the design of a skill that works independently with no dependencies on other skills. Ensures the skill is self-contained, well-scoped, and useful in isolation. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/stnl/SKILL.md`, applying it to this input: $ARGUMENTS

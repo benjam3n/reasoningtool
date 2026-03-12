@@ -1,6 +1,8 @@
 ---
 name: gee
 description: "Systematic execution of GOSM gates with enforcement."
+output:
+  format: "prose"
 ---
 
 # Gate Execution Engine

@@ -1,6 +1,8 @@
 ---
 name: eh
 description: "A layered framework for building from certain foundations toward determinate action."
+output:
+  format: "prose"
 ---
 
 # Epistemic Hierarchy

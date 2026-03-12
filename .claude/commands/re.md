@@ -1,1 +1,1 @@
-Read strategically for comprehension, retention, and application using research-backed techniques. Read and execute `claude-code-plugin/skills/re/SKILL.md`, applying it to this input: $ARGUMENTS
+Read strategically for comprehension, retention, and application using research-backed techniques. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/re/SKILL.md`, applying it to this input: $ARGUMENTS

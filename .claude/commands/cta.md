@@ -1,1 +1,1 @@
-Analyze a category of guesses to determine which apply to the user. System does the work by testing each guess against a. Read and execute `claude-code-plugin/skills/cta/SKILL.md`, applying it to this input: $ARGUMENTS
+Analyze a category of guesses to determine which apply to the user. System does the work by testing each guess against a. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cta/SKILL.md`, applying it to this input: $ARGUMENTS

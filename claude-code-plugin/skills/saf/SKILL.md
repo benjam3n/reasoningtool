@@ -1,6 +1,8 @@
 ---
 name: "saf - Safety Analysis"
 description: Systematically identify safety risks, failure modes, and protective measures for any plan, system, or action.
+output:
+  format: "prose"
 ---
 
 # Safety Analysis

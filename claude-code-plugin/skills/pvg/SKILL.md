@@ -1,6 +1,8 @@
 ---
 name: pvg
 description: "Handler for goals focused on PREVENTING bad outcomes rather than achieving good ones."
+output:
+  format: "prose"
 ---
 
 # Preventive and Defensive Goals Handler

@@ -1,6 +1,8 @@
 ---
 name: "mcp - Musical Composition Orderings"
 description: "Orderings inspired by musical forms — theme and variation, call and response, tension and release — for structuring extended experiences."
+output:
+  format: "prose"
 ---
 
 # Musical Composition Orderings

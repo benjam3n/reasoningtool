@@ -1,6 +1,8 @@
 ---
 name: "dtse - Does This Skill Exist"
 description: "Check whether a requested skill exists by name or function, show exact matches and nearest alternatives, and provide next action."
+output:
+  format: "prose"
 ---
 
 # DTSE - Does This Skill Exist

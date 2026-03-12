@@ -1,6 +1,8 @@
 ---
 name: "dxpt - Domain Expert Assessment"
 description: Evaluate quality from a domain expert's perspective. Identifies the domain, checks for oversimplification, verifies terminology, assesses depth, identifies missing nuance, and flags misleading content.
+output:
+  format: "prose"
 ---
 
 # Domain Expert Assessment

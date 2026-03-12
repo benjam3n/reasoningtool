@@ -1,6 +1,8 @@
 ---
 name: "cls - Checklist Search"
 description: "The simplest possible search: enumerate items, check each against"
+output:
+  format: "prose"
 ---
 
 # Checklist Search

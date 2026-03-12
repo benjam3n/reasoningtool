@@ -1,6 +1,8 @@
 ---
 name: "doubt - Second-Guessing"
 description: "Handle post-decision doubt and break the cycle of second-guessing"
+output:
+  format: "prose"
 ---
 
 # Second-Guessing

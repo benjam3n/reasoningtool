@@ -4,6 +4,8 @@ description: "Pick 10 skills uniformly at random from the full library. No bias,
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "random", "serendipity"]
+output:
+  format: "prose"
 ---
 
 # Pick 10 Random

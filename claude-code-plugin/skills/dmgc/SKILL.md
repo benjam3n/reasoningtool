@@ -1,6 +1,8 @@
 ---
 name: "dmgc - Damage Control"
 description: When something has already gone wrong — stop the bleeding, triage what's salvageable, communicate clearly, and recover systematically.
+output:
+  format: "prose"
 ---
 
 # Damage Control

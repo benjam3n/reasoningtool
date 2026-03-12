@@ -4,6 +4,8 @@ description: "Pick 8 skills from a specific tier. Maps user input to a tier leve
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "tier", "quality"]
+output:
+  format: "prose"
 ---
 
 # Pick 8 Tier

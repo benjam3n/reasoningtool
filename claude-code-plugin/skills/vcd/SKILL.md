@@ -1,6 +1,8 @@
 ---
 name: "vcd - Value Conflict Decomposition"
 description: "Goals often serve multiple intrinsic values that conflict with each other."
+output:
+  format: "prose"
 ---
 
 # Value Conflict Decomposition

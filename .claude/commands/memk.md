@@ -1,1 +1,1 @@
-Systematic approach to capturing, organizing, and maintaining personal knowledge for future retrieval and use. Read and execute `claude-code-plugin/skills/memk/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic approach to capturing, organizing, and maintaining personal knowledge for future retrieval and use. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/memk/SKILL.md`, applying it to this input: $ARGUMENTS

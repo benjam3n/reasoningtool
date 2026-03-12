@@ -1,6 +1,8 @@
 ---
 name: saqrc
 description: "Rewrite unclear questions by separating intent from target question."
+output:
+  format: "prose"
 ---
 
 # Question Rewrite Chains

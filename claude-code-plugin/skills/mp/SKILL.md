@@ -1,6 +1,8 @@
 ---
 name: "mp - Motivation Psychology Orderings"
 description: "Orderings that account for human psychological factors — energy, motivation, habits, and engagement for sustainable performance."
+output:
+  format: "prose"
 ---
 
 # Motivation Psychology Orderings

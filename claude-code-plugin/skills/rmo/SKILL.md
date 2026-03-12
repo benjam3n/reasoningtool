@@ -1,6 +1,8 @@
 ---
 name: "rmo - Resume Optimization"
 description: "Systematic approach to crafting resumes that pass ATS filters, capture attention,"
+output:
+  format: "prose"
 ---
 
 # Resume Optimization

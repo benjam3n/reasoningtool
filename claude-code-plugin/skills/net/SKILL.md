@@ -1,6 +1,8 @@
 ---
 name: "net - Professional Networking"
 description: "Systematic approach to building genuine professional relationships that create"
+output:
+  format: "prose"
 ---
 
 # Professional Networking

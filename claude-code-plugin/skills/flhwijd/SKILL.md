@@ -1,6 +1,8 @@
 ---
 name: "flhwijd - For Like Here What I Just Did"
 description: "Analyze the user's just-finished action sequence, extract the repeatable pattern, clean it, name it, and convert it into a reusable procedure with trigger conditions."
+output:
+  format: "prose"
 ---
 
 # FLHWIJD - For Like Here What I Just Did

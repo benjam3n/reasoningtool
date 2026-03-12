@@ -1,1 +1,1 @@
-Systematically explores an unfamiliar space by mapping boundaries, identifying dimensions, sampling broadly, and flagging surprises and promising regions. Read and execute `claude-code-plugin/skills/exps/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically explores an unfamiliar space by mapping boundaries, identifying dimensions, sampling broadly, and flagging surprises and promising regions. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/exps/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "skev - Skill Evaluation"
 description: Evaluates the quality and effectiveness of a procedure, skill, or method. Tests on multiple inputs, measures efficiency, identifies failure modes, and rates overall effectiveness.
+output:
+  format: "prose"
 ---
 
 # Skill Evaluation

@@ -1,6 +1,8 @@
 ---
 name: "strt - Where to Start"
 description: "For when you have a goal but genuinely don't know where to begin. Find the zero-dependency starting point and take it."
+output:
+  format: "prose"
 ---
 
 # STRT - Where to Start

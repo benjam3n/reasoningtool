@@ -1,6 +1,8 @@
 ---
 name: "agsk - Argument Analysis"
 description: "Analyze and construct arguments by checking logical validity, premise truth, hidden assumptions, and evidence strength."
+output:
+  format: "prose"
 ---
 
 # AGSK - Argument Analysis

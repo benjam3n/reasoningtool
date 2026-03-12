@@ -1,1 +1,1 @@
-Systematically analyze competitive landscape using Porter's Five Forces, competitor mapping, and differentiation strateg. Read and execute `claude-code-plugin/skills/cma/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically analyze competitive landscape using Porter's Five Forces, competitor mapping, and differentiation strateg. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cma/SKILL.md`, applying it to this input: $ARGUMENTS

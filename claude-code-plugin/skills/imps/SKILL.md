@@ -1,6 +1,8 @@
 ---
 name: "imps - Improve Skill"
 description: "Systematically improve a single skill by diagnosing its weaknesses against the quality standard, generating specific fixes, applying them, and verifying the result meets all structural and content requirements."
+output:
+  format: "prose"
 ---
 
 # Improve Skill

@@ -1,6 +1,8 @@
 ---
 name: "sta - Statistical Analysis"
 description: "Systematic procedure for selecting appropriate statistical tests and correctly interpreting results"
+output:
+  format: "prose"
 ---
 
 # Statistical Analysis

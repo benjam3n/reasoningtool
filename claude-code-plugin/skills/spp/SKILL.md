@@ -1,6 +1,8 @@
 ---
 name: "spp - Spatial Proteomics"
 description: "Procedure for designing and analyzing spatial proteomics experiments to map protein localization and interactions in tissue context."
+output:
+  format: "prose"
 ---
 
 # Spatial Proteomics

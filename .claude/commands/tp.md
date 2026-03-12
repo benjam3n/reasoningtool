@@ -1,1 +1,1 @@
-Arguments don't exist in isolation. Each conclusion depends on premises,. Read and execute `claude-code-plugin/skills/tp/SKILL.md`, applying it to this input: $ARGUMENTS
+Arguments don't exist in isolation. Each conclusion depends on premises,. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/tp/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "pha - Phone Acquisition"
 description: "Acquire and configure phone numbers for autonomous system operations"
+output:
+  format: "prose"
 ---
 
 # Phone Acquisition

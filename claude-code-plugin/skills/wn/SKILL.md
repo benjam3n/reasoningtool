@@ -1,6 +1,8 @@
 ---
 name: "wn - What's New"
 description: "Summarize what is new in a project or codebase, grouped by configurable views (day, category, skill, iteration), filtering out unchanged items."
+output:
+  format: "prose"
 ---
 
 # WN - What's New

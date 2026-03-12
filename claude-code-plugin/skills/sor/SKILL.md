@@ -1,6 +1,8 @@
 ---
 name: "sor - Source Research"
 description: "Systematic procedure for finding, evaluating, and synthesizing information from primary and secondary sources."
+output:
+  format: "prose"
 ---
 
 # Source Research

@@ -1,1 +1,1 @@
-Sub-orchestrator for goals and wants. Routes to WantTo analysis to trace what the want commits you to and find the actual want. Read and execute `claude-code-plugin/skills/want/SKILL.md`, applying it to this input: $ARGUMENTS
+Sub-orchestrator for goals and wants. Routes to WantTo analysis to trace what the want commits you to and find the actual want. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/want/SKILL.md`, applying it to this input: $ARGUMENTS

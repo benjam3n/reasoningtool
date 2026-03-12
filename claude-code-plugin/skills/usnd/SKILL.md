@@ -1,6 +1,8 @@
 ---
 name: "usnd - User-Need Discovery"
 description: Discover what users actually need versus what they say they need. Observes behavior, identifies pain points, maps workarounds, traces root desires, validates with evidence, and outputs a need hierarchy.
+output:
+  format: "prose"
 ---
 
 # User-Need Discovery

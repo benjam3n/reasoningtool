@@ -1,6 +1,8 @@
 ---
 name: "handle - Handle This"
 description: "Convert maximally ambiguous 'handle this' requests into a classified task type, a concrete first action, and an ordered next-skill sequence."
+output:
+  format: "prose"
 ---
 
 # Handle - Handle This

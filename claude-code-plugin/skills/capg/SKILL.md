@@ -1,6 +1,8 @@
 ---
 name: "capg - Capability Gate"
 description: "Pre-step feasibility check determining if AI can execute directly, needs delegation, or if task is infeasible"
+output:
+  format: "prose"
 ---
 
 # Capability Gate

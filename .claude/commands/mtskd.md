@@ -1,1 +1,1 @@
-Design skills that operate on other skills — improving, validating, combining, or routing them — with cross-skill compatibility. Read and execute `claude-code-plugin/skills/mtskd/SKILL.md`, applying it to this input: $ARGUMENTS
+Design skills that operate on other skills — improving, validating, combining, or routing them — with cross-skill compatibility. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/mtskd/SKILL.md`, applying it to this input: $ARGUMENTS

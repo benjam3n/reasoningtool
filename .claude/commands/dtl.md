@@ -1,1 +1,1 @@
-Two complementary methodologies for innovation:. Read and execute `claude-code-plugin/skills/dtl/SKILL.md`, applying it to this input: $ARGUMENTS
+Two complementary methodologies for innovation:. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dtl/SKILL.md`, applying it to this input: $ARGUMENTS

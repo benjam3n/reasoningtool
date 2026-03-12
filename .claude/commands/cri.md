@@ -1,1 +1,1 @@
-Structured evaluation using gestalt impression + analytical decomposition. Impression first, then analysis, then check f. Read and execute `claude-code-plugin/skills/cri/SKILL.md`, applying it to this input: $ARGUMENTS
+Structured evaluation using gestalt impression + analytical decomposition. Impression first, then analysis, then check f. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cri/SKILL.md`, applying it to this input: $ARGUMENTS

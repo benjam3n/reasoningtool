@@ -1,6 +1,8 @@
 ---
 name: "socg - Social Cognition"
 description: Understanding and navigating social dynamics. Identifies social context, models perspectives, predicts reactions, and plans moves with awareness of stated and unstated norms.
+output:
+  format: "prose"
 ---
 
 # Social Cognition

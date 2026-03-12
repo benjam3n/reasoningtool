@@ -1,6 +1,8 @@
 ---
 name: saropc
 description: "Apply Recursive Causal Interrogation to choices about what procedure to run, what to measure, and when to stop."
+output:
+  format: "prose"
 ---
 
 # RCI on Protocol Choices

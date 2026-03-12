@@ -1,6 +1,8 @@
 ---
 name: "cvis - Creator Vision Analysis"
 description: Analyze a project from the creator's perspective. Articulates the vision, checks whether current work serves it, identifies vision drift, and recommends corrections.
+output:
+  format: "prose"
 ---
 
 # Creator Vision Analysis

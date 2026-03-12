@@ -1,6 +1,8 @@
 ---
 name: "qr - Qualitative Research"
 description: "Systematic procedure for qualitative data analysis including coding, thematic analysis, grounded theory, and interview techniques"
+output:
+  format: "prose"
 ---
 
 # Qualitative Research

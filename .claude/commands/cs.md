@@ -1,1 +1,1 @@
-Create, update, or gap-scan skills. Three modes: CREATE produces a new SKILL.md, UPDATE improves an existing one, GAP_SCAN identifies missing skills. Read and execute `claude-code-plugin/skills/cs/SKILL.md`, applying it to this input: $ARGUMENTS
+Create, update, or gap-scan skills. Three modes: CREATE produces a new SKILL.md, UPDATE improves an existing one, GAP_SCAN identifies missing skills. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cs/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "draft - Draft and Revise"
 description: Structured drafting with revision cycles. First draft captures structure, second draft fixes logic, third draft polishes prose. Each revision has specific criteria. Prevents the common failure of trying to write perfectly on the first pass.
+output:
+  format: "prose"
 ---
 
 # Draft and Revise

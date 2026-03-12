@@ -1,1 +1,1 @@
-Systematically construct and examine the worst possible outcome — what does failure look like at scale, and what path leads there? Read and execute `claude-code-plugin/skills/dys/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically construct and examine the worst possible outcome — what does failure look like at scale, and what path leads there? Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dys/SKILL.md`, applying it to this input: $ARGUMENTS

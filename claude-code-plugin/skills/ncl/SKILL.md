@@ -1,6 +1,8 @@
 ---
 name: "ncl - Normative Claim Analysis"
 description: Evaluate a "should" claim. Identify underlying values, check if prescriptions serve those values, and assess competing considerations.
+output:
+  format: "prose"
 ---
 
 # Normative Claim Analysis

@@ -1,6 +1,8 @@
 ---
 name: "uf - Useful For"
 description: "Given a skill or method, map its best-fit use cases, failure conditions, limits, and alternative skills with explicit switch conditions."
+output:
+  format: "prose"
 ---
 
 # UF - Useful For

@@ -1,6 +1,8 @@
 ---
 name: "fowwr - Figure Out What Went Wrong"
 description: Figure Out What Went Wrong - Backward causal diagnosis of failures. Trace from symptom to root cause, test each candidate cause, and derive what would prevent recurrence.
+output:
+  format: "prose"
 ---
 
 # FOWWR - Figure Out What Went Wrong

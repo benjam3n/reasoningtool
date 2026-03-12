@@ -4,6 +4,8 @@ description: "Find 10 skills that pair well with a specified skill, covering its
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "complement", "pairing"]
+output:
+  format: "prose"
 ---
 
 # Pick 10 Complement

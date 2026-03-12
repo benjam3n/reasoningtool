@@ -1,6 +1,8 @@
 ---
 name: "phil - Philosophize Requirements"
 description: "Derive what a skill, system, or solution SHOULD do by examining its nature, purpose, and the problem it exists to solve — before writing any procedures."
+output:
+  format: "prose"
 ---
 
 # Philosophize Requirements

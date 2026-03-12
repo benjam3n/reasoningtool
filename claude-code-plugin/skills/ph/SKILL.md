@@ -1,6 +1,8 @@
 ---
 name: ph
 description: "Not all procedures are equal. There is a hierarchy of meta-procedures and content procedures."
+output:
+  format: "prose"
 ---
 
 # Procedure Hierarchy

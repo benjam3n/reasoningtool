@@ -1,6 +1,8 @@
 ---
 name: "llmf - LLM Feasibility"
 description: Assess whether a task is well-suited for LLM execution. Checks factual accuracy needs, context window requirements, hallucination risks, output verifiability, and recommends guardrails.
+output:
+  format: "prose"
 ---
 
 # LLM Feasibility

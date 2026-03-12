@@ -1,1 +1,1 @@
-Reasoning from conclusions back to premises. Given a conclusion, what journey led here? Reveals purpose and enables eval. Read and execute `claude-code-plugin/skills/br/SKILL.md`, applying it to this input: $ARGUMENTS
+Reasoning from conclusions back to premises. Given a conclusion, what journey led here? Reveals purpose and enables eval. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/br/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "mcd - Multi-Criteria Decision Analysis"
 description: "Systematic procedure for making decisions involving multiple criteria, tradeoffs, and stakeholders"
+output:
+  format: "prose"
 ---
 
 # Multi-Criteria Decision Analysis

@@ -1,1 +1,1 @@
-Derive the appropriate method from the situation rather than. Read and execute `claude-code-plugin/skills/md/SKILL.md`, applying it to this input: $ARGUMENTS
+Derive the appropriate method from the situation rather than. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/md/SKILL.md`, applying it to this input: $ARGUMENTS

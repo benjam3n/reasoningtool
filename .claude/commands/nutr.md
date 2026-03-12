@@ -1,1 +1,1 @@
-Design a practical nutrition plan based on actual eating patterns, real constraints, and sustainable changes — not idealized diets. Read and execute `claude-code-plugin/skills/nutr/SKILL.md`, applying it to this input: $ARGUMENTS
+Design a practical nutrition plan based on actual eating patterns, real constraints, and sustainable changes — not idealized diets. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/nutr/SKILL.md`, applying it to this input: $ARGUMENTS

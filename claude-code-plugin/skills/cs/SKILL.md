@@ -1,6 +1,8 @@
 ---
 name: "cs - Create Skill"
 description: "Create, update, or gap-scan skills. Three modes: CREATE produces a new SKILL.md, UPDATE improves an existing one, GAP_SCAN identifies missing skills."
+output:
+  format: "prose"
 ---
 
 # CS - Create Skill

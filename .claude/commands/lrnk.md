@@ -1,1 +1,1 @@
-Systematic procedure for learning anything. Assesses current knowledge, identifies gaps, chooses learning strategies, sets milestones, and plans ongoing review. Read and execute `claude-code-plugin/skills/lrnk/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic procedure for learning anything. Assesses current knowledge, identifies gaps, chooses learning strategies, sets milestones, and plans ongoing review. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/lrnk/SKILL.md`, applying it to this input: $ARGUMENTS

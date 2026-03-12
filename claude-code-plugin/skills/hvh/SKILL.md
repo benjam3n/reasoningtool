@@ -1,6 +1,8 @@
 ---
 name: "hvh - High Volatility Handler"
 description: "Handle goals and plans in rapidly changing environments where conditions shift faster than normal planning cycles."
+output:
+  format: "prose"
 ---
 
 # High Volatility Handler

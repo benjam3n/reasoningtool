@@ -1,6 +1,8 @@
 ---
 name: "dys - Dystopia Analysis"
 description: Systematically construct and examine the worst possible outcome — what does failure look like at scale, and what path leads there?
+output:
+  format: "prose"
 ---
 
 # Dystopia Analysis

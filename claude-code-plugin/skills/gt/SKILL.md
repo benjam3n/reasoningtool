@@ -1,6 +1,8 @@
 ---
 name: "gt - Graph Traversal Orderings"
 description: "Orderings derived from graph traversal algorithms — BFS for breadth, DFS for depth, topological for dependencies."
+output:
+  format: "prose"
 ---
 
 # Graph Traversal Orderings

@@ -1,6 +1,8 @@
 ---
 name: "meta - Get Oriented"
 description: Sub-orchestrator for meta-questions about the toolkit. Provides skill discovery, usage guidance, and orientation.
+output:
+  format: "prose"
 ---
 
 # Meta

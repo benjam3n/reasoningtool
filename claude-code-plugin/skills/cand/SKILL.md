@@ -1,6 +1,8 @@
 ---
 name: "cand - Candidate Evaluation"
 description: Systematically evaluates candidates for any role, position, or slot. Scores on requirements, checks for disqualifiers, and ranks by fit.
+output:
+  format: "prose"
 ---
 
 # Candidate Evaluation

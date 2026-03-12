@@ -1,6 +1,8 @@
 ---
 name: pcef
 description: "Unified framework for procedure effectiveness tracking — operational and empirical."
+output:
+  format: "prose"
 ---
 
 # Procedure Effectiveness

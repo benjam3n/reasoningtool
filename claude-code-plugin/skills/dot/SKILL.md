@@ -1,6 +1,8 @@
 ---
 name: dot
 description: "Procedure for tracking outcomes that take months or years to manifest."
+output:
+  format: "prose"
 ---
 
 # Delayed Outcome Tracking

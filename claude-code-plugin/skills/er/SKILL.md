@@ -1,6 +1,8 @@
 ---
 name: "er - Economic Research"
 description: "Systematic analysis of economic viability, cost structures, and comparative advantage"
+output:
+  format: "prose"
 ---
 
 # Economic Research

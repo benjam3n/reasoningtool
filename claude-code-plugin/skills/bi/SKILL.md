@@ -1,6 +1,8 @@
 ---
 name: "bi - Bounded Inquiry"
 description: "Unbounded inquiry cannot terminate - every answer opens new questions."
+output:
+  format: "prose"
 ---
 
 # Bounded Inquiry

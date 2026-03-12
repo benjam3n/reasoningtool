@@ -1,1 +1,1 @@
-Decide what information, concerns, and possibilities to deliberately ignore. Productive neglect through systematic triage. Read and execute `claude-code-plugin/skills/ign/SKILL.md`, applying it to this input: $ARGUMENTS
+Decide what information, concerns, and possibilities to deliberately ignore. Productive neglect through systematic triage. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ign/SKILL.md`, applying it to this input: $ARGUMENTS

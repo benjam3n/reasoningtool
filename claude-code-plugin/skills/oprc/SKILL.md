@@ -1,6 +1,8 @@
 ---
 name: "oprc - Procedure Generation"
 description: Generates step-by-step procedures with dependency ordering, decision points, and failure handling. Takes a goal and produces a complete, testable procedure.
+output:
+  format: "prose"
 ---
 
 # Procedure Generation

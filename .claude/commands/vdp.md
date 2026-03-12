@@ -1,1 +1,1 @@
-Eight principles of visual design derived from first principles (cognitive load, gestalt perception, reading research). . Read and execute `claude-code-plugin/skills/vdp/SKILL.md`, applying it to this input: $ARGUMENTS
+Eight principles of visual design derived from first principles (cognitive load, gestalt perception, reading research). . Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/vdp/SKILL.md`, applying it to this input: $ARGUMENTS

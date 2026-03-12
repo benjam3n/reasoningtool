@@ -1,1 +1,1 @@
-Guides the design of skills that can be inserted into other skills as steps — working as both standalone tools and embedded gates/checks within host skills. Read and execute `claude-code-plugin/skills/injc/SKILL.md`, applying it to this input: $ARGUMENTS
+Guides the design of skills that can be inserted into other skills as steps — working as both standalone tools and embedded gates/checks within host skills. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/injc/SKILL.md`, applying it to this input: $ARGUMENTS

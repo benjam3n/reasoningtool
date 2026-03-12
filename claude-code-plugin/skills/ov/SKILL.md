@@ -1,6 +1,8 @@
 ---
 name: ov
 description: "Alternative ordering strategies for procedure steps when the default doesn't fit."
+output:
+  format: "prose"
 ---
 
 # Ordering Strategy Variations

@@ -1,1 +1,1 @@
-Decompose a prompt into its explicit requests, implicit requests, constraints, assumptions, emotional signals, and candidate skill mappings — making every part visible. Read and execute `claude-code-plugin/skills/itp/SKILL.md`, applying it to this input: $ARGUMENTS
+Decompose a prompt into its explicit requests, implicit requests, constraints, assumptions, emotional signals, and candidate skill mappings — making every part visible. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/itp/SKILL.md`, applying it to this input: $ARGUMENTS

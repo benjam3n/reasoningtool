@@ -1,1 +1,1 @@
-Validate that a list is MECE (Mutually Exclusive, Collectively Exhaustive). Identifies overlaps and gaps.. Read and execute `claude-code-plugin/skills/mv/SKILL.md`, applying it to this input: $ARGUMENTS
+Validate that a list is MECE (Mutually Exclusive, Collectively Exhaustive). Identifies overlaps and gaps.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/mv/SKILL.md`, applying it to this input: $ARGUMENTS

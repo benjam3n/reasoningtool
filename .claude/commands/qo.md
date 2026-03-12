@@ -1,1 +1,1 @@
-Find the satisfying unresolved question that opens a document and order all questions in a dependency chain. Upstream of. Read and execute `claude-code-plugin/skills/qo/SKILL.md`, applying it to this input: $ARGUMENTS
+Find the satisfying unresolved question that opens a document and order all questions in a dependency chain. Upstream of. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/qo/SKILL.md`, applying it to this input: $ARGUMENTS

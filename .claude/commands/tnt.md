@@ -1,1 +1,1 @@
-While value_conflict_decomposition provides the framework for understanding conflicts,. Read and execute `claude-code-plugin/skills/tnt/SKILL.md`, applying it to this input: $ARGUMENTS
+While value_conflict_decomposition provides the framework for understanding conflicts,. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/tnt/SKILL.md`, applying it to this input: $ARGUMENTS

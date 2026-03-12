@@ -1,6 +1,8 @@
 ---
 name: "plsk - Plans"
 description: Procedure for evaluating and improving plans. Checks if steps lead to goal, identifies missing or unnecessary steps, assesses sequencing and resources, and suggests improvements.
+output:
+  format: "prose"
 ---
 
 # Plans

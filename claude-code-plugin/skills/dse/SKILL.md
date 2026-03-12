@@ -1,6 +1,8 @@
 ---
 name: dse
 description: "Evaluate strategies based on the logical soundness of their derivation."
+output:
+  format: "prose"
 ---
 
 # Deductive Strategy Evaluation

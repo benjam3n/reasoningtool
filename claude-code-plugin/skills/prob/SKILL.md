@@ -1,6 +1,8 @@
 ---
 name: "prob - Probabilistic Reasoning"
 description: Reason under uncertainty using Bayesian thinking, base rates, confidence calibration, and expected value. Avoid base rate neglect, conjunction fallacy, overconfidence, and other probability traps.
+output:
+  format: "prose"
 ---
 
 # Probabilistic Reasoning

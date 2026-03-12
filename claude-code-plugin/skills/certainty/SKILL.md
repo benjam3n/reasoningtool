@@ -1,6 +1,8 @@
 ---
 name: "certainty - Maximum Effort Resolution"
 description: Continues analysis until the answer is thoroughly resolved. Chains multiple skills iteratively, escalating depth until no unresolved branches, untested assumptions, or competing conclusions remain.
+output:
+  format: "prose"
 ---
 
 # Certainty

@@ -1,6 +1,8 @@
 ---
 name: "op - Order Procedure"
 description: "Determine the correct execution order for a set of steps based on dependencies and constraints"
+output:
+  format: "prose"
 ---
 
 # Order Procedure

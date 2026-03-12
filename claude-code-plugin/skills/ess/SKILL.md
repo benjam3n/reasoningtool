@@ -1,6 +1,8 @@
 ---
 name: "ess - External Source Search"
 description: "Systematic procedure for searching external sources to find evidence, data, and information relevant to a question."
+output:
+  format: "prose"
 ---
 
 # External Source Search

@@ -2,6 +2,8 @@
 name: "dct - Decision Tree Analysis"
 description: "Systematic procedure for structuring complex decisions with multiple branches, probabilities, and outcomes. Includes empirical validation for probability estimates."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Decision Tree Analysis

@@ -1,6 +1,8 @@
 ---
 name: "orcs - Orchestrator Skill Design"
 description: Guides the design of routing and orchestrating skills that classify input, map it to the right target skill, and handle edge cases and ambiguous inputs.
+output:
+  format: "prose"
 ---
 
 # Orchestrator Skill Design

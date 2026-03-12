@@ -1,6 +1,8 @@
 ---
 name: "prcp - Perception Skills"
 description: Systematic procedure for improving what you notice. Slows down observation, separates what's present from what's interpreted, and surfaces what you normally filter out.
+output:
+  format: "prose"
 ---
 
 # Perception Skills

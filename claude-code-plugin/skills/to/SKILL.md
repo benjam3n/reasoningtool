@@ -1,6 +1,8 @@
 ---
 name: "to - Topological Ordering"
 description: Generate valid execution sequences from dependencies. Respects hard constraints, optimizes for priorities, and identifies parallel execution opportunities.
+output:
+  format: "hybrid"
 ---
 
 # Topological Ordering

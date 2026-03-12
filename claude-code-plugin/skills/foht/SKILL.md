@@ -1,6 +1,8 @@
 ---
 name: "foht - Figure Out How To"
 description: Figure Out How To - Method discovery when you know WHAT but not HOW. Systematically map the method space, test candidates, and find approaches that survive scrutiny.
+output:
+  format: "prose"
 ---
 
 # FOHT - Figure Out How To

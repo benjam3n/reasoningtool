@@ -1,6 +1,8 @@
 ---
 name: "redteam - Red Team Analysis"
 description: Adversarial analysis — attack your own plan, argument, or system. Find the failure modes, exploit the weaknesses, identify what an intelligent adversary would do. Then fix what you found.
+output:
+  format: "prose"
 ---
 
 # Red Team Analysis

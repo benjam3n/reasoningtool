@@ -1,6 +1,8 @@
 ---
 name: dsd
 description: "Derive strategies by working backward from success criteria to required actions."
+output:
+  format: "prose"
 ---
 
 # Deductive Strategy Discovery

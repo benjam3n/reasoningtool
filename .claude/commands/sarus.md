@@ -1,1 +1,1 @@
-Repo-wide scan to find question patterns that commonly require interpretation before answering.. Read and execute `claude-code-plugin/skills/sarus/SKILL.md`, applying it to this input: $ARGUMENTS
+Repo-wide scan to find question patterns that commonly require interpretation before answering.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sarus/SKILL.md`, applying it to this input: $ARGUMENTS

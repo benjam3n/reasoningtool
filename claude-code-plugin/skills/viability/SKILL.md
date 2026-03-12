@@ -1,6 +1,8 @@
 ---
 name: "viability - Test an Idea"
 description: Sub-orchestrator for ideas and proposals. Routes to ARAW viability testing with appropriate development, risk assessment, and supplementary analysis for outcome projection and reframing.
+output:
+  format: "prose"
 ---
 
 # Viability

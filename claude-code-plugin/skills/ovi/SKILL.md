@@ -1,6 +1,8 @@
 ---
 name: "ovi - Ordering Variations Integration"
 description: "Guide for selecting and applying the right ordering strategy to any procedure's steps."
+output:
+  format: "prose"
 ---
 
 # Ordering Variations Integration

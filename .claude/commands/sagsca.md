@@ -1,1 +1,1 @@
-Identify inconsistent gate field schemas across the library that increase interpretation burden and cause engine integra. Read and execute `claude-code-plugin/skills/sagsca/SKILL.md`, applying it to this input: $ARGUMENTS
+Identify inconsistent gate field schemas across the library that increase interpretation burden and cause engine integra. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sagsca/SKILL.md`, applying it to this input: $ARGUMENTS

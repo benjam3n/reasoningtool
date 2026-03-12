@@ -1,6 +1,8 @@
 ---
 name: "search - Explore a Space"
 description: Sub-orchestrator for exploration. Routes to UAUA, space enumeration, dimension discovery, list building, or pattern expansion based on what's known and what's needed.
+output:
+  format: "prose"
 ---
 
 # Search

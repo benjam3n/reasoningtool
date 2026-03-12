@@ -1,6 +1,8 @@
 ---
 name: "rtas - Rights Assessment"
 description: Identify and evaluate rights in a situation by mapping all parties, determining applicable rights, assessing respect, and identifying remedies.
+output:
+  format: "prose"
 ---
 
 # Rights Assessment

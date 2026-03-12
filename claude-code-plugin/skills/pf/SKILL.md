@@ -1,6 +1,8 @@
 ---
 name: "pf - Priority Framework Orderings"
 description: "Classic priority frameworks — Eisenhower matrix, MoSCoW, RICE, weighted scoring — for systematic ranking."
+output:
+  format: "prose"
 ---
 
 # Priority Framework Orderings

@@ -1,6 +1,8 @@
 ---
 name: "be - Bandit Exploration Orderings"
 description: "Orderings from multi-armed bandit algorithms for balancing exploration of unknown options with exploitation of known good ones."
+output:
+  format: "prose"
 ---
 
 # Bandit Exploration Orderings

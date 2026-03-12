@@ -1,1 +1,1 @@
-Assume Right / Assume Wrong search - For every claim, explore what follows if true (AR) and what breaks if false (AW). N. Read and execute `claude-code-plugin/skills/araw/SKILL.md`, applying it to this input: $ARGUMENTS
+Assume Right / Assume Wrong search - For every claim, explore what follows if true (AR) and what breaks if false (AW). N. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/araw/SKILL.md`, applying it to this input: $ARGUMENTS

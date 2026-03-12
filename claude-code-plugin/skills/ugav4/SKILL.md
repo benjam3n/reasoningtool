@@ -4,6 +4,8 @@ description: "Goal analysis emphasizing leverage identification and stakeholder 
 tier: "tier4"
 categories: ["Goal Processing"]
 tags: ["goal", "leverage", "communication", "stakeholders"]
+output:
+  format: "prose"
 ---
 
 # Universal Goal Analysis v4: Leverage Analysis & Communication

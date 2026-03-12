@@ -1,6 +1,8 @@
 ---
 name: sadrt
 description: "Estimate where two independent executors would diverge when applying the same gate/procedure to the same input."
+output:
+  format: "prose"
 ---
 
 # Divergence Risk Test

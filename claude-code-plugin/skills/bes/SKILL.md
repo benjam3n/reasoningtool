@@ -1,6 +1,8 @@
 ---
 name: "bes - Binary Elimination Search"
 description: Like playing 20 Questions - each yes/no question eliminates half the possibilities. For N options, at most log2(N) questions needed.
+output:
+  format: "prose"
 ---
 
 # Binary Elimination Search

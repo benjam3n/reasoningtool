@@ -1,6 +1,8 @@
 ---
 name: "ns - Negotiation Strategy Orderings"
 description: "Orderings for strategic interactions where sequence of moves affects counterparty responses."
+output:
+  format: "prose"
 ---
 
 # Negotiation Strategy Orderings

@@ -1,1 +1,1 @@
-Plan for AI-agent coordination and autonomous operation. Design handoff protocols, error recovery, and human oversight. Read and execute `claude-code-plugin/skills/ltai/SKILL.md`, applying it to this input: $ARGUMENTS
+Plan for AI-agent coordination and autonomous operation. Design handoff protocols, error recovery, and human oversight. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ltai/SKILL.md`, applying it to this input: $ARGUMENTS

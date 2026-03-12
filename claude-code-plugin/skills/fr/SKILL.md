@@ -1,6 +1,8 @@
 ---
 name: "fr - Failure Recovery"
 description: "Structured recovery procedures when projects encounter failures, providing clear decision trees and specific actions for common failure modes."
+output:
+  format: "prose"
 ---
 
 # Failure Recovery

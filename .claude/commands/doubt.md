@@ -1,1 +1,1 @@
-Handle post-decision doubt and break the cycle of second-guessing Read and execute `claude-code-plugin/skills/doubt/SKILL.md`, applying it to this input: $ARGUMENTS
+Handle post-decision doubt and break the cycle of second-guessing Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/doubt/SKILL.md`, applying it to this input: $ARGUMENTS

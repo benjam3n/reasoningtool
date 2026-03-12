@@ -1,1 +1,1 @@
-Evaluate a "should" claim. Identify underlying values, check if prescriptions serve those values, and assess competing considerations. Read and execute `claude-code-plugin/skills/ncl/SKILL.md`, applying it to this input: $ARGUMENTS
+Evaluate a "should" claim. Identify underlying values, check if prescriptions serve those values, and assess competing considerations. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ncl/SKILL.md`, applying it to this input: $ARGUMENTS

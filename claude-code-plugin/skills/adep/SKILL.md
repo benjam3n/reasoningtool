@@ -1,6 +1,8 @@
 ---
 name: "adep - Adaptive Extraction Pipeline"
 description: "Breadth-first, learned extraction pipeline that clarifies goals first, samples broadly, learns user preferences, and extracts selectively from highest-value items."
+output:
+  format: "prose"
 ---
 
 # Adaptive Extraction Pipeline

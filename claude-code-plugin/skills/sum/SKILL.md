@@ -1,6 +1,8 @@
 ---
 name: "sum - Summarize"
 description: "Summarize anything — text, conversations, situations, projects, decisions, or experiences — using the interpretation that best matches what the user actually needs."
+output:
+  format: "prose"
 ---
 
 # Summarize

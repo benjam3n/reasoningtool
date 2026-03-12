@@ -1,6 +1,8 @@
 ---
 name: "sdc - Self-Deception Check"
 description: "Detect when reasoning is actually rationalization. Mechanical checks for motivated reasoning, emotional override, and evidence asymmetry."
+output:
+  format: "prose"
 ---
 
 # Self-Deception Check

@@ -1,6 +1,8 @@
 ---
 name: "efrt - Effort Estimation"
 description: Estimates how much effort something will take. Decomposes into subtasks, applies three-point estimation, adds buffers, and compares to reference classes.
+output:
+  format: "prose"
 ---
 
 # Effort Estimation

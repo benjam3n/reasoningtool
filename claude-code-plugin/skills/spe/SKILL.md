@@ -1,6 +1,8 @@
 ---
 name: spe
 description: "Extends the search paradigm to non-obvious domains. Identifies which search methods should become procedures."
+output:
+  format: "prose"
 ---
 
 # Search Paradigm Extensions and Procedure Candidates

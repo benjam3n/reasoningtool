@@ -1,6 +1,8 @@
 ---
 name: "ape - Alphacode Pass 1 Explicit"
 description: "First pass at competitive programming — explicit problem decomposition, constraint identification, and straightforward implementation."
+output:
+  format: "prose"
 ---
 
 # Alphacode Pass 1 Explicit

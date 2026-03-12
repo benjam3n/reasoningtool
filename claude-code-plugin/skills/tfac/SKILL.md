@@ -1,6 +1,8 @@
 ---
 name: "tfac - Team Facilitation"
 description: Design and run effective group sessions that produce clear outcomes, manage group dynamics, and keep participants engaged.
+output:
+  format: "prose"
 ---
 
 # Team Facilitation

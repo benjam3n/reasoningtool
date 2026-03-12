@@ -1,6 +1,8 @@
 ---
 name: "chns - Chainable Skill Design"
 description: Guides the design of skills that compose well with other skills, with clean input/output contracts and narrow scope for reliable handoffs.
+output:
+  format: "prose"
 ---
 
 # Chainable Skill Design

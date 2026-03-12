@@ -1,1 +1,1 @@
-Orderings optimized for acquiring knowledge, validating hypotheses,. Read and execute `claude-code-plugin/skills/ld/SKILL.md`, applying it to this input: $ARGUMENTS
+Orderings optimized for acquiring knowledge, validating hypotheses,. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ld/SKILL.md`, applying it to this input: $ARGUMENTS

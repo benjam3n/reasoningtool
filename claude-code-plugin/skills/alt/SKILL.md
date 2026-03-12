@@ -1,6 +1,8 @@
 ---
 name: "alt - Abstraction Level"
 description: "Choose the right level of abstraction for understanding, deciding, executing, communicating, or creating. Zoom in, zoom out, or reframe."
+output:
+  format: "prose"
 ---
 
 # Abstraction Level

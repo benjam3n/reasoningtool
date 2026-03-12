@@ -1,6 +1,8 @@
 ---
 name: sacri
 description: "Ensure gates and procedures link to other procedures that provide the needed answer-interface and next steps."
+output:
+  format: "prose"
 ---
 
 # Cross-Reference Integrity Audit

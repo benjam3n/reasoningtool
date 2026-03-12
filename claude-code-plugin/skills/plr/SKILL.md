@@ -1,6 +1,8 @@
 ---
 name: "plr - Policy Research"
 description: "Identify evidence-based, neglected, tractable policies for advocacy campaigns"
+output:
+  format: "prose"
 ---
 
 # Policy Research

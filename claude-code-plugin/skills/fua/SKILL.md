@@ -1,6 +1,8 @@
 ---
 name: "fua - Fundraising (Advocacy)"
 description: "Build self-sustaining funding for advocacy operations through multiple revenue streams"
+output:
+  format: "prose"
 ---
 
 # Fundraising (Advocacy)

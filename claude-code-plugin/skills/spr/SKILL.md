@@ -1,6 +1,8 @@
 ---
 name: "spr - Spaced Repetition"
 description: "Design and implement spaced repetition systems for durable long-term retention of knowledge"
+output:
+  format: "prose"
 ---
 
 # Spaced Repetition

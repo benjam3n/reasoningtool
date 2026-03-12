@@ -1,1 +1,1 @@
-Moves from analysis to commitment. Frames the decision, enumerates options, applies criteria, checks for decision traps, and documents the rationale. Read and execute `claude-code-plugin/skills/dcst/SKILL.md`, applying it to this input: $ARGUMENTS
+Moves from analysis to commitment. Frames the decision, enumerates options, applies criteria, checks for decision traps, and documents the rationale. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dcst/SKILL.md`, applying it to this input: $ARGUMENTS

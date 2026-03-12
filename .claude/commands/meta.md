@@ -1,1 +1,1 @@
-Sub-orchestrator for meta-questions about the toolkit. Provides skill discovery, usage guidance, and orientation. Read and execute `claude-code-plugin/skills/meta/SKILL.md`, applying it to this input: $ARGUMENTS
+Sub-orchestrator for meta-questions about the toolkit. Provides skill discovery, usage guidance, and orientation. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/meta/SKILL.md`, applying it to this input: $ARGUMENTS

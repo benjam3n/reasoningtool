@@ -1,6 +1,8 @@
 ---
 name: "aex - Assumption Extraction"
 description: Extract hidden assumptions from any content. Surfaces what must be true for claims to hold, enabling deeper analysis.
+output:
+  format: "prose"
 ---
 
 # Assumption Extraction

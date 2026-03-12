@@ -1,1 +1,1 @@
-Orderings from formal project management methodologies (PERT, CPM,. Read and execute `claude-code-plugin/skills/pjm/SKILL.md`, applying it to this input: $ARGUMENTS
+Orderings from formal project management methodologies (PERT, CPM,. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/pjm/SKILL.md`, applying it to this input: $ARGUMENTS

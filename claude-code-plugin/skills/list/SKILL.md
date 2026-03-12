@@ -1,6 +1,8 @@
 ---
 name: "list - Build High-Quality Lists"
 description: "Create rigorous, useful lists with clear scope, inclusion rules, ordering logic, coverage checks, and concise rationale per item — avoiding the common failures of vagueness, gaps, and inconsistent granularity."
+output:
+  format: "checklist"
 ---
 
 # List - Build High-Quality Lists

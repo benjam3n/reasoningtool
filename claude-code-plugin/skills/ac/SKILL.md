@@ -1,6 +1,8 @@
 ---
 name: "ac - Adversarial Checklist"
 description: Create a checklist that catches what normal checklists miss. Each item includes adversarial branches -- what if this assumption is wrong? Chains assumption extraction, failure anticipation, assumption inversion, and steps generation.
+output:
+  format: "prose"
 ---
 
 # Adversarial Checklist

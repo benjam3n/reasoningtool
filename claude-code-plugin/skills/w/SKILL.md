@@ -1,6 +1,8 @@
 ---
 name: "w - High Quality Writing"
 description: Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically — upstream criteria determine whether writing works; downstream criteria determine how well.
+output:
+  format: "prose"
 ---
 
 # High Quality Writing

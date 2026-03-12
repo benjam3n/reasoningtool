@@ -1,1 +1,1 @@
-Learn from what happened before to predict what happens next. Identify recurring patterns, test causality, and project forward. Read and execute `claude-code-plugin/skills/hpat/SKILL.md`, applying it to this input: $ARGUMENTS
+Learn from what happened before to predict what happens next. Identify recurring patterns, test causality, and project forward. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/hpat/SKILL.md`, applying it to this input: $ARGUMENTS

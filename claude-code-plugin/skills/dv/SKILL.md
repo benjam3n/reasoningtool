@@ -1,6 +1,8 @@
 ---
 name: "dv - Detection Verification Orderings"
 description: "Orderings optimized for detecting deception, fraud, anomalies, and inconsistencies."
+output:
+  format: "prose"
 ---
 
 # Detection Verification Orderings

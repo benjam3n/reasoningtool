@@ -1,6 +1,8 @@
 ---
 name: "rf - Refactoring"
 description: "Procedure for systematically improving code structure without changing behavior"
+output:
+  format: "prose"
 ---
 
 # Refactoring

@@ -1,6 +1,8 @@
 ---
 name: "oba - Obvious Anything"
 description: Comprehensive obvious-things scan. Checks for everything obvious that might be missed — facts, actions, risks, outcomes, stakeholders, and assumptions.
+output:
+  format: "prose"
 ---
 
 # Obvious Anything

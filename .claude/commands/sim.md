@@ -1,1 +1,1 @@
-Takes any complex thing (plan, explanation, process, argument) and strips it to its essential core without losing meaning. Read and execute `claude-code-plugin/skills/sim/SKILL.md`, applying it to this input: $ARGUMENTS
+Takes any complex thing (plan, explanation, process, argument) and strips it to its essential core without losing meaning. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sim/SKILL.md`, applying it to this input: $ARGUMENTS

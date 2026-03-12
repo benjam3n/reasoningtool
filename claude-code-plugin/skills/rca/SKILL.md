@@ -2,6 +2,8 @@
 name: "rca - Root Cause Analysis"
 description: "Systematically trace symptoms back to their underlying root causes using structured diagnostic techniques. Supports context-adaptive variants."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Root Cause Analysis

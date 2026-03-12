@@ -1,1 +1,1 @@
-Procedure for analyzing products or offerings. Identifies the user and their need, evaluates fit, compares against alternatives, and finds improvement opportunities. Read and execute `claude-code-plugin/skills/prsk/SKILL.md`, applying it to this input: $ARGUMENTS
+Procedure for analyzing products or offerings. Identifies the user and their need, evaluates fit, compares against alternatives, and finds improvement opportunities. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/prsk/SKILL.md`, applying it to this input: $ARGUMENTS

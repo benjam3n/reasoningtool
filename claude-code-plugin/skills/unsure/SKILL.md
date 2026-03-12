@@ -1,6 +1,8 @@
 ---
 name: "unsure - Not Sure About This"
 description: "For mild uncertainty — you have a direction but aren't confident. A decision tree to move from hesitation to action or justified pause."
+output:
+  format: "prose"
 ---
 
 # Unsure - Not Sure About This

@@ -1,1 +1,1 @@
-Design a structured learning path for any subject. Sequences topics by dependency, selects methods, sets milestones, and estimates time. Read and execute `claude-code-plugin/skills/curd/SKILL.md`, applying it to this input: $ARGUMENTS
+Design a structured learning path for any subject. Sequences topics by dependency, selects methods, sets milestones, and estimates time. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/curd/SKILL.md`, applying it to this input: $ARGUMENTS

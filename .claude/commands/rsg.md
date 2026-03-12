@@ -1,1 +1,1 @@
-Handler for goals focused on REBUILDING from damage, not improving from baseline.. Read and execute `claude-code-plugin/skills/rsg/SKILL.md`, applying it to this input: $ARGUMENTS
+Handler for goals focused on REBUILDING from damage, not improving from baseline.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/rsg/SKILL.md`, applying it to this input: $ARGUMENTS

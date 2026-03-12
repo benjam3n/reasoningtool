@@ -1,1 +1,1 @@
-Systematic validation procedure. Defines criteria, runs checks, flags failures, and makes a pass/fail determination with reasoning. Read and execute `claude-code-plugin/skills/vldt/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic validation procedure. Defines criteria, runs checks, flags failures, and makes a pass/fail determination with reasoning. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/vldt/SKILL.md`, applying it to this input: $ARGUMENTS

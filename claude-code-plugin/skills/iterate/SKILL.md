@@ -1,6 +1,8 @@
 ---
 name: "iterate - Figure Out What to Iterate On"
 description: Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted — then executes the highest-value iteration.
+output:
+  format: "prose"
 ---
 
 # Iterate

@@ -1,6 +1,8 @@
 ---
 name: clg
 description: "Handler for goals that require building collectives, communities, or movements."
+output:
+  format: "prose"
 ---
 
 # Collective and Movement Goals Handler

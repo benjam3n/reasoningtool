@@ -1,1 +1,1 @@
-Check for obvious good outcomes that are being overlooked or underweighted in an analysis. Read and execute `claude-code-plugin/skills/ogo/SKILL.md`, applying it to this input: $ARGUMENTS
+Check for obvious good outcomes that are being overlooked or underweighted in an analysis. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ogo/SKILL.md`, applying it to this input: $ARGUMENTS

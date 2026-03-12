@@ -1,6 +1,8 @@
 ---
 name: "rlcl - Relational Claim Analysis"
 description: Evaluate claims about how things relate. Verify the relationship type, test its strength, and identify its boundaries.
+output:
+  format: "prose"
 ---
 
 # Relational Claim Analysis

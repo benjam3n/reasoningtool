@@ -1,6 +1,8 @@
 ---
 name: "but - Contrast and Objection Handler"
 description: "Handle 'but' statements by separating the main claim from the objection, classifying the tension type, and routing to the right resolution skill."
+output:
+  format: "prose"
 ---
 
 # BUT - Contrast and Objection Handler

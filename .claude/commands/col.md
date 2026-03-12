@@ -1,1 +1,1 @@
-Designs how a group of people should work together — roles, communication, decisions, handoffs, and accountability. Read and execute `claude-code-plugin/skills/col/SKILL.md`, applying it to this input: $ARGUMENTS
+Designs how a group of people should work together — roles, communication, decisions, handoffs, and accountability. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/col/SKILL.md`, applying it to this input: $ARGUMENTS

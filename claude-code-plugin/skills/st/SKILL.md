@@ -1,6 +1,8 @@
 ---
 name: st
 description: "Every strategy exists within a game. Characterize the game, design strategies with clear mechanisms, evaluate along key dimensions."
+output:
+  format: "prose"
 ---
 
 # Strategy Templates

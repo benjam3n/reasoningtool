@@ -1,6 +1,8 @@
 ---
 name: "pji - Project Initiation"
 description: "Launch projects with clear charter, stakeholders, and success criteria"
+output:
+  format: "prose"
 ---
 
 # Project Initiation

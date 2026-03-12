@@ -1,6 +1,8 @@
 ---
 name: "dtsk - Data Analysis"
 description: "Work with data systematically: assess what exists, evaluate quality, identify gaps, choose methods, interpret results, and communicate findings."
+output:
+  format: "prose"
 ---
 
 # DTSK - Data Analysis

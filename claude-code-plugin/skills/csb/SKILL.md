@@ -1,6 +1,8 @@
 ---
 name: "csb - Consensus Building"
 description: Move a group toward agreement by surfacing real disagreements, generating options, and using gradients of agreement rather than binary votes.
+output:
+  format: "prose"
 ---
 
 # Consensus Building

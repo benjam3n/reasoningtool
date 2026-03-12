@@ -1,1 +1,1 @@
-Determine which skills to run next (more than one), in order, with rationale, handoff prompts, and stop conditions. Read and execute `claude-code-plugin/skills/fonss/SKILL.md`, applying it to this input: $ARGUMENTS
+Determine which skills to run next (more than one), in order, with rationale, handoff prompts, and stop conditions. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/fonss/SKILL.md`, applying it to this input: $ARGUMENTS

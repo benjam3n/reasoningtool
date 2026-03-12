@@ -1,6 +1,8 @@
 ---
 name: "blank - Drawing a Blank"
 description: "Break through creative or productive blocks when nothing comes to mind"
+output:
+  format: "prose"
 ---
 
 # Drawing a Blank

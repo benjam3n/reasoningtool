@@ -1,6 +1,8 @@
 ---
 name: "pwif - Physical World Interface"
 description: Bridge thinking to real-world action — account for physical logistics, materials, locations, time, and failure modes that pure reasoning ignores.
+output:
+  format: "prose"
 ---
 
 # Physical World Interface

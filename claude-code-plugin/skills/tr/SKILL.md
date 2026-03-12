@@ -1,6 +1,8 @@
 ---
 name: "tr - Template Registry"
 description: Registry for domain templates. Store, retrieve, search, and manage domain-specific configurations.
+output:
+  format: "prose"
 ---
 
 # Template Registry

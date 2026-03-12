@@ -1,6 +1,8 @@
 ---
 name: "dop - Documentation Procedures"
 description: "Create comprehensive project documentation that allows others to understand, reproduce, and maintain the project."
+output:
+  format: "prose"
 ---
 
 # Documentation Procedures

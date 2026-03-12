@@ -1,6 +1,8 @@
 ---
 name: "gen - Generate - Diverse Candidate Production"
 description: Produce diverse candidate solutions. Given constraints and purpose, generate N candidates ranging from conventional to extreme. The creative primitive that other skills call.
+output:
+  format: "prose"
 ---
 
 # Generate - Diverse Candidate Production

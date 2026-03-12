@@ -1,6 +1,8 @@
 ---
 name: "cmplx - Complex Analysis"
 description: "Framework for genuinely complex problems that resist simple answers. Identify sources of complexity, choose appropriate tools, decompose without oversimplifying, and synthesize."
+output:
+  format: "prose"
 ---
 
 # CMPLX - Complex Analysis

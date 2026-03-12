@@ -1,1 +1,1 @@
-Systematically capture, analyze, and apply learnings to improve campaign effectiveness. Read and execute `claude-code-plugin/skills/lrs/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically capture, analyze, and apply learnings to improve campaign effectiveness. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/lrs/SKILL.md`, applying it to this input: $ARGUMENTS

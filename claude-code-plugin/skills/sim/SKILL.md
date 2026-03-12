@@ -1,6 +1,8 @@
 ---
 name: "sim - Simplification"
 description: Takes any complex thing (plan, explanation, process, argument) and strips it to its essential core without losing meaning.
+output:
+  format: "prose"
 ---
 
 # Simplification

@@ -1,6 +1,8 @@
 ---
 name: "pjs - Project Scoping"
 description: "Define project scope — what's included, excluded, success criteria, constraints, and boundaries. Prevents scope creep."
+output:
+  format: "prose"
 ---
 
 # Project Scoping

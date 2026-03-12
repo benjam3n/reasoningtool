@@ -1,6 +1,8 @@
 ---
 name: "sid - Situation Identification"
 description: "Identify what situation you are actually in before attempting to solve it. Prevents the most dangerous failure: solving the wrong problem perfectly."
+output:
+  format: "prose"
 ---
 
 # Situation Identification

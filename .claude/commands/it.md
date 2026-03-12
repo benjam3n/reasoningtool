@@ -1,1 +1,1 @@
-Process 'I think' statements into explicit claims with confidence levels, evidence/assumption separation, and next verification actions. Read and execute `claude-code-plugin/skills/it/SKILL.md`, applying it to this input: $ARGUMENTS
+Process 'I think' statements into explicit claims with confidence levels, evidence/assumption separation, and next verification actions. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/it/SKILL.md`, applying it to this input: $ARGUMENTS

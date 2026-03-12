@@ -1,1 +1,1 @@
-Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuous . Read and execute `claude-code-plugin/skills/wr/SKILL.md`, applying it to this input: $ARGUMENTS
+Weekly review procedure to maintain visibility across all active projects, identify stalled work, and ensure continuous . Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/wr/SKILL.md`, applying it to this input: $ARGUMENTS

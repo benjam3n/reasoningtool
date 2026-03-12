@@ -1,6 +1,8 @@
 ---
 name: "stl - Storytelling"
 description: "Systematic procedure for crafting and delivering compelling stories that create emotional connection and drive action"
+output:
+  format: "prose"
 ---
 
 # Storytelling

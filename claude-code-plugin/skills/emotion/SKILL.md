@@ -1,6 +1,8 @@
 ---
 name: "emotion - Process a Feeling"
 description: Sub-orchestrator for emotional inputs. Acknowledges the emotion, identifies the implicit request, and routes to the appropriate analytical skill — with expanded routing for reframing, scope control, and self-check skills.
+output:
+  format: "prose"
 ---
 
 # Emotion

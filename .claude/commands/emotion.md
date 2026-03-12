@@ -1,1 +1,1 @@
-Sub-orchestrator for emotional inputs. Acknowledges the emotion, identifies the implicit request, and routes to the appropriate analytical skill. Read and execute `claude-code-plugin/skills/emotion/SKILL.md`, applying it to this input: $ARGUMENTS
+Sub-orchestrator for emotional inputs. Acknowledges the emotion, identifies the implicit request, and routes to the appropriate analytical skill. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/emotion/SKILL.md`, applying it to this input: $ARGUMENTS

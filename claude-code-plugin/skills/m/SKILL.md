@@ -1,6 +1,8 @@
 ---
 name: "m - Matching"
 description: "Define criteria for filtering options"
+output:
+  format: "prose"
 ---
 
 # Matching

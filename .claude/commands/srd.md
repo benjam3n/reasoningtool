@@ -1,1 +1,1 @@
-Orderings for legitimate competitive, adversarial, and performance contexts. Read and execute `claude-code-plugin/skills/srd/SKILL.md`, applying it to this input: $ARGUMENTS
+Orderings for legitimate competitive, adversarial, and performance contexts. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/srd/SKILL.md`, applying it to this input: $ARGUMENTS

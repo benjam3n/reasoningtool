@@ -1,1 +1,1 @@
-Identify quality standards, benchmark current skill level, and design deliberate practice to close gaps. Read and execute `claude-code-plugin/skills/skb/SKILL.md`, applying it to this input: $ARGUMENTS
+Identify quality standards, benchmark current skill level, and design deliberate practice to close gaps. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/skb/SKILL.md`, applying it to this input: $ARGUMENTS

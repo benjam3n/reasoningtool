@@ -1,6 +1,8 @@
 ---
 name: "p - PROPOSE - Evidence-Derived Plan Synthesis"
 description: Convert analysis findings into steelmanned, actionable plans with conditional recommendations. Every recommendation includes a derivation chain explaining WHY. Requires a source analysis from /ar, /aw, /u, /araw, or /uaua.
+output:
+  format: "prose"
 ---
 
 # PROPOSE - Evidence-Derived Plan Synthesis

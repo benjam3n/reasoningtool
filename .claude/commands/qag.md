@@ -1,1 +1,1 @@
-Generate high-quality questions about identified guesses. Applies quality criteria and "why continue?" gate to prevent l. Read and execute `claude-code-plugin/skills/qag/SKILL.md`, applying it to this input: $ARGUMENTS
+Generate high-quality questions about identified guesses. Applies quality criteria and "why continue?" gate to prevent l. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/qag/SKILL.md`, applying it to this input: $ARGUMENTS

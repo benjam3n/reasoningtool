@@ -1,1 +1,1 @@
-Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically — upstream criter. Read and execute `claude-code-plugin/skills/w/SKILL.md`, applying it to this input: $ARGUMENTS
+Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically — upstream criter. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/w/SKILL.md`, applying it to this input: $ARGUMENTS

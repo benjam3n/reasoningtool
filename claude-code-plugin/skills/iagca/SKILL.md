@@ -1,6 +1,8 @@
 ---
 name: "iagca - I Am Getting Carried Away"
 description: "Detect idea sprawl, compress scope aggressively, and return to the highest-leverage next actions — preserving valuable ideas without letting them derail execution."
+output:
+  format: "prose"
 ---
 
 # IAGCA - I Am Getting Carried Away

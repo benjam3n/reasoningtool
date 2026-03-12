@@ -4,6 +4,8 @@ description: "Goal analysis focused on generating fact-yielding questions. Each 
 tier: "tier4"
 categories: ["Goal Processing"]
 tags: ["goal", "questions", "actionable", "analysis"]
+output:
+  format: "prose"
 ---
 
 # Universal Goal Analysis v2: Actionable Fact-Yielding Questions

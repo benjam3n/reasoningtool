@@ -1,6 +1,8 @@
 ---
 name: "la - Limitation Analysis"
 description: "Systematically identify limitations across multiple dimensions,"
+output:
+  format: "prose"
 ---
 
 # Limitation Analysis

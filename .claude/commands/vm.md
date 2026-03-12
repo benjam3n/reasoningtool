@@ -1,1 +1,1 @@
-Design and optimize viral loops, referral programs, and word-of-mouth triggers to achieve organic growth. Read and execute `claude-code-plugin/skills/vm/SKILL.md`, applying it to this input: $ARGUMENTS
+Design and optimize viral loops, referral programs, and word-of-mouth triggers to achieve organic growth. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/vm/SKILL.md`, applying it to this input: $ARGUMENTS

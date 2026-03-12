@@ -1,1 +1,1 @@
-Figure Out What Went Wrong - Backward causal diagnosis of failures. Trace from symptom to root cause, test each candidat. Read and execute `claude-code-plugin/skills/fowwr/SKILL.md`, applying it to this input: $ARGUMENTS
+Figure Out What Went Wrong - Backward causal diagnosis of failures. Trace from symptom to root cause, test each candidat. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/fowwr/SKILL.md`, applying it to this input: $ARGUMENTS

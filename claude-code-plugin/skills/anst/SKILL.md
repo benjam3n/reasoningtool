@@ -1,6 +1,8 @@
 ---
 name: "anst - Analysis Stage"
 description: Structured deep analysis after exploration. Selects what to analyze, applies frameworks, finds patterns, tests hypotheses, and synthesizes findings.
+output:
+  format: "prose"
 ---
 
 # Analysis Stage

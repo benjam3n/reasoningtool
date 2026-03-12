@@ -1,6 +1,8 @@
 ---
 name: "evaluate - Assess Something"
 description: Sub-orchestrator for evaluation. Routes to ARAW, MECE validation, procedure validation, assumption extraction, risk analysis, or quality checks based on what's being assessed and what kind of evaluation is needed.
+output:
+  format: "prose"
 ---
 
 # Evaluate

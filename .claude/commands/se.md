@@ -1,1 +1,1 @@
-Generate comprehensive lists by systematically covering all dimensions. Ensures nothing is missed through structured enu. Read and execute `claude-code-plugin/skills/se/SKILL.md`, applying it to this input: $ARGUMENTS
+Generate comprehensive lists by systematically covering all dimensions. Ensures nothing is missed through structured enu. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/se/SKILL.md`, applying it to this input: $ARGUMENTS

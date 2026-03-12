@@ -1,6 +1,8 @@
 ---
 name: sym
 description: "Real problems exist in complex systems with many interacting parts. Comprehensive system modeling ontology."
+output:
+  format: "prose"
 ---
 
 # System Modeling

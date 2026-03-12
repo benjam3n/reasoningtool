@@ -1,1 +1,1 @@
-Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making. Read and execute `claude-code-plugin/skills/fm/SKILL.md`, applying it to this input: $ARGUMENTS
+Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/fm/SKILL.md`, applying it to this input: $ARGUMENTS

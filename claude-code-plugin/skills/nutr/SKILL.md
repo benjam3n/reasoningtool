@@ -1,6 +1,8 @@
 ---
 name: "nutr - Nutrition Planning"
 description: Design a practical nutrition plan based on actual eating patterns, real constraints, and sustainable changes — not idealized diets.
+output:
+  format: "prose"
 ---
 
 # Nutrition Planning

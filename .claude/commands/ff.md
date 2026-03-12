@@ -1,1 +1,1 @@
-Raise investment capital through investor outreach, pitch preparation, term sheet negotiation, and due diligence. Read and execute `claude-code-plugin/skills/ff/SKILL.md`, applying it to this input: $ARGUMENTS
+Raise investment capital through investor outreach, pitch preparation, term sheet negotiation, and due diligence. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ff/SKILL.md`, applying it to this input: $ARGUMENTS

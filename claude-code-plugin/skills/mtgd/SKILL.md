@@ -1,6 +1,8 @@
 ---
 name: "mtgd - Meeting Design"
 description: Design meetings that actually produce outcomes. Eliminates unnecessary meetings and structures necessary ones for maximum effectiveness.
+output:
+  format: "prose"
 ---
 
 # Meeting Design

@@ -1,1 +1,1 @@
-Generates comprehensive, well-organized lists. Takes a topic or scope and produces a structured list that is complete, deduplicated, and formatted for readability. Read and execute `claude-code-plugin/skills/olst/SKILL.md`, applying it to this input: $ARGUMENTS
+Generates comprehensive, well-organized lists. Takes a topic or scope and produces a structured list that is complete, deduplicated, and formatted for readability. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/olst/SKILL.md`, applying it to this input: $ARGUMENTS

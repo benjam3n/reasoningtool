@@ -2,6 +2,8 @@
 name: "gjs - Goal Journey System"
 description: "A goal journey is NOT a narrative arc. It's a CHAIN OF GOALS. Integration hub for GOSM goal processing."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Goal Journey System

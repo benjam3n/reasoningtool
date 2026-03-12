@@ -1,6 +1,8 @@
 ---
 name: "nstep - Minimal Next Step"
 description: "The absolute simplest next-step skill. What are you trying to do? What's one thing you can do in the next 5 minutes? Do that."
+output:
+  format: "prose"
 ---
 
 # NSTEP - Minimal Next Step

@@ -1,6 +1,8 @@
 ---
 name: "ctcov - Cognitive Coverage Analysis"
 description: "Assess whether a system covers all types of thinking. Identifies gaps across cognitive dimensions and recommends additions."
+output:
+  format: "prose"
 ---
 
 # Cognitive Coverage Analysis

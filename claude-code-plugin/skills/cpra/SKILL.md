@@ -1,6 +1,8 @@
 ---
 name: cpra
 description: "Meta-procedure for ensuring any analysis, procedure, or decision covers all relevant aspects."
+output:
+  format: "prose"
 ---
 
 # Comprehensive Aspects

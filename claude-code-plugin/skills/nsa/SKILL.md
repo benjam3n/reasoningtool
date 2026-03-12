@@ -1,6 +1,8 @@
 ---
 name: "nsa - Not Sure About"
 description: "Convert uncertainty statements into typed uncertainty with confidence ranges, cost-of-uncertainty analysis, and concrete evidence-gathering actions."
+output:
+  format: "prose"
 ---
 
 # NSA - Not Sure About

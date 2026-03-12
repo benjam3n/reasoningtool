@@ -2,6 +2,8 @@
 name: "wre - Writing Requirements Engineering"
 description: "Derive writing requirements before drafting. Builds a multi-stage requirements object: artifact definition, thesis object, technical requirements, philosophical requirements, expansion requirements, outline requirements, exclusions, traceability, and draft gate."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Writing Requirements Engineering

@@ -1,1 +1,1 @@
-Structured summarization at multiple compression levels. Produces 1-sentence, 1-paragraph, and 1-page summaries ranked by claim importance. Read and execute `claude-code-plugin/skills/sum/SKILL.md`, applying it to this input: $ARGUMENTS
+Structured summarization at multiple compression levels. Produces 1-sentence, 1-paragraph, and 1-page summaries ranked by claim importance. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sum/SKILL.md`, applying it to this input: $ARGUMENTS

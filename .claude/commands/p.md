@@ -1,1 +1,1 @@
-Convert analysis findings into steelmanned, actionable plans with conditional recommendations. Every recommendation incl. Read and execute `claude-code-plugin/skills/p/SKILL.md`, applying it to this input: $ARGUMENTS
+Convert analysis findings into steelmanned, actionable plans with conditional recommendations. Every recommendation incl. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/p/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: qg
 description: "When you don't know something, the right question is worth more than hours of speculation."
+output:
+  format: "prose"
 ---
 
 # Question Generation

@@ -1,6 +1,8 @@
 ---
 name: dss
 description: "Complete system design workflow — from requirements through verified design."
+output:
+  format: "prose"
 ---
 
 # Design System

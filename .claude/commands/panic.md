@@ -1,1 +1,1 @@
-Regain control in urgent situations where everything feels like it's going wrong Read and execute `claude-code-plugin/skills/panic/SKILL.md`, applying it to this input: $ARGUMENTS
+Regain control in urgent situations where everything feels like it's going wrong Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/panic/SKILL.md`, applying it to this input: $ARGUMENTS

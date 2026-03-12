@@ -1,1 +1,1 @@
-Determine how much thinking to invest in a decision. Maps stakes, reversibility, and diminishing returns to effort levels (minimum, standard, maximum). Read and execute `claude-code-plugin/skills/ecal/SKILL.md`, applying it to this input: $ARGUMENTS
+Determine how much thinking to invest in a decision. Maps stakes, reversibility, and diminishing returns to effort levels (minimum, standard, maximum). Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ecal/SKILL.md`, applying it to this input: $ARGUMENTS

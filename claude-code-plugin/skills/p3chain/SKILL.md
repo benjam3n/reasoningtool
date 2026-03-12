@@ -4,6 +4,8 @@ description: "Pick 3 skills that form a tight workflow chain starting from a giv
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "chain", "workflow"]
+output:
+  format: "prose"
 ---
 
 # Pick 3 Chain

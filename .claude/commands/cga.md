@@ -1,1 +1,1 @@
-You have a way of analyzing things. It works. But you can only hold. Read and execute `claude-code-plugin/skills/cga/SKILL.md`, applying it to this input: $ARGUMENTS
+You have a way of analyzing things. It works. But you can only hold. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cga/SKILL.md`, applying it to this input: $ARGUMENTS

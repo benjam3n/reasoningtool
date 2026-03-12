@@ -1,6 +1,8 @@
 ---
 name: "reframe - Reframe the Problem"
 description: Systematically reframe a problem by changing the level of abstraction, stakeholder perspective, time horizon, success criteria, or constraint set. Generate genuinely different framings, not word substitutions.
+output:
+  format: "prose"
 ---
 
 # Reframe the Problem

@@ -1,6 +1,8 @@
 ---
 name: "grf - Goal Refinement"
 description: "Transform vague or incomplete goals into SMART goals with explicit clarification vs substitution distinction"
+output:
+  format: "prose"
 ---
 
 # Goal Refinement

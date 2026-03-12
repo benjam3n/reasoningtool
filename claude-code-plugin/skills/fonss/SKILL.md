@@ -1,6 +1,8 @@
 ---
 name: "fonss - Figure Out Next Skills"
 description: "Determine which skills to run next (more than one), in order, with rationale, handoff prompts, and stop conditions."
+output:
+  format: "prose"
 ---
 
 # FONSS - Figure Out Next Skills

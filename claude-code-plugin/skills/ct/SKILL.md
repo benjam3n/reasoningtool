@@ -1,6 +1,8 @@
 ---
 name: "ct - Crisis Triage Orderings"
 description: "Orderings for resource-constrained emergencies where not everything can be addressed and you must maximize outcomes with limited resources."
+output:
+  format: "prose"
 ---
 
 # Crisis Triage Orderings

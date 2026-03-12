@@ -1,6 +1,8 @@
 ---
 name: "faa - Fairness Allocation Orderings"
 description: "Orderings that balance competing priorities, prevent starvation, and allocate resources proportionally across stakeholders."
+output:
+  format: "prose"
 ---
 
 # Fairness Allocation Orderings

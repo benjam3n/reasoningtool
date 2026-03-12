@@ -1,6 +1,8 @@
 ---
 name: "ipss - Interpretation Space Search"
 description: "Ambiguity means multiple interpretations are possible."
+output:
+  format: "prose"
 ---
 
 # Interpretation Space Search

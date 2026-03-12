@@ -1,6 +1,8 @@
 ---
 name: sarus
 description: "Repo-wide scan to find question patterns that commonly require interpretation before answering."
+output:
+  format: "prose"
 ---
 
 # Repo Unclarity Scan

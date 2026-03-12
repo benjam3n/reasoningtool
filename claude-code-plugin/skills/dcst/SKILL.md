@@ -1,6 +1,8 @@
 ---
 name: "dcst - Decision Stage"
 description: Moves from analysis to commitment. Frames the decision, enumerates options, applies criteria, checks for decision traps, and documents the rationale.
+output:
+  format: "prose"
 ---
 
 # Decision Stage

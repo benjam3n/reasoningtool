@@ -1,6 +1,8 @@
 ---
 name: "prm - Pre-Mortem Analysis"
 description: Gary Klein's technique - assume it went wrong and ask why. People are better at explaining past events than predicting future ones.
+output:
+  format: "prose"
 ---
 
 # Pre-Mortem Analysis

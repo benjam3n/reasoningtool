@@ -1,6 +1,8 @@
 ---
 name: "spec - Speculative Analysis"
 description: "Rigorous procedure for exploring speculative and 'what if' ideas. Assesses plausibility, prerequisites, implications, and falsifiability."
+output:
+  format: "prose"
 ---
 
 # Speculative Analysis

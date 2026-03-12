@@ -1,1 +1,1 @@
-Craft and send high-quality outreach communications that maximize response rates. Read and execute `claude-code-plugin/skills/orm/SKILL.md`, applying it to this input: $ARGUMENTS
+Craft and send high-quality outreach communications that maximize response rates. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/orm/SKILL.md`, applying it to this input: $ARGUMENTS

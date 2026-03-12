@@ -1,6 +1,8 @@
 ---
 name: "pge - Pedagogy/Educational Orderings"
 description: "Orderings from learning science — interleaving, spacing, testing effect, desirable difficulties — for durable understanding."
+output:
+  format: "prose"
 ---
 
 # Pedagogy/Educational Orderings

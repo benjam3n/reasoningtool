@@ -1,6 +1,8 @@
 ---
 name: "gapf - Gap-Filling Analysis"
 description: Systematically find what's missing in any system, plan, or collection. Defines intended coverage, enumerates what exists, identifies categories, checks each for coverage, flags gaps, and prioritizes by impact.
+output:
+  format: "prose"
 ---
 
 # Gap-Filling Analysis

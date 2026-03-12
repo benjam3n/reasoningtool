@@ -1,6 +1,8 @@
 ---
 name: "src - Source Credibility Assessment"
 description: "Procedure for evaluating the credibility and reliability of any information source"
+output:
+  format: "prose"
 ---
 
 # Source Credibility Assessment

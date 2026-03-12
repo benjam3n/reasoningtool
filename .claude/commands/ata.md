@@ -1,1 +1,1 @@
-Expand a request with all implied adjacent actions that should also be done, ordered by dependency and necessity, without overwhelming the user. Read and execute `claude-code-plugin/skills/ata/SKILL.md`, applying it to this input: $ARGUMENTS
+Expand a request with all implied adjacent actions that should also be done, ordered by dependency and necessity, without overwhelming the user. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ata/SKILL.md`, applying it to this input: $ARGUMENTS

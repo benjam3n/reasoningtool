@@ -1,6 +1,8 @@
 ---
 name: "dwt - Done With Thinking"
 description: "Decide when to stop analyzing and commit to action. External criteria for ending deliberation instead of relying on readiness feelings."
+output:
+  format: "prose"
 ---
 
 # Done With Thinking

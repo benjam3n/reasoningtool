@@ -1,6 +1,8 @@
 ---
 name: "td - Temporal/Deadline Orderings"
 description: "Orderings driven by temporal constraints, deadlines, and timing requirements."
+output:
+  format: "prose"
 ---
 
 # Temporal/Deadline Orderings

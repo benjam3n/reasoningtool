@@ -1,6 +1,8 @@
 ---
 name: "fl - Freelancing"
 description: "Comprehensive guide to building a sustainable freelance practice, from finding"
+output:
+  format: "prose"
 ---
 
 # Freelancing

@@ -1,6 +1,8 @@
 ---
 name: "how - Find the Method"
 description: Sub-orchestrator for method-seeking. Routes to FOHT method discovery, step generation, goal clarification, or alternative framing based on what's defined and how complex the task is.
+output:
+  format: "prose"
 ---
 
 # How

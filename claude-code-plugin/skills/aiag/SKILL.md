@@ -1,6 +1,8 @@
 ---
 name: "aiag - AI Agent Analysis"
 description: Analyzes suitability for AI agents. Assesses which tasks are automatable, evaluates reliability requirements, designs human oversight, and plans for failure modes.
+output:
+  format: "prose"
 ---
 
 # AI Agent Analysis

@@ -1,6 +1,8 @@
 ---
 name: "am - Academic Mastery"
 description: "Master academic subjects through structured learning, concept mapping, and competency verification"
+output:
+  format: "prose"
 ---
 
 # Academic Mastery

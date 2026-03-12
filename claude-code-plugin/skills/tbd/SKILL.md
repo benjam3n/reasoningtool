@@ -1,6 +1,8 @@
 ---
 name: "tbd - To Be Determined"
 description: "Identify unresolved decisions in any plan, document, or conversation, and convert each into an explicit determination question with type, owner, deadline, and cost of remaining unresolved."
+output:
+  format: "prose"
 ---
 
 # TBD - To Be Determined

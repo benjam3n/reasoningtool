@@ -1,6 +1,8 @@
 ---
 name: "gop - Good Outcome Analysis"
 description: Systematically identify, define, and maximize the probability of good outcomes for any situation, plan, or decision.
+output:
+  format: "prose"
 ---
 
 # Good Outcome Analysis

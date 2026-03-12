@@ -1,1 +1,1 @@
-Find analogies from other domains to generate novel insights. Transfer solutions and patterns across fields.. Read and execute `claude-code-plugin/skills/cda/SKILL.md`, applying it to this input: $ARGUMENTS
+Find analogies from other domains to generate novel insights. Transfer solutions and patterns across fields.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cda/SKILL.md`, applying it to this input: $ARGUMENTS

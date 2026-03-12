@@ -1,6 +1,8 @@
 ---
 name: "vcl - Value Clarification"
 description: Discover what you actually value — not what you think you value — by examining behavior, trade-offs, and revealed preferences.
+output:
+  format: "prose"
 ---
 
 # Value Clarification

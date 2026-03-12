@@ -1,6 +1,8 @@
 ---
 name: "want - Clarify a Goal"
 description: Sub-orchestrator for goals and wants. Routes to WantTo analysis to trace what the want commits you to and find the actual want.
+output:
+  format: "prose"
 ---
 
 # Want

@@ -1,6 +1,8 @@
 ---
 name: "ezy - Easy Mode Analysis"
 description: "Break any problem into the easiest possible steps — no jargon, no prerequisites, no assumed knowledge. Designed for when the user is overwhelmed, new to the domain, or needs the simplest possible path forward."
+output:
+  format: "prose"
 ---
 
 # Easy Mode Analysis

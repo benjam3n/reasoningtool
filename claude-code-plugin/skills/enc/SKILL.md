@@ -1,6 +1,8 @@
 ---
 name: "enc - Engineering Calculations"
 description: "Standard engineering calculation procedures for robotics and mechanical system design — forces, torques, materials, actuator sizing."
+output:
+  format: "prose"
 ---
 
 # Engineering Calculations

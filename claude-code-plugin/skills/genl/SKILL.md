@@ -1,6 +1,8 @@
 ---
 name: "genl - General Analysis"
 description: "Analyze at the general level — extract principles, patterns, and transferable insights rather than situation-specific answers. Find the general rule that explains the specific case."
+output:
+  format: "prose"
 ---
 
 # General Analysis

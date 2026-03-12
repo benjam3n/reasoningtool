@@ -1,6 +1,8 @@
 ---
 name: "bldk - Build"
 description: Procedure for building or creating anything. Defines requirements, designs before building, builds incrementally, tests continuously, and iterates based on feedback.
+output:
+  format: "prose"
 ---
 
 # Build

@@ -1,6 +1,8 @@
 ---
 name: "cfr - Conflict Resolution"
 description: "Systematic procedure for de-escalating tensions, finding common ground, and navigating difficult conversations productively"
+output:
+  format: "prose"
 ---
 
 # Conflict Resolution

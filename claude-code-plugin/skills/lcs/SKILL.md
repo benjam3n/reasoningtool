@@ -1,6 +1,8 @@
 ---
 name: "lcs - Local Search Orderings"
 description: "Orderings based on local search optimization — improve from current position, escape local optima, systematic exploration with memory."
+output:
+  format: "prose"
 ---
 
 # Local Search Orderings

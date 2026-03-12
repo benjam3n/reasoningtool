@@ -1,6 +1,8 @@
 ---
 name: "siycftr - See If You Can Find The Rest"
 description: "Scan text for omitted but implied items and produce the complete set, distinguishing genuinely implied items from invented ones."
+output:
+  format: "prose"
 ---
 
 # SIYCFTR - See If You Can Find The Rest

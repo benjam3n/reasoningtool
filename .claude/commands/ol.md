@@ -1,1 +1,1 @@
-In competitive environments, the entity that can cycle through. Read and execute `claude-code-plugin/skills/ol/SKILL.md`, applying it to this input: $ARGUMENTS
+In competitive environments, the entity that can cycle through. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ol/SKILL.md`, applying it to this input: $ARGUMENTS

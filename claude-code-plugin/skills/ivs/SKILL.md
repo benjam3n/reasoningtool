@@ -1,6 +1,8 @@
 ---
 name: "ivs - Investment Strategy"
 description: "Develop and execute personal investment strategies including portfolio allocation, risk tolerance assessment, and investment selection"
+output:
+  format: "prose"
 ---
 
 # Investment Strategy

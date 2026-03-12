@@ -1,6 +1,8 @@
 ---
 name: evd
 description: "Universal dimensions for evaluating any claim, problem, or solution."
+output:
+  format: "prose"
 ---
 
 # Evaluation Dimensions

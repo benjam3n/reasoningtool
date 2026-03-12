@@ -1,6 +1,8 @@
 ---
 name: "fla - Failure Anticipation"
 description: "Systematically identify potential failures, assess their risk, and plan mitigations before execution"
+output:
+  format: "prose"
 ---
 
 # Failure Anticipation

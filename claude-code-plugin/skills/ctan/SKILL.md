@@ -1,6 +1,8 @@
 ---
 name: "ctan - Contract Analysis"
 description: Review and understand a contract or agreement by mapping obligations, consideration, risk allocation, and concerning terms.
+output:
+  format: "prose"
 ---
 
 # Contract Analysis

@@ -1,6 +1,8 @@
 ---
 name: "ctgp - Category Gap Analysis"
 description: Analyzes gaps within a category by comparing what should exist to what currently exists, then prioritizes missing items by importance.
+output:
+  format: "prose"
 ---
 
 # Category Gap Analysis

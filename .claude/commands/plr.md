@@ -1,1 +1,1 @@
-Identify evidence-based, neglected, tractable policies for advocacy campaigns. Read and execute `claude-code-plugin/skills/plr/SKILL.md`, applying it to this input: $ARGUMENTS
+Identify evidence-based, neglected, tractable policies for advocacy campaigns. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/plr/SKILL.md`, applying it to this input: $ARGUMENTS

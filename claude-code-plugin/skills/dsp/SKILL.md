@@ -1,6 +1,8 @@
 ---
 name: "dsp - Mechanical Design Procedures"
 description: "Systematic design of mechanical systems, chassis, and electromechanical assemblies."
+output:
+  format: "prose"
 ---
 
 # Mechanical Design Procedures

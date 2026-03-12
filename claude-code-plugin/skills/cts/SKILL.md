@@ -1,6 +1,8 @@
 ---
 name: "cts - Content Strategy"
 description: "Develop and execute content strategy that attracts, engages, and converts"
+output:
+  format: "prose"
 ---
 
 # Content Strategy

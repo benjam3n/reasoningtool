@@ -1,6 +1,8 @@
 ---
 name: so
 description: "Standardized output format for GOSM projects."
+output:
+  format: "prose"
 ---
 
 # Structured Output Format

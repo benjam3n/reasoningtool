@@ -1,6 +1,8 @@
 ---
 name: "anag - Analogy Generation"
 description: Explains concept X in terms of familiar concept Y by mapping structural correspondence, then testing where the analogy breaks.
+output:
+  format: "prose"
 ---
 
 # Analogy Generation

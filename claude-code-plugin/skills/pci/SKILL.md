@@ -1,6 +1,8 @@
 ---
 name: "pci - Procedure Improvement"
 description: "Systematically improve GOSM library procedures using schema-driven validation and tier-based progress tracking"
+output:
+  format: "prose"
 ---
 
 # Procedure Improvement

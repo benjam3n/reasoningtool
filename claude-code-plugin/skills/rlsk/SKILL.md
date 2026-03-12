@@ -1,6 +1,8 @@
 ---
 name: "rlsk - Relationship Analysis"
 description: "Analyze and improve relationships by identifying parties, assessing state, surfacing unmet needs, and finding actionable patterns."
+output:
+  format: "prose"
 ---
 
 # RLSK - Relationship Analysis

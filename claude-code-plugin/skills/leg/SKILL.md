@@ -1,6 +1,8 @@
 ---
 name: "leg - Legal Reasoning"
 description: Apply structured legal thinking to a situation. Identifies relevant legal domains, analyzes facts against rules, and surfaces risks and obligations.
+output:
+  format: "prose"
 ---
 
 # Legal Reasoning

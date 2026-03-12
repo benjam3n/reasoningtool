@@ -1,6 +1,8 @@
 ---
 name: "prr - Procedure Registry Review"
 description: "Review and improve the procedure registry schema using explicit definitions, evidence alignment, and non-regression."
+output:
+  format: "prose"
 ---
 
 # Procedure Registry Review

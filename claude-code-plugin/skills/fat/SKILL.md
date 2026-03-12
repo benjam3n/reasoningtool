@@ -1,6 +1,8 @@
 ---
 name: fat
 description: "When a project fails, systematically analyze the root cause and attribute failure correctly."
+output:
+  format: "prose"
 ---
 
 # Failure Attribution Framework

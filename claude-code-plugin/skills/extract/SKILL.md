@@ -1,6 +1,8 @@
 ---
 name: "extract - Skill Extractor"
 description: "Given any prompt, decompose it into implicit sub-tasks and extract every potentially useful skill, grouped by role and prioritized with invocation-ready suggestions."
+output:
+  format: "hybrid"
 ---
 
 # Extract - Skill Extractor

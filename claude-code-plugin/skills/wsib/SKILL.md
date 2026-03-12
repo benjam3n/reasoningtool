@@ -1,6 +1,8 @@
 ---
 name: "wsib - What Skill Is Best"
 description: "Choose the single best skill to run RIGHT NOW for a prompt, with confidence calibration, runner-up comparison, and fallback if first choice fails."
+output:
+  format: "prose"
 ---
 
 # WSIB - What Skill Is Best

@@ -4,6 +4,8 @@ description: "Pick 5 skills that together provide the most thorough analysis pos
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "deep", "thorough", "analysis"]
+output:
+  format: "prose"
 ---
 
 # Pick 5 Deep

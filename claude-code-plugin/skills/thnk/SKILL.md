@@ -1,6 +1,8 @@
 ---
 name: "thnk - Think"
 description: Meta-skill for choosing the right thinking approach. Identifies what type of thinking is needed, selects the appropriate framework, applies it, and evaluates output quality.
+output:
+  format: "prose"
 ---
 
 # Think

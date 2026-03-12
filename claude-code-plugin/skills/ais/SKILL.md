@@ -1,6 +1,8 @@
 ---
 name: "ais - Advocacy Infrastructure Setup"
 description: "Set up foundational infrastructure for autonomous advocacy operations"
+output:
+  format: "prose"
 ---
 
 # Advocacy Infrastructure Setup

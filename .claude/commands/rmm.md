@@ -1,1 +1,1 @@
-Recognize when a mental model is fundamentally wrong, dismantle it, and build or adopt a replacement without losing momentum. Read and execute `claude-code-plugin/skills/rmm/SKILL.md`, applying it to this input: $ARGUMENTS
+Recognize when a mental model is fundamentally wrong, dismantle it, and build or adopt a replacement without losing momentum. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/rmm/SKILL.md`, applying it to this input: $ARGUMENTS

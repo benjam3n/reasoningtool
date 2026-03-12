@@ -1,6 +1,8 @@
 ---
 name: "fwai - Future AI Agent Value"
 description: Assess value for autonomous AI agents. Identifies tasks suitable for autonomous execution, assesses reliability requirements, evaluates error recovery needs, checks human-in-loop requirements, and projects automation potential.
+output:
+  format: "prose"
 ---
 
 # Future AI Agent Value

@@ -1,6 +1,8 @@
 ---
 name: "impss - Improve Skills (Batch)"
 description: "Systematically improve multiple skills by triaging them against the quality standard, prioritizing by severity and impact, and applying /imps to each in the optimal order."
+output:
+  format: "prose"
 ---
 
 # Improve Skills (Batch)

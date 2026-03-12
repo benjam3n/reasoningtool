@@ -1,6 +1,8 @@
 ---
 name: "funr - Fun/Exploration Reasoning"
 description: "Reason about what's interesting, playful, or worth exploring for its own sake. Follow curiosity threads, note unexpected connections, and assess what exploration reveals."
+output:
+  format: "prose"
 ---
 
 # FUNR - Fun/Exploration Reasoning

@@ -1,6 +1,8 @@
 ---
 name: "crw - Criteria Weighting Decision Matrix"
 description: "Also known as: Weighted scoring model, Decision matrix, Pugh matrix."
+output:
+  format: "prose"
 ---
 
 # Criteria Weighting Decision Matrix

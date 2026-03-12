@@ -1,6 +1,8 @@
 ---
 name: "dvs - Diversity Search Orderings"
 description: "Orderings that prioritize behavioral diversity, novelty, and coverage of solution space over convergence to a single optimum."
+output:
+  format: "prose"
 ---
 
 # Diversity Search Orderings

@@ -1,1 +1,1 @@
-Reason about what's interesting, playful, or worth exploring for its own sake. Follow curiosity threads, note unexpected connections, and assess what exploration reveals. Read and execute `claude-code-plugin/skills/funr/SKILL.md`, applying it to this input: $ARGUMENTS
+Reason about what's interesting, playful, or worth exploring for its own sake. Follow curiosity threads, note unexpected connections, and assess what exploration reveals. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/funr/SKILL.md`, applying it to this input: $ARGUMENTS

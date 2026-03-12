@@ -1,6 +1,8 @@
 ---
 name: "obo - Obvious Bad Outcomes"
 description: Check for obvious bad outcomes that are being ignored, minimized, or rationalized away.
+output:
+  format: "prose"
 ---
 
 # Obvious Bad Outcomes

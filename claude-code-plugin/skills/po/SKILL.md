@@ -1,6 +1,8 @@
 ---
 name: "po - Personal Optimization"
 description: "N-of-1 experimentation framework for systematically improving personal health,"
+output:
+  format: "prose"
 ---
 
 # Personal Optimization

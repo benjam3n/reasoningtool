@@ -1,6 +1,8 @@
 ---
 name: "col - Collaboration Design"
 description: Designs how a group of people should work together — roles, communication, decisions, handoffs, and accountability.
+output:
+  format: "prose"
 ---
 
 # Collaboration Design

@@ -1,6 +1,8 @@
 ---
 name: "ld - Learning Discovery Orderings"
 description: "Orderings optimized for acquiring knowledge, validating hypotheses, and iterative learning when understanding matters more than speed."
+output:
+  format: "prose"
 ---
 
 # Learning Discovery Orderings

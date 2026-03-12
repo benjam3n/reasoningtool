@@ -1,6 +1,8 @@
 ---
 name: "ita - Impossible To Achievable"
 description: "Transform seemingly impossible goals into achievable ones by systematically challenging what makes them impossible."
+output:
+  format: "prose"
 ---
 
 # Impossible To Achievable

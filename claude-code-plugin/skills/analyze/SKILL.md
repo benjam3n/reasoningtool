@@ -1,6 +1,8 @@
 ---
 name: "analyze - Analyze a Situation"
 description: Sub-orchestrator for analytical requests. Routes to decomposition, systems analysis, comparison, risk assessment, or synthesis based on what kind of analysis is needed.
+output:
+  format: "prose"
 ---
 
 # Analysis

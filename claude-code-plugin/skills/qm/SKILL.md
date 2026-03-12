@@ -1,6 +1,8 @@
 ---
 name: qm
 description: "Procedure for measuring outcomes that resist quantification."
+output:
+  format: "prose"
 ---
 
 # Qualitative Outcome Measurement

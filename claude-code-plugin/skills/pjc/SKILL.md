@@ -1,6 +1,8 @@
 ---
 name: "pjc - Project Closure"
 description: "Complete projects properly with handoff and learning capture"
+output:
+  format: "prose"
 ---
 
 # Project Closure

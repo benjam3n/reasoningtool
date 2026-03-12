@@ -1,6 +1,8 @@
 ---
 name: "ska - Skill Acquisition"
 description: "Systematically acquire new skills using deliberate practice principles"
+output:
+  format: "prose"
 ---
 
 # Skill Acquisition

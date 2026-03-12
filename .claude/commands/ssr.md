@@ -1,1 +1,1 @@
-Capture learnings at end of session for continuous improvement. Reviews what worked, what did not, surprises, and proced. Read and execute `claude-code-plugin/skills/ssr/SKILL.md`, applying it to this input: $ARGUMENTS
+Capture learnings at end of session for continuous improvement. Reviews what worked, what did not, surprises, and proced. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ssr/SKILL.md`, applying it to this input: $ARGUMENTS

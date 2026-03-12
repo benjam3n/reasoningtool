@@ -1,6 +1,8 @@
 ---
 name: "diagnose - Find the Cause"
 description: Sub-orchestrator for diagnostic questions. Routes to UAUA exploration, causal tracing, safety analysis, or direct debugging based on how much is known and the nature of the problem.
+output:
+  format: "prose"
 ---
 
 # Diagnose

@@ -1,6 +1,8 @@
 ---
 name: "ver - GOSM Verification Procedure"
 description: Verify claims using the GOSM verification standard. Every claim must be OBSERVED, TESTED, or DERIVED - never guessed.
+output:
+  format: "prose"
 ---
 
 # GOSM Verification Procedure

@@ -1,6 +1,8 @@
 ---
 name: "ratn - Rationale Construction"
 description: Builds a clear, compelling rationale for any decision or recommendation. Organizes evidence by strength, addresses counterarguments, and outputs a persuasive but honest case.
+output:
+  format: "prose"
 ---
 
 # Rationale Construction

@@ -1,6 +1,8 @@
 ---
 name: "fss - Future Space Search"
 description: "The future is uncertain but not arbitrary."
+output:
+  format: "prose"
 ---
 
 # Future Space Search

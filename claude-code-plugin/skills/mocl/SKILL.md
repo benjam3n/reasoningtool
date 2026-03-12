@@ -1,6 +1,8 @@
 ---
 name: "mocl - Modal Claim Analysis"
 description: Evaluate "could/would/might" claims. Identify the type of possibility, check constraints, and assess distance from actuality.
+output:
+  format: "prose"
 ---
 
 # Modal Claim Analysis

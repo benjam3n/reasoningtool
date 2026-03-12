@@ -1,6 +1,8 @@
 ---
 name: "prvn - Proven-Need Validation"
 description: "Validate that a need is real before investing by finding behavioral evidence, quantifying demand, checking existing solutions, and assessing trajectory."
+output:
+  format: "prose"
 ---
 
 # PRVN - Proven-Need Validation

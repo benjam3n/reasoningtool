@@ -1,6 +1,8 @@
 ---
 name: "br - Backward Reasoning"
 description: Reasoning from conclusions back to premises. Given a conclusion, what journey led here? Reveals purpose and enables evaluation.
+output:
+  format: "prose"
 ---
 
 # Backward Reasoning

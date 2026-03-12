@@ -1,6 +1,8 @@
 ---
 name: "lost - Lost My Direction"
 description: "For when you had a direction but lost it. Helps you find whether the goal changed, you changed, or the situation changed — and what to do next."
+output:
+  format: "prose"
 ---
 
 # Lost - Lost My Direction

@@ -1,1 +1,1 @@
-Sub-orchestrator for commands and action requests. Routes to direct execution, step generation, or reclassifies when the command needs analysis first. Read and execute `claude-code-plugin/skills/action/SKILL.md`, applying it to this input: $ARGUMENTS
+Sub-orchestrator for commands and action requests. Routes to direct execution, step generation, or reclassifies when the command needs analysis first. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/action/SKILL.md`, applying it to this input: $ARGUMENTS

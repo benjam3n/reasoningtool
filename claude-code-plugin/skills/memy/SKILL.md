@@ -1,6 +1,8 @@
 ---
 name: "memy - Memory & Retention"
 description: Systematic approach to remembering what matters. Decides what's worth encoding, selects strategies, creates retrieval cues, and builds connective knowledge structures.
+output:
+  format: "prose"
 ---
 
 # Memory & Retention

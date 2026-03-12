@@ -1,6 +1,8 @@
 ---
 name: "saaesa - Apply Evidence Standard Application"
 description: "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any “verified” claims."
+output:
+  format: "prose"
 ---
 
 # Apply Evidence Standard Application

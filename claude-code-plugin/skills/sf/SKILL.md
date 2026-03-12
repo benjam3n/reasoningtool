@@ -1,6 +1,8 @@
 ---
 name: "sf - Save File"
 description: Save the output from the most recent skill invocation to the appropriate library folder. Only saves when explicitly requested.
+output:
+  format: "prose"
 ---
 
 # Save File

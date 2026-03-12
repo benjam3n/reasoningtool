@@ -1,6 +1,8 @@
 ---
 name: "sp - Steelman Prompt"
 description: Improves a prompt before it gets answered. Adds precision, scope, criteria, skill routing, and failure-proofing without answering the question.
+output:
+  format: "prose"
 ---
 
 # Steelman Prompt

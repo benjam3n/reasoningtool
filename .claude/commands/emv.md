@@ -1,1 +1,1 @@
-Empirical validation step for GOSM plans - adds external reality testing beyond coherence checks. Read and execute `claude-code-plugin/skills/emv/SKILL.md`, applying it to this input: $ARGUMENTS
+Empirical validation step for GOSM plans - adds external reality testing beyond coherence checks. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/emv/SKILL.md`, applying it to this input: $ARGUMENTS

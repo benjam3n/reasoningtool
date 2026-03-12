@@ -1,6 +1,8 @@
 ---
 name: "shc - System Health Check"
 description: "Evaluate if the GOSM system needs improvement"
+output:
+  format: "prose"
 ---
 
 # System Health Check

@@ -1,1 +1,1 @@
-Orderings for presentations, writing, and communication where. Read and execute `claude-code-plugin/skills/cn/SKILL.md`, applying it to this input: $ARGUMENTS
+Orderings for presentations, writing, and communication where. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cn/SKILL.md`, applying it to this input: $ARGUMENTS

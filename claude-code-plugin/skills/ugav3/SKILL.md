@@ -4,6 +4,8 @@ description: "Goal analysis with fully decomposed sub-procedures. Every analysis
 tier: "tier4"
 categories: ["Goal Processing"]
 tags: ["goal", "decomposition", "procedures", "systematic"]
+output:
+  format: "prose"
 ---
 
 # Universal Goal Analysis v3: Fully Decomposed Sub-Procedures

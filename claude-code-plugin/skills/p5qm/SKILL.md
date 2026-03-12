@@ -4,6 +4,8 @@ description: "Interactive skill selection through elimination questions. Asks 3-
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "question", "interactive", "elimination"]
+output:
+  format: "prose"
 ---
 
 # Pick 5 Question Me

@@ -1,6 +1,8 @@
 ---
 name: ho
 description: "Comprehensive procedure for health-related goals including fitness, nutrition, sleep, energy, and wellness."
+output:
+  format: "prose"
 ---
 
 # Health and Wellness Optimization

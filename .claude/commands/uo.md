@@ -1,1 +1,1 @@
-Every output must be unassailable. Anything said can and will. Read and execute `claude-code-plugin/skills/uo/SKILL.md`, applying it to this input: $ARGUMENTS
+Every output must be unassailable. Anything said can and will. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/uo/SKILL.md`, applying it to this input: $ARGUMENTS

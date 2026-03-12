@@ -1,6 +1,8 @@
 ---
 name: "alebc - And Lists Each Big Change"
 description: "Convert a change stream into high-level big-change bullets, filtering out low-level modifications and grouping related changes into coherent shifts."
+output:
+  format: "prose"
 ---
 
 # ALEBC - And Lists Each Big Change

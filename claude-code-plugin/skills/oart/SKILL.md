@@ -1,6 +1,8 @@
 ---
 name: "oart - Artifact Generation"
 description: Generates reusable artifacts such as templates, checklists, frameworks, and tools. Takes a use case and produces a well-structured artifact with usage instructions and a tested example.
+output:
+  format: "prose"
 ---
 
 # Artifact Generation

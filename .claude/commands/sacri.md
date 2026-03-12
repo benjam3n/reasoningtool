@@ -1,1 +1,1 @@
-Ensure gates and procedures link to other procedures that provide the needed answer-interface and next steps.. Read and execute `claude-code-plugin/skills/sacri/SKILL.md`, applying it to this input: $ARGUMENTS
+Ensure gates and procedures link to other procedures that provide the needed answer-interface and next steps.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sacri/SKILL.md`, applying it to this input: $ARGUMENTS

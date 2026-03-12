@@ -1,1 +1,1 @@
-Systematically prioritizes a list of anything using weighted criteria and appropriate frameworks (Eisenhower, MoSCoW, impact-effort). Read and execute `claude-code-plugin/skills/pri/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically prioritizes a list of anything using weighted criteria and appropriate frameworks (Eisenhower, MoSCoW, impact-effort). Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/pri/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,1 +1,1 @@
-Procedure for tracking outcomes that take months or years to manifest.. Read and execute `claude-code-plugin/skills/dot/SKILL.md`, applying it to this input: $ARGUMENTS
+Procedure for tracking outcomes that take months or years to manifest.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dot/SKILL.md`, applying it to this input: $ARGUMENTS

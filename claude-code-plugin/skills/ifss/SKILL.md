@@ -1,6 +1,8 @@
 ---
 name: "ifss - Inference Space Search"
 description: "Information implies other information. But not all inferences are equal:"
+output:
+  format: "prose"
 ---
 
 # Inference Space Search

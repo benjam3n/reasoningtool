@@ -1,1 +1,1 @@
-Gate that verifies all items mentioned by user have been considered, analyzed, and addressed. Prevents dropping user-men. Read and execute `claude-code-plugin/skills/mcg/SKILL.md`, applying it to this input: $ARGUMENTS
+Gate that verifies all items mentioned by user have been considered, analyzed, and addressed. Prevents dropping user-men. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/mcg/SKILL.md`, applying it to this input: $ARGUMENTS

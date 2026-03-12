@@ -1,1 +1,1 @@
-Rewrite unclear questions by separating intent (“what did I mean?”) from the target question (“what do I want to answer?”).. Read and execute `claude-code-plugin/skills/saqrc/SKILL.md`, applying it to this input: $ARGUMENTS
+Rewrite unclear questions by separating intent (“what did I mean?”) from the target question (“what do I want to answer?”).. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/saqrc/SKILL.md`, applying it to this input: $ARGUMENTS

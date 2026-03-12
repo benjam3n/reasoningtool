@@ -1,1 +1,1 @@
-Comprehensive obvious-things scan. Checks for everything obvious that might be missed — facts, actions, risks, outcomes, stakeholders, and assumptions. Read and execute `claude-code-plugin/skills/oba/SKILL.md`, applying it to this input: $ARGUMENTS
+Comprehensive obvious-things scan. Checks for everything obvious that might be missed — facts, actions, risks, outcomes, stakeholders, and assumptions. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/oba/SKILL.md`, applying it to this input: $ARGUMENTS

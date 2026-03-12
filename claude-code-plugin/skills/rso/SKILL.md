@@ -1,6 +1,8 @@
 ---
 name: "rso - Resource Optimization Orderings"
 description: "Orderings for maximizing throughput, minimizing waste, and efficient resource utilization."
+output:
+  format: "prose"
 ---
 
 # Resource Optimization Orderings

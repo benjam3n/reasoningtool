@@ -1,6 +1,8 @@
 ---
 name: snp
 description: "The future is uncertain. Develop multiple plausible futures and prepare strategies that work across them."
+output:
+  format: "prose"
 ---
 
 # Scenario Planning

@@ -1,6 +1,8 @@
 ---
 name: "soph - Sophisticated Analysis"
 description: "Apply maximum analytical sophistication to a problem — multi-layered reasoning, cross-domain synthesis, second-order effects, hidden assumptions, and structural insights that simple analysis misses."
+output:
+  format: "prose"
 ---
 
 # Sophisticated Analysis

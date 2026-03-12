@@ -1,1 +1,1 @@
-Transform impossible or problematic goals into achievable versions. No such thing as an impossible goal - only insuffici. Read and execute `claude-code-plugin/skills/grfr/SKILL.md`, applying it to this input: $ARGUMENTS
+Transform impossible or problematic goals into achievable versions. No such thing as an impossible goal - only insuffici. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/grfr/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "cms - Component Selection"
 description: "A structured procedure for evaluating multiple component options against"
+output:
+  format: "prose"
 ---
 
 # Component Selection

@@ -1,6 +1,8 @@
 ---
 name: "mts - Make This Skill"
 description: "Create a new skill from a request by deriving purpose, naming, workflow, output format, quality checks, and integration points."
+output:
+  format: "prose"
 ---
 
 # MTS - Make This Skill

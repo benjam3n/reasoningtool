@@ -1,6 +1,8 @@
 ---
 name: "val - Validation"
 description: "Verify that an output meets its requirements through systematic criteria checking, coverage scoring, and gap analysis."
+output:
+  format: "prose"
 ---
 
 # Validation

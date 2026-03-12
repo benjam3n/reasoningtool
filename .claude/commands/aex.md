@@ -1,1 +1,1 @@
-Extract hidden assumptions from any content. Surfaces what must be true for claims to hold, enabling deeper analysis.. Read and execute `claude-code-plugin/skills/aex/SKILL.md`, applying it to this input: $ARGUMENTS
+Extract hidden assumptions from any content. Surfaces what must be true for claims to hold, enabling deeper analysis.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/aex/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,1 +1,1 @@
-Argues both sides of any position by steelmanning FOR and AGAINST, then identifies where the sides actually disagree and which has better evidence. Read and execute `claude-code-plugin/skills/deb/SKILL.md`, applying it to this input: $ARGUMENTS
+Argues both sides of any position by steelmanning FOR and AGAINST, then identifies where the sides actually disagree and which has better evidence. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/deb/SKILL.md`, applying it to this input: $ARGUMENTS

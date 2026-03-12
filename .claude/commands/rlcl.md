@@ -1,1 +1,1 @@
-Evaluate claims about how things relate. Verify the relationship type, test its strength, and identify its boundaries. Read and execute `claude-code-plugin/skills/rlcl/SKILL.md`, applying it to this input: $ARGUMENTS
+Evaluate claims about how things relate. Verify the relationship type, test its strength, and identify its boundaries. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/rlcl/SKILL.md`, applying it to this input: $ARGUMENTS

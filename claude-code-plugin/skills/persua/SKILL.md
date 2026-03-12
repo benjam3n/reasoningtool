@@ -1,6 +1,8 @@
 ---
 name: "persua - Persuasion Analysis"
 description: Analyze what would actually persuade a specific person or audience — not generic rhetoric but understanding their existing beliefs, values, resistance points, and the specific evidence or framing that would move them. Ethical persuasion through understanding, not manipulation.
+output:
+  format: "prose"
 ---
 
 # PERSUA - Persuasion Analysis

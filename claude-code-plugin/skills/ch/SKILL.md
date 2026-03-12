@@ -1,6 +1,8 @@
 ---
 name: "ch - Crisis Handler"
 description: "Systematic procedure for handling crises — stabilize, diagnose, communicate, resolve, and learn."
+output:
+  format: "prose"
 ---
 
 # Crisis Handler

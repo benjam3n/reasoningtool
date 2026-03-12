@@ -1,6 +1,8 @@
 ---
 name: "platitude - Operationalize a Platitude"
 description: "Convert a single platitude into concrete, testable actions, boundary conditions, and failure modes — transforming vague wisdom into executable guidance."
+output:
+  format: "prose"
 ---
 
 # Platitude - Operationalize a Platitude

@@ -1,6 +1,8 @@
 ---
 name: aar
 description: "The After Action Review (AAR) is a structured debrief to learn from experience."
+output:
+  format: "prose"
 ---
 
 # After Action Review

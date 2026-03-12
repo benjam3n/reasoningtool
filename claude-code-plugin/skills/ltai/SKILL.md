@@ -1,6 +1,8 @@
 ---
 name: "ltai - Long-Term AI Orchestration"
 description: Plan for AI-agent coordination and autonomous operation. Design handoff protocols, error recovery, and human oversight.
+output:
+  format: "prose"
 ---
 
 # Long-Term AI Orchestration

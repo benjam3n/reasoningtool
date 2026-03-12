@@ -1,6 +1,8 @@
 ---
 name: "skm - Stakeholder Management"
 description: "Engage stakeholders effectively throughout the project"
+output:
+  format: "prose"
 ---
 
 # Stakeholder Management

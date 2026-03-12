@@ -1,6 +1,8 @@
 ---
 name: "apid - API Design"
 description: "Procedure for designing, implementing, and documenting effective APIs"
+output:
+  format: "prose"
 ---
 
 # API Design

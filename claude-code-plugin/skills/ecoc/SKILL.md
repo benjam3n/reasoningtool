@@ -1,6 +1,8 @@
 ---
 name: "ecoc - Ethical Code of Conduct"
 description: Create a practical code of ethics for a person, team, or organization — one that handles real edge cases, not just platitudes.
+output:
+  format: "prose"
 ---
 
 # Ethical Code of Conduct

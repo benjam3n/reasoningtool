@@ -1,6 +1,8 @@
 ---
 name: "ans - Analogy Search (Cross-Domain Transfer)"
 description: "Many problems have been solved before - just in different domains."
+output:
+  format: "prose"
 ---
 
 # Analogy Search (Cross-Domain Transfer)

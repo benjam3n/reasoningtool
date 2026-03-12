@@ -1,6 +1,8 @@
 ---
 name: "utp - Utopia Analysis"
 description: Systematically construct and examine the best possible outcome — what would ideal actually look like, and what would it take to get there?
+output:
+  format: "prose"
 ---
 
 # Utopia Analysis

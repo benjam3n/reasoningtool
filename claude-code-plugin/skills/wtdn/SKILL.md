@@ -1,6 +1,8 @@
 ---
 name: "wtdn - What To Do Next"
 description: "Simple next-step finder. No routing, no classification. State where you are, get the single most valuable next move, understand why, do it."
+output:
+  format: "prose"
 ---
 
 # WTDN - What To Do Next

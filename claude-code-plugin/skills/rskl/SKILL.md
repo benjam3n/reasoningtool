@@ -1,6 +1,8 @@
 ---
 name: "rskl - Reasoning Skills"
 description: Meta-procedure for improving reasoning quality. Identifies the reasoning type in use, checks for common errors, and verifies logical structure.
+output:
+  format: "prose"
 ---
 
 # Reasoning Skills

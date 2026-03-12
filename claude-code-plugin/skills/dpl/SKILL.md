@@ -1,6 +1,8 @@
 ---
 name: "dpl - Deployment"
 description: "Procedure for planning and executing reliable software deployments"
+output:
+  format: "prose"
 ---
 
 # Deployment

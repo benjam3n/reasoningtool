@@ -1,6 +1,8 @@
 ---
 name: "ign - Decide What to Ignore"
 description: "Decide what information, concerns, and possibilities to deliberately ignore. Productive neglect through systematic triage."
+output:
+  format: "prose"
 ---
 
 # Decide What to Ignore

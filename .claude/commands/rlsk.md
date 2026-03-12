@@ -1,1 +1,1 @@
-Analyze and improve relationships by identifying parties, assessing state, surfacing unmet needs, and finding actionable patterns. Read and execute `claude-code-plugin/skills/rlsk/SKILL.md`, applying it to this input: $ARGUMENTS
+Analyze and improve relationships by identifying parties, assessing state, surfacing unmet needs, and finding actionable patterns. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/rlsk/SKILL.md`, applying it to this input: $ARGUMENTS

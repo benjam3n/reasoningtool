@@ -1,6 +1,8 @@
 ---
 name: "undr - Under-Represented Analysis"
 description: Analyzes an under-served area to determine what it needs. Assesses current coverage, identifies gaps relative to demand, and recommends build order.
+output:
+  format: "prose"
 ---
 
 # Under-Represented Analysis

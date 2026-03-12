@@ -1,6 +1,8 @@
 ---
 name: "iaw - In Another Way"
 description: "Re-express a goal, claim, or plan in genuinely alternative forms that preserve intent while changing approach, then rank alternatives by fit."
+output:
+  format: "prose"
 ---
 
 # IAW - In Another Way

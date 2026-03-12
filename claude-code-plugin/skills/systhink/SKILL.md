@@ -1,6 +1,8 @@
 ---
 name: "systhink - Systems Thinking"
 description: Analyze feedback loops, emergent behavior, system dynamics, stocks and flows, and leverage points. See the system, not just the parts.
+output:
+  format: "prose"
 ---
 
 # Systems Thinking

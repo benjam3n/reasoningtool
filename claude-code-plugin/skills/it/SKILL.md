@@ -1,6 +1,8 @@
 ---
 name: "it - I Think"
 description: "Process 'I think' statements into explicit claims with confidence levels, evidence/assumption separation, and next verification actions."
+output:
+  format: "prose"
 ---
 
 # IT - I Think

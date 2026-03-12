@@ -1,6 +1,8 @@
 ---
 name: vhd
 description: "Framework for deciding when to improve existing procedures (vertical) versus add new ones (horizontal)."
+output:
+  format: "prose"
 ---
 
 # Vertical vs Horizontal Integration Decision

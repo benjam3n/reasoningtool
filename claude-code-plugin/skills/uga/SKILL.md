@@ -2,6 +2,8 @@
 name: "uga - Universal Goal Analysis (Consolidated)"
 description: "The comprehensive question framework v5 — adds operational, meta-cognitive, and quality categories. Consolidated from ugav2-v5."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Universal Goal Analysis Framework

@@ -1,1 +1,1 @@
-Analyzes gaps within a category by comparing what should exist to what currently exists, then prioritizes missing items by importance. Read and execute `claude-code-plugin/skills/ctgp/SKILL.md`, applying it to this input: $ARGUMENTS
+Analyzes gaps within a category by comparing what should exist to what currently exists, then prioritizes missing items by importance. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ctgp/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "ro - Reorder a List Expertly"
 description: "Reorder an existing list using an explicit objective, multi-dimensional scoring, dependency awareness, and sanity checks — producing a defensible best-to-worst order with confidence flags."
+output:
+  format: "ranked-list"
 ---
 
 # RO - Reorder a List Expertly

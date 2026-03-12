@@ -1,6 +1,8 @@
 ---
 name: "exint - External Integration"
 description: Design how something connects to external systems, tools, or services. Identifies touchpoints, maps data flows, defines interfaces, assesses dependencies, plans for failures, and produces an integration checklist.
+output:
+  format: "prose"
 ---
 
 # External Integration

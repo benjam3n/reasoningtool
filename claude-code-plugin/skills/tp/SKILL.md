@@ -1,6 +1,8 @@
 ---
 name: tp
 description: "Arguments form dependency graphs. When any assumption's truth value changes, propagate through all dependent conclusions."
+output:
+  format: "prose"
 ---
 
 # Truth Propagation

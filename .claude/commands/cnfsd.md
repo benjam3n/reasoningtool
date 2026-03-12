@@ -1,1 +1,1 @@
-For mental fog where things don't make sense. Separates what you understand from what you don't, identifies the gap type, and provides the right tool to close it. Read and execute `claude-code-plugin/skills/cnfsd/SKILL.md`, applying it to this input: $ARGUMENTS
+For mental fog where things don't make sense. Separates what you understand from what you don't, identifies the gap type, and provides the right tool to close it. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cnfsd/SKILL.md`, applying it to this input: $ARGUMENTS

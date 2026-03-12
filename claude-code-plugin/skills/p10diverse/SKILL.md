@@ -4,6 +4,8 @@ description: "Pick 10 skills maximizing coverage across different categories, ti
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "diverse", "coverage"]
+output:
+  format: "prose"
 ---
 
 # Pick 10 Diverse

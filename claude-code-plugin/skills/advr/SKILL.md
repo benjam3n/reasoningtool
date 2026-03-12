@@ -1,6 +1,8 @@
 ---
 name: advr
 description: "Nothing is a fact until it survives an assassination attempt. Builder constructs claims, Breaker tries to destroy them."
+output:
+  format: "prose"
 ---
 
 # Adversarial Review

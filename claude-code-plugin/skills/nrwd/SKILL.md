@@ -1,6 +1,8 @@
 ---
 name: "nrwd - Narrow Domain Analysis"
 description: Deep analysis within a specific domain. Goes deep not wide, using domain-specific vocabulary, frameworks, and constraints.
+output:
+  format: "prose"
 ---
 
 # Narrow Domain Analysis

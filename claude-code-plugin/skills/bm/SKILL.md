@@ -1,6 +1,8 @@
 ---
 name: "bm - Budget Management"
 description: "Manage limited financial resources across autonomous operations with maximum value extraction"
+output:
+  format: "prose"
 ---
 
 # Budget Management

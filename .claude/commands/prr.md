@@ -1,1 +1,1 @@
-Review and improve the procedure registry schema using explicit definitions, evidence alignment, and non-regression.. Read and execute `claude-code-plugin/skills/prr/SKILL.md`, applying it to this input: $ARGUMENTS
+Review and improve the procedure registry schema using explicit definitions, evidence alignment, and non-regression.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/prr/SKILL.md`, applying it to this input: $ARGUMENTS

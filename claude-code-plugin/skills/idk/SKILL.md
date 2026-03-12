@@ -1,6 +1,8 @@
 ---
 name: "idk - I Don't Know"
 description: "Entry point for total uncertainty. When you don't know what you want, what to do, or what's happening — start here."
+output:
+  format: "prose"
 ---
 
 # IDK - I Don't Know

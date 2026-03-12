@@ -1,6 +1,8 @@
 ---
 name: "orc - Outreach Campaigns"
 description: "Execute multi-channel persuasion campaigns for policy advocacy"
+output:
+  format: "prose"
 ---
 
 # Outreach Campaigns

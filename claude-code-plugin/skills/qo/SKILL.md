@@ -1,6 +1,8 @@
 ---
 name: "qo - Question Ordering"
 description: Find the satisfying unresolved question that opens a document and order all questions in a dependency chain. Upstream of /w.
+output:
+  format: "prose"
 ---
 
 # Question Ordering

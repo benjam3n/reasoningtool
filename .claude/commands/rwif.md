@@ -1,1 +1,1 @@
-Bridge the gap between thinking/planning and physical execution. Converts plans into actionable checklists with logistics, failure modes, and contingencies. Read and execute `claude-code-plugin/skills/rwif/SKILL.md`, applying it to this input: $ARGUMENTS
+Bridge the gap between thinking/planning and physical execution. Converts plans into actionable checklists with logistics, failure modes, and contingencies. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/rwif/SKILL.md`, applying it to this input: $ARGUMENTS

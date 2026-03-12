@@ -1,6 +1,8 @@
 ---
 name: "immg - Immediate Gap Analysis"
 description: Find what's obviously missing RIGHT NOW. Fast, ruthless prioritization of urgent gaps in the current state.
+output:
+  format: "prose"
 ---
 
 # Immediate Gap Analysis

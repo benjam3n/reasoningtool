@@ -1,6 +1,8 @@
 ---
 name: "efa - Emotional First Aid"
 description: Immediate structured response when someone is in emotional distress — stabilize first, then support.
+output:
+  format: "prose"
 ---
 
 # Emotional First Aid

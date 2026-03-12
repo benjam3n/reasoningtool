@@ -1,6 +1,8 @@
 ---
 name: va
 description: "For any obvious strategy, ask what if we did the exact opposite. Counters the tendency to accept first-good-enough answers."
+output:
+  format: "prose"
 ---
 
 # Variation Analysis

@@ -1,6 +1,8 @@
 ---
 name: "exst - Execution Stage"
 description: Turns decisions into action. Breaks down tasks, sequences them, sets milestones, identifies the first action, and biases toward starting over perfecting the plan.
+output:
+  format: "prose"
 ---
 
 # Execution Stage

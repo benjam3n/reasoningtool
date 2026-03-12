@@ -1,6 +1,8 @@
 ---
 name: "ldg - Luck Dependent Goals"
 description: "Handle goals that depend partly on luck or chance — maximize controllable factors, create multiple shots, build resilience."
+output:
+  format: "prose"
 ---
 
 # Luck Dependent Goals

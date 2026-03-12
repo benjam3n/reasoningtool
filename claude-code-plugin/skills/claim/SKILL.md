@@ -1,6 +1,8 @@
 ---
 name: "claim - Test a Claim"
 description: Sub-orchestrator for claims and assertions. Routes to ARAW-based testing with appropriate depth, balance, and supplementary analysis skills.
+output:
+  format: "prose"
 ---
 
 # Claim

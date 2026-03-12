@@ -1,1 +1,1 @@
-Elicit user preferences by presenting concrete trade-offs rather than asking open-ended questions. System does the work . Read and execute `claude-code-plugin/skills/pre/SKILL.md`, applying it to this input: $ARGUMENTS
+Elicit user preferences by presenting concrete trade-offs rather than asking open-ended questions. System does the work . Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/pre/SKILL.md`, applying it to this input: $ARGUMENTS

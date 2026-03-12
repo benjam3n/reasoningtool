@@ -1,6 +1,8 @@
 ---
 name: "per - Persuasion Design"
 description: "Design a persuasive argument or communication. Structures the argument, anticipates objections, and checks for ethical soundness."
+output:
+  format: "prose"
 ---
 
 # Persuasion Design

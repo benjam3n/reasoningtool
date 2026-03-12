@@ -1,1 +1,1 @@
-Generate a narrative — fiction, parable, scenario, or illustrative story — that embodies a concept, explores a question, or makes an idea vivid. Read and execute `claude-code-plugin/skills/story/SKILL.md`, applying it to this input: $ARGUMENTS
+Generate a narrative — fiction, parable, scenario, or illustrative story — that embodies a concept, explores a question, or makes an idea vivid. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/story/SKILL.md`, applying it to this input: $ARGUMENTS

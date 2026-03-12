@@ -1,6 +1,8 @@
 ---
 name: "satr - Saturation Analysis"
 description: Analyzes whether an area has too much coverage. Identifies redundancy, finds rarely-used items, and recommends consolidation or pruning.
+output:
+  format: "prose"
 ---
 
 # Saturation Analysis

@@ -1,1 +1,1 @@
-Analyzes at the organizational level. Identifies structure, incentives, culture, resources, and processes to find where the org helps or hinders a goal. Read and execute `claude-code-plugin/skills/orgn/SKILL.md`, applying it to this input: $ARGUMENTS
+Analyzes at the organizational level. Identifies structure, incentives, culture, resources, and processes to find where the org helps or hinders a goal. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/orgn/SKILL.md`, applying it to this input: $ARGUMENTS

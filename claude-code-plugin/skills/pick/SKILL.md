@@ -4,6 +4,8 @@ description: "Pick N skills using a specified algorithm. Supports random, goal-d
 tier: "category"
 categories: ["Meta & Navigation"]
 tags: ["discovery", "selection", "navigation", "meta"]
+output:
+  format: "prose"
 ---
 
 # Skill Picker

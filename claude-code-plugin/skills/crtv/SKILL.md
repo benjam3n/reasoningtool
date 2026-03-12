@@ -1,6 +1,8 @@
 ---
 name: "crtv - Creativity Procedure"
 description: Systematic procedure for generating novel ideas. Moves through divergent generation, combinatorial play, and convergent evaluation against the original need.
+output:
+  format: "prose"
 ---
 
 # Creativity Procedure

@@ -1,1 +1,1 @@
-Sub-orchestrator for exploration. Routes to UAUA, space enumeration, or dimension discovery based on what's known and what's needed. Read and execute `claude-code-plugin/skills/search/SKILL.md`, applying it to this input: $ARGUMENTS
+Sub-orchestrator for exploration. Routes to UAUA, space enumeration, or dimension discovery based on what's known and what's needed. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/search/SKILL.md`, applying it to this input: $ARGUMENTS

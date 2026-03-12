@@ -1,6 +1,8 @@
 ---
 name: saaiasa
 description: "Classify utterances in a gate/procedure/document so the system doesn't answer the wrong thing."
+output:
+  format: "prose"
 ---
 
 # Apply Intent + Speech Acts

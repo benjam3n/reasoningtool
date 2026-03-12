@@ -1,6 +1,8 @@
 ---
 name: tnt
 description: "Specific, tested tactics for navigating the most common value tensions and conflicts."
+output:
+  format: "prose"
 ---
 
 # Tension Navigation Tactics

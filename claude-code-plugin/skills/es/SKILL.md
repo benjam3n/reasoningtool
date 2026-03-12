@@ -1,6 +1,8 @@
 ---
 name: es
 description: "Evolution has optimized biological systems for billions of years. Apply evolutionary strategies to find solutions."
+output:
+  format: "prose"
 ---
 
 # Evolutionary Strategies

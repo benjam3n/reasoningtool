@@ -1,6 +1,8 @@
 ---
 name: "omtx - Matrix Generation"
 description: Generates comparison and analysis matrices. Takes items and dimensions, fills cells with evidence-based assessments, and highlights patterns across the matrix.
+output:
+  format: "prose"
 ---
 
 # Matrix Generation

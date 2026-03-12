@@ -1,6 +1,8 @@
 ---
 name: "exps - Exploration"
 description: Systematically explores an unfamiliar space by mapping boundaries, identifying dimensions, sampling broadly, and flagging surprises and promising regions.
+output:
+  format: "prose"
 ---
 
 # Exploration

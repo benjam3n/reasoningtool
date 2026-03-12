@@ -1,6 +1,8 @@
 ---
 name: "olst - List Generation"
 description: Generates comprehensive, well-organized lists. Takes a topic or scope and produces a structured list that is complete, deduplicated, and formatted for readability.
+output:
+  format: "prose"
 ---
 
 # List Generation

@@ -1,6 +1,8 @@
 ---
 name: "pos - Positioning Strategy"
 description: "Develop clear market positioning through category design, differentiation, and compelling messaging"
+output:
+  format: "prose"
 ---
 
 # Positioning Strategy

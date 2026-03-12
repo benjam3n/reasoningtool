@@ -1,6 +1,8 @@
 ---
 name: "exrp - Exercise Programming"
 description: Design a structured exercise program tailored to current fitness level, goals, and real-world constraints.
+output:
+  format: "prose"
 ---
 
 # Exercise Programming

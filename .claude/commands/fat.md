@@ -1,1 +1,1 @@
-When a project fails, systematically analyze the root cause.. Read and execute `claude-code-plugin/skills/fat/SKILL.md`, applying it to this input: $ARGUMENTS
+When a project fails, systematically analyze the root cause.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/fat/SKILL.md`, applying it to this input: $ARGUMENTS

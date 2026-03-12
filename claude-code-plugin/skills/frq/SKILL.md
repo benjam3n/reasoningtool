@@ -1,6 +1,8 @@
 ---
 name: "frq - Find Right Question"
 description: "Find the right question to ask by diagnosing your actual situation and generating the most actionable question."
+output:
+  format: "prose"
 ---
 
 # Find Right Question

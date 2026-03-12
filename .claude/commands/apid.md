@@ -1,1 +1,1 @@
-Procedure for designing, implementing, and documenting effective APIs. Read and execute `claude-code-plugin/skills/apid/SKILL.md`, applying it to this input: $ARGUMENTS
+Procedure for designing, implementing, and documenting effective APIs. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/apid/SKILL.md`, applying it to this input: $ARGUMENTS

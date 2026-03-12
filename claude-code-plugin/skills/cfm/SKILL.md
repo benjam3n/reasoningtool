@@ -1,6 +1,8 @@
 ---
 name: "cfm - Cash Flow Management"
 description: "Track and optimize cash flow including income, expenses, runway calculation, and burn rate analysis"
+output:
+  format: "prose"
 ---
 
 # Cash Flow Management

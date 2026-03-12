@@ -2,6 +2,8 @@
 name: "cor - Code Review"
 description: "Procedure for conducting effective code reviews using Claude Code's capabilities for exhaustive analysis"
 context: fork
+output:
+  format: "prose"
 ---
 
 # Code Review

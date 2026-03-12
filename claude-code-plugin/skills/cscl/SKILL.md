@@ -1,6 +1,8 @@
 ---
 name: "cscl - Causal Claim Analysis"
 description: Test whether X actually causes Y. Check confounders, mechanisms, temporal ordering, and counterfactuals.
+output:
+  format: "prose"
 ---
 
 # Causal Claim Analysis

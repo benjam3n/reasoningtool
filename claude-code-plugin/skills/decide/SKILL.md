@@ -1,6 +1,8 @@
 ---
 name: "decide - Make a Decision"
 description: Sub-orchestrator for decisions. Routes to comparison, ARAW testing, dominance analysis, or goal clarification based on what the user knows and the stakes involved.
+output:
+  format: "prose"
 ---
 
 # Decide

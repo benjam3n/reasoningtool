@@ -1,6 +1,8 @@
 ---
 name: "skgap - Skill Gap Analysis"
 description: "Identify thinking dimensions not adequately represented by the current skill library, recommend new skills across a sophistication/simplicity spectrum, and prioritize by user value and coverage gap severity."
+output:
+  format: "prose"
 ---
 
 # Skill Gap Analysis

@@ -1,6 +1,8 @@
 ---
 name: "sms - Social Media Strategy"
 description: "Build effective social media presence through platform selection, content planning, engagement, and measurement"
+output:
+  format: "prose"
 ---
 
 # Social Media Strategy

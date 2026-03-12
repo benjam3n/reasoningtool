@@ -1,6 +1,8 @@
 ---
 name: "mcs - MCP Setup"
 description: "Configure MCP servers to enable autonomous GOSM execution capabilities"
+output:
+  format: "prose"
 ---
 
 # MCP Setup

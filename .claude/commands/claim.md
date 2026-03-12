@@ -1,1 +1,1 @@
-Sub-orchestrator for claims and assertions. Routes to ARAW-based testing with appropriate depth and balance. Read and execute `claude-code-plugin/skills/claim/SKILL.md`, applying it to this input: $ARGUMENTS
+Sub-orchestrator for claims and assertions. Routes to ARAW-based testing with appropriate depth and balance. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/claim/SKILL.md`, applying it to this input: $ARGUMENTS

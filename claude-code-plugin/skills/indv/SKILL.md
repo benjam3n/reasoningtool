@@ -1,6 +1,8 @@
 ---
 name: "indv - Individual Analysis"
 description: Analyzes something from the perspective of a single person. Identifies goals, resources, constraints, skills, and context to optimize for individual agency and autonomy.
+output:
+  format: "prose"
 ---
 
 # Individual Analysis

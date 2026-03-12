@@ -1,6 +1,8 @@
 ---
 name: pqr
 description: "A 24-week rotating list of questions for weekly review."
+output:
+  format: "prose"
 ---
 
 # Proactive Question Rotation

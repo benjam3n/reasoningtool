@@ -1,1 +1,1 @@
-Identify options that dominate others — strictly better on all dimensions, or better on some and equal on the rest. Read and execute `claude-code-plugin/skills/dom/SKILL.md`, applying it to this input: $ARGUMENTS
+Identify options that dominate others — strictly better on all dimensions, or better on some and equal on the rest. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dom/SKILL.md`, applying it to this input: $ARGUMENTS

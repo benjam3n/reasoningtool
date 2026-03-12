@@ -1,1 +1,1 @@
-Orderings that maintain multiple candidate solutions or use. Read and execute `claude-code-plugin/skills/pbs/SKILL.md`, applying it to this input: $ARGUMENTS
+Orderings that maintain multiple candidate solutions or use. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/pbs/SKILL.md`, applying it to this input: $ARGUMENTS

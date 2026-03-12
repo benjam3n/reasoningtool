@@ -1,1 +1,1 @@
-Guides the design of skills that enhance other skills by accepting their output, adding a layer of analysis or validation, and returning enriched results. Read and execute `claude-code-plugin/skills/wrps/SKILL.md`, applying it to this input: $ARGUMENTS
+Guides the design of skills that enhance other skills by accepting their output, adding a layer of analysis or validation, and returning enriched results. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/wrps/SKILL.md`, applying it to this input: $ARGUMENTS

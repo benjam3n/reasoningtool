@@ -1,6 +1,8 @@
 ---
 name: afa
 description: "A premortem imagines failure has already occurred, then works backward to identify what went wrong."
+output:
+  format: "prose"
 ---
 
 # Anticipated Failures Analysis (Premortem)

@@ -1,6 +1,8 @@
 ---
 name: "comc - Communicate"
 description: Designs a communication for any context. Identifies audience, determines goal, chooses medium, structures the message, and anticipates objections.
+output:
+  format: "prose"
 ---
 
 # Communicate

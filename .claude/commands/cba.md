@@ -1,1 +1,1 @@
-Systematically quantify costs and benefits to evaluate decisions, including NPV calculation, sensitivity analysis, and i. Read and execute `claude-code-plugin/skills/cba/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically quantify costs and benefits to evaluate decisions, including NPV calculation, sensitivity analysis, and i. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cba/SKILL.md`, applying it to this input: $ARGUMENTS

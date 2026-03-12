@@ -1,6 +1,8 @@
 ---
 name: "odec - Decision Output"
 description: Generates structured decision recommendations. Takes a decision context and produces a clear recommendation with rationale, confidence level, and conditions for revision.
+output:
+  format: "prose"
 ---
 
 # Decision Output

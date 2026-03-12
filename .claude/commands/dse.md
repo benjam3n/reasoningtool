@@ -1,1 +1,1 @@
-Evaluate strategies based on the logical soundness of their derivation.. Read and execute `claude-code-plugin/skills/dse/SKILL.md`, applying it to this input: $ARGUMENTS
+Evaluate strategies based on the logical soundness of their derivation.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/dse/SKILL.md`, applying it to this input: $ARGUMENTS

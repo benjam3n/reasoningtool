@@ -1,1 +1,1 @@
-This framework provides methods for analyzing questions to determine:. Read and execute `claude-code-plugin/skills/qaf/SKILL.md`, applying it to this input: $ARGUMENTS
+This framework provides methods for analyzing questions to determine:. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/qaf/SKILL.md`, applying it to this input: $ARGUMENTS

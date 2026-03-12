@@ -1,6 +1,8 @@
 ---
 name: "pjm - Project Management Orderings"
 description: "Orderings from formal project management — PERT, CPM, Critical Chain, Agile — for scheduling and resource management."
+output:
+  format: "prose"
 ---
 
 # Project Management Orderings

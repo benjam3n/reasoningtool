@@ -1,6 +1,8 @@
 ---
 name: "qs - Queue Scheduling Orderings"
 description: "Orderings for managing queues — FIFO, priority queues, shortest job first, fair queuing."
+output:
+  format: "prose"
 ---
 
 # Queue Scheduling Orderings

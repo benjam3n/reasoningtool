@@ -1,6 +1,8 @@
 ---
 name: "tkint - Toolkit Integrity Analysis"
 description: "Assess structural integrity of a collection, system, or toolkit. Finds broken references, orphans, circular dependencies, and naming inconsistencies."
+output:
+  format: "prose"
 ---
 
 # Toolkit Integrity Analysis

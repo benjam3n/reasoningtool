@@ -1,6 +1,8 @@
 ---
 name: "de - Dependency Extraction"
 description: Extract dependencies between steps, tasks, or items. Identifies what must happen before what, enabling proper sequencing and parallel execution.
+output:
+  format: "prose"
 ---
 
 # Dependency Extraction

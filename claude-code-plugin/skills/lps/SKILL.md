@@ -1,6 +1,8 @@
 ---
 name: lps
 description: "The foundational infrastructure for treating strategy selection as theorem proving."
+output:
+  format: "prose"
 ---
 
 # Logical Proof System

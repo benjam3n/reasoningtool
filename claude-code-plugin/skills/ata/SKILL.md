@@ -1,6 +1,8 @@
 ---
 name: "ata - And Then Also"
 description: "Expand a request with all implied adjacent actions that should also be done, ordered by dependency and necessity, without overwhelming the user."
+output:
+  format: "prose"
 ---
 
 # ATA - And Then Also

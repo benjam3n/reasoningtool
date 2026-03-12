@@ -1,6 +1,8 @@
 ---
 name: cppd
 description: "Analyze patterns across completed GOSM projects to improve the system."
+output:
+  format: "prose"
 ---
 
 # Cross-Project Pattern Detection

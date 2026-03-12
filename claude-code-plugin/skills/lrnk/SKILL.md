@@ -1,6 +1,8 @@
 ---
 name: "lrnk - Learn"
 description: Systematic procedure for learning anything. Assesses current knowledge, identifies gaps, chooses learning strategies, sets milestones, and plans ongoing review.
+output:
+  format: "prose"
 ---
 
 # Learn

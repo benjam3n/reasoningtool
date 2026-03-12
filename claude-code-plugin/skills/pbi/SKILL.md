@@ -2,6 +2,8 @@
 name: "pbi - Problem Identification"
 description: "Before solving, identify the RIGHT problem at the RIGHT level. Includes clarification vs substitution checking to prevent problem drift."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Problem Identification

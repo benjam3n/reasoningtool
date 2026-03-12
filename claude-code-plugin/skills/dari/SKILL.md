@@ -1,6 +1,8 @@
 ---
 name: dari
 description: "Bridges the deductive strategy system with adversarial review testing for maximum strategy confidence."
+output:
+  format: "prose"
 ---
 
 # Deductive Adversarial Review Integration

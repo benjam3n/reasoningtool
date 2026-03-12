@@ -1,6 +1,8 @@
 ---
 name: "ip - Interview Preparation"
 description: "Comprehensive preparation system for job interviews covering research, story"
+output:
+  format: "prose"
 ---
 
 # Interview Preparation

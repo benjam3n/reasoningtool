@@ -1,6 +1,8 @@
 ---
 name: "dqnt - Data & Quantitative Analysis"
 description: "Procedure for working with numbers and data. Clarifies questions, assesses data quality, performs analysis, checks for statistical traps, and communicates findings."
+output:
+  format: "prose"
 ---
 
 # Data & Quantitative Analysis

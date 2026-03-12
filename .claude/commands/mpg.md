@@ -1,1 +1,1 @@
-Handler for goals that require navigating institutions, groups, politics, and. Read and execute `claude-code-plugin/skills/mpg/SKILL.md`, applying it to this input: $ARGUMENTS
+Handler for goals that require navigating institutions, groups, politics, and. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/mpg/SKILL.md`, applying it to this input: $ARGUMENTS

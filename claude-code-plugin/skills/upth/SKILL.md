@@ -1,6 +1,8 @@
 ---
 name: "upth - Unproceduralized Thinking"
 description: Identify cognitive operations that don't have explicit procedures yet. Observes thinking processes, surfaces implicit steps and tacit knowledge, formalizes them into explicit procedures, tests, and refines.
+output:
+  format: "prose"
 ---
 
 # Unproceduralized Thinking

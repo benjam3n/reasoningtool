@@ -1,1 +1,1 @@
-Systematically evaluates candidates for any role, position, or slot. Scores on requirements, checks for disqualifiers, and ranks by fit. Read and execute `claude-code-plugin/skills/cand/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically evaluates candidates for any role, position, or slot. Scores on requirements, checks for disqualifiers, and ranks by fit. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/cand/SKILL.md`, applying it to this input: $ARGUMENTS

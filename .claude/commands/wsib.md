@@ -1,1 +1,1 @@
-Choose the single best skill to run RIGHT NOW for a prompt, with confidence calibration, runner-up comparison, and fallback if first choice fails. Read and execute `claude-code-plugin/skills/wsib/SKILL.md`, applying it to this input: $ARGUMENTS
+Choose the single best skill to run RIGHT NOW for a prompt, with confidence calibration, runner-up comparison, and fallback if first choice fails. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/wsib/SKILL.md`, applying it to this input: $ARGUMENTS

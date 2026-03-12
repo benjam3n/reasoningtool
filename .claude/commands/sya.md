@@ -1,1 +1,1 @@
-Analyze complex systems using causal loop diagrams, stock and flow models, feedback loop identification, and system arch. Read and execute `claude-code-plugin/skills/sya/SKILL.md`, applying it to this input: $ARGUMENTS
+Analyze complex systems using causal loop diagrams, stock and flow models, feedback loop identification, and system arch. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sya/SKILL.md`, applying it to this input: $ARGUMENTS

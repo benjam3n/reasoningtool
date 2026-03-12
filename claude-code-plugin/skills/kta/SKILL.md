@@ -1,6 +1,8 @@
 ---
 name: "kta - Knowledge to Action"
 description: "Convert knowledge into action by diagnosing what actually blocks execution: unclear steps, activation energy, competing commitments, emotional barriers, or identity conflicts."
+output:
+  format: "prose"
 ---
 
 # Knowledge to Action

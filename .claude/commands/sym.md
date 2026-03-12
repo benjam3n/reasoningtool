@@ -1,1 +1,1 @@
-Real problems exist in complex systems with many interacting parts.. Read and execute `claude-code-plugin/skills/sym/SKILL.md`, applying it to this input: $ARGUMENTS
+Real problems exist in complex systems with many interacting parts.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sym/SKILL.md`, applying it to this input: $ARGUMENTS

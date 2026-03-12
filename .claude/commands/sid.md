@@ -1,1 +1,1 @@
-Identify what situation you are actually in before attempting to solve it. Prevents the most dangerous failure: solving the wrong problem perfectly. Read and execute `claude-code-plugin/skills/sid/SKILL.md`, applying it to this input: $ARGUMENTS
+Identify what situation you are actually in before attempting to solve it. Prevents the most dangerous failure: solving the wrong problem perfectly. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/sid/SKILL.md`, applying it to this input: $ARGUMENTS

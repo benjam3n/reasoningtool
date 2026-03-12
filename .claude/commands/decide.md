@@ -1,1 +1,1 @@
-Sub-orchestrator for decisions. Routes to comparison, ARAW testing, or goal clarification based on what the user knows. Read and execute `claude-code-plugin/skills/decide/SKILL.md`, applying it to this input: $ARGUMENTS
+Sub-orchestrator for decisions. Routes to comparison, ARAW testing, or goal clarification based on what the user knows. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/decide/SKILL.md`, applying it to this input: $ARGUMENTS

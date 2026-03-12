@@ -1,6 +1,8 @@
 ---
 name: "ea - Email Acquisition"
 description: "Acquire and configure email addresses for autonomous system operations"
+output:
+  format: "prose"
 ---
 
 # Email Acquisition

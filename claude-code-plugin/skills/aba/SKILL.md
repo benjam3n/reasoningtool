@@ -1,6 +1,8 @@
 ---
 name: "aba - AI Biomedical Agent"
 description: "Procedure for using AI to analyze biomedical research, evaluate studies, assess drug interactions, and interpret clinical data."
+output:
+  format: "prose"
 ---
 
 # AI Biomedical Agent

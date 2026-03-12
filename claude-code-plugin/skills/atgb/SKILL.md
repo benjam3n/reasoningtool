@@ -1,6 +1,8 @@
 ---
 name: "atgb - ARAW to GOSM Bridge"
 description: "Bridges ARAW exploration outputs to GOSM planning inputs."
+output:
+  format: "prose"
 ---
 
 # ARAW to GOSM Bridge

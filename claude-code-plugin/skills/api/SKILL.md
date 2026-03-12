@@ -1,6 +1,8 @@
 ---
 name: "api - Alphacode Pass 2 Implicit"
 description: "Second pass at competitive programming — find implicit patterns, hidden structure, and optimizations the explicit pass missed."
+output:
+  format: "prose"
 ---
 
 # Alphacode Pass 2 Implicit

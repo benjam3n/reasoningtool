@@ -1,1 +1,1 @@
-Handler for goals that require building collectives, communities, or movements.. Read and execute `claude-code-plugin/skills/clg/SKILL.md`, applying it to this input: $ARGUMENTS
+Handler for goals that require building collectives, communities, or movements.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/clg/SKILL.md`, applying it to this input: $ARGUMENTS

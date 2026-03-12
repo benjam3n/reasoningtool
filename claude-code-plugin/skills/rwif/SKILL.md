@@ -1,6 +1,8 @@
 ---
 name: "rwif - Real-World Interface"
 description: "Bridge the gap between thinking/planning and physical execution. Converts plans into actionable checklists with logistics, failure modes, and contingencies."
+output:
+  format: "prose"
 ---
 
 # Real-World Interface

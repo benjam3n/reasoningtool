@@ -1,6 +1,8 @@
 ---
 name: "mr - Market Research"
 description: "Systematic process for identifying, validating, and sizing market opportunities."
+output:
+  format: "prose"
 ---
 
 # Market Research

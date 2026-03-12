@@ -1,6 +1,8 @@
 ---
 name: "panic - Panic Protocol"
 description: "Regain control in urgent situations where everything feels like it's going wrong"
+output:
+  format: "prose"
 ---
 
 # Panic Protocol

@@ -1,6 +1,8 @@
 ---
 name: "ecomp - Ecosystem Completion"
 description: Analyze whether a system or collection is complete and coherent. Maps components, identifies connections, finds orphans and missing links, and assesses domain coverage.
+output:
+  format: "prose"
 ---
 
 # Ecosystem Completion

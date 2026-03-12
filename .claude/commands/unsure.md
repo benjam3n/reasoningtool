@@ -1,1 +1,1 @@
-For mild uncertainty — you have a direction but aren't confident. A decision tree to move from hesitation to action or justified pause. Read and execute `claude-code-plugin/skills/unsure/SKILL.md`, applying it to this input: $ARGUMENTS
+For mild uncertainty — you have a direction but aren't confident. A decision tree to move from hesitation to action or justified pause. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/unsure/SKILL.md`, applying it to this input: $ARGUMENTS

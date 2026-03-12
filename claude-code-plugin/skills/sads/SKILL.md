@@ -2,6 +2,8 @@
 name: "sads - Detector Sweep"
 description: "Scan files for ambiguity, proxying, bundled questions, undefined terms, hidden conditionals, goal substitution, and conventional bias."
 context: fork
+output:
+  format: "prose"
 ---
 
 # Detector Sweep

@@ -1,6 +1,8 @@
 ---
 name: "wsn - What Skill Next"
 description: "Determine the highest-value next skill to add to the reasoning toolkit by analyzing gaps, ROI, and user needs."
+output:
+  format: "prose"
 ---
 
 # What Skill Next

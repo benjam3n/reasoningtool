@@ -1,1 +1,1 @@
-Systematically check if a solution or similar solution already exists before investing effort in creation. Read and execute `claude-code-plugin/skills/exc/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematically check if a solution or similar solution already exists before investing effort in creation. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/exc/SKILL.md`, applying it to this input: $ARGUMENTS

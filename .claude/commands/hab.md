@@ -1,1 +1,1 @@
-Designs a plan to build a new habit or break an old one using cue-routine-reward structure, environment design, and obstacle planning. Read and execute `claude-code-plugin/skills/hab/SKILL.md`, applying it to this input: $ARGUMENTS
+Designs a plan to build a new habit or break an old one using cue-routine-reward structure, environment design, and obstacle planning. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/hab/SKILL.md`, applying it to this input: $ARGUMENTS

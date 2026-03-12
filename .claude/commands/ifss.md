@@ -1,1 +1,1 @@
-Information implies other information. But not all inferences are equal:. Read and execute `claude-code-plugin/skills/ifss/SKILL.md`, applying it to this input: $ARGUMENTS
+Information implies other information. But not all inferences are equal:. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ifss/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -1,6 +1,8 @@
 ---
 name: "eqi - Emotional Intelligence"
 description: Systematically develop emotional awareness, regulation, and social skill — treating EQ as a learnable competency, not a personality trait.
+output:
+  format: "prose"
 ---
 
 # Emotional Intelligence

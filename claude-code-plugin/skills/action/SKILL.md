@@ -1,6 +1,8 @@
 ---
 name: "action - Execute a Command"
 description: Sub-orchestrator for commands and action requests. Routes to direct execution, step generation, task sequencing, or reclassifies when the command needs analysis first.
+output:
+  format: "prose"
 ---
 
 # Action

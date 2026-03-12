@@ -1,6 +1,8 @@
 ---
 name: gaca
 description: "Convert gates from yes/no vibe checks into explicit, checkable claim-interfaces."
+output:
+  format: "prose"
 ---
 
 # Gate As Claim Audit

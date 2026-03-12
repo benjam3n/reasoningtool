@@ -1,6 +1,8 @@
 ---
 name: "vldt - Validate"
 description: Systematic validation procedure. Defines criteria, runs checks, flags failures, and makes a pass/fail determination with reasoning.
+output:
+  format: "prose"
 ---
 
 # Validate

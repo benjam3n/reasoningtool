@@ -1,1 +1,1 @@
-Systematic process for identifying, validating, and sizing market opportunities.. Read and execute `claude-code-plugin/skills/mr/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic process for identifying, validating, and sizing market opportunities.. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/mr/SKILL.md`, applying it to this input: $ARGUMENTS

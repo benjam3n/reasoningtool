@@ -1,1 +1,1 @@
-Apply knowledge and skills from one domain to new contexts through systematic transfer strategies. Read and execute `claude-code-plugin/skills/lt/SKILL.md`, applying it to this input: $ARGUMENTS
+Apply knowledge and skills from one domain to new contexts through systematic transfer strategies. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/lt/SKILL.md`, applying it to this input: $ARGUMENTS

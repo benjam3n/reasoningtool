@@ -1,6 +1,8 @@
 ---
 name: "ornt - Orientation"
 description: Helps someone figure out where they are and what they're dealing with. Surveys the situation, identifies the problem type, assesses urgency, and recommends an entry point.
+output:
+  format: "prose"
 ---
 
 # Orientation

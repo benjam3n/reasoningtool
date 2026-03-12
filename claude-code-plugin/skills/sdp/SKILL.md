@@ -1,6 +1,8 @@
 ---
 name: "sdp - Embedded Software Development"
 description: "Developing embedded software for robotics and microcontroller-based systems."
+output:
+  format: "prose"
 ---
 
 # Embedded Software Development

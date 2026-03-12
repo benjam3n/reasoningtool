@@ -1,6 +1,8 @@
 ---
 name: ie
 description: "A systematic search for non-obvious strategies using cross-domain mapping, gap search, and strategy inversion."
+output:
+  format: "prose"
 ---
 
 # Innovation Engine

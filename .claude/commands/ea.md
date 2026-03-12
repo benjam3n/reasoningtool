@@ -1,1 +1,1 @@
-Acquire and configure email addresses for autonomous system operations. Read and execute `claude-code-plugin/skills/ea/SKILL.md`, applying it to this input: $ARGUMENTS
+Acquire and configure email addresses for autonomous system operations. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ea/SKILL.md`, applying it to this input: $ARGUMENTS

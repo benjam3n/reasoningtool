@@ -1,6 +1,8 @@
 ---
 name: "story - Story"
 description: Generate a narrative — fiction, parable, scenario, or illustrative story — that embodies a concept, explores a question, or makes an idea vivid.
+output:
+  format: "prose"
 ---
 
 # Story

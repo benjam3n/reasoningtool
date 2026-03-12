@@ -1,1 +1,1 @@
-Bridge thinking to real-world action — account for physical logistics, materials, locations, time, and failure modes that pure reasoning ignores. Read and execute `claude-code-plugin/skills/pwif/SKILL.md`, applying it to this input: $ARGUMENTS
+Bridge thinking to real-world action — account for physical logistics, materials, locations, time, and failure modes that pure reasoning ignores. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/pwif/SKILL.md`, applying it to this input: $ARGUMENTS

@@ -4,6 +4,8 @@ description: "Pick 7 skills from a specific category or matching a category patt
 tier: "tier4"
 categories: ["Meta & Navigation"]
 tags: ["shortcut", "pick", "discovery", "category", "filter"]
+output:
+  format: "prose"
 ---
 
 # Pick 7 Category

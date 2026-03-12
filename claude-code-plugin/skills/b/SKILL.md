@@ -1,6 +1,8 @@
 ---
 name: "b - Budgeting"
 description: "Create, manage, and optimize budgets for projects, organizations, or personal finances"
+output:
+  format: "prose"
 ---
 
 # Budgeting

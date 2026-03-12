@@ -1,6 +1,8 @@
 ---
 name: "given - Rank Skills by ROI for a Given Goal"
 description: "Given a goal, rank relevant skills from highest to lowest expected ROI, including negative-ROI skills with reasons."
+output:
+  format: "prose"
 ---
 
 # Given - Rank Skills by ROI for a Given Goal

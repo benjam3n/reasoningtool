@@ -1,6 +1,8 @@
 ---
 name: cnw
 description: "When you face a constraint that seems to block progress, find a workaround. There is ALWAYS a workaround."
+output:
+  format: "prose"
 ---
 
 # Constraint Workaround Meta-Procedure

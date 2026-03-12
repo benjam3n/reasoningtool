@@ -1,1 +1,1 @@
-Systematic procedure for estimating probabilities, updating beliefs with evidence, and making well-calibrated prediction. Read and execute `claude-code-plugin/skills/pbr/SKILL.md`, applying it to this input: $ARGUMENTS
+Systematic procedure for estimating probabilities, updating beliefs with evidence, and making well-calibrated prediction. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/pbr/SKILL.md`, applying it to this input: $ARGUMENTS

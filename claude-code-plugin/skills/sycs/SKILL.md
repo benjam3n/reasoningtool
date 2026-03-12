@@ -1,6 +1,8 @@
 ---
 name: "sycs - So You Can See"
 description: "Expand implications of a statement so the hidden conclusions are explicit, ordered by depth, and flagged by impact and testability."
+output:
+  format: "prose"
 ---
 
 # SYCS - So You Can See
