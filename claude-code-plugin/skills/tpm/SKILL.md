@@ -1,371 +1,323 @@
 ---
-name: "tpm - Template Maintenance"
-description: Maintain and improve domain templates over time. Track usage, identify gaps, and evolve templates based on experience.
+name: "tpm - Technical Performance Measures"
+description: Define and track key technical metrics that indicate whether the system is on track to meet requirements. Sets planned profiles, tolerance bands, measurement methods, and escalation thresholds.
 output:
-  format: "prose"
+  format: "table"
 ---
 
-# Template Maintenance
+# Technical Performance Measures
 
 **Input**: $ARGUMENTS
 
 ---
 
-## Purpose
+## Interpretations
 
-Keep domain templates effective over time:
-- **Track** template usage and outcomes
-- **Identify** gaps and improvement opportunities
-- **Evolve** templates based on experience
-- **Validate** templates remain accurate
-- **Retire** outdated templates
+Before executing, identify which interpretation matches the user's input:
 
----
+**Interpretation 1 — Define TPMs for a new system**: The user has a system under development and needs to identify critical technical parameters, set target profiles, and establish a tracking framework to provide early warning of requirement shortfalls.
+**Interpretation 2 — Assess TPM status for an existing program**: The user has a system in development or operations and wants to evaluate current technical performance against planned values to determine if corrective action is needed.
+**Interpretation 3 — Create TPM reporting for a review or milestone**: The user needs to prepare TPM status reporting for a program review, design review, or milestone decision and wants a structured dashboard with trends and risk assessment.
 
-## Maintenance Operations
-
-### TRACK: Record Template Usage
-
-After using a template, record the outcome:
-
-```
-TEMPLATE USAGE LOG: [template name]
-
-SESSION: [date/id]
-
-USAGE DETAILS:
-- Template: [name]
-- Version: [version]
-- Input: [brief description of what was analyzed]
-- Skills executed: [which skills from chain were run]
-
-OUTCOME:
-- Completed successfully: [Yes/No/Partial]
-- Output quality: [1-5 rating]
-- User satisfaction: [if known]
-
-OBSERVATIONS:
-- What worked well: [list]
-- What didn't work: [list]
-- Missing dimensions: [any dimensions that should have been included]
-- Missing assumptions: [any assumptions that should have been checked]
-- Suggested improvements: [list]
-
-LOG ENTRY CREATED: [timestamp]
-```
+If ambiguous, ask: "I can help with defining TPMs for a new system, assessing current TPM status, or creating TPM reporting for a milestone review — which fits?"
+If clear from context, proceed with the matching interpretation.
 
 ---
 
-### ANALYZE: Review Template Performance
+## Depth Scaling
 
-Aggregate usage data to assess template health:
+Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/tpm 4x [input]").
 
-```
-TEMPLATE ANALYSIS: [template name]
-
-USAGE STATISTICS:
-- Total uses: [N]
-- Period: [date range]
-- Success rate: [X%]
-- Average quality: [X/5]
-
-PATTERN ANALYSIS:
-
-Most used skills:
-| Skill | Usage Count | Skip Rate |
-|-------|-------------|-----------|
-| [skill] | [N] | [X%] |
-
-Most common issues:
-| Issue | Frequency | Impact |
-|-------|-----------|--------|
-| [issue] | [N times] | [HIGH/MED/LOW] |
-
-Dimension coverage:
-| Dimension | Used | Useful | Should Add |
-|-----------|------|--------|------------|
-| [dim] | [X%] | [Y%] | [suggestion] |
-
-Assumption hit rate:
-| Assumption | Checked | Was Relevant |
-|------------|---------|--------------|
-| [assumption] | [X%] | [Y%] |
-
-HEALTH SCORE: [0-100]
-
-RECOMMENDATIONS:
-1. [Recommendation based on data]
-2. [Recommendation based on data]
-```
+| Depth | Min TPMs Defined | Min Assessment Points | Min Risk Indicators | Min Measurement Methods | Min Reporting Elements |
+|-------|-----------------|----------------------|--------------------|-----------------------|----------------------|
+| 1x    | 3               | 2                    | 2                  | 3                     | 1                    |
+| 2x    | 6               | 4                    | 4                  | 6                     | 2                    |
+| 4x    | 12              | 6                    | 8                  | 12                    | 3                    |
+| 8x    | 20              | 8                    | 12                 | 20                    | 4                    |
+| 16x   | 30              | 12                   | 20                 | 30                    | 5                    |
 
 ---
 
-### IMPROVE: Update Template Based on Analysis
+## The Process
 
-Apply improvements to a template:
+### Step 1: Identify Critical Technical Parameters
+
+Select the technical parameters that are most important to system success. Focus on parameters that:
+- Are tied to key requirements
+- Have significant technical risk
+- Drive design decisions
+- Are difficult to achieve
+- Have history of problems on similar systems
 
 ```
-TEMPLATE IMPROVEMENT: [template name]
+CRITICAL PARAMETER SELECTION:
 
-CURRENT VERSION: [X.Y]
-PROPOSED VERSION: [X.Y+1]
-
-CHANGES BASED ON ANALYSIS:
-
-1. DIMENSIONS
-   Add: [new dimension] - Reason: [why needed based on usage]
-   Remove: [dimension] - Reason: [why not useful]
-   Modify: [dimension] - Change: [what to change]
-
-2. ASSUMPTIONS
-   Add: [new assumption] - Reason: [frequently relevant but missing]
-   Remove: [assumption] - Reason: [rarely relevant]
-
-3. SKILL CHAIN
-   Add: [skill] at position [N] - Reason: [why needed]
-   Remove: [skill] - Reason: [rarely used or not helpful]
-   Reorder: [skill] from [N] to [M] - Reason: [why]
-
-4. TRIGGERS
-   Add: [trigger] - Reason: [users expected this to match]
-   Remove: [trigger] - Reason: [false positives]
-
-5. OUTPUT FORMAT
-   Change: [what to modify]
-   Reason: [why]
-
-IMPROVEMENT VALIDATION:
-- [ ] Changes address identified issues
-- [ ] No breaking changes to existing workflows
-- [ ] Version properly incremented
-- [ ] Changelog updated
-
-APPLY IMPROVEMENT: [Yes/No]
+| # | Parameter | Unit | Linked Requirement | Why Critical | Risk Level |
+|---|-----------|------|--------------------|-------------|------------|
+| 1 | [e.g., system response time] | [ms] | [REQ-001] | [drives user satisfaction, architecturally significant] | HIGH/MED/LOW |
+| 2 | [e.g., weight] | [kg] | [REQ-015] | [constrained by platform, hard to reduce later] | HIGH/MED/LOW |
+| 3 | [e.g., mean time between failures] | [hours] | [REQ-022] | [reliability requirement, expensive to fix late] | HIGH/MED/LOW |
+| 4 | [e.g., throughput] | [tx/sec] | [REQ-008] | [scalability driver, architecture dependent] | HIGH/MED/LOW |
+| 5 | [e.g., power consumption] | [watts] | [REQ-030] | [thermal/battery constraint] | HIGH/MED/LOW |
+| 6 | [e.g., data accuracy] | [%] | [REQ-011] | [core mission capability] | HIGH/MED/LOW |
+...
 ```
+
+Selection criteria checklist:
+
+| Criterion | Question | Apply? |
+|-----------|----------|--------|
+| **Requirement linkage** | Is this parameter directly tied to a key requirement? | |
+| **Technical risk** | Is there significant uncertainty in achieving this value? | |
+| **Design driver** | Does this parameter drive major design decisions? | |
+| **Integration sensitivity** | Does this degrade when components are integrated? | |
+| **Cost sensitivity** | Would failure to meet this drive significant rework cost? | |
+| **Schedule sensitivity** | Would late discovery of shortfall impact schedule? | |
+| **Stakeholder visibility** | Do stakeholders specifically ask about this parameter? | |
 
 ---
 
-### VALIDATE: Check Template Accuracy
+### Step 2: Set Planned Value Profiles
 
-Periodically verify template is still valid:
+For each TPM, define the expected trajectory over the development timeline:
 
 ```
-TEMPLATE VALIDATION: [template name]
+TPM PLANNED PROFILE: [Parameter Name]
 
-VALIDATION DATE: [date]
-LAST VALIDATION: [date]
-TEMPLATE VERSION: [version]
+Requirement threshold: [value] [unit] (MUST achieve)
+Requirement objective: [value] [unit] (GOAL to achieve)
+Current best estimate: [value] [unit]
 
-VALIDATION CHECKS:
+| Milestone | Date | Planned Value | Tolerance Band (+/-) | Basis |
+|-----------|------|--------------|--------------------| ------|
+| System Requirements Review (SRR) | [date] | [value] | +/-[value] | Engineering estimate, analogy |
+| Preliminary Design Review (PDR) | [date] | [value] | +/-[value] | Analysis, modeling |
+| Critical Design Review (CDR) | [date] | [value] | +/-[value] | Detailed design analysis |
+| Test Readiness Review (TRR) | [date] | [value] | +/-[value] | Component test data |
+| System Verification Review (SVR) | [date] | [value] | +/-[value] | System test data |
+| Operational Test | [date] | [value] | +/-[value] | Measured performance |
+| Full Rate Production | [date] | [value] | +/-[value] | Production unit data |
 
-1. SKILL CHAIN VALIDITY
-   All skills exist and are accessible?
-   | Skill | Exists | Current |
-   |-------|--------|---------|
-   | [skill] | [Y/N] | [Y/N - has it been updated?] |
+PROFILE SHAPE:
+- Tolerance band narrows as design matures and test data replaces estimates
+- Planned value may shift as design evolves (within requirement threshold)
+- Achievement curve should converge toward requirement threshold/objective
+```
 
-2. DIMENSION RELEVANCE
-   Are dimensions still the right ones for this domain?
-   | Dimension | Still Relevant | Notes |
-   |-----------|----------------|-------|
-   | [dim] | [Y/N/Partial] | [notes] |
+Planned value profile table for all TPMs:
 
-3. ASSUMPTION CURRENCY
-   Are default assumptions still valid?
-   | Assumption | Still Valid | Changed Context |
-   |------------|-------------|-----------------|
-   | [assumption] | [Y/N] | [if changed, how] |
+| TPM | Unit | Requirement | SRR Est. | PDR Est. | CDR Est. | TRR Measured | SVR Measured | Status |
+|-----|------|-------------|----------|----------|----------|-------------|-------------|--------|
+| [param 1] | [unit] | [threshold] | [value+/-tol] | [value+/-tol] | [value+/-tol] | [value+/-tol] | [value+/-tol] | ON TRACK / AT RISK / BREACH |
+| [param 2] | [unit] | [threshold] | [value+/-tol] | [value+/-tol] | [value+/-tol] | [value+/-tol] | [value+/-tol] | ON TRACK / AT RISK / BREACH |
+...
 
-4. TRIGGER ACCURACY
-   Do triggers still correctly identify this domain?
-   | Trigger | Accurate | False Positives | False Negatives |
-   |---------|----------|-----------------|-----------------|
-   | [trigger] | [Y/N] | [examples] | [examples] |
+---
 
-5. ANALOGY DOMAIN RELEVANCE
-   Are suggested analogies still useful?
-   | Domain | Still Useful | Better Alternative |
-   |--------|--------------|-------------------|
-   | [domain] | [Y/N] | [if no, what instead] |
+### Step 3: Define Current Estimates and Tolerance Bands
 
-VALIDATION RESULT:
-- Overall status: [VALID / NEEDS_UPDATE / DEPRECATED]
-- Critical issues: [list]
-- Recommended actions: [list]
+For each TPM at the current point in time:
 
-NEXT VALIDATION: [scheduled date]
+```
+CURRENT TPM STATUS:
+
+| TPM | Requirement | Planned Value (now) | Current Estimate | Margin | Tolerance Band | Status |
+|-----|-------------|--------------------|-----------------|---------| --------------|--------|
+| [param 1] | <= [threshold] | [planned] | [current] | [planned - current] | +/-[tol] | GREEN / YELLOW / RED |
+| [param 2] | >= [threshold] | [planned] | [current] | [current - planned] | +/-[tol] | GREEN / YELLOW / RED |
+...
+
+STATUS DEFINITIONS:
+
+| Status | Meaning | Condition |
+|--------|---------|-----------|
+| GREEN | On track | Current estimate within tolerance band of planned value |
+| YELLOW | At risk | Current estimate outside tolerance band but within requirement threshold |
+| RED | Breach | Current estimate does not meet requirement threshold |
+
+MARGIN DEFINITIONS:
+
+| Margin Type | Calculation | Purpose |
+|------------|-------------|---------|
+| Design margin | Requirement threshold - current best estimate | How much room remains |
+| Margin consumption rate | Margin lost per time period | Trend indicator |
+| Required margin at this milestone | Planned value - requirement threshold | Expected margin at this point |
+| Margin ratio | Actual margin / Required margin | >1.0 is healthy, <1.0 is concerning |
 ```
 
 ---
 
-### RETIRE: Deprecate Outdated Template
+### Step 4: Establish Measurement Methods
 
-Remove templates that are no longer useful:
+Define how each TPM will be measured at each lifecycle stage:
 
 ```
-TEMPLATE RETIREMENT: [template name]
+MEASUREMENT METHODS:
 
-RETIREMENT REASON:
-[ ] Superseded by: [new template name]
-[ ] Domain no longer relevant
-[ ] Merged into: [other template name]
-[ ] Low usage (< [N] uses in [period])
-[ ] Consistently poor outcomes
-[ ] Other: [specify]
+| TPM | Lifecycle Stage | Measurement Method | Data Source | Accuracy | Frequency |
+|-----|----------------|-------------------|-------------|----------|-----------|
+| [param 1] | Concept | Engineering estimate | Similar system data | +/-50% | Once |
+| [param 1] | Design | Analysis/modeling | Simulation results | +/-25% | Per design iteration |
+| [param 1] | Development | Component test | Lab measurement | +/-10% | Per test event |
+| [param 1] | Integration | System test | Integrated test | +/-5% | Per integration build |
+| [param 1] | Operations | Field measurement | Operational data | +/-2% | Continuous |
+...
 
-RETIREMENT PROCESS:
+MEASUREMENT MATURITY LEVELS:
 
-1. USAGE CHECK
-   Recent usage: [N] times in last [period]
-   Active users: [if known]
-   Dependencies: [templates or workflows that use this]
-
-2. MIGRATION PATH
-   If superseded: Redirect to [new template]
-   If merged: Content incorporated into [template]
-   If deprecated: Alternative recommendation [suggestion]
-
-3. ARCHIVE
-   Archive location: templates/archive/[template_name]_[date].yaml
-   Preserve: [what to keep for reference]
-
-4. NOTIFICATION
-   Users to notify: [if applicable]
-   Deprecation notice: [message]
-
-RETIREMENT STATUS:
-- [ ] Usage checked
-- [ ] Migration path defined
-- [ ] Template archived
-- [ ] Index updated
-- [ ] Notifications sent (if applicable)
-
-RETIREMENT COMPLETE: [Yes/No]
+| Level | Source | Typical Accuracy | Confidence |
+|-------|--------|-----------------|------------|
+| 1 | Expert opinion / rough analogy | +/-50% | LOW |
+| 2 | Parametric model / detailed analogy | +/-30% | LOW-MED |
+| 3 | Engineering analysis / simulation | +/-20% | MEDIUM |
+| 4 | Component or subsystem test data | +/-10% | MED-HIGH |
+| 5 | System-level test data | +/-5% | HIGH |
+| 6 | Operational measurement data | +/-2% | VERY HIGH |
 ```
 
 ---
 
-### REPORT: Template Health Dashboard
-
-Overview of all templates:
+### Step 5: Define Reporting and Escalation Thresholds
 
 ```
-===================================================
-TEMPLATE HEALTH REPORT
-Generated: [date]
-===================================================
+ESCALATION FRAMEWORK:
+
+| Threshold | Condition | Action Required | Escalation To |
+|-----------|-----------|----------------|---------------|
+| WATCH | Margin consumption rate increasing | Monitor more frequently, investigate root cause | Technical lead |
+| WARNING | Current estimate within [X]% of tolerance band edge | Root cause analysis, identify corrective actions | Project manager |
+| ACTION | Current estimate outside tolerance band (YELLOW) | Implement corrective action plan, report to management | Program manager |
+| BREACH | Current estimate violates requirement threshold (RED) | Formal corrective action, requirement re-negotiation or redesign | Sponsor / customer |
+
+REPORTING CADENCE:
+
+| Report Type | Audience | Frequency | Content |
+|-------------|----------|-----------|---------|
+| TPM Dashboard | Project team | Weekly/Bi-weekly | All TPM status, trends, margin |
+| TPM Summary | Program management | Monthly | Status changes, escalations, actions |
+| TPM Detail | Design review board | Per milestone | Full profile history, measurement data, forecasts |
+| TPM Alert | Management chain | As needed (on threshold breach) | Specific TPM, impact, corrective action plan |
+
+CORRECTIVE ACTION TEMPLATE:
+
+| Field | Content |
+|-------|---------|
+| TPM affected | [parameter name] |
+| Current status | [RED/YELLOW] |
+| Requirement threshold | [value] |
+| Current estimate | [value] |
+| Shortfall | [delta] |
+| Root cause | [analysis] |
+| Corrective actions | 1. [action, owner, due date] 2. [action, owner, due date] |
+| Expected result | [estimated value after correction] |
+| Fallback plan | [if corrective action fails] |
+| Decision needed by | [date] |
+```
+
+---
+
+### Step 6: Track Actuals vs Planned
+
+Create the tracking dashboard:
+
+```
+TPM TRACKING DASHBOARD:
+
+Date: [current date]
+Program phase: [current phase]
+Next milestone: [milestone name, date]
 
 SUMMARY:
-- Total templates: [N]
-- Healthy: [N] ([X%])
-- Needs attention: [N] ([X%])
-- Deprecated: [N]
+  Total TPMs tracked: [N]
+  GREEN (on track): [N]
+  YELLOW (at risk): [N]
+  RED (breached): [N]
 
-===================================================
+DETAILED STATUS:
 
-TEMPLATE STATUS:
+| TPM | Req | Planned | Current | Margin | Trend | Status | Action |
+|-----|-----|---------|---------|--------|-------|--------|--------|
+| [param 1] | [val] | [val] | [val] | [val] | up/stable/down | GREEN | None |
+| [param 2] | [val] | [val] | [val] | [val] | down | YELLOW | [CAP-001] |
+| [param 3] | [val] | [val] | [val] | [val] | down | RED | [CAP-002] |
+...
 
-| Template | Version | Uses | Health | Last Validated | Action |
-|----------|---------|------|--------|----------------|--------|
-| [name] | [ver] | [N] | [Good/Warning/Critical] | [date] | [None/Update/Validate/Retire] |
+TREND HISTORY:
 
-===================================================
+TPM: [parameter name]
+| Date | Planned | Actual/Estimate | Margin | Measurement Level | Notes |
+|------|---------|----------------|--------|-------------------|-------|
+| [date 1] | [value] | [value] | [value] | 1-Expert | Initial estimate |
+| [date 2] | [value] | [value] | [value] | 2-Parametric | Updated with model |
+| [date 3] | [value] | [value] | [value] | 3-Analysis | PDR analysis |
+| [date 4] | [value] | [value] | [value] | 4-Component test | First test data |
+| [date 5] | [value] | [value] | [value] | 5-System test | Integration result |
 
-NEEDS ATTENTION:
-
-1. [Template name]
-   Issue: [what's wrong]
-   Recommended: [action]
-
-2. [Template name]
-   Issue: [what's wrong]
-   Recommended: [action]
-
-===================================================
-
-RECENT CHANGES:
-- [date]: [template] updated to v[X]
-- [date]: [template] created
-- [date]: [template] retired
-
-===================================================
-
-UPCOMING MAINTENANCE:
-- [date]: [template] due for validation
-- [date]: [template] usage review
-
-===================================================
+MARGIN BURNDOWN:
+  Starting margin (SRR): [value]
+  Current margin: [value]
+  Margin consumed: [value] ([%])
+  Margin consumption rate: [value per month]
+  Projected margin at IOC: [value] -- SUFFICIENT / INSUFFICIENT
 ```
 
 ---
 
-## Maintenance Schedule
-
-Recommended maintenance cadence:
-
-| Activity | Frequency | Trigger |
-|----------|-----------|---------|
-| Usage logging | Every use | Automatic |
-| Performance analysis | Monthly | Scheduled |
-| Validation | Quarterly | Scheduled |
-| Improvement | As needed | Analysis findings |
-| Health report | Monthly | Scheduled |
-| Retirement review | Quarterly | Low usage |
-
----
-
-## Example: Improving Academic Research Template
+## Output Format
 
 ```
-TEMPLATE IMPROVEMENT: academic_research
+## TPM TRACKING PLAN: [System Name]
 
-CURRENT VERSION: 1.0
-PROPOSED VERSION: 1.1
+### Critical Technical Parameters
+[Table of selected TPMs with justification]
 
-CHANGES BASED ON ANALYSIS:
+### Planned Value Profiles
+[For each TPM: requirement, planned trajectory, tolerance bands]
 
-1. DIMENSIONS
-   Add: "Publication venue" [journal, conference, book, thesis]
-   Reason: 15 of 20 recent uses needed this dimension
+### Current Status Dashboard
+  GREEN: [N] | YELLOW: [N] | RED: [N]
+[Detailed status table with margin and trend]
 
-2. ASSUMPTIONS
-   Add: "Reproducibility is possible"
-   Reason: Emerged as critical in 8 uses
+### Measurement Plan
+[Table of methods per TPM per lifecycle stage]
 
-3. SKILL CHAIN
-   Add: /de after /se
-   Reason: Research often has task dependencies
+### Escalation Framework
+[Thresholds, actions, reporting cadence]
 
-4. TRIGGERS
-   Add: "systematic review"
-   Reason: 5 users expected this to match
+### Active Corrective Actions
+[Any current YELLOW/RED items with action plans]
 
-IMPROVEMENT VALIDATION:
-- [x] Changes address identified issues
-- [x] No breaking changes
-- [x] Version incremented to 1.1
-- [x] Changelog updated
+### Trend History
+[Historical tracking data for each TPM]
 
-APPLY IMPROVEMENT: Yes
+### Risk Assessment
+[TPMs most likely to breach, mitigation strategies]
 ```
 
 ---
 
 ## Quality Checklist
 
-Before completing maintenance:
-- [ ] Operation type clear (TRACK/ANALYZE/IMPROVE/VALIDATE/RETIRE)
-- [ ] Data gathered or generated
-- [ ] Analysis performed where applicable
-- [ ] Recommendations specific and actionable
-- [ ] Changes validated before applying
-- [ ] Records updated
+Before completing:
+- [ ] TPMs linked to specific requirements
+- [ ] Only critical parameters selected (not everything -- typically 6-15 TPMs)
+- [ ] Planned value profiles defined with narrowing tolerance bands
+- [ ] Requirement threshold and objective values stated
+- [ ] Margin calculated and margin consumption rate tracked
+- [ ] Measurement methods defined for each lifecycle stage
+- [ ] Measurement maturity level noted (estimate vs test data)
+- [ ] Escalation thresholds are specific and actionable
+- [ ] Reporting cadence and audience defined
+- [ ] Trend direction indicated (improving, stable, degrading)
 
 ---
 
-## Integration
+## Next Steps
 
-Use with:
-- `/dmt` - Create templates to maintain
-- `/tr` - Store and retrieve templates
-- Learning infrastructure - Feed improvements into self-improvement pipeline
+After defining TPMs:
+1. Use `/requirements` to ensure TPM-linked requirements are well-specified and measurable
+2. Use `/testplan` to design test events that will measure TPMs at each milestone
+3. Use `/tracematrix` to verify TPMs trace to requirements, design, and test
+4. Use `/sysdecomp` to allocate TPMs to responsible components/subsystems
+5. Use `/lcca` to understand cost impact of TPM shortfalls and corrective actions
+6. Use `/fla` to anticipate failure modes that could cause TPM breaches
