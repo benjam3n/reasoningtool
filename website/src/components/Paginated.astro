@@ -738,7 +738,7 @@ const { pageGroup = '', pageIndex = 0, mobileNums = 'grid' } = Astro.props;
       const deltaY = touchState.lastY - currentY;
       const now = performance.now();
       const deltaTime = Math.max(8, now - touchState.lastTime);
-      const appliedDelta = deltaY * 0.11;
+      const appliedDelta = deltaY * 0.32;
       const instantaneousVelocity = appliedDelta / (deltaTime / 16.67);
 
       touchState.lastY = currentY;
@@ -756,7 +756,7 @@ const { pageGroup = '', pageIndex = 0, mobileNums = 'grid' } = Astro.props;
       const allowScroll = activeSection.classList.contains('section--scrollable') && activeSection.contains(target);
       if (!allowScroll) return;
       e.preventDefault();
-      activeSection.scrollTop += e.deltaY * 0.16;
+      activeSection.scrollTop += e.deltaY * 0.45;
     }, { passive: false });
 
     container.addEventListener('touchstart', (e) => {
