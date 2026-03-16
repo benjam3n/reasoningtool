@@ -644,7 +644,7 @@ const { pageGroup = '', pageIndex = 0, mobileNums = 'grid' } = Astro.props;
           return;
         }
 
-        touchState.velocity *= 0.988;
+        touchState.velocity *= 0.96;
         if (Math.abs(touchState.velocity) < 0.08) {
           touchState.velocity = 0;
           touchState.rafId = 0;
