@@ -7,6 +7,24 @@ output:
 
 # Career Path Planning
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Career direction exploration**: The user feels stuck, unfulfilled, or uncertain about their career and wants to systematically explore what paths are available, what they value, and where to go next.
+**Interpretation 2 — Career transition planning**: The user has already identified a target role or field and needs a concrete plan to get there — gap analysis, skill development, networking, and timeline.
+**Interpretation 3 — Career decision evaluation**: The user faces a specific choice (promotion vs. new company, stay vs. pivot, offer A vs. offer B) and wants a structured framework to evaluate the options against their values and goals.
+
+If ambiguous, ask: "I can help with exploring what career direction to pursue, planning a specific career transition, or evaluating a concrete career decision — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+---
+
+
 ## Overview
 Strategic framework for assessing career options, planning transitions,
 identifying skill gaps, and making intentional career decisions.
@@ -276,22 +294,3 @@ Take action and adjust based on learning:
 - Development plan has concrete actions and timeline
 - Experiments designed before major commitment
 - Taking action, not just analyzing
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Career direction exploration**: The user feels stuck, unfulfilled, or uncertain about their career and wants to systematically explore what paths are available, what they value, and where to go next.
-**Interpretation 2 — Career transition planning**: The user has already identified a target role or field and needs a concrete plan to get there — gap analysis, skill development, networking, and timeline.
-**Interpretation 3 — Career decision evaluation**: The user faces a specific choice (promotion vs. new company, stay vs. pivot, offer A vs. offer B) and wants a structured framework to evaluate the options against their values and goals.
-
-If ambiguous, ask: "I can help with exploring what career direction to pursue, planning a specific career transition, or evaluating a concrete career decision — which fits?"
-If clear from context, proceed with the matching interpretation.
-
----
-
-Apply this procedure to the input provided.

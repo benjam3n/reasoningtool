@@ -133,9 +133,3 @@ Select top candidates for deeper analysis.
 - Opportunities were evaluated on leverage AND feasibility
 - Selected opportunities match available resources
 - Sustainability of opportunity was considered
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

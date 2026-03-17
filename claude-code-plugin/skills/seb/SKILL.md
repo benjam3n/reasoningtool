@@ -361,9 +361,3 @@ Iteration process:
 - Link building focuses on earning, not manipulation
 - Measurement tracks business outcomes, not just rankings
 - Strategy is sustainable with available resources
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

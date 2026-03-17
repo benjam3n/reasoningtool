@@ -156,9 +156,3 @@ Common maintenance tasks:
 - Leech cards are identified and addressed
 - Deck is maintained with outdated content retired
 - Retention rate is tracked and above 85%
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

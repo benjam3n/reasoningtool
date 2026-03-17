@@ -86,9 +86,3 @@ After deciding, prevent decision erosion:
 - A review date was set
 - The first action toward the decision was identified
 - No revisiting before the review date
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

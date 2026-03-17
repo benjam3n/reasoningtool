@@ -440,9 +440,3 @@ RECOMMENDATION:
 - Relevant archetypes are identified
 - Leverage points are prioritized by actual leverage
 - Interventions are traced through feedback effects
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

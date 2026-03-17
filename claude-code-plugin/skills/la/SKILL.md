@@ -7,6 +7,22 @@ output:
 
 # Limitation Analysis
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — System/product limitations**: The user wants to identify weaknesses, constraints, and bottlenecks in a system, product, or tool they are building or using.
+**Interpretation 2 — Method/approach limitations**: The user wants to assess the boundaries and blind spots of a particular method, framework, or analytical approach.
+**Interpretation 3 — Personal/team limitations**: The user wants to honestly evaluate capacity constraints, skill gaps, or resource limitations affecting their ability to execute.
+
+If ambiguous, ask: "I can help with system/product limitations, method/approach limitations, or personal/team limitations — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Systematically identify limitations across multiple dimensions,
 assess their impact, and prioritize which to address.
@@ -93,20 +109,3 @@ For limitations we won't fix, document:
 - When it matters vs when it doesn't
 - Who needs to know about it
 
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — System/product limitations**: The user wants to identify weaknesses, constraints, and bottlenecks in a system, product, or tool they are building or using.
-**Interpretation 2 — Method/approach limitations**: The user wants to assess the boundaries and blind spots of a particular method, framework, or analytical approach.
-**Interpretation 3 — Personal/team limitations**: The user wants to honestly evaluate capacity constraints, skill gaps, or resource limitations affecting their ability to execute.
-
-If ambiguous, ask: "I can help with system/product limitations, method/approach limitations, or personal/team limitations — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

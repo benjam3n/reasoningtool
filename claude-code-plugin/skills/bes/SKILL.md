@@ -74,9 +74,3 @@ Document the final answer and the path taken.
 - Questions divided space roughly in half
 - Elimination was consistent with answers
 - Single answer remained at end
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

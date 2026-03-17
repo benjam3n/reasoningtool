@@ -227,9 +227,3 @@ Each criterion should be:
 | Did we change what's being achieved? | NO | YES |
 | Did we just add specificity? | YES | NO |
 | Would user feel redirected? | NO | YES |
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

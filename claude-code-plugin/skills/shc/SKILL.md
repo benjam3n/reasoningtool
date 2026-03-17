@@ -218,9 +218,3 @@ Create actionable improvement recommendations:
 - Recommendations are prioritized by impact and urgency
 - Health status matches the evidence
 - Self-referential limitations are acknowledged
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

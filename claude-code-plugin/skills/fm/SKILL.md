@@ -7,6 +7,22 @@ output:
 
 # Financial Modeling
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Build a financial model**: The user needs to construct a financial model from scratch (projections, scenarios, sensitivity analysis) to support a specific decision like investment, launch, or fundraising.
+**Interpretation 2 — Evaluate an existing model**: The user has a financial model (or numbers/projections someone gave them) and wants to audit it for correctness, test its assumptions, or understand what it actually tells them.
+**Interpretation 3 — Quick financial sizing**: The user doesn't need a full model — they need a back-of-envelope financial analysis to quickly assess whether something is worth deeper investigation (unit economics, breakeven, rough ROI).
+
+If ambiguous, ask: "I can help with building a model from scratch, evaluating an existing one, or doing a quick financial sizing — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Build financial models for projections, scenario analysis, and sensitivity testing to support decision-making
 
@@ -207,20 +223,3 @@ Prepare model for communication:
 - Scenarios are internally consistent
 - Sensitivity analysis identifies key drivers
 - Documentation enables maintenance by others
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Build a financial model**: The user needs to construct a financial model from scratch (projections, scenarios, sensitivity analysis) to support a specific decision like investment, launch, or fundraising.
-**Interpretation 2 — Evaluate an existing model**: The user has a financial model (or numbers/projections someone gave them) and wants to audit it for correctness, test its assumptions, or understand what it actually tells them.
-**Interpretation 3 — Quick financial sizing**: The user doesn't need a full model — they need a back-of-envelope financial analysis to quickly assess whether something is worth deeper investigation (unit economics, breakeven, rough ROI).
-
-If ambiguous, ask: "I can help with building a model from scratch, evaluating an existing one, or doing a quick financial sizing — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

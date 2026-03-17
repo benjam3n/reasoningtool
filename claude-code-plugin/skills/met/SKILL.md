@@ -100,9 +100,3 @@ What new relationships does the journey metaphor reveal?
 
 **Output**: iterated_insights
 
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

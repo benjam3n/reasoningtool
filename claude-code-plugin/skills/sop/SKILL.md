@@ -254,9 +254,3 @@ For Tier 5 sources and any dropped from lower tiers:
 - Top priorities align with actual needs
 - Time allocation is realistic and complete
 - Skipped sources have clear rationale
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

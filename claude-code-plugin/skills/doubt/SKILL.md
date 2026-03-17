@@ -98,9 +98,3 @@ Between now and the review date:
 - A commit statement was written with a specific review date
 - Energy was redirected from doubting to acting
 - No revisiting before the review date unless genuinely new information emerges
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

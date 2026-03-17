@@ -64,9 +64,3 @@ Merge all options into single list:
 - Unconventional options included (not just obvious choices)
 - No premature filtering (options aren't judged/removed)
 - Generation gaps acknowledged (know what might be missing)
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

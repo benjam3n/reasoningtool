@@ -270,9 +270,3 @@ Ensure kickoff momentum continues:
 - Team understands objectives, scope, and their roles
 - Project infrastructure is established
 - Transition to planning phase is clear
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

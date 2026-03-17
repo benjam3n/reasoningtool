@@ -204,9 +204,3 @@ Verify plan is complete and actionable.
 - Success criteria are measurable
 - Fallback plan exists for non-trivial steps
 - Infeasible steps are transformed or flagged
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

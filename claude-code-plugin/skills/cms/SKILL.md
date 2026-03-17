@@ -50,9 +50,3 @@ Record final choice with rationale
 - Selected component meets all must-have requirements
 - Trade-offs are explicitly acknowledged and accepted
 - Fork points are documented for future reference
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

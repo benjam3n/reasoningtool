@@ -100,9 +100,3 @@ Decide: Persist / Adjust / Pivot
 - All templates ready for use
 - Automation triggering correctly
 - Repeat business rate measurable
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

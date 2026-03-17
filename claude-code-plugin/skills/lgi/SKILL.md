@@ -68,9 +68,3 @@ Synthesize the layers into a goal statement:
 
 Or shorter: "The goal is [Y]."
 
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

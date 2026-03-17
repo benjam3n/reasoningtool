@@ -93,9 +93,3 @@ Prepare for API changes over time:
 - Documentation enables self-service
 - Versioning strategy established
 - API specification validates
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

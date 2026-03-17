@@ -102,9 +102,3 @@ Note what would change the interpretation.
 - Scoring was consistent across interpretations
 - Confidence assessment accounts for score gaps
 - Selected interpretation accounts for key input features
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -100,9 +100,3 @@ If issues:
 - Rollback capability verified
 - Stakeholders notified of outcome
 - Deployment documented
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

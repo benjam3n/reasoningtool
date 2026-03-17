@@ -7,6 +7,24 @@ output:
 
 # Architecture Patterns
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Greenfield architecture selection**: The user is starting a new system or project and needs to evaluate and choose the right architectural pattern from scratch.
+**Interpretation 2 — Architecture evolution**: The user has an existing system that's hitting scaling, complexity, or maintainability limits and needs to evaluate whether and how to change the architecture.
+**Interpretation 3 — Architecture decision documentation**: The user has already made or is near making an architectural choice and wants to formally document it with rationale, tradeoffs, and an ADR.
+
+If ambiguous, ask: "I can help with choosing architecture for a new system, evolving an existing architecture, or documenting an architectural decision — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+---
+
+
 ## Overview
 Procedure for evaluating, choosing, and implementing software architecture patterns
 
@@ -93,22 +111,3 @@ Create plan to implement the architecture:
 - Plan is realistic given constraints
 - Stakeholders are aligned
 - Architecture can evolve over time
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Greenfield architecture selection**: The user is starting a new system or project and needs to evaluate and choose the right architectural pattern from scratch.
-**Interpretation 2 — Architecture evolution**: The user has an existing system that's hitting scaling, complexity, or maintainability limits and needs to evaluate whether and how to change the architecture.
-**Interpretation 3 — Architecture decision documentation**: The user has already made or is near making an architectural choice and wants to formally document it with rationale, tradeoffs, and an ADR.
-
-If ambiguous, ask: "I can help with choosing architecture for a new system, evolving an existing architecture, or documenting an architectural decision — which fits?"
-If clear from context, proceed with the matching interpretation.
-
----
-
-Apply this procedure to the input provided.

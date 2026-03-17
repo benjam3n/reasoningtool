@@ -1,0 +1,1 @@
+Scan recent work context and summarize what's in progress to help resume. Read and execute /home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/statous/SKILL.md, applying it to this input: $ARGUMENTS

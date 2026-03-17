@@ -183,9 +183,3 @@ Develop high-level execution plan for recommended strategy:
 - Execution outline is detailed enough to begin procedure discovery
 - Risks are identified with mitigation approaches
 - Alternatives are ranked for fallback purposes
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

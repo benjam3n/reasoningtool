@@ -212,9 +212,3 @@ Set up balance alerts:
 - Maintenance schedule established
 - Cost tracking in place
 - Balance monitoring configured
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

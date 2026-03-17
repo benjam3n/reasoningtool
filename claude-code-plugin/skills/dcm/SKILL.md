@@ -114,4 +114,3 @@ If yes and within max_depth:
 
 ---
 
-Apply this procedure to the input provided.

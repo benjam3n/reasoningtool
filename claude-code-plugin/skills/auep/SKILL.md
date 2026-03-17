@@ -265,9 +265,3 @@ Save report to output_directory/EXTRACTION_REPORT.md
 - Indexes updated with all new procedures
 - Cost stayed within budget
 - Extraction report is accurate and complete
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

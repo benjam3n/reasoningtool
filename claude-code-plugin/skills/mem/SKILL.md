@@ -172,9 +172,3 @@ Expansion:
 - Models are connected into a latticework
 - Models are applied in real decisions
 - Limitations and misapplications are known
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

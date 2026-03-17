@@ -157,9 +157,3 @@ Create comprehensive coverage analysis:
 - New procedure specifications are complete and actionable
 - Priority ordering considers all relevant factors
 - Coverage summary accurately reflects the analysis
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -92,9 +92,3 @@ Synthesize analysis into clear recommendation:
 - Discount rate is appropriate for risk level
 - Sensitivity analysis covers key assumptions
 - Recommendation is clear and actionable
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

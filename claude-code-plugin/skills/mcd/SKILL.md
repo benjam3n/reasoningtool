@@ -87,9 +87,3 @@ Test robustness of the recommendation:
 - Intangible factors explicitly considered
 - Dissenting views captured and addressed
 - Decision rationale documented for future reference
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -87,9 +87,3 @@ Ensure commitment and clear next steps:
 - Groupthink check performed
 - All participants committed to support implementation
 - Review point scheduled
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

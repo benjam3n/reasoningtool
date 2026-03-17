@@ -303,9 +303,3 @@ Newsletter sponsorship (when 500+ subscribers):
 - Long-term revenue streams defined
 - Sustainability roadmap documented
 - All revenue tracked and reported
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

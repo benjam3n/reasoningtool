@@ -60,9 +60,3 @@ Produce a rewrite queue of specific edits.
 - When you want repeatable results across executors (human, AI, future you)
 - When a gate/procedure is used for enforcement decisions
 - When outputs feel inconsistent across runs
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

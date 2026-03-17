@@ -268,9 +268,3 @@ Human approval required before sending.
 - Tone is professional-warm, not corporate-speak
 - All facts are verified and sourced
 - Human has approved before sending
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

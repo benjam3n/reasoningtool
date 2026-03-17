@@ -106,9 +106,3 @@ After deciding under ambiguity:
 - Optionality was considered — flexible choices preferred
 - Reversible and irreversible choices were handled differently
 - Monitoring signals and review dates were established
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

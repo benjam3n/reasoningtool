@@ -115,9 +115,3 @@ Run the habit with monitoring:
 - Tracking system is in place and being used
 - Accountability mechanism matches the person and stakes
 - Never miss twice rule is understood and applied
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

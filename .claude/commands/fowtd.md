@@ -1,0 +1,1 @@
+Figure Out What To Do — when you have lots of data, information, or material and need to figure out what to do with it. Read and execute /home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/fowtd/SKILL.md, applying it to this input: $ARGUMENTS

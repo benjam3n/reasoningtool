@@ -7,6 +7,22 @@ output:
 
 # Journey Matching
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Find journeys that match a current situation**: The user has a goal, problem, or life situation and wants to find journey archetypes from the library that match, so they can learn what typically comes next and what to watch for.
+**Interpretation 2 — Get guidance for a specific stage of a journey**: The user already knows roughly what journey they're on but wants to understand where they are in it, what challenges to expect at this stage, and what transitions are ahead.
+**Interpretation 3 — Compare alternative paths forward**: The user is at a decision point where multiple journey patterns could apply and wants to see how different paths diverge, what each requires, and which fits their constraints.
+
+If ambiguous, ask: "I can help with finding journeys that match your situation, getting stage-specific guidance for a journey you're on, or comparing alternative paths forward — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Given a current situation (goal, problem, state), find journeys
 from the library that might apply. This enables learning from
@@ -246,20 +262,3 @@ top_matching_journeys:
     description: '[Where you are in this journey]'
 
 ```
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Find journeys that match a current situation**: The user has a goal, problem, or life situation and wants to find journey archetypes from the library that match, so they can learn what typically comes next and what to watch for.
-**Interpretation 2 — Get guidance for a specific stage of a journey**: The user already knows roughly what journey they're on but wants to understand where they are in it, what challenges to expect at this stage, and what transitions are ahead.
-**Interpretation 3 — Compare alternative paths forward**: The user is at a decision point where multiple journey patterns could apply and wants to see how different paths diverge, what each requires, and which fits their constraints.
-
-If ambiguous, ask: "I can help with finding journeys that match your situation, getting stage-specific guidance for a journey you're on, or comparing alternative paths forward — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

@@ -120,9 +120,3 @@ Consider: Is this stream worth continuing?
 - Pricing set with market context
 - Acquisition system documented and running
 - First client acquired or clear path to first client
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

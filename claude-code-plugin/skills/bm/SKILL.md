@@ -7,6 +7,22 @@ output:
 
 # Budget Management
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Set up a budget for a new project**: The user is starting a project with a fixed budget and needs to establish allocations, spending gates, and tracking from the beginning.
+**Interpretation 2 — Evaluate a specific expense**: The user has a particular purchase or investment decision and wants to run it through the spending gate framework to decide whether it is worth the cost.
+**Interpretation 3 — Review and optimize an existing budget**: The user is mid-project with spending already underway and needs to assess budget health, identify savings, and reallocate resources.
+
+If ambiguous, ask: "I can help with setting up a new project budget, evaluating a specific expense, or reviewing and optimizing an existing budget — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Manage limited financial resources across autonomous operations with maximum value extraction
 
@@ -224,20 +240,3 @@ COST PER OUTCOME:
 - Regular budget reviews conducted
 - Budget health accurately assessed
 - Final report captures lessons learned
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Set up a budget for a new project**: The user is starting a project with a fixed budget and needs to establish allocations, spending gates, and tracking from the beginning.
-**Interpretation 2 — Evaluate a specific expense**: The user has a particular purchase or investment decision and wants to run it through the spending gate framework to decide whether it is worth the cost.
-**Interpretation 3 — Review and optimize an existing budget**: The user is mid-project with spending already underway and needs to assess budget health, identify savings, and reallocate resources.
-
-If ambiguous, ask: "I can help with setting up a new project budget, evaluating a specific expense, or reviewing and optimizing an existing budget — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

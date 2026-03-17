@@ -328,9 +328,3 @@ Develop actionable recommendations from the analysis:
 - Priorities are justified by clear criteria
 - Strategic options address multiple SWOT factors
 - Recommendations are specific and actionable
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

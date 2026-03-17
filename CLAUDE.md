@@ -1,6 +1,6 @@
 # Reasoning Toolkit
 
-This project contains 597 thinking skills. Each skill is a structured procedure in `claude-code-plugin/skills/[name]/SKILL.md`.
+This project contains 650 thinking skills. Each skill is a structured procedure in `claude-code-plugin/skills/[name]/SKILL.md`.
 
 ## How Skills Work
 
@@ -67,7 +67,9 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Choose depth/scope | `/alt`, `/ign`, `/dwt` |
 | Set difficulty level | `/soph`, `/smpl`, `/ezy`, `/hrd`, `/genl`, `/spcf` |
 | Handle lists | `/list`, `/ro`, `/etc`, `/aso` |
+| Figure out what to do with data | `/fowtd`, `/fowtdn` |
 | Find the right skill | `/wsib`, `/dtse`, `/extract`, `/fonss`, `/handle` |
 | Improve skills | `/imps`, `/impss`, `/imprt`, `/skgap` |
 | Operationalize wisdom | `/platitude`, `/platitudes` |
 | Anticipate the future | `/dys`, `/utp`, `/fut` |
+| Resume prior work | `/statous` |

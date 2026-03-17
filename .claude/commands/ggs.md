@@ -1,0 +1,1 @@
+Guess Generation → Selection. Read and execute /home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/ggs/SKILL.md, applying it to this input: $ARGUMENTS

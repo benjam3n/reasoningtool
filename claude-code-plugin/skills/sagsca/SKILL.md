@@ -44,9 +44,3 @@ Goal: the standard schema itself should not smuggle in bundled checks, undefined
 - When adding new gate files or new gate fields
 - When the engine behaves differently across gate sets (core vs domain vs meta)
 - When you want a single “standard gate form” across the library
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

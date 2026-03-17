@@ -179,9 +179,3 @@ This STEPS document serves the following goal chain:
 - No vague verbs or ambiguous pronouns
 - All decision points are pre-resolved
 - Sequence passes dependency validation
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -7,6 +7,22 @@ output:
 
 # Marketing Funnel Analysis
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Diagnose a leaky funnel**: The user has an existing funnel with conversion data and wants to find where users drop off and why growth is stalling.
+**Interpretation 2 — Design a funnel from scratch**: The user is building a new product or business and wants to define their AARRR stages, metrics, and tracking before launch.
+**Interpretation 3 — Optimize a specific funnel stage**: The user already knows which stage is underperforming (e.g., activation, retention) and wants targeted experiments and fixes for that stage.
+
+If ambiguous, ask: "I can help with diagnosing a leaky funnel, designing a funnel from scratch, or optimizing a specific stage — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Analyze and optimize the customer journey from awareness to revenue using the AARRR framework
 
@@ -335,20 +351,3 @@ Document institutional knowledge:
 - Results are statistically significant before action
 - Learnings are documented and applied to future experiments
 - Metrics show improvement trend over time
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Diagnose a leaky funnel**: The user has an existing funnel with conversion data and wants to find where users drop off and why growth is stalling.
-**Interpretation 2 — Design a funnel from scratch**: The user is building a new product or business and wants to define their AARRR stages, metrics, and tracking before launch.
-**Interpretation 3 — Optimize a specific funnel stage**: The user already knows which stage is underperforming (e.g., activation, retention) and wants targeted experiments and fixes for that stage.
-
-If ambiguous, ask: "I can help with diagnosing a leaky funnel, designing a funnel from scratch, or optimizing a specific stage — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

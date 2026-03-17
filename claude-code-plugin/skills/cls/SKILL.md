@@ -68,9 +68,3 @@ Optionally rank by number of criteria met or weighted score.
 - Pass/fail was recorded with evidence
 - Aggregation mode was applied correctly
 - Results are reproducible (another checker would get same result)
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

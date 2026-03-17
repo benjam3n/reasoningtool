@@ -132,9 +132,3 @@ N. [Foundational/intrinsic goal]
 - Best way: [Assessment]
 - Journey necessary: [Assessment]
 ```
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

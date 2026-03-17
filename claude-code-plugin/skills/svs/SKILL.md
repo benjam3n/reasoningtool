@@ -141,9 +141,3 @@ Rank by potential impact.
 - Variations are genuinely different from current solution
 - Evaluation criteria were applied consistently
 - Promising variations are feasible and valuable
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -7,6 +7,22 @@ output:
 
 # Verification Before Output
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Verify claims in a document or output**: The user has a draft, report, or analysis and wants every claim checked for verification status (observed, tested, or derived) before publishing or acting on it.
+**Interpretation 2 — Audit a decision or recommendation**: The user is about to act on a recommendation and wants to ensure no part of it rests on guesses, unverified assumptions, or low-confidence hand-waving.
+**Interpretation 3 — Establish verification standards for a process**: The user wants to build a no-guessing verification protocol into an ongoing workflow, system, or team practice so that future outputs are verified by default.
+
+If ambiguous, ask: "I can help with verifying claims in an existing output, auditing a specific decision, or establishing verification standards for a process — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 This procedure is the culmination of the no-guessing philosophy.
 
@@ -247,20 +263,3 @@ If any element is missing:
 - test_based_confidence_gate
 - execution_verified_adequacy_gate
 - specificity_gate (for capability claims)
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Verify claims in a document or output**: The user has a draft, report, or analysis and wants every claim checked for verification status (observed, tested, or derived) before publishing or acting on it.
-**Interpretation 2 — Audit a decision or recommendation**: The user is about to act on a recommendation and wants to ensure no part of it rests on guesses, unverified assumptions, or low-confidence hand-waving.
-**Interpretation 3 — Establish verification standards for a process**: The user wants to build a no-guessing verification protocol into an ongoing workflow, system, or team practice so that future outputs are verified by default.
-
-If ambiguous, ask: "I can help with verifying claims in an existing output, auditing a specific decision, or establishing verification standards for a process — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

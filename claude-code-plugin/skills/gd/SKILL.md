@@ -127,9 +127,3 @@ structure: '## Goal Decomposition: [Original Goal]
   '
 
 ```
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

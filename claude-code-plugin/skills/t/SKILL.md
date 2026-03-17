@@ -7,6 +7,22 @@ output:
 
 # Targeting
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Building an advocacy target database**: The user is launching a policy advocacy campaign and needs to identify, tier, and build dossiers on congressional targets (legislators and staff) for outreach.
+**Interpretation 2 — Refreshing or expanding an existing target list**: The user already has a target database but needs to update it for a new legislative session, staff turnover, or expanded policy scope.
+**Interpretation 3 — Prioritizing outreach within a known set**: The user already knows who the targets are but needs help scoring, tiering, and developing personalized engagement strategies for each.
+
+If ambiguous, ask: "I can help with building a target database from scratch, refreshing an existing list, or prioritizing outreach for known targets — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Build comprehensive database of advocacy targets with personalized dossiers
 
@@ -175,20 +191,3 @@ Verify data integrity:
 - Committee coverage is complete for all selected policies
 - Database is fully populated with validated data
 - Tier distribution matches targets (15-20 T1, 20-30 T2, 10+ T3)
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Building an advocacy target database**: The user is launching a policy advocacy campaign and needs to identify, tier, and build dossiers on congressional targets (legislators and staff) for outreach.
-**Interpretation 2 — Refreshing or expanding an existing target list**: The user already has a target database but needs to update it for a new legislative session, staff turnover, or expanded policy scope.
-**Interpretation 3 — Prioritizing outreach within a known set**: The user already knows who the targets are but needs help scoring, tiering, and developing personalized engagement strategies for each.
-
-If ambiguous, ask: "I can help with building a target database from scratch, refreshing an existing list, or prioritizing outreach for known targets — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

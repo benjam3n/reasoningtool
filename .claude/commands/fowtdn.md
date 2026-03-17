@@ -1,0 +1,1 @@
+Figure Out What To Do Next — when you've been working through data or a problem and need the single most valuable next action. Read and execute /home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/fowtdn/SKILL.md, applying it to this input: $ARGUMENTS

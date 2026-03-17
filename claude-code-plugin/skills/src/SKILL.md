@@ -211,9 +211,3 @@ Create final assessment record:
 - Red flags explicitly documented
 - Final score calculated correctly
 - Recommended use is clear and justified
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

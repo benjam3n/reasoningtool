@@ -151,9 +151,3 @@ Consider diversity (don't pick all similar).
 - Combination count is correct
 - Constraints are justified
 - Evaluation criteria are clear
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

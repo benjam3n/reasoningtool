@@ -7,6 +7,22 @@ output:
 
 # Experimental Design
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Design a new experiment**: The user has a research question or hypothesis and wants a rigorous experimental design with proper controls, variables, randomization, and analysis plan.
+**Interpretation 2 — Evaluate an existing experimental design**: The user has a study design (their own or someone else's) and wants it reviewed for validity threats, confounds, power issues, or methodological weaknesses.
+**Interpretation 3 — Plan a practical A/B test or intervention trial**: The user needs to test a product change, feature, or real-world intervention and wants a design that is both rigorous and feasible given practical constraints.
+
+If ambiguous, ask: "I can help with designing a new experiment, evaluating an existing design for weaknesses, or planning a practical A/B test — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Systematic procedure for designing rigorous experiments with proper controls, variables, and validity considerations
 
@@ -363,20 +379,3 @@ PRE-REGISTRATION
 - All four types of validity threats addressed
 - Analysis plan pre-specified before data collection
 - Appropriate controls for research question
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Design a new experiment**: The user has a research question or hypothesis and wants a rigorous experimental design with proper controls, variables, randomization, and analysis plan.
-**Interpretation 2 — Evaluate an existing experimental design**: The user has a study design (their own or someone else's) and wants it reviewed for validity threats, confounds, power issues, or methodological weaknesses.
-**Interpretation 3 — Plan a practical A/B test or intervention trial**: The user needs to test a product change, feature, or real-world intervention and wants a design that is both rigorous and feasible given practical constraints.
-
-If ambiguous, ask: "I can help with designing a new experiment, evaluating an existing design for weaknesses, or planning a practical A/B test — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

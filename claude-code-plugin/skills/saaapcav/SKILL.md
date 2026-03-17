@@ -53,9 +53,3 @@ Prefer:
 - When a gate/procedure feels rigorous but is hard to execute
 - When different executors interpret the same text differently
 - When you want to convert interpretive prompts into checkable prompts
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

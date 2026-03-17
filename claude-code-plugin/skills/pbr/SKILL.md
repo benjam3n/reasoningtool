@@ -94,9 +94,3 @@ Record the estimate and plan for verification:
 - Alternative hypotheses genuinely considered
 - Known biases explicitly addressed
 - Prediction recorded for future calibration tracking
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

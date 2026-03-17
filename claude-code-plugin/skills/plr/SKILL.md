@@ -138,9 +138,3 @@ Enter all policy data into advocacy database:
 - One-page briefs are clear, professional, and complete
 - Evidence summaries include counterargument rebuttals
 - Database fully populated with scoring data
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

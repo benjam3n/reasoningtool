@@ -1,6 +1,6 @@
 # Reasoning Toolkit
 
-This project contains 597 thinking skills. Each skill is a structured procedure in `skills/[name]/SKILL.md`.
+This project contains 650 thinking skills. Each skill is a structured procedure in `skills/[name]/SKILL.md`.
 
 ## How Skills Work
 
@@ -24,7 +24,7 @@ These are sub-orchestrators — they classify your input and route to the right 
 | A decision to make | `/decide` | ARAW |
 | An idea to test | `/viability` | ARAW |
 | Work to assess | `/evaluate` | ARAW |
-| Something broken | `/diagnose` | UAUA |
+| Something broken | `/diagnose` or `/fix` | UAUA |
 | A space to explore | `/search` | UAUA |
 | A goal or want | `/want` | AR-forward |
 | A "how do I" question | `/how` | AR-forward |
@@ -37,6 +37,10 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Something to iterate on | `/iterate` | Meta-iteration |
 | Need orientation | `/meta` | Informational |
 | A prompt to improve | `/sp` | — |
+| Something to categorize | `/categorize` | Direct |
+| Something to improve | `/improve` | Direct |
+| Something to fix | `/fix` | Direct |
+| A large body of work | `/perceive` | Direct |
 
 ## Direct Skills (Power Users)
 
@@ -57,3 +61,8 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Recover from error | `/rmm`, `/kta` |
 | Choose depth/scope | `/alt`, `/ign`, `/dwt` |
 | Understand a system | `/fohw`, `/insd` |
+| Figure out what to do with data | `/fowtd`, `/fowtdn` |
+| Organize/categorize | `/categorize`, `/cls` |
+| Fix something | `/fix`, `/diagnose` |
+| Improve something | `/improve`, `/iterate` |
+| Resume prior work | `/statous` |

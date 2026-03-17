@@ -79,9 +79,3 @@ Document the conflict and approach for future reference.
 - Concrete approach designed, not just abstract strategy
 - Success criteria and pivot triggers defined
 - Plan includes check-in points for the navigation
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

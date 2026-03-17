@@ -220,9 +220,3 @@ Create recommendations:
 - A/B test properly executed with random assignment
 - Campaign metrics fully calculated
 - Learnings extracted and documented
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

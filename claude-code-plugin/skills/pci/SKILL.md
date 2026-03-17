@@ -75,9 +75,3 @@ Create summary document with:
 - No procedure degrades (tier before <= tier after)
 - Original content preserved in all cases
 - Priority algorithm applied consistently
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

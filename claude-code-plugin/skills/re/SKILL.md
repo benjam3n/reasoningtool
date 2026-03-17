@@ -178,9 +178,3 @@ Follow-up schedule:
 - Recall is tested during and after reading
 - Notes are in own words and usable
 - Review and application are planned
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

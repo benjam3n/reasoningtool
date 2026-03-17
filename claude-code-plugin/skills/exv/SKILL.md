@@ -92,9 +92,3 @@ Synthesize analysis into a clear recommendation:
 - Kelly criterion applied appropriately for sizing
 - Risk tolerance considered in recommendation
 - Downside explicitly evaluated for survivability
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

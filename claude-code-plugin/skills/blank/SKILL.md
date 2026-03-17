@@ -95,9 +95,3 @@ Your creative direction lives in what you chose to generate, even when generatin
 - 3 bad ideas were generated without censoring
 - Bad ideas were mined for interesting elements
 - Some form of output now exists, even if imperfect
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

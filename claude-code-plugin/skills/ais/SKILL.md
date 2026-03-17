@@ -96,9 +96,3 @@ Verify all components work together:
 - Legislative monitoring alerts trigger for test keywords
 - All credentials are documented securely
 - Integration between components verified end-to-end
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -98,9 +98,3 @@ These can be treated as near-axioms for planning.
 - After ARAW exploration on a problem/goal
 - Before starting GOSM planning phase
 - When ARAW identifies tensions or crux nodes
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

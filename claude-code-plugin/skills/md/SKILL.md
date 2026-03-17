@@ -54,9 +54,3 @@ If any doubt: revisit earlier steps.
 
 ## Verification
 {'how_to_know_its_working': ['Methods fit situations rather than being forced', 'Multiple approaches genuinely considered', 'Reasoning chain from situation to method is visible', 'Method can be questioned and revised'], 'how_to_know_its_not_working': ['Same method applied to different situations', 'Method chosen before situation understood', 'No visible reasoning for why this method', 'Method defended instead of questioned']}
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

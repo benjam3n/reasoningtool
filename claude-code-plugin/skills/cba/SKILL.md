@@ -379,9 +379,3 @@ Synthesize all analysis into a recommendation:
 - Intangibles are acknowledged even if not quantified
 - Recommendation follows logically from analysis
 - Key assumptions are explicit and testable
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

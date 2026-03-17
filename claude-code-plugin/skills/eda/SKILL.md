@@ -298,9 +298,3 @@ Document everything needed to resume without memory.
 - Audit trail is complete
 - Context preserved for next session
 - No deadlines silently missed
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

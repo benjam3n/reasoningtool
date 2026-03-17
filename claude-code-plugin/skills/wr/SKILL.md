@@ -183,9 +183,3 @@ Compile all findings into weekly review document:
 - Last week's goals are accounted for
 - Review document is saved for future reference
 - Time to complete review is reasonable (30-60 min)
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

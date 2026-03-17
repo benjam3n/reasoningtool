@@ -202,9 +202,3 @@ Verify the complete solution works:
 - Fallback chain covers all likely failures
 - Implementation includes reliability layers
 - Pipeline tested at expected scale
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

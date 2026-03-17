@@ -188,9 +188,3 @@ When progress stalls:
 - Difficulty is calibrated to 70-85% success rate
 - Progress is measured through regular assessment
 - Practice plan adapts based on progress
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

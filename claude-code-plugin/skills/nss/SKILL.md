@@ -110,9 +110,3 @@ Select top ideas for further development.
 - Ideas address real problems
 - Feasibility was honestly assessed
 - Top ideas have clear next steps
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

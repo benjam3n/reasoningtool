@@ -133,9 +133,3 @@ The matrix is a tool to structure thinking, not replace judgment.
 - Calculations are correct
 - Sensitivity analysis performed
 - Result passes sanity check
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

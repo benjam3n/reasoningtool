@@ -167,9 +167,3 @@ Learning from transfer attempts:
 - Transfer hypotheses are specific and testable
 - Adaptations account for domain differences
 - Transfer is validated through application
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

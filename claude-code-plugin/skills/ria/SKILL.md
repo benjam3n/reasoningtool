@@ -88,9 +88,3 @@ Prepare response plans for critical risks:
 - Critical risks have detailed contingency plans
 - Residual risk assessed after planned mitigations
 - Review schedule established and communicated
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

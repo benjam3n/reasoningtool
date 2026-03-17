@@ -371,9 +371,3 @@ Add validated procedures to GOSM library:
 - Completeness ratings reflect actual usability
 - Integration decisions are justified
 - Extraction logged for future reference
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

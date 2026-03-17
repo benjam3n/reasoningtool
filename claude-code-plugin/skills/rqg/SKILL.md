@@ -96,9 +96,3 @@ Create the formal requirements document:
 - Priorities are assigned with stakeholder agreement
 - Assumptions are explicitly documented
 - Open questions are tracked for resolution
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

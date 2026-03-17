@@ -163,9 +163,3 @@ SAFETY: All plan status changes logged with timestamp and reason.
 - Primary plan is fully executable
 - Backup plans can be activated within defined timeframe
 - Resource allocation does not exceed available resources
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

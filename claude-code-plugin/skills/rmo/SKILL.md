@@ -197,9 +197,3 @@ Quality check before submission:
 - Length is appropriate (1-2 pages max)
 - Contact info is current and professional
 - Zero errors (spelling, grammar, consistency)
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

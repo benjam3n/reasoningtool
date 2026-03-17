@@ -187,9 +187,3 @@ Apply evolutionary improvement to triage model:
 - Extraction focused on highest-value items
 - Actual yield tracked against predictions
 - Model improved based on outcomes
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

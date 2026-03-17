@@ -99,9 +99,3 @@ State the termination explicitly:
 
 **Output**: termination_statement
 
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

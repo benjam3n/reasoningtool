@@ -142,9 +142,3 @@ Set up ongoing portfolio management:
 - IPS is documented and signed
 - Rebalancing rules are clear and actionable
 - Tax implications have been considered
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

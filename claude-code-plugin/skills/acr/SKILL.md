@@ -162,9 +162,3 @@ Maintenance:
 - Gaps are identified and targeted for study
 - Multiple retrieval attempts with spacing
 - Retrieval practice varied across attempts
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -7,6 +7,22 @@ output:
 
 # Optimization
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Rank options by criteria**: The user has a set of options and criteria and wants a weighted, scored ranking from best to worst.
+**Interpretation 2 — Identify the best trade-off**: The user has options that excel on different dimensions and wants to understand what they gain and lose with each choice.
+**Interpretation 3 — Test ranking robustness**: The user has a tentative ranking and wants to know whether it holds up under different assumptions or weighting schemes.
+
+If ambiguous, ask: "I can help with ranking options by criteria, identifying the best trade-off, or testing how robust a ranking is — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Rank viable options from best to worst using multi-criteria optimization
 
@@ -95,20 +111,3 @@ The ranking should be defensible and transparent.
 - Sensitivity analysis tests ranking robustness
 - Trade-offs are explicit and quantified
 - Ranking rationale is clear and defensible
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Rank options by criteria**: The user has a set of options and criteria and wants a weighted, scored ranking from best to worst.
-**Interpretation 2 — Identify the best trade-off**: The user has options that excel on different dimensions and wants to understand what they gain and lose with each choice.
-**Interpretation 3 — Test ranking robustness**: The user has a tentative ranking and wants to know whether it holds up under different assumptions or weighting schemes.
-
-If ambiguous, ask: "I can help with ranking options by criteria, identifying the best trade-off, or testing how robust a ranking is — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

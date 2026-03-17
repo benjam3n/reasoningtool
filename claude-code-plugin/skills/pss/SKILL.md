@@ -138,9 +138,3 @@ For the selected plan:
 - Scoring is consistent
 - Sensitivity analysis performed
 - Contingencies documented
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

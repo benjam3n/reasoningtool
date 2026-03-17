@@ -87,9 +87,3 @@ Synthesize analysis into timing and approach recommendation:
 - Decision rigor matched to reversibility level
 - Design for reversibility options explored
 - Clear recommendation with rationale
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

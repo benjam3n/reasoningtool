@@ -169,9 +169,3 @@ Signs the story is ready:
 - Landing connects to the key message without over-explaining
 - Appropriate length for context
 - Practiced out loud and refined
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -72,9 +72,3 @@ Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/qaf 4x [input]").
 | 16x   | 25                     | 18                      | 8                        | 7                    |
 
 These are floors. Go deeper where insight is dense. Compress where it's not.
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

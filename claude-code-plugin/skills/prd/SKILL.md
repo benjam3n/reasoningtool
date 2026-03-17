@@ -270,9 +270,3 @@ Accessibility review:
 - Presentation can be delivered without slides if needed
 - Accessibility requirements met (contrast, alt text)
 - Technical requirements met (format, size, compatibility)
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

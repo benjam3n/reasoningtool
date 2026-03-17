@@ -97,9 +97,3 @@ After negotiation concludes, capture learnings:
 - Concessions are conditional (traded, not given away)
 - Agreement is documented in writing
 - Both parties' interests are addressed (not just yours)
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

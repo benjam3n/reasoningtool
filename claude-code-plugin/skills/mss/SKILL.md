@@ -119,9 +119,3 @@ If this model is correct:
 - Scoring was consistent across models
 - Best model accounts for anomalies
 - Implications and next steps identified
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

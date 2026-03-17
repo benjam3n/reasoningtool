@@ -93,8 +93,9 @@ _tier4 = {
     'Skill Routing': [
         'wsib', 'dtse', 'extract', 'fonss', 'given', 'next', 'handle', 'itp',
         'uf', 'wn',
-        'pick', 'tri', 'ornt', 'wsn',
+        'pick', 'tri', 'ornt', 'wsn', 'statous',
         'idk', 'unsure', 'cnfsd', 'ambi', 'blank', 'nowwt', 'nstep', 'strt', 'wtdn',
+        'fowtd', 'fowtdn',
     ],
     'Skill Creation': [
         'mts', 'fmtsb', 'sc', 'cs', 'flhwijd',

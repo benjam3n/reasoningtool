@@ -104,9 +104,3 @@ constraints:
 out_of_scope:
   drifted_topics: [list of rejected/drifted claims]
 
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

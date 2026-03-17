@@ -336,9 +336,3 @@ Reference environment variables and secure storage.
 - Documentation is complete
 - Troubleshooting guide covers common issues
 - Human has reviewed and approved setup
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

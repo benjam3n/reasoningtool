@@ -309,9 +309,3 @@ Update the source project to record what was extracted:
 - Library location is correct for the domain
 - Index is updated in all relevant places
 - Source project is tagged for traceability
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

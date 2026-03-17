@@ -108,9 +108,3 @@ For each selected future, write detailed description:
 - Scoring criteria match search goal
 - Selected futures span important possibilities
 - Futures have clear descriptions and implications
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

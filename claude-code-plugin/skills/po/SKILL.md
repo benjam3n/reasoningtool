@@ -97,9 +97,3 @@ If trying next intervention:
 - Only one variable changed at a time
 - Effect measured objectively
 - Results documented for future reference
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -89,9 +89,3 @@ Provide clear rationale for recommendation.
 - Adaptation effort estimates are realistic (not overly optimistic)
 - Recommendation rationale addresses build vs use tradeoffs
 - Cross-domain search was attempted for analogous solutions
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

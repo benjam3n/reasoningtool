@@ -606,9 +606,3 @@ Ongoing:
 - Quality assurance procedures in place
 - Ethical requirements addressed
 - All procedures documented for reproducibility
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -100,9 +100,3 @@ Document security for ongoing maintenance:
 - Security testing completed
 - Monitoring and alerting configured
 - Incident response plan exists
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

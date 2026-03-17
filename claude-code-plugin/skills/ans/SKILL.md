@@ -84,9 +84,3 @@ Assess each transferred solution:
 - Structural similarity was assessed, not just surface similarity
 - Transfer was explicit about what maps and what doesn't
 - Transferred solution addresses the actual problem
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

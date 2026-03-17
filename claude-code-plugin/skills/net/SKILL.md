@@ -278,9 +278,3 @@ When you need help, ask effectively:
 - Outreach is personalized, not templated mass-send
 - Follow-up and thank-you habits established
 - Regular maintenance cadence in place
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

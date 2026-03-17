@@ -7,6 +7,22 @@ output:
 
 # Testing Strategy
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Designing a testing strategy for a project**: The user needs a comprehensive test plan covering test types, tools, pyramid balance, and CI/CD integration for a new or existing project.
+**Interpretation 2 — Improving an underperforming test suite**: The user already has tests but they are slow, flaky, missing coverage, or not catching bugs, and wants a targeted plan to fix the problems.
+**Interpretation 3 — Deciding how to test a specific feature or component**: The user does not need a full strategy but wants guidance on the right testing approach for a particular piece of functionality.
+
+If ambiguous, ask: "I can help with designing a full testing strategy, improving an existing test suite, or deciding how to test a specific feature — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Procedure for designing and implementing effective software testing strategies
 
@@ -97,20 +113,3 @@ Embed testing into development workflow:
 - Team understands and follows testing patterns
 - Coverage targets are met for new code
 - Tests catch bugs before production
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Designing a testing strategy for a project**: The user needs a comprehensive test plan covering test types, tools, pyramid balance, and CI/CD integration for a new or existing project.
-**Interpretation 2 — Improving an underperforming test suite**: The user already has tests but they are slow, flaky, missing coverage, or not catching bugs, and wants a targeted plan to fix the problems.
-**Interpretation 3 — Deciding how to test a specific feature or component**: The user does not need a full strategy but wants guidance on the right testing approach for a particular piece of functionality.
-
-If ambiguous, ask: "I can help with designing a full testing strategy, improving an existing test suite, or deciding how to test a specific feature — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

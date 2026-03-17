@@ -16,8 +16,8 @@ output:
 Before executing, identify which interpretation matches the user's input:
 
 **Interpretation 1 — Filter guesses from /gg output**: The user has a large set of guesses (from /gg or similar) and wants to systematically evaluate which are worth pursuing, which are wrong, and which are critical.
-**Interpretation 2 — Select best options from a list**: The user has enumerated options and wants to select the best one(s) based on criteria.
-**Interpretation 3 — Triage a backlog**: The user has many items and wants to sort them into act-on / defer / eliminate buckets.
+**Interpretation 2 — Select best options from a list**: The user has enumerated options and wants to select the best one(s) based on criteria. Default: select top 20 unless user specifies a different number.
+**Interpretation 3 — Triage a backlog**: The user has many items and wants to sort them into act-on / defer / eliminate buckets. Default: surface top 20 unless user specifies a different number.
 
 If ambiguous, ask: "I can help with filtering guesses from an analysis, selecting the best options from a list, or triaging a backlog — which fits?"
 If clear from context, proceed with the matching interpretation.
@@ -170,6 +170,8 @@ SELECTION MATRIX:
 ---
 
 ### Step 7: Final Selection
+
+Default to selecting the **top 20** items across all tiers unless the user specifies a different number (e.g., "best 10", "top 5"). The 20 should be distributed across tiers based on quality, not forced evenly.
 
 ```
 SELECTED ([N]):

@@ -89,9 +89,3 @@ Monitor progress and adapt:
 - Baseline is recorded for comparison
 - Progress is tracked with regular assessments
 - Practice occurs at appropriate difficulty (challenging but achievable)
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

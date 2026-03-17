@@ -142,9 +142,3 @@ Review checklist:
 - Test cases classify unambiguously
 - No orphan or duplicate categories
 - Version and change log maintained
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

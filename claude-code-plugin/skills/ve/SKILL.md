@@ -110,9 +110,3 @@ Create a value map showing:
 - When you suspect the stated goal is instrumental, not intrinsic
 - When planning seems disconnected from what matters
 - When verifying that actions serve actual values
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

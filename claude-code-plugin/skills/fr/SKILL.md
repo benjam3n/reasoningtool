@@ -7,6 +7,22 @@ output:
 
 # Failure Recovery
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Recover from a specific project failure**: The user has hit a concrete blocker — a strategy that isn't working, a blown timeline, exhausted resources, or an external shock — and needs structured recovery procedures.
+**Interpretation 2 — Decide whether to pivot or persist**: The user is uncertain whether the project should continue at all, and needs help classifying the failure and evaluating whether the goal, strategy, or plan is still valid.
+**Interpretation 3 — Conduct a retrospective on a past failure**: The user wants to analyze a failure that already happened to extract learnings and prevent recurrence, rather than recover from an active crisis.
+
+If ambiguous, ask: "I can help with recovering from an active failure, deciding whether to pivot or persist, or conducting a retrospective on a past failure — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Structured recovery procedures when projects encounter failures, providing clear decision trees and specific actions for common failure modes.
 
@@ -246,20 +262,3 @@ After recovery (successful or not):
 - Decision is documented in DECISION_TREE.md
 - STATE.md reflects recovery mode during execution
 - LEARNINGS.md updated after recovery completes
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Recover from a specific project failure**: The user has hit a concrete blocker — a strategy that isn't working, a blown timeline, exhausted resources, or an external shock — and needs structured recovery procedures.
-**Interpretation 2 — Decide whether to pivot or persist**: The user is uncertain whether the project should continue at all, and needs help classifying the failure and evaluating whether the goal, strategy, or plan is still valid.
-**Interpretation 3 — Conduct a retrospective on a past failure**: The user wants to analyze a failure that already happened to extract learnings and prevent recurrence, rather than recover from an active crisis.
-
-If ambiguous, ask: "I can help with recovering from an active failure, deciding whether to pivot or persist, or conducting a retrospective on a past failure — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

@@ -7,6 +7,22 @@ output:
 
 # Order Procedure
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Sequence a plan**: The user has a set of steps or tasks and needs to determine the correct execution order based on dependencies.
+**Interpretation 2 — Find parallelism**: The user has an ordered plan and wants to identify which steps can run simultaneously to reduce total time.
+**Interpretation 3 — Optimize an existing sequence**: The user already has a step order but suspects it is inefficient, and wants to reorder for speed, risk reduction, or resource efficiency.
+
+If ambiguous, ask: "I can help with sequencing a plan, finding parallelism opportunities, or optimizing an existing sequence — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Determine the correct execution order for a set of steps based on dependencies and constraints
 
@@ -100,20 +116,3 @@ Produce the final ordered output in requested format:
 - Parallel groups contain no dependent steps
 - Critical path is correctly identified
 - Optimization rationale is documented
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Sequence a plan**: The user has a set of steps or tasks and needs to determine the correct execution order based on dependencies.
-**Interpretation 2 — Find parallelism**: The user has an ordered plan and wants to identify which steps can run simultaneously to reduce total time.
-**Interpretation 3 — Optimize an existing sequence**: The user already has a step order but suspects it is inefficient, and wants to reorder for speed, risk reduction, or resource efficiency.
-
-If ambiguous, ask: "I can help with sequencing a plan, finding parallelism opportunities, or optimizing an existing sequence — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

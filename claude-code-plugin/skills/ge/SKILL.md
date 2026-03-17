@@ -7,6 +7,22 @@ output:
 
 # Growth Experiments
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Design a growth experiment**: The user has a specific product or feature change they want to test and needs help structuring a rigorous A/B test or experiment around it.
+**Interpretation 2 — Build an experimentation program**: The user wants to establish or improve a systematic growth experimentation practice across their team or organization.
+**Interpretation 3 — Analyze experiment results**: The user has already run a growth experiment and needs help interpreting the data, assessing statistical significance, or deciding next steps.
+
+If ambiguous, ask: "I can help with designing a specific growth experiment, building an experimentation program, or analyzing experiment results — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Run systematic experiments to discover and validate growth levers using hypothesis-driven testing
 
@@ -391,20 +407,3 @@ Maturity levels:
 - Learnings are documented regardless of outcome
 - Experiment velocity is tracked and improving
 - Winners are implemented, not just declared
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Design a growth experiment**: The user has a specific product or feature change they want to test and needs help structuring a rigorous A/B test or experiment around it.
-**Interpretation 2 — Build an experimentation program**: The user wants to establish or improve a systematic growth experimentation practice across their team or organization.
-**Interpretation 3 — Analyze experiment results**: The user has already run a growth experiment and needs help interpreting the data, assessing statistical significance, or deciding next steps.
-
-If ambiguous, ask: "I can help with designing a specific growth experiment, building an experimentation program, or analyzing experiment results — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

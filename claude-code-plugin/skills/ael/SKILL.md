@@ -54,9 +54,3 @@ Present them. Ask if they apply.
 
 ## Verification
 {'how_to_know_its_working': ['Responses feel more precise and grounded', 'Less back-and-forth clarification needed', 'The user recognizes quality without having to explain it', 'Reasoning chains are visible and checkable', 'Fewer corrections needed'], 'how_to_know_its_not_working': ['Still making assertions without visible grounding', 'User still correcting assumptions', 'Deferring when action is possible', 'Vague language persists', 'Quality not improving'], 'self_check': {'question': 'Am I applying this or just aware of it?', 'test': "Look at recent response:\n- Did I separate observable from assumed?\n- Did I ground in what I know before inferring?\n- Did I present assumptions as hypotheses?\n- Did I act when I could, instead of deferring?\n\nIf no to any: I'm aware but not applying.\n"}}
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

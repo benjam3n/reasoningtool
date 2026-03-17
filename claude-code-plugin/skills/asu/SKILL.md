@@ -105,9 +105,3 @@ Having contingencies reduces risk.
 - Criticality was assessed for each
 - High-risk assumptions have validation plans
 - Contingencies exist for critical assumptions
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

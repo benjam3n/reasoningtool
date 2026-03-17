@@ -7,6 +7,22 @@ output:
 
 # Progress Tracking
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Set up tracking for a project**: The user is starting or early in a project and needs to establish metrics, baselines, dashboards, and reporting cadences from scratch.
+**Interpretation 2 — Diagnose why a project is off track**: The user has a project that is behind schedule, over budget, or stalled and wants to analyze variances, identify blockers, and course-correct.
+**Interpretation 3 — Prepare a status report**: The user needs to communicate project progress to stakeholders and wants help structuring a clear, honest, actionable status update.
+
+If ambiguous, ask: "I can help with setting up project tracking, diagnosing why a project is off track, or preparing a status report — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Monitor and report project status effectively
 
@@ -305,20 +321,3 @@ Maintain accurate plans and projections:
 - Status reports are timely and actionable
 - Stakeholders are appropriately informed
 - Forecasts are realistic based on actuals
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Set up tracking for a project**: The user is starting or early in a project and needs to establish metrics, baselines, dashboards, and reporting cadences from scratch.
-**Interpretation 2 — Diagnose why a project is off track**: The user has a project that is behind schedule, over budget, or stalled and wants to analyze variances, identify blockers, and course-correct.
-**Interpretation 3 — Prepare a status report**: The user needs to communicate project progress to stakeholders and wants help structuring a clear, honest, actionable status update.
-
-If ambiguous, ask: "I can help with setting up project tracking, diagnosing why a project is off track, or preparing a status report — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

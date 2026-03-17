@@ -133,4 +133,3 @@ If not coherent: Either the conclusion is confused OR your reconstruction is wro
 
 ---
 
-Apply this procedure to the input provided.

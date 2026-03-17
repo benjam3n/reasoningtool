@@ -200,9 +200,3 @@ Early warning signs:
 - Progress is tracked with appropriate metrics
 - Adequate time allowed before evaluating
 - Prevention habits established for ongoing practice
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

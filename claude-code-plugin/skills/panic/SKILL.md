@@ -95,9 +95,3 @@ After the NOW list is handled:
 - Only NOW items were worked on
 - Remaining items were captured for later handling
 - No rash decisions were made during panic
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

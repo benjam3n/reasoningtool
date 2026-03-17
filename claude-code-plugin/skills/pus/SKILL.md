@@ -209,9 +209,3 @@ Capture learnings while they're fresh:
 - Practiced at least 3 times out loud
 - Prepared for likely Q&A questions
 - Timing has been checked and fits allocation
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

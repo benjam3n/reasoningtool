@@ -201,9 +201,3 @@ Systemic prevention:
 - Listened more than talked during the conversation
 - Reached specific, actionable agreement or understanding
 - Planned relationship repair and prevention measures
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

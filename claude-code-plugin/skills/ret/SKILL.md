@@ -140,9 +140,3 @@ Ensure the retrospective creates lasting change:
 - Number of actions is manageable (2-3 maximum)
 - Psychological safety was maintained throughout
 - Notes documented and shared promptly
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

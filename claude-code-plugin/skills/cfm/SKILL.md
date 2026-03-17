@@ -168,9 +168,3 @@ Set up ongoing monitoring and management:
 - Forecast includes known future events
 - Optimization opportunities are actionable
 - Tracking system is set up and being used
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

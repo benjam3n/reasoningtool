@@ -161,9 +161,3 @@ If struggling:
 - Competency is verified through problem-solving, not just recognition
 - Spaced repetition maintains knowledge over time
 - Can explain concepts in own words without notes
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-09T18:22:12.105851+00:00",
-  "total": 591,
+  "generated": "2026-03-17T01:07:25.238474+00:00",
+  "total": 650,
   "skills": {
     "aa": {
       "id": "aa",
@@ -43,7 +43,7 @@
         "Quality Gates",
         "Example Usage"
       ],
-      "line_count": 190
+      "line_count": 192
     },
     "aar": {
       "id": "aar",
@@ -69,7 +69,26 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 131
+      "line_count": 133
+    },
+    "aasm": {
+      "id": "aasm",
+      "title": "Assume Assumption",
+      "description": "Take a hidden or implicit assumption and force it to be explicit and true. Trace what world that creates, what depends on it, and how fragile it is.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 73
     },
     "aba": {
       "id": "aba",
@@ -89,7 +108,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 105
+      "line_count": 107
     },
     "abts": {
       "id": "abts",
@@ -111,7 +130,7 @@
         "Step 6: Define Decision Criteria Before Running",
         "Integration"
       ],
-      "line_count": 164
+      "line_count": 166
     },
     "ac": {
       "id": "ac",
@@ -152,7 +171,64 @@
         "What Makes This Different from Normal Checklists",
         "Example Usage"
       ],
-      "line_count": 163
+      "line_count": 165
+    },
+    "acaus": {
+      "id": "acaus",
+      "title": "Assume Causation",
+      "description": "Force the assumption that X actually causes Y (not just correlates). Trace the mechanism, test the claim, and identify what must be true for causation to hold.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 81
+    },
+    "acons": {
+      "id": "acons",
+      "title": "Assume Constraint",
+      "description": "Force the assumption that a constraint is real and binding. Trace what it means for your options: what's ruled out, what's left, and is the constraint actually real?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
+    },
+    "acplx": {
+      "id": "acplx",
+      "title": "Assume Complex",
+      "description": "Force the assumption that the situation is more complex than it appears. What are we missing? What hidden variables, feedback loops, or emergent dynamics are at play?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 74
     },
     "acr": {
       "id": "acr",
@@ -177,7 +253,26 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 168
+      "line_count": 165
+    },
+    "acrit": {
+      "id": "acrit",
+      "title": "Assume Critical",
+      "description": "Force the assumption that something is absolutely critical — a must-have, non-negotiable, load-bearing element. Trace what that demands and whether it's actually true.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
     },
     "action": {
       "id": "action",
@@ -227,7 +322,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 190
+      "line_count": 192
     },
     "adep": {
       "id": "adep",
@@ -254,7 +349,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 193
+      "line_count": 190
     },
     "advr": {
       "id": "advr",
@@ -279,7 +374,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 139
+      "line_count": 141
     },
     "ael": {
       "id": "ael",
@@ -304,7 +399,7 @@
         "Steps",
         "Verification"
       ],
-      "line_count": 60
+      "line_count": 57
     },
     "aex": {
       "id": "aex",
@@ -337,7 +432,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 351
+      "line_count": 353
     },
     "afa": {
       "id": "afa",
@@ -363,7 +458,26 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 139
+      "line_count": 141
+    },
+    "afail": {
+      "id": "afail",
+      "title": "Assume Failure",
+      "description": "Force the assumption that the endeavor fails. Trace what happens: what's the damage? What's the recovery? What does failure teach? Pre-mortem thinking.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 72
     },
     "agi": {
       "id": "agi",
@@ -391,7 +505,7 @@
         "Steps",
         "When to Use"
       ],
-      "line_count": 104
+      "line_count": 101
     },
     "agsk": {
       "id": "agsk",
@@ -416,7 +530,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 156
+      "line_count": 158
     },
     "ai": {
       "id": "ai",
@@ -444,7 +558,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 379
+      "line_count": 381
     },
     "aiag": {
       "id": "aiag",
@@ -466,7 +580,26 @@
         "Step 6: Capability Projection",
         "Integration"
       ],
-      "line_count": 120
+      "line_count": 122
+    },
+    "airr": {
+      "id": "airr",
+      "title": "Assume Irrelevant",
+      "description": "Force the assumption that something widely considered important is actually irrelevant. Trace what follows: what simplifies? What were we wasting attention on?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
     },
     "ais": {
       "id": "ais",
@@ -491,7 +624,45 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 102
+      "line_count": 99
+    },
+    "aitp": {
+      "id": "aitp",
+      "title": "Assume Theoretically Possible",
+      "description": "Force the assumption that something is theoretically possible — no physical, logical, or mathematical barrier prevents it. Trace what engineering, resource, or practical barriers remain.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
+    },
+    "aknown": {
+      "id": "aknown",
+      "title": "Assume Known",
+      "description": "Force the assumption that something is already known or settled. Trace what follows: what can we build on? Are we re-investigating the already-answered?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
     },
     "al": {
       "id": "al",
@@ -512,13 +683,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 266
+      "line_count": 268
     },
     "alebc": {
       "id": "alebc",
@@ -543,7 +714,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 189
+      "line_count": 191
     },
     "alt": {
       "id": "alt",
@@ -570,7 +741,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 416
+      "line_count": 418
     },
     "am": {
       "id": "am",
@@ -592,7 +763,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 167
+      "line_count": 164
     },
     "ambi": {
       "id": "ambi",
@@ -613,7 +784,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 113
+      "line_count": 109
     },
     "ams": {
       "id": "ams",
@@ -638,7 +809,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 208
+      "line_count": 205
     },
     "anag": {
       "id": "anag",
@@ -660,7 +831,7 @@
         "Step 6: Final Output",
         "Integration"
       ],
-      "line_count": 114
+      "line_count": 116
     },
     "analyze": {
       "id": "analyze",
@@ -714,7 +885,26 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 239
+      "line_count": 241
+    },
+    "ancons": {
+      "id": "ancons",
+      "title": "Assume No Constraint",
+      "description": "Force the assumption that a perceived constraint doesn't exist. What would you do with total freedom? What does the unconstrained solution reveal about the constrained one?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
     },
     "ans": {
       "id": "ans",
@@ -746,7 +936,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 90
+      "line_count": 87
     },
     "anst": {
       "id": "anst",
@@ -768,7 +958,7 @@
         "Step 6: Synthesize Findings",
         "Integration"
       ],
-      "line_count": 146
+      "line_count": 148
     },
     "ao": {
       "id": "ao",
@@ -790,7 +980,26 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 88
+      "line_count": 90
+    },
+    "aop": {
+      "id": "aop",
+      "title": "Assume Opposite",
+      "description": "Take whatever the input claims or assumes, and force the exact opposite. Trace what world that implies, what evidence would support it, and what you learn from the inversion.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 74
     },
     "ap": {
       "id": "ap",
@@ -809,13 +1018,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 112
+      "line_count": 114
     },
     "ape": {
       "id": "ape",
@@ -834,7 +1043,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 90
+      "line_count": 92
     },
     "api": {
       "id": "api",
@@ -853,7 +1062,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 90
+      "line_count": 92
     },
     "apid": {
       "id": "apid",
@@ -877,7 +1086,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 99
+      "line_count": 96
     },
     "apm": {
       "id": "apm",
@@ -896,7 +1105,45 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 74
+      "line_count": 76
+    },
+    "aprob": {
+      "id": "aprob",
+      "title": "Assume Problem",
+      "description": "Force the assumption that something IS the problem. Trace what follows if this is truly the root cause. What would fixing it look like? What evidence would confirm it?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
+    },
+    "aq": {
+      "id": "aq",
+      "title": "Assume Question",
+      "description": "Force the assumption that a particular question is THE right question to ask. Trace what follows: does answering it actually help? What questions does it foreclose?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
     },
     "ar": {
       "id": "ar",
@@ -934,7 +1181,7 @@
         "Anti-Cheerleading Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 222
+      "line_count": 243
     },
     "araw": {
       "id": "araw",
@@ -984,7 +1231,7 @@
         "Saving Output",
         "Pre-Completion Check"
       ],
-      "line_count": 424
+      "line_count": 427
     },
     "arcd": {
       "id": "arcd",
@@ -1004,7 +1251,45 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 60
+      "line_count": 62
+    },
+    "arel": {
+      "id": "arel",
+      "title": "Assume Relation",
+      "description": "Force the assumption that two things are related. Trace the implications: what kind of relationship? Causal, correlational, structural, temporal? What follows?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 83
+    },
+    "arev": {
+      "id": "arev",
+      "title": "Assume Reversible",
+      "description": "Force the assumption that a decision or action is fully reversible. Trace what follows: should we just try it? What's the real cost of reversal? Is it actually reversible?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 70
     },
     "argd": {
       "id": "argd",
@@ -1023,7 +1308,102 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 83
+      "line_count": 85
+    },
+    "ascf": {
+      "id": "ascf",
+      "title": "Assume Solution Can Be Found",
+      "description": "Force the assumption that a solution is discoverable — not just that it exists, but that we can actually find it with available methods. Trace what search strategy follows.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 67
+    },
+    "ascfa": {
+      "id": "ascfa",
+      "title": "Assume Solution Can Be Found A Priori",
+      "description": "Force the assumption that the solution can be derived from first principles — no experiments, no search, just reasoning. What does that require? When is this warranted?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 69
+    },
+    "asdne": {
+      "id": "asdne",
+      "title": "Assume Solution Does Not Exist",
+      "description": "Force the assumption that no solution exists, then trace what follows. What does that imply about the problem? What should we do instead? What changes if we accept unsolvability?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 71
+    },
+    "ase": {
+      "id": "ase",
+      "title": "Assume Solution Exists",
+      "description": "Force the assumption that a solution exists for the problem at hand, then trace what follows. What does the solution space look like? What constraints must it satisfy? What have we been missing?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 71
+    },
+    "asimp": {
+      "id": "asimp",
+      "title": "Assume Simple",
+      "description": "Force the assumption that the simple explanation is correct. Trace what follows from Occam's razor: what complexity can we eliminate? What if it really is that straightforward?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 73
     },
     "aso": {
       "id": "aso",
@@ -1050,7 +1430,26 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 218
+      "line_count": 220
+    },
+    "asol": {
+      "id": "asol",
+      "title": "Assume Solution",
+      "description": "Force the assumption that something IS the solution. Trace what follows: does it actually address the problem? What are the costs? What breaks?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 75
     },
     "asu": {
       "id": "asu",
@@ -1076,7 +1475,26 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 111
+      "line_count": 108
+    },
+    "asucc": {
+      "id": "asucc",
+      "title": "Assume Success",
+      "description": "Force the assumption that the endeavor succeeds. Trace forward: what does the world look like after success? What new problems emerge? Is the success state actually desirable?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 71
     },
     "ata": {
       "id": "ata",
@@ -1107,7 +1525,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 167
+      "line_count": 169
     },
     "atgb": {
       "id": "atgb",
@@ -1137,7 +1555,26 @@
         "Core Principle",
         "Steps"
       ],
-      "line_count": 110
+      "line_count": 107
+    },
+    "ati": {
+      "id": "ati",
+      "title": "Assume Theoretically Impossible",
+      "description": "Force the assumption that something is theoretically impossible — a fundamental barrier prevents it. Trace what follows: what should we do instead? What's the closest achievable thing?",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 70
     },
     "auep": {
       "id": "auep",
@@ -1162,7 +1599,53 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 271
+      "line_count": 268
+    },
+    "aunk": {
+      "id": "aunk",
+      "title": "Assume Unknown",
+      "description": "Force the assumption that something treated as known is actually unknown or unknowable. Trace what changes when the ground beneath a belief disappears.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Core Move",
+        "Procedure",
+        "When to Use",
+        "Integration"
+      ],
+      "line_count": 68
+    },
+    "auto": {
+      "id": "auto",
+      "title": "Automatic Routing",
+      "description": "Take any free-text input, classify it, and route to the correct sub-orchestrator. The automatic front door to all 597 skills.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "meta"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Coarse Classification",
+        "Phase 2: Fine Routing",
+        "Phase 3: Confidence Check",
+        "Phase 4: Post-Route Verification",
+        "Edge Cases",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 285
     },
     "av": {
       "id": "av",
@@ -1184,7 +1667,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 187
+      "line_count": 189
     },
     "aw": {
       "id": "aw",
@@ -1223,7 +1706,7 @@
         "Anti-Softness Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 215
+      "line_count": 235
     },
     "awtlytrn": {
       "id": "awtlytrn",
@@ -1252,7 +1735,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 194
+      "line_count": 196
     },
     "b": {
       "id": "b",
@@ -1270,13 +1753,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 106
+      "line_count": 108
     },
     "be": {
       "id": "be",
@@ -1298,7 +1781,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 82
+      "line_count": 84
     },
     "benf": {
       "id": "benf",
@@ -1319,7 +1802,7 @@
         "Step 5: State Total Benefit",
         "Integration"
       ],
-      "line_count": 119
+      "line_count": 121
     },
     "bes": {
       "id": "bes",
@@ -1351,7 +1834,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 80
+      "line_count": 77
     },
     "bi": {
       "id": "bi",
@@ -1376,7 +1859,7 @@
         "Depth Scaling",
         "Steps"
       ],
-      "line_count": 105
+      "line_count": 102
     },
     "blank": {
       "id": "blank",
@@ -1395,7 +1878,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 102
+      "line_count": 98
     },
     "bldk": {
       "id": "bldk",
@@ -1417,7 +1900,7 @@
         "Step 6: Ship Decision",
         "Integration"
       ],
-      "line_count": 127
+      "line_count": 129
     },
     "bm": {
       "id": "bm",
@@ -1438,14 +1921,14 @@
         "bo"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Principles",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 241
+      "line_count": 243
     },
     "bo": {
       "id": "bo",
@@ -1471,7 +1954,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 145
+      "line_count": 147
     },
     "boc": {
       "id": "boc",
@@ -1516,7 +1999,7 @@
         "Execution Checklist",
         "Next Procedure"
       ],
-      "line_count": 260
+      "line_count": 262
     },
     "br": {
       "id": "br",
@@ -1544,7 +2027,7 @@
         "Steps",
         "When to Use"
       ],
-      "line_count": 134
+      "line_count": 136
     },
     "but": {
       "id": "but",
@@ -1581,7 +2064,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 174
+      "line_count": 176
     },
     "cand": {
       "id": "cand",
@@ -1602,7 +2085,7 @@
         "Step 5: Recommend",
         "Integration"
       ],
-      "line_count": 118
+      "line_count": 120
     },
     "capg": {
       "id": "capg",
@@ -1628,7 +2111,36 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 210
+      "line_count": 207
+    },
+    "categorize": {
+      "id": "categorize",
+      "title": "Categorize",
+      "description": "Organize items, files, folders, or output into discovered categories. Discovers dimensions from the data itself, not from theory. Handles large inputs by sampling.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "gg"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principles",
+        "Step 1: Gather Items",
+        "Step 2: Discover Dimensions",
+        "Step 3: Assign and Name Categories",
+        "Step 4: Output",
+        "Step 5: Patterns",
+        "Step 6: Summary",
+        "Depth Scaling",
+        "Anti-Failure Checks",
+        "Large Input Tactics",
+        "Integration"
+      ],
+      "line_count": 216
     },
     "cba": {
       "id": "cba",
@@ -1657,7 +2169,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 385
+      "line_count": 382
     },
     "cd": {
       "id": "cd",
@@ -1683,13 +2195,13 @@
         "dtl"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 196
+      "line_count": 198
     },
     "cda": {
       "id": "cda",
@@ -1722,7 +2234,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 408
+      "line_count": 410
     },
     "cdb": {
       "id": "cdb",
@@ -1744,7 +2256,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 117
+      "line_count": 119
     },
     "cdiff": {
       "id": "cdiff",
@@ -1766,7 +2278,7 @@
         "Step 6: Output Positioning",
         "Integration"
       ],
-      "line_count": 138
+      "line_count": 140
     },
     "cdr": {
       "id": "cdr",
@@ -1806,7 +2318,7 @@
         "Quality Gates",
         "Example Usage"
       ],
-      "line_count": 178
+      "line_count": 180
     },
     "certainty": {
       "id": "certainty",
@@ -1838,7 +2350,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 215
+      "line_count": 217
     },
     "cfm": {
       "id": "cfm",
@@ -1865,7 +2377,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 174
+      "line_count": 171
     },
     "cfr": {
       "id": "cfr",
@@ -1893,7 +2405,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 207
+      "line_count": 204
     },
     "cga": {
       "id": "cga",
@@ -1915,7 +2427,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 133
+      "line_count": 135
     },
     "ch": {
       "id": "ch",
@@ -1940,7 +2452,29 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 99
+      "line_count": 101
+    },
+    "changemgmt": {
+      "id": "changemgmt",
+      "title": "Change Management",
+      "description": "Manage changes to system requirements, design, or implementation in a controlled way. Assesses impact, evaluates alternatives, and ensures traceability through implementation.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "CHANGE IMPACT ASSESSMENT: [CR Number] — [Title]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 358
     },
     "chns": {
       "id": "chns",
@@ -1963,7 +2497,7 @@
         "Step 7: Document Chaining Patterns",
         "Integration"
       ],
-      "line_count": 139
+      "line_count": 141
     },
     "claim": {
       "id": "claim",
@@ -2014,7 +2548,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 196
+      "line_count": 198
     },
     "clg": {
       "id": "clg",
@@ -2037,7 +2571,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 132
+      "line_count": 134
     },
     "clr": {
       "id": "clr",
@@ -2061,7 +2595,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 106
+      "line_count": 103
     },
     "cls": {
       "id": "cls",
@@ -2087,7 +2621,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 74
+      "line_count": 71
     },
     "cma": {
       "id": "cma",
@@ -2108,13 +2642,12 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
-        "Overview",
+        "Interpretations",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 355
+      "line_count": 354
     },
     "cmp": {
       "id": "cmp",
@@ -2136,6 +2669,7 @@
       "invokes": [],
       "invoked_by": [
         "analyze",
+        "cuw",
         "decide",
         "dsp",
         "gu",
@@ -2149,7 +2683,7 @@
         "When Called by Other Skills",
         "Pre-Completion Check"
       ],
-      "line_count": 159
+      "line_count": 161
     },
     "cmplx": {
       "id": "cmplx",
@@ -2171,7 +2705,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 154
+      "line_count": 156
     },
     "cmpr": {
       "id": "cmpr",
@@ -2194,7 +2728,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 148
+      "line_count": 150
     },
     "cms": {
       "id": "cms",
@@ -2220,7 +2754,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 56
+      "line_count": 53
     },
     "cn": {
       "id": "cn",
@@ -2242,7 +2776,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 95
+      "line_count": 97
     },
     "cnfsd": {
       "id": "cnfsd",
@@ -2267,7 +2801,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 202
+      "line_count": 204
     },
     "cns": {
       "id": "cns",
@@ -2289,7 +2823,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 74
+      "line_count": 76
     },
     "cnw": {
       "id": "cnw",
@@ -2311,7 +2845,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 131
+      "line_count": 133
     },
     "col": {
       "id": "col",
@@ -2333,7 +2867,7 @@
         "Step 6: Accountability",
         "Integration"
       ],
-      "line_count": 121
+      "line_count": 123
     },
     "collab": {
       "id": "collab",
@@ -2357,7 +2891,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 251
+      "line_count": 253
     },
     "comc": {
       "id": "comc",
@@ -2379,7 +2913,29 @@
         "Step 6: Draft the Communication",
         "Integration"
       ],
-      "line_count": 119
+      "line_count": 121
+    },
+    "configmgmt": {
+      "id": "configmgmt",
+      "title": "Configuration Management",
+      "description": "Establish and maintain consistency of system attributes with requirements and design throughout the lifecycle. Produces a CM plan with configuration item identification, baselines, change control procedures, status accounting, and audit planning.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "CONFIGURATION MANAGEMENT PLAN: [System/Project Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 351
     },
     "conflict": {
       "id": "conflict",
@@ -2404,7 +2960,29 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 264
+      "line_count": 266
+    },
+    "conops": {
+      "id": "conops",
+      "title": "Concept of Operations",
+      "description": "Develop a structured Concept of Operations (ConOps) document that defines operational scenarios, user interactions, mission context, and operational modes for a system. Bridges the gap between stakeholder needs and system requirements.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "CONCEPT OF OPERATIONS: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 278
     },
     "conr": {
       "id": "conr",
@@ -2427,7 +3005,7 @@
         "Step 7: Failure Planning",
         "Integration"
       ],
-      "line_count": 146
+      "line_count": 148
     },
     "cor": {
       "id": "cor",
@@ -2463,7 +3041,7 @@
         "Verification Criteria",
         "Integration Points"
       ],
-      "line_count": 565
+      "line_count": 567
     },
     "cpp": {
       "id": "cpp",
@@ -2485,13 +3063,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 295
+      "line_count": 297
     },
     "cppd": {
       "id": "cppd",
@@ -2515,7 +3093,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 140
+      "line_count": 142
     },
     "cpra": {
       "id": "cpra",
@@ -2539,7 +3117,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 147
+      "line_count": 149
     },
     "create": {
       "id": "create",
@@ -2586,7 +3164,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 211
+      "line_count": 213
     },
     "cri": {
       "id": "cri",
@@ -2616,7 +3194,7 @@
         "Severity Levels",
         "When Called by Other Skills"
       ],
-      "line_count": 130
+      "line_count": 132
     },
     "crtv": {
       "id": "crtv",
@@ -2639,7 +3217,7 @@
         "Step 7: Creative Output",
         "Integration"
       ],
-      "line_count": 152
+      "line_count": 154
     },
     "crw": {
       "id": "crw",
@@ -2668,7 +3246,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 139
+      "line_count": 136
     },
     "cs": {
       "id": "cs",
@@ -2695,7 +3273,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 219
+      "line_count": 221
     },
     "csb": {
       "id": "csb",
@@ -2717,7 +3295,7 @@
         "Step 6: Lock In Agreement and Document",
         "Integration"
       ],
-      "line_count": 144
+      "line_count": 146
     },
     "cscl": {
       "id": "cscl",
@@ -2740,7 +3318,7 @@
         "Step 7: Assess Overall Causal Evidence",
         "Integration"
       ],
-      "line_count": 159
+      "line_count": 161
     },
     "ct": {
       "id": "ct",
@@ -2764,7 +3342,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 81
+      "line_count": 83
     },
     "cta": {
       "id": "cta",
@@ -2806,7 +3384,7 @@
         "Execution Checklist",
         "Next Procedure"
       ],
-      "line_count": 254
+      "line_count": 256
     },
     "ctan": {
       "id": "ctan",
@@ -2828,7 +3406,7 @@
         "Step 6: Flag Unusual or Concerning Terms",
         "Integration"
       ],
-      "line_count": 153
+      "line_count": 155
     },
     "ctcov": {
       "id": "ctcov",
@@ -2850,7 +3428,7 @@
         "Step 6: Summary",
         "Integration"
       ],
-      "line_count": 200
+      "line_count": 202
     },
     "ctgp": {
       "id": "ctgp",
@@ -2871,7 +3449,7 @@
         "Step 5: Prioritize Missing Items",
         "Integration"
       ],
-      "line_count": 110
+      "line_count": 112
     },
     "cts": {
       "id": "cts",
@@ -2890,13 +3468,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 325
+      "line_count": 327
     },
     "curd": {
       "id": "curd",
@@ -2919,7 +3497,37 @@
         "Step 7: Estimate Total Time and Create Schedule",
         "Integration"
       ],
-      "line_count": 157
+      "line_count": 159
+    },
+    "cuw": {
+      "id": "cuw",
+      "title": "Come Up With",
+      "description": "Generate quality candidates when you need to come up with ideas, options, names, solutions, or approaches. Combines divergent generation with convergent filtering to produce genuinely useful output, not just long lists.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "dd",
+        "cmp",
+        "evaluate",
+        "how",
+        "decide",
+        "se"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principles",
+        "Depth Scaling",
+        "Steps",
+        "Failure Modes",
+        "Pre-Completion Checklist",
+        "After Completion",
+        "Integration"
+      ],
+      "line_count": 255
     },
     "cv": {
       "id": "cv",
@@ -2943,7 +3551,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 74
+      "line_count": 76
     },
     "cvis": {
       "id": "cvis",
@@ -2964,7 +3572,7 @@
         "Step 5: Recommend Corrections",
         "Integration"
       ],
-      "line_count": 144
+      "line_count": 146
     },
     "dari": {
       "id": "dari",
@@ -2990,7 +3598,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 143
+      "line_count": 145
     },
     "dbg": {
       "id": "dbg",
@@ -3025,7 +3633,7 @@
         "LLM Debugging Superpowers",
         "Common Debugging Patterns (LLM Reference)"
       ],
-      "line_count": 508
+      "line_count": 510
     },
     "dc": {
       "id": "dc",
@@ -3052,7 +3660,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 612
+      "line_count": 609
     },
     "dcm": {
       "id": "dcm",
@@ -3082,7 +3690,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 115
+      "line_count": 117
     },
     "dcp": {
       "id": "dcp",
@@ -3127,7 +3735,7 @@
         "Output Format",
         "Example Usage"
       ],
-      "line_count": 207
+      "line_count": 209
     },
     "dcst": {
       "id": "dcst",
@@ -3149,7 +3757,7 @@
         "Step 6: Document for Future Reference",
         "Integration"
       ],
-      "line_count": 141
+      "line_count": 143
     },
     "dct": {
       "id": "dct",
@@ -3179,7 +3787,7 @@
         "Verification",
         "Integration Points"
       ],
-      "line_count": 166
+      "line_count": 168
     },
     "dd": {
       "id": "dd",
@@ -3192,6 +3800,7 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
+        "cuw",
         "dcp",
         "search"
       ],
@@ -3205,7 +3814,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 236
+      "line_count": 238
     },
     "de": {
       "id": "de",
@@ -3231,7 +3840,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 309
+      "line_count": 311
     },
     "deb": {
       "id": "deb",
@@ -3253,7 +3862,7 @@
         "Step 6: Synthesis",
         "Integration"
       ],
-      "line_count": 128
+      "line_count": 130
     },
     "decide": {
       "id": "decide",
@@ -3291,6 +3900,7 @@
       "invoked_by": [
         "analyze",
         "claim",
+        "cuw",
         "diagnose",
         "evaluate",
         "how",
@@ -3311,7 +3921,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 199
+      "line_count": 201
     },
     "diagnose": {
       "id": "diagnose",
@@ -3355,7 +3965,7 @@
         "Execute",
         "After Completion"
       ],
-      "line_count": 138
+      "line_count": 140
     },
     "difr": {
       "id": "difr",
@@ -3380,7 +3990,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 136
+      "line_count": 138
     },
     "dlp": {
       "id": "dlp",
@@ -3402,7 +4012,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 194
+      "line_count": 191
     },
     "dmgc": {
       "id": "dmgc",
@@ -3425,7 +4035,7 @@
         "Timing Guide",
         "Integration"
       ],
-      "line_count": 184
+      "line_count": 186
     },
     "dmt": {
       "id": "dmt",
@@ -3446,7 +4056,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 415
+      "line_count": 417
     },
     "dom": {
       "id": "dom",
@@ -3473,7 +4083,7 @@
         "Step 7: OUTPUT",
         "Integration"
       ],
-      "line_count": 131
+      "line_count": 133
     },
     "dop": {
       "id": "dop",
@@ -3494,7 +4104,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 56
+      "line_count": 58
     },
     "dot": {
       "id": "dot",
@@ -3518,7 +4128,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 156
+      "line_count": 158
     },
     "doubt": {
       "id": "doubt",
@@ -3542,7 +4152,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 105
+      "line_count": 101
     },
     "dpl": {
       "id": "dpl",
@@ -3567,7 +4177,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 106
+      "line_count": 103
     },
     "dqnt": {
       "id": "dqnt",
@@ -3590,7 +4200,7 @@
         "Step 7: Communicate Findings",
         "Integration"
       ],
-      "line_count": 184
+      "line_count": 186
     },
     "draft": {
       "id": "draft",
@@ -3616,7 +4226,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 244
+      "line_count": 246
     },
     "dsd": {
       "id": "dsd",
@@ -3643,7 +4253,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 148
+      "line_count": 150
     },
     "dse": {
       "id": "dse",
@@ -3668,7 +4278,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 126
+      "line_count": 128
     },
     "dshb": {
       "id": "dshb",
@@ -3690,7 +4300,7 @@
         "Step 6: Plan Data Sources and Refresh Cadence",
         "Integration"
       ],
-      "line_count": 166
+      "line_count": 168
     },
     "dsn": {
       "id": "dsn",
@@ -3726,7 +4336,7 @@
         "Mathematical Quality Model",
         "Pre-Completion Check"
       ],
-      "line_count": 179
+      "line_count": 181
     },
     "dsp": {
       "id": "dsp",
@@ -3750,7 +4360,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 65
+      "line_count": 67
     },
     "dss": {
       "id": "dss",
@@ -3775,7 +4385,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 162
+      "line_count": 164
     },
     "dtl": {
       "id": "dtl",
@@ -3800,7 +4410,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 176
+      "line_count": 178
     },
     "dtse": {
       "id": "dtse",
@@ -3827,7 +4437,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 188
+      "line_count": 190
     },
     "dtsk": {
       "id": "dtsk",
@@ -3850,7 +4460,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 148
+      "line_count": 150
     },
     "dv": {
       "id": "dv",
@@ -3872,7 +4482,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 85
+      "line_count": 87
     },
     "dvs": {
       "id": "dvs",
@@ -3893,7 +4503,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 67
+      "line_count": 69
     },
     "dwt": {
       "id": "dwt",
@@ -3914,7 +4524,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 454
+      "line_count": 456
     },
     "dxpt": {
       "id": "dxpt",
@@ -3936,7 +4546,7 @@
         "Step 6: Flag Misleading Content",
         "Integration"
       ],
-      "line_count": 168
+      "line_count": 170
     },
     "dys": {
       "id": "dys",
@@ -3960,7 +4570,7 @@
         "Step 6: OUTPUT",
         "Integration"
       ],
-      "line_count": 132
+      "line_count": 134
     },
     "ea": {
       "id": "ea",
@@ -3979,13 +4589,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 224
+      "line_count": 226
     },
     "ecal": {
       "id": "ecal",
@@ -4015,7 +4625,7 @@
         "WHEN TO OVERRIDE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 307
+      "line_count": 309
     },
     "ecoc": {
       "id": "ecoc",
@@ -4038,7 +4648,7 @@
         "Step 7: Stress Test",
         "Integration"
       ],
-      "line_count": 149
+      "line_count": 151
     },
     "ecomp": {
       "id": "ecomp",
@@ -4060,7 +4670,7 @@
         "Step 6: Completeness Assessment",
         "Integration"
       ],
-      "line_count": 145
+      "line_count": 147
     },
     "eda": {
       "id": "eda",
@@ -4086,7 +4696,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 304
+      "line_count": 301
     },
     "edit": {
       "id": "edit",
@@ -4112,7 +4722,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 245
+      "line_count": 247
     },
     "efa": {
       "id": "efa",
@@ -4135,7 +4745,7 @@
         "Important Limitations",
         "Integration"
       ],
-      "line_count": 165
+      "line_count": 167
     },
     "efrt": {
       "id": "efrt",
@@ -4156,7 +4766,7 @@
         "Step 5: Final Estimate",
         "Integration"
       ],
-      "line_count": 117
+      "line_count": 119
     },
     "eg": {
       "id": "eg",
@@ -4175,7 +4785,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 91
+      "line_count": 93
     },
     "eh": {
       "id": "eh",
@@ -4197,7 +4807,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 134
+      "line_count": 136
     },
     "emotion": {
       "id": "emotion",
@@ -4241,7 +4851,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 189
+      "line_count": 191
     },
     "empth": {
       "id": "empth",
@@ -4266,7 +4876,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 219
+      "line_count": 221
     },
     "emv": {
       "id": "emv",
@@ -4296,7 +4906,7 @@
         "When to Skip Empirical Validation",
         "Calibration Review (Periodic)"
       ],
-      "line_count": 282
+      "line_count": 284
     },
     "enc": {
       "id": "enc",
@@ -4317,7 +4927,32 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 75
+      "line_count": 77
+    },
+    "enough": {
+      "id": "enough",
+      "title": "Sufficiency Check",
+      "description": "Determine whether something has been examined, built, planned, or analyzed enough — or whether more work is needed, and specifically what's missing.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principles",
+        "Phase 1: Define the Standard",
+        "Phase 2: Dimensional Sufficiency Check",
+        "Phase 3: The \"More Work\" Cost-Benefit",
+        "Phase 4: Over-Sufficiency Check",
+        "Phase 5: Verdict",
+        "Depth Scaling",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 242
     },
     "eqi": {
       "id": "eqi",
@@ -4340,7 +4975,7 @@
         "Step 7: Create a Development Plan",
         "Integration"
       ],
-      "line_count": 209
+      "line_count": 211
     },
     "er": {
       "id": "er",
@@ -4360,13 +4995,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 263
+      "line_count": 265
     },
     "es": {
       "id": "es",
@@ -4389,7 +5024,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 159
+      "line_count": 161
     },
     "ess": {
       "id": "ess",
@@ -4410,7 +5045,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 98
+      "line_count": 100
     },
     "etc": {
       "id": "etc",
@@ -4439,7 +5074,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 196
+      "line_count": 198
     },
     "eth": {
       "id": "eth",
@@ -4465,7 +5100,7 @@
         "Step 6: SYNTHESIS",
         "Integration"
       ],
-      "line_count": 140
+      "line_count": 142
     },
     "evaluate": {
       "id": "evaluate",
@@ -4508,6 +5143,7 @@
         "action",
         "analyze",
         "create",
+        "cuw",
         "emotion",
         "evd",
         "iterate",
@@ -4525,7 +5161,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 208
+      "line_count": 210
     },
     "evd": {
       "id": "evd",
@@ -4549,7 +5185,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 153
+      "line_count": 155
     },
     "exc": {
       "id": "exc",
@@ -4575,7 +5211,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 95
+      "line_count": 92
     },
     "exd": {
       "id": "exd",
@@ -4596,13 +5232,13 @@
         "ig"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 380
+      "line_count": 382
     },
     "exint": {
       "id": "exint",
@@ -4624,7 +5260,7 @@
         "Step 6: Integration Checklist",
         "Integration"
       ],
-      "line_count": 166
+      "line_count": 168
     },
     "exps": {
       "id": "exps",
@@ -4647,7 +5283,7 @@
         "Step 7: Exploration Summary",
         "Integration"
       ],
-      "line_count": 135
+      "line_count": 137
     },
     "exrp": {
       "id": "exrp",
@@ -4670,7 +5306,7 @@
         "Step 7: Define Metrics",
         "Integration"
       ],
-      "line_count": 171
+      "line_count": 173
     },
     "exst": {
       "id": "exst",
@@ -4692,7 +5328,7 @@
         "Step 6: Begin",
         "Integration"
       ],
-      "line_count": 144
+      "line_count": 146
     },
     "extract": {
       "id": "extract",
@@ -4719,7 +5355,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 175
+      "line_count": 177
     },
     "exv": {
       "id": "exv",
@@ -4745,7 +5381,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 98
+      "line_count": 95
     },
     "ezy": {
       "id": "ezy",
@@ -4770,7 +5406,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 186
+      "line_count": 188
     },
     "faa": {
       "id": "faa",
@@ -4791,7 +5427,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 70
+      "line_count": 72
     },
     "fat": {
       "id": "fat",
@@ -4818,7 +5454,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 151
+      "line_count": 153
     },
     "fb": {
       "id": "fb",
@@ -4845,7 +5481,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 212
+      "line_count": 214
     },
     "fctl": {
       "id": "fctl",
@@ -4866,7 +5502,7 @@
         "Step 5: Verdict",
         "Integration"
       ],
-      "line_count": 139
+      "line_count": 141
     },
     "fd": {
       "id": "fd",
@@ -4885,13 +5521,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 211
+      "line_count": 213
     },
     "fe": {
       "id": "fe",
@@ -4917,7 +5553,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 83
+      "line_count": 80
     },
     "ff": {
       "id": "ff",
@@ -4936,13 +5572,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 265
+      "line_count": 267
     },
     "fia": {
       "id": "fia",
@@ -4987,7 +5623,33 @@
         "Quality Gates",
         "Example Usage"
       ],
-      "line_count": 215
+      "line_count": 217
+    },
+    "fix": {
+      "id": "fix",
+      "title": "Fix It",
+      "description": "Take something broken, bad, or underperforming — diagnose what's wrong, then fix it in place. Works on code, skills, documents, plans, processes, or anything with a quality gap.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principles",
+        "Step 1: Read the Thing",
+        "Step 2: Diagnose",
+        "Step 3: Plan the Fix",
+        "Step 4: Execute the Fix",
+        "Step 5: Verify",
+        "Step 6: Report",
+        "Depth Scaling",
+        "Anti-Failure Checks",
+        "Integration"
+      ],
+      "line_count": 183
     },
     "fj": {
       "id": "fj",
@@ -5009,7 +5671,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 135
+      "line_count": 137
     },
     "fl": {
       "id": "fl",
@@ -5027,13 +5689,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 387
+      "line_count": 389
     },
     "fla": {
       "id": "fla",
@@ -5068,13 +5730,13 @@
         "want"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 190
+      "line_count": 192
     },
     "flhwijd": {
       "id": "flhwijd",
@@ -5099,7 +5761,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 206
+      "line_count": 208
     },
     "fm": {
       "id": "fm",
@@ -5124,13 +5786,13 @@
         "bo"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 224
+      "line_count": 226
     },
     "fmtsb": {
       "id": "fmtsb",
@@ -5156,7 +5818,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 219
+      "line_count": 221
     },
     "fnd": {
       "id": "fnd",
@@ -5185,7 +5847,7 @@
         "Instructions",
         "Skill Registry (318 skills)"
       ],
-      "line_count": 410
+      "line_count": 412
     },
     "foht": {
       "id": "foht",
@@ -5223,7 +5885,7 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 293
+      "line_count": 295
     },
     "fohw": {
       "id": "fohw",
@@ -5246,7 +5908,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 453
+      "line_count": 455
     },
     "fonss": {
       "id": "fonss",
@@ -5274,7 +5936,89 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 205
+      "line_count": 207
+    },
+    "fow": {
+      "id": "fow",
+      "title": "Figure Out Why",
+      "description": "Systematic diagnosis of WHY something is happening (or not happening). Forces generation of multiple candidate explanations before evaluation, separates symptoms from causes, and distinguishes proximate from root cause. Works across domains: code, systems, design, behavior, outcomes.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principle: The Five-Before-One Rule",
+        "Depth Scaling",
+        "Step 1: Stabilize the Observation",
+        "Step 2: Separate Symptoms from the Phenomenon",
+        "Step 3: Generate Candidate Explanations",
+        "Step 4: Evaluate Each Candidate",
+        "Step 5: Synthesize and Rank",
+        "Step 6: Propose Verification",
+        "Anti-Failure Checks",
+        "When FOW Routes to Other Skills",
+        "Saving Output",
+        "Verification Checklist"
+      ],
+      "line_count": 329
+    },
+    "fowtd": {
+      "id": "fowtd",
+      "title": "Figure Out What To Do",
+      "description": "When you have a pile of data, information, options, or material and don't know what to do with it — extract what matters, identify what it's for, and produce a concrete action plan.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "skill"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Material Inventory",
+        "Phase 2: Shape Detection",
+        "Phase 3: Triage",
+        "Phase 4: Action Determination",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 193
+    },
+    "fowtdn": {
+      "id": "fowtdn",
+      "title": "Figure Out What To Do Next",
+      "description": "When you've been working through data or a problem and need to determine the single most valuable next action — assesses progress, identifies what changed, and picks the move that advances you most.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "skill"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Core Principles",
+        "Phase 1: Progress Check",
+        "Phase 2: Delta Assessment",
+        "Phase 3: Remaining Work Scan",
+        "Phase 4: Next Action Selection",
+        "Phase 5: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 202
     },
     "fowwr": {
       "id": "fowwr",
@@ -5309,7 +6053,7 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 250
+      "line_count": 252
     },
     "fr": {
       "id": "fr",
@@ -5332,13 +6076,13 @@
         "rsg"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 263
+      "line_count": 265
     },
     "frq": {
       "id": "frq",
@@ -5366,7 +6110,7 @@
         "Common Mistakes",
         "When to Override This Procedure"
       ],
-      "line_count": 323
+      "line_count": 325
     },
     "frzn": {
       "id": "frzn",
@@ -5391,7 +6135,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 93
+      "line_count": 89
     },
     "fss": {
       "id": "fss",
@@ -5421,7 +6165,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 114
+      "line_count": 111
     },
     "fua": {
       "id": "fua",
@@ -5445,7 +6189,29 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 309
+      "line_count": 306
+    },
+    "funcanalysis": {
+      "id": "funcanalysis",
+      "title": "Functional Analysis",
+      "description": "Decompose system functions into subfunctions, define functional interfaces, allocate functions to physical components, and trace functions to requirements. Produces a functional decomposition tree and allocation matrix.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "FUNCTIONAL ANALYSIS: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 282
     },
     "funr": {
       "id": "funr",
@@ -5467,7 +6233,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 139
+      "line_count": 141
     },
     "fut": {
       "id": "fut",
@@ -5491,7 +6257,7 @@
         "Step 5: IMPLICATIONS",
         "Integration"
       ],
-      "line_count": 122
+      "line_count": 124
     },
     "fwa": {
       "id": "fwa",
@@ -5519,7 +6285,7 @@
         "When to Override This Procedure",
         "Worked Examples"
       ],
-      "line_count": 251
+      "line_count": 253
     },
     "fwai": {
       "id": "fwai",
@@ -5541,7 +6307,7 @@
         "Step 6: Value Assessment",
         "Integration"
       ],
-      "line_count": 183
+      "line_count": 185
     },
     "gaa": {
       "id": "gaa",
@@ -5562,7 +6328,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 68
+      "line_count": 70
     },
     "gaca": {
       "id": "gaca",
@@ -5586,7 +6352,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 121
+      "line_count": 123
     },
     "gapf": {
       "id": "gapf",
@@ -5609,7 +6375,7 @@
         "Step 7: Synthesize",
         "Integration"
       ],
-      "line_count": 129
+      "line_count": 131
     },
     "gd": {
       "id": "gd",
@@ -5639,7 +6405,7 @@
         "When to Use",
         "Output Format"
       ],
-      "line_count": 133
+      "line_count": 130
     },
     "gdm": {
       "id": "gdm",
@@ -5666,7 +6432,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 93
+      "line_count": 90
     },
     "ge": {
       "id": "ge",
@@ -5688,13 +6454,13 @@
         "idg"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 408
+      "line_count": 410
     },
     "gee": {
       "id": "gee",
@@ -5718,7 +6484,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 124
+      "line_count": 126
     },
     "gen": {
       "id": "gen",
@@ -5753,7 +6519,7 @@
         "When Called by Other Skills",
         "Common Failure Modes"
       ],
-      "line_count": 115
+      "line_count": 117
     },
     "genl": {
       "id": "genl",
@@ -5778,7 +6544,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 189
+      "line_count": 191
     },
     "gflr": {
       "id": "gflr",
@@ -5802,7 +6568,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 147
+      "line_count": 149
     },
     "gg": {
       "id": "gg",
@@ -5825,6 +6591,8 @@
         "qag"
       ],
       "invoked_by": [
+        "categorize",
+        "ggs",
         "qag",
         "spd"
       ],
@@ -5865,7 +6633,31 @@
         "Execution Checklist",
         "Next Procedure"
       ],
-      "line_count": 556
+      "line_count": 558
+    },
+    "ggs": {
+      "id": "ggs",
+      "title": "Guess Generation → Selection",
+      "description": "Generate exhaustive guesses then systematically select the top 20 for evaluation. Chains /gg into /selection.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "gg",
+        "selection"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Overview",
+        "Step 1: Generate Guesses",
+        "Step 2: Select Top 20",
+        "Step 3: Run Selection",
+        "Output",
+        "Execution Checklist"
+      ],
+      "line_count": 64
     },
     "given": {
       "id": "given",
@@ -5890,7 +6682,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 194
+      "line_count": 196
     },
     "gjs": {
       "id": "gjs",
@@ -5943,7 +6735,7 @@
         "Next Procedure",
         "Niche Documentation"
       ],
-      "line_count": 301
+      "line_count": 303
     },
     "gn": {
       "id": "gn",
@@ -5968,7 +6760,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 70
+      "line_count": 67
     },
     "gop": {
       "id": "gop",
@@ -5993,7 +6785,7 @@
         "Step 6: MAXIMIZE",
         "Integration"
       ],
-      "line_count": 123
+      "line_count": 125
     },
     "gosm": {
       "id": "gosm",
@@ -6024,7 +6816,7 @@
         "Full (30-60+ minutes)",
         "Pre-Completion Check"
       ],
-      "line_count": 120
+      "line_count": 122
     },
     "grf": {
       "id": "grf",
@@ -6052,7 +6844,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 233
+      "line_count": 230
     },
     "grfr": {
       "id": "grfr",
@@ -6088,7 +6880,7 @@
         "Verification",
         "Niche Documentation"
       ],
-      "line_count": 165
+      "line_count": 167
     },
     "gsr": {
       "id": "gsr",
@@ -6120,7 +6912,7 @@
         "Output Format",
         "Goal-Structure Reconstruction: [Conclusion]"
       ],
-      "line_count": 138
+      "line_count": 135
     },
     "gt": {
       "id": "gt",
@@ -6141,7 +6933,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 76
+      "line_count": 78
     },
     "gts": {
       "id": "gts",
@@ -6166,7 +6958,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 184
+      "line_count": 186
     },
     "gu": {
       "id": "gu",
@@ -6220,7 +7012,7 @@
         "Verification Criteria",
         "Integration Points"
       ],
-      "line_count": 492
+      "line_count": 494
     },
     "gw": {
       "id": "gw",
@@ -6239,13 +7031,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 257
+      "line_count": 259
     },
     "hab": {
       "id": "hab",
@@ -6268,7 +7060,7 @@
         "Step 7: Set Measurement",
         "Integration"
       ],
-      "line_count": 130
+      "line_count": 132
     },
     "handle": {
       "id": "handle",
@@ -6307,7 +7099,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 180
+      "line_count": 182
     },
     "hd": {
       "id": "hd",
@@ -6331,7 +7123,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 187
+      "line_count": 184
     },
     "hf": {
       "id": "hf",
@@ -6361,7 +7153,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 121
+      "line_count": 118
     },
     "ho": {
       "id": "ho",
@@ -6385,7 +7177,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 146
+      "line_count": 148
     },
     "how": {
       "id": "how",
@@ -6422,6 +7214,7 @@
         "action",
         "analyze",
         "create",
+        "cuw",
         "decide",
         "diagnose",
         "emotion",
@@ -6441,7 +7234,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 215
+      "line_count": 217
     },
     "hpat": {
       "id": "hpat",
@@ -6462,7 +7255,7 @@
         "Step 5: Identify Where Patterns Might Break",
         "Integration"
       ],
-      "line_count": 140
+      "line_count": 142
     },
     "hrd": {
       "id": "hrd",
@@ -6488,7 +7281,29 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 239
+      "line_count": 241
+    },
+    "hsi": {
+      "id": "hsi",
+      "title": "Human Systems Integration",
+      "description": "Ensure system design accounts for human capabilities, limitations, and needs across all user populations. Addresses human factors, training, staffing, and accessibility.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "HSI ASSESSMENT: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 296
     },
     "ht": {
       "id": "ht",
@@ -6520,7 +7335,7 @@
         "Verification",
         "Niche Documentation"
       ],
-      "line_count": 542
+      "line_count": 544
     },
     "hvh": {
       "id": "hvh",
@@ -6540,7 +7355,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 106
+      "line_count": 108
     },
     "iagca": {
       "id": "iagca",
@@ -6570,7 +7385,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 193
+      "line_count": 195
     },
     "iaw": {
       "id": "iaw",
@@ -6599,7 +7414,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 184
+      "line_count": 186
     },
     "icl": {
       "id": "icl",
@@ -6620,7 +7435,7 @@
         "Step 5: Assess Credibility",
         "Integration"
       ],
-      "line_count": 153
+      "line_count": 155
     },
     "idg": {
       "id": "idg",
@@ -6644,7 +7459,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 145
+      "line_count": 147
     },
     "idk": {
       "id": "idk",
@@ -6674,7 +7489,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 194
+      "line_count": 196
     },
     "idsk": {
       "id": "idsk",
@@ -6696,7 +7511,7 @@
         "Step 6: Determine Next Step",
         "Integration"
       ],
-      "line_count": 112
+      "line_count": 114
     },
     "ie": {
       "id": "ie",
@@ -6722,7 +7537,29 @@
         "Verification",
         "When to Use"
       ],
-      "line_count": 156
+      "line_count": 158
+    },
+    "iface": {
+      "id": "iface",
+      "title": "Interface Specification",
+      "description": "Define and document all interfaces between system components, subsystems, and external systems. Produces a structured Interface Control Document (ICD) with protocols, data formats, timing, and error handling.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "INTERFACE CONTROL DOCUMENT: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 312
     },
     "ifss": {
       "id": "ifss",
@@ -6745,14 +7582,14 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Goal",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 142
+      "line_count": 144
     },
     "ig": {
       "id": "ig",
@@ -6774,7 +7611,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 94
+      "line_count": 96
     },
     "ign": {
       "id": "ign",
@@ -6801,7 +7638,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 632
+      "line_count": 634
     },
     "im": {
       "id": "im",
@@ -6831,7 +7668,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 105
+      "line_count": 102
     },
     "immg": {
       "id": "immg",
@@ -6853,7 +7690,32 @@
         "Output Summary",
         "Integration"
       ],
-      "line_count": 127
+      "line_count": 129
+    },
+    "improve": {
+      "id": "improve",
+      "title": "Improve It",
+      "description": "Take something that works but could be better. Find the highest-leverage improvements and apply them. Not for broken things (/fix) — for things that work but underperform their potential.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principles",
+        "Step 1: Read and Baseline",
+        "Step 2: Find Improvement Opportunities",
+        "Step 3: Prioritize",
+        "Step 4: Apply Improvements",
+        "Step 5: Re-baseline",
+        "Depth Scaling",
+        "Anti-Failure Checks",
+        "Integration"
+      ],
+      "line_count": 174
     },
     "imprt": {
       "id": "imprt",
@@ -6880,7 +7742,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 202
+      "line_count": 204
     },
     "imps": {
       "id": "imps",
@@ -6907,7 +7769,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 185
+      "line_count": 187
     },
     "impss": {
       "id": "impss",
@@ -6937,7 +7799,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 203
+      "line_count": 205
     },
     "indv": {
       "id": "indv",
@@ -6959,7 +7821,7 @@
         "Step 6: Optimize for Agency",
         "Integration"
       ],
-      "line_count": 127
+      "line_count": 129
     },
     "injc": {
       "id": "injc",
@@ -6982,7 +7844,7 @@
         "Integration",
         "Integration"
       ],
-      "line_count": 158
+      "line_count": 160
     },
     "ins": {
       "id": "ins",
@@ -7011,7 +7873,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 446
+      "line_count": 448
     },
     "insd": {
       "id": "insd",
@@ -7033,7 +7895,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 306
+      "line_count": 308
     },
     "ip": {
       "id": "ip",
@@ -7054,13 +7916,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 288
+      "line_count": 290
     },
     "ipss": {
       "id": "ipss",
@@ -7086,7 +7948,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 108
+      "line_count": 105
     },
     "isd": {
       "id": "isd",
@@ -7113,7 +7975,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 126
+      "line_count": 123
     },
     "it": {
       "id": "it",
@@ -7153,7 +8015,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 217
+      "line_count": 219
     },
     "ita": {
       "id": "ita",
@@ -7176,7 +8038,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 108
+      "line_count": 110
     },
     "iterate": {
       "id": "iterate",
@@ -7216,7 +8078,7 @@
         "Follow-Up Routing",
         "Integration"
       ],
-      "line_count": 405
+      "line_count": 407
     },
     "itp": {
       "id": "itp",
@@ -7243,7 +8105,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 207
+      "line_count": 209
     },
     "ivs": {
       "id": "ivs",
@@ -7270,7 +8132,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 148
+      "line_count": 145
     },
     "jdgm": {
       "id": "jdgm",
@@ -7293,7 +8155,7 @@
         "Step 7: Decision Record",
         "Integration"
       ],
-      "line_count": 148
+      "line_count": 150
     },
     "je": {
       "id": "je",
@@ -7315,11 +8177,11 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
-        "Steps",
-        "Interpretations"
+        "Steps"
       ],
-      "line_count": 297
+      "line_count": 299
     },
     "jm": {
       "id": "jm",
@@ -7345,12 +8207,12 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
-        "Output Format",
-        "Interpretations"
+        "Output Format"
       ],
-      "line_count": 263
+      "line_count": 265
     },
     "jss": {
       "id": "jss",
@@ -7376,7 +8238,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 209
+      "line_count": 206
     },
     "kta": {
       "id": "kta",
@@ -7401,7 +8263,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 315
+      "line_count": 317
     },
     "la": {
       "id": "la",
@@ -7421,13 +8283,35 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Core Principle",
         "Depth Scaling",
-        "Steps",
-        "Interpretations"
+        "Steps"
       ],
-      "line_count": 110
+      "line_count": 112
+    },
+    "lcca": {
+      "id": "lcca",
+      "title": "Life Cycle Cost Analysis",
+      "description": "Estimate total cost of ownership across the full system lifecycle. Covers development, production, operations, support, and disposal phases with sensitivity analysis and alternative comparison.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "LIFECYCLE COST ESTIMATE: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 344
     },
     "lcs": {
       "id": "lcs",
@@ -7448,7 +8332,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 74
+      "line_count": 76
     },
     "ld": {
       "id": "ld",
@@ -7469,7 +8353,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 71
+      "line_count": 73
     },
     "ldg": {
       "id": "ldg",
@@ -7488,7 +8372,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 103
+      "line_count": 105
     },
     "leg": {
       "id": "leg",
@@ -7510,7 +8394,7 @@
         "Step 6: Recommend Actions",
         "Integration"
       ],
-      "line_count": 138
+      "line_count": 140
     },
     "lgi": {
       "id": "lgi",
@@ -7537,7 +8421,7 @@
         "Core Principle",
         "Steps"
       ],
-      "line_count": 74
+      "line_count": 71
     },
     "list": {
       "id": "list",
@@ -7566,7 +8450,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 209
+      "line_count": 211
     },
     "llmf": {
       "id": "llmf",
@@ -7588,7 +8472,7 @@
         "Step 6: Recommend Guardrails",
         "Integration"
       ],
-      "line_count": 155
+      "line_count": 157
     },
     "lost": {
       "id": "lost",
@@ -7613,7 +8497,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 192
+      "line_count": 194
     },
     "lp": {
       "id": "lp",
@@ -7638,7 +8522,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 171
+      "line_count": 173
     },
     "lpd": {
       "id": "lpd",
@@ -7664,7 +8548,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 139
+      "line_count": 136
     },
     "lps": {
       "id": "lps",
@@ -7689,7 +8573,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 155
+      "line_count": 157
     },
     "lr": {
       "id": "lr",
@@ -7710,13 +8594,13 @@
         "aa"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 142
+      "line_count": 144
     },
     "lrnk": {
       "id": "lrnk",
@@ -7738,7 +8622,7 @@
         "Step 6: Plan Retention",
         "Integration"
       ],
-      "line_count": 123
+      "line_count": 125
     },
     "lrs": {
       "id": "lrs",
@@ -7755,13 +8639,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 274
+      "line_count": 276
     },
     "lt": {
       "id": "lt",
@@ -7783,7 +8667,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 173
+      "line_count": 170
     },
     "ltai": {
       "id": "ltai",
@@ -7804,7 +8688,7 @@
         "Step 5: Project Capability Evolution",
         "Integration"
       ],
-      "line_count": 148
+      "line_count": 150
     },
     "m": {
       "id": "m",
@@ -7826,13 +8710,13 @@
         "gts"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 116
+      "line_count": 118
     },
     "ma": {
       "id": "ma",
@@ -7869,7 +8753,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 157
+      "line_count": 154
     },
     "mcd": {
       "id": "mcd",
@@ -7896,7 +8780,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 93
+      "line_count": 90
     },
     "mcg": {
       "id": "mcg",
@@ -7924,7 +8808,7 @@
         "When To Use This Gate",
         "Integration"
       ],
-      "line_count": 245
+      "line_count": 247
     },
     "mcp": {
       "id": "mcp",
@@ -7945,7 +8829,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 80
+      "line_count": 82
     },
     "mcs": {
       "id": "mcs",
@@ -7969,7 +8853,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 342
+      "line_count": 339
     },
     "md": {
       "id": "md",
@@ -7992,7 +8876,7 @@
         "Steps",
         "Verification"
       ],
-      "line_count": 60
+      "line_count": 57
     },
     "mdr": {
       "id": "mdr",
@@ -8015,7 +8899,7 @@
         "Step 7: Post-Decision",
         "Integration"
       ],
-      "line_count": 120
+      "line_count": 122
     },
     "mem": {
       "id": "mem",
@@ -8041,7 +8925,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 178
+      "line_count": 175
     },
     "memk": {
       "id": "memk",
@@ -8063,7 +8947,7 @@
         "Step 6: Prune Outdated Entries",
         "Integration"
       ],
-      "line_count": 150
+      "line_count": 152
     },
     "memy": {
       "id": "memy",
@@ -8086,7 +8970,7 @@
         "Step 7: Retention Summary",
         "Integration"
       ],
-      "line_count": 157
+      "line_count": 159
     },
     "met": {
       "id": "met",
@@ -8111,7 +8995,7 @@
         "Core Principle",
         "Steps"
       ],
-      "line_count": 106
+      "line_count": 103
     },
     "meta": {
       "id": "meta",
@@ -8123,14 +9007,16 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "auto"
+      ],
       "sections": [
         "Routing Decisions",
         "Category Skills Quick Reference",
         "Execute",
         "Integration"
       ],
-      "line_count": 235
+      "line_count": 237
     },
     "mets": {
       "id": "mets",
@@ -8152,7 +9038,7 @@
         "Step 6: Plan for Goodhart's Law",
         "Integration"
       ],
-      "line_count": 163
+      "line_count": 165
     },
     "mf": {
       "id": "mf",
@@ -8173,13 +9059,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 352
+      "line_count": 354
     },
     "mil": {
       "id": "mil",
@@ -8202,7 +9088,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 79
+      "line_count": 81
     },
     "mocl": {
       "id": "mocl",
@@ -8223,7 +9109,7 @@
         "Step 5: Assess Distance from Actuality",
         "Integration"
       ],
-      "line_count": 143
+      "line_count": 145
     },
     "mp": {
       "id": "mp",
@@ -8244,7 +9130,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 81
+      "line_count": 83
     },
     "mpa": {
       "id": "mpa",
@@ -8275,7 +9161,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 169
+      "line_count": 166
     },
     "mpg": {
       "id": "mpg",
@@ -8298,7 +9184,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 131
+      "line_count": 133
     },
     "mr": {
       "id": "mr",
@@ -8320,13 +9206,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 131
+      "line_count": 133
     },
     "mrc": {
       "id": "mrc",
@@ -8355,7 +9241,7 @@
         "Integration with Other Skills",
         "Failure Indicators"
       ],
-      "line_count": 89
+      "line_count": 91
     },
     "mss": {
       "id": "mss",
@@ -8382,7 +9268,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 125
+      "line_count": 122
     },
     "mtcg": {
       "id": "mtcg",
@@ -8405,7 +9291,7 @@
         "Step 7: Metacognitive Summary",
         "Integration"
       ],
-      "line_count": 159
+      "line_count": 161
     },
     "mtcl": {
       "id": "mtcl",
@@ -8427,7 +9313,7 @@
         "Step 6: Verdict",
         "Integration"
       ],
-      "line_count": 165
+      "line_count": 167
     },
     "mtgd": {
       "id": "mtgd",
@@ -8449,7 +9335,7 @@
         "Step 6: Define Follow-Up Actions Format",
         "Integration"
       ],
-      "line_count": 126
+      "line_count": 128
     },
     "mtnw": {
       "id": "mtnw",
@@ -8470,7 +9356,7 @@
         "Step 5: Recommend Domains to Enter",
         "Integration"
       ],
-      "line_count": 137
+      "line_count": 139
     },
     "mts": {
       "id": "mts",
@@ -8496,7 +9382,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 245
+      "line_count": 247
     },
     "mtskd": {
       "id": "mtskd",
@@ -8519,7 +9405,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 174
+      "line_count": 176
     },
     "mv": {
       "id": "mv",
@@ -8545,7 +9431,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 306
+      "line_count": 308
     },
     "ncl": {
       "id": "ncl",
@@ -8567,7 +9453,7 @@
         "Step 6: Assess the Strength of the \"Should\"",
         "Integration"
       ],
-      "line_count": 146
+      "line_count": 148
     },
     "neg": {
       "id": "neg",
@@ -8592,7 +9478,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 104
+      "line_count": 100
     },
     "net": {
       "id": "net",
@@ -8617,7 +9503,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 284
+      "line_count": 281
     },
     "next": {
       "id": "next",
@@ -8657,7 +9543,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 182
+      "line_count": 184
     },
     "nowwt": {
       "id": "nowwt",
@@ -8681,7 +9567,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 157
+      "line_count": 159
     },
     "nrwd": {
       "id": "nrwd",
@@ -8702,7 +9588,7 @@
         "Step 5: Domain-Appropriate Output",
         "Integration"
       ],
-      "line_count": 104
+      "line_count": 106
     },
     "ns": {
       "id": "ns",
@@ -8722,7 +9608,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 71
+      "line_count": 73
     },
     "nsa": {
       "id": "nsa",
@@ -8759,7 +9645,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 209
+      "line_count": 211
     },
     "nss": {
       "id": "nss",
@@ -8786,7 +9672,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 116
+      "line_count": 113
     },
     "nstep": {
       "id": "nstep",
@@ -8807,7 +9693,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 87
+      "line_count": 89
     },
     "nusr": {
       "id": "nusr",
@@ -8828,7 +9714,7 @@
         "Step 5: Recommend Simplifications",
         "Integration"
       ],
-      "line_count": 148
+      "line_count": 150
     },
     "nutr": {
       "id": "nutr",
@@ -8851,7 +9737,7 @@
         "Step 7: Implementation Plan",
         "Integration"
       ],
-      "line_count": 178
+      "line_count": 180
     },
     "o": {
       "id": "o",
@@ -8871,13 +9757,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 112
+      "line_count": 114
     },
     "oart": {
       "id": "oart",
@@ -8901,7 +9787,7 @@
         "Deliver",
         "Integration"
       ],
-      "line_count": 156
+      "line_count": 158
     },
     "oba": {
       "id": "oba",
@@ -8925,7 +9811,7 @@
         "Step 4: INJECTION INTO OTHER SKILLS",
         "Integration"
       ],
-      "line_count": 119
+      "line_count": 121
     },
     "obo": {
       "id": "obo",
@@ -8951,7 +9837,7 @@
         "Step 4: OUTPUT",
         "Integration"
       ],
-      "line_count": 101
+      "line_count": 103
     },
     "obv": {
       "id": "obv",
@@ -8975,7 +9861,7 @@
         "Step 4: INJECTION MODE",
         "Integration"
       ],
-      "line_count": 107
+      "line_count": 109
     },
     "odec": {
       "id": "odec",
@@ -8998,7 +9884,7 @@
         "Step 7: State Next Steps",
         "Integration"
       ],
-      "line_count": 153
+      "line_count": 155
     },
     "ogo": {
       "id": "ogo",
@@ -9020,7 +9906,7 @@
         "Step 3: OUTPUT",
         "Integration"
       ],
-      "line_count": 90
+      "line_count": 92
     },
     "ol": {
       "id": "ol",
@@ -9044,7 +9930,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 144
+      "line_count": 146
     },
     "olst": {
       "id": "olst",
@@ -9067,7 +9953,7 @@
         "Step 7: Deliver",
         "Integration"
       ],
-      "line_count": 129
+      "line_count": 131
     },
     "omtx": {
       "id": "omtx",
@@ -9088,7 +9974,7 @@
         "Step 5: Summarize Findings",
         "Integration"
       ],
-      "line_count": 124
+      "line_count": 126
     },
     "onar": {
       "id": "onar",
@@ -9111,7 +9997,7 @@
         "Step 7: Deliver",
         "Integration"
       ],
-      "line_count": 132
+      "line_count": 134
     },
     "op": {
       "id": "op",
@@ -9132,13 +10018,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 117
+      "line_count": 119
     },
     "oprc": {
       "id": "oprc",
@@ -9161,7 +10047,7 @@
         "Step 7: Deliver",
         "Integration"
       ],
-      "line_count": 146
+      "line_count": 148
     },
     "ops": {
       "id": "ops",
@@ -9180,7 +10066,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 96
+      "line_count": 98
     },
     "orc": {
       "id": "orc",
@@ -9206,7 +10092,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 226
+      "line_count": 223
     },
     "orcs": {
       "id": "orcs",
@@ -9232,7 +10118,7 @@
         "Integration",
         "Integration"
       ],
-      "line_count": 161
+      "line_count": 163
     },
     "orec": {
       "id": "orec",
@@ -9255,7 +10141,7 @@
         "Step 7: Define Success Metrics",
         "Integration"
       ],
-      "line_count": 146
+      "line_count": 148
     },
     "orgn": {
       "id": "orgn",
@@ -9277,7 +10163,7 @@
         "Step 6: Recommendations",
         "Integration"
       ],
-      "line_count": 117
+      "line_count": 119
     },
     "orm": {
       "id": "orm",
@@ -9299,7 +10185,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 274
+      "line_count": 271
     },
     "ornt": {
       "id": "ornt",
@@ -9321,7 +10207,7 @@
         "Step 6: Provide a One-Paragraph Briefing",
         "Integration"
       ],
-      "line_count": 129
+      "line_count": 131
     },
     "ov": {
       "id": "ov",
@@ -9343,7 +10229,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 144
+      "line_count": 146
     },
     "ovi": {
       "id": "ovi",
@@ -9364,7 +10250,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 63
+      "line_count": 65
     },
     "ovwlm": {
       "id": "ovwlm",
@@ -9390,7 +10276,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 221
+      "line_count": 223
     },
     "p": {
       "id": "p",
@@ -9428,7 +10314,7 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 329
+      "line_count": 331
     },
     "p10complement": {
       "id": "p10complement",
@@ -9458,7 +10344,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 191
+      "line_count": 193
     },
     "p10diverse": {
       "id": "p10diverse",
@@ -9488,7 +10374,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 196
+      "line_count": 198
     },
     "p10for": {
       "id": "p10for",
@@ -9518,7 +10404,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 207
+      "line_count": 209
     },
     "p10goal": {
       "id": "p10goal",
@@ -9548,7 +10434,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 201
+      "line_count": 203
     },
     "p10random": {
       "id": "p10random",
@@ -9579,7 +10465,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 179
+      "line_count": 181
     },
     "p10useful": {
       "id": "p10useful",
@@ -9609,7 +10495,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 196
+      "line_count": 198
     },
     "p3chain": {
       "id": "p3chain",
@@ -9639,7 +10525,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 191
+      "line_count": 193
     },
     "p5deep": {
       "id": "p5deep",
@@ -9669,7 +10555,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 232
+      "line_count": 234
     },
     "p5qm": {
       "id": "p5qm",
@@ -9699,7 +10585,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 237
+      "line_count": 239
     },
     "p5similar": {
       "id": "p5similar",
@@ -9729,7 +10615,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 194
+      "line_count": 196
     },
     "p5want": {
       "id": "p5want",
@@ -9759,7 +10645,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 211
+      "line_count": 213
     },
     "p7cat": {
       "id": "p7cat",
@@ -9789,7 +10675,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 209
+      "line_count": 211
     },
     "p8tier": {
       "id": "p8tier",
@@ -9820,7 +10706,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 236
+      "line_count": 238
     },
     "pag": {
       "id": "pag",
@@ -9842,7 +10728,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 158
+      "line_count": 160
     },
     "panic": {
       "id": "panic",
@@ -9863,7 +10749,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 102
+      "line_count": 98
     },
     "pb": {
       "id": "pb",
@@ -9885,7 +10771,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 65
+      "line_count": 67
     },
     "pbi": {
       "id": "pbi",
@@ -9917,7 +10803,7 @@
         "Verification",
         "Integration Points"
       ],
-      "line_count": 158
+      "line_count": 160
     },
     "pbr": {
       "id": "pbr",
@@ -9943,7 +10829,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 100
+      "line_count": 97
     },
     "pbs": {
       "id": "pbs",
@@ -9965,7 +10851,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 64
+      "line_count": 66
     },
     "pcd": {
       "id": "pcd",
@@ -9992,7 +10878,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 163
+      "line_count": 160
     },
     "pce": {
       "id": "pce",
@@ -10029,7 +10915,7 @@
         "Step 5: Recommend Action",
         "Pre-Completion Check"
       ],
-      "line_count": 148
+      "line_count": 150
     },
     "pcef": {
       "id": "pcef",
@@ -10053,7 +10939,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 137
+      "line_count": 139
     },
     "pcex": {
       "id": "pcex",
@@ -10081,7 +10967,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 315
+      "line_count": 312
     },
     "pci": {
       "id": "pci",
@@ -10106,7 +10992,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 81
+      "line_count": 78
     },
     "pcl": {
       "id": "pcl",
@@ -10128,7 +11014,7 @@
         "Step 6: Estimate Probability",
         "Integration"
       ],
-      "line_count": 149
+      "line_count": 151
     },
     "pefs": {
       "id": "pefs",
@@ -10156,7 +11042,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 377
+      "line_count": 374
     },
     "per": {
       "id": "per",
@@ -10178,7 +11064,35 @@
         "Step 6: Ethical Soundness Check",
         "Integration"
       ],
-      "line_count": 143
+      "line_count": 145
+    },
+    "perceive": {
+      "id": "perceive",
+      "title": "Perception Engine",
+      "description": "Process a large body of work — strip noise, preserve all signal including nuance, reorganize into the optimal representation, and reason about what it means and what to do.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "What This Is",
+        "Interpretations",
+        "Core Principles",
+        "Phase 1: INGEST",
+        "Phase 2: PERCEIVE — Separate Signal from Noise",
+        "Phase 3: CROSS-REFERENCE — Find the Combined Picture",
+        "Phase 4: REPRESENT — Optimal Format",
+        "Phase 5: REASON — What Does This Mean?",
+        "Phase 6: COMPLETENESS CHECK",
+        "Depth Scaling",
+        "Failure Modes",
+        "Practical Execution for Large Batches",
+        "Integration"
+      ],
+      "line_count": 272
     },
     "persua": {
       "id": "persua",
@@ -10203,7 +11117,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 268
+      "line_count": 303
     },
     "pf": {
       "id": "pf",
@@ -10223,7 +11137,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 71
+      "line_count": 73
     },
     "pge": {
       "id": "pge",
@@ -10243,7 +11157,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 64
+      "line_count": 66
     },
     "ph": {
       "id": "ph",
@@ -10262,7 +11176,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 113
+      "line_count": 115
     },
     "pha": {
       "id": "pha",
@@ -10286,7 +11200,32 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 218
+      "line_count": 215
+    },
+    "phil": {
+      "id": "phil",
+      "title": "Philosophize Requirements",
+      "description": "Derive what a skill, system, or solution SHOULD do by examining its nature, purpose, and the problem it exists to solve — before writing any procedures.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principles",
+        "Phase 1: Name What You're Philosophizing About",
+        "Phase 2: Derive Requirements from Multiple Angles",
+        "Phase 3: Convergence Analysis",
+        "Phase 4: Requirements Specification",
+        "Phase 5: Readiness Check",
+        "Depth Scaling",
+        "Failure Modes",
+        "Integration"
+      ],
+      "line_count": 268
     },
     "pick": {
       "id": "pick",
@@ -10320,7 +11259,7 @@
         "When to Use",
         "Integration"
       ],
-      "line_count": 397
+      "line_count": 399
     },
     "pinf": {
       "id": "pinf",
@@ -10342,7 +11281,7 @@
         "Step 6: Predict Outcomes",
         "Integration"
       ],
-      "line_count": 179
+      "line_count": 181
     },
     "pjc": {
       "id": "pjc",
@@ -10359,13 +11298,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 345
+      "line_count": 347
     },
     "pji": {
       "id": "pji",
@@ -10389,7 +11328,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 276
+      "line_count": 273
     },
     "pjm": {
       "id": "pjm",
@@ -10411,7 +11350,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 69
+      "line_count": 71
     },
     "pjs": {
       "id": "pjs",
@@ -10430,7 +11369,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 83
+      "line_count": 85
     },
     "platitude": {
       "id": "platitude",
@@ -10459,7 +11398,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 187
+      "line_count": 189
     },
     "platitudes": {
       "id": "platitudes",
@@ -10487,7 +11426,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 229
+      "line_count": 231
     },
     "plr": {
       "id": "plr",
@@ -10514,7 +11453,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 144
+      "line_count": 141
     },
     "plsk": {
       "id": "plsk",
@@ -10536,7 +11475,7 @@
         "Step 6: Improved Plan",
         "Integration"
       ],
-      "line_count": 117
+      "line_count": 119
     },
     "po": {
       "id": "po",
@@ -10563,7 +11502,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 103
+      "line_count": 100
     },
     "poa": {
       "id": "poa",
@@ -10586,13 +11525,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Core Principle",
         "Depth Scaling",
-        "Steps",
-        "Interpretations"
+        "Steps"
       ],
-      "line_count": 124
+      "line_count": 126
     },
     "pos": {
       "id": "pos",
@@ -10612,13 +11551,13 @@
         "bo"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 494
+      "line_count": 496
     },
     "pp": {
       "id": "pp",
@@ -10637,7 +11576,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 57
+      "line_count": 59
     },
     "pqr": {
       "id": "pqr",
@@ -10658,7 +11597,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 117
+      "line_count": 119
     },
     "prcp": {
       "id": "prcp",
@@ -10681,7 +11620,7 @@
         "Step 7: Perception Report",
         "Integration"
       ],
-      "line_count": 150
+      "line_count": 152
     },
     "prd": {
       "id": "prd",
@@ -10709,7 +11648,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 276
+      "line_count": 273
     },
     "pre": {
       "id": "pre",
@@ -10750,7 +11689,7 @@
         "Execution Checklist",
         "Next Procedure"
       ],
-      "line_count": 212
+      "line_count": 214
     },
     "pri": {
       "id": "pri",
@@ -10772,7 +11711,7 @@
         "Step 6: Edge Cases",
         "Integration"
       ],
-      "line_count": 121
+      "line_count": 123
     },
     "prm": {
       "id": "prm",
@@ -10801,14 +11740,14 @@
         "viability"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Goal",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 111
+      "line_count": 113
     },
     "prob": {
       "id": "prob",
@@ -10833,7 +11772,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 251
+      "line_count": 253
     },
     "prr": {
       "id": "prr",
@@ -10861,7 +11800,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 210
+      "line_count": 212
     },
     "prsk": {
       "id": "prsk",
@@ -10883,7 +11822,7 @@
         "Step 6: Improvement Opportunities and Market Fit",
         "Integration"
       ],
-      "line_count": 120
+      "line_count": 122
     },
     "prvn": {
       "id": "prvn",
@@ -10906,7 +11845,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 157
+      "line_count": 159
     },
     "pss": {
       "id": "pss",
@@ -10936,7 +11875,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 144
+      "line_count": 141
     },
     "pt": {
       "id": "pt",
@@ -10955,13 +11894,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 322
+      "line_count": 324
     },
     "pus": {
       "id": "pus",
@@ -10987,7 +11926,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 215
+      "line_count": 212
     },
     "pusr": {
       "id": "pusr",
@@ -11008,7 +11947,7 @@
         "Step 5: Power User Satisfaction Score",
         "Integration"
       ],
-      "line_count": 148
+      "line_count": 150
     },
     "pv": {
       "id": "pv",
@@ -11038,7 +11977,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 397
+      "line_count": 399
     },
     "pvg": {
       "id": "pvg",
@@ -11061,7 +12000,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 144
+      "line_count": 146
     },
     "pw": {
       "id": "pw",
@@ -11082,13 +12021,13 @@
         "create"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 143
+      "line_count": 145
     },
     "pwc": {
       "id": "pwc",
@@ -11115,7 +12054,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 94
+      "line_count": 91
     },
     "pwif": {
       "id": "pwif",
@@ -11137,7 +12076,7 @@
         "Step 6: Final Reality Check",
         "Integration"
       ],
-      "line_count": 181
+      "line_count": 183
     },
     "qaf": {
       "id": "qaf",
@@ -11166,7 +12105,7 @@
         "Output Format",
         "Depth Scaling"
       ],
-      "line_count": 78
+      "line_count": 75
     },
     "qag": {
       "id": "qag",
@@ -11212,7 +12151,7 @@
         "Note for Next Step",
         "Next Procedure"
       ],
-      "line_count": 246
+      "line_count": 248
     },
     "qg": {
       "id": "qg",
@@ -11235,7 +12174,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 159
+      "line_count": 161
     },
     "qm": {
       "id": "qm",
@@ -11259,7 +12198,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 144
+      "line_count": 146
     },
     "qo": {
       "id": "qo",
@@ -11279,12 +12218,12 @@
         "Output Format",
         "Pre-Completion Check"
       ],
-      "line_count": 185
+      "line_count": 187
     },
     "qr": {
       "id": "qr",
-      "title": "Qualitative Research",
-      "description": "Systematic procedure for qualitative data analysis including coding, thematic analysis, grounded theory, and interview techniques",
+      "title": "Question Route",
+      "description": "Map any question to the nearest node in the 438-question graph, show connected questions by route type, and suggest reasoning skills that match.",
       "tier": "tier3",
       "category": "Research & Analysis",
       "categories": [
@@ -11303,13 +12242,40 @@
         "qm"
       ],
       "sections": [
-        "Overview",
-        "Steps",
-        "When to Use",
-        "Verification",
-        "Interpretations"
+        "Core Principles",
+        "Phase 1: Parse the Question",
+        "Phase 2: Find Nearest Question Node",
+        "Phase 3: Retrieve Connected Questions",
+        "Phase 4: Check for Chains and Sequences",
+        "Phase 5: Suggest Reasoning Skills",
+        "Phase 6: Output",
+        "Failure Modes",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
       ],
-      "line_count": 759
+      "line_count": 297
+    },
+    "qrx": {
+      "id": "qrx",
+      "title": "QuestionRoute Extract",
+      "description": "Extract structured QuestionRoute data (questions, routes, chains, regresses) from unstructured prose, skills, or markdown files. Prototype for structured skill output.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Output Schema",
+        "Process",
+        "Judgment Guidelines",
+        "Depth Scaling",
+        "Pre-Completion Checklist",
+        "Integration"
+      ],
+      "line_count": 261
     },
     "qs": {
       "id": "qs",
@@ -11329,7 +12295,29 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 71
+      "line_count": 73
+    },
+    "ram": {
+      "id": "ram",
+      "title": "Reliability, Availability, Maintainability Analysis",
+      "description": "Analyze and specify system reliability, availability, and maintainability characteristics. Models failure behavior, predicts system performance, and identifies improvement opportunities.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "RAM ANALYSIS REPORT: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 344
     },
     "ratn": {
       "id": "ratn",
@@ -11350,7 +12338,7 @@
         "Step 5: Construct the Rationale",
         "Integration"
       ],
-      "line_count": 130
+      "line_count": 132
     },
     "rc5w": {
       "id": "rc5w",
@@ -11381,7 +12369,7 @@
         "Common Patterns",
         "Pre-Completion Check"
       ],
-      "line_count": 132
+      "line_count": 134
     },
     "rca": {
       "id": "rca",
@@ -11416,7 +12404,7 @@
         "Verification",
         "Niche Documentation"
       ],
-      "line_count": 353
+      "line_count": 355
     },
     "rci": {
       "id": "rci",
@@ -11442,13 +12430,13 @@
         "saropc"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Core Principle",
         "Principles",
-        "When to Use",
-        "Interpretations"
+        "When to Use"
       ],
-      "line_count": 163
+      "line_count": 165
     },
     "re": {
       "id": "re",
@@ -11474,7 +12462,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 184
+      "line_count": 181
     },
     "redteam": {
       "id": "redteam",
@@ -11500,7 +12488,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 249
+      "line_count": 251
     },
     "reframe": {
       "id": "reframe",
@@ -11524,7 +12512,29 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 251
+      "line_count": 253
+    },
+    "requirements": {
+      "id": "requirements",
+      "title": "Requirements Elicitation & Specification",
+      "description": "Systematically discover, categorize, and specify all requirements for a project or system. Surfaces hidden requirements, resolves conflicts, and produces a structured specification.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "REQUIREMENTS SPECIFICATION: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 297
     },
     "ret": {
       "id": "ret",
@@ -11551,7 +12561,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 146
+      "line_count": 143
     },
     "rf": {
       "id": "rf",
@@ -11569,14 +12579,14 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Principles",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 120
+      "line_count": 122
     },
     "rfst": {
       "id": "rfst",
@@ -11599,7 +12609,7 @@
         "Step 7: Reflection Summary",
         "Integration"
       ],
-      "line_count": 170
+      "line_count": 172
     },
     "rgc": {
       "id": "rgc",
@@ -11621,7 +12631,7 @@
         "Step 6: Create Compliance Checklist",
         "Integration"
       ],
-      "line_count": 166
+      "line_count": 168
     },
     "ria": {
       "id": "ria",
@@ -11648,7 +12658,29 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 94
+      "line_count": 91
+    },
+    "riskmgmt": {
+      "id": "riskmgmt",
+      "title": "Risk Management",
+      "description": "Identify, assess, mitigate, and monitor risks throughout the system lifecycle. Produces a risk register, risk matrix, and risk mitigation plan with triggers and contingencies.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "RISK MANAGEMENT PLAN: [System/Project Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 320
     },
     "rlcl": {
       "id": "rlcl",
@@ -11670,7 +12702,7 @@
         "Step 6: Verdict",
         "Integration"
       ],
-      "line_count": 161
+      "line_count": 163
     },
     "rlg": {
       "id": "rlg",
@@ -11691,7 +12723,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 100
+      "line_count": 102
     },
     "rlsk": {
       "id": "rlsk",
@@ -11714,7 +12746,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 138
+      "line_count": 140
     },
     "rm": {
       "id": "rm",
@@ -11737,7 +12769,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 69
+      "line_count": 71
     },
     "rmm": {
       "id": "rmm",
@@ -11767,7 +12799,7 @@
         "WHEN TO OVERRIDE THIS PROCEDURE",
         "WORKED EXAMPLES"
       ],
-      "line_count": 710
+      "line_count": 712
     },
     "rmo": {
       "id": "rmo",
@@ -11789,7 +12821,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 203
+      "line_count": 200
     },
     "ro": {
       "id": "ro",
@@ -11817,7 +12849,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 241
+      "line_count": 243
     },
     "roa": {
       "id": "roa",
@@ -11844,7 +12876,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 98
+      "line_count": 95
     },
     "roip": {
       "id": "roip",
@@ -11866,7 +12898,7 @@
         "Step 6: Recommend",
         "Integration"
       ],
-      "line_count": 135
+      "line_count": 137
     },
     "rqg": {
       "id": "rqg",
@@ -11892,7 +12924,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 102
+      "line_count": 99
     },
     "rsg": {
       "id": "rsg",
@@ -11915,7 +12947,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 143
+      "line_count": 145
     },
     "rskl": {
       "id": "rskl",
@@ -11938,7 +12970,7 @@
         "Step 7: Reasoning Verdict",
         "Integration"
       ],
-      "line_count": 155
+      "line_count": 157
     },
     "rso": {
       "id": "rso",
@@ -11958,7 +12990,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 54
+      "line_count": 56
     },
     "rtas": {
       "id": "rtas",
@@ -11979,7 +13011,7 @@
         "Step 5: Determine Remedies Available",
         "Integration"
       ],
-      "line_count": 146
+      "line_count": 148
     },
     "rva": {
       "id": "rva",
@@ -12007,7 +13039,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 93
+      "line_count": 90
     },
     "rwif": {
       "id": "rwif",
@@ -12029,7 +13061,7 @@
         "Step 6: Add Contingencies",
         "Integration"
       ],
-      "line_count": 160
+      "line_count": 162
     },
     "saaapcav": {
       "id": "saaapcav",
@@ -12063,7 +13095,7 @@
         "Steps",
         "When to Use"
       ],
-      "line_count": 59
+      "line_count": 56
     },
     "saadag": {
       "id": "saadag",
@@ -12088,7 +13120,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 112
+      "line_count": 114
     },
     "saaesa": {
       "id": "saaesa",
@@ -12118,7 +13150,7 @@
         "Steps",
         "When to Use"
       ],
-      "line_count": 53
+      "line_count": 50
     },
     "saaiasa": {
       "id": "saaiasa",
@@ -12142,7 +13174,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 107
+      "line_count": 109
     },
     "sacri": {
       "id": "sacri",
@@ -12164,7 +13196,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 96
+      "line_count": 98
     },
     "sadrt": {
       "id": "sadrt",
@@ -12189,7 +13221,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 97
+      "line_count": 99
     },
     "sads": {
       "id": "sads",
@@ -12220,7 +13252,7 @@
         "When to Use",
         "Integration Points"
       ],
-      "line_count": 145
+      "line_count": 147
     },
     "saf": {
       "id": "saf",
@@ -12246,7 +13278,7 @@
         "Step 7: SAFETY SUMMARY",
         "Integration"
       ],
-      "line_count": 143
+      "line_count": 145
     },
     "sagsca": {
       "id": "sagsca",
@@ -12273,7 +13305,7 @@
         "Steps",
         "When to Use"
       ],
-      "line_count": 50
+      "line_count": 47
     },
     "sapea": {
       "id": "sapea",
@@ -12300,7 +13332,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 118
+      "line_count": 120
     },
     "saqrc": {
       "id": "saqrc",
@@ -12327,7 +13359,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 101
+      "line_count": 103
     },
     "saropc": {
       "id": "saropc",
@@ -12349,7 +13381,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 123
+      "line_count": 125
     },
     "sarus": {
       "id": "sarus",
@@ -12371,7 +13403,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 114
+      "line_count": 116
     },
     "satr": {
       "id": "satr",
@@ -12392,7 +13424,7 @@
         "Step 5: Recommend Consolidation or Pruning",
         "Integration"
       ],
-      "line_count": 115
+      "line_count": 117
     },
     "satrda": {
       "id": "satrda",
@@ -12419,7 +13451,7 @@
         "Steps",
         "When to Use"
       ],
-      "line_count": 66
+      "line_count": 63
     },
     "sbfow": {
       "id": "sbfow",
@@ -12455,7 +13487,7 @@
         "Anti-Self-Defense Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 280
+      "line_count": 282
     },
     "sc": {
       "id": "sc",
@@ -12481,7 +13513,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 248
+      "line_count": 250
     },
     "sdc": {
       "id": "sdc",
@@ -12509,7 +13541,7 @@
         "When to Override This Procedure",
         "Worked Examples"
       ],
-      "line_count": 565
+      "line_count": 567
     },
     "sdp": {
       "id": "sdp",
@@ -12530,7 +13562,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 60
+      "line_count": 62
     },
     "se": {
       "id": "se",
@@ -12544,6 +13576,7 @@
       "invokes": [],
       "invoked_by": [
         "cga",
+        "cuw",
         "dcp",
         "evaluate",
         "frzn",
@@ -12564,7 +13597,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 291
+      "line_count": 293
     },
     "search": {
       "id": "search",
@@ -12608,7 +13641,7 @@
         "Execute",
         "After Completion"
       ],
-      "line_count": 142
+      "line_count": 144
     },
     "seb": {
       "id": "seb",
@@ -12635,7 +13668,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 367
+      "line_count": 364
     },
     "sel": {
       "id": "sel",
@@ -12672,7 +13705,58 @@
         "Verification Criteria",
         "Integration Points"
       ],
-      "line_count": 391
+      "line_count": 393
+    },
+    "selection": {
+      "id": "selection",
+      "title": "Guess Selection & Evaluation",
+      "description": "Systematically evaluate and select from a set of guesses, options, or possibilities. Combines ARAW analysis with prioritization to determine which guesses are strong, weak, actionable, or eliminable.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [
+        "ggs"
+      ],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "SELECTION SUMMARY",
+        "TIER 1 SELECTIONS",
+        "TIER 2 SELECTIONS",
+        "TIER 3 (MONITOR)",
+        "KEY CRUXES TO RESOLVE",
+        "ELIMINATED WITH JUSTIFICATION",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 247
+    },
+    "selifecycle": {
+      "id": "selifecycle",
+      "title": "Systems Engineering Lifecycle Management",
+      "description": "Plan and manage the overall SE process for a project. The meta-skill that orchestrates all other SE skills — selects lifecycle model, tailors processes, defines reviews, and creates the SE Management Plan (SEMP).",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "SE MANAGEMENT PLAN: [Project Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 394
     },
     "sep": {
       "id": "sep",
@@ -12696,7 +13780,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 106
+      "line_count": 103
     },
     "sf": {
       "id": "sf",
@@ -12715,7 +13799,7 @@
         "Arguments",
         "Important"
       ],
-      "line_count": 59
+      "line_count": 61
     },
     "shc": {
       "id": "shc",
@@ -12743,7 +13827,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 224
+      "line_count": 221
     },
     "sid": {
       "id": "sid",
@@ -12773,7 +13857,7 @@
         "When to Override This Procedure",
         "Worked Examples"
       ],
-      "line_count": 371
+      "line_count": 373
     },
     "sim": {
       "id": "sim",
@@ -12795,7 +13879,7 @@
         "Final Output",
         "Integration"
       ],
-      "line_count": 104
+      "line_count": 106
     },
     "siycftr": {
       "id": "siycftr",
@@ -12823,7 +13907,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 180
+      "line_count": 182
     },
     "ska": {
       "id": "ska",
@@ -12845,7 +13929,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 95
+      "line_count": 92
     },
     "skb": {
       "id": "skb",
@@ -12871,7 +13955,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 120
+      "line_count": 117
     },
     "skcl": {
       "id": "skcl",
@@ -12895,7 +13979,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 157
+      "line_count": 159
     },
     "skev": {
       "id": "skev",
@@ -12917,7 +14001,7 @@
         "Step 6: Rate Overall Effectiveness",
         "Integration"
       ],
-      "line_count": 122
+      "line_count": 124
     },
     "skgap": {
       "id": "skgap",
@@ -12944,7 +14028,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 261
+      "line_count": 263
     },
     "skm": {
       "id": "skm",
@@ -12968,7 +14052,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 271
+      "line_count": 268
     },
     "skp": {
       "id": "skp",
@@ -12992,7 +14076,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 206
+      "line_count": 203
     },
     "slp": {
       "id": "slp",
@@ -13015,7 +14099,7 @@
         "Step 7: Implementation Plan",
         "Integration"
       ],
-      "line_count": 185
+      "line_count": 187
     },
     "smc": {
       "id": "smc",
@@ -13038,7 +14122,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 143
+      "line_count": 145
     },
     "smpl": {
       "id": "smpl",
@@ -13061,7 +14145,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 104
+      "line_count": 106
     },
     "sms": {
       "id": "sms",
@@ -13091,7 +14175,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 452
+      "line_count": 449
     },
     "sn": {
       "id": "sn",
@@ -13108,13 +14192,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 223
+      "line_count": 225
     },
     "snp": {
       "id": "snp",
@@ -13138,7 +14222,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 142
+      "line_count": 144
     },
     "so": {
       "id": "so",
@@ -13157,7 +14241,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 153
+      "line_count": 155
     },
     "socg": {
       "id": "socg",
@@ -13180,7 +14264,7 @@
         "Step 7: Social Cognition Summary",
         "Integration"
       ],
-      "line_count": 164
+      "line_count": 166
     },
     "sop": {
       "id": "sop",
@@ -13206,7 +14290,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 260
+      "line_count": 257
     },
     "soph": {
       "id": "soph",
@@ -13231,7 +14315,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 192
+      "line_count": 194
     },
     "sor": {
       "id": "sor",
@@ -13252,7 +14336,29 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 99
+      "line_count": 101
+    },
+    "sos": {
+      "id": "sos",
+      "title": "System of Systems Analysis",
+      "description": "Analyze and design systems composed of independently operated constituent systems. Identifies emergent behaviors, interdependencies, governance models, and integration strategies.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "SoS ARCHITECTURE DESCRIPTION: [SoS Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 313
     },
     "sp": {
       "id": "sp",
@@ -13282,7 +14388,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 218
+      "line_count": 220
     },
     "spcf": {
       "id": "spcf",
@@ -13307,7 +14413,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 208
+      "line_count": 210
     },
     "spd": {
       "id": "spd",
@@ -13345,7 +14451,7 @@
         "SPACE DISCOVERED FOR: \"[input]\"",
         "Next Procedure"
       ],
-      "line_count": 254
+      "line_count": 256
     },
     "spe": {
       "id": "spe",
@@ -13366,7 +14472,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 132
+      "line_count": 134
     },
     "spec": {
       "id": "spec",
@@ -13388,7 +14494,7 @@
         "Step 6: Rate Overall Plausibility",
         "Integration"
       ],
-      "line_count": 129
+      "line_count": 131
     },
     "spg": {
       "id": "spg",
@@ -13426,7 +14532,7 @@
         "Examples",
         "Execution Checklist"
       ],
-      "line_count": 213
+      "line_count": 215
     },
     "spp": {
       "id": "spp",
@@ -13445,7 +14551,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 97
+      "line_count": 99
     },
     "spr": {
       "id": "spr",
@@ -13469,7 +14575,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 162
+      "line_count": 159
     },
     "src": {
       "id": "src",
@@ -13498,7 +14604,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 217
+      "line_count": 214
     },
     "srd": {
       "id": "srd",
@@ -13518,7 +14624,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 58
+      "line_count": 60
     },
     "ssr": {
       "id": "ssr",
@@ -13556,7 +14662,7 @@
         "Integration Points",
         "Execution Checklist"
       ],
-      "line_count": 253
+      "line_count": 255
     },
     "st": {
       "id": "st",
@@ -13579,7 +14685,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 155
+      "line_count": 157
     },
     "sta": {
       "id": "sta",
@@ -13601,13 +14707,56 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
-        "Overview",
+        "Interpretations",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 449
+      "line_count": 448
+    },
+    "stakeholder": {
+      "id": "stakeholder",
+      "title": "Stakeholder Analysis",
+      "description": "Systematically identify all stakeholders, map their interests, influence, and requirements, detect conflicts between stakeholder needs, and define engagement strategies. Produces a stakeholder registry and influence map.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "STAKEHOLDER ANALYSIS: [System/Project Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 289
+    },
+    "statous": {
+      "id": "statous",
+      "title": "Status Resume",
+      "description": "Scans recent work context (git history, uncommitted changes, memory, open branches) to summarize what was in progress and help you figure out what to pick back up.",
+      "tier": "tier4",
+      "category": "Skill Routing",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Step 1: Gather Signals",
+        "Step 2: Identify Threads",
+        "Step 3: Assess Resumability",
+        "Step 4: Surface Danglers",
+        "Step 5: Recommend",
+        "Step 6: One-Line Summary",
+        "Integration"
+      ],
+      "line_count": 120
     },
     "stc": {
       "id": "stc",
@@ -13629,7 +14778,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 99
+      "line_count": 101
     },
     "stcc": {
       "id": "stcc",
@@ -13650,7 +14799,7 @@
         "Step 5: Recommend Finishing Order",
         "Integration"
       ],
-      "line_count": 126
+      "line_count": 128
     },
     "std": {
       "id": "std",
@@ -13679,7 +14828,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 189
+      "line_count": 186
     },
     "steelman": {
       "id": "steelman",
@@ -13705,7 +14854,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 246
+      "line_count": 248
     },
     "stg": {
       "id": "stg",
@@ -13743,7 +14892,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 185
+      "line_count": 182
     },
     "stl": {
       "id": "stl",
@@ -13768,7 +14917,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 175
+      "line_count": 172
     },
     "stnl": {
       "id": "stnl",
@@ -13791,7 +14940,7 @@
         "Integration",
         "Integration"
       ],
-      "line_count": 142
+      "line_count": 144
     },
     "story": {
       "id": "story",
@@ -13813,7 +14962,7 @@
         "Step 6: REFLECTION (optional, only if requested)",
         "Integration"
       ],
-      "line_count": 118
+      "line_count": 120
     },
     "strt": {
       "id": "strt",
@@ -13838,12 +14987,12 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 150
+      "line_count": 152
     },
     "sum": {
       "id": "sum",
-      "title": "Summarization",
-      "description": "Structured summarization at multiple compression levels. Produces 1-sentence, 1-paragraph, and 1-page summaries ranked by claim importance.",
+      "title": "Summarize",
+      "description": "Summarize anything — text, conversations, situations, projects, decisions, or experiences — using the interpretation that best matches what the user actually needs.",
       "tier": "tier4",
       "category": "List & Pattern",
       "categories": [],
@@ -13852,14 +15001,23 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
-        "Step 1: Extract Claims",
-        "Step 2: Rank by Importance",
-        "Step 3: Compress — Three Levels",
-        "Step 4: Verify",
-        "Final Output",
+        "Step 0: Detect Interpretation",
+        "Interpretation 1: COMPRESS",
+        "Interpretation 2: DISTILL",
+        "Interpretation 3: RECAP",
+        "Interpretation 4: STATUS",
+        "Interpretation 5: SYNTHESIZE",
+        "Interpretation 6: EXPLAIN",
+        "Interpretation 7: RETROSPECT",
+        "Interpretation 8: EXTRACT",
+        "Quality Criteria by Interpretation",
+        "Output Format (All Interpretations)",
+        "Depth Scaling",
+        "Failure Modes",
+        "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 101
+      "line_count": 586
     },
     "svs": {
       "id": "svs",
@@ -13887,7 +15045,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 147
+      "line_count": 144
     },
     "swa": {
       "id": "swa",
@@ -13917,7 +15075,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 334
+      "line_count": 331
     },
     "sya": {
       "id": "sya",
@@ -13947,7 +15105,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 446
+      "line_count": 443
     },
     "sycs": {
       "id": "sycs",
@@ -13984,7 +15142,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 198
+      "line_count": 200
     },
     "sym": {
       "id": "sym",
@@ -14009,7 +15167,74 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 156
+      "line_count": 158
+    },
+    "sysarch": {
+      "id": "sysarch",
+      "title": "System Architecture Design",
+      "description": "Design system architecture from requirements by decomposing into subsystems, defining interfaces, evaluating candidate architectures against quality attributes, and documenting architectural views (functional, physical, behavioral).",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Architectural Views",
+        "Output Format",
+        "SYSTEM ARCHITECTURE: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 351
+    },
+    "sysdecomp": {
+      "id": "sysdecomp",
+      "title": "System Decomposition",
+      "description": "Break a complex system into manageable subsystems and components using structured decomposition. Defines component responsibilities, interactions, and validates completeness of the breakdown.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "SYSTEM BREAKDOWN STRUCTURE: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 305
+    },
+    "sysintegration": {
+      "id": "sysintegration",
+      "title": "Systems Integration",
+      "description": "Plan and execute the integration of subsystems into a working whole. Produces an integration plan with strategy selection, dependency analysis, integration sequence, test cases, and issue tracking.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "INTEGRATION PLAN: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 318
     },
     "sysk": {
       "id": "sysk",
@@ -14034,7 +15259,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 160
+      "line_count": 162
     },
     "systhink": {
       "id": "systhink",
@@ -14058,7 +15283,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 251
+      "line_count": 253
     },
     "t": {
       "id": "t",
@@ -14074,13 +15299,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 192
+      "line_count": 194
     },
     "tbd": {
       "id": "tbd",
@@ -14117,7 +15342,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 170
+      "line_count": 172
     },
     "td": {
       "id": "td",
@@ -14137,7 +15362,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 62
+      "line_count": 64
     },
     "teach": {
       "id": "teach",
@@ -14159,7 +15384,7 @@
         "Step 6: Test Question",
         "Integration"
       ],
-      "line_count": 101
+      "line_count": 103
     },
     "technical": {
       "id": "technical",
@@ -14191,7 +15416,29 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 209
+      "line_count": 211
+    },
+    "testplan": {
+      "id": "testplan",
+      "title": "Test Planning & Verification Strategy",
+      "description": "Design comprehensive test strategy and plans for system verification and validation. Defines test levels, types, cases, environments, and criteria to ensure thorough coverage.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "TEST PLAN: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 332
     },
     "tfac": {
       "id": "tfac",
@@ -14213,7 +15460,7 @@
         "Step 6: Create the Output Template",
         "Integration"
       ],
-      "line_count": 137
+      "line_count": 139
     },
     "thnk": {
       "id": "thnk",
@@ -14234,7 +15481,7 @@
         "Step 5: Iterate If Needed",
         "Integration"
       ],
-      "line_count": 109
+      "line_count": 111
     },
     "tkint": {
       "id": "tkint",
@@ -14257,7 +15504,7 @@
         "Step 7: Structural Improvements Summary",
         "Integration"
       ],
-      "line_count": 166
+      "line_count": 168
     },
     "tmsk": {
       "id": "tmsk",
@@ -14279,7 +15526,7 @@
         "Step 6: Recommendations",
         "Integration"
       ],
-      "line_count": 123
+      "line_count": 125
     },
     "tnt": {
       "id": "tnt",
@@ -14303,7 +15550,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 121
+      "line_count": 123
     },
     "to": {
       "id": "to",
@@ -14331,7 +15578,7 @@
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 385
+      "line_count": 387
     },
     "tobd": {
       "id": "tobd",
@@ -14358,7 +15605,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 200
+      "line_count": 202
     },
     "tp": {
       "id": "tp",
@@ -14383,12 +15630,12 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 153
+      "line_count": 155
     },
     "tpm": {
       "id": "tpm",
-      "title": "Template Maintenance",
-      "description": "Maintain and improve domain templates over time. Track usage, identify gaps, and evolve templates based on experience.",
+      "title": "Technical Performance Measures",
+      "description": "Define and track key technical metrics that indicate whether the system is on track to meet requirements. Sets planned profiles, tolerance bands, measurement methods, and escalation thresholds.",
       "tier": "tier4",
       "category": "Procedures & Meta",
       "categories": [],
@@ -14397,14 +15644,15 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
-        "Purpose",
-        "Maintenance Operations",
-        "Maintenance Schedule",
-        "Example: Improving Academic Research Template",
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "TPM TRACKING PLAN: [System Name]",
         "Quality Checklist",
-        "Integration"
+        "Next Steps"
       ],
-      "line_count": 370
+      "line_count": 323
     },
     "tr": {
       "id": "tr",
@@ -14427,7 +15675,51 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 369
+      "line_count": 371
+    },
+    "tracematrix": {
+      "id": "tracematrix",
+      "title": "Requirements Traceability Matrix",
+      "description": "Create and maintain bidirectional traceability from stakeholder needs through requirements to design, implementation, and test. Identifies orphan requirements, gold-plating, and coverage gaps.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "TRACEABILITY MATRIX: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 299
+    },
+    "tradestudy": {
+      "id": "tradestudy",
+      "title": "Trade Study / Trade-off Analysis",
+      "description": "Systematically evaluate alternatives against weighted criteria using a structured decision matrix. Includes pairwise comparison for weighting, multi-criteria scoring, sensitivity analysis, and documented decision rationale.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "TRADE STUDY: [Decision Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 326
     },
     "tri": {
       "id": "tri",
@@ -14449,7 +15741,7 @@
         "Step 6: Sanity Check",
         "Integration"
       ],
-      "line_count": 114
+      "line_count": 116
     },
     "trust": {
       "id": "trust",
@@ -14474,7 +15766,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 265
+      "line_count": 267
     },
     "ts": {
       "id": "ts",
@@ -14496,13 +15788,13 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 114
+      "line_count": 116
     },
     "txm": {
       "id": "txm",
@@ -14526,7 +15818,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 149
+      "line_count": 145
     },
     "u": {
       "id": "u",
@@ -14562,7 +15854,7 @@
         "Depth Scaling",
         "Pre-Completion Check"
       ],
-      "line_count": 249
+      "line_count": 251
     },
     "uaua": {
       "id": "uaua",
@@ -14606,7 +15898,7 @@
         "Saving Output",
         "Pre-Completion Check"
       ],
-      "line_count": 515
+      "line_count": 517
     },
     "uf": {
       "id": "uf",
@@ -14631,7 +15923,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 203
+      "line_count": 205
     },
     "uga": {
       "id": "uga",
@@ -14673,7 +15965,7 @@
         "Verification",
         "Integration Points"
       ],
-      "line_count": 275
+      "line_count": 277
     },
     "ugav2": {
       "id": "ugav2",
@@ -14707,7 +15999,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 199
+      "line_count": 201
     },
     "ugav3": {
       "id": "ugav3",
@@ -14742,7 +16034,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 226
+      "line_count": 228
     },
     "ugav4": {
       "id": "ugav4",
@@ -14777,7 +16069,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 230
+      "line_count": 232
     },
     "ugav5": {
       "id": "ugav5",
@@ -14812,7 +16104,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 263
+      "line_count": 265
     },
     "undr": {
       "id": "undr",
@@ -14833,7 +16125,7 @@
         "Step 5: Prioritize and Recommend Build Order",
         "Integration"
       ],
-      "line_count": 111
+      "line_count": 113
     },
     "unstk": {
       "id": "unstk",
@@ -14856,7 +16148,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 162
+      "line_count": 164
     },
     "unsure": {
       "id": "unsure",
@@ -14883,7 +16175,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 166
+      "line_count": 168
     },
     "unvs": {
       "id": "unvs",
@@ -14904,7 +16196,7 @@
         "Step 5: State the Universalized Version",
         "Integration"
       ],
-      "line_count": 104
+      "line_count": 106
     },
     "unx": {
       "id": "unx",
@@ -14942,7 +16234,7 @@
         "Known-Optimal Check",
         "Pre-Completion Check"
       ],
-      "line_count": 195
+      "line_count": 197
     },
     "uo": {
       "id": "uo",
@@ -14964,7 +16256,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 106
+      "line_count": 108
     },
     "upth": {
       "id": "upth",
@@ -14986,7 +16278,7 @@
         "Step 6: Refine",
         "Integration"
       ],
-      "line_count": 155
+      "line_count": 157
     },
     "usnd": {
       "id": "usnd",
@@ -15008,7 +16300,7 @@
         "Step 6: Output Need Hierarchy",
         "Integration"
       ],
-      "line_count": 134
+      "line_count": 136
     },
     "usrn": {
       "id": "usrn",
@@ -15030,7 +16322,7 @@
         "Step 6: Verify With the User",
         "Integration"
       ],
-      "line_count": 146
+      "line_count": 148
     },
     "utp": {
       "id": "utp",
@@ -15051,7 +16343,7 @@
         "Step 5: OUTPUT",
         "Integration"
       ],
-      "line_count": 111
+      "line_count": 113
     },
     "va": {
       "id": "va",
@@ -15075,7 +16367,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 114
+      "line_count": 116
     },
     "val": {
       "id": "val",
@@ -15104,7 +16396,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 190
+      "line_count": 192
     },
     "vbo": {
       "id": "vbo",
@@ -15129,6 +16421,7 @@
       ],
       "invoked_by": [],
       "sections": [
+        "Interpretations",
         "Overview",
         "Goal",
         "Steps",
@@ -15137,10 +16430,9 @@
         "Verification",
         "Output Format",
         "Step 7: Specificity Check for Capability Claims",
-        "Gates Invoked",
-        "Interpretations"
+        "Gates Invoked"
       ],
-      "line_count": 264
+      "line_count": 266
     },
     "vcd": {
       "id": "vcd",
@@ -15170,7 +16462,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 85
+      "line_count": 82
     },
     "vcl": {
       "id": "vcl",
@@ -15193,7 +16485,7 @@
         "Step 7: Alignment Check",
         "Integration"
       ],
-      "line_count": 141
+      "line_count": 143
     },
     "vdp": {
       "id": "vdp",
@@ -15226,7 +16518,7 @@
         "When to Use This Skill",
         "What This Skill Does NOT Cover"
       ],
-      "line_count": 198
+      "line_count": 200
     },
     "ve": {
       "id": "ve",
@@ -15259,7 +16551,7 @@
         "Steps",
         "When to Use"
       ],
-      "line_count": 116
+      "line_count": 113
     },
     "ver": {
       "id": "ver",
@@ -15291,7 +16583,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 217
+      "line_count": 219
     },
     "vhd": {
       "id": "vhd",
@@ -15312,7 +16604,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 139
+      "line_count": 141
     },
     "viability": {
       "id": "viability",
@@ -15362,7 +16654,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 220
+      "line_count": 222
     },
     "vldt": {
       "id": "vldt",
@@ -15384,7 +16676,7 @@
         "Step 6: Validation Summary",
         "Integration"
       ],
-      "line_count": 121
+      "line_count": 123
     },
     "vm": {
       "id": "vm",
@@ -15406,13 +16698,13 @@
         "clg"
       ],
       "sections": [
+        "Interpretations",
         "Overview",
         "Steps",
         "When to Use",
-        "Verification",
-        "Interpretations"
+        "Verification"
       ],
-      "line_count": 495
+      "line_count": 497
     },
     "vp": {
       "id": "vp",
@@ -15436,7 +16728,29 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 203
+      "line_count": 205
+    },
+    "vv": {
+      "id": "vv",
+      "title": "Verification & Validation",
+      "description": "Plan and execute verification (built right?) and validation (built the right thing?) activities. Produces a V&V plan with requirements traceability matrix, test cases, and acceptance criteria.",
+      "tier": null,
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Output Format",
+        "V&V PLAN: [System Name]",
+        "Quality Checklist",
+        "Next Steps"
+      ],
+      "line_count": 321
     },
     "w": {
       "id": "w",
@@ -15461,7 +16775,7 @@
         "Structure Patterns",
         "Pre-Completion Check"
       ],
-      "line_count": 247
+      "line_count": 249
     },
     "want": {
       "id": "want",
@@ -15519,7 +16833,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 210
+      "line_count": 212
     },
     "wn": {
       "id": "wn",
@@ -15544,7 +16858,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 185
+      "line_count": 187
     },
     "wr": {
       "id": "wr",
@@ -15572,7 +16886,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 189
+      "line_count": 186
     },
     "wre": {
       "id": "wre",
@@ -15608,7 +16922,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 355
+      "line_count": 357
     },
     "wrps": {
       "id": "wrps",
@@ -15632,7 +16946,7 @@
         "Step 6: Test With Multiple Skills",
         "Integration"
       ],
-      "line_count": 151
+      "line_count": 153
     },
     "wsib": {
       "id": "wsib",
@@ -15663,7 +16977,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 178
+      "line_count": 180
     },
     "wsn": {
       "id": "wsn",
@@ -15685,7 +16999,7 @@
         "Quick Mode",
         "Integration"
       ],
-      "line_count": 178
+      "line_count": 180
     },
     "wt": {
       "id": "wt",
@@ -15721,7 +17035,7 @@
         "Anti-Failure Checks",
         "Pre-Completion Check"
       ],
-      "line_count": 293
+      "line_count": 295
     },
     "wtdn": {
       "id": "wtdn",
@@ -15742,7 +17056,7 @@
         "Failure Modes",
         "Integration"
       ],
-      "line_count": 124
+      "line_count": 126
     },
     "ycshikfmif": {
       "id": "ycshikfmif",
@@ -15769,7 +17083,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 208
+      "line_count": 210
     }
   }
 }

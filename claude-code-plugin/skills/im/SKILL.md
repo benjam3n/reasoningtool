@@ -99,9 +99,3 @@ Include both:
 - Inversions are true opposites
 - Actions are specific and actionable
 - Both do's and don'ts are included
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

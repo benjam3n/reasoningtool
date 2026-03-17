@@ -203,9 +203,3 @@ When you have interest from multiple companies:
 - Meeting weekly application quotas
 - Following up on all applications
 - Analyzing funnel and making adjustments
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

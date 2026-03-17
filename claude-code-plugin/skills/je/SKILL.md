@@ -7,6 +7,22 @@ output:
 
 # Goal Journey Extraction
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Extract a goal journey from a source**: The user has a book, story, experience, or case study and wants to extract the underlying purpose chain (action to goal to goal to intrinsic goal) and generalize it into a reusable journey pattern.
+**Interpretation 2 — Map someone's personal goal chain**: The user wants to trace their own (or someone else's) current actions back through instrumental goals to discover what intrinsic goals are actually driving behavior.
+**Interpretation 3 — Analyze competing goal chains for conflict**: The user suspects that multiple goals are in tension and wants to surface the full chains to find where they diverge or conflict.
+
+If ambiguous, ask: "I can help with extracting a journey from a source, mapping a personal goal chain, or analyzing conflicts between competing goals — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Extract the underlying GOAL JOURNEY from any source:
 books, videos, PDFs, conversations, experiences.
@@ -280,20 +296,3 @@ journey:
 
 **Output**: complete_journey
 
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Extract a goal journey from a source**: The user has a book, story, experience, or case study and wants to extract the underlying purpose chain (action to goal to goal to intrinsic goal) and generalize it into a reusable journey pattern.
-**Interpretation 2 — Map someone's personal goal chain**: The user wants to trace their own (or someone else's) current actions back through instrumental goals to discover what intrinsic goals are actually driving behavior.
-**Interpretation 3 — Analyze competing goal chains for conflict**: The user suspects that multiple goals are in tension and wants to surface the full chains to find where they diverge or conflict.
-
-If ambiguous, ask: "I can help with extracting a journey from a source, mapping a personal goal chain, or analyzing conflicts between competing goals — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

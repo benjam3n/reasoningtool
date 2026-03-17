@@ -7,6 +7,22 @@ output:
 
 # Failure Anticipation
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Pre-execution risk analysis**: The user has a specific plan or project and wants to systematically identify what could go wrong before they start, using FMEA-style scoring and mitigation planning.
+**Interpretation 2 — Design for resilience**: The user is designing a system, product, or process and wants to build in failure resistance from the start — the focus is on architecture choices, not a specific launch timeline.
+**Interpretation 3 — Post-failure prevention**: Something already failed, and the user wants to apply failure anticipation retroactively to prevent recurrence — essentially learning from one failure to anticipate the next ones.
+
+If ambiguous, ask: "I can help with anticipating failures before execution, designing for resilience, or preventing recurrence after a failure — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Systematically identify potential failures, assess their risk, and plan mitigations before execution
 
@@ -173,20 +189,3 @@ Create comprehensive failure anticipation report:
 - Single points of failure are identified
 - Cascade failure potential is assessed
 - Monitoring indicators are measurable
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Pre-execution risk analysis**: The user has a specific plan or project and wants to systematically identify what could go wrong before they start, using FMEA-style scoring and mitigation planning.
-**Interpretation 2 — Design for resilience**: The user is designing a system, product, or process and wants to build in failure resistance from the start — the focus is on architecture choices, not a specific launch timeline.
-**Interpretation 3 — Post-failure prevention**: Something already failed, and the user wants to apply failure anticipation retroactively to prevent recurrence — essentially learning from one failure to anticipate the next ones.
-
-If ambiguous, ask: "I can help with anticipating failures before execution, designing for resilience, or preventing recurrence after a failure — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

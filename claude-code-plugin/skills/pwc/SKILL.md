@@ -88,9 +88,3 @@ Handle ties by re-comparing or accepting tie.
 - No significant intransitivity
 - Scores sum correctly
 - Ranking reflects scores
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

@@ -77,9 +77,3 @@ Ensure discoverability:
 - INDEX.md contains new entry
 - Schema validation passes
 - At least one example provided
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

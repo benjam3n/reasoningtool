@@ -47,9 +47,3 @@ For each case:
 - When a procedure/gate uses labels like Verified/Assumption/Unknown
 - When a document sounds rigorous but does not specify how to verify claims
 - When you want to turn “verified” into a repeatable content audit
-
----
-
-**Input**: $ARGUMENTS
-
-Apply this procedure to the input provided.

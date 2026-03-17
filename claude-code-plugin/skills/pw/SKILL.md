@@ -7,6 +7,22 @@ output:
 
 # Persuasive Writing
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Writing persuasive content from scratch**: The user needs to create a new persuasive piece (proposal, pitch, email, essay) and wants the full process from audience analysis through final draft.
+**Interpretation 2 — Making existing writing more persuasive**: The user has a draft that is too flat, informational, or unconvincing and wants to strengthen its persuasive elements without starting over.
+**Interpretation 3 — Developing a persuasion strategy**: The user needs to plan their overall approach to influencing a specific audience or stakeholder but is not yet at the writing stage — they need the thinking before the prose.
+
+If ambiguous, ask: "I can help with writing persuasive content from scratch, strengthening an existing draft, or developing a persuasion strategy — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Systematic procedure for writing persuasive content that influences readers and motivates action
 
@@ -126,20 +142,3 @@ Complete final preparation:
 - Urgency or reason to act NOW is present
 - Language is clear enough for a smart 12-year-old
 - Format is appropriate for the medium and audience
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Writing persuasive content from scratch**: The user needs to create a new persuasive piece (proposal, pitch, email, essay) and wants the full process from audience analysis through final draft.
-**Interpretation 2 — Making existing writing more persuasive**: The user has a draft that is too flat, informational, or unconvincing and wants to strengthen its persuasive elements without starting over.
-**Interpretation 3 — Developing a persuasion strategy**: The user needs to plan their overall approach to influencing a specific audience or stakeholder but is not yet at the writing stage — they need the thinking before the prose.
-
-If ambiguous, ask: "I can help with writing persuasive content from scratch, strengthening an existing draft, or developing a persuasion strategy — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.

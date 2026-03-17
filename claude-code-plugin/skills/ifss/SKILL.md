@@ -7,6 +7,22 @@ output:
 
 # Inference Space Search
 
+**Input**: $ARGUMENTS
+
+## Interpretations
+
+Before executing, identify which interpretation matches the user's input:
+
+**Interpretation 1 — Draw conclusions from evidence**: The user has a set of facts, observations, or data and wants to systematically generate and rank all valid inferences — deductive, inductive, abductive, and analogical.
+**Interpretation 2 — Explore implications of a claim or decision**: The user has a specific proposition and wants to understand what follows from it — consequences, prerequisites, and hidden entailments.
+**Interpretation 3 — Find the best explanation for a puzzling observation**: The user has something surprising or unexplained and wants to generate and evaluate competing explanations (primarily abductive reasoning).
+
+If ambiguous, ask: "I can help with drawing conclusions from your evidence, exploring what follows from a claim, or finding the best explanation for something puzzling — which fits?"
+If clear from context, proceed with the matching interpretation.
+
+---
+
+
 ## Overview
 Information implies other information. But not all inferences are equal:
 - Some are logically valid, some aren't
@@ -125,20 +141,3 @@ Select top inferences for use.
 - Soundness was assessed for each
 - Usefulness was considered
 - Top inferences are actionable
-
----
-
-**Input**: $ARGUMENTS
-
-## Interpretations
-
-Before executing, identify which interpretation matches the user's input:
-
-**Interpretation 1 — Draw conclusions from evidence**: The user has a set of facts, observations, or data and wants to systematically generate and rank all valid inferences — deductive, inductive, abductive, and analogical.
-**Interpretation 2 — Explore implications of a claim or decision**: The user has a specific proposition and wants to understand what follows from it — consequences, prerequisites, and hidden entailments.
-**Interpretation 3 — Find the best explanation for a puzzling observation**: The user has something surprising or unexplained and wants to generate and evaluate competing explanations (primarily abductive reasoning).
-
-If ambiguous, ask: "I can help with drawing conclusions from your evidence, exploring what follows from a claim, or finding the best explanation for something puzzling — which fits?"
-If clear from context, proceed with the matching interpretation.
-
-Apply this procedure to the input provided.
