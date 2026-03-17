@@ -3107,3 +3107,1090 @@ Is the last impression the impression that impression is inexhaustible?
 Is inexhaustibility an impression?
 
 What is an impression?
+
+---
+
+## Impression and Materiality
+
+Is an impression material?
+
+Does an impression have weight?
+
+Does an impression have mass?
+
+Is the impression on clay the same kind of thing as the impression on mind?
+
+Is the clay metaphor for mind misleading?
+
+Is every metaphor for mind based on impression?
+
+Is the impression in the brain the same as the impression in the mind?
+
+If brain and mind are different, which receives the impression?
+
+If brain and mind are the same, is the impression physical?
+
+Is a physical impression extended in space?
+
+---
+
+Is the imprint a kind of impression?
+
+Is the fossil an impression?
+
+Is the fossil an impression of life?
+
+Is the impression of life in the fossil the same as the life that made it?
+
+Is the gap between the life and the fossil impression the gap between being and representation?
+
+Is representation always an impression?
+
+Is an impression always a representation?
+
+Can there be a non-representational impression?
+
+Is abstract art a non-representational impression?
+
+Is a non-representational impression an impression of nothing or an impression of pure form?
+
+---
+
+Is wax the ideal receiver of impressions?
+
+Is the mind more like wax or more like water?
+
+Does water receive impressions?
+
+Is the ripple on water an impression?
+
+Does the ripple preserve the form of what caused it?
+
+How long does the ripple last?
+
+Is the duration of the ripple the duration of the impression?
+
+Is the medium of impression part of the impression?
+
+Does the medium shape the impression?
+
+If the medium shapes the impression, is the impression of the object or of the medium?
+
+---
+
+Is the impression on paper different from the impression on stone?
+
+Does the permanence of the medium affect the permanence of the impression?
+
+Is a permanent impression more real than a fleeting one?
+
+Is permanence a measure of reality for impressions?
+
+Is the impression on digital media permanent or ephemeral?
+
+Is the digital impression copied or original?
+
+Is every digital impression a copy?
+
+If every digital impression is a copy, is there an original digital impression?
+
+Is the absence of an original a problem for digital impression?
+
+Is the problem of the original itself an impression?
+
+---
+
+## Impression and Emotion
+
+Is an emotion an impression?
+
+Is an emotion caused by an impression?
+
+Is an emotion the impression's effect?
+
+Is the effect of an impression part of the impression?
+
+Can you separate the impression from its emotional effect?
+
+Is the separation of impression from emotion a cognitive achievement?
+
+Is the cognitive achievement itself an impression?
+
+Is the stoic attempt to separate impression from emotion possible?
+
+Is the stoic separation desirable?
+
+Is the desirability of separation itself an emotional impression?
+
+---
+
+Is fear an impression?
+
+Is fear the impression of danger?
+
+Is the impression of danger the same as danger?
+
+Can the impression of danger exist without danger?
+
+Can danger exist without the impression of danger?
+
+Is the gap between danger and the impression of danger the space of courage?
+
+Is courage the ability to act despite the impression of danger?
+
+Is the impression of one's own courage itself an impression?
+
+Is the impression of one's own fear itself an impression?
+
+Is the impression of emotion always a second-order impression?
+
+---
+
+Is love an impression?
+
+Is love a first impression?
+
+Is love at first sight an impression that persists?
+
+Is the persistence of love's first impression evidence of its depth?
+
+Is the depth of love's impression evidence of its truth?
+
+Can love's impression be false?
+
+Is false love a false impression?
+
+Is the impression of love distinguishable from love itself?
+
+If the impression of love is indistinguishable from love, is love an impression?
+
+If love is an impression, is it diminished?
+
+---
+
+Is joy an impression?
+
+Is sadness an impression?
+
+Is the difference between joy and sadness an impression?
+
+Can the same event produce both joy and sadness?
+
+If the same event produces both, are the impressions of the event contradictory?
+
+Can contradictory impressions coexist?
+
+Is the coexistence of contradictory impressions itself an impression?
+
+Is ambivalence an impression?
+
+Is the impression of ambivalence clear or confused?
+
+Is confusion itself an impression?
+
+---
+
+## Impression and Animal Life
+
+Do animals have impressions?
+
+Is the animal impression the same as the human impression?
+
+Is the animal impression simpler than the human impression?
+
+Is simplicity a measure of inferiority for impressions?
+
+Does the bat have impressions?
+
+Is the bat's sonar impression a visual impression?
+
+Is the bat's impression of the world comparable to ours?
+
+Can we have an impression of the bat's impression?
+
+Is the inability to have an impression of another species' impression a limitation of impression?
+
+Is the limitation of impression species-specific?
+
+---
+
+Is instinct an impression?
+
+Is instinct an impression that has become automatic?
+
+Is an automatic impression still an impression?
+
+Does the automaticity of instinct remove it from the category of impression?
+
+Is the boundary between instinct and impression clear?
+
+Is the boundary between instinct and impression an impression?
+
+Is the impression that instinct is different from impression itself instinctive?
+
+Can instinct be wrong?
+
+Can an instinctive impression be false?
+
+Is the reliability of instinct an impression?
+
+---
+
+Is the prey's impression of the predator an impression of danger?
+
+Is the predator's impression of the prey an impression of opportunity?
+
+Are danger and opportunity impressions or interpretations?
+
+Is interpretation inseparable from impression in animal life?
+
+Is interpretation inseparable from impression in human life?
+
+Is the claim that interpretation is inseparable from impression itself an interpretation?
+
+Is it also an impression?
+
+Can you have an impression without interpreting it?
+
+Is the uninterpreted impression possible?
+
+Is the uninterpreted impression the raw impression?
+
+---
+
+## Impression and Simulation
+
+Can impressions be simulated?
+
+Is a simulated impression the same as a real impression?
+
+Is the brain in a vat receiving impressions?
+
+Are the impressions of the brain in a vat real impressions?
+
+If the impressions are real, is the brain in a vat in touch with reality?
+
+If the impressions are not real, what makes them unreal?
+
+Is the unreality of simulated impressions an impression?
+
+Can you be impressed by the possibility that your impressions are simulated?
+
+Is the worry about simulation an impression about impressions?
+
+Is the worry itself simulated?
+
+---
+
+Is virtual reality a source of impressions?
+
+Are virtual impressions less real than physical impressions?
+
+Is the physical impression more reliable than the virtual impression?
+
+Is reliability a feature of the impression or of its source?
+
+If reliability is a feature of the source, can we judge the source from the impression?
+
+If we judge the source from the impression, is the judgment circular?
+
+Is the circularity of judgment about impressions a necessary circularity?
+
+Is necessary circularity an impression?
+
+Is the impression of necessity reliable?
+
+Is the reliability of the impression of necessity circular?
+
+---
+
+Can you choose which impressions to receive in a simulation?
+
+Is the ability to choose impressions a form of freedom?
+
+Is the freedom to choose impressions the same as the freedom to choose reality?
+
+If you can choose your impressions, do you need reality?
+
+Is the need for reality an impression?
+
+Is the impression that reality is needed itself a product of reality?
+
+Is the impression that reality is needed itself a product of impression?
+
+Can impression replace reality?
+
+Has impression always already replaced reality?
+
+Is the question of whether impression replaces reality itself an impression?
+
+---
+
+## Impression and Music
+
+Is music an impression?
+
+Is the impression of music temporal?
+
+Does music impress through time?
+
+Is the impression of a melody the sum of the impressions of its notes?
+
+Is the melody more than the sum of its notes?
+
+Is the more-than an impression?
+
+Is the impression of harmony an impression of relation?
+
+Is the impression of relation different from the impression of things?
+
+Can you have an impression of pure relation?
+
+Is pure relation without relata an impression of nothing?
+
+---
+
+Is rhythm an impression?
+
+Is the impression of rhythm the impression of repetition?
+
+Is the impression of repetition the repetition of impression?
+
+Is repetition itself an impression?
+
+Does repeated impression deepen or flatten?
+
+Is the deepening of repeated impression habituation?
+
+Is habituation the opposite of impression?
+
+Can habituation itself be impressive?
+
+Is the impression of groove a kind of habituation?
+
+Is the groove an impression or a pattern of impressions?
+
+---
+
+Is silence an impression?
+
+Is the impression of silence the absence of auditory impression?
+
+Is the absence of auditory impression a positive impression?
+
+Is John Cage's 4'33" an impression?
+
+Is 4'33" an impression of the impossibility of silence?
+
+Is the impossibility of silence an auditory impression?
+
+Is the ambient sound that fills 4'33" an impression?
+
+Is the impression of ambient sound different when framed as music?
+
+Does framing change the impression?
+
+Is framing itself an impression?
+
+---
+
+Is dissonance an impression?
+
+Is the impression of dissonance negative?
+
+Is the negativity of dissonance culturally determined?
+
+Can dissonance become consonance through changing impressions?
+
+Is the historical change from dissonance to consonance a change in impression or in music?
+
+If the music hasn't changed but the impression has, where is the dissonance?
+
+Is dissonance in the sound or in the ear?
+
+Is the ear an impression-receiving organ?
+
+Is the ear also an impression-shaping organ?
+
+Does the ear create the impression it receives?
+
+---
+
+## Impression and Childhood
+
+Are childhood impressions formative?
+
+What does it mean for an impression to form?
+
+Is the formed person the product of childhood impressions?
+
+Is the formed person imprisoned by childhood impressions?
+
+Can childhood impressions be overcome?
+
+Is overcoming a childhood impression the same as erasing it?
+
+Can a childhood impression be erased?
+
+Is the inerasability of childhood impressions a curse or a blessing?
+
+Is the characterization of inerasability as curse or blessing itself an impression?
+
+Is the childhood impression of the world the truest impression?
+
+---
+
+Is the child more impressionable than the adult?
+
+What does impressionability mean?
+
+Is impressionability a virtue?
+
+Is impressionability a vulnerability?
+
+Is the loss of impressionability the price of maturity?
+
+Is maturity the hardening against impression?
+
+Is the hardened adult less alive than the impressionable child?
+
+Is aliveness a measure of impressionability?
+
+Is the most alive being the most impressionable being?
+
+Is the most impressionable being the most vulnerable being?
+
+---
+
+Is innocence an impression?
+
+Is the impression of innocence the same as innocence?
+
+Can the impression of innocence be faked?
+
+If the impression of innocence can be faked, is innocence ever reliably impressed?
+
+Is the loss of innocence the loss of a certain kind of impression?
+
+Is the loss of a kind of impression the loss of a kind of world?
+
+Is the world itself an impression?
+
+Is the child's world a different impression from the adult's world?
+
+Are these different worlds or different impressions of the same world?
+
+Is the sameness of the world behind different impressions an impression?
+
+---
+
+## Impression and Habit
+
+Is habit an impression?
+
+Is habit the repetition of impression?
+
+Does repetition of impression create habit?
+
+Does habit create repetition of impression?
+
+Is the causal direction between habit and impression clear?
+
+Can habit exist without impression?
+
+Can impression exist without habit?
+
+Is the first impression prior to all habit?
+
+Is the first impression itself shaped by biological habit?
+
+Is biological habit a pre-personal impression?
+
+---
+
+Does habit dull impression?
+
+Is a dulled impression still an impression?
+
+Is the dullness of habitual impression a loss?
+
+Is the dullness of habitual impression a gain?
+
+Is efficiency the gain of habitual impression?
+
+Is wonder the loss of habitual impression?
+
+Can efficiency and wonder coexist in the same impression?
+
+Is the attempt to maintain wonder against habit itself a habit?
+
+Is the habit of wondering a paradox?
+
+Is the paradox an impression?
+
+---
+
+Can habit be broken?
+
+Is the breaking of habit a new impression?
+
+Is the new impression that breaks habit more vivid than the habitual impression?
+
+Is vividness the criterion of genuine impression?
+
+Is the habitual impression not genuine?
+
+Is the habitual impression genuine but unnoticed?
+
+Is an unnoticed impression an impression?
+
+Is noticing an additional impression or a quality of the impression?
+
+If noticing is additional, is the unnoticed impression complete without it?
+
+If noticing is a quality, can an impression lack it?
+
+---
+
+## Impression and Finitude
+
+Is finitude itself an impression?
+
+Is the impression of finitude finite?
+
+Can a finite impression grasp finitude?
+
+Is the grasp of finitude itself finite?
+
+Is the finite grasp of finitude adequate?
+
+Is adequacy an impression?
+
+Is the impression of inadequacy the most honest impression?
+
+Is honesty an impression?
+
+Is the impression of honesty reliable?
+
+Is the reliability of the impression of honesty itself something we are impressed by?
+
+---
+
+Is the limit of impression the limit of the world?
+
+Is the limit of the world the limit of impression?
+
+Are these the same limit?
+
+Is the coincidence of these limits an impression?
+
+Can you be impressed by a limit you cannot cross?
+
+Is the uncrossable limit the most impressive limit?
+
+Is the most impressive limit the one that defines impression?
+
+Does impression define its own limit?
+
+Is the self-defining limit of impression the boundary of meaning?
+
+Is meaning itself bounded by impression?
+
+---
+
+Is mortality the ultimate impression?
+
+Is the impression of mortality the impression that impressions end?
+
+Is the ending of impressions itself an impression?
+
+Can the ending of impressions be experienced?
+
+If the ending of impressions cannot be experienced, is it nothing?
+
+If it is nothing, is the fear of it the fear of nothing?
+
+Is the fear of nothing an impression of nothing?
+
+Is the impression of nothing the nothing of impression?
+
+Is the nothing of impression the end of the question?
+
+Is the end of the question the final impression?
+
+---
+
+## Impression and Perception
+
+Is perception an impression?
+
+Is perception more than impression?
+
+What does perception add to impression?
+
+Is the addition of perception to impression itself perceived?
+
+Is the addition of perception to impression itself an impression?
+
+Is perception organized impression?
+
+Is organization imposed on impression or discovered in it?
+
+If imposed, by whom?
+
+If discovered, by what faculty?
+
+Is the faculty of organization itself an impression?
+
+---
+
+Is the Gestalt an impression?
+
+Is the whole greater than the sum of its impressions?
+
+Is the greater-than-sum an additional impression?
+
+Is the figure-ground distinction an impression?
+
+Is the figure impressed upon the ground?
+
+Is the ground impressed upon the figure?
+
+Is the switching between figure and ground a switching between impressions?
+
+Is the ambiguous figure two impressions or one?
+
+Can two impressions occupy the same perceptual space?
+
+Is perceptual space itself an impression?
+
+---
+
+Is color an impression?
+
+Is the impression of red the same for everyone?
+
+Is the inverted spectrum a problem about impressions?
+
+If your red impression is my green impression, would we ever know?
+
+Is the privacy of impressions a barrier to knowledge?
+
+Is the privacy of impressions itself an impression?
+
+Can you have an impression of privacy?
+
+Is the impression of another's inner life an impression of their impressions?
+
+Is the impression of inaccessibility itself accessible?
+
+Is accessibility an impression?
+
+---
+
+Is synesthesia a crossed impression?
+
+Is the synesthetic impression of colored sound a genuine impression?
+
+Is the synesthetic impression more or less accurate than the ordinary impression?
+
+Is accuracy relevant to synesthetic impression?
+
+Is the synesthetic impression a reminder that impression categories are contingent?
+
+Is the contingency of impression categories itself an impression?
+
+Can you be impressed by the contingency of your own modes of impression?
+
+Is the mode of impression part of the impression?
+
+Is the impression separable from its mode?
+
+Is a modeless impression possible?
+
+---
+
+## Impression and Meaning
+
+Does an impression have meaning?
+
+Is meaning in the impression or added to it?
+
+If meaning is in the impression, is every impression meaningful?
+
+If meaning is added, what adds it?
+
+Is the addition of meaning an interpretation?
+
+Is interpretation an impression?
+
+Is the impression of meaning the same as meaning?
+
+Can an impression be meaningful without being interpreted?
+
+Is uninterpreted meaning possible?
+
+Is the possibility of uninterpreted meaning itself an interpretation?
+
+---
+
+Is the impression of significance an impression?
+
+Is significance more than impression?
+
+What makes an impression significant?
+
+Is the significance of an impression determined by context?
+
+Is context a set of other impressions?
+
+Is the significance of an impression relative to other impressions?
+
+Is relative significance the only kind of significance?
+
+Is there absolute significance?
+
+Would absolute significance be an impression?
+
+Can an impression be absolutely significant?
+
+---
+
+Is the impression of meaninglessness meaningful?
+
+Is the meaningful impression of meaninglessness paradoxical?
+
+Is the paradox an impression?
+
+Is the impression of absurdity absurd?
+
+Is the absurd impression of the absurd a double absurdity?
+
+Is double absurdity more or less absurd than single absurdity?
+
+Is the measure of absurdity an impression?
+
+Is the impression of the immeasurable an impression?
+
+Can you measure impressions?
+
+Is the measurement of impressions itself an impression?
+
+---
+
+## Impression and Otherness
+
+Is the other an impression?
+
+Is the other more than an impression?
+
+Is the face of the other an impression?
+
+Is the face of the other more than an impression?
+
+Does Levinas claim that the face exceeds impression?
+
+Can anything exceed impression?
+
+If the face exceeds impression, how do we encounter it?
+
+Is the encounter with what exceeds impression itself an impression?
+
+Is the impression of excess the same as excess?
+
+Is the excess of the other over impression the ethical?
+
+---
+
+Is the stranger an impression?
+
+Is the impression of strangeness the same as strangeness?
+
+Can the strange become familiar through repeated impression?
+
+Does the familiarization of the strange destroy the impression of strangeness?
+
+Is the destruction of the impression of strangeness a loss?
+
+Is hospitality a response to the impression of the stranger?
+
+Is the impression of the stranger as threat a distortion?
+
+Is the impression of the stranger as guest a construction?
+
+Is every impression of the other a construction?
+
+Is construction the same as distortion?
+
+---
+
+Is alienation an impression?
+
+Is the impression of alienation the same as alienation?
+
+Can you be alienated without having the impression of alienation?
+
+Can you have the impression of alienation without being alienated?
+
+Is the gap between alienation and the impression of alienation itself alienating?
+
+Is alienation from one's own impressions possible?
+
+Can you be alienated from your impressions?
+
+Is alienation from impressions the loss of the capacity for impression?
+
+Is the loss of the capacity for impression the deepest alienation?
+
+Is the deepest alienation an impression?
+
+---
+
+## Impression and Multiplicity
+
+Is a single impression possible?
+
+Is every impression multiple?
+
+Is the multiplicity of impression part of the impression?
+
+Is the unity of impression imposed or discovered?
+
+Is the imposition of unity an impression?
+
+Is the discovery of unity an impression?
+
+Is the difference between imposition and discovery an impression?
+
+Can you have an impression of pure multiplicity?
+
+Is pure multiplicity without unity chaotic?
+
+Is chaos an impression?
+
+---
+
+Is the impression of order an impression?
+
+Is order in the impression or in the world?
+
+If order is in the impression, is the world chaotic?
+
+If order is in the world, why do impressions sometimes seem chaotic?
+
+Is the seeming chaos of impressions a failure of perception?
+
+Is a failure of perception a failure of impression?
+
+Can impression fail?
+
+Is the failure of impression an impression of failure?
+
+Is the impression of failure the same as failure?
+
+Can failure itself impress?
+
+---
+
+Are simultaneous impressions one impression or many?
+
+Is the unity of a moment of experience one impression?
+
+Is the plurality of sensory channels many impressions?
+
+Is the binding of sensory channels into a unified experience an impression?
+
+Is the binding problem a problem about impressions?
+
+Is the solution to the binding problem an impression?
+
+Would the solution to the binding problem explain how impressions are unified?
+
+Is the unity of impressions explained by a further impression?
+
+Does the explanation of unity through impression lead to regress?
+
+Is the regress itself the answer?
+
+---
+
+## Impression and Silence
+
+Is silence impressive?
+
+Is the impression of silence positive or negative?
+
+Is the impression of silence the impression of the absence of sound?
+
+Is the impression of the absence of sound the same as the absence of the impression of sound?
+
+Can you distinguish these two?
+
+Is the distinction between the impression of absence and the absence of impression the most fundamental distinction?
+
+Is the most fundamental distinction an impression?
+
+Is the impression of the most fundamental distinction reliable?
+
+Can the most fundamental distinction be reached through impression?
+
+Or does it precede all impression?
+
+---
+
+Is the silence between words an impression?
+
+Is the silence between notes an impression?
+
+Is the silence between impressions an impression?
+
+Is the gap between impressions part of the stream of impression?
+
+Is the stream of impression continuous or discontinuous?
+
+If continuous, are there no gaps?
+
+If discontinuous, what fills the gaps?
+
+Is the gap between impressions nothing?
+
+Is the nothing between impressions an impression?
+
+Is the nothing between impressions the condition for impression?
+
+---
+
+## Impression and the Absolute
+
+Is the absolute an impression?
+
+Can the absolute make an impression?
+
+Is the impression of the absolute relative?
+
+If the impression of the absolute is relative, is it an impression of the absolute?
+
+Is the relativity of the impression of the absolute a refutation of the absolute?
+
+Or is it a refutation of impression?
+
+Can impression be refuted?
+
+Is the refutation of impression an impression?
+
+Is the impression that impression is limited the most important impression?
+
+Is the most important impression the last impression before silence?
+
+---
+
+Is the totality of impressions itself an impression?
+
+Can you have an impression of all impressions?
+
+Is the impression of all impressions included in all impressions?
+
+Is the inclusion paradoxical?
+
+Is the paradox the final impression?
+
+Is the final impression the impression that there is no final impression?
+
+Is the impression that there is no final impression itself final?
+
+Is the infinite regression of final impressions itself an impression?
+
+Is the impression of infinite regression the most honest impression about impression?
+
+Is honesty about impression the last thing impression can give us?
+
+---
+
+Is the question of impression exhausted?
+
+Can the question of impression be exhausted?
+
+Is the inexhaustibility of the question an impression?
+
+Is the impression of inexhaustibility the deepest impression?
+
+Is the deepest impression the one that cannot be bottomed out?
+
+Is the inability to bottom out an impression of the infinite?
+
+Is the infinite an impression?
+
+Is the impression of the infinite finite?
+
+Is the finitude of the impression of the infinite a tragedy?
+
+Or is it the very nature of impression to reach toward what exceeds it?
+
+---
+
+## Impression and Dissolution
+
+Does impression dissolve under scrutiny?
+
+Does the scrutinized impression reveal itself as multiple impressions?
+
+Is the revelation of multiplicity a dissolution of unity?
+
+Is the dissolution of unity a loss of the impression?
+
+Is the loss of the impression the gain of knowledge?
+
+Is the gain of knowledge at the cost of impression a fair trade?
+
+Is fairness an impression?
+
+Is the impression of fairness the same as fairness?
+
+Is the dissolution of the impression of fairness the dissolution of fairness?
+
+Can dissolution itself impress?
+
+---
+
+Does the concept of impression dissolve when examined?
+
+Is the dissolution of the concept an impression?
+
+Is the impression of conceptual dissolution frightening?
+
+Is the fear of conceptual dissolution an impression?
+
+Is the impression of fear itself subject to dissolution?
+
+Does fear dissolve into its components?
+
+Are the components of fear themselves impressions?
+
+Is the component impression simpler than the compound?
+
+Is simplicity the end of dissolution?
+
+Is the end of dissolution itself an impression?
+
+---
+
+Is the question itself dissolving?
+
+Is the dissolution of the question the answer?
+
+Is the answer an impression?
+
+Is the impression of the answer satisfying?
+
+Is satisfaction an impression?
+
+Is the impression of satisfaction the end of inquiry?
+
+Is the end of inquiry an impression?
+
+Is the impression that inquiry has ended premature?
+
+Is prematurity an impression?
+
+Is the final question about impression the question that dissolves all impressions into the silence from which they arose?
+

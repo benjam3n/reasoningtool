@@ -802,9 +802,9 @@ Can ignorance enable better speculation?
 
 ## Conjecture and Creativity
 
-Is conjecture creative?
+Is the creative dimension of conjecture essential or accidental?
 
-Is creativity conjectural?
+Is the conjectural dimension of creativity essential or accidental?
 
 Does all creativity involve conjecture?
 
@@ -1234,9 +1234,9 @@ Is beauty different from truth?
 
 ---
 
-Can a conjecture be true?
+Can a conjecture turn out to be true without ceasing to have been conjectural?
 
-Is a true conjecture still a conjecture?
+Does a conjecture that proves true retroactively lose its conjectural character?
 
 Does truth end the life of a conjecture?
 
@@ -1744,7 +1744,7 @@ Is asking whether both can be true itself a conjecture?
 
 Is belief revision rational?
 
-Is conjecture rational?
+Is the rationality of conjecture the same as the rationality of belief?
 
 Is rational conjecture the same as rational belief revision?
 
@@ -2486,7 +2486,7 @@ Can you conjecture without intuition?
 
 Can you have intuition without conjecture?
 
-Is intuition the source of conjecture?
+Is intuition the wellspring from which conjecture flows?
 
 Is conjecture the product of intuition?
 
@@ -2990,7 +2990,7 @@ Is the creation of conjecture an event?
 
 Is the discovery of conjecture an event?
 
-Is there a moment of conjecture?
+Is there a discrete instant at which conjecture crystallizes?
 
 Can you pinpoint the moment of conjecture?
 
@@ -4045,3 +4045,113 @@ Is the final question answerable?
 Is the answerability of the final question a conjecture?
 
 Is there a question after the final question?
+
+---
+
+Is conjecture the human condition?
+
+Is the human condition conjectural?
+
+Is being human a conjecture about what it means to be?
+
+Is meaning itself a conjecture?
+
+Is the meaning of conjecture conjectural?
+
+Is the conjecture of meaning meaningful?
+
+Is the meaningfulness of conjecture about meaning circular?
+
+Is the circularity of meaning and conjecture escapable?
+
+Is escaping circularity the goal of conjecture?
+
+Is embracing circularity the wisdom of conjecture?
+
+---
+
+Is conjecture fragile?
+
+Is the fragility of conjecture a virtue?
+
+Is the fragility of conjecture what makes it testable?
+
+Is testability a form of fragility?
+
+Is fragility a form of openness?
+
+Is openness a form of vulnerability?
+
+Is vulnerability a precondition for conjecture?
+
+Is invulnerable conjecture a contradiction?
+
+Is the invulnerability of dogma the opposite of conjecture?
+
+Is the vulnerability of conjecture what separates it from dogma?
+
+---
+
+Does conjecture presuppose a world?
+
+Does conjecture presuppose a self?
+
+Does conjecture presuppose other minds?
+
+Does conjecture presuppose language?
+
+Does conjecture presuppose time?
+
+Does conjecture presuppose causation?
+
+Are these presuppositions themselves conjectures?
+
+Can the presuppositions of conjecture be examined by conjecture?
+
+Is examining the presuppositions of conjecture the deepest form of conjecture?
+
+Is the deepest form of conjecture the most vertiginous?
+
+---
+
+Is the origin of conjecture conjecturable?
+
+Did conjecture begin?
+
+Was there a first conjecture?
+
+What was the first conjecture?
+
+Was the first conjecture about survival?
+
+Was the first conjecture about danger?
+
+Was the first conjecture about food?
+
+Was the first conjecture about other minds?
+
+Is the question of the first conjecture answerable?
+
+Is the question of the first conjecture itself a conjecture about origins?
+
+---
+
+Is wonder the last conjecture as well as the first?
+
+Does conjecture return to wonder?
+
+Is the return to wonder the completion of conjecture?
+
+Is the completion of conjecture the beginning of new conjecture?
+
+Is the cycle of conjecture and wonder eternal?
+
+Is eternity a conjecture?
+
+Is the conjecture of eternity the boldest conjecture of all?
+
+Is the boldest conjecture of all the one that cannot be refuted?
+
+Is the conjecture that cannot be refuted the most dangerous or the most beautiful?
+
+Is asking whether it is dangerous or beautiful itself a conjecture about value?

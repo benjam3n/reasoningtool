@@ -2653,3 +2653,1475 @@ Can form and content be separated?
 Is the attempt to separate form and content itself an invention?
 
 Does every attempt to analyze invention end up demonstrating it?
+
+---
+
+## Invention and Materiality
+
+Does every invention require matter?
+
+Can an invention be purely immaterial?
+
+Is software an immaterial invention?
+
+If software requires hardware to run, is it truly immaterial?
+
+Does the dependence of software on hardware make software a material invention?
+
+Is the distinction between material and immaterial inventions a false dichotomy?
+
+Can a process be invented?
+
+Is a manufacturing process an invention distinct from the product it produces?
+
+Does the invention of a process require different skills than the invention of a product?
+
+Is process invention more abstract than product invention?
+
+Does greater abstraction make process invention more or less difficult?
+
+Can difficulty be a criterion for evaluating inventions?
+
+---
+
+Is the material an invention is made from part of the invention?
+
+Does the choice of material constitute an inventive act?
+
+Is the invention of a new material — such as plastic or graphene — a different kind of invention from the invention of a new device?
+
+Does materials science produce inventions or discoveries?
+
+When a new material property is found, is it invented or discovered?
+
+Can a property be invented?
+
+Does the creation of a material with novel properties invent those properties?
+
+Or do the properties exist potentially in the material's components and are merely discovered through combination?
+
+Is potential existence the same as existence?
+
+Does the realization of a potential constitute invention?
+
+Is every actualization of a potential an invention?
+
+---
+
+Does the scale of an invention matter?
+
+Is a nanotechnology device an invention in the same sense as a bridge?
+
+Does the invisibility of nanoscale inventions change their status as inventions?
+
+Is visibility relevant to invention?
+
+Can an invisible invention be as consequential as a visible one?
+
+Is the microchip — invisible to the naked eye in its details — the most consequential invention of the twentieth century?
+
+Does the consequentiality of an invention depend on its scale?
+
+Is there a relationship between the size of an invention and its impact?
+
+Do smaller inventions tend to have larger impacts?
+
+Is this an empirical question or a conceptual one?
+
+Can the relationship between size and impact be invented — that is, deliberately engineered?
+
+---
+
+Does the medium of an invention determine its possibilities?
+
+Does working in metal enable different inventions than working in wood?
+
+Does the digital medium enable inventions impossible in analog media?
+
+Is the distinction between digital and analog itself an invention?
+
+Does the invention of the digital transform all subsequent invention?
+
+Is the digital a medium, a tool, or an invention?
+
+Can something be all three simultaneously?
+
+Does the multiplicity of categories an invention can occupy reveal the inadequacy of our categories?
+
+Is the inadequacy of categories a problem to be solved or a feature to be accepted?
+
+Can accepting inadequacy be an inventive response?
+
+Is acceptance ever inventive?
+
+---
+
+## Invention and Emotion
+
+Does emotion drive invention?
+
+Is frustration a common precursor to invention?
+
+Does anger at the inadequacy of existing solutions motivate the invention of new ones?
+
+Can joy drive invention, or is it primarily a response to invention?
+
+Is the joy of invention a unique emotion?
+
+Does the inventor experience emotions unavailable to non-inventors?
+
+Is the thrill of invention addictive?
+
+Can addiction to invention be harmful?
+
+Does obsessive invention constitute a pathology?
+
+Is the driven inventor mentally healthy or mentally ill?
+
+Does the question of mental health apply to the inventive impulse?
+
+Can the inventive impulse be pathological?
+
+---
+
+Does love drive invention?
+
+Have inventions been motivated by love for another person?
+
+Is the invention made for a loved one different in character from the invention made for profit?
+
+Does the motivation behind an invention affect the invention's quality?
+
+Can an invention motivated by hate be as good as one motivated by love?
+
+Does the moral quality of the motivation affect the moral quality of the invention?
+
+Are inventions morally colored by their origins?
+
+Can an invention transcend its origins?
+
+Does the separation of an invention from its inventor free the invention from the inventor's moral character?
+
+Is an invention an autonomous entity once created?
+
+Does the autonomy of an invention imply that it has a life of its own?
+
+Can an invention have a life?
+
+---
+
+Is the fear of failure the greatest obstacle to invention?
+
+Does perfectionism prevent invention?
+
+Is the willingness to produce imperfect work essential to invention?
+
+Does the culture of perfectionism in some fields suppress invention?
+
+Can one invent perfectly, or is imperfection inherent in invention?
+
+Is imperfection a feature of all human creation?
+
+Does the imperfection of inventions drive further invention?
+
+Is the cycle of imperfection and improvement the engine of inventive progress?
+
+Does the pursuit of perfection through successive imperfect inventions ever reach perfection?
+
+Is the asymptotic approach to perfection the condition of all invention?
+
+Can perfection be invented?
+
+Is the concept of perfection itself an invention?
+
+---
+
+Does wonder drive invention?
+
+Is the sense of wonder at the natural world the origin of inventive inquiry?
+
+Does invention require the capacity for wonder?
+
+Can one who has lost the capacity for wonder still invent?
+
+Does familiarity with existing inventions diminish wonder and thereby reduce inventiveness?
+
+Is the jaded inventor a less effective inventor?
+
+Can wonder be cultivated?
+
+Is the cultivation of wonder an inventive practice?
+
+Does the deliberate cultivation of an emotion count as an invention?
+
+Can emotions be invented?
+
+Is a new emotion possible?
+
+Could a future invention create a new emotional state?
+
+---
+
+## Invention and Communication
+
+Does an invention need to be communicated to exist?
+
+Is an invention that no one knows about still an invention?
+
+Does the communication of an invention change the invention?
+
+Is the description of an invention part of the invention?
+
+Can an invention be fully described?
+
+Does every description of an invention leave something out?
+
+Is what is left out of the description part of the tacit dimension of the invention?
+
+Can the tacit dimension be communicated?
+
+If the tacit dimension cannot be communicated, can the invention be fully transferred?
+
+Is the transfer of an invention between people possible?
+
+Does the transfer of an invention require reinvention?
+
+Is learning to use an invention a form of reinvention?
+
+---
+
+Is the demonstration of an invention a form of communication?
+
+Does a demonstration communicate what a description cannot?
+
+Is a demonstration more inventive than a description?
+
+Can one demonstrate an idea?
+
+Is the prototype a demonstration of an idea?
+
+Is the prototype an invention or a step toward an invention?
+
+At what point in the development process does something become an invention?
+
+Is the first sketch an invention?
+
+Is the first working model an invention?
+
+Is the final production version an invention?
+
+Are all of these the same invention at different stages?
+
+Does the staging of invention imply that invention is a process rather than an event?
+
+---
+
+Is publication a necessary condition for invention?
+
+Does the patent system's requirement for disclosure imply that hidden inventions are not inventions?
+
+Can trade secrets be inventions?
+
+If a trade secret is an invention, does the secrecy change its nature?
+
+Does secrecy enhance or diminish an invention?
+
+Is an open-source invention different in kind from a proprietary one?
+
+Does the openness of an invention affect its inventive character?
+
+Can openness be a feature of an invention?
+
+Is open-source software an invention of a new model of invention?
+
+Does the open-source model challenge the traditional concept of the inventor?
+
+Does the dissolution of individual authorship in open-source projects change the nature of invention?
+
+Is authorship necessary for invention?
+
+---
+
+Can an invention go viral?
+
+Does the viral spread of an invention change the invention?
+
+Is a meme an invention?
+
+Is the concept of a meme itself an invention?
+
+Did Richard Dawkins invent the meme, or did he discover a pre-existing pattern?
+
+Is the invention of a concept that describes a natural process itself a natural process?
+
+Can the meta-level — the level at which we describe processes — be natural?
+
+Is the distinction between natural and artificial a natural distinction or an artificial one?
+
+If the distinction is artificial, is it invented?
+
+Does the invention of the natural-artificial distinction shape all subsequent thinking about invention?
+
+Can one think about invention without the natural-artificial distinction?
+
+---
+
+## Invention and Complexity
+
+Does invention increase complexity?
+
+Is every invention an addition to the complexity of the world?
+
+Does increasing complexity create the conditions for further invention?
+
+Is there a relationship between complexity and inventiveness?
+
+Do more complex societies produce more inventions?
+
+Does complexity eventually become an obstacle to invention?
+
+Can complexity be simplified through invention?
+
+Is simplification an inventive act?
+
+Is the invention of a simpler solution more impressive than the invention of a complex one?
+
+Does elegance in invention reflect a deep understanding?
+
+Is elegance an objective property of inventions or a subjective judgment?
+
+Can the criteria for elegance be invented?
+
+---
+
+Does invention create systems?
+
+Is a system an invention?
+
+Is the invention of a system more consequential than the invention of a component?
+
+Can components be invented independently of systems?
+
+Does every component imply a system?
+
+Does every system imply components?
+
+Is the relationship between system and component circular?
+
+Can circular relationships be invented?
+
+Is the invention of a circular relationship a logical innovation?
+
+Does logical innovation differ from technological innovation?
+
+Can logic be invented?
+
+Is the invention of a new logic possible?
+
+---
+
+Does the complexity of an invention correlate with its importance?
+
+Are the most important inventions simple or complex?
+
+Is the wheel — a simple invention — more important than the computer — a complex one?
+
+Can simple and complex inventions be compared on a single scale of importance?
+
+Is the comparison of inventions across eras meaningful?
+
+Does the context-dependence of importance make cross-era comparison impossible?
+
+Is the importance of an invention relative to its era or absolute?
+
+Can anything be absolutely important?
+
+Is absolute importance an invention?
+
+Is the concept of absolute value an invention?
+
+Does the invention of absolute value serve a purpose?
+
+---
+
+Is emergence a form of invention?
+
+Do emergent properties constitute inventions of nature?
+
+Is the emergence of consciousness from neural activity an invention?
+
+If consciousness is emergent, was it invented by evolution?
+
+Can evolution be an inventor if it has no intentions?
+
+Is intentionless invention possible?
+
+Does the possibility of intentionless invention undermine the traditional concept of invention?
+
+Should the traditional concept be abandoned or expanded?
+
+Is the expansion of a concept a form of invention?
+
+Is the contraction of a concept — making it more precise — also a form of invention?
+
+Can precision be invented?
+
+Is the invention of precision one of the great achievements of modern science?
+
+---
+
+## Invention and Risk
+
+Does invention require risk?
+
+Is the willingness to risk failure essential to invention?
+
+Can one invent safely?
+
+Does the elimination of risk eliminate invention?
+
+Is the cautious inventor less inventive than the reckless one?
+
+Does recklessness in invention produce better inventions or more dangerous ones?
+
+Can the risk of invention be calculated?
+
+Is the calculation of risk itself an invention?
+
+Does the invention of risk calculation change the nature of risk?
+
+Does quantifying risk transform it from an existential condition into a manageable variable?
+
+Is the transformation of the unmanageable into the manageable the essence of invention?
+
+---
+
+Is the risk of unintended consequences inherent in invention?
+
+Can an inventor foresee all the consequences of an invention?
+
+Does the impossibility of foreseeing all consequences absolve the inventor of responsibility?
+
+Is limited foresight a moral defense?
+
+Does the claim of limited foresight become less credible as knowledge accumulates?
+
+Should modern inventors be held to higher standards of foresight than past ones?
+
+Is the standard of foresight itself an invention?
+
+Does the invention of higher standards of foresight make invention more responsible?
+
+Can responsibility be invented?
+
+Is moral responsibility a natural fact or a social invention?
+
+Does the social invention of responsibility change the nature of moral obligation?
+
+---
+
+Is the risk of obsolescence a feature of every invention?
+
+Does every invention carry the seeds of its own replacement?
+
+Is the awareness of eventual obsolescence a burden for the inventor?
+
+Can an inventor create something intended to last forever?
+
+Is the ambition to create something permanent a form of hubris?
+
+Does the hubris of permanence conflict with the dynamic nature of invention?
+
+Is the dynamic nature of invention a fact or an interpretation?
+
+Can the nature of invention be interpreted differently?
+
+Is every interpretation of invention an invention?
+
+Does the multiplicity of interpretations of invention enrich or confuse?
+
+Can confusion be productive?
+
+Is productive confusion an inventive state?
+
+---
+
+## Invention and Memory
+
+Does invention require memory?
+
+Can one invent without remembering previous inventions?
+
+Does memory of past failures guide future invention?
+
+Is the history of invention a collective memory?
+
+Does collective memory shape what can be invented?
+
+Can collective memory be deliberately altered to enable new inventions?
+
+Is the alteration of collective memory an inventive act?
+
+Is propaganda an invention?
+
+Is the invention of propaganda a social invention?
+
+Does the manipulation of memory constitute invention or destruction?
+
+Can destruction be inventive?
+
+Is creative destruction — the replacement of old systems by new ones — a form of invention?
+
+---
+
+Is forgetting necessary for invention?
+
+Does the weight of accumulated knowledge prevent the fresh thinking required for invention?
+
+Is the beginner who knows nothing more inventive than the expert who knows everything?
+
+Does expertise help or hinder invention?
+
+Can one be too knowledgeable to invent?
+
+Does the paradox of expertise — knowing so much that one cannot see alternatives — affect all inventors?
+
+Is the ability to forget selectively an inventive skill?
+
+Can the skill of selective forgetting be taught?
+
+Is the teaching of forgetting paradoxical?
+
+Can one deliberately forget?
+
+Is deliberate forgetting an invention?
+
+Is the invention of techniques for forgetting a contribution to the art of invention?
+
+---
+
+Does the documentation of inventions serve memory or replace it?
+
+Is the archive of inventions an invention?
+
+Does the archive change the nature of what it preserves?
+
+Is a preserved invention the same as a living invention?
+
+Does an invention die when it ceases to be used?
+
+Is a dead invention still an invention?
+
+Can a dead invention be revived?
+
+Is the revival of a dead invention a new invention or the resurrection of an old one?
+
+Does the metaphor of death and resurrection apply to inventions?
+
+Is the application of biological metaphors to technological artifacts misleading?
+
+Can metaphors mislead?
+
+Is a misleading metaphor a failed invention?
+
+---
+
+## Invention and Identity
+
+Does invention define human identity?
+
+Is homo faber — man the maker — the most accurate description of the human species?
+
+Is the capacity for invention the defining characteristic of humanity?
+
+If invention defines humanity, are non-inventive humans less human?
+
+Does the definition of humanity in terms of invention exclude those who do not invent?
+
+Is the exclusion of non-inventors from full humanity a consequence of defining humanity by invention?
+
+Can a definition be harmful?
+
+Is a harmful definition a failed invention?
+
+Does the failure of a definition reveal the limits of invention?
+
+Can the limits of invention be identified?
+
+Are the limits of invention themselves subject to invention?
+
+Can one invent beyond the limits of invention?
+
+---
+
+Does the identity of a culture depend on its inventions?
+
+Is a culture without distinctive inventions a culture without identity?
+
+Does cultural identity require inventive originality?
+
+Can a culture that borrows all its inventions from others have an identity?
+
+Is borrowing a form of invention?
+
+Is creative borrowing — taking an invention from one context and adapting it to another — an inventive act?
+
+Does the stigma attached to borrowing reflect a bias toward originality?
+
+Is originality an invented value?
+
+Did someone invent the concept of originality?
+
+When was originality invented as a value?
+
+Is the Romantic era the period in which originality became a supreme value?
+
+Is the Romantic valorization of originality itself original?
+
+---
+
+Does personal identity depend on one's inventions?
+
+Is an inventor defined by their inventions?
+
+Does the inventor's identity merge with the invention?
+
+Is the lightbulb part of Edison's identity?
+
+Is the theory of relativity part of Einstein's identity?
+
+Can one separate the inventor from the invention?
+
+Does the attempt to separate them distort both?
+
+Is the inseparability of inventor and invention a feature of great inventions?
+
+Does greatness in invention require the merging of inventor and invention?
+
+Can a mediocre inventor be inseparable from a mediocre invention?
+
+Is mediocrity in invention possible?
+
+Is every invention, by virtue of being an invention, at least minimally great?
+
+---
+
+## Invention and Surprise
+
+Does invention require surprise?
+
+Is an expected invention a contradiction in terms?
+
+Can one plan to be surprised?
+
+Does the planning of surprise destroy the surprise?
+
+Is the planned production of novelty a paradox?
+
+Can research and development — the planned production of novelty — succeed?
+
+Does R&D produce genuine inventions or merely predictable improvements?
+
+Is the distinction between genuine invention and predictable improvement a meaningful one?
+
+Can predictability coexist with novelty?
+
+Is a predictable novelty a genuine novelty?
+
+Does the oxymoron of predictable novelty reveal a tension at the heart of modern invention?
+
+Can the tension be resolved?
+
+---
+
+Does surprise distinguish invention from engineering?
+
+Is engineering the application of known principles, while invention is the discovery of new principles?
+
+Can engineering be inventive?
+
+Is there a clear boundary between engineering and invention?
+
+Does the blurring of the boundary between engineering and invention reflect the reality of inventive practice?
+
+Is the practice of invention messier than the theory of invention?
+
+Does the messiness of practice invalidate the neatness of theory?
+
+Can a neat theory describe a messy practice?
+
+Is the attempt to neaten practice through theory itself an invention?
+
+Does theorizing about invention change the practice of invention?
+
+Does the change in practice that results from theorizing constitute an invention?
+
+Is the invention of a new practice through theorizing a meta-invention?
+
+---
+
+Is serendipity a form of surprise in invention?
+
+Does serendipity require prepared minds?
+
+Is the prepared mind the inventor's contribution to serendipitous invention?
+
+Can one prepare for the unprepared?
+
+Is preparation for the unexpected a paradox?
+
+Does the paradox of preparation for the unexpected reveal something about the nature of invention?
+
+Is invention essentially paradoxical?
+
+Does the paradoxical nature of invention resist systematic analysis?
+
+Can something that resists systematic analysis be studied systematically?
+
+Is the systematic study of the unsystematic a paradox?
+
+Does the proliferation of paradoxes in the study of invention indicate that invention is fundamentally paradoxical?
+
+Or does it indicate that our conceptual framework is inadequate?
+
+---
+
+## Invention and Trust
+
+Does invention require trust?
+
+Must an inventor trust their own judgment to invent?
+
+Does self-trust distinguish the inventor from the non-inventor?
+
+Can excessive self-trust lead to foolish inventions?
+
+Is the fine line between visionary and fool a matter of trust?
+
+Does the outcome determine whether trust was warranted?
+
+Is retrospective validation of trust a genuine validation?
+
+Can trust be validated only after the fact?
+
+Is the inventor's trust a leap of faith?
+
+Is the leap of faith compatible with rational inquiry?
+
+Can invention be both a leap of faith and a rational process?
+
+Does the coexistence of faith and reason in invention challenge the faith-reason dichotomy?
+
+---
+
+Does society need to trust inventors?
+
+Is the social license to invent based on trust?
+
+Can the abuse of trust by inventors erode the social license to invent?
+
+Does the erosion of trust lead to excessive regulation?
+
+Is excessive regulation the consequence of broken trust?
+
+Can trust between society and inventors be rebuilt?
+
+Is the rebuilding of trust an inventive process?
+
+Does the invention of new institutional arrangements foster trust?
+
+Is institutional trust different from personal trust?
+
+Can institutions trust?
+
+Is the concept of institutional trust a social invention?
+
+Does the invention of institutional trust make individual trust less important?
+
+---
+
+## Invention and Paradox
+
+Is every invention a solution to a problem it simultaneously creates?
+
+Does the automobile solve the problem of transportation while creating the problem of pollution?
+
+Does every solution-problem pair generate further invention?
+
+Is the generation of new problems by solutions the engine of perpetual invention?
+
+Can the engine be stopped?
+
+Would stopping the engine of invention be desirable?
+
+Is the desire to stop invention itself a problem that requires an inventive solution?
+
+Is the paradox of wanting to invent a solution to the problem of invention irresolvable?
+
+Does irresolvability indicate a genuine paradox or a poorly framed question?
+
+Can a question be poorly framed and still productive?
+
+Is the productivity of poorly framed questions an argument against conceptual precision?
+
+Can imprecision be inventive?
+
+---
+
+Is the invention of a paradox the highest form of intellectual invention?
+
+Does a paradox reveal the limits of thought?
+
+Can the limits of thought be transcended through invention?
+
+Is the transcendence of cognitive limits the goal of invention?
+
+Can cognitive limits be transcended, or only extended?
+
+Is extension a form of transcendence?
+
+Does the distinction between extension and transcendence matter for understanding invention?
+
+Is the philosophical analysis of invention an extension or a transcendence of ordinary thinking about invention?
+
+Can ordinary thinking be inventive?
+
+Is everyday problem-solving a form of invention?
+
+Does the democratization of invention — recognizing everyone as an inventor — dilute the concept?
+
+Or does it enrich it?
+
+---
+
+Can the paradoxes of invention be resolved?
+
+Is the resolution of paradox possible without inventing a new framework?
+
+Does every new framework generate new paradoxes?
+
+Is the cycle of framework-paradox-framework an inventive cycle?
+
+Does the inventive cycle have a direction?
+
+Is the direction of the inventive cycle progress?
+
+Can progress be defined without circularity?
+
+Is the circularity of defining progress a paradox of invention?
+
+Does the proliferation of paradoxes indicate that we are approaching the limits of the concept of invention?
+
+Or does it indicate that the concept is inexhaustible?
+
+Is an inexhaustible concept an invention or a discovery?
+
+Does the inexhaustibility of the concept of invention mirror the inexhaustibility of invention itself?
+
+---
+
+## Coda
+
+Does the end of a series of questions about invention constitute an answer?
+
+Is the accumulation of questions without answers itself a form of knowledge?
+
+Does the form of recursive interrogation reveal something that propositional statements cannot?
+
+Is the recursive structure of these questions itself an invention?
+
+Has the process of generating these questions been an inventive process?
+
+Does the reader who follows these questions invent new thoughts?
+
+Is the stimulation of thought in others a form of invention?
+
+Can the inventor of questions claim credit for the thoughts those questions produce?
+
+Is the thought produced by a question the invention of the questioner or the answerer?
+
+Does the indeterminacy of intellectual credit reflect the indeterminacy of invention itself?
+
+Is invention indeterminate?
+
+Does the indeterminacy of invention ensure that the question "what is invention?" can never be finally answered?
+
+---
+
+## Invention and Collaboration
+
+Does collaboration enhance or dilute invention?
+
+Is a jointly invented thing more or less inventive than a solo invention?
+
+Does the combination of perspectives produce inventions that no single perspective could?
+
+Is the whole of collaborative invention greater than the sum of its parts?
+
+Can the sum-greater-than-parts phenomenon itself be invented?
+
+Is synergy an invention or a natural occurrence?
+
+Does calling synergy natural mystify what is actually a designed outcome?
+
+Can synergy be designed?
+
+Is the design of synergy a form of social invention?
+
+Does social invention require different methods than technological invention?
+
+Can the methods of technological invention be applied to social problems?
+
+Is the application of engineering methods to social problems technocratic?
+
+Is technocracy an invention?
+
+---
+
+Does competition drive invention more effectively than collaboration?
+
+Is the competitive model of invention — where rival inventors race to patent first — the most productive?
+
+Does the race to patent prioritize speed over quality?
+
+Can quality be sacrificed in the name of inventive priority?
+
+Is priority — being the first to invent something — morally relevant?
+
+Does being first give one a greater claim to the invention?
+
+Is the concept of priority itself an invention of the patent system?
+
+Did the concept of priority exist before patent law?
+
+Can a legal concept reshape the practice it regulates?
+
+Does patent law shape invention, or does invention shape patent law?
+
+Is the relationship between law and invention co-evolutionary?
+
+Can co-evolution be an inventive process?
+
+---
+
+Is the workshop a site of collaborative invention?
+
+Does the physical arrangement of a workspace affect inventive output?
+
+Can architecture foster invention?
+
+Is the design of spaces for invention itself an invention?
+
+Does the open-plan office foster collaboration or merely noise?
+
+Is the cubicle an anti-inventive space?
+
+Can a space be designed to maximize serendipitous encounters?
+
+Is the coffee machine the most important piece of equipment in a research lab?
+
+Does informal interaction drive invention more than formal research?
+
+Can the informal be formalized without destroying it?
+
+Is the attempt to formalize the informal a contradiction?
+
+Does the contradiction reveal something about the nature of invention?
+
+---
+
+## Invention and Ecology
+
+Does invention affect the natural environment?
+
+Is every invention an intervention in the ecology of the planet?
+
+Does the ecological impact of an invention determine its moral status?
+
+Can an invention be ecologically neutral?
+
+Is the concept of ecological neutrality itself an invention?
+
+Does the invention of the concept of sustainability change how we evaluate inventions?
+
+Is sustainability a constraint on invention or a driver of invention?
+
+Does the constraint of sustainability produce more inventive solutions?
+
+Is green technology a distinct form of invention?
+
+Does the adjective "green" change the noun "technology"?
+
+Can technology be genuinely green, or is the phrase an oxymoron?
+
+Is the oxymoron of green technology itself revealing?
+
+---
+
+Can invention reverse ecological damage?
+
+Is the invention of carbon capture technology a solution or a distraction?
+
+Does the promise of future inventions justify present ecological destruction?
+
+Is the belief that technology will solve environmental problems a form of faith?
+
+Is technological faith rational or irrational?
+
+Can faith in invention be justified by the track record of past inventions?
+
+Does the past success of invention guarantee future success?
+
+Is the extrapolation from past to future a valid form of reasoning?
+
+Can the validity of extrapolation be assessed without inventing new methods?
+
+Is the invention of new methods of assessment a meta-inventive task?
+
+Does meta-invention differ from ordinary invention?
+
+Is the distinction between meta-invention and ordinary invention a useful one?
+
+---
+
+Is biomimicry — inventing by imitating nature — a genuine form of invention?
+
+Does imitating nature constitute invention if the pattern already exists?
+
+Is the translation of a natural pattern into a human artifact an inventive act?
+
+Does the inventiveness of biomimicry depend on the degree of translation required?
+
+Is Velcro — inspired by burrs — an invention or an imitation?
+
+Can something be both an invention and an imitation?
+
+Does the coexistence of invention and imitation in a single artifact challenge the distinction between them?
+
+Is the challenge to the distinction productive?
+
+Does challenging distinctions produce new understanding?
+
+Is new understanding an invention?
+
+Can understanding be invented?
+
+Is the invention of understanding the goal of all inquiry?
+
+---
+
+## Invention and Desire
+
+Does desire drive invention?
+
+Is the desire for what does not yet exist the primary motivation for invention?
+
+Can one desire something one cannot imagine?
+
+Does the unimaginable lie beyond the scope of inventive desire?
+
+Is the expansion of imagination an expansion of inventive desire?
+
+Does advertising invent desire?
+
+If advertising invents desire, and desire drives invention, does advertising drive invention?
+
+Is the cycle of advertising-desire-invention a productive or destructive cycle?
+
+Can a cycle be both productive and destructive?
+
+Is the productive-destructive duality a feature of all invention?
+
+Does every invention produce and destroy simultaneously?
+
+Is Schumpeter's creative destruction the fundamental law of invention?
+
+---
+
+Can one invent a desire?
+
+Is the invention of new desires a form of social engineering?
+
+Does social engineering count as invention?
+
+Is the manipulation of desire ethical?
+
+Can the manipulation of desire be distinguished from the education of desire?
+
+Is the education of desire an invention?
+
+Does education invent new desires in students?
+
+Is the creation of intellectual curiosity — a desire to know — an invention of the educational system?
+
+Can a system create desire, or can it only channel existing desire?
+
+Is the channeling of desire an inventive act?
+
+Does channeling differ from creating?
+
+Is the distinction between channeling and creating relevant to understanding invention?
+
+---
+
+## Invention and Play
+
+Is play the origin of invention?
+
+Does the purposelessness of play make it a more fertile ground for invention than purposeful work?
+
+Is the purposelessness of play genuine, or does play always serve a hidden purpose?
+
+Can hidden purposes drive invention?
+
+Is the inventor who plays more inventive than the inventor who works?
+
+Does the distinction between play and work map onto the distinction between invention and labor?
+
+Is labor the opposite of invention?
+
+Can labor be inventive?
+
+Is the inventive laborer a contradiction or a reality?
+
+Does the reality of inventive labor challenge the romantic separation of invention from work?
+
+Is the romantic separation of invention from work a class-based ideology?
+
+Does ideology shape what counts as invention?
+
+---
+
+Is the game a paradigmatic invention?
+
+Does every game invent a world with its own rules?
+
+Is the invention of rules a form of lawmaking?
+
+Is lawmaking a form of invention?
+
+Can laws be invented?
+
+Are laws discovered — as in natural laws — or invented — as in human laws?
+
+Does the distinction between natural and human law rest on the distinction between discovery and invention?
+
+If the distinction between discovery and invention is unstable, is the distinction between natural and human law also unstable?
+
+Does the instability of foundational distinctions threaten the coherence of our conceptual framework?
+
+Can a conceptual framework be coherent if its foundational distinctions are unstable?
+
+Is coherence itself an invention?
+
+Can one invent coherence where none naturally exists?
+
+---
+
+## Invention and Mortality
+
+Does the awareness of death drive invention?
+
+Is the desire to leave something behind a motivation for invention?
+
+Does the inventor seek immortality through invention?
+
+Can an invention outlive its inventor?
+
+Does the survival of an invention constitute a form of immortality?
+
+Is the immortality conferred by invention genuine or metaphorical?
+
+Does the metaphor of immortality through invention comfort or deceive?
+
+Can a metaphor do both simultaneously?
+
+Is the simultaneous comforting and deceiving nature of metaphor itself an invention?
+
+Does the invention of comforting metaphors serve a social function?
+
+Is the social function of metaphor a discovered fact or an invented interpretation?
+
+Can interpretations be invented?
+
+---
+
+Does the finitude of human life constrain invention?
+
+Would immortal beings invent differently?
+
+Does the urgency created by mortality enhance inventiveness?
+
+Is the race against time a feature of all invention?
+
+Can one invent outside of time?
+
+Is the concept of timeless invention coherent?
+
+Are mathematical inventions timeless?
+
+Does the timelessness of mathematical truths make them discoveries rather than inventions?
+
+If mathematical truths are timeless, can they be invented at a particular time?
+
+Does the temporality of the inventive act conflict with the timelessness of the inventive product?
+
+Is the conflict between temporal act and timeless product a paradox of invention?
+
+Can the paradox be resolved without dissolving either temporality or timelessness?
+
+---
+
+Does each generation reinvent the inventions of the past?
+
+Is the reinvention of the past a necessary part of cultural transmission?
+
+Does every generation need to rediscover — or reinvent — the wheel?
+
+Is the metaphor of reinventing the wheel always negative?
+
+Can reinvention be valuable even when the original invention is known?
+
+Does reinvention deepen understanding of the original invention?
+
+Is deepened understanding a form of invention?
+
+Is understanding ever complete?
+
+Does the incompleteness of understanding ensure the perpetuity of invention?
+
+Is perpetual invention a burden or a gift?
+
+Can a gift be a burden?
+
+Is the burden of invention the price of being human?
+
+---
+
+## Scope Contraction: The Moment of Invention
+
+What happens in the instant of invention?
+
+Is there a discrete moment at which an invention comes into being?
+
+Or is invention a continuous process without discrete moments?
+
+Can a continuous process produce discrete results?
+
+Is the discreteness of the inventive product an illusion created by retrospection?
+
+Does the inventor remember the moment of invention accurately?
+
+Is the memory of invention reliable?
+
+Does the narrative of invention distort the reality of invention?
+
+Is every account of invention a narrative invention?
+
+Can one access the reality of invention behind the narrative?
+
+Is there a reality of invention independent of narrative?
+
+Does the dependence of invention on narrative make invention a literary phenomenon?
+
+---
+
+Is the spark of invention real?
+
+Does something ignite in the mind of the inventor at the moment of conception?
+
+Is the metaphor of ignition appropriate for invention?
+
+Does the fire metaphor — the spark, the flame, the illumination — capture something essential about invention?
+
+Or does it romanticize a mundane cognitive process?
+
+Is the cognitive process of invention mundane?
+
+Can something mundane produce something extraordinary?
+
+Does the extraordinary nature of inventive products require an extraordinary process?
+
+Or can ordinary processes produce extraordinary results?
+
+Is the ordinariness of the inventive process itself extraordinary?
+
+Does the paradox of ordinary extraordinariness characterize invention?
+
+Can a paradox characterize without defining?
+
+---
+
+What is the minimum unit of invention?
+
+Is there a smallest possible invention?
+
+Is a single novel connection between two ideas an invention?
+
+Is a single new word an invention?
+
+Is a single brushstroke an invention?
+
+Does the concept of a minimum unit presuppose that invention is quantifiable?
+
+Is invention quantifiable?
+
+Can inventions be counted?
+
+Does the counting of inventions require a definition of what counts as one invention?
+
+Is the definition of a single invention itself an inventive act?
+
+Does the circularity of defining invention in terms of invention undermine the project of definition?
+
+Can a project that undermines itself still produce useful results?
+
+---
+
+## Echo Return: Invention and Discovery Revisited
+
+Has this inquiry changed the relationship between invention and discovery?
+
+Does sustained questioning about invention reveal that the boundary between invention and discovery is more porous than initially assumed?
+
+Is the porosity of the boundary a discovery or an invention of this inquiry?
+
+Does the inquiry invent its own conclusions?
+
+Can an inquiry's conclusions be invented rather than discovered?
+
+If conclusions are invented, are they arbitrary?
+
+Can non-arbitrary conclusions be invented?
+
+Is the non-arbitrariness of an invented conclusion evidence that it was actually discovered?
+
+Does the evidence for discovery within invention collapse the distinction entirely?
+
+Can a distinction be collapsed without being destroyed?
+
+Is a collapsed distinction still useful?
+
+Does the usefulness of a collapsed distinction depend on the context of its use?
+
+---
+
+Is every discovery also an invention?
+
+Does every act of finding also involve an act of making?
+
+Does the finder make the found by the act of finding?
+
+Is observation a form of construction?
+
+If observation constructs its object, does science invent rather than discover?
+
+Does the constructivist thesis — that science invents its objects — go too far?
+
+Can a thesis go too far and still contain truth?
+
+Is partial truth sufficient for a useful thesis?
+
+Is the usefulness of a thesis an inventive criterion or a truth criterion?
+
+Can a single criterion serve both invention and truth?
+
+Is the convergence of invention and truth the goal of inquiry?
+
+Or is the goal the maintenance of the distinction between them?
+
+---
+
+Can the distinction between invention and discovery be reinvented?
+
+Does reinventing the distinction change what falls on each side?
+
+Can the boundary be drawn differently?
+
+Is every drawing of the boundary an inventive act?
+
+Does the inventive drawing of a boundary create the categories it separates?
+
+Are categories created or discovered?
+
+If categories are created, is taxonomy an inventive discipline?
+
+Is the Linnaean classification an invention?
+
+Does the invention of classification systems shape what can be known?
+
+Does what can be known shape what can be invented?
+
+Is the mutual shaping of knowledge and invention the fundamental dynamic of intellectual history?
+
+Can intellectual history be understood without the concept of invention?
+
+---
+
+## Terminal Recursion
+
+Does this file end, or does it merely stop?
+
+Is the stopping of an inquiry different from its completion?
+
+Can an inquiry into invention ever be complete?
+
+Does the incompleteness of the inquiry demonstrate the inexhaustibility of invention?
+
+Is the inexhaustibility of invention a cause for celebration or despair?
+
+Can one celebrate and despair simultaneously?
+
+Is the simultaneous experience of celebration and despair itself an invention of the human condition?
+
+Is the human condition an invention or a given?
+
+If it is a given, who or what gave it?
+
+If it is an invention, who invented it?
+
+Does the question of origin always lead to a regress?
+
+Is the regress of origins the deepest regress in the philosophy of invention?
+
+---
+
+Can the regress be embraced rather than resolved?
+
+Is the embrace of regress a philosophical invention?
+
+Does embracing regress change its character from a problem to a feature?
+
+Is the transformation of problems into features the essence of invention?
+
+Does every invention transform a problem into a feature?
+
+Is the transformation permanent or temporary?
+
+Does the temporariness of the transformation guarantee the perpetuity of invention?
+
+Is perpetual invention the human condition?
+
+If perpetual invention is the human condition, is the question "what is invention?" the question "what is it to be human?"
+
+Does the convergence of the question of invention with the question of humanity close the circle of inquiry?
+
+Is a closed circle a completion or a trap?
+
+Does the answer depend on whether one is inside or outside the circle?
+
+Can one step outside the circle of invention?
+
+Is the attempt to step outside itself an inventive act?
+
+Does the impossibility of stepping outside the circle of invention confirm that invention is inescapable?
+
+Is the inescapability of invention the final insight of this inquiry?
+
+Can a final insight be followed by further insights?
+
+Does the concept of finality apply to invention?
+
+Is the refusal of finality the most inventive gesture of all?
+
+Does the question that refuses to end itself constitute an invention without closure?

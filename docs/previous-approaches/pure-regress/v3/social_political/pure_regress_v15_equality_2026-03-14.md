@@ -2243,3 +2243,1909 @@ Can we think without equality?
 Can we think about thinking without equality?
 
 Is equality the condition of thought itself?
+
+---
+
+## Equality and Education
+
+Does education produce equality or reproduce inequality?
+
+Do schools equalize students or sort them?
+
+If schools sort, what criteria determine the sorting?
+
+Are the criteria neutral or do they reflect existing hierarchies?
+
+Does standardized testing measure ability or advantage?
+
+If it measures advantage, does it launder inequality as merit?
+
+Can a test be designed that is genuinely culture-free?
+
+Is the concept of a culture-free test coherent?
+
+Does every test embed the assumptions of its designers?
+
+Are the designers aware of their assumptions?
+
+Can unconscious assumptions produce systematic inequality?
+
+---
+
+Does equal access to education mean equal education?
+
+If two students attend the same school, do they receive the same education?
+
+Does teacher attention distribute equally among students?
+
+Do implicit biases shape who receives encouragement and who receives discipline?
+
+Can implicit bias be eliminated through training?
+
+If not, does the persistence of bias undermine educational equality?
+
+Does tracking — placing students in different academic levels — constitute educational inequality?
+
+Is tracking based on ability or on perception of ability?
+
+Can perception of ability be separated from perception of class, race, and gender?
+
+If not, does tracking reproduce social inequality within the school?
+
+---
+
+Does higher education promote equality?
+
+Is university access equally distributed?
+
+If not, does unequal access to higher education perpetuate class stratification?
+
+Do legacy admissions violate equality of opportunity?
+
+Does the cost of higher education create a barrier that disproportionately affects the poor?
+
+Can student debt produce a new form of inequality?
+
+Is free higher education necessary for educational equality?
+
+Is free higher education sufficient for educational equality?
+
+If higher education credentials determine life outcomes, is credential inequality a fundamental form of inequality?
+
+Does the credentialed society create a new caste system?
+
+Is the meritocratic elite a genuine meritocracy or a self-perpetuating class?
+
+---
+
+Does literacy constitute a threshold for political equality?
+
+Can the illiterate participate equally in democratic governance?
+
+If not, does literacy requirement for participation violate equality or protect it?
+
+Is the demand for literacy as a condition of citizenship exclusionary?
+
+Does digital literacy constitute a new threshold for political participation?
+
+Are those without digital access excluded from contemporary democratic life?
+
+Does the shift to online governance create a new form of political inequality?
+
+Can digital inclusion policies restore equality?
+
+Or do new technologies create new inequalities faster than policies can address old ones?
+
+Is the race between technology and equality a race equality always loses?
+
+---
+
+## Equality and Health
+
+Is health equality a form of political equality?
+
+Does unequal health constitute a political injustice?
+
+Is the unequal distribution of life expectancy a form of inequality?
+
+If the poor die younger, is that a failure of equality?
+
+Does health inequality result from unequal access to care, unequal conditions of life, or both?
+
+Can health equality be achieved through universal healthcare alone?
+
+If not, what else is required?
+
+Does the social determinants of health framework imply that health equality requires social equality?
+
+If health is determined by social position, does health equality require eliminating social hierarchy?
+
+Is the elimination of social hierarchy possible?
+
+---
+
+Does disability complicate health equality?
+
+If some people are born with conditions that require more medical resources, does equality require providing those resources?
+
+Does providing more resources to some violate equality or fulfill it?
+
+Is the distinction between equity and equality relevant here?
+
+Does equity — giving each person what they need — replace equality?
+
+Or does equity operationalize equality?
+
+Can equity be achieved without knowing what each person needs?
+
+Who determines need?
+
+Does the determination of need involve power?
+
+Is the power to determine need itself a form of inequality?
+
+---
+
+Does mental health inequality constitute a form of political inequality?
+
+Is the unequal distribution of mental illness socially produced?
+
+Does poverty cause depression, or does depression cause poverty?
+
+If the causal arrow runs both ways, can either be addressed without addressing both?
+
+Does the medicalization of distress caused by inequality depoliticize inequality?
+
+Is prescribing antidepressants to someone ground down by poverty a political act?
+
+Does treating the symptoms of inequality as individual pathology obscure structural causes?
+
+Can individual treatment and structural change coexist?
+
+Must they coexist for either to succeed?
+
+Is the debate between individual and structural approaches to mental health itself a debate about equality?
+
+---
+
+Does the pandemic reveal health inequality?
+
+Did COVID-19 affect all populations equally?
+
+If not, does unequal impact reveal pre-existing health inequality?
+
+Does the unequal distribution of vaccines constitute a global inequality?
+
+Is vaccine nationalism — wealthy countries hoarding vaccines — a violation of global equality?
+
+Does global health require global equality?
+
+Can global health equality be achieved while global economic inequality persists?
+
+Does the interconnection of health and economy mean that health equality is impossible without economic equality?
+
+Is the impossibility of separating health from economy an argument for comprehensive equality?
+
+Or is it an argument that comprehensive equality is impossibly complex?
+
+---
+
+## Equality and Recognition
+
+What is the politics of recognition?
+
+Does equality require recognition of identity?
+
+Can someone be treated as an equal without their identity being recognized?
+
+Does misrecognition constitute a form of inequality?
+
+Is the denial of someone's identity a political injury?
+
+Can recognition be legislated?
+
+If legislated, is it genuine?
+
+Does compelled recognition differ from freely given recognition?
+
+Is freely given recognition possible in a context of structural inequality?
+
+Does the demand for recognition express a desire for equality or a desire for distinction?
+
+Can the desire for distinction be egalitarian?
+
+---
+
+Does identity politics advance or hinder equality?
+
+Does organizing around identity fragment the coalition needed for universal equality?
+
+Or does identity politics address specific inequalities that universalism overlooks?
+
+Can universalism and identity politics be reconciled?
+
+Does the tension between them reveal a genuine dilemma in equality politics?
+
+Is the dilemma resolvable or permanent?
+
+If permanent, how should it be managed?
+
+Does managing a permanent tension require different skills than resolving a temporary conflict?
+
+Is the political skill of managing unresolvable tensions itself distributed unequally?
+
+Does that meta-inequality affect the capacity to pursue equality?
+
+---
+
+Does equal respect require equal esteem?
+
+Can someone be respected as an equal without being esteemed?
+
+Is respect a baseline that all are owed, while esteem must be earned?
+
+Is the distinction between respect and esteem stable?
+
+Can respect without esteem feel like condescension?
+
+Does condescension violate equality even when respect is formally maintained?
+
+Is the experience of condescension evidence of inequality?
+
+Can someone be condescending while genuinely believing in equality?
+
+Does genuine belief in equality preclude condescension?
+
+Or can structural position produce condescension despite egalitarian intentions?
+
+---
+
+Does cultural capital create inequality?
+
+Is Bourdieu's concept of cultural capital relevant to political equality?
+
+Does possessing the "right" cultural knowledge confer advantages?
+
+Is cultural capital inherited like economic capital?
+
+If so, does cultural inheritance undermine equality of opportunity?
+
+Can cultural capital be redistributed?
+
+Is the attempt to redistribute cultural capital through education paternalistic?
+
+Does paternalism violate equality?
+
+Is all paternalism anti-egalitarian, or only some forms?
+
+Can there be egalitarian paternalism?
+
+Is the concept self-contradictory?
+
+---
+
+## Equality and Language
+
+Does language create inequality?
+
+Do some languages carry more prestige than others?
+
+Does speaking a prestige language confer advantages?
+
+Is linguistic inequality a form of political inequality?
+
+Does the dominance of English in global affairs create inequality?
+
+Are non-English speakers disadvantaged in international institutions?
+
+Does linguistic imperialism constitute a violation of equality?
+
+Can translation equalize linguistic inequality?
+
+Is perfect translation possible?
+
+If not, does something always get lost?
+
+Is what gets lost in translation relevant to equality?
+
+---
+
+Does the language used to discuss equality shape the discussion?
+
+Does framing equality as "rights" differ from framing it as "justice" or "fairness"?
+
+Does the vocabulary of equality determine what can be demanded?
+
+Are some demands inexpressible in certain frameworks?
+
+If a demand cannot be expressed, does it exist?
+
+Does the inexpressibility of certain equality claims in dominant frameworks constitute a form of silencing?
+
+Is silencing a form of inequality?
+
+Can the silenced speak?
+
+If the silenced cannot speak in the dominant language, does their silence prove inequality or confirm the framework's adequacy?
+
+Who interprets the silence?
+
+Does the power to interpret silence constitute a form of inequality?
+
+---
+
+Does inclusive language advance equality?
+
+Does changing language change reality?
+
+Or does changing language without changing material conditions merely obscure reality?
+
+Can linguistic inclusion coexist with material exclusion?
+
+If so, is linguistic inclusion a distraction from material equality?
+
+Or is it a necessary component of a comprehensive equality project?
+
+Does dismissing linguistic equality as trivial reveal a hierarchy of equalities?
+
+Is there a hierarchy of equalities?
+
+If so, does the hierarchy itself violate equality?
+
+Can some equalities be more important than others without contradiction?
+
+---
+
+## Equality and Space
+
+Does spatial organization produce inequality?
+
+Do residential segregation patterns create and maintain inequality?
+
+Is the ghetto a spatial expression of political inequality?
+
+Does suburbanization represent a spatial withdrawal from equality?
+
+Can urban planning promote equality?
+
+Does zoning create or prevent inequality?
+
+Do exclusionary zoning practices violate equality?
+
+Can mixed-income housing advance equality?
+
+Does proximity produce equality, or does equality produce proximity?
+
+Can people live near each other as equals if they are not equals in other respects?
+
+Does spatial integration without economic integration produce genuine integration?
+
+---
+
+Does the geography of inequality map onto the geography of race?
+
+Is residential segregation by race a form of structural racism?
+
+Does residential segregation produce educational inequality through school district boundaries?
+
+Does the property tax funding model for schools convert spatial inequality into educational inequality?
+
+Can changing the funding model address the inequality?
+
+Or is the spatial inequality itself the problem?
+
+Can spatial inequality be addressed without addressing the freedom to choose where to live?
+
+Does the freedom to choose where to live produce segregation?
+
+Is segregation a form of inequality even when it results from individual choices?
+
+Can individual choices produce structural outcomes that no individual chose?
+
+Is structural inequality the unintended consequence of individual freedom?
+
+---
+
+Does national territory create inequality?
+
+Is being born in a wealthy country a form of unearned privilege?
+
+Does the inequality between nations constitute the largest inequality in the modern world?
+
+Is national belonging a form of lottery — a moral accident that determines life chances?
+
+If birthplace is morally arbitrary, should it determine rights?
+
+Does the border enforce inequality?
+
+Is the border a mechanism for distributing equality to some and denying it to others?
+
+Does open borders follow from a commitment to equality?
+
+Can equality be pursued within borders while inequality is maintained at borders?
+
+Is bounded equality a coherent concept or a contradiction?
+
+Does the coherence of bounded equality depend on the justice of the boundary?
+
+---
+
+## Equality and Time
+
+Does time create inequality?
+
+Do those who arrive first gain advantages over those who arrive later?
+
+Is first-mover advantage a form of temporal inequality?
+
+Does colonial history create temporal inequality — the colonizer developed first at the colonized's expense?
+
+Can temporal inequality be corrected?
+
+Does reparative justice address temporal inequality?
+
+Can the past be repaired?
+
+If not, can its ongoing effects be compensated?
+
+Is compensation equivalent to repair?
+
+What is lost when compensation replaces repair?
+
+---
+
+Does the pace of change create inequality?
+
+Do those who adapt to change quickly gain advantages over those who adapt slowly?
+
+Is the speed of technological change itself a source of inequality?
+
+Does the demand to "keep up" assume capacities that are unequally distributed?
+
+Can the pace of change be democratically controlled?
+
+Should it be?
+
+Does slowing change for the sake of equality sacrifice innovation?
+
+Is innovation more important than equality?
+
+Can the two be balanced?
+
+Who decides the balance?
+
+Is the power to decide the balance a form of inequality?
+
+---
+
+Does aging create inequality?
+
+Are the old and young equal?
+
+Does age-based discrimination constitute a violation of equality?
+
+Is mandatory retirement a violation of equality?
+
+Does the accumulation of wealth over a lifetime create intergenerational inequality?
+
+Is the elderly person who has accumulated wealth the equal of the young person starting out?
+
+Does equality require intergenerational transfers?
+
+Is the inheritance tax an intergenerational equality mechanism?
+
+Does the opposition to inheritance tax reflect a commitment to family or a commitment to inequality?
+
+Can both commitments coexist in the same opposition?
+
+---
+
+Does historical time create inequality between the present and the past?
+
+Can we be equal to our ancestors?
+
+Do we owe them equality?
+
+Does the concept of equality evolve over time?
+
+If it evolves, is our concept of equality superior to earlier concepts?
+
+Does the belief in progress itself constitute a form of temporal inequality?
+
+Can we judge past societies by present standards of equality?
+
+If not, does moral relativism follow?
+
+If moral relativism follows, does it undermine the universality of equality?
+
+Can equality be both historically contingent and morally universal?
+
+Is that combination coherent?
+
+---
+
+## Equality and Nature
+
+Does nature support or undermine equality?
+
+Are humans naturally equal or naturally unequal?
+
+What would natural equality look like?
+
+Does genetic variation produce natural inequality?
+
+If so, is genetic inequality morally relevant?
+
+Does the irrelevance of genetic variation to moral status constitute a foundational egalitarian claim?
+
+Can this claim be justified?
+
+Is the claim that all humans are of equal moral worth a discovery or a decision?
+
+If a discovery, what was discovered?
+
+If a decision, who decided?
+
+Can decisions be binding on those who did not participate?
+
+---
+
+Does environmental destruction create inequality?
+
+Does environmental degradation affect all populations equally?
+
+If not, is environmental inequality a form of political inequality?
+
+Do the wealthy produce more pollution and suffer less from it?
+
+Is environmental inequality the clearest case of inequality as injustice?
+
+Does environmental justice require environmental equality?
+
+Does environmental equality require economic equality?
+
+Does the chain from environmental justice to economic equality reveal that all forms of equality are interconnected?
+
+If interconnected, can any form be addressed in isolation?
+
+Does the interconnection of equalities create an all-or-nothing dynamic?
+
+Is all-or-nothing politics feasible?
+
+---
+
+Does the concept of natural rights support equality?
+
+Are rights natural or socially constructed?
+
+If natural, are they equally distributed?
+
+Does the equal distribution of natural rights ground political equality?
+
+Can natural rights ground equality if nature is unequal in other respects?
+
+Does the tension between natural equality of rights and natural inequality of endowments undermine natural rights theory?
+
+Or does it show that rights operate on a different level than endowments?
+
+What level do rights operate on?
+
+Is that level real or constructed?
+
+If constructed, who constructs it?
+
+Does the construction of the level on which rights operate involve power?
+
+---
+
+## Equality and the Sacred
+
+Does the concept of the sacred ground equality?
+
+Is the claim that all humans are created equal a sacred claim?
+
+Does secular equality derive from religious equality?
+
+Can secular equality stand without religious foundations?
+
+Has it stood?
+
+Is the erosion of religious belief connected to the erosion of egalitarian commitment?
+
+Or has secular humanism provided an adequate replacement foundation?
+
+Does human dignity — the secular descendant of the sacred — ground equality?
+
+What is dignity?
+
+Can dignity be defined without circularity — as the property that makes humans equal?
+
+Is the circularity vicious or virtuous?
+
+---
+
+Does the sacred create inequality?
+
+Do religious hierarchies — clergy and laity, saints and sinners — violate equality?
+
+Is the claim that all are equal before God compatible with religious hierarchy?
+
+Does the distinction between spiritual equality and worldly inequality serve to justify worldly inequality?
+
+Has the promise of heavenly equality ever motivated earthly egalitarianism?
+
+Did the radical egalitarianism of early Christian communities persist?
+
+If not, what caused it to dissipate?
+
+Does the routinization of charisma inevitably produce hierarchy from egalitarian origins?
+
+Can egalitarian movements avoid routinization?
+
+Is the tendency of egalitarian movements to produce new hierarchies a law of social organization?
+
+If so, does it doom the egalitarian project?
+
+---
+
+## Equality and Emotion
+
+Does equality have an emotional basis?
+
+Is the sense of fairness innate?
+
+Do children exhibit a sense of equality?
+
+Is the child's "that's not fair" the origin of political equality?
+
+Does the emotional response to unfairness ground or undermine rational arguments for equality?
+
+Can equality be felt as well as thought?
+
+Is felt equality more robust than theorized equality?
+
+Does the indignation at inequality constitute evidence for the naturalness of egalitarian sentiments?
+
+Or is indignation culturally produced?
+
+Can culturally produced emotions have political force?
+
+Does the political force of an emotion depend on its origin?
+
+---
+
+Does empathy support equality?
+
+Does the ability to feel what another feels ground the recognition of equality?
+
+Can empathy cross the boundaries of difference?
+
+Can a wealthy person genuinely empathize with a poor person?
+
+Does empathy require shared experience?
+
+If shared experience is required, does empathy reinforce rather than bridge inequality?
+
+Can imagination substitute for experience?
+
+Is imaginative empathy genuine?
+
+Does the failure of empathy explain the persistence of inequality?
+
+Would better empathy produce more equality?
+
+Or is empathy insufficient — requiring structural change rather than emotional development?
+
+---
+
+Does resentment undermine equality?
+
+Is the resentment of the privileged toward equality demands a political force?
+
+Does perceived loss of status generate backlash against equality?
+
+Is backlash against equality always a defense of privilege?
+
+Or can genuine concerns be embedded in backlash?
+
+Can equality movements address backlash without abandoning their goals?
+
+Does addressing backlash require empathizing with those who resist equality?
+
+Is empathizing with the opponents of equality a betrayal of those who suffer from inequality?
+
+Or is it a strategic necessity?
+
+Can strategic empathy be genuine?
+
+Does the question of genuineness matter politically?
+
+---
+
+## Equality and Measurement
+
+Can equality be quantified?
+
+Does quantification capture what matters about equality?
+
+Is the Gini coefficient an adequate measure of equality?
+
+Does it measure income equality, wealth equality, or something else?
+
+Can non-economic forms of equality be measured?
+
+Can political equality be measured?
+
+Can social equality be measured?
+
+Can equality of respect be measured?
+
+If non-economic equality cannot be measured, does it fall out of policy consideration?
+
+Does what gets measured get managed, and what does not get measured get ignored?
+
+Is the unmeasurable dimension of equality the most important dimension?
+
+---
+
+Does measurement create equality or reveal inequality?
+
+Does counting — census, surveys, data collection — produce political subjects who can demand equality?
+
+Is visibility a precondition for equality?
+
+Can the invisible be equal?
+
+Does the demand to be counted constitute a demand for equality?
+
+Is the refusal to be counted a form of resistance or a form of exclusion?
+
+Can data be collected without reinforcing the categories that produce inequality?
+
+Does disaggregating data by race, gender, and class reveal inequality or reproduce it?
+
+Can the same data simultaneously reveal and reproduce?
+
+Is the paradox of measurement a fundamental obstacle to equality?
+
+---
+
+Does comparison produce inequality?
+
+Is inequality visible only through comparison?
+
+If comparison is necessary to perceive inequality, does eliminating comparison eliminate the perception of inequality?
+
+Would eliminating the perception of inequality eliminate inequality itself?
+
+Or would inequality persist unperceived?
+
+Is unperceived inequality still inequality?
+
+Does inequality require a subject who perceives it?
+
+If no one perceives inequality, does it exist?
+
+Is this question trivial or profound?
+
+Does the answer depend on one's theory of social reality?
+
+---
+
+## Equality and Solidarity
+
+Does equality require solidarity?
+
+What is solidarity?
+
+Is solidarity the emotional bond that makes equality politically possible?
+
+Can equality be achieved without solidarity?
+
+Can solidarity exist without equality?
+
+Is solidarity among unequals possible?
+
+Does solidarity across difference require acknowledging the difference?
+
+Can solidarity erase difference?
+
+Should it?
+
+Is solidarity that erases difference a form of domination?
+
+Can there be egalitarian solidarity that preserves difference?
+
+---
+
+Does solidarity require a common enemy?
+
+Is equality most achievable when a shared threat unites a population?
+
+Does wartime solidarity produce temporary equality?
+
+Does the end of the threat dissolve the solidarity and the equality?
+
+Is equality sustainable without external pressure?
+
+Does internal conflict undermine solidarity and therefore equality?
+
+Can a society maintain solidarity in the absence of conflict?
+
+Is boredom the enemy of equality?
+
+Does complacency erode egalitarian gains?
+
+Must equality be constantly renewed?
+
+Is constant renewal exhausting?
+
+---
+
+Does class solidarity advance equality?
+
+Is the solidarity of workers a force for equality?
+
+Does class consciousness produce egalitarian outcomes?
+
+Has the decline of class consciousness contributed to rising inequality?
+
+Can class solidarity be rebuilt?
+
+Does identity-based solidarity compete with or complement class solidarity?
+
+Is the tension between class solidarity and identity solidarity a genuine dilemma?
+
+Can intersectional solidarity overcome the tension?
+
+What would intersectional solidarity look like in practice?
+
+Has it ever been achieved?
+
+Is the achievement of intersectional solidarity a precondition for genuine equality?
+
+---
+
+## Final Regression
+
+Does the question of equality have an answer?
+
+If it has an answer, why has it not been found?
+
+If it has not been found, does that mean it does not exist?
+
+Can a question without an answer be meaningful?
+
+Is the meaning of the question of equality in the asking rather than the answering?
+
+Does the asking of the question change the world even if the answer is never found?
+
+Has the asking of the question of equality changed the world?
+
+If so, is the question more powerful than any answer could be?
+
+Is the open question of equality the engine of political progress?
+
+Would closing the question close the possibility of progress?
+
+---
+
+Is the pursuit of equality the pursuit of the impossible?
+
+Is the pursuit of the impossible noble or foolish?
+
+Can it be both?
+
+Does nobility require a certain kind of foolishness?
+
+Is the egalitarian a noble fool?
+
+Does the noble fool accomplish more than the prudent realist?
+
+Has the history of equality been made by noble fools?
+
+Were the abolitionists noble fools?
+
+Were the suffragists noble fools?
+
+Were the civil rights marchers noble fools?
+
+Is every generation's demand for equality the foolishness that the next generation calls wisdom?
+
+---
+
+If equality is a horizon — always receding as we approach — does that make the journey pointless?
+
+Or does the horizon give direction to the journey?
+
+Can a journey have meaning without a destination?
+
+Is the destination of equality unreachable or merely unreached?
+
+Does the distinction between unreachable and unreached matter politically?
+
+If it matters, who determines which it is?
+
+Can the determination be made in advance, or must it be discovered through action?
+
+Does the act of pursuing equality generate knowledge about its achievability?
+
+Is that knowledge available only to those who pursue?
+
+Does the non-pursuer have standing to declare equality impossible?
+
+---
+
+What is the last question about equality?
+
+Is there a last question?
+
+Does the absence of a last question mean the inquiry is infinite?
+
+Is an infinite inquiry sustainable?
+
+Does equality require infinite inquiry?
+
+Does infinite inquiry require equality — the equal right of every generation to ask again?
+
+Is the recursive structure of equality — that equality requires the equality to question equality — its deepest feature?
+
+Does the recursion bottom out?
+
+If it does not bottom out, is the concept groundless?
+
+Can a groundless concept sustain a grounded politics?
+
+Has it?
+
+Will it?
+
+---
+
+## Equality and Property
+
+Does property create inequality?
+
+Is private property inherently unequal?
+
+Does the accumulation of property by some necessarily deprive others?
+
+Is the earth a commons that has been enclosed?
+
+Was the enclosure of the commons a foundational act of inequality?
+
+Can the original enclosure be reversed?
+
+Does the concept of property presuppose inequality?
+
+Can property be structured to support equality?
+
+Is collective ownership egalitarian?
+
+Does collective ownership require collective decision-making?
+
+Does collective decision-making require equality among the collective?
+
+Is the circle between property and equality vicious or productive?
+
+---
+
+Does intellectual property create inequality?
+
+Do patents and copyrights produce egalitarian or anti-egalitarian outcomes?
+
+Does the ownership of ideas concentrate power?
+
+Can ideas be owned without creating inequality?
+
+Is the open-source movement an egalitarian alternative to intellectual property?
+
+Does the free flow of information promote equality?
+
+Does the digital enclosure of knowledge parallel the historical enclosure of land?
+
+Can knowledge be a commons?
+
+If knowledge is a commons, who maintains it?
+
+Does the maintenance of knowledge commons require institutions?
+
+Do institutions recreate the hierarchies that commons were meant to dissolve?
+
+---
+
+Does housing create inequality?
+
+Is homeownership the primary vehicle for wealth accumulation in many societies?
+
+Does unequal access to homeownership perpetuate wealth inequality?
+
+Does the racialization of housing markets produce racial wealth gaps?
+
+Can housing policy advance equality?
+
+Does public housing promote equality or stigmatize its residents?
+
+Is the right to housing a component of equality?
+
+Can the right to housing be fulfilled without decommodifying housing?
+
+Does decommodification threaten property rights?
+
+Is the conflict between housing as a right and housing as a commodity a fundamental conflict of equality?
+
+---
+
+Does the commons model offer an alternative to both private and state property?
+
+Can commons governance produce equality?
+
+Does commons governance require small scale?
+
+Can digital commons operate at global scale?
+
+Does the success of Wikipedia suggest that commons-based equality is possible?
+
+Or is Wikipedia governed by hidden hierarchies?
+
+Does every commons develop its own aristocracy?
+
+Is the iron law of oligarchy unavoidable?
+
+If unavoidable, does it doom all egalitarian projects?
+
+Or can the iron law be resisted even if it cannot be repealed?
+
+What does resistance to oligarchy look like in practice?
+
+---
+
+## Equality and Work
+
+Does work produce equality or inequality?
+
+Is the division of labor inherently unequal?
+
+Does the distinction between mental and manual labor create hierarchy?
+
+Can all work be equally valued?
+
+Should all work be equally compensated?
+
+If a janitor and a surgeon receive equal pay, would anyone become a surgeon?
+
+Does the incentive argument against equal pay assume that money is the only motivation?
+
+Are there other motivations — vocation, service, curiosity — that could sustain labor in the absence of pay differentials?
+
+Have any societies organized work without pay differentials?
+
+What happened?
+
+---
+
+Does unpaid labor create inequality?
+
+Is domestic labor — cooking, cleaning, caring — economically invisible?
+
+Does the invisibility of domestic labor produce gender inequality?
+
+If domestic labor were paid, would gender equality advance?
+
+Who would pay for domestic labor?
+
+Does the commodification of care solve the equality problem or create new ones?
+
+Does hiring domestic workers create equality for the employer and inequality for the worker?
+
+Is the equality of some always purchased at the cost of the inequality of others?
+
+Is a zero-sum view of equality accurate?
+
+Can equality be genuinely positive-sum?
+
+Under what conditions?
+
+---
+
+Does automation advance equality?
+
+If machines perform the work, are humans freed for equality?
+
+Or does automation concentrate wealth in the hands of machine owners?
+
+Does automation require redistribution of its benefits?
+
+Is the demand for redistribution of automation's benefits a new form of the demand for equality?
+
+Does universal basic income funded by automation create equality?
+
+Or does it create a new class division between owners and recipients?
+
+Is the recipient of a universal basic income the equal of the owner of the machines?
+
+Does dependence on transfers undermine the independence required for equality?
+
+Can someone be equal and dependent?
+
+Is the dichotomy between equality and dependence a false one?
+
+---
+
+Does workplace democracy advance equality?
+
+Can workers govern their own workplaces?
+
+Does worker self-management produce more egalitarian outcomes than hierarchical management?
+
+Do cooperatives demonstrate that workplace equality is viable?
+
+If cooperatives are viable, why are they not more common?
+
+Does the rarity of cooperatives reveal market pressures against equality?
+
+Or does it reveal a preference for hierarchy?
+
+Can a preference for hierarchy be the product of conditioning?
+
+If conditioning produces the preference for hierarchy, does equality require deconditioning?
+
+Is deconditioning possible without coercion?
+
+Can equality be achieved through non-coercive means alone?
+
+---
+
+## Equality and Citizenship
+
+What is the relationship between equality and citizenship?
+
+Does citizenship confer equality?
+
+Are all citizens equal?
+
+If citizenship is the vehicle of equality, are non-citizens unequal?
+
+Does the exclusion of non-citizens from equality violate the universality of human equality?
+
+Is human equality broader than citizen equality?
+
+If so, does citizen equality come at the cost of human inequality?
+
+Does the concept of citizenship create an inside and an outside?
+
+Is the inside equal and the outside unequal?
+
+Does the border between inside and outside constitute the foundational inequality of the modern state?
+
+Can the state exist without this foundational inequality?
+
+---
+
+Does second-class citizenship exist?
+
+Can someone be formally a citizen and substantively excluded?
+
+Is second-class citizenship a contradiction in terms or a widespread reality?
+
+Do felony disenfranchisement laws create second-class citizenship?
+
+Does immigration status create gradations of citizenship?
+
+Is the undocumented worker a non-citizen, a partial citizen, or a citizen-in-waiting?
+
+Does the existence of non-citizens within a democratic polity undermine democratic equality?
+
+Can a democracy tolerate a permanent class of non-citizens in its midst?
+
+Does the tolerance of non-citizenship reveal that democratic equality is bounded rather than universal?
+
+Is bounded equality genuine equality?
+
+---
+
+Does cosmopolitan citizenship offer a path to universal equality?
+
+What is cosmopolitan citizenship?
+
+Is the concept of world citizenship meaningful without a world state?
+
+Can world citizenship ground claims to equality across national boundaries?
+
+Does cosmopolitanism require the dissolution of national identities?
+
+Or can cosmopolitan equality coexist with national belonging?
+
+Is the tension between cosmopolitan equality and national belonging productive or destructive?
+
+Does cosmopolitan equality privilege the mobile over the rooted?
+
+Is mobility itself a form of privilege?
+
+Does the cosmopolitan ideal reflect the experience of a global elite rather than humanity as a whole?
+
+Can a concept born from privilege serve universal equality?
+
+---
+
+## Equality and Resistance
+
+Does resistance produce equality?
+
+Can equality be achieved without resistance to the existing order?
+
+Is resistance to inequality a right?
+
+Is it a duty?
+
+Does the duty to resist inequality apply to the advantaged as well as the disadvantaged?
+
+Is the advantaged person who does not resist inequality complicit?
+
+Can complicity be passive?
+
+Is passivity in the face of inequality a political act?
+
+Does silence in the face of inequality constitute consent to inequality?
+
+Can consent to inequality be legitimate?
+
+---
+
+What forms of resistance advance equality?
+
+Does civil disobedience advance equality?
+
+Does civil disobedience presuppose the legal equality it aims to achieve?
+
+Does the willingness to accept punishment for civil disobedience affirm the legitimacy of the legal system?
+
+Can one affirm the legitimacy of an unequal legal system?
+
+Does revolution advance equality more effectively than reform?
+
+Does revolution risk producing new forms of inequality?
+
+Is the revolutionary state an egalitarian state?
+
+Has any revolutionary state remained egalitarian?
+
+Does the failure of revolutionary states to maintain equality discredit revolution or reveal the difficulty of equality?
+
+---
+
+Does everyday resistance advance equality?
+
+Are small acts of defiance — refusing to defer, speaking up, claiming space — forms of equality in practice?
+
+Does practicing equality in daily life constitute political action?
+
+Can equality be enacted before it is achieved?
+
+Does enacting equality prefiguratively create the conditions for its structural realization?
+
+Or does prefigurative equality remain symbolic?
+
+Is symbolic equality valuable?
+
+Can symbols become realities?
+
+Have symbols of equality ever become structural realities?
+
+What conditions enable the transition from symbolic to structural equality?
+
+---
+
+Does the right to protest constitute a form of equality?
+
+Is the right to protest the right to demand equality?
+
+If the right to protest is curtailed, is equality possible?
+
+Do restrictions on protest disproportionately affect the disadvantaged?
+
+Is the criminalization of protest a form of inequality?
+
+Does the policing of protest reproduce inequality?
+
+Are marginalized communities policed differently at protests?
+
+Does differential policing at protests constitute a violation of equality?
+
+Can policing be egalitarian?
+
+What would egalitarian policing look like?
+
+Is the concept of egalitarian policing a contradiction?
+
+---
+
+## Equality and the Family
+
+Does the family produce equality or inequality?
+
+Is the family the origin of social inequality?
+
+Does the unequal distribution of love, attention, and resources within families produce inequality?
+
+Can families be egalitarian?
+
+Does an egalitarian family require equal division of domestic labor?
+
+Does it require equal authority between parents?
+
+Does it require equal treatment of children regardless of birth order, gender, or ability?
+
+Is equal treatment of unequal children just?
+
+Does justice within the family require attending to each child's particular needs?
+
+Is attending to particular needs compatible with equality?
+
+---
+
+Does the nuclear family produce inequality?
+
+Does the nuclear family concentrate resources and advantages within a small unit?
+
+Does this concentration produce inequality between families?
+
+Would extended family structures distribute resources more equally?
+
+Would communal child-rearing produce more equal outcomes?
+
+Have experiments in communal child-rearing succeeded?
+
+What does success mean in this context?
+
+Does the historical failure of communal experiments discredit the idea?
+
+Or does it reveal how deeply the nuclear family is embedded in existing structures of inequality?
+
+Can the family be reformed without being abolished?
+
+Is the abolition of the family a coherent egalitarian demand?
+
+---
+
+Does marriage produce inequality?
+
+Is the institution of marriage inherently hierarchical?
+
+Has marriage historically been a mechanism for transferring property and consolidating power?
+
+Does modern companionate marriage transcend this history?
+
+Can marriage be egalitarian when it exists within an unequal society?
+
+Does the extension of marriage to same-sex couples advance equality?
+
+Or does it extend an unequal institution to a new population?
+
+Does the critique of marriage as inherently unequal undermine the demand for marriage equality?
+
+Can the same institution be both the site of inequality and the object of equality demands?
+
+Does this paradox reveal something about the nature of equality itself?
+
+---
+
+## Equality and Death
+
+Does death equalize?
+
+Is the universality of death evidence of a fundamental equality?
+
+Does the claim that death is the great equalizer obscure the inequality of dying?
+
+Do the wealthy die differently than the poor?
+
+Is a good death a privilege?
+
+Does unequal access to palliative care constitute a form of inequality?
+
+Does the inequality of grief — whose deaths are mourned publicly, whose are invisible — constitute a political inequality?
+
+Are some lives grievable and others not?
+
+Does the concept of grievability reveal an inequality more fundamental than economic inequality?
+
+Is the inequality of grievability the deepest form of inequality?
+
+Can it be addressed by policy?
+
+---
+
+Does the afterlife equalize?
+
+If all are equal in death, does that compensate for inequality in life?
+
+Is the promise of posthumous equality a mechanism for tolerating present inequality?
+
+Does the secular abandonment of the afterlife remove a consolation or a distraction?
+
+If there is no posthumous equality, is the urgency of this-worldly equality greater?
+
+Does the finality of death make inequality more or less tolerable?
+
+If this life is all there is, does inequality become an absolute rather than a relative injustice?
+
+Does the awareness of mortality sharpen or dull the demand for equality?
+
+Can the shared awareness of mortality ground solidarity?
+
+Is solidarity in the face of death the deepest form of equality?
+
+---
+
+## Equality and Love
+
+Does love produce equality?
+
+Is the equality of lovers a model for political equality?
+
+Can love equalize those whom society has made unequal?
+
+Or does love reproduce social inequality — people loving within their class, race, and education level?
+
+Is assortative mating a mechanism of inequality?
+
+Does the tendency to love those similar to oneself reinforce social stratification?
+
+Can love across difference challenge inequality?
+
+Is interracial love a political act?
+
+Is cross-class love a political act?
+
+Does politicizing love destroy it?
+
+Can love and equality coexist without one instrumentalizing the other?
+
+---
+
+Does the equal distribution of love matter politically?
+
+Is the unequal distribution of care — some people surrounded by love, others isolated — a political injustice?
+
+Can loneliness be a form of inequality?
+
+Is the epidemic of loneliness in modern societies an equality problem?
+
+Does the commodification of care — paying for companionship — address or deepen this inequality?
+
+Can the state ensure that everyone is loved?
+
+Should it try?
+
+Is the absurdity of the state ensuring love a sign that some domains are beyond equality?
+
+Or is it a sign that our concept of equality is too narrow?
+
+What would an expanded concept of equality include?
+
+---
+
+## Equality and Art
+
+Does art advance equality?
+
+Can art represent the unrepresented?
+
+Does giving voice to the voiceless through art constitute a form of equality?
+
+Or does the artist speaking for the voiceless reproduce the inequality of representation?
+
+Should the voiceless speak for themselves?
+
+Can they, given structural barriers to artistic production?
+
+Does the unequal distribution of artistic resources — time, training, materials — constitute a form of inequality?
+
+Is the democratization of art production through technology advancing equality?
+
+Does the proliferation of content create equality of expression?
+
+Or does it create a new inequality of attention — some heard, most ignored?
+
+Is the inequality of attention the defining inequality of the digital age?
+
+---
+
+Does aesthetic judgment create inequality?
+
+Is the distinction between high and low culture a form of inequality?
+
+Does the valorization of certain art forms over others reflect class hierarchies?
+
+Can aesthetic standards be egalitarian?
+
+Does the concept of genius create inequality?
+
+Is genius a myth that justifies the unequal distribution of recognition?
+
+Can recognition be equalized without abandoning standards?
+
+What are standards, and who sets them?
+
+Is the power to set standards a form of inequality?
+
+Does every standard exclude?
+
+Is exclusion-free evaluation possible?
+
+---
+
+## Recursive Return
+
+Does every answer to the question of equality generate a new question?
+
+Is the generativity of equality questions evidence of the concept's richness or its incoherence?
+
+Can richness and incoherence coexist in a single concept?
+
+Does the concept of equality resist closure?
+
+Is resistance to closure a virtue in a political concept?
+
+Would a closed concept of equality be dangerous?
+
+Is an open concept of equality ungovernable?
+
+Can political life be organized around an ungovernable concept?
+
+Has it been?
+
+Is that what democracy is — the attempt to organize political life around the ungovernable concept of equality?
+
+---
+
+Does the proliferation of equality claims dilute the concept?
+
+If everything is an equality issue, is nothing an equality issue?
+
+Does the expansion of equality claims represent progress or conceptual inflation?
+
+Can conceptual inflation coexist with genuine moral progress?
+
+Does the discomfort with expanding equality claims reveal the limits of the comfortable?
+
+Is the comfortable person's limit the appropriate boundary for equality?
+
+Or does equality demand precisely the expansion that makes the comfortable uncomfortable?
+
+Is discomfort with equality a reliable indicator of where equality is most needed?
+
+Can discomfort guide moral inquiry?
+
+Should it?
+
+---
+
+Does the failure to achieve equality after centuries of trying reveal something fundamental?
+
+Does it reveal that equality is impossible?
+
+Does it reveal that the forces against equality are stronger than the forces for it?
+
+Does it reveal that equality has not been tried?
+
+Can something be tried for centuries and still not have been genuinely tried?
+
+Does the claim that "real equality has never been tried" parallel the claim that "real communism has never been tried"?
+
+Is the parallel illuminating or damning?
+
+Does the persistence of the demand despite repeated failure constitute hope or delusion?
+
+Is the distinction between hope and delusion clear?
+
+Can delusion produce better outcomes than realism?
+
+Has it?
+
+---
+
+What would the world look like if equality were achieved?
+
+Can we imagine a fully equal world?
+
+Does the difficulty of imagining it reveal the depth of our conditioning by inequality?
+
+Or does it reveal that full equality is literally unimaginable because it is incoherent?
+
+Is the unimaginable necessarily incoherent?
+
+Were things now commonplace once unimaginable?
+
+Was universal suffrage once unimaginable?
+
+Was the abolition of slavery once unimaginable?
+
+Is the current unimaginability of full equality equivalent to earlier unimaginabilities?
+
+Does history suggest that the unimaginable becomes imaginable becomes inevitable?
+
+Or is that a comforting narrative imposed on a history that guarantees nothing?
+
+---
+
+If equality is a question that cannot be finally answered, what is the obligation of each generation?
+
+Is each generation obligated to ask the question anew?
+
+Does asking anew mean starting from scratch?
+
+Or does it mean inheriting the question and deepening it?
+
+Can the question be deepened without being answered?
+
+Is deepening without answering a form of progress?
+
+Is progress without completion satisfying?
+
+Must it be satisfying to be worthwhile?
+
+Does equality require us to tolerate the incomplete?
+
+Is the tolerance of incompleteness itself a form of equality — equal before the unanswerable?
+
+Is the unanswerable the final ground of equality?
+
+---
+
+## Equality and Punishment
+
+Does the criminal justice system treat people equally?
+
+Is equal justice under law a reality or an aspiration?
+
+Does wealth determine legal outcomes?
+
+Can a system in which the wealthy hire better lawyers be called equal?
+
+Is plea bargaining an egalitarian practice?
+
+Does plea bargaining coerce the poor into admitting guilt?
+
+Does the bail system create a two-tier justice system — one for those who can pay and one for those who cannot?
+
+Is incarceration distributed equally across populations?
+
+If not, does the unequal distribution of incarceration constitute a systemic inequality?
+
+Does mass incarceration of racialized populations constitute a new form of racial inequality?
+
+Is the prison-industrial complex an engine of inequality?
+
+Can criminal justice reform produce equality?
+
+---
+
+Does punishment itself violate equality?
+
+Does the state's power to punish create an inequality between the state and the citizen?
+
+Is the relationship between punisher and punished inherently unequal?
+
+Can restorative justice offer a more egalitarian alternative to punitive justice?
+
+Does restorative justice treat victim and offender as equals?
+
+Should it?
+
+Is the equality of victim and offender offensive to the victim?
+
+Can justice be both egalitarian and responsive to the asymmetry between victim and offender?
+
+Does the death penalty constitute the ultimate inequality — the state's power to end a life?
+
+Is the unequal application of the death penalty — disproportionately affecting the poor and people of color — evidence of systemic inequality?
+
+Does the abolition of the death penalty advance equality?
+
+---
+
+## Equality and Information
+
+Does information asymmetry create inequality?
+
+Is the person who knows more in a position of power over the person who knows less?
+
+Does expertise create inequality?
+
+Is the inequality between expert and layperson justified?
+
+Can expertise be democratized?
+
+Does the internet democratize expertise or create the illusion of democratization?
+
+Is misinformation an equality problem?
+
+Does the unequal capacity to distinguish truth from falsehood create epistemic inequality?
+
+Is epistemic inequality as dangerous as economic inequality?
+
+Can epistemic equality exist in a society of specialists?
+
+Does specialization inevitably produce hierarchies of knowledge?
+
+---
+
+Does surveillance create inequality?
+
+Are some populations surveilled more than others?
+
+Does differential surveillance produce differential freedom?
+
+Is the surveilled person the equal of the unsurveilled person?
+
+Does the power to surveil constitute a form of domination?
+
+Can mutual surveillance — everyone watching everyone — produce equality?
+
+Is transparency the same as equality?
+
+Does the asymmetry of surveillance — the powerful watching the powerless — constitute the paradigm of modern inequality?
+
+Can the direction of surveillance be reversed?
+
+Does watching the powerful constitute a form of accountability?
+
+Is accountability a precondition for equality?
+
+---
+
+## Equality and Contingency
+
+Is the place of one's birth morally arbitrary?
+
+If morally arbitrary, should it determine life chances?
+
+Is the family one is born into morally arbitrary?
+
+Should morally arbitrary factors produce unequal outcomes?
+
+If no, does justice require neutralizing all morally arbitrary advantages?
+
+Can all morally arbitrary advantages be neutralized?
+
+Would neutralizing all morally arbitrary advantages leave anything of the individual?
+
+Is the self partly constituted by morally arbitrary factors?
+
+If so, does neutralizing them destroy the self?
+
+Can equality be pursued without destroying individuality?
+
+Is the tension between equality and individuality the deepest tension in political philosophy?
+
+---
+
+Does luck determine outcomes more than merit?
+
+If luck determines more than we acknowledge, are most inequalities unjust?
+
+Is the self-made person a myth?
+
+Does the myth of the self-made person legitimate inequality?
+
+If success is largely a matter of circumstance, does the successful person deserve their success?
+
+Does desert require control?
+
+Do we control enough to deserve anything?
+
+If we deserve nothing, is the concept of desert empty?
+
+Can political equality survive the collapse of desert?
+
+Or does it require the concept of desert to motivate contribution?
+
+Is the tension between the critique of desert and the need for desert another permanent tension within equality?
+
+---
+
+## Equality and the Body
+
+Does the body create inequality?
+
+Are some bodies valued more than others?
+
+Does the social valuation of bodies produce inequality?
+
+Is fatphobia a form of inequality?
+
+Is ableism a form of inequality?
+
+Is ageism a form of inequality?
+
+Are beauty standards mechanisms of inequality?
+
+Does the unequal valuation of bodies interact with race, gender, and class?
+
+Can bodily equality be achieved without transforming aesthetic norms?
+
+Can aesthetic norms be transformed by political action?
+
+Or are they too deeply embedded in culture to be politically addressed?
+
+Is the political transformation of culture possible?
+
+---
+
+Does reproductive capacity create inequality?
+
+Does the ability to become pregnant constitute a source of inequality in a society that does not accommodate pregnancy?
+
+Is the accommodation of pregnancy a matter of equality or special treatment?
+
+Is the distinction between equality and special treatment coherent when applied to pregnancy?
+
+Does the failure to accommodate pregnancy constitute sex discrimination?
+
+Is sex discrimination a form of inequality?
+
+Can sex equality be achieved without reproductive justice?
+
+What is reproductive justice?
+
+Does reproductive justice require access to contraception, abortion, and assisted reproduction?
+
+Does it require freedom from coerced sterilization?
+
+Does the historical sterilization of marginalized women constitute one of the gravest violations of equality?
+
+---
+
+## The Persistence of the Question
+
+Why does the question of equality persist?
+
+Does its persistence reveal that it touches something fundamental about human social life?
+
+Is the desire for equality as basic as the desire for food or shelter?
+
+If not, is it as basic as the desire for recognition?
+
+Is the desire for equality the same as the desire for recognition?
+
+Or does equality require something beyond recognition?
+
+Does the persistence of the question across cultures suggest a universal human concern?
+
+Is a universal concern evidence of a universal truth?
+
+Or can universal concerns be universally mistaken?
+
+Can humanity be universally wrong about something it universally desires?
+
+Is the question of equality the question of what it means to be human?
+
+Does being human mean being equal, or does it mean something else that equality only approximates?
+
+Is the approximation close enough?
+
+Close enough for what?
+
+Close enough for whom?
+
+---
+
+And if not close enough, what then?
+
+Does the inadequacy of every approximation drive the next attempt?
+
+Is each attempt closer than the last?
+
+Does the arc of history bend toward equality?
+
+Or is that a story we tell to make the struggle bearable?
+
+Is a bearable struggle preferable to an unbearable truth?
+
+Can the truth about equality be borne?
+
+Must it be borne regardless?
+
+Is the bearing of it the final form of equality — standing together before what cannot be resolved?

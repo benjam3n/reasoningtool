@@ -2739,3 +2739,1433 @@ Is everything about fortune a matter of fortune?
 Is the question of fortune itself fortunate?
 
 Is it fortunate that we can ask what fortune is?
+
+---
+
+## Fortune and Moral Luck
+
+What is moral luck?
+
+Is moral luck a contradiction in terms?
+
+Can morality depend on luck?
+
+Does the outcome of an action change its moral status?
+
+Is the drunk driver who kills someone morally worse than the drunk driver who arrives home safely?
+
+If both drivers made the same choice, should fortune in outcome affect moral judgment?
+
+Does the law treat fortunate and unfortunate outcomes of identical choices differently?
+
+Should the law treat them differently?
+
+Is the moral difference between the two drivers real or apparent?
+
+Does moral luck undermine the foundation of moral responsibility?
+
+---
+
+Is the moral luck debate a debate about fortune?
+
+Does Thomas Nagel's account of moral luck reveal that fortune pervades morality?
+
+Is resultant luck the most troubling form of moral luck?
+
+Is circumstantial luck equally troubling?
+
+Is constitutive luck the most fundamental form of moral luck?
+
+Is constitutive luck the fortune of being the kind of person you are?
+
+Can you be morally responsible for who you are?
+
+Did you choose your moral character?
+
+If you did not choose your moral character, are you responsible for it?
+
+Is the foundation of moral agency itself a matter of fortune?
+
+---
+
+Does moral luck extend to moral knowledge?
+
+Is knowing right from wrong a matter of fortune?
+
+Is being raised with good values a matter of fortune?
+
+Is having the cognitive capacity for moral reasoning a matter of fortune?
+
+Is exposure to moral education a matter of fortune?
+
+If moral knowledge depends on fortune, is moral ignorance excusable?
+
+Is the morally ignorant person unfortunate rather than culpable?
+
+Can fortune excuse moral failure?
+
+Should fortune excuse moral failure?
+
+Where does the excuse of fortune end and moral responsibility begin?
+
+---
+
+Is the hero fortunate or virtuous?
+
+Is the coward unfortunate or vicious?
+
+Did the hero simply have the fortune of being brave?
+
+Did the coward simply have the misfortune of being fearful?
+
+Is the difference between heroism and cowardice a difference in fortune?
+
+Does this question threaten the entire edifice of moral praise and blame?
+
+Can we praise virtue if virtue is fortune?
+
+Can we blame vice if vice is misfortune?
+
+Does moral luck dissolve the distinction between the praiseworthy and the blameworthy?
+
+Is the dissolution of this distinction liberating or terrifying?
+
+---
+
+## Fortune and Suffering
+
+Is all suffering a form of bad fortune?
+
+Is chosen suffering still fortune?
+
+Is the suffering of the ascetic fortune?
+
+Can suffering be voluntarily undertaken and still count as misfortune?
+
+Does the voluntariness of suffering change its character?
+
+Is voluntary suffering sacrifice rather than misfortune?
+
+Is the distinction between sacrifice and misfortune the distinction between chosen and unchosen suffering?
+
+Can unchosen suffering become sacrifice through acceptance?
+
+Does acceptance transform misfortune into something else?
+
+What does acceptance transform misfortune into?
+
+---
+
+Is suffering the price of fortune?
+
+Does exposure to fortune guarantee eventual suffering?
+
+Is suffering the inevitable shadow of fortune?
+
+Can you have fortune without the possibility of suffering?
+
+Is the possibility of suffering the condition of the possibility of joy?
+
+Does the depth of possible suffering correlate with the height of possible joy?
+
+Is this correlation a law of fortune?
+
+Or is it a romantic projection?
+
+Can you have deep joy without deep vulnerability to suffering?
+
+Is invulnerability to suffering the same as incapacity for joy?
+
+---
+
+Does suffering teach?
+
+Does suffering always teach or only sometimes?
+
+What determines whether suffering teaches or merely damages?
+
+Is the difference between educational suffering and destructive suffering a matter of fortune?
+
+Is the person who learns from suffering fortunate in their misfortune?
+
+Is the person who is destroyed by suffering doubly unfortunate?
+
+Is there a threshold of suffering beyond which learning is impossible?
+
+Does extreme suffering exceed the capacity for meaning?
+
+Is the Holocaust an instance of fortune beyond meaning?
+
+Are there fortunes so extreme that the concept of fortune itself breaks down?
+
+---
+
+Is compassion the appropriate response to another's misfortune?
+
+Is compassion a recognition that fortune is shared?
+
+Does compassion acknowledge that your fortune could have been theirs?
+
+Is compassion possible without the recognition of shared vulnerability to fortune?
+
+Does compassion require imagination?
+
+Does compassion require imagining yourself in the other's fortune?
+
+Is the failure of compassion a failure of imagination about fortune?
+
+Can compassion be cultivated?
+
+Is cultivating compassion a preparation for fortune?
+
+Is compassion the virtue most closely tied to the awareness of fortune?
+
+---
+
+## Fortune and Language
+
+Does language shape the experience of fortune?
+
+Do different languages carve fortune differently?
+
+Is there a difference between fortune, Gluck, chance, suerte, and fortuna?
+
+Does each word carry different assumptions about the nature of fortune?
+
+Is the English word fortune itself ambivalent between luck and wealth?
+
+Does this ambivalence reveal something about English-speaking cultures?
+
+Does the German Gluck conflate happiness and luck?
+
+Does this conflation reveal something about the relationship between happiness and luck?
+
+Is the linguistic diversity of fortune-words evidence that fortune is culturally constructed?
+
+Or is it evidence that fortune is universal but variously interpreted?
+
+---
+
+Can fortune be adequately expressed in language?
+
+Does language capture fortune or merely gesture toward it?
+
+Is fortune one of those experiences that exceeds language?
+
+Does the inadequacy of language before fortune explain why people resort to religious language?
+
+Is the phrase "there but for the grace of God go I" an acknowledgment that secular language fails before fortune?
+
+Is the phrase "it was meant to be" an attempt to impose narrative on fortune?
+
+Is the phrase "everything happens for a reason" a denial of fortune?
+
+Do these common phrases reveal a deep discomfort with fortune?
+
+Is the discomfort with fortune a discomfort with meaninglessness?
+
+Is fortune always threatening to dissolve into meaninglessness?
+
+---
+
+Is the word fortune itself fortunate?
+
+Does the word fortune carry associations that shape how we think about the concept?
+
+Would we think differently about fortune if we called it something else?
+
+Does the etymology of fortune — from Fortuna, the Roman goddess — embed theological assumptions in a supposedly secular concept?
+
+Can you use the word fortune without invoking the goddess?
+
+Is every use of the word fortune an unconscious prayer?
+
+Is language about fortune always slightly religious?
+
+Can fully secular language about fortune be developed?
+
+Has probability theory developed fully secular language about fortune?
+
+Does probability theory capture what we mean by fortune or merely a part of it?
+
+---
+
+Is fortune a metaphor?
+
+Is the wheel of fortune a metaphor?
+
+Is the smile of fortune a metaphor?
+
+Is the blow of fortune a metaphor?
+
+Are all expressions of fortune metaphorical?
+
+Can fortune be expressed literally?
+
+What would a literal description of fortune look like?
+
+Would a literal description of fortune strip it of all significance?
+
+Is the significance of fortune inseparable from its metaphorical expression?
+
+Does fortune exist between the literal and the metaphorical?
+
+---
+
+## Fortune and Children
+
+Do children understand fortune?
+
+At what age does the concept of fortune become available?
+
+Is the child's cry "that's not fair" a response to fortune?
+
+Does the child conflate fortune with injustice?
+
+Is the child right to conflate them?
+
+Does the adult distinction between fortune and injustice represent maturation or resignation?
+
+Is accepting that some things are fortune rather than injustice a form of growing up?
+
+Is growing up learning to live with fortune?
+
+Is the loss of childhood innocence the recognition that fortune is not fair?
+
+Is the expectation of fairness itself a childish expectation?
+
+---
+
+Is being born to loving parents good fortune?
+
+Is being born to neglectful parents bad fortune?
+
+Does the child have any control over this fortune?
+
+Is the fortune of parenting the most consequential fortune?
+
+Does early fortune shape the capacity to handle later fortune?
+
+Does a fortunate childhood build resilience or complacency?
+
+Does an unfortunate childhood build resilience or damage?
+
+Is the relationship between early fortune and later capacity itself a matter of fortune?
+
+Is there any escaping the fortune of childhood?
+
+Does therapy attempt to process the fortune of childhood?
+
+---
+
+Do parents worry about their children's fortune?
+
+Is parental anxiety a response to the child's exposure to fortune?
+
+Is the desire to protect children a desire to shield them from fortune?
+
+Can children be shielded from fortune?
+
+Should children be shielded from fortune?
+
+Does shielding children from fortune prevent them from developing the capacity to handle it?
+
+Is helicopter parenting an attempt to eliminate fortune from childhood?
+
+Does eliminating fortune from childhood produce adults incapable of handling fortune?
+
+Is the paradox of protective parenting that it creates vulnerability to fortune?
+
+Is some exposure to fortune necessary for the development of competence?
+
+---
+
+## Fortune and Gratitude Revisited
+
+Is ingratitude for good fortune the most common moral failing?
+
+Do the fortunate take their fortune for granted?
+
+Is taking fortune for granted a universal tendency?
+
+Is gratitude for fortune a practice or a feeling?
+
+Can gratitude for fortune be practiced?
+
+Does practicing gratitude change the experience of fortune?
+
+Does practicing gratitude change fortune itself?
+
+Can the grateful person attract more good fortune?
+
+Is the belief that gratitude attracts fortune magical thinking?
+
+Or does gratitude change behavior in ways that probabilistically increase good fortune?
+
+---
+
+Is gratitude the antidote to envy?
+
+Does focusing on your own fortune reduce the sting of others' fortune?
+
+Is comparison the enemy of gratitude?
+
+Can you be grateful without comparing?
+
+Does gratitude require awareness of what you have?
+
+Does awareness of what you have require awareness of what you might not have had?
+
+Is gratitude always implicitly comparative?
+
+Is comparison always implicitly competitive?
+
+Can comparison be generous rather than competitive?
+
+Can you celebrate another's fortune without diminishing your own?
+
+---
+
+Is ingratitude a form of blindness to fortune?
+
+Is the ingrate someone who cannot see their fortune?
+
+Is the inability to see one's fortune a cognitive limitation?
+
+Is it a moral limitation?
+
+Is it an emotional limitation?
+
+Can fortune be so constant that it becomes invisible?
+
+Does the constancy of good fortune anesthetize gratitude?
+
+Does periodic misfortune awaken gratitude?
+
+Is misfortune necessary for gratitude?
+
+Is this a cruel necessity or a structural feature of consciousness?
+
+---
+
+## Fortune and Responsibility
+
+Does fortune diminish responsibility?
+
+If fortune determines outcomes, are you responsible for your outcomes?
+
+Is responsibility possible in a world governed by fortune?
+
+Is responsibility possible in a world not governed by fortune?
+
+Does responsibility require some domain of control beyond fortune?
+
+Is there any such domain?
+
+Does the shrinking of the domain of control by the expansion of recognized fortune threaten responsibility?
+
+Is the expansion of recognized fortune the expansion of excuses?
+
+At what point does attributing outcomes to fortune become an evasion of responsibility?
+
+Is the line between acknowledging fortune and evading responsibility clear?
+
+---
+
+Can you be responsible for how you respond to fortune?
+
+Is response-to-fortune the last bastion of responsibility?
+
+Is your response to fortune the only thing that is truly yours?
+
+Is this the Stoic position?
+
+Is this position adequate?
+
+Does it place too much weight on inner response and too little on outer condition?
+
+Can you responsibly respond to fortune that is overwhelming?
+
+Is the demand to respond well to overwhelming fortune a form of victim-blaming?
+
+Can the demand for resilience become oppressive?
+
+Is there a right to be devastated by misfortune?
+
+---
+
+Does society have a responsibility to mitigate fortune?
+
+Is the mitigation of fortune a collective responsibility?
+
+Does collective responsibility for fortune require collective resources?
+
+Is progressive taxation a recognition that wealth is partly fortune?
+
+Is the social safety net a recognition that poverty is partly fortune?
+
+Is universal education a recognition that ignorance is partly fortune?
+
+Is universal healthcare a recognition that illness is partly fortune?
+
+Are all social institutions attempts to distribute the burden of fortune?
+
+Should they be?
+
+Is the question of how to distribute the burden of fortune the fundamental political question?
+
+---
+
+## Fortune and Envy Revisited
+
+Is envy the shadow of fortune?
+
+Does unequal fortune inevitably produce envy?
+
+Is envy a natural response or a moral failing?
+
+Can a natural response be a moral failing?
+
+Is the universality of envy evidence that it is natural?
+
+Is the destructiveness of envy evidence that it is a failing?
+
+Can something be both natural and a failing?
+
+Does fortune create the conditions for envy?
+
+Without fortune, would there be envy?
+
+Is a world without fortune a world without envy?
+
+---
+
+Is schadenfreude a response to another's misfortune?
+
+Does schadenfreude reveal something shameful about human nature?
+
+Or does schadenfreude reveal something inevitable about the experience of fortune?
+
+Is schadenfreude the inverse of envy?
+
+Does the fortunate person's fall produce relief in the less fortunate?
+
+Is this relief morally acceptable?
+
+Is the pleasure in another's misfortune always wrong?
+
+Can schadenfreude be directed at the powerful without being morally objectionable?
+
+Is schadenfreude toward the powerful a form of justice-feeling?
+
+Is justice-feeling distinguishable from envy?
+
+---
+
+## Fortune and Games
+
+Is every game a model of fortune?
+
+Do games create controlled environments for experiencing fortune?
+
+Is the appeal of games the appeal of manageable fortune?
+
+Does the dice roll represent fortune in its purest form?
+
+Is the card shuffle a miniature wheel of fortune?
+
+Is the appeal of gambling the appeal of concentrated fortune?
+
+Does the gambler seek fortune more intensely than the non-gambler?
+
+Or does the gambler misunderstand fortune?
+
+Does the gambler believe fortune can be mastered?
+
+Is the gambler's fallacy the belief that fortune has a memory?
+
+---
+
+Does fortune have a memory?
+
+Does past fortune influence future fortune?
+
+Is the gambler's fallacy wrong in casinos but right in life?
+
+Does life-fortune exhibit dependencies that game-fortune does not?
+
+Is the independence of successive coin flips unlike the dependence of successive life events?
+
+Is life more like poker than roulette?
+
+Does skill interact with fortune in life as in poker?
+
+Is the skill-fortune interaction the key to understanding life?
+
+Can you separate the skill component from the fortune component in any outcome?
+
+Is the attempt to separate skill from fortune always somewhat arbitrary?
+
+---
+
+Is sport a theater of fortune?
+
+Does athletic competition dramatize the role of fortune?
+
+Is the bounce of the ball fortune?
+
+Is the injury at a crucial moment fortune?
+
+Is the referee's error fortune?
+
+Does the best team always win?
+
+If the best team does not always win, is the difference fortune?
+
+Is upset victory the purest expression of fortune in sport?
+
+Does the celebration of upset victory celebrate fortune?
+
+Is the love of sport a love of fortune's drama?
+
+---
+
+## Fortune and Philosophy of History
+
+Is history driven by fortune?
+
+Is the course of history a sequence of fortunes?
+
+Did the plague that struck Athens in 430 BCE change the course of Western civilization through fortune?
+
+Did the storm that scattered the Spanish Armada change history through fortune?
+
+Did the mutation that caused the 1918 influenza pandemic change history through fortune?
+
+Is every pivotal historical event traceable to fortune?
+
+Is the great-person theory of history a denial of fortune's role?
+
+Is the structural theory of history an acknowledgment of fortune's role?
+
+Can any theory of history account for fortune?
+
+Does fortune make history unpredictable in principle?
+
+---
+
+Is progress compatible with fortune?
+
+Does progress mean increasing control over fortune?
+
+Has humanity progressed in its ability to manage fortune?
+
+Is the reduction of infant mortality a triumph over fortune?
+
+Is the prevention of famine a triumph over fortune?
+
+Is the control of infectious disease a triumph over fortune?
+
+Are these triumphs permanent or provisional?
+
+Can fortune reclaim the ground that progress has taken?
+
+Is the possibility that fortune can reclaim progress a permanent source of anxiety?
+
+Is progress itself fortunate?
+
+---
+
+Is the rise and fall of civilizations a macro-fortune?
+
+Is the fortune of civilizations analogous to the fortune of individuals?
+
+Does a civilization have a wheel of fortune?
+
+Did Rome rise by fortune and fall by fortune?
+
+Does every civilization believe its fortune is permanent?
+
+Is the belief in permanent fortune the defining delusion of every civilization at its peak?
+
+Is American fortune permanent?
+
+Is Chinese fortune permanent?
+
+Is European fortune permanent?
+
+Is the question of civilizational fortune the most consequential question of any era?
+
+---
+
+## Fortune and Existentialism
+
+Is fortune the existentialist's central concern?
+
+Is thrownness another name for birth fortune?
+
+Is Heidegger's Geworfenheit the philosophical articulation of fortune?
+
+Is Sartre's radical freedom an attempt to deny fortune?
+
+Can you be radically free and subject to fortune simultaneously?
+
+Does radical freedom mean choosing your response to fortune?
+
+Is choosing your response to fortune genuine freedom or consolation prize?
+
+Is the existentialist's insistence on freedom a protest against fortune?
+
+Is the protest against fortune itself fortunate?
+
+Can you protest fortune from outside fortune?
+
+---
+
+Is absurdity the recognition that fortune is meaningless?
+
+Is Camus's Sisyphus a figure of fortune?
+
+Does Sisyphus represent the repetitive nature of fortune?
+
+Is the eternal return of the same a theory of fortune?
+
+Would you will the eternal return of your fortune?
+
+Is the willingness to will the eternal return of your fortune the test of amor fati?
+
+Can you love your fortune including its misfortunes?
+
+Is loving your misfortunes masochistic or heroic?
+
+Is the distinction between masochism and heroism in the face of fortune clear?
+
+Does the clarity of this distinction depend on the severity of the misfortune?
+
+---
+
+Is anxiety the mood of fortune?
+
+Is Kierkegaard's anxiety the anticipation of fortune?
+
+Is anxiety the experience of facing open possibility?
+
+Is open possibility another name for fortune?
+
+Is the anxious person the person most aware of fortune?
+
+Is the serene person the person least aware of fortune?
+
+Or is the serene person the most profoundly aware of fortune and at peace with it?
+
+Is peace with fortune the goal of all philosophy?
+
+Has any philosopher achieved peace with fortune?
+
+Is the philosopher's restless questioning a sign of being at war with fortune?
+
+---
+
+Is bad faith a way of hiding from fortune?
+
+Does bad faith pretend that fortune does not exist?
+
+Does bad faith pretend that outcomes were inevitable?
+
+Is the claim "I had no choice" a bad-faith denial of fortune?
+
+Is the claim "I made this happen entirely on my own" a bad-faith denial of fortune?
+
+Are both excessive fatalism and excessive voluntarism forms of bad faith about fortune?
+
+Is authentic existence an honest reckoning with fortune?
+
+Is authenticity the refusal to deny fortune?
+
+Is authenticity the refusal to be crushed by fortune?
+
+Is authenticity the narrow path between denying fortune and being overwhelmed by it?
+
+---
+
+## Fortune and Contingency
+
+Is fortune the lived experience of contingency?
+
+Is contingency the philosophical name for fortune?
+
+Does contingency mean that things could have been otherwise?
+
+Is the could-have-been-otherwise the essence of fortune?
+
+Does every fortunate event point to a world where it did not happen?
+
+Does every unfortunate event point to a world where it did not happen?
+
+Is fortune the gap between the actual and the possible?
+
+Is fortune what falls in the gap between necessity and impossibility?
+
+Is the space of contingency the space of fortune?
+
+Does widening the space of contingency widen the space of fortune?
+
+---
+
+Is radical contingency terrifying?
+
+Does the recognition that everything could have been otherwise produce vertigo?
+
+Is existential vertigo the experience of fortune's depth?
+
+Does the depth of fortune extend to the foundations of existence?
+
+Is the existence of the universe contingent?
+
+Is the existence of the universe fortunate?
+
+Is the existence of anything at all the most radical fortune?
+
+Is the question "why is there something rather than nothing" a question about fortune?
+
+Is the something that exists fortunate to exist?
+
+Can existence be fortunate if there is no perspective from which non-existence could be experienced?
+
+---
+
+Is the contingency of the self the most intimate fortune?
+
+Could you have been someone else?
+
+Could you have been no one?
+
+Is the fact that you are you the most personal fortune?
+
+Is personal identity a contingent matter?
+
+Is the contingency of personal identity disturbing?
+
+Does the contingency of personal identity undermine self-importance?
+
+Should the contingency of personal identity produce humility?
+
+Does humility before fortune produce a better life?
+
+Is humility the most appropriate response to the recognition of fortune?
+
+---
+
+## Fortune and Hope
+
+Is hope a response to fortune?
+
+Does hope assume that fortune can change?
+
+Is hope the belief that future fortune will be better than present fortune?
+
+Is hope rational?
+
+Can hope be rational without evidence that fortune will improve?
+
+Is hope without evidence faith?
+
+Is faith a relationship to fortune?
+
+Does hope make misfortune bearable?
+
+Does the absence of hope make misfortune unbearable?
+
+Is despair the absence of hope about fortune?
+
+---
+
+Is hope a virtue?
+
+Is hope a self-fulfilling prophecy?
+
+Does hoping for good fortune increase the probability of good fortune?
+
+Does the hopeful person act differently from the despairing person?
+
+Do the different actions of hopeful and despairing people produce different fortunes?
+
+Is hope therefore a practical skill for navigating fortune?
+
+Can hope be cultivated?
+
+Can you choose to hope?
+
+Is chosen hope genuine hope?
+
+Or is genuine hope something that arrives unbidden, like fortune itself?
+
+---
+
+Is false hope worse than no hope?
+
+Can hope be false?
+
+Is the distinction between true hope and false hope sustainable?
+
+Is hope always somewhat false because fortune is always uncertain?
+
+Is hope always somewhat true because fortune is always open?
+
+Is the openness of fortune the ground of hope?
+
+Is hope the subjective experience of fortune's openness?
+
+Does closing off fortune close off hope?
+
+Does certainty eliminate hope?
+
+Is hope only possible under conditions of uncertainty, which are the conditions of fortune?
+
+---
+
+## Fortune and Regret
+
+Is regret a response to fortune?
+
+Do you regret bad fortune?
+
+Do you regret good fortune missed?
+
+Is regret the backward-looking emotion of fortune?
+
+Is hope the forward-looking emotion of fortune?
+
+Are regret and hope the temporal poles of the experience of fortune?
+
+Can you regret something that was not your fault?
+
+Can you regret something that was entirely a matter of fortune?
+
+Is the regret of fortune irrational?
+
+Is irrational regret still painful?
+
+---
+
+Is counterfactual thinking the cognitive basis of regret about fortune?
+
+Does imagining what might have been intensify regret?
+
+Does the vividness of the counterfactual correlate with the intensity of regret?
+
+Is the ease of imagining an alternative the measure of how fortunate or unfortunate an event feels?
+
+Do near misses produce more regret than distant misses?
+
+Is the near miss the most painful form of fortune?
+
+Is the near miss the experience of fortune's razor edge?
+
+Does the near miss reveal how contingent fortune is?
+
+Is every outcome a near miss of a different outcome?
+
+Is every moment a near miss of a different life?
+
+---
+
+Can you regret good fortune?
+
+Can you feel that things went too well?
+
+Is the guilt of good fortune a form of regret?
+
+Does survivor's guilt involve regretting one's own survival?
+
+Can you regret being the one who was spared?
+
+Is regretting one's own good fortune morally admirable or psychologically disordered?
+
+Is there a healthy relationship to one's own good fortune?
+
+What does a healthy relationship to good fortune look like?
+
+Is it gratitude without guilt?
+
+Is gratitude without guilt achievable?
+
+---
+
+## Fortune and Scale
+
+Does fortune operate at every scale?
+
+Is quantum fortune different from human fortune?
+
+Is planetary fortune different from personal fortune?
+
+Is the extinction of the dinosaurs a matter of fortune?
+
+Is the asteroid that struck the Yucatan a matter of fortune?
+
+Is the emergence of mammals after the extinction a matter of fortune?
+
+Is the existence of humanity a matter of fortune?
+
+Is the fortune that produced humanity the same kind of fortune that governs individual lives?
+
+Does fortune scale?
+
+Is there one fortune or many fortunes?
+
+---
+
+Is cosmic fortune meaningful?
+
+Is the fine-tuning of the universe for life a matter of fortune?
+
+Is the anthropic principle a theory about cosmic fortune?
+
+Does the multiverse hypothesis dissolve cosmic fortune into cosmic necessity?
+
+If every possible universe exists, is there fortune in which one you inhabit?
+
+Is your universe fortunate?
+
+Is the universe's fortune your fortune?
+
+Does the scale of cosmic fortune dwarf personal fortune?
+
+Does the dwarfing of personal fortune by cosmic fortune diminish or amplify personal fortune's significance?
+
+Is personal fortune more significant because it is experienced?
+
+---
+
+Is fortune fractal?
+
+Does fortune exhibit the same patterns at every scale?
+
+Is the rise and fall of a career analogous to the rise and fall of an empire?
+
+Is the fortune of a day analogous to the fortune of a lifetime?
+
+Is the fortune of a moment analogous to the fortune of a civilization?
+
+Does self-similarity in fortune suggest a deep structure?
+
+Is there a deep structure to fortune?
+
+Would discovering the deep structure of fortune eliminate fortune?
+
+Or would it reveal fortune's architecture without diminishing its power?
+
+Is fortune architectural?
+
+---
+
+## Fortune and the Body
+
+Is the body the site of fortune?
+
+Does fortune act on and through the body?
+
+Is physical health the most fundamental fortune?
+
+Is the body's vulnerability the ground of all fortune?
+
+Does the body's fragility make fortune inescapable?
+
+Is the invulnerable body a fantasy of escaping fortune?
+
+Is the superhero a fantasy of a body beyond fortune?
+
+Is medicine an attempt to fortify the body against fortune?
+
+Can medicine succeed completely?
+
+Would a body immune to all disease and decay be subject to fortune?
+
+---
+
+Is beauty of body a matter of fortune?
+
+Is physical attractiveness distributed by fortune?
+
+Does physical attractiveness produce social fortune?
+
+Is the halo effect a mechanism by which bodily fortune becomes social fortune?
+
+Is the person born beautiful fortunate in ways they may never recognize?
+
+Is the person born ugly unfortunate in ways they cannot escape?
+
+Is calling physical appearance fortune honest or cruel?
+
+Does acknowledging the fortune of appearance help or harm those who are unfortunate in this regard?
+
+Is the cosmetic surgery industry an attempt to correct the fortune of appearance?
+
+Can fortune of appearance be corrected?
+
+---
+
+Is aging a decline in fortune?
+
+Does the aging body experience increasing misfortune?
+
+Is the loss of physical capacity a loss of fortune?
+
+Is the wisdom that sometimes accompanies aging a compensating fortune?
+
+Does aging reveal fortune's temporal structure?
+
+Does the body's decline reveal the wheel of fortune in slow motion?
+
+Is every body on the wheel?
+
+Is the young body at the top and the old body at the bottom?
+
+Is this a cruel metaphor or an accurate one?
+
+Can the old body be fortunate in ways the young body cannot?
+
+---
+
+## The Eternal Return of Fortune
+
+Does fortune repeat?
+
+Do the same fortunes recur across generations?
+
+Is the fortune of the child a repetition of the fortune of the parent?
+
+Can the cycle of fortune be broken across generations?
+
+Is social mobility the breaking of fortune's intergenerational cycle?
+
+Is social mobility increasing or decreasing?
+
+If social mobility is decreasing, is fortune becoming more hereditary?
+
+Is hereditary fortune a return to aristocracy?
+
+Is meritocracy an attempt to break hereditary fortune?
+
+Has meritocracy succeeded?
+
+---
+
+Is fortune seasonal?
+
+Does fortune follow rhythms?
+
+Do good years alternate with bad years?
+
+Is the perception of alternation a cognitive bias or a genuine pattern?
+
+Does the agricultural cycle embed fortune in seasonal rhythm?
+
+Is the economic cycle a fortune cycle?
+
+Is boom and bust the modern wheel of fortune?
+
+Is the business cycle predictable?
+
+If the business cycle is predictable, is it still fortune?
+
+Does predictability eliminate fortune or merely change its character?
+
+---
+
+Does fortune spiral or cycle?
+
+Is the return of fortune exact or approximate?
+
+Does fortune return at a higher level or the same level?
+
+Is the spiral of fortune progress or repetition?
+
+Can you tell the difference between spiraling fortune and cycling fortune from within?
+
+Does the inability to tell the difference from within mean the difference does not exist?
+
+Or does it mean the difference exists but is invisible to participants?
+
+Is the invisibility of fortune's structure to those within it a permanent feature?
+
+Can retrospect reveal what the present conceals?
+
+Is all understanding of fortune retrospective?
+
+---
+
+Is fortune the last word?
+
+Is there anything beyond fortune?
+
+Is the beyond-fortune accessible to human beings?
+
+Is the beyond-fortune what religions call grace?
+
+Is grace fortune that transcends fortune?
+
+Is grace fortune that is not subject to the wheel?
+
+Is the desire for something beyond fortune the deepest human desire?
+
+Is the deepest human desire itself fortunate?
+
+Is the capacity to desire something beyond fortune a gift?
+
+Is the gift of desiring beyond fortune the most paradoxical fortune of all?
+
+---
+
+## Fortune and Memory
+
+Does memory shape fortune?
+
+Is the remembered fortune the same as the experienced fortune?
+
+Does memory amplify good fortune?
+
+Does memory amplify bad fortune?
+
+Does nostalgia transform past fortune into something it never was?
+
+Is the golden age always in memory?
+
+Is remembered fortune more vivid than present fortune?
+
+Does the selectivity of memory distort the record of fortune?
+
+Is the distortion of fortune by memory itself a fortune?
+
+Is a bad memory a mercy?
+
+Is a good memory a burden?
+
+---
+
+Does trauma preserve bad fortune indefinitely?
+
+Is trauma the inability to let bad fortune become past?
+
+Does the traumatized person live in perpetual misfortune?
+
+Is the flashback a return of fortune that never recedes?
+
+Is healing from trauma the process of making fortune past?
+
+Can fortune ever truly become past?
+
+Does past fortune continue to shape present fortune?
+
+Is the present always haunted by the fortune of the past?
+
+Is the future always shaped by the fortune of the past?
+
+Is fortune cumulative in memory even when it is not cumulative in fact?
+
+---
+
+Is forgetting a form of fortune?
+
+Is the ability to forget bad fortune a mercy?
+
+Is the inability to forget bad fortune a curse?
+
+Is forgetting good fortune a loss?
+
+Is the inability to hold onto the memory of good fortune a quiet misfortune?
+
+Does the fading of memory equalize fortune over time?
+
+Does time dim the brightest fortune and lighten the darkest fortune?
+
+Is the dimming of fortune by time a kindness or a theft?
+
+Is the theft of vivid fortune by time the most universal misfortune?
+
+Or is it the most universal mercy?
+
+---
+
+## Fortune and Technology
+
+Does technology redistribute fortune?
+
+Does the invention of the printing press change the fortune of knowledge?
+
+Does the invention of the internet change the fortune of connection?
+
+Does the invention of antibiotics change the fortune of infection?
+
+Does each technology create winners and losers in fortune?
+
+Is technological unemployment a new form of misfortune?
+
+Is the fortune of being skilled in the right technology the modern fortune of birth?
+
+Is being born into the age of a particular technology a matter of fortune?
+
+Is every technology a redistribution of fortune that creates new inequalities?
+
+Does technology solve fortune or merely transform it?
+
+---
+
+Is artificial intelligence the ultimate challenge to fortune?
+
+Will AI predict fortune so accurately that fortune ceases to exist?
+
+Will AI create new forms of fortune no one anticipated?
+
+Is the development of AI itself a matter of civilizational fortune?
+
+Is the timing of AI development fortunate or unfortunate for humanity?
+
+Is the question of whether AI is beneficial or harmful a question about fortune?
+
+Will AI make human fortune more equal or more unequal?
+
+Is the inability to predict AI's effects on fortune itself a form of fortune?
+
+Is humanity gambling with its fortune by developing AI?
+
+Is the gamble of AI the highest-stakes fortune humanity has ever faced?
+
+---
+
+## Fortune and Place
+
+Is where you live a matter of fortune?
+
+Is geography fortune?
+
+Is the fortune of place the most underestimated fortune?
+
+Does living near water confer fortune?
+
+Does living on fertile soil confer fortune?
+
+Does living in a temperate climate confer fortune?
+
+Is the fortune of geography the foundation of all other fortune?
+
+Did Jared Diamond's argument about guns, germs, and steel reduce civilizational fortune to geographical fortune?
+
+Is geographical determinism a theory of fortune?
+
+Can geographical fortune be overcome?
+
+---
+
+Is the city a concentration of fortune?
+
+Does urbanization concentrate both good and bad fortune?
+
+Is the opportunity of the city a fortune?
+
+Is the danger of the city a misfortune?
+
+Is the anonymity of the city a fortune or a misfortune?
+
+Does the rural life offer different fortune than the urban life?
+
+Is the fortune of the countryside quieter than the fortune of the city?
+
+Is quiet fortune still fortune?
+
+Does the scale of community change the character of fortune?
+
+Is fortune experienced differently in a village and a metropolis?
+
+---
+
+## Fortune and Knowledge
+
+Does knowledge protect against fortune?
+
+Does ignorance expose to fortune?
+
+Is the educated person less subject to fortune?
+
+Or is the educated person merely subject to different fortune?
+
+Does knowing more about the world reduce the randomness of outcomes?
+
+Does knowing more about the world increase awareness of how random outcomes are?
+
+Is the most knowledgeable person the most aware of fortune's role?
+
+Is awareness of fortune's role wisdom or paralysis?
+
+Can you know too much about fortune?
+
+Does excessive awareness of fortune prevent action?
+
+---
+
+Is the illusion of control a necessary illusion?
+
+Does the illusion of control protect against the paralysis of recognizing fortune?
+
+Is the moderately deluded person better equipped for life than the fully lucid person?
+
+Is self-deception about fortune adaptive?
+
+Does adaptive self-deception about fortune constitute a kind of wisdom?
+
+Can wisdom and self-deception coexist?
+
+Is the wisest person the one who knows when to be lucid and when to be deluded about fortune?
+
+Is this meta-cognitive skill itself a matter of fortune?
+
+Is the fortune of having the right degree of self-deception the most hidden fortune?
+
+Does the hiddenness of this fortune make it the most effective?
+
+---
+
+## Fortune and the Ineffable
+
+Is there something about fortune that cannot be said?
+
+Does fortune touch the ineffable?
+
+Is the experience of radical fortune — fortune that upends everything — an encounter with what cannot be spoken?
+
+Does extreme good fortune leave you speechless?
+
+Does extreme bad fortune leave you speechless?
+
+Is the speechlessness before fortune a sign that fortune exceeds the categories of thought?
+
+Does fortune reveal the limits of reason?
+
+Does fortune reveal the limits of language?
+
+Does fortune reveal the limits of the self?
+
+Is fortune the experience of the limit?
+
+---
+
+Is the encounter with fortune an encounter with the real?
+
+Is fortune the irruption of reality into the managed life?
+
+Does the managed life attempt to exclude fortune?
+
+Does fortune break through every management?
+
+Is the breakthrough of fortune into the managed life what the existentialists call the encounter with existence?
+
+Is fortune existence showing itself?
+
+Is existence fortunate?
+
+Is the final question about fortune the question of why there is fortune at all?
+
+Is the question of why there is fortune the same as the question of why there is anything?
+
+Is fortune the deepest mystery because it is the closest mystery — the mystery we live inside every moment of every day?

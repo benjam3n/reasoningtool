@@ -3127,3 +3127,1165 @@ Is the end of questioning the end of reception?
 Is the end of reception possible?
 
 Is the possibility of the end of reception itself a question to be received?
+
+---
+
+## Reception and Memory
+
+Is reception stored in memory?
+
+Is memory a form of ongoing reception?
+
+Does memory preserve reception or transform it?
+
+Is remembered reception the same as lived reception?
+
+Is remembered reception a pale copy of lived reception?
+
+Is remembered reception richer than lived reception?
+
+Does memory add to what was received?
+
+Does memory subtract from what was received?
+
+Does memory distort what was received?
+
+Is undistorted memory of reception possible?
+
+Is the attempt to remember reception faithfully itself a form of reception?
+
+Is nostalgia for past reception a distortion of that reception?
+
+---
+
+Does the body remember reception differently from the mind?
+
+Is bodily memory of reception more reliable?
+
+Is bodily memory of reception more honest?
+
+Can the body remember a reception the mind has forgotten?
+
+Can the mind remember a reception the body has forgotten?
+
+Is the split between bodily and mental memory of reception artificial?
+
+Is there a unified memory of reception?
+
+Is fragmented memory of reception the norm?
+
+Does fragmented memory of reception produce fragmented meaning?
+
+Is fragmented meaning still meaning?
+
+---
+
+Is forgetting a form of reception?
+
+Does forgetting transform what was received?
+
+Is the forgotten reception still active?
+
+Does the forgotten reception shape subsequent receptions?
+
+Is the unconscious a repository of forgotten receptions?
+
+Is the unconscious structured by forgotten receptions?
+
+Does psychoanalysis aim to recover forgotten receptions?
+
+Can forgotten receptions be recovered?
+
+Is recovered reception the same as original reception?
+
+Is the concept of original reception meaningful if memory always transforms?
+
+---
+
+Is trauma a form of reception?
+
+Is traumatic reception different from ordinary reception?
+
+Does trauma overwhelm the capacity for reception?
+
+Is the overwhelmed reception still reception?
+
+Is the inability to process a reception a failure of reception or its excess?
+
+Does traumatic reception resist integration into memory?
+
+Is unintegrated reception still reception?
+
+Does the repetition compulsion in trauma represent a reception that cannot be completed?
+
+Is incomplete reception the defining feature of trauma?
+
+Can traumatic reception ever be completed?
+
+Is therapy a completion of traumatic reception?
+
+---
+
+## Reception and Attention
+
+What is the relationship between attention and reception?
+
+Is attention necessary for reception?
+
+Is attention sufficient for reception?
+
+Can you attend without receiving?
+
+Can you receive without attending?
+
+Is attention a gateway to reception?
+
+Is attention a filter on reception?
+
+Does attention select what is received?
+
+Does reception select what is attended to?
+
+Is the relationship between attention and reception circular?
+
+---
+
+Is focused attention the best mode of reception?
+
+Is diffuse attention a valid mode of reception?
+
+Is Walter Benjamin's concept of distracted reception legitimate?
+
+Is the flâneur's mode of reception distracted or attentive?
+
+Is browsing a form of reception?
+
+Is scanning a form of reception?
+
+Is skimming a form of reception?
+
+Is deep reading a form of reception?
+
+Is surface reading a form of reception?
+
+Are deep and surface reading equally valid modes of reception?
+
+Is the hierarchy between deep and surface reading a prejudice about reception?
+
+---
+
+Is attention a scarce resource?
+
+Is the scarcity of attention a limit on reception?
+
+Is the attention economy a theory of reception?
+
+Does the commodification of attention change reception?
+
+Is purchased attention genuine reception?
+
+Is forced attention genuine reception?
+
+Can attention be freely given?
+
+Is freely given attention the only genuine form of reception?
+
+Is the concept of freely given attention coherent in a world of attention manipulation?
+
+Is all attention manipulation a manipulation of reception?
+
+---
+
+Is multitasking compatible with reception?
+
+Can you receive multiple things simultaneously?
+
+Is simultaneous reception divided reception?
+
+Is divided reception diminished reception?
+
+Is the modern condition of divided attention a crisis of reception?
+
+Is the crisis of reception a crisis of meaning?
+
+Is the crisis of meaning a crisis of reception?
+
+Is the circularity of this crisis revealing?
+
+Does the circularity suggest that meaning and reception are inseparable?
+
+Can meaning exist without reception?
+
+Can reception exist without meaning?
+
+---
+
+## Reception and Presence
+
+Does reception require presence?
+
+What is presence?
+
+Is presence physical or mental or both?
+
+Can you be physically present but not receptively present?
+
+Can you be receptively present but not physically present?
+
+Is virtual presence sufficient for reception?
+
+Is telepresence a form of reception?
+
+Does mediated presence change the quality of reception?
+
+Is unmediated presence necessary for full reception?
+
+Is the concept of unmediated presence coherent?
+
+---
+
+Is being present the same as being receptive?
+
+Is being present a precondition for being receptive?
+
+Can you be present without being receptive?
+
+Is presence without receptivity empty?
+
+Is receptivity without presence possible?
+
+Is the discipline of presence a discipline of reception?
+
+Is mindfulness a practice of receptive presence?
+
+Does mindfulness enhance reception?
+
+Does mindfulness change what is received?
+
+Is mindful reception different in kind from ordinary reception?
+
+---
+
+Is the presence of the work necessary for reception?
+
+Can you receive a work in its absence?
+
+Is the memory of a work a form of the work's presence?
+
+Is the reproduction of a work a form of the work's presence?
+
+Is the description of a work a form of the work's presence?
+
+Can you receive a work you have never encountered?
+
+Can you receive a work through someone else's description?
+
+Is secondhand reception genuine reception?
+
+Is all reception of canonical works partly secondhand?
+
+Is purely firsthand reception possible?
+
+---
+
+Is presence temporal?
+
+Is the present moment the only moment of reception?
+
+Does reception happen in the present?
+
+Can you receive the past?
+
+Can you receive the future?
+
+Is the reception of the past a form of memory?
+
+Is the reception of the future a form of anticipation?
+
+Is anticipatory reception genuine reception?
+
+Is memorial reception genuine reception?
+
+Is only present reception genuine reception?
+
+Is the concept of the present moment itself a construction?
+
+Is reception always already temporal?
+
+---
+
+## Reception and Pleasure
+
+Is pleasure a component of reception?
+
+Is pleasure the goal of reception?
+
+Is pleasure the measure of reception?
+
+Can reception be pleasurable without being good?
+
+Can reception be good without being pleasurable?
+
+Is the pleasure of reception aesthetic pleasure?
+
+Is aesthetic pleasure the highest form of pleasure?
+
+Is aesthetic pleasure a distinct kind of pleasure?
+
+Is the pleasure of reception the pleasure of understanding?
+
+Is the pleasure of reception the pleasure of feeling?
+
+---
+
+Is displeasure a component of reception?
+
+Can you receive with displeasure?
+
+Is displeasurable reception still valid reception?
+
+Is the displeasure of difficult reception productive?
+
+Does difficulty enhance reception?
+
+Does ease enhance reception?
+
+Is effortless reception superficial?
+
+Is effortful reception deeper?
+
+Is the equation of effort with depth a bias?
+
+Is the equation of ease with superficiality a bias?
+
+---
+
+Is the pleasure of reception the pleasure of recognition?
+
+Is recognizing something in a work pleasurable?
+
+Is the pleasure of recognition the pleasure of the familiar?
+
+Is the pleasure of surprise the pleasure of the unfamiliar?
+
+Can reception provide both the pleasure of recognition and the pleasure of surprise?
+
+Is the tension between recognition and surprise the engine of reception?
+
+Is the resolution of that tension the completion of reception?
+
+Is the irresolution of that tension the continuation of reception?
+
+Is ongoing reception more valuable than completed reception?
+
+Is completed reception possible?
+
+---
+
+Is the pleasure of reception selfish?
+
+Is the pleasure of reception shared?
+
+Is shared pleasure in reception a form of community?
+
+Is the pleasure of reception transformative?
+
+Does the pleasure of reception change the receiver?
+
+Does the pleasure of reception change the world?
+
+Is the claim that reception changes the world grandiose?
+
+Is the claim that reception changes only the receiver modest?
+
+Is the modest claim more honest?
+
+Is the grandiose claim more hopeful?
+
+Is hope a component of reception?
+
+---
+
+## Reception and Judgment
+
+Does reception involve judgment?
+
+Is judgment part of reception or separate from it?
+
+Does judgment follow reception?
+
+Does judgment precede reception?
+
+Does judgment shape reception?
+
+Does reception shape judgment?
+
+Can you receive without judging?
+
+Can you judge without receiving?
+
+Is non-judgmental reception possible?
+
+Is non-judgmental reception desirable?
+
+---
+
+Is the judgment formed in reception revisable?
+
+Can you change your judgment of what you received?
+
+Does changing your judgment change what you received?
+
+Is the first judgment formed in reception more authentic?
+
+Is the revised judgment formed after reflection more accurate?
+
+Is the distinction between authentic and accurate judgment meaningful?
+
+Is quick judgment a failure of reception?
+
+Is slow judgment a virtue of reception?
+
+Is the suspension of judgment a form of reception?
+
+Is the suspension of judgment the highest form of reception?
+
+---
+
+Is taste a form of receptive judgment?
+
+Is taste innate or acquired?
+
+Is acquired taste more refined reception?
+
+Is innate taste more genuine reception?
+
+Is the distinction between innate and acquired taste sustainable?
+
+Does education refine receptive judgment?
+
+Does education impose receptive judgment?
+
+Is imposed receptive judgment still the receiver's own?
+
+Can you be taught to receive well?
+
+What does it mean to receive well?
+
+Is receiving well receiving truly?
+
+---
+
+Is critical judgment a form of reception?
+
+Is critical distance compatible with reception?
+
+Does critical distance enhance or diminish reception?
+
+Is the critic a better receiver?
+
+Is the critic a worse receiver?
+
+Is the critic a different kind of receiver?
+
+Does professional critical judgment differ from amateur receptive judgment?
+
+Is amateur receptive judgment more honest?
+
+Is professional critical judgment more informed?
+
+Is the tension between honesty and information the tension of all reception?
+
+---
+
+## Reception and Transformation
+
+Does reception transform the receiver?
+
+Does reception transform the received?
+
+Does reception transform the relationship between receiver and received?
+
+Is transformation the purpose of reception?
+
+Is transformation the effect of reception?
+
+Is transformation the essence of reception?
+
+Can reception occur without transformation?
+
+Is non-transformative reception superficial?
+
+Is the demand that reception be transformative a burden on reception?
+
+Can reception be valued without demanding transformation?
+
+---
+
+Is the transformation through reception permanent?
+
+Is the transformation through reception reversible?
+
+Can you un-receive what you have received?
+
+Can you return to the state before reception?
+
+Is the irreversibility of reception its power?
+
+Is the irreversibility of reception its danger?
+
+Is dangerous reception the most valuable?
+
+Is safe reception worth having?
+
+Is the distinction between dangerous and safe reception meaningful?
+
+Is all genuine reception dangerous?
+
+---
+
+Does reception transform the world?
+
+Is the world different after a great work is received?
+
+Is the reception of a great work a historical event?
+
+Are historical events forms of collective reception?
+
+Is the French Revolution a reception event?
+
+Is the reception of Darwin's theory a reception event?
+
+Is the reception of Einstein's theory a reception event?
+
+Does the reception of ideas change reality?
+
+Does the reception of art change reality?
+
+Is changed reality evidence of genuine reception?
+
+---
+
+Is conversion a form of reception?
+
+Is the convert a receiver?
+
+Is the conversion experience the most intense form of reception?
+
+Is conversion reception of truth or reception of persuasion?
+
+Is the distinction between truth and persuasion meaningful in conversion?
+
+Is all reception a mild form of conversion?
+
+Is conversion a radical form of reception?
+
+Does reception always change belief?
+
+Can you receive without any change in belief?
+
+Is reception without change in belief merely entertainment?
+
+Is entertainment a legitimate form of reception?
+
+Is the dismissal of entertainment as reception a form of elitism?
+
+---
+
+## Reception as Metaphor
+
+Is reception itself a metaphor?
+
+What is reception a metaphor for?
+
+Is reception a metaphor for understanding?
+
+Is reception a metaphor for experience?
+
+Is reception a metaphor for being?
+
+Is reception a metaphor for openness?
+
+Is reception a metaphor for vulnerability?
+
+Is the metaphorical nature of reception a problem?
+
+Can we speak of reception literally?
+
+Is literal reception possible?
+
+---
+
+Is the container metaphor for reception adequate?
+
+Is the receiver a container filled by the received?
+
+Does the container metaphor imply passivity?
+
+Does the container metaphor imply emptiness before reception?
+
+Is the receiver empty before reception?
+
+Is the receiver full before reception?
+
+If the receiver is full before reception, where does the received go?
+
+Does reception displace what was already in the receiver?
+
+Is displacement a feature of reception?
+
+Is overflow a feature of reception?
+
+---
+
+Is the dialogue metaphor for reception adequate?
+
+Is reception a conversation between work and receiver?
+
+Does the work speak?
+
+Does the receiver listen?
+
+Is listening the model of reception?
+
+Is listening passive or active?
+
+Is the best listener the best receiver?
+
+Does the dialogue metaphor imply two subjects?
+
+Is the work a subject in the dialogue of reception?
+
+Can the work respond to the receiver's response?
+
+Does the work change through being received?
+
+---
+
+Is the digestion metaphor for reception adequate?
+
+Is reception a form of consumption?
+
+Is reception a form of assimilation?
+
+Does assimilation destroy the otherness of the received?
+
+Does digestion transform the received into the receiver?
+
+Is the transformation of the received into the receiver the goal of reception?
+
+Is the preservation of the received as other the goal of reception?
+
+Are assimilation and preservation contradictory goals of reception?
+
+Can reception both assimilate and preserve?
+
+Is the impossibility of both assimilating and preserving the tragedy of reception?
+
+Is the tragedy of reception productive?
+
+Is productive tragedy the essence of reception?
+
+Is the essence of reception tragic?
+
+Is the question of reception's essence itself a form of reception?
+
+Is the form of reception a question without end?
+
+---
+
+## Reception and Place
+
+Does place affect reception?
+
+Is reception always situated?
+
+Is situated reception the only kind of reception?
+
+Can reception transcend its situation?
+
+Does the claim to transcend situation mask the situation?
+
+Is universal reception a myth?
+
+Is particular reception the only reality?
+
+Is the particularity of reception a limitation or a richness?
+
+Can particular receptions be compared?
+
+Is the comparison of receptions itself a reception?
+
+---
+
+Does geography shape reception?
+
+Is the reception of a work in its place of origin different from reception elsewhere?
+
+Is a work best received in its place of origin?
+
+Is the concept of a work's proper place coherent?
+
+Does displacement change reception?
+
+Is displaced reception diminished or enriched?
+
+Is the exile's reception different from the native's reception?
+
+Does homelessness change receptivity?
+
+Is rootedness a condition of reception?
+
+Is uprootedness a condition of reception?
+
+Can both rootedness and uprootedness condition reception simultaneously?
+
+---
+
+Does climate affect reception?
+
+Is reception in sunlight different from reception in darkness?
+
+Is reception in warmth different from reception in cold?
+
+Is reception in a garden different from reception in a cell?
+
+Does the natural environment condition reception?
+
+Does the built environment condition reception?
+
+Is architectural space a frame for reception?
+
+Does the frame of architectural space enhance or constrain reception?
+
+Is the white cube gallery a neutral space for reception?
+
+Is the claim of neutrality itself a form of framing?
+
+Is all reception framed?
+
+Is unframed reception possible?
+
+---
+
+## Reception and Identity
+
+Does reception shape identity?
+
+Does identity shape reception?
+
+Is the relationship between reception and identity circular?
+
+Is the circularity between reception and identity productive?
+
+Are you what you receive?
+
+Are you how you receive?
+
+Is your mode of reception your identity?
+
+Can you change your mode of reception?
+
+Can you change your identity through reception?
+
+Is the transformation of identity through reception the goal of aesthetic education?
+
+---
+
+Does cultural identity determine reception?
+
+Does racial identity determine reception?
+
+Does gender identity determine reception?
+
+Does class identity determine reception?
+
+Does sexual identity determine reception?
+
+Is identity-based reception reductive?
+
+Is the denial of identity-based reception naive?
+
+Can you receive across identity lines?
+
+Is cross-identity reception possible?
+
+Is cross-identity reception desirable?
+
+Is cross-identity reception appropriation?
+
+Is appropriation a form of reception?
+
+---
+
+Does age affect reception?
+
+Is the young person's reception different from the old person's?
+
+Is the old person's reception wiser?
+
+Is the young person's reception fresher?
+
+Is freshness a form of wisdom?
+
+Is wisdom a form of freshness?
+
+Does the accumulation of receptions over a lifetime change receptivity?
+
+Does the accumulation of receptions deepen or burden?
+
+Is the burden of accumulated receptions a form of wisdom or fatigue?
+
+Is receptive fatigue real?
+
+Can receptive fatigue be overcome?
+
+Is the overcoming of receptive fatigue itself a form of reception?
+
+---
+
+Does personal history determine reception?
+
+Does your unique biography make your reception unique?
+
+Is every reception unique?
+
+If every reception is unique, can receptions be shared?
+
+Is the sharing of reception an approximation?
+
+Is the approximation in shared reception close enough?
+
+Close enough for what?
+
+Is close enough for understanding?
+
+Is close enough for connection?
+
+Is connection the purpose of shared reception?
+
+Is shared reception the foundation of community?
+
+---
+
+## Reception and Language Revisited
+
+Is every reception already linguistic?
+
+Is there a pre-linguistic stratum of reception?
+
+Is the pre-linguistic stratum accessible?
+
+Is the attempt to access the pre-linguistic through language paradoxical?
+
+Is the paradox of articulating the inarticulate the central paradox of reception?
+
+Can gesture communicate reception?
+
+Can dance communicate reception?
+
+Can music communicate reception?
+
+Is the communication of reception through non-linguistic means more faithful?
+
+Is the concept of faithfulness in communicating reception coherent?
+
+---
+
+Does naming what you receive fix it?
+
+Does the fixity of naming betray the fluidity of reception?
+
+Is reception fluid?
+
+Is reception fixed?
+
+Is reception between fluid and fixed?
+
+Is the between of reception its characteristic modality?
+
+Is reception always between?
+
+Between what and what?
+
+Between self and other?
+
+Between past and future?
+
+Between meaning and sensation?
+
+Between understanding and bewilderment?
+
+---
+
+Is the vocabulary of reception adequate?
+
+Do we have the right words for reception?
+
+Is the inadequacy of vocabulary a limit on reception or a limit on articulation?
+
+Is inarticulate reception genuine reception?
+
+Is over-articulate reception a distortion?
+
+Is there a right amount of articulation for reception?
+
+Is the right amount different for different receptions?
+
+Is the right amount different for different receivers?
+
+Is the concept of a right amount of articulation itself a distortion?
+
+Does the search for the right articulation itself constitute a form of ongoing reception?
+
+---
+
+## Reception and Aesthetics
+
+Is aesthetics the study of reception?
+
+Is aesthetics the study of something else that includes reception?
+
+Is reception central or peripheral to aesthetics?
+
+Can there be aesthetics without a theory of reception?
+
+Can there be a theory of reception without aesthetics?
+
+Is reception the missing term in aesthetics?
+
+Has aesthetics always been about reception without naming it?
+
+Is the naming of reception a modern development?
+
+Is the modern focus on reception a correction or a distortion?
+
+Was classical aesthetics less attentive to reception?
+
+---
+
+Is Kant's aesthetics a theory of reception?
+
+Is disinterested contemplation a mode of reception?
+
+Is disinterested reception possible?
+
+Is all reception interested?
+
+Is interested reception less aesthetic?
+
+Is the demand for disinterest a demand for a specific kind of reception?
+
+Is the demand for a specific kind of reception a limitation on reception?
+
+Does Kant's aesthetics privilege a particular mode of reception?
+
+Is the particular mode Kant privileges the best mode?
+
+Is the question of the best mode of reception meaningful?
+
+---
+
+Is Hegel's aesthetics a theory of reception?
+
+Is the unfolding of Spirit through art a theory of collective reception?
+
+Is reception historical in Hegel's sense?
+
+Does history determine what can be received?
+
+Does what is received determine history?
+
+Is the dialectic of reception and history productive?
+
+Is the end of art in Hegel the end of a mode of reception?
+
+Can modes of reception end?
+
+Do ended modes of reception return?
+
+Is the return of ended modes of reception nostalgic or revolutionary?
+
+---
+
+Is phenomenological aesthetics a theory of reception?
+
+Is the phenomenological reduction a preparation for reception?
+
+Does bracketing enhance receptivity?
+
+Can you bracket your assumptions in reception?
+
+Is the attempt to bracket a form of heightened reception?
+
+Is heightened reception the same as better reception?
+
+Is better reception possible?
+
+Is the comparative judgment of receptions meaningful?
+
+Can one reception be better than another?
+
+What criteria would determine better reception?
+
+---
+
+## Reception and Silence
+
+Is silence a condition of reception?
+
+Does silence enhance reception?
+
+Is the silence before a performance a preparation for reception?
+
+Is the silence after a performance a continuation of reception?
+
+Is the silence within a work a space for reception?
+
+Does silence within music invite reception?
+
+Does silence within speech invite reception?
+
+Is the pause a receptive space?
+
+Is the gap a receptive space?
+
+Is the blank space on the page a receptive space?
+
+---
+
+Is inner silence necessary for reception?
+
+Is the quieting of inner noise a condition of receptivity?
+
+Is inner noise an obstacle to reception?
+
+Is inner noise itself a form of reception?
+
+Is the noise of your own thoughts reception of yourself?
+
+Is reception of yourself a precondition for reception of others?
+
+Is reception of others a precondition for reception of yourself?
+
+Is the circularity of self-reception and other-reception the structure of reception itself?
+
+Is the structure of reception circular?
+
+Is circularity a problem for understanding reception?
+
+---
+
+Is the unsaid part of what is received?
+
+Do you receive what is not said?
+
+Is the reception of the unsaid more important than the reception of the said?
+
+Is the unsaid receivable?
+
+Is the attempt to receive the unsaid a form of interpretation?
+
+Is the attempt to receive the unsaid a form of projection?
+
+How do you distinguish between receiving the unsaid and projecting onto the unsaid?
+
+Is the distinction between receiving and projecting sustainable?
+
+Is all reception partly projection?
+
+Is all projection partly reception?
+
+Is the entanglement of reception and projection the human condition?
+
+---
+
+## Reception and the Future
+
+Does reception have a future?
+
+Is the future of reception the future of attention?
+
+Is the future of reception the future of meaning?
+
+Is reception endangered?
+
+What endangers reception?
+
+Does the acceleration of culture endanger reception?
+
+Does the abundance of content endanger reception?
+
+Does the scarcity of time endanger reception?
+
+Is the endangerment of reception a genuine crisis?
+
+Is the claim that reception is endangered nostalgic?
+
+---
+
+Will future forms of reception differ from past forms?
+
+Will new technologies create new modes of reception?
+
+Will virtual reality change reception?
+
+Will brain-computer interfaces change reception?
+
+Will direct neural stimulation replace reception?
+
+Is direct neural stimulation still reception?
+
+Is bypassing the senses still reception?
+
+Is reception essentially sensory?
+
+If reception is essentially sensory, can it survive the transcendence of the senses?
+
+Is the transcendence of the senses desirable?
+
+---
+
+Will artificial intelligence change reception?
+
+Can AI receive?
+
+If AI can process art, does AI receive art?
+
+Is processing the same as receiving?
+
+Is the difference between processing and receiving the difference between computation and consciousness?
+
+Is consciousness necessary for reception?
+
+If consciousness is necessary for reception, and AI lacks consciousness, can AI receive?
+
+If AI cannot receive, what is AI doing when it processes art?
+
+Is AI's processing of art a simulation of reception?
+
+Is simulated reception a form of reception?
+
+---
+
+Will the future bring better reception or worse?
+
+Is the question of better or worse reception answerable?
+
+Is the question of better or worse reception even the right question?
+
+What is the right question about the future of reception?
+
+Is the right question about the future of reception itself a form of reception?
+
+Is asking about reception always already receiving?
+
+Is the recursion of reception and questioning endless?
+
+Is the endlessness of this recursion the truth about reception?
+
+Is truth about reception receivable?
+
+Is the receivability of truth about reception the final question?
+
+Is there a final question about reception?
