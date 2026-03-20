@@ -558,6 +558,15 @@ Default: 2x.
 
 ---
 
+## Anti-Flattening Checks
+
+Summaries are the most vulnerable output to voice collapse and cached takes — the summary often produces the most generic version of the content. Run these checks on every summary:
+
+- **Voice preservation**: Does the summary preserve what's distinctive about the original? If the original had a strong voice, unusual framing, or specific terminology, the summary must retain that texture — not flatten it into neutral explanatory prose.
+- **Cached-take detection**: Did the summary replace the original's actual claims with more familiar/generic versions? Compare: does each claim in the summary match what the original actually said, or did summarization quietly swap in the "standard" version?
+- **Specificity retention**: Are concrete details, numbers, names, and examples preserved? Generic summaries drop specifics first — but specifics are often what made the original worth reading.
+- **Insight preservation**: If the original made a surprising or counterintuitive point, does the summary still convey the surprise? Or did it normalize the insight into something obvious?
+
 ## Pre-Completion Checklist
 
 - [ ] Interpretation correctly identified (or asked using plain language if ambiguous)
@@ -568,6 +577,8 @@ Default: 2x.
 - [ ] Nothing critical was dropped (or drops are acknowledged)
 - [ ] Interpretation-specific quality criteria met (fidelity for Compress, core-finding for Distill, etc.)
 - [ ] Someone who reads only the summary could act appropriately
+- [ ] Summary preserves the original's distinctive voice and framing (not flattened to generic prose)
+- [ ] No original claims were quietly replaced with more "standard" versions
 
 ---
 

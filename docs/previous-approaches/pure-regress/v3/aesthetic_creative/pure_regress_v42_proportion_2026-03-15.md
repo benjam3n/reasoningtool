@@ -3764,4 +3764,372 @@ Is the echo proportional to the original?
 
 Is the proportion of echo to origin the proportion of this regression to its opening word?
 
+---
+
+## Proportion and Silence
+
+Is silence proportional to sound?
+
+Is the pause in music a proportional absence?
+
+Does the rest in a musical score carry proportional weight equal to the note?
+
+Is the proportion of silence to speech in a conversation a measure of its depth?
+
+Does the wisest speaker proportion their silence to their knowledge?
+
+Is the unspoken word proportionally heavier than the spoken one?
+
+Is the proportion of what is left unsaid to what is said the proportion of tact?
+
+Is tact a proportional art?
+
+Is diplomacy the art of proportioning what is said to what can be heard?
+
+Is the proportion of candor to discretion a cultural variable?
+
+Does each culture proportion its silences differently?
+
+Is the Japanese concept of ma a theory of proportioned emptiness?
+
+Is proportioned emptiness still emptiness?
+
+Is the empty space in a painting proportional to the filled space?
+
+Does the proportion of negative to positive space define a composition more than either alone?
+
+Is the proportional interplay of presence and absence the deepest aesthetic principle?
+
+Is absence proportional to what was expected to be present?
+
+Is the proportion of expectation to fulfillment the proportion of longing?
+
+Is longing disproportionate by nature?
+
+Does longing always exceed its object?
+
+Is the excess of longing over its object the disproportion that drives desire?
+
+Is desire always disproportionate?
+
+Is proportionate desire even possible?
+
+Would proportionate desire be satisfaction?
+
+Is satisfaction the death of proportion, since it removes the gap between desire and fulfillment?
+
+---
+
+## Proportion and Scale
+
+Does proportion change with scale?
+
+Is the proportion that works at human scale the same proportion that works at cosmic scale?
+
+Is the golden ratio scale-invariant?
+
+Is scale-invariance itself a proportional property?
+
+Do fractals demonstrate that proportion can be preserved across infinite scales?
+
+Is the fractal the purest expression of proportional self-similarity?
+
+Is self-similarity a proportional concept?
+
+Is the proportion of a coastline to its measurement the proportion of roughness to resolution?
+
+Does the coastline paradox reveal that proportion depends on the scale of observation?
+
+Is the scale of observation itself a proportional choice?
+
+Does the choice of scale proportion what can be seen?
+
+Is the microscope a device for changing the proportion of visibility?
+
+Does magnification alter proportion, or reveal hidden proportions?
+
+Is the proportion revealed under magnification more real than the proportion visible to the naked eye?
+
+Is the naked eye a proportional instrument?
+
+Is human perception tuned to a particular band of proportions?
+
+Are we blind to proportions outside our perceptual bandwidth?
+
+Is the proportion of the visible to the invisible the proportion of knowledge to ignorance?
+
+Is the proportion of the known universe to the unknown universe a humbling proportion?
+
+Is humility a proportional response to cosmic scale?
+
+Is the proper proportion of human confidence to cosmic vastness vanishingly small?
+
+Is the vanishingly small proportion still a proportion?
+
+Does the infinitesimal have proportional standing?
+
+Is the infinitesimal the proportion that calculus was invented to handle?
+
+Is calculus a proportional language?
+
+---
+
+## Proportion and Justice
+
+Is justice proportional punishment?
+
+Is the lex talionis — an eye for an eye — a proportional principle?
+
+Is proportional retribution just?
+
+Does proportional punishment require measuring the severity of the crime?
+
+Can the severity of a crime be measured in the same units as the severity of punishment?
+
+Is the incommensurability of crime and punishment a failure of proportional justice?
+
+Does restorative justice reject the proportional framework entirely?
+
+Is restorative justice a different kind of proportion — proportioning the response to the harm rather than to the offender?
+
+Is the proportion of mercy to justice a theological question?
+
+Does divine justice require infinite proportion?
+
+Is the proportion of an infinite punishment to a finite sin infinitely disproportionate?
+
+Is hell disproportionate?
+
+Is the concept of eternal punishment a proportional absurdity?
+
+Is proportional absurdity still absurdity, or does the qualifier change it?
+
+Is the qualifier always a proportional modifier?
+
+Is the proportion of qualifier to noun a grammatical proportion?
+
+Is grammar proportional?
+
+Does grammatical proportion determine clarity?
+
+Is the clearest sentence the most proportional one?
+
+Is Strunk and White's advice to omit needless words advice about verbal proportion?
+
+Is verbal economy proportional discipline?
+
+Is the proportion of words to meaning the efficiency of language?
+
+Can language be too efficient — too tightly proportioned — and lose nuance?
+
+Is nuance the product of slight disproportion?
+
+Is the slightly disproportionate sentence the most literary one?
+
+---
+
+## Proportion and the Body Revisited
+
+Is the proportion of head to body a cultural obsession?
+
+Do different artistic traditions proportion the human figure differently?
+
+Is the eight-heads-tall figure of Western fashion illustration a proportional distortion?
+
+Is the four-heads-tall figure of a toddler a natural proportion?
+
+Does the perception of cuteness depend on proportional cues — large head, large eyes, small body?
+
+Is the proportional schema of cuteness cross-cultural?
+
+Is the baby schema a proportional universal?
+
+Is the universal a proportional concept?
+
+Does the universal claim proportional applicability across all cases?
+
+Is proportional applicability the definition of a law?
+
+Is a natural law a proportional regularity?
+
+Is the regularity of natural law a proportional constancy?
+
+Is constancy proportional?
+
+Is the proportion of change to constancy the proportion of time to eternity?
+
+Is eternity disproportionate to time?
+
+Is the eternal the disproportionate that refuses temporal measure?
+
+Is the refusal of measure a refusal of proportion?
+
+Can anything refuse proportion and still be intelligible?
+
+Is intelligibility itself proportional to the mind that seeks to understand?
+
+Is understanding proportional to effort?
+
+Does disproportionate effort sometimes yield disproportionate understanding?
+
+Is the breakthrough the moment of disproportionate return on effort?
+
+Is the breakthrough always disproportionate?
+
+Is the proportion of preparation to breakthrough the proportion of the iceberg — vast below, minimal above?
+
+Is the iceberg proportion the proportion of all mastery?
+
+---
+
+## Proportion and Attention
+
+Is attention proportional to interest?
+
+Is interest proportional to novelty?
+
+Does novelty decay in proportion to exposure?
+
+Is the decay of novelty a proportional curve?
+
+Is the hedonic treadmill a proportional trap?
+
+Does the hedonic treadmill ensure that happiness remains proportional to relative change rather than absolute state?
+
+Is relative proportion the only proportion that matters for experience?
+
+Is the Weber-Fechner law — that perception is proportional to the logarithm of stimulus — the fundamental law of proportional experience?
+
+Is logarithmic proportion the proportion of consciousness?
+
+Does consciousness proportion its attention according to logarithmic rather than linear scales?
+
+Is the disproportionate attention paid to threats an evolutionary proportion?
+
+Is the proportion of threat-detection to opportunity-detection in the brain a survival proportion?
+
+Is the survival proportion still adaptive in a world where most threats are social rather than physical?
+
+Is the mismatch between evolutionary proportions and modern reality the source of anxiety?
+
+Is anxiety a proportional mismatch?
+
+Is the anxious person someone whose proportional calibration is misaligned with their environment?
+
+Is recalibration a proportional act?
+
+Can meditation recalibrate proportional attention?
+
+Does meditation proportion attention to the present moment?
+
+Is the present moment proportionally underweighted in ordinary consciousness?
+
+Is the proportion of attention to past, present, and future a measure of psychological health?
+
+Is psychological health proportional balance?
+
+Is the balanced mind the proportioned mind?
+
+Is the proportioned mind the goal of all contemplative traditions?
+
+---
+
+## Proportion and Language
+
+Is the proportion of vowels to consonants a property of a language's sound?
+
+Does the proportion of monosyllabic to polysyllabic words determine a language's feel?
+
+Is English's disproportionate vocabulary a strength or a burden?
+
+Is the proportion of borrowed words in English a measure of its cultural permeability?
+
+Is cultural permeability a proportional quality?
+
+Is the proportion of native to foreign elements in a language a linguistic proportion?
+
+Does linguistic proportion affect expressiveness?
+
+Is a language with a larger proportion of emotional vocabulary more emotionally expressive?
+
+Is the Sapir-Whorf hypothesis a hypothesis about linguistic proportion shaping cognitive proportion?
+
+Does the proportion of words for snow in Inuit languages proportion perception of snow?
+
+Is the proportion of color terms in a language a proportion of chromatic perception?
+
+Is perception proportioned by language?
+
+Is the limit of my language the proportion of my world?
+
+Is Wittgenstein's famous claim a proportional claim?
+
+Is the proportion of the sayable to the unsayable the proportion of language to reality?
+
+Is reality disproportionate to language?
+
+Is the surplus of reality over language the source of poetry?
+
+Is poetry the attempt to proportion language to the disproportionate?
+
+Is the poetic line a proportional unit?
+
+Is meter a system of proportioned syllables?
+
+Is free verse a rejection of syllabic proportion?
+
+Does free verse find its own internal proportions?
+
+Is the internal proportion of a free verse poem more difficult to achieve than the external proportion of metered verse?
+
+Is difficulty proportional to constraint, or inversely proportional?
+
+Is the most constrained form the easiest in one way and the hardest in another — proportioning effort differently?
+
+---
+
+## Proportion and the End
+
+Is every ending a proportional conclusion?
+
+Does a satisfying ending proportion its resolution to the weight of what preceded it?
+
+Is the disproportionate ending — too abrupt, too extended — the unsatisfying one?
+
+Is the proportion of denouement to climax a narrative proportion?
+
+Is the proportion of conclusion to argument a philosophical proportion?
+
+Does a proportional conclusion feel inevitable?
+
+Is inevitability a proportional feeling?
+
+Is the feeling of inevitability the feeling that the proportions could not have been otherwise?
+
+Is the proportion that could not have been otherwise the necessary proportion?
+
+Is the necessary proportion the beautiful one?
+
+Is beauty the appearance of necessity in proportion?
+
+Is the final proportion the one that contains all the others?
+
+Is the proportion of beginning to end the proportion of the whole?
+
+Is the whole proportional to its parts, or are the parts proportional to the whole?
+
+Is this the question that has been asked from the start?
+
+Is the recursion of this question proportional to the recursion of proportion itself?
+
+Is proportion recursive?
+
+Does every proportion contain within it the question of its own proportionality?
+
+Is the question of proportionality the question that never resolves?
+
+Is the unresolvable question the proportional one?
+
+Is the proportional question the one that echoes?
+
 What is proportion?

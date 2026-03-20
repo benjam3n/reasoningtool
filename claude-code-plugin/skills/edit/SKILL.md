@@ -136,6 +136,23 @@ WEAK VERBS FOUND:
 
 **Finding E — Verb strength score**: [count of weak verbs] / [total sentences] = weakness ratio. Above 0.3 is a problem.
 
+### Step 6b: LLM Generation Failure Scan
+
+Scan for systematic patterns that indicate machine-generated rather than genuinely thought-through writing:
+
+```
+GENERATION FAILURES FOUND:
+  Pre-baked thesis: Does the piece reach the most popular/predictable conclusion for this topic? [YES — quote the thesis / NO]
+  Cached takes: Are any "insights" actually the default position restated? [list instances]
+  Performed humility: Are there false-balance paragraphs that hedge both sides without committing? [list instances]
+  Relativistic hedging: "Some argue X, others Y, truth in between" constructions? [count — quote worst examples]
+  Voice collapse: Does the prose sound interchangeable with any other LLM output? [YES — identify the generic register / NO — identify what's distinctive]
+  False structure: Are headers, bullets, or numbered lists organizing nothing — decorative formatting that breaks up text without serving the argument? [list instances]
+  Aspiration as conclusion: Does the piece end with hope, inspiration, or a call to collective action instead of a substantive final claim? [YES — quote ending / NO]
+```
+
+**Finding E2 — Generation failure count**: [count of failures found]. Above 0 is a problem — each is a sign the writing was assembled from patterns rather than produced by thought.
+
 ### Step 7: Hedge and Redundancy Scan
 
 ```
@@ -209,6 +226,7 @@ For the top 3 issues, provide before/after with the principle each fix serves (n
 | **Compliment sandwich** | Starting and ending with praise to soften criticism | State findings directly. Praise only what genuinely works, and be specific about why. |
 | **Missing the forest** | 40 sentence-level notes but no structural assessment | Always do Phase 1 first. A structural problem makes sentence edits irrelevant. |
 | **Taste as editing** | "I would use a different word here" without a principle | Every edit needs a reason rooted in clarity, logic, tone, or reader experience — not preference. |
+| **Missing generation failures** | All findings are craft-level but the piece reads like generic LLM output | Run Step 6b. A well-crafted piece can still fail at the generation level — pre-baked thesis, cached takes, voice collapse. These are structural diseases, not style issues. |
 
 ---
 

@@ -54,7 +54,7 @@ _tier3 = {
     ],
     'Planning & Projects': [
         'pji', 'pjs', 'de', 'pjc', 'op', 'pt', 'ria', 'dpl',
-        'ret', 'skm', 'dop', 'pp',
+        'ret', 'skm', 'dop', 'pp', 'plansuite',
     ],
     'Business': [
         'cd', 'mf', 'pos', 'neg', 'clr', 'fm', 'bm', 'ivs',

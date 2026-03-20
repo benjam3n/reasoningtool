@@ -306,6 +306,16 @@ Optimization process:
 - Iterate on strategy based on data
 
 
+## Anti-Cached-Strategy Check
+
+Content strategy is the domain most vulnerable to cached takes — every strategy ends up recommending the same pillars, the same calendar, the same "create valuable content" advice. Run these checks before delivering:
+
+- **Pillar originality**: Are the recommended content pillars actually specific to THIS business, or could they apply to any company in the industry? "Thought leadership" and "industry insights" are not pillars — they're placeholders. A real pillar names the specific angle this company owns.
+- **Recommendation specificity**: For each recommendation, ask: would I give this same advice to their competitor? If yes, it's a cached take. Strategy that doesn't differentiate isn't strategy — it's a template.
+- **Calendar substance**: Is the content calendar organized around genuine editorial thinking, or just filling slots? "Monday: educational, Wednesday: engagement, Friday: fun" is false structure. Each planned piece should have a reason beyond "it's Tuesday."
+- **Metric defaults**: Are the recommended metrics the standard list (traffic, engagement, conversions) or do they measure what actually matters for THIS business's specific goals?
+- **"Best practices" audit**: Flag every instance of "best practice" or "industry standard." These are cached takes by definition. Replace with specific, evidence-backed recommendations or honest "we don't know yet, test this."
+
 ## When to Use
 - Building an audience for a product or service
 - Establishing thought leadership in a domain

@@ -121,6 +121,20 @@ Complete final preparation:
 6. Get feedback if possible before sending
 
 
+## LLM Generation Failures
+
+Persuasive writing is especially vulnerable to these — LLM defaults actively undermine persuasion because they produce text that sounds like everyone else, which is the opposite of persuasive.
+
+| Failure | What It Does to Persuasion | Fix |
+|---------|---------------------------|-----|
+| **Pre-baked thesis** | Reader recognizes the conclusion as the "standard take" and stops engaging — nothing to be persuaded of | Test: would someone who hadn't read other commentary reach this conclusion from evidence alone? |
+| **Cached takes** | Reader has heard this argument before and has already dismissed or accepted it — no movement happens | Find the angle they haven't encountered. The persuasive power is in the unexpected argument, not the strongest-sounding one. |
+| **Performed humility** | "To be sure, there are limitations" signals the writer is performing balance, not thinking honestly — erodes trust | Delete it. If the piece is the same or better, it was performance. Real concessions change the argument; fake ones pad it. |
+| **Relativistic hedging** | "Some argue X, others Y" gives the reader permission to stay where they are — the opposite of persuasion | Take a position. Say exactly where you land and why. Hedging is anti-persuasion. |
+| **Voice collapse** | Generic LLM cadence signals "this was generated, not written" — reader disengages immediately | The piece must sound like a specific person wrote it. If any AI could have produced it, rewrite. |
+| **False structure** | Bullet points and headers that organize nothing make the piece look like a template, not an argument | Remove all formatting. Does the argument still flow? If yes, the structure was decorative. |
+| **Aspiration as conclusion** | "Together we can build a better future" — the reader feels manipulated, not moved | End on your strongest concrete point, not a vague call to hope. Delete the last paragraph and check. |
+
 ## When to Use
 - Writing proposals to clients, executives, or stakeholders
 - Crafting emails that need to get a response or action
@@ -142,3 +156,5 @@ Complete final preparation:
 - Urgency or reason to act NOW is present
 - Language is clear enough for a smart 12-year-old
 - Format is appropriate for the medium and audience
+- No cached takes — every key argument offers something the reader hasn't heard before
+- Structure does real work — remove all formatting and check if the argument still flows (if yes, structure was decorative)

@@ -106,6 +106,14 @@ For EVERY paragraph, state:
 - Connection to next paragraph is UNCLEAR (logic gap)
 - The paragraph does two jobs (split it)
 
+### Step 4b: Thesis Originality Check
+
+Before proceeding, test the piece's conclusion against predictability:
+- State the thesis/conclusion in one sentence.
+- Ask: is this the take that someone would reach by pattern-matching to existing commentary, without examining the evidence themselves?
+- Ask: has this exact conclusion appeared in 10,000 other pieces on this topic?
+- If yes to either: the thesis is pre-baked. Go back to the evidence and find the conclusion that the evidence actually supports — not the one that feels familiar.
+
 ### Step 5: Argument Flow Test
 
 Read only the first sentence of every paragraph in sequence. Does this produce a coherent summary of the piece? If not, the first sentences are burying the lead — each paragraph's opening must signal its job.
@@ -148,6 +156,8 @@ REGISTER SHIFTS: [Places where formality level changes without reason]
 
 **Finding F — Tone consistency**: Note any section where the voice shifts (e.g., suddenly casual in a formal piece, suddenly academic in a practical piece).
 
+**Finding F2 — Voice collapse check**: Read the piece as a stranger. Could any AI assistant have written this? Same cadence, same transitions ("Moreover," "It's worth noting," "This raises the question"), same paragraph rhythm? If yes, the voice has collapsed into generic LLM output. Rewrite until the prose has a specific voice — not just a competent one.
+
 ### Step 9: Read Aloud Test
 
 Read the piece aloud (or simulate). Flag:
@@ -164,6 +174,7 @@ Target the stated length. If over, cut in this priority order:
 3. Weakest examples (keep the best one, cut the rest)
 4. Qualifications the reader can infer
 5. Entire sections if still over (the weakest-job section goes)
+6. Aspirational conclusions — if the last paragraph is "The future holds promise" or equivalent, delete it. If the piece is better without it, you were concluding with hope instead of substance. End on your last real point.
 
 ---
 
@@ -208,6 +219,9 @@ REVISION METRICS:
 | **Logic gap denial** | Transitions say "additionally" when the relationship is unclear | "Additionally" is not a logical connector. State the actual relationship. |
 | **Revision as addition** | Draft 2 is longer than Draft 1 | You added instead of cutting. Go back and subtract first. |
 | **Tone drift** | Formal piece suddenly has contractions and slang | Pick one register and enforce it. Rewrite deviating sections. |
+| **Pre-baked thesis** | The conclusion is the most popular/predictable take on this topic | Return to evidence. What does it actually show? Find the conclusion no one has written yet. |
+| **Voice collapse** | Prose sounds like any AI assistant — same cadence, transitions, structure | Rewrite for a specific voice. Cut "Moreover," "It's worth noting," and every transition that could appear in any piece. |
+| **Aspiration as conclusion** | Final paragraph is vague hope ("great promise," "exciting future," "much to learn") | Delete it. End on the last substantive point. If that feels abrupt, the piece was leaning on the aspirational ending as a crutch. |
 
 ---
 

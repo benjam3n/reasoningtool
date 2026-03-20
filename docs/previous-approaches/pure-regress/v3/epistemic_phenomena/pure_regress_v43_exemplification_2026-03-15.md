@@ -3197,3 +3197,843 @@ Does the mind that learns by example ever arrive, or is it always in transit?
 Is being always in transit — between example and concept, particular and general, showing and saying — the condition of thought itself?
 
 And if thought is always in transit, is the exemplification that sustains it less a solution than an inexhaustible question?
+
+---
+
+## Counterexamples and the Logic of Refutation
+
+Is the counterexample the most powerful form of exemplification?
+
+Does a single counterexample have more logical force than a thousand confirming examples?
+
+Is the asymmetry between confirmation and refutation an asymmetry in the power of exemplification?
+
+What exactly does a counterexample exemplify — the falsity of a claim, or the existence of an exception?
+
+Is there a difference between showing a claim false and showing that an exception exists?
+
+Does the counterexample refute the universal or merely limit its scope?
+
+If the counterexample limits scope rather than refuting, is it a modification rather than a destruction?
+
+Can a theory survive its counterexamples by accommodating them?
+
+Is the accommodation of counterexamples a strength of theory or a weakness?
+
+When does accommodation become ad hoc adjustment?
+
+Is the ad hoc adjustment that saves a theory from counterexamples a form of intellectual dishonesty?
+
+Or is it a form of rational persistence in the face of anomaly?
+
+Does Kuhn's distinction between normal science and revolutionary science depend on how counterexamples are treated?
+
+Is normal science the practice of domesticating counterexamples?
+
+Is revolutionary science the practice of taking counterexamples seriously?
+
+What does it mean to take a counterexample seriously?
+
+Does taking a counterexample seriously require letting it reshape one's conceptual framework?
+
+Is the willingness to let a counterexample reshape thought a cognitive virtue?
+
+Can one be too willing to abandon a framework in the face of counterexamples?
+
+Is the balance between tenacity and flexibility in the face of counterexamples codifiable, or is it a matter of judgment?
+
+Is judgment about counterexamples itself something that can only be learned by example?
+
+---
+
+Does the counterexample presuppose the rule it counters?
+
+Can there be a counterexample without a prior claim to counter?
+
+Is the counterexample parasitic on the generalization it undermines?
+
+Does the parasitism of the counterexample make it a secondary form of exemplification?
+
+Or is the counterexample primary — the original impetus for refining generalizations?
+
+Did the first generalizations arise from examples, and the first refinements from counterexamples?
+
+Is the dialectic of example and counterexample the engine of conceptual development?
+
+Does every concept develop through a history of examples and counterexamples?
+
+Is the mature concept one that has survived all known counterexamples?
+
+Can a concept that has survived all known counterexamples still be wrong?
+
+Is the possibility that unknown counterexamples exist the permanent vulnerability of all knowledge?
+
+Does this permanent vulnerability make all knowledge provisional?
+
+Is provisional knowledge still knowledge, or merely well-supported belief?
+
+Does the distinction between knowledge and well-supported belief depend on whether counterexamples are possible in principle?
+
+If counterexamples are always possible in principle, is certain knowledge impossible?
+
+Is the impossibility of certain knowledge a reason for despair or for continued inquiry?
+
+---
+
+Is the thought experiment a kind of imagined counterexample?
+
+Does the imagined counterexample have the same logical force as an actual one?
+
+Can you refute a theory with a scenario that has never occurred?
+
+If the scenario is logically possible, does its non-occurrence matter?
+
+Is logical possibility sufficient for a counterexample, or must the counterexample be physically possible?
+
+Does the trolley problem function as a counterexample to simple utilitarian or deontological principles?
+
+Is the philosophical thought experiment a machine for generating counterexamples?
+
+Does the power of thought experiments depend on their exemplificatory vividness?
+
+Can an abstract counterexample be as compelling as a vivid one?
+
+Is the vividness of a counterexample epistemically relevant or merely psychologically persuasive?
+
+If vividness is merely persuasive, should we distrust vivid counterexamples?
+
+Can we distrust vividness without losing the force of exemplification altogether?
+
+Is there a form of counterexample that is both rigorous and vivid?
+
+Is the best counterexample one that is simultaneously logically compelling and imaginatively gripping?
+
+Does the conjunction of logic and imagination in the counterexample make it a unique epistemic tool?
+
+---
+
+## Exemplars, Prototypes, and Category Structure
+
+Is an exemplar the same as an example?
+
+Does the exemplar have a privileged position among examples?
+
+Is the exemplar the best example, the most typical, or the most salient?
+
+Can these three notions — best, most typical, most salient — come apart?
+
+Is the best example of a bird the one most people think of first?
+
+Is the robin a better example of a bird than the penguin?
+
+If so, what makes it better — typicality, familiarity, or centrality to the concept?
+
+Is typicality a feature of the example or of the concept?
+
+Does the concept "bird" have a center, and is the robin closer to that center?
+
+Is the center of a concept its prototype?
+
+Is the prototype a real entity or a statistical abstraction?
+
+Can the prototype of a category be something that does not actually exist?
+
+Is the average face — which no actual face matches — the prototype of "face"?
+
+If the prototype is an abstraction, how can it serve as an example?
+
+Can an abstraction exemplify?
+
+Does the prototype exemplify by being the idealization that actual examples approximate?
+
+Is approximation to the prototype the measure of how good an example something is?
+
+---
+
+Does Eleanor Rosch's prototype theory replace the classical theory of categories?
+
+Does the classical theory hold that category membership is all-or-nothing?
+
+Does prototype theory hold that category membership is graded?
+
+Is graded membership a matter of degree of exemplification?
+
+Does the robin exemplify "bird" to a higher degree than the penguin?
+
+Is degree of exemplification a coherent notion?
+
+Can something half-exemplify a property?
+
+Is the borderline case a case of partial exemplification?
+
+Does the existence of borderline cases show that exemplification admits of degrees?
+
+Or does it show that our categories are vague?
+
+Is vagueness in categories a defect or a feature?
+
+If vagueness is a feature, does it make exemplification fundamentally fuzzy?
+
+Can fuzzy exemplification ground clear knowledge?
+
+Is the demand for clear exemplification a demand that reality may not satisfy?
+
+Does reality come in clear categories, or do we impose categories on a continuous world?
+
+If the world is continuous and categories are discrete, is exemplification always a forced fit?
+
+Is the forced fit between world and category the source of all classificatory error?
+
+Can classificatory error be eliminated, or is it inherent in the act of classification?
+
+---
+
+Is the exemplar model of categorization different from the prototype model?
+
+Does the exemplar model hold that we store actual encountered examples rather than abstractions?
+
+If categorization is based on stored exemplars, is every judgment of category membership a comparison to remembered examples?
+
+Is memory of examples the foundation of all categorization?
+
+Does the exemplar model make categorization essentially historical — dependent on which examples one has encountered?
+
+If two people have encountered different examples, do they have different categories?
+
+Does the diversity of encountered examples produce diversity of categories?
+
+Is conceptual disagreement sometimes traceable to different exemplar histories?
+
+Can people share a concept if they have encountered entirely different examples of it?
+
+Is shared conceptual life possible only because people encounter overlapping examples?
+
+Is the overlap of exemplar histories the basis of shared meaning?
+
+Does shared meaning require identical exemplar histories, or merely sufficiently similar ones?
+
+How similar is sufficiently similar?
+
+Is the question of sufficient similarity itself answerable only by examples?
+
+---
+
+Does the choice of exemplar shape the concept?
+
+If you learned "democracy" through the example of Athens, does your concept differ from someone who learned it through the example of modern Sweden?
+
+Does the founding exemplar of a concept determine its contours?
+
+Can the founding exemplar be replaced by a better one?
+
+What makes one exemplar better than another?
+
+Is the better exemplar the one that captures more of the concept's essential features?
+
+But if the concept's essential features are determined by exemplars, is this circular?
+
+Does the circularity of exemplar and concept defeat the attempt to ground one in the other?
+
+Is the circle vicious or hermeneutic?
+
+If hermeneutic, does it deepen understanding with each pass?
+
+Does each new exemplar encountered deepen the concept?
+
+Is the deepening of concepts through exemplars an unending process?
+
+Can a concept ever be deep enough?
+
+Is the desire for a deep enough concept the desire for a perfect exemplar?
+
+Does the perfect exemplar exist, or is it an ideal that actual examples can only approach?
+
+Is the ideal exemplar the Platonic Form under a different name?
+
+---
+
+## Showing versus Saying
+
+Can everything that can be shown also be said?
+
+Is Wittgenstein's distinction between showing and saying a distinction about the limits of exemplification?
+
+Does showing achieve something that saying cannot?
+
+What exactly does showing achieve that saying misses?
+
+Is the shown content the content that resists propositional formulation?
+
+Can propositional formulation capture everything, or are there truths that can only be shown?
+
+Is the logical form of a proposition something that the proposition shows but cannot say?
+
+If logical form can only be shown, is it exemplified by every well-formed proposition?
+
+Does every well-formed proposition exemplify its own logical structure?
+
+Is the exemplification of logical structure involuntary — happening whether or not anyone notices?
+
+Is involuntary exemplification the most fundamental kind?
+
+Does every entity exemplify its own nature whether or not it is selected as an example?
+
+If so, is the world always already showing what it is?
+
+Is philosophy the attempt to attend to what the world shows?
+
+Does attending to what the world shows require a special kind of perception?
+
+Is philosophical perception the perception of exemplification?
+
+---
+
+Does the gesture exemplify what words cannot?
+
+Is the pointing finger an exemplification of direction?
+
+Does pointing show direction without saying anything about direction?
+
+Is the difference between pointing and describing the difference between showing and saying?
+
+Can description ever fully replace demonstration?
+
+Is the cooking demonstration an exemplification that no recipe can match?
+
+Does the demonstration exemplify the process, while the recipe merely describes it?
+
+Is the gap between demonstration and description the gap between exemplification and denotation?
+
+Can the gap ever be closed?
+
+Would closing the gap require a language that is simultaneously descriptive and demonstrative?
+
+Is such a language possible?
+
+Is film such a language — simultaneously showing and saying?
+
+Does film exemplify by presenting rather than by representing?
+
+Is the distinction between presenting and representing the distinction between exemplification and description?
+
+Can presentation occur without representation?
+
+Is pure presentation — showing without saying — the ideal of exemplification?
+
+Is the ideal of pure presentation achievable, or does every showing implicitly say?
+
+Does every act of showing carry an implicit claim?
+
+Is the implicit claim of showing "this is how things are"?
+
+If every showing carries such a claim, is exemplification always assertoric?
+
+Can you show something without asserting anything?
+
+Is the non-assertoric showing a showing that exempts itself from truth and falsity?
+
+Is art a form of non-assertoric showing?
+
+Does art exemplify without asserting?
+
+If art exemplifies without asserting, can it still be true or false?
+
+Is the truth of art a different kind of truth — exemplificatory rather than propositional?
+
+---
+
+## Goodman's Exemplification Revisited: Expression as Metaphorical Exemplification
+
+Does Goodman's notion of expression extend exemplification into the metaphorical?
+
+Is a painting that expresses sadness metaphorically exemplifying sadness?
+
+Does the painting literally possess sadness, or does it metaphorically possess it?
+
+If metaphorical possession is genuine possession, is metaphorical exemplification genuine exemplification?
+
+Can metaphorical exemplification be as epistemically informative as literal exemplification?
+
+Is the sad painting teaching us something about sadness?
+
+Does what the sad painting teaches differ from what a clinical description of sadness teaches?
+
+Is the difference between artistic and clinical knowledge a difference in mode of exemplification?
+
+Does the artwork exemplify by embodying, while the description exemplifies by denoting?
+
+Is embodied exemplification richer than denotative exemplification?
+
+Can richness of exemplification compensate for lack of precision?
+
+Is the trade-off between richness and precision inherent in exemplification?
+
+Does every choice of exemplification involve a choice between richness and precision?
+
+Is the scientific example precise but impoverished?
+
+Is the artistic example rich but imprecise?
+
+Can any example be both maximally rich and maximally precise?
+
+Is the impossibility of maximal richness and maximal precision a fundamental limit of exemplification?
+
+Does this limit echo Heisenberg's uncertainty — not in physics but in epistemology?
+
+Is there an epistemic uncertainty principle governing exemplification?
+
+---
+
+Does the metaphor exemplify by making the unfamiliar familiar?
+
+Does the simile weaken exemplification by introducing "like" — a distancing particle?
+
+Is the metaphor more exemplificatory than the simile because it asserts identity rather than similarity?
+
+Does "the world is a stage" exemplify something about the world that "the world is like a stage" merely gestures at?
+
+Is the assertoric force of metaphor the force of exemplification pushed to its extreme?
+
+Does the extreme of exemplification risk falsehood?
+
+Is the powerful metaphor always dangerously close to being literally false?
+
+Is the willingness to risk literal falsehood the price of metaphorical exemplification?
+
+Does the value of metaphorical exemplification justify the risk of literal falsehood?
+
+Is all creative exemplification a form of controlled risk?
+
+---
+
+## The Economy of Examples
+
+How many examples are enough?
+
+Is one example ever sufficient?
+
+Is the single example always vulnerable to the charge of being unrepresentative?
+
+Does adding more examples increase confidence?
+
+Is the increase in confidence proportional to the number of examples?
+
+Does each additional example contribute less than the last?
+
+Is there a law of diminishing returns for exemplification?
+
+If so, is there an optimal number of examples?
+
+Does the optimal number depend on the concept being exemplified?
+
+Do simple concepts require fewer examples than complex ones?
+
+Is the concept of "red" simple enough to be exemplified by a single instance?
+
+Or does the variety of reds — crimson, scarlet, vermillion — require multiple examples?
+
+Is the family of reds a family of exemplifications?
+
+Does the family of exemplifications define the concept more precisely than any single example?
+
+Is the concept the family of its examples?
+
+If the concept is the family of its examples, is the concept open-ended because new examples are always possible?
+
+Is the open-endedness of concepts a consequence of the inexhaustibility of exemplification?
+
+---
+
+Is the textbook's use of "worked examples" an attempt to exemplify problem-solving methods?
+
+Does the worked example exemplify the method, the solution, or both?
+
+Can the student extract the method from the worked example, or do they merely learn the solution?
+
+Is the danger of worked examples that students memorize solutions rather than learning methods?
+
+Is the extraction of method from example the central challenge of learning by example?
+
+Does the teacher's role consist in helping the student see the general in the particular?
+
+Is seeing the general in the particular the cognitive act that exemplification facilitates?
+
+Can this cognitive act be taught, or must it be caught?
+
+If it must be caught, is learning by example irreducibly experiential?
+
+Does the irreducibly experiential nature of example-based learning resist formalization?
+
+Is the resistance to formalization the reason artificial intelligence struggles with learning from few examples?
+
+Does human learning from examples involve something that algorithmic learning does not?
+
+Is the human ability to grasp exemplification a form of understanding that transcends pattern matching?
+
+Or is sophisticated pattern matching all that exemplification amounts to?
+
+Is the reduction of exemplification to pattern matching a deflation of a richer concept?
+
+---
+
+Does the redundant example waste time or reinforce understanding?
+
+Is the redundant example truly redundant, or does it add a dimension not captured by previous examples?
+
+Can two examples that seem to exemplify the same thing actually exemplify different aspects of it?
+
+Is every example unique in what it exemplifies, even when it seems repetitive?
+
+Does the sequence of examples matter?
+
+Is the order in which examples are presented pedagogically significant?
+
+Does a badly ordered sequence of examples confuse rather than clarify?
+
+Is the art of teaching partly the art of ordering examples?
+
+Is there an optimal ordering of examples for any given concept?
+
+Does the optimal ordering depend on the learner's prior knowledge?
+
+Is the adaptation of examples to the learner a form of personalized exemplification?
+
+Can exemplification be personalized without losing its objective content?
+
+Does the objective content of an example survive its adaptation to different learners?
+
+Or does each learner encounter a different exemplification of the same concept?
+
+Is the "same concept" accessed through different exemplifications truly the same?
+
+---
+
+## Instances and Types
+
+Is the relationship between instance and type the fundamental relationship of exemplification?
+
+Does every instance instantiate a type?
+
+Can there be an instance without a type — a pure particular?
+
+Is the pure particular a coherent notion?
+
+Does the pure particular, if it existed, exemplify nothing at all?
+
+Is a thing that exemplifies nothing epistemically invisible?
+
+Can we perceive what exemplifies no type?
+
+Is perception always perception of something as something — an instance as a type?
+
+Does perceiving something as something require exemplification?
+
+Is exemplification the condition of perceptual recognition?
+
+If so, does the failure of exemplification produce perceptual confusion?
+
+Is the moment of confusion — when something does not fit any type — the moment before a new type is born?
+
+Does the birth of new types require anomalous instances that resist existing exemplification?
+
+Is the anomalous instance the catalyst of conceptual innovation?
+
+Does conceptual innovation always begin with an example that does not fit?
+
+Is the misfit example the most important example?
+
+---
+
+Can a single instance belong to multiple types simultaneously?
+
+Does a red ball exemplify redness, roundness, solidity, and objecthood all at once?
+
+Is the simultaneous exemplification of multiple types the normal condition of concrete things?
+
+If concrete things always exemplify multiple types, does attention determine which type is exemplified?
+
+Is attentional selection the mechanism by which exemplification becomes determinate?
+
+Without attention, is exemplification indeterminate?
+
+Is indeterminate exemplification an oxymoron?
+
+Can something exemplify without determinately exemplifying something in particular?
+
+Is the background of perception — things present but not attended to — a field of indeterminate exemplification?
+
+Does the background become determinately exemplifying when attention shifts to it?
+
+Is the foreground-background structure of perception an exemplificatory structure?
+
+Does exemplification require foregrounding?
+
+Is foregrounding always a selection that backgrounds other possibilities?
+
+Is the backgrounding of alternative exemplifications a form of epistemic loss?
+
+Is every determinate act of exemplification accompanied by the loss of alternative exemplifications?
+
+Is this loss the price of cognitive clarity?
+
+---
+
+Is the token-type distinction a distinction about exemplification?
+
+Is the token the concrete instance that exemplifies the abstract type?
+
+Is every word-token an exemplification of its word-type?
+
+Do all tokens of the same type exemplify the same thing?
+
+Or does each token exemplify the type differently — through its particular font, size, inflection, context?
+
+Is the variability of tokens compatible with the unity of the type?
+
+Does the type's unity survive the diversity of its tokens?
+
+Is the unity of the type a product of abstraction from token diversity?
+
+Is abstraction from token diversity the cognitive act of recognizing a type?
+
+Is recognizing a type an act of seeing through particulars to what they have in common?
+
+Is what particulars have in common always a further particular, or is it genuinely universal?
+
+Is the problem of universals a problem about what tokens exemplify?
+
+Does the nominalist deny that tokens exemplify anything universal?
+
+Does the realist affirm that what tokens exemplify is genuinely real?
+
+Is the debate between nominalism and realism a debate about the ontology of what is exemplified?
+
+Can the debate be resolved by examining exemplification more carefully?
+
+Or does examining exemplification more carefully reveal why the debate persists?
+
+---
+
+## The Failure of Exemplification
+
+Can exemplification fail?
+
+What does it mean for an example to fail?
+
+Does the failed example fail to exemplify, or does it exemplify something other than intended?
+
+Is unintended exemplification always a form of failure?
+
+Or is it sometimes a form of discovery?
+
+Is the difference between failure and discovery a matter of how the unintended exemplification is received?
+
+Does the receptive mind turn failed exemplification into discovery?
+
+Is the unreceptive mind one that sees all unintended exemplification as failure?
+
+Is flexibility in receiving exemplification an intellectual virtue?
+
+Can you be too flexible — seeing exemplification where there is none?
+
+Is seeing exemplification where there is none a form of pareidolia?
+
+Is pareidolia — seeing faces in clouds — a failure of exemplification or an excess of it?
+
+Is the excess of exemplification the tendency to see everything as an example of something?
+
+Is seeing everything as an example of something a form of theory-ladenness?
+
+Does theory-ladenness make exemplification inescapable?
+
+If exemplification is inescapable, can we ever see things as they are rather than as examples of our categories?
+
+Is the desire to see things as they are the desire to escape exemplification?
+
+Is the escape from exemplification the escape from conceptual thought?
+
+Can there be perception without exemplification?
+
+Would perception without exemplification be the "blooming, buzzing confusion" that James attributed to the infant?
+
+Is the infant's world a world without exemplification?
+
+Does cognitive development consist in the gradual acquisition of exemplificatory capacity?
+
+Is the fully developed mind one that exemplifies fluently?
+
+Is fluent exemplification a mark of expertise?
+
+---
+
+Does the deliberately bad example serve a pedagogical purpose?
+
+Can showing what something is not be as instructive as showing what it is?
+
+Is the bad example a form of via negativa — approaching the concept by eliminating what it is not?
+
+Does the via negativa of exemplification require a prior positive understanding?
+
+Can you recognize a bad example without already knowing what a good one looks like?
+
+Is the ability to distinguish good from bad examples a sign of understanding?
+
+Is understanding measurable by one's ability to generate and evaluate examples?
+
+If so, is exemplification the test of understanding?
+
+Is the test of understanding always an exemplificatory test — "give me an example"?
+
+Does the demand "give me an example" test depth or breadth of understanding?
+
+Can someone understand deeply without being able to produce examples?
+
+Is the inarticulate expert — the one who understands but cannot exemplify — genuinely knowledgeable?
+
+Or is the inability to exemplify a genuine epistemic deficiency?
+
+Is the teacher who cannot provide examples deficient as a teacher or merely as a communicator?
+
+Is communication without exemplification possible?
+
+---
+
+## Exemplification and Normativity
+
+Is there a right way to exemplify?
+
+Does the concept determine what counts as a good example of it?
+
+Or does the good example determine what the concept means?
+
+If the good example determines conceptual meaning, who decides which examples are good?
+
+Is the authority to declare examples good or bad a form of conceptual power?
+
+Does the power to set examples shape what a community understands?
+
+Is the control of examples a form of ideological control?
+
+Do those who choose the examples in textbooks shape the conceptual landscape of a generation?
+
+Is the politics of exemplification the politics of what gets to count as representative?
+
+Does representativeness in exemplification carry normative weight?
+
+Is the exemplary life — the life held up as an example — normative for those who witness it?
+
+Does the exemplary person set the standard that others measure themselves against?
+
+Is the saint or hero an exemplification of virtues that others are meant to emulate?
+
+Can emulation of an exemplary person be harmful if the example is flawed?
+
+Is every exemplary person flawed in ways that their exemplarity conceals?
+
+Does the concealment of flaws in the exemplary person distort the exemplification of virtue?
+
+Is honest exemplification of virtue possible, or does exemplification always idealize?
+
+Does idealization in exemplification serve aspiration or deception?
+
+Is the aspirational function of exemplification worth the risk of deception?
+
+Can exemplification inspire without deceiving?
+
+---
+
+Is the norm implicit in every act of exemplification?
+
+Does choosing this as an example implicitly claim that this is how things should be understood?
+
+Is the implicit norm in exemplification the source of its persuasive power?
+
+Does persuasive power make exemplification dangerous?
+
+Is the danger of exemplification that it shapes thought while appearing merely to illustrate?
+
+Does the appearance of innocence — "it's just an example" — conceal the normative force?
+
+Can we become critically aware of the normative force of examples?
+
+Is critical awareness of exemplification a form of intellectual self-defense?
+
+Does intellectual self-defense require asking, of every example: why this one?
+
+Is the question "why this example?" the beginning of critical thinking about exemplification?
+
+Does critical thinking about exemplification lead to better exemplification or to paralysis?
+
+Can you be so critical of examples that you become unable to use them?
+
+Is the inability to use examples a form of intellectual paralysis?
+
+Is there a mean between naive acceptance and paralyzing critique of examples?
+
+Is finding that mean the task of the educated mind?
+
+---
+
+## Exemplification Without End
+
+Does every answer to a question about exemplification itself require an example?
+
+Is the need for examples in answering questions about examples a form of infinite regress?
+
+Can the regress of exemplification be halted?
+
+Would halting the regress require a self-exemplifying foundation?
+
+Is the self-exemplifying foundation the example that needs no further example to be understood?
+
+Does such a foundation exist?
+
+Is the search for a self-exemplifying foundation the search for absolute clarity?
+
+Is absolute clarity achievable or is it a regulative ideal?
+
+If it is a regulative ideal, does it guide inquiry without ever being reached?
+
+Is the guidance of unreachable ideals the condition of ongoing intellectual life?
+
+Does ongoing intellectual life require that exemplification never be complete?
+
+Is the incompleteness of exemplification the guarantee that there is always more to understand?
+
+Is there always more to understand?
+
+Can the claim that there is always more to understand be exemplified?
+
+Is this very sequence of questions an exemplification of inexhaustible inquiry?
+
+Does the sequence exemplify inexhaustibility by being inexhaustible?
+
+Or does the sequence, being finite, fail to exemplify true inexhaustibility?
+
+Can the finite exemplify the infinite?
+
+Is every attempt to exemplify infinity a finite gesture toward what exceeds all gestures?
+
+Is the gesture toward what exceeds all gestures the essence of exemplification?
+
+Does exemplification always gesture beyond itself?
+
+Is gesturing beyond itself the defining characteristic of the example?
+
+If the example always gestures beyond itself, does it always point to the need for another example?
+
+Is the need for another example the need that drives all inquiry forward?
+
+Is inquiry that is driven forward by exemplification inquiry without a final resting place?
+
+Is the absence of a final resting place the condition of a mind that thinks by example?
+
+Does the mind that thinks by example think endlessly?
+
+Is endless thought a blessing or a burden?
+
+Is the question of whether endless thought is a blessing or a burden itself an example of endless thought?
+
+Does recognizing this recursion halt it or deepen it?
+
+And if it deepens, does the deepening itself exemplify the inexhaustibility it describes?

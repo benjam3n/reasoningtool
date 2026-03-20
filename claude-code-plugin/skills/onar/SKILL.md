@@ -114,6 +114,12 @@ Check that the narrative serves its intended purpose:
 
 ```
 PURPOSE CHECK: [does the narrative achieve its goal? what's missing?]
+
+GENERATION FAILURE CHECK:
+- Voice collapse: Read the narrative aloud. Does it sound like a specific person telling a specific story, or does it sound like "professional writing"? Could any AI assistant have produced this? If yes, the voice has collapsed. Rewrite with concrete sensory details, unusual word choices, or rhythms that belong to THIS story.
+- Cached narrative: Is the story following a stock arc (hero's journey, underdog triumph, lesson-learned) because it's the default, or because it's actually the right structure? Test: has this exact narrative shape been used in 10,000 other pieces? If the structure is predictable, the narrative isn't doing work — it's performing "story."
+- False structure: Remove all headers and formatting. Does the narrative still flow and make sense? If it falls apart without structural scaffolding, the structure was doing the thinking. The prose should carry the story on its own.
+- Aspiration as conclusion: Does the narrative end with "and so we look forward to..." or "the future holds promise"? Delete the last paragraph. If the piece is better, the ending was filler. End on something concrete and specific.
 ```
 
 ---

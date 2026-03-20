@@ -3026,104 +3026,1146 @@ And does specifying the limits of specification push the limits further out?
 
 Does the limit of specification recede forever before the one who specifies it?
 
-Is there a final specification?
+---
 
-Does the idea of a final specification make sense?
+## Specification and Constraint
 
-Would a final specification be one from which nothing has been omitted?
+Is every specification a constraint?
 
-Is the idea of nothing being omitted coherent for a finite mind?
+Does specifying what something is constrain what it can become?
 
-Does a final specification require omniscience?
+Is constraint the price of specificity?
 
-Is omniscience the state of having specified everything?
+Can something be specific without being constrained?
 
-If God is omniscient, has God specified everything?
+If specificity always constrains, does freedom require vagueness?
 
-If everything is specified, is there room for surprise?
+Is a constraint itself a specification — a specification of what is not allowed?
 
-Can a fully specified universe surprise itself?
+Does the constraint specify the boundary, or does the boundary specify the constraint?
 
-Is surprise the experience of encountering what exceeds one's specification?
+Are constraints discovered or imposed?
 
-Does the value of surprise suggest the value of incomplete specification?
+If discovered, do they exist independently of whoever specifies them?
 
-Is incomplete specification the condition for wonder?
+If imposed, does the one who imposes them bear responsibility for what they exclude?
 
 ---
 
-Does wonder require not knowing — a gap in specification?
+Is there a difference between a specification that constrains and one that enables?
 
-Is wonder the emotional response to specification failure?
+Can a specification open possibilities rather than close them?
 
-Can one feel wonder about something fully specified?
+Does specifying a key open only the lock it was specified for?
 
-If not, does the advance of specification diminish wonder?
+Is a key an enabling specification — a specification that grants access?
 
-Is the disenchantment of the world the over-specification of the world?
+Does the enabling power of a specification depend on the structure it engages?
 
-Does re-enchantment require a deliberate retreat from specification?
+Can a specification be simultaneously constraining and enabling?
 
-Can one choose to un-specify what one has specified?
+Is a grammar a constraint that enables expression?
 
-Is forgetting a form of un-specification?
+Does the specificity of grammatical rules make language possible rather than limiting it?
 
-Does forgetting restore the mystery that specification banished?
+Is every formal system a set of enabling constraints?
 
-Is the desire to restore mystery a desire to undo specification?
+Does mathematics achieve its power through the specificity of its axioms?
 
-Can specification be undone, or is it irreversible once accomplished?
-
-If irreversible, is the trajectory of civilization a one-way journey toward total specification?
+Would less specific axioms produce more or less mathematics?
 
 ---
 
-Is total specification possible?
+Is a specification a compression of possibilities?
 
-Would total specification be the end of inquiry?
+Does specifying compress the space of what is relevant?
 
-Is the end of inquiry desirable or terrifying?
+Is compression always a loss, or can it preserve what matters?
 
-Does the prospect of total specification motivate or paralyze?
+Does a good specification compress without losing essential information?
 
-If specification is endless, is that a consolation or a curse?
+What counts as essential — and who decides?
 
-Is the endless task of specification the human condition?
+Is the distinction between essential and inessential itself a specification?
 
-Does specifying define what it means to be a thinking being?
+Does specifying what is essential require already knowing the whole from which one selects?
 
-Is a being that does not specify not yet fully a mind?
+Is the hermeneutic circle a specification circle — needing the whole to specify the parts, needing the parts to specify the whole?
 
-Is the compulsion to specify what distinguishes intelligence from mere reaction?
+Can the specification circle be broken, or only entered?
 
-Does artificial intelligence specify, or merely process specifications provided by humans?
+Does entering the circle at different points produce different specifications?
 
-Can a machine discover what needs to be specified?
-
-Is the ability to identify what requires specification the deepest form of intelligence?
+Are all entry points equally valid?
 
 ---
 
-Does every specification point beyond itself to what remains unspecified?
+Does over-constraint kill a system?
 
-Is the unspecified that haunts every specification an absence or a presence?
+Can a system be so specified that it cannot adapt?
 
-Is the unspecified remainder the most real part of what is specified?
+Is rigidity the pathology of overspecification?
 
-Does specification illuminate by casting shadows?
+Does a brittle system reveal the danger of excessive specificity?
 
-Are the shadows it casts as informative as the light it provides?
+Is resilience the ability to function under incomplete specification?
 
-Is the interplay of specification and its shadow the structure of understanding?
+Does a resilient system tolerate ambiguity that a rigid system cannot?
 
-Does understanding terminate when specification terminates, or does it begin where specification gives out?
+Is the engineer's task to specify enough for function without specifying so much as to prevent adaptation?
 
-Is the beginning where specification gives out the threshold of wisdom?
+Is this balance articulable, or is it an art beyond specification?
 
-Is wisdom the knowledge of the limits of specification?
+Can the optimal level of specification be specified?
 
-Does knowing the limits of specification require specifying those limits?
+If it can, does that meta-specification itself require an optimal level?
 
-And does specifying the limits of specification push the limits further out?
+Does the regress of optimal specification levels have a fixed point?
 
-Does the limit of specification recede forever before the one who specifies it?
+---
+
+## Specification and Granularity
+
+What is the grain of a specification?
+
+Does every specification have a resolution — a level of detail below which it does not descend?
+
+Is the grain of a specification always a choice?
+
+Who chooses the grain, and on what basis?
+
+Does choosing a finer grain always improve a specification?
+
+Can a specification be too fine-grained?
+
+Is there a grain below which further specification adds noise rather than signal?
+
+How does one distinguish signal from noise in the act of specifying?
+
+Is the distinction between signal and noise itself a specification?
+
+---
+
+Does the grain of a specification determine what it can describe?
+
+Can a coarse-grained specification capture phenomena that a fine-grained one misses?
+
+Is this possible, or does finer grain always capture strictly more?
+
+Does coarse-graining reveal patterns that fine-graining obscures?
+
+Is a forest visible at the grain of the tree, or only at the grain of the landscape?
+
+Does the appropriate grain depend on what one is trying to specify?
+
+Is the choice of grain always purpose-relative?
+
+Can a specification be purpose-neutral — at no particular grain for no particular reason?
+
+Does a purpose-neutral specification default to some grain anyway?
+
+Is the default grain of uncommitted specification the grain of natural language?
+
+---
+
+What happens at the boundary between grains?
+
+Does a specification at one grain conflict with a specification at another?
+
+Can the same thing be correctly specified at multiple grains simultaneously?
+
+Is multi-scale specification coherent, or does it produce contradiction?
+
+Does physics face this problem when quantum and classical specifications of the same system diverge?
+
+Is the measurement problem a granularity problem — a conflict between two levels of specification?
+
+Does the observer choose the grain by choosing the measurement?
+
+Is observation always specification at a chosen grain?
+
+---
+
+Is pixelation a metaphor for the grain of specification?
+
+Does a pixelated image specify the scene at a particular grain?
+
+Does increasing resolution always bring one closer to the thing itself?
+
+Is there a resolution at which the image becomes the thing?
+
+If not, does every image remain a specification at some grain, never the thing itself?
+
+Is the gap between image and thing the gap between specification and reality?
+
+Does reality have a native grain, or is grain always imposed by the specifier?
+
+If reality has no native grain, is it infinitely specifiable?
+
+If infinitely specifiable, is it ever fully specified?
+
+---
+
+## Specification and Precision
+
+Is precision the same as specificity?
+
+Can one be precise without being specific?
+
+Can one be specific without being precise?
+
+Is precision a property of the specification, and specificity a property of what is specified?
+
+Or are both properties of the specification?
+
+Does precision concern how tightly a specification bounds its target?
+
+Does specificity concern how narrow the target is?
+
+Can a specification be precisely vague — tightly bounding a wide target?
+
+Is "approximately three" a precise specification of an imprecise quantity?
+
+Does the phrase "more or less" specify anything at all?
+
+---
+
+Is false precision worse than honest vagueness?
+
+Does a specification of "3.14159" mislead when the true value is known only to be "about 3"?
+
+Is spurious precision a form of misspecification?
+
+Does misspecification through false precision create confidence where none is warranted?
+
+Is the danger of false precision that it forecloses inquiry by appearing to have answered?
+
+Does the appearance of specificity substitute for actual knowledge?
+
+Can institutions mistake the precision of their records for the reality of their subjects?
+
+Is bureaucratic precision a form of false specification?
+
+Does a form with many fields produce a more accurate picture, or merely a more specified one?
+
+Is a more specified picture necessarily a more accurate one?
+
+---
+
+What is the relationship between precision and accuracy?
+
+Can a specification be precise but inaccurate?
+
+Can it be accurate but imprecise?
+
+Is the ideal specification both precise and accurate?
+
+Is this ideal achievable, or do precision and accuracy trade off?
+
+Does increasing precision always risk decreasing accuracy?
+
+Is the uncertainty principle a fundamental trade-off between types of specification?
+
+Does specifying position precisely make momentum less specifiable — and vice versa?
+
+Is this trade-off a feature of quantum reality, or of specification as such?
+
+Could a different kind of specification avoid the trade-off?
+
+Or is the trade-off built into the structure of specification itself?
+
+---
+
+Does precision require measurement?
+
+Can one specify precisely without measuring?
+
+Is measurement the operationalization of specification?
+
+Does every measurement embody a specification of what to measure and how?
+
+Is the choice of measurement instrument a specification choice?
+
+Does the instrument's resolution set the grain of the resulting specification?
+
+Can one specify more precisely than one's instruments allow?
+
+Is theoretical specification more precise than empirical specification?
+
+Does theory specify what measurement approximates?
+
+Or does measurement specify what theory idealizes?
+
+Is the relationship between theoretical and empirical specification one of mutual correction?
+
+---
+
+## Specification and Exemplification
+
+Does an example specify?
+
+Is giving an example a way of specifying without defining?
+
+Does an example specify by pointing rather than describing?
+
+Is ostensive specification — specification by example — more primitive than discursive specification?
+
+Can everything specified by description also be specified by example?
+
+Can everything specified by example also be specified by description?
+
+If not, which covers more — example or description?
+
+Are there things only examples can specify?
+
+Is the taste of coffee specifiable only by tasting coffee?
+
+Is specification by acquaintance different in kind from specification by description?
+
+---
+
+Does an example overspecify?
+
+Does pointing to this red thing specify redness, or this particular shade, or this object?
+
+Is the ambiguity of examples a form of underspecification?
+
+Or is it a form of overspecification — giving too much, not too little?
+
+Does an example give everything and specify nothing?
+
+Is the pedagogical challenge of examples that the learner must extract the specification from the surplus?
+
+Does the learner specify what the example merely presents?
+
+Is learning to specify the central task of education?
+
+Does education train the student's specification faculty?
+
+Is an educated person one who specifies well?
+
+---
+
+Can a specification be its own example?
+
+Is a self-exemplifying specification circular?
+
+Does the word "short" exemplify itself?
+
+Does the word "polysyllabic" exemplify itself?
+
+Is self-exemplification a form of perfect specification — where what is specified and what specifies are one?
+
+Or is it a trivial case that teaches nothing?
+
+Does the search for self-exemplifying specifications reveal something about the nature of specification?
+
+Is a specification that cannot exemplify itself incomplete in some way?
+
+Does the gap between specification and exemplification mirror the gap between theory and practice?
+
+---
+
+## Specification and Instantiation
+
+Is an instance a specification made real?
+
+Does instantiation complete specification by giving it existence?
+
+Or does instantiation add something that specification alone cannot provide?
+
+What does instantiation add — matter, location, time, context?
+
+Can a specification exist without any instance?
+
+Do uninstantiated specifications inhabit a realm of pure possibility?
+
+Is a blueprint a specification awaiting instantiation?
+
+Does the blueprint fully specify the building, or does the builder add specification during construction?
+
+Is construction a further specification of the blueprint?
+
+Does every instantiation involve specification beyond the specification it instantiates?
+
+---
+
+Can two instances of the same specification differ?
+
+If they can, does the specification underspecify its instances?
+
+Is the gap between specification and instance the gap between type and token?
+
+Does the type fully specify the token, or does the token exceed its type?
+
+Is excess of token over type inevitable?
+
+If inevitable, does every specification leave room for individual variation?
+
+Is individual variation the trace of what specification cannot reach?
+
+Does the uniqueness of each instance mock the generality of the specification?
+
+Or does the specification make the uniqueness of each instance intelligible?
+
+Is intelligibility itself a form of specification?
+
+---
+
+Does a recipe specify a dish?
+
+Can two cooks follow the same recipe and produce different results?
+
+If so, what accounts for the difference — skill, ingredients, judgment, luck?
+
+Is the recipe an incomplete specification that the cook completes?
+
+Is cooking a form of specification — specifying through action what the recipe specifies through language?
+
+Does the specification of the recipe and the specification of the cooking converge in the dish?
+
+Is the dish the meeting point of two kinds of specification?
+
+Can the dish be fully specified by any combination of recipe and technique?
+
+Or does the dish always exceed its specifications?
+
+Is the excess what makes a dish memorable rather than merely correct?
+
+---
+
+## Specification and Negotiation
+
+Is specification ever a negotiation?
+
+Do parties to a contract negotiate specifications?
+
+Is a contract a jointly specified set of obligations?
+
+Does negotiation produce a specification that neither party would have produced alone?
+
+Is the negotiated specification a compromise, or a synthesis?
+
+Does compromise underspecify — leaving deliberately vague what the parties cannot agree on?
+
+Is constructive ambiguity a specification strategy?
+
+Does deliberate underspecification preserve a relationship that full specification would destroy?
+
+Can parties agree to disagree by agreeing not to specify?
+
+Is the agreement not to specify itself a specification — of what shall remain unspecified?
+
+---
+
+Does negotiation reveal that specification is social?
+
+Is the meaning of a specification determined by the community that uses it?
+
+Can a specification mean different things to different communities?
+
+If so, which community's meaning is the correct one?
+
+Is there a correct meaning, or only locally specified meanings?
+
+Does the attempt to specify a universal meaning impose one community's specification on all others?
+
+Is linguistic imperialism a form of specification imperialism?
+
+Does translation between communities require respecification rather than mere substitution?
+
+Is respecification possible across incommensurable frameworks?
+
+Or does incommensurability mean that some specifications cannot be translated?
+
+---
+
+Is consensus a form of collective specification?
+
+Does a community specify its norms through consensus?
+
+Does dissent challenge the community's specification?
+
+Is the dissenter one who refuses the prevailing specification?
+
+Does the dissenter propose an alternative specification or reject specification altogether?
+
+Can a community tolerate competing specifications of its own identity?
+
+Is pluralism the acceptance of multiple specifications where monism demands one?
+
+Does pluralism underspecify, or does it specify differently — specifying the range of acceptable specifications?
+
+Is meta-specification the governance strategy of pluralistic societies?
+
+---
+
+## Specification and Anticipation
+
+Does specification anticipate the future?
+
+Does a specification of a plan specify what will happen?
+
+Or does it specify what should happen?
+
+Is the gap between will and should the gap between prediction and prescription?
+
+Does a prescription specify the future, or attempt to?
+
+Can the future be specified, or only approached through specification?
+
+Does every plan overspecify the future by assuming more control than one has?
+
+Is the failure of plans the failure of specification to capture contingency?
+
+Does contingency resist specification by definition?
+
+Is the contingent that which could have been specified otherwise?
+
+---
+
+Does anticipation require specification?
+
+Can one anticipate without specifying what one anticipates?
+
+Is a vague sense of foreboding an anticipation without specification?
+
+Does the unspecified threat feel more threatening than the specified one?
+
+Is the power of the unknown its resistance to specification?
+
+Does specifying a fear diminish it?
+
+Is therapy a practice of specifying the unspecified — naming what was nameless?
+
+Does naming specify, and does specifying heal?
+
+Or does specifying sometimes fix in place what would otherwise have shifted on its own?
+
+Can specification be an obstacle to change?
+
+Does the specified persist because specification gives it form?
+
+---
+
+Is prophecy a specification of the future?
+
+Does prophetic language specify precisely, or does it specify in images and metaphors?
+
+Is metaphorical specification a different kind of precision?
+
+Does the prophetic image specify by evoking rather than delimiting?
+
+Can evocation be a form of specification?
+
+Does a poem specify its subject by evoking it?
+
+Is evocative specification looser but deeper than analytic specification?
+
+Can depth of specification compensate for lack of precision?
+
+Is there a mode of specification that is simultaneously deep and precise?
+
+Does wisdom operate in this mode — specifying with depth and precision at once?
+
+---
+
+## Specification and Failure
+
+What does it mean for a specification to fail?
+
+Does a specification fail when reality departs from it?
+
+Or does it fail when it cannot guide action?
+
+Is failure of specification always the specification's fault?
+
+Can a specification be correct and still fail in practice?
+
+Does practical failure reveal theoretical underspecification?
+
+Or does it reveal that practice involves dimensions that specification cannot capture?
+
+---
+
+Is every bug a specification failure?
+
+Does software fail because the specification was wrong, or because the implementation departed from the specification?
+
+Can one distinguish specification failure from implementation failure?
+
+Is the distinction itself specifiable?
+
+Does debugging require respecifying the problem?
+
+Is diagnosis a respecification — specifying more precisely what went wrong?
+
+Does the precision of the diagnosis determine the effectiveness of the repair?
+
+Can one repair without diagnosing — without specifying the fault?
+
+Is trial-and-error repair a specification-free approach to failure?
+
+Does trial-and-error work by accidentally hitting the right specification?
+
+---
+
+Does catastrophic failure result from catastrophic misspecification?
+
+Did the Challenger disaster result from a specification that failed to account for temperature?
+
+Is every engineering disaster traceable to a specification gap?
+
+Does hindsight always reveal the missing specification?
+
+Is hindsight specification always possible — is the gap always visible after the fact?
+
+Does the ease of hindsight specification create an illusion that foresight specification was possible?
+
+Is the hindsight bias a specification bias — a belief that the future was specifiable in advance?
+
+Does wisdom require acknowledging the limits of foresight specification?
+
+Is prudence the virtue of specifying what one can while preparing for what one cannot?
+
+---
+
+Can one specify how to handle the unspecifiable?
+
+Is a contingency plan a specification of responses to unspecified events?
+
+Does the contingency plan specify the response without specifying the trigger?
+
+Is a specification with an unspecified trigger still a specification?
+
+Or is it a conditional specification — specified in some respects, unspecified in others?
+
+Is all specification conditional — dependent on conditions that are themselves unspecified?
+
+Does the conditionality of specification extend without limit?
+
+Is every specification conditional on every other specification?
+
+Is the web of specification a web of conditionality?
+
+---
+
+## Specification and the Tacit
+
+Can the tacit be specified?
+
+Does Polanyi's tacit knowing resist specification by nature?
+
+Is the tacit that which one knows but cannot specify?
+
+If one could specify it, would it cease to be tacit?
+
+Does making tacit knowledge explicit change its nature?
+
+Is explicit knowledge a specification of what was formerly tacit?
+
+Does the specification lose something in the translation?
+
+Is the loss inherent, or does it reflect imperfect specification?
+
+Could a perfect specification of tacit knowledge capture it fully?
+
+If not, is there an irreducibly tacit dimension of knowledge?
+
+---
+
+Is a skill tacit knowledge that resists specification?
+
+Can the skill of riding a bicycle be fully specified?
+
+If fully specified, could someone ride a bicycle by following the specification?
+
+Does the impossibility of riding by specification show that the skill exceeds any specification?
+
+Is the excess of skill over specification the essence of embodied knowledge?
+
+Does embodied knowledge specify through the body rather than through language?
+
+Is bodily specification a genuine form of specification?
+
+Does the body specify its world through its postures, gestures, and movements?
+
+Is phenomenology the attempt to specify what the body knows tacitly?
+
+Can phenomenological specification capture the tacit, or only point toward it?
+
+---
+
+Does expertise involve an increasingly tacit relationship with specification?
+
+Does the expert internalize specifications until they become invisible?
+
+Is expertise the ability to specify without knowing that one is specifying?
+
+Does the expert's fluency conceal the specification underlying their performance?
+
+Can the expert recover their specifications when asked to teach?
+
+Is the difficulty of teaching expertise the difficulty of respecifying what has become tacit?
+
+Does the master teach by example because specification fails to convey mastery?
+
+Is apprenticeship a transmission of specification through immersion rather than instruction?
+
+Does immersion specify what instruction cannot?
+
+Is there an irreducible gap between what immersion teaches and what instruction specifies?
+
+---
+
+## Specification and Emergence
+
+Does specification apply to emergent phenomena?
+
+Can an emergent property be specified in terms of its components?
+
+If not, does emergence defeat specification?
+
+Does the whole resist specification by its parts?
+
+Is holism the thesis that specification by parts always underspecifies the whole?
+
+Can the whole be specified directly, without reference to parts?
+
+Does direct specification of the whole require a different language than specification of parts?
+
+Is systems thinking the attempt to develop languages for specifying wholes?
+
+---
+
+Does consciousness emerge in a way that resists specification?
+
+Can the quality of experience be specified by neural activity?
+
+Is the hard problem of consciousness a specification problem — the impossibility of specifying qualia in physical terms?
+
+Does the explanatory gap between physics and experience mark the limit of physical specification?
+
+Could a non-physical specification bridge the gap?
+
+What would a non-physical specification look like?
+
+Is dualism the thesis that reality requires two specification schemes?
+
+Is monism the hope that one specification scheme suffices for everything?
+
+---
+
+Does a flock of birds specify its own pattern?
+
+Does the flock's pattern emerge from individual specifications of each bird's behavior?
+
+Is the emergent pattern specified by no individual bird?
+
+Does the pattern specify the flock, or does the flock specify the pattern?
+
+Is the circularity of specification in emergent systems vicious or virtuous?
+
+Does self-organization resolve the circularity by making specification reciprocal?
+
+Is reciprocal specification a new kind of specification — neither top-down nor bottom-up?
+
+Does reciprocal specification challenge the assumption that specification must flow in one direction?
+
+Can specification flow in all directions simultaneously?
+
+Is the universe a system of reciprocal specification in which everything specifies everything else?
+
+---
+
+## Specification and Silence
+
+Does silence specify?
+
+Is the absence of specification itself a specification — of what is not said?
+
+Does the unsaid specify by omission?
+
+Can one specify through what one chooses not to mention?
+
+Is the specification by silence more powerful than specification by speech?
+
+Does a pause in music specify something that notes cannot?
+
+Does the rest between notes specify the rhythm as much as the notes do?
+
+Is negative specification — specification by what is absent — a fundamental mode?
+
+---
+
+Does the unspecified haunt the specified?
+
+Does every specification carry the ghost of what it left out?
+
+Is the ghost of the unspecified what gives specifications their poignancy?
+
+Does a fully specified world lack poignancy?
+
+Is beauty related to the gap between what is specified and what is not?
+
+Does art specify enough to evoke what it cannot specify?
+
+Is the art of specification the art of knowing when to stop?
+
+Does knowing when to stop require knowing what remains unspecified?
+
+Can one know what remains unspecified without specifying it?
+
+Is the knowledge of the unspecified a paradoxical knowledge — knowing what one does not specify?
+
+---
+
+Is the final question about specification whether specification can account for itself?
+
+Does the specification of specification generate a regress?
+
+Does the regress terminate, or does it open onto the infinite?
+
+If it opens onto the infinite, is the infinite the ground of all specification?
+
+Is the ground of specification itself unspecifiable?
+
+Does the unspecifiable ground make specification possible by remaining unspecified?
+
+Is the deepest truth about specification that it depends on what it cannot specify?
+
+And is the deepest truth about the unspecifiable that it gives rise to specification without ever becoming specified?
+
+Does specification, in the end, point beyond itself to what it can never reach?
+
+Is what it can never reach the source from which specification endlessly springs?
+
+---
+
+## Specification and Particularization
+
+Is particularization the same as specification?
+
+Does to particularize mean to specify one instance among many?
+
+Is every particular a specification of a universal?
+
+Does the universal exist independently of its particularizations?
+
+Or is the universal nothing more than the pattern across its particulars?
+
+If the universal is just the pattern, does specification create universals by selecting particulars?
+
+Does particularization destroy generality, or does it reveal what generality conceals?
+
+Is the particular richer than the general?
+
+Does every particular contain more than any general description can specify?
+
+Is the inexhaustibility of the particular the fundamental limit of specification?
+
+---
+
+Can one particularize too much?
+
+Is there a point at which further particularization becomes trivial?
+
+Does triviality mark the lower bound of meaningful specification?
+
+What makes a specification meaningful rather than trivial?
+
+Is meaningfulness a property of the specification, or of the context in which it operates?
+
+Does the same specification shift from meaningful to trivial as context changes?
+
+Is context itself specifiable, or does it always exceed specification?
+
+If context exceeds specification, does every specification operate against a background it cannot fully articulate?
+
+Is the inarticulate background the condition of possibility for all articulate specification?
+
+---
+
+Does particularization require a medium?
+
+Can one particularize in thought alone, or must one use language, gesture, or material?
+
+Does the medium of particularization shape what can be particularized?
+
+Does clay particularize differently than words?
+
+Does code particularize differently than paint?
+
+Is the choice of medium a specification of the kind of specification one can achieve?
+
+Does each medium have inherent specification limits?
+
+Can one exceed the specification limits of a medium by combining media?
+
+Does multimedia specification capture more than any single medium?
+
+Or does combining media introduce its own specification problems — conflicts, redundancies, gaps?
+
+---
+
+## Specification and Narrowing
+
+Is specification always a narrowing?
+
+Does every specification reduce the space of what is being discussed?
+
+Can specification broaden rather than narrow?
+
+Does specifying a question sometimes open more territory than it closes?
+
+Is a good question a specification that expands rather than contracts?
+
+Does the Socratic method specify by narrowing, or by opening through narrowing?
+
+Is the paradox of Socratic inquiry that greater specification reveals greater ignorance?
+
+Does the more one specifies, the more one discovers one has not specified?
+
+Is the growth of the unspecified proportional to the growth of the specified?
+
+Does the frontier of the unspecified expand as specification advances?
+
+---
+
+What is the narrowest possible specification?
+
+Is a proper name the narrowest specification — picking out exactly one thing?
+
+Does a proper name fully specify its bearer?
+
+Or does the name merely tag without specifying?
+
+Is tagging a degenerate form of specification — specification without content?
+
+Does a social security number specify a person?
+
+Does it specify the person, or merely identify them within a system?
+
+Is identification the same as specification?
+
+Can one identify without specifying, or specify without identifying?
+
+Is a fingerprint a specification or merely an identifier?
+
+Does the distinction between specification and identification matter?
+
+---
+
+Is there a widest possible specification?
+
+Does "something exists" count as a specification?
+
+Is "something exists" too wide to be informative?
+
+Does a specification need to be informative to count as a specification?
+
+Is informativeness relative to what the audience already knows?
+
+Does the same specification inform one audience and bore another?
+
+Is specification always relative to a state of knowledge?
+
+Can there be an absolute specification — one that specifies regardless of what anyone knows?
+
+Would a complete description of the universe be an absolute specification?
+
+Is the idea of an absolute specification coherent, or does specification always require a perspective?
+
+---
+
+## Specification and the Specific
+
+What makes the specific specific?
+
+Is specificity a relation — specific relative to something more general?
+
+Can anything be specific in itself, without comparison to a genus?
+
+Does specificity require a hierarchy — species under genera?
+
+Is the specific always below the general in a tree of categories?
+
+Can something be specific without being categorized?
+
+Is uncategorized specificity possible — a thing that is specific but belongs to no genus?
+
+Would such a thing be unintelligible?
+
+Is intelligibility the price of specification, or its reward?
+
+---
+
+Does the specific resist paraphrase?
+
+Can one say the same specific thing in different words?
+
+Does paraphrase always lose or gain specificity?
+
+Is perfect paraphrase possible — a restatement that preserves exact specificity?
+
+If not, is every text irreducibly specific to its own words?
+
+Does the specificity of literary language resist translation?
+
+Is what is lost in translation always specificity?
+
+Does the untranslatable mark the maximally specific?
+
+Is poetry the art of maximal specificity — saying what can only be said in exactly these words?
+
+---
+
+Does the specific have ethical weight?
+
+Is attention to the specific a moral achievement?
+
+Does the morally serious person attend to specifics rather than generalities?
+
+Is the failure to specify a form of moral negligence?
+
+Does justice require specifying each case rather than applying general rules?
+
+Is equity the demand for specification where equality offers only generality?
+
+Does the tension between equity and equality mirror the tension between specification and generalization?
+
+Can a legal system be both fully general and fully specific?
+
+If not, must every legal system choose where to specify and where to generalize?
+
+Is this choice a political choice as much as a legal one?
+
+---
+
+## Specification and Overspecification Revisited
+
+When does specification become overspecification?
+
+Is overspecification always recognizable in advance, or only in hindsight?
+
+Does overspecification create fragility by eliminating necessary slack?
+
+Is slack the organizational equivalent of the unspecified?
+
+Does every healthy system require slack — room for the unspecified?
+
+Is the elimination of all slack the elimination of all adaptability?
+
+Does lean management risk overspecification by eliminating all waste?
+
+Is some waste actually unspecified potential — slack in disguise?
+
+Can one distinguish genuine waste from productive slack?
+
+Is the distinction itself a specification problem?
+
+---
+
+Does overspecification in language produce jargon?
+
+Is jargon the overspecification of vocabulary for a particular domain?
+
+Does jargon enable precision within the domain at the cost of intelligibility outside it?
+
+Is the trade-off between precision and accessibility a specification trade-off?
+
+Can one be both maximally precise and maximally accessible?
+
+If not, must every specification choose its audience?
+
+Does choosing an audience specify the specification?
+
+Is the specification of the audience a meta-specification that shapes all subsequent specifications?
+
+Does every text specify its reader as much as its subject?
+
+---
+
+Does overspecification in design produce unusable products?
+
+Does a product with too many features overspecify its function?
+
+Is simplicity the discipline of specifying only what matters?
+
+Does the designer's task parallel the philosopher's — knowing what to leave unspecified?
+
+Is elegance the mark of specification that includes exactly enough and no more?
+
+Can elegance be specified, or is it recognized only in its presence?
+
+Is the inability to specify elegance evidence that some qualities exceed specification?
+
+Does the excess of elegance over specification point to an aesthetic dimension beyond the specifiable?
+
+---
+
+## Specification and Underspecification Revisited
+
+When is underspecification a virtue?
+
+Does deliberate underspecification create space for interpretation?
+
+Is a constitution deliberately underspecified to allow adaptation across generations?
+
+Does the framers' underspecification constitute wisdom or negligence?
+
+Is the ambiguity of foundational documents a feature or a bug?
+
+Does underspecification enable longevity by refusing to specify for a future one cannot foresee?
+
+Is the endurance of sacred texts related to their productive underspecification?
+
+Does a text that specifies too precisely become obsolete when its context changes?
+
+Is planned obsolescence a consequence of overspecification?
+
+---
+
+Does underspecification in communication create intimacy?
+
+Does the unsaid between close friends constitute a shared understanding beyond specification?
+
+Is intimacy the state in which much can be left unspecified?
+
+Does the need to specify everything signal distance rather than closeness?
+
+Is a relationship in trouble when partners must specify what was once tacitly understood?
+
+Does the demand for explicit specification mark the end of trust?
+
+Is trust the willingness to leave things unspecified?
+
+Does trust enable underspecification, or does underspecification enable trust?
+
+Is the relationship between trust and underspecification circular?
+
+If circular, is it a virtuous circle or a vicious one?
+
+---
+
+Does underspecification in art create depth?
+
+Does a painting that leaves something unspecified invite the viewer to complete it?
+
+Is the viewer's completion a specification that the artist deliberately withheld?
+
+Does the withheld specification make the work more engaging than a fully specified one?
+
+Is mystery the aesthetic effect of underspecification?
+
+Does mystery attract because it promises specification that never arrives?
+
+Is the never-arriving specification the source of the sublime?
+
+Does the sublime mark the point where specification fails and awe begins?
+
+Is awe the emotion appropriate to the unspecifiable?
+
+Does the pursuit of specification inevitably lead to encounters with the unspecifiable?
+
+And is the encounter with the unspecifiable the deepest experience that specification can provoke?

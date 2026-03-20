@@ -171,6 +171,13 @@ After drafting, scan for these. Each is a criterion violation:
 | **Second-person commands** ("Think about," "Consider") | Recognition (presumes experience) | Use impersonal observation |
 | **Theoretical claims** ("The brain optimizes for...") | Recognition (requires evaluation) | Replace with the observable thing |
 | **Persuasive structure** (build-up → conclusion) | Reader-drawn conclusion (writer arguing) | Let steps accumulate; reader concludes |
+| **Pre-baked thesis** (lands on the most popular/predictable conclusion) | Advancement (nothing new) | Test: would someone who hadn't read commentary reach this from evidence alone? If no, the conclusion was imported, not derived |
+| **Cached takes** ("insights" that are the default position on this topic) | Advancement + Recognition (reader has heard this before) | Has this been said in 10,000 other pieces? Find what hasn't been said |
+| **Performed humility** ("To be sure, there are limitations...") | Non-skippability (delete it — piece is the same or better) | Cut or replace with genuine engagement with the limitation |
+| **Relativistic hedging** ("Some argue X, others Y, truth in between") | Precise scope (no position taken) | State exactly WHERE in between and WHY |
+| **Voice collapse** (sounds like every other LLM output — same cadence, transitions, structure) | Voice match (voice matches genre, not a generator) | Test: could any AI assistant have written this? If yes, rewrite |
+| **False structure** (headers/lists/bullets that organize nothing) | Non-skippability (remove formatting — piece still works = decorative) | Structure must do work. If removing it changes nothing, cut it |
+| **Aspiration as conclusion** ("The future holds great promise") | Reader-drawn conclusion (writer substituting hope for substance) | Delete the last paragraph — if the piece is better, you were concluding with aspiration |
 
 ### Criterion 10: Claim Verification
 
@@ -246,3 +253,4 @@ After upstream passes: scope, voice, weak patterns, claim verification.
 - [ ] Weak patterns scanned and fixed
 - [ ] Claims verified with source markers where applicable
 - [ ] No recognizable persuasive genre (not self-help, not sermon, not TED talk)
+- [ ] Thesis is not the most predictable conclusion on this topic (pre-baked thesis check)

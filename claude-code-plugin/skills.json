@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-17T01:07:25.238474+00:00",
-  "total": 650,
+  "generated": "2026-03-19T19:02:58.872765+00:00",
+  "total": 652,
   "skills": {
     "aa": {
       "id": "aa",
@@ -311,7 +311,8 @@
         "decide",
         "dtl",
         "emotion",
-        "how"
+        "how",
+        "plansuite"
       ],
       "sections": [
         "Interpretations",
@@ -2972,7 +2973,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "plansuite"
+      ],
       "sections": [
         "Interpretations",
         "Depth Scaling",
@@ -3828,6 +3831,7 @@
       "invokes": [],
       "invoked_by": [
         "pjm",
+        "plansuite",
         "sym"
       ],
       "sections": [
@@ -5726,6 +5730,7 @@
         "emotion",
         "evaluate",
         "how",
+        "plansuite",
         "viability",
         "want"
       ],
@@ -6881,6 +6886,48 @@
         "Niche Documentation"
       ],
       "line_count": 167
+    },
+    "grade": {
+      "id": "grade",
+      "title": "Grade LLM Output",
+      "description": "Grade any LLM output as an external grader who knows nothing about the project. Identifies systematic failures in reasoning, voice, and honesty that the LLM cannot see from inside its own generation.",
+      "tier": "tier2",
+      "category": "Assumptions & Critique",
+      "categories": [
+        "evaluation",
+        "meta_analysis",
+        "quality_assessment"
+      ],
+      "tags": [
+        "grading",
+        "llm",
+        "output_quality",
+        "systematic_failures",
+        "meta_evaluation"
+      ],
+      "input_types": [
+        "text",
+        "conversation",
+        "self_evaluation",
+        "llm_output"
+      ],
+      "invokes": [
+        "araw",
+        "platitude",
+        "sdc"
+      ],
+      "invoked_by": [
+        "evaluate"
+      ],
+      "sections": [
+        "Interpretations",
+        "Core Principle",
+        "The Seven Systematic Failures",
+        "Grading Process",
+        "Special Case: Grading Self-Evaluation",
+        "Failure Modes of This Skill"
+      ],
+      "line_count": 210
     },
     "gsr": {
       "id": "gsr",
@@ -11371,6 +11418,41 @@
       ],
       "line_count": 85
     },
+    "plansuite": {
+      "id": "plansuite",
+      "title": "Full Planning Suite",
+      "description": "Run a comprehensive planning suite (want, sysarch, de, riskmgmt, spec, tradestudy, action, fla, conops) for any project, producing a detailed session-level planning document with concrete artifacts.",
+      "tier": "tier3",
+      "category": "Planning & Projects",
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "want",
+        "sysarch",
+        "de",
+        "riskmgmt",
+        "spec",
+        "tradestudy",
+        "action",
+        "fla",
+        "conops"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Depth Scaling",
+        "The Process",
+        "Session Document Output",
+        "Domain Inventory",
+        "Skill 1: /want — Want Tracing ([depth])",
+        "Skill 2: /sysarch — System Architecture ([depth])",
+        "Summary: What to Do",
+        "When to Use",
+        "Verification Checklist"
+      ],
+      "line_count": 339
+    },
     "platitude": {
       "id": "platitude",
       "title": "Operationalize a Platitude",
@@ -12670,7 +12752,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "plansuite"
+      ],
       "sections": [
         "Interpretations",
         "Depth Scaling",
@@ -14484,7 +14568,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "plansuite"
+      ],
       "sections": [
         "Step 1: State the Speculation Clearly",
         "Step 2: Identify Prerequisites",
@@ -15179,7 +15265,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "plansuite"
+      ],
       "sections": [
         "Interpretations",
         "Depth Scaling",
@@ -15709,7 +15797,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "plansuite"
+      ],
       "sections": [
         "Interpretations",
         "Depth Scaling",
@@ -16818,6 +16908,7 @@
         "decide",
         "emotion",
         "how",
+        "plansuite",
         "search",
         "technical",
         "viability"

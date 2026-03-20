@@ -239,6 +239,18 @@ Fulfill grant obligations:
    - Understand funder's evolving priorities
 
 
+## Anti-Hedging Protocol
+
+Grant writing is where performed humility and relativistic hedging are most destructive. Funders want confidence and specificity — hedging signals that you don't believe in your own project.
+
+**Eliminate on sight:**
+- "To be sure, further research is needed" paragraphs — every grant funds further research. This is filler, not substance. If you must acknowledge limitations, name the SPECIFIC limitation and explain why it doesn't undermine the project.
+- "Some scholars argue..." hedging — if you need to position against prior work, take a side. "Smith (2023) argues X; however, our preliminary data shows Y" is positioning. "Some argue X, others Y, and the truth likely lies somewhere in between" is abdication.
+- Performed humility about your own capabilities — "We hope to" is weaker than "We will." "We believe this approach may" is weaker than "This approach does." State claims at the confidence level your evidence supports, then support them. Don't pre-emptively soften everything.
+- Aspiration-as-conclusion — don't end sections or the proposal with "Together, we can make a difference" or "This work has the potential to transform." End with the specific, measurable outcome the funder is paying for.
+
+**The test:** Read every hedge and qualifier. For each one, ask: does this protect against a real risk of overclaiming, or does it just make me sound less confident? Remove the latter.
+
 ## When to Use
 - Organization is eligible for grant funding (nonprofit, research, etc.)
 - Project aligns with known funder priorities

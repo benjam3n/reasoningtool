@@ -430,6 +430,23 @@ A/B testing opportunities:
 - Call to actions
 
 
+## Anti-Generation-Failure Checks
+
+Social media strategy and content are extremely vulnerable to voice collapse and cached takes.
+
+**Voice collapse prevention:**
+- Social content that sounds like it was written by a "social media manager" is already dead. The voice must be recognizably THIS brand's voice — not the generic professional-yet-approachable tone that every brand defaults to.
+- Test: cover the logo. Can you tell whose post this is from the voice alone? If not, voice has collapsed.
+- "Excited to announce..." / "We're thrilled to share..." / "Here's why this matters:" — these are the social media equivalent of throat-clearing. Cut them. Start with the substance.
+
+**Cached-take prevention:**
+- Every social media strategy recommends the same things: "be authentic," "engage with your community," "provide value," "be consistent." These are true and useless. Each recommendation must be specific enough to act on differently from a competitor.
+- Content pillar recommendations must be specific to THIS brand. "Educational content" is not a pillar. "Debunking common misconceptions about [specific domain]" is a pillar.
+- If the strategy could be copy-pasted to a competitor's brand with only the name changed, it's cached.
+
+**Aspiration-as-strategy:**
+- "Build a thriving community" / "Become the go-to voice" / "Drive meaningful engagement" — these are aspirations, not strategy. Strategy specifies HOW, with what resources, on what timeline, measured by what.
+
 ## When to Use
 - Building brand awareness and reach
 - When target audience is active on social platforms

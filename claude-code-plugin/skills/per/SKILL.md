@@ -133,6 +133,15 @@ If ANY check fails: revise the argument. Persuasion that relies on deception or 
 ETHICS: [PASS / FAIL — if fail, what needs revision]
 ```
 
+### Persuasion Failure Check
+
+| Failure | Test | Fix |
+|---------|------|-----|
+| **Cached takes** | Is any argument the default position on this topic — something said in 10,000 other pitches? | Find the argument that's true of THIS specific situation, not the category. |
+| **Relativistic hedging** | Does the argument say "some argue X, others Y, truth is somewhere in between"? | That's not persuasion. Take a position. If you're hedging, you haven't found your actual argument yet. |
+| **Pre-baked thesis** | Would someone who had never read commentary on this topic reach the same conclusion from the evidence alone? If not, you're recycling consensus, not persuading. | Rebuild the argument from THIS evidence, not from the standard position. |
+| **Aspiration as conclusion** | Does the closing say "the future holds great promise" or equivalent? | Delete the last paragraph. If the piece is better without it, the conclusion was filler. End on your strongest concrete point. |
+
 ---
 
 ## Integration

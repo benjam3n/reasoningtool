@@ -2747,3 +2747,1281 @@ Has this investigation arrived anywhere, or has it only deepened the question it
 Is the deepening of a question an achievement or a failure?
 
 And does solidarity care whether the questions about it are ever answered, or does it persist regardless — in the factory, the march, the meeting, the embrace — indifferent to the philosophers who try to name it?
+
+---
+
+## Solidarity and Unity
+
+Is solidarity the same as unity, or does solidarity preserve difference while unity dissolves it?
+
+Can people be unified without being in solidarity?
+
+Can people be in solidarity without being unified?
+
+If unity requires agreement and solidarity requires only commitment, is solidarity the more demanding concept?
+
+Is it harder to commit to someone you disagree with than to agree with someone you are already committed to?
+
+Does unity paper over conflict while solidarity acknowledges it?
+
+If solidarity acknowledges conflict, does it also require working through conflict?
+
+Can solidarity exist alongside unresolved disagreement?
+
+Is the willingness to remain in relationship despite disagreement the essence of solidarity?
+
+Or is that merely tolerance, which falls short of solidarity?
+
+What does solidarity add to tolerance?
+
+Does solidarity require action where tolerance requires only restraint?
+
+Is the difference between solidarity and tolerance the difference between standing with and merely standing aside?
+
+Can you be in solidarity with someone by simply not opposing them?
+
+Or does solidarity require active support — showing up, speaking out, risking something?
+
+If solidarity requires risk, how much risk is enough?
+
+Is solidarity that costs nothing really solidarity?
+
+Can the wealthy person who donates without sacrifice claim solidarity with the poor?
+
+Does solidarity require that you have something to lose?
+
+If solidarity without cost is not solidarity, is solidarity always a form of sacrifice?
+
+---
+
+Is the unity that solidarity creates organic or constructed?
+
+Does it grow from below or get imposed from above?
+
+Can solidarity be mandated?
+
+If a government declares national solidarity, is that solidarity or obedience?
+
+Is compulsory solidarity a contradiction in terms?
+
+Does solidarity require the freedom to refuse it?
+
+If you cannot opt out of solidarity, are you a participant or a captive?
+
+Is voluntary solidarity the only authentic solidarity?
+
+But if solidarity is voluntary, what prevents people from opting out when solidarity becomes costly?
+
+Does authentic solidarity require the ongoing choice to remain — to keep choosing solidarity even when it is difficult?
+
+Is solidarity that has never been tested really solidarity, or merely untested goodwill?
+
+Does solidarity prove itself only in crisis?
+
+If solidarity only becomes visible during crisis, where does it exist between crises?
+
+Is latent solidarity real solidarity?
+
+Can solidarity exist as a potential that is never actualized?
+
+Is the promise of solidarity sufficient, or must it be performed?
+
+---
+
+What holds a solidarity together when the original cause has been won or lost?
+
+Does solidarity outlive its occasion?
+
+Can solidarity created by a shared struggle survive the end of that struggle?
+
+Do movements dissolve after victory because the solidarity was instrumental rather than intrinsic?
+
+Is post-victory dissolution a failure of solidarity or its natural completion?
+
+Does solidarity have a lifespan?
+
+Can solidarity be permanent, or is it always tied to specific conditions?
+
+If conditions change, must solidarity change with them?
+
+Can solidarity between two groups in one era become irrelevant or even harmful in another?
+
+Is yesterday's solidarity today's obligation?
+
+Does inherited solidarity bind those who did not choose it?
+
+Can you be born into solidarity the way you are born into debt?
+
+---
+
+## Mutual Support
+
+What is the relationship between solidarity and mutual aid?
+
+Is mutual aid solidarity in practice, or can mutual aid occur without solidarity?
+
+Can you help someone you are not in solidarity with?
+
+If you can, what distinguishes solidarity-based help from ordinary assistance?
+
+Does solidarity transform the quality of help, or only the motivation behind it?
+
+Is help given out of solidarity different from help given out of pity?
+
+Does the recipient experience solidarity-based help differently from charity-based help?
+
+Can you tell, from the outside, whether an act of help is rooted in solidarity or in condescension?
+
+Does it matter what motivates help if the help itself is identical?
+
+If a hungry person is fed, does it matter whether the feeding comes from solidarity, charity, guilt, or obligation?
+
+Does the hungry person care about the feeder's intentions?
+
+Should they?
+
+---
+
+Is mutual support the core of solidarity, or is solidarity possible without material support?
+
+Can solidarity be purely symbolic — a statement, a gesture, a declaration?
+
+Does symbolic solidarity do anything, or is it merely performative?
+
+Is performative solidarity worthless, or does it have value as a signal?
+
+Can a signal of solidarity create the conditions for actual solidarity?
+
+Does saying "we stand with you" make it more likely that people will actually stand?
+
+Or does the ease of symbolic solidarity substitute for the difficulty of real support?
+
+Has social media made solidarity easier to perform and harder to practice?
+
+Is a hashtag solidarity?
+
+If a million people share a hashtag but none of them change their behavior, has solidarity occurred?
+
+Is awareness a form of solidarity?
+
+Does knowing about injustice create any obligation?
+
+If knowing creates obligation, does deliberate ignorance become a strategy for avoiding solidarity?
+
+Is choosing not to know a form of refusing solidarity?
+
+---
+
+What does mutual in mutual support actually require?
+
+Must both parties give and receive, or can one party always give while the other always receives?
+
+If solidarity is always asymmetrical in practice, is mutuality an ideal rather than a description?
+
+Can the powerful be in solidarity with the powerless if the powerless cannot reciprocate?
+
+What could the powerless offer the powerful in return?
+
+Is the claim that solidarity must be mutual a way of demanding something from those who have nothing to give?
+
+Or does mutuality protect the dignity of the recipient by insisting they are not merely a passive beneficiary?
+
+Is there a way to give without creating a hierarchy between giver and receiver?
+
+Does solidarity solve the problem of hierarchical giving, or does it just rename it?
+
+Can solidarity between unequals ever be fully mutual?
+
+Or does inequality always distort the relationship, no matter what we call it?
+
+---
+
+## Class Solidarity
+
+What is class solidarity?
+
+Is class solidarity natural to those who share economic conditions, or must it be cultivated?
+
+If workers do not spontaneously feel solidarity with other workers, does that mean class solidarity is artificial?
+
+Is anything that must be cultivated artificial?
+
+Does the need to cultivate class solidarity prove that class identity is not the most salient identity for most people?
+
+Why might a worker feel more solidarity with their national group than with workers in other nations?
+
+Is national solidarity a rival to class solidarity, or can both exist simultaneously?
+
+When national solidarity and class solidarity conflict, which wins?
+
+Does the historical victory of national solidarity over class solidarity prove that class is not the fundamental social division?
+
+Or does it prove that nationalism is more effectively propagated than class consciousness?
+
+Is class solidarity suppressed or merely absent?
+
+If class solidarity must be awakened, who does the awakening?
+
+Can the intellectual awaken class solidarity without being patronizing?
+
+Is the vanguard party a vehicle for class solidarity or a substitution for it?
+
+Does organizing create solidarity, or does solidarity create the conditions for organizing?
+
+---
+
+Can there be solidarity within a class that also contains profound internal divisions?
+
+Can white workers and Black workers share class solidarity when racism divides them?
+
+Does racism break class solidarity, or does class solidarity require overcoming racism?
+
+Is the demand that marginalized workers set aside their specific grievances for class unity a form of solidarity or a form of erasure?
+
+Can class solidarity accommodate difference, or does it require homogeneity?
+
+Is the working class a unity or a collection of fragments?
+
+If it is fragments, can solidarity bind the fragments without pretending they are whole?
+
+Is the failure of class solidarity in practice a failure of the concept or a failure of implementation?
+
+Can a concept be valid even if it has never been fully realized?
+
+Is class solidarity an aspiration or a description?
+
+---
+
+Does class solidarity require class consciousness?
+
+Can you be in solidarity with your class without knowing you belong to it?
+
+Is unconscious class solidarity possible?
+
+If a worker helps another worker without thinking of it as class solidarity, is it class solidarity nonetheless?
+
+Does naming an action as solidarity change its character?
+
+Does class solidarity require an enemy — the capitalist, the boss, the owning class?
+
+Is solidarity always against something as well as for something?
+
+Can there be solidarity without opposition?
+
+If solidarity requires an adversary, does it create division even as it creates unity?
+
+Is the division that class solidarity creates — between workers and owners — a discovery of existing division or a creation of new division?
+
+Does naming an antagonism create it or reveal it?
+
+---
+
+Is class solidarity possible in a society where class boundaries are blurred?
+
+Does the middle class destroy class solidarity by creating a buffer between rich and poor?
+
+Is the middle class in solidarity with itself?
+
+Can the middle class be in solidarity with the poor without giving up its middle-class position?
+
+Does downward solidarity require downward mobility?
+
+Must you impoverish yourself to stand with the poor?
+
+Is solidarity that preserves your privilege authentic?
+
+Can you be in solidarity with the homeless while owning a home?
+
+Where is the line between solidarity and hypocrisy?
+
+Is the accusation of hypocrisy a weapon used to prevent solidarity?
+
+Does the demand for perfect consistency in solidarity serve those who want no solidarity at all?
+
+---
+
+## Political Solidarity
+
+What makes solidarity political?
+
+Is all solidarity political, or is some solidarity personal, familial, or communal?
+
+Can solidarity be apolitical?
+
+If you help your neighbor without any political motivation, is that solidarity?
+
+Is neighborly solidarity a foundation for political solidarity, or a separate phenomenon?
+
+Does political solidarity require a political analysis — an understanding of why the conditions you oppose exist?
+
+Can you be in political solidarity with someone without understanding the structural causes of their suffering?
+
+Is solidarity without analysis just sentimentality?
+
+Is analysis without solidarity just intellectualism?
+
+Does either accomplish anything without the other?
+
+---
+
+What is the relationship between solidarity and political parties?
+
+Can a political party embody solidarity, or does party structure always distort it?
+
+Is party discipline solidarity or coercion?
+
+When a party demands loyalty, is that solidarity or obedience?
+
+Can solidarity be institutionalized without being bureaucratized?
+
+Does institutionalization preserve solidarity or kill it?
+
+Is spontaneous solidarity more authentic than organized solidarity?
+
+Is it also more fragile?
+
+Does the choice between spontaneity and organization define different traditions of political solidarity?
+
+Is the anarchist emphasis on spontaneous solidarity naive?
+
+Is the socialist emphasis on organized solidarity authoritarian?
+
+Can these two impulses coexist within a single movement?
+
+---
+
+Does political solidarity require a shared ideology?
+
+Can people with different political beliefs stand in solidarity?
+
+Can a liberal and a socialist be in solidarity against fascism?
+
+Does the solidarity of the anti-fascist coalition survive the defeat of fascism?
+
+Is solidarity against a common enemy easier than solidarity for a common vision?
+
+Is negative solidarity — solidarity against — more natural than positive solidarity — solidarity for?
+
+Does positive solidarity require more imagination than negative solidarity?
+
+Is it easier to know what you oppose together than what you want together?
+
+---
+
+Can political solidarity cross partisan lines?
+
+Is bipartisan solidarity a meaningful concept or an oxymoron?
+
+When politicians from opposing parties cooperate, is that solidarity or deal-making?
+
+Is compromise a form of solidarity?
+
+Does compromise require recognizing the other side's legitimacy — and is that recognition a minimal form of solidarity?
+
+Or is compromise merely strategic, with no solidarity involved?
+
+Can a society function without some minimal solidarity between its political factions?
+
+Is democratic politics impossible without a baseline of solidarity among citizens who disagree?
+
+What is the minimum level of solidarity required for democracy to function?
+
+Has that minimum been reached? Has it been lost?
+
+Can democratic solidarity be rebuilt once it has eroded?
+
+---
+
+## Solidarity Versus Charity
+
+What is the difference between solidarity and charity?
+
+Does charity flow downward while solidarity flows horizontally?
+
+Is the direction of flow the essential difference?
+
+Can charity be reimagined as solidarity, or are they fundamentally different acts?
+
+Does charity preserve the existing order while solidarity seeks to change it?
+
+Is the charitable person invested in the continuation of the conditions that make charity necessary?
+
+Does the donor need the recipient in order to feel generous?
+
+Is charity a relationship of dependence disguised as a relationship of care?
+
+Does solidarity threaten the donor-recipient relationship by insisting on equality?
+
+---
+
+Why do the powerful prefer charity to solidarity?
+
+Is charity compatible with hierarchy while solidarity threatens it?
+
+Does charity allow the giver to remain comfortable while solidarity demands discomfort?
+
+Is the tax-deductible donation a substitute for solidarity?
+
+Can institutional charity — the foundation, the NGO, the aid organization — practice solidarity?
+
+Does the structure of institutional charity inevitably reproduce the power relations solidarity seeks to dismantle?
+
+Can you pay someone to be in solidarity on your behalf?
+
+Is the professional humanitarian in solidarity with those they serve, or are they employees of a charity?
+
+Does professionalization destroy solidarity?
+
+Can you be in solidarity from nine to five?
+
+---
+
+Is the distinction between solidarity and charity a question of power?
+
+Does charity leave power relations intact while solidarity redistributes power?
+
+If solidarity redistributes power, does the powerful party lose something?
+
+Is that loss what makes solidarity frightening to those with power?
+
+Is charity the price the powerful pay to avoid solidarity?
+
+Is philanthropy a defense against redistribution?
+
+Does the billionaire's foundation preempt the revolution?
+
+Is strategic philanthropy a form of counter-solidarity — an organized effort to prevent the solidarity of the powerless?
+
+Or is that a conspiracy theory that misreads genuine generosity?
+
+Can generosity and structural preservation coexist in the same act?
+
+---
+
+Does charity address symptoms while solidarity addresses causes?
+
+Is feeding the hungry charity, while dismantling the systems that create hunger solidarity?
+
+Can feeding the hungry be an act of solidarity if it is accompanied by political action?
+
+Does the motivation behind the act determine whether it is charity or solidarity?
+
+Or does the structural effect determine it, regardless of motivation?
+
+If a charitable act inadvertently creates solidarity, is it charity or solidarity?
+
+If a solidarity action inadvertently reinforces hierarchy, is it solidarity or charity?
+
+Can an act be both charity and solidarity simultaneously?
+
+Or are they mutually exclusive categories?
+
+Is the distinction between charity and solidarity itself too neat, too binary?
+
+Does real practice always mix charity and solidarity in ways that resist clean categorization?
+
+---
+
+## Solidarity Across Difference
+
+Can there be solidarity between people who share nothing in common?
+
+What is the minimum commonality required for solidarity?
+
+Must you share an identity, a condition, an enemy, or a value?
+
+Can solidarity be based solely on shared humanity?
+
+Is shared humanity too abstract to ground real solidarity?
+
+Does the abstraction of universal humanity dissolve the specific conditions that make solidarity necessary?
+
+Is universal solidarity a noble ideal or a meaningless platitude?
+
+Can you be in solidarity with everyone?
+
+If you are in solidarity with everyone, are you in solidarity with anyone?
+
+Does solidarity require specificity — solidarity with this group, against this injustice, for this demand?
+
+Is specific solidarity the only real solidarity?
+
+---
+
+Can the privileged be in solidarity with the oppressed?
+
+What does it mean for a man to be in solidarity with feminism?
+
+What does it mean for a white person to be in solidarity with racial justice?
+
+Is allyship a form of solidarity?
+
+Is allyship a weaker or different form of solidarity?
+
+Does the ally stand with or stand behind?
+
+Can the ally ever truly understand the experience of those they claim solidarity with?
+
+Is understanding necessary for solidarity, or is commitment sufficient?
+
+Can you commit to a struggle you do not fully understand?
+
+Is the willingness to be led by those with direct experience a form of solidarity?
+
+Or is following someone else's lead just deference, which is not the same as solidarity?
+
+---
+
+Does solidarity across difference require giving up something?
+
+Must the man in solidarity with feminism give up patriarchal privilege?
+
+Must the white person in solidarity with racial justice give up white privilege?
+
+Can you be in solidarity with a group while benefiting from the systems that oppress them?
+
+Is solidarity without material sacrifice performative?
+
+Is the demand for material sacrifice a test of sincerity or a barrier to entry?
+
+Does demanding too much sacrifice from potential allies ensure that solidarity never grows?
+
+Does demanding too little sacrifice ensure that solidarity remains superficial?
+
+Where is the balance between accessibility and authenticity in solidarity across difference?
+
+---
+
+Can solidarity across difference survive the anger of the oppressed toward the privileged?
+
+Is the privileged person entitled to comfort within solidarity?
+
+If solidarity makes the privileged person uncomfortable, should they endure the discomfort or leave?
+
+Is enduring discomfort the price of admission to solidarity across difference?
+
+Can the privileged person's discomfort itself become a distraction from the work of solidarity?
+
+When does centering the privileged person's feelings undermine solidarity?
+
+Is the injunction to decenter oneself a form of solidarity?
+
+Can you decenter yourself and remain in solidarity?
+
+Is self-decentering a skill that solidarity requires?
+
+Can it be learned, or must it be continually practiced?
+
+---
+
+Is solidarity across difference possible between groups with conflicting interests?
+
+Can workers in the Global North be in solidarity with workers in the Global South whose cheap labor subsidizes Northern consumption?
+
+Does Northern solidarity with the South require Northern sacrifice?
+
+Is the Northern worker willing to pay more for goods so that Southern workers can earn more?
+
+If not, is the solidarity rhetorical?
+
+Can rhetorical solidarity evolve into material solidarity?
+
+Or does rhetorical solidarity substitute for material solidarity and prevent its emergence?
+
+---
+
+Can solidarity exist between humans and non-humans?
+
+Is environmental solidarity a meaningful concept?
+
+Can you be in solidarity with a forest, an ocean, or a species?
+
+Does solidarity require a subject who can recognize and reciprocate it?
+
+If solidarity requires reciprocity, can it extend to beings incapable of reciprocating?
+
+Is the claim of solidarity with nature anthropomorphism?
+
+Or does it represent an expansion of the moral imagination beyond the human?
+
+Is the expansion of solidarity beyond the human a completion of solidarity's logic or an abuse of the concept?
+
+---
+
+## Global Solidarity
+
+What does global solidarity mean?
+
+Is global solidarity possible in a world divided by nations, languages, cultures, and economies?
+
+Does the idea of global solidarity presuppose a global community that does not exist?
+
+Can solidarity create community, or does community create solidarity?
+
+If global community does not yet exist, can global solidarity bring it into being?
+
+Is the aspiration to global solidarity utopian?
+
+Is utopianism a necessary component of solidarity, or a distraction from practical action?
+
+---
+
+Does global solidarity require global institutions?
+
+Can the United Nations embody solidarity, or does it merely coordinate interests?
+
+Is international law a framework for solidarity or a system of power?
+
+Do international human rights represent global solidarity or Western imposition?
+
+Can a concept born in one culture express universal solidarity?
+
+Is the universality of human rights a fact about humanity or a claim by one civilization?
+
+Does the debate over universality undermine the possibility of global solidarity?
+
+Or does the debate itself constitute a form of solidarity — a global argument about shared obligations?
+
+---
+
+What does global solidarity look like in practice?
+
+Is the international boycott a form of global solidarity?
+
+Is the labor strike in one country in support of workers in another country a form of global solidarity?
+
+Does consumer activism constitute solidarity with distant workers?
+
+Can you buy your way into solidarity through fair trade?
+
+Is fair trade solidarity or just a different form of consumption?
+
+Does ethical consumption change anything, or does it merely make the consumer feel better?
+
+Is feeling better about your consumption the opposite of solidarity?
+
+---
+
+Can global solidarity survive the fact that the world's suffering is unevenly distributed?
+
+Does the person in a wealthy nation experience solidarity with the person in a poor nation differently from how the person in the poor nation experiences it?
+
+Is the solidarity of the comfortable with the suffering always tinged with condescension?
+
+Can awareness of condescension purify solidarity, or does it merely add self-consciousness to condescension?
+
+Is self-conscious condescension better or worse than unselfconscious condescension?
+
+Does reflexivity improve solidarity or paralyze it?
+
+Can you think too much about solidarity and thereby fail to practice it?
+
+---
+
+Does global solidarity require a global crisis?
+
+Did the pandemic create global solidarity or reveal its absence?
+
+Did the unequal distribution of vaccines demonstrate the failure of global solidarity?
+
+Is global solidarity possible when national interests always take priority?
+
+Can a nation be in solidarity with another nation?
+
+Is international solidarity between states the same as solidarity between peoples?
+
+Can states practice solidarity, or is solidarity inherently a relation between persons?
+
+Does the mediation of solidarity through institutions always distort it?
+
+Is unmediated solidarity — person to person, across borders — possible in a globalized world?
+
+Does the internet enable global solidarity or merely simulate it?
+
+---
+
+## The Labor of Solidarity
+
+Is solidarity work?
+
+Does solidarity require ongoing effort, or can it be achieved once and maintained passively?
+
+Is the maintenance of solidarity itself a form of labor?
+
+Who does the labor of solidarity?
+
+Is solidarity labor distributed equally, or do some people bear more of the burden?
+
+Do women do more solidarity labor than men?
+
+Do marginalized people do more solidarity labor than privileged people?
+
+Is the unequal distribution of solidarity labor itself an injustice?
+
+Can solidarity be unjust in its demands on those who practice it?
+
+---
+
+Does solidarity require emotional labor?
+
+Must you care in order to be in solidarity?
+
+Is solidarity without feeling merely mechanical?
+
+Is mechanical solidarity — going through the motions — worthless?
+
+Or does going through the motions sometimes sustain solidarity when feeling fails?
+
+Can you practice solidarity on days when you do not feel it?
+
+Is the discipline of practicing solidarity without feeling it a form of integrity?
+
+Or is it a form of self-deception?
+
+Does solidarity require honesty about its own limitations?
+
+Can you be honest about not feeling solidarity while continuing to practice it?
+
+Is that honesty itself a form of solidarity?
+
+---
+
+What happens when solidarity labor goes unrecognized?
+
+Does unrecognized solidarity labor breed resentment?
+
+Can resentment destroy solidarity from within?
+
+Is the person who does the most solidarity labor the most likely to burn out?
+
+Is burnout a failure of individual endurance or a failure of collective responsibility?
+
+Does the concept of burnout in solidarity movements reveal that solidarity is unsustainable?
+
+Or does it reveal that solidarity is poorly distributed?
+
+Can solidarity sustain itself, or does it always tend toward exhaustion?
+
+Is the exhaustion of solidarity movements inevitable?
+
+Can solidarity be renewed after exhaustion?
+
+What renews solidarity — victory, defeat, crisis, or simply rest?
+
+---
+
+## Solidarity and Memory
+
+Does solidarity require memory?
+
+Must you remember past struggles to maintain present solidarity?
+
+Is the forgetting of past solidarity a betrayal?
+
+Does each generation need to build its own solidarity, or can it inherit solidarity from the past?
+
+Can inherited solidarity be authentic, or is it merely habitual?
+
+Is habitual solidarity — solidarity that continues because it always has — a lesser form?
+
+Or is habitual solidarity the most durable form precisely because it does not depend on feeling or choice?
+
+---
+
+What role do narratives play in solidarity?
+
+Does every solidarity movement need a story about itself?
+
+Is the story of shared struggle the glue that holds solidarity together?
+
+Can the story be false and the solidarity still real?
+
+Does mythologized solidarity — solidarity based on a simplified or embellished history — work better than accurate solidarity?
+
+Is the accurate account of a movement's failures and betrayals destructive to solidarity?
+
+Or does honest reckoning strengthen solidarity by building trust?
+
+Can solidarity survive the truth about itself?
+
+---
+
+Do monuments and memorials create solidarity or merely commemorate it?
+
+Is the act of remembering together a form of solidarity?
+
+Does shared grief create solidarity?
+
+Is solidarity born in mourning?
+
+Can you mourn with someone you have never met?
+
+Is the global outpouring of grief after a disaster a form of solidarity?
+
+Or is it a fleeting emotional response that dissipates without generating lasting commitment?
+
+Is fleeting solidarity better than no solidarity?
+
+Does brief solidarity leave a residue that can be activated later?
+
+---
+
+## Solidarity and Betrayal
+
+Is betrayal the shadow of solidarity?
+
+Can you betray someone you were never in solidarity with?
+
+Is betrayal only possible within solidarity — a violation of a bond that existed?
+
+Does the possibility of betrayal make solidarity vulnerable?
+
+Is vulnerability an inherent feature of solidarity or a weakness to be overcome?
+
+Can solidarity be protected against betrayal?
+
+Does protecting solidarity against betrayal require excluding untrustworthy members?
+
+Does exclusion for the sake of solidarity contradict solidarity's inclusive impulse?
+
+---
+
+What constitutes a betrayal of solidarity?
+
+Is crossing a picket line a betrayal?
+
+Is breaking ranks a betrayal?
+
+Is disagreeing publicly a betrayal?
+
+Where is the line between legitimate dissent within solidarity and betrayal of solidarity?
+
+Does solidarity require silence about internal disagreements?
+
+Is the demand for public unity a demand for dishonesty?
+
+Can solidarity tolerate public disagreement?
+
+Does public disagreement strengthen solidarity by demonstrating its resilience, or weaken it by revealing division?
+
+---
+
+Can broken solidarity be repaired?
+
+Is forgiveness necessary for the restoration of solidarity?
+
+Can you forgive a betrayal and rebuild solidarity?
+
+Is rebuilt solidarity stronger for having survived betrayal, or permanently weakened?
+
+Does the scar of betrayal make solidarity more cautious?
+
+Is cautious solidarity still solidarity?
+
+Or has caution replaced trust, transforming solidarity into something else — a guarded cooperation, a wary alliance?
+
+Can trust be rebuilt, or only approximated?
+
+Is the approximation of trust sufficient for solidarity?
+
+---
+
+## The Paradoxes of Solidarity
+
+Is solidarity paradoxical by nature?
+
+Does solidarity require both unity and difference — unity of purpose and difference of position?
+
+Can unity and difference coexist without contradiction?
+
+Is the tension between unity and difference the engine that drives solidarity forward?
+
+Does solidarity require both freedom and obligation — the freedom to join and the obligation to remain?
+
+Can you be free within solidarity or only free outside it?
+
+Is the constraint of solidarity a form of freedom — the freedom that comes from not standing alone?
+
+---
+
+Does solidarity require both strength and vulnerability — the strength to act and the vulnerability to be affected by others?
+
+Is the person who cannot be affected by others' suffering incapable of solidarity?
+
+Is the person who is overwhelmed by others' suffering also incapable of solidarity?
+
+Does solidarity require a middle ground between indifference and dissolution?
+
+Is that middle ground stable, or must it be constantly renegotiated?
+
+Is the constant renegotiation of solidarity itself a form of solidarity?
+
+---
+
+Does solidarity contain its own negation?
+
+Does every solidarity create an outside — those who are not included?
+
+Is the outside of solidarity an exclusion?
+
+Can solidarity avoid creating outsiders?
+
+If solidarity is always solidarity with someone and therefore not with someone else, is exclusion built into its structure?
+
+Is universal solidarity the only solidarity that avoids exclusion?
+
+But if universal solidarity is impossible, is all solidarity exclusionary?
+
+Is the recognition that all solidarity is exclusionary a reason to abandon solidarity or to practice it more carefully?
+
+---
+
+Can solidarity be excessive?
+
+Can too much solidarity become suffocating?
+
+Does intense solidarity demand conformity?
+
+Is the pressure to conform within solidarity movements a form of solidarity or its opposite?
+
+Can you be too loyal?
+
+Is excessive loyalty solidarity or servility?
+
+Where does solidarity end and groupthink begin?
+
+Is the ability to dissent within solidarity the measure of its health?
+
+Does healthy solidarity welcome dissent, or merely tolerate it?
+
+Is there a difference between welcoming and tolerating dissent?
+
+---
+
+## The Future of Solidarity
+
+Is solidarity an archaic concept or a permanent human need?
+
+Does the individualism of contemporary culture make solidarity harder?
+
+Has atomization destroyed the conditions for solidarity?
+
+Can solidarity be rebuilt in an atomized society?
+
+Does digital connection create new forms of solidarity or simulate solidarity while deepening isolation?
+
+Is online solidarity real?
+
+Can you be in genuine solidarity with someone you have never met in person?
+
+Does physical co-presence matter for solidarity?
+
+Is the solidarity of the picket line different from the solidarity of the group chat?
+
+---
+
+Will automation destroy class solidarity by destroying the working class?
+
+If work disappears, does worker solidarity disappear with it?
+
+Can there be solidarity among the unemployed?
+
+Is solidarity based on shared deprivation different from solidarity based on shared labor?
+
+Does universal basic income create the conditions for new forms of solidarity or destroy the conditions that made old forms necessary?
+
+Is solidarity born of necessity, and if necessity is removed, does solidarity disappear?
+
+Can post-scarcity solidarity exist?
+
+What would people be in solidarity about if material needs were met?
+
+Would existential solidarity replace economic solidarity?
+
+---
+
+Does climate change create the conditions for a new global solidarity?
+
+Is the shared threat of ecological collapse sufficient to generate solidarity across all other divisions?
+
+Has it generated such solidarity?
+
+If the greatest shared threat in human history has not generated global solidarity, can anything?
+
+Is the failure of climate solidarity the definitive proof that global solidarity is impossible?
+
+Or is it merely proof that global solidarity has not yet been achieved?
+
+Is the distinction between impossible and not yet achieved the most important distinction in politics?
+
+---
+
+Will future generations look back on our era as one of solidarity's decline or its transformation?
+
+Is solidarity changing form rather than disappearing?
+
+Are mutual aid networks, cooperative platforms, and decentralized movements new forms of solidarity?
+
+Or are they nostalgia for old forms dressed in new technology?
+
+Is the future of solidarity local or global?
+
+Can local solidarities aggregate into global solidarity?
+
+Or does global solidarity require something other than the sum of local solidarities?
+
+---
+
+Does solidarity have a future, or only a past?
+
+Is the golden age of solidarity behind us — the labor movements, the liberation movements, the revolutions?
+
+Or is every age an age of solidarity for those who practice it?
+
+Is solidarity always present, always contested, always being born and dying and being reborn?
+
+Is the question of solidarity's future itself a form of solidarity — a concern for those who will come after?
+
+Does asking about the future of solidarity express hope that it will continue?
+
+Is that hope itself a form of solidarity with the future?
+
+Can you be in solidarity with people who do not yet exist?
+
+Is the care for future generations the ultimate test of solidarity — solidarity that can never be reciprocated?
+
+Is non-reciprocal solidarity the purest form or a contradiction?
+
+And does it matter, if the care persists regardless of whether anyone calls it solidarity?
+
+---
+
+## Solidarity and Identity
+
+Does solidarity create identity, or does identity create solidarity?
+
+Do you become a member of a group through solidarity, or do you practice solidarity because you are already a member?
+
+Is the identity that solidarity creates more real than the identity you were born with?
+
+Can chosen solidarity be stronger than inherited belonging?
+
+Is the bond between comrades deeper than the bond between kin?
+
+Does the intensity of shared struggle forge identities that peacetime cannot?
+
+Is the veteran's bond a model of solidarity or a warning about its dependence on extremity?
+
+---
+
+Does identity-based solidarity exclude those who do not share the identity?
+
+Is solidarity among women exclusionary toward men?
+
+Is solidarity among a racial group exclusionary toward other racial groups?
+
+Can identity-based solidarity coexist with broader solidarity?
+
+Must you be in solidarity with your group before you can be in solidarity with others?
+
+Or does group solidarity sometimes prevent broader solidarity?
+
+Is the insistence on group solidarity before broader solidarity a form of gatekeeping?
+
+Does gatekeeping protect solidarity or impoverish it?
+
+---
+
+Can solidarity transcend identity entirely?
+
+Is there a solidarity of strangers — people who share nothing but their presence in the same moment?
+
+Is the solidarity of strangers in a disaster real solidarity or emergency cooperation?
+
+Does the fact that strangers help each other in crises prove that solidarity is innate?
+
+Or does the fact that strangers stop helping after the crisis prove that solidarity is situational?
+
+Is situational solidarity lesser solidarity?
+
+Does all solidarity begin as situational before it becomes structural?
+
+Can situational solidarity be cultivated into lasting commitment?
+
+What turns a moment of solidarity into a movement of solidarity?
+
+---
+
+## Solidarity and Power
+
+Does solidarity always challenge power?
+
+Can the powerful practice solidarity with each other?
+
+Is the solidarity of the powerful — the old boys' network, the cartel, the ruling coalition — genuine solidarity?
+
+Or is it mere collusion that uses the language of solidarity?
+
+Does the solidarity of the powerful differ structurally from the solidarity of the powerless?
+
+Is solidarity from below fundamentally different from solidarity from above?
+
+Does solidarity from above reinforce existing power while solidarity from below challenges it?
+
+Can the same word meaningfully apply to both?
+
+---
+
+Does power corrupt solidarity?
+
+When a solidarity movement gains power, does it remain in solidarity with those it represents?
+
+Does the leader who emerged from solidarity eventually stand above it?
+
+Is the bureaucratization of solidarity movements inevitable?
+
+Does every movement that succeeds become an institution, and does every institution betray the solidarity that created it?
+
+Is institutionalized solidarity a contradiction?
+
+Can the institution preserve what the movement created?
+
+Or does the form of the institution necessarily distort the content of solidarity?
+
+---
+
+Is solidarity a form of power?
+
+Does the solidarity of the powerless create power where none existed?
+
+Is the power created by solidarity different from other forms of power?
+
+Is solidarity-based power more legitimate than wealth-based or violence-based power?
+
+Does the legitimacy of solidarity-based power depend on the justice of its cause?
+
+Can solidarity create unjust power?
+
+Is the solidarity of an unjust group still solidarity?
+
+Does the moral quality of the cause determine the moral quality of the solidarity?
+
+Or is solidarity morally neutral — a capacity that can serve any purpose?
+
+---
+
+## Solidarity and Language
+
+Does solidarity require a shared language?
+
+Can people who cannot communicate verbally be in solidarity?
+
+Is the silent solidarity of shared presence sufficient?
+
+Does the word solidarity itself matter?
+
+Do different languages capture different aspects of solidarity?
+
+Is the Polish solidarnosc the same concept as the French solidarite?
+
+Does the history embedded in each language's word for solidarity shape the concept differently?
+
+Can solidarity be translated?
+
+Is something always lost in the translation of solidarity across languages and cultures?
+
+---
+
+Does naming solidarity change it?
+
+Does the act of saying we are in solidarity formalize what was previously informal?
+
+Does formalization strengthen or weaken solidarity?
+
+Is unnamed solidarity — the solidarity that is practiced without being declared — more authentic?
+
+Or does naming solidarity make it visible and therefore more powerful?
+
+Does the declaration of solidarity create obligations that unnamed solidarity does not?
+
+Is the declared solidarity harder to abandon because it has been spoken?
+
+Does speech act theory apply to solidarity — does saying it make it so?
+
+Or does saying it without doing it make it less so?
+
+---
+
+Can solidarity be expressed in silence?
+
+Is the silent presence of a witness a form of solidarity?
+
+Is sitting with someone in their grief, without speaking, solidarity?
+
+Is the refusal to speak when speaking would be harmful a form of solidarity?
+
+Is strategic silence solidarity?
+
+Can silence be louder than speech in the practice of solidarity?
+
+When the powerful speak, is the silence of solidarity among the powerless a form of resistance?
+
+Or is silence always the weapon of the powerful used against the powerless?
+
+Does the meaning of silence depend entirely on who is silent and why?
+
+---
+
+## Solidarity and Time
+
+Is solidarity bound by time?
+
+Does solidarity exist only in the present moment of shared action?
+
+Can solidarity extend backward in time — solidarity with ancestors, with past movements, with the dead?
+
+Is honoring the dead a form of solidarity?
+
+Can you be in solidarity with someone who can never know it?
+
+Does the impossibility of reciprocity from the dead make solidarity with them purer or emptier?
+
+---
+
+Can solidarity extend forward in time — solidarity with the unborn, with future movements, with those who will inherit the world we leave?
+
+Is environmental solidarity ultimately solidarity with future generations?
+
+Does the inability of future generations to participate in present solidarity make it asymmetrical?
+
+Is all intergenerational solidarity necessarily asymmetrical?
+
+Does asymmetry diminish solidarity or reveal its most generous form?
+
+Is solidarity that expects nothing in return the highest form of solidarity?
+
+Or is the expectation of nothing a form of nihilism disguised as generosity?
+
+---
+
+Does solidarity have a tempo?
+
+Is there fast solidarity and slow solidarity?
+
+Is the solidarity of the riot different from the solidarity of the cooperative?
+
+Does urgent solidarity burn brighter but shorter?
+
+Does patient solidarity build slower but last longer?
+
+Can a movement sustain both the urgency of crisis solidarity and the patience of long-term solidarity?
+
+Is the tension between urgency and patience the central tension of every solidarity movement?
+
+Does every movement eventually face the question: do we act now or build for the future?
+
+Is that question answerable, or does solidarity require holding both impulses simultaneously?
+
+Is the ability to hold contradiction the deepest capacity that solidarity requires?
+
+And is that capacity itself a form of solidarity — with the complexity of the world as it actually is?

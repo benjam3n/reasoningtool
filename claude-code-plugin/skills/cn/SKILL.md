@@ -84,6 +84,8 @@ Audiences process information sequentially. The first thing they hear frames eve
 - Burying the lead (conclusion last when audience is busy)
 - Data dump (no ordering principle at all)
 - Chronological for persuasion (boring, no tension)
+- **False structure**: Headers, sections, or numbered lists that impose visual order on content that has no logical order. Structure should serve the argument's logic — section breaks mark real transitions in reasoning, not just places where the text needed to be broken up. Test: if you removed all headers and formatting, would the reader still perceive the same sections? If not, the structure is decorative. Every division should mark a genuine shift in topic, perspective, or argumentative function.
+- **Aspiration as conclusion**: Ending with an inspirational call to action ("together, we can...") instead of a substantive final point. The last thing the audience hears should be the strongest claim, not a sentiment.
 
 ## When to Use
 - Presentations, memos, reports, proposals

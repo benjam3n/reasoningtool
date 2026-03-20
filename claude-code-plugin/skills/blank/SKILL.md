@@ -37,6 +37,8 @@ You can't generate output from nothing. Feed your brain something:
 
 The goal is provocation, not instruction. You need something to push against.
 
+**Warning — cached unblocking advice**: The suggestions above are real, but they're also the first things every article about creative blocks says. If you're using this skill to advise someone else, don't just hand them "try brainstorming," "just start writing," or "lower your standards." Those are the cached takes on unblocking. Instead, diagnose the SPECIFIC block: Is it taste exceeding ability? Fear of commitment to a direction? Not enough raw material? The unblocking move depends on the cause. Generic block-breaking advice is itself a form of being blocked.
+
 ### Step 3: Lower the bar
 Perfectionism causes most blanks. Bypass it:
 1. Ask: what's the WORST version of this I could make?
@@ -95,3 +97,4 @@ Your creative direction lives in what you chose to generate, even when generatin
 - 3 bad ideas were generated without censoring
 - Bad ideas were mined for interesting elements
 - Some form of output now exists, even if imperfect
+- **Cached advice check**: Did the unblocking approach address the SPECIFIC cause of THIS block, or did it default to generic block-breaking advice? "Try brainstorming," "just start," "lower your standards" are the equivalent of telling a depressed person to cheer up. Name the actual blockage (taste gap, direction paralysis, input starvation, fear of judgment) and match the intervention to it.

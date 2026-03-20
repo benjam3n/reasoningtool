@@ -167,6 +167,20 @@ For philosophical or argumentative writing, explicitly require:
 - What is NOT being claimed
 - What would count as evidence against the claim
 
+### Anti-Generation-Failure Requirements
+
+Derive requirements that prevent the draft from collapsing into generic LLM output:
+
+| Requirement Type | Ask | Example Requirement |
+|-----------------|-----|-------------------|
+| **Anti-pre-baked-thesis** | Is the thesis the most predictable take on this topic? What would a thoughtful person find SURPRISING about the thesis? | "Thesis must not be the default position — if 80% of LLM outputs would reach this conclusion, it's cached, not thought" |
+| **Anti-cached-takes** | For each supporting claim, is it the first thing that comes to mind? | "Each supporting claim must pass: could I find this exact point in the first 3 search results? If yes, go deeper" |
+| **Anti-performed-humility** | Are any balance/nuance paragraphs doing real intellectual work, or just performing fairness? | "No false-balance paragraphs unless both positions have genuinely comparable evidence" |
+| **Anti-relativistic-hedging** | Where will the draft be tempted to split the difference? | "No 'some argue X, others Y' unless the essay then takes a side and defends it" |
+| **Anti-voice-collapse** | What makes this writer's perspective distinctive? | "Voice must reflect [specific register, stance, or framing] — not interchangeable with generic explanatory prose" |
+| **Anti-false-structure** | Does every planned section/header do argumentative work? | "No section exists for formatting reasons — every division must mark a real shift in the argument" |
+| **Anti-aspiration-conclusion** | What is the ending's intellectual obligation? | "Conclusion must make a final substantive claim, not end with hope or a call to action" |
+
 ---
 
 ## Stage 4: Expansion Requirements
@@ -245,6 +259,9 @@ EXCLUSIONS
 | **Subject-switching conclusions** | Ending on a different topic than you started |
 | **Hedge stacking** | So many qualifiers the thesis dissolves |
 | **False balance** | Giving equal weight to positions with unequal evidence |
+| **Pre-baked thesis** | Thesis is the most predictable/popular conclusion on the topic |
+| **Aspiration ending** | Conclusion gestures at hope or collective action instead of making a final claim |
+| **Voice-neutral prose** | Writing that could have been produced by any LLM — no distinctive perspective |
 
 ---
 

@@ -2277,3 +2277,1727 @@ Is correspondence circular — always returning to itself, always presupposing i
 Can a circular concept be a fundamental concept, or must fundamental concepts have a non-circular foundation?
 
 If fundamental concepts need foundations, what is the foundation of correspondence — and does it correspond to anything?
+
+---
+
+## Correspondence Theory of Truth
+
+Does the correspondence theory of truth claim that truth is a relation between propositions and facts?
+
+Is the fact that a proposition corresponds to a distinct entity, or is it merely the proposition's truth-condition restated?
+
+Can the correspondence theory distinguish between the fact and the true proposition without circularity?
+
+If a true proposition is one that corresponds to a fact, and a fact is what a true proposition corresponds to, has anything been explained?
+
+Does the correspondence theory require an independent account of facts?
+
+Can facts be specified without reference to the propositions that describe them?
+
+If facts can only be individuated through propositions, does correspondence collapse into a relation between propositions?
+
+Is the correspondence theory really a theory of truth, or is it a restatement of the truism that true statements get things right?
+
+Can the notion of "getting things right" be cashed out without invoking correspondence?
+
+---
+
+Does the correspondence theory apply equally to all domains of discourse?
+
+Does "murder is wrong" correspond to a moral fact, and if so, what kind of fact is it?
+
+Does "seven is prime" correspond to a mathematical fact, and if so, where does that fact reside?
+
+Does "this painting is beautiful" correspond to an aesthetic fact?
+
+If correspondence works only for empirical claims, is it a partial theory of truth at best?
+
+If it works for all claims, must we accept facts in every domain — moral facts, mathematical facts, aesthetic facts, modal facts?
+
+Is the proliferation of fact-types a cost or a benefit of the correspondence theory?
+
+Does the correspondence theory commit us to a richer ontology than we might otherwise accept?
+
+Can we accept correspondence as a theory of truth while remaining agnostic about which facts exist?
+
+Is agnosticism about facts compatible with a robust correspondence theory?
+
+---
+
+What is the structure of a fact, according to the correspondence theory?
+
+Is a fact structured like a proposition — with constituents arranged in a certain way?
+
+If facts have propositional structure, does each fact contain objects, properties, and relations arranged as the proposition says?
+
+Does the fact that snow is white contain snow and whiteness as constituents?
+
+If so, is the fact identical to the complex of snow-having-whiteness, or is it something over and above its constituents?
+
+What holds the constituents of a fact together — what is the unity of the fact?
+
+Is the unity of the fact the same problem as the unity of the proposition?
+
+Does the correspondence theory merely transfer the problem of propositional unity to the level of facts?
+
+If the unity of the fact is explained by the relation among its constituents, is the relation itself a constituent of the fact?
+
+Does including the relation as a constituent generate Bradley's regress — a further relation needed to relate the relation to its relata?
+
+Is the correspondence theory vulnerable to Bradley's regress at the level of facts?
+
+Can the correspondence theory survive if facts cannot be coherently individuated?
+
+---
+
+Does correspondence require that propositions and facts share a common structure?
+
+Is the sharing of structure between proposition and fact itself a structural fact?
+
+If so, does this structural fact require a further proposition to correspond to it?
+
+Does this generate an infinite regress of structural correspondences?
+
+Is the regress of structural correspondences the same regress that the correspondence theory was supposed to resolve?
+
+Did Russell recognize this problem when he abandoned the multiple relation theory of judgment?
+
+Did Wittgenstein's Tractatus attempt to solve it by declaring that structural correspondence shows itself but cannot be said?
+
+Is the Tractarian solution a genuine resolution or an admission of defeat?
+
+If structural correspondence can only be shown, is the correspondence theory itself unsayable?
+
+Can a theory of truth be unsayable and still be a theory?
+
+---
+
+Is the correspondence theory compatible with the existence of vague truths?
+
+Does "the room is warm" correspond to a fact, even though warmth admits of degrees?
+
+If the fact is vague, does it have sharp boundaries?
+
+If facts have no sharp boundaries, can correspondence be a precise relation?
+
+Can an imprecise relation ground the concept of truth?
+
+Does the correspondence theory require that truth is precise, or can it accommodate degrees of truth?
+
+If truth comes in degrees, does correspondence come in degrees?
+
+Can something half-correspond to a fact?
+
+Is approximate correspondence genuine correspondence, or a different relation entirely?
+
+Does science aim at exact correspondence with facts, or is approximate correspondence the best it can hope for?
+
+If approximate correspondence is the best science can achieve, is scientific truth a lesser kind of truth?
+
+Or is approximate correspondence the only kind there is — exact correspondence being an unreachable ideal?
+
+---
+
+## Mapping Between Structures
+
+What is a mapping?
+
+Is a mapping a rule that assigns to each element of one structure an element of another?
+
+Does a mapping require that the two structures exist independently of the mapping itself?
+
+Can a mapping bring its codomain into existence, or must the codomain already be there?
+
+If the codomain must already exist, is mapping always a discovery rather than a creation?
+
+Can mapping be creative — can the act of mapping generate new structures?
+
+Is the map between two structures itself a structure, and if so, can it be mapped onto further structures?
+
+---
+
+Does the concept of a mapping presuppose the concept of a function?
+
+Is every mapping a function, or are there mappings that are not functional?
+
+Can a mapping be one-to-many, or must it assign each element a unique image?
+
+If one-to-many mappings are allowed, does this weaken the notion of correspondence?
+
+Is a one-to-many mapping a correspondence at all, or is it something looser?
+
+Does correspondence require uniqueness — each element having exactly one correspondent?
+
+If correspondence requires uniqueness, what happens when multiple elements in the codomain are equally good correspondents?
+
+Is the selection of a unique correspondent from among equals itself an act of correspondence or an act of choice?
+
+Does choice undermine correspondence by introducing arbitrariness?
+
+---
+
+What is the relationship between a map and the territory it maps?
+
+Is a map a correspondence between spatial features and marks on paper?
+
+Does a map correspond to the territory point for point, or only feature for feature?
+
+Can a map be accurate without being complete — must it represent everything in the territory?
+
+Is the selection of what to include on a map a decision about which correspondences matter?
+
+Does every map necessarily omit something, and if so, does it fail in correspondence?
+
+Or is selective correspondence the only kind of correspondence that maps — and perhaps all representations — can achieve?
+
+Is Borges' map the size of the territory a reductio of perfect correspondence?
+
+If a perfectly corresponding map is useless, is perfect correspondence itself useless?
+
+Does usefulness require some degree of non-correspondence — simplification, abstraction, distortion?
+
+Is the utility of a map inversely proportional to the completeness of its correspondence?
+
+---
+
+Can two structures be isomorphic — in perfect structural correspondence — while being materially different?
+
+Does isomorphism preserve everything that matters about structure?
+
+What does isomorphism fail to preserve?
+
+If isomorphism preserves structure but not content, is structure all that correspondence captures?
+
+Can correspondence capture content as well as structure?
+
+Is the content of an element something over and above its structural position?
+
+If content reduces to structural position, does isomorphism exhaust correspondence?
+
+If content does not reduce to structure, what more does correspondence require?
+
+Can the "more" that correspondence requires be itself structurally characterized?
+
+Does the attempt to structurally characterize the non-structural lead to an infinite regress?
+
+---
+
+Is a homomorphism a weakened form of correspondence — preserving some structure but not all?
+
+Does every homomorphism correspond to a way of simplifying one structure relative to another?
+
+Is simplification itself a mapping from the complex to the simple?
+
+Can the simple correspond to the complex, or does simplification destroy correspondence?
+
+If simplification destroys some correspondences while preserving others, who decides which correspondences to sacrifice?
+
+Is the decision about which correspondences to sacrifice a pragmatic one or a principled one?
+
+Can pragmatic considerations determine matters of correspondence?
+
+Does this make correspondence partly a practical notion rather than a purely theoretical one?
+
+---
+
+What is the relationship between mapping and representation?
+
+Is every representation a mapping from what is represented to the medium of representation?
+
+Does representation require that the mapping preserve something — some feature, some structure, some relation?
+
+What minimum must a mapping preserve in order to count as representation?
+
+Can a mapping that preserves nothing still represent?
+
+Is a purely arbitrary mapping — a code — a form of correspondence or merely a convention?
+
+Does the distinction between natural and conventional correspondence track the distinction between resemblance and code?
+
+Is a portrait a natural correspondence to its subject while a name is a conventional one?
+
+If both are correspondences, is the notion of correspondence broad enough to encompass both resemblance and arbitrary assignment?
+
+Is a notion that broad still informative?
+
+---
+
+## Adequation
+
+What does it mean for the intellect to be adequate to its object?
+
+Is adequation a medieval formulation of the correspondence theory of truth?
+
+Did Aquinas mean the same thing by adaequatio intellectus et rei that modern philosophers mean by correspondence?
+
+Is there a difference between the mind conforming to reality and a proposition matching a fact?
+
+Does adequation suggest an active process — the mind making itself adequate to the thing — whereas correspondence suggests a static relation?
+
+If adequation is active, is it a process that can succeed or fail by degrees?
+
+Can the mind become more and more adequate to reality without ever achieving perfect adequation?
+
+Is perfect adequation an asymptotic ideal?
+
+Does the impossibility of perfect adequation undermine the concept, or does it give the concept its motivating force?
+
+---
+
+Is adequation a relation between the mind and individual objects, or between the mind and reality as a whole?
+
+Can the mind be adequate to a particular thing without being adequate to the whole of which that thing is a part?
+
+Does adequate knowledge of a part require adequate knowledge of the whole?
+
+If so, is complete adequation impossible for finite minds?
+
+Is the impossibility of complete adequation a limitation of minds or a feature of reality?
+
+Could a mind be fully adequate to reality only if it were identical with reality?
+
+Does adequation tend toward identity — the knower becoming what it knows?
+
+Did Aristotle hold that the mind becomes its objects in some sense?
+
+Is the mind's becoming its object a literal identity or a metaphorical correspondence?
+
+If metaphorical, what is the literal truth behind the metaphor?
+
+---
+
+Does adequation require that the mind possess the form of the object without the matter?
+
+Is receiving the form without the matter itself a kind of correspondence — the form in the mind corresponding to the form in the thing?
+
+Can the same form exist in two substrates — mind and matter — while remaining the same form?
+
+Is the identity of the form across substrates what makes adequation possible?
+
+If forms are individuated by their substrates, can the form in the mind be strictly identical to the form in the thing?
+
+If not strictly identical, is it a copy, and does the copy correspond to the original?
+
+How does the copy-theory of mental representation differ from the correspondence theory of truth?
+
+Is every correspondence theory implicitly a copy theory?
+
+Can there be correspondence without copying?
+
+---
+
+Is adequation threatened by the fact that minds are culturally shaped?
+
+Does cultural formation distort the mind's capacity for adequation, or does it enable it?
+
+Can a mind be adequate to reality only through the mediation of culture, language, and tradition?
+
+If mediation is necessary, is immediate adequation impossible?
+
+Is the desire for immediate adequation — direct contact between mind and reality — a philosophical fantasy?
+
+Does all adequation pass through signs, symbols, and interpretive frameworks?
+
+If so, does the mind ever reach the thing itself, or only its own representations?
+
+Is the gap between representation and thing the permanent condition of human knowing?
+
+Can the gap be narrowed without being closed?
+
+Is narrowing the gap the work of science, philosophy, or something else entirely?
+
+---
+
+## Mirroring
+
+Does the mind mirror nature?
+
+Is the metaphor of the mirror adequate to the mind's relation to reality?
+
+Does a mirror correspond to what it reflects, and if so, is this correspondence passive or active?
+
+Is the mind a passive mirror, receiving impressions, or does it actively shape what it reflects?
+
+Did Rorty's critique of the mirror metaphor undermine the correspondence theory, or only one version of it?
+
+Can correspondence survive the death of the mirror metaphor?
+
+Is there a form of correspondence that does not require the mind to be a mirror?
+
+---
+
+What does a mirror actually do — does it reproduce an image or produce one?
+
+Is the mirror image identical to the thing reflected, or is it a systematic transformation?
+
+Does a mirror reverse left and right, and if so, does this reversal compromise correspondence?
+
+Is a reversed image still in correspondence with its original?
+
+If systematic distortion preserves structure, is distortion compatible with correspondence?
+
+Does every medium of reflection introduce distortion?
+
+Is distortion-free correspondence possible, or is all correspondence mediated and therefore distorted?
+
+If all correspondence is distorted, is there a fact of the matter about what undistorted correspondence would look like?
+
+Can we correct for distortion without knowing what the undistorted image looks like?
+
+Is the correction of distortion itself a form of correspondence — between the distorted image and an ideal?
+
+---
+
+Does mirroring require a surface on which the image appears?
+
+Is the mind a surface, and if so, what kind of surface?
+
+Can a surface be infinitely thin, or does every surface have depth?
+
+If the mind has depth, does reflection penetrate below the surface?
+
+Is deep reflection different from surface mirroring?
+
+Does deep reflection correspond to reality more accurately than surface mirroring?
+
+Can depth of reflection itself be measured, and if so, by correspondence to what standard?
+
+Is the distinction between deep and shallow understanding a distinction between degrees of correspondence?
+
+---
+
+Is a mirror image a copy, a representation, or something else?
+
+Does the mirror image exist in the mirror, in the eye of the beholder, or nowhere at all?
+
+If the mirror image exists, does it correspond to the thing reflected in the same way that a true proposition corresponds to a fact?
+
+Is the mirror image a fact?
+
+If the mirror image is a fact, is it the same fact as the reflected object, or a different one?
+
+Can the mirror image itself be mirrored, and does the mirror of a mirror correspond to the original?
+
+Does double mirroring restore the original, or does it introduce new distortions?
+
+Is the relation between original and copy of a copy still correspondence?
+
+---
+
+Does the universe mirror itself in its parts?
+
+Is a hologram a form of mirroring in which each part contains information about the whole?
+
+Does the holographic principle in physics suggest that reality is a kind of self-mirroring?
+
+If reality mirrors itself, is there an original and a copy, or are all mirrors and no originals?
+
+Can there be mirroring without an original — pure correspondence without a privileged term?
+
+Is symmetry a form of self-mirroring?
+
+Does a symmetric object correspond to itself under transformation?
+
+Is self-correspondence the most fundamental form of correspondence?
+
+---
+
+## Representation Revisited
+
+Is all representation a form of correspondence?
+
+Can something represent without corresponding to what it represents?
+
+Is abstract art representational even when it does not correspond to any recognizable object?
+
+Does abstract art correspond to emotions, structures, or formal relations rather than objects?
+
+Is the correspondence between art and emotion a genuine correspondence or a metaphorical extension?
+
+Does the metaphorical extension of correspondence weaken or enrich the concept?
+
+Can a concept be enriched by metaphorical extension without losing its core meaning?
+
+What is the core meaning of correspondence, stripped of all metaphorical extension?
+
+Is the core meaning of correspondence the bare notion of one thing going with another?
+
+Is "going with" too vague to be a philosophical concept?
+
+---
+
+Does a symbol correspond to what it symbolizes?
+
+Is the correspondence between symbol and symbolized conventional or natural?
+
+If conventional, does the convention itself correspond to something?
+
+Can a convention be arbitrary and still ground genuine correspondence?
+
+Is the arbitrariness of linguistic signs a problem for the correspondence theory of language?
+
+Does Saussure's claim that the sign is arbitrary undermine correspondence between language and world?
+
+Or does Saussure's claim apply only to the sign-signifier relation, leaving the sign-world relation open?
+
+Can signs correspond to the world through a chain of conventions, each link arbitrary but the whole chain grounded?
+
+What grounds the whole chain if each link is arbitrary?
+
+Is the grounding of the chain itself a correspondence — between the system of signs and the system of things?
+
+---
+
+Does a photograph correspond to its subject more directly than a painting?
+
+Is photographic correspondence mechanical, whereas painterly correspondence is interpretive?
+
+Does the mechanical nature of photography guarantee correspondence?
+
+Can a photograph fail to correspond to its subject — through distortion, framing, or manipulation?
+
+If photographs can fail to correspond, is their correspondence no more guaranteed than that of paintings?
+
+Is the difference between photography and painting a difference in the degree of human mediation?
+
+Does less mediation mean greater correspondence?
+
+Or does mediation enhance correspondence by selecting what matters?
+
+Is the most correspondence-preserving representation the one with the least human involvement, or the one with the most skilled human involvement?
+
+---
+
+Can a model correspond to what it models?
+
+Is a scientific model a correspondence between theoretical structures and natural processes?
+
+Does a model need to correspond in every respect, or only in relevant respects?
+
+What determines the relevant respects in which a model should correspond?
+
+Is the selection of relevant respects a pragmatic decision or a discovery about nature?
+
+Can two models that correspond to the same phenomenon in different respects both be true?
+
+If both are true, do they correspond to different aspects of the same reality?
+
+Can reality have aspects — different faces it shows to different models?
+
+Is the notion of aspects of reality a form of perspectivalism?
+
+Does perspectivalism undermine correspondence by making truth relative to a model?
+
+Or does perspectivalism enrich correspondence by recognizing that reality exceeds any single correspondent?
+
+---
+
+## Pre-Established Harmony Revisited
+
+Did Leibniz propose pre-established harmony as an alternative to real correspondence?
+
+Is pre-established harmony the doctrine that mind and body do not interact but merely run in parallel?
+
+If mind and body run in parallel, is their coordination a form of correspondence without causal connection?
+
+Can there be correspondence without any connection — causal, logical, or structural?
+
+Is pre-established harmony a miracle or an explanation?
+
+Does invoking God as the harmonizer explain the correspondence or merely postpone the question?
+
+If God establishes the harmony, does God's act of establishing it constitute a super-correspondence between God's plan and the world's unfolding?
+
+Is the correspondence between divine plan and worldly realization itself in need of explanation?
+
+Does the need for explanation generate a regress — God's plan must correspond to something, and that something to something else?
+
+---
+
+Can there be harmony without a harmonizer?
+
+Does the existence of natural regularities — laws of nature — constitute a pre-established harmony?
+
+Is the fact that mathematics applies to physics a form of pre-established harmony?
+
+Did Wigner call this the "unreasonable effectiveness of mathematics"?
+
+Is the unreasonable effectiveness of mathematics a genuine mystery or a selection effect?
+
+If mathematics is effective because we developed it to describe nature, is the correspondence between math and nature unsurprising?
+
+But if mathematics developed independently of physical application — as in pure number theory — and later found physical application, is that surprising?
+
+Does the surprising applicability of pure mathematics suggest a deep correspondence between mathematical structure and physical reality?
+
+Is this deep correspondence evidence for mathematical Platonism?
+
+If mathematical objects exist independently, does their correspondence with physical reality require explanation?
+
+---
+
+Is the harmony between different branches of mathematics itself a form of correspondence?
+
+Does the Langlands program seek correspondences between number theory and geometry?
+
+Are the correspondences discovered by the Langlands program pre-established or constructed?
+
+If constructed, who constructs them — mathematicians or the mathematical structures themselves?
+
+Can mathematical structures construct their own correspondences?
+
+Is the self-organization of mathematics into harmonious wholes a form of pre-established harmony within the mathematical realm?
+
+Does the internal harmony of mathematics correspond to the internal harmony of nature?
+
+Is the correspondence between mathematical harmony and natural harmony itself harmonious?
+
+Is this an example of harmony about harmony — meta-harmony?
+
+Does meta-harmony require its own explanation, or is it self-explanatory?
+
+---
+
+Is the correspondence between mental states and brain states a form of pre-established harmony?
+
+Do mental events correspond to neural events one-to-one?
+
+If the correspondence between mental and neural is not one-to-one, is it many-to-one, one-to-many, or many-to-many?
+
+Does the type of mapping between mental and neural affect the kind of correspondence that holds?
+
+Can mental states correspond to neural states if mental states are multiply realizable?
+
+If the same mental state can correspond to different neural states in different organisms, is the correspondence fixed or flexible?
+
+Is flexible correspondence genuine correspondence, or is it something weaker?
+
+Does the mind-brain correspondence require a theory of identity, correlation, or something else?
+
+Is identity the strongest form of correspondence — where the two terms collapse into one?
+
+Does identity eliminate correspondence by eliminating the duality that correspondence requires?
+
+---
+
+## Correspondence and Meaning
+
+Does meaning arise from correspondence?
+
+Does a word mean what it does because it corresponds to something in the world?
+
+If meaning is correspondence, what does a word mean when nothing in the world corresponds to it?
+
+How does "unicorn" mean anything if there are no unicorns?
+
+Can a word correspond to a concept rather than an object?
+
+If words correspond to concepts, do concepts correspond to objects?
+
+Is meaning a chain of correspondences — word to concept, concept to object?
+
+If the chain breaks at any link, does meaning collapse?
+
+Does the meaning of fictional terms show that correspondence is not necessary for meaning?
+
+Or does fiction correspond to possible worlds, imagined scenarios, or mental constructs?
+
+---
+
+Does the meaning of a sentence correspond to a state of affairs?
+
+Is a state of affairs something that obtains or fails to obtain?
+
+Does a true sentence correspond to an obtaining state of affairs and a false sentence to a non-obtaining one?
+
+Can a sentence correspond to a non-obtaining state of affairs, and if so, what kind of correspondence is that?
+
+Is correspondence to a non-obtaining state of affairs the same as non-correspondence?
+
+Or is it a genuine correspondence to something — the possible but non-actual?
+
+Do possible states of affairs exist as correspondents?
+
+Is the ontology of possible states of affairs a cost that the correspondence theory of meaning must bear?
+
+---
+
+Does metaphor involve correspondence?
+
+Does "Juliet is the sun" correspond to anything?
+
+If metaphor does not correspond literally, does it correspond figuratively?
+
+What is figurative correspondence — is it a weaker or a different kind of correspondence?
+
+Does metaphor create new correspondences that did not exist before the metaphor was uttered?
+
+If metaphor is creative, does it show that correspondence can be made rather than found?
+
+Can a made correspondence be as real as a found one?
+
+Is the distinction between found and made correspondences sustainable?
+
+---
+
+Does translation between languages presuppose correspondence between their semantic systems?
+
+Can two languages correspond to the same reality through different conceptual structures?
+
+If different languages carve reality differently, do they correspond to different realities or to the same reality differently?
+
+Is Quine's thesis of the indeterminacy of translation a denial of inter-linguistic correspondence?
+
+If translation is indeterminate, does correspondence between language and world become indeterminate too?
+
+Can correspondence be indeterminate — neither holding nor failing to hold?
+
+Is indeterminate correspondence a coherent notion?
+
+Does the coherence of indeterminate correspondence depend on the logic we presuppose?
+
+Can classical logic accommodate indeterminate correspondence, or is a non-classical logic required?
+
+---
+
+## Correspondence and Verification
+
+Can correspondence be verified?
+
+If truth is correspondence, can we verify that a proposition corresponds to a fact?
+
+Does verification require comparing the proposition with the fact?
+
+Can we access the fact independently of any proposition about it?
+
+If we cannot access facts independently of propositions, can we ever compare proposition and fact?
+
+Is the impossibility of comparison a problem for the correspondence theory or for verification theory?
+
+Did the logical positivists conflate correspondence with verification?
+
+Is correspondence a metaphysical thesis while verification is an epistemological one?
+
+Can a metaphysical thesis be correct even if it cannot be epistemologically verified?
+
+---
+
+Does the verification of correspondence require a God's-eye view?
+
+Is a God's-eye view one from which both proposition and fact are simultaneously visible?
+
+Is a God's-eye view itself a correspondence — between the divine perspective and reality as it is?
+
+If even God's perspective is a perspective, is there no view from nowhere?
+
+Does the impossibility of a view from nowhere entail the impossibility of verifying correspondence?
+
+Can correspondence be indirectly verified — through coherence, pragmatic success, or predictive accuracy?
+
+If indirect verification is the best we can do, does it matter whether correspondence or coherence is the correct theory of truth?
+
+Is the practical indistinguishability of correspondence and coherence a reason to abandon the distinction?
+
+Or is the distinction real even if we cannot tell which theory is correct?
+
+---
+
+Does science verify its theories by checking their correspondence with observation?
+
+Is observation itself a form of correspondence — between sensory states and external objects?
+
+If observation is correspondential, does verifying correspondence through observation involve circular reasoning?
+
+Can we escape the circle of correspondence — correspondence verified by observation, observation itself a form of correspondence?
+
+Is the circle a vicious one, or a hermeneutic one?
+
+Does a hermeneutic circle provide understanding even if it does not provide proof?
+
+Is understanding different from verification, and if so, does it require correspondence?
+
+---
+
+## Correspondence and Error
+
+How does the correspondence theory explain error?
+
+Is a false belief one that fails to correspond to any fact?
+
+Or does a false belief correspond to something — a non-fact, a possibility, a state of affairs that does not obtain?
+
+If false beliefs correspond to non-obtaining states of affairs, do non-obtaining states of affairs exist?
+
+Is the ontology of non-obtaining states of affairs too extravagant?
+
+Can the correspondence theory explain error without inflating ontology?
+
+---
+
+Is illusion a failure of correspondence?
+
+Does a mirage correspond to anything — to light patterns, to atmospheric conditions, to something other than water?
+
+If a mirage corresponds to atmospheric conditions rather than to water, is the perception false or merely misdescribed?
+
+Is error always a matter of misdescription — assigning the wrong correspondent to a perception?
+
+Can we err about which correspondent is the right one?
+
+Does erring about correspondents show that correspondence itself is unclear?
+
+Or does it show that we are fallible in detecting correspondences while the correspondences themselves are perfectly determinate?
+
+Is the determinacy of correspondences independent of our ability to detect them?
+
+---
+
+Can systematic error be understood as systematic mis-correspondence?
+
+Does a systematically distorting lens create a systematic correspondence between apparent and real positions?
+
+Is systematic distortion a form of correspondence — just not the identity correspondence?
+
+Can we correct for systematic distortion by discovering the rule of correspondence between appearance and reality?
+
+Is the correction of distortion itself a higher-order correspondence?
+
+Does the ability to correct for error presuppose that we already know what true correspondence looks like?
+
+If we already knew what true correspondence looked like, would we have erred in the first place?
+
+Is error possible only for beings who grasp the concept of correspondence imperfectly?
+
+---
+
+## Correspondence and Objectivity
+
+Does objectivity require correspondence?
+
+Is an objective claim one that corresponds to mind-independent reality?
+
+If objectivity is correspondence to mind-independent reality, can we ever establish objectivity?
+
+Does the attempt to establish objectivity require a mind, and does the involvement of a mind compromise mind-independence?
+
+Is the paradox of objectivity that it can only be sought by minds but must transcend them?
+
+Can correspondence to mind-independent reality be a regulative ideal without being an achievable goal?
+
+Is a regulative ideal that can never be achieved still a useful concept?
+
+---
+
+Does intersubjective agreement constitute evidence of correspondence?
+
+If many observers agree, does their agreement correspond to an objective fact?
+
+Or could many observers be systematically wrong in the same way?
+
+Does the possibility of collective error undermine the inference from agreement to correspondence?
+
+Can correspondence be established without any observers at all?
+
+Is correspondence an observer-independent relation?
+
+If observer-independent, is it also mind-independent — existing even in a universe without minds?
+
+Did correspondences hold before there were minds to notice them?
+
+Does the question of whether correspondences held before minds presuppose a temporal correspondence between our concept of "before" and the actual past?
+
+Is the correspondence between our temporal concepts and the actual temporal order itself in need of justification?
+
+---
+
+## Correspondence in Formal Systems
+
+Do formal systems exhibit internal correspondences?
+
+Is the correspondence between syntax and semantics in a formal language a genuine correspondence?
+
+Does Gödel numbering establish a correspondence between statements and numbers?
+
+Is Gödel numbering a natural correspondence or an artificial one?
+
+Does the distinction between natural and artificial correspondences apply within mathematics?
+
+Can a correspondence be mathematically productive without being natural?
+
+Is naturalness a mathematical concept or a philosophical one imposed on mathematics?
+
+---
+
+Does the completeness theorem establish a correspondence between syntactic provability and semantic truth?
+
+If every semantically valid formula is provable, does this mean that syntax corresponds perfectly to semantics?
+
+Does Gödel's incompleteness theorem show that this perfect correspondence fails for sufficiently strong systems?
+
+Is the failure of correspondence between syntax and semantics in strong systems a deep fact about correspondence itself?
+
+Does incompleteness reveal a limit on all correspondences, or only on correspondences within formal arithmetic?
+
+Can the incompleteness of formal systems be interpreted as the impossibility of perfect self-correspondence?
+
+Is a system's inability to fully correspond to itself a version of the liar's paradox?
+
+Does the liar's paradox show that self-correspondence is inherently problematic?
+
+---
+
+Is the duality between algebra and geometry in algebraic geometry a formal correspondence?
+
+Does categorical equivalence establish that two apparently different theories are the same theory in different guise?
+
+If two theories are categorically equivalent, do they correspond to the same mathematical reality?
+
+Is categorical equivalence the strongest form of mathematical correspondence?
+
+Can there be correspondences that categorical equivalence fails to capture?
+
+Are there aspects of mathematical structures that resist formalization as functors between categories?
+
+Is the resistance to formalization itself a fact about correspondence — that some correspondences are too deep or too subtle for any formal framework?
+
+---
+
+## Correspondence and Emergence
+
+Do emergent properties correspond to anything at the lower level?
+
+If consciousness emerges from neural activity, does consciousness correspond to a pattern of neural firing?
+
+Is the correspondence between emergent properties and their base properties one-to-one or many-to-one?
+
+If many-to-one, does each token of the emergent property correspond to a different base configuration?
+
+Is multiple realizability a challenge to correspondence, or does it reveal that correspondence can be flexible?
+
+Can flexible correspondence support reduction?
+
+If emergent properties cannot be reduced to base properties, does correspondence between levels fail?
+
+Is irreducibility the failure of correspondence or the discovery that correspondence comes in irreducibly different kinds?
+
+---
+
+Does the whole correspond to the sum of its parts?
+
+If the whole is more than the sum of its parts, does the "more" correspond to anything?
+
+Can the surplus of the whole over its parts correspond to the arrangement of the parts?
+
+Is arrangement itself a correspondent, or is it the relation among correspondents?
+
+Can a relation be a correspondent?
+
+If relations can be correspondents, is the correspondence between a relation and its correspondent itself a relation?
+
+Does this generate a regress of relations corresponding to relations?
+
+Is the regress of relational correspondence the deepest form of the correspondence regress?
+
+---
+
+## Correspondence and Nothingness
+
+Can something correspond to nothing?
+
+Does the proposition "nothing exists" correspond to anything?
+
+If it corresponds to the absence of everything, is absence something that can serve as a correspondent?
+
+Is absence a thing, a state, or neither?
+
+Can correspondence theory handle the concept of nothingness?
+
+Does the difficulty of nothingness for correspondence theory reveal a fundamental limitation?
+
+Is correspondence inherently a relation between somethings, incapable of reaching nothing?
+
+If correspondence cannot reach nothing, is the concept of nothing beyond the reach of truth?
+
+Can there be truths about nothing?
+
+---
+
+Does the void correspond to itself?
+
+Is self-correspondence the minimal form of correspondence — everything corresponds at least to itself?
+
+Does nothingness correspond to itself, and if so, is this correspondence trivial?
+
+Is trivial correspondence still correspondence?
+
+Does the triviality of self-correspondence show that correspondence requires otherness — a gap between correspondent and correspondee?
+
+Can there be correspondence without a gap?
+
+Is gapless correspondence identity, and does identity eliminate correspondence?
+
+If identity eliminates correspondence, does perfect correspondence destroy itself?
+
+Is the self-destruction of perfect correspondence the deepest paradox of the correspondence concept?
+
+---
+
+## The Persistence of Correspondence
+
+Why does the concept of correspondence persist despite all objections?
+
+Is correspondence an ineliminable concept — one that every attempt to eliminate it must presuppose?
+
+Does the critique of correspondence itself correspond to something?
+
+If the critique corresponds to genuine problems with the concept, has correspondence been used to undermine correspondence?
+
+Is the self-undermining of correspondence a sign of its incoherence or its indispensability?
+
+Can a concept be both incoherent and indispensable?
+
+Are there many concepts that are both incoherent and indispensable — freedom, self, time, truth?
+
+Is correspondence one of these fundamental concepts that thought cannot do without but also cannot fully clarify?
+
+---
+
+Does the persistence of correspondence reflect a deep human need to believe that thought and reality are connected?
+
+Is the desire for correspondence the desire for contact with reality?
+
+Is the desire for contact with reality a fundamental human drive or a culturally specific obsession?
+
+If culturally specific, is it a Western obsession — tied to Greek philosophy's pursuit of truth as aletheia?
+
+Does aletheia — unconcealment — correspond to correspondence, or is it a different relation between thought and being?
+
+Is Heidegger's claim that truth is unconcealment a rejection of correspondence or a deepening of it?
+
+If unconcealment is deeper than correspondence, does correspondence presuppose unconcealment?
+
+Can something correspond to us only after it has been unconcealed?
+
+Is unconcealment the condition of possibility for correspondence?
+
+---
+
+Will correspondence eventually be superseded by some other concept?
+
+Or is correspondence the permanent horizon of all thought about truth?
+
+Can we think truth without correspondence, even in principle?
+
+Has any philosopher successfully thought truth without correspondence?
+
+Did the pragmatists succeed in replacing correspondence with utility?
+
+Did the coherence theorists succeed in replacing correspondence with coherence?
+
+Did the deflationists succeed in replacing correspondence with disquotation?
+
+Does every replacement for correspondence smuggle correspondence back in?
+
+Is the smuggling-back of correspondence evidence of its indispensability?
+
+Or is it evidence of our inability to think in any other way — a cognitive limitation rather than a metaphysical insight?
+
+Can we distinguish between a concept that is indispensable because reality requires it and one that is indispensable because our minds require it?
+
+Is this distinction itself a form of correspondence — between reality's requirements and our minds' requirements?
+
+Does the impossibility of escaping correspondence prove its truth, or merely demonstrate our imprisonment within it?
+
+Is imprisonment within correspondence a liberation — giving us access to reality — or a confinement — trapping us in our own conceptual schemes?
+
+Can a prison that opens onto reality still be called a prison?
+
+Is the question of correspondence ultimately the question of whether thought can reach beyond itself?
+
+Can thought reach beyond itself, and if so, does it find correspondence waiting there — the relation that connects thought to what is not thought?
+
+Or does thought, reaching beyond itself, find only more thought — correspondences all the way down, with no ground that is not itself a correspondence?
+
+Is the groundlessness of correspondence the final truth about correspondence, or merely the point where questioning must stop?
+
+Does questioning ever truly stop, or does it merely pause before the next question arises?
+
+What is the next question about correspondence — and does it correspond to anything we have not yet imagined?
+
+---
+
+## Correspondence and Measurement
+
+Does measurement establish a correspondence between a physical quantity and a number?
+
+Is the assignment of numbers to physical properties a mapping, and if so, what kind?
+
+Does measurement discover a correspondence that already exists, or does it create one?
+
+If measurement creates correspondence, does the thing measured exist as a quantity before measurement?
+
+Can a property be quantitative without being measured?
+
+Is the quantitative character of nature independent of measurement, or constituted by it?
+
+Does quantum mechanics suggest that measurement constitutes the quantity — that properties are indeterminate until measured?
+
+If measurement constitutes the measured property, is the correspondence between measurement and property trivial?
+
+Is a trivially constituted correspondence less real than a discovered one?
+
+---
+
+Does the choice of units affect the correspondence between quantity and number?
+
+Is the correspondence between temperature and the number 100 different in Celsius and Fahrenheit?
+
+If the same physical state corresponds to different numbers under different scales, is the correspondence unique?
+
+If not unique, is the correspondence real — or is only the structure of correspondences (the ordering, the ratios) real?
+
+Does the structural invariance across scales suggest that correspondence attaches to relations among measurements rather than individual measurements?
+
+Is the real correspondent the structure, not the point?
+
+Does this mean that correspondence is always structural — never merely pointwise?
+
+Can pointwise correspondence exist without structural correspondence?
+
+Is a single, isolated correspondence conceivable, or must every correspondence be embedded in a network?
+
+---
+
+Does the correspondence between instrument readings and physical quantities require calibration?
+
+Is calibration itself a correspondence — between the instrument's behavior and a standard?
+
+What does the standard correspond to?
+
+If the standard is conventional (the platinum-iridium kilogram, the cesium atom's oscillation), does the entire chain of correspondences rest on convention?
+
+Can a chain of correspondences grounded in convention yield objective measurement?
+
+Is objectivity achievable through convention, or does convention compromise objectivity?
+
+Does the intersubjectivity of conventions substitute for the objectivity of correspondences?
+
+Is intersubjective agreement about correspondences a weaker or a different kind of objectivity?
+
+---
+
+Does the uncertainty principle limit the precision of correspondence between measurement and reality?
+
+If position and momentum cannot both be precisely measured, do they both precisely correspond to the particle?
+
+Is the failure of simultaneous precise correspondence a feature of reality or a feature of measurement?
+
+If a feature of reality, does reality itself contain irreducible non-correspondence — aspects that resist being pinned to definite correspondents?
+
+Is irreducible indefiniteness a limit of correspondence, or does it show that correspondence applies only to certain aspects of reality?
+
+Can correspondence theory accommodate genuine indeterminacy?
+
+Does indeterminacy in nature require indeterminacy in truth — propositions that are neither true nor false?
+
+If some propositions are neither true nor false, do they fail to correspond to anything, or do they correspond to indeterminate states of affairs?
+
+---
+
+## Correspondence and Information
+
+Is information a form of correspondence?
+
+Does a signal carry information by corresponding to its source?
+
+Is Shannon information — reduction of uncertainty — a form of correspondence between message and source?
+
+Does the information in a DNA molecule correspond to the proteins it encodes?
+
+Is the genetic code a correspondence between nucleotide sequences and amino acid sequences?
+
+Is this correspondence natural, or is it the product of evolutionary contingency?
+
+If contingent, could a different correspondence have served life equally well?
+
+Does the arbitrariness of the genetic code challenge or support the importance of correspondence?
+
+---
+
+Does the information in a message correspond to the information at the source?
+
+Is the preservation of information through a channel a preservation of correspondence?
+
+Does noise degrade correspondence between source and receiver?
+
+Is noise the enemy of correspondence, or does noise itself correspond to something (the state of the channel)?
+
+Can the presence of noise be informative — can it correspond to features of the environment?
+
+Is all correspondence signal, or can correspondence be noise?
+
+Is the distinction between signal and noise a distinction between intended and unintended correspondence?
+
+Does intent matter for correspondence, or does correspondence hold regardless of anyone's intentions?
+
+---
+
+Does digital encoding establish a more exact correspondence than analog encoding?
+
+Is the discrete character of digital information a form of exact correspondence?
+
+Does discreteness eliminate the imprecision of analog correspondence?
+
+Or does discretization introduce its own form of non-correspondence — the gap between continuous reality and discrete representation?
+
+Is the gap between continuous reality and discrete representation a failure of correspondence or a different kind of correspondence?
+
+Does the sampling theorem show that continuous signals can be perfectly reconstructed from discrete samples?
+
+If so, does this mean that digital-analog correspondence can be exact, given sufficient sampling rate?
+
+Is the sufficiency of sampling rate a condition on the correspondence between representation and reality?
+
+---
+
+Is computation a form of correspondence — mapping inputs to outputs?
+
+Does a computer correspond to a mathematical function?
+
+Is the correspondence between a computer's physical states and the mathematical function it computes a genuine correspondence?
+
+Does the Church-Turing thesis claim a correspondence between intuitive computability and formal computability?
+
+If so, is this correspondence provable, or is it a hypothesis about correspondence?
+
+Can a hypothesis about correspondence be tested, and if so, by what method?
+
+Does the untestability of the Church-Turing thesis show the limits of empirical correspondence?
+
+---
+
+## Correspondence and Symmetry
+
+Is symmetry a form of self-correspondence?
+
+Does a symmetric object correspond to itself under a transformation?
+
+Is the set of transformations under which an object corresponds to itself its symmetry group?
+
+Does the symmetry group capture everything about the object's self-correspondence?
+
+Can an object have self-correspondences that its symmetry group does not capture?
+
+Is there more to self-correspondence than symmetry?
+
+---
+
+Does the correspondence between physical laws and symmetry groups reveal something deep about nature?
+
+Does Noether's theorem establish a correspondence between symmetries and conservation laws?
+
+Is the correspondence between symmetries and conservation laws necessary or contingent?
+
+If necessary, does it reveal the mathematical structure of physical reality?
+
+If contingent, could there be a universe with symmetries but no corresponding conservation laws?
+
+Does the tightness of the symmetry-conservation correspondence suggest that physics is a science of correspondences?
+
+Is all of physics reducible to the study of correspondences between structures?
+
+---
+
+Does gauge symmetry establish a correspondence between different mathematical descriptions of the same physical state?
+
+If different descriptions correspond to the same state, is the state more real than any of its descriptions?
+
+Is the gauge-invariant quantity the true correspondent of reality, and the gauge-dependent quantities mere artifacts?
+
+Can we access the gauge-invariant quantity without going through gauge-dependent descriptions?
+
+Is the necessity of gauge-dependent descriptions a necessary detour through non-correspondence in order to reach correspondence?
+
+Must we pass through non-correspondence to reach correspondence?
+
+Is the indirect path to correspondence the only path available?
+
+---
+
+Does the correspondence between particles and fields in quantum field theory constitute an identity or a duality?
+
+Is wave-particle duality a failure of correspondence — nature refusing to correspond to either of our categories?
+
+Or is it a double correspondence — nature corresponding to both wave and particle categories simultaneously?
+
+Can something correspond to two incompatible categories at once?
+
+Does this require revising our notion of correspondence to allow for contradictory correspondents?
+
+Can correspondence survive contradiction?
+
+Is the quantum world one in which correspondence must be loosened to accommodate reality?
+
+---
+
+## Correspondence Between Theories
+
+Do successor theories correspond to their predecessors?
+
+Does general relativity correspond to Newtonian gravity in the appropriate limit?
+
+Is the correspondence between theories in limiting cases a genuine correspondence or an approximation?
+
+If approximation, how close must the approximation be to count as correspondence?
+
+Is there a threshold of approximation below which correspondence holds and above which it fails?
+
+Who sets that threshold — nature, mathematicians, or pragmatic convention?
+
+---
+
+Does the correspondence principle in physics require that new theories reduce to old theories in appropriate domains?
+
+Is reduction a form of correspondence between theoretical frameworks?
+
+Can a new theory correspond to an old theory while radically differing from it in other domains?
+
+Is partial correspondence between theories sufficient for scientific progress?
+
+Does science progress by extending correspondences to new domains while preserving them in old ones?
+
+Is the history of science the history of expanding correspondence?
+
+Or is it the history of replacing one set of correspondences with another?
+
+Does Kuhn's concept of paradigm shifts imply a break in correspondence between successive theories?
+
+If paradigm shifts break correspondence, can there be progress across paradigm shifts?
+
+Is progress without correspondence possible?
+
+---
+
+Do theories in different sciences correspond to each other?
+
+Does biology correspond to chemistry at some level?
+
+Does psychology correspond to neuroscience?
+
+If there are inter-level correspondences, are they reductive or non-reductive?
+
+Can non-reductive correspondence be as informative as reductive correspondence?
+
+Is the dream of a unified science the dream of a universal correspondence — every fact in every science corresponding to facts in a single fundamental science?
+
+Is the dream of universal correspondence achievable, or is it a regulative ideal?
+
+If only a regulative ideal, does it guide science productively?
+
+Can an unachievable ideal guide practice, and if so, does the ideal correspond to anything real?
+
+---
+
+## Correspondence and Ethics
+
+Does moral truth correspond to moral facts?
+
+If there are moral facts, what are they like — do they resemble natural facts?
+
+Can the correspondence theory of truth be applied to ethical claims without presupposing moral realism?
+
+Does applying correspondence to ethics commit us to the existence of moral facts?
+
+Is the commitment to moral facts a reasonable cost for a unified theory of truth?
+
+Or should truth in ethics be understood differently — through coherence, pragmatic value, or expressivism?
+
+If truth in ethics is not correspondence, can there be a single theory of truth for all domains?
+
+Is the failure of correspondence in ethics evidence that correspondence is not the essence of truth?
+
+---
+
+Can "torture is wrong" correspond to something in the world?
+
+If it corresponds to a fact about suffering, is the wrongness in the suffering or in our response to it?
+
+If the wrongness is in our response, does the correspondence run from the ethical claim to a psychological fact rather than a moral one?
+
+Does reducing moral correspondence to psychological correspondence eliminate the normativity of ethics?
+
+Can correspondence theory preserve normativity, or does it flatten the ought into the is?
+
+Is the gap between is and ought a gap in correspondence — ought-claims failing to correspond to any is-fact?
+
+Does the is-ought gap show that correspondence is limited to descriptive claims?
+
+---
+
+Does justice correspond to an ideal or to an actual state of affairs?
+
+If justice corresponds to an ideal, does the ideal exist — and if so, where?
+
+Is the correspondence between an ideal and reality the aspiration of politics?
+
+Can reality be made to correspond to an ideal, or must the ideal always outstrip reality?
+
+If the ideal always outstrips reality, is the correspondence between ideal and real always incomplete?
+
+Is incomplete correspondence between ideal and real the permanent condition of ethical life?
+
+Does ethical progress consist in increasing the correspondence between the real and the ideal?
+
+Can we measure this correspondence, and if so, by what standard?
+
+Does the standard correspond to a further ideal, generating a regress of ideals?
+
+---
+
+## Correspondence and Art
+
+Does a work of art correspond to the world it depicts?
+
+Is representational art an exercise in correspondence — image corresponding to scene?
+
+Does abstract art abandon correspondence, or does it establish new correspondences with non-visible realities?
+
+Can music correspond to emotions?
+
+If music corresponds to emotions, is the correspondence structural — patterns of tension and release matching patterns of feeling?
+
+Is the structural correspondence between music and emotion natural or learned?
+
+If learned, is it a genuine correspondence or a habitual association?
+
+Can habitual association become correspondence through long practice?
+
+---
+
+Does a novel correspond to life?
+
+Is realism in literature the pursuit of correspondence between fiction and lived experience?
+
+Can fiction correspond to truths that non-fiction cannot capture?
+
+If so, is fictional correspondence a deeper form of correspondence?
+
+Does the depth of fictional correspondence suggest that truth is not limited to literal correspondence?
+
+Can a literally false story correspond to a deeper truth?
+
+What is the relationship between literal truth and deeper truth — are they in correspondence, in tension, or orthogonal?
+
+Is the distinction between literal and metaphorical correspondence itself a correspondence?
+
+---
+
+Does artistic expression correspond to the artist's inner state?
+
+Is the expression theory of art a correspondence theory — artwork corresponding to emotion?
+
+Can the artwork surpass the artist's inner state — corresponding to something the artist did not fully feel?
+
+If the artwork corresponds to more than the artist intended, where does the surplus correspondence come from?
+
+Does the audience's experience correspond to the artist's intention?
+
+If the audience finds different correspondences than the artist intended, are those correspondences real?
+
+Is correspondence in art objective, subjective, or intersubjective?
+
+Can multiple incompatible correspondences coexist in the same artwork?
+
+Does the multiplicity of correspondences in art distinguish art from science?
+
+Is science the pursuit of single, definite correspondence, while art embraces multiple, ambiguous correspondences?
+
+---
+
+Is beauty a form of correspondence?
+
+Does a beautiful object correspond to some standard — proportion, harmony, fitness?
+
+If beauty is correspondence to a standard, what does the standard correspond to?
+
+Is the standard of beauty natural, cultural, or mathematical?
+
+Does the golden ratio correspond to beauty, and if so, why?
+
+Is the correspondence between mathematical ratio and aesthetic pleasure a deep fact about the universe?
+
+Or is it a contingent fact about human perception?
+
+If contingent, does it count as a genuine correspondence?
+
+Is the contingency of aesthetic correspondence different from the contingency of physical correspondence?
+
+Does all correspondence turn out to be contingent, and if so, is contingent correspondence the only kind there is?
+
+Is the wish for necessary correspondence the wish for something that cannot exist?
+
+Does the impossibility of necessary correspondence render all correspondence fragile?
+
+Is fragile correspondence still correspondence — holding until it breaks, real while it lasts?
+
+Is the fragility of correspondence the fragility of meaning itself?
+
+---
+
+## Correspondence and Memory
+
+Does memory correspond to the past?
+
+Is a memory a present state that corresponds to a former state of affairs?
+
+What guarantees that the correspondence between memory and past holds?
+
+Can a vivid memory fail to correspond to any actual event?
+
+If false memories feel identical to true ones, does subjective certainty provide no evidence of correspondence?
+
+Is the correspondence between memory and past verifiable, or must it be taken on trust?
+
+Does the unverifiability of memorial correspondence undermine the concept of the past?
+
+---
+
+Is remembering an act of re-establishing correspondence with what once was?
+
+Does each act of remembering alter the memory, and does each alteration degrade correspondence?
+
+If memories degrade with each retrieval, does the correspondence between memory and past fade over time?
+
+Is a faded correspondence still a correspondence?
+
+At what point does degraded correspondence become non-correspondence?
+
+Is the boundary between correspondence and non-correspondence sharp or vague?
+
+If vague, does the vagueness of the boundary correspond to something real about memory, or is it an artifact of our concepts?
+
+---
+
+Does collective memory correspond to collective experience?
+
+Can a society remember something that no individual experienced?
+
+If collective memory lacks individual correspondents, what does it correspond to — documents, monuments, narratives?
+
+Is the correspondence between collective memory and the past mediated by archives?
+
+Does the archive correspond to the event, or only to previous records of the event?
+
+Is there a regress of correspondences — archive corresponding to record, record to testimony, testimony to experience, experience to event?
+
+Does the regress of memorial correspondences eventually ground out in direct experience?
+
+If direct experience is the ground, can the ground itself be mistaken?
+
+Does the possibility of mistaken experience undermine the entire chain of memorial correspondence?
+
+---
+
+## Correspondence and Translation
+
+Is translation a form of correspondence between texts?
+
+Does a translated text correspond to its original?
+
+Is perfect translation — perfect correspondence between original and translation — possible?
+
+Does the impossibility of perfect translation show the limits of inter-linguistic correspondence?
+
+Is something always lost in translation, and if so, what is lost — content, form, connotation, rhythm?
+
+Is what is lost in translation precisely that which resists correspondence?
+
+Does the untranslatable mark the boundary of correspondence between languages?
+
+---
+
+Can two sentences in different languages correspond to the same thought?
+
+If thoughts are language-independent, is the correspondence between thought and sentence more fundamental than the correspondence between sentences in different languages?
+
+If thoughts are language-dependent, can there be genuine correspondence between languages with different conceptual structures?
+
+Does the Sapir-Whorf hypothesis imply that inter-linguistic correspondence is always imperfect?
+
+If always imperfect, is inter-linguistic correspondence a useful fiction?
+
+Can a useful fiction correspond to anything?
+
+Does calling something a "useful fiction" presuppose a correspondence between the fiction and the reality it usefully approximates?
+
+---
+
+Is interpretation a form of establishing correspondence?
+
+Does every act of interpretation propose a correspondence between text and meaning?
+
+Can the same text correspond to multiple meanings simultaneously?
+
+If multiple correspondences hold simultaneously, is meaning determinate?
+
+Does the indeterminacy of interpretation entail the indeterminacy of correspondence?
+
+Or does it entail only the indeterminacy of our knowledge of correspondence?
+
+Is the correspondence between text and meaning fixed by the author's intention, the reader's reception, or the text's own structure?
+
+If all three yield different correspondences, which is the real one?
+
+Can there be multiple real correspondences, or must correspondence be unique?
+
+---
+
+## Correspondence and Death
+
+Does death correspond to anything for the one who dies?
+
+Is death the cessation of all correspondence — the end of the subject's relation to the world?
+
+Can something correspond to what no longer exists?
+
+Does a gravestone correspond to a person who has died?
+
+Is the correspondence between memorial and deceased a one-sided correspondence — holding from our side but not from theirs?
+
+Can correspondence be one-sided, or must it be reciprocal?
+
+If correspondence requires reciprocity, does the death of one correspondent dissolve the correspondence?
+
+---
+
+Does the fear of death correspond to the reality of death?
+
+Can we know whether our concept of death corresponds to what death actually is?
+
+Is death the one reality that we cannot verify our correspondence with?
+
+Does this make death the ultimate test of correspondence theory — the case where correspondence is most needed and least available?
+
+Is the unknowability of death a limit of correspondence or a limit of experience?
+
+Can correspondence extend beyond the limits of possible experience?
+
+If Kant was right that knowledge is limited to possible experience, can correspondence reach further than knowledge?
+
+Is the correspondence between our concepts and things-in-themselves forever uncertain?
+
+---
+
+Does the persistence of the dead in memory establish a residual correspondence?
+
+Can the dead correspond to us through the works they left behind?
+
+Is a posthumous correspondence — letters received after death — a genuine correspondence?
+
+Does the written word outlast the writer's capacity for correspondence?
+
+Is the correspondence between a text and its readers a correspondence that persists beyond the author's death?
+
+Does meaning survive the death of the one who meant?
+
+If meaning survives death, is meaning's correspondence with reality independent of any living subject?
+
+Is subject-independent correspondence the most objective form of correspondence?
+
+Or is subject-independent correspondence an incoherent notion — correspondence requiring at least one subject to hold?
+
+---
+
+## Correspondence and Ground
+
+What grounds correspondence?
+
+Does correspondence need to be grounded, or is it a primitive relation?
+
+If primitive, does it resist further analysis?
+
+Can a primitive relation be understood, or must understanding always involve analysis?
+
+Is the demand that correspondence be grounded itself a demand for a further correspondence — between correspondence and its ground?
+
+Does the demand for ground generate the regress that haunts all thinking about correspondence?
+
+Is the regress of grounds the fundamental structure of philosophical thought?
+
+---
+
+Can correspondence be its own ground?
+
+Is a self-grounding relation coherent?
+
+Does self-grounding avoid the regress, or does it constitute the smallest possible circle?
+
+Is a circle of radius zero — a point — a degenerate circle or not a circle at all?
+
+Is self-grounding correspondence a degenerate case of correspondence or the paradigm case?
+
+If the paradigm case, does all correspondence aspire to the condition of self-grounding?
+
+Is self-grounding the same as self-evidence?
+
+Is the correspondence between a proposition and a fact ever self-evident?
+
+If self-evident, does it need no further justification?
+
+Is self-evidence the end of the regress, or a refusal to continue questioning?
+
+---
+
+Does the search for the ground of correspondence eventually become the search for the ground of being?
+
+Is the question of correspondence ultimately an ontological question — about what there is and how what there is hangs together?
+
+Does being itself exhibit a structure of correspondence — beings corresponding to being, beings corresponding to each other?
+
+Is the fundamental question of ontology "What corresponds to what?"
+
+If so, is ontology the science of correspondences?
+
+Is all philosophy the investigation of correspondences and their breakdowns?
+
+Does the breakdown of correspondence constitute philosophical crisis?
+
+Is philosophical crisis productive — generating new questions, new correspondences, new ways of thinking?
+
+Does every crisis of correspondence resolve into a new configuration of correspondence?
+
+Is the history of philosophy the history of shifting correspondences?
+
+---
+
+Does the last correspondence rest on something that is not a correspondence?
+
+Or does it rest on nothing — suspended, groundless, held up only by the web of other correspondences?
+
+Is a web of correspondences without external support self-supporting?
+
+Can a self-supporting web be stable?
+
+Is the stability of a self-supporting web of correspondences the best we can hope for?
+
+Is this stability what we mean by truth?
+
+Is truth not a single correspondence but a stable web of correspondences, each supporting the others?
+
+Does this collapse correspondence theory into coherence theory?
+
+If correspondence and coherence converge, have we reached the end of the debate — or merely restated it?
+
+Is the convergence of correspondence and coherence itself a correspondence?
+
+Is this final correspondence the last question, or does it open onto questions we cannot yet formulate?
+
+Does the inability to formulate the next question correspond to the limits of language, the limits of thought, or the limits of reality itself?
+
+Are the limits of correspondence the limits of the world?
+
+And if the limits of correspondence are the limits of the world, does the world end where correspondence ends — or does something beyond correspondence persist, silent and uncorrespondable?
+
+Is the uncorrespondable the deepest mystery — that which exists but cannot be matched, mapped, mirrored, or met by any thought?
+
+Does the existence of the uncorrespondable itself correspond to something — and if it does, was it ever truly uncorrespondable?

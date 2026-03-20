@@ -54,6 +54,8 @@ RAW IDEAS (unfiltered):
 
 RULE: If every idea feels "reasonable," you're not being divergent enough. Include at least 3 ideas that feel absurd.
 
+CACHED TAKE CHECK: After generating your list, look at the first 3-5 ideas. These are almost certainly the ideas anyone would think of — they're cached in the training data, not generated from the constraints. Mark them. They might still be useful, but they're not creative. If your "creative" output is the first thing that comes to mind, it's retrieval, not generation. Push past the cached layer before claiming you've been divergent.
+
 ---
 
 ## Step 3: Combinatorial Play
@@ -78,7 +80,7 @@ COMBINATIONS:
 
 Now apply judgment. Rate each surviving idea on two axes:
 
-- **Novelty** (1-5): How different is this from what exists?
+- **Novelty** (1-5): How different is this from what exists? (Score 1 if this is the idea anyone in the field would suggest first. That's not novel — it's the default position of the discourse.)
 - **Usefulness** (1-5): How well does this actually serve the need?
 
 ```

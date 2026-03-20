@@ -345,6 +345,24 @@ Iteration process:
 - Expand to new keyword opportunities
 
 
+## Anti-Generation-Failure Checks
+
+SEO content is the most cached-take-prone writing that exists. Every SEO article on the same keyword says the same things in the same order with the same examples. This makes it easy to produce and impossible to differentiate.
+
+**Pre-baked content prevention:**
+- Before writing any SEO content, read the top 3 existing results for the target keyword. The goal is not to produce a slightly longer version of what already exists — it's to say something those articles don't. If the planned content doesn't contain at least one substantial claim, example, or perspective absent from the top 3, it won't rank AND it won't deserve to.
+- "Ultimate guide" format is itself a cached take. It produces comprehensive, undifferentiated content. Prefer specific-angle content that's genuinely expert over exhaustive content that's generically thorough.
+
+**Cached-take signals in SEO writing:**
+- Definition paragraphs that match Wikipedia ("X is a Y that Z") — rewrite in the author's voice with a specific angle.
+- "Why X matters" sections that list obvious benefits — either make a non-obvious case or cut the section.
+- "Best practices" lists identical to every other article — replace with specific, experience-based recommendations.
+- Stock examples that appear in every article on the topic — use original examples or real case studies.
+
+**Voice collapse in SEO content:**
+- SEO content defaults to an explanatory, authoritative-but-bland register. This is voice collapse. The content should sound like a specific expert wrote it, not like "SEO content."
+- E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) actually demands a distinctive voice — first-hand experience and genuine expertise sound different from compiled research. Write like someone who knows, not like someone who googled.
+
 ## When to Use
 - Building long-term organic acquisition channel
 - When paid acquisition costs are unsustainable

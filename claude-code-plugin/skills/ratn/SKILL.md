@@ -118,6 +118,11 @@ RATIONALE QUALITY CHECK:
 - Honest: [Does it acknowledge real weaknesses?]
 - Complete: [Does it leave obvious questions unanswered?]
 - Actionable: [Does it make clear what should happen next?]
+
+GENERATION FAILURE CHECK:
+- Pre-baked thesis: Would someone who had never read commentary on this topic reach the same conclusion from THIS evidence? If the rationale just arrives at the popular position, it's not a rationale — it's a dressed-up assumption. Rebuild from the specific evidence provided.
+- Performed humility: Is there a "to be sure, there are limitations" paragraph? Delete it. If the rationale is the same or better, it was performance, not honesty. Real concessions change the shape of the argument — they cost something.
+- Cached takes: Is any supporting argument a general principle rather than a claim derived from THIS specific evidence? ("Innovation drives growth" / "Data-driven decisions are better.") Replace with the actual reasoning chain from evidence to conclusion.
 ```
 
 ---

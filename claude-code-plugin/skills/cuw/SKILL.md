@@ -205,6 +205,7 @@ If you genuinely can't pick (multiple candidates are equally strong for differen
 | **Criteria-free generation** | Long list with no way to evaluate quality | Stop. Define "good" first. Then regenerate |
 | **Quantity over quality** | 20 ideas, none developed | Generate fewer, develop each more fully |
 | **All safe/obvious** | Nothing surprising in the list | Push with extreme, inversion, or constraint strategies |
+| **Cached first batch** | The first 3-5 candidates are the ones anyone would generate | These are retrieved from training data, not produced from constraints. Keep them if they're good, but don't stop there. Generate 3+ more that are genuinely different — different mechanism, different framing, different assumption about the problem. If you can't tell your candidates apart from what a Google search would return, they're cached takes, not ideas. |
 | **Ignoring constraints** | Creative ideas that can't actually work | Filter against dealbreakers before presenting |
 | **Premature convergence** | Jumped to one idea without exploring the space | Go back to Step 3 and use strategies you haven't tried |
 | **Everything is a synthesis** | Forced combinations that aren't better than originals | Keep originals; only present syntheses that clearly improve |
@@ -220,6 +221,7 @@ If you genuinely can't pick (multiple candidates are equally strong for differen
 - [ ] Synthesis attempted where promising
 - [ ] Each presented candidate has honest strengths AND weaknesses
 - [ ] At least one candidate is non-obvious or surprising
+- [ ] Reviewed the first 3 candidates for cached-take bias — if they're all "the obvious answer," generated additional candidates that break from the default
 - [ ] Recommendation given (if user wants one)
 
 ---

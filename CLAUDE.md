@@ -50,7 +50,7 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Handle uncertainty | `/pbr`, `/nsa`, `/it` |
 | Write something | `/pw`, `/stl`, `/w` |
 | Draft/edit writing | `/wre`, `/w`, `/stl`, `/pw` |
-| Plan a project | `/de`, `/to` |
+| Plan a project | `/de`, `/to`, `/plansuite` |
 | Manage tasks | `/ata`, `/tbd`, `/tobd` |
 | Understand a goal | `/gu`, `/gd`, `/grf` |
 | Research a topic | `/lr`, `/fia` |

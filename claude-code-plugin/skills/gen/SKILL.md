@@ -114,3 +114,5 @@ Generate is a primitive. When called by UAUA (G1 step), design, or other skills:
 | Self-censoring ("that's too weird") | The extreme slot exists for this. Use it. |
 | Too many candidates, all mediocre | Reduce to 3, increase quality of each |
 | Constraints ignored | Reread constraints before each candidate |
+| **Voice collapse** — all candidates sound the same | Read your candidates back-to-back. Same sentence length, same transitions, same tone? That's not diversity, it's one idea wearing different costumes. Each candidate should read like it was written by a different person with a different sensibility. Vary structure, rhythm, and register — not just content. |
+| **Cached takes across all slots** — conventional, unconventional, and extreme are all predictable | The "unconventional" slot often gets the second-most-obvious idea, and "extreme" gets the third. Test: would someone familiar with the domain guess all three? If yes, your "diversity" is just a gradient of the same cached thinking. The extreme candidate should make you uncomfortable, not just sound edgy. |

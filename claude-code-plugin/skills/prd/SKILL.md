@@ -251,6 +251,22 @@ Accessibility review:
 4. Readable fonts and sizes?
 
 
+## Anti-Generation-Failure Checks
+
+Presentations are especially vulnerable to two generation failures: false structure and aspiration-as-conclusion.
+
+**False structure in slides:**
+- Bullet point lists that say nothing — three bullets that each restate the slide title in different words are not content. Every bullet must add a claim, fact, or distinction that the other bullets don't.
+- Decorative section breaks — a section divider slide is only justified if the presentation genuinely shifts topic or argumentative function. Don't create sections to create the appearance of organization.
+- Parallel construction without parallel content — formatting three points identically implies they're comparable. If they're not (one is major, two are minor), the structure is lying.
+
+**Aspiration-as-conclusion in final slides:**
+- "Together, we can..." / "The future is..." / "Let's build..." — these are applause prompts, not conclusions. The final slide should state the single most important claim or ask, not a sentiment.
+- If the presentation is a pitch: end with the specific ask. If it's informational: end with the key takeaway. If it's persuasive: end with the strongest argument. Never end with hope.
+
+**Voice collapse in slide copy:**
+- Presentation text is especially prone to sounding like every other deck. Check: could these slide titles appear in any presentation on any topic? "Key Takeaways," "Looking Ahead," "Our Approach" — these are filler titles. Each title should state a specific claim.
+
 ## When to Use
 - Creating slides for any presentation or talk
 - Designing pitch decks for investors or clients

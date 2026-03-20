@@ -107,6 +107,11 @@ Write the actual message, applying all of the above.
 TONE CHECK: [Does the tone match the audience and goal? Adjust if needed]
 LENGTH CHECK: [Is it the right length? Shorter is almost always better]
 CLARITY CHECK: [Could anyone misunderstand this? Fix ambiguity]
+
+GENERATION FAILURE CHECK:
+- Voice collapse: Could any AI assistant have written this? If the communication sounds interchangeable with a template, rewrite with the sender's actual voice — word choices, rhythms, specificity that only THIS person in THIS context would use.
+- Cached takes: Is any part of the message something that's been said in 10,000 other communications? ("We're excited to announce..." / "In today's fast-paced environment..." / "We value your partnership.") Replace with something only true of THIS situation.
+- Performed humility: Is there a "to be sure" or "we recognize" paragraph that exists to look balanced? Delete it. If the piece is the same or better without it, it was performance.
 ```
 
 ---

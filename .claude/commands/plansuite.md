@@ -1,0 +1,1 @@
+Run a full planning suite (want, sysarch, de, riskmgmt, spec, tradestudy, action, fla, conops) for any project. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/plansuite/SKILL.md`, applying it to this input: $ARGUMENTS

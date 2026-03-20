@@ -193,6 +193,20 @@ Report:
 - Suggested improvements (always at least 2-3 specific items)
 - What would make this stronger with more time
 
+### Generation Failure Check
+
+All writing routes should apply generation failure checks before finalizing. After any routed skill produces content, verify against these seven failures:
+
+1. **Pre-baked thesis** — Does it reach the most predictable conclusion?
+2. **Cached takes** — Are the "insights" just default positions?
+3. **Performed humility** — Are there false-balance paragraphs?
+4. **Relativistic hedging** — "Some argue X, others Y, truth in between"?
+5. **Voice collapse** — Does it sound like every other LLM output?
+6. **False structure** — Is formatting decorative rather than functional?
+7. **Aspiration as conclusion** — Does it end with hope instead of substance?
+
+If any are present, revise before delivering. For high-stakes content, run `/edit` as a post-production verification step — it includes a dedicated generation failure scan.
+
 ### Follow-Up Routing
 
 After content is produced, the user may need:

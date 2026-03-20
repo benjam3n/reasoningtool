@@ -78,9 +78,11 @@ Write the story. Follow these principles:
 1. **Show, don't tell** — Use concrete detail, not abstract summary
 2. **Start in the middle** — Begin where it's interesting, not at the chronological start
 3. **Specific > generic** — "A cracked blue mug" not "a cup"
-4. **Earn the ending** — The conclusion should feel inevitable in hindsight
+4. **Earn the ending** — The conclusion should feel inevitable in hindsight. Don't end with hope unless the story earned it — "and they understood something new" is not an ending, it's a retreat from one.
 5. **Trust the reader** — Don't explain the meaning; let the story carry it
 6. **Appropriate length** — Match length to complexity. A vignette can be 200 words. An allegory might need 2000.
+7. **Not AI prose** — The story should not sound like an AI wrote it. No "a profound sense of," no "in that moment, she realized," no rhythmically identical paragraphs. Read it back — if it sounds like it came from a generator, rewrite until it doesn't.
+8. **Earn the moral** — If the story's moral is the most obvious one for this premise, find a more interesting angle. The first moral that comes to mind is the cached one. What does this story actually show when you follow the characters honestly instead of steering them toward the expected lesson?
 
 ---
 
@@ -105,6 +107,17 @@ Key insight: [what the story reveals]
 Connection to input: [how it relates to what was asked]
 What the story tests: [what assumption or idea is being examined]
 ```
+
+---
+
+## Failure Modes
+
+| Failure | Signal | Fix |
+|---------|--------|-----|
+| **Voice collapse** | Prose sounds like any AI output — same rhythm, same transitions, "profound" and "realized" everywhere | Rewrite with a specific voice. Read it aloud. If it sounds generated, it is. |
+| **Cached narrative** | Story arrives at the most obvious moral/lesson for this premise | Follow the characters honestly instead of steering toward the expected takeaway. What does the story actually show? |
+| **Aspiration ending** | Story ends with vague hope or unearned epiphany ("and in that moment, everything changed") | Delete the last paragraph. If the story is better, the ending was a crutch. End where the story actually ends. |
+| **Performed emotion** | Characters feel what they're supposed to feel on cue — grief, wonder, resolve — without earning it | Show the behavior, not the feeling. Cut every sentence that names an emotion. |
 
 ---
 

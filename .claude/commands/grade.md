@@ -1,0 +1,1 @@
+Grade any LLM output as an external grader who knows nothing about the project. Identifies systematic failures in reasoning, voice, and honesty that the LLM cannot see from inside its own generation. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/grade/SKILL.md`, applying it to this input: $ARGUMENTS

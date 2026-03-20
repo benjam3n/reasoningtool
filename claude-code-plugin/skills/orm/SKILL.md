@@ -258,6 +258,14 @@ Human approval required before sending.
 - Introducing proposals or opportunities to decision makers
 - Re-engaging after previous positive interaction
 
+## Anti-Generic Outreach Check
+
+Before finalizing, test every sentence against these failures:
+
+- **Cached outreach takes**: "I came across your work and was really impressed" / "I hope this finds you well" / "I'd love to pick your brain" — these signal mass outreach. Every sentence should contain a detail that could ONLY apply to THIS recipient. Test: could you send this same email to 50 people by changing the name? If yes, rewrite.
+- **Voice collapse**: Does this read like every other outreach email? Strip the names and details — if what remains is a generic template skeleton, the voice has collapsed. The email should sound like a specific human wrote it, not like "professional outreach."
+- **Performed humility**: "I know you're busy, so I'll keep this brief" is a stock move, not actual respect for their time. Actual respect is making the email worth reading. Delete any sentence that performs consideration without delivering value.
+
 ## Verification
 - Subject line is specific and benefit-oriented
 - Opening establishes relevance within 2 sentences

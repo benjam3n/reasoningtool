@@ -51,7 +51,7 @@ These are sub-orchestrators — they classify your input and route to the right 
 | Explore options | `/se`, `/poa`, `/dd` |
 | Check assumptions | `/aex`, `/ht` |
 | Write something | `/pw`, `/stl` |
-| Plan a project | `/de`, `/to` |
+| Plan a project | `/de`, `/to`, `/plansuite` |
 | Understand a goal | `/gu`, `/gd`, `/grf` |
 | Research a topic | `/lr`, `/fia` |
 | Validate work | `/pv`, `/mv`, `/vbo` |
