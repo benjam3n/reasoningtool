@@ -190,7 +190,7 @@ TESTABLE WITH EFFORT (requires work):
 - [Assumption Z]: Would need [what] to test
 
 UNTESTABLE (must accept or reject):
-- [Assumption W]: Cannot test because [reason]
+- [Assumption W]: Cannot test because [reason]. Evidence searched: [what you looked for and didn't find]. Closest available proxy: [what partial evidence exists].
   -> Decision: [accept/reject/assume for now]
 
 ALREADY TESTED (evidence exists):

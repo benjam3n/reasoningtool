@@ -26,7 +26,7 @@ If clear from context, proceed with the matching interpretation.
 
 ## Core Principles
 
-1. **The stated want is never the actual want.** "I want to quit my job" means "I want what my job prevents." The first statement is the starting point, not the answer. Always go at least one layer deeper.
+1. **The stated want is usually not the actual want.** "I want to quit my job" means "I want what my job prevents." The first statement is the starting point, not the answer. Always go at least one layer deeper — but the user's stated want may be exactly right. Check before assuming hidden complexity.
 
 2. **Wants bundle desires, methods, beliefs, and assumptions.** "I want to start a startup" bundles the desire (autonomy, wealth), the method (startup specifically), the belief (this is the best path), and the assumption (I can pull it off). Unbundling reveals the real want.
 

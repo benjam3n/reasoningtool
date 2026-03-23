@@ -78,6 +78,8 @@ TOTAL SPACE: [N1] × [N2] × [N3] = [Total] combinations
 GRANULARITY: [EXHAUSTIVE / REPRESENTATIVE / TOP-N / DIMENSION-ONLY]
 ```
 
+**NOVELTY CHECK:** For each dimension, is this a standard textbook category or derived from the specific context? If you cannot point to a feature of the input that generated a dimension, you are reproducing a cached taxonomy.
+
 ---
 
 ### Step 2: Choose Enumeration Strategy

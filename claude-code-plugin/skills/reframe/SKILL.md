@@ -181,6 +181,8 @@ FRAME COMPARISON:
 | Success shift [F24] | [summary] | [options] | [High/Med/Low] | [insight] | [blind spot] |
 ```
 
+**STATE THE REAL PROBLEM:** After comparing all frames, commit to one sentence: "The real problem is ____." If you cannot write this sentence, you are cataloguing frames, not reframing.
+
 ### Step 5: Evaluate and Recommend
 
 ```

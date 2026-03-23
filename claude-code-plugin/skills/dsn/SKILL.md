@@ -65,6 +65,8 @@ Always apply. Every domain.
 
 ## Domain Effort Ordering
 
+These are default orderings. If your specific design has an obvious bottleneck that isn't at the top of this list, start there. The ordering is a heuristic, not a procedure.
+
 Work from top to bottom. Top items produce the most quality per unit of effort.
 
 ### Web / App

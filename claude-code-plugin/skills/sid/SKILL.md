@@ -99,7 +99,7 @@ WHAT YOU SHOULD SEE: A specific action you can take in the next 24 hours to get 
 Execute the test from A.5. Based on the results:
 - One description clearly wins -- Proceed with that classification. Go to **VALIDATION CHECKPOINT**.
 - Still ambiguous -- Return to A.3 with new information and generate new descriptions.
-- You have cycled three times with no convergence -- Label this situation as "genuinely ambiguous" and proceed with the most reversible action available.
+- You have cycled three times with no convergence -- Label this situation as "genuinely ambiguous" and state which description you would bet on if forced. Ambiguity does not exempt you from having a best guess. Proceed with the most reversible action available.
 
 ---
 
@@ -137,7 +137,7 @@ If the situation involves another person you have dealt with before, answer: Am 
 
 ### B.5 -- Proceed with your classification but set a checkpoint.
 
-If you have passed all checks, your pattern match is likely valid. Proceed. But set a concrete future checkpoint: "If [specific observable] has not occurred by [date], I will reclassify."
+If you have passed all checks, your pattern match is likely valid. Proceed. The goal is accurate classification, not maximum self-doubt. If your pattern match survives the checks, trust it. But set a concrete future checkpoint: "If [specific observable] has not occurred by [date], I will reclassify."
 
 WHAT YOU SHOULD SEE: A written statement with a specific observable and a specific date. Not "I will reassess if things do not improve" but "If the client has not signed by February 15, this is not a timing problem and I will reclassify as a fit problem."
 

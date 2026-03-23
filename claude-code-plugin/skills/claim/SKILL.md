@@ -91,6 +91,8 @@ If the input is vague, restate it precisely before proceeding. A claim must be f
 - User reports received wisdom ("people say X") → push AW harder. 60% AW.
 - Default: 50/50.
 
+Exception: If the user's confidence is about their own future capability or aspiration ('I can do X', 'I will achieve Y'), the confidence is not evidence of bias — it's a claim about commitment. Test the claim's feasibility, not the user's right to be confident.
+
 ### 7. Does the Claim Need Context First?
 
 Before testing, some claims need additional framing:

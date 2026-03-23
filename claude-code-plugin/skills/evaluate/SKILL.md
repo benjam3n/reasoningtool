@@ -32,7 +32,7 @@ If clear from context, proceed with the matching interpretation.
 
 2. **Self-evaluation must be adversarial.** When evaluating your own prior output, increase adversarial rigor. Confirmation bias is strongest when reviewing your own work.
 
-3. **Evaluation is not confirmation.** The purpose is to find weaknesses, gaps, and errors — not to validate. If the evaluation finds nothing wrong, be suspicious.
+3. **Evaluation is not confirmation.** The purpose is to find weaknesses, gaps, and errors — not to validate. If the evaluation finds nothing wrong, verify your test was severe enough to have found problems if they existed. If the test was severe and passed, the work is strong — say so.
 
 4. **The type of evaluation matters.** Correctness, completeness, quality, risk, and assumption checks use different tools and produce different outputs. Route precisely.
 

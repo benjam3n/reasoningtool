@@ -38,6 +38,8 @@ If clear from context, proceed with the matching interpretation.
 
 6. **Analysis terminates in actionable insight.** If the analysis doesn't point toward a decision, an action, or a changed understanding, it hasn't finished. "This is complex" is not a finding — it's an admission of incomplete analysis.
 
+7. **Analysis should find what IS as well as what's wrong.** If the thing being analyzed is genuinely well-designed in some areas, name those areas with the same rigor you apply to weaknesses. Problem-finding without strength-finding produces a distorted picture.
+
 ---
 
 ## Routing Decisions

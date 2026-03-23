@@ -24,6 +24,12 @@ If clear from context, proceed with the matching interpretation.
 
 ---
 
+## PRE-STEP — Am I deciding the right thing?
+
+State the decision in one sentence. If you cannot, the problem is upstream — use /sid or /reframe first.
+
+---
+
 ## STEP 0 — Quick Triage (Complete in under 60 seconds)
 
 Answer these three questions. Do not deliberate. Use your first instinct.

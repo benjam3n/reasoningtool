@@ -69,7 +69,7 @@ UNMET NEEDS:
      IMPACT: [observable consequence]
 ```
 
-Unmet needs are the engine of relationship problems. Most conflicts are symptoms of unmet needs, not root causes.
+Unmet needs drive many relationship problems. But some conflicts are genuine disagreements about values or incompatible goals — not symptoms of anything. Check whether the conflict is a needs gap or a real disagreement before defaulting to the needs frame.
 
 ---
 
@@ -92,6 +92,8 @@ NEGATIVE PATTERN: [description]
   CYCLE: [how it escalates or repeats]
   COST: [what damage it does each time]
 ```
+
+Describe the actual pattern you observe first, THEN check if it matches a named pattern. The observation comes before the label.
 
 Look for: pursue-withdraw cycles, criticism-defensiveness loops, assumption cascades, score-keeping, avoidance spirals.
 

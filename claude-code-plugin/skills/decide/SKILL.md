@@ -38,6 +38,8 @@ If clear from context, proceed with the matching interpretation.
 
 6. **Foreclosures matter as much as gains.** Every option gives something up. The user often focuses on what they get and ignores what they lose. Make foreclosures explicit for every option.
 
+7. **Not all decisions are expected-value calculations.** Some decisions are about identity, commitments, or values. If the decision is identity-driven, name the commitment and test whether it's genuine, not whether it maximizes expected utility.
+
 ---
 
 ## Routing Decisions

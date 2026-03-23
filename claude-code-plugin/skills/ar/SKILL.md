@@ -240,3 +240,4 @@ Default: 2x. These are floors.
 - [ ] Weakest links identified with R-numbers
 - [ ] **Cheerleading check**: If every finding is positive, you missed the costs. Go back.
 - [ ] Testable predictions reference specific R-numbers
+- [ ] Each implication is specific to THIS claim — if it could apply to any claim in the same category, it's cached, not derived

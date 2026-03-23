@@ -33,6 +33,8 @@ If the input is too vague, ask: "What specifically is happening that shouldn't b
 
 ### 3. Is the Cause Known, Suspected, or Unknown?
 
+Verify the problem is actually complex before applying complex analysis. Sometimes the obvious cause is the right one.
+
 - **Known** ("It fails because of X"): this is actually a CLAIM about causation.
   → INVOKE: /claim "X causes [symptom]" — test whether the stated cause is correct.
 - **Suspected** ("I think it might be X"): test the hypothesis.

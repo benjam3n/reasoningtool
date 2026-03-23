@@ -143,14 +143,14 @@ SUGGESTED SEQUENCE:
 
 ## Depth Scaling
 
-| Depth | Min Sub-Needs | Min Skills | Min Interactions | Min Roles |
-|-------|---------------|-----------|-----------------|-----------|
-| 1x | 2 | 4 | 0 | 1 |
-| 2x | 4 | 8 | 2 | 3 |
-| 4x | 6 | 14 | 4 | 4 |
-| 8x | 9 | 22 | 7 | 5 |
+| Depth | Typical Sub-Needs | Typical Skills | Typical Interactions | Typical Roles |
+|-------|-------------------|---------------|---------------------|---------------|
+| 1x | 1-3 | 2-5 | 0-1 | 1 |
+| 2x | 3-5 | 6-10 | 1-3 | 2-3 |
+| 4x | 4-7 | 10-16 | 3-5 | 3-4 |
+| 8x | 6-10 | 16-25 | 5-8 | 4-5 |
 
-Default: 2x. These are floors.
+Default: 2x. These are guidelines, not floors. A simple prompt with 2 genuine sub-needs and 3 perfect skills is better than padding to hit a number.
 
 ---
 

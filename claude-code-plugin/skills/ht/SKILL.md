@@ -439,10 +439,7 @@ Formulate appropriate conclusions and next steps:
    - Moderate against (10-40%): "Evidence does not support H1"
    - Strong against (<10%): "Evidence strongly refutes H1"
 
-   Be appropriately hedged:
-   - Acknowledge uncertainty
-   - Note limitations
-   - Specify conditions
+   State your conclusion at the strength the evidence supports. If the posterior is 65%, say the evidence leans toward support — don't retreat to 'inconclusive' because it feels safer.
 
 2. DISTINGUISH TYPES OF CONCLUSIONS
 

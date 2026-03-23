@@ -28,7 +28,7 @@ If the thing is BROKEN (errors, wrong output, fundamentally flawed), use `/fix` 
 
 1. **Working is the baseline, not the goal.** Something can work and still be mediocre. The question is: what would make this genuinely good?
 2. **Highest leverage first.** Find the improvement that produces the most quality gain for the least change. Don't rewrite what can be sharpened.
-3. **Compare to the best, not the average.** What does excellent look like in this category? Where does this fall short of excellent?
+3. **Compare to the best, not the average.** What does excellent look like in this category? Where does this fall short of excellent? But also: recognize when something is already good. The highest-leverage improvement is sometimes 'stop improving.'
 4. **Improve the thing, not around it.** Don't add features, wrappers, or scaffolding. Make the core better.
 5. **Know when to stop.** Diminishing returns are real. Call out when further improvement isn't worth the effort.
 
@@ -44,7 +44,7 @@ Read the entire target. While reading, establish:
 
 ```
 PURPOSE: [what it's for]
-CURRENT QUALITY: [N]/10 — [why]
+CURRENT QUALITY: [specific strengths and weaknesses] — VERDICT: [needs significant work / needs targeted improvements / good enough to ship / excellent]
 QUALITY BAR: [what excellent looks like for this kind of thing]
 GAP: [the distance between current and excellent]
 ```

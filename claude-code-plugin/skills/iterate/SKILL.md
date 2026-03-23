@@ -29,7 +29,7 @@ output:
 
 4. **Deletion is iteration.** Removing something that shouldn't exist is often the highest-value iteration. Addition bias means most work has too much, not too little.
 
-5. **Diminishing returns are real.** The first iteration on something produces the most value. Each subsequent iteration produces less. Know when to stop.
+5. **Diminishing returns are real.** The first iteration on something produces the most value. Each subsequent iteration produces less. Know when to stop. Stop iterating when the improvement from the last round was marginal (less improvement than the round before it) or when the output meets the stated quality bar. More iterations is not always better.
 
 6. **Every finding gets tracked.** Number every iteration target, dimension, level, and priority. Nothing gets lost in prose.
 
@@ -349,7 +349,7 @@ READY FOR:
 | 4x | 9 | 8 | 5 | 45 |
 | 8x | 9 (all) | 12 | 8 | 70 |
 
-Default: 2x. These are floors.
+Default: 2x. These are guidelines, not floors — scale to the actual complexity of the subject.
 
 ---
 

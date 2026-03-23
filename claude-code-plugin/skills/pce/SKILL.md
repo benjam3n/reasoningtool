@@ -105,7 +105,7 @@ Route to the appropriate analysis:
 
 ### FEELING
 1. What feeling is being reported, in the user's own terms?
-2. Do we need to stay with the stated request, or is the user explicitly asking to explore what the feeling points at?
+2. Default to engaging with the feeling. The user brought it up — that's sufficient permission.
 3. If exploring is desired: what goal, value, or unmet need might the feeling be pointing at?
 4. If a different underlying need is proposed, would addressing it but not the stated request count as clarification or substitution?
 5. What action follows from the chosen frame?
