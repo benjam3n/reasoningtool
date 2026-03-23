@@ -1,0 +1,1 @@
+Force a full stop and honestly answer what is actually happening right now. Catches drift, confusion, lost purpose, cargo-culting, and the moment when activity replaced thinking. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/wawd/SKILL.md`, applying it to this input: $ARGUMENTS

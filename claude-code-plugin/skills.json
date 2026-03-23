@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-23T00:25:20.252078+00:00",
-  "total": 653,
+  "generated": "2026-03-23T00:55:48.748237+00:00",
+  "total": 654,
   "skills": {
     "aa": {
       "id": "aa",
@@ -1726,7 +1726,8 @@
       "invoked_by": [
         "emotion",
         "how",
-        "want"
+        "want",
+        "wawd"
       ],
       "sections": [
         "Core Principles",
@@ -6854,6 +6855,7 @@
         "llm_output"
       ],
       "invokes": [
+        "pbtc",
         "sf"
       ],
       "invoked_by": [],
@@ -6867,7 +6869,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 196
+      "line_count": 204
     },
     "grf": {
       "id": "grf",
@@ -7040,7 +7042,8 @@
       "invoked_by": [
         "ho",
         "pick",
-        "uga"
+        "uga",
+        "wawd"
       ],
       "sections": [
         "Interpretations",
@@ -10922,11 +10925,14 @@
         "se",
         "claim"
       ],
-      "invoked_by": [],
+      "invoked_by": [
+        "grade",
+        "wawd"
+      ],
       "sections": [
         "Interpretations",
         "Purpose",
-        "Depth Scaling",
+        "Recursive Passes",
         "The Structural Fingerprints",
         "The Check Procedure",
         "Quick Check (Abbreviated)",
@@ -10934,7 +10940,7 @@
         "Quality Checklist",
         "Integration"
       ],
-      "line_count": 350
+      "line_count": 376
     },
     "pcd": {
       "id": "pcd",
@@ -13648,7 +13654,8 @@
       "input_types": [],
       "invokes": [],
       "invoked_by": [
-        "pbtc"
+        "pbtc",
+        "wawd"
       ],
       "sections": [
         "Interpretations",
@@ -13971,7 +13978,8 @@
       "invokes": [],
       "invoked_by": [
         "action",
-        "how"
+        "how",
+        "wawd"
       ],
       "sections": [
         "Interpretations",
@@ -15703,7 +15711,8 @@
         "action",
         "how",
         "ov",
-        "panic"
+        "panic",
+        "wawd"
       ],
       "sections": [
         "Interpretations",
@@ -16974,6 +16983,37 @@
         "Integration"
       ],
       "line_count": 212
+    },
+    "wawd": {
+      "id": "wawd",
+      "title": "What Are We Doing",
+      "description": "Force a full stop and honestly answer what is actually happening right now. Catches drift, confusion, lost purpose, cargo-culting, and the moment when activity replaced thinking.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "sid",
+        "pbtc",
+        "gu",
+        "sdc",
+        "awtlytrn",
+        "to"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Purpose",
+        "Step 1: Stop Everything and Describe",
+        "Step 2: Classify the Situation",
+        "Step 3: The Honesty Tests",
+        "Step 4: Verdict and Next Move",
+        "Quick Version",
+        "Quality Checklist",
+        "Integration"
+      ],
+      "line_count": 264
     },
     "wn": {
       "id": "wn",

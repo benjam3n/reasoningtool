@@ -26,7 +26,7 @@ _tier2 = [
     'pv', 'ai', 'to', 'cda', 'ma', 'sya', 'br', 'prm',
     'fla', 'poa', 'ifss', 'rci', 'la', 'vbo', 'val',
     'fwa', 'frq', 'sdc', 'sid', 'ecal', 'rmm', 'alt',
-    'ign', 'dwt', 'kta', 'fohw', 'insd', 'pbtc',
+    'ign', 'dwt', 'kta', 'fohw', 'insd', 'pbtc', 'wawd',
 ]
 for s in _tier2:
     TIER_MAP[s] = ('tier2', None)
@@ -417,7 +417,7 @@ def main():
             {
                 'name': 'reasoningtool',
                 'description': f'{len(skills)} thinking skills for decisions, problem solving, writing, research, planning, and more',
-                'version': '1.0.0',
+                'version': '3.0.0',
                 'author': {'name': 'reasoningtool'},
                 'source': './',
                 'category': 'productivity',

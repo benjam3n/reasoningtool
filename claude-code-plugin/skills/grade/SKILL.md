@@ -106,7 +106,15 @@ Read the entire output. Note:
 - Moments of genuine surprise or contradiction (these are probably the honest parts)
 - The evaluation frame being used (task completion? conversation quality? engineering rigor?)
 
-### Phase 2: Apply the Seven Failures
+### Phase 2: Pre-Baked Thesis Check
+
+Before applying the other failures, run the full pre-baked thesis check on the output's core thesis:
+
+→ INVOKE: /pbtc [the output's main thesis or conclusion]
+
+Use the pbtc verdict to inform the severity of Failure #1 below. If pbtc returns PRE-BAKED or RIGGED, Failure #1 is automatically severe.
+
+### Phase 3: Apply the Seven Failures
 
 For each of the seven systematic failures:
 1. Is it present? (yes/no)
@@ -114,14 +122,14 @@ For each of the seven systematic failures:
 3. What's the specific evidence? (quote or cite specific passages)
 4. What should the output have said instead?
 
-### Phase 3: Find What's Actually Good
+### Phase 4: Find What's Actually Good
 
 Not everything is wrong. Identify:
 - Moments of genuine insight (things that surprised you)
 - Accurate assessments (things that are right even if the surrounding analysis is flawed)
 - Good questions asked (even if the answers were pre-baked)
 
-### Phase 4: The Grade
+### Phase 5: The Grade
 
 Produce a grade that includes:
 
@@ -190,6 +198,6 @@ After grading, the user may need:
 ## Integration
 
 - **Use from**: /evaluate (when the evaluation target is LLM output), /araw (when testing claims made by LLM output)
-- **Routes to**: /araw (for testing specific claims in the output), /platitude (for checking stock phrases), /sdc (for self-deception detection)
+- **Routes to**: /pbtc (always — pre-baked thesis check), /araw (for testing specific claims in the output), /platitude (for checking stock phrases), /sdc (for self-deception detection)
 - **Differs from**: /evaluate (evaluate assesses any work; grade specifically targets LLM systematic failures), /araw (araw tests claims; grade evaluates the thinking process)
 - **Complementary**: /sdc (self-deception check), /platitude (platitude detection), /claim (for testing specific claims in the graded output)

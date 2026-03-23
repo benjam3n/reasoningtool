@@ -36,19 +36,45 @@ A pre-baked thesis is a conclusion that was chosen before the analysis began. Th
 
 ---
 
-## Depth Scaling
+## Recursive Passes
 
-Default: 2x. Parse depth from $ARGUMENTS if specified (e.g., "/pbtc 4x [input]").
+Default: 1x (single pass). Parse pass count from $ARGUMENTS if specified (e.g., "/pbtc 3x [input]").
 
-| Depth | Min Signals Checked | Min Counter-theses Generated | Min Evidence Audits | Min Structural Tests |
-|-------|--------------------|-----------------------------|--------------------|--------------------|
-| 1x    | 4                  | 1                           | 1                  | 2                  |
-| 2x    | 6                  | 2                           | 2                  | 3                  |
-| 4x    | 10                 | 3                           | 3                  | 5                  |
-| 8x    | 14                 | 5                           | 5                  | 7                  |
-| 16x   | 20                 | 7                           | 7                  | 10                 |
+The Nx modifier controls how many times the check runs **recursively on its own output**. This catches the meta-failure: the check itself can have a pre-baked thesis about whether the input is pre-baked.
 
-These are floors. Go deeper where insight is dense. Compress where it's not.
+| Passes | What happens |
+|--------|-------------|
+| 1x     | Run the check once on the input. Standard. |
+| 2x     | Run the check on the input → then run the check again on your Pass 1 output. Did your own analysis have a pre-baked conclusion about whether the thesis was pre-baked? |
+| 3x     | 2x + run the check on your Pass 2 output. Did your self-correction itself have a pre-baked thesis? |
+| 4x+    | Continue the chain. Each pass checks the previous pass's output for pre-bake signals. |
+
+### How recursive passes work
+
+**Pass 1**: Run Steps 1-7 on the user's input. Produce the verdict.
+
+**Pass 2**: Treat your entire Pass 1 output as the new input. Run Steps 1-7 again, asking: "Did my Pass 1 analysis itself show signs of a pre-baked thesis?" Common findings:
+- The check assumed SUSPECT or PRE-BAKED before examining signals (confirmation bias about bias)
+- The check was too generous because it didn't want to accuse (performed neutrality)
+- The check pattern-matched on surface features without engaging the actual argument
+
+**Pass 3+**: Same pattern. Each pass treats the previous pass's full output as its input.
+
+### Reporting recursive passes
+
+```
+PASS 1 VERDICT: [verdict] on the original input
+PASS 2 VERDICT: [verdict] on Pass 1's analysis
+  - [what Pass 2 found about Pass 1's reasoning]
+  - [adjustments to Pass 1's verdict, if any]
+PASS 3 VERDICT: [verdict] on Pass 2's analysis (if 3x+)
+  - [what Pass 3 found]
+
+FINAL VERDICT: [the verdict that survived all passes]
+CONFIDENCE: [higher if verdicts converged; lower if they kept flipping]
+```
+
+If verdicts oscillate (Pass 1 says CLEAN, Pass 2 says PRE-BAKED, Pass 3 says CLEAN), report the oscillation — it means the signal is genuinely ambiguous.
 
 ---
 
