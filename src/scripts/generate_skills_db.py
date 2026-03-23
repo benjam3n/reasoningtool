@@ -26,7 +26,7 @@ _tier2 = [
     'pv', 'ai', 'to', 'cda', 'ma', 'sya', 'br', 'prm',
     'fla', 'poa', 'ifss', 'rci', 'la', 'vbo', 'val',
     'fwa', 'frq', 'sdc', 'sid', 'ecal', 'rmm', 'alt',
-    'ign', 'dwt', 'kta', 'fohw', 'insd',
+    'ign', 'dwt', 'kta', 'fohw', 'insd', 'pbtc',
 ]
 for s in _tier2:
     TIER_MAP[s] = ('tier2', None)

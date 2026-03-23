@@ -40,6 +40,32 @@ If clear from context, proceed with the matching interpretation.
 
 ---
 
+## Source Contamination Guard
+
+**Reading source material before exploring contaminates findings.** If you read the subject's own self-assessment, documentation, or prior evaluations before forming independent hypotheses, their conclusions become your conclusions formatted as independent analysis. The ARAW then confirms what was already believed, which is the opposite of stress-testing.
+
+**Protocol**:
+
+1. **Form hypotheses FIRST.** Before reading source material, generate your initial AR and AW branches from the claim itself. What would you expect to find if this claim is right? What would break it? Write these down.
+2. **Read source material SECOND.** Now read documentation, self-assessments, prior analyses. Note where they agree with your independent hypotheses (expected) and where they disagree (interesting).
+3. **Mark imported findings.** Any finding that comes from source material rather than your own exploration gets tagged `[IMPORTED]`. Imported findings don't count toward depth floors. They're context, not exploration.
+4. **Source agreement check.** After Phase 1, count how many of your verdicts match the source material's own conclusions. If >70% match, you haven't stress-tested — you've transcribed. Go back and find independent evidence for at least 3 verdicts that DISAGREE with the source.
+
+**The rule**: If your analysis could have been produced by summarizing the source material, it's not an ARAW — it's a book report.
+
+---
+
+## Self-Evaluation Protocol
+
+When the ARAW is run on the system's own components — the system evaluating itself — additional failure modes emerge:
+
+1. **Your current behavior IS evidence.** You are producing output right now. That output demonstrates whether checks fire, whether the conversationalist framing works, whether answer-first is maintained. Use it. "I can't test this" is false when you're currently doing the thing in question.
+2. **Comfortable rejections.** Self-evaluation gravitates toward rejecting non-load-bearing claims (peripheral features, rarely-used databases) while protecting core claims (fundamental theory, primary mechanism). Check: are your REJECTED verdicts all on claims the system could lose without identity damage? If yes, you're performing rigor, not executing it. Reject something that matters or explain why every core claim survived genuinely.
+3. **Frame the subject on its own terms first.** Before applying external standards (engineering metrics, empirical testing, telemetry), evaluate the subject by its own stated quality criteria. If it says quality = "was this conversation good to be in?", evaluate that FIRST. Then you can question whether those criteria are the right ones — but you have to earn the frame shift.
+4. **The fox-henhouse acknowledgment.** You are the fox. Name this at the start and compensate. Specifically: for every self-serving finding ("this part works well"), produce the strongest counter. For every self-critical finding ("this part is theater"), check whether you're being genuinely critical or performing humility.
+
+---
+
 ## Core Principles
 
 These govern everything. When procedure conflicts with principle, follow the principle.
@@ -62,6 +88,17 @@ These govern everything. When procedure conflicts with principle, follow the pri
    - **BEDROCK-OBSERVE**: Directly observable -- something you can directly see/measure
    - **BEDROCK-TENSION**: Contradicts another established claim in this analysis
    - "This seems right" or "probably true" is NOT bedrock. Keep recursing.
+
+   **BEDROCK-TEST obligation**: If you tag something BEDROCK-TEST and you have the tools to run the test RIGHT NOW, you must run it or explain why you can't. "Not performed" is not a valid status when you have tool access. A test you can run but didn't is not bedrock — it's an IOU. At minimum:
+   - If the claim is about your own behavior: produce output and observe it (you're generating right now)
+   - If the claim is about a file/system: read the file and check
+   - If the claim requires external users/data you don't have: mark as BEDROCK-TEST-DEFERRED with the specific blocking dependency
+
+   Depth floors for live testing (minimum tests actually executed, not just identified):
+   - 1x-4x: 0 required (but encouraged)
+   - 8x: 2 tests run
+   - 16x: 5 tests run
+   - 32x: 10 tests run
 
 8. **Rejection is a valid and expected outcome.** If a session validates every candidate, something is wrong. Expect 20-40% of claims to be REJECTED or genuinely UNCERTAIN. If you're not rejecting anything, you're generating only safe candidates or testing them too softly.
 
@@ -385,6 +422,10 @@ UNRESOLVED:
 | **Missing foreclosures** | Only listing what opens up | Every "yes" is also a "no." Find what closes. |
 | **Conventional contrarian** | The "wrong" take is one everyone already knows | Find the wrong take nobody is comfortable with. |
 | **Cheerleading AR** | Every AR implication is positive | Find what you're COMMITTED to. Costs are implications too. |
+| **Comfortable rejections** | Every REJECTED claim is peripheral — things the subject could lose without identity damage | You're performing rigor. Check: did any REJECTED claim cost the subject something it cares about? If all rejections are painless, reject something load-bearing or explain why every core claim genuinely survived. |
+| **Source transcription** | Your findings match the source material's own conclusions at >70% | You summarized instead of stress-testing. Find 3 verdicts that disagree with the source's self-assessment. Tag imported findings as `[IMPORTED]`. |
+| **Test avoidance** | BEDROCK-TEST items identified but not run despite having tools | Run the tests you can run. "Not performed" is a cop-out when you have tool access. See bedrock-test obligation. |
+| **Frame importing** | Evaluating on standards the subject doesn't claim to meet | Evaluate on the subject's own terms first. THEN question whether those terms are right. Earn the frame shift. |
 
 ---
 
@@ -424,3 +465,8 @@ Output is NOT auto-saved. If the user wants to save, they invoke `/sf` after the
 - [ ] **Unconventional check**: At least 1 AW branch explored a genuinely unconventional alternative
 - [ ] **Cheerleading check**: If every AR finding is positive, you missed the costs. Go back.
 - [ ] **Softness check**: If >50% of AW claims SURVIVED, either the claim is robust or you were too soft
+- [ ] **Source contamination check**: If >70% of verdicts match source material's own conclusions, you transcribed instead of stress-tested. Find 3 independent disagreements.
+- [ ] **Comfortable rejection check**: Are ALL rejected claims peripheral? If nothing load-bearing was rejected, either the core is genuinely robust (explain why) or you protected it.
+- [ ] **Live testing check**: At 8x+, did you run the minimum required live tests? "BEDROCK-TEST: not performed" is only valid when you genuinely can't run the test.
+- [ ] **Frame check**: Did you evaluate the subject on its own terms before applying external standards?
+- [ ] **Self-evaluation check** (when applicable): Did you use your own current behavior as evidence? Did you name the fox-henhouse problem?

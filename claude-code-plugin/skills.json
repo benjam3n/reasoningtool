@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-19T19:02:58.872765+00:00",
-  "total": 652,
+  "generated": "2026-03-23T00:25:20.252078+00:00",
+  "total": 653,
   "skills": {
     "aa": {
       "id": "aa",
@@ -419,6 +419,7 @@
         "dcp",
         "evaluate",
         "fia",
+        "pbtc",
         "tp"
       ],
       "sections": [
@@ -1214,12 +1215,15 @@
         "gaa",
         "gjs",
         "gu",
+        "pbtc",
         "qag",
         "viability"
       ],
       "sections": [
         "Interpretations",
         "Corruption Pre-Inoculation",
+        "Source Contamination Guard",
+        "Self-Evaluation Protocol",
         "Core Principles",
         "Quick Mode: ARAW-Lite",
         "Step 0: Meta-ARAW (Strategy Selection)",
@@ -1232,7 +1236,7 @@
         "Saving Output",
         "Pre-Completion Check"
       ],
-      "line_count": 427
+      "line_count": 473
     },
     "arcd": {
       "id": "arcd",
@@ -1309,7 +1313,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 85
+      "line_count": 92
     },
     "ascf": {
       "id": "ascf",
@@ -1879,7 +1883,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 98
+      "line_count": 101
     },
     "bldk": {
       "id": "bldk",
@@ -2534,6 +2538,7 @@
         "diagnose",
         "emotion",
         "evaluate",
+        "pbtc",
         "search",
         "viability",
         "want"
@@ -2777,7 +2782,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 97
+      "line_count": 99
     },
     "cnfsd": {
       "id": "cnfsd",
@@ -2914,7 +2919,7 @@
         "Step 6: Draft the Communication",
         "Integration"
       ],
-      "line_count": 121
+      "line_count": 126
     },
     "configmgmt": {
       "id": "configmgmt",
@@ -3167,7 +3172,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 213
+      "line_count": 227
     },
     "cri": {
       "id": "cri",
@@ -3220,7 +3225,7 @@
         "Step 7: Creative Output",
         "Integration"
       ],
-      "line_count": 154
+      "line_count": 156
     },
     "crw": {
       "id": "crw",
@@ -3474,10 +3479,11 @@
         "Interpretations",
         "Overview",
         "Steps",
+        "Anti-Cached-Strategy Check",
         "When to Use",
         "Verification"
       ],
-      "line_count": 327
+      "line_count": 337
     },
     "curd": {
       "id": "curd",
@@ -3530,7 +3536,7 @@
         "After Completion",
         "Integration"
       ],
-      "line_count": 255
+      "line_count": 257
     },
     "cv": {
       "id": "cv",
@@ -4230,7 +4236,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 246
+      "line_count": 260
     },
     "dsd": {
       "id": "dsd",
@@ -4726,7 +4732,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 247
+      "line_count": 265
     },
     "efa": {
       "id": "efa",
@@ -6524,7 +6530,7 @@
         "When Called by Other Skills",
         "Common Failure Modes"
       ],
-      "line_count": 117
+      "line_count": 119
     },
     "genl": {
       "id": "genl",
@@ -6823,6 +6829,46 @@
       ],
       "line_count": 122
     },
+    "grade": {
+      "id": "grade",
+      "title": "Grade LLM Output",
+      "description": "Grade any LLM output as an external grader who knows nothing about the project. Identifies systematic failures in reasoning, voice, and honesty that the LLM cannot see from inside its own generation.",
+      "tier": null,
+      "category": null,
+      "categories": [
+        "evaluation",
+        "meta_analysis",
+        "quality_assessment"
+      ],
+      "tags": [
+        "grading",
+        "llm",
+        "output_quality",
+        "systematic_failures",
+        "meta_evaluation"
+      ],
+      "input_types": [
+        "text",
+        "conversation",
+        "self_evaluation",
+        "llm_output"
+      ],
+      "invokes": [
+        "sf"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Core Principle",
+        "The Seven Systematic Failures",
+        "Grading Process",
+        "Special Case: Grading Self-Evaluation",
+        "Failure Modes of This Skill",
+        "After Completion",
+        "Integration"
+      ],
+      "line_count": 196
+    },
     "grf": {
       "id": "grf",
       "title": "Goal Refinement",
@@ -6886,48 +6932,6 @@
         "Niche Documentation"
       ],
       "line_count": 167
-    },
-    "grade": {
-      "id": "grade",
-      "title": "Grade LLM Output",
-      "description": "Grade any LLM output as an external grader who knows nothing about the project. Identifies systematic failures in reasoning, voice, and honesty that the LLM cannot see from inside its own generation.",
-      "tier": "tier2",
-      "category": "Assumptions & Critique",
-      "categories": [
-        "evaluation",
-        "meta_analysis",
-        "quality_assessment"
-      ],
-      "tags": [
-        "grading",
-        "llm",
-        "output_quality",
-        "systematic_failures",
-        "meta_evaluation"
-      ],
-      "input_types": [
-        "text",
-        "conversation",
-        "self_evaluation",
-        "llm_output"
-      ],
-      "invokes": [
-        "araw",
-        "platitude",
-        "sdc"
-      ],
-      "invoked_by": [
-        "evaluate"
-      ],
-      "sections": [
-        "Interpretations",
-        "Core Principle",
-        "The Seven Systematic Failures",
-        "Grading Process",
-        "Special Case: Grading Self-Evaluation",
-        "Failure Modes of This Skill"
-      ],
-      "line_count": 210
     },
     "gsr": {
       "id": "gsr",
@@ -7081,10 +7085,11 @@
         "Interpretations",
         "Overview",
         "Steps",
+        "Anti-Hedging Protocol",
         "When to Use",
         "Verification"
       ],
-      "line_count": 259
+      "line_count": 271
     },
     "hab": {
       "id": "hab",
@@ -10044,7 +10049,7 @@
         "Step 7: Deliver",
         "Integration"
       ],
-      "line_count": 134
+      "line_count": 140
     },
     "op": {
       "id": "op",
@@ -10230,9 +10235,10 @@
         "Overview",
         "Steps",
         "When to Use",
+        "Anti-Generic Outreach Check",
         "Verification"
       ],
-      "line_count": 271
+      "line_count": 279
     },
     "ornt": {
       "id": "ornt",
@@ -10900,6 +10906,36 @@
       ],
       "line_count": 66
     },
+    "pbtc": {
+      "id": "pbtc",
+      "title": "Pre-Baked Thesis Check",
+      "description": "Detect when reasoning is working backwards from a predetermined conclusion. Surfaces the signs that the 'analysis' is actually a case built to support a thesis that was chosen before the evidence was examined.",
+      "tier": "tier2",
+      "category": null,
+      "categories": [],
+      "tags": [],
+      "input_types": [],
+      "invokes": [
+        "araw",
+        "aex",
+        "sdc",
+        "se",
+        "claim"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "Purpose",
+        "Depth Scaling",
+        "The Structural Fingerprints",
+        "The Check Procedure",
+        "Quick Check (Abbreviated)",
+        "Common Pre-Bake Patterns",
+        "Quality Checklist",
+        "Integration"
+      ],
+      "line_count": 350
+    },
     "pcd": {
       "id": "pcd",
       "title": "Procedure Discovery",
@@ -11111,7 +11147,7 @@
         "Step 6: Ethical Soundness Check",
         "Integration"
       ],
-      "line_count": 145
+      "line_count": 154
     },
     "perceive": {
       "id": "perceive",
@@ -11727,10 +11763,11 @@
       "sections": [
         "Overview",
         "Steps",
+        "Anti-Generation-Failure Checks",
         "When to Use",
         "Verification"
       ],
-      "line_count": 273
+      "line_count": 289
     },
     "pre": {
       "id": "pre",
@@ -12106,10 +12143,11 @@
         "Interpretations",
         "Overview",
         "Steps",
+        "LLM Generation Failures",
         "When to Use",
         "Verification"
       ],
-      "line_count": 145
+      "line_count": 161
     },
     "pwc": {
       "id": "pwc",
@@ -12420,7 +12458,7 @@
         "Step 5: Construct the Rationale",
         "Integration"
       ],
-      "line_count": 132
+      "line_count": 137
     },
     "rc5w": {
       "id": "rc5w",
@@ -13609,7 +13647,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "pbtc"
+      ],
       "sections": [
         "Interpretations",
         "Purpose",
@@ -13665,6 +13705,7 @@
         "evaluate",
         "frzn",
         "gts",
+        "pbtc",
         "search"
       ],
       "sections": [
@@ -13749,10 +13790,11 @@
       "sections": [
         "Overview",
         "Steps",
+        "Anti-Generation-Failure Checks",
         "When to Use",
         "Verification"
       ],
-      "line_count": 364
+      "line_count": 382
     },
     "sel": {
       "id": "sel",
@@ -13810,15 +13852,17 @@
         "The Process",
         "Output Format",
         "SELECTION SUMMARY",
-        "TIER 1 SELECTIONS",
+        "TIER 1 SELECTIONS [Test first / Act immediately]",
         "TIER 2 SELECTIONS",
         "TIER 3 (MONITOR)",
+        "RANKING STABILITY",
+        "CLUSTER COVERAGE",
         "KEY CRUXES TO RESOLVE",
         "ELIMINATED WITH JUSTIFICATION",
         "Quality Checklist",
         "Next Steps"
       ],
-      "line_count": 247
+      "line_count": 311
     },
     "selifecycle": {
       "id": "selifecycle",
@@ -13876,7 +13920,9 @@
       "tags": [],
       "input_types": [],
       "invokes": [],
-      "invoked_by": [],
+      "invoked_by": [
+        "grade"
+      ],
       "sections": [
         "What to Save",
         "Process",
@@ -14256,10 +14302,11 @@
       "sections": [
         "Overview",
         "Steps",
+        "Anti-Generation-Failure Checks",
         "When to Use",
         "Verification"
       ],
-      "line_count": 449
+      "line_count": 466
     },
     "sn": {
       "id": "sn",
@@ -15003,7 +15050,7 @@
         "When to Use",
         "Verification"
       ],
-      "line_count": 172
+      "line_count": 181
     },
     "stnl": {
       "id": "stnl",
@@ -15046,9 +15093,10 @@
         "Step 4: WRITE THE STORY",
         "Step 5: THE STORY",
         "Step 6: REFLECTION (optional, only if requested)",
+        "Failure Modes",
         "Integration"
       ],
-      "line_count": 120
+      "line_count": 133
     },
     "strt": {
       "id": "strt",
@@ -15100,10 +15148,11 @@
         "Output Format (All Interpretations)",
         "Depth Scaling",
         "Failure Modes",
+        "Anti-Flattening Checks",
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 586
+      "line_count": 597
     },
     "svs": {
       "id": "svs",
@@ -16865,7 +16914,7 @@
         "Structure Patterns",
         "Pre-Completion Check"
       ],
-      "line_count": 249
+      "line_count": 257
     },
     "want": {
       "id": "want",
@@ -17013,7 +17062,7 @@
         "Pre-Completion Checklist",
         "Integration"
       ],
-      "line_count": 357
+      "line_count": 374
     },
     "wrps": {
       "id": "wrps",

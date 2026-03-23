@@ -1,0 +1,1 @@
+Detect when reasoning is working backwards from a predetermined conclusion. Surfaces the signs that the 'analysis' is actually a case built to support a thesis that was chosen before the evidence was examined. Read and execute `/home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/pbtc/SKILL.md`, applying it to this input: $ARGUMENTS
