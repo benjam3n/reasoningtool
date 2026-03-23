@@ -230,5 +230,5 @@ Default: 2x. These are floors.
 - [ ] Synthesis introduces NO new claims — only references W-numbers
 - [ ] Alternatives derived from analysis, not asserted from thin air
 - [ ] At least one finding that feels uncomfortable
-- [ ] **Softness check**: If >50% of claims SURVIVED, either the original claim is robust or you were too soft
+- [ ] **Softness check**: If >50% of claims SURVIVED, check whether each survival was genuinely derived from the wrongness tree. If yes, the claim is robust — say so. If survival came from shallow wrongness reasons that didn't reach bedrock, go deeper
 - [ ] Testable predictions reference specific W-numbers

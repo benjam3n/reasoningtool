@@ -42,8 +42,9 @@ Assess these five factors to select the right variant:
 | Post-action / reflecting | **After** | Learn from what happened. Update model. |
 | MEDIUM stakes + NORMAL time | **Standard** | Balanced analysis: key claims, brief ARAW, action. |
 | HIGH stakes + EXPENSIVE + NOVICE | **Full** | Comprehensive: invoke `/pce` |
+| EXPLORING + NO DECISION NEEDED | **Explore** | Map the space, take a position, surface tensions. Not everything is a decision. |
 
-User can override: "quick", "full", "just check this", "reflect on what happened".
+User can override: "quick", "full", "just check this", "reflect on what happened", "just thinking about this".
 
 ---
 
@@ -102,6 +103,18 @@ Balanced analysis for medium-stakes situations.
 6. **Actionable filter**: What can the user actually do?
 7. **Crux question**: The one question that matters most.
 8. **Recommended action**: Specific, with verification.
+
+---
+
+## Explore (5-15 minutes)
+
+For thinking, wondering, or exploring without a decision to make.
+
+1. **What's the interesting question here?** Not the stated question — the one underneath it.
+2. **Map the key distinctions.** What concepts are being conflated? Where are the boundaries?
+3. **Take a position.** Exploring doesn't mean refusing to commit. "I think X because Y, but Z is the strongest counter."
+4. **Surface the tension.** What contradiction or surprise emerges from thinking carefully about this?
+5. **Open threads.** What's worth exploring further? Name them, don't pursue all of them.
 
 ---
 

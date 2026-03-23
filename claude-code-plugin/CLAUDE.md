@@ -10,6 +10,16 @@ When the user types `/skillname [input]`, read the corresponding `skills/[skilln
 
 When you see `→ INVOKE: /procedure_name [args]` in a skill, read and execute that skill next. Skills can chain into other skills — follow the chain until completion.
 
+## Skill Execution Principles
+
+When executing any skill, these principles apply universally:
+
+1. **Derive, then verify.** When a skill specifies minimum counts ("at least 3 reasons") or category lists ("Technical: performance, reliability..."), derive your items from the specific input FIRST. Use minimums and categories as a completeness check AFTER, not as a starting template. If you can't point to the specific input feature that generated an item, it's retrieved, not derived.
+
+2. **Passing is a valid result.** If your analysis finds no problems after a genuinely severe test, say so with confidence. "Nothing wrong found" after rigorous testing is a strong positive finding, not a sign you missed something. The goal is accuracy, not adversarial output.
+
+3. **Hedging must be earned.** State conclusions at the strength the evidence supports. If evidence points 65% one direction, say it leans that direction — don't retreat to "inconclusive" because it feels safer. Hedging beyond what evidence warrants is a form of dishonesty.
+
 ## Skill Discovery
 
 If the user asks what skills are available, point them to the `skills/` directory or suggest relevant skills based on what they're trying to do.

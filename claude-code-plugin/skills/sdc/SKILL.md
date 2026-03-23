@@ -74,7 +74,7 @@ Before doing anything else, complete this sentence in writing (paper or digital)
 
 Why this matters: This creates a record. You cannot retroactively claim "I was always open-minded" if you wrote down a strong leaning.
 
-What you should see: A sentence describing what you want to do and a certainty number. If your certainty is 9 or 10, proceed with heightened suspicion -- near-total certainty on complex decisions is a red flag.
+What you should see: A sentence describing what you want to do and a certainty number. If your certainty is 9 or 10, check whether it's domain-based or emotion-based. Within your area of genuine expertise, high certainty may be warranted — this procedure is designed for decisions where emotional stakes cloud judgment, not for penalizing expert confidence.
 
 ### Step A2: The Body Check (30 seconds)
 

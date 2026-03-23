@@ -17,6 +17,10 @@ Structured approach to finding information from external sources. Defines what y
 
 ## Steps
 
+### Step 0: Check Capabilities
+
+Do you have web search tools available in this session? If yes, proceed normally. If no: state what you know from training data, flag it as unverified, and recommend specific search queries the user can run. Do not simulate a search process you cannot actually perform.
+
 ### Step 1: Define the Search
 1. What specific question are you trying to answer?
 2. What kind of evidence would answer it? (data, studies, expert opinion, examples, documentation)

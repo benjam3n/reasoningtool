@@ -129,6 +129,12 @@ CONSISTENCY CHECK:
 - Verify no circular preferences (A > B > C > A)
 - Verify weights sum to 100%
 - Flag any surprising weights for stakeholder validation
+
+WEIGHT INDEPENDENCE CHECK:
+- Did you set these weights before or after you had a sense of which
+  alternative would win? If after, re-derive weights by asking "which
+  criterion matters most for the OBJECTIVE" without reference to how
+  alternatives score.
 ```
 
 ---
