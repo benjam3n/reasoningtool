@@ -106,6 +106,18 @@ Before evaluating, establish what "good" means:
 
 Add domain-specific criteria as needed. After rapid triage, check which criteria have low variance across CRITICAL/STRONG guesses (all score 4-5). Report non-differentiating criteria — they're included but didn't affect rankings.
 
+### Polarity Balance Check (if guesses have [DIR:], [USE:], [ORIENT:] tags)
+
+Before proceeding to triage, count the polarity distribution of all guesses entering selection. Then enforce these balance rules during triage and final selection:
+
+**Direction balance**: Skeptical guesses naturally score higher on impact-if-wrong (because "maybe everything is wrong" always has HIGH divergence). Correct for this by evaluating CONSTRUCTIVE and SKEPTICAL guesses in SEPARATE pools, then merging. Final selection must be ≥40% CONSTRUCTIVE when the input is Interpretation 2 (possibilities for an unknown).
+
+**Purpose balance**: Final selection MUST include ≥3 OUTPUT or BOTH guesses. A selection of all THINKING guesses produces insight without action. If your top 20 is all "should we even be doing this?" and no "here's what to build," the selection failed.
+
+**Orientation balance**: Final selection must include at least 1 EXTEND, 1 REDIRECT, and 1 NEUTRAL guess. Over-indexing any orientation is a sign of bias, not rigor.
+
+**The core failure to avoid**: Skeptical/meta guesses feel intellectually superior. "This whole project might be overengineered" feels like a deeper insight than "consolidate these 5 files into one." But when someone asks "what should I do next," the constructive guess IS the answer and the skeptical guess is context. Select for answers first, context second.
+
 ---
 
 ### Step 5: Rapid Triage (All Guesses)
@@ -222,6 +234,12 @@ Default to selecting the **top 20** items across all tiers unless the user speci
 
 **Cluster coverage check**: Before finalizing, verify that each significant cluster (from Step 3) has at least 1 representative in the selection. If a cluster is missing, swap in its highest-scoring member for the lowest-scoring redundant item from an over-represented cluster.
 
+**Polarity balance check** (if tags present): Count the [DIR:], [USE:], and [ORIENT:] distribution in your selected items. Enforce:
+- ≥40% CONSTRUCTIVE (for Interpretation 2 inputs). If under 40%, swap in the highest-scoring constructive guesses for the lowest-scoring skeptical ones.
+- ≥3 OUTPUT or BOTH items. If under 3, swap in the highest-scoring output guesses for the lowest-scoring thinking-only ones.
+- ≥1 each of EXTEND, REDIRECT, NEUTRAL. If any missing, swap in.
+- Report the final polarity balance in the output.
+
 **Framing**: Detect whether the selected guesses are primarily hypotheses/unknowns or actions/changes. If hypotheses: frame tiers as "Test first / Test after / Monitor." If actions: frame as "Act on immediately / Act on after / Revisit later."
 
 ```
@@ -276,6 +294,12 @@ Non-differentiating criteria: [criteria that didn't vary across selections]
 ## CLUSTER COVERAGE
 [Which clusters are represented in the selection, which are not, and why]
 
+## POLARITY BALANCE
+Direction: Constructive [N] / Skeptical [N] / Diagnostic [N]
+Purpose: Output [N] / Thinking [N] / Both [N]
+Orientation: Extend [N] / Redirect [N] / Neutral [N]
+[Note any swaps made to meet balance requirements]
+
 ## KEY CRUXES TO RESOLVE
 [CRITICAL guesses with highest divergence, in resolution order]
 
@@ -299,6 +323,8 @@ Before completing:
 - [ ] Tiers assigned with next actions (framed as test or act)
 - [ ] Eliminations justified
 - [ ] Resolution order for cruxes specified
+- [ ] Polarity balance checked — ≥40% constructive, ≥3 output, all orientations represented
+- [ ] If imbalanced, swaps made and documented
 
 ---
 

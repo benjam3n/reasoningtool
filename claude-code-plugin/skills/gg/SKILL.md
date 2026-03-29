@@ -24,6 +24,46 @@ If clear from context, proceed with the matching interpretation.
 
 ---
 
+## Guess Polarity
+
+Every guess has two properties that affect how it should be weighted downstream in selection. Tag each guess with both.
+
+### Direction: Constructive vs Skeptical
+
+| Tag | Meaning | Example |
+|-----|---------|---------|
+| **[DIR: CONSTRUCTIVE]** | Proposes something to build, try, or act on | "Consolidate the 5 procedures into a single flowchart" |
+| **[DIR: SKEPTICAL]** | Questions whether the premise, approach, or goal is right | "This entire project is overengineering something that works fine" |
+| **[DIR: DIAGNOSTIC]** | Identifies a specific problem or gap without proposing direction | "We don't know if the procedures actually improve outcomes" |
+
+**Balance rule**: For Interpretation 2 (generate possibilities), aim for at least 40% CONSTRUCTIVE guesses. The natural bias is toward SKEPTICAL — skeptical guesses feel smarter and more "critical thinking." But when someone asks "what should I do next," they need actionable options, not just reasons to doubt. Skeptical guesses are valuable but should not dominate the selection.
+
+**Common failure**: Selecting mostly skeptical/meta guesses because they have high CRUX ratings. A skeptical guess like "maybe none of this works" will ALWAYS score HIGH on impact-if-wrong, because its assume-wrong branch is "everything changes." This inflates skeptical guesses in selection. Correct for this by evaluating constructive and skeptical guesses in SEPARATE pools before merging.
+
+### Purpose: Thinking vs Output
+
+| Tag | Meaning | Example |
+|-----|---------|---------|
+| **[USE: THINKING]** | Useful for shaping how you approach the problem, but doesn't produce a deliverable | "The value was in the thinking, not the documents" |
+| **[USE: OUTPUT]** | Directly produces something concrete — a file, a plan, an artifact, a decision | "Write a v2 of the configuration that incorporates these procedures" |
+| **[USE: BOTH]** | Informs approach AND produces something | "Have 10 conversations, grade them, build only for observed failures" |
+
+**Selection rule**: Final selections MUST include at least 3 OUTPUT or BOTH guesses. A selection of all THINKING guesses produces insight without action. A selection of all OUTPUT guesses produces action without insight. Both are needed, but err toward output — the user can think on their own; they're asking you because they want things done.
+
+### Assume-Right vs Assume-Wrong Orientation
+
+Some guesses implicitly assume the current approach is RIGHT and extend it. Others assume it's WRONG and redirect.
+
+| Tag | Meaning | Example |
+|-----|---------|---------|
+| **[ORIENT: EXTEND]** | Builds on the current trajectory | "Integrate the procedures into the existing system" |
+| **[ORIENT: REDIRECT]** | Changes the current trajectory | "Stop building infrastructure; the constraint is now use, not build" |
+| **[ORIENT: NEUTRAL]** | Neither extends nor redirects — orthogonal | "Test before committing either way" |
+
+**Balance rule**: Selection should include guesses from all three orientations. Over-indexing REDIRECT produces paralysis ("should we even be doing this?"). Over-indexing EXTEND produces tunnel vision. NEUTRAL guesses (tests, experiments, audits) are often the highest-value because they RESOLVE the extend-vs-redirect question.
+
+---
+
 ## Core Principles
 
 1. **GUESSING IS SEARCH** - Apply ALL search methods systematically
@@ -522,6 +562,13 @@ Blind spots: [any remaining]
 ## CRITICAL GUESSES
 [High Impact × Low Confidence - must question these]
 
+## POLARITY BALANCE
+Constructive: [N] ([%])
+Skeptical: [N] ([%])
+Diagnostic: [N] ([%])
+Output: [N] | Thinking: [N] | Both: [N]
+Extend: [N] | Redirect: [N] | Neutral: [N]
+
 ## TOTAL
 Guesses: [N]
 Coverage: [%]
@@ -545,6 +592,9 @@ Before completing, verify:
 - [ ] Gaps identified and either filled or justified
 - [ ] Coverage metrics calculated
 - [ ] Critical guesses identified
+- [ ] Every guess tagged with [DIR:], [USE:], [ORIENT:]
+- [ ] Polarity balance checked: ≥40% constructive for Interpretation 2
+- [ ] At least 3 OUTPUT or BOTH guesses in the top 20
 
 ---
 
