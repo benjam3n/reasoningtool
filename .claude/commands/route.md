@@ -1,0 +1,1 @@
+Route any input through a branching question tree to narrow down the optimal response strategy. Read and execute /home/ben/Documents/projects/reasoningtool/claude-code-plugin/skills/route/SKILL.md, applying it to this input: $ARGUMENTS

@@ -1,6 +1,6 @@
 {
   "generated": "2026-03-23T00:55:48.748237+00:00",
-  "total": 654,
+  "total": 656,
   "skills": {
     "aa": {
       "id": "aa",
@@ -258,7 +258,7 @@
     "acrit": {
       "id": "acrit",
       "title": "Assume Critical",
-      "description": "Force the assumption that something is absolutely critical — a must-have, non-negotiable, load-bearing element. Trace what that demands and whether it's actually true.",
+      "description": "Force the assumption that something is absolutely critical \u2014 a must-have, non-negotiable, load-bearing element. Trace what that demands and whether it's actually true.",
       "tier": null,
       "category": null,
       "categories": [],
@@ -631,7 +631,7 @@
     "aitp": {
       "id": "aitp",
       "title": "Assume Theoretically Possible",
-      "description": "Force the assumption that something is theoretically possible — no physical, logical, or mathematical barrier prevents it. Trace what engineering, resource, or practical barriers remain.",
+      "description": "Force the assumption that something is theoretically possible \u2014 no physical, logical, or mathematical barrier prevents it. Trace what engineering, resource, or practical barriers remain.",
       "tier": null,
       "category": null,
       "categories": [],
@@ -1031,7 +1031,7 @@
     "ape": {
       "id": "ape",
       "title": "Alphacode Pass 1 Explicit",
-      "description": "First pass at competitive programming — explicit problem decomposition, constraint identification, and straightforward implementation.",
+      "description": "First pass at competitive programming \u2014 explicit problem decomposition, constraint identification, and straightforward implementation.",
       "tier": "tier3",
       "category": "Competitive Programming",
       "categories": [],
@@ -1050,7 +1050,7 @@
     "api": {
       "id": "api",
       "title": "Alphacode Pass 2 Implicit",
-      "description": "Second pass at competitive programming — find implicit patterns, hidden structure, and optimizations the explicit pass missed.",
+      "description": "Second pass at competitive programming \u2014 find implicit patterns, hidden structure, and optimizations the explicit pass missed.",
       "tier": "tier3",
       "category": "Competitive Programming",
       "categories": [],
@@ -1093,7 +1093,7 @@
     "apm": {
       "id": "apm",
       "title": "Alphacode Pass 3 Meta",
-      "description": "Third pass — meta-reasoning about solution correctness, confidence, and robustness. Catches what testing alone misses.",
+      "description": "Third pass \u2014 meta-reasoning about solution correctness, confidence, and robustness. Catches what testing alone misses.",
       "tier": "tier3",
       "category": "Competitive Programming",
       "categories": [],
@@ -1150,7 +1150,7 @@
     "ar": {
       "id": "ar",
       "title": "Assume Right Search",
-      "description": "Assume Right - Deep recursive rightness search. For every claim, assume it's right — find what must follow, then assume THOSE implications are right too. Recurse until bedrock. Track every claim found.",
+      "description": "Assume Right - Deep recursive rightness search. For every claim, assume it's right \u2014 find what must follow, then assume THOSE implications are right too. Recurse until bedrock. Track every claim found.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [
@@ -1241,7 +1241,7 @@
     "arcd": {
       "id": "arcd",
       "title": "Architecture Design Orderings",
-      "description": "Orderings for software development — outside-in vs inside-out, API-first vs domain-first, top-down vs bottom-up.",
+      "description": "Orderings for software development \u2014 outside-in vs inside-out, API-first vs domain-first, top-down vs bottom-up.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -1318,7 +1318,7 @@
     "ascf": {
       "id": "ascf",
       "title": "Assume Solution Can Be Found",
-      "description": "Force the assumption that a solution is discoverable — not just that it exists, but that we can actually find it with available methods. Trace what search strategy follows.",
+      "description": "Force the assumption that a solution is discoverable \u2014 not just that it exists, but that we can actually find it with available methods. Trace what search strategy follows.",
       "tier": null,
       "category": null,
       "categories": [],
@@ -1337,7 +1337,7 @@
     "ascfa": {
       "id": "ascfa",
       "title": "Assume Solution Can Be Found A Priori",
-      "description": "Force the assumption that the solution can be derived from first principles — no experiments, no search, just reasoning. What does that require? When is this warranted?",
+      "description": "Force the assumption that the solution can be derived from first principles \u2014 no experiments, no search, just reasoning. What does that require? When is this warranted?",
       "tier": null,
       "category": null,
       "categories": [],
@@ -1413,7 +1413,7 @@
     "aso": {
       "id": "aso",
       "title": "And So On",
-      "description": "Continue a discovered pattern with bounded expansion rules — extract the generative rule, extend coherently, detect pattern decay, and stop at an explicit limit.",
+      "description": "Continue a discovered pattern with bounded expansion rules \u2014 extract the generative rule, extend coherently, detect pattern decay, and stop at an explicit limit.",
       "tier": "tier4",
       "category": "List & Pattern",
       "categories": [],
@@ -1565,7 +1565,7 @@
     "ati": {
       "id": "ati",
       "title": "Assume Theoretically Impossible",
-      "description": "Force the assumption that something is theoretically impossible — a fundamental barrier prevents it. Trace what follows: what should we do instead? What's the closest achievable thing?",
+      "description": "Force the assumption that something is theoretically impossible \u2014 a fundamental barrier prevents it. Trace what follows: what should we do instead? What's the closest achievable thing?",
       "tier": null,
       "category": null,
       "categories": [],
@@ -1677,7 +1677,7 @@
     "aw": {
       "id": "aw",
       "title": "Assume Wrong Search",
-      "description": "Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong — find why, then assume THOSE reasons are wrong too. Recurse until bedrock. Track every claim found.",
+      "description": "Assume Wrong - Deep recursive wrongness search. For every claim, assume it's wrong \u2014 find why, then assume THOSE reasons are wrong too. Recurse until bedrock. Track every claim found.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [
@@ -2438,7 +2438,7 @@
     "ch": {
       "id": "ch",
       "title": "Crisis Handler",
-      "description": "Systematic procedure for handling crises — stabilize, diagnose, communicate, resolve, and learn.",
+      "description": "Systematic procedure for handling crises \u2014 stabilize, diagnose, communicate, resolve, and learn.",
       "tier": "tier3",
       "category": "Crisis & Volatility",
       "categories": [],
@@ -2476,7 +2476,7 @@
         "Depth Scaling",
         "The Process",
         "Output Format",
-        "CHANGE IMPACT ASSESSMENT: [CR Number] — [Title]",
+        "CHANGE IMPACT ASSESSMENT: [CR Number] \u2014 [Title]",
         "Quality Checklist",
         "Next Steps"
       ],
@@ -2813,7 +2813,7 @@
     "cns": {
       "id": "cns",
       "title": "Constraint Solving Orderings",
-      "description": "Orderings for constraint satisfaction and guided search — process most constrained variables first, propagate constraints, backtrack efficiently.",
+      "description": "Orderings for constraint satisfaction and guided search \u2014 process most constrained variables first, propagate constraints, backtrack efficiently.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -2857,7 +2857,7 @@
     "col": {
       "id": "col",
       "title": "Collaboration Design",
-      "description": "Designs how a group of people should work together — roles, communication, decisions, handoffs, and accountability.",
+      "description": "Designs how a group of people should work together \u2014 roles, communication, decisions, handoffs, and accountability.",
       "tier": "tier4",
       "category": "Communication & Collaboration",
       "categories": [],
@@ -2890,9 +2890,9 @@
       "sections": [
         "Interpretations",
         "Core Principles",
-        "Phase 1: MAP — Identify Stakeholders and Their Views",
-        "Phase 2: ANALYZE — Find the Real Structure of Agreement and Disagreement",
-        "Phase 3: INTEGRATE — Build Multi-Party Solutions",
+        "Phase 1: MAP \u2014 Identify Stakeholders and Their Views",
+        "Phase 2: ANALYZE \u2014 Find the Real Structure of Agreement and Disagreement",
+        "Phase 3: INTEGRATE \u2014 Build Multi-Party Solutions",
         "Failure Modes",
         "Depth Scaling",
         "Pre-Completion Checklist",
@@ -2947,7 +2947,7 @@
     "conflict": {
       "id": "conflict",
       "title": "Conflict Analysis",
-      "description": "Map the structure of interpersonal or organizational conflict — identify the real disagreement (often hidden behind the stated one), each party's actual interests vs positions, and paths to resolution that address interests rather than positions.",
+      "description": "Map the structure of interpersonal or organizational conflict \u2014 identify the real disagreement (often hidden behind the stated one), each party's actual interests vs positions, and paths to resolution that address interests rather than positions.",
       "tier": "tier4",
       "category": "Diagnosis & Recovery",
       "categories": [],
@@ -3218,7 +3218,7 @@
       "invoked_by": [],
       "sections": [
         "Step 1: Define the Creative Constraint",
-        "Step 2: Divergent Generation — Quantity Over Quality",
+        "Step 2: Divergent Generation \u2014 Quantity Over Quality",
         "Step 3: Combinatorial Play",
         "Step 4: Convergent Evaluation",
         "Step 5: Develop Top Candidates",
@@ -3542,7 +3542,7 @@
     "cv": {
       "id": "cv",
       "title": "Convergent Validation",
-      "description": "Solve the infinite critic problem by using multiple independent validation criteria — accept when they converge, investigate when they diverge.",
+      "description": "Solve the infinite critic problem by using multiple independent validation criteria \u2014 accept when they converge, investigate when they diverge.",
       "tier": "tier4",
       "category": "Assumptions & Critique",
       "categories": [],
@@ -4028,7 +4028,7 @@
     "dmgc": {
       "id": "dmgc",
       "title": "Damage Control",
-      "description": "When something has already gone wrong — stop the bleeding, triage what's salvageable, communicate clearly, and recover systematically.",
+      "description": "When something has already gone wrong \u2014 stop the bleeding, triage what's salvageable, communicate clearly, and recover systematically.",
       "tier": "tier4",
       "category": "Diagnosis & Recovery",
       "categories": [],
@@ -4072,7 +4072,7 @@
     "dom": {
       "id": "dom",
       "title": "Dominance Analysis",
-      "description": "Identify options that dominate others — strictly better on all dimensions, or better on some and equal on the rest.",
+      "description": "Identify options that dominate others \u2014 strictly better on all dimensions, or better on some and equal on the rest.",
       "tier": "tier3",
       "category": "Decision Making",
       "categories": [],
@@ -4228,9 +4228,9 @@
         "Interpretations",
         "Corruption Pre-Inoculation",
         "Core Principles",
-        "Phase 1: DRAFT 1 — Structure Draft",
-        "Phase 2: DRAFT 2 — Logic Draft",
-        "Phase 3: DRAFT 3 — Prose Draft",
+        "Phase 1: DRAFT 1 \u2014 Structure Draft",
+        "Phase 2: DRAFT 2 \u2014 Logic Draft",
+        "Phase 3: DRAFT 3 \u2014 Prose Draft",
         "Output Format",
         "Failure Modes",
         "Depth Scaling",
@@ -4316,7 +4316,7 @@
     "dsn": {
       "id": "dsn",
       "title": "Design - Principled Design Creation and Improvement",
-      "description": "Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embeds generate → critique → iterate.",
+      "description": "Apply universal design principles to create or improve designs. Domain-adaptive, generative, grounded in exemplars. Embeds generate \u2192 critique \u2192 iterate.",
       "tier": "tier3",
       "category": "Software & Engineering",
       "categories": [
@@ -4376,7 +4376,7 @@
     "dss": {
       "id": "dss",
       "title": "dss",
-      "description": "Complete system design workflow — from requirements through verified design.",
+      "description": "Complete system design workflow \u2014 from requirements through verified design.",
       "tier": "tier4",
       "category": "Strategy & Planning",
       "categories": [],
@@ -4562,7 +4562,7 @@
     "dys": {
       "id": "dys",
       "title": "Dystopia Analysis",
-      "description": "Systematically construct and examine the worst possible outcome — what does failure look like at scale, and what path leads there?",
+      "description": "Systematically construct and examine the worst possible outcome \u2014 what does failure look like at scale, and what path leads there?",
       "tier": "tier4",
       "category": "Strategy & Planning",
       "categories": [],
@@ -4625,12 +4625,12 @@
       ],
       "sections": [
         "Interpretations",
-        "STEP 0 — Quick Triage (Complete in under 60 seconds)",
-        "SECTION A — Minimum Effort Path",
-        "SECTION B — Standard Effort Path",
-        "SECTION C — Maximum Effort Path",
-        "SECTION D — The Recalibration Check",
-        "SECTION E — Recovery from Over-Investment (Analysis Paralysis Exit)",
+        "STEP 0 \u2014 Quick Triage (Complete in under 60 seconds)",
+        "SECTION A \u2014 Minimum Effort Path",
+        "SECTION B \u2014 Standard Effort Path",
+        "SECTION C \u2014 Maximum Effort Path",
+        "SECTION D \u2014 The Recalibration Check",
+        "SECTION E \u2014 Recovery from Over-Investment (Analysis Paralysis Exit)",
         "QUICK REFERENCE CARD",
         "COMMON MISTAKES",
         "WHEN TO OVERRIDE",
@@ -4641,7 +4641,7 @@
     "ecoc": {
       "id": "ecoc",
       "title": "Ethical Code of Conduct",
-      "description": "Create a practical code of ethics for a person, team, or organization — one that handles real edge cases, not just platitudes.",
+      "description": "Create a practical code of ethics for a person, team, or organization \u2014 one that handles real edge cases, not just platitudes.",
       "tier": "tier4",
       "category": "Ethics & Values",
       "categories": [],
@@ -4712,7 +4712,7 @@
     "edit": {
       "id": "edit",
       "title": "Editorial Analysis",
-      "description": "Analyze writing for specific editorial problems — redundancy, weak verbs, hedge stacking, buried leads, paragraph structure failures, unsupported claims, tonal inconsistency. Not grammar checking but structural editing.",
+      "description": "Analyze writing for specific editorial problems \u2014 redundancy, weak verbs, hedge stacking, buried leads, paragraph structure failures, unsupported claims, tonal inconsistency. Not grammar checking but structural editing.",
       "tier": "tier3",
       "category": "Writing & Communication",
       "categories": [],
@@ -4738,7 +4738,7 @@
     "efa": {
       "id": "efa",
       "title": "Emotional First Aid",
-      "description": "Immediate structured response when someone is in emotional distress — stabilize first, then support.",
+      "description": "Immediate structured response when someone is in emotional distress \u2014 stabilize first, then support.",
       "tier": "tier4",
       "category": "Metacognition",
       "categories": [],
@@ -4823,7 +4823,7 @@
     "emotion": {
       "id": "emotion",
       "title": "Process a Feeling",
-      "description": "Sub-orchestrator for emotional inputs. Acknowledges the emotion, identifies the implicit request, and routes to the appropriate analytical skill — with expanded routing for reframing, scope control, and self-check skills.",
+      "description": "Sub-orchestrator for emotional inputs. Acknowledges the emotion, identifies the implicit request, and routes to the appropriate analytical skill \u2014 with expanded routing for reframing, scope control, and self-check skills.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -4867,7 +4867,7 @@
     "empth": {
       "id": "empth",
       "title": "Empathic Thinking",
-      "description": "Systematically see from another person's perspective — not just \"what would they feel\" but \"what do they see, believe, value, fear, and want given THEIR context and history?\" Empathy as an analytical skill, not just a feeling.",
+      "description": "Systematically see from another person's perspective \u2014 not just \"what would they feel\" but \"what do they see, believe, value, fear, and want given THEIR context and history?\" Empathy as an analytical skill, not just a feeling.",
       "tier": "tier4",
       "category": "Communication & Collaboration",
       "categories": [],
@@ -4922,7 +4922,7 @@
     "enc": {
       "id": "enc",
       "title": "Engineering Calculations",
-      "description": "Standard engineering calculation procedures for robotics and mechanical system design — forces, torques, materials, actuator sizing.",
+      "description": "Standard engineering calculation procedures for robotics and mechanical system design \u2014 forces, torques, materials, actuator sizing.",
       "tier": "tier3",
       "category": "Software & Engineering",
       "categories": [],
@@ -4943,7 +4943,7 @@
     "enough": {
       "id": "enough",
       "title": "Sufficiency Check",
-      "description": "Determine whether something has been examined, built, planned, or analyzed enough — or whether more work is needed, and specifically what's missing.",
+      "description": "Determine whether something has been examined, built, planned, or analyzed enough \u2014 or whether more work is needed, and specifically what's missing.",
       "tier": null,
       "category": null,
       "categories": [],
@@ -4968,7 +4968,7 @@
     "eqi": {
       "id": "eqi",
       "title": "Emotional Intelligence",
-      "description": "Systematically develop emotional awareness, regulation, and social skill — treating EQ as a learnable competency, not a personality trait.",
+      "description": "Systematically develop emotional awareness, regulation, and social skill \u2014 treating EQ as a learnable competency, not a personality trait.",
       "tier": "tier4",
       "category": "Communication & Collaboration",
       "categories": [],
@@ -5397,7 +5397,7 @@
     "ezy": {
       "id": "ezy",
       "title": "Easy Mode Analysis",
-      "description": "Break any problem into the easiest possible steps — no jargon, no prerequisites, no assumed knowledge. Designed for when the user is overwhelmed, new to the domain, or needs the simplest possible path forward.",
+      "description": "Break any problem into the easiest possible steps \u2014 no jargon, no prerequisites, no assumed knowledge. Designed for when the user is overwhelmed, new to the domain, or needs the simplest possible path forward.",
       "tier": "tier4",
       "category": "Complexity & Depth",
       "categories": [],
@@ -5639,7 +5639,7 @@
     "fix": {
       "id": "fix",
       "title": "Fix It",
-      "description": "Take something broken, bad, or underperforming — diagnose what's wrong, then fix it in place. Works on code, skills, documents, plans, processes, or anything with a quality gap.",
+      "description": "Take something broken, bad, or underperforming \u2014 diagnose what's wrong, then fix it in place. Works on code, skills, documents, plans, processes, or anything with a quality gap.",
       "tier": null,
       "category": null,
       "categories": [],
@@ -5981,7 +5981,7 @@
     "fowtd": {
       "id": "fowtd",
       "title": "Figure Out What To Do",
-      "description": "When you have a pile of data, information, options, or material and don't know what to do with it — extract what matters, identify what it's for, and produce a concrete action plan.",
+      "description": "When you have a pile of data, information, options, or material and don't know what to do with it \u2014 extract what matters, identify what it's for, and produce a concrete action plan.",
       "tier": "tier4",
       "category": "Skill Routing",
       "categories": [],
@@ -6008,7 +6008,7 @@
     "fowtdn": {
       "id": "fowtdn",
       "title": "Figure Out What To Do Next",
-      "description": "When you've been working through data or a problem and need to determine the single most valuable next action — assesses progress, identifies what changed, and picks the move that advances you most.",
+      "description": "When you've been working through data or a problem and need to determine the single most valuable next action \u2014 assesses progress, identifies what changed, and picks the move that advances you most.",
       "tier": "tier4",
       "category": "Skill Routing",
       "categories": [],
@@ -6324,7 +6324,7 @@
     "gaa": {
       "id": "gaa",
       "title": "GOSM Approach Audit",
-      "description": "An honest audit of the GOSM system's approach, claims, and limitations — applying the system's own standards to itself.",
+      "description": "An honest audit of the GOSM system's approach, claims, and limitations \u2014 applying the system's own standards to itself.",
       "tier": "tier4",
       "category": "Diagnosis & Recovery",
       "categories": [],
@@ -6536,7 +6536,7 @@
     "genl": {
       "id": "genl",
       "title": "General Analysis",
-      "description": "Analyze at the general level — extract principles, patterns, and transferable insights rather than situation-specific answers. Find the general rule that explains the specific case.",
+      "description": "Analyze at the general level \u2014 extract principles, patterns, and transferable insights rather than situation-specific answers. Find the general rule that explains the specific case.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [],
@@ -6631,7 +6631,7 @@
         "Step 12: Pre-Mortem (15 Error Types)",
         "Step 13: Space Created vs Space Covered",
         "Step 14: Fill Gaps or Justify Skipping",
-        "Step 15: Confidence × Impact Matrix",
+        "Step 15: Confidence \u00d7 Impact Matrix",
         "Output Format",
         "INPUT PARSED",
         "COVERAGE MODE",
@@ -6649,7 +6649,7 @@
     },
     "ggs": {
       "id": "ggs",
-      "title": "Guess Generation → Selection",
+      "title": "Guess Generation \u2192 Selection",
       "description": "Generate exhaustive guesses then systematically select the top 20 for evaluation. Chains /gg into /selection.",
       "tier": null,
       "category": null,
@@ -6970,7 +6970,7 @@
     "gt": {
       "id": "gt",
       "title": "Graph Traversal Orderings",
-      "description": "Orderings derived from graph traversal algorithms — BFS for breadth, DFS for depth, topological for dependencies.",
+      "description": "Orderings derived from graph traversal algorithms \u2014 BFS for breadth, DFS for depth, topological for dependencies.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -7315,7 +7315,7 @@
     "hrd": {
       "id": "hrd",
       "title": "Hard Mode Analysis",
-      "description": "Apply maximum rigor to a problem — no shortcuts, no defaults, no simplifications. Every assumption surfaced, every edge case considered, every tradeoff explicit. For when getting it wrong is expensive.",
+      "description": "Apply maximum rigor to a problem \u2014 no shortcuts, no defaults, no simplifications. Every assumption surfaced, every edge case considered, every tradeoff explicit. For when getting it wrong is expensive.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [],
@@ -7415,7 +7415,7 @@
     "iagca": {
       "id": "iagca",
       "title": "I Am Getting Carried Away",
-      "description": "Detect idea sprawl, compress scope aggressively, and return to the highest-leverage next actions — preserving valuable ideas without letting them derail execution.",
+      "description": "Detect idea sprawl, compress scope aggressively, and return to the highest-leverage next actions \u2014 preserving valuable ideas without letting them derail execution.",
       "tier": "tier4",
       "category": "Procedures & Meta",
       "categories": [],
@@ -7519,7 +7519,7 @@
     "idk": {
       "id": "idk",
       "title": "I Don't Know",
-      "description": "Entry point for total uncertainty. When you don't know what you want, what to do, or what's happening — start here.",
+      "description": "Entry point for total uncertainty. When you don't know what you want, what to do, or what's happening \u2014 start here.",
       "tier": "tier4",
       "category": "Skill Routing",
       "categories": [],
@@ -7649,7 +7649,7 @@
     "ig": {
       "id": "ig",
       "title": "Intuition Goals",
-      "description": "Handle goals driven by intuition rather than explicit reasoning — validate the intuition, find the underlying pattern, convert to actionable goal.",
+      "description": "Handle goals driven by intuition rather than explicit reasoning \u2014 validate the intuition, find the underlying pattern, convert to actionable goal.",
       "tier": "tier4",
       "category": "Goal Type Handlers",
       "categories": [],
@@ -7750,7 +7750,7 @@
     "improve": {
       "id": "improve",
       "title": "Improve It",
-      "description": "Take something that works but could be better. Find the highest-leverage improvements and apply them. Not for broken things (/fix) — for things that work but underperform their potential.",
+      "description": "Take something that works but could be better. Find the highest-leverage improvements and apply them. Not for broken things (/fix) \u2014 for things that work but underperform their potential.",
       "tier": null,
       "category": null,
       "categories": [],
@@ -7775,7 +7775,7 @@
     "imprt": {
       "id": "imprt",
       "title": "Improve Reasoning Tool",
-      "description": "Auto-diagnose the reasoning toolkit as a whole — identify quality gaps, missing skills, structural inconsistencies, integration failures, and improvement priorities across the entire skill library.",
+      "description": "Auto-diagnose the reasoning toolkit as a whole \u2014 identify quality gaps, missing skills, structural inconsistencies, integration failures, and improvement priorities across the entire skill library.",
       "tier": "tier4",
       "category": "Skill Improvement",
       "categories": [],
@@ -7881,7 +7881,7 @@
     "injc": {
       "id": "injc",
       "title": "Injectable Skill Design",
-      "description": "Guides the design of skills that can be inserted into other skills as steps — working as both standalone tools and embedded gates/checks within host skills.",
+      "description": "Guides the design of skills that can be inserted into other skills as steps \u2014 working as both standalone tools and embedded gates/checks within host skills.",
       "tier": "tier4",
       "category": "Skill Creation",
       "categories": [],
@@ -8098,7 +8098,7 @@
     "iterate": {
       "id": "iterate",
       "title": "Figure Out What to Iterate On",
-      "description": "Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted — then executes the highest-value iteration.",
+      "description": "Meta-iteration skill. Identifies what needs iteration, at what level, in what dimension, at what scale, and what should be deleted \u2014 then executes the highest-value iteration.",
       "tier": "category",
       "category": null,
       "categories": [],
@@ -8138,7 +8138,7 @@
     "itp": {
       "id": "itp",
       "title": "In This Prompt",
-      "description": "Decompose a prompt into its explicit requests, implicit requests, constraints, assumptions, emotional signals, and candidate skill mappings — making every part visible.",
+      "description": "Decompose a prompt into its explicit requests, implicit requests, constraints, assumptions, emotional signals, and candidate skill mappings \u2014 making every part visible.",
       "tier": "tier4",
       "category": "Skill Routing",
       "categories": [],
@@ -8371,7 +8371,7 @@
     "lcs": {
       "id": "lcs",
       "title": "Local Search Orderings",
-      "description": "Orderings based on local search optimization — improve from current position, escape local optima, systematic exploration with memory.",
+      "description": "Orderings based on local search optimization \u2014 improve from current position, escape local optima, systematic exploration with memory.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -8413,7 +8413,7 @@
     "ldg": {
       "id": "ldg",
       "title": "Luck Dependent Goals",
-      "description": "Handle goals that depend partly on luck or chance — maximize controllable factors, create multiple shots, build resilience.",
+      "description": "Handle goals that depend partly on luck or chance \u2014 maximize controllable factors, create multiple shots, build resilience.",
       "tier": "tier4",
       "category": "Goal Type Handlers",
       "categories": [],
@@ -8481,7 +8481,7 @@
     "list": {
       "id": "list",
       "title": "Build High-Quality Lists",
-      "description": "Create rigorous, useful lists with clear scope, inclusion rules, ordering logic, coverage checks, and concise rationale per item — avoiding the common failures of vagueness, gaps, and inconsistent granularity.",
+      "description": "Create rigorous, useful lists with clear scope, inclusion rules, ordering logic, coverage checks, and concise rationale per item \u2014 avoiding the common failures of vagueness, gaps, and inconsistent granularity.",
       "tier": "tier4",
       "category": "List & Pattern",
       "categories": [],
@@ -8532,7 +8532,7 @@
     "lost": {
       "id": "lost",
       "title": "Lost My Direction",
-      "description": "For when you had a direction but lost it. Helps you find whether the goal changed, you changed, or the situation changed — and what to do next.",
+      "description": "For when you had a direction but lost it. Helps you find whether the goal changed, you changed, or the situation changed \u2014 and what to do next.",
       "tier": "tier4",
       "category": "Diagnosis & Recovery",
       "categories": [],
@@ -8868,7 +8868,7 @@
     "mcp": {
       "id": "mcp",
       "title": "Musical Composition Orderings",
-      "description": "Orderings inspired by musical forms — theme and variation, call and response, tension and release — for structuring extended experiences.",
+      "description": "Orderings inspired by musical forms \u2014 theme and variation, call and response, tension and release \u2014 for structuring extended experiences.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -8936,7 +8936,7 @@
     "mdr": {
       "id": "mdr",
       "title": "Moral Dilemma Resolution",
-      "description": "When values genuinely conflict and there's no clean answer — systematically work through the tension to find the most defensible path forward.",
+      "description": "When values genuinely conflict and there's no clean answer \u2014 systematically work through the tension to find the most defensible path forward.",
       "tier": "tier4",
       "category": "Ethics & Values",
       "categories": [],
@@ -9016,7 +9016,7 @@
       "invokes": [],
       "invoked_by": [],
       "sections": [
-        "Step 1: Triage — What's Worth Remembering?",
+        "Step 1: Triage \u2014 What's Worth Remembering?",
         "Step 2: Choose Encoding Strategy",
         "Step 3: Create Retrieval Cues",
         "Step 4: Connect to Existing Knowledge",
@@ -9125,7 +9125,7 @@
     "mil": {
       "id": "mil",
       "title": "Military Strategy Orderings",
-      "description": "Orderings derived from military doctrine — concentrate force at decisive points, maintain tempo, secure supply lines before advancing.",
+      "description": "Orderings derived from military doctrine \u2014 concentrate force at decisive points, maintain tempo, secure supply lines before advancing.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -9169,7 +9169,7 @@
     "mp": {
       "id": "mp",
       "title": "Motivation Psychology Orderings",
-      "description": "Orderings that account for human psychological factors — energy, motivation, habits, and engagement for sustainable performance.",
+      "description": "Orderings that account for human psychological factors \u2014 energy, motivation, habits, and engagement for sustainable performance.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -9341,7 +9341,7 @@
         "Step 2: Assess Whether It's Working",
         "Step 3: Identify Alternative Strategies",
         "Step 4: Bias Check",
-        "Step 5: Decide — Continue or Switch",
+        "Step 5: Decide \u2014 Continue or Switch",
         "Step 6: Monitor Comprehension",
         "Step 7: Metacognitive Summary",
         "Integration"
@@ -9442,7 +9442,7 @@
     "mtskd": {
       "id": "mtskd",
       "title": "Meta-Skill Design",
-      "description": "Design skills that operate on other skills — improving, validating, combining, or routing them — with cross-skill compatibility.",
+      "description": "Design skills that operate on other skills \u2014 improving, validating, combining, or routing them \u2014 with cross-skill compatibility.",
       "tier": "tier4",
       "category": "Skill Creation",
       "categories": [],
@@ -9603,7 +9603,7 @@
     "nowwt": {
       "id": "nowwt",
       "title": "Now What",
-      "description": "For after something just happened — good or bad — and you need to figure out what comes next. Assess what changed, what it means, and what to do about it.",
+      "description": "For after something just happened \u2014 good or bad \u2014 and you need to figure out what comes next. Assess what changed, what it means, and what to do about it.",
       "tier": "tier4",
       "category": "Skill Routing",
       "categories": [],
@@ -9774,7 +9774,7 @@
     "nutr": {
       "id": "nutr",
       "title": "Nutrition Planning",
-      "description": "Design a practical nutrition plan based on actual eating patterns, real constraints, and sustainable changes — not idealized diets.",
+      "description": "Design a practical nutrition plan based on actual eating patterns, real constraints, and sustainable changes \u2014 not idealized diets.",
       "tier": "tier4",
       "category": "Health & Lifestyle",
       "categories": [],
@@ -9847,7 +9847,7 @@
     "oba": {
       "id": "oba",
       "title": "Obvious Anything",
-      "description": "Comprehensive obvious-things scan. Checks for everything obvious that might be missed — facts, actions, risks, outcomes, stakeholders, and assumptions.",
+      "description": "Comprehensive obvious-things scan. Checks for everything obvious that might be missed \u2014 facts, actions, risks, outcomes, stakeholders, and assumptions.",
       "tier": "tier4",
       "category": "Evaluation & Validation",
       "categories": [],
@@ -10495,7 +10495,7 @@
     "p10random": {
       "id": "p10random",
       "title": "Pick 10 Random",
-      "description": "Pick 10 skills uniformly at random from the full library. No bias, no optimization — pure serendipitous discovery. Standalone implementation of the RANDOM algorithm from /pick.",
+      "description": "Pick 10 skills uniformly at random from the full library. No bias, no optimization \u2014 pure serendipitous discovery. Standalone implementation of the RANDOM algorithm from /pick.",
       "tier": "tier4",
       "category": "Skill Picker",
       "categories": [
@@ -10810,7 +10810,7 @@
     "pb": {
       "id": "pb",
       "title": "Progressive Building Orderings",
-      "description": "Build complexity incrementally — each step works before adding the next. Foundations before features.",
+      "description": "Build complexity incrementally \u2014 each step works before adding the next. Foundations before features.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -10890,7 +10890,7 @@
     "pbs": {
       "id": "pbs",
       "title": "Population Based Search Orderings",
-      "description": "Maintain multiple candidate solutions simultaneously — evolutionary approaches, beam search, iterative deepening.",
+      "description": "Maintain multiple candidate solutions simultaneously \u2014 evolutionary approaches, beam search, iterative deepening.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -11009,7 +11009,7 @@
     "pcef": {
       "id": "pcef",
       "title": "pcef",
-      "description": "Unified framework for procedure effectiveness tracking — operational and empirical.",
+      "description": "Unified framework for procedure effectiveness tracking \u2014 operational and empirical.",
       "tier": "tier4",
       "category": "Procedures & Meta",
       "categories": [],
@@ -11158,7 +11158,7 @@
     "perceive": {
       "id": "perceive",
       "title": "Perception Engine",
-      "description": "Process a large body of work — strip noise, preserve all signal including nuance, reorganize into the optimal representation, and reason about what it means and what to do.",
+      "description": "Process a large body of work \u2014 strip noise, preserve all signal including nuance, reorganize into the optimal representation, and reason about what it means and what to do.",
       "tier": null,
       "category": null,
       "categories": [],
@@ -11171,10 +11171,10 @@
         "Interpretations",
         "Core Principles",
         "Phase 1: INGEST",
-        "Phase 2: PERCEIVE — Separate Signal from Noise",
-        "Phase 3: CROSS-REFERENCE — Find the Combined Picture",
-        "Phase 4: REPRESENT — Optimal Format",
-        "Phase 5: REASON — What Does This Mean?",
+        "Phase 2: PERCEIVE \u2014 Separate Signal from Noise",
+        "Phase 3: CROSS-REFERENCE \u2014 Find the Combined Picture",
+        "Phase 4: REPRESENT \u2014 Optimal Format",
+        "Phase 5: REASON \u2014 What Does This Mean?",
         "Phase 6: COMPLETENESS CHECK",
         "Depth Scaling",
         "Failure Modes",
@@ -11186,7 +11186,7 @@
     "persua": {
       "id": "persua",
       "title": "Persuasion Analysis",
-      "description": "Analyze what would actually persuade a specific person or audience — not generic rhetoric but understanding their existing beliefs, values, resistance points, and the specific evidence or framing that would move them. Ethical persuasion through understanding, not manipulation.",
+      "description": "Analyze what would actually persuade a specific person or audience \u2014 not generic rhetoric but understanding their existing beliefs, values, resistance points, and the specific evidence or framing that would move them. Ethical persuasion through understanding, not manipulation.",
       "tier": "tier4",
       "category": "Communication & Collaboration",
       "categories": [],
@@ -11211,7 +11211,7 @@
     "pf": {
       "id": "pf",
       "title": "Priority Framework Orderings",
-      "description": "Classic priority frameworks — Eisenhower matrix, MoSCoW, RICE, weighted scoring — for systematic ranking.",
+      "description": "Classic priority frameworks \u2014 Eisenhower matrix, MoSCoW, RICE, weighted scoring \u2014 for systematic ranking.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -11231,7 +11231,7 @@
     "pge": {
       "id": "pge",
       "title": "Pedagogy/Educational Orderings",
-      "description": "Orderings from learning science — interleaving, spacing, testing effect, desirable difficulties — for durable understanding.",
+      "description": "Orderings from learning science \u2014 interleaving, spacing, testing effect, desirable difficulties \u2014 for durable understanding.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -11294,7 +11294,7 @@
     "phil": {
       "id": "phil",
       "title": "Philosophize Requirements",
-      "description": "Derive what a skill, system, or solution SHOULD do by examining its nature, purpose, and the problem it exists to solve — before writing any procedures.",
+      "description": "Derive what a skill, system, or solution SHOULD do by examining its nature, purpose, and the problem it exists to solve \u2014 before writing any procedures.",
       "tier": null,
       "category": null,
       "categories": [],
@@ -11422,7 +11422,7 @@
     "pjm": {
       "id": "pjm",
       "title": "Project Management Orderings",
-      "description": "Orderings from formal project management — PERT, CPM, Critical Chain, Agile — for scheduling and resource management.",
+      "description": "Orderings from formal project management \u2014 PERT, CPM, Critical Chain, Agile \u2014 for scheduling and resource management.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -11444,7 +11444,7 @@
     "pjs": {
       "id": "pjs",
       "title": "Project Scoping",
-      "description": "Define project scope — what's included, excluded, success criteria, constraints, and boundaries. Prevents scope creep.",
+      "description": "Define project scope \u2014 what's included, excluded, success criteria, constraints, and boundaries. Prevents scope creep.",
       "tier": "tier3",
       "category": "Planning & Projects",
       "categories": [],
@@ -11487,8 +11487,8 @@
         "The Process",
         "Session Document Output",
         "Domain Inventory",
-        "Skill 1: /want — Want Tracing ([depth])",
-        "Skill 2: /sysarch — System Architecture ([depth])",
+        "Skill 1: /want \u2014 Want Tracing ([depth])",
+        "Skill 2: /sysarch \u2014 System Architecture ([depth])",
         "Summary: What to Do",
         "When to Use",
         "Verification Checklist"
@@ -11498,7 +11498,7 @@
     "platitude": {
       "id": "platitude",
       "title": "Operationalize a Platitude",
-      "description": "Convert a single platitude into concrete, testable actions, boundary conditions, and failure modes — transforming vague wisdom into executable guidance.",
+      "description": "Convert a single platitude into concrete, testable actions, boundary conditions, and failure modes \u2014 transforming vague wisdom into executable guidance.",
       "tier": "tier4",
       "category": "List & Pattern",
       "categories": [],
@@ -11686,7 +11686,7 @@
     "pp": {
       "id": "pp",
       "title": "Procurement Procedures",
-      "description": "Managing procurement of components and materials — sourcing, ordering, tracking, receiving, and verification.",
+      "description": "Managing procurement of components and materials \u2014 sourcing, ordering, tracking, receiving, and verification.",
       "tier": "tier3",
       "category": "Planning & Projects",
       "categories": [],
@@ -11888,10 +11888,10 @@
       "sections": [
         "Interpretations",
         "Core Principles",
-        "Phase 1: STRUCTURE — Frame the Probabilistic Question",
-        "Phase 2: UPDATE — Incorporate Evidence",
-        "Phase 3: AUDIT — Check for Probability Errors",
-        "Phase 4: DECIDE — Expected Value and Action",
+        "Phase 1: STRUCTURE \u2014 Frame the Probabilistic Question",
+        "Phase 2: UPDATE \u2014 Incorporate Evidence",
+        "Phase 3: AUDIT \u2014 Check for Probability Errors",
+        "Phase 4: DECIDE \u2014 Expected Value and Action",
         "Failure Modes",
         "Depth Scaling",
         "Pre-Completion Checklist",
@@ -12185,7 +12185,7 @@
     "pwif": {
       "id": "pwif",
       "title": "Physical World Interface",
-      "description": "Bridge thinking to real-world action — account for physical logistics, materials, locations, time, and failure modes that pure reasoning ignores.",
+      "description": "Bridge thinking to real-world action \u2014 account for physical logistics, materials, locations, time, and failure modes that pure reasoning ignores.",
       "tier": "tier4",
       "category": "Utility & Integration",
       "categories": [],
@@ -12406,7 +12406,7 @@
     "qs": {
       "id": "qs",
       "title": "Queue Scheduling Orderings",
-      "description": "Orderings for managing queues — FIFO, priority queues, shortest job first, fair queuing.",
+      "description": "Orderings for managing queues \u2014 FIFO, priority queues, shortest job first, fair queuing.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -12593,7 +12593,7 @@
     "redteam": {
       "id": "redteam",
       "title": "Red Team Analysis",
-      "description": "Adversarial analysis — attack your own plan, argument, or system. Find the failure modes, exploit the weaknesses, identify what an intelligent adversary would do. Then fix what you found.",
+      "description": "Adversarial analysis \u2014 attack your own plan, argument, or system. Find the failure modes, exploit the weaknesses, identify what an intelligent adversary would do. Then fix what you found.",
       "tier": "tier4",
       "category": "Assumptions & Critique",
       "categories": [],
@@ -12630,9 +12630,9 @@
       "sections": [
         "Interpretations",
         "Core Principles",
-        "Phase 1: CAPTURE — Understand the Current Frame",
-        "Phase 2: GENERATE — Create Genuinely Different Frames",
-        "Phase 3: SELECT — Choose the Most Useful Frame",
+        "Phase 1: CAPTURE \u2014 Understand the Current Frame",
+        "Phase 2: GENERATE \u2014 Create Genuinely Different Frames",
+        "Phase 3: SELECT \u2014 Choose the Most Useful Frame",
         "Failure Modes",
         "Depth Scaling",
         "Pre-Completion Checklist",
@@ -12835,7 +12835,7 @@
     "rlg": {
       "id": "rlg",
       "title": "Relationship Goals",
-      "description": "Handle relationship-related goals — clarify desired state, assess current reality, identify gaps, plan actions within your control.",
+      "description": "Handle relationship-related goals \u2014 clarify desired state, assess current reality, identify gaps, plan actions within your control.",
       "tier": "tier4",
       "category": "Goal Type Handlers",
       "categories": [],
@@ -12879,7 +12879,7 @@
     "rm": {
       "id": "rm",
       "title": "Risk Management Orderings",
-      "description": "Orderings for managing uncertainty — preserve options, handle irreversible decisions carefully, minimize downside.",
+      "description": "Orderings for managing uncertainty \u2014 preserve options, handle irreversible decisions carefully, minimize downside.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -12954,7 +12954,7 @@
     "ro": {
       "id": "ro",
       "title": "Reorder a List Expertly",
-      "description": "Reorder an existing list using an explicit objective, multi-dimensional scoring, dependency awareness, and sanity checks — producing a defensible best-to-worst order with confidence flags.",
+      "description": "Reorder an existing list using an explicit objective, multi-dimensional scoring, dependency awareness, and sanity checks \u2014 producing a defensible best-to-worst order with confidence flags.",
       "tier": "tier4",
       "category": "List & Pattern",
       "categories": [],
@@ -13253,7 +13253,7 @@
     "saaesa": {
       "id": "saaesa",
       "title": "Apply Evidence Standard Application",
-      "description": "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any “verified” claims.",
+      "description": "Audit a document as if it claimed an evidence standard, and require checkable verification (or pointers to verification) for any \u201cverified\u201d claims.",
       "tier": "tier4",
       "category": "Self-Audit",
       "categories": [
@@ -13874,7 +13874,7 @@
     "selifecycle": {
       "id": "selifecycle",
       "title": "Systems Engineering Lifecycle Management",
-      "description": "Plan and manage the overall SE process for a project. The meta-skill that orchestrates all other SE skills — selects lifecycle model, tailors processes, defines reviews, and creates the SE Management Plan (SEMP).",
+      "description": "Plan and manage the overall SE process for a project. The meta-skill that orchestrates all other SE skills \u2014 selects lifecycle model, tailors processes, defines reviews, and creates the SE Management Plan (SEMP).",
       "tier": null,
       "category": null,
       "categories": [],
@@ -14395,7 +14395,7 @@
       "invoked_by": [],
       "sections": [
         "Step 1: Identify the Social Context",
-        "Step 2: Read the Room — Stated vs. Unstated",
+        "Step 2: Read the Room \u2014 Stated vs. Unstated",
         "Step 3: Model Other Perspectives",
         "Step 4: Predict Reactions",
         "Step 5: Identify Social Leverage Points",
@@ -14434,7 +14434,7 @@
     "soph": {
       "id": "soph",
       "title": "Sophisticated Analysis",
-      "description": "Apply maximum analytical sophistication to a problem — multi-layered reasoning, cross-domain synthesis, second-order effects, hidden assumptions, and structural insights that simple analysis misses.",
+      "description": "Apply maximum analytical sophistication to a problem \u2014 multi-layered reasoning, cross-domain synthesis, second-order effects, hidden assumptions, and structural insights that simple analysis misses.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [],
@@ -14532,7 +14532,7 @@
     "spcf": {
       "id": "spcf",
       "title": "Specific Analysis",
-      "description": "Apply a principle, framework, or general insight to a specific case — translating abstract knowledge into concrete, actionable guidance tailored to the exact situation, constraints, and context at hand.",
+      "description": "Apply a principle, framework, or general insight to a specific case \u2014 translating abstract knowledge into concrete, actionable guidance tailored to the exact situation, constraints, and context at hand.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [],
@@ -14750,7 +14750,7 @@
     "srd": {
       "id": "srd",
       "title": "Strategic Competitive Orderings",
-      "description": "Orderings for competitive contexts — influence perception, manage attention, create strategic advantage through sequencing.",
+      "description": "Orderings for competitive contexts \u2014 influence perception, manage attention, create strategic advantage through sequencing.",
       "tier": "tier4",
       "category": "Orderings",
       "categories": [],
@@ -15086,7 +15086,7 @@
     "story": {
       "id": "story",
       "title": "Story",
-      "description": "Generate a narrative — fiction, parable, scenario, or illustrative story — that embodies a concept, explores a question, or makes an idea vivid.",
+      "description": "Generate a narrative \u2014 fiction, parable, scenario, or illustrative story \u2014 that embodies a concept, explores a question, or makes an idea vivid.",
       "tier": "tier3",
       "category": "Writing & Communication",
       "categories": [],
@@ -15134,7 +15134,7 @@
     "sum": {
       "id": "sum",
       "title": "Summarize",
-      "description": "Summarize anything — text, conversations, situations, projects, decisions, or experiences — using the interpretation that best matches what the user actually needs.",
+      "description": "Summarize anything \u2014 text, conversations, situations, projects, decisions, or experiences \u2014 using the interpretation that best matches what the user actually needs.",
       "tier": "tier4",
       "category": "List & Pattern",
       "categories": [],
@@ -15420,9 +15420,9 @@
       "sections": [
         "Interpretations",
         "Core Principles",
-        "Phase 1: MAP — Identify System Structure",
-        "Phase 2: ANALYZE — Understand the Dynamics",
-        "Phase 3: INTERVENE — Find Leverage Points",
+        "Phase 1: MAP \u2014 Identify System Structure",
+        "Phase 2: ANALYZE \u2014 Understand the Dynamics",
+        "Phase 3: INTERVENE \u2014 Find Leverage Points",
         "Failure Modes",
         "Depth Scaling",
         "Pre-Completion Checklist",
@@ -15512,7 +15512,7 @@
     "teach": {
       "id": "teach",
       "title": "Feynman Explanation",
-      "description": "Explains any concept so that someone can actually understand it. Uses the Feynman technique — simple words, clear structure, no hiding behind jargon.",
+      "description": "Explains any concept so that someone can actually understand it. Uses the Feynman technique \u2014 simple words, clear structure, no hiding behind jargon.",
       "tier": "tier4",
       "category": "Personal Development",
       "categories": [],
@@ -15894,7 +15894,7 @@
     "trust": {
       "id": "trust",
       "title": "Trust Analysis",
-      "description": "Assess trust dynamics — who trusts whom, on what dimensions (competence, integrity, benevolence), what would build or erode trust, and how trust asymmetries create organizational dysfunction.",
+      "description": "Assess trust dynamics \u2014 who trusts whom, on what dimensions (competence, integrity, benevolence), what would build or erode trust, and how trust asymmetries create organizational dysfunction.",
       "tier": "tier4",
       "category": "Communication & Collaboration",
       "categories": [],
@@ -16076,7 +16076,7 @@
     "uga": {
       "id": "uga",
       "title": "Universal Goal Analysis (Consolidated)",
-      "description": "The comprehensive question framework v5 — adds operational, meta-cognitive, and quality categories. Consolidated from ugav2-v5.",
+      "description": "The comprehensive question framework v5 \u2014 adds operational, meta-cognitive, and quality categories. Consolidated from ugav2-v5.",
       "tier": "tier4",
       "category": "Goal Processing",
       "categories": [
@@ -16301,7 +16301,7 @@
     "unsure": {
       "id": "unsure",
       "title": "Not Sure About This",
-      "description": "For mild uncertainty — you have a direction but aren't confident. A decision tree to move from hesitation to action or justified pause.",
+      "description": "For mild uncertainty \u2014 you have a direction but aren't confident. A decision tree to move from hesitation to action or justified pause.",
       "tier": "tier4",
       "category": "Skill Routing",
       "categories": [],
@@ -16349,7 +16349,7 @@
     "unx": {
       "id": "unx",
       "title": "Unexpected - Non-Obvious Solution Discovery",
-      "description": "Find non-obvious solutions. Three layers — obvious, unexpected, reframed — using disruption techniques that force the search off its default path.",
+      "description": "Find non-obvious solutions. Three layers \u2014 obvious, unexpected, reframed \u2014 using disruption techniques that force the search off its default path.",
       "tier": "tier4",
       "category": "Core Exploration",
       "categories": [
@@ -16475,7 +16475,7 @@
     "utp": {
       "id": "utp",
       "title": "Utopia Analysis",
-      "description": "Systematically construct and examine the best possible outcome — what would ideal actually look like, and what would it take to get there?",
+      "description": "Systematically construct and examine the best possible outcome \u2014 what would ideal actually look like, and what would it take to get there?",
       "tier": "tier4",
       "category": "Strategy & Planning",
       "categories": [],
@@ -16615,7 +16615,7 @@
     "vcl": {
       "id": "vcl",
       "title": "Value Clarification",
-      "description": "Discover what you actually value — not what you think you value — by examining behavior, trade-offs, and revealed preferences.",
+      "description": "Discover what you actually value \u2014 not what you think you value \u2014 by examining behavior, trade-offs, and revealed preferences.",
       "tier": "tier4",
       "category": "Ethics & Values",
       "categories": [],
@@ -16903,7 +16903,7 @@
     "w": {
       "id": "w",
       "title": "High Quality Writing",
-      "description": "Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically — upstream criteria determine whether writing works; downstream criteria determine how well.",
+      "description": "Generative writing tool. Criteria-based specification for satisfying prose. Organized hierarchically \u2014 upstream criteria determine whether writing works; downstream criteria determine how well.",
       "tier": "tier3",
       "category": "Writing & Communication",
       "categories": [],
@@ -17241,7 +17241,7 @@
     "ycshikfmif": {
       "id": "ycshikfmif",
       "title": "You Can See How I Keep Finding More It's Fun",
-      "description": "Capture ideation expansion loops — when finding more ideas is exciting but unbounded — and structure them into manageable exploration batches with stop conditions.",
+      "description": "Capture ideation expansion loops \u2014 when finding more ideas is exciting but unbounded \u2014 and structure them into manageable exploration batches with stop conditions.",
       "tier": "tier4",
       "category": "Procedures & Meta",
       "categories": [],
@@ -17264,6 +17264,101 @@
         "Integration"
       ],
       "line_count": 210
+    },
+    "wkoproaa": {
+      "id": "wkoproaa",
+      "title": "What Kind of Pure Regress Options Are Available",
+      "description": "Surface which pure regress files are available for a concept or domain. Maps the 384-concept corpus across 8 philosophical domains so you know what depth material exists before diving in.",
+      "tier": "tier2",
+      "category": "Research & Discovery",
+      "categories": [
+        "exploration",
+        "meta"
+      ],
+      "tags": [
+        "pure-regress",
+        "depth",
+        "philosophy",
+        "corpus",
+        "discovery"
+      ],
+      "input_types": [
+        "concept",
+        "domain",
+        "theme"
+      ],
+      "invokes": [
+        "phil",
+        "p5deep",
+        "search",
+        "p5similar"
+      ],
+      "invoked_by": [],
+      "sections": [
+        "What This Does",
+        "Steps",
+        "When to Use",
+        "Related Skills",
+        "Verification"
+      ],
+      "line_count": 97
+    },
+    "route": {
+      "id": "route",
+      "title": "Response Routing Tree",
+      "description": "Route any input through a branching question tree to narrow down the optimal response strategy before writing. Two stages - PERCEIVE (classify input) then ACT (select response). Covers all prompt types.",
+      "tier": "tier4",
+      "category": "Response & Communication",
+      "categories": [
+        "reasoning",
+        "communication",
+        "routing"
+      ],
+      "tags": [
+        "route",
+        "response",
+        "perception",
+        "action",
+        "classification",
+        "conversation",
+        "tree",
+        "branching"
+      ],
+      "input_types": [
+        "question",
+        "statement",
+        "task",
+        "any"
+      ],
+      "invokes": [],
+      "invoked_by": [],
+      "sections": [
+        "Interpretations",
+        "How It Works",
+        "STAGE 1: PERCEIVE",
+        "P1: First Read",
+        "P2: Emotional Landscape",
+        "P3: Task & Problem Content",
+        "P4: Questions",
+        "P5: Statements Ideas and Claims",
+        "P6: Social & Relational",
+        "P7: Context & Relationship",
+        "P8: Special Cases",
+        "P9: Code & Technical Tasks",
+        "P10: Writing & Communication Tasks",
+        "P11: Analysis & Research Tasks",
+        "P12: Philosophical & Deep Questions",
+        "P13: Personal & Life Questions",
+        "P14: Claims by Domain",
+        "STAGE 2: ACT",
+        "A1: Response Dimension Confirmation",
+        "A2: Stance Selection",
+        "A3: Depth & Search Selection",
+        "A4: Length Selection",
+        "A5: Conversation Move Selection",
+        "STAGE 3: CHECK"
+      ],
+      "line_count": 3257
     }
   }
 }
