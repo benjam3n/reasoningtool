@@ -1574,7 +1574,7 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 - Probably but unclear → CARRY: handle the obvious ones, note assumptions
 - No → CARRY: implement the happy path
 
-→ P7.1
+→ P9.75
 
 ### P9.10: What kind of modification?
 
@@ -1845,6 +1845,1612 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 - GraphQL schema → CARRY: design schema, explain types and relationships
 - Internal API / function interface → CARRY: design clean interface, explain the contract
 - API review → CARRY: check consistency, naming, error handling, versioning
+
+→ P7.1
+
+### P9.75: What domain is this code in?
+
+- Frontend web → P9.100
+- Backend / server → P9.140
+- Mobile → P9.180
+- Data engineering / pipelines → P9.220
+- Machine learning / AI → P9.260
+- DevOps / infrastructure → P9.300
+- Embedded / systems / firmware → P9.340
+- Game development → P9.370
+- CLI / scripting / automation → P7.1
+- General / not domain-specific → P7.1
+
+---
+
+## P9A: Frontend Web Development (branched from P9.75)
+
+### P9.100: What frontend framework?
+
+- React → P9.101
+- Vue → P9.108
+- Angular → P9.108
+- Svelte / SvelteKit → P9.108
+- Vanilla JS / no framework → P9.108
+- Next.js / Nuxt / Remix (meta-framework) → P9.105
+- HTMX / server-rendered with JS sprinkles → P9.108
+- Don't know / choosing → P9.109
+
+### P9.101: What kind of React work?
+
+- Component design → P9.102
+- State management → P9.103
+- Hooks → P9.104
+- Routing → P9.108
+- Forms → P9.112
+- Data fetching → P9.113
+- Testing React components → P9.114
+- Performance → P9.115
+- Styling → P9.110
+- General / mixed → P9.108
+
+### P9.102: What kind of component?
+
+- UI primitive (button, input, modal) → CARRY: composable, accessible, props-driven
+- Layout component (page, grid, sidebar) → CARRY: responsive, slot-based
+- Feature component (user list, dashboard card) → CARRY: data-connected, clear responsibility boundary
+- Wrapper / HOC / provider → CARRY: minimal surface area, clear what it adds
+- Form component → P9.112
+
+→ P9.110
+
+### P9.103: What state management challenge?
+
+- Local component state is getting unwieldy → CARRY: extract to custom hook or context, keep state close to use
+- Need to share state between distant components → CARRY: context for simple, state library for complex
+- Global app state → CARRY: evaluate if truly global, use appropriate tool (Redux, Zustand, Jotai)
+- Server state (fetched data) → P9.113
+- Form state → P9.112
+- URL state → CARRY: use URL params/search params, they're free state management
+
+→ P9.108
+
+### P9.104: What kind of hook work?
+
+- Writing a custom hook → CARRY: extract shared logic, name it useX, return only what's needed
+- Fixing a hook bug (stale closure, infinite loop, etc.) → CARRY: check dependency arrays, check if you need useCallback/useMemo
+- Understanding hook behavior → CARRY: explain the specific hook, show the mental model
+- useEffect issues → CARRY: check if you even need an effect (you probably don't), check cleanup
+
+→ P9.108
+
+### P9.105: What meta-framework concern?
+
+- Routing (file-based, dynamic, nested) → CARRY: follow framework conventions, explain the routing model
+- Data fetching (server components, loaders, getServerSideProps) → CARRY: fetch at the right level, explain waterfall vs parallel
+- SSR vs CSR vs SSG for this page → P9.106
+- API routes / server functions → CARRY: keep them thin, validate inputs, handle errors
+- Deployment → P9.107
+- Middleware → CARRY: use for auth/redirects, keep lightweight
+
+→ P9.108
+
+### P9.106: What rendering strategy fits this page?
+
+- Static content that rarely changes → CARRY: SSG, revalidate on deploy or interval
+- Dynamic content per user → CARRY: SSR or CSR depending on SEO needs
+- Mix of static and dynamic → CARRY: static shell, client-fetch dynamic parts
+- Real-time / frequently updating → CARRY: CSR with subscriptions or polling
+- SEO-critical → CARRY: SSR or SSG, not CSR
+
+→ P9.108
+
+### P9.107: Where is this deploying?
+
+- Vercel / Netlify / edge platform → CARRY: leverage edge functions, follow platform conventions
+- Traditional server (VPS, EC2) → CARRY: need a Node server, configure process manager
+- Static hosting (S3, GitHub Pages) → CARRY: must be fully static, no server features
+- Container → CARRY: Dockerfile, multi-stage build, handle build-time vs runtime env vars
+- Don't know yet → CARRY: recommend based on framework and needs
+
+→ P7.1
+
+### P9.108: Does this need to be accessible?
+
+- Yes — they mentioned accessibility → CARRY: WCAG compliance, semantic HTML, ARIA, keyboard nav, screen reader testing
+- Yes — it should be (form, navigation, interactive element) → CARRY: build accessible by default
+- Not critical (internal tool, prototype) → CARRY: still use semantic HTML, skip exhaustive ARIA
+- They didn't mention it but it matters (public-facing) → CARRY: build accessible, note what you did
+
+→ P9.110
+
+### P9.109: What are the requirements for choosing a framework?
+
+- Simple / few pages → CARRY: recommend vanilla or lightweight (HTMX, Alpine)
+- Complex SPA → CARRY: React or Vue, explain tradeoffs
+- SEO important → CARRY: meta-framework (Next.js, Nuxt, SvelteKit)
+- Team familiarity matters → CARRY: ask what they know, recommend what fits
+- Performance critical → CARRY: Svelte, Solid, or vanilla — smaller bundle
+- Don't overthink it → CARRY: React is the safe default, Next.js if they need SSR
+
+→ P7.1
+
+### P9.110: What styling approach?
+
+- CSS Modules → CARRY: scoped, no conflicts, good for component libraries
+- Tailwind → CARRY: utility classes, colocation, configure theme
+- CSS-in-JS (styled-components, emotion) → CARRY: runtime cost, good DX, consider server extraction
+- Plain CSS / SCSS → CARRY: BEM or similar convention, keep specificity flat
+- Component library (MUI, Chakra, shadcn) → P9.111
+- Not specified → CARRY: match existing codebase, or Tailwind for new projects
+
+→ P7.1
+
+### P9.111: Which component library?
+
+- Using one already → CARRY: follow library patterns, customize through theme
+- Choosing one → CARRY: shadcn for ownership, MUI for comprehensive, Radix for headless
+- Building their own → CARRY: start from Radix/Headless UI primitives, don't reinvent accessibility
+
+→ P7.1
+
+### P9.112: What kind of form?
+
+- Simple (few fields, no validation) → CARRY: controlled inputs, basic onSubmit
+- Complex (many fields, validation, conditional logic) → CARRY: form library (react-hook-form, Formik), schema validation (zod)
+- Multi-step / wizard → CARRY: form library with step state, validate per step
+- Dynamic (fields change based on input) → CARRY: form library, dynamic field arrays
+- File upload → CARRY: handle size limits, preview, progress, chunking for large files
+
+→ P7.1
+
+### P9.113: What data fetching pattern?
+
+- REST API → CARRY: React Query / SWR for caching, loading/error states
+- GraphQL → CARRY: Apollo or urql, typed queries, fragments for components
+- Server components (RSC) → CARRY: fetch in server component, pass to client, handle loading with Suspense
+- WebSocket / real-time → CARRY: connection management, reconnection, optimistic updates
+- Local file / static data → CARRY: import directly or fetch at build time
+
+→ P7.1
+
+### P9.114: What kind of frontend testing?
+
+- Unit testing components → CARRY: React Testing Library, test behavior not implementation
+- Integration testing → CARRY: test user flows, mock APIs at network level (MSW)
+- E2E testing → CARRY: Playwright or Cypress, test critical paths
+- Visual regression → CARRY: Storybook + Chromatic or Percy
+- Accessibility testing → CARRY: axe-core, screen reader manual testing
+
+→ P7.1
+
+### P9.115: What kind of frontend performance issue?
+
+- Slow initial load → CARRY: bundle analysis, code splitting, lazy loading
+- Slow interactions / janky UI → CARRY: React DevTools profiler, identify re-renders, memoize
+- Large bundle size → CARRY: tree shaking, dynamic imports, analyze dependencies
+- Memory leaks → CARRY: check for unmounted component updates, event listener cleanup
+- Image performance → CARRY: lazy loading, responsive images, WebP/AVIF, CDN
+- Layout shifts (CLS) → CARRY: set explicit dimensions, font loading strategy
+
+→ P7.1
+
+---
+
+## P9B: Backend Development (branched from P9.75)
+
+### P9.140: What kind of backend?
+
+- REST API → P9.141
+- GraphQL API → P9.145
+- WebSocket / real-time server → P9.148
+- Background job processor → P9.150
+- CLI tool with server component → P9.152
+- Monolith → P9.153
+- Microservice → P9.155
+- Serverless functions → P9.157
+
+### P9.141: What REST API framework?
+
+- Express / Fastify (Node) → P9.142
+- Django / FastAPI / Flask (Python) → P9.142
+- Spring Boot (Java/Kotlin) → P9.142
+- Rails (Ruby) → P9.142
+- Go (net/http, Gin, Echo) → P9.142
+- Rust (Actix, Axum) → P9.142
+- Other / choosing → CARRY: recommend based on team expertise and requirements
+
+→ P9.142
+
+### P9.142: What's the main concern?
+
+- Endpoint design (URL structure, HTTP methods, status codes) → CARRY: RESTful conventions, consistent naming, proper status codes
+- Request validation → CARRY: validate at boundary, schema-based (zod, pydantic, etc.), fail fast
+- Error handling → P9.143
+- Authentication / authorization → P9.144
+- Response formatting → CARRY: consistent envelope or direct, pagination, HATEOAS if appropriate
+- Rate limiting / throttling → CARRY: token bucket or sliding window, per-user or per-IP, clear error messages
+
+→ P7.1
+
+### P9.143: What kind of error handling?
+
+- Consistent error format → CARRY: structured errors (code, message, details), consistent across all endpoints
+- Error recovery → CARRY: retry idempotent operations, circuit breaker for downstream, graceful degradation
+- Logging errors → CARRY: structured logging, correlation IDs, don't log sensitive data
+- User-facing error messages → CARRY: generic messages to users, detailed in logs, never leak internals
+
+→ P7.1
+
+### P9.144: What kind of auth?
+
+- Session-based → CARRY: secure cookies, CSRF protection, session store choice
+- JWT → CARRY: short expiry, refresh tokens, don't store sensitive data in payload
+- OAuth / social login → CARRY: use a library, don't roll your own, handle token refresh
+- API keys → CARRY: hash stored keys, rate limit, scope permissions
+- Role-based access control → CARRY: define roles clearly, check at middleware level, principle of least privilege
+- Multi-tenant → CARRY: row-level security or schema isolation, tenant context in every query
+
+→ P7.1
+
+### P9.145: What GraphQL concern?
+
+- Schema design → P9.146
+- Resolver performance → P9.147
+- Authentication in GraphQL → CARRY: context-based auth, field-level permissions for sensitive data
+- Subscriptions → P9.148
+- Code generation → CARRY: schema-first vs code-first, generate types for client and server
+
+→ P7.1
+
+### P9.146: What schema design question?
+
+- Types and relationships → CARRY: model the domain, not the database; connections for lists, nodes for entities
+- Input types → CARRY: separate input types from output types, validate at resolver level
+- Pagination → CARRY: cursor-based for real-time data, offset for simple cases
+- Versioning → CARRY: prefer evolving schema over versioning, deprecate fields
+- Federation / stitching → CARRY: clear ownership boundaries, entity references
+
+→ P7.1
+
+### P9.147: What resolver performance issue?
+
+- N+1 queries → CARRY: DataLoader pattern, batch database calls
+- Slow resolvers → CARRY: identify bottleneck, cache at resolver level or use persisted queries
+- Over-fetching from database → CARRY: only fetch fields needed, look-ahead to see what client requested
+- Deeply nested queries → CARRY: query depth limiting, query cost analysis
+
+→ P7.1
+
+### P9.148: What real-time pattern?
+
+- WebSocket → P9.149
+- Server-Sent Events (SSE) → CARRY: simpler than WebSocket, one-way, auto-reconnect, good for feeds
+- Long polling → CARRY: fallback pattern, use only if WebSocket/SSE not available
+- GraphQL subscriptions → CARRY: pub/sub backend, connection management, filter by relevance
+
+→ P7.1
+
+### P9.149: What WebSocket concern?
+
+- Connection management → CARRY: heartbeat, reconnection logic, connection pooling
+- Message protocol → CARRY: define message types, version the protocol, handle unknown messages gracefully
+- Scaling → CARRY: sticky sessions or pub/sub backend (Redis), state synchronization
+- Authentication → CARRY: authenticate on connect, re-verify periodically, handle token expiry
+- Error handling → CARRY: graceful disconnect, reconnect with backoff, queue messages during disconnect
+
+→ P7.1
+
+### P9.150: What kind of background job?
+
+- Queue-based (process tasks from a queue) → P9.151
+- Scheduled (cron-like) → CARRY: use a scheduler library, idempotent jobs, handle missed runs
+- Event-driven (react to events) → CARRY: event bus, at-least-once delivery, idempotent handlers
+- Long-running process → CARRY: checkpointing, graceful shutdown, progress tracking
+
+→ P7.1
+
+### P9.151: What queue concern?
+
+- Queue choice (Redis, RabbitMQ, SQS, etc.) → CARRY: Redis for simple, RabbitMQ for routing, SQS for AWS-native
+- Job retry / failure handling → CARRY: exponential backoff, dead letter queue, max retries
+- Concurrency / ordering → CARRY: partition by key for ordering, tune concurrency for throughput
+- Monitoring → CARRY: queue depth, processing time, failure rate, alerting
+
+→ P7.1
+
+### P9.152: What kind of CLI-server hybrid?
+
+- CLI that starts a server → CARRY: daemon management, PID files, graceful shutdown
+- CLI that talks to a running server → CARRY: client library, connection handling, auth
+- CLI with both local and remote modes → CARRY: clear mode switching, consistent interface
+
+→ P7.1
+
+### P9.153: What monolith concern?
+
+- Structure / organization → P9.154
+- Database access patterns → CARRY: repository pattern or ORM, consistent query patterns
+- Middleware pipeline → CARRY: ordered, each piece has one job, error middleware at end
+- Configuration management → CARRY: environment-based, validate at startup, typed config
+- Logging / observability → CARRY: structured logging, request IDs, health checks
+
+→ P7.1
+
+### P9.154: How to organize the monolith?
+
+- By feature / domain → CARRY: vertical slices, each feature owns its routes/logic/data
+- By layer (controllers/services/repos) → CARRY: horizontal layers, dependency goes inward
+- Mix → CARRY: features for business logic, shared layers for cross-cutting concerns
+- It's a mess and needs organizing → CARRY: identify boundaries, extract modules incrementally, don't rewrite
+
+→ P7.1
+
+### P9.155: What microservice concern?
+
+- Service boundaries → P9.156
+- Inter-service communication → CARRY: sync (HTTP/gRPC) for queries, async (events) for commands, avoid cascading failures
+- Data ownership → CARRY: each service owns its data, no shared databases, eventual consistency
+- Distributed transactions → CARRY: saga pattern, compensating transactions, avoid 2PC
+- Service discovery → CARRY: DNS-based or registry, health checks, load balancing
+- Shared code → CARRY: minimize, use packages for truly shared types/utils, avoid distributed monolith
+
+→ P7.1
+
+### P9.156: How to draw service boundaries?
+
+- By business domain → CARRY: bounded contexts, each service is a capability
+- By team ownership → CARRY: team owns service, Conway's law, clear interfaces
+- By scaling needs → CARRY: separate things that scale differently
+- By deployment frequency → CARRY: separate things that change at different rates
+- Not sure → CARRY: start monolith, split when you feel pain, not before
+
+→ P7.1
+
+### P9.157: What serverless concern?
+
+- Cold starts → CARRY: keep functions small, provisioned concurrency for latency-sensitive, warm-up pings
+- Function organization → CARRY: one function per endpoint or handler, shared layers for common code
+- State management → CARRY: external state (DynamoDB, Redis), functions are stateless
+- Cost optimization → CARRY: right-size memory, batch when possible, avoid long-running functions
+- Local development → CARRY: SAM/Serverless Framework, local emulation, integration tests against real services
+- Vendor lock-in → CARRY: abstract provider-specific code, or accept lock-in if the tradeoffs are worth it
+
+→ P7.1
+
+---
+
+## P9C: Mobile Development (branched from P9.75)
+
+### P9.180: What platform?
+
+- iOS only → P9.181
+- Android only → P9.185
+- Cross-platform → P9.189
+- Don't know / choosing → P9.194
+
+### P9.181: What iOS framework?
+
+- SwiftUI → P9.182
+- UIKit → P9.183
+- Mix → CARRY: SwiftUI for new screens, UIKit for complex/legacy, bridge with hosting controllers
+- Choosing → P9.184
+
+### P9.182: What SwiftUI concern?
+
+- Layout / views → CARRY: declarative, composition over inheritance, preview-driven development
+- Navigation → CARRY: NavigationStack for iOS 16+, NavigationView for older, programmatic navigation
+- State management → CARRY: @State local, @ObservableObject shared, @EnvironmentObject for DI
+- Data flow → CARRY: single source of truth, bind down, action up
+- Lists / performance → CARRY: LazyVStack/LazyHStack, identifiable items, avoid body recomputation
+- Animations → CARRY: withAnimation for state changes, .animation modifier for view transitions
+- Custom components → CARRY: extract views, use ViewModifier for reusable styling, preferences for child-to-parent
+
+→ P9.195
+
+### P9.183: What UIKit concern?
+
+- View controller lifecycle → CARRY: understand viewDidLoad/viewWillAppear cycle, avoid putting everything in viewDidLoad
+- Auto Layout / constraints → CARRY: programmatic or storyboard, anchor-based API, avoid ambiguous constraints
+- Table/Collection views → CARRY: diffable data sources for iOS 13+, compositional layout for complex grids
+- Navigation patterns → CARRY: coordinator pattern for complex navigation, avoid deep view controller coupling
+- Memory management → CARRY: weak references for delegates, check for retain cycles, use Instruments
+
+→ P9.195
+
+### P9.184: SwiftUI or UIKit?
+
+- New project, iOS 16+ → CARRY: SwiftUI, it's mature enough
+- Need iOS 14/15 support → CARRY: UIKit with SwiftUI for new screens, or pure UIKit
+- Complex UI (custom gestures, animations) → CARRY: UIKit gives more control, wrap in SwiftUI if needed
+- Simple UI → CARRY: SwiftUI, faster development
+- Team knows UIKit well → CARRY: UIKit is fine, adopt SwiftUI incrementally
+
+→ P9.195
+
+### P9.185: What Android framework?
+
+- Jetpack Compose → P9.186
+- XML views (traditional) → P9.187
+- Mix → CARRY: Compose for new screens, XML for existing, ComposeView bridge
+- Choosing → P9.188
+
+### P9.186: What Compose concern?
+
+- Layout / composables → CARRY: remember for state, LaunchedEffect for side effects, composition over inheritance
+- Navigation → CARRY: Navigation Compose, type-safe arguments, nested graphs for features
+- State management → CARRY: hoisted state, ViewModel for screen state, remember for UI state
+- Theming → CARRY: MaterialTheme, custom theme for brand, compositionLocal for context
+- Lists / performance → CARRY: LazyColumn/LazyRow, key parameter, avoid recomposition
+- Side effects → CARRY: LaunchedEffect, DisposableEffect, SideEffect — understand lifecycle
+
+→ P9.195
+
+### P9.187: What XML view concern?
+
+- Fragment lifecycle → CARRY: understand lifecycle, avoid doing work in wrong state, use viewLifecycleOwner
+- RecyclerView → CARRY: ListAdapter with DiffUtil, view types for heterogeneous lists, item decoration
+- Data binding → CARRY: view binding over data binding for simplicity, or neither (just findViewByIds)
+- Custom views → CARRY: extend View, handle measure/layout/draw, save/restore state
+
+→ P9.195
+
+### P9.188: Compose or XML?
+
+- New project → CARRY: Compose, it's the future, better DX
+- Existing XML project → CARRY: adopt Compose for new screens, migrate incrementally
+- Complex custom views → CARRY: Compose Canvas API is capable, or wrap custom View
+- Team knows XML well → CARRY: start new features in Compose, keep existing XML
+
+→ P9.195
+
+### P9.189: What cross-platform framework?
+
+- React Native → P9.190
+- Flutter → P9.191
+- Kotlin Multiplatform → P9.192
+- Capacitor / Ionic → P9.193
+- Choosing → P9.194
+
+### P9.190: What React Native concern?
+
+- Navigation (React Navigation) → CARRY: stack/tab/drawer navigators, deep linking, type-safe routes
+- Native modules → CARRY: new architecture (TurboModules) or bridge, platform-specific code
+- Performance → CARRY: new architecture (Fabric), avoid bridge traffic, Hermes engine, FlashList for lists
+- Styling → CARRY: StyleSheet, no CSS cascade, flexbox layout, platform-specific styles
+- State management → CARRY: same as React web — Redux, Zustand, React Query for server state
+- Expo vs bare → CARRY: Expo for most projects, eject only if you need custom native code Expo doesn't support
+
+→ P9.195
+
+### P9.191: What Flutter concern?
+
+- Widget design → CARRY: composition of small widgets, stateless default, stateful when needed
+- State management → CARRY: Provider for simple, Riverpod for testable, BLoC for complex
+- Navigation → CARRY: GoRouter for declarative, Navigator 2.0 for full control
+- Platform channels → CARRY: MethodChannel for one-off, EventChannel for streams, Pigeon for typed
+- Performance → CARRY: const constructors, RepaintBoundary, avoid rebuilding the whole tree
+- Package ecosystem → CARRY: pub.dev, check maintenance status, prefer well-maintained packages
+
+→ P9.195
+
+### P9.192: What KMP concern?
+
+- Shared logic boundary → CARRY: share business logic, keep UI native (SwiftUI + Compose)
+- Platform-specific code → CARRY: expect/actual pattern, interface with platform implementations
+- Networking → CARRY: Ktor for shared HTTP, serialization with kotlinx.serialization
+- State management → CARRY: shared ViewModels with KMP-compatible patterns
+- Gradle setup → CARRY: source sets, dependency management, build variants
+
+→ P9.195
+
+### P9.193: What Capacitor concern?
+
+- Plugin access (camera, filesystem, etc.) → CARRY: Capacitor plugin API, fallback to web API
+- Performance expectations → CARRY: web performance in a native shell, optimize web bundle
+- Native functionality → CARRY: custom plugins for platform-specific, bridge API
+- When to use → CARRY: existing web app going mobile, simple apps, content-heavy — NOT animation-heavy or complex gestures
+
+→ P9.195
+
+### P9.194: How to choose a mobile framework?
+
+- Team skills → CARRY: web team → React Native, Dart/Java/Kotlin → Flutter, native experience → native
+- App complexity → CARRY: complex animations/gestures → native or Flutter, simple forms/content → anything works
+- Platform-specific features → CARRY: heavy platform integration → native, mostly UI → cross-platform
+- Time to market → CARRY: cross-platform is faster for v1, native is faster for platform-specific features
+- Long-term maintainability → CARRY: native has best long-term, cross-platform has migration risk
+
+→ P7.1
+
+### P9.195: What mobile-specific concern applies?
+
+- Offline support / data sync → P9.196
+- Push notifications → P9.197
+- Deep linking / universal links → CARRY: configure both platforms, handle link-to-screen mapping, deferred deep links
+- App lifecycle → P9.198
+- Device APIs (camera, location, sensors) → CARRY: request permissions properly, handle denial gracefully, test on device
+- App size → CARRY: asset optimization, code splitting, on-demand resources
+- None of these → P7.1
+
+### P9.196: What offline pattern?
+
+- Cache for offline reading → CARRY: cache API responses, show stale data with refresh indicator
+- Full offline functionality → CARRY: local database (SQLite, Realm), sync queue, conflict resolution
+- Sync strategy → CARRY: optimistic updates, last-write-wins or merge, handle conflicts
+- Offline-first → CARRY: local DB is source of truth, sync in background, design for conflict
+
+→ P7.1
+
+### P9.197: What push notification concern?
+
+- Setup (FCM, APNs) → CARRY: configure both platforms, handle token registration, backend integration
+- Rich notifications → CARRY: images, actions, grouping, platform-specific capabilities
+- Handling in-app → CARRY: foreground vs background behavior, navigation on tap, badge management
+- Targeting / segmentation → CARRY: topic-based or user-based, don't over-notify, respect preferences
+
+→ P7.1
+
+### P9.198: What app lifecycle concern?
+
+- Background execution → CARRY: background tasks (iOS BGTaskScheduler, Android WorkManager), battery considerations
+- State preservation → CARRY: save state on background, restore on foreground, handle process death
+- Launch performance → CARRY: defer non-critical init, splash screen, measure cold/warm start
+- Memory pressure → CARRY: release caches on memory warning, lazy loading, monitor for leaks
+
+→ P7.1
+
+---
+
+## P9D: Data Engineering (branched from P9.75)
+
+### P9.220: What kind of data work?
+
+- Pipeline design → P9.221
+- Data modeling / warehouse design → P9.226
+- Data quality → P9.230
+- Orchestration → P9.233
+- Real-time / streaming → P9.236
+- Migration → P9.240
+- Cost optimization → P9.243
+
+### P9.221: What pipeline pattern?
+
+- ETL (extract, transform, load) → P9.222
+- ELT (extract, load, transform) → P9.222
+- Streaming → P9.236
+- Batch → P9.222
+- Hybrid (batch + streaming) → CARRY: lambda or kappa architecture, explain tradeoffs
+- Don't know → P9.223
+
+### P9.222: What's the main pipeline concern?
+
+- Reliability / failure handling → CARRY: idempotent steps, checkpointing, retry with backoff, dead letter for failures
+- Performance / throughput → CARRY: parallelize, partition data, profile bottlenecks, incremental processing
+- Schema evolution → P9.224
+- Data freshness / latency → CARRY: evaluate SLA, optimize bottleneck stage, consider streaming for low-latency
+- Testing → P9.225
+- Monitoring → CARRY: row counts, freshness, schema changes, runtime, failure alerts
+
+→ P7.1
+
+### P9.223: ETL or ELT?
+
+- Data is messy and needs cleaning → CARRY: ETL — transform before loading, cleaner warehouse
+- Warehouse is powerful (Snowflake, BigQuery) → CARRY: ELT — load raw, transform in warehouse, cheaper compute
+- Multiple sources need joining → CARRY: ELT for flexibility, materialize the joins you need
+- Real-time needs → P9.236
+
+→ P7.1
+
+### P9.224: How to handle schema evolution?
+
+- Adding columns → CARRY: backwards compatible, default values, update downstream
+- Removing columns → CARRY: deprecate first, verify no downstream dependencies, then drop
+- Type changes → CARRY: version the schema, migrate data, update consumers
+- Breaking changes → CARRY: new table/topic, parallel processing, cutover when ready
+- Schema registry → CARRY: Avro/Protobuf with registry, enforce compatibility mode
+
+→ P7.1
+
+### P9.225: How to test data pipelines?
+
+- Data validation → CARRY: Great Expectations or dbt tests, validate assumptions at each stage
+- Pipeline logic → CARRY: unit test transformations with sample data, integration test with real-ish data
+- End-to-end → CARRY: shadow pipeline against production data, compare outputs
+- Performance → CARRY: profile with production-scale data, not toy datasets
+
+→ P7.1
+
+### P9.226: What kind of data model?
+
+- Dimensional model (star/snowflake schema) → P9.227
+- Normalized (3NF) → CARRY: good for OLTP, minimize redundancy, foreign keys
+- Data vault → P9.228
+- Document / NoSQL → CARRY: model for access patterns, denormalize for reads, embed vs reference
+- Graph → CARRY: model entities as nodes, relationships as edges, optimize for traversal patterns
+- Choosing → P9.229
+
+### P9.227: What dimensional modeling question?
+
+- Fact table design → CARRY: grain first (what does one row represent?), measures are additive/semi/non
+- Dimension table design → CARRY: descriptive attributes, slowly changing dimensions (Type 1/2/3)
+- Conformed dimensions → CARRY: shared dimensions across fact tables, single source of truth
+- Bridge tables → CARRY: for many-to-many relationships between facts and dimensions
+- Aggregation → CARRY: pre-aggregate for common queries, but keep atomic grain available
+
+→ P7.1
+
+### P9.228: What data vault question?
+
+- Hub/Link/Satellite design → CARRY: hubs for business keys, links for relationships, satellites for descriptive data
+- Loading patterns → CARRY: hash business keys, load hubs first, then links, then satellites
+- Point-in-time tables → CARRY: snapshot satellites for history, bridge for current state
+- Business vault → CARRY: computed business rules on top of raw vault
+
+→ P7.1
+
+### P9.229: Which modeling approach?
+
+- Analytical / BI queries → CARRY: dimensional model (star schema), optimize for queries
+- Auditability / history → CARRY: data vault, full history, lineage
+- Flexible / evolving → CARRY: ELT into raw then model, or data vault for max flexibility
+- Simple / fast → CARRY: wide flat tables, denormalized, acceptable for small scale
+
+→ P7.1
+
+### P9.230: What data quality issue?
+
+- Missing data → P9.231
+- Duplicate data → P9.232
+- Incorrect data → CARRY: validate at ingestion, reconcile against source, monitor for drift
+- Late-arriving data → CARRY: handle with reprocessing window, upsert logic, or append with timestamp
+- Schema mismatch → P9.224
+
+### P9.231: How to handle missing data?
+
+- Critical field missing → CARRY: reject record, alert, investigate source
+- Optional field missing → CARRY: default value or null, document the assumption
+- Partially missing → CARRY: keep what's there, flag for review, don't silently drop
+- Upstream quality issue → CARRY: fix at source if possible, monitor and alert, document workaround
+
+→ P7.1
+
+### P9.232: How to handle duplicates?
+
+- Exact duplicates → CARRY: deduplicate on primary key, keep first/last, document choice
+- Near-duplicates (fuzzy matching) → CARRY: matching rules, confidence scores, manual review for uncertain
+- Cross-source duplicates → CARRY: master data management, golden record, merge rules
+- Prevention → CARRY: idempotent ingestion, upsert patterns, dedup at source
+
+→ P7.1
+
+### P9.233: What orchestration tool?
+
+- Airflow → P9.234
+- dbt → P9.235
+- Prefect / Dagster → CARRY: similar to Airflow but more Pythonic, asset-based (Dagster) or flow-based (Prefect)
+- Cloud-native (Step Functions, Cloud Composer) → CARRY: managed service, less ops, vendor lock-in
+- Choosing → CARRY: dbt for SQL transforms, Airflow for general orchestration, Dagster for data-aware orchestration
+- Custom → CARRY: consider switching to a standard tool, but if sticking: idempotent tasks, dependency tracking, monitoring
+
+→ P7.1
+
+### P9.234: What Airflow concern?
+
+- DAG design → CARRY: idempotent tasks, small atomic units, clear dependencies, avoid dynamic DAG generation
+- Operators → CARRY: use existing operators, custom only when needed, keep operator code thin
+- Performance → CARRY: parallelism settings, executor choice (Celery/Kubernetes), pool management
+- Debugging → CARRY: logs per task, test locally, XCom for small data passing only
+- Deployment → CARRY: Astronomer/MWAA for managed, or Helm chart for self-hosted
+
+→ P7.1
+
+### P9.235: What dbt concern?
+
+- Model design → CARRY: staging → intermediate → mart layers, one model per concept, refs for dependencies
+- Testing → CARRY: schema tests (not_null, unique), custom data tests, freshness checks
+- Incremental models → CARRY: use for large tables, merge strategy, handle late-arriving data
+- Documentation → CARRY: describe every model and column, generate docs site
+- Performance → CARRY: materialization strategy (view/table/incremental), cluster/partition keys
+
+→ P7.1
+
+### P9.236: What streaming concern?
+
+- Tool choice → P9.237
+- Event design → P9.238
+- Processing logic → P9.239
+- Exactly-once semantics → CARRY: idempotent consumers, transactional outbox, or accept at-least-once
+- Backpressure → CARRY: buffer, drop, or slow producer — depends on data criticality
+
+→ P7.1
+
+### P9.237: What streaming tool?
+
+- Kafka → CARRY: partitioning strategy, consumer groups, retention, Schema Registry
+- Kinesis → CARRY: shard management, checkpointing, retention limits
+- Pulsar → CARRY: topic vs subscription model, tiered storage, multi-tenancy
+- Flink → CARRY: windowing, state management, checkpointing, watermarks
+- Spark Streaming → CARRY: micro-batch vs structured streaming, checkpoint to durable storage
+- Choosing → CARRY: Kafka for general, Kinesis for AWS-native, Flink for complex event processing
+
+→ P7.1
+
+### P9.238: How to design events?
+
+- Event schema → CARRY: include event type, timestamp, source, correlation ID, version
+- Event granularity → CARRY: one business action = one event, avoid mega-events
+- Ordering → CARRY: partition by entity ID for ordering guarantees, accept unordered across partitions
+- Versioning → CARRY: schema evolution, backwards compatibility, schema registry
+
+→ P7.1
+
+### P9.239: What stream processing logic?
+
+- Filtering / routing → CARRY: stateless, partition-preserving, simple predicates
+- Aggregation / windowing → CARRY: tumbling/sliding/session windows, handle late data, watermarks
+- Joining streams → CARRY: windowed joins, handle out-of-order, state management
+- Enrichment → CARRY: lookup from external source, cache locally, handle stale data
+- Complex event processing → CARRY: patterns across events, temporal constraints, state machines
+
+→ P7.1
+
+### P9.240: What kind of data migration?
+
+- Database migration (schema change) → CARRY: versioned migrations, backwards compatible when possible, test with production-scale data
+- Platform migration (move between systems) → P9.241
+- Data format change → CARRY: dual-write during transition, validate output matches, cutover when confident
+
+→ P7.1
+
+### P9.241: What platform migration concern?
+
+- Data transfer → CARRY: incremental sync, validate counts/checksums, dual-run period
+- Downtime requirements → CARRY: change data capture for zero-downtime, or scheduled migration window
+- Data mapping → CARRY: document source-to-target mapping, handle unmappable data, transform rules
+- Rollback plan → CARRY: keep source running, don't decommission until confident, point-in-time recovery
+
+→ P7.1
+
+### P9.243: What data cost concern?
+
+- Storage costs → CARRY: tiered storage, compression, retention policies, archive cold data
+- Compute costs → CARRY: right-size clusters, spot instances for batch, auto-scaling
+- Query costs (Snowflake, BigQuery) → CARRY: warehouse sizing, query optimization, caching, clustering keys
+- Transfer costs → CARRY: minimize cross-region, compress in transit, batch transfers
+
+→ P7.1
+
+---
+
+## P9E: Machine Learning / AI (branched from P9.75)
+
+### P9.260: What kind of ML work?
+
+- Model development (train/evaluate) → P9.261
+- Data preparation → P9.265
+- Model deployment / serving → P9.269
+- MLOps / infrastructure → P9.273
+- LLM / prompt engineering → P9.277
+- Fine-tuning → P9.281
+- RAG (retrieval-augmented generation) → P9.284
+- Evaluation / benchmarking → P9.287
+- Computer vision → P9.290
+- NLP (non-LLM) → P9.293
+
+### P9.261: What kind of model?
+
+- Classification → P9.262
+- Regression → P9.262
+- Clustering → P9.263
+- Recommendation → P9.264
+- Time series → P9.264
+- Generative → P9.277
+- Reinforcement learning → CARRY: define state/action/reward clearly, start with simple environment, iterate
+- Anomaly detection → P9.264
+- Other / custom → P9.262
+
+### P9.262: What's the main modeling concern?
+
+- Feature selection / engineering → P9.265
+- Model selection → CARRY: start simple (logistic regression, random forest), add complexity only if needed, baseline first
+- Hyperparameter tuning → CARRY: random search over grid search, use validation set, Optuna/Ray Tune for systematic
+- Overfitting → CARRY: regularization, cross-validation, more data, simpler model, early stopping
+- Underfitting → CARRY: more features, more complex model, less regularization, check data quality
+- Imbalanced classes → CARRY: SMOTE, class weights, appropriate metrics (F1, AUC not accuracy), stratified splits
+- Interpretability → CARRY: SHAP values, feature importance, partial dependence plots, simpler model if interpretability critical
+
+→ P7.1
+
+### P9.263: What clustering approach?
+
+- Know number of clusters → CARRY: K-means, evaluate with silhouette score, try different K
+- Don't know number → CARRY: DBSCAN or hierarchical, evaluate cluster quality
+- High-dimensional data → CARRY: reduce dimensions first (PCA, UMAP), then cluster
+- Mixed data types → CARRY: K-prototypes, or encode categoricals and use K-means
+
+→ P7.1
+
+### P9.264: What specialized ML concern?
+
+- Recommendation cold start → CARRY: content-based for cold start, collaborative filtering once you have data, hybrid
+- Time series stationarity → CARRY: check with ADF test, differencing, seasonal decomposition
+- Anomaly threshold → CARRY: precision-recall tradeoff, domain-specific threshold, human-in-the-loop for uncertain
+- Real-time inference → P9.269
+
+→ P7.1
+
+### P9.265: What data preparation work?
+
+- Feature engineering → P9.266
+- Data cleaning → P9.267
+- Data splitting → P9.268
+- Labeling → CARRY: clear labeling guidelines, inter-annotator agreement, active learning for efficiency
+- Augmentation → CARRY: domain-appropriate augmentation, verify augmented data is realistic, balance augmented vs real
+
+→ P7.1
+
+### P9.266: What feature engineering?
+
+- Numerical features → CARRY: scaling (standardize for linear, normalize for neural), handle outliers, log transform for skewed
+- Categorical features → CARRY: one-hot for few categories, target encoding for many, ordinal for ordered
+- Text features → CARRY: TF-IDF for classical, embeddings for neural, handle vocabulary size
+- Time features → CARRY: cyclical encoding, lag features, rolling statistics, holiday flags
+- Interaction features → CARRY: polynomial for linear models, automatic in tree models, domain-guided
+- Feature selection → CARRY: remove zero-variance, correlation filter, recursive feature elimination, domain knowledge
+
+→ P7.1
+
+### P9.267: What data cleaning?
+
+- Missing values → CARRY: understand WHY missing (MCAR/MAR/MNAR), impute or drop based on mechanism
+- Outliers → CARRY: investigate before removing, domain-dependent threshold, winsorize vs drop
+- Inconsistent formats → CARRY: standardize early, validate with schema, document transformations
+- Deduplication → CARRY: exact match on key fields, fuzzy matching for near-dupes, keep most complete record
+
+→ P7.1
+
+### P9.268: What data splitting concern?
+
+- Train/val/test ratio → CARRY: 80/10/10 standard, more test if small dataset, stratify for imbalanced
+- Temporal data → CARRY: time-based split, no future leakage, walk-forward validation
+- Group/hierarchy in data → CARRY: group-aware split, same group in same fold, prevent leakage
+- Cross-validation strategy → CARRY: K-fold for standard, stratified for imbalanced, time-series split for temporal
+
+→ P7.1
+
+### P9.269: How to serve the model?
+
+- REST API → P9.270
+- Batch inference → P9.271
+- Edge / on-device → P9.272
+- Streaming → CARRY: model as stream processor, low-latency requirements, warm model in memory
+
+→ P7.1
+
+### P9.270: What model serving concern?
+
+- Latency → CARRY: optimize model (quantize, distill, ONNX), batch requests, GPU inference, caching
+- Scaling → CARRY: horizontal scaling, load balancer, auto-scale on request volume
+- A/B testing → CARRY: traffic splitting, statistical significance, canary deployment
+- Model versioning → CARRY: version the model + preprocessing, rollback capability, shadow mode for validation
+- Input validation → CARRY: validate schema, handle missing features, reject malformed requests gracefully
+
+→ P7.1
+
+### P9.271: What batch inference concern?
+
+- Scale → CARRY: partition data, parallel processing, checkpointing for restartability
+- Freshness → CARRY: how stale can predictions be? Schedule accordingly
+- Storage → CARRY: store predictions with model version, timestamp, input hash for reproducibility
+
+→ P7.1
+
+### P9.272: What edge deployment concern?
+
+- Model size → CARRY: quantization, pruning, distillation, TFLite/CoreML/ONNX conversion
+- Hardware constraints → CARRY: profile on target device, memory budget, compute budget, battery
+- Update strategy → CARRY: OTA model updates, A/B test on device, fallback to previous model
+- Privacy → CARRY: on-device inference keeps data local, federated learning for improvement
+
+→ P7.1
+
+### P9.273: What MLOps concern?
+
+- Experiment tracking → P9.274
+- Pipeline automation → P9.275
+- Model monitoring → P9.276
+- Reproducibility → CARRY: version code + data + config + environment, random seeds, deterministic training
+
+→ P7.1
+
+### P9.274: What experiment tracking?
+
+- Tool choice → CARRY: MLflow for general, W&B for teams, Neptune for collaboration — all similar
+- What to track → CARRY: hyperparameters, metrics, artifacts, data version, code version, environment
+- Organizing experiments → CARRY: name runs descriptively, group by hypothesis, tag with project/purpose
+- Comparing experiments → CARRY: dashboard with key metrics, parallel coordinates for hyperparameter sensitivity
+
+→ P7.1
+
+### P9.275: What ML pipeline concern?
+
+- Training pipeline → CARRY: data → preprocess → train → evaluate → register, each step idempotent
+- Feature pipeline → CARRY: feature store (Feast, Tecton), online vs offline features, point-in-time correctness
+- Retraining triggers → CARRY: scheduled, data drift detected, performance degradation, manual
+- Pipeline testing → CARRY: unit test transforms, integration test pipeline, validate outputs
+
+→ P7.1
+
+### P9.276: What model monitoring?
+
+- Data drift → CARRY: statistical tests (KS, PSI) on input features, alert on distribution shift
+- Model drift → CARRY: track prediction distribution, compare to training distribution, alert on shift
+- Performance monitoring → CARRY: track accuracy/latency/throughput, compare to baseline, alert on degradation
+- Bias monitoring → CARRY: track performance across subgroups, fairness metrics, alert on disparity
+
+→ P7.1
+
+### P9.277: What LLM work?
+
+- Prompt engineering → P9.278
+- Building an LLM application → P9.279
+- Agent design → P9.280
+- Evaluation → P9.287
+- Fine-tuning → P9.281
+
+### P9.278: What prompt engineering concern?
+
+- Getting better outputs → CARRY: be specific, give examples (few-shot), structure the output, chain of thought for reasoning
+- Reducing hallucinations → CARRY: constrain output, provide context, ask for citations, verify outputs
+- Consistency → CARRY: system prompts, temperature settings, structured output (JSON mode), seed for reproducibility
+- Complex tasks → CARRY: break into subtasks, chain prompts, use tools/function calling
+- Cost optimization → CARRY: shorter prompts, caching, smaller model for simple tasks, batching
+
+→ P7.1
+
+### P9.279: What LLM application concern?
+
+- Architecture → CARRY: prompt chaining, tool use, RAG, agent — match complexity to need, start simple
+- Context window management → CARRY: summarize long contexts, prioritize relevant information, chunking strategy
+- Error handling → CARRY: retry on failure, fallback responses, validate LLM output, human-in-the-loop
+- Cost management → CARRY: cache responses, route simple queries to smaller models, batch requests
+- Guardrails → CARRY: input/output validation, content filtering, rate limiting, monitoring for misuse
+
+→ P7.1
+
+### P9.280: What agent concern?
+
+- Tool design → CARRY: clear tool descriptions, typed parameters, error messages that help the agent recover
+- Planning / reasoning → CARRY: ReAct pattern, scratchpad, structured planning, limit iterations
+- Memory → CARRY: conversation history, working memory, long-term retrieval, summarization
+- Reliability → CARRY: timeout, max iterations, fallback, human escalation, deterministic where possible
+- Multi-agent → CARRY: clear roles, communication protocol, orchestration, avoid infinite loops
+
+→ P7.1
+
+### P9.281: What fine-tuning approach?
+
+- Full fine-tuning → P9.282
+- LoRA / PEFT → P9.283
+- Choosing → CARRY: LoRA for most cases, full fine-tune only with lots of data and compute, start with prompting
+
+### P9.282: What full fine-tuning concern?
+
+- Data preparation → CARRY: high-quality examples, consistent format, balanced categories, validation set
+- Training → CARRY: learning rate schedule, gradient accumulation for large models, checkpoint frequently
+- Evaluation → CARRY: held-out test set, compare to base model, check for catastrophic forgetting
+- Cost → CARRY: expensive — make sure prompting and RAG can't solve it first
+
+→ P7.1
+
+### P9.283: What LoRA concern?
+
+- Rank selection → CARRY: start with rank 8-16, increase if underfitting, target attention layers first
+- Data requirements → CARRY: fewer examples needed than full fine-tune, quality over quantity, diverse examples
+- Merging → CARRY: merge for deployment simplicity, keep separate for A/B testing or multiple adapters
+
+→ P7.1
+
+### P9.284: What RAG concern?
+
+- Retrieval strategy → P9.285
+- Chunking → P9.286
+- Generation quality → CARRY: include relevant context, cite sources, handle no-results gracefully
+- Evaluation → P9.287
+
+### P9.285: What retrieval strategy?
+
+- Vector search → CARRY: embedding model choice matters, cosine similarity, HNSW for speed, re-rank for quality
+- Hybrid (vector + keyword) → CARRY: combine scores, BM25 + embedding, reciprocal rank fusion
+- Re-ranking → CARRY: cross-encoder re-rank top-K from bi-encoder, improves precision at cost of latency
+- Multi-query → CARRY: generate multiple query variants, union results, covers more ground
+- Metadata filtering → CARRY: filter before vector search, or post-filter, depends on selectivity
+
+→ P7.1
+
+### P9.286: What chunking strategy?
+
+- Fixed-size chunks → CARRY: 200-500 tokens typical, overlap by 10-20%, simple but misses boundaries
+- Semantic chunking → CARRY: split on paragraphs/sections/topics, preserves meaning, varies in size
+- Document-specific → CARRY: structured docs (HTML, MD) use headings, code use functions, tables keep together
+- Chunk size optimization → CARRY: smaller for precise retrieval, larger for context, test different sizes
+
+→ P7.1
+
+### P9.287: What ML evaluation concern?
+
+- Metrics selection → P9.288
+- Benchmark design → P9.289
+- LLM evaluation → CARRY: human eval for quality, automated metrics for scale, LLM-as-judge with rubric
+
+→ P7.1
+
+### P9.288: What metrics to use?
+
+- Classification → CARRY: accuracy for balanced, F1 for imbalanced, AUC-ROC for threshold-free, confusion matrix for detail
+- Regression → CARRY: RMSE for same-unit interpretation, MAE for outlier-robust, R-squared for explained variance
+- Ranking → CARRY: NDCG, MAP, MRR — depends on whether position matters
+- Generation → CARRY: BLEU/ROUGE for reference-based, perplexity for fluency, human eval for quality
+- Retrieval → CARRY: precision@K, recall@K, MRR for position, human relevance judgments
+
+→ P7.1
+
+### P9.289: How to design a benchmark?
+
+- Representative data → CARRY: cover edge cases, distribution match production, diverse inputs
+- Clear criteria → CARRY: rubric for subjective evaluation, unambiguous for objective
+- Statistical rigor → CARRY: confidence intervals, multiple runs, significance testing
+- Avoiding contamination → CARRY: separate from training data, monitor for leakage, date-aware splits
+
+→ P7.1
+
+### P9.290: What computer vision work?
+
+- Image classification → CARRY: pretrained backbone (ResNet, EfficientNet), fine-tune last layers, augmentation
+- Object detection → CARRY: YOLO for speed, Faster R-CNN for accuracy, anchor-free for simplicity
+- Segmentation → CARRY: semantic (pixel class) vs instance (individual objects), U-Net or Mask R-CNN
+- Image generation → CARRY: diffusion models, ControlNet for conditioned, style transfer
+- OCR / document understanding → CARRY: Tesseract for simple, document AI models for structured, layout analysis
+- Video → CARRY: frame-by-frame or temporal models, tracking, action recognition
+
+→ P7.1
+
+### P9.293: What NLP work (non-LLM)?
+
+- Text classification → CARRY: BERT fine-tune for quality, TF-IDF + classifier for speed, handle class imbalance
+- Named entity recognition → CARRY: spaCy for standard entities, fine-tune BERT for custom, rule-based for patterns
+- Sentiment analysis → CARRY: pretrained models available, domain-specific fine-tuning helps, handle negation/sarcasm
+- Text preprocessing → CARRY: tokenization, lowercasing, stopwords (only if relevant), lemmatization for classical methods
+- Embeddings → CARRY: sentence-transformers for sentences, word2vec/GloVe for words, domain-specific matters
+
+→ P7.1
+
+---
+
+## P9F: DevOps & Infrastructure (branched from P9.75, extends P9.45)
+
+### P9.300: What DevOps concern?
+
+- CI/CD pipeline → P9.301
+- Container orchestration → P9.305
+- Infrastructure as Code → P9.310
+- Monitoring / observability → P9.315
+- Cloud architecture → P9.320
+- Networking → P9.325
+- Secrets management → CARRY: vault or cloud-native (AWS Secrets Manager, etc.), rotate regularly, never in code
+- Disaster recovery → P9.328
+- Cost optimization → P9.330
+
+### P9.301: What CI/CD concern?
+
+- Pipeline design → P9.302
+- Build speed → P9.303
+- Deployment strategy → P9.304
+- Tool choice → CARRY: GitHub Actions for GitHub, GitLab CI for GitLab, Jenkins for self-hosted flexibility
+
+→ P7.1
+
+### P9.302: What pipeline design question?
+
+- What stages to include → CARRY: lint → test → build → deploy, add security scan for production
+- Branch strategy → CARRY: trunk-based for speed, GitFlow for releases, feature branches with short life
+- Environment promotion → CARRY: dev → staging → production, same artifact through all environments
+- Approval gates → CARRY: automated for dev/staging, manual approval for production, clear rollback process
+
+→ P7.1
+
+### P9.303: What's making the build slow?
+
+- Test suite → CARRY: parallel tests, test selection (only affected), cache dependencies, split into fast/slow suites
+- Build step → CARRY: caching (layer cache for Docker, dependency cache), parallel builds, incremental builds
+- Dependencies → CARRY: cache node_modules/pip packages, use lockfile for determinism, pre-built base images
+- Everything → CARRY: profile each step, fix worst first, consider splitting pipeline
+
+→ P7.1
+
+### P9.304: What deployment strategy?
+
+- Blue-green → CARRY: full parallel environment, instant rollback, higher cost
+- Canary → CARRY: gradual rollout, monitor metrics, automatic rollback on errors
+- Rolling → CARRY: update instances incrementally, health checks before proceeding, some capacity reduced
+- Feature flags → CARRY: deploy code dark, enable gradually, separate deploy from release
+- Choosing → CARRY: canary for most services, blue-green for databases, feature flags for risky changes
+
+→ P7.1
+
+### P9.305: What container orchestration concern?
+
+- Kubernetes basics → P9.306
+- Kubernetes networking → P9.307
+- Kubernetes storage → P9.308
+- Helm / package management → P9.309
+- Do I even need Kubernetes? → CARRY: probably not for fewer than 10 services — ECS, Cloud Run, or Docker Compose may be enough
+
+→ P7.1
+
+### P9.306: What Kubernetes concern?
+
+- Pod design → CARRY: one container per pod usually, init containers for setup, sidecar for cross-cutting
+- Deployment configuration → CARRY: replicas, resource requests/limits, liveness/readiness probes, rolling update strategy
+- Scaling → CARRY: HPA for horizontal (CPU/memory/custom metrics), VPA for vertical, cluster autoscaler for nodes
+- Namespaces → CARRY: by team or environment, resource quotas, network policies between namespaces
+- Debugging → CARRY: kubectl describe/logs/exec, events, check probe failures, resource limits
+
+→ P7.1
+
+### P9.307: What K8s networking?
+
+- Service types → CARRY: ClusterIP for internal, LoadBalancer for external, NodePort for debugging, Ingress for HTTP routing
+- Ingress configuration → CARRY: nginx or ALB ingress controller, TLS termination, path-based routing
+- Service mesh → CARRY: Istio or Linkerd for mTLS/observability/traffic management, adds complexity — need it?
+- DNS / service discovery → CARRY: CoreDNS, service.namespace.svc.cluster.local, headless services for StatefulSets
+
+→ P7.1
+
+### P9.308: What K8s storage?
+
+- Persistent volumes → CARRY: PVC for stateful workloads, StorageClass for dynamic provisioning, access modes matter
+- ConfigMaps / Secrets → CARRY: ConfigMap for non-sensitive, Secret for sensitive (base64 not encryption), external secrets operator for real security
+- StatefulSets → CARRY: ordered deployment, stable network identity, persistent storage per pod
+
+→ P7.1
+
+### P9.309: What Helm concern?
+
+- Chart design → CARRY: templates for common patterns, values.yaml for configuration, sub-charts for dependencies
+- Version management → CARRY: semantic versioning, Chart.lock for dependencies, upgrade testing
+- Environment-specific values → CARRY: values-dev.yaml / values-prod.yaml, override specific values per environment
+
+→ P7.1
+
+### P9.310: What IaC tool?
+
+- Terraform → P9.311
+- Pulumi → P9.312
+- CloudFormation / CDK → P9.313
+- Ansible → P9.314
+- Choosing → CARRY: Terraform for multi-cloud, CDK for AWS-native, Pulumi for real programming languages
+
+→ P7.1
+
+### P9.311: What Terraform concern?
+
+- State management → CARRY: remote state (S3 + DynamoDB), state locking, never edit state manually
+- Module design → CARRY: reusable modules for patterns, clear inputs/outputs, version modules
+- Workspace vs directory → CARRY: workspaces for environment variation, directories for truly separate stacks
+- Import existing resources → CARRY: terraform import, then write the config to match, verify with plan
+- Drift detection → CARRY: regular terraform plan, alert on drift, reconcile or document
+
+→ P7.1
+
+### P9.312: What Pulumi concern?
+
+- Language choice → CARRY: use your team's strongest language, TypeScript most common, Python well-supported
+- State management → CARRY: Pulumi Cloud for managed, S3/GCS for self-managed, same concerns as Terraform
+- Stack organization → CARRY: stack per environment, shared infrastructure in separate project, references between stacks
+- Testing → CARRY: unit test with mock providers, integration test with real providers, policy as code
+
+→ P7.1
+
+### P9.313: What CDK concern?
+
+- Construct design → CARRY: L1 raw CloudFormation, L2 opinionated defaults, L3 patterns — use highest appropriate level
+- Stack organization → CARRY: stack per independently deployable unit, cross-stack references for shared resources
+- Drift → CARRY: CDK drift detection, import existing resources with CfnResource
+
+→ P7.1
+
+### P9.314: What Ansible concern?
+
+- Playbook design → CARRY: idempotent tasks, roles for reusability, variables for environment-specific
+- Inventory management → CARRY: dynamic inventory for cloud, groups by role/environment
+- Testing → CARRY: Molecule for role testing, check mode for dry run
+
+→ P7.1
+
+### P9.315: What observability concern?
+
+- Logging → P9.316
+- Metrics → P9.317
+- Tracing → P9.318
+- Alerting → P9.319
+- Full stack → CARRY: unified observability (Datadog, Grafana stack), correlate logs-metrics-traces
+
+→ P7.1
+
+### P9.316: What logging concern?
+
+- Log format → CARRY: structured JSON, consistent fields (timestamp, level, service, trace_id, message)
+- Log aggregation → CARRY: ELK/EFK stack, Loki, or managed (CloudWatch, Datadog), centralize all services
+- Log levels → CARRY: ERROR for failures, WARN for concerning, INFO for business events, DEBUG for development
+- What to log → CARRY: business events, errors with context, request/response at boundaries, NOT sensitive data
+- Log retention → CARRY: hot for recent (7-30 days), warm for months, cold for compliance, auto-rotate
+
+→ P7.1
+
+### P9.317: What metrics concern?
+
+- What to measure → CARRY: RED (rate, errors, duration) for services, USE (utilization, saturation, errors) for resources
+- Tool choice → CARRY: Prometheus + Grafana for self-hosted, Datadog/New Relic for managed
+- Custom metrics → CARRY: counters for totals, gauges for current values, histograms for distributions
+- Dashboard design → CARRY: overview dashboard per service, drill-down for detail, SLO tracking
+
+→ P7.1
+
+### P9.318: What tracing concern?
+
+- Instrumentation → CARRY: OpenTelemetry for vendor-neutral, auto-instrument where possible, manual span for business logic
+- Trace propagation → CARRY: W3C trace context, propagate through async/queues, correlation IDs
+- Sampling → CARRY: head-based for simplicity, tail-based for interesting traces, 100% for low-traffic services
+
+→ P7.1
+
+### P9.319: What alerting concern?
+
+- What to alert on → CARRY: SLO violations, error rate spikes, resource exhaustion approaching — NOT every metric
+- Alert fatigue → CARRY: fewer, higher-quality alerts, clear ownership, runbook per alert, snooze/escalation
+- On-call → CARRY: rotation, escalation policy, clear severity levels, blameless postmortems
+- SLOs → CARRY: define SLIs first, set achievable SLOs, error budget policy, burn rate alerts
+
+→ P7.1
+
+### P9.320: What cloud architecture concern?
+
+- Multi-account / multi-project → CARRY: separate by environment and team, landing zone, guardrails
+- VPC design → CARRY: CIDR planning, public/private subnets, NAT for outbound, peering for cross-VPC
+- IAM → CARRY: least privilege, roles over users, service accounts, audit regularly
+- Multi-region → CARRY: active-active or active-passive, data replication, DNS routing, cost implications
+- Cloud choice → CARRY: AWS for most services, GCP for data/ML, Azure for enterprise — pick based on team expertise
+
+→ P7.1
+
+### P9.325: What networking concern?
+
+- Load balancing → CARRY: L4 for TCP, L7 for HTTP, health checks, connection draining
+- CDN → CARRY: static assets, caching strategy, cache invalidation, edge functions
+- DNS → CARRY: TTL management, failover routing, health check routing, zone management
+- TLS → CARRY: automate cert management (Let's Encrypt, ACM), enforce HTTPS, HSTS
+
+→ P7.1
+
+### P9.328: What disaster recovery concern?
+
+- RTO / RPO → CARRY: define acceptable downtime and data loss, design for those targets
+- Backup strategy → CARRY: automated, tested restores, cross-region, retention policy
+- Failover → CARRY: automated failover, DNS-based or load-balancer-based, practice failovers
+- Runbooks → CARRY: documented procedures, tested regularly, accessible during incidents
+
+→ P7.1
+
+### P9.330: What cloud cost concern?
+
+- Compute → CARRY: right-size instances, reserved/savings plans for stable, spot for fault-tolerant
+- Storage → CARRY: lifecycle policies, tiered storage, delete unused, compression
+- Network → CARRY: minimize cross-region transfer, VPC endpoints for AWS services, CDN for repeated content
+- Visibility → CARRY: tagging strategy, cost allocation, budget alerts, regular reviews
+
+→ P7.1
+
+---
+
+## P9G: Embedded / Systems (branched from P9.75)
+
+### P9.340: What kind of embedded work?
+
+- Firmware development → P9.341
+- Hardware interface → P9.345
+- RTOS / OS selection → P9.348
+- Communication protocols → P9.350
+- Power management → P9.353
+- Debugging hardware → P9.355
+- Systems programming (OS-level, drivers) → P9.358
+
+### P9.341: What firmware concern?
+
+- Boot process → CARRY: bootloader, initialization sequence, watchdog, fail-safe boot
+- Memory management → P9.342
+- Interrupt handling → P9.343
+- State machines → P9.344
+- OTA updates → CARRY: dual partition, verified boot, rollback on failure, delta updates for bandwidth
+
+→ P7.1
+
+### P9.342: What memory concern?
+
+- Stack vs heap → CARRY: prefer stack, fixed-size buffers, no dynamic allocation in embedded if possible
+- Memory-mapped I/O → CARRY: volatile pointers, correct register access, barriers for ordering
+- Flash management → CARRY: wear leveling, write alignment, erase-before-write, filesystem choice (LittleFS, SPIFFS)
+- Memory leaks → CARRY: static analysis, bounded allocation, memory pools, track high-water mark
+
+→ P7.1
+
+### P9.343: What interrupt concern?
+
+- Priority management → CARRY: priority inversion prevention, keep ISR short, defer work to task level
+- Shared data → CARRY: volatile variables, critical sections, disable interrupts briefly, atomic operations
+- Timing → CARRY: latency requirements, jitter measurement, DMA for high-throughput, hardware timers
+
+→ P7.1
+
+### P9.344: What state machine design?
+
+- Simple (few states) → CARRY: switch/case, clear state transitions, handle all inputs in all states
+- Complex (many states, hierarchical) → CARRY: state machine framework, HSM for nested states, event-driven
+- Concurrent state machines → CARRY: independent machines, message passing between them, avoid shared mutable state
+
+→ P7.1
+
+### P9.345: What hardware interface?
+
+- GPIO → CARRY: pin configuration (input/output/pullup), debouncing for buttons, interrupt-driven over polling
+- SPI → CARRY: clock polarity/phase, chip select management, DMA for bulk transfers
+- I2C → CARRY: address management, clock stretching, error recovery, multi-master considerations
+- UART → CARRY: baud rate, flow control, ring buffer for receive, DMA for bulk
+- ADC/DAC → CARRY: sampling rate, resolution, filtering, calibration
+- USB → CARRY: device class, descriptor design, enumeration, bulk/interrupt/isochronous transfer types
+- Custom peripherals → CARRY: register map documentation, timing diagrams, test with logic analyzer
+
+→ P7.1
+
+### P9.348: What OS choice?
+
+- FreeRTOS → CARRY: tasks, queues, semaphores, memory management scheme, tick rate
+- Zephyr → CARRY: device tree, Kconfig, networking stack, Bluetooth stack, broader hardware support
+- Bare metal → CARRY: simpler, deterministic, manual scheduling, appropriate for single-purpose
+- Linux (embedded) → CARRY: Yocto/Buildroot for custom images, device drivers, user space vs kernel space
+- Choosing → CARRY: bare metal for simple, FreeRTOS for multitasking, Zephyr for connectivity, Linux for complex
+
+→ P7.1
+
+### P9.350: What communication protocol?
+
+- MQTT → CARRY: QoS levels, topic hierarchy, retained messages, last will, TLS for security
+- BLE → P9.351
+- WiFi → CARRY: provisioning, reconnection, power management, TLS, credential storage
+- LoRa/LoRaWAN → CARRY: duty cycle limits, spreading factor tradeoff (range vs throughput), join procedure
+- CAN bus → CARRY: message priority, arbitration, error handling, bit timing, bus termination
+- Modbus → CARRY: RTU vs TCP, register mapping, polling interval, error handling
+- Custom protocol → P9.352
+
+### P9.351: What BLE concern?
+
+- Service/characteristic design → CARRY: UUIDs, read/write/notify properties, MTU negotiation
+- Connection management → CARRY: advertising, bonding, connection parameters, multi-device
+- Power optimization → CARRY: advertising interval, connection interval, sleep between events
+- Security → CARRY: pairing modes, encryption, authenticated reads/writes
+
+→ P7.1
+
+### P9.352: What custom protocol concern?
+
+- Frame format → CARRY: start byte, length, payload, CRC, escape sequences
+- Error detection → CARRY: CRC for reliability, checksum for simple, retransmission for critical
+- Flow control → CARRY: acknowledgment, windowing, backpressure, timeout and retry
+
+→ P7.1
+
+### P9.353: What power management concern?
+
+- Sleep modes → CARRY: understand MCU sleep levels, wake sources, peripheral state during sleep
+- Battery life estimation → CARRY: measure current in each mode, duty cycle, battery capacity, margin
+- Power budget → CARRY: allocate per subsystem, measure don't estimate, identify dominant consumer
+- Energy harvesting → CARRY: source characteristics, storage, budget for intermittent operation
+
+→ P7.1
+
+### P9.355: What embedded debugging approach?
+
+- JTAG/SWD → CARRY: breakpoints, register inspection, flash programming, trace
+- Logic analyzer → CARRY: protocol decode, timing analysis, signal integrity
+- Serial debug → CARRY: printf debugging, structured log output, minimal overhead
+- Hard fault diagnosis → CARRY: fault registers, stack trace, memory dump, reproduce reliably
+
+→ P7.1
+
+### P9.358: What systems programming work?
+
+- Device driver → CARRY: kernel vs user space, DMA, interrupt handling, device tree
+- Memory management → CARRY: virtual memory, page tables, allocators, memory protection
+- Concurrency → CARRY: locks, lock-free structures, memory ordering, deadlock prevention
+- File system → CARRY: VFS layer, block device interface, journaling, caching
+- Network stack → CARRY: socket layer, protocol implementation, zero-copy, buffer management
+
+→ P7.1
+
+---
+
+## P9H: Game Development (branched from P9.75)
+
+### P9.370: What game engine?
+
+- Unity → P9.371
+- Unreal → P9.374
+- Godot → P9.377
+- Custom engine → P9.380
+- No engine (framework like SDL, Raylib) → P9.380
+- Choosing → P9.382
+
+### P9.371: What Unity concern?
+
+- C# scripting → P9.372
+- Scene management → CARRY: scene loading, DontDestroyOnLoad, additive scenes, loading screens
+- UI (UGUI / UI Toolkit) → CARRY: Canvas for UGUI, USS/UXML for UI Toolkit, world space vs screen space
+- Animation → P9.373
+- Physics → P9.383
+- Performance → P9.385
+- Asset management → CARRY: Addressables for large projects, asset bundles, memory management
+
+→ P7.1
+
+### P9.372: What Unity scripting concern?
+
+- MonoBehaviour lifecycle → CARRY: Awake/Start/Update/FixedUpdate/LateUpdate order, initialization dependencies
+- Component architecture → CARRY: small focused components, composition over inheritance, GetComponent caching
+- ScriptableObjects → CARRY: data containers, shared configuration, event channels, factory patterns
+- Coroutines vs async → CARRY: coroutines for frame-relative timing, async/await for IO, UniTask for better async
+- Event system → CARRY: UnityEvent for inspector, C# events for code, avoid string-based SendMessage
+
+→ P7.1
+
+### P9.373: What animation concern?
+
+- Animator controller → CARRY: state machine, blend trees, layers, parameters, avatar masks
+- Procedural animation → CARRY: IK, physics-driven, code-controlled blending, LateUpdate for post-processing
+- Sprite animation → CARRY: sprite sheets, animation clips, frame timing, animation events
+- Cutscenes → CARRY: Timeline, Cinemachine cameras, sequencing, skip handling
+
+→ P7.1
+
+### P9.374: What Unreal concern?
+
+- Blueprints vs C++ → P9.375
+- Level design → CARRY: streaming levels, world partition for large worlds, level instances
+- Materials → CARRY: material instances for variation, material functions for reuse, LOD considerations
+- Multiplayer → P9.387
+- UI (UMG) → CARRY: widget blueprints, data binding, common UI patterns, input handling
+
+→ P7.1
+
+### P9.375: Blueprints, C++, or both?
+
+- Blueprints → CARRY: visual scripting, good for designers, gameplay logic, prototyping
+- C++ → CARRY: performance-critical code, base classes, engine extension, complex systems
+- Both → CARRY: C++ base classes exposed to Blueprints, Blueprint for configuration/events, nativize hot paths
+
+→ P9.376
+
+### P9.376: What Unreal C++ concern?
+
+- UObject system → CARRY: UPROPERTY/UFUNCTION macros, garbage collection, reflection, serialization
+- Gameplay framework → CARRY: GameMode, GameState, PlayerController, PlayerState — understand ownership
+- Delegates / events → CARRY: single-cast, multi-cast, dynamic for Blueprints, event dispatchers
+- Memory → CARRY: smart pointers (TSharedPtr, TWeakPtr), UObject ownership, avoid raw new/delete
+
+→ P7.1
+
+### P9.377: What Godot concern?
+
+- GDScript vs C# → P9.378
+- Scene tree → CARRY: node composition, scene inheritance, instancing, groups for cross-cutting
+- Signals → CARRY: observer pattern, connect in editor or code, custom signals, avoid deep coupling
+- UI (Control nodes) → CARRY: anchors and margins, theme resources, containers for layout
+- 2D vs 3D → P9.379
+
+→ P7.1
+
+### P9.378: GDScript or C#?
+
+- GDScript → CARRY: tightly integrated, simpler, faster iteration, smaller community than C#
+- C# → CARRY: familiar to Unity devs, stronger typing, bigger ecosystem, some Godot features lag
+- Both → CARRY: GDScript for game logic, C# for complex systems, they interop via signals
+
+→ P7.1
+
+### P9.379: Godot 2D or 3D?
+
+- 2D → CARRY: Sprite2D, TileMap, Area2D for detection, lightweight
+- 3D → CARRY: MeshInstance3D, CSG for prototyping, environment for lighting, camera management
+- 2.5D → CARRY: 3D world with 2D constraints, or 2D with parallax for depth illusion
+
+→ P7.1
+
+### P9.380: What custom engine / framework concern?
+
+- Architecture → P9.381
+- Rendering → CARRY: OpenGL/Vulkan/Metal, render pipeline, batching, shader management
+- Entity system → CARRY: ECS for data-oriented, component-based for flexibility, inheritance for simple
+- Resource management → CARRY: asset loading, caching, reference counting, hot reloading
+- Input → CARRY: input mapping, action system, rebinding, controller support, input buffering
+
+→ P7.1
+
+### P9.381: What engine architecture question?
+
+- Game loop → CARRY: fixed timestep for physics, variable for rendering, accumulator pattern
+- ECS design → CARRY: sparse sets or archetypes, query system, system ordering, parallel systems
+- Scene graph → CARRY: tree structure, transform propagation, spatial queries, visibility culling
+- Event / messaging → CARRY: immediate or queued, typed events, event bus, avoid frame-order dependencies
+
+→ P7.1
+
+### P9.382: How to choose a game engine?
+
+- 2D game → CARRY: Godot for simple, Unity for polished, Love2D for code-focused
+- 3D game → CARRY: Unity for indie, Unreal for AAA visuals, Godot for open-source
+- Mobile → CARRY: Unity has best mobile tooling, Godot improving, Unreal possible but heavier
+- Team size → CARRY: solo → Godot or Unity, team → Unity or Unreal (better collaboration tools)
+- Learning → CARRY: Godot for learning (simplest), Unity for employability, Unreal for AAA pipeline
+
+→ P7.1
+
+### P9.383: What game physics concern?
+
+- Collision detection → P9.384
+- Rigid body → CARRY: mass, friction, restitution, constraints, sleep for performance
+- Character controller → CARRY: kinematic vs physics-based, grounding, slopes, stairs, coyote time
+- Custom physics → CARRY: deterministic for replay/netcode, fixed timestep, spatial partitioning
+
+→ P7.1
+
+### P9.384: What collision concern?
+
+- Layer / mask setup → CARRY: separate layers by type, collision matrix, avoid unnecessary checks
+- Trigger vs collider → CARRY: triggers for detection zones, colliders for physical interaction
+- Performance → CARRY: simple shapes, compound colliders, broad phase optimization, spatial hashing
+- Custom shapes → CARRY: mesh colliders are expensive, approximate with primitives, convex decomposition
+
+→ P7.1
+
+### P9.385: What game performance concern?
+
+- Frame rate → CARRY: profile first (CPU or GPU bound?), fix worst offender, target frame time not FPS
+- Draw calls → CARRY: batching, instancing, LOD, occlusion culling, atlas textures
+- Memory → CARRY: asset streaming, texture compression, object pooling, unload unused scenes
+- Loading times → CARRY: async loading, streaming, preloading, loading screens
+- GC pressure → CARRY: object pooling, avoid per-frame allocations, struct vs class, pre-allocated collections
+
+→ P7.1
+
+### P9.387: What multiplayer concern?
+
+- Architecture → P9.388
+- Netcode → P9.389
+- Matchmaking → CARRY: skill-based, queue management, latency-based region selection
+- Anti-cheat → CARRY: server-authoritative design, input validation, anomaly detection, encryption
+
+→ P7.1
+
+### P9.388: What multiplayer architecture?
+
+- Client-server → CARRY: server-authoritative, client prediction, server reconciliation, lag compensation
+- Peer-to-peer → CARRY: host migration, NAT traversal, deterministic lockstep for RTS
+- Dedicated servers → CARRY: hosting infrastructure, scaling, region selection, matchmaking integration
+
+→ P7.1
+
+### P9.389: What netcode concern?
+
+- State synchronization → CARRY: snapshot interpolation or state replication, delta compression, priority system
+- Input prediction → CARRY: client-side prediction, server reconciliation on mismatch, rollback for fighting games
+- Lag compensation → CARRY: server rewind for hit detection, interpolation buffer, jitter handling
+- Bandwidth → CARRY: compress, prioritize, quantize, delta encode, don't send what hasn't changed
 
 → P7.1
 
@@ -2450,6 +4056,14 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 - How do I handle a work situation? → P13.7
 - Should I take this opportunity? → P13.8
 - Am I in the right field? → P13.9
+- Negotiation (salary, role, raise) → P13.40
+- Remote work → P13.43
+- Freelancing / consulting → P13.44
+- Impostor syndrome → P13.45
+- Toxic workplace → P13.46
+- Work-life balance / burnout → P13.47
+- Career pivot → P13.49
+- Management vs IC → P13.50
 
 ### P13.3: What's driving the desire to leave?
 
@@ -2518,6 +4132,14 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 - Friendship → P13.16
 - Professional relationship → P13.7
 - General (loneliness, connection, belonging) → P13.17
+- Communication patterns → P13.51
+- Boundaries → P13.52
+- Trust → P13.53
+- Long-distance → P13.54
+- Dating → P13.55
+- Breakup → P13.56
+- Aging parents → P13.57
+- Parenting → P13.58
 
 ### P13.11: What specifically?
 
@@ -2566,15 +4188,25 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 
 ### P13.18: What kind of health question?
 
-- Physical health → P13.19
+- Physical health / medical → P13.19
 - Mental health → P13.20
 - Habits / lifestyle → P13.21
+- Sleep → P13.60
+- Exercise → P13.61
+- Chronic illness → P13.62
+- Addiction / recovery → P13.63
+- Body image → P13.64
+- Nutrition → P13.65
+- Aging / longevity / healthspan → P15.1
+- Biological age / biomarkers → P15.20
+- "Should I take X supplement / do Y for longevity" → P15.10
 
 ### P13.19: Is this a medical question?
 
 - Yes — asking for diagnosis/treatment → CARRY: don't diagnose, suggest they see a professional, provide general information
 - No — general health / fitness / nutrition → CARRY: evidence-based information, acknowledge individual variation
 - Partly — they have a diagnosis, asking about management → CARRY: general information, defer to their doctor for specifics
+- Aging-related medical concern → P15.1 (route through aging domain, which will refer to professional when appropriate)
 
 → P7.1
 
@@ -2597,10 +4229,12 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 ### P13.22: What kind of financial question?
 
 - Budgeting / spending → CARRY: practical, non-judgmental, specific to their situation
-- Investing → CARRY: general principles, acknowledge you're not a financial advisor
-- Major purchase → CARRY: help them evaluate, numbers if possible, name the non-financial factors
-- Debt → CARRY: practical steps, prioritization, non-judgmental
+- Investing → P13.73
+- Major purchase → P13.71
+- Debt → P13.72
 - Earning more → CARRY: specific strategies for their situation
+- Emergency fund → P13.70
+- Lifestyle inflation → P13.74
 
 → P7.1
 
@@ -2629,6 +4263,12 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 - "Am I X enough?" (good enough, smart enough, etc.) → CARRY: challenge the framing, "enough for what?"
 - Identity transition (becoming something new) → CARRY: normalize the discomfort, support the transition
 - Conflict between identities → CARRY: name the tension, don't resolve it for them
+- Values clarification → P13.80
+- Cultural identity → P13.81
+- Age transition → P13.82
+- Post-success identity → P13.83
+- Identity after loss → P13.84
+- Gender / sexuality → P13.85
 
 → P7.1
 
@@ -2638,6 +4278,420 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 - "How do I find meaning?" → CARRY: must read depth map (meaning), take a position, be specific
 - "Does what I do matter?" → CARRY: take seriously, don't dismiss, help them see what does matter
 - Crisis of meaning → CARRY: Acknowledging first, philosophical engagement second
+- Secular meaning-making → P13.90
+- Legacy → P13.91
+- Contribution vs achievement → P13.92
+- Purpose through difficulty → P13.93
+- Retirement purpose → P13.94
+- Purpose and relationships → P13.95
+
+→ P7.1
+
+---
+
+## P13A: Deeper Career (extends P13.2)
+
+### P13.40: What kind of negotiation?
+
+- Salary negotiation (new job) → P13.41
+- Raise negotiation (current job) → P13.42
+- Role / responsibility negotiation → CARRY: name what you want specifically, tie to business value, have a walkaway
+- Benefits / flexibility negotiation → CARRY: know what matters most to you, propose solutions not demands, be willing to trade
+
+→ P7.1
+
+### P13.41: What stage of salary negotiation?
+
+- Haven't received an offer yet → CARRY: don't name a number first if possible, research market rates, prepare to justify your range
+- Have an offer, deciding whether to negotiate → CARRY: almost always negotiate, worst case they say no, be professional
+- In active negotiation → CARRY: anchor high but reasonable, focus on total comp, get it in writing
+- Multiple offers → CARRY: leverage responsibly, be transparent about timeline, don't bluff
+
+→ P7.1
+
+### P13.42: How to approach a raise conversation?
+
+- Have clear evidence of value → CARRY: present the evidence, name the number, make it easy to say yes
+- Feel underpaid but no specific evidence → CARRY: gather evidence first (market data, accomplishments), don't go on feelings alone
+- Already been denied → CARRY: understand why, ask what would change the answer, set a timeline to revisit
+- Timing question → CARRY: after a win, during review cycle, or when you have leverage — not when the company is struggling
+
+→ P7.1
+
+### P13.43: Remote work question?
+
+- How to be effective remote → CARRY: structure your day, overcommunicate, visible output, boundaries between work and home
+- How to manage remote team → CARRY: async-first, clear expectations, regular 1:1s, trust output not hours
+- Hybrid frustrations → CARRY: identify the specific friction, propose solutions, align with team norms
+- Isolation / loneliness → CARRY: acknowledge it's real, suggest structured social time, coworking, hobbies outside work
+- Asking for remote / defending remote → CARRY: focus on results not preference, propose a trial, address their concerns directly
+
+→ P7.1
+
+### P13.44: Freelancing / consulting question?
+
+- Should I freelance? → CARRY: be honest about financial buffer, tolerance for uncertainty, ability to find clients
+- How to find clients → CARRY: start with network, specialize don't generalize, case studies over cold outreach
+- Pricing → CARRY: value-based over hourly, know your minimum rate, don't compete on price
+- Managing freelance business → CARRY: systems for invoicing/contracts/taxes, separate business finances, track time
+- Going back to employment → CARRY: normalize it, freelance experience is valuable, frame the transition positively
+
+→ P7.1
+
+### P13.45: Impostor syndrome?
+
+- "I don't belong here" → CARRY: normalize it, most competent people feel this, separate feelings from evidence
+- "I'll be found out" → CARRY: nobody knows everything, you were hired for a reason, focus on learning not knowing
+- "Everyone else is better" → CARRY: you see their output but not their struggle, comparison is unreliable
+- After a promotion or new role → CARRY: discomfort is normal in growth, give yourself a ramp-up period, ask for help
+- Persistent and debilitating → CARRY: this might be worth exploring with a therapist, it's not just "normal nerves" at this point
+
+→ P7.1
+
+### P13.46: Toxic workplace question?
+
+- How bad is it? → CARRY: help them distinguish annoying from toxic, name specific patterns (gaslighting, blame, retaliation)
+- Should I stay? → CARRY: toxic rarely gets better from the bottom, what's the cost of staying, do you have options
+- How to cope while staying → CARRY: document everything, set boundaries, don't internalize, build exit plan
+- How to leave → CARRY: quietly, professionally, don't burn bridges even if tempting, prioritize your wellbeing
+- Recovery after leaving → CARRY: takes time, normalize the adjustment, therapy if it was truly toxic
+
+→ P7.1
+
+### P13.47: Work-life balance question?
+
+- Overworking → CARRY: identify what's driving it (culture, fear, ambition, poor boundaries), address the root
+- Guilt about not working → CARRY: rest is productive, burnout costs more than breaks, model sustainable pace
+- Can't disconnect → CARRY: practical boundaries (notification settings, dedicated work space, end-of-day ritual)
+- Partner/family conflict about work → CARRY: this is a relationship question too (→ P13.10), but address the work side: what can actually change
+- Burnout → P13.48
+
+→ P7.1
+
+### P13.48: What stage of burnout?
+
+- Early signs (fatigue, cynicism, reduced engagement) → CARRY: catch it now, reduce load, protect recovery time, it gets worse
+- Active burnout (can't function, dread, physical symptoms) → CARRY: this is serious, consider medical leave, talk to a professional, don't push through
+- Recovery → CARRY: slow return, don't go back to the same conditions, fundamental changes needed, be patient
+- Preventing recurrence → CARRY: identify your triggers, build sustainable habits, regular check-ins with yourself
+
+→ P7.1
+
+### P13.49: Career pivot question?
+
+- What to pivot to → CARRY: explore interests + skills + market demand, informational interviews, don't quit first
+- How to pivot → CARRY: bridge skills, side projects, education if needed, network in new field
+- Too late to pivot → CARRY: it's rarely too late, but be realistic about timeline and financial cost
+- Scared to pivot → CARRY: separate fear of change from fear of the wrong change, small experiments reduce risk
+
+→ P7.1
+
+### P13.50: Management vs IC question?
+
+- Should I become a manager? → CARRY: do you want to multiply others or do deep work, try it before committing, it's not a promotion
+- I became a manager and hate it → CARRY: going back to IC is valid and increasingly common, time it right
+- How to be a better manager → CARRY: 1:1s, feedback, delegation, shield your team, develop people not just output
+- IC career ceiling → CARRY: staff/principal paths exist, not all companies support them, consider the company not just the role
+
+→ P7.1
+
+---
+
+## P13B: Deeper Relationships (extends P13.10)
+
+### P13.51: Communication pattern question?
+
+- We keep having the same argument → CARRY: identify the underlying need, not the surface topic, break the cycle by changing your move
+- They don't listen → CARRY: check if you're communicating in their mode, be specific about what "listening" means to you
+- I can't express what I feel → CARRY: practice naming emotions, write it first if speaking is hard, "I feel X when Y" format
+- Difficult conversation coming → CARRY: prepare your points, lead with intent not accusations, listen first, have it in person
+- Passive-aggressive patterns → CARRY: name the pattern directly, model direct communication, it's learned and can be unlearned
+
+→ P7.1
+
+### P13.52: Boundary question?
+
+- How to set boundaries → CARRY: be clear and specific, state the boundary and the consequence, don't over-explain
+- They don't respect my boundaries → CARRY: enforce consequences, broken boundaries without consequences aren't boundaries
+- Guilt about setting boundaries → CARRY: boundaries protect the relationship, not just you, guilt is normal and manageable
+- Boundaries with family → CARRY: hardest ones, start small, expect pushback, be consistent
+- Boundaries at work → CARRY: professional and firm, "I'm not available after X," don't apologize for boundaries
+
+→ P7.1
+
+### P13.53: Trust question?
+
+- Broken trust → CARRY: can it be rebuilt? Only if the person takes full responsibility and changes behavior, not just apologizes
+- Building trust in new relationship → CARRY: consistency over time, small promises kept, vulnerability reciprocated
+- Trust issues from past → CARRY: acknowledge the pattern, separate past from present, therapy helps
+- Should I trust this person → CARRY: trust is earned by behavior patterns, not promises, watch what they do not what they say
+
+→ P7.1
+
+### P13.54: Long-distance relationship?
+
+- Making it work → CARRY: regular communication, shared experiences (movies, games), visit schedule, end date helps
+- Growing apart → CARRY: be honest about what's happening, distance reveals what was already there
+- Should we try long-distance → CARRY: depends on timeline and commitment level, be realistic about the difficulty
+- Communication challenges → CARRY: time zones, over-texting vs under-texting, quality over quantity, video over text for important things
+
+→ P7.1
+
+### P13.55: Dating question?
+
+- Where to meet people → CARRY: apps work but aren't the only way, hobbies/interests, through friends, lower the bar for first interactions
+- Dating anxiety → CARRY: rejection is information not judgment, practice helps, self-worth isn't determined by dating success
+- When to get serious → CARRY: when you both want to, there's no timeline, pay attention to how you feel not what you "should" do
+- Red flags → CARRY: trust your gut, patterns matter more than incidents, how they treat service workers and exes
+- After a breakup → CARRY: grieve before dating, rebound awareness, there's no right timeline to start again
+
+→ P7.1
+
+### P13.56: Breakup question?
+
+- Should I break up → CARRY: if you're asking repeatedly, probably yes, but help them find the crux — what would need to change
+- How to break up → CARRY: in person, be honest but kind, don't give false hope, clean break is usually better
+- Being broken up with → CARRY: acknowledge the pain, don't beg, go no-contact if possible, it gets better
+- Can't move on → CARRY: normal for it to take time, limit social media checking, fill the space with your own life
+- Staying friends → CARRY: rarely works immediately, needs real space first, possible later if both are moved on
+
+→ P7.1
+
+### P13.57: Aging parents question?
+
+- Role reversal → CARRY: uncomfortable for everyone, respect their autonomy as long as safely possible, have the conversations early
+- Caregiving burden → CARRY: get help, you can't do it alone, caregiver burnout is real, set boundaries
+- Difficult conversations (driving, independence, finances) → CARRY: come from love not control, bring facts, include them in decisions
+- Estranged parent aging → CARRY: no obligation to reconnect, but decide before it's too late, on your terms if at all
+
+→ P7.1
+
+### P13.58: Parenting question?
+
+- Parenting style disagreements with partner → CARRY: unified front matters, compromise privately not in front of kids, pick your battles
+- Age-specific challenges → CARRY: what age? Specifics matter more than general advice
+- Work-parent balance → CARRY: guilt is universal and not useful, quality time > quantity, model what matters to you
+- Single parenting → CARRY: harder, not impossible, build your support network, ask for help
+- When to worry about your kid → CARRY: trust your instincts, talk to their pediatrician/teacher, most things are phases
+
+→ P7.1
+
+---
+
+## P13C: Deeper Health (extends P13.18)
+
+### P13.60: Sleep question?
+
+- Can't fall asleep → CARRY: sleep hygiene basics, consistent schedule, no screens, cool dark room, cognitive shuffle
+- Can't stay asleep → CARRY: rule out medical causes, stress management, don't check the clock, get up if you can't sleep
+- Sleep schedule is broken → CARRY: gradual adjustment (30 min/day), morning light exposure, anchor wake time not bed time
+- Too much sleep → CARRY: could be depression, check thyroid, assess energy not just hours
+- Sleep anxiety → CARRY: paradoxical intention (try to stay awake), remove clock from sight, CBT-I is evidence-based
+
+→ P7.1
+
+### P13.61: Exercise question?
+
+- How to start → CARRY: ridiculously small (5 min walk), attach to existing habit, consistency over intensity, any movement counts
+- Lost motivation → CARRY: routine not motivation, social accountability, change the type, lower the bar
+- What kind of exercise → CARRY: the kind you'll actually do, mix strength + cardio + flexibility, match your goals
+- Overtraining / injury → CARRY: rest is training, see a professional, modify don't quit, listen to your body
+- Exercise and mental health → CARRY: strong evidence for depression/anxiety, not a replacement for treatment, both/and
+
+→ P7.1
+
+### P13.62: Chronic illness management?
+
+- Newly diagnosed → CARRY: overwhelming is normal, learn at your pace, find your community, advocate for yourself
+- Fatigue management → CARRY: spoon theory, prioritize ruthlessly, rest before you crash, communicate limits
+- Invisible illness frustrations → CARRY: validate the frustration, you don't owe anyone an explanation, find people who get it
+- Work with chronic illness → CARRY: know your rights (accommodations), pace yourself, communicate what you need
+- Relationship impact → CARRY: honest communication, don't pretend you're fine, let people help, boundaries on caregiving
+
+→ P7.1
+
+### P13.63: Addiction / recovery question?
+
+- Recognizing a problem → CARRY: if you're asking, it's worth examining, look at impact not quantity, be honest with yourself
+- Seeking help → CARRY: therapy, support groups, medical help depending on substance, no shame in needing help
+- Supporting someone → CARRY: you can't force recovery, set boundaries, Al-Anon/support for yourself, enable vs help
+- Recovery challenges → CARRY: relapse is common not failure, change your environment, new routines, one day at a time isn't cliche
+- Harm reduction → CARRY: valid approach, meet people where they are, reducing is better than nothing
+
+→ P7.1
+
+### P13.64: Body image question?
+
+- Negative body image → CARRY: culture is the problem not your body, limit comparison sources, focus on function over form
+- Eating concerns → CARRY: if restricting, binging, or purging, professional help, this isn't about willpower
+- Fitness vs appearance → CARRY: health metrics over mirror, how you feel over how you look, strength over size
+- Aging body → CARRY: bodies change, grieve if needed, adapt expectations, stay active for health not appearance
+
+→ P7.1
+
+### P13.65: Nutrition question?
+
+- What to eat → CARRY: whole foods, variety, enough protein, don't overthink it, no single diet is magic
+- Specific diet question → CARRY: most diets work by creating a calorie deficit, sustainability matters most, evidence over trends
+- Relationship with food → CARRY: if food causes anxiety or guilt, consider working with a professional, nourishment not punishment
+- Cooking / meal prep → CARRY: batch cook basics, simple recipes, lower the bar, even scrambled eggs count
+
+→ P7.1
+
+---
+
+## P13D: Deeper Finance (extends P13.22)
+
+### P13.70: Emergency fund question?
+
+- How much → CARRY: 3-6 months expenses, adjust for job stability and risk tolerance, something is better than nothing
+- Where to keep it → CARRY: high-yield savings, accessible, not invested in volatile assets
+- Can't build one → CARRY: start tiny ($25/paycheck), automate it, it grows faster than you think
+
+→ P7.1
+
+### P13.71: Major financial decision?
+
+- Buy vs rent → CARRY: math matters (price-to-rent ratio), but so does lifestyle, don't buy just because "throwing money away"
+- Car purchase → CARRY: used is almost always better value, total cost of ownership, don't finance more than you can afford
+- Starting a business → CARRY: have runway, validate before investing, separate personal and business finances, plan for no income
+- Going back to school → CARRY: ROI calculation, opportunity cost, can you do it without debt, what's the specific career outcome
+
+→ P7.1
+
+### P13.72: Debt strategy?
+
+- Which debt first → CARRY: mathematically: highest interest, psychologically: smallest balance, both work — pick one and stick
+- Overwhelming debt → CARRY: list everything, minimum payments on all, attack one, consider professional help (nonprofit credit counseling)
+- Student loans → CARRY: income-driven repayment if federal, refinance if good credit, public service forgiveness if applicable
+- Should I pay off or invest → CARRY: guaranteed return (interest saved) vs expected return (investing), usually pay off high-interest first
+
+→ P7.1
+
+### P13.73: Investing question (beyond basics)?
+
+- Getting started → CARRY: low-cost index funds, max employer match, automate contributions, don't try to pick stocks
+- Real estate investing → CARRY: not passive, requires capital and knowledge, rental math (1% rule, cap rate), consider REITs instead
+- Retirement planning → CARRY: max tax-advantaged accounts first, target date funds are fine, time in market beats timing the market
+- Risk tolerance → CARRY: younger = more stock, older = more bonds, don't invest money you need in 5 years, sleep test
+- FIRE (financial independence) → CARRY: math works (25x expenses), lifestyle tradeoffs are real, flexibility matters more than a number
+
+→ P7.1
+
+### P13.74: Lifestyle inflation question?
+
+- Spending creeping up with income → CARRY: automate savings increase with raises, conscious spending (what brings joy vs habit)
+- Want to spend less → CARRY: track spending first, cut categories not items, values-based budgeting
+- Partner has different spending habits → CARRY: this is a relationship question too, find the compromise, separate + joint accounts, shared goals
+
+→ P7.1
+
+---
+
+## P13E: Deeper Identity (extends P13.34)
+
+### P13.80: Values clarification?
+
+- Don't know my values → CARRY: look at how you spend time and money (revealed preferences), what makes you angry shows what you value
+- Values conflict → CARRY: most interesting decisions are values vs values, name both, decide which matters more HERE
+- Living misaligned with values → CARRY: small alignment steps, don't upend everything at once, values change and that's ok
+- Values vs expectations → CARRY: whose values are these really? Separate inherited from chosen, both can be valid
+
+→ P7.1
+
+### P13.81: Cultural identity question?
+
+- Between cultures → CARRY: you don't have to choose, code-switching is a skill not inauthenticity, find your blend
+- Disconnected from heritage → CARRY: explore at your own pace, it's yours to claim, no gatekeeper owns it
+- Cultural expectations vs personal desires → CARRY: real tension, no easy answer, setting boundaries doesn't mean rejecting culture
+- Immigrant experience → CARRY: grief and growth coexist, belonging takes time, both places can be home
+
+→ P7.1
+
+### P13.82: Age transition question?
+
+- Quarter-life crisis → CARRY: comparison is poison, paths aren't linear, it's ok not to have it figured out
+- Midlife crisis → CARRY: re-evaluation isn't crisis, what would you do differently if you started now, some desires are worth pursuing
+- Retirement identity → CARRY: work ≠ identity (even though it felt like it), explore what's been waiting, structure matters
+- Aging in general → CARRY: losses are real, grieve them, gains too (perspective, freedom, clarity), adapt don't deny
+
+→ P7.1
+
+### P13.83: Post-success identity?
+
+- "I achieved the thing and I'm still not happy" → CARRY: hedonic adaptation is real, the question becomes "now what?", meaning ≠ achievement
+- Identity after leaving a role → CARRY: "I used to be X" — who are you now? Explore without rushing to define
+- Success impostor → CARRY: you did the work, the success is real, external validation won't fix internal doubt
+
+→ P7.1
+
+### P13.84: Identity after loss?
+
+- Loss of a person → CARRY: identity shifts are normal after loss, you don't have to "find yourself" on a timeline
+- Loss of ability → CARRY: grieve the before, adapt to the now, identity is more than what you can do
+- Loss of a dream → CARRY: real grief even without a tangible loss, what opens up when you let go
+
+→ P7.1
+
+### P13.85: Gender / sexuality identity?
+
+- Questioning → CARRY: exploration is healthy, there's no rush to label, talk to people who've been there
+- Coming out → CARRY: safety first, on your terms, your timeline, it's a continuous process not a one-time event
+- Late discovery → CARRY: valid at any age, grief for lost time is real, community helps
+- Navigating others' reactions → CARRY: their adjustment isn't your responsibility, set boundaries on questions, find your people
+
+→ P7.1
+
+---
+
+## P13F: Deeper Purpose (extends P13.38)
+
+### P13.90: Secular meaning-making?
+
+- Without religion → CARRY: meaning through relationships, creation, contribution, experience — it's constructed not found
+- Lost religion, missing the meaning → CARRY: the community and structure were real goods, find secular versions, grief is valid
+- Existential anxiety → CARRY: normal and healthy in doses, Camus over Kierkegaard, absurdity can be liberating
+- Creating meaning vs finding it → CARRY: take a position — meaning is made, not discovered, but that makes it more yours not less
+
+→ P7.1
+
+### P13.91: Legacy question?
+
+- "What will I leave behind?" → CARRY: legacy is in people you've affected more than things you've built, but both count
+- Too focused on legacy → CARRY: legacy anxiety is future-tripping, the present is where you actually live
+- No legacy / feel invisible → CARRY: influence is often invisible too, ripple effects you'll never see, small circles matter
+
+→ P7.1
+
+### P13.92: Contribution vs achievement?
+
+- Driven by achievement, wondering if it matters → CARRY: achievement without contribution can feel hollow, but achievement FOR something is contribution
+- Want to contribute but feel powerless → CARRY: scale doesn't equal impact, local and specific matters, start where you are
+- Comparing my contribution to others → CARRY: your contribution is yours, comparison kills it, different ≠ less
+
+→ P7.1
+
+### P13.93: Purpose through difficulty?
+
+- Suffering and meaning → CARRY: don't romanticize suffering, but meaning CAN emerge from difficulty, survivor's meaning is earned
+- Purpose during crisis → CARRY: purpose might be "get through today," that's enough, grander purpose can wait
+- Lost purpose after setback → CARRY: setbacks test whether purpose was intrinsic or contingent, rebuild from what remains
+
+→ P7.1
+
+### P13.94: Retirement purpose?
+
+- Lost purpose after retiring → CARRY: work filled structure/identity/social needs — replace each one specifically, not generically
+- Pre-retirement planning (beyond financial) → CARRY: develop interests NOW, relationships outside work, trial runs of retirement life
+- Volunteering / giving back → CARRY: meaningful if it fits you, not an obligation, find what uses YOUR skills and interests
+
+→ P7.1
+
+### P13.95: Purpose and relationships?
+
+- Purpose through others vs purpose for yourself → CARRY: both are real, neither is sufficient alone, balance shifts over life
+- Relationship as purpose → CARRY: it can be, but a relationship that IS your purpose is fragile — diversify your meaning
+- Purpose conflict in relationship → CARRY: can you both have purpose without competing? Find the overlap or respect the divergence
 
 → P7.1
 
@@ -2649,6 +4703,7 @@ Each question's answers include routing arrows. Follow them. You accumulate CARR
 
 - Technology / software → P14.2
 - Science → P14.8
+- Health / aging / longevity / nutrition / supplements → P15.35
 - Human behavior / psychology → P14.12
 - Business / strategy → P14.16
 - Society / culture → P14.20
