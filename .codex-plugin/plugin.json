@@ -1,0 +1,38 @@
+{
+  "name": "reasoningtool",
+  "version": "0.1.0",
+  "description": "A library of structured reasoning, analysis, decision, research, and problem-solving skills.",
+  "author": {
+    "name": "Ben Ward",
+    "email": "benjaminalexw@proton.me",
+    "url": "https://github.com/benjam3n"
+  },
+  "homepage": "https://reasoningtool.com",
+  "repository": "https://github.com/benjam3n/reasoningtool",
+  "keywords": [
+    "reasoning",
+    "analysis",
+    "decision-making",
+    "research",
+    "problem-solving"
+  ],
+  "skills": "./claude-code-plugin/skills/",
+  "interface": {
+    "displayName": "ReasoningTool",
+    "shortDescription": "Structured reasoning and problem-solving skills",
+    "longDescription": "Use a large library of composable skills for claim testing, decision support, analysis, research, planning, and problem solving.",
+    "developerName": "Ben Ward",
+    "category": "Productivity",
+    "capabilities": [
+      "Reasoning",
+      "Analysis",
+      "Research"
+    ],
+    "websiteURL": "https://reasoningtool.com",
+    "defaultPrompt": [
+      "Test this claim with ReasoningTool.",
+      "Help me decide using the best matching skill.",
+      "Analyze this problem and route to the right skill."
+    ]
+  }
+}
