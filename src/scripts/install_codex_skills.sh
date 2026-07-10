@@ -3,28 +3,32 @@ set -euo pipefail
 
 usage() {
   cat <<'EOF'
-Install reasoningtool skills into Codex.
+Install reasoningtool skills for ChatGPT/Codex.
 
 Usage:
-  src/scripts/install_codex_skills.sh [--copy|--symlink] [--force] [--code-home PATH]
+  src/scripts/install_codex_skills.sh [--copy|--symlink] [--force] [--target PATH] [--code-home PATH]
 
 Options:
-  --copy            Copy skill folders (default).
-  --symlink         Symlink skill folders (no Codex syntax adaptation).
+  --copy            Copy and adapt skill folders (default).
+  --symlink         Symlink skill folders without syntax adaptation.
   --force           Replace existing installed skill folders.
-  --code-home PATH  Install into PATH/skills instead of $CODEX_HOME/skills.
+  --target PATH     Install directly into PATH.
+  --code-home PATH  Backward-compatible option; install into PATH/skills.
 
-Notes:
-  - Copy mode rewrites Claude-style invoke syntax to Codex-style invoke syntax:
-    "INVOKE: /skill" -> "INVOKE: $skill"
-  - Skills are installed with original IDs because skills invoke each other
-    by those names.
+Defaults:
+  Skills are installed into $AGENTS_SKILLS_DIR when set, otherwise
+  $HOME/.agents/skills.
+
+Copy-mode adaptations:
+  - "INVOKE: /skill" becomes "INVOKE: $skill".
+  - "$ARGUMENTS" becomes "USER_INPUT".
+  - Codex-specific override text is inserted when an override exists.
 EOF
 }
 
 MODE="copy"
 FORCE="false"
-CODE_HOME="${CODEX_HOME:-$HOME/.codex}"
+TARGET_DIR="${AGENTS_SKILLS_DIR:-$HOME/.agents/skills}"
 
 prepend_after_frontmatter() {
   local override_file="$1"
@@ -69,12 +73,20 @@ while [[ $# -gt 0 ]]; do
       FORCE="true"
       shift
       ;;
+    --target)
+      if [[ $# -lt 2 ]]; then
+        echo "--target requires a path" >&2
+        exit 1
+      fi
+      TARGET_DIR="$2"
+      shift 2
+      ;;
     --code-home)
       if [[ $# -lt 2 ]]; then
         echo "--code-home requires a path" >&2
         exit 1
       fi
-      CODE_HOME="$2"
+      TARGET_DIR="$2/skills"
       shift 2
       ;;
     -h|--help)
@@ -90,9 +102,8 @@ while [[ $# -gt 0 ]]; do
 done
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+REPO_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 SOURCE_DIR="$REPO_ROOT/claude-code-plugin/skills"
-TARGET_DIR="$CODE_HOME/skills"
 CODEX_OVERRIDES_DIR="$REPO_ROOT/codex-overrides"
 ROUTER_SKILLS="claim decide diagnose evaluate search how want emotion analyze viability action create technical certainty iterate meta next fonss wsib cs sc dtse mts fmtsb uf it but extract handle ata sycs aso iagca"
 
@@ -125,115 +136,23 @@ for skill_path in "$SOURCE_DIR"/*; do
   if [[ "$MODE" == "copy" ]]; then
     cp -R "$skill_path" "$dest"
 
-    # Adapt Claude command syntax to Codex explicit skill syntax.
     if [[ -f "$dest/SKILL.md" ]]; then
       perl -0pi -e 's/INVOKE:\s*\/\[([A-Za-z0-9._-]+)\]/INVOKE: \$$1/g' "$dest/SKILL.md"
       perl -0pi -e 's/INVOKE:\s*\/([A-Za-z0-9._-]+)/INVOKE: \$$1/g' "$dest/SKILL.md"
       perl -0pi -e 's/\$ARGUMENTS/USER_INPUT/g' "$dest/SKILL.md"
-    fi
 
-    # Apply Codex-specific strict override for ARAW.
-    if [[ "$skill_id" == "araw" && -f "$CODEX_OVERRIDES_DIR/araw_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/araw_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for AR.
-    if [[ "$skill_id" == "ar" && -f "$CODEX_OVERRIDES_DIR/ar_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/ar_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for AW.
-    if [[ "$skill_id" == "aw" && -f "$CODEX_OVERRIDES_DIR/aw_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/aw_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for U.
-    if [[ "$skill_id" == "u" && -f "$CODEX_OVERRIDES_DIR/u_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/u_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for SE.
-    if [[ "$skill_id" == "se" && -f "$CODEX_OVERRIDES_DIR/se_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/se_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for GU.
-    if [[ "$skill_id" == "gu" && -f "$CODEX_OVERRIDES_DIR/gu_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/gu_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for GJS.
-    if [[ "$skill_id" == "gjs" && -f "$CODEX_OVERRIDES_DIR/gjs_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/gjs_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for GOSM.
-    if [[ "$skill_id" == "gosm" && -f "$CODEX_OVERRIDES_DIR/gosm_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/gosm_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for PCE.
-    if [[ "$skill_id" == "pce" && -f "$CODEX_OVERRIDES_DIR/pce_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/pce_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict overrides for key phase-2 routers.
-    if [[ "$skill_id" == "claim" && -f "$CODEX_OVERRIDES_DIR/claim_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/claim_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "decide" && -f "$CODEX_OVERRIDES_DIR/decide_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/decide_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "search" && -f "$CODEX_OVERRIDES_DIR/search_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/search_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "diagnose" && -f "$CODEX_OVERRIDES_DIR/diagnose_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/diagnose_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "evaluate" && -f "$CODEX_OVERRIDES_DIR/evaluate_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/evaluate_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "how" && -f "$CODEX_OVERRIDES_DIR/how_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/how_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "want" && -f "$CODEX_OVERRIDES_DIR/want_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/want_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "fonss" && -f "$CODEX_OVERRIDES_DIR/fonss_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/fonss_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "given" && -f "$CODEX_OVERRIDES_DIR/given_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/given_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "extract" && -f "$CODEX_OVERRIDES_DIR/extract_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/extract_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    if [[ "$skill_id" == "cs" && -f "$CODEX_OVERRIDES_DIR/cs_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/cs_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for UAUA.
-    if [[ "$skill_id" == "uaua" && -f "$CODEX_OVERRIDES_DIR/uaua_strict_codex.md" ]]; then
-      prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/uaua_strict_codex.md" "$dest/SKILL.md"
-    fi
-
-    # Apply Codex-specific strict override for router skills.
-    for router_skill in $ROUTER_SKILLS; do
-      if [[ "$skill_id" == "$router_skill" && -f "$CODEX_OVERRIDES_DIR/router_strict_codex.md" ]]; then
-        prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/router_strict_codex.md" "$dest/SKILL.md"
-        break
+      specific_override="$CODEX_OVERRIDES_DIR/${skill_id}_strict_codex.md"
+      if [[ -f "$specific_override" ]]; then
+        prepend_after_frontmatter "$specific_override" "$dest/SKILL.md"
       fi
-    done
+
+      for router_skill in $ROUTER_SKILLS; do
+        if [[ "$skill_id" == "$router_skill" && -f "$CODEX_OVERRIDES_DIR/router_strict_codex.md" ]]; then
+          prepend_after_frontmatter "$CODEX_OVERRIDES_DIR/router_strict_codex.md" "$dest/SKILL.md"
+          break
+        fi
+      done
+    fi
   else
     ln -s "$skill_path" "$dest"
   fi
